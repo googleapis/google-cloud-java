@@ -68,6 +68,10 @@ public final class AssuredworkloadsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_assuredworkloads_v1_Workload_ResourceSettings_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_assuredworkloads_v1_Workload_SaaEnrollmentResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_assuredworkloads_v1_Workload_SaaEnrollmentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_assuredworkloads_v1_Workload_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_assuredworkloads_v1_Workload_LabelsEntry_fieldAccessorTable;
@@ -112,7 +116,7 @@ public final class AssuredworkloadsProto {
           + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 "
           + "\001(\t\"o\n\025ListWorkloadsResponse\022=\n\tworkload"
           + "s\030\001 \003(\0132*.google.cloud.assuredworkloads."
-          + "v1.Workload\022\027\n\017next_page_token\030\002 \001(\t\"\240\014\n"
+          + "v1.Workload\022\027\n\017next_page_token\030\002 \001(\t\"\222\023\n"
           + "\010Workload\022\021\n\004name\030\001 \001(\tB\003\340A\001\022\031\n\014display_"
           + "name\030\002 \001(\tB\003\340A\002\022O\n\tresources\030\003 \003(\01327.goo"
           + "gle.cloud.assuredworkloads.v1.Workload.R"
@@ -128,74 +132,96 @@ public final class AssuredworkloadsProto {
           + "\001(\01326.google.cloud.assuredworkloads.v1.W"
           + "orkload.KMSSettingsB\003\340A\004\022[\n\021resource_set"
           + "tings\030\017 \003(\0132;.google.cloud.assuredworklo"
-          + "ads.v1.Workload.ResourceSettingsB\003\340A\004\032\357\001"
-          + "\n\014ResourceInfo\022\023\n\013resource_id\030\001 \001(\003\022[\n\rr"
-          + "esource_type\030\002 \001(\0162D.google.cloud.assure"
-          + "dworkloads.v1.Workload.ResourceInfo.Reso"
-          + "urceType\"m\n\014ResourceType\022\035\n\031RESOURCE_TYP"
-          + "E_UNSPECIFIED\020\000\022\024\n\020CONSUMER_PROJECT\020\001\022\033\n"
-          + "\027ENCRYPTION_KEYS_PROJECT\020\002\022\013\n\007KEYRING\020\003\032"
-          + "\217\001\n\013KMSSettings\022A\n\022next_rotation_time\030\001 "
-          + "\001(\0132\032.google.protobuf.TimestampB\t\340A\002\340A\004\340"
-          + "A\005\022=\n\017rotation_period\030\002 \001(\0132\031.google.pro"
-          + "tobuf.DurationB\t\340A\002\340A\004\340A\005\032\232\001\n\020ResourceSe"
-          + "ttings\022\023\n\013resource_id\030\001 \001(\t\022[\n\rresource_"
-          + "type\030\002 \001(\0162D.google.cloud.assuredworkloa"
-          + "ds.v1.Workload.ResourceInfo.ResourceType"
-          + "\022\024\n\014display_name\030\003 \001(\t\032-\n\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\330\001\n\020Compli"
-          + "anceRegime\022!\n\035COMPLIANCE_REGIME_UNSPECIF"
-          + "IED\020\000\022\007\n\003IL4\020\001\022\010\n\004CJIS\020\002\022\020\n\014FEDRAMP_HIGH"
-          + "\020\003\022\024\n\020FEDRAMP_MODERATE\020\004\022\026\n\022US_REGIONAL_"
-          + "ACCESS\020\005\022\t\n\005HIPAA\020\006\022\013\n\007HITRUST\020\007\022\032\n\026EU_R"
-          + "EGIONS_AND_SUPPORT\020\010\022\032\n\026CA_REGIONS_AND_S"
-          + "UPPORT\020\t:u\352Ar\n(assuredworkloads.googleap"
-          + "is.com/Workload\022Forganizations/{organiza"
-          + "tion}/locations/{location}/workloads/{wo"
-          + "rkload}\"\344\001\n\037CreateWorkloadOperationMetad"
-          + "ata\0224\n\013create_time\030\001 \001(\0132\032.google.protob"
-          + "uf.TimestampB\003\340A\001\022\031\n\014display_name\030\002 \001(\tB"
-          + "\003\340A\001\022\023\n\006parent\030\003 \001(\tB\003\340A\001\022[\n\021compliance_"
-          + "regime\030\004 \001(\0162;.google.cloud.assuredworkl"
-          + "oads.v1.Workload.ComplianceRegimeB\003\340A\0012\342"
-          + "\010\n\027AssuredWorkloadsService\022\357\001\n\016CreateWor"
-          + "kload\0227.google.cloud.assuredworkloads.v1"
-          + ".CreateWorkloadRequest\032\035.google.longrunn"
-          + "ing.Operation\"\204\001\202\323\344\223\002>\"2/v1/{parent=orga"
-          + "nizations/*/locations/*}/workloads:\010work"
-          + "load\332A\017parent,workload\312A+\n\010Workload\022\037Cre"
-          + "ateWorkloadOperationMetadata\022\333\001\n\016UpdateW"
+          + "ads.v1.Workload.ResourceSettingsB\003\340A\004\022`\n"
+          + "\024kaj_enrollment_state\030\021 \001(\0162=.google.clo"
+          + "ud.assuredworkloads.v1.Workload.KajEnrol"
+          + "lmentStateB\003\340A\003\022&\n\031enable_sovereign_cont"
+          + "rols\030\022 \001(\010B\003\340A\001\022f\n\027saa_enrollment_respon"
+          + "se\030\024 \001(\0132@.google.cloud.assuredworkloads"
+          + ".v1.Workload.SaaEnrollmentResponseB\003\340A\003\032"
+          + "\357\001\n\014ResourceInfo\022\023\n\013resource_id\030\001 \001(\003\022[\n"
+          + "\rresource_type\030\002 \001(\0162D.google.cloud.assu"
+          + "redworkloads.v1.Workload.ResourceInfo.Re"
+          + "sourceType\"m\n\014ResourceType\022\035\n\031RESOURCE_T"
+          + "YPE_UNSPECIFIED\020\000\022\024\n\020CONSUMER_PROJECT\020\001\022"
+          + "\033\n\027ENCRYPTION_KEYS_PROJECT\020\002\022\013\n\007KEYRING\020"
+          + "\003\032\217\001\n\013KMSSettings\022A\n\022next_rotation_time\030"
+          + "\001 \001(\0132\032.google.protobuf.TimestampB\t\340A\002\340A"
+          + "\004\340A\005\022=\n\017rotation_period\030\002 \001(\0132\031.google.p"
+          + "rotobuf.DurationB\t\340A\002\340A\004\340A\005\032\232\001\n\020Resource"
+          + "Settings\022\023\n\013resource_id\030\001 \001(\t\022[\n\rresourc"
+          + "e_type\030\002 \001(\0162D.google.cloud.assuredworkl"
+          + "oads.v1.Workload.ResourceInfo.ResourceTy"
+          + "pe\022\024\n\014display_name\030\003 \001(\t\032\374\003\n\025SaaEnrollme"
+          + "ntResponse\022f\n\014setup_status\030\001 \001(\0162K.googl"
+          + "e.cloud.assuredworkloads.v1.Workload.Saa"
+          + "EnrollmentResponse.SetupStateH\000\210\001\001\022a\n\014se"
+          + "tup_errors\030\002 \003(\0162K.google.cloud.assuredw"
+          + "orkloads.v1.Workload.SaaEnrollmentRespon"
+          + "se.SetupError\"R\n\nSetupState\022\033\n\027SETUP_STA"
+          + "TE_UNSPECIFIED\020\000\022\022\n\016STATUS_PENDING\020\001\022\023\n\017"
+          + "STATUS_COMPLETE\020\002\"\262\001\n\nSetupError\022\033\n\027SETU"
+          + "P_ERROR_UNSPECIFIED\020\000\022\034\n\030ERROR_INVALID_B"
+          + "ASE_SETUP\020\001\022&\n\"ERROR_MISSING_EXTERNAL_SI"
+          + "GNING_KEY\020\002\022#\n\037ERROR_NOT_ALL_SERVICES_EN"
+          + "ROLLED\020\003\022\034\n\030ERROR_SETUP_CHECK_FAILED\020\004B\017"
+          + "\n\r_setup_status\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\330\001\n\020ComplianceReg"
+          + "ime\022!\n\035COMPLIANCE_REGIME_UNSPECIFIED\020\000\022\007"
+          + "\n\003IL4\020\001\022\010\n\004CJIS\020\002\022\020\n\014FEDRAMP_HIGH\020\003\022\024\n\020F"
+          + "EDRAMP_MODERATE\020\004\022\026\n\022US_REGIONAL_ACCESS\020"
+          + "\005\022\t\n\005HIPAA\020\006\022\013\n\007HITRUST\020\007\022\032\n\026EU_REGIONS_"
+          + "AND_SUPPORT\020\010\022\032\n\026CA_REGIONS_AND_SUPPORT\020"
+          + "\t\"\177\n\022KajEnrollmentState\022$\n KAJ_ENROLLMEN"
+          + "T_STATE_UNSPECIFIED\020\000\022 \n\034KAJ_ENROLLMENT_"
+          + "STATE_PENDING\020\001\022!\n\035KAJ_ENROLLMENT_STATE_"
+          + "COMPLETE\020\002:u\352Ar\n(assuredworkloads.google"
+          + "apis.com/Workload\022Forganizations/{organi"
+          + "zation}/locations/{location}/workloads/{"
+          + "workload}\"\344\001\n\037CreateWorkloadOperationMet"
+          + "adata\0224\n\013create_time\030\001 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\003\340A\001\022\031\n\014display_name\030\002 \001("
+          + "\tB\003\340A\001\022\023\n\006parent\030\003 \001(\tB\003\340A\001\022[\n\021complianc"
+          + "e_regime\030\004 \001(\0162;.google.cloud.assuredwor"
+          + "kloads.v1.Workload.ComplianceRegimeB\003\340A\001"
+          + "2\342\010\n\027AssuredWorkloadsService\022\357\001\n\016CreateW"
           + "orkload\0227.google.cloud.assuredworkloads."
-          + "v1.UpdateWorkloadRequest\032*.google.cloud."
-          + "assuredworkloads.v1.Workload\"d\202\323\344\223\002G2;/v"
-          + "1/{workload.name=organizations/*/locatio"
-          + "ns/*/workloads/*}:\010workload\332A\024workload,u"
-          + "pdate_mask\022\244\001\n\016DeleteWorkload\0227.google.c"
-          + "loud.assuredworkloads.v1.DeleteWorkloadR"
-          + "equest\032\026.google.protobuf.Empty\"A\202\323\344\223\0024*2"
-          + "/v1/{name=organizations/*/locations/*/wo"
-          + "rkloads/*}\332A\004name\022\262\001\n\013GetWorkload\0224.goog"
-          + "le.cloud.assuredworkloads.v1.GetWorkload"
-          + "Request\032*.google.cloud.assuredworkloads."
-          + "v1.Workload\"A\202\323\344\223\0024\0222/v1/{name=organizat"
-          + "ions/*/locations/*/workloads/*}\332A\004name\022\305"
-          + "\001\n\rListWorkloads\0226.google.cloud.assuredw"
-          + "orkloads.v1.ListWorkloadsRequest\0327.googl"
-          + "e.cloud.assuredworkloads.v1.ListWorkload"
-          + "sResponse\"C\202\323\344\223\0024\0222/v1/{parent=organizat"
-          + "ions/*/locations/*}/workloads\332A\006parent\032S"
-          + "\312A\037assuredworkloads.googleapis.com\322A.htt"
-          + "ps://www.googleapis.com/auth/cloud-platf"
-          + "ormB\335\002\n$com.google.cloud.assuredworkload"
-          + "s.v1B\025AssuredworkloadsProtoP\001ZPgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/assur"
-          + "edworkloads/v1;assuredworkloads\252\002 Google"
-          + ".Cloud.AssuredWorkloads.V1\312\002 Google\\Clou"
-          + "d\\AssuredWorkloads\\V1\352\002#Google::Cloud::A"
-          + "ssuredWorkloads::V1\352A]\n(assuredworkloads"
-          + ".googleapis.com/Location\0221organizations/"
-          + "{organization}/locations/{location}b\006pro"
-          + "to3"
+          + "v1.CreateWorkloadRequest\032\035.google.longru"
+          + "nning.Operation\"\204\001\202\323\344\223\002>\"2/v1/{parent=or"
+          + "ganizations/*/locations/*}/workloads:\010wo"
+          + "rkload\332A\017parent,workload\312A+\n\010Workload\022\037C"
+          + "reateWorkloadOperationMetadata\022\333\001\n\016Updat"
+          + "eWorkload\0227.google.cloud.assuredworkload"
+          + "s.v1.UpdateWorkloadRequest\032*.google.clou"
+          + "d.assuredworkloads.v1.Workload\"d\202\323\344\223\002G2;"
+          + "/v1/{workload.name=organizations/*/locat"
+          + "ions/*/workloads/*}:\010workload\332A\024workload"
+          + ",update_mask\022\244\001\n\016DeleteWorkload\0227.google"
+          + ".cloud.assuredworkloads.v1.DeleteWorkloa"
+          + "dRequest\032\026.google.protobuf.Empty\"A\202\323\344\223\0024"
+          + "*2/v1/{name=organizations/*/locations/*/"
+          + "workloads/*}\332A\004name\022\262\001\n\013GetWorkload\0224.go"
+          + "ogle.cloud.assuredworkloads.v1.GetWorklo"
+          + "adRequest\032*.google.cloud.assuredworkload"
+          + "s.v1.Workload\"A\202\323\344\223\0024\0222/v1/{name=organiz"
+          + "ations/*/locations/*/workloads/*}\332A\004name"
+          + "\022\305\001\n\rListWorkloads\0226.google.cloud.assure"
+          + "dworkloads.v1.ListWorkloadsRequest\0327.goo"
+          + "gle.cloud.assuredworkloads.v1.ListWorklo"
+          + "adsResponse\"C\202\323\344\223\0024\0222/v1/{parent=organiz"
+          + "ations/*/locations/*}/workloads\332A\006parent"
+          + "\032S\312A\037assuredworkloads.googleapis.com\322A.h"
+          + "ttps://www.googleapis.com/auth/cloud-pla"
+          + "tformB\335\002\n$com.google.cloud.assuredworklo"
+          + "ads.v1B\025AssuredworkloadsProtoP\001ZPgoogle."
+          + "golang.org/genproto/googleapis/cloud/ass"
+          + "uredworkloads/v1;assuredworkloads\252\002 Goog"
+          + "le.Cloud.AssuredWorkloads.V1\312\002 Google\\Cl"
+          + "oud\\AssuredWorkloads\\V1\352\002#Google::Cloud:"
+          + ":AssuredWorkloads::V1\352A]\n(assuredworkloa"
+          + "ds.googleapis.com/Location\0221organization"
+          + "s/{organization}/locations/{location}b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -276,6 +302,9 @@ public final class AssuredworkloadsProto {
               "ProvisionedResourcesParent",
               "KmsSettings",
               "ResourceSettings",
+              "KajEnrollmentState",
+              "EnableSovereignControls",
+              "SaaEnrollmentResponse",
             });
     internal_static_google_cloud_assuredworkloads_v1_Workload_ResourceInfo_descriptor =
         internal_static_google_cloud_assuredworkloads_v1_Workload_descriptor
@@ -307,10 +336,20 @@ public final class AssuredworkloadsProto {
             new java.lang.String[] {
               "ResourceId", "ResourceType", "DisplayName",
             });
-    internal_static_google_cloud_assuredworkloads_v1_Workload_LabelsEntry_descriptor =
+    internal_static_google_cloud_assuredworkloads_v1_Workload_SaaEnrollmentResponse_descriptor =
         internal_static_google_cloud_assuredworkloads_v1_Workload_descriptor
             .getNestedTypes()
             .get(3);
+    internal_static_google_cloud_assuredworkloads_v1_Workload_SaaEnrollmentResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_assuredworkloads_v1_Workload_SaaEnrollmentResponse_descriptor,
+            new java.lang.String[] {
+              "SetupStatus", "SetupErrors", "SetupStatus",
+            });
+    internal_static_google_cloud_assuredworkloads_v1_Workload_LabelsEntry_descriptor =
+        internal_static_google_cloud_assuredworkloads_v1_Workload_descriptor
+            .getNestedTypes()
+            .get(4);
     internal_static_google_cloud_assuredworkloads_v1_Workload_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_assuredworkloads_v1_Workload_LabelsEntry_descriptor,

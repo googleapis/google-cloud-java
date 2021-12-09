@@ -102,6 +102,8 @@ public class AssuredWorkloadsServiceClientTest {
             .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .setKmsSettings(Workload.KMSSettings.newBuilder().build())
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
+            .setEnableSovereignControls(true)
+            .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -160,6 +162,8 @@ public class AssuredWorkloadsServiceClientTest {
             .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .setKmsSettings(Workload.KMSSettings.newBuilder().build())
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
+            .setEnableSovereignControls(true)
+            .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -218,6 +222,8 @@ public class AssuredWorkloadsServiceClientTest {
             .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .setKmsSettings(Workload.KMSSettings.newBuilder().build())
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
+            .setEnableSovereignControls(true)
+            .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -336,6 +342,8 @@ public class AssuredWorkloadsServiceClientTest {
             .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .setKmsSettings(Workload.KMSSettings.newBuilder().build())
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
+            .setEnableSovereignControls(true)
+            .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -383,6 +391,8 @@ public class AssuredWorkloadsServiceClientTest {
             .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .setKmsSettings(Workload.KMSSettings.newBuilder().build())
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
+            .setEnableSovereignControls(true)
+            .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 

@@ -296,8 +296,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources managed by
-   * the workload.
+   * Optional. Compliance controls that should be applied to the resources
+   * managed by the workload.
    * </pre>
    *
    * <code>
@@ -314,8 +314,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources managed by
-   * the workload.
+   * Optional. Compliance controls that should be applied to the resources
+   * managed by the workload.
    * </pre>
    *
    * <code>
@@ -1135,8 +1135,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>
@@ -1153,8 +1153,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>
@@ -1174,8 +1174,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>
@@ -1197,8 +1197,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>
@@ -1222,8 +1222,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>

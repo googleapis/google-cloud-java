@@ -47,6 +47,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     etag_ = "";
     provisionedResourcesParent_ = "";
     resourceSettings_ = java.util.Collections.emptyList();
+    kajEnrollmentState_ = 0;
   }
 
   @java.lang.Override
@@ -287,6 +288,37 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
                   input.readMessage(
                       com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.parser(),
                       extensionRegistry));
+              break;
+            }
+          case 136:
+            {
+              int rawValue = input.readEnum();
+
+              kajEnrollmentState_ = rawValue;
+              break;
+            }
+          case 144:
+            {
+              enableSovereignControls_ = input.readBool();
+              break;
+            }
+          case 162:
+            {
+              com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.Builder
+                  subBuilder = null;
+              if (saaEnrollmentResponse_ != null) {
+                subBuilder = saaEnrollmentResponse_.toBuilder();
+              }
+              saaEnrollmentResponse_ =
+                  input.readMessage(
+                      com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(saaEnrollmentResponse_);
+                saaEnrollmentResponse_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -653,6 +685,168 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Key Access Justifications(KAJ) Enrollment State.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState}
+   */
+  public enum KajEnrollmentState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default State for KAJ Enrollment.
+     * </pre>
+     *
+     * <code>KAJ_ENROLLMENT_STATE_UNSPECIFIED = 0;</code>
+     */
+    KAJ_ENROLLMENT_STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Pending State for KAJ Enrollment.
+     * </pre>
+     *
+     * <code>KAJ_ENROLLMENT_STATE_PENDING = 1;</code>
+     */
+    KAJ_ENROLLMENT_STATE_PENDING(1),
+    /**
+     *
+     *
+     * <pre>
+     * Complete State for KAJ Enrollment.
+     * </pre>
+     *
+     * <code>KAJ_ENROLLMENT_STATE_COMPLETE = 2;</code>
+     */
+    KAJ_ENROLLMENT_STATE_COMPLETE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default State for KAJ Enrollment.
+     * </pre>
+     *
+     * <code>KAJ_ENROLLMENT_STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int KAJ_ENROLLMENT_STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Pending State for KAJ Enrollment.
+     * </pre>
+     *
+     * <code>KAJ_ENROLLMENT_STATE_PENDING = 1;</code>
+     */
+    public static final int KAJ_ENROLLMENT_STATE_PENDING_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Complete State for KAJ Enrollment.
+     * </pre>
+     *
+     * <code>KAJ_ENROLLMENT_STATE_COMPLETE = 2;</code>
+     */
+    public static final int KAJ_ENROLLMENT_STATE_COMPLETE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static KajEnrollmentState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static KajEnrollmentState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return KAJ_ENROLLMENT_STATE_UNSPECIFIED;
+        case 1:
+          return KAJ_ENROLLMENT_STATE_PENDING;
+        case 2:
+          return KAJ_ENROLLMENT_STATE_COMPLETE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<KajEnrollmentState>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<KajEnrollmentState>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<KajEnrollmentState>() {
+              public KajEnrollmentState findValueByNumber(int number) {
+                return KajEnrollmentState.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.assuredworkloads.v1beta1.Workload.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final KajEnrollmentState[] VALUES = values();
+
+    public static KajEnrollmentState valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private KajEnrollmentState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState)
   }
 
   public interface ResourceInfoOrBuilder
@@ -1647,8 +1841,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-     * new version of the crypto key and mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management
+     * Service will automatically create a new version of the crypto key and
+     * mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1662,8 +1857,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-     * new version of the crypto key and mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management
+     * Service will automatically create a new version of the crypto key and
+     * mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1677,8 +1873,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-     * new version of the crypto key and mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management
+     * Service will automatically create a new version of the crypto key and
+     * mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1691,9 +1888,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-     * Management Service automatically rotates a key. Must be at least 24 hours
-     * and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+     * this period when the Key Management Service automatically rotates a key.
+     * Must be at least 24 hours and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -1707,9 +1904,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-     * Management Service automatically rotates a key. Must be at least 24 hours
-     * and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+     * this period when the Key Management Service automatically rotates a key.
+     * Must be at least 24 hours and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -1723,9 +1920,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-     * Management Service automatically rotates a key. Must be at least 24 hours
-     * and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+     * this period when the Key Management Service automatically rotates a key.
+     * Must be at least 24 hours and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -1854,8 +2051,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-     * new version of the crypto key and mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management
+     * Service will automatically create a new version of the crypto key and
+     * mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1872,8 +2070,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-     * new version of the crypto key and mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management
+     * Service will automatically create a new version of the crypto key and
+     * mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1892,8 +2091,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-     * new version of the crypto key and mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management
+     * Service will automatically create a new version of the crypto key and
+     * mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1911,9 +2111,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-     * Management Service automatically rotates a key. Must be at least 24 hours
-     * and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+     * this period when the Key Management Service automatically rotates a key.
+     * Must be at least 24 hours and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -1930,9 +2130,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-     * Management Service automatically rotates a key. Must be at least 24 hours
-     * and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+     * this period when the Key Management Service automatically rotates a key.
+     * Must be at least 24 hours and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -1951,9 +2151,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-     * Management Service automatically rotates a key. Must be at least 24 hours
-     * and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+     * this period when the Key Management Service automatically rotates a key.
+     * Must be at least 24 hours and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -2342,8 +2542,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-       * new version of the crypto key and mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management
+       * Service will automatically create a new version of the crypto key and
+       * mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2359,8 +2560,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-       * new version of the crypto key and mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management
+       * Service will automatically create a new version of the crypto key and
+       * mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2382,8 +2584,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-       * new version of the crypto key and mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management
+       * Service will automatically create a new version of the crypto key and
+       * mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2407,8 +2610,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-       * new version of the crypto key and mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management
+       * Service will automatically create a new version of the crypto key and
+       * mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2429,8 +2633,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-       * new version of the crypto key and mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management
+       * Service will automatically create a new version of the crypto key and
+       * mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2458,8 +2663,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-       * new version of the crypto key and mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management
+       * Service will automatically create a new version of the crypto key and
+       * mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2481,8 +2687,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-       * new version of the crypto key and mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management
+       * Service will automatically create a new version of the crypto key and
+       * mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2498,8 +2705,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-       * new version of the crypto key and mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management
+       * Service will automatically create a new version of the crypto key and
+       * mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2519,8 +2727,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-       * new version of the crypto key and mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management
+       * Service will automatically create a new version of the crypto key and
+       * mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2554,9 +2763,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-       * Management Service automatically rotates a key. Must be at least 24 hours
-       * and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+       * this period when the Key Management Service automatically rotates a key.
+       * Must be at least 24 hours and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2572,9 +2781,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-       * Management Service automatically rotates a key. Must be at least 24 hours
-       * and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+       * this period when the Key Management Service automatically rotates a key.
+       * Must be at least 24 hours and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2596,9 +2805,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-       * Management Service automatically rotates a key. Must be at least 24 hours
-       * and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+       * this period when the Key Management Service automatically rotates a key.
+       * Must be at least 24 hours and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2622,9 +2831,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-       * Management Service automatically rotates a key. Must be at least 24 hours
-       * and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+       * this period when the Key Management Service automatically rotates a key.
+       * Must be at least 24 hours and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2645,9 +2854,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-       * Management Service automatically rotates a key. Must be at least 24 hours
-       * and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+       * this period when the Key Management Service automatically rotates a key.
+       * Must be at least 24 hours and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2675,9 +2884,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-       * Management Service automatically rotates a key. Must be at least 24 hours
-       * and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+       * this period when the Key Management Service automatically rotates a key.
+       * Must be at least 24 hours and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2699,9 +2908,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-       * Management Service automatically rotates a key. Must be at least 24 hours
-       * and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+       * this period when the Key Management Service automatically rotates a key.
+       * Must be at least 24 hours and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2717,9 +2926,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-       * Management Service automatically rotates a key. Must be at least 24 hours
-       * and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+       * this period when the Key Management Service automatically rotates a key.
+       * Must be at least 24 hours and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2739,9 +2948,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-       * Management Service automatically rotates a key. Must be at least 24 hours
-       * and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+       * this period when the Key Management Service automatically rotates a key.
+       * Must be at least 24 hours and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2830,7 +3039,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -2844,7 +3054,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -2858,7 +3069,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -2977,7 +3189,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -2994,7 +3207,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -3013,7 +3227,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -3375,7 +3590,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -3391,7 +3607,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -3413,7 +3630,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -3438,7 +3656,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -3460,7 +3679,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -3490,7 +3710,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -3512,7 +3733,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -3529,7 +3751,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -3550,7 +3773,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -3639,7 +3863,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -3653,7 +3878,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -3667,7 +3893,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -3786,7 +4013,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -3803,7 +4031,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -3822,7 +4051,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -4186,7 +4416,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -4202,7 +4433,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -4224,7 +4456,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -4249,7 +4482,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -4271,7 +4505,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -4301,7 +4536,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -4323,7 +4559,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -4340,7 +4577,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -4361,7 +4599,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -4450,7 +4689,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -4464,7 +4704,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -4478,7 +4719,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -4597,7 +4839,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -4614,7 +4857,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -4633,7 +4877,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -5003,7 +5248,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5019,7 +5265,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5041,7 +5288,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5066,7 +5314,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5088,7 +5337,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5118,7 +5368,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5140,7 +5391,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5157,7 +5409,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5178,7 +5431,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5268,7 +5522,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -5282,7 +5537,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -5296,7 +5552,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -5416,7 +5673,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -5433,7 +5691,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -5452,7 +5711,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+     * Required. Input only. Immutable. Settings used to create a CMEK crypto
+     * key.
      * </pre>
      *
      * <code>
@@ -5829,7 +6089,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5845,7 +6106,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5867,7 +6129,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5892,7 +6155,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5914,7 +6178,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5944,7 +6209,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5966,7 +6232,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -5983,7 +6250,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -6004,7 +6272,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto key.
+       * Required. Input only. Immutable. Settings used to create a CMEK crypto
+       * key.
        * </pre>
        *
        * <code>
@@ -7216,6 +7485,1647 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface SaaEnrollmentResponseOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment status of a given workload.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState setup_status = 1;
+     * </code>
+     *
+     * @return Whether the setupStatus field is set.
+     */
+    boolean hasSetupStatus();
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment status of a given workload.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState setup_status = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for setupStatus.
+     */
+    int getSetupStatusValue();
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment status of a given workload.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState setup_status = 1;
+     * </code>
+     *
+     * @return The setupStatus.
+     */
+    com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
+        getSetupStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment setup error if any.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+     * </code>
+     *
+     * @return A list containing the setupErrors.
+     */
+    java.util.List<
+            com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError>
+        getSetupErrorsList();
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment setup error if any.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+     * </code>
+     *
+     * @return The count of setupErrors.
+     */
+    int getSetupErrorsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment setup error if any.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The setupErrors at the given index.
+     */
+    com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError
+        getSetupErrors(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment setup error if any.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for setupErrors.
+     */
+    java.util.List<java.lang.Integer> getSetupErrorsValueList();
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment setup error if any.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of setupErrors at the given index.
+     */
+    int getSetupErrorsValue(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Signed Access Approvals (SAA) enrollment response.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse}
+   */
+  public static final class SaaEnrollmentResponse extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse)
+      SaaEnrollmentResponseOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SaaEnrollmentResponse.newBuilder() to construct.
+    private SaaEnrollmentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SaaEnrollmentResponse() {
+      setupStatus_ = 0;
+      setupErrors_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SaaEnrollmentResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private SaaEnrollmentResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int rawValue = input.readEnum();
+                bitField0_ |= 0x00000001;
+                setupStatus_ = rawValue;
+                break;
+              }
+            case 16:
+              {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  setupErrors_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                setupErrors_.add(rawValue);
+                break;
+              }
+            case 18:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int rawValue = input.readEnum();
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                    setupErrors_ = new java.util.ArrayList<java.lang.Integer>();
+                    mutable_bitField0_ |= 0x00000002;
+                  }
+                  setupErrors_.add(rawValue);
+                }
+                input.popLimit(oldLimit);
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          setupErrors_ = java.util.Collections.unmodifiableList(setupErrors_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
+          .internal_static_google_cloud_assuredworkloads_v1beta1_Workload_SaaEnrollmentResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
+          .internal_static_google_cloud_assuredworkloads_v1beta1_Workload_SaaEnrollmentResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.class,
+              com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Setup state of SAA enrollment.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState}
+     */
+    public enum SetupState implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified.
+       * </pre>
+       *
+       * <code>SETUP_STATE_UNSPECIFIED = 0;</code>
+       */
+      SETUP_STATE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * SAA enrollment pending.
+       * </pre>
+       *
+       * <code>STATUS_PENDING = 1;</code>
+       */
+      STATUS_PENDING(1),
+      /**
+       *
+       *
+       * <pre>
+       * SAA enrollment comopleted.
+       * </pre>
+       *
+       * <code>STATUS_COMPLETE = 2;</code>
+       */
+      STATUS_COMPLETE(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified.
+       * </pre>
+       *
+       * <code>SETUP_STATE_UNSPECIFIED = 0;</code>
+       */
+      public static final int SETUP_STATE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * SAA enrollment pending.
+       * </pre>
+       *
+       * <code>STATUS_PENDING = 1;</code>
+       */
+      public static final int STATUS_PENDING_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * SAA enrollment comopleted.
+       * </pre>
+       *
+       * <code>STATUS_COMPLETE = 2;</code>
+       */
+      public static final int STATUS_COMPLETE_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SetupState valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SetupState forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SETUP_STATE_UNSPECIFIED;
+          case 1:
+            return STATUS_PENDING;
+          case 2:
+            return STATUS_COMPLETE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SetupState> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<SetupState> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SetupState>() {
+            public SetupState findValueByNumber(int number) {
+              return SetupState.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final SetupState[] VALUES = values();
+
+      public static SetupState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SetupState(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Setup error of SAA enrollment.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError}
+     */
+    public enum SetupError implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified.
+       * </pre>
+       *
+       * <code>SETUP_ERROR_UNSPECIFIED = 0;</code>
+       */
+      SETUP_ERROR_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Invalid states for all customers, to be redirected to AA UI for
+       * additional details.
+       * </pre>
+       *
+       * <code>ERROR_INVALID_BASE_SETUP = 1;</code>
+       */
+      ERROR_INVALID_BASE_SETUP(1),
+      /**
+       *
+       *
+       * <pre>
+       * Returned when there is not an EKM key configured.
+       * </pre>
+       *
+       * <code>ERROR_MISSING_EXTERNAL_SIGNING_KEY = 2;</code>
+       */
+      ERROR_MISSING_EXTERNAL_SIGNING_KEY(2),
+      /**
+       *
+       *
+       * <pre>
+       * Returned when there are no enrolled services or the customer is
+       * enrolled in CAA only for a subset of services.
+       * </pre>
+       *
+       * <code>ERROR_NOT_ALL_SERVICES_ENROLLED = 3;</code>
+       */
+      ERROR_NOT_ALL_SERVICES_ENROLLED(3),
+      /**
+       *
+       *
+       * <pre>
+       * Returned when exception was encountered during evaluation of other
+       * criteria.
+       * </pre>
+       *
+       * <code>ERROR_SETUP_CHECK_FAILED = 4;</code>
+       */
+      ERROR_SETUP_CHECK_FAILED(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified.
+       * </pre>
+       *
+       * <code>SETUP_ERROR_UNSPECIFIED = 0;</code>
+       */
+      public static final int SETUP_ERROR_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Invalid states for all customers, to be redirected to AA UI for
+       * additional details.
+       * </pre>
+       *
+       * <code>ERROR_INVALID_BASE_SETUP = 1;</code>
+       */
+      public static final int ERROR_INVALID_BASE_SETUP_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Returned when there is not an EKM key configured.
+       * </pre>
+       *
+       * <code>ERROR_MISSING_EXTERNAL_SIGNING_KEY = 2;</code>
+       */
+      public static final int ERROR_MISSING_EXTERNAL_SIGNING_KEY_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Returned when there are no enrolled services or the customer is
+       * enrolled in CAA only for a subset of services.
+       * </pre>
+       *
+       * <code>ERROR_NOT_ALL_SERVICES_ENROLLED = 3;</code>
+       */
+      public static final int ERROR_NOT_ALL_SERVICES_ENROLLED_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * Returned when exception was encountered during evaluation of other
+       * criteria.
+       * </pre>
+       *
+       * <code>ERROR_SETUP_CHECK_FAILED = 4;</code>
+       */
+      public static final int ERROR_SETUP_CHECK_FAILED_VALUE = 4;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SetupError valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SetupError forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SETUP_ERROR_UNSPECIFIED;
+          case 1:
+            return ERROR_INVALID_BASE_SETUP;
+          case 2:
+            return ERROR_MISSING_EXTERNAL_SIGNING_KEY;
+          case 3:
+            return ERROR_NOT_ALL_SERVICES_ENROLLED;
+          case 4:
+            return ERROR_SETUP_CHECK_FAILED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SetupError> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<SetupError> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SetupError>() {
+            public SetupError findValueByNumber(int number) {
+              return SetupError.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+            .getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final SetupError[] VALUES = values();
+
+      public static SetupError valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SetupError(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError)
+    }
+
+    private int bitField0_;
+    public static final int SETUP_STATUS_FIELD_NUMBER = 1;
+    private int setupStatus_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment status of a given workload.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState setup_status = 1;
+     * </code>
+     *
+     * @return Whether the setupStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasSetupStatus() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment status of a given workload.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState setup_status = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for setupStatus.
+     */
+    @java.lang.Override
+    public int getSetupStatusValue() {
+      return setupStatus_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment status of a given workload.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState setup_status = 1;
+     * </code>
+     *
+     * @return The setupStatus.
+     */
+    @java.lang.Override
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
+        getSetupStatus() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState result =
+          com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
+              .valueOf(setupStatus_);
+      return result == null
+          ? com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int SETUP_ERRORS_FIELD_NUMBER = 2;
+    private java.util.List<java.lang.Integer> setupErrors_;
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+            java.lang.Integer,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError>
+        setupErrors_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer,
+                com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+                    .SetupError>() {
+              public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+                      .SetupError
+                  convert(java.lang.Integer from) {
+                @SuppressWarnings("deprecation")
+                com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError
+                    result =
+                        com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+                            .SetupError.valueOf(from);
+                return result == null
+                    ? com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+                        .SetupError.UNRECOGNIZED
+                    : result;
+              }
+            };
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment setup error if any.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+     * </code>
+     *
+     * @return A list containing the setupErrors.
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError>
+        getSetupErrorsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer,
+          com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError>(
+          setupErrors_, setupErrors_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment setup error if any.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+     * </code>
+     *
+     * @return The count of setupErrors.
+     */
+    @java.lang.Override
+    public int getSetupErrorsCount() {
+      return setupErrors_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment setup error if any.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The setupErrors at the given index.
+     */
+    @java.lang.Override
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError
+        getSetupErrors(int index) {
+      return setupErrors_converter_.convert(setupErrors_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment setup error if any.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for setupErrors.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getSetupErrorsValueList() {
+      return setupErrors_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates SAA enrollment setup error if any.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of setupErrors at the given index.
+     */
+    @java.lang.Override
+    public int getSetupErrorsValue(int index) {
+      return setupErrors_.get(index);
+    }
+
+    private int setupErrorsMemoizedSerializedSize;
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeEnum(1, setupStatus_);
+      }
+      if (getSetupErrorsList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(setupErrorsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < setupErrors_.size(); i++) {
+        output.writeEnumNoTag(setupErrors_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, setupStatus_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < setupErrors_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(setupErrors_.get(i));
+        }
+        size += dataSize;
+        if (!getSetupErrorsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+        }
+        setupErrorsMemoizedSerializedSize = dataSize;
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse other =
+          (com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse) obj;
+
+      if (hasSetupStatus() != other.hasSetupStatus()) return false;
+      if (hasSetupStatus()) {
+        if (setupStatus_ != other.setupStatus_) return false;
+      }
+      if (!setupErrors_.equals(other.setupErrors_)) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSetupStatus()) {
+        hash = (37 * hash) + SETUP_STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + setupStatus_;
+      }
+      if (getSetupErrorsCount() > 0) {
+        hash = (37 * hash) + SETUP_ERRORS_FIELD_NUMBER;
+        hash = (53 * hash) + setupErrors_.hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Signed Access Approvals (SAA) enrollment response.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse)
+        com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
+            .internal_static_google_cloud_assuredworkloads_v1beta1_Workload_SaaEnrollmentResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
+            .internal_static_google_cloud_assuredworkloads_v1beta1_Workload_SaaEnrollmentResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.class,
+                com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        setupStatus_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        setupErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
+            .internal_static_google_cloud_assuredworkloads_v1beta1_Workload_SaaEnrollmentResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+          getDefaultInstanceForType() {
+        return com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse build() {
+        com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+          buildPartial() {
+        com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse result =
+            new com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.setupStatus_ = setupStatus_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          setupErrors_ = java.util.Collections.unmodifiableList(setupErrors_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.setupErrors_ = setupErrors_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse) {
+          return mergeFrom(
+              (com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse other) {
+        if (other
+            == com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+                .getDefaultInstance()) return this;
+        if (other.hasSetupStatus()) {
+          setSetupStatus(other.getSetupStatus());
+        }
+        if (!other.setupErrors_.isEmpty()) {
+          if (setupErrors_.isEmpty()) {
+            setupErrors_ = other.setupErrors_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureSetupErrorsIsMutable();
+            setupErrors_.addAll(other.setupErrors_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int setupStatus_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment status of a given workload.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState setup_status = 1;
+       * </code>
+       *
+       * @return Whether the setupStatus field is set.
+       */
+      @java.lang.Override
+      public boolean hasSetupStatus() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment status of a given workload.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState setup_status = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for setupStatus.
+       */
+      @java.lang.Override
+      public int getSetupStatusValue() {
+        return setupStatus_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment status of a given workload.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState setup_status = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for setupStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSetupStatusValue(int value) {
+        bitField0_ |= 0x00000001;
+        setupStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment status of a given workload.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState setup_status = 1;
+       * </code>
+       *
+       * @return The setupStatus.
+       */
+      @java.lang.Override
+      public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
+          getSetupStatus() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState result =
+            com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
+                .valueOf(setupStatus_);
+        return result == null
+            ? com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment status of a given workload.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState setup_status = 1;
+       * </code>
+       *
+       * @param value The setupStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSetupStatus(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        setupStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment status of a given workload.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState setup_status = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSetupStatus() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        setupStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> setupErrors_ = java.util.Collections.emptyList();
+
+      private void ensureSetupErrorsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          setupErrors_ = new java.util.ArrayList<java.lang.Integer>(setupErrors_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment setup error if any.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+       * </code>
+       *
+       * @return A list containing the setupErrors.
+       */
+      public java.util.List<
+              com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError>
+          getSetupErrorsList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError>(
+            setupErrors_, setupErrors_converter_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment setup error if any.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+       * </code>
+       *
+       * @return The count of setupErrors.
+       */
+      public int getSetupErrorsCount() {
+        return setupErrors_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment setup error if any.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The setupErrors at the given index.
+       */
+      public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError
+          getSetupErrors(int index) {
+        return setupErrors_converter_.convert(setupErrors_.get(index));
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment setup error if any.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The setupErrors to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSetupErrors(
+          int index,
+          com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSetupErrorsIsMutable();
+        setupErrors_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment setup error if any.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+       * </code>
+       *
+       * @param value The setupErrors to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSetupErrors(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSetupErrorsIsMutable();
+        setupErrors_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment setup error if any.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+       * </code>
+       *
+       * @param values The setupErrors to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSetupErrors(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+                          .SetupError>
+              values) {
+        ensureSetupErrorsIsMutable();
+        for (com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError
+            value : values) {
+          setupErrors_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment setup error if any.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSetupErrors() {
+        setupErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment setup error if any.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for setupErrors.
+       */
+      public java.util.List<java.lang.Integer> getSetupErrorsValueList() {
+        return java.util.Collections.unmodifiableList(setupErrors_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment setup error if any.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of setupErrors at the given index.
+       */
+      public int getSetupErrorsValue(int index) {
+        return setupErrors_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment setup error if any.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of setupErrors at the given index.
+       * @return This builder for chaining.
+       */
+      public Builder setSetupErrorsValue(int index, int value) {
+        ensureSetupErrorsIsMutable();
+        setupErrors_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment setup error if any.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for setupErrors to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSetupErrorsValue(int value) {
+        ensureSetupErrorsIsMutable();
+        setupErrors_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates SAA enrollment setup error if any.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
+       * </code>
+       *
+       * @param values The enum numeric values on the wire for setupErrors to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSetupErrorsValue(java.lang.Iterable<java.lang.Integer> values) {
+        ensureSetupErrorsIsMutable();
+        for (int value : values) {
+          setupErrors_.add(value);
+        }
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse)
+    private static final com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse();
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SaaEnrollmentResponse> PARSER =
+        new com.google.protobuf.AbstractParser<SaaEnrollmentResponse>() {
+          @java.lang.Override
+          public SaaEnrollmentResponse parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new SaaEnrollmentResponse(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<SaaEnrollmentResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SaaEnrollmentResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int complianceRegimeSettingsCase_ = 0;
   private java.lang.Object complianceRegimeSettings_;
 
@@ -7646,7 +9556,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for IL4.
    * </pre>
    *
    * <code>
@@ -7664,7 +9575,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for IL4.
    * </pre>
    *
    * <code>
@@ -7686,7 +9598,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for IL4.
    * </pre>
    *
    * <code>
@@ -7709,7 +9622,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for CJIS.
    * </pre>
    *
    * <code>
@@ -7727,7 +9641,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for CJIS.
    * </pre>
    *
    * <code>
@@ -7749,7 +9664,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for CJIS.
    * </pre>
    *
    * <code>
@@ -7772,7 +9688,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for FedRAMP High.
    * </pre>
    *
    * <code>
@@ -7790,7 +9707,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for FedRAMP High.
    * </pre>
    *
    * <code>
@@ -7814,7 +9732,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for FedRAMP High.
    * </pre>
    *
    * <code>
@@ -7838,7 +9757,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for FedRAMP Moderate.
    * </pre>
    *
    * <code>
@@ -7856,7 +9776,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for FedRAMP Moderate.
    * </pre>
    *
    * <code>
@@ -7880,7 +9801,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for FedRAMP Moderate.
    * </pre>
    *
    * <code>
@@ -8054,8 +9976,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The parent resource for the resources managed by this Assured Workload. May
-   * be either empty or a folder resource which is a child of the
+   * Input only. The parent resource for the resources managed by this Assured
+   * Workload. May be either empty or a folder resource which is a child of the
    * Workload parent. If not specified all resources are created under the
    * parent organization.
    * Format:
@@ -8083,8 +10005,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The parent resource for the resources managed by this Assured Workload. May
-   * be either empty or a folder resource which is a child of the
+   * Input only. The parent resource for the resources managed by this Assured
+   * Workload. May be either empty or a folder resource which is a child of the
    * Workload parent. If not specified all resources are created under the
    * parent organization.
    * Format:
@@ -8115,9 +10037,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-   * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-   * Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set a project
+   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+   * Compliance Regimes.
    * </pre>
    *
    * <code>
@@ -8134,9 +10056,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-   * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-   * Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set a project
+   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+   * Compliance Regimes.
    * </pre>
    *
    * <code>
@@ -8155,9 +10077,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-   * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-   * Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set a project
+   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+   * Compliance Regimes.
    * </pre>
    *
    * <code>
@@ -8177,9 +10099,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload resources.
-   * These properties (such as custom project id) will be used to create
-   * workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload
+   * resources. These properties (such as custom project id) will be used to
+   * create workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -8195,9 +10117,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload resources.
-   * These properties (such as custom project id) will be used to create
-   * workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload
+   * resources. These properties (such as custom project id) will be used to
+   * create workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -8214,9 +10136,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload resources.
-   * These properties (such as custom project id) will be used to create
-   * workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload
+   * resources. These properties (such as custom project id) will be used to
+   * create workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -8231,9 +10153,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload resources.
-   * These properties (such as custom project id) will be used to create
-   * workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload
+   * resources. These properties (such as custom project id) will be used to
+   * create workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -8249,9 +10171,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload resources.
-   * These properties (such as custom project id) will be used to create
-   * workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload
+   * resources. These properties (such as custom project id) will be used to
+   * create workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -8262,6 +10184,133 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder
       getResourceSettingsOrBuilder(int index) {
     return resourceSettings_.get(index);
+  }
+
+  public static final int KAJ_ENROLLMENT_STATE_FIELD_NUMBER = 17;
+  private int kajEnrollmentState_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the KAJ enrollment state of the given workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState kaj_enrollment_state = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for kajEnrollmentState.
+   */
+  @java.lang.Override
+  public int getKajEnrollmentStateValue() {
+    return kajEnrollmentState_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the KAJ enrollment state of the given workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState kaj_enrollment_state = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The kajEnrollmentState.
+   */
+  @java.lang.Override
+  public com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState
+      getKajEnrollmentState() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState result =
+        com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState.valueOf(
+            kajEnrollmentState_);
+    return result == null
+        ? com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ENABLE_SOVEREIGN_CONTROLS_FIELD_NUMBER = 18;
+  private boolean enableSovereignControls_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the sovereignty status of the given workload.
+   * Currently meant to be used by Europe/Canada customers.
+   * </pre>
+   *
+   * <code>bool enable_sovereign_controls = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableSovereignControls.
+   */
+  @java.lang.Override
+  public boolean getEnableSovereignControls() {
+    return enableSovereignControls_;
+  }
+
+  public static final int SAA_ENROLLMENT_RESPONSE_FIELD_NUMBER = 20;
+  private com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+      saaEnrollmentResponse_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the SAA enrollment response of the given workload.
+   * SAA enrollment response is queried during GetWorkload call.
+   * In failure cases, user friendly error message is shown in SAA details page.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the saaEnrollmentResponse field is set.
+   */
+  @java.lang.Override
+  public boolean hasSaaEnrollmentResponse() {
+    return saaEnrollmentResponse_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the SAA enrollment response of the given workload.
+   * SAA enrollment response is queried during GetWorkload call.
+   * In failure cases, user friendly error message is shown in SAA details page.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The saaEnrollmentResponse.
+   */
+  @java.lang.Override
+  public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+      getSaaEnrollmentResponse() {
+    return saaEnrollmentResponse_ == null
+        ? com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+            .getDefaultInstance()
+        : saaEnrollmentResponse_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the SAA enrollment response of the given workload.
+   * SAA enrollment response is queried during GetWorkload call.
+   * In failure cases, user friendly error message is shown in SAA details page.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponseOrBuilder
+      getSaaEnrollmentResponseOrBuilder() {
+    return getSaaEnrollmentResponse();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -8336,6 +10385,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < resourceSettings_.size(); i++) {
       output.writeMessage(15, resourceSettings_.get(i));
+    }
+    if (kajEnrollmentState_
+        != com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState
+            .KAJ_ENROLLMENT_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(17, kajEnrollmentState_);
+    }
+    if (enableSovereignControls_ != false) {
+      output.writeBool(18, enableSovereignControls_);
+    }
+    if (saaEnrollmentResponse_ != null) {
+      output.writeMessage(20, getSaaEnrollmentResponse());
     }
     unknownFields.writeTo(output);
   }
@@ -8419,6 +10480,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(15, resourceSettings_.get(i));
     }
+    if (kajEnrollmentState_
+        != com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState
+            .KAJ_ENROLLMENT_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, kajEnrollmentState_);
+    }
+    if (enableSovereignControls_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, enableSovereignControls_);
+    }
+    if (saaEnrollmentResponse_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(20, getSaaEnrollmentResponse());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8453,6 +10527,12 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (!getKmsSettings().equals(other.getKmsSettings())) return false;
     }
     if (!getResourceSettingsList().equals(other.getResourceSettingsList())) return false;
+    if (kajEnrollmentState_ != other.kajEnrollmentState_) return false;
+    if (getEnableSovereignControls() != other.getEnableSovereignControls()) return false;
+    if (hasSaaEnrollmentResponse() != other.hasSaaEnrollmentResponse()) return false;
+    if (hasSaaEnrollmentResponse()) {
+      if (!getSaaEnrollmentResponse().equals(other.getSaaEnrollmentResponse())) return false;
+    }
     if (!getComplianceRegimeSettingsCase().equals(other.getComplianceRegimeSettingsCase()))
       return false;
     switch (complianceRegimeSettingsCase_) {
@@ -8513,6 +10593,14 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     if (getResourceSettingsCount() > 0) {
       hash = (37 * hash) + RESOURCE_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getResourceSettingsList().hashCode();
+    }
+    hash = (37 * hash) + KAJ_ENROLLMENT_STATE_FIELD_NUMBER;
+    hash = (53 * hash) + kajEnrollmentState_;
+    hash = (37 * hash) + ENABLE_SOVEREIGN_CONTROLS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSovereignControls());
+    if (hasSaaEnrollmentResponse()) {
+      hash = (37 * hash) + SAA_ENROLLMENT_RESPONSE_FIELD_NUMBER;
+      hash = (53 * hash) + getSaaEnrollmentResponse().hashCode();
     }
     switch (complianceRegimeSettingsCase_) {
       case 7:
@@ -8740,6 +10828,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceSettingsBuilder_.clear();
       }
+      kajEnrollmentState_ = 0;
+
+      enableSovereignControls_ = false;
+
+      if (saaEnrollmentResponseBuilder_ == null) {
+        saaEnrollmentResponse_ = null;
+      } else {
+        saaEnrollmentResponse_ = null;
+        saaEnrollmentResponseBuilder_ = null;
+      }
       complianceRegimeSettingsCase_ = 0;
       complianceRegimeSettings_ = null;
       return this;
@@ -8833,6 +10931,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         result.resourceSettings_ = resourceSettings_;
       } else {
         result.resourceSettings_ = resourceSettingsBuilder_.build();
+      }
+      result.kajEnrollmentState_ = kajEnrollmentState_;
+      result.enableSovereignControls_ = enableSovereignControls_;
+      if (saaEnrollmentResponseBuilder_ == null) {
+        result.saaEnrollmentResponse_ = saaEnrollmentResponse_;
+      } else {
+        result.saaEnrollmentResponse_ = saaEnrollmentResponseBuilder_.build();
       }
       result.complianceRegimeSettingsCase_ = complianceRegimeSettingsCase_;
       onBuilt();
@@ -8968,6 +11073,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             resourceSettingsBuilder_.addAllMessages(other.resourceSettings_);
           }
         }
+      }
+      if (other.kajEnrollmentState_ != 0) {
+        setKajEnrollmentStateValue(other.getKajEnrollmentStateValue());
+      }
+      if (other.getEnableSovereignControls() != false) {
+        setEnableSovereignControls(other.getEnableSovereignControls());
+      }
+      if (other.hasSaaEnrollmentResponse()) {
+        mergeSaaEnrollmentResponse(other.getSaaEnrollmentResponse());
       }
       switch (other.getComplianceRegimeSettingsCase()) {
         case IL4_SETTINGS:
@@ -10203,7 +12317,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for IL4.
      * </pre>
      *
      * <code>
@@ -10221,7 +12336,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for IL4.
      * </pre>
      *
      * <code>
@@ -10250,7 +12366,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for IL4.
      * </pre>
      *
      * <code>
@@ -10276,7 +12393,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for IL4.
      * </pre>
      *
      * <code>
@@ -10299,7 +12417,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for IL4.
      * </pre>
      *
      * <code>
@@ -10337,7 +12456,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for IL4.
      * </pre>
      *
      * <code>
@@ -10365,7 +12485,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for IL4.
      * </pre>
      *
      * <code>
@@ -10381,7 +12502,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for IL4.
      * </pre>
      *
      * <code>
@@ -10406,7 +12528,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for IL4.
      * </pre>
      *
      * <code>
@@ -10449,7 +12572,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for CJIS.
      * </pre>
      *
      * <code>
@@ -10467,7 +12591,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for CJIS.
      * </pre>
      *
      * <code>
@@ -10496,7 +12621,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for CJIS.
      * </pre>
      *
      * <code>
@@ -10522,7 +12648,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for CJIS.
      * </pre>
      *
      * <code>
@@ -10545,7 +12672,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for CJIS.
      * </pre>
      *
      * <code>
@@ -10583,7 +12711,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for CJIS.
      * </pre>
      *
      * <code>
@@ -10611,7 +12740,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for CJIS.
      * </pre>
      *
      * <code>
@@ -10627,7 +12757,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for CJIS.
      * </pre>
      *
      * <code>
@@ -10652,7 +12783,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for CJIS.
      * </pre>
      *
      * <code>
@@ -10695,7 +12827,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP High.
      * </pre>
      *
      * <code>
@@ -10713,7 +12846,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP High.
      * </pre>
      *
      * <code>
@@ -10745,7 +12879,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP High.
      * </pre>
      *
      * <code>
@@ -10771,7 +12906,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP High.
      * </pre>
      *
      * <code>
@@ -10795,7 +12931,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP High.
      * </pre>
      *
      * <code>
@@ -10833,7 +12970,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP High.
      * </pre>
      *
      * <code>
@@ -10861,7 +12999,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP High.
      * </pre>
      *
      * <code>
@@ -10877,7 +13016,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP High.
      * </pre>
      *
      * <code>
@@ -10903,7 +13043,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP High.
      * </pre>
      *
      * <code>
@@ -10947,7 +13088,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP Moderate.
      * </pre>
      *
      * <code>
@@ -10965,7 +13107,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP Moderate.
      * </pre>
      *
      * <code>
@@ -10997,7 +13140,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP Moderate.
      * </pre>
      *
      * <code>
@@ -11023,7 +13167,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP Moderate.
      * </pre>
      *
      * <code>
@@ -11047,7 +13192,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP Moderate.
      * </pre>
      *
      * <code>
@@ -11085,7 +13231,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP Moderate.
      * </pre>
      *
      * <code>
@@ -11113,7 +13260,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP Moderate.
      * </pre>
      *
      * <code>
@@ -11129,7 +13277,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP Moderate.
      * </pre>
      *
      * <code>
@@ -11155,7 +13304,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+     * Required. Input only. Immutable. Settings specific to resources needed
+     * for FedRAMP Moderate.
      * </pre>
      *
      * <code>
@@ -11464,8 +13614,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured Workload. May
-     * be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured
+     * Workload. May be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -11492,8 +13642,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured Workload. May
-     * be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured
+     * Workload. May be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -11520,8 +13670,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured Workload. May
-     * be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured
+     * Workload. May be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -11547,8 +13697,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured Workload. May
-     * be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured
+     * Workload. May be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -11570,8 +13720,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured Workload. May
-     * be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured
+     * Workload. May be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -11605,9 +13755,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-     * Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set a project
+     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+     * Compliance Regimes.
      * </pre>
      *
      * <code>
@@ -11623,9 +13773,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-     * Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set a project
+     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+     * Compliance Regimes.
      * </pre>
      *
      * <code>
@@ -11647,9 +13797,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-     * Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set a project
+     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+     * Compliance Regimes.
      * </pre>
      *
      * <code>
@@ -11674,9 +13824,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-     * Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set a project
+     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+     * Compliance Regimes.
      * </pre>
      *
      * <code>
@@ -11698,9 +13848,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-     * Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set a project
+     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+     * Compliance Regimes.
      * </pre>
      *
      * <code>
@@ -11730,9 +13880,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-     * Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set a project
+     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+     * Compliance Regimes.
      * </pre>
      *
      * <code>
@@ -11754,9 +13904,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-     * Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set a project
+     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+     * Compliance Regimes.
      * </pre>
      *
      * <code>
@@ -11773,9 +13923,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-     * Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set a project
+     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+     * Compliance Regimes.
      * </pre>
      *
      * <code>
@@ -11796,9 +13946,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-     * Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set a project
+     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+     * Compliance Regimes.
      * </pre>
      *
      * <code>
@@ -11845,9 +13995,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -11866,9 +14016,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -11886,9 +14036,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -11907,9 +14057,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -11934,9 +14084,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -11960,9 +14110,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -11987,9 +14137,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -12014,9 +14164,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -12039,9 +14189,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -12065,9 +14215,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -12091,9 +14241,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -12114,9 +14264,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -12137,9 +14287,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -12154,9 +14304,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -12175,9 +14325,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -12197,9 +14347,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -12217,9 +14367,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -12238,9 +14388,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload resources.
-     * These properties (such as custom project id) will be used to create
-     * workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload
+     * resources. These properties (such as custom project id) will be used to
+     * create workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -12271,6 +14421,399 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         resourceSettings_ = null;
       }
       return resourceSettingsBuilder_;
+    }
+
+    private int kajEnrollmentState_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the KAJ enrollment state of the given workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState kaj_enrollment_state = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for kajEnrollmentState.
+     */
+    @java.lang.Override
+    public int getKajEnrollmentStateValue() {
+      return kajEnrollmentState_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the KAJ enrollment state of the given workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState kaj_enrollment_state = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for kajEnrollmentState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKajEnrollmentStateValue(int value) {
+
+      kajEnrollmentState_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the KAJ enrollment state of the given workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState kaj_enrollment_state = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The kajEnrollmentState.
+     */
+    @java.lang.Override
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState
+        getKajEnrollmentState() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState result =
+          com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState.valueOf(
+              kajEnrollmentState_);
+      return result == null
+          ? com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the KAJ enrollment state of the given workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState kaj_enrollment_state = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The kajEnrollmentState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKajEnrollmentState(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      kajEnrollmentState_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the KAJ enrollment state of the given workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState kaj_enrollment_state = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKajEnrollmentState() {
+
+      kajEnrollmentState_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableSovereignControls_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the sovereignty status of the given workload.
+     * Currently meant to be used by Europe/Canada customers.
+     * </pre>
+     *
+     * <code>bool enable_sovereign_controls = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableSovereignControls.
+     */
+    @java.lang.Override
+    public boolean getEnableSovereignControls() {
+      return enableSovereignControls_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the sovereignty status of the given workload.
+     * Currently meant to be used by Europe/Canada customers.
+     * </pre>
+     *
+     * <code>bool enable_sovereign_controls = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableSovereignControls to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableSovereignControls(boolean value) {
+
+      enableSovereignControls_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the sovereignty status of the given workload.
+     * Currently meant to be used by Europe/Canada customers.
+     * </pre>
+     *
+     * <code>bool enable_sovereign_controls = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableSovereignControls() {
+
+      enableSovereignControls_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        saaEnrollmentResponse_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.Builder,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponseOrBuilder>
+        saaEnrollmentResponseBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the SAA enrollment response of the given workload.
+     * SAA enrollment response is queried during GetWorkload call.
+     * In failure cases, user friendly error message is shown in SAA details page.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the saaEnrollmentResponse field is set.
+     */
+    public boolean hasSaaEnrollmentResponse() {
+      return saaEnrollmentResponseBuilder_ != null || saaEnrollmentResponse_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the SAA enrollment response of the given workload.
+     * SAA enrollment response is queried during GetWorkload call.
+     * In failure cases, user friendly error message is shown in SAA details page.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The saaEnrollmentResponse.
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+        getSaaEnrollmentResponse() {
+      if (saaEnrollmentResponseBuilder_ == null) {
+        return saaEnrollmentResponse_ == null
+            ? com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+                .getDefaultInstance()
+            : saaEnrollmentResponse_;
+      } else {
+        return saaEnrollmentResponseBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the SAA enrollment response of the given workload.
+     * SAA enrollment response is queried during GetWorkload call.
+     * In failure cases, user friendly error message is shown in SAA details page.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSaaEnrollmentResponse(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse value) {
+      if (saaEnrollmentResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        saaEnrollmentResponse_ = value;
+        onChanged();
+      } else {
+        saaEnrollmentResponseBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the SAA enrollment response of the given workload.
+     * SAA enrollment response is queried during GetWorkload call.
+     * In failure cases, user friendly error message is shown in SAA details page.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSaaEnrollmentResponse(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.Builder
+            builderForValue) {
+      if (saaEnrollmentResponseBuilder_ == null) {
+        saaEnrollmentResponse_ = builderForValue.build();
+        onChanged();
+      } else {
+        saaEnrollmentResponseBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the SAA enrollment response of the given workload.
+     * SAA enrollment response is queried during GetWorkload call.
+     * In failure cases, user friendly error message is shown in SAA details page.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeSaaEnrollmentResponse(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse value) {
+      if (saaEnrollmentResponseBuilder_ == null) {
+        if (saaEnrollmentResponse_ != null) {
+          saaEnrollmentResponse_ =
+              com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.newBuilder(
+                      saaEnrollmentResponse_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          saaEnrollmentResponse_ = value;
+        }
+        onChanged();
+      } else {
+        saaEnrollmentResponseBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the SAA enrollment response of the given workload.
+     * SAA enrollment response is queried during GetWorkload call.
+     * In failure cases, user friendly error message is shown in SAA details page.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSaaEnrollmentResponse() {
+      if (saaEnrollmentResponseBuilder_ == null) {
+        saaEnrollmentResponse_ = null;
+        onChanged();
+      } else {
+        saaEnrollmentResponse_ = null;
+        saaEnrollmentResponseBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the SAA enrollment response of the given workload.
+     * SAA enrollment response is queried during GetWorkload call.
+     * In failure cases, user friendly error message is shown in SAA details page.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.Builder
+        getSaaEnrollmentResponseBuilder() {
+
+      onChanged();
+      return getSaaEnrollmentResponseFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the SAA enrollment response of the given workload.
+     * SAA enrollment response is queried during GetWorkload call.
+     * In failure cases, user friendly error message is shown in SAA details page.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponseOrBuilder
+        getSaaEnrollmentResponseOrBuilder() {
+      if (saaEnrollmentResponseBuilder_ != null) {
+        return saaEnrollmentResponseBuilder_.getMessageOrBuilder();
+      } else {
+        return saaEnrollmentResponse_ == null
+            ? com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+                .getDefaultInstance()
+            : saaEnrollmentResponse_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the SAA enrollment response of the given workload.
+     * SAA enrollment response is queried during GetWorkload call.
+     * In failure cases, user friendly error message is shown in SAA details page.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.Builder,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponseOrBuilder>
+        getSaaEnrollmentResponseFieldBuilder() {
+      if (saaEnrollmentResponseBuilder_ == null) {
+        saaEnrollmentResponseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse,
+                com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.Builder,
+                com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponseOrBuilder>(
+                getSaaEnrollmentResponse(), getParentForChildren(), isClean());
+        saaEnrollmentResponse_ = null;
+      }
+      return saaEnrollmentResponseBuilder_;
     }
 
     @java.lang.Override

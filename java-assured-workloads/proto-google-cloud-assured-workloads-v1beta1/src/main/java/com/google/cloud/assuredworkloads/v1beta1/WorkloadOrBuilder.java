@@ -279,7 +279,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for IL4.
    * </pre>
    *
    * <code>
@@ -294,7 +295,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for IL4.
    * </pre>
    *
    * <code>
@@ -309,7 +311,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for IL4.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for IL4.
    * </pre>
    *
    * <code>
@@ -323,7 +326,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for CJIS.
    * </pre>
    *
    * <code>
@@ -338,7 +342,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for CJIS.
    * </pre>
    *
    * <code>
@@ -353,7 +358,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for CJIS.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for CJIS.
    * </pre>
    *
    * <code>
@@ -368,7 +374,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for FedRAMP High.
    * </pre>
    *
    * <code>
@@ -383,7 +390,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for FedRAMP High.
    * </pre>
    *
    * <code>
@@ -398,7 +406,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for FedRAMP High.
    * </pre>
    *
    * <code>
@@ -413,7 +422,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for FedRAMP Moderate.
    * </pre>
    *
    * <code>
@@ -428,7 +438,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for FedRAMP Moderate.
    * </pre>
    *
    * <code>
@@ -444,7 +455,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
+   * Required. Input only. Immutable. Settings specific to resources needed
+   * for FedRAMP Moderate.
    * </pre>
    *
    * <code>
@@ -540,8 +552,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. The parent resource for the resources managed by this Assured Workload. May
-   * be either empty or a folder resource which is a child of the
+   * Input only. The parent resource for the resources managed by this Assured
+   * Workload. May be either empty or a folder resource which is a child of the
    * Workload parent. If not specified all resources are created under the
    * parent organization.
    * Format:
@@ -558,8 +570,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. The parent resource for the resources managed by this Assured Workload. May
-   * be either empty or a folder resource which is a child of the
+   * Input only. The parent resource for the resources managed by this Assured
+   * Workload. May be either empty or a folder resource which is a child of the
    * Workload parent. If not specified all resources are created under the
    * parent organization.
    * Format:
@@ -577,9 +589,9 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-   * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-   * Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set a project
+   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+   * Compliance Regimes.
    * </pre>
    *
    * <code>
@@ -593,9 +605,9 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-   * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-   * Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set a project
+   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+   * Compliance Regimes.
    * </pre>
    *
    * <code>
@@ -609,9 +621,9 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
-   * CMEK key is provisioned. This field is mandatory for a subset of Compliance
-   * Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set a project
+   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
+   * Compliance Regimes.
    * </pre>
    *
    * <code>
@@ -624,9 +636,9 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload resources.
-   * These properties (such as custom project id) will be used to create
-   * workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload
+   * resources. These properties (such as custom project id) will be used to
+   * create workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -639,9 +651,9 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload resources.
-   * These properties (such as custom project id) will be used to create
-   * workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload
+   * resources. These properties (such as custom project id) will be used to
+   * create workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -654,9 +666,9 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload resources.
-   * These properties (such as custom project id) will be used to create
-   * workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload
+   * resources. These properties (such as custom project id) will be used to
+   * create workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -668,9 +680,9 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload resources.
-   * These properties (such as custom project id) will be used to create
-   * workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload
+   * resources. These properties (such as custom project id) will be used to
+   * create workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -684,9 +696,9 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload resources.
-   * These properties (such as custom project id) will be used to create
-   * workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload
+   * resources. These properties (such as custom project id) will be used to
+   * create workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -695,6 +707,98 @@ public interface WorkloadOrBuilder
    */
   com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder
       getResourceSettingsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the KAJ enrollment state of the given workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState kaj_enrollment_state = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for kajEnrollmentState.
+   */
+  int getKajEnrollmentStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the KAJ enrollment state of the given workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState kaj_enrollment_state = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The kajEnrollmentState.
+   */
+  com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState getKajEnrollmentState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the sovereignty status of the given workload.
+   * Currently meant to be used by Europe/Canada customers.
+   * </pre>
+   *
+   * <code>bool enable_sovereign_controls = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableSovereignControls.
+   */
+  boolean getEnableSovereignControls();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the SAA enrollment response of the given workload.
+   * SAA enrollment response is queried during GetWorkload call.
+   * In failure cases, user friendly error message is shown in SAA details page.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the saaEnrollmentResponse field is set.
+   */
+  boolean hasSaaEnrollmentResponse();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the SAA enrollment response of the given workload.
+   * SAA enrollment response is queried during GetWorkload call.
+   * In failure cases, user friendly error message is shown in SAA details page.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The saaEnrollmentResponse.
+   */
+  com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+      getSaaEnrollmentResponse();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the SAA enrollment response of the given workload.
+   * SAA enrollment response is queried during GetWorkload call.
+   * In failure cases, user friendly error message is shown in SAA details page.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse saa_enrollment_response = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponseOrBuilder
+      getSaaEnrollmentResponseOrBuilder();
 
   public com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegimeSettingsCase
       getComplianceRegimeSettingsCase();
