@@ -178,4 +178,11 @@ class CompositeTracer extends BigtableTracer {
       tracer.recordGfeMetadata(latency, throwable);
     }
   }
+
+  @Override
+  public void batchRequestThrottled(long throttledTimeMs) {
+    for (BigtableTracer tracer : bigtableTracers) {
+      tracer.batchRequestThrottled(throttledTimeMs);
+    }
+  }
 }

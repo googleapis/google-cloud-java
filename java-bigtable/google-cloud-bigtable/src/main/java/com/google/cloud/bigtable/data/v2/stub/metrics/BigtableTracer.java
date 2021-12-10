@@ -21,21 +21,40 @@ import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.BaseApiTracer;
 import javax.annotation.Nullable;
 
-/** A Bigtable specific {@link ApiTracer} that includes additional contexts. */
+/**
+ * A Bigtable specific {@link ApiTracer} that includes additional contexts. This class is a base
+ * implementation that does nothing.
+ */
 @BetaApi("This surface is stable yet it might be removed in the future.")
-public abstract class BigtableTracer extends BaseApiTracer {
+public class BigtableTracer extends BaseApiTracer {
+
+  private volatile int attempt = 0;
+
+  @Override
+  public void attemptStarted(int attemptNumber) {
+    this.attempt = attemptNumber;
+  }
 
   /**
    * Get the attempt number of the current call. Attempt number for the current call is passed in
    * and should be recorded in {@link #attemptStarted(int)}. With the getter we can access it from
    * {@link ApiCallContext}. Attempt number starts from 0.
    */
-  public abstract int getAttempt();
+  public int getAttempt() {
+    return attempt;
+  }
 
   /**
    * Record the latency between Google's network receives the RPC and reads back the first byte of
    * the response from server-timing header. If server-timing header is missing, increment the
    * missing header count.
    */
-  public abstract void recordGfeMetadata(@Nullable Long latency, @Nullable Throwable throwable);
+  public void recordGfeMetadata(@Nullable Long latency, @Nullable Throwable throwable) {
+    // noop
+  }
+
+  /** Adds an annotation of the total throttled time of a batch. */
+  public void batchRequestThrottled(long throttledTimeMs) {
+    // noop
+  }
 }

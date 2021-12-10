@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_ATTEMPT_LATENCY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_BATCH_THROTTLED_TIME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_GFE_LATENCY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_INSTANCE_ID;
@@ -154,4 +155,14 @@ class RpcViewConstants {
               BIGTABLE_APP_PROFILE_ID,
               BIGTABLE_OP,
               BIGTABLE_STATUS));
+
+  // use distribution so we can correlate batch throttled time with op_latency
+  static final View BIGTABLE_BATCH_THROTTLED_TIME_VIEW =
+      View.create(
+          View.Name.create("cloud.google.com/java/bigtable/batch_throttled_time"),
+          "Total throttled time of a batch in msecs",
+          BIGTABLE_BATCH_THROTTLED_TIME,
+          AGGREGATION_WITH_MILLIS_HISTOGRAM,
+          ImmutableList.of(
+              BIGTABLE_INSTANCE_ID, BIGTABLE_PROJECT_ID, BIGTABLE_APP_PROFILE_ID, BIGTABLE_OP));
 }

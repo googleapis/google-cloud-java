@@ -88,4 +88,11 @@ public class RpcMeasureConstants {
           "cloud.google.com/java/bigtable/gfe_header_missing_count",
           "Number of RPC responses received without the server-timing header, most likely means that the RPC never reached Google's network",
           COUNT);
+
+  /** Total throttled time of a batch in msecs. */
+  public static final MeasureLong BIGTABLE_BATCH_THROTTLED_TIME =
+      MeasureLong.create(
+          "cloud.google.com/java/bigtable/batch_throttled_time",
+          "Total throttled time of a batch in msecs",
+          MILLISECOND);
 }

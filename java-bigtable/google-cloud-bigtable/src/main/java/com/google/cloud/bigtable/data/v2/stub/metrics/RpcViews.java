@@ -31,7 +31,8 @@ public class RpcViews {
           RpcViewConstants.BIGTABLE_COMPLETED_OP_VIEW,
           RpcViewConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY_VIEW,
           RpcViewConstants.BIGTABLE_ATTEMPT_LATENCY_VIEW,
-          RpcViewConstants.BIGTABLE_ATTEMPTS_PER_OP_VIEW);
+          RpcViewConstants.BIGTABLE_ATTEMPTS_PER_OP_VIEW,
+          RpcViewConstants.BIGTABLE_BATCH_THROTTLED_TIME_VIEW);
 
   private static final ImmutableSet<View> GFE_VIEW_SET =
       ImmutableSet.of(

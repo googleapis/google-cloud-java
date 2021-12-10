@@ -129,8 +129,8 @@ class MetricsTracer extends BigtableTracer {
   }
 
   @Override
-  public void attemptStarted(int i) {
-    attempt = i;
+  public void attemptStarted(int attemptNumber) {
+    attempt = attemptNumber;
     attemptCount++;
     attemptTimer = Stopwatch.createStarted();
     attemptResponseCount = 0;
@@ -224,6 +224,15 @@ class MetricsTracer extends BigtableTracer {
         newTagCtxBuilder()
             .putLocal(RpcMeasureConstants.BIGTABLE_STATUS, Util.extractStatus(throwable))
             .build());
+  }
+
+  @Override
+  public void batchRequestThrottled(long totalThrottledMs) {
+    MeasureMap measures =
+        stats
+            .newMeasureMap()
+            .put(RpcMeasureConstants.BIGTABLE_BATCH_THROTTLED_TIME, totalThrottledMs);
+    measures.record(newTagCtxBuilder().build());
   }
 
   private TagContextBuilder newTagCtxBuilder() {

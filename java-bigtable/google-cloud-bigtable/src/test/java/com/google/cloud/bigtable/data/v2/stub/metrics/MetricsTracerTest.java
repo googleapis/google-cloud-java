@@ -18,9 +18,18 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.when;
 
+import com.google.api.gax.batching.Batcher;
+import com.google.api.gax.batching.BatcherImpl;
+import com.google.api.gax.batching.BatchingDescriptor;
+import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
@@ -28,8 +37,11 @@ import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
+import com.google.cloud.bigtable.misc_utilities.MethodComparator;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -44,6 +56,9 @@ import io.opencensus.impl.stats.StatsComponentImpl;
 import io.opencensus.tags.TagKey;
 import io.opencensus.tags.TagValue;
 import io.opencensus.tags.Tags;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
@@ -55,6 +70,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Answers;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -88,6 +104,7 @@ public class MetricsTracerTest {
 
   private StatsComponentImpl localStats = new StatsComponentImpl();
   private EnhancedBigtableStub stub;
+  private BigtableDataSettings settings;
 
   @Before
   public void setUp() throws Exception {
@@ -96,7 +113,7 @@ public class MetricsTracerTest {
 
     RpcViews.registerBigtableClientViews(localStats.getViewManager());
 
-    BigtableDataSettings settings =
+    settings =
         BigtableDataSettings.newBuilderForEmulator(serviceHelper.getPort())
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
@@ -349,6 +366,117 @@ public class MetricsTracerTest {
               APP_PROFILE_ID);
       assertThat(attemptLatency).isAtLeast(0);
     }
+  }
+
+  @Test
+  public void testBatchReadRowsThrottledTime() throws Exception {
+    doAnswer(
+            new Answer() {
+              @Override
+              public Object answer(InvocationOnMock invocation) {
+                @SuppressWarnings("unchecked")
+                StreamObserver<ReadRowsResponse> observer =
+                    (StreamObserver<ReadRowsResponse>) invocation.getArguments()[1];
+                observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
+                observer.onCompleted();
+                return null;
+              }
+            })
+        .when(mockService)
+        .readRows(any(ReadRowsRequest.class), any());
+
+    try (Batcher batcher =
+        stub.newBulkReadRowsBatcher(Query.create(TABLE_ID), GrpcCallContext.createDefault())) {
+      batcher.add(ByteString.copyFromUtf8("row1"));
+      batcher.sendOutstanding();
+
+      // Give OpenCensus a chance to update the views asynchronously.
+      Thread.sleep(100);
+
+      long throttledTimeMetric =
+          StatsTestUtils.getAggregationValueAsLong(
+              localStats,
+              RpcViewConstants.BIGTABLE_BATCH_THROTTLED_TIME_VIEW,
+              ImmutableMap.of(
+                  RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows")),
+              PROJECT_ID,
+              INSTANCE_ID,
+              APP_PROFILE_ID);
+      assertThat(throttledTimeMetric).isEqualTo(0);
+    }
+  }
+
+  @Test
+  public void testBatchMutateRowsThrottledTime() throws Exception {
+    FlowController flowController = Mockito.mock(FlowController.class);
+    BatchingDescriptor batchingDescriptor = Mockito.mock(MutateRowsBatchingDescriptor.class);
+    // Mock throttling
+    final long throttled = 50;
+    doAnswer(
+            new Answer() {
+              @Override
+              public Object answer(InvocationOnMock invocation) throws Throwable {
+                Thread.sleep(throttled);
+                return null;
+              }
+            })
+        .when(flowController)
+        .reserve(any(Long.class), any(Long.class));
+    when(flowController.getMaxElementCountLimit()).thenReturn(null);
+    when(flowController.getMaxRequestBytesLimit()).thenReturn(null);
+    when(batchingDescriptor.countBytes(any())).thenReturn(1l);
+    when(batchingDescriptor.newRequestBuilder(any())).thenCallRealMethod();
+
+    doAnswer(
+            new Answer() {
+              @Override
+              public Object answer(InvocationOnMock invocation) {
+                @SuppressWarnings("unchecked")
+                StreamObserver<MutateRowsResponse> observer =
+                    (StreamObserver<MutateRowsResponse>) invocation.getArguments()[1];
+                observer.onNext(MutateRowsResponse.getDefaultInstance());
+                observer.onCompleted();
+                return null;
+              }
+            })
+        .when(mockService)
+        .mutateRows(any(MutateRowsRequest.class), any());
+
+    ApiCallContext defaultContext = GrpcCallContext.createDefault();
+
+    Batcher batcher =
+        new BatcherImpl(
+            batchingDescriptor,
+            stub.bulkMutateRowsCallable().withDefaultCallContext(defaultContext),
+            BulkMutation.create(TABLE_ID),
+            settings.getStubSettings().bulkMutateRowsSettings().getBatchingSettings(),
+            Executors.newSingleThreadScheduledExecutor(),
+            flowController,
+            defaultContext);
+
+    batcher.add(RowMutationEntry.create("key"));
+    batcher.sendOutstanding();
+
+    Thread.sleep(100);
+    long throttledTimeMetric =
+        StatsTestUtils.getAggregationValueAsLong(
+            localStats,
+            RpcViewConstants.BIGTABLE_BATCH_THROTTLED_TIME_VIEW,
+            ImmutableMap.of(
+                RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.MutateRows")),
+            PROJECT_ID,
+            INSTANCE_ID,
+            APP_PROFILE_ID);
+    assertThat(throttledTimeMetric).isAtLeast(throttled);
+  }
+
+  @Test
+  public void testMethodsOverride() {
+    Method[] baseMethods = BigtableTracer.class.getDeclaredMethods();
+    Method[] metricsTracerMethods = MetricsTracer.class.getDeclaredMethods();
+    assertThat(Arrays.asList(metricsTracerMethods))
+        .comparingElementsUsing(MethodComparator.METHOD_CORRESPONDENCE)
+        .containsAtLeastElementsIn(baseMethods);
   }
 
   @SuppressWarnings("unchecked")
