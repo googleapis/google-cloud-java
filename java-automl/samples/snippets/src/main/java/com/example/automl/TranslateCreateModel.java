@@ -46,7 +46,6 @@ class TranslateCreateModel {
     try (AutoMlClient client = AutoMlClient.create()) {
       // A resource that represents Google Cloud Platform location.
       LocationName projectLocation = LocationName.of(projectId, "us-central1");
-      // Leave model unset to use the default base model provided by Google
       TranslationModelMetadata translationModelMetadata =
           TranslationModelMetadata.newBuilder().build();
       Model model =

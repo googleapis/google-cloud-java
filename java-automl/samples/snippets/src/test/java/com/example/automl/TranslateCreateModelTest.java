@@ -76,8 +76,12 @@ public class TranslateCreateModelTest {
           String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
       TranslateCreateModel.createModel(PROJECT_ID, DATASET_ID, modelName);
       String got = bout.toString();
+      // After setting DATASET_ID, change line below to
+      // assertThat(got).contains("Training started...");
       assertThat(got).contains("Dataset does not exist");
     } catch (IOException | ExecutionException | InterruptedException e) {
+      // After setting DATASET_ID, change line below to
+      // assertThat(e.getMessage()).contains("Training started...");
       assertThat(e.getMessage()).contains("Dataset does not exist");
     }
   }
