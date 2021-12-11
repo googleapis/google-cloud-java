@@ -29,7 +29,7 @@ import java.util.Map;
 public final class LogDestinationName extends Option {
   private static final long serialVersionUID = 7944256748441111191L;
 
-  enum DestinationType implements Option.OptionType {
+  public enum DestinationType implements Option.OptionType {
     PROJECT,
     FOLDER,
     ORGANIZATION,
@@ -107,6 +107,16 @@ public final class LogDestinationName extends Option {
     }
 
     return null;
+  }
+
+  /** Returns ID value associated with {@code LogDestinationName} object */
+  public String getId() {
+    return getValue().toString();
+  }
+
+  /** Returns destination type option value associated with {@code LogDestinationName} object */
+  public DestinationType getDestinationType() {
+    return getOptionType();
   }
 
   /** Creates a {@code LogDestinationName} object from given {@code LogName}. */

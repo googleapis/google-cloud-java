@@ -116,25 +116,25 @@ public class LoggingTest {
     WriteOption writeOption = WriteOption.destination(LogDestinationName.project(PROJECT_NAME));
     LogDestinationName resource = (LogDestinationName) writeOption.getValue();
     assertEquals(WriteOption.OptionType.LOG_DESTINATION, writeOption.getOptionType());
-    assertEquals(LogDestinationName.DestinationType.PROJECT, resource.getOptionType());
-    assertEquals(PROJECT_NAME, resource.getValue());
+    assertEquals(LogDestinationName.DestinationType.PROJECT, resource.getDestinationType());
+    assertEquals(PROJECT_NAME, resource.getId());
 
     writeOption = WriteOption.destination(LogDestinationName.billingAccount(BILLING_NAME));
     resource = (LogDestinationName) writeOption.getValue();
     assertEquals(WriteOption.OptionType.LOG_DESTINATION, writeOption.getOptionType());
-    assertEquals(LogDestinationName.DestinationType.BILLINGACCOUNT, resource.getOptionType());
-    assertEquals(BILLING_NAME, resource.getValue());
+    assertEquals(LogDestinationName.DestinationType.BILLINGACCOUNT, resource.getDestinationType());
+    assertEquals(BILLING_NAME, resource.getId());
 
     writeOption = WriteOption.destination(LogDestinationName.folder(FOLDER_NAME));
     resource = (LogDestinationName) writeOption.getValue();
     assertEquals(WriteOption.OptionType.LOG_DESTINATION, writeOption.getOptionType());
-    assertEquals(LogDestinationName.DestinationType.FOLDER, resource.getOptionType());
-    assertEquals(FOLDER_NAME, resource.getValue());
+    assertEquals(LogDestinationName.DestinationType.FOLDER, resource.getDestinationType());
+    assertEquals(FOLDER_NAME, resource.getId());
 
     writeOption = WriteOption.destination(LogDestinationName.organization(ORGANIZATION_NAME));
     resource = (LogDestinationName) writeOption.getValue();
     assertEquals(WriteOption.OptionType.LOG_DESTINATION, writeOption.getOptionType());
-    assertEquals(LogDestinationName.DestinationType.ORGANIZATION, resource.getOptionType());
-    assertEquals(ORGANIZATION_NAME, resource.getValue());
+    assertEquals(LogDestinationName.DestinationType.ORGANIZATION, resource.getDestinationType());
+    assertEquals(ORGANIZATION_NAME, resource.getId());
   }
 }
