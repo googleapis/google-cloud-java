@@ -117,24 +117,24 @@ public class LoggingTest {
     LogDestinationName resource = (LogDestinationName) writeOption.getValue();
     assertEquals(WriteOption.OptionType.LOG_DESTINATION, writeOption.getOptionType());
     assertEquals(LogDestinationName.DestinationType.PROJECT, resource.getDestinationType());
-    assertEquals(PROJECT_NAME, resource.getId());
+    assertEquals(PROJECT_NAME, resource.getDestinationId());
 
     writeOption = WriteOption.destination(LogDestinationName.billingAccount(BILLING_NAME));
     resource = (LogDestinationName) writeOption.getValue();
     assertEquals(WriteOption.OptionType.LOG_DESTINATION, writeOption.getOptionType());
     assertEquals(LogDestinationName.DestinationType.BILLINGACCOUNT, resource.getDestinationType());
-    assertEquals(BILLING_NAME, resource.getId());
+    assertEquals(BILLING_NAME, resource.getDestinationId());
 
     writeOption = WriteOption.destination(LogDestinationName.folder(FOLDER_NAME));
     resource = (LogDestinationName) writeOption.getValue();
     assertEquals(WriteOption.OptionType.LOG_DESTINATION, writeOption.getOptionType());
     assertEquals(LogDestinationName.DestinationType.FOLDER, resource.getDestinationType());
-    assertEquals(FOLDER_NAME, resource.getId());
+    assertEquals(FOLDER_NAME, resource.getDestinationId());
 
     writeOption = WriteOption.destination(LogDestinationName.organization(ORGANIZATION_NAME));
     resource = (LogDestinationName) writeOption.getValue();
     assertEquals(WriteOption.OptionType.LOG_DESTINATION, writeOption.getOptionType());
     assertEquals(LogDestinationName.DestinationType.ORGANIZATION, resource.getDestinationType());
-    assertEquals(ORGANIZATION_NAME, resource.getId());
+    assertEquals(ORGANIZATION_NAME, resource.getDestinationId());
   }
 }

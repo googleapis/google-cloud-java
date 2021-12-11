@@ -110,7 +110,7 @@ public final class LogDestinationName extends Option {
   }
 
   /** Returns ID value associated with {@code LogDestinationName} object */
-  public String getId() {
+  public String getDestinationId() {
     return getValue().toString();
   }
 
