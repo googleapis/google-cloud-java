@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The response message for
- * [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
+ * The response message for [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.CompileSuggestionResponse}
@@ -246,9 +245,8 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
    * Number of messages prior to and including
    * [latest_message][google.cloud.dialogflow.v2beta1.CompileSuggestionResponse.latest_message]
    * to compile the suggestion. It may be smaller than the
-   * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size]
-   * field in the request if there aren't that many messages in the
-   * conversation.
+   * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size] field in the request if
+   * there aren't that many messages in the conversation.
    * </pre>
    *
    * <code>int32 context_size = 3;</code>
@@ -447,8 +445,7 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The response message for
-   * [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
+   * The response message for [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.CompileSuggestionResponse}
@@ -941,9 +938,8 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
      * Number of messages prior to and including
      * [latest_message][google.cloud.dialogflow.v2beta1.CompileSuggestionResponse.latest_message]
      * to compile the suggestion. It may be smaller than the
-     * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size]
-     * field in the request if there aren't that many messages in the
-     * conversation.
+     * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size] field in the request if
+     * there aren't that many messages in the conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -961,9 +957,8 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
      * Number of messages prior to and including
      * [latest_message][google.cloud.dialogflow.v2beta1.CompileSuggestionResponse.latest_message]
      * to compile the suggestion. It may be smaller than the
-     * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size]
-     * field in the request if there aren't that many messages in the
-     * conversation.
+     * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size] field in the request if
+     * there aren't that many messages in the conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -984,9 +979,8 @@ public final class CompileSuggestionResponse extends com.google.protobuf.Generat
      * Number of messages prior to and including
      * [latest_message][google.cloud.dialogflow.v2beta1.CompileSuggestionResponse.latest_message]
      * to compile the suggestion. It may be smaller than the
-     * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size]
-     * field in the request if there aren't that many messages in the
-     * conversation.
+     * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size] field in the request if
+     * there aren't that many messages in the conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>

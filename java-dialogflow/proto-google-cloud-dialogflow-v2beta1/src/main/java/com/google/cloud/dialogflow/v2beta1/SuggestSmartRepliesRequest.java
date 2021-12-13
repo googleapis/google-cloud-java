@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for
- * [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
+ * The request message for [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest}
@@ -523,8 +522,7 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The request message for
-   * [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
+   * The request message for [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest}

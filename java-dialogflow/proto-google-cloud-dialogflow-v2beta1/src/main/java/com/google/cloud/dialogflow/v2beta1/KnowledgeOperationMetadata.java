@@ -39,6 +39,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
 
   private KnowledgeOperationMetadata() {
     state_ = 0;
+    knowledgeBase_ = "";
   }
 
   @java.lang.Override
@@ -75,6 +76,13 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
               int rawValue = input.readEnum();
 
               state_ = rawValue;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              knowledgeBase_ = s;
               break;
             }
           default:
@@ -334,6 +342,55 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         : result;
   }
 
+  public static final int KNOWLEDGE_BASE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object knowledgeBase_;
+  /**
+   *
+   *
+   * <pre>
+   * The name of the knowledge base interacted with during the operation.
+   * </pre>
+   *
+   * <code>string knowledge_base = 3;</code>
+   *
+   * @return The knowledgeBase.
+   */
+  @java.lang.Override
+  public java.lang.String getKnowledgeBase() {
+    java.lang.Object ref = knowledgeBase_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      knowledgeBase_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of the knowledge base interacted with during the operation.
+   * </pre>
+   *
+   * <code>string knowledge_base = 3;</code>
+   *
+   * @return The bytes for knowledgeBase.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKnowledgeBaseBytes() {
+    java.lang.Object ref = knowledgeBase_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      knowledgeBase_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -353,6 +410,9 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
             .getNumber()) {
       output.writeEnum(1, state_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(knowledgeBase_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, knowledgeBase_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -366,6 +426,9 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         != com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State.STATE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(knowledgeBase_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, knowledgeBase_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -384,6 +447,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         (com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata) obj;
 
     if (state_ != other.state_) return false;
+    if (!getKnowledgeBase().equals(other.getKnowledgeBase())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -397,6 +461,8 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + KNOWLEDGE_BASE_FIELD_NUMBER;
+    hash = (53 * hash) + getKnowledgeBase().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -545,6 +611,8 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       super.clear();
       state_ = 0;
 
+      knowledgeBase_ = "";
+
       return this;
     }
 
@@ -574,6 +642,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata result =
           new com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata(this);
       result.state_ = state_;
+      result.knowledgeBase_ = knowledgeBase_;
       onBuilt();
       return result;
     }
@@ -627,6 +696,10 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         return this;
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (!other.getKnowledgeBase().isEmpty()) {
+        knowledgeBase_ = other.knowledgeBase_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -759,6 +832,112 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     public Builder clearState() {
 
       state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object knowledgeBase_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the knowledge base interacted with during the operation.
+     * </pre>
+     *
+     * <code>string knowledge_base = 3;</code>
+     *
+     * @return The knowledgeBase.
+     */
+    public java.lang.String getKnowledgeBase() {
+      java.lang.Object ref = knowledgeBase_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        knowledgeBase_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the knowledge base interacted with during the operation.
+     * </pre>
+     *
+     * <code>string knowledge_base = 3;</code>
+     *
+     * @return The bytes for knowledgeBase.
+     */
+    public com.google.protobuf.ByteString getKnowledgeBaseBytes() {
+      java.lang.Object ref = knowledgeBase_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        knowledgeBase_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the knowledge base interacted with during the operation.
+     * </pre>
+     *
+     * <code>string knowledge_base = 3;</code>
+     *
+     * @param value The knowledgeBase to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKnowledgeBase(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      knowledgeBase_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the knowledge base interacted with during the operation.
+     * </pre>
+     *
+     * <code>string knowledge_base = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKnowledgeBase() {
+
+      knowledgeBase_ = getDefaultInstance().getKnowledgeBase();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the knowledge base interacted with during the operation.
+     * </pre>
+     *
+     * <code>string knowledge_base = 3;</code>
+     *
+     * @param value The bytes for knowledgeBase to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKnowledgeBaseBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      knowledgeBase_ = value;
       onChanged();
       return this;
     }
