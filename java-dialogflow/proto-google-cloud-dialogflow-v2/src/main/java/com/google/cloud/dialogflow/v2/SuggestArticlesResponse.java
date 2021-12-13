@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The response message for
- * [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
+ * The response message for [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.SuggestArticlesResponse}
@@ -266,11 +265,10 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
    *
    * <pre>
    * Number of messages prior to and including
-   * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message]
-   * to compile the suggestion. It may be smaller than the
-   * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size]
-   * field in the request if there aren't that many messages in the
-   * conversation.
+   * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message] to compile the
+   * suggestion. It may be smaller than the
+   * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size] field in the request if there
+   * aren't that many messages in the conversation.
    * </pre>
    *
    * <code>int32 context_size = 3;</code>
@@ -466,8 +464,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The response message for
-   * [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
+   * The response message for [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.SuggestArticlesResponse}
@@ -1161,11 +1158,10 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message]
-     * to compile the suggestion. It may be smaller than the
-     * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size]
-     * field in the request if there aren't that many messages in the
-     * conversation.
+     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message] to compile the
+     * suggestion. It may be smaller than the
+     * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size] field in the request if there
+     * aren't that many messages in the conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -1181,11 +1177,10 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message]
-     * to compile the suggestion. It may be smaller than the
-     * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size]
-     * field in the request if there aren't that many messages in the
-     * conversation.
+     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message] to compile the
+     * suggestion. It may be smaller than the
+     * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size] field in the request if there
+     * aren't that many messages in the conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -1204,11 +1199,10 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message]
-     * to compile the suggestion. It may be smaller than the
-     * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size]
-     * field in the request if there aren't that many messages in the
-     * conversation.
+     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesResponse.latest_message] to compile the
+     * suggestion. It may be smaller than the
+     * [SuggestArticlesRequest.context_size][google.cloud.dialogflow.v2.SuggestArticlesRequest.context_size] field in the request if there
+     * aren't that many messages in the conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>

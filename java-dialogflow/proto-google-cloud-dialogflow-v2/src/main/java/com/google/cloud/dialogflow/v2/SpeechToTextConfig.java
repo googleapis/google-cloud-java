@@ -117,15 +117,16 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The speech model used in speech to text.
+   * The speech model used in speech to text.
    * `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as
    * `USE_ENHANCED`. It can be overridden in [AnalyzeContentRequest][google.cloud.dialogflow.v2.AnalyzeContentRequest] and
    * [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest] request.
+   * If enhanced model variant is specified and an enhanced
+   * version of the specified model for the language does not exist, then it
+   * would emit an error.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1;</code>
    *
    * @return The enum numeric value on the wire for speechModelVariant.
    */
@@ -137,15 +138,16 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The speech model used in speech to text.
+   * The speech model used in speech to text.
    * `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as
    * `USE_ENHANCED`. It can be overridden in [AnalyzeContentRequest][google.cloud.dialogflow.v2.AnalyzeContentRequest] and
    * [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest] request.
+   * If enhanced model variant is specified and an enhanced
+   * version of the specified model for the language does not exist, then it
+   * would emit an error.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1;</code>
    *
    * @return The speechModelVariant.
    */
@@ -483,15 +485,16 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The speech model used in speech to text.
+     * The speech model used in speech to text.
      * `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as
      * `USE_ENHANCED`. It can be overridden in [AnalyzeContentRequest][google.cloud.dialogflow.v2.AnalyzeContentRequest] and
      * [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest] request.
+     * If enhanced model variant is specified and an enhanced
+     * version of the specified model for the language does not exist, then it
+     * would emit an error.
      * </pre>
      *
-     * <code>
-     * .google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1;</code>
      *
      * @return The enum numeric value on the wire for speechModelVariant.
      */
@@ -503,15 +506,16 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The speech model used in speech to text.
+     * The speech model used in speech to text.
      * `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as
      * `USE_ENHANCED`. It can be overridden in [AnalyzeContentRequest][google.cloud.dialogflow.v2.AnalyzeContentRequest] and
      * [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest] request.
+     * If enhanced model variant is specified and an enhanced
+     * version of the specified model for the language does not exist, then it
+     * would emit an error.
      * </pre>
      *
-     * <code>
-     * .google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1;</code>
      *
      * @param value The enum numeric value on the wire for speechModelVariant to set.
      * @return This builder for chaining.
@@ -526,15 +530,16 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The speech model used in speech to text.
+     * The speech model used in speech to text.
      * `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as
      * `USE_ENHANCED`. It can be overridden in [AnalyzeContentRequest][google.cloud.dialogflow.v2.AnalyzeContentRequest] and
      * [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest] request.
+     * If enhanced model variant is specified and an enhanced
+     * version of the specified model for the language does not exist, then it
+     * would emit an error.
      * </pre>
      *
-     * <code>
-     * .google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1;</code>
      *
      * @return The speechModelVariant.
      */
@@ -551,15 +556,16 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The speech model used in speech to text.
+     * The speech model used in speech to text.
      * `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as
      * `USE_ENHANCED`. It can be overridden in [AnalyzeContentRequest][google.cloud.dialogflow.v2.AnalyzeContentRequest] and
      * [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest] request.
+     * If enhanced model variant is specified and an enhanced
+     * version of the specified model for the language does not exist, then it
+     * would emit an error.
      * </pre>
      *
-     * <code>
-     * .google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1;</code>
      *
      * @param value The speechModelVariant to set.
      * @return This builder for chaining.
@@ -577,15 +583,16 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The speech model used in speech to text.
+     * The speech model used in speech to text.
      * `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as
      * `USE_ENHANCED`. It can be overridden in [AnalyzeContentRequest][google.cloud.dialogflow.v2.AnalyzeContentRequest] and
      * [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest] request.
+     * If enhanced model variant is specified and an enhanced
+     * version of the specified model for the language does not exist, then it
+     * would emit an error.
      * </pre>
      *
-     * <code>
-     * .google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.dialogflow.v2.SpeechModelVariant speech_model_variant = 1;</code>
      *
      * @return This builder for chaining.
      */

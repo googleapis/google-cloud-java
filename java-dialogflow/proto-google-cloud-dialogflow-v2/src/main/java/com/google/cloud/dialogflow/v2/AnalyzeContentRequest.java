@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for
- * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent].
+ * The request message for [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.AnalyzeContentRequest}
@@ -870,8 +869,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request message for
-   * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent].
+   * The request message for [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.AnalyzeContentRequest}
