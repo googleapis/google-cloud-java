@@ -299,7 +299,8 @@ public class ITBlobSnippets {
 
   @Test
   public void testUploadObjectFromMemory() throws IOException {
-    UploadObjectFromMemory.uploadObjectFromMemory(PROJECT_ID, BUCKET, "uploadobjectfrommemorytest", STRING_CONTENT);
+    UploadObjectFromMemory.uploadObjectFromMemory(
+        PROJECT_ID, BUCKET, "uploadobjectfrommemorytest", STRING_CONTENT);
     final byte[] output = storage.get(BUCKET, "uploadobjectfrommemorytest").getContent();
     assertEquals(STRING_CONTENT, new String(output, UTF_8));
   }

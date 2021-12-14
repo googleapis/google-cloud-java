@@ -44,7 +44,12 @@ public class UploadObjectFromMemory {
     storage.create(blobInfo, contents.getBytes(StandardCharsets.UTF_8));
 
     System.out.println(
-        "Object " + objectName + " uploaded to bucket " + bucketName + " with contents " + contents);
+        "Object "
+            + objectName
+            + " uploaded to bucket "
+            + bucketName
+            + " with contents "
+            + contents);
   }
 }
 // [END storage_file_upload_from_memory]

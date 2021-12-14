@@ -40,11 +40,7 @@ public class DownloadObjectIntoMemory {
     Blob blob = storage.get(BlobId.of(bucketName, objectName));
     OutputStream object = new PrintStream(System.out);
     System.out.println(
-        "The contents of "
-            + objectName
-            + " from bucket name "
-            + bucketName
-            + " are: ");
+        "The contents of " + objectName + " from bucket name " + bucketName + " are: ");
     blob.downloadTo(object);
   }
 }
