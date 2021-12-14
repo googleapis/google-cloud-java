@@ -72,7 +72,8 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
     // the exception messages
     boolean shouldRetry =
         (shouldRetryBasedOnResult(context, previousThrowable, previousResponse)
-                || shouldRetryBasedOnBigQueryRetryConfig(previousThrowable, bigQueryRetryConfig))
+                || shouldRetryBasedOnBigQueryRetryConfig(
+                    previousThrowable, bigQueryRetryConfig, previousResponse))
             && shouldRetryBasedOnTiming(context, nextAttemptSettings);
 
     if (LOG.isLoggable(Level.FINEST)) {
@@ -92,13 +93,26 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
   }
 
   private boolean shouldRetryBasedOnBigQueryRetryConfig(
-      Throwable previousThrowable, BigQueryRetryConfig bigQueryRetryConfig) {
+      Throwable previousThrowable,
+      BigQueryRetryConfig bigQueryRetryConfig,
+      ResponseT previousResponse) {
     /*
     We are deciding if a given error should be retried on the basis of error message.
     Cannot rely on Error/Status code as for example error code 400 (which is not retriable) could be thrown due to rateLimitExceed, which is retriable
      */
-    String errorDesc;
-    if (previousThrowable != null && (errorDesc = previousThrowable.getMessage()) != null) {
+    String errorDesc = null;
+    if (previousThrowable != null) {
+      errorDesc = previousThrowable.getMessage();
+    } else if (previousResponse != null) {
+      /*
+      In some cases error messages may come without an exception
+      e.g. status code 200 with a rate limit exceeded for job create
+      in these cases there is now previousThrowable so we need to check previousResponse
+       */
+      errorDesc = previousResponse.toString();
+    }
+
+    if (errorDesc != null) {
       errorDesc = errorDesc.toLowerCase(); // for case insensitive comparison
       for (Iterator<String> retriableMessages =
               bigQueryRetryConfig.getRetriableErrorMessages().iterator();
@@ -161,7 +175,8 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
     if (!((shouldRetryBasedOnResult(context, previousThrowable, previousResponse)
         || shouldRetryBasedOnBigQueryRetryConfig(
             previousThrowable,
-            bigQueryRetryConfig)))) { // Calling shouldRetryBasedOnBigQueryRetryConfig to check if
+            bigQueryRetryConfig,
+            previousResponse)))) { // Calling shouldRetryBasedOnBigQueryRetryConfig to check if
       // the error message could be retried
       return null;
     }

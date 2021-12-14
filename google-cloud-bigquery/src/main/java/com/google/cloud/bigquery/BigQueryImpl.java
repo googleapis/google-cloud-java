@@ -347,15 +347,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @InternalApi("visible for testing")
   Job create(JobInfo jobInfo, Supplier<JobId> idProvider, JobOption... options) {
-    boolean idRandom = false;
-    if (jobInfo.getJobId() == null) {
-      jobInfo = jobInfo.toBuilder().setJobId(idProvider.get()).build();
-      idRandom = true;
-    }
-    final com.google.api.services.bigquery.model.Job jobPb =
-        jobInfo.setProjectId(getOptions().getProjectId()).toPb();
-    final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
+    final boolean idRandom = (jobInfo.getJobId() == null);
 
+    final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     BigQueryException createException;
     // NOTE(pongad): This double-try structure is admittedly odd.
     // translateAndThrow itself throws, and pretends to return an exception only
@@ -363,21 +357,36 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     // This makes it difficult to translate without throwing.
     // Fixing this entails some work on BaseServiceException.translate.
     // Since that affects a bunch of APIs, we should fix this as a separate change.
+    final JobId[] finalJobId = new JobId[1];
     try {
       try {
         return Job.fromPb(
             this,
-            runWithRetries(
+            BigQueryRetryHelper.runWithRetries(
                 new Callable<com.google.api.services.bigquery.model.Job>() {
                   @Override
                   public com.google.api.services.bigquery.model.Job call() {
-                    return bigQueryRpc.create(jobPb, optionsMap);
+                    if (idRandom) {
+                      // re-generate a new random job with the same jobInfo when jobId is not
+                      // provided by the user
+                      JobInfo recreatedJobInfo =
+                          jobInfo.toBuilder().setJobId(idProvider.get()).build();
+                      com.google.api.services.bigquery.model.Job newJobPb =
+                          recreatedJobInfo.setProjectId(getOptions().getProjectId()).toPb();
+                      finalJobId[0] = recreatedJobInfo.getJobId();
+                      return bigQueryRpc.create(newJobPb, optionsMap);
+                    } else {
+                      com.google.api.services.bigquery.model.Job jobPb =
+                          jobInfo.setProjectId(getOptions().getProjectId()).toPb();
+                      return bigQueryRpc.create(jobPb, optionsMap);
+                    }
                   }
                 },
                 getOptions().getRetrySettings(),
-                BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
-                getOptions().getClock()));
-      } catch (RetryHelper.RetryHelperException e) {
+                EXCEPTION_HANDLER,
+                getOptions().getClock(),
+                DEFAULT_RETRY_CONFIG));
+      } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
         throw BigQueryException.translateAndThrow(e);
       }
     } catch (BigQueryException e) {
@@ -396,7 +405,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     // fetch a job created by someone else.
     Job job;
     try {
-      job = getJob(jobInfo.getJobId());
+      job = getJob(finalJobId[0]);
     } catch (BigQueryException e) {
       throw createException;
     }

@@ -1530,6 +1530,30 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testCreateJobFailureShouldRetry() {
+    when(bigqueryRpcMock.create(jobCapture.capture(), eq(EMPTY_RPC_OPTIONS)))
+        .thenThrow(new BigQueryException(500, "InternalError"))
+        .thenThrow(new BigQueryException(502, "Bad Gateway"))
+        .thenThrow(new BigQueryException(503, "Service Unavailable"))
+        .thenThrow(
+            new BigQueryException(
+                400, RATE_LIMIT_ERROR_MSG)) // retrial on based on RATE_LIMIT_EXCEEDED_MSG
+        .thenThrow(new BigQueryException(200, RATE_LIMIT_ERROR_MSG))
+        .thenReturn(newJobPb());
+
+    bigquery = options.getService();
+    bigquery =
+        options
+            .toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
+            .getService();
+
+    ((BigQueryImpl) bigquery).create(JobInfo.of(QUERY_JOB_CONFIGURATION_FOR_DMLQUERY));
+    verify(bigqueryRpcMock, times(6)).create(jobCapture.capture(), eq(EMPTY_RPC_OPTIONS));
+  }
+
+  @Test
   public void testCreateJobWithSelectedFields() {
     when(bigqueryRpcMock.create(
             any(com.google.api.services.bigquery.model.Job.class), capturedOptions.capture()))
