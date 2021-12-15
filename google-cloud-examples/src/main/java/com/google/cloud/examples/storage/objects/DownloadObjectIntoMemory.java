@@ -16,12 +16,9 @@
 package com.google.cloud.examples.storage.objects;
 
 // [START storage_file_download_into_memory]
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import java.io.OutputStream;
-import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 
 public class DownloadObjectIntoMemory {
   public static void downloadObjectIntoMemory(
@@ -36,12 +33,14 @@ public class DownloadObjectIntoMemory {
     // String objectName = "your-object-name";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-
-    Blob blob = storage.get(BlobId.of(bucketName, objectName));
-    OutputStream object = new PrintStream(System.out);
+    byte[] content = storage.readAllBytes(bucketName, objectName);
     System.out.println(
-        "The contents of " + objectName + " from bucket name " + bucketName + " are: ");
-    blob.downloadTo(object);
+        "The contents of "
+            + objectName
+            + " from bucket name "
+            + bucketName
+            + " are: "
+            + new String(content, StandardCharsets.UTF_8));
   }
 }
 // [END storage_file_download_into_memory]

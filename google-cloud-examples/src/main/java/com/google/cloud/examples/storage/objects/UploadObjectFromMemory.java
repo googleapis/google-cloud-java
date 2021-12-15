@@ -20,6 +20,7 @@ import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
@@ -40,8 +41,9 @@ public class UploadObjectFromMemory {
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     BlobId blobId = BlobId.of(bucketName, objectName);
+    byte[] content = contents.getBytes(StandardCharsets.UTF_8);
     BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
-    storage.create(blobInfo, contents.getBytes(StandardCharsets.UTF_8));
+    storage.createFrom(blobInfo, new ByteArrayInputStream(content));
 
     System.out.println(
         "Object "
