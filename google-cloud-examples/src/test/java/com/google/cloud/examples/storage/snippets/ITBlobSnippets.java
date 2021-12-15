@@ -31,6 +31,7 @@ import com.google.cloud.examples.storage.objects.CopyObject;
 import com.google.cloud.examples.storage.objects.CopyOldVersionOfObject;
 import com.google.cloud.examples.storage.objects.DeleteObject;
 import com.google.cloud.examples.storage.objects.DeleteOldVersionOfObject;
+import com.google.cloud.examples.storage.objects.DownloadByteRange;
 import com.google.cloud.examples.storage.objects.DownloadEncryptedObject;
 import com.google.cloud.examples.storage.objects.DownloadObject;
 import com.google.cloud.examples.storage.objects.DownloadObjectIntoMemory;
@@ -159,6 +160,17 @@ public class ITBlobSnippets {
     try {
       DownloadObject.downloadObject(PROJECT_ID, BUCKET, BLOB, tempFile.getPath());
       assertEquals("Hello, World!", new String(Files.readAllBytes(tempFile.toPath())));
+    } finally {
+      tempFile.delete();
+    }
+  }
+
+  @Test
+  public void testDownloadByteRange() throws IOException {
+    File tempFile = File.createTempFile("file", ".txt");
+    try {
+      DownloadByteRange.downloadByteRange(PROJECT_ID, BUCKET, BLOB, 0, 5, tempFile.getPath());
+      assertEquals("Hello", new String(Files.readAllBytes(tempFile.toPath())));
     } finally {
       tempFile.delete();
     }
