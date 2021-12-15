@@ -37,12 +37,12 @@ public class UploadObjectFromMemory {
     // String objectName = "your-object-name";
 
     // The string of contents you wish to upload
-    // String contents = "Hello world!"
+    // String contents = "Hello world!";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     BlobId blobId = BlobId.of(bucketName, objectName);
-    byte[] content = contents.getBytes(StandardCharsets.UTF_8);
     BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
+    byte[] content = contents.getBytes(StandardCharsets.UTF_8);
     storage.createFrom(blobInfo, new ByteArrayInputStream(content));
 
     System.out.println(
