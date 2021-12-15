@@ -30,13 +30,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-compute:1.5.0-alpha'
+implementation 'com.google.cloud:google-cloud-compute:1.6.0-beta'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.5.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.6.0-beta"
 ```
 
 ## Authentication
@@ -73,6 +73,17 @@ See the [Compute Engine client library docs][javadocs] to learn how to
 use this Compute Engine Client Library.
 
 
+### Compute alpha to beta migration
+
+From version 1.6.0-beta `google-cloud-compute` will have the following feature changes: 
+- Everything except polling methods which used to return `Operation` now returns `OperationFuture`. 
+- Library automatically polls Operation status.
+- `Operation op = client.myMethod(args)` should be replaced with `OperationFuture<Operation, Operation> opFuture = client.myMethodAsync(args);` 
+- Manual polling now just calls `opFuture.get()` and wait for it to complete polling. 
+- To check for intermediate status on the future use either `opFuture.peekMetadata()` (non-blocking) or `opFuture.getMetadata()` (blocking) 
+- If you wish to stop automatic polling call `opFuture.cancel()` - it will cancel the future on the client side but it will not affect the execution of the operation on the server side in any way (server will keep working on the operation). 
+- The calls still may be done without relying on automatic polling and/or OperationFuture. To do so, use `client.myMethodCallable(MyMethodRequest).call()` semantics instead. Note this semantics does not have flattened method declarations and the request message must be instantiated explicitly by the users code.
+
 ### Example
 The following example creates a GCE address, then lists all the available addresses in the region and in the whole project and eventually deletes the newly created address.
 
@@ -96,10 +107,10 @@ public class ComputeExample {
 
     // AddressClient#insert()
     System.out.println("\n===============\nAddressClient#insert()\n===============");
-    Operation insertResponse =
-        addressesClient.insert(project, region, Address.newBuilder().setName(address).build());
+    OperationFuture<Operation,Operation> insertResponse =
+        addressesClient.insertAsync(project, region, Address.newBuilder().setName(address).build());
+    Operation insertResponseOperation = insertResponse.get();
     System.out.println(JsonFormat.printer().print(insertResponse) + "\n");
-    Thread.sleep(1000L);
 
     // AddressClient#list()
     System.out.println("\n===============\nAddressClient#list()\n===============");
@@ -117,7 +128,8 @@ public class ComputeExample {
 
     // AddressClient#delete()
     System.out.println("\n===============\nAddressClient#delete()\n===============");
-    Operation deleteResponse = addressesClient.delete(project, region, address);
+    OperationFuture<Operation,Operation> deleteResponse = addressesClient.deleteAsync(project, region, address);
+    Operation deleteResponseOperation = deleteResponse.get();
     System.out.println(JsonFormat.printer().print(deleteResponse) + "\n");
   }
 }
