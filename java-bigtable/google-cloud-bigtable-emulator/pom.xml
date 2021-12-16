@@ -52,7 +52,9 @@
             </goals>
             <configuration>
               <componentNames>
+                <componentName>bigtable-darwin-arm</componentName>
                 <componentName>bigtable-darwin-x86_64</componentName>
+                <componentName>bigtable-linux-arm</componentName>
                 <componentName>bigtable-linux-x86</componentName>
                 <componentName>bigtable-linux-x86_64</componentName>
                 <componentName>bigtable-windows-x86</componentName>

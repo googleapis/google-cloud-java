@@ -232,6 +232,9 @@ public class Emulator {
       case "amd64":
         arch = "x86_64";
         break;
+      case "aarch64":
+        arch = "arm";
+        break;
       default:
         throw new UnsupportedOperationException("Unsupported architecture: " + unformattedArch);
     }
