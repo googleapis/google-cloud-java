@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.122.5](https://www.github.com/googleapis/java-logging-logback/compare/v0.122.4...v0.122.5) (2021-12-16)
+
+
+### Dependencies
+
+* update dependency ch.qos.logback:logback-classic to v1.2.8 ([#610](https://www.github.com/googleapis/java-logging-logback/issues/610)) ([96de06a](https://www.github.com/googleapis/java-logging-logback/commit/96de06a655b8dacdba2acb60a7c4d521ce50e943))
+
 ### [0.122.4](https://www.github.com/googleapis/java-logging-logback/compare/v0.122.3...v0.122.4) (2021-12-06)
 
 
