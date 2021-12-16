@@ -1,4 +1,6 @@
 product: true
+requestsize:
+  enabled: true
 staleness:
   pullrequest: true
   old: 30
