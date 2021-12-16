@@ -41,7 +41,7 @@
         <!-- https://github.com/googleapis/java-gcloud-maven-plugin -->
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gcloud-maven-plugin</artifactId>
-        <version>0.1.2</version>
+        <version>0.1.4</version>
 
         <executions>
           <execution>
@@ -52,7 +52,6 @@
             </goals>
             <configuration>
               <componentNames>
-                <componentName>bigtable-darwin-x86</componentName>
                 <componentName>bigtable-darwin-x86_64</componentName>
                 <componentName>bigtable-linux-x86</componentName>
                 <componentName>bigtable-linux-x86_64</componentName>
