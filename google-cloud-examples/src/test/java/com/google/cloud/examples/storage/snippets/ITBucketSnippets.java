@@ -331,7 +331,7 @@ public class ITBucketSnippets {
           .build()
           .update();
     } finally {
-      // No matter what happens make sure test set bucket back to UNSPECIFIED
+      // No matter what happens make sure test set bucket back to INHERITED
       storage.get(BUCKET).toBuilder()
           .setIamConfiguration(
               BucketInfo.IamConfiguration.newBuilder()
@@ -357,7 +357,7 @@ public class ITBucketSnippets {
           .build()
           .update();
     } finally {
-      // No matter what happens make sure test set bucket back to UNSPECIFIED
+      // No matter what happens make sure test set bucket back to INHERITED
       storage.get(BUCKET).toBuilder()
           .setIamConfiguration(
               BucketInfo.IamConfiguration.newBuilder()
@@ -383,7 +383,7 @@ public class ITBucketSnippets {
           storage.get(BUCKET).getIamConfiguration().getPublicAccessPrevention(),
           BucketInfo.PublicAccessPrevention.INHERITED);
     } finally {
-      // No matter what happens make sure test set bucket back to UNSPECIFIED
+      // No matter what happens make sure test set bucket back to INHERITED
       storage.get(BUCKET).toBuilder()
           .setIamConfiguration(
               BucketInfo.IamConfiguration.newBuilder()
