@@ -68,6 +68,14 @@
       </dependency>
 
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-datacatalog-bom</artifactId>
+        <version>1.6.1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
         <groupId>org.checkerframework</groupId>
         <artifactId>checker-compat-qual</artifactId>
         <version>2.5.5</version>
@@ -114,18 +122,6 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-storage</artifactId>
         <version>2.2.2</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-datacatalog</artifactId>
-        <version>1.6.1</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
-        <version>1.6.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
