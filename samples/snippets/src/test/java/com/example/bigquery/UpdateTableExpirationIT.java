@@ -24,8 +24,9 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
@@ -81,7 +82,8 @@ public class UpdateTableExpirationIT {
 
   @Test
   public void testUpdateTableExpiration() {
-    Long newExpiration = TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS);
+    // Set new expiration to a week from Now
+    Long newExpiration = Instant.now().plus(7, ChronoUnit.DAYS).toEpochMilli();
     UpdateTableExpiration.updateTableExpiration(BIGQUERY_DATASET_NAME, tableName, newExpiration);
     assertThat(bout.toString()).contains("Table expiration updated successfully");
   }
