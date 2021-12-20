@@ -16,7 +16,7 @@
 
 package com.example.bigquery;
 
-// [START bigquery_alter_materialized_view]
+// [START bigquery_update_materialized_view]
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -24,17 +24,17 @@ import com.google.cloud.bigquery.MaterializedViewDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 
-// Sample to alter materialized view
-public class AlterMaterializedView {
+// Sample to update materialized view
+public class UpdateMaterializedView {
 
   public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String materializedViewName = "MY_MATERIALIZED_VIEW_NAME";
-    alterMaterializedView(datasetName, materializedViewName);
+    updateMaterializedView(datasetName, materializedViewName);
   }
 
-  public static void alterMaterializedView(String datasetName, String materializedViewName) {
+  public static void updateMaterializedView(String datasetName, String materializedViewName) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
@@ -45,17 +45,17 @@ public class AlterMaterializedView {
       // Get existing materialized view
       Table table = bigquery.getTable(tableId);
       MaterializedViewDefinition materializedViewDefinition = table.getDefinition();
-      // Alter materialized view
+      // Update materialized view
       materializedViewDefinition
           .toBuilder()
           .setEnableRefresh(true)
           .setRefreshIntervalMs(1000L)
           .build();
       table.toBuilder().setDefinition(materializedViewDefinition).build().update();
-      System.out.println("Materialized view altered successfully");
+      System.out.println("Materialized view updated successfully");
     } catch (BigQueryException e) {
-      System.out.println("Materialized view was not altered. \n" + e.toString());
+      System.out.println("Materialized view was not updated. \n" + e.toString());
     }
   }
 }
-// [END bigquery_alter_materialized_view]
+// [END bigquery_update_materialized_view]
