@@ -17,6 +17,7 @@ package com.google.cloud.bigquery.storage.v1;
 
 import com.google.common.base.Optional;
 import com.google.common.util.concurrent.Uninterruptibles;
+import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,10 +46,15 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   private final AtomicInteger nextMessageId = new AtomicInteger(1);
   private boolean autoPublishResponse;
   private ScheduledExecutorService executor = null;
-  private Duration responseDelay = Duration.ZERO;
 
   private Duration responseSleep = Duration.ZERO;
   private Semaphore responseSemaphore = new Semaphore(0, true);
+
+  private long numberTimesToClose = 0;
+  private long closeAfter = 0;
+  private long recordCount = 0;
+  private long connectionCount = 0;
+  private boolean firstRecord = false;
 
   /** Class used to save the state of a possible response. */
   private static class Response {
@@ -120,38 +126,51 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
     responseSemaphore.acquire();
   }
 
+  /* Return the number of times the stream was connected. */
+  public long getConnectionCount() {
+    return connectionCount;
+  }
+
   @Override
   public StreamObserver<AppendRowsRequest> appendRows(
       final StreamObserver<AppendRowsResponse> responseObserver) {
+    this.connectionCount++;
+    this.firstRecord = true;
     StreamObserver<AppendRowsRequest> requestObserver =
         new StreamObserver<AppendRowsRequest>() {
           @Override
           public void onNext(AppendRowsRequest value) {
             LOG.fine("Get request:" + value.toString());
-            final Response response = responses.remove();
             requests.add(value);
+            recordCount++;
             if (responseSleep.compareTo(Duration.ZERO) > 0) {
-              LOG.info("Sleeping before response for " + responseSleep.toString());
+              LOG.fine("Sleeping before response for " + responseSleep.toString());
               Uninterruptibles.sleepUninterruptibly(
                   responseSleep.toMillis(), TimeUnit.MILLISECONDS);
             }
-            if (responseDelay == Duration.ZERO) {
-              sendResponse(response, responseObserver);
-            } else {
-              final Response responseToSend = response;
-              // TODO(yirutang): This is very wrong because it messes up response/complete ordering.
-              LOG.fine("Schedule a response to be sent at delay");
-              executor.schedule(
-                  new Runnable() {
-                    @Override
-                    public void run() {
-                      sendResponse(responseToSend, responseObserver);
-                    }
-                  },
-                  responseDelay.toMillis(),
-                  TimeUnit.MILLISECONDS);
+            if (firstRecord) {
+              if (!value.getProtoRows().hasWriterSchema() || value.getWriteStream().isEmpty()) {
+                LOG.info(
+                    String.valueOf(
+                        !value.getProtoRows().hasWriterSchema()
+                            || value.getWriteStream().isEmpty()));
+                responseObserver.onError(
+                    Status.INVALID_ARGUMENT
+                        .withDescription("Unexpected first request: " + value.toString())
+                        .asException());
+                return;
+              }
             }
-            responseSemaphore.release();
+            firstRecord = false;
+            if (closeAfter > 0
+                && recordCount % closeAfter == 0
+                && (numberTimesToClose == 0 || connectionCount <= numberTimesToClose)) {
+              LOG.info("Shutting down connection from test...");
+              responseObserver.onError(Status.ABORTED.asException());
+            } else {
+              final Response response = responses.remove();
+              sendResponse(response, responseObserver);
+            }
           }
 
           @Override
@@ -180,12 +199,6 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   /** Set an executor to use to delay publish responses. */
   public FakeBigQueryWriteImpl setExecutor(ScheduledExecutorService executor) {
     this.executor = executor;
-    return this;
-  }
-
-  /** Set an amount of time by which to delay publish responses. */
-  public FakeBigQueryWriteImpl setResponseDelay(Duration responseDelay) {
-    this.responseDelay = responseDelay;
     return this;
   }
 
@@ -230,5 +243,30 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   public void reset() {
     requests.clear();
     responses.clear();
+  }
+
+  /* Abort the stream after N records. The primary use case is to test the retry logic. After N
+   * records are sent, the stream will be aborted with Code.ABORTED. This is a retriable error.
+   * The abort will call the onDone callback immediately, and thus potentially losing some messages
+   * that have already been sent. If the value of closeAfter is too small, the client might not get
+   * a chance to process any records before a subsequent abort is sent. Which means multiple retries
+   * in a row on the client side. After 3 retries in a row the write will fail.
+   * closeAfter should be large enough to give the client some opportunity to receive some of the
+   * messages.
+   **/
+  public void setCloseEveryNAppends(long closeAfter) {
+    this.closeAfter = closeAfter;
+  }
+  /* If setCloseEveryNAppends is greater than 0, then the stream will be aborted every N appends.
+   * setTimesToClose will limit the number of times to do the abort. If it is set to 0, it will
+   * abort every N appends.
+   * The primary use cases is, send a couple of records, then abort. But if there are only a couple
+   * of records, it is possible these two records are sent, then the abort happens before those two
+   * records are processed by the client, requiring them to be sent again, and thus a potential
+   * infinite loop. Therefore set the times to close to 1. This will send the two records, force
+   * an abort an retry, and then reprocess the records to completion.
+   **/
+  public void setTimesToClose(long numberTimesToClose) {
+    this.numberTimesToClose = numberTimesToClose;
   }
 }

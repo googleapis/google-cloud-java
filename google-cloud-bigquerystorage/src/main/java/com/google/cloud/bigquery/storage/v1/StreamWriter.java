@@ -20,6 +20,7 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.cloud.bigquery.storage.util.Errors;
 import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData;
 import com.google.cloud.bigquery.storage.v1.StreamConnection.DoneCallback;
 import com.google.cloud.bigquery.storage.v1.StreamConnection.RequestCallback;
@@ -89,6 +90,26 @@ public class StreamWriter implements AutoCloseable {
    */
   @GuardedBy("lock")
   private long inflightBytes = 0;
+
+  /*
+   * Tracks how often the stream was closed due to a retriable error. Streaming will stop when the
+   * count hits a threshold. Streaming should only be halted, if it isn't possible to establish a
+   * connection. Keep track of the number of reconnections in succession. This will be reset if
+   * a row is successfully called back.
+   */
+  @GuardedBy("lock")
+  private long conectionRetryCountWithoutCallback = 0;
+
+  /*
+   * If false, streamConnection needs to be reset.
+   */
+  @GuardedBy("lock")
+  private boolean streamConnectionIsConnected = false;
+
+  /*
+   * Retry threshold, limits how often the connection is retried before processing halts.
+   */
+  private static final long RETRY_THRESHOLD = 3;
 
   /*
    * Indicates whether user has called Close() or not.
@@ -173,6 +194,18 @@ public class StreamWriter implements AutoCloseable {
       this.ownsBigQueryWriteClient = false;
     }
 
+    this.appendThread =
+        new Thread(
+            new Runnable() {
+              @Override
+              public void run() {
+                appendLoop();
+              }
+            });
+    this.appendThread.start();
+  }
+
+  private void resetConnection() {
     this.streamConnection =
         new StreamConnection(
             this.client,
@@ -188,15 +221,6 @@ public class StreamWriter implements AutoCloseable {
                 doneCallback(finalStatus);
               }
             });
-    this.appendThread =
-        new Thread(
-            new Runnable() {
-              @Override
-              public void run() {
-                appendLoop();
-              }
-            });
-    this.appendThread.start();
   }
 
   /**
@@ -331,12 +355,27 @@ public class StreamWriter implements AutoCloseable {
    * It takes requests from waiting queue and sends them to server.
    */
   private void appendLoop() {
-    boolean isFirstRequestInConnection = true;
     Deque<AppendRequestAndResponse> localQueue = new LinkedList<AppendRequestAndResponse>();
+    boolean streamNeedsConnecting = false;
+    // Set firstRequestInConnection to true immediately after connecting the steam,
+    // indicates then next row sent, needs the schema and other metadata.
+    boolean isFirstRequestInConnection = true;
     while (!waitingQueueDrained()) {
       this.lock.lock();
       try {
         hasMessageInWaitingQueue.await(100, TimeUnit.MILLISECONDS);
+        // Copy the streamConnectionIsConnected guarded by lock to a local variable.
+        // In addition, only reconnect if there is a retriable error.
+        streamNeedsConnecting = !streamConnectionIsConnected && connectionFinalStatus == null;
+        if (streamNeedsConnecting) {
+          // If the stream connection is broken, any requests on inflightRequestQueue will need
+          // to be resent, as the new connection has no knowledge of the requests. Copy the requests
+          // from inflightRequestQueue and prepent them onto the waitinRequestQueue. They need to be
+          // prepended as they need to be sent before new requests.
+          while (!inflightRequestQueue.isEmpty()) {
+            waitingRequestQueue.addFirst(inflightRequestQueue.pollLast());
+          }
+        }
         while (!this.waitingRequestQueue.isEmpty()) {
           AppendRequestAndResponse requestWrapper = this.waitingRequestQueue.pollFirst();
           this.inflightRequestQueue.addLast(requestWrapper);
@@ -355,12 +394,34 @@ public class StreamWriter implements AutoCloseable {
       if (localQueue.isEmpty()) {
         continue;
       }
-
-      // TODO: Add reconnection here.
+      if (streamNeedsConnecting) {
+        // Set streamConnectionIsConnected to true, to indicate the stream has been connected. This
+        // should happen before the call to resetConnection. As it is unknown when the connection
+        // could be closed and the doneCallback called, and thus clearing the flag.
+        lock.lock();
+        try {
+          this.streamConnectionIsConnected = true;
+        } finally {
+          lock.unlock();
+        }
+        resetConnection();
+        // Set firstRequestInConnection to indicate the next request to be sent should include
+        // metedata.
+        isFirstRequestInConnection = true;
+      }
       while (!localQueue.isEmpty()) {
         AppendRowsRequest preparedRequest =
             prepareRequestBasedOnPosition(
                 localQueue.pollFirst().message, isFirstRequestInConnection);
+        // Send should only throw an exception if there is a problem with the request. The catch
+        // block will handle this case, and return the exception with the result.
+        // Otherwise send will return:
+        //   SUCCESS: Message was sent, wait for the callback.
+        //   STREAM_CLOSED: Stream was closed, normally or due to en error
+        //   NOT_ENOUGH_QUOTA: Message wasn't sent due to not enough quota.
+        // TODO: Handle NOT_ENOUGH_QUOTA.
+        // In the close case, the request is in the inflight queue, and will either be returned
+        // to the user with an error, or will be resent.
         this.streamConnection.send(preparedRequest);
         isFirstRequestInConnection = false;
       }
@@ -369,8 +430,10 @@ public class StreamWriter implements AutoCloseable {
     log.fine("Cleanup starts. Stream: " + streamName);
     // At this point, the waiting queue is drained, so no more requests.
     // We can close the stream connection and handle the remaining inflight requests.
-    this.streamConnection.close();
-    waitForDoneCallback();
+    if (streamConnection != null) {
+      this.streamConnection.close();
+      waitForDoneCallback();
+    }
 
     // At this point, there cannot be more callback. It is safe to clean up all inflight requests.
     log.fine(
@@ -455,6 +518,12 @@ public class StreamWriter implements AutoCloseable {
     AppendRequestAndResponse requestWrapper;
     this.lock.lock();
     try {
+      // Had a successful connection with at least one result, reset retries.
+      // conectionRetryCountWithoutCallback is reset so that only multiple retries, without
+      // successful records sent, will cause the stream to fail.
+      if (conectionRetryCountWithoutCallback != 0) {
+        conectionRetryCountWithoutCallback = 0;
+      }
       requestWrapper = pollInflightRequestQueue();
     } finally {
       this.lock.unlock();
@@ -476,6 +545,14 @@ public class StreamWriter implements AutoCloseable {
     }
   }
 
+  private boolean isRetriableError(Throwable t) {
+    Status status = Status.fromThrowable(t);
+    if (Errors.isRetryableInternalStatus(status)) {
+      return true;
+    }
+    return status.getCode() == Status.Code.ABORTED || status.getCode() == Status.Code.UNAVAILABLE;
+  }
+
   private void doneCallback(Throwable finalStatus) {
     log.fine(
         "Received done callback. Stream: "
@@ -484,7 +561,26 @@ public class StreamWriter implements AutoCloseable {
             + finalStatus.toString());
     this.lock.lock();
     try {
-      this.connectionFinalStatus = finalStatus;
+      this.streamConnectionIsConnected = false;
+      if (connectionFinalStatus == null) {
+        // If the error can be retried, don't set it here, let it try to retry later on.
+        if (isRetriableError(finalStatus)
+            && conectionRetryCountWithoutCallback < RETRY_THRESHOLD
+            && !userClosed) {
+          this.conectionRetryCountWithoutCallback++;
+          log.fine(
+              "Retriable error "
+                  + finalStatus.toString()
+                  + " received, retry count "
+                  + conectionRetryCountWithoutCallback
+                  + " for stream "
+                  + streamName);
+        } else {
+          this.connectionFinalStatus = finalStatus;
+          log.info(
+              "Stream finished with error " + finalStatus.toString() + " for stream " + streamName);
+        }
+      }
     } finally {
       this.lock.unlock();
     }

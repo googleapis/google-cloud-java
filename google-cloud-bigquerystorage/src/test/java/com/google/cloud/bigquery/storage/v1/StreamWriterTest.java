@@ -134,6 +134,11 @@ public class StreamWriterTest {
     return writer.append(createProtoRows(messages), -1);
   }
 
+  private ApiFuture<AppendRowsResponse> sendTestMessage(
+      StreamWriter writer, String[] messages, long offset) {
+    return writer.append(createProtoRows(messages), offset);
+  }
+
   private static <T extends Throwable> T assertFutureException(
       Class<T> expectedThrowable, final Future<?> future) {
     return assertThrows(
@@ -595,5 +600,42 @@ public class StreamWriterTest {
     assertTrue(actualError.getStatus().getDescription().contains("MessageSize is too large"));
 
     writer.close();
+  }
+
+  @Test
+  public void testAppendWithResetSuccess() throws Exception {
+    try (StreamWriter writer = getTestStreamWriter()) {
+      testBigQueryWrite.setCloseEveryNAppends(113);
+      long appendCount = 10000;
+      for (long i = 0; i < appendCount; i++) {
+        testBigQueryWrite.addResponse(createAppendResponse(i));
+      }
+      List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+      for (long i = 0; i < appendCount; i++) {
+        futures.add(sendTestMessage(writer, new String[] {String.valueOf(i)}, i));
+      }
+      for (int i = 0; i < appendCount; i++) {
+        assertEquals(futures.get(i).get().getAppendResult().getOffset().getValue(), (long) i);
+      }
+      assertTrue(testBigQueryWrite.getConnectionCount() >= (int) (appendCount / 113.0));
+    }
+  }
+
+  // This test is setup for the server to force a retry after all records are sent. Ensure the
+  // records are resent, even if no new records are appeneded.
+  @Test
+  public void testRetryAfterAllRecordsInflight() throws Exception {
+    try (StreamWriter writer = getTestStreamWriter()) {
+      testBigQueryWrite.setCloseEveryNAppends(2);
+      testBigQueryWrite.setTimesToClose(1);
+      testBigQueryWrite.addResponse(createAppendResponse(0));
+      testBigQueryWrite.addResponse(createAppendResponse(1));
+
+      ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"}, 0);
+      ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"}, 1);
+      TimeUnit.SECONDS.sleep(1);
+      assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+      assertEquals(1, appendFuture2.get().getAppendResult().getOffset().getValue());
+    }
   }
 }
