@@ -10,5 +10,6 @@
   "repo_short": "java-bigtable",
   "distribution_name": "com.google.cloud:google-cloud-bigtable",
   "codeowner_team": "@googleapis/api-bigtable",
+  "library_type": "GAPIC_COMBO",
   "api_id": "bigtable.googleapis.com"
 }
