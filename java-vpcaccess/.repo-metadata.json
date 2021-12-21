@@ -11,5 +11,6 @@
   "repo_short": "java-vpcaccess",
   "distribution_name": "com.google.cloud:google-cloud-vpcaccess",
   "api_id": "vpcaccess.googleapis.com",
+  "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
