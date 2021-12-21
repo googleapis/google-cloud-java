@@ -11,5 +11,6 @@
   "distribution_name": "com.google.cloud:google-cloud-resourcemanager",
   "api_id": "cloudresourcemanager.googleapis.com",
   "transport": "http",
+  "library_type": "GAPIC_COMBO",
   "api_description": "enables you to programmatically manage resources by project, folder, and organization."
 }
