@@ -61,7 +61,6 @@ javadoc)
 integration)
     mvn -B ${INTEGRATION_TEST_ARGS} \
       -ntp \
-      -e \
       -Penable-integration-tests \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
