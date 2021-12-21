@@ -11,5 +11,6 @@
   "repo_short": "java-appengine-admin",
   "distribution_name": "com.google.cloud:google-cloud-appengine-admin",
   "api_id": "appengine.googleapis.com",
+  "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
