@@ -10,6 +10,7 @@
   "language": "java",
   "repo": "googleapis/java-iam",
   "repo_short": "java-iam",
+  "library_type": "OTHER",
   "distribution_name": "com.google.api.grpc:proto-google-iam-v1",
   "excluded_poms": "proto-google-iam-v1-bom",
   "excluded_dependencies": "grpc-google-iam-v1"
