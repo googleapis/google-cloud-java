@@ -11,5 +11,6 @@
   "repo_short": "java-essential-contacts",
   "distribution_name": "com.google.cloud:google-cloud-essential-contacts",
   "api_id": "essentialcontacts.googleapis.com",
+  "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
