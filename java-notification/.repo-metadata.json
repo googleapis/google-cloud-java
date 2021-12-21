@@ -6,5 +6,6 @@
   "language": "java",
   "repo": "googleapis/java-notification",
   "repo_short": "java-notification",
+  "library_type": "OTHER",
   "distribution_name": "com.google.cloud:google-cloud-notification"
 }
