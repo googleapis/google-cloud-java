@@ -98,17 +98,19 @@ public class ImportDataVideoObjectTrackingSampleTest {
   @After
   public void tearDown() throws InterruptedException, ExecutionException, IOException {
     // delete the temp dataset
-    DatasetServiceSettings datasetServiceSettings =
-        DatasetServiceSettings.newBuilder()
-            .setEndpoint("us-central1-aiplatform.googleapis.com:443")
-            .build();
-    try (DatasetServiceClient datasetServiceClient =
-        DatasetServiceClient.create(datasetServiceSettings)) {
-      DatasetName datasetName = DatasetName.of(PROJECT, LOCATION, datasetId);
+    if (datasetId != null) {
+      DatasetServiceSettings datasetServiceSettings =
+          DatasetServiceSettings.newBuilder()
+              .setEndpoint("us-central1-aiplatform.googleapis.com:443")
+              .build();
+      try (DatasetServiceClient datasetServiceClient =
+          DatasetServiceClient.create(datasetServiceSettings)) {
+        DatasetName datasetName = DatasetName.of(PROJECT, LOCATION, datasetId);
 
-      OperationFuture<Empty, DeleteOperationMetadata> operationFuture =
-          datasetServiceClient.deleteDatasetAsync(datasetName);
-      operationFuture.get();
+        OperationFuture<Empty, DeleteOperationMetadata> operationFuture =
+            datasetServiceClient.deleteDatasetAsync(datasetName);
+        operationFuture.get();
+      }
     }
     System.out.flush();
     System.setOut(originalPrintStream);
