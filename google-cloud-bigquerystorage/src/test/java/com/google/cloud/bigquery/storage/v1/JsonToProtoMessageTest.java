@@ -411,13 +411,13 @@ public class JsonToProtoMessageTest {
           .build();
   private final TableFieldSchema TEST_BIGNUMERIC =
       TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.NUMERIC)
+          .setType(TableFieldSchema.Type.BIGNUMERIC)
           .setMode(TableFieldSchema.Mode.NULLABLE)
           .setName("test_bignumeric")
           .build();
   private final TableFieldSchema TEST_BIGNUMERIC_STR =
       TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.NUMERIC)
+          .setType(TableFieldSchema.Type.BIGNUMERIC)
           .setMode(TableFieldSchema.Mode.REPEATED)
           .setName("test_bignumeric_str")
           .build();
@@ -831,9 +831,10 @@ public class JsonToProtoMessageTest {
             .setTestNumericStr(
                 BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("12.4")))
             .setTestBignumeric(
-                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("2.3")))
+                BigDecimalByteStringEncoder.encodeToBigNumericByteString(
+                    new BigDecimal("578960446186580977117854925043439539266.3")))
             .addTestBignumericStr(
-                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.23")))
+                BigDecimalByteStringEncoder.encodeToBigNumericByteString(new BigDecimal("1.23")))
             .setTestInterval("0-0 0 0:0:0.000005")
             .addTestJson("{'a':'b'}")
             .build();
@@ -880,7 +881,8 @@ public class JsonToProtoMessageTest {
     json.put("test_numeric_str", "12.4");
     json.put(
         "test_bignumeric",
-        BigDecimalByteStringEncoder.encodeToNumericByteString(BigDecimal.valueOf(2.3)));
+        BigDecimalByteStringEncoder.encodeToBigNumericByteString(
+            new BigDecimal("578960446186580977117854925043439539266.3")));
     json.put("test_bignumeric_str", new JSONArray(new String[] {"1.23"}));
     json.put("test_interval", "0-0 0 0:0:0.000005");
     json.put("test_json", new JSONArray(new String[] {"{'a':'b'}"}));

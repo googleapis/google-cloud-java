@@ -235,13 +235,13 @@ public class BQTableSchemaToProtoDescriptorTest {
             .build();
     final TableFieldSchema TEST_BIGNUMERIC =
         TableFieldSchema.newBuilder()
-            .setType(TableFieldSchema.Type.NUMERIC)
+            .setType(TableFieldSchema.Type.BIGNUMERIC)
             .setMode(TableFieldSchema.Mode.NULLABLE)
             .setName("test_bignumeric")
             .build();
     final TableFieldSchema TEST_BIGNUMERIC_STR =
         TableFieldSchema.newBuilder()
-            .setType(TableFieldSchema.Type.NUMERIC)
+            .setType(TableFieldSchema.Type.BIGNUMERIC)
             .setMode(TableFieldSchema.Mode.REPEATED)
             .setName("test_bignumeric_str")
             .build();

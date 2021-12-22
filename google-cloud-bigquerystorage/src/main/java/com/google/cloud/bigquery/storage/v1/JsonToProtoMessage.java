@@ -205,7 +205,7 @@ public class JsonToProtoMessage {
             if (val instanceof String) {
               protoMsg.setField(
                   fieldDescriptor,
-                  BigDecimalByteStringEncoder.encodeToNumericByteString(
+                  BigDecimalByteStringEncoder.encodeToBigNumericByteString(
                       new BigDecimal((String) val)));
               return;
             }
@@ -373,7 +373,7 @@ public class JsonToProtoMessage {
             if (val instanceof String) {
               protoMsg.addRepeatedField(
                   fieldDescriptor,
-                  BigDecimalByteStringEncoder.encodeToNumericByteString(
+                  BigDecimalByteStringEncoder.encodeToBigNumericByteString(
                       new BigDecimal((String) val)));
               added = true;
             }
