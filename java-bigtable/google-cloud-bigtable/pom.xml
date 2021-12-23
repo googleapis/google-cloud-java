@@ -599,7 +599,7 @@
           <dependency>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>extra-enforcer-rules</artifactId>
-            <version>1.4</version>
+            <version>1.5.1</version>
           </dependency>
           <dependency>
             <groupId>org.apache.maven.shared</groupId>
