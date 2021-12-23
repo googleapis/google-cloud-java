@@ -154,9 +154,6 @@ public class JsonToProtoMessage {
           String.format(
               "JSONObject does not have the required field %s.%s.", jsonScope, missingFieldName));
     }
-    if (topLevel && msg.getSerializedSize() == 0) {
-      throw new IllegalArgumentException("The created protobuf message is empty.");
-    }
     return msg;
   }
 
