@@ -224,14 +224,23 @@ public class StreamWriter implements AutoCloseable {
   }
 
   /**
-   * Schedules the writing of a message.
+   * Schedules the writing of rows at the end of current stream.
    *
-   * <p>Example of writing a message.
+   * @param rows the rows in serialized format to write to BigQuery.
+   * @return the append response wrapped in a future.
+   */
+  public ApiFuture<AppendRowsResponse> append(ProtoRows rows) {
+    return append(rows, -1);
+  }
+
+  /**
+   * Schedules the writing of rows at given offset.
+   *
+   * <p>Example of writing rows with specific offset.
    *
    * <pre>{@code
-   * AppendRowsRequest message;
-   * ApiFuture<AppendRowsResponse> messageIdFuture = writer.append(message);
-   * ApiFutures.addCallback(messageIdFuture, new ApiFutureCallback<AppendRowsResponse>() {
+   * ApiFuture<AppendRowsResponse> future = writer.append(rows, 0);
+   * ApiFutures.addCallback(future, new ApiFutureCallback<AppendRowsResponse>() {
    *   public void onSuccess(AppendRowsResponse response) {
    *     if (!response.hasError()) {
    *       System.out.println("written with offset: " + response.getAppendResult().getOffset());
@@ -247,7 +256,7 @@ public class StreamWriter implements AutoCloseable {
    * }</pre>
    *
    * @param rows the rows in serialized format to write to BigQuery.
-   * @param offset the offset of the first row.
+   * @param offset the offset of the first row. Provide -1 to write at the current end of stream.
    * @return the append response wrapped in a future.
    */
   public ApiFuture<AppendRowsResponse> append(ProtoRows rows, long offset) {

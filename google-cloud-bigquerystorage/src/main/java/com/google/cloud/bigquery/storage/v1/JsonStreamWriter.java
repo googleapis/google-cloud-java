@@ -80,7 +80,8 @@ public class JsonStreamWriter implements AutoCloseable {
 
   /**
    * Writes a JSONArray that contains JSONObjects to the BigQuery table by first converting the JSON
-   * data to protobuf messages, then using StreamWriter's append() to write the data.
+   * data to protobuf messages, then using StreamWriter's append() to write the data at current end
+   * of stream.
    *
    * @param jsonArr The JSON array that contains JSONObjects to be written
    * @return ApiFuture<AppendRowsResponse> returns an AppendRowsResponse message wrapped in an
@@ -92,7 +93,8 @@ public class JsonStreamWriter implements AutoCloseable {
 
   /**
    * Writes a JSONArray that contains JSONObjects to the BigQuery table by first converting the JSON
-   * data to protobuf messages, then using StreamWriter's append() to write the data.
+   * data to protobuf messages, then using StreamWriter's append() to write the data at the
+   * specified offset.
    *
    * @param jsonArr The JSON array that contains JSONObjects to be written
    * @param offset Offset for deduplication

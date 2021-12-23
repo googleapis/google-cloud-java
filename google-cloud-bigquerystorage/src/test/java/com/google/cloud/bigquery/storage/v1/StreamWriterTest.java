@@ -131,7 +131,7 @@ public class StreamWriterTest {
   }
 
   private ApiFuture<AppendRowsResponse> sendTestMessage(StreamWriter writer, String[] messages) {
-    return writer.append(createProtoRows(messages), -1);
+    return writer.append(createProtoRows(messages));
   }
 
   private ApiFuture<AppendRowsResponse> sendTestMessage(
