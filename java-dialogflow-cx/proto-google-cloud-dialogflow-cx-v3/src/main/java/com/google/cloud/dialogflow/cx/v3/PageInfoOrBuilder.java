@@ -58,6 +58,33 @@ public interface PageInfoOrBuilder
    *
    *
    * <pre>
+   * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+   * The display name of the current page.
+   * </pre>
+   *
+   * <code>string display_name = 4;</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+   * The display name of the current page.
+   * </pre>
+   *
+   * <code>string display_name = 4;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
    * Information about the form.
    * </pre>

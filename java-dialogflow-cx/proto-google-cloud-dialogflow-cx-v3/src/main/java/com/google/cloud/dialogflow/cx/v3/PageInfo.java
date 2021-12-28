@@ -39,6 +39,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
 
   private PageInfo() {
     currentPage_ = "";
+    displayName_ = "";
   }
 
   @java.lang.Override
@@ -92,6 +93,13 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
                 formInfo_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              displayName_ = s;
               break;
             }
           default:
@@ -3021,6 +3029,57 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object displayName_;
+  /**
+   *
+   *
+   * <pre>
+   * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+   * The display name of the current page.
+   * </pre>
+   *
+   * <code>string display_name = 4;</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+   * The display name of the current page.
+   * </pre>
+   *
+   * <code>string display_name = 4;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int FORM_INFO_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.cx.v3.PageInfo.FormInfo formInfo_;
   /**
@@ -3092,6 +3151,9 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
     if (formInfo_ != null) {
       output.writeMessage(3, getFormInfo());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, displayName_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -3106,6 +3168,9 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (formInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getFormInfo());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, displayName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -3124,6 +3189,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.dialogflow.cx.v3.PageInfo) obj;
 
     if (!getCurrentPage().equals(other.getCurrentPage())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (hasFormInfo() != other.hasFormInfo()) return false;
     if (hasFormInfo()) {
       if (!getFormInfo().equals(other.getFormInfo())) return false;
@@ -3141,6 +3207,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CURRENT_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getCurrentPage().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     if (hasFormInfo()) {
       hash = (37 * hash) + FORM_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getFormInfo().hashCode();
@@ -3292,6 +3360,8 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       currentPage_ = "";
 
+      displayName_ = "";
+
       if (formInfoBuilder_ == null) {
         formInfo_ = null;
       } else {
@@ -3326,6 +3396,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.cx.v3.PageInfo result =
           new com.google.cloud.dialogflow.cx.v3.PageInfo(this);
       result.currentPage_ = currentPage_;
+      result.displayName_ = displayName_;
       if (formInfoBuilder_ == null) {
         result.formInfo_ = formInfo_;
       } else {
@@ -3382,6 +3453,10 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.cx.v3.PageInfo.getDefaultInstance()) return this;
       if (!other.getCurrentPage().isEmpty()) {
         currentPage_ = other.currentPage_;
+        onChanged();
+      }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
         onChanged();
       }
       if (other.hasFormInfo()) {
@@ -3533,6 +3608,117 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       currentPage_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The display name of the current page.
+     * </pre>
+     *
+     * <code>string display_name = 4;</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The display name of the current page.
+     * </pre>
+     *
+     * <code>string display_name = 4;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The display name of the current page.
+     * </pre>
+     *
+     * <code>string display_name = 4;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      displayName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The display name of the current page.
+     * </pre>
+     *
+     * <code>string display_name = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+
+      displayName_ = getDefaultInstance().getDisplayName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The display name of the current page.
+     * </pre>
+     *
+     * <code>string display_name = 4;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      displayName_ = value;
       onChanged();
       return this;
     }
