@@ -142,6 +142,9 @@
             "DeleteDocument": {
               "methods": ["deleteDocumentAsync", "deleteDocumentAsync", "deleteDocumentAsync", "deleteDocumentOperationCallable", "deleteDocumentCallable"]
             },
+            "ExportDocument": {
+              "methods": ["exportDocumentAsync", "exportDocumentOperationCallable", "exportDocumentCallable"]
+            },
             "GetDocument": {
               "methods": ["getDocument", "getDocument", "getDocument", "getDocumentCallable"]
             },

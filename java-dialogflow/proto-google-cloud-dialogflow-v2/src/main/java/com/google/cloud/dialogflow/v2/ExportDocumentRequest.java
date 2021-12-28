@@ -22,29 +22,29 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Request message for [Documents.ReloadDocument][google.cloud.dialogflow.v2.Documents.ReloadDocument].
+ * Request message for [Documents.ExportDocument][google.cloud.dialogflow.v2.Documents.ExportDocument].
  * </pre>
  *
- * Protobuf type {@code google.cloud.dialogflow.v2.ReloadDocumentRequest}
+ * Protobuf type {@code google.cloud.dialogflow.v2.ExportDocumentRequest}
  */
-public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMessageV3
+public final class ExportDocumentRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.ReloadDocumentRequest)
-    ReloadDocumentRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.ExportDocumentRequest)
+    ExportDocumentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ReloadDocumentRequest.newBuilder() to construct.
-  private ReloadDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ExportDocumentRequest.newBuilder() to construct.
+  private ExportDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ReloadDocumentRequest() {
+  private ExportDocumentRequest() {
     name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ReloadDocumentRequest();
+    return new ExportDocumentRequest();
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private ReloadDocumentRequest(
+  private ExportDocumentRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -77,16 +77,26 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
               name_ = s;
               break;
             }
-          case 26:
+          case 18:
             {
-              java.lang.String s = input.readStringRequireUtf8();
-              sourceCase_ = 3;
-              source_ = s;
+              com.google.cloud.dialogflow.v2.GcsDestination.Builder subBuilder = null;
+              if (destinationCase_ == 2) {
+                subBuilder =
+                    ((com.google.cloud.dialogflow.v2.GcsDestination) destination_).toBuilder();
+              }
+              destination_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.GcsDestination.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dialogflow.v2.GcsDestination) destination_);
+                destination_ = subBuilder.buildPartial();
+              }
+              destinationCase_ = 2;
               break;
             }
-          case 32:
+          case 24:
             {
-              importGcsCustomMetadata_ = input.readBool();
+              exportFullContent_ = input.readBool();
               break;
             }
           case 40:
@@ -115,31 +125,31 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.DocumentProto
-        .internal_static_google_cloud_dialogflow_v2_ReloadDocumentRequest_descriptor;
+        .internal_static_google_cloud_dialogflow_v2_ExportDocumentRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.dialogflow.v2.DocumentProto
-        .internal_static_google_cloud_dialogflow_v2_ReloadDocumentRequest_fieldAccessorTable
+        .internal_static_google_cloud_dialogflow_v2_ExportDocumentRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2.ReloadDocumentRequest.class,
-            com.google.cloud.dialogflow.v2.ReloadDocumentRequest.Builder.class);
+            com.google.cloud.dialogflow.v2.ExportDocumentRequest.class,
+            com.google.cloud.dialogflow.v2.ExportDocumentRequest.Builder.class);
   }
 
-  private int sourceCase_ = 0;
-  private java.lang.Object source_;
+  private int destinationCase_ = 0;
+  private java.lang.Object destination_;
 
-  public enum SourceCase
+  public enum DestinationCase
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    CONTENT_URI(3),
-    SOURCE_NOT_SET(0);
+    GCS_DESTINATION(2),
+    DESTINATION_NOT_SET(0);
     private final int value;
 
-    private SourceCase(int value) {
+    private DestinationCase(int value) {
       this.value = value;
     }
     /**
@@ -148,16 +158,16 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static SourceCase valueOf(int value) {
+    public static DestinationCase valueOf(int value) {
       return forNumber(value);
     }
 
-    public static SourceCase forNumber(int value) {
+    public static DestinationCase forNumber(int value) {
       switch (value) {
-        case 3:
-          return CONTENT_URI;
+        case 2:
+          return GCS_DESTINATION;
         case 0:
-          return SOURCE_NOT_SET;
+          return DESTINATION_NOT_SET;
         default:
           return null;
       }
@@ -168,8 +178,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     }
   };
 
-  public SourceCase getSourceCase() {
-    return SourceCase.forNumber(sourceCase_);
+  public DestinationCase getDestinationCase() {
+    return DestinationCase.forNumber(destinationCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -178,9 +188,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The name of the document to reload.
+   * Required. The name of the document to export.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
    * </pre>
    *
    * <code>
@@ -205,9 +215,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The name of the document to reload.
+   * Required. The name of the document to export.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
    * </pre>
    *
    * <code>
@@ -229,102 +239,74 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
-  public static final int CONTENT_URI_FIELD_NUMBER = 3;
+  public static final int GCS_DESTINATION_FIELD_NUMBER = 2;
   /**
    *
    *
    * <pre>
-   * Optional. The path of gcs source file for reloading document content. For now,
-   * only gcs uri is supported.
-   * For documents stored in Google Cloud Storage, these URIs must have
-   * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * Cloud Storage file path to export the document.
    * </pre>
    *
-   * <code>string content_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.cloud.dialogflow.v2.GcsDestination gcs_destination = 2;</code>
    *
-   * @return Whether the contentUri field is set.
-   */
-  public boolean hasContentUri() {
-    return sourceCase_ == 3;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The path of gcs source file for reloading document content. For now,
-   * only gcs uri is supported.
-   * For documents stored in Google Cloud Storage, these URIs must have
-   * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-   * </pre>
-   *
-   * <code>string content_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The contentUri.
-   */
-  public java.lang.String getContentUri() {
-    java.lang.Object ref = "";
-    if (sourceCase_ == 3) {
-      ref = source_;
-    }
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (sourceCase_ == 3) {
-        source_ = s;
-      }
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The path of gcs source file for reloading document content. For now,
-   * only gcs uri is supported.
-   * For documents stored in Google Cloud Storage, these URIs must have
-   * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-   * </pre>
-   *
-   * <code>string content_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for contentUri.
-   */
-  public com.google.protobuf.ByteString getContentUriBytes() {
-    java.lang.Object ref = "";
-    if (sourceCase_ == 3) {
-      ref = source_;
-    }
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      if (sourceCase_ == 3) {
-        source_ = b;
-      }
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int IMPORT_GCS_CUSTOM_METADATA_FIELD_NUMBER = 4;
-  private boolean importGcsCustomMetadata_;
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Whether to import custom metadata from Google Cloud Storage.
-   * Only valid when the document source is Google Cloud Storage URI.
-   * </pre>
-   *
-   * <code>bool import_gcs_custom_metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The importGcsCustomMetadata.
+   * @return Whether the gcsDestination field is set.
    */
   @java.lang.Override
-  public boolean getImportGcsCustomMetadata() {
-    return importGcsCustomMetadata_;
+  public boolean hasGcsDestination() {
+    return destinationCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage file path to export the document.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.GcsDestination gcs_destination = 2;</code>
+   *
+   * @return The gcsDestination.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.GcsDestination getGcsDestination() {
+    if (destinationCase_ == 2) {
+      return (com.google.cloud.dialogflow.v2.GcsDestination) destination_;
+    }
+    return com.google.cloud.dialogflow.v2.GcsDestination.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage file path to export the document.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.GcsDestination gcs_destination = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.GcsDestinationOrBuilder getGcsDestinationOrBuilder() {
+    if (destinationCase_ == 2) {
+      return (com.google.cloud.dialogflow.v2.GcsDestination) destination_;
+    }
+    return com.google.cloud.dialogflow.v2.GcsDestination.getDefaultInstance();
+  }
+
+  public static final int EXPORT_FULL_CONTENT_FIELD_NUMBER = 3;
+  private boolean exportFullContent_;
+  /**
+   *
+   *
+   * <pre>
+   * When enabled, export the full content of the document including empirical
+   * probability.
+   * </pre>
+   *
+   * <code>bool export_full_content = 3;</code>
+   *
+   * @return The exportFullContent.
+   */
+  @java.lang.Override
+  public boolean getExportFullContent() {
+    return exportFullContent_;
   }
 
   public static final int SMART_MESSAGING_PARTIAL_UPDATE_FIELD_NUMBER = 5;
@@ -333,11 +315,11 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. When enabled, the reload request is to apply partial update to the smart
-   * messaging allowlist.
+   * When enabled, export the smart messaging allowlist document for partial
+   * update.
    * </pre>
    *
-   * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool smart_messaging_partial_update = 5;</code>
    *
    * @return The smartMessagingPartialUpdate.
    */
@@ -363,11 +345,11 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (sourceCase_ == 3) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, source_);
+    if (destinationCase_ == 2) {
+      output.writeMessage(2, (com.google.cloud.dialogflow.v2.GcsDestination) destination_);
     }
-    if (importGcsCustomMetadata_ != false) {
-      output.writeBool(4, importGcsCustomMetadata_);
+    if (exportFullContent_ != false) {
+      output.writeBool(3, exportFullContent_);
     }
     if (smartMessagingPartialUpdate_ != false) {
       output.writeBool(5, smartMessagingPartialUpdate_);
@@ -384,11 +366,13 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (sourceCase_ == 3) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, source_);
+    if (destinationCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.dialogflow.v2.GcsDestination) destination_);
     }
-    if (importGcsCustomMetadata_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, importGcsCustomMetadata_);
+    if (exportFullContent_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, exportFullContent_);
     }
     if (smartMessagingPartialUpdate_ != false) {
       size +=
@@ -404,19 +388,19 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.dialogflow.v2.ReloadDocumentRequest)) {
+    if (!(obj instanceof com.google.cloud.dialogflow.v2.ExportDocumentRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2.ReloadDocumentRequest other =
-        (com.google.cloud.dialogflow.v2.ReloadDocumentRequest) obj;
+    com.google.cloud.dialogflow.v2.ExportDocumentRequest other =
+        (com.google.cloud.dialogflow.v2.ExportDocumentRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (getImportGcsCustomMetadata() != other.getImportGcsCustomMetadata()) return false;
+    if (getExportFullContent() != other.getExportFullContent()) return false;
     if (getSmartMessagingPartialUpdate() != other.getSmartMessagingPartialUpdate()) return false;
-    if (!getSourceCase().equals(other.getSourceCase())) return false;
-    switch (sourceCase_) {
-      case 3:
-        if (!getContentUri().equals(other.getContentUri())) return false;
+    if (!getDestinationCase().equals(other.getDestinationCase())) return false;
+    switch (destinationCase_) {
+      case 2:
+        if (!getGcsDestination().equals(other.getGcsDestination())) return false;
         break;
       case 0:
       default:
@@ -434,14 +418,14 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + IMPORT_GCS_CUSTOM_METADATA_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getImportGcsCustomMetadata());
+    hash = (37 * hash) + EXPORT_FULL_CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExportFullContent());
     hash = (37 * hash) + SMART_MESSAGING_PARTIAL_UPDATE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSmartMessagingPartialUpdate());
-    switch (sourceCase_) {
-      case 3:
-        hash = (37 * hash) + CONTENT_URI_FIELD_NUMBER;
-        hash = (53 * hash) + getContentUri().hashCode();
+    switch (destinationCase_) {
+      case 2:
+        hash = (37 * hash) + GCS_DESTINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getGcsDestination().hashCode();
         break;
       case 0:
       default:
@@ -451,71 +435,71 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     return hash;
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest parseFrom(byte[] data)
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest parseDelimitedFrom(
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest parseDelimitedFrom(
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -532,7 +516,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2.ReloadDocumentRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.dialogflow.v2.ExportDocumentRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -550,31 +534,31 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [Documents.ReloadDocument][google.cloud.dialogflow.v2.Documents.ReloadDocument].
+   * Request message for [Documents.ExportDocument][google.cloud.dialogflow.v2.Documents.ExportDocument].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.dialogflow.v2.ReloadDocumentRequest}
+   * Protobuf type {@code google.cloud.dialogflow.v2.ExportDocumentRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.ReloadDocumentRequest)
-      com.google.cloud.dialogflow.v2.ReloadDocumentRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.ExportDocumentRequest)
+      com.google.cloud.dialogflow.v2.ExportDocumentRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2.DocumentProto
-          .internal_static_google_cloud_dialogflow_v2_ReloadDocumentRequest_descriptor;
+          .internal_static_google_cloud_dialogflow_v2_ExportDocumentRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.v2.DocumentProto
-          .internal_static_google_cloud_dialogflow_v2_ReloadDocumentRequest_fieldAccessorTable
+          .internal_static_google_cloud_dialogflow_v2_ExportDocumentRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2.ReloadDocumentRequest.class,
-              com.google.cloud.dialogflow.v2.ReloadDocumentRequest.Builder.class);
+              com.google.cloud.dialogflow.v2.ExportDocumentRequest.class,
+              com.google.cloud.dialogflow.v2.ExportDocumentRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.dialogflow.v2.ReloadDocumentRequest.newBuilder()
+    // Construct using com.google.cloud.dialogflow.v2.ExportDocumentRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -593,29 +577,29 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       super.clear();
       name_ = "";
 
-      importGcsCustomMetadata_ = false;
+      exportFullContent_ = false;
 
       smartMessagingPartialUpdate_ = false;
 
-      sourceCase_ = 0;
-      source_ = null;
+      destinationCase_ = 0;
+      destination_ = null;
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.dialogflow.v2.DocumentProto
-          .internal_static_google_cloud_dialogflow_v2_ReloadDocumentRequest_descriptor;
+          .internal_static_google_cloud_dialogflow_v2_ExportDocumentRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.v2.ReloadDocumentRequest getDefaultInstanceForType() {
-      return com.google.cloud.dialogflow.v2.ReloadDocumentRequest.getDefaultInstance();
+    public com.google.cloud.dialogflow.v2.ExportDocumentRequest getDefaultInstanceForType() {
+      return com.google.cloud.dialogflow.v2.ExportDocumentRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.v2.ReloadDocumentRequest build() {
-      com.google.cloud.dialogflow.v2.ReloadDocumentRequest result = buildPartial();
+    public com.google.cloud.dialogflow.v2.ExportDocumentRequest build() {
+      com.google.cloud.dialogflow.v2.ExportDocumentRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -623,16 +607,20 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.v2.ReloadDocumentRequest buildPartial() {
-      com.google.cloud.dialogflow.v2.ReloadDocumentRequest result =
-          new com.google.cloud.dialogflow.v2.ReloadDocumentRequest(this);
+    public com.google.cloud.dialogflow.v2.ExportDocumentRequest buildPartial() {
+      com.google.cloud.dialogflow.v2.ExportDocumentRequest result =
+          new com.google.cloud.dialogflow.v2.ExportDocumentRequest(this);
       result.name_ = name_;
-      if (sourceCase_ == 3) {
-        result.source_ = source_;
+      if (destinationCase_ == 2) {
+        if (gcsDestinationBuilder_ == null) {
+          result.destination_ = destination_;
+        } else {
+          result.destination_ = gcsDestinationBuilder_.build();
+        }
       }
-      result.importGcsCustomMetadata_ = importGcsCustomMetadata_;
+      result.exportFullContent_ = exportFullContent_;
       result.smartMessagingPartialUpdate_ = smartMessagingPartialUpdate_;
-      result.sourceCase_ = sourceCase_;
+      result.destinationCase_ = destinationCase_;
       onBuilt();
       return result;
     }
@@ -672,36 +660,34 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.dialogflow.v2.ReloadDocumentRequest) {
-        return mergeFrom((com.google.cloud.dialogflow.v2.ReloadDocumentRequest) other);
+      if (other instanceof com.google.cloud.dialogflow.v2.ExportDocumentRequest) {
+        return mergeFrom((com.google.cloud.dialogflow.v2.ExportDocumentRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.dialogflow.v2.ReloadDocumentRequest other) {
-      if (other == com.google.cloud.dialogflow.v2.ReloadDocumentRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.dialogflow.v2.ExportDocumentRequest other) {
+      if (other == com.google.cloud.dialogflow.v2.ExportDocumentRequest.getDefaultInstance())
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
       }
-      if (other.getImportGcsCustomMetadata() != false) {
-        setImportGcsCustomMetadata(other.getImportGcsCustomMetadata());
+      if (other.getExportFullContent() != false) {
+        setExportFullContent(other.getExportFullContent());
       }
       if (other.getSmartMessagingPartialUpdate() != false) {
         setSmartMessagingPartialUpdate(other.getSmartMessagingPartialUpdate());
       }
-      switch (other.getSourceCase()) {
-        case CONTENT_URI:
+      switch (other.getDestinationCase()) {
+        case GCS_DESTINATION:
           {
-            sourceCase_ = 3;
-            source_ = other.source_;
-            onChanged();
+            mergeGcsDestination(other.getGcsDestination());
             break;
           }
-        case SOURCE_NOT_SET:
+        case DESTINATION_NOT_SET:
           {
             break;
           }
@@ -721,12 +707,12 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.v2.ReloadDocumentRequest parsedMessage = null;
+      com.google.cloud.dialogflow.v2.ExportDocumentRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.dialogflow.v2.ReloadDocumentRequest) e.getUnfinishedMessage();
+            (com.google.cloud.dialogflow.v2.ExportDocumentRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -736,16 +722,16 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private int sourceCase_ = 0;
-    private java.lang.Object source_;
+    private int destinationCase_ = 0;
+    private java.lang.Object destination_;
 
-    public SourceCase getSourceCase() {
-      return SourceCase.forNumber(sourceCase_);
+    public DestinationCase getDestinationCase() {
+      return DestinationCase.forNumber(destinationCase_);
     }
 
-    public Builder clearSource() {
-      sourceCase_ = 0;
-      source_ = null;
+    public Builder clearDestination() {
+      destinationCase_ = 0;
+      destination_ = null;
       onChanged();
       return this;
     }
@@ -755,9 +741,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the document to reload.
+     * Required. The name of the document to export.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
      * </pre>
      *
      * <code>
@@ -781,9 +767,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the document to reload.
+     * Required. The name of the document to export.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
      * </pre>
      *
      * <code>
@@ -807,9 +793,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the document to reload.
+     * Required. The name of the document to export.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
      * </pre>
      *
      * <code>
@@ -832,9 +818,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the document to reload.
+     * Required. The name of the document to export.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
      * </pre>
      *
      * <code>
@@ -853,9 +839,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the document to reload.
+     * Required. The name of the document to export.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
      * </pre>
      *
      * <code>
@@ -876,191 +862,248 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.GcsDestination,
+            com.google.cloud.dialogflow.v2.GcsDestination.Builder,
+            com.google.cloud.dialogflow.v2.GcsDestinationOrBuilder>
+        gcsDestinationBuilder_;
     /**
      *
      *
      * <pre>
-     * Optional. The path of gcs source file for reloading document content. For now,
-     * only gcs uri is supported.
-     * For documents stored in Google Cloud Storage, these URIs must have
-     * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * Cloud Storage file path to export the document.
      * </pre>
      *
-     * <code>string content_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.v2.GcsDestination gcs_destination = 2;</code>
      *
-     * @return Whether the contentUri field is set.
+     * @return Whether the gcsDestination field is set.
      */
     @java.lang.Override
-    public boolean hasContentUri() {
-      return sourceCase_ == 3;
+    public boolean hasGcsDestination() {
+      return destinationCase_ == 2;
     }
     /**
      *
      *
      * <pre>
-     * Optional. The path of gcs source file for reloading document content. For now,
-     * only gcs uri is supported.
-     * For documents stored in Google Cloud Storage, these URIs must have
-     * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * Cloud Storage file path to export the document.
      * </pre>
      *
-     * <code>string content_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.v2.GcsDestination gcs_destination = 2;</code>
      *
-     * @return The contentUri.
+     * @return The gcsDestination.
      */
     @java.lang.Override
-    public java.lang.String getContentUri() {
-      java.lang.Object ref = "";
-      if (sourceCase_ == 3) {
-        ref = source_;
-      }
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (sourceCase_ == 3) {
-          source_ = s;
+    public com.google.cloud.dialogflow.v2.GcsDestination getGcsDestination() {
+      if (gcsDestinationBuilder_ == null) {
+        if (destinationCase_ == 2) {
+          return (com.google.cloud.dialogflow.v2.GcsDestination) destination_;
         }
-        return s;
+        return com.google.cloud.dialogflow.v2.GcsDestination.getDefaultInstance();
       } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The path of gcs source file for reloading document content. For now,
-     * only gcs uri is supported.
-     * For documents stored in Google Cloud Storage, these URIs must have
-     * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-     * </pre>
-     *
-     * <code>string content_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for contentUri.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getContentUriBytes() {
-      java.lang.Object ref = "";
-      if (sourceCase_ == 3) {
-        ref = source_;
-      }
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        if (sourceCase_ == 3) {
-          source_ = b;
+        if (destinationCase_ == 2) {
+          return gcsDestinationBuilder_.getMessage();
         }
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+        return com.google.cloud.dialogflow.v2.GcsDestination.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Optional. The path of gcs source file for reloading document content. For now,
-     * only gcs uri is supported.
-     * For documents stored in Google Cloud Storage, these URIs must have
-     * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * Cloud Storage file path to export the document.
      * </pre>
      *
-     * <code>string content_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The contentUri to set.
-     * @return This builder for chaining.
+     * <code>.google.cloud.dialogflow.v2.GcsDestination gcs_destination = 2;</code>
      */
-    public Builder setContentUri(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      sourceCase_ = 3;
-      source_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The path of gcs source file for reloading document content. For now,
-     * only gcs uri is supported.
-     * For documents stored in Google Cloud Storage, these URIs must have
-     * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-     * </pre>
-     *
-     * <code>string content_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearContentUri() {
-      if (sourceCase_ == 3) {
-        sourceCase_ = 0;
-        source_ = null;
+    public Builder setGcsDestination(com.google.cloud.dialogflow.v2.GcsDestination value) {
+      if (gcsDestinationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destination_ = value;
         onChanged();
+      } else {
+        gcsDestinationBuilder_.setMessage(value);
       }
+      destinationCase_ = 2;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. The path of gcs source file for reloading document content. For now,
-     * only gcs uri is supported.
-     * For documents stored in Google Cloud Storage, these URIs must have
-     * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * Cloud Storage file path to export the document.
      * </pre>
      *
-     * <code>string content_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for contentUri to set.
-     * @return This builder for chaining.
+     * <code>.google.cloud.dialogflow.v2.GcsDestination gcs_destination = 2;</code>
      */
-    public Builder setContentUriBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public Builder setGcsDestination(
+        com.google.cloud.dialogflow.v2.GcsDestination.Builder builderForValue) {
+      if (gcsDestinationBuilder_ == null) {
+        destination_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcsDestinationBuilder_.setMessage(builderForValue.build());
       }
-      checkByteStringIsUtf8(value);
-      sourceCase_ = 3;
-      source_ = value;
-      onChanged();
+      destinationCase_ = 2;
       return this;
     }
-
-    private boolean importGcsCustomMetadata_;
     /**
      *
      *
      * <pre>
-     * Optional. Whether to import custom metadata from Google Cloud Storage.
-     * Only valid when the document source is Google Cloud Storage URI.
+     * Cloud Storage file path to export the document.
      * </pre>
      *
-     * <code>bool import_gcs_custom_metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.v2.GcsDestination gcs_destination = 2;</code>
+     */
+    public Builder mergeGcsDestination(com.google.cloud.dialogflow.v2.GcsDestination value) {
+      if (gcsDestinationBuilder_ == null) {
+        if (destinationCase_ == 2
+            && destination_ != com.google.cloud.dialogflow.v2.GcsDestination.getDefaultInstance()) {
+          destination_ =
+              com.google.cloud.dialogflow.v2.GcsDestination.newBuilder(
+                      (com.google.cloud.dialogflow.v2.GcsDestination) destination_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          destination_ = value;
+        }
+        onChanged();
+      } else {
+        if (destinationCase_ == 2) {
+          gcsDestinationBuilder_.mergeFrom(value);
+        }
+        gcsDestinationBuilder_.setMessage(value);
+      }
+      destinationCase_ = 2;
+      return this;
+    }
+    /**
      *
-     * @return The importGcsCustomMetadata.
+     *
+     * <pre>
+     * Cloud Storage file path to export the document.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.GcsDestination gcs_destination = 2;</code>
+     */
+    public Builder clearGcsDestination() {
+      if (gcsDestinationBuilder_ == null) {
+        if (destinationCase_ == 2) {
+          destinationCase_ = 0;
+          destination_ = null;
+          onChanged();
+        }
+      } else {
+        if (destinationCase_ == 2) {
+          destinationCase_ = 0;
+          destination_ = null;
+        }
+        gcsDestinationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage file path to export the document.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.GcsDestination gcs_destination = 2;</code>
+     */
+    public com.google.cloud.dialogflow.v2.GcsDestination.Builder getGcsDestinationBuilder() {
+      return getGcsDestinationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage file path to export the document.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.GcsDestination gcs_destination = 2;</code>
      */
     @java.lang.Override
-    public boolean getImportGcsCustomMetadata() {
-      return importGcsCustomMetadata_;
+    public com.google.cloud.dialogflow.v2.GcsDestinationOrBuilder getGcsDestinationOrBuilder() {
+      if ((destinationCase_ == 2) && (gcsDestinationBuilder_ != null)) {
+        return gcsDestinationBuilder_.getMessageOrBuilder();
+      } else {
+        if (destinationCase_ == 2) {
+          return (com.google.cloud.dialogflow.v2.GcsDestination) destination_;
+        }
+        return com.google.cloud.dialogflow.v2.GcsDestination.getDefaultInstance();
+      }
     }
     /**
      *
      *
      * <pre>
-     * Optional. Whether to import custom metadata from Google Cloud Storage.
-     * Only valid when the document source is Google Cloud Storage URI.
+     * Cloud Storage file path to export the document.
      * </pre>
      *
-     * <code>bool import_gcs_custom_metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.v2.GcsDestination gcs_destination = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.GcsDestination,
+            com.google.cloud.dialogflow.v2.GcsDestination.Builder,
+            com.google.cloud.dialogflow.v2.GcsDestinationOrBuilder>
+        getGcsDestinationFieldBuilder() {
+      if (gcsDestinationBuilder_ == null) {
+        if (!(destinationCase_ == 2)) {
+          destination_ = com.google.cloud.dialogflow.v2.GcsDestination.getDefaultInstance();
+        }
+        gcsDestinationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.GcsDestination,
+                com.google.cloud.dialogflow.v2.GcsDestination.Builder,
+                com.google.cloud.dialogflow.v2.GcsDestinationOrBuilder>(
+                (com.google.cloud.dialogflow.v2.GcsDestination) destination_,
+                getParentForChildren(),
+                isClean());
+        destination_ = null;
+      }
+      destinationCase_ = 2;
+      onChanged();
+      ;
+      return gcsDestinationBuilder_;
+    }
+
+    private boolean exportFullContent_;
+    /**
      *
-     * @param value The importGcsCustomMetadata to set.
+     *
+     * <pre>
+     * When enabled, export the full content of the document including empirical
+     * probability.
+     * </pre>
+     *
+     * <code>bool export_full_content = 3;</code>
+     *
+     * @return The exportFullContent.
+     */
+    @java.lang.Override
+    public boolean getExportFullContent() {
+      return exportFullContent_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When enabled, export the full content of the document including empirical
+     * probability.
+     * </pre>
+     *
+     * <code>bool export_full_content = 3;</code>
+     *
+     * @param value The exportFullContent to set.
      * @return This builder for chaining.
      */
-    public Builder setImportGcsCustomMetadata(boolean value) {
+    public Builder setExportFullContent(boolean value) {
 
-      importGcsCustomMetadata_ = value;
+      exportFullContent_ = value;
       onChanged();
       return this;
     }
@@ -1068,17 +1111,17 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Whether to import custom metadata from Google Cloud Storage.
-     * Only valid when the document source is Google Cloud Storage URI.
+     * When enabled, export the full content of the document including empirical
+     * probability.
      * </pre>
      *
-     * <code>bool import_gcs_custom_metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool export_full_content = 3;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearImportGcsCustomMetadata() {
+    public Builder clearExportFullContent() {
 
-      importGcsCustomMetadata_ = false;
+      exportFullContent_ = false;
       onChanged();
       return this;
     }
@@ -1088,12 +1131,11 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. When enabled, the reload request is to apply partial update to the smart
-     * messaging allowlist.
+     * When enabled, export the smart messaging allowlist document for partial
+     * update.
      * </pre>
      *
-     * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>bool smart_messaging_partial_update = 5;</code>
      *
      * @return The smartMessagingPartialUpdate.
      */
@@ -1105,12 +1147,11 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. When enabled, the reload request is to apply partial update to the smart
-     * messaging allowlist.
+     * When enabled, export the smart messaging allowlist document for partial
+     * update.
      * </pre>
      *
-     * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>bool smart_messaging_partial_update = 5;</code>
      *
      * @param value The smartMessagingPartialUpdate to set.
      * @return This builder for chaining.
@@ -1125,12 +1166,11 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. When enabled, the reload request is to apply partial update to the smart
-     * messaging allowlist.
+     * When enabled, export the smart messaging allowlist document for partial
+     * update.
      * </pre>
      *
-     * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>bool smart_messaging_partial_update = 5;</code>
      *
      * @return This builder for chaining.
      */
@@ -1152,42 +1192,42 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.ReloadDocumentRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.ExportDocumentRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.ReloadDocumentRequest)
-  private static final com.google.cloud.dialogflow.v2.ReloadDocumentRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.ExportDocumentRequest)
+  private static final com.google.cloud.dialogflow.v2.ExportDocumentRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2.ReloadDocumentRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2.ExportDocumentRequest();
   }
 
-  public static com.google.cloud.dialogflow.v2.ReloadDocumentRequest getDefaultInstance() {
+  public static com.google.cloud.dialogflow.v2.ExportDocumentRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReloadDocumentRequest> PARSER =
-      new com.google.protobuf.AbstractParser<ReloadDocumentRequest>() {
+  private static final com.google.protobuf.Parser<ExportDocumentRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ExportDocumentRequest>() {
         @java.lang.Override
-        public ReloadDocumentRequest parsePartialFrom(
+        public ExportDocumentRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ReloadDocumentRequest(input, extensionRegistry);
+          return new ExportDocumentRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<ReloadDocumentRequest> parser() {
+  public static com.google.protobuf.Parser<ExportDocumentRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ReloadDocumentRequest> getParserForType() {
+  public com.google.protobuf.Parser<ExportDocumentRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.dialogflow.v2.ReloadDocumentRequest getDefaultInstanceForType() {
+  public com.google.cloud.dialogflow.v2.ExportDocumentRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

@@ -234,6 +234,7 @@ public class DocumentsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (Document element : documentsClient.listDocuments(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -263,6 +264,7 @@ public class DocumentsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Document> future = documentsClient.listDocumentsPagedCallable().futureCall(request);
    *   // Do something.
@@ -292,6 +294,7 @@ public class DocumentsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListDocumentsResponse response = documentsClient.listDocumentsCallable().call(request);
@@ -1025,6 +1028,8 @@ public class DocumentsClient implements BackgroundResource {
    *               DocumentName.ofProjectKnowledgeBaseDocumentName(
    *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
    *                   .toString())
+   *           .setImportGcsCustomMetadata(true)
+   *           .setSmartMessagingPartialUpdate(true)
    *           .build();
    *   Document response = documentsClient.reloadDocumentAsync(request).get();
    * }
@@ -1066,6 +1071,8 @@ public class DocumentsClient implements BackgroundResource {
    *               DocumentName.ofProjectKnowledgeBaseDocumentName(
    *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
    *                   .toString())
+   *           .setImportGcsCustomMetadata(true)
+   *           .setSmartMessagingPartialUpdate(true)
    *           .build();
    *   OperationFuture<Document, KnowledgeOperationMetadata> future =
    *       documentsClient.reloadDocumentOperationCallable().futureCall(request);
@@ -1107,6 +1114,8 @@ public class DocumentsClient implements BackgroundResource {
    *               DocumentName.ofProjectKnowledgeBaseDocumentName(
    *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
    *                   .toString())
+   *           .setImportGcsCustomMetadata(true)
+   *           .setSmartMessagingPartialUpdate(true)
    *           .build();
    *   ApiFuture<Operation> future = documentsClient.reloadDocumentCallable().futureCall(request);
    *   // Do something.
@@ -1116,6 +1125,115 @@ public class DocumentsClient implements BackgroundResource {
    */
   public final UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable() {
     return stub.reloadDocumentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a smart messaging candidate document into the specified destination.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ExportDocumentRequest request =
+   *       ExportDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setExportFullContent(true)
+   *           .setSmartMessagingPartialUpdate(true)
+   *           .build();
+   *   Document response = documentsClient.exportDocumentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Document, KnowledgeOperationMetadata> exportDocumentAsync(
+      ExportDocumentRequest request) {
+    return exportDocumentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a smart messaging candidate document into the specified destination.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ExportDocumentRequest request =
+   *       ExportDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setExportFullContent(true)
+   *           .setSmartMessagingPartialUpdate(true)
+   *           .build();
+   *   OperationFuture<Document, KnowledgeOperationMetadata> future =
+   *       documentsClient.exportDocumentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Document response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ExportDocumentRequest, Document, KnowledgeOperationMetadata>
+      exportDocumentOperationCallable() {
+    return stub.exportDocumentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a smart messaging candidate document into the specified destination.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ExportDocumentRequest request =
+   *       ExportDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setExportFullContent(true)
+   *           .setSmartMessagingPartialUpdate(true)
+   *           .build();
+   *   ApiFuture<Operation> future = documentsClient.exportDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportDocumentRequest, Operation> exportDocumentCallable() {
+    return stub.exportDocumentCallable();
   }
 
   @Override

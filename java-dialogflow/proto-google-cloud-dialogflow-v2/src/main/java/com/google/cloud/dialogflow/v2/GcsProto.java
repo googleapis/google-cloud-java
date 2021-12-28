@@ -27,6 +27,11 @@ public final class GcsProto {
     registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_GcsDestination_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_GcsDestination_fieldAccessorTable;
+
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
@@ -38,11 +43,12 @@ public final class GcsProto {
       "\n$google/cloud/dialogflow/v2/gcs.proto\022\032"
           + "google.cloud.dialogflow.v2\032\037google/api/f"
           + "ield_behavior.proto\032\034google/api/annotati"
-          + "ons.protoB\227\001\n\036com.google.cloud.dialogflo"
-          + "w.v2B\010GcsProtoP\001ZDgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/dialogflow/v2;dial"
-          + "ogflow\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialogflow"
-          + ".V2b\006proto3"
+          + "ons.proto\"\035\n\016GcsDestination\022\013\n\003uri\030\001 \001(\t"
+          + "B\227\001\n\036com.google.cloud.dialogflow.v2B\010Gcs"
+          + "ProtoP\001ZDgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/dialogflow/v2;dialogflow\370\001\001"
+          + "\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -50,6 +56,14 @@ public final class GcsProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+            });
+    internal_static_google_cloud_dialogflow_v2_GcsDestination_descriptor =
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_dialogflow_v2_GcsDestination_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_GcsDestination_descriptor,
+            new java.lang.String[] {
+              "Uri",
             });
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

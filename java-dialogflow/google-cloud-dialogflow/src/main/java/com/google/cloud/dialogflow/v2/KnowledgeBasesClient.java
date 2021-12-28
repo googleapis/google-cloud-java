@@ -242,6 +242,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (KnowledgeBase element : knowledgeBasesClient.listKnowledgeBases(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -270,6 +271,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<KnowledgeBase> future =
    *       knowledgeBasesClient.listKnowledgeBasesPagedCallable().futureCall(request);
@@ -298,6 +300,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListKnowledgeBasesResponse response =

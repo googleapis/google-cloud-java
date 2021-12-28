@@ -294,6 +294,48 @@ public final class DocumentsGrpc {
     return getReloadDocumentMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.ExportDocumentRequest, com.google.longrunning.Operation>
+      getExportDocumentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportDocument",
+      requestType = com.google.cloud.dialogflow.v2.ExportDocumentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.ExportDocumentRequest, com.google.longrunning.Operation>
+      getExportDocumentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2.ExportDocumentRequest, com.google.longrunning.Operation>
+        getExportDocumentMethod;
+    if ((getExportDocumentMethod = DocumentsGrpc.getExportDocumentMethod) == null) {
+      synchronized (DocumentsGrpc.class) {
+        if ((getExportDocumentMethod = DocumentsGrpc.getExportDocumentMethod) == null) {
+          DocumentsGrpc.getExportDocumentMethod =
+              getExportDocumentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2.ExportDocumentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportDocument"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2.ExportDocumentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new DocumentsMethodDescriptorSupplier("ExportDocument"))
+                      .build();
+        }
+      }
+    }
+    return getExportDocumentMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DocumentsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DocumentsStub> factory =
@@ -454,6 +496,26 @@ public final class DocumentsGrpc {
           getReloadDocumentMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Exports a smart messaging candidate document into the specified
+     * destination.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
+     * </pre>
+     */
+    public void exportDocument(
+        com.google.cloud.dialogflow.v2.ExportDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportDocumentMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -494,6 +556,12 @@ public final class DocumentsGrpc {
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.ReloadDocumentRequest,
                       com.google.longrunning.Operation>(this, METHODID_RELOAD_DOCUMENT)))
+          .addMethod(
+              getExportDocumentMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.v2.ExportDocumentRequest,
+                      com.google.longrunning.Operation>(this, METHODID_EXPORT_DOCUMENT)))
           .build();
     }
   }
@@ -637,6 +705,28 @@ public final class DocumentsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a smart messaging candidate document into the specified
+     * destination.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
+     * </pre>
+     */
+    public void exportDocument(
+        com.google.cloud.dialogflow.v2.ExportDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportDocumentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -760,6 +850,25 @@ public final class DocumentsGrpc {
         com.google.cloud.dialogflow.v2.ReloadDocumentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReloadDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a smart messaging candidate document into the specified
+     * destination.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportDocument(
+        com.google.cloud.dialogflow.v2.ExportDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportDocumentMethod(), getCallOptions(), request);
     }
   }
 
@@ -886,6 +995,25 @@ public final class DocumentsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReloadDocumentMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a smart messaging candidate document into the specified
+     * destination.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportDocument(com.google.cloud.dialogflow.v2.ExportDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportDocumentMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DOCUMENTS = 0;
@@ -894,6 +1022,7 @@ public final class DocumentsGrpc {
   private static final int METHODID_DELETE_DOCUMENT = 3;
   private static final int METHODID_UPDATE_DOCUMENT = 4;
   private static final int METHODID_RELOAD_DOCUMENT = 5;
+  private static final int METHODID_EXPORT_DOCUMENT = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -942,6 +1071,11 @@ public final class DocumentsGrpc {
         case METHODID_RELOAD_DOCUMENT:
           serviceImpl.reloadDocument(
               (com.google.cloud.dialogflow.v2.ReloadDocumentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_DOCUMENT:
+          serviceImpl.exportDocument(
+              (com.google.cloud.dialogflow.v2.ExportDocumentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -1014,6 +1148,7 @@ public final class DocumentsGrpc {
                       .addMethod(getDeleteDocumentMethod())
                       .addMethod(getUpdateDocumentMethod())
                       .addMethod(getReloadDocumentMethod())
+                      .addMethod(getExportDocumentMethod())
                       .build();
         }
       }

@@ -47,6 +47,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.CreateDocumentRequest;
 import com.google.cloud.dialogflow.v2.DeleteDocumentRequest;
 import com.google.cloud.dialogflow.v2.Document;
+import com.google.cloud.dialogflow.v2.ExportDocumentRequest;
 import com.google.cloud.dialogflow.v2.GetDocumentRequest;
 import com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata;
 import com.google.cloud.dialogflow.v2.ListDocumentsRequest;
@@ -120,6 +121,9 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
   private final UnaryCallSettings<ReloadDocumentRequest, Operation> reloadDocumentSettings;
   private final OperationCallSettings<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
       reloadDocumentOperationSettings;
+  private final UnaryCallSettings<ExportDocumentRequest, Operation> exportDocumentSettings;
+  private final OperationCallSettings<ExportDocumentRequest, Document, KnowledgeOperationMetadata>
+      exportDocumentOperationSettings;
 
   private static final PagedListDescriptor<ListDocumentsRequest, ListDocumentsResponse, Document>
       LIST_DOCUMENTS_PAGE_STR_DESC =
@@ -229,6 +233,17 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     return reloadDocumentOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to exportDocument. */
+  public UnaryCallSettings<ExportDocumentRequest, Operation> exportDocumentSettings() {
+    return exportDocumentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportDocument. */
+  public OperationCallSettings<ExportDocumentRequest, Document, KnowledgeOperationMetadata>
+      exportDocumentOperationSettings() {
+    return exportDocumentOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DocumentsStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -314,6 +329,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     updateDocumentOperationSettings = settingsBuilder.updateDocumentOperationSettings().build();
     reloadDocumentSettings = settingsBuilder.reloadDocumentSettings().build();
     reloadDocumentOperationSettings = settingsBuilder.reloadDocumentOperationSettings().build();
+    exportDocumentSettings = settingsBuilder.exportDocumentSettings().build();
+    exportDocumentOperationSettings = settingsBuilder.exportDocumentOperationSettings().build();
   }
 
   /** Builder for DocumentsStubSettings. */
@@ -343,6 +360,11 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     private final OperationCallSettings.Builder<
             ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
         reloadDocumentOperationSettings;
+    private final UnaryCallSettings.Builder<ExportDocumentRequest, Operation>
+        exportDocumentSettings;
+    private final OperationCallSettings.Builder<
+            ExportDocumentRequest, Document, KnowledgeOperationMetadata>
+        exportDocumentOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -391,6 +413,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
       updateDocumentOperationSettings = OperationCallSettings.newBuilder();
       reloadDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       reloadDocumentOperationSettings = OperationCallSettings.newBuilder();
+      exportDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportDocumentOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -399,7 +423,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
               createDocumentSettings,
               deleteDocumentSettings,
               updateDocumentSettings,
-              reloadDocumentSettings);
+              reloadDocumentSettings,
+              exportDocumentSettings);
       initDefaults(this);
     }
 
@@ -416,6 +441,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
       updateDocumentOperationSettings = settings.updateDocumentOperationSettings.toBuilder();
       reloadDocumentSettings = settings.reloadDocumentSettings.toBuilder();
       reloadDocumentOperationSettings = settings.reloadDocumentOperationSettings.toBuilder();
+      exportDocumentSettings = settings.exportDocumentSettings.toBuilder();
+      exportDocumentOperationSettings = settings.exportDocumentOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -424,7 +451,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
               createDocumentSettings,
               deleteDocumentSettings,
               updateDocumentSettings,
-              reloadDocumentSettings);
+              reloadDocumentSettings,
+              exportDocumentSettings);
     }
 
     private static Builder createDefault() {
@@ -468,6 +496,11 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
 
       builder
           .reloadDocumentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .exportDocumentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -571,6 +604,31 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .exportDocumentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportDocumentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Document.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  KnowledgeOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -654,6 +712,20 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
             ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
         reloadDocumentOperationSettings() {
       return reloadDocumentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportDocument. */
+    public UnaryCallSettings.Builder<ExportDocumentRequest, Operation> exportDocumentSettings() {
+      return exportDocumentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportDocument. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ExportDocumentRequest, Document, KnowledgeOperationMetadata>
+        exportDocumentOperationSettings() {
+      return exportDocumentOperationSettings;
     }
 
     @Override

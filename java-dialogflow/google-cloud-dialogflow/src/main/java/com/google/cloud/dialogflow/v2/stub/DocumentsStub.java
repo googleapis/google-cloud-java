@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.CreateDocumentRequest;
 import com.google.cloud.dialogflow.v2.DeleteDocumentRequest;
 import com.google.cloud.dialogflow.v2.Document;
+import com.google.cloud.dialogflow.v2.ExportDocumentRequest;
 import com.google.cloud.dialogflow.v2.GetDocumentRequest;
 import com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata;
 import com.google.cloud.dialogflow.v2.ListDocumentsRequest;
@@ -95,6 +96,15 @@ public abstract class DocumentsStub implements BackgroundResource {
 
   public UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable() {
     throw new UnsupportedOperationException("Not implemented: reloadDocumentCallable()");
+  }
+
+  public OperationCallable<ExportDocumentRequest, Document, KnowledgeOperationMetadata>
+      exportDocumentOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportDocumentOperationCallable()");
+  }
+
+  public UnaryCallable<ExportDocumentRequest, Operation> exportDocumentCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportDocumentCallable()");
   }
 
   @Override

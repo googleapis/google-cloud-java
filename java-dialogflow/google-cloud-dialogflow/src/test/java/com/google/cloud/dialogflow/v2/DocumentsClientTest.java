@@ -657,4 +657,79 @@ public class DocumentsClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  public void exportDocumentTest() throws Exception {
+    Document expectedResponse =
+        Document.newBuilder()
+            .setName(
+                DocumentName.ofProjectKnowledgeBaseDocumentName(
+                        "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setMimeType("mimeType-1392120434")
+            .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
+            .setEnableAutoReload(true)
+            .setLatestReloadStatus(Document.ReloadStatus.newBuilder().build())
+            .putAllMetadata(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportDocumentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocuments.addResponse(resultOperation);
+
+    ExportDocumentRequest request =
+        ExportDocumentRequest.newBuilder()
+            .setName(
+                DocumentName.ofProjectKnowledgeBaseDocumentName(
+                        "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                    .toString())
+            .setExportFullContent(true)
+            .setSmartMessagingPartialUpdate(true)
+            .build();
+
+    Document actualResponse = client.exportDocumentAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocuments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportDocumentRequest actualRequest = ((ExportDocumentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getGcsDestination(), actualRequest.getGcsDestination());
+    Assert.assertEquals(request.getExportFullContent(), actualRequest.getExportFullContent());
+    Assert.assertEquals(
+        request.getSmartMessagingPartialUpdate(), actualRequest.getSmartMessagingPartialUpdate());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportDocumentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocuments.addException(exception);
+
+    try {
+      ExportDocumentRequest request =
+          ExportDocumentRequest.newBuilder()
+              .setName(
+                  DocumentName.ofProjectKnowledgeBaseDocumentName(
+                          "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                      .toString())
+              .setExportFullContent(true)
+              .setSmartMessagingPartialUpdate(true)
+              .build();
+      client.exportDocumentAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
 }

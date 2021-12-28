@@ -126,6 +126,17 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
     return ((DocumentsStubSettings) getStubSettings()).reloadDocumentOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to exportDocument. */
+  public UnaryCallSettings<ExportDocumentRequest, Operation> exportDocumentSettings() {
+    return ((DocumentsStubSettings) getStubSettings()).exportDocumentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportDocument. */
+  public OperationCallSettings<ExportDocumentRequest, Document, KnowledgeOperationMetadata>
+      exportDocumentOperationSettings() {
+    return ((DocumentsStubSettings) getStubSettings()).exportDocumentOperationSettings();
+  }
+
   public static final DocumentsSettings create(DocumentsStubSettings stub) throws IOException {
     return new DocumentsSettings.Builder(stub.toBuilder()).build();
   }
@@ -279,6 +290,18 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
             ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
         reloadDocumentOperationSettings() {
       return getStubSettingsBuilder().reloadDocumentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportDocument. */
+    public UnaryCallSettings.Builder<ExportDocumentRequest, Operation> exportDocumentSettings() {
+      return getStubSettingsBuilder().exportDocumentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportDocument. */
+    public OperationCallSettings.Builder<
+            ExportDocumentRequest, Document, KnowledgeOperationMetadata>
+        exportDocumentOperationSettings() {
+      return getStubSettingsBuilder().exportDocumentOperationSettings();
     }
 
     @Override

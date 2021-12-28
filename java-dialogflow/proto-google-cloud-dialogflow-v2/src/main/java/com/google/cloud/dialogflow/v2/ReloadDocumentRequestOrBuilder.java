@@ -102,5 +102,33 @@ public interface ReloadDocumentRequestOrBuilder
    */
   com.google.protobuf.ByteString getContentUriBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to import custom metadata from Google Cloud Storage.
+   * Only valid when the document source is Google Cloud Storage URI.
+   * </pre>
+   *
+   * <code>bool import_gcs_custom_metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The importGcsCustomMetadata.
+   */
+  boolean getImportGcsCustomMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When enabled, the reload request is to apply partial update to the smart
+   * messaging allowlist.
+   * </pre>
+   *
+   * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The smartMessagingPartialUpdate.
+   */
+  boolean getSmartMessagingPartialUpdate();
+
   public com.google.cloud.dialogflow.v2.ReloadDocumentRequest.SourceCase getSourceCase();
 }
