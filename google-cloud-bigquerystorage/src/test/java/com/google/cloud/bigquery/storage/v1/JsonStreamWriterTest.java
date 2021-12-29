@@ -496,4 +496,48 @@ public class JsonStreamWriterTest {
               || testBigQueryWrite.getAppendRequests().get(3).getProtoRows().hasWriterSchema());
     }
   }
+
+  @Test
+  public void testWithoutIgnoreUnknownFields() throws Exception {
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(0, TEST_INT).build();
+    try (JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, tableSchema).build()) {
+      JSONObject foo = new JSONObject();
+      foo.put("test_int", 10);
+      JSONObject bar = new JSONObject();
+      bar.put("test_unknown", 10);
+      JSONArray jsonArr = new JSONArray();
+      jsonArr.put(foo);
+      jsonArr.put(bar);
+      try {
+        ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
+        Assert.fail("expected ExecutionException");
+      } catch (Exception ex) {
+        assertEquals(
+            ex.getMessage(), "JSONObject has fields unknown to BigQuery: root.test_unknown.");
+      }
+    }
+  }
+
+  @Test
+  public void testWithIgnoreUnknownFields() throws Exception {
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(0, TEST_INT).build();
+    try (JsonStreamWriter writer =
+        JsonStreamWriter.newBuilder(TEST_STREAM, tableSchema)
+            .setChannelProvider(channelProvider)
+            .setIgnoreUnknownFields(true)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build()) {
+      testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+      JSONObject foo = new JSONObject();
+      foo.put("test_int", 10);
+      JSONObject bar = new JSONObject();
+      bar.put("test_unknown", 10);
+      JSONArray jsonArr = new JSONArray();
+      jsonArr.put(foo);
+      jsonArr.put(bar);
+      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
+      appendFuture.get();
+    }
+  }
 }

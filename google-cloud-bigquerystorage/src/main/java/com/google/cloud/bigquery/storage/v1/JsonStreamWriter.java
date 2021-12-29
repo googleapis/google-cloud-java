@@ -52,6 +52,7 @@ public class JsonStreamWriter implements AutoCloseable {
   private StreamWriter.Builder streamWriterBuilder;
   private Descriptor descriptor;
   private TableSchema tableSchema;
+  private boolean ignoreUnknownFields = false;
 
   /**
    * Constructs the JsonStreamWriter
@@ -80,6 +81,7 @@ public class JsonStreamWriter implements AutoCloseable {
     this.streamWriter = streamWriterBuilder.build();
     this.streamName = builder.streamName;
     this.tableSchema = builder.tableSchema;
+    this.ignoreUnknownFields = builder.ignoreUnknownFields;
   }
 
   /**
@@ -135,7 +137,8 @@ public class JsonStreamWriter implements AutoCloseable {
     for (int i = 0; i < jsonArr.length(); i++) {
       JSONObject json = jsonArr.getJSONObject(i);
       Message protoMessage =
-          JsonToProtoMessage.convertJsonToProtoMessage(this.descriptor, this.tableSchema, json);
+          JsonToProtoMessage.convertJsonToProtoMessage(
+              this.descriptor, this.tableSchema, json, ignoreUnknownFields);
       rowsBuilder.addSerializedRows(protoMessage.toByteString());
     }
     // Need to make sure refreshAppendAndSetDescriptor finish first before this can run
@@ -249,6 +252,7 @@ public class JsonStreamWriter implements AutoCloseable {
     private String endpoint;
     private boolean createDefaultStream = false;
     private String traceId;
+    private boolean ignoreUnknownFields = false;
 
     private static String streamPatternString =
         "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/streams/[^/]+";
@@ -347,6 +351,18 @@ public class JsonStreamWriter implements AutoCloseable {
      */
     public Builder setTraceId(String traceId) {
       this.traceId = Preconditions.checkNotNull(traceId, "TraceId is null.");
+      return this;
+    }
+
+    /**
+     * Setter for a ignoreUnkownFields, if true, unknown Json fields to BigQuery will be ignored
+     * instead of error out.
+     *
+     * @param ignoreUnknownFields
+     * @return Builder
+     */
+    public Builder setIgnoreUnknownFields(boolean ignoreUnknownFields) {
+      this.ignoreUnknownFields = ignoreUnknownFields;
       return this;
     }
 

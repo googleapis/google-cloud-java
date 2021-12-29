@@ -64,7 +64,8 @@ public class JsonToProtoMessage {
     Preconditions.checkNotNull(protoSchema, "Protobuf descriptor is null.");
     Preconditions.checkState(json.length() != 0, "JSONObject is empty.");
 
-    return convertJsonToProtoMessageImpl(protoSchema, null, json, "root", /*topLevel=*/ true);
+    return convertJsonToProtoMessageImpl(
+        protoSchema, null, json, "root", /*topLevel=*/ true, false);
   }
 
   /**
@@ -85,7 +86,39 @@ public class JsonToProtoMessage {
     Preconditions.checkState(json.length() != 0, "JSONObject is empty.");
 
     return convertJsonToProtoMessageImpl(
-        protoSchema, tableSchema.getFieldsList(), json, "root", /*topLevel=*/ true);
+        protoSchema,
+        tableSchema.getFieldsList(),
+        json,
+        "root",
+        /*topLevel=*/ true,
+        /*ignoreUnknownFields*/ false);
+  }
+
+  /**
+   * Converts Json data to protocol buffer messages given the protocol buffer descriptor.
+   *
+   * @param protoSchema
+   * @param tableSchema bigquery table schema is needed for type conversion of DATETIME, TIME,
+   *     NUMERIC, BIGNUMERIC
+   * @param json
+   * @param ignoreUnknownFields allows unknown fields in JSON input to be ignored.
+   * @throws IllegalArgumentException when JSON data is not compatible with proto descriptor.
+   */
+  public static DynamicMessage convertJsonToProtoMessage(
+      Descriptor protoSchema, TableSchema tableSchema, JSONObject json, boolean ignoreUnknownFields)
+      throws IllegalArgumentException {
+    Preconditions.checkNotNull(json, "JSONObject is null.");
+    Preconditions.checkNotNull(protoSchema, "Protobuf descriptor is null.");
+    Preconditions.checkNotNull(tableSchema, "TableSchema is null.");
+    Preconditions.checkState(json.length() != 0, "JSONObject is empty.");
+
+    return convertJsonToProtoMessageImpl(
+        protoSchema,
+        tableSchema.getFieldsList(),
+        json,
+        "root",
+        /*topLevel=*/ true,
+        ignoreUnknownFields);
   }
 
   /**
@@ -102,7 +135,8 @@ public class JsonToProtoMessage {
       List<TableFieldSchema> tableSchema,
       JSONObject json,
       String jsonScope,
-      boolean topLevel)
+      boolean topLevel,
+      boolean ignoreUnknownFields)
       throws IllegalArgumentException {
 
     DynamicMessage.Builder protoMsg = DynamicMessage.newBuilder(protoSchema);
@@ -117,9 +151,11 @@ public class JsonToProtoMessage {
       String jsonLowercaseName = jsonName.toLowerCase();
       String currentScope = jsonScope + "." + jsonName;
       FieldDescriptor field = protoSchema.findFieldByName(jsonLowercaseName);
-      if (field == null) {
+      if (field == null && !ignoreUnknownFields) {
         throw new IllegalArgumentException(
             String.format("JSONObject has fields unknown to BigQuery: %s.", currentScope));
+      } else if (field == null) {
+        continue;
       }
       TableFieldSchema fieldSchema = null;
       if (tableSchema != null) {
@@ -137,9 +173,10 @@ public class JsonToProtoMessage {
         }
       }
       if (!field.isRepeated()) {
-        fillField(protoMsg, field, fieldSchema, json, jsonName, currentScope);
+        fillField(protoMsg, field, fieldSchema, json, jsonName, currentScope, ignoreUnknownFields);
       } else {
-        fillRepeatedField(protoMsg, field, fieldSchema, json, jsonName, currentScope);
+        fillRepeatedField(
+            protoMsg, field, fieldSchema, json, jsonName, currentScope, ignoreUnknownFields);
       }
     }
 
@@ -174,7 +211,8 @@ public class JsonToProtoMessage {
       TableFieldSchema fieldSchema,
       JSONObject json,
       String exactJsonKeyName,
-      String currentScope)
+      String currentScope,
+      boolean ignoreUnknownFields)
       throws IllegalArgumentException {
 
     java.lang.Object val = json.get(exactJsonKeyName);
@@ -303,7 +341,8 @@ public class JsonToProtoMessage {
                   fieldSchema == null ? null : fieldSchema.getFieldsList(),
                   json.getJSONObject(exactJsonKeyName),
                   currentScope,
-                  /*topLevel =*/ false));
+                  /*topLevel =*/ false,
+                  ignoreUnknownFields));
           return;
         }
         break;
@@ -331,7 +370,8 @@ public class JsonToProtoMessage {
       TableFieldSchema fieldSchema,
       JSONObject json,
       String exactJsonKeyName,
-      String currentScope)
+      String currentScope,
+      boolean ignoreUnknownFields)
       throws IllegalArgumentException {
 
     JSONArray jsonArray;
@@ -478,7 +518,8 @@ public class JsonToProtoMessage {
                     fieldSchema == null ? null : fieldSchema.getFieldsList(),
                     jsonArray.getJSONObject(i),
                     currentScope,
-                    /*topLevel =*/ false));
+                    /*topLevel =*/ false,
+                    ignoreUnknownFields));
           } else {
             fail = true;
           }
