@@ -502,11 +502,13 @@ public class StreamWriter implements AutoCloseable {
   }
 
   private void cleanupInflightRequests() {
-    Throwable finalStatus;
+    Throwable finalStatus = new Exceptions.WriterClosedException(streamName);
     Deque<AppendRequestAndResponse> localQueue = new LinkedList<AppendRequestAndResponse>();
     this.lock.lock();
     try {
-      finalStatus = this.connectionFinalStatus;
+      if (this.connectionFinalStatus != null) {
+        finalStatus = this.connectionFinalStatus;
+      }
       while (!this.inflightRequestQueue.isEmpty()) {
         localQueue.addLast(pollInflightRequestQueue());
       }

@@ -638,4 +638,12 @@ public class StreamWriterTest {
       assertEquals(1, appendFuture2.get().getAppendResult().getOffset().getValue());
     }
   }
+
+  @Test
+  public void testWriterClosedStream() throws Exception {
+    try (StreamWriter writer = getTestStreamWriter()) {
+      // Writer is closed without any traffic.
+      TimeUnit.SECONDS.sleep(1);
+    }
+  }
 }

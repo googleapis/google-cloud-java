@@ -27,6 +27,11 @@ import javax.annotation.Nullable;
 
 /** Exceptions for Storage Client Libraries. */
 public final class Exceptions {
+  public static class WriterClosedException extends Exception {
+    public WriterClosedException(String streamName) {
+      super("Writer closed on: " + streamName);
+    }
+  }
   /** Main Storage Exception. Might contain map of streams to errors for that stream. */
   public static class StorageException extends RuntimeException {
 
