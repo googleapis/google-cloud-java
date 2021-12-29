@@ -22,6 +22,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.Descriptor;
+import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Message;
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -34,7 +35,10 @@ import org.json.JSONObject;
 /**
  * A StreamWriter that can write JSON data (JSONObjects) to BigQuery tables. The JsonStreamWriter is
  * built on top of a StreamWriter, and it simply converts all JSON data to protobuf messages then
- * calls StreamWriter's append() method to write to BigQuery tables.
+ * calls StreamWriter's append() method to write to BigQuery tables. It maintains all StreamWriter
+ * functions, but also provides an additional feature: schema update support, where if the BigQuery
+ * table schema is updated, users will be able to ingest data on the new schema after some time (in
+ * order of minutes).
  */
 public class JsonStreamWriter implements AutoCloseable {
   private static String streamPatternString =
@@ -81,27 +85,49 @@ public class JsonStreamWriter implements AutoCloseable {
   /**
    * Writes a JSONArray that contains JSONObjects to the BigQuery table by first converting the JSON
    * data to protobuf messages, then using StreamWriter's append() to write the data at current end
-   * of stream.
+   * of stream. If there is a schema update, the current StreamWriter is closed. A new StreamWriter
+   * is created with the updated TableSchema.
    *
    * @param jsonArr The JSON array that contains JSONObjects to be written
    * @return ApiFuture<AppendRowsResponse> returns an AppendRowsResponse message wrapped in an
    *     ApiFuture
    */
-  public ApiFuture<AppendRowsResponse> append(JSONArray jsonArr) {
+  public ApiFuture<AppendRowsResponse> append(JSONArray jsonArr)
+      throws IOException, DescriptorValidationException {
     return append(jsonArr, -1);
   }
 
   /**
    * Writes a JSONArray that contains JSONObjects to the BigQuery table by first converting the JSON
    * data to protobuf messages, then using StreamWriter's append() to write the data at the
-   * specified offset.
+   * specified offset. If there is a schema update, the current StreamWriter is closed. A new
+   * StreamWriter is created with the updated TableSchema.
    *
    * @param jsonArr The JSON array that contains JSONObjects to be written
    * @param offset Offset for deduplication
    * @return ApiFuture<AppendRowsResponse> returns an AppendRowsResponse message wrapped in an
    *     ApiFuture
    */
-  public ApiFuture<AppendRowsResponse> append(JSONArray jsonArr, long offset) {
+  public ApiFuture<AppendRowsResponse> append(JSONArray jsonArr, long offset)
+      throws IOException, DescriptorValidationException {
+    // Handle schema updates in a Thread-safe way by locking down the operation
+    synchronized (this) {
+      TableSchema updatedSchema = this.streamWriter.getUpdatedSchema();
+      if (updatedSchema != null) {
+        // Close the StreamWriter
+        this.streamWriter.close();
+        // Update JsonStreamWriter's TableSchema and Descriptor
+        this.tableSchema = updatedSchema;
+        this.descriptor =
+            BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(updatedSchema);
+        // Create a new underlying StreamWriter with the updated TableSchema and Descriptor
+        this.streamWriter =
+            streamWriterBuilder
+                .setWriterSchema(ProtoSchemaConverter.convert(this.descriptor))
+                .build();
+      }
+    }
+
     ProtoRows.Builder rowsBuilder = ProtoRows.newBuilder();
     // Any error in convertJsonToProtoMessage will throw an
     // IllegalArgumentException/IllegalStateException/NullPointerException and will halt processing
@@ -155,9 +181,9 @@ public class JsonStreamWriter implements AutoCloseable {
       streamWriterBuilder.setEndpoint(endpoint);
     }
     if (traceId != null) {
-      streamWriterBuilder.setTraceId("JsonWriterBeta_" + traceId);
+      streamWriterBuilder.setTraceId("JsonWriter_" + traceId);
     } else {
-      streamWriterBuilder.setTraceId("JsonWriterBeta:null");
+      streamWriterBuilder.setTraceId("JsonWriter:null");
     }
     if (flowControlSettings != null) {
       if (flowControlSettings.getMaxOutstandingRequestBytes() != null) {

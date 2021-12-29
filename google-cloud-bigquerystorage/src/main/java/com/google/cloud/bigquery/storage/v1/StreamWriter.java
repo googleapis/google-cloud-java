@@ -44,8 +44,6 @@ import javax.annotation.concurrent.GuardedBy;
  * A BigQuery Stream Writer that can be used to write data into BigQuery Table.
  *
  * <p>TODO: Support batching.
- *
- * <p>TODO: Support schema change.
  */
 public class StreamWriter implements AutoCloseable {
   private static final Logger log = Logger.getLogger(StreamWriter.class.getName());
@@ -134,6 +132,12 @@ public class StreamWriter implements AutoCloseable {
    */
   @GuardedBy("lock")
   private final Deque<AppendRequestAndResponse> inflightRequestQueue;
+
+  /*
+   * Contains the updated TableSchema.
+   */
+  @GuardedBy("lock")
+  private TableSchema updatedSchema;
 
   /*
    * A client used to interact with BigQuery.
@@ -528,6 +532,9 @@ public class StreamWriter implements AutoCloseable {
   private void requestCallback(AppendRowsResponse response) {
     AppendRequestAndResponse requestWrapper;
     this.lock.lock();
+    if (response.hasUpdatedSchema()) {
+      this.updatedSchema = response.getUpdatedSchema();
+    }
     try {
       // Had a successful connection with at least one result, reset retries.
       // conectionRetryCountWithoutCallback is reset so that only multiple retries, without
@@ -624,7 +631,12 @@ public class StreamWriter implements AutoCloseable {
     return new StreamWriter.Builder(streamName);
   }
 
-  /** A builder of {@link StreamWriterV2}s. */
+  /** Thread-safe getter of updated TableSchema */
+  public synchronized TableSchema getUpdatedSchema() {
+    return this.updatedSchema;
+  }
+
+  /** A builder of {@link StreamWriter}s. */
   public static final class Builder {
 
     private static final long DEFAULT_MAX_INFLIGHT_REQUESTS = 1000L;
@@ -650,6 +662,8 @@ public class StreamWriter implements AutoCloseable {
         BigQueryWriteSettings.defaultCredentialsProviderBuilder().build();
 
     private String traceId = null;
+
+    private TableSchema updatedTableSchema = null;
 
     private Builder(String streamName) {
       this.streamName = Preconditions.checkNotNull(streamName);

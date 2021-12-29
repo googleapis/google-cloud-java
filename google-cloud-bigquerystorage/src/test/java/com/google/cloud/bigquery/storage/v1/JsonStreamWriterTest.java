@@ -16,6 +16,7 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.ExecutorProvider;
@@ -26,6 +27,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.cloud.bigquery.storage.test.JsonTest;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
+import com.google.cloud.bigquery.storage.test.Test.UpdatedFooType;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
@@ -193,7 +195,7 @@ public class JsonStreamWriterTest {
               .getSerializedRows(0),
           expectedProto.toByteString());
       assertEquals(
-          testBigQueryWrite.getAppendRequests().get(0).getTraceId(), "JsonWriterBeta_test:empty");
+          testBigQueryWrite.getAppendRequests().get(0).getTraceId(), "JsonWriter_test:empty");
     }
   }
 
@@ -284,8 +286,7 @@ public class JsonStreamWriterTest {
               .getProtoRows()
               .getRows()
               .getSerializedRowsCount());
-      assertEquals(
-          testBigQueryWrite.getAppendRequests().get(0).getTraceId(), "JsonWriterBeta:null");
+      assertEquals(testBigQueryWrite.getAppendRequests().get(0).getTraceId(), "JsonWriter:null");
       for (int i = 0; i < 4; i++) {
         assertEquals(
             testBigQueryWrite
@@ -386,6 +387,113 @@ public class JsonStreamWriterTest {
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build()) {
       assertEquals("projects/p/datasets/d/tables/t/_default", writer.getStreamName());
+    }
+  }
+
+  @Test
+  public void testSimpleSchemaUpdate() throws Exception {
+    try (JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build()) {
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+              .setUpdatedSchema(UPDATED_TABLE_SCHEMA)
+              .build());
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(1)).build())
+              .build());
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(2)).build())
+              .build());
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(3)).build())
+              .build());
+      // First append
+      JSONObject foo = new JSONObject();
+      foo.put("foo", "aaa");
+      JSONArray jsonArr = new JSONArray();
+      jsonArr.put(foo);
+
+      ApiFuture<AppendRowsResponse> appendFuture1 = writer.append(jsonArr);
+      ApiFuture<AppendRowsResponse> appendFuture2 = writer.append(jsonArr);
+      ApiFuture<AppendRowsResponse> appendFuture3 = writer.append(jsonArr);
+
+      assertEquals(0L, appendFuture1.get().getAppendResult().getOffset().getValue());
+      assertEquals(1L, appendFuture2.get().getAppendResult().getOffset().getValue());
+      assertEquals(
+          1,
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(0)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRowsCount());
+      assertEquals(
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(0)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRows(0),
+          FooType.newBuilder().setFoo("aaa").build().toByteString());
+
+      assertEquals(2L, appendFuture3.get().getAppendResult().getOffset().getValue());
+      assertEquals(
+          1,
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(1)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRowsCount());
+      assertEquals(
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(1)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRows(0),
+          FooType.newBuilder().setFoo("aaa").build().toByteString());
+
+      // Second append with updated schema.
+      JSONObject updatedFoo = new JSONObject();
+      updatedFoo.put("foo", "aaa");
+      updatedFoo.put("bar", "bbb");
+      JSONArray updatedJsonArr = new JSONArray();
+      updatedJsonArr.put(updatedFoo);
+
+      ApiFuture<AppendRowsResponse> appendFuture4 = writer.append(updatedJsonArr);
+
+      assertEquals(3L, appendFuture4.get().getAppendResult().getOffset().getValue());
+      assertEquals(4, testBigQueryWrite.getAppendRequests().size());
+      assertEquals(
+          1,
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(3)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRowsCount());
+      assertEquals(
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(3)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRows(0),
+          UpdatedFooType.newBuilder().setFoo("aaa").setBar("bbb").build().toByteString());
+
+      assertTrue(testBigQueryWrite.getAppendRequests().get(0).getProtoRows().hasWriterSchema());
+      assertTrue(
+          testBigQueryWrite.getAppendRequests().get(2).getProtoRows().hasWriterSchema()
+              || testBigQueryWrite.getAppendRequests().get(3).getProtoRows().hasWriterSchema());
     }
   }
 }
