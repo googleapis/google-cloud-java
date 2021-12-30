@@ -19,10 +19,7 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
-import io.grpc.Status;
-import io.grpc.Status.Code;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import io.grpc.protobuf.StatusProto;
 import javax.annotation.Nullable;
 
 /** Exceptions for Storage Client Libraries. */
@@ -124,30 +121,8 @@ public final class Exceptions {
    */
   @Nullable
   public static StorageException toStorageException(Throwable exception) {
-    // TODO: switch to using rpcStatus when cl/408735437 is rolled out
-    // com.google.rpc.Status rpcStatus = StatusProto.fromThrowable(exception);
-    Status grpcStatus = Status.fromThrowable(exception);
-    String message = exception.getMessage();
-    String streamPatternString = "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+";
-    Pattern streamPattern = Pattern.compile(streamPatternString);
-    if (message == null) {
-      return null;
-    }
-    // TODO: SWTICH TO CHECK SCHEMA_MISMATCH_EXTRA_FIELDS IN THE ERROR CODE
-    if (grpcStatus.getCode().equals(Code.INVALID_ARGUMENT)
-        && message.toLowerCase().contains("input schema has more fields than bigquery schema")) {
-      Matcher streamMatcher = streamPattern.matcher(message);
-      String entity = streamMatcher.find() ? streamMatcher.group() : "streamName unkown";
-      return new SchemaMismatchedException(entity, message, exception);
-    }
-    // TODO: SWTICH TO CHECK STREAM_FINALIZED IN THE ERROR CODE
-    if (grpcStatus.getCode().equals(Code.INVALID_ARGUMENT)
-        && message.toLowerCase().contains("stream has been finalized and cannot be appended")) {
-      Matcher streamMatcher = streamPattern.matcher(message);
-      String entity = streamMatcher.find() ? streamMatcher.group() : "streamName unkown";
-      return new StreamFinalizedException(entity, message, exception);
-    }
-    return null;
+    com.google.rpc.Status rpcStatus = StatusProto.fromThrowable(exception);
+    return toStorageException(rpcStatus, exception);
   }
 
   private Exceptions() {}

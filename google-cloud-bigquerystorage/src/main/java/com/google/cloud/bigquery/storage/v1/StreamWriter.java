@@ -590,17 +590,14 @@ public class StreamWriter implements AutoCloseable {
                   + " for stream "
                   + streamName);
         } else {
-          this.connectionFinalStatus = finalStatus;
+          Exceptions.StorageException storageException = Exceptions.toStorageException(finalStatus);
+          this.connectionFinalStatus = storageException != null ? storageException : finalStatus;
           log.info(
               "Stream finished with error " + finalStatus.toString() + " for stream " + streamName);
         }
       }
     } finally {
       this.lock.unlock();
-    }
-    Exceptions.StorageException storageException = Exceptions.toStorageException(finalStatus);
-    if (storageException != null) {
-      this.connectionFinalStatus = storageException;
     }
   }
 

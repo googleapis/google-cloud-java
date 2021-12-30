@@ -745,10 +745,9 @@ public class ITBigQueryWriteManualClientTest {
         response.get();
         Assert.fail("Should fail");
       } catch (ExecutionException e) {
-        // TODO(stephwang): update test case when toStroageException is updated
+        assertEquals(Exceptions.SchemaMismatchedException.class, e.getCause().getClass());
         assertThat(e.getCause().getMessage())
-            .contains(
-                "io.grpc.StatusRuntimeException: INVALID_ARGUMENT: Input schema has more fields than BigQuery schema");
+            .contains("Schema mismatch due to extra fields in user schema");
       }
     }
   }
@@ -777,10 +776,8 @@ public class ITBigQueryWriteManualClientTest {
         response.get();
         Assert.fail("Should fail");
       } catch (ExecutionException e) {
-        //   //TODO(stephwang): update test case when toStroageException is updated
-        assertThat(e.getCause().getMessage())
-            .contains(
-                "io.grpc.StatusRuntimeException: INVALID_ARGUMENT: Stream has been finalized and cannot be appended");
+        assertEquals(Exceptions.StreamFinalizedException.class, e.getCause().getClass());
+        assertThat(e.getCause().getMessage()).contains("Stream is finalized");
       }
     }
   }
