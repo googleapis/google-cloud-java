@@ -1,5 +1,15 @@
 # Changelog
 
+### [3.5.2](https://www.github.com/googleapis/java-logging/compare/v3.5.1...v3.5.2) (2021-12-28)
+
+
+### Bug Fixes
+
+* enforce w3c trace context value validation ([#777](https://www.github.com/googleapis/java-logging/issues/777)) ([0150655](https://www.github.com/googleapis/java-logging/commit/0150655891537a8de3f3debb5ec5c49f4a6de146))
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-logging/issues/1299)) ([#780](https://www.github.com/googleapis/java-logging/issues/780)) ([3f70b62](https://www.github.com/googleapis/java-logging/commit/3f70b6261b606c03307eb8ca5dbea14526d1b054))
+* Rename LogDestinationName.getId() to LogDestinationName.getDestinationId() ([#797](https://www.github.com/googleapis/java-logging/issues/797)) ([62e7838](https://www.github.com/googleapis/java-logging/commit/62e783839b9a7c29a05bfeac55189bd8ea1bdfd6))
+* Rename staleness.critical config parameter to staleness.extraold ([#781](https://www.github.com/googleapis/java-logging/issues/781)) ([3083bca](https://www.github.com/googleapis/java-logging/commit/3083bca8fb388092c5abfbe5efc58d1de757bb00))
+
 ### [3.5.1](https://www.github.com/googleapis/java-logging/compare/v3.5.0...v3.5.1) (2021-12-03)
 
 
