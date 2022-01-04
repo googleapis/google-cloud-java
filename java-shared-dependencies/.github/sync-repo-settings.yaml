@@ -22,6 +22,7 @@ branchProtectionRules:
       - dependencies (11, java-storage)
       - dependencies (11, java-pubsub)
       - cla/google
+      - OwlBot Post Processor
   - pattern: java7
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -67,6 +68,7 @@ branchProtectionRules:
       - dependencies (11, java-storage)
       - dependencies (11, java-pubsub)
       - cla/google
+      - OwlBot Post Processor
   - pattern: 0.20.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
