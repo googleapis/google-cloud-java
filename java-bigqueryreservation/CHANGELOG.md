@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-bigqueryreservation/compare/v2.1.4...v2.2.0) (2021-12-27)
+
+
+### Features
+
+* increase the logical timeout (retry deadline) to 5 minutes ([#577](https://www.github.com/googleapis/java-bigqueryreservation/issues/577)) ([574dcca](https://www.github.com/googleapis/java-bigqueryreservation/commit/574dcca7941e3b0a5a21c4f5241f9136ee00b6a4))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-bigqueryreservation/issues/1299)) ([#573](https://www.github.com/googleapis/java-bigqueryreservation/issues/573)) ([8e80b7e](https://www.github.com/googleapis/java-bigqueryreservation/commit/8e80b7e7a9046e7c396807e78804eeeab90d439d))
+
 ### [2.1.4](https://www.github.com/googleapis/java-bigqueryreservation/compare/v2.1.3...v2.1.4) (2021-12-03)
 
 
