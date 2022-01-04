@@ -126,9 +126,7 @@ public class DateTest {
     Date d1 = Date.fromYearMonthDay(2016, 9, 18);
     Date d2 = Date.fromYearMonthDay(2016, 9, 18);
     Date d3 = Date.fromYearMonthDay(2016, 9, 19);
-    EqualsTester tester = new EqualsTester();
-    tester.addEqualityGroup(d1, d2);
-    tester.addEqualityGroup(d3);
+    new EqualsTester().addEqualityGroup(d1, d2).addEqualityGroup(d3).testEquals();
   }
 
   @Test

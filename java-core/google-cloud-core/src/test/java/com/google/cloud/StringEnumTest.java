@@ -101,13 +101,12 @@ public class StringEnumTest {
 
   @Test
   public void testEquals() {
-    EqualsTester tester = new EqualsTester();
-
-    tester.addEqualityGroup(Letter.A, Letter.valueOf("A"), Letter.valueOfStrict("A"));
-    tester.addEqualityGroup(Letter.B, Letter.valueOf("B"), Letter.valueOfStrict("B"));
-    tester.addEqualityGroup(Letter.C, Letter.valueOf("C"), Letter.valueOfStrict("C"));
-    tester.addEqualityGroup(
-        Letter.valueOf("NonExistentLetter"), Letter.valueOf("NonExistentLetter"));
+    new EqualsTester()
+        .addEqualityGroup(Letter.A, Letter.valueOf("A"), Letter.valueOfStrict("A"))
+        .addEqualityGroup(Letter.B, Letter.valueOf("B"), Letter.valueOfStrict("B"))
+        .addEqualityGroup(Letter.C, Letter.valueOf("C"), Letter.valueOfStrict("C"))
+        .addEqualityGroup(Letter.valueOf("NonExistentLetter"), Letter.valueOf("NonExistentLetter"))
+        .testEquals();
   }
 
   @Test
@@ -123,6 +122,7 @@ public class StringEnumTest {
   @Test
   public void testValues() {
     assertThat(
-        Arrays.asList(Letter.values()).containsAll(Arrays.asList(Letter.A, Letter.B, Letter.C)));
+            Arrays.asList(Letter.values()).containsAll(Arrays.asList(Letter.A, Letter.B, Letter.C)))
+        .isTrue();
   }
 }

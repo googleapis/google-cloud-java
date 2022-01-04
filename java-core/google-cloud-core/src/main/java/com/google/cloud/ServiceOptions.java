@@ -697,7 +697,7 @@ public abstract class ServiceOptions<
         && Objects.equals(retrySettings, other.retrySettings)
         && Objects.equals(serviceFactoryClassName, other.serviceFactoryClassName)
         && Objects.equals(serviceRpcFactoryClassName, other.serviceRpcFactoryClassName)
-        && Objects.equals(clock, clock)
+        && Objects.equals(clock, other.clock)
         && Objects.equals(quotaProjectId, other.quotaProjectId);
   }
 
