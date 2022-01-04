@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.8.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.7.0...v2.8.0) (2021-12-30)
+
+
+### Features
+
+* Add ignoreUnknownField support in JsonWriter ([#1455](https://www.github.com/googleapis/java-bigquerystorage/issues/1455)) ([4616adb](https://www.github.com/googleapis/java-bigquerystorage/commit/4616adb30d07d7be522b74837adae080eca103a6))
+* Add reconnect support to v1 client lib. ([#1446](https://www.github.com/googleapis/java-bigquerystorage/issues/1446)) ([a5157fa](https://www.github.com/googleapis/java-bigquerystorage/commit/a5157faf37354ee48a0af930a68edf4823b5be6f))
+* add schema update support in JsonStreamWriter ([#1447](https://www.github.com/googleapis/java-bigquerystorage/issues/1447)) ([973afcc](https://www.github.com/googleapis/java-bigquerystorage/commit/973afccc22507b8109b3920d3fc183692dcc66c2))
+* support `append()` without offset in `StreamWriter` ([#1452](https://www.github.com/googleapis/java-bigquerystorage/issues/1452)) ([cb8b0ad](https://www.github.com/googleapis/java-bigquerystorage/commit/cb8b0ad25fbf07c3509b3d94244a999b9cb90e54))
+
+
+### Bug Fixes
+
+* allow all fields to be null values ([#1450](https://www.github.com/googleapis/java-bigquerystorage/issues/1450)) ([e47ac79](https://www.github.com/googleapis/java-bigquerystorage/commit/e47ac791765486f02f027d3c440645ef2a379ba9))
+* finish BIGNUMERIC support ([#1449](https://www.github.com/googleapis/java-bigquerystorage/issues/1449)) ([d9d51cd](https://www.github.com/googleapis/java-bigquerystorage/commit/d9d51cd203733a972c80e312e9e279b50fb260fa))
+* fix a NullPtr when user closes a writer without connection being ever established ([#1454](https://www.github.com/googleapis/java-bigquerystorage/issues/1454)) ([b774f5d](https://www.github.com/googleapis/java-bigquerystorage/commit/b774f5d0d00275278708d1299b4912b455be4bed))
+* update storageError support due to server side enhancement ([#1456](https://www.github.com/googleapis/java-bigquerystorage/issues/1456)) ([6243ad5](https://www.github.com/googleapis/java-bigquerystorage/commit/6243ad5cba61d4dae7f4ceb60b09c625e7589215))
+
 ## [2.7.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.6.5...v2.7.0) (2021-12-07)
 
 
