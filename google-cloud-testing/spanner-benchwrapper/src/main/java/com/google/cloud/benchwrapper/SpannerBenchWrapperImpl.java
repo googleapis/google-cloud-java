@@ -19,7 +19,6 @@ package com.google.cloud.benchwrapper;
 import static com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.cloud.benchwrapper.SpannerBenchWrapperGrpc.SpannerBenchWrapperImplBase;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
@@ -29,7 +28,6 @@ import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerBatchUpdateException;
 import com.google.cloud.spanner.SpannerOptions;
-import com.google.cloud.spanner.SpannerOptions.CallCredentialsProvider;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.TransactionContext;
 import io.grpc.ManagedChannelBuilder;
