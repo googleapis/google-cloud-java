@@ -25,10 +25,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.nio.file.Path;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
@@ -98,10 +101,24 @@ public class Emulator {
     }
     this.port = getAvailablePort();
 
+    // Try to align the localhost address across java & golang emulator
+    // This should fix issues on systems that default to ipv4 but the jvm is started with
+    // -Djava.net.preferIPv6Addresses=true
+    Optional<String> localhostAddress = Optional.empty();
+    try {
+      localhostAddress = Optional.of(InetAddress.getByName(null).getHostAddress());
+    } catch (UnknownHostException e) {
+    }
+
     // Workaround https://bugs.openjdk.java.net/browse/JDK-8068370
     for (int attemptsLeft = 3; process == null; attemptsLeft--) {
       try {
-        process = Runtime.getRuntime().exec(String.format("%s -port %d", executable, port));
+        String cmd = executable.toString();
+        if (localhostAddress.isPresent()) {
+          cmd += String.format(" -host [%s]", localhostAddress.get());
+        }
+        cmd += String.format(" -port %d", port);
+        process = Runtime.getRuntime().exec(cmd);
       } catch (IOException e) {
         if (attemptsLeft > 0) {
           Thread.sleep(1000);
