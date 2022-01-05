@@ -1,5 +1,26 @@
 # Changelog
 
+### [1.2.3](https://www.github.com/googleapis/java-shared-config/compare/v1.2.2...v1.2.3) (2022-01-04)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-shared-config/issues/1299)) ([#376](https://www.github.com/googleapis/java-shared-config/issues/376)) ([50e7a10](https://www.github.com/googleapis/java-shared-config/commit/50e7a10a8dca0505fd831e3dd929577d2f82b011))
+* **java:** Only enable integration tests for native image testing ([#375](https://www.github.com/googleapis/java-shared-config/issues/375)) ([663f421](https://www.github.com/googleapis/java-shared-config/commit/663f421de342afcba24703079f778738045d3ff2))
+* **java:** Pass missing integration test flags to native image test commands ([#1309](https://www.github.com/googleapis/java-shared-config/issues/1309)) ([#383](https://www.github.com/googleapis/java-shared-config/issues/383)) ([b17b44e](https://www.github.com/googleapis/java-shared-config/commit/b17b44e37fe44ba61616417189c6b2271f3a4d18))
+
+
+### Dependencies
+
+* update auto-value-annotation.version to v1.9 ([#378](https://www.github.com/googleapis/java-shared-config/issues/378)) ([5e1cd0e](https://www.github.com/googleapis/java-shared-config/commit/5e1cd0e39910548ec4eb6639da979c3b66411503))
+* update dependency com.google.googlejavaformat:google-java-format to v1.13.0 ([#361](https://www.github.com/googleapis/java-shared-config/issues/361)) ([095d60a](https://www.github.com/googleapis/java-shared-config/commit/095d60a061a574dcf84b9fcf26dff48617a306b1))
+* update dependency com.puppycrawl.tools:checkstyle to v9.2 ([#366](https://www.github.com/googleapis/java-shared-config/issues/366)) ([061df67](https://www.github.com/googleapis/java-shared-config/commit/061df676d8b2fef5bbb0ce9661d3c96fcb57e73a))
+* update dependency com.puppycrawl.tools:checkstyle to v9.2.1 ([#382](https://www.github.com/googleapis/java-shared-config/issues/382)) ([1a182c5](https://www.github.com/googleapis/java-shared-config/commit/1a182c52e7c5431875296940d68c9bdfcf74be00))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.9 ([#379](https://www.github.com/googleapis/java-shared-config/issues/379)) ([0a2b05f](https://www.github.com/googleapis/java-shared-config/commit/0a2b05ff7f649331efbc4dd540705da10691a2f1))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.8 ([#372](https://www.github.com/googleapis/java-shared-config/issues/372)) ([6fe795e](https://www.github.com/googleapis/java-shared-config/commit/6fe795ede39575656ef1609bf7aac28c1d170976))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.9 ([#380](https://www.github.com/googleapis/java-shared-config/issues/380)) ([f2efad5](https://www.github.com/googleapis/java-shared-config/commit/f2efad585b431fe186c7900a8171a999c689405b))
+* update dependency org.junit.vintage:junit-vintage-engine to v5.8.2 ([#365](https://www.github.com/googleapis/java-shared-config/issues/365)) ([604058d](https://www.github.com/googleapis/java-shared-config/commit/604058d52dc962db9a506762926576542687285e))
+
 ### [1.2.2](https://www.github.com/googleapis/java-shared-config/compare/v1.2.1...v1.2.2) (2021-11-16)
 
 
