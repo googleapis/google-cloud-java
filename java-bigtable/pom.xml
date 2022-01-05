@@ -260,9 +260,6 @@
                         <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/stub/metrics/**</sourceFileExclude>
                     </sourceFileExcludes>
 
-                    <!-- exclude stats package which shades opencensus for builtin metrics -->
-                    <excludePackageNames>com.google.cloud.bigtable.stats</excludePackageNames>
-
                     <!-- Enable external linking -->
                     <links>
                         <link>https://googleapis.dev/java/gax/${gax.version}/</link>
