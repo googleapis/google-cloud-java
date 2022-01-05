@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.5.0](https://www.github.com/googleapis/java-bigtable/compare/v2.4.0...v2.5.0) (2022-01-05)
+
+
+### Features
+
+* add batch throttled ms metric ([#888](https://www.github.com/googleapis/java-bigtable/issues/888)) ([0d197a5](https://www.github.com/googleapis/java-bigtable/commit/0d197a5ab9b7ccd20091c1c6c4a794586d6a51dc))
+* ARM support for gcloud bigtable emulator ([#1094](https://www.github.com/googleapis/java-bigtable/issues/1094)) ([d3cb4a4](https://www.github.com/googleapis/java-bigtable/commit/d3cb4a4e03ae0f7e065bfee06ac8e3b86b447a4a))
+
+
+### Bug Fixes
+
+* align ip version preference for the wrapped  emulator ([#1052](https://www.github.com/googleapis/java-bigtable/issues/1052)) ([9dc93c5](https://www.github.com/googleapis/java-bigtable/commit/9dc93c5c9372f1501006e2d3a3a7affecd65fb8e))
+* remove stats from javadoc ([#1108](https://www.github.com/googleapis/java-bigtable/issues/1108)) ([33fe7fe](https://www.github.com/googleapis/java-bigtable/commit/33fe7fe162cf84339e1887b052e446ef0aaf19d6))
+* remove tracking latency from channel priming requests ([#1082](https://www.github.com/googleapis/java-bigtable/issues/1082)) ([bd873bc](https://www.github.com/googleapis/java-bigtable/commit/bd873bc82f0b210312fd442678c801758291935e))
+
 ## [2.4.0](https://www.github.com/googleapis/java-bigtable/compare/v2.3.1...v2.4.0) (2021-12-07)
 
 
