@@ -1,5 +1,25 @@
 # Changelog
 
+### [2.3.4](https://www.github.com/googleapis/java-core/compare/v2.3.3...v2.3.4) (2022-01-06)
+
+
+### Bug Fixes
+
+* fixed compilation warnings from error prone ([e6e7040](https://www.github.com/googleapis/java-core/commit/e6e7040305b19ec9d5468f4cd44d7a29d0d5e470))
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-core/issues/1299)) ([#643](https://www.github.com/googleapis/java-core/issues/643)) ([0f4c1db](https://www.github.com/googleapis/java-core/commit/0f4c1dbbd89d82f5cc86c2b684d6645699b835b3))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-core/issues/1301)) ([#652](https://www.github.com/googleapis/java-core/issues/652)) ([ab2fa93](https://www.github.com/googleapis/java-core/commit/ab2fa93ba0434f593abb063afad44dc923bf462a))
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v1.33.0 ([#658](https://www.github.com/googleapis/java-core/issues/658)) ([d417ebd](https://www.github.com/googleapis/java-core/commit/d417ebd7bedc9d4e983f32c87a8d61163502cf1d))
+* update dependency com.google.api:gax-bom to v2.8.0 ([#659](https://www.github.com/googleapis/java-core/issues/659)) ([91717ab](https://www.github.com/googleapis/java-core/commit/91717ab9361a31976727b26d08837e8b3838bdb4))
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.7.1 ([#656](https://www.github.com/googleapis/java-core/issues/656)) ([ecfbdc1](https://www.github.com/googleapis/java-core/commit/ecfbdc181087d37d38f7911b9962953f5d246434))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.2.0 ([#645](https://www.github.com/googleapis/java-core/issues/645)) ([3926b54](https://www.github.com/googleapis/java-core/commit/3926b5423893635dd709b8fc6037fb896396ff13))
+* update dependency com.google.http-client:google-http-client-bom to v1.41.0 ([#657](https://www.github.com/googleapis/java-core/issues/657)) ([41a5120](https://www.github.com/googleapis/java-core/commit/41a51201a3712f71f6cf3be3c29db68360b2405f))
+* update dependency com.google.protobuf:protobuf-bom to v3.19.2 ([#655](https://www.github.com/googleapis/java-core/issues/655)) ([eb6c037](https://www.github.com/googleapis/java-core/commit/eb6c03729af41e6d7bd9db80644b8ddfd22e78ec))
+* update dependency io.grpc:grpc-bom to v1.43.1 ([#647](https://www.github.com/googleapis/java-core/issues/647)) ([275b882](https://www.github.com/googleapis/java-core/commit/275b882918f7625daeb3e98ab26b7b0a2f2cdb7b))
+
 ### [2.3.3](https://www.github.com/googleapis/java-core/compare/v2.3.2...v2.3.3) (2021-12-02)
 
 
