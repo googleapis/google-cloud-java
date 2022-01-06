@@ -17,8 +17,8 @@
 package com.google.cloud.iam.admin.v1.it;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assume.assumeNotNull;
 
 import com.google.cloud.iam.admin.v1.IAMClient;
 import com.google.iam.admin.v1.ProjectName;
@@ -44,7 +44,7 @@ public class ITSystemTest {
 
   @Test
   public void listServiceAccounts() {
-    assumeNotNull(PROJECT_ID);
+    assertNotNull(PROJECT_ID);
 
     int count = 0;
     for (ServiceAccount serviceAccount :
