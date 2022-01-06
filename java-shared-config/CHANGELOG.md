@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.4](https://www.github.com/googleapis/java-shared-config/compare/v1.2.3...v1.2.4) (2022-01-06)
+
+
+### Dependencies
+
+* revert dependency com.google.googlejavaformat:google-java-format to v1.7 ([#391](https://www.github.com/googleapis/java-shared-config/issues/391)) ([17077fb](https://www.github.com/googleapis/java-shared-config/commit/17077fb1a58eef7098dc5e1e9b2c78a63c5c11e1))
+
 ### [1.2.3](https://www.github.com/googleapis/java-shared-config/compare/v1.2.2...v1.2.3) (2022-01-04)
 
 
