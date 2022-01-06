@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.3.5](https://www.github.com/googleapis/java-core/compare/v2.3.4...v2.3.5) (2022-01-06)
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v2.1.2 ([#661](https://www.github.com/googleapis/java-core/issues/661)) ([0a136d8](https://www.github.com/googleapis/java-core/commit/0a136d8122f6c5042808cbfee9e58dc53e368da6))
+* update gax.version to v2.8.1 ([#663](https://www.github.com/googleapis/java-core/issues/663)) ([7c09aa5](https://www.github.com/googleapis/java-core/commit/7c09aa5729408a395f1a8fae94744f9d33638b1a))
+
 ### [2.3.4](https://www.github.com/googleapis/java-core/compare/v2.3.3...v2.3.4) (2022-01-06)
 
 
