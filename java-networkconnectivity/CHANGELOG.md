@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-networkconnectivity/compare/v0.4.0...v0.5.0) (2022-01-07)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-networkconnectivity/issues/1196)) ([#140](https://www.github.com/googleapis/java-networkconnectivity/issues/140)) ([1815962](https://www.github.com/googleapis/java-networkconnectivity/commit/181596270ab199a77b78cc7eda7100e24102526f))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-networkconnectivity/issues/1299)) ([#182](https://www.github.com/googleapis/java-networkconnectivity/issues/182)) ([978dc4c](https://www.github.com/googleapis/java-networkconnectivity/commit/978dc4cf832ed987a3baa895909f7d47d195cfbb))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-networkconnectivity/issues/1266)) ([#167](https://www.github.com/googleapis/java-networkconnectivity/issues/167)) ([a00e58d](https://www.github.com/googleapis/java-networkconnectivity/commit/a00e58d93bf12431d04f3f938a910faab9ac1711))
+* Mark a couple networkconnectivity API fields as required, to match implemented behavior ([#174](https://www.github.com/googleapis/java-networkconnectivity/issues/174)) ([507173f](https://www.github.com/googleapis/java-networkconnectivity/commit/507173fd2d1b771a8db26201649dbf98786738f8))
+* Remove ActivateSpoke and DeactivateSpoke methods ([#136](https://www.github.com/googleapis/java-networkconnectivity/issues/136)) ([5beedfa](https://www.github.com/googleapis/java-networkconnectivity/commit/5beedfa50c4ce32b0a25ad4fefa14ff254ecae19))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#130](https://www.github.com/googleapis/java-networkconnectivity/issues/130)) ([6a4ad85](https://www.github.com/googleapis/java-networkconnectivity/commit/6a4ad85591d7751f075507be6979c3fcb9c001d3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#135](https://www.github.com/googleapis/java-networkconnectivity/issues/135)) ([0a6d812](https://www.github.com/googleapis/java-networkconnectivity/commit/0a6d812e352b9e2acf2a5d31ab3e2d2fd144a360))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#142](https://www.github.com/googleapis/java-networkconnectivity/issues/142)) ([6e79651](https://www.github.com/googleapis/java-networkconnectivity/commit/6e79651d59b502e25fa7b04103ac26f4904655e0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#150](https://www.github.com/googleapis/java-networkconnectivity/issues/150)) ([fba50a8](https://www.github.com/googleapis/java-networkconnectivity/commit/fba50a820442feb8dec1c50409a8b4803bc52a22))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#154](https://www.github.com/googleapis/java-networkconnectivity/issues/154)) ([1a843b1](https://www.github.com/googleapis/java-networkconnectivity/commit/1a843b16dbdfcfd3fcc7060f1d8871f74ba50dee))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#164](https://www.github.com/googleapis/java-networkconnectivity/issues/164)) ([74e8a37](https://www.github.com/googleapis/java-networkconnectivity/commit/74e8a377cb0da038414ce0352067b9a328a1b860))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#176](https://www.github.com/googleapis/java-networkconnectivity/issues/176)) ([680fc3d](https://www.github.com/googleapis/java-networkconnectivity/commit/680fc3d426b48689f665f179deddb2bd0cf6a0e7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#181](https://www.github.com/googleapis/java-networkconnectivity/issues/181)) ([c596af4](https://www.github.com/googleapis/java-networkconnectivity/commit/c596af4ff73046156570fccd080d7128e8af610d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#186](https://www.github.com/googleapis/java-networkconnectivity/issues/186)) ([eb46c69](https://www.github.com/googleapis/java-networkconnectivity/commit/eb46c696d28db34bed009a329b6ad5615e2978d4))
+
 ## [0.4.0](https://www.github.com/googleapis/java-networkconnectivity/compare/v0.3.2...v0.4.0) (2021-08-10)
 
 
