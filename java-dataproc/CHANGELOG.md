@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.3.1](https://www.github.com/googleapis/java-dataproc/compare/v2.3.0...v2.3.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-dataproc/issues/1299)) ([#746](https://www.github.com/googleapis/java-dataproc/issues/746)) ([1cfdaae](https://www.github.com/googleapis/java-dataproc/commit/1cfdaae5ef043a12c5bb9debf3bb8f1ffe366b5f))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-dataproc/issues/1301)) ([#755](https://www.github.com/googleapis/java-dataproc/issues/755)) ([5035a44](https://www.github.com/googleapis/java-dataproc/commit/5035a44dcedf0d993c750086c78813b886fceca3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#760](https://www.github.com/googleapis/java-dataproc/issues/760)) ([04a07b6](https://www.github.com/googleapis/java-dataproc/commit/04a07b6689f6a7df8410ddf7f454c2a639650939))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.2 ([#748](https://www.github.com/googleapis/java-dataproc/issues/748)) ([e5cd53a](https://www.github.com/googleapis/java-dataproc/commit/e5cd53a670fe6efd712ee2415604feceb68ad3d0))
+
 ## [2.3.0](https://www.github.com/googleapis/java-dataproc/compare/v2.2.2...v2.3.0) (2021-12-03)
 
 
