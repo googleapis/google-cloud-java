@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.1.9](https://www.github.com/googleapis/java-accessapproval/compare/v2.1.8...v2.1.9) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-accessapproval/issues/1299)) ([#629](https://www.github.com/googleapis/java-accessapproval/issues/629)) ([965d176](https://www.github.com/googleapis/java-accessapproval/commit/965d1762b263856987a1cfdb70a1dc7491d65499))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-accessapproval/issues/1301)) ([#637](https://www.github.com/googleapis/java-accessapproval/issues/637)) ([da1adb4](https://www.github.com/googleapis/java-accessapproval/commit/da1adb4be09ceb02947283850bb217411478e748))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.3.4 ([#639](https://www.github.com/googleapis/java-accessapproval/issues/639)) ([364d2a0](https://www.github.com/googleapis/java-accessapproval/commit/364d2a08b3218642779fd4a966597e7ad72e73a4))
+* update dependency com.google.cloud:google-cloud-core to v2.3.5 ([#643](https://www.github.com/googleapis/java-accessapproval/issues/643)) ([3df65d4](https://www.github.com/googleapis/java-accessapproval/commit/3df65d457096cbbc2cd01587e4ce59a8002e8465))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#641](https://www.github.com/googleapis/java-accessapproval/issues/641)) ([d57ebf3](https://www.github.com/googleapis/java-accessapproval/commit/d57ebf31d329d37d156d31859b9c716049aa892d))
+
 ### [2.1.8](https://www.github.com/googleapis/java-accessapproval/compare/v2.1.7...v2.1.8) (2021-12-05)
 
 
