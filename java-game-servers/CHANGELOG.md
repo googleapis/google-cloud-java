@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.5](https://www.github.com/googleapis/java-game-servers/compare/v2.1.4...v2.1.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-game-servers/issues/1299)) ([#583](https://www.github.com/googleapis/java-game-servers/issues/583)) ([bc985e7](https://www.github.com/googleapis/java-game-servers/commit/bc985e756088f9527f0354b9afb628698c997cc5))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-game-servers/issues/1301)) ([#590](https://www.github.com/googleapis/java-game-servers/issues/590)) ([6adec6d](https://www.github.com/googleapis/java-game-servers/commit/6adec6d1e37fb365ef2c52c306313fc5283f43ad))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#593](https://www.github.com/googleapis/java-game-servers/issues/593)) ([3d1e176](https://www.github.com/googleapis/java-game-servers/commit/3d1e176dd08077b524d5010952a3b4d0a509bc35))
+
 ### [2.1.4](https://www.github.com/googleapis/java-game-servers/compare/v2.1.3...v2.1.4) (2021-12-03)
 
 
