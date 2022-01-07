@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.6.0](https://www.github.com/googleapis/java-shared-dependencies/compare/2.5.1...v2.6.0) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-shared-dependencies/issues/1299)) ([#546](https://www.github.com/googleapis/java-shared-dependencies/issues/546)) ([d8bb8d9](https://www.github.com/googleapis/java-shared-dependencies/commit/d8bb8d9d8e3b8c582f768cd3164e8580ec334511))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-shared-dependencies/issues/1301)) ([#557](https://www.github.com/googleapis/java-shared-dependencies/issues/557)) ([6b57d08](https://www.github.com/googleapis/java-shared-dependencies/commit/6b57d08816ec6c1dfb637cae022624e896930ad8))
+
+
+### Dependencies
+
+* gRPC upgrade to 1.43.2 ([#567](https://www.github.com/googleapis/java-shared-dependencies/issues/567)) ([c946655](https://www.github.com/googleapis/java-shared-dependencies/commit/c94665571f26d24fbbb3f89ef5a3db99663bfdba))
+* update dependency com.google.api-client:google-api-client-bom to v1.33.0 ([#563](https://www.github.com/googleapis/java-shared-dependencies/issues/563)) ([0aedddb](https://www.github.com/googleapis/java-shared-dependencies/commit/0aedddb9a535753767d56f5910f355c7a1c8509c))
+* update dependency com.google.api:api-common to v2.1.2 ([2f154a3](https://www.github.com/googleapis/java-shared-dependencies/commit/2f154a3ff759211438c72859e98b314c7ff8405f))
+* update dependency com.google.http-client:google-http-client-bom to v1.41.0 ([#562](https://www.github.com/googleapis/java-shared-dependencies/issues/562)) ([6da0735](https://www.github.com/googleapis/java-shared-dependencies/commit/6da0735d4db9df998d11c549488a024b800bed65))
+* update dependency io.grpc:grpc-bom to v1.43.1 ([#553](https://www.github.com/googleapis/java-shared-dependencies/issues/553)) ([b787c8f](https://www.github.com/googleapis/java-shared-dependencies/commit/b787c8f2032b7ffc9797158c3ff214b7813f34b7))
+* update dependency org.apache.httpcomponents:httpcore to v4.4.15 ([#550](https://www.github.com/googleapis/java-shared-dependencies/issues/550)) ([e2d3dba](https://www.github.com/googleapis/java-shared-dependencies/commit/e2d3dbad6dd54c117abb5ab1b6137cfee4e5a32b))
+* update dependency org.checkerframework:checker-qual to v3.20.0 ([#549](https://www.github.com/googleapis/java-shared-dependencies/issues/549)) ([586df59](https://www.github.com/googleapis/java-shared-dependencies/commit/586df5949d4ddca11d0705d696882c32d8436c31))
+* update gax.version to v2.8.0 ([#564](https://www.github.com/googleapis/java-shared-dependencies/issues/564)) ([9ad5d4f](https://www.github.com/googleapis/java-shared-dependencies/commit/9ad5d4f5385753a0c5739ef400f5d346e3342b84))
+* update gax.version to v2.8.1 ([2f154a3](https://www.github.com/googleapis/java-shared-dependencies/commit/2f154a3ff759211438c72859e98b314c7ff8405f))
+* update google.common-protos.version to v2.7.1 ([#561](https://www.github.com/googleapis/java-shared-dependencies/issues/561)) ([9aa860d](https://www.github.com/googleapis/java-shared-dependencies/commit/9aa860d92f745f1d4382eb16439bf17ac6ca8ae9))
+* update google.core.version to v2.3.5 ([#565](https://www.github.com/googleapis/java-shared-dependencies/issues/565)) ([2f154a3](https://www.github.com/googleapis/java-shared-dependencies/commit/2f154a3ff759211438c72859e98b314c7ff8405f))
+* update iam.version to v1.2.0 ([#547](https://www.github.com/googleapis/java-shared-dependencies/issues/547)) ([3232c82](https://www.github.com/googleapis/java-shared-dependencies/commit/3232c828b628cb604a200b3e569e56e758e5e11d))
+* upgrading protobuf to 3.19.2 ([#560](https://www.github.com/googleapis/java-shared-dependencies/issues/560)) ([7ef3325](https://www.github.com/googleapis/java-shared-dependencies/commit/7ef33250f5473348d3546210b7a534360f476101))
+
 ### [2.5.1](https://www.github.com/googleapis/java-shared-dependencies/compare/2.5.0...v2.5.1) (2021-12-03)
 
 
