@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.122.15](https://www.github.com/googleapis/java-notification/compare/v0.122.14...v0.122.15) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-notification/issues/1299)) ([#477](https://www.github.com/googleapis/java-notification/issues/477)) ([59fc7cb](https://www.github.com/googleapis/java-notification/commit/59fc7cba9bb96fa428fd38c81ce6c4d38ea1e5de))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-storage to v1-rev20211201-1.32.1 ([#476](https://www.github.com/googleapis/java-notification/issues/476)) ([ceb79d2](https://www.github.com/googleapis/java-notification/commit/ceb79d21cd79ead9a91964157316853199f9a2a3))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.115.0 ([#479](https://www.github.com/googleapis/java-notification/issues/479)) ([b1b0e80](https://www.github.com/googleapis/java-notification/commit/b1b0e80073f2ecdbffc79caf2003ac43f66c5ca0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#488](https://www.github.com/googleapis/java-notification/issues/488)) ([171e613](https://www.github.com/googleapis/java-notification/commit/171e613507f180449d487dcfcd0731dedd19a194))
+
 ### [0.122.14](https://www.github.com/googleapis/java-notification/compare/v0.122.13...v0.122.14) (2021-12-03)
 
 
