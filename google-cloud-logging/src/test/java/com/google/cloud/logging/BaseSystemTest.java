@@ -130,8 +130,6 @@ public class BaseSystemTest {
     return waitForLogs(logName, null, 1);
   }
 
-  private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
   protected static Iterator<LogEntry> waitForLogs(Logging.EntryListOption[] options, int minLogs)
       throws InterruptedException {
     Page<LogEntry> page = logging.listLogEntries(options);

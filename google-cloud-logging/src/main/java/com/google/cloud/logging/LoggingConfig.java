@@ -41,6 +41,8 @@ class LoggingConfig {
   private static final String RESOURCE_TYPE_TAG = "resourceType";
   private static final String ENHANCERS_TAG = "enhancers";
   private static final String USE_INHERITED_CONTEXT = "useInheritedContext";
+  private static final String AUTO_POPULATE_METADATA = "autoPopulateMetadata";
+  private static final String REDIRECT_TO_STDOUT = "redirectToStdout";
 
   public LoggingConfig(String className) {
     this.className = className;
@@ -76,6 +78,14 @@ class LoggingConfig {
     return getFormatterProperty(FORMATTER_TAG, new SimpleFormatter());
   }
 
+  Boolean getAutoPopulateMetadata() {
+    return getBooleanProperty(AUTO_POPULATE_METADATA, null);
+  }
+
+  Boolean getRedirectToStdout() {
+    return getBooleanProperty(REDIRECT_TO_STDOUT, null);
+  }
+
   MonitoredResource getMonitoredResource(String projectId) {
     String resourceType = getProperty(RESOURCE_TYPE_TAG, "");
     return MonitoredResourceUtil.getResource(projectId, resourceType);
@@ -88,10 +98,11 @@ class LoggingConfig {
       if (list != null) {
         String[] items = list.split(",");
         for (String e_name : items) {
-          Class<? extends LoggingEnhancer> clz =
-              (Class<? extends LoggingEnhancer>)
-                  ClassLoader.getSystemClassLoader().loadClass(e_name);
-          enhancers.add(clz.getDeclaredConstructor().newInstance());
+          Class<? extends LoggingEnhancer> clazz =
+              ClassLoader.getSystemClassLoader()
+                  .loadClass(e_name)
+                  .asSubclass(LoggingEnhancer.class);
+          enhancers.add(clazz.getDeclaredConstructor().newInstance());
         }
       }
       return enhancers;
@@ -115,6 +126,14 @@ class LoggingConfig {
 
   private String getProperty(String name, String defaultValue) {
     return firstNonNull(getProperty(name), defaultValue);
+  }
+
+  private Boolean getBooleanProperty(String name, Boolean defaultValue) {
+    String flag = getProperty(name);
+    if (flag != null) {
+      return Boolean.parseBoolean(flag);
+    }
+    return defaultValue;
   }
 
   private Level getLevelProperty(String name, Level defaultValue) {

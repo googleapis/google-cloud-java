@@ -33,6 +33,7 @@ import java.util.Map;
 public class MonitoredResourceUtil {
 
   private static final String APPENGINE_LABEL_PREFIX = "appengine.googleapis.com/";
+  protected static final String PORJECTID_LABEL = Label.ProjectId.getKey();
 
   protected enum Label {
     ClusterName("cluster_name"),

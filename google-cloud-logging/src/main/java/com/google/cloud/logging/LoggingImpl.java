@@ -24,7 +24,9 @@ import static com.google.cloud.logging.Logging.WriteOption.OptionType.LABELS;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LOG_DESTINATION;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LOG_NAME;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.RESOURCE;
+import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.client.util.Strings;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
@@ -40,7 +42,6 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
-import com.google.common.base.Preconditions;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
@@ -92,6 +93,7 @@ import java.util.concurrent.TimeoutException;
 
 class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
+  protected static final String RESOURCE_NAME_FORMAT = "projects/%s/traces/%s";
   private static final int FLUSH_WAIT_TIMEOUT_SECONDS = 6;
   private final LoggingRpc rpc;
   private final Map<Object, ApiFuture<Void>> pendingWrites = new ConcurrentHashMap<>();
@@ -457,10 +459,10 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   @Override
   public ApiFuture<Boolean> deleteLogAsync(String log, LogDestinationName destination) {
-    Preconditions.checkNotNull(log, "log parameter cannot be null");
+    checkNotNull(log, "log parameter cannot be null");
     String projectId = getOptions().getProjectId();
     if (destination == null) {
-      Preconditions.checkNotNull(projectId, "projectId parameter cannot be null");
+      checkNotNull(projectId, "projectId parameter cannot be null");
     }
     LogName name = getLogName(projectId, log, destination);
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(name.toString()).build();
@@ -790,6 +792,54 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return destination.toLogName(logName);
   }
 
+  public Iterable<LogEntry> populateMetadata(
+      Iterable<LogEntry> logEntries,
+      MonitoredResource customResource,
+      String... exclusionClassPaths) {
+    checkNotNull(logEntries);
+    final Boolean needDebugInfo =
+        Iterables.any(
+            logEntries,
+            log -> log.getSeverity() == Severity.DEBUG && log.getSourceLocation() == null);
+    final SourceLocation sourceLocation =
+        needDebugInfo ? SourceLocation.fromCurrentContext(exclusionClassPaths) : null;
+    // populate monitored resource metadata by prioritizing the one set via
+    // WriteOption
+    final MonitoredResource resourceMetadata =
+        customResource == null
+            ? MonitoredResourceUtil.getResource(getOptions().getProjectId(), null)
+            : customResource;
+    final Context context = (new ContextHandler()).getCurrentContext();
+    final ArrayList<LogEntry> populatedLogEntries = Lists.newArrayList();
+
+    // populate empty metadata fields of log entries before calling write API
+    for (LogEntry entry : logEntries) {
+      if (entry == null) {
+        continue;
+      }
+      LogEntry.Builder entityBuilder = entry.toBuilder();
+      if (resourceMetadata != null && entry.getResource() == null) {
+        entityBuilder.setResource(resourceMetadata);
+      }
+      if (context != null && entry.getHttpRequest() == null) {
+        entityBuilder.setHttpRequest(context.getHttpRequest());
+      }
+      if (context != null && Strings.isNullOrEmpty(entry.getTrace())) {
+        MonitoredResource resource =
+            entry.getResource() != null ? entry.getResource() : resourceMetadata;
+        entityBuilder.setTrace(getFormattedTrace(context.getTraceId(), resource));
+      }
+      if (context != null && Strings.isNullOrEmpty(entry.getSpanId())) {
+        entityBuilder.setSpanId(context.getSpanId());
+      }
+      if (entry.getSeverity() == Severity.DEBUG && entry.getSourceLocation() == null) {
+        entityBuilder.setSourceLocation(sourceLocation);
+      }
+      populatedLogEntries.add(entityBuilder.build());
+    }
+    return populatedLogEntries;
+  }
+
   public void write(Iterable<LogEntry> logEntries, WriteOption... options) {
     if (inWriteCall.get() != null) {
       return;
@@ -797,6 +847,18 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     inWriteCall.set(true);
 
     try {
+      final Map<Option.OptionType, ?> writeOptions = optionMap(options);
+      final Boolean logingOptionsPopulateFlag = getOptions().getAutoPopulateMetadata();
+      final Boolean writeOptionPopulateFlga =
+          WriteOption.OptionType.AUTO_POPULATE_METADATA.get(writeOptions);
+
+      if (writeOptionPopulateFlga == Boolean.TRUE
+          || (writeOptionPopulateFlga == null && logingOptionsPopulateFlag == Boolean.TRUE)) {
+        final MonitoredResource sharedResourceMetadata = RESOURCE.get(writeOptions);
+        logEntries =
+            populateMetadata(logEntries, sharedResourceMetadata, this.getClass().getName());
+      }
+
       writeLogEntries(logEntries, options);
       if (flushSeverity != null) {
         for (LogEntry logEntry : logEntries) {
@@ -822,6 +884,27 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     } catch (InterruptedException | ExecutionException | TimeoutException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  /**
+   * Formats trace following resource name template if the resource metadata has project id.
+   *
+   * @param traceId A trace id string or {@code null} if trace info is missing.
+   * @param resource A {@see MonitoredResource} describing environment metadata.
+   * @return A formatted trace id string.
+   */
+  private String getFormattedTrace(String traceId, MonitoredResource resource) {
+    if (traceId == null) {
+      return null;
+    }
+    String projectId = null;
+    if (resource != null) {
+      projectId = resource.getLabels().getOrDefault(MonitoredResourceUtil.PORJECTID_LABEL, null);
+    }
+    if (projectId != null) {
+      return String.format(RESOURCE_NAME_FORMAT, projectId, traceId);
+    }
+    return traceId;
   }
 
   /*

@@ -19,9 +19,17 @@ package com.google.cloud.logging;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.MonitoredResource;
+import com.google.cloud.logging.Payload.Type;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
 import com.google.logging.v2.LogEntryOperation;
 import com.google.logging.v2.LogEntrySourceLocation;
 import com.google.logging.v2.LogName;
@@ -61,8 +69,8 @@ public class LogEntry implements Serializable {
   private final HttpRequest httpRequest;
   private final Map<String, String> labels;
   private final Operation operation;
-  private final Object trace;
-  private final Object spanId;
+  private final String trace;
+  private final String spanId;
   private final boolean traceSampled;
   private final SourceLocation sourceLocation;
   private final Payload<?> payload;
@@ -80,8 +88,8 @@ public class LogEntry implements Serializable {
     private HttpRequest httpRequest;
     private Map<String, String> labels = new HashMap<>();
     private Operation operation;
-    private Object trace;
-    private Object spanId;
+    private String trace;
+    private String spanId;
     private boolean traceSampled;
     private SourceLocation sourceLocation;
     private Payload<?> payload;
@@ -245,7 +253,7 @@ public class LogEntry implements Serializable {
      * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
      */
     public Builder setTrace(Object trace) {
-      this.trace = trace;
+      this.trace = trace != null ? trace.toString() : null;
       return this;
     }
 
@@ -257,7 +265,7 @@ public class LogEntry implements Serializable {
 
     /** Sets the ID of the trace span associated with the log entry, if any. */
     public Builder setSpanId(Object spanId) {
-      this.spanId = spanId;
+      this.spanId = spanId != null ? spanId.toString() : null;
       return this;
     }
 
@@ -573,6 +581,142 @@ public class LogEntry implements Serializable {
       builder.setSourceLocation(sourceLocation.toPb());
     }
     return builder.build();
+  }
+
+  /**
+   * Customized serializers to match the expected format for timestamp, source location and request
+   * method
+   */
+  static final class InstantSerializer implements JsonSerializer<Instant> {
+    @Override
+    public JsonElement serialize(
+        Instant src, java.lang.reflect.Type typeOfSrc, JsonSerializationContext context) {
+      return new JsonPrimitive(src.toString());
+    }
+  }
+
+  static final class SourceLocationSerializer implements JsonSerializer<SourceLocation> {
+    @Override
+    public JsonElement serialize(
+        SourceLocation src, java.lang.reflect.Type typeOfSrc, JsonSerializationContext context) {
+      JsonObject obj = new JsonObject();
+      if (src.getFile() != null) {
+        obj.addProperty("file", src.getFile());
+      }
+      if (src.getLine() != null) {
+        obj.addProperty("line", src.getLine().toString());
+      }
+      if (src.getFunction() != null) {
+        obj.addProperty("function", src.getFunction());
+      }
+      return obj;
+    }
+  }
+
+  static final class RequestMethodSerializer implements JsonSerializer<HttpRequest.RequestMethod> {
+    @Override
+    public JsonElement serialize(
+        HttpRequest.RequestMethod src,
+        java.lang.reflect.Type typeOfSrc,
+        JsonSerializationContext context) {
+      return new JsonPrimitive(src.name());
+    }
+  }
+
+  /** Helper class to format one line Json representation of the LogEntry for structured log. */
+  static final class StructuredLogFormatter {
+    private final Gson gson;
+    private final StringBuilder builder;
+
+    public StructuredLogFormatter(StringBuilder builder) {
+      checkNotNull(builder);
+      this.gson =
+          new GsonBuilder()
+              .registerTypeAdapter(Instant.class, new InstantSerializer())
+              .registerTypeAdapter(SourceLocation.class, new SourceLocationSerializer())
+              .registerTypeAdapter(HttpRequest.RequestMethod.class, new RequestMethodSerializer())
+              .create();
+      this.builder = builder;
+    }
+
+    /**
+     * Adds a Json field and value pair to the current string representation. Method does not
+     * validate parameters to be multi-line strings. Nothing is added if {@code value} parameter is
+     * {@code null}.
+     *
+     * @param name a valid Json field name string.
+     * @param value an object to be serialized to Json using {@link Gson}.
+     * @param appendComma a flag to add a trailing comma.
+     * @return a reference to this object.
+     */
+    public StructuredLogFormatter appendField(String name, Object value, boolean appendComma) {
+      checkNotNull(name);
+      if (value != null) {
+        builder.append(gson.toJson(name)).append(":").append(gson.toJson(value));
+        if (appendComma) {
+          builder.append(",");
+        }
+      }
+      return this;
+    }
+
+    public StructuredLogFormatter appendField(String name, Object value) {
+      return appendField(name, value, true);
+    }
+
+    /**
+     * Serializes a dictionary of key, values as Json fields.
+     *
+     * @param value a {@link Map} of key, value arguments to be serialized using {@link Gson}.
+     * @param appendComma a flag to add a trailing comma.
+     * @return a reference to this object.
+     */
+    public StructuredLogFormatter appendDict(Map<String, Object> value, boolean appendComma) {
+      if (value != null) {
+        String json = gson.toJson(value);
+        // append json object without brackets
+        if (json.length() > 1) {
+          builder.append(json.substring(0, json.length() - 1).substring(1));
+          if (appendComma) {
+            builder.append(",");
+          }
+        }
+      }
+      return this;
+    }
+  }
+
+  /**
+   * Serializes the object to a one line JSON string in the simplified format that can be parsed by
+   * the logging agents that run on Google Cloud resources.
+   */
+  public String toStructuredJsonString() {
+    if (payload.getType() == Type.PROTO) {
+      throw new UnsupportedOperationException("LogEntry with protobuf payload cannot be converted");
+    }
+
+    final StringBuilder builder = new StringBuilder("{");
+    final StructuredLogFormatter formatter = new StructuredLogFormatter(builder);
+
+    formatter
+        .appendField("severity", severity)
+        .appendField("timestamp", timestamp)
+        .appendField("httpRequest", httpRequest)
+        .appendField("logging.googleapis.com/insertId", insertId)
+        .appendField("logging.googleapis.com/labels", labels)
+        .appendField("logging.googleapis.com/operation", operation)
+        .appendField("logging.googleapis.com/sourceLocation", sourceLocation)
+        .appendField("logging.googleapis.com/spanId", spanId)
+        .appendField("logging.googleapis.com/trace", trace)
+        .appendField("logging.googleapis.com/trace_sampled", traceSampled);
+    if (payload.getType() == Type.STRING) {
+      formatter.appendField("message", payload.getData(), false);
+    } else if (payload.getType() == Type.JSON) {
+      Payload.JsonPayload jsonPayload = (Payload.JsonPayload) payload;
+      formatter.appendDict(jsonPayload.getDataAsMap(), false);
+    }
+    builder.append("}");
+    return builder.toString();
   }
 
   /** Returns a builder for {@code LogEntry} objects given the entry payload. */

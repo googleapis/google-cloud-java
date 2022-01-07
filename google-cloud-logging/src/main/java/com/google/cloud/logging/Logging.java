@@ -70,7 +70,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
       LOG_NAME,
       RESOURCE,
       LABELS,
-      LOG_DESTINATION;
+      LOG_DESTINATION,
+      AUTO_POPULATE_METADATA;
 
       @SuppressWarnings("unchecked")
       <T> T get(Map<Option.OptionType, ?> options) {
@@ -113,6 +114,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      */
     public static WriteOption destination(LogDestinationName destination) {
       return new WriteOption(OptionType.LOG_DESTINATION, destination);
+    }
+
+    /**
+     * Returns an option to opt-out automatic population of log entries metadata fields that are not
+     * set.
+     */
+    public static WriteOption autoPopulateMetadata(boolean autoPopulateMetadata) {
+      return new WriteOption(OptionType.AUTO_POPULATE_METADATA, autoPopulateMetadata);
     }
   }
 
@@ -1277,8 +1286,30 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * </pre>
    */
   @BetaApi("The surface for the tail streaming is not stable yet and may change in the future.")
-  default LogEntryServerStream tailLogEntries(TailOption... options) {
+  LogEntryServerStream tailLogEntries(TailOption... options);
+
+  /**
+   * Populates metadata fields of the immutable collection of {@link LogEntry} items. Only empty
+   * fields are populated. The {@link SourceLocation} is populated only for items with the severity
+   * set to {@link Severity.DEBUG}. The information about {@link HttpRequest}, trace and span Id is
+   * retrieved using {@link ContextHandler}.
+   *
+   * @param logEntries an immutable collection of {@link LogEntry} items.
+   * @param customResource a customized instance of the {@link MonitoredResource}. If this parameter
+   *     is {@code null} then the new instance will be generated using {@link
+   *     MonitoredResourceUtil#getResource(String, String)}.
+   * @param exclusionClassPaths a list of exclussion class path prefixes. If left empty then {@link
+   *     SourceLocation} instance is built based on the caller's stack trace information. Otherwise,
+   *     the information from the first {@link StackTraceElement} along the call stack which class
+   *     name does not start with any not {@code null} exclusion class paths is used.
+   * @return A collection of {@link LogEntry} items composed from the {@code logEntries} parameter
+   *     with populated metadata fields.
+   */
+  default Iterable<LogEntry> populateMetadata(
+      Iterable<LogEntry> logEntries,
+      MonitoredResource customResource,
+      String... exclusionClassPaths) {
     throw new UnsupportedOperationException(
-        "method tailLogEntriesCallable() does not have default implementation");
+        "method populateMetadata() does not have default implementation");
   }
 }

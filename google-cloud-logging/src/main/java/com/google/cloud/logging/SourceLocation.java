@@ -16,11 +16,11 @@
 
 package com.google.cloud.logging;
 
-import static com.google.common.base.Preconditions.checkElementIndex;
-
+import com.google.api.client.util.Strings;
 import com.google.common.base.MoreObjects;
 import com.google.logging.v2.LogEntrySourceLocation;
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /** Additional information about the source code location that produced the log entry. */
@@ -158,28 +158,36 @@ public final class SourceLocation implements Serializable {
   }
 
   /**
-   * Creates instance of {@link SourceLocation} based on stack trace information. Caller should
-   * provide the level in the stack where the information can be located. The stack trace level
-   * should be {@code 0} to display information for the caller of the method.
+   * Creates an instance of {@link SourceLocation} based on stack trace information. The stack trace
+   * level is determined based on the exclusion list of the class paths provided in the {@code
+   * exclusionClassPaths} parameter. If the list is empty or not defined the caller's stack trace
+   * information is used. Otherwise, the first {@link StackTraceElement} along the stack which class
+   * name does not start with any not {@code null} exclusion class paths will be used.
    *
-   * @param level Zero-based non-negative integer defining the level in the stack trace where {@code
-   *     0} is topmost element.
+   * @param exclusionClassPaths a varargs array of strings containing class path prefixes.
    * @return a new instance of {@link SourceLocation} populated with file name, method and line
    *     number information.
-   * @throws IndexOutOfBoundsException if the provided {@link level} is negative or greater than the
-   *     current call stack.
    */
-  static SourceLocation fromCurrentContext(int level) {
+  static SourceLocation fromCurrentContext(String... exclusionClassPaths) {
     StackTraceElement[] stackTrace = (new Exception()).getStackTrace();
-    Builder builder = newBuilder();
-    // need to take info from 1 level down the stack to compensate the call to this
-    // method
-    int indexPlus = checkElementIndex(level, stackTrace.length - 1) + 1;
-    StackTraceElement ste = stackTrace[indexPlus];
-    return builder
-        .setFile(ste.getFileName())
-        .setLine(Long.valueOf(ste.getLineNumber()))
-        .setFunction(ste.getMethodName())
-        .build();
+
+    for (int level = 1; level < stackTrace.length; level++) {
+      StackTraceElement ste = stackTrace[level];
+      String className = ste.getClassName();
+
+      if (exclusionClassPaths != null) {
+        if (Strings.isNullOrEmpty(className)
+            || Arrays.stream(exclusionClassPaths)
+                .anyMatch(prefix -> prefix != null && className.startsWith(prefix))) {
+          continue;
+        }
+      }
+      return newBuilder()
+          .setFile(ste.getFileName())
+          .setLine(Long.valueOf(ste.getLineNumber()))
+          .setFunction(ste.getMethodName())
+          .build();
+    }
+    return null;
   }
 }

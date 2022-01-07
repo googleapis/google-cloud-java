@@ -49,7 +49,7 @@ public class Context {
 
     /** Sets the HTTP request. */
     public Builder setRequest(HttpRequest request) {
-      this.requestBuilder = request.toBuilder();
+      this.requestBuilder = request != null ? request.toBuilder() : HttpRequest.newBuilder();
       return this;
     }
 

@@ -17,6 +17,7 @@
 package com.google.cloud.logging;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
@@ -61,22 +62,39 @@ public class SourceLocationTest {
   @Test
   public void testFromCurrentContext() {
     StackTraceElement expectedData = (new Exception()).getStackTrace()[0];
-    SourceLocation data = SourceLocation.fromCurrentContext(0);
+    SourceLocation data = SourceLocation.fromCurrentContext();
     assertEquals(expectedData.getFileName(), data.getFile());
     assertEquals(expectedData.getMethodName(), data.getFunction());
-    // mind the assertion is vs (expectedData.lineNumber + 1). it is because the source location
-    // info of the expectedData is one line above the source location of the tested data.
+    // mind the assertion is vs (expectedData.lineNumber + 1). it is because the
+    // source location
+    // info of the expectedData is one line above the source location of the tested
+    // data.
     assertEquals(Long.valueOf(expectedData.getLineNumber() + 1), data.getLine());
   }
 
-  @Test(expected = IndexOutOfBoundsException.class)
-  public void testFromCurrentContextWithNegativeLevel() {
-    SourceLocation.fromCurrentContext(-1);
+  @Test
+  public void testFromCurrentContextWithExclusionList() {
+    StackTraceElement expectedData = (new Exception()).getStackTrace()[0];
+    SourceLocation data = SourceLocation.fromCurrentContext(LoggingImpl.class.getName());
+    assertEquals(expectedData.getFileName(), data.getFile());
+    assertEquals(expectedData.getMethodName(), data.getFunction());
+    // mind the assertion is vs (expectedData.lineNumber + 1). it is because the
+    // source location
+    // info of the expectedData is one line above the source location of the tested
+    // data.
+    assertEquals(Long.valueOf(expectedData.getLineNumber() + 1), data.getLine());
   }
 
-  @Test(expected = IndexOutOfBoundsException.class)
+  public void testFromCurrentContextWithNegativeLevel() {
+    SourceLocation data = SourceLocation.fromCurrentContext((String[]) null);
+    assertNull(data);
+  }
+
+  @Test
   public void testFromCurrentContextWithVeryLargeLevel() {
-    SourceLocation.fromCurrentContext(10000);
+    SourceLocation data =
+        SourceLocation.fromCurrentContext("com.google", "sun", "java", "jdk", "org");
+    assertNull(data);
   }
 
   private void compareSourceLocation(SourceLocation expected, SourceLocation value) {

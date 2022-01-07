@@ -43,6 +43,7 @@ public class LoggingTest {
   private static final String FOLDER_NAME = "folder";
   private static final String ORGANIZATION_NAME = "organization";
   private static final String BILLING_NAME = "billing";
+  private static final Boolean DONT_AUTO_POPULATE_METADATA = false;
 
   @Test
   public void testListOption() {
@@ -109,6 +110,10 @@ public class LoggingTest {
     writeOption = WriteOption.resource(RESOURCE);
     assertEquals(RESOURCE, writeOption.getValue());
     assertEquals(WriteOption.OptionType.RESOURCE, writeOption.getOptionType());
+
+    writeOption = WriteOption.autoPopulateMetadata(DONT_AUTO_POPULATE_METADATA);
+    assertEquals(DONT_AUTO_POPULATE_METADATA, writeOption.getValue());
+    assertEquals(WriteOption.OptionType.AUTO_POPULATE_METADATA, writeOption.getOptionType());
   }
 
   @Test

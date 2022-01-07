@@ -261,6 +261,9 @@ public class LoggingImplTest {
             .setProjectId(PROJECT)
             .setServiceRpcFactory(rpcFactoryMock)
             .setRetrySettings(ServiceOptions.getNoRetrySettings())
+            // disable auto-population for LoggingImpl class tests
+            // see {@see AutoPopulationTests} for auto-population tests
+            .setAutoPopulateMetadata(false)
             .build();
 
     // By default when calling ListLogEntries, we append a filter of last 24 hours.

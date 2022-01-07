@@ -25,9 +25,11 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
 import java.util.logging.Formatter;
@@ -109,6 +111,15 @@ import java.util.logging.SimpleFormatter;
  *       else "global").
  *   <li>{@code com.google.cloud.logging.Synchronicity} the synchronicity of the write method to use
  *       to write logs to the Cloud Logging service (defaults to {@link Synchronicity#ASYNC}).
+ *   <li>{@code com.google.cloud.logging.LoggingHandler.autoPopulateMetadata} is a boolean flag that
+ *       opts-out the population of the log entries metadata before the logs are sent to Cloud
+ *       Logging (defaults to {@code true}).
+ *   <li>{@code com.google.cloud.logging.LoggingHandler.redirectToStdout} is a boolean flag that
+ *       opts-in redirecting the output of the handler to STDOUT instead of ingesting logs to Cloud
+ *       Logging using Logging API (defaults to {@code true}). Redirecting logs can be used in
+ *       Google Cloud environments with installed logging agent to delegate log ingestions to the
+ *       agent. Redirected logs are formatted as one line Json string following the structured
+ *       logging guidelines.
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
@@ -118,6 +129,8 @@ import java.util.logging.SimpleFormatter;
  * <pre>
  * {@code com.example.mypackage.handlers=com.google.cloud.logging.LoggingHandler}
  * </pre>
+ *
+ * @see <a href="https://cloud.google.com/logging/docs/structured-logging">Structured logging</a>
  */
 public class LoggingHandler extends Handler {
 
@@ -138,6 +151,9 @@ public class LoggingHandler extends Handler {
   private final Level baseLevel;
 
   private volatile Level flushLevel;
+
+  private volatile Boolean autoPopulateMetadata;
+  private volatile Boolean redirectToStdout;
 
   private WriteOption[] defaultWriteOptions;
 
@@ -196,7 +212,10 @@ public class LoggingHandler extends Handler {
   }
 
   /**
-   * Creates a handler that publishes messages to Cloud Logging.
+   * Creates a handler that publishes messages to Cloud Logging. Auto-population of the logs
+   * metadata can be opted-out in {@code options} argument or in the configuration file. At least
+   * one flag {@link LoggingOptions} or {@link LoggingConfig} has to be explicitly set to {@code
+   * false} in order to opt-out the metadata auto-population.
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Cloud Logging service
@@ -222,14 +241,19 @@ public class LoggingHandler extends Handler {
       setLevel(level);
       baseLevel = level.equals(Level.ALL) ? Level.FINEST : level;
       flushLevel = config.getFlushLevel();
+      Boolean f1 = options.getAutoPopulateMetadata();
+      Boolean f2 = config.getAutoPopulateMetadata();
+      autoPopulateMetadata = isTrueOrNull(f1) && isTrueOrNull(f2);
+      redirectToStdout = firstNonNull(config.getRedirectToStdout(), Boolean.FALSE);
       String logName = log != null ? log : config.getLogName();
-
       MonitoredResource resource =
           firstNonNull(
               monitoredResource, config.getMonitoredResource(loggingOptions.getProjectId()));
       List<WriteOption> writeOptions = new ArrayList<WriteOption>();
       writeOptions.add(WriteOption.logName(logName));
-      writeOptions.add(WriteOption.resource(resource));
+      if (resource != null) {
+        writeOptions.add(WriteOption.resource(resource));
+      }
       writeOptions.add(
           WriteOption.labels(
               ImmutableMap.of(
@@ -242,8 +266,9 @@ public class LoggingHandler extends Handler {
       }
       defaultWriteOptions = Iterables.toArray(writeOptions, WriteOption.class);
 
-      getLogging().setFlushSeverity(severityFor(flushLevel));
-      getLogging().setWriteSynchronicity(config.getSynchronicity());
+      logging = loggingOptions.getService();
+      logging.setFlushSeverity(severityFor(flushLevel));
+      logging.setWriteSynchronicity(config.getSynchronicity());
 
       this.enhancers = new LinkedList<>();
 
@@ -287,11 +312,32 @@ public class LoggingHandler extends Handler {
     }
     if (logEntry != null) {
       try {
-        getLogging().write(ImmutableList.of(logEntry), defaultWriteOptions);
+        Iterable<LogEntry> logEntries = ImmutableList.of(logEntry);
+        if (autoPopulateMetadata) {
+          logEntries =
+              logging.populateMetadata(
+                  logEntries, getMonitoredResource(), "com.google.cloud.logging", "java");
+        }
+        if (redirectToStdout) {
+          logEntries.forEach(log -> System.out.println(log.toStructuredJsonString()));
+        } else {
+          logging.write(logEntries, defaultWriteOptions);
+        }
       } catch (Exception ex) {
         getErrorManager().error(null, ex, ErrorManager.WRITE_FAILURE);
       }
     }
+  }
+
+  private MonitoredResource getMonitoredResource() {
+    Optional<WriteOption> resourceOption =
+        Arrays.stream(defaultWriteOptions)
+            .filter(o -> o.getOptionType() == WriteOption.OptionType.RESOURCE)
+            .findFirst();
+    if (resourceOption.isPresent()) {
+      return (MonitoredResource) resourceOption.get().getValue();
+    }
+    return null;
   }
 
   private LogEntry logEntryFor(LogRecord record) throws Exception {
@@ -317,7 +363,7 @@ public class LoggingHandler extends Handler {
   @Override
   public void flush() {
     try {
-      getLogging().flush();
+      logging.flush();
     } catch (Exception ex) {
       getErrorManager().error(null, ex, ErrorManager.FLUSH_FAILURE);
     }
@@ -348,7 +394,7 @@ public class LoggingHandler extends Handler {
    */
   public void setFlushLevel(Level flushLevel) {
     this.flushLevel = flushLevel;
-    getLogging().setFlushSeverity(severityFor(flushLevel));
+    logging.setFlushSeverity(severityFor(flushLevel));
   }
 
   /**
@@ -357,12 +403,35 @@ public class LoggingHandler extends Handler {
    * @param synchronicity {@link Synchronicity}
    */
   public void setSynchronicity(Synchronicity synchronicity) {
-    getLogging().setWriteSynchronicity(synchronicity);
+    logging.setWriteSynchronicity(synchronicity);
   }
 
   /** Get the flush log level. */
   public Synchronicity getSynchronicity() {
-    return getLogging().getWriteSynchronicity();
+    return logging.getWriteSynchronicity();
+  }
+
+  /** Sets the metadata auto population flag. */
+  public void setAutoPopulateMetadata(boolean value) {
+    this.autoPopulateMetadata = value;
+  }
+
+  /** Gets the metadata auto population flag. */
+  public Boolean getAutoPopulateMetadata() {
+    return this.autoPopulateMetadata;
+  }
+
+  /**
+   * Enable/disable redirection to STDOUT. If set to {@code true}, logs will be printed to STDOUT in
+   * the Json format that can be parsed by the logging agent. If set to {@code false}, logs will be
+   * ingested to Cloud Logging by calling Logging API.
+   */
+  public void setRedirectToStdout(boolean value) {
+    this.redirectToStdout = value;
+  }
+
+  public Boolean getRedirectToStdout() {
+    return redirectToStdout;
   }
 
   /**
@@ -406,15 +475,7 @@ public class LoggingHandler extends Handler {
     }
   }
 
-  /** Returns an instance of the logging service. */
-  private Logging getLogging() {
-    if (logging == null) {
-      synchronized (this) {
-        if (logging == null) {
-          logging = loggingOptions.getService();
-        }
-      }
-    }
-    return logging;
+  private static boolean isTrueOrNull(Boolean b) {
+    return b == null || b == Boolean.TRUE;
   }
 }

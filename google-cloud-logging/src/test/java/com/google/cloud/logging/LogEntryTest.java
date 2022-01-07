@@ -31,6 +31,7 @@ import java.time.Instant;
 import java.util.Map;
 import org.junit.Test;
 
+@SuppressWarnings("deprecation")
 public class LogEntryTest {
 
   private static final String LOG_NAME = "syslog";
@@ -39,8 +40,8 @@ public class LogEntryTest {
       MonitoredResource.newBuilder("cloudsql_database")
           .setLabels(ImmutableMap.of("datasetId", "myDataset", "zone", "myZone"))
           .build();
-  private static final Instant TIMESTAMP = Instant.ofEpochMilli(42);
-  private static final Instant RECEIVE_TIMESTAMP = Instant.ofEpochMilli(24);
+  private static final Instant TIMESTAMP = Instant.parse("1984-08-13T15:35:30.123Z");
+  private static final Instant RECEIVE_TIMESTAMP = Instant.parse("1984-08-13T15:35:31.0Z");
   private static final Severity SEVERITY = Severity.ALERT;
   private static final String INSERT_ID = "insertId";
   private static final HttpRequest HTTP_REQUEST =
@@ -52,27 +53,13 @@ public class LogEntryTest {
       ImmutableMap.of("key1", "value1", "key2", "value2");
   private static final Operation OPERATION = Operation.of("id", "producer");
   private static final String TRACE = "trace";
-  private static final Object TRACE_FORMATTER =
-      new Object() {
-        @Override
-        public String toString() {
-          return TRACE;
-        }
-      };
   private static final String SPAN_ID = "spanId";
-  private static final Object SPAN_ID_FORMATTER =
-      new Object() {
-        @Override
-        public String toString() {
-          return SPAN_ID;
-        }
-      };
   private static final boolean TRACE_SAMPLED = true;
   private static final SourceLocation SOURCE_LOCATION =
       new SourceLocation.Builder().setFile("file").setLine(42L).setFunction("function").build();
   private static final StringPayload STRING_PAYLOAD = StringPayload.of("payload");
   private static final JsonPayload JSON_PAYLOAD =
-      JsonPayload.of(ImmutableMap.<String, Object>of("key", "val"));
+      JsonPayload.of(ImmutableMap.<String, Object>of("key1", "val", "key2", 123, "key3", false));
   private static final ProtoPayload PROTO_PAYLOAD =
       ProtoPayload.of(Any.pack(Empty.getDefaultInstance()));
   private static final LogDestinationName BILLING_NAME =
@@ -91,8 +78,8 @@ public class LogEntryTest {
           .setHttpRequest(HTTP_REQUEST)
           .setLabels(LABELS)
           .setOperation(OPERATION)
-          .setTrace(TRACE_FORMATTER)
-          .setSpanId(SPAN_ID_FORMATTER)
+          .setTrace(TRACE)
+          .setSpanId(SPAN_ID)
           .setTraceSampled(TRACE_SAMPLED)
           .setSourceLocation(SOURCE_LOCATION)
           .build();
@@ -107,8 +94,8 @@ public class LogEntryTest {
           .setHttpRequest(HTTP_REQUEST)
           .setLabels(LABELS)
           .setOperation(OPERATION)
-          .setTrace(TRACE_FORMATTER)
-          .setSpanId(SPAN_ID_FORMATTER)
+          .setTrace(TRACE)
+          .setSpanId(SPAN_ID)
           .setTraceSampled(TRACE_SAMPLED)
           .setSourceLocation(SOURCE_LOCATION)
           .build();
@@ -123,8 +110,8 @@ public class LogEntryTest {
           .setHttpRequest(HTTP_REQUEST)
           .setLabels(LABELS)
           .setOperation(OPERATION)
-          .setTrace(TRACE_FORMATTER)
-          .setSpanId(SPAN_ID_FORMATTER)
+          .setTrace(TRACE)
+          .setSpanId(SPAN_ID)
           .setTraceSampled(TRACE_SAMPLED)
           .setSourceLocation(SOURCE_LOCATION)
           .build();
@@ -378,5 +365,24 @@ public class LogEntryTest {
     assertEquals(expected.getTraceSampled(), value.getTraceSampled());
     assertEquals(expected.getSourceLocation(), value.getSourceLocation());
     assertEquals(expected.getPayload(), value.getPayload());
+  }
+
+  private static final String[] EXPECTED_STRUCTURED_LOGS = {
+    "{\"severity\":\"ALERT\",\"timestamp\":\"1984-08-13T15:35:30.123Z\",\"httpRequest\":{\"requestMethod\":\"GET\",\"status\":404,\"cacheLookup\":false,\"cacheHit\":false,\"cacheValidatedWithOriginServer\":false},\"logging.googleapis.com/insertId\":\"insertId\",\"logging.googleapis.com/labels\":{\"key1\":\"value1\",\"key2\":\"value2\"},\"logging.googleapis.com/operation\":{\"id\":\"id\",\"producer\":\"producer\",\"first\":false,\"last\":false},\"logging.googleapis.com/sourceLocation\":{\"file\":\"file\",\"line\":\"42\",\"function\":\"function\"},\"logging.googleapis.com/spanId\":\"spanId\",\"logging.googleapis.com/trace\":\"trace\",\"logging.googleapis.com/trace_sampled\":true,\"message\":\"payload\"}",
+    "{\"severity\":\"ALERT\",\"timestamp\":\"1984-08-13T15:35:30.123Z\",\"httpRequest\":{\"requestMethod\":\"GET\",\"status\":404,\"cacheLookup\":false,\"cacheHit\":false,\"cacheValidatedWithOriginServer\":false},\"logging.googleapis.com/insertId\":\"insertId\",\"logging.googleapis.com/labels\":{\"key1\":\"value1\",\"key2\":\"value2\"},\"logging.googleapis.com/operation\":{\"id\":\"id\",\"producer\":\"producer\",\"first\":false,\"last\":false},\"logging.googleapis.com/sourceLocation\":{\"file\":\"file\",\"line\":\"42\",\"function\":\"function\"},\"logging.googleapis.com/spanId\":\"spanId\",\"logging.googleapis.com/trace\":\"trace\",\"logging.googleapis.com/trace_sampled\":true,\"key1\":\"val\",\"key2\":123.0,\"key3\":false}"
+  };
+  private static final LogEntry[] TEST_LOG_ENTRIES = {STRING_ENTRY, JSON_ENTRY};
+
+  @Test
+  public void testStructureLogPresentations() {
+    for (int i = 0; i < TEST_LOG_ENTRIES.length; i++) {
+      String structured_log = TEST_LOG_ENTRIES[i].toStructuredJsonString();
+      assertEquals(EXPECTED_STRUCTURED_LOGS[i], structured_log);
+    }
+  }
+
+  @Test(expected = UnsupportedOperationException.class)
+  public void testStructureLogPresentationWithProtobufPayload() {
+    PROTO_ENTRY.toStructuredJsonString();
   }
 }

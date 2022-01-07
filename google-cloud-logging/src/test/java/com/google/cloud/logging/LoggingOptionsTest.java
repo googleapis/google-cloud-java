@@ -16,21 +16,35 @@
 
 package com.google.cloud.logging;
 
+import static org.easymock.EasyMock.createMock;
+import static org.junit.Assert.assertEquals;
+
 import com.google.cloud.TransportOptions;
-import org.easymock.EasyMock;
-import org.junit.Assert;
 import org.junit.Test;
 
 public class LoggingOptionsTest {
+  private static final Boolean DONT_AUTO_POPULATE_METADATA = false;
+  private static final String PROJECT_ID = "fake-project-id";
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testNonGrpcTransportOptions() {
+    TransportOptions invalidTransport = createMock(TransportOptions.class);
+    LoggingOptions.newBuilder().setTransportOptions(invalidTransport);
+  }
 
   @Test
-  public void testInvalidTransport() {
-    try {
-      LoggingOptions.newBuilder()
-          .setTransportOptions(EasyMock.<TransportOptions>createMock(TransportOptions.class));
-      Assert.fail();
-    } catch (IllegalArgumentException expected) {
-      Assert.assertNotNull(expected.getMessage());
-    }
+  public void testAutoPopulateMetadataOption() {
+    LoggingOptions actual =
+        LoggingOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setAutoPopulateMetadata(DONT_AUTO_POPULATE_METADATA)
+            .build();
+    assertEquals(DONT_AUTO_POPULATE_METADATA, actual.getAutoPopulateMetadata());
+  }
+
+  @Test
+  public void testAutoPopulateMetadataDefaultOption() {
+    LoggingOptions actual = LoggingOptions.newBuilder().setProjectId(PROJECT_ID).build();
+    assertEquals(Boolean.TRUE, actual.getAutoPopulateMetadata());
   }
 }

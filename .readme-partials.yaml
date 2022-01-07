@@ -134,3 +134,62 @@ custom_content: |
   ```
   com.google.cloud.examples.logging.snippets.AddLoggingHandler.handlers=com.google.cloud.logging.LoggingHandler
   ```
+
+  #### Alternative way to ingest logs in Google Cloud managed environments
+
+  If you use Java logger with the Cloud Logging Handler, you can configure the handler to output logs to `stdout` using
+  the [structured logging Json format](https://cloud.google.com/logging/docs/structured-logging#special-payload-fields).
+  To do this, add `com.google.cloud.logging.LoggingHandler.redirectToStdout=true` to the logger configuration file.
+  You can use this configuration when running applications in Google Cloud managed environments such as AppEngine, Cloud Run,
+  Cloud Function or GKE. The logger agent installed on these environments can capture STDOUT and ingest it into Cloud Logging.
+  The agent can parse structured logs printed to STDOUT and capture additional log metadata beside the log payload.
+  The parsed information includes severity, source location, user labels, http request and tracing information.
+
+  #### Auto-population of log entrys' metadata
+
+  LogEntry object metadata information such as [monitored resource](https://cloud.google.com/logging/docs/reference/v2/rest/v2/MonitoredResource), 
+  [Http request](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#HttpRequest) or 
+  [source location](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#LogEntrySourceLocation)
+  are automatically populated with information that the library retrieves from the execution context.
+  The library populates only empty (set to `null`) LogEntry fields.
+  This behavior in the `Logging` instance can be opted out via `LoggingOptions`.
+  Call `LoggingOptions.Builder.setAutoPopulateMetadata(false)` to configure logging options to opt-out the metadata auto-population.
+  Cloud Logging handler can be configured to opt-out automatic population of the metadata using the logger configuration.
+  To disable the metadata auto-population add `com.google.cloud.logging.LoggingHandler.autoPopulateMetadata=false`
+  to the logger configuration file.
+
+  The auto-population logic populates source location _only_ for log entries with `Severity.DEBUG` severity.
+  The execution context of the Http request and tracing information is maintained by `ContextHandler` class.
+  The context is managed in the scope of the thread.
+  If you do not use thread pools for multi-threading the `ContextHandler` can be configured to propagate the context
+  to the scope of the child threads.
+  To enable this add `com.google.cloud.logging.ContextHandler.useInheritedContext=true` to the logger configuration file.
+  The library provides two methods to update the context:
+
+  * Manually set the context. You can use the following methods of the `Context.Builder` to set the context information.
+  Use the method `setRequest()` to setup the `HttpRequest` instance or `setRequestUrl()`, `setRequestMethod()`,
+  `setReferer() `, `setRemoteIp()` and `setServerIp()` to setup the fields of the `HttpRequest`.
+  The trace and span Ids can be set directly using `setTraceId()` and `setSpanId()` respectively.
+  Alternatively it can be parsed from the W3C tracing context header using `loadW3CTraceParentContext()` or
+  from the Google Cloud tracing context header using `loadCloudTraceContext()`.
+
+      ```java
+      Context context = Context.newBuilder().setHttpRequest(request).setTrace(traceId).setSpanId(spanId).build();
+      (new ContextHandler()).setCurrentContext(context);
+      ```
+
+  * Using [servlet initializer](https://github.com/googleapis/java-logging-servlet-initializer).
+  If your application uses a Web server based on Jakarta servlets (e.g. Jetty or Tomcat), you can add the servlet initializer
+  package to your WAR. The package implements a service provider interface (SPI) for
+  [javax.servlet.ServletContainerInitializer](https://docs.oracle.com/javaee/6/api/javax/servlet/ServletContainerInitializer.html)
+  and filters all servlet requests to automatically capture the execution context of the servlet request and store it using
+  `ContextHandler` class. The stored `Context` class instances are used to populate Http request and tracing information.
+  If you use Maven, to use the servlet initializer add the following dependency to your BOM:
+
+      ```xml
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-logging-servlet-initializer</artifactId>
+      </dependency>      
+      ```
+

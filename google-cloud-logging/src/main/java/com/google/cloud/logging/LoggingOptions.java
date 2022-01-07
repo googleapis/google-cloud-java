@@ -38,6 +38,8 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
   private static final String DEFAULT_HOST = LoggingSettings.getDefaultEndpoint();
   private static final long serialVersionUID = 5753499510627426717L;
 
+  private Boolean autoPopulateMetadataOnWrite = null;
+
   public static class DefaultLoggingFactory implements LoggingFactory {
     private static final LoggingFactory INSTANCE = new DefaultLoggingFactory();
 
@@ -72,6 +74,8 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
 
   public static class Builder extends ServiceOptions.Builder<Logging, LoggingOptions, Builder> {
 
+    private Boolean autoPopulateMetadataOnWrite = true;
+
     private Builder() {}
 
     private Builder(LoggingOptions options) {
@@ -87,6 +91,11 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
       return super.setTransportOptions(transportOptions);
     }
 
+    public Builder setAutoPopulateMetadata(boolean autoPopulateMetadataOnWrite) {
+      this.autoPopulateMetadataOnWrite = autoPopulateMetadataOnWrite;
+      return this;
+    }
+
     @Override
     public LoggingOptions build() {
       return new LoggingOptions(this);
@@ -96,6 +105,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
   @InternalApi("This class should only be extended within google-cloud-java")
   protected LoggingOptions(Builder builder) {
     super(LoggingFactory.class, LoggingRpcFactory.class, builder, new LoggingDefaults());
+    this.autoPopulateMetadataOnWrite = builder.autoPopulateMetadataOnWrite;
   }
 
   @SuppressWarnings("serial")
@@ -128,6 +138,10 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
 
   protected LoggingRpc getLoggingRpcV2() {
     return (LoggingRpc) getRpc();
+  }
+
+  public Boolean getAutoPopulateMetadata() {
+    return this.autoPopulateMetadataOnWrite;
   }
 
   @Override
