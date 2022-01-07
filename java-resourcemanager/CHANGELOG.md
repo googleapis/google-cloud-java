@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/googleapis/java-resourcemanager/compare/v1.2.0...v1.2.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-resourcemanager/issues/1299)) ([#679](https://www.github.com/googleapis/java-resourcemanager/issues/679)) ([bbbf5a6](https://www.github.com/googleapis/java-resourcemanager/commit/bbbf5a650ab8b30a84766c6e7d38ccd86713beeb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#689](https://www.github.com/googleapis/java-resourcemanager/issues/689)) ([4beb140](https://www.github.com/googleapis/java-resourcemanager/commit/4beb140bebf95aa93839d2eb3d1e96e26b55061f))
+
 ## [1.2.0](https://www.github.com/googleapis/java-resourcemanager/compare/v1.1.4...v1.2.0) (2021-12-03)
 
 
