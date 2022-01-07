@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.32.5](https://www.github.com/googleapis/java-phishingprotection/compare/v0.32.4...v0.32.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-phishingprotection/issues/1299)) ([#589](https://www.github.com/googleapis/java-phishingprotection/issues/589)) ([d3b2088](https://www.github.com/googleapis/java-phishingprotection/commit/d3b2088080abb07b858f5ce64b2b6f7555fa32e9))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-phishingprotection/issues/1301)) ([#595](https://www.github.com/googleapis/java-phishingprotection/issues/595)) ([0a6d62b](https://www.github.com/googleapis/java-phishingprotection/commit/0a6d62bdf7c46094c468025d6d6b44f23b645e01))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#599](https://www.github.com/googleapis/java-phishingprotection/issues/599)) ([b3975e8](https://www.github.com/googleapis/java-phishingprotection/commit/b3975e8663023257699599412515a462901c8035))
+
 ### [0.32.4](https://www.github.com/googleapis/java-phishingprotection/compare/v0.32.3...v0.32.4) (2021-12-03)
 
 
