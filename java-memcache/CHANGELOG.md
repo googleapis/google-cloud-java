@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.5](https://www.github.com/googleapis/java-memcache/compare/v2.1.4...v2.1.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-memcache/issues/1299)) ([#548](https://www.github.com/googleapis/java-memcache/issues/548)) ([63622c1](https://www.github.com/googleapis/java-memcache/commit/63622c1c9d152454b59b3105ba92223a16c618f6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#556](https://www.github.com/googleapis/java-memcache/issues/556)) ([cdc33cd](https://www.github.com/googleapis/java-memcache/commit/cdc33cd78b4b251810a61ec91876bf5184de0d3e))
+
 ### [2.1.4](https://www.github.com/googleapis/java-memcache/compare/v2.1.3...v2.1.4) (2021-12-03)
 
 
