@@ -1,5 +1,21 @@
 # Changelog
 
+### [1.2.4](https://www.github.com/googleapis/java-accesscontextmanager/compare/v1.2.3...v1.2.4) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-accesscontextmanager/issues/1299)) ([#282](https://www.github.com/googleapis/java-accesscontextmanager/issues/282)) ([b414a5e](https://www.github.com/googleapis/java-accesscontextmanager/commit/b414a5e2682171119862c2697364188a172d621d))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-accesscontextmanager/issues/1266)) ([#269](https://www.github.com/googleapis/java-accesscontextmanager/issues/269)) ([81f99a5](https://www.github.com/googleapis/java-accesscontextmanager/commit/81f99a5e15c6e5f96a61a68acc4554ff2cd7f6c3))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-accesscontextmanager/issues/1301)) ([#285](https://www.github.com/googleapis/java-accesscontextmanager/issues/285)) ([d494202](https://www.github.com/googleapis/java-accesscontextmanager/commit/d49420217980d1006f85a1eea43b9b8432c981f6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#277](https://www.github.com/googleapis/java-accesscontextmanager/issues/277)) ([08015cb](https://www.github.com/googleapis/java-accesscontextmanager/commit/08015cb15a64e97a10aa2b65ce6c696755869ab4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#281](https://www.github.com/googleapis/java-accesscontextmanager/issues/281)) ([c76661e](https://www.github.com/googleapis/java-accesscontextmanager/commit/c76661e14e284c0c71a99a7c9dca6ec11720ac47))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#288](https://www.github.com/googleapis/java-accesscontextmanager/issues/288)) ([5dcd53f](https://www.github.com/googleapis/java-accesscontextmanager/commit/5dcd53febb300d384909eba04cfc5ea6c7c20681))
+
 ### [1.2.3](https://www.github.com/googleapis/java-accesscontextmanager/compare/v1.2.2...v1.2.3) (2021-10-19)
 
 
