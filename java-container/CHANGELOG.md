@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.3.1](https://www.github.com/googleapis/java-container/compare/v2.3.0...v2.3.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-container/issues/1299)) ([#631](https://www.github.com/googleapis/java-container/issues/631)) ([2df8ffb](https://www.github.com/googleapis/java-container/commit/2df8ffb3886df089f7f98f23a19647f0e55f1d18))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#641](https://www.github.com/googleapis/java-container/issues/641)) ([dca2260](https://www.github.com/googleapis/java-container/commit/dca2260e6a42ec4d0eb16c3680b54ea4ebba8621))
+
 ## [2.3.0](https://www.github.com/googleapis/java-container/compare/v2.2.1...v2.3.0) (2021-12-03)
 
 
