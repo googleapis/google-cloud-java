@@ -1,5 +1,18 @@
 # Changelog
 
+### [3.3.1](https://www.github.com/googleapis/java-channel/compare/v3.3.0...v3.3.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-channel/issues/1299)) ([#228](https://www.github.com/googleapis/java-channel/issues/228)) ([5ece8d1](https://www.github.com/googleapis/java-channel/commit/5ece8d1060918d1c455c0a9ade54b758f2cb1744))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-channel/issues/1301)) ([#232](https://www.github.com/googleapis/java-channel/issues/232)) ([30a38ad](https://www.github.com/googleapis/java-channel/commit/30a38ad4a5cf1242e7ba542325692ac9c4937ec3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#235](https://www.github.com/googleapis/java-channel/issues/235)) ([b3dd280](https://www.github.com/googleapis/java-channel/commit/b3dd280643eaaf22f5fdd2f73e8d4a8432b93e87))
+
 ## [3.3.0](https://www.github.com/googleapis/java-channel/compare/v3.2.2...v3.3.0) (2021-12-03)
 
 
