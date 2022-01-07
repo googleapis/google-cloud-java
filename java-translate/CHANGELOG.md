@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.1.9](https://www.github.com/googleapis/java-translate/compare/v2.1.8...v2.1.9) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-translate/issues/1301)) ([#892](https://www.github.com/googleapis/java-translate/issues/892)) ([3a81949](https://www.github.com/googleapis/java-translate/commit/3a81949d9de5adda0a0dbde66226cdf15903fa49))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.3.4 ([#894](https://www.github.com/googleapis/java-translate/issues/894)) ([fa8c92a](https://www.github.com/googleapis/java-translate/commit/fa8c92af925d97a5926133ed768cae765272d4b0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#896](https://www.github.com/googleapis/java-translate/issues/896)) ([d4f76dc](https://www.github.com/googleapis/java-translate/commit/d4f76dc7cec06a60cf923858d8a67f65337b817f))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.2 ([#875](https://www.github.com/googleapis/java-translate/issues/875)) ([af8c85d](https://www.github.com/googleapis/java-translate/commit/af8c85d245df8a9f6c4c30a3279e1698f493dbfd))
+
 ### [2.1.8](https://www.github.com/googleapis/java-translate/compare/v2.1.7...v2.1.8) (2021-12-06)
 
 
