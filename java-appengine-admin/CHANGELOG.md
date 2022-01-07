@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-appengine-admin/compare/v2.1.3...v2.1.4) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-appengine-admin/issues/1301)) ([#162](https://www.github.com/googleapis/java-appengine-admin/issues/162)) ([fe1b4d3](https://www.github.com/googleapis/java-appengine-admin/commit/fe1b4d36bd634b1f582d6822a95332737ee6d9a8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#166](https://www.github.com/googleapis/java-appengine-admin/issues/166)) ([e10cfba](https://www.github.com/googleapis/java-appengine-admin/commit/e10cfbaa64cfa3dda8e78fc50a2d1f1648dd77f1))
+
 ### [2.1.3](https://www.github.com/googleapis/java-appengine-admin/compare/v2.1.2...v2.1.3) (2021-12-06)
 
 
