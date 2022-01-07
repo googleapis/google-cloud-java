@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.6.2](https://www.github.com/googleapis/java-notebooks/compare/v0.6.1...v0.6.2) (2022-01-07)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#299](https://www.github.com/googleapis/java-notebooks/issues/299)) ([9e76a8b](https://www.github.com/googleapis/java-notebooks/commit/9e76a8b46690728511687ed91e05936423345798))
+
 ### [0.6.1](https://www.github.com/googleapis/java-notebooks/compare/v0.6.0...v0.6.1) (2021-12-06)
 
 
