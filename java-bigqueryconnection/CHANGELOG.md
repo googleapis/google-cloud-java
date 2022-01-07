@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.8](https://www.github.com/googleapis/java-bigqueryconnection/compare/v2.1.7...v2.1.8) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-bigqueryconnection/issues/1299)) ([#589](https://www.github.com/googleapis/java-bigqueryconnection/issues/589)) ([f0289e8](https://www.github.com/googleapis/java-bigqueryconnection/commit/f0289e814806779fd12f9912eda0eb4996c03044))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#605](https://www.github.com/googleapis/java-bigqueryconnection/issues/605)) ([85258a7](https://www.github.com/googleapis/java-bigqueryconnection/commit/85258a70a03233a282668afc05283d3c2b49ac1f))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.2 ([#603](https://www.github.com/googleapis/java-bigqueryconnection/issues/603)) ([1acbc31](https://www.github.com/googleapis/java-bigqueryconnection/commit/1acbc31569ef737e2411fb25e47fca000b24aa73))
+
 ### [2.1.7](https://www.github.com/googleapis/java-bigqueryconnection/compare/v2.1.6...v2.1.7) (2021-12-03)
 
 
