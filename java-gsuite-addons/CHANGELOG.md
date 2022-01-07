@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.5](https://www.github.com/googleapis/java-gsuite-addons/compare/v2.1.4...v2.1.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-gsuite-addons/issues/1299)) ([#150](https://www.github.com/googleapis/java-gsuite-addons/issues/150)) ([afa65ca](https://www.github.com/googleapis/java-gsuite-addons/commit/afa65caa8c10e491b3ae2e11627349e7a626ad8e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#156](https://www.github.com/googleapis/java-gsuite-addons/issues/156)) ([2477970](https://www.github.com/googleapis/java-gsuite-addons/commit/24779701f87c234219599475017650b10d0ce193))
+
 ### [2.1.4](https://www.github.com/googleapis/java-gsuite-addons/compare/v2.1.3...v2.1.4) (2021-12-03)
 
 
