@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-contact-center-insights/compare/v2.1.3...v2.2.0) (2022-01-07)
+
+
+### Features
+
+* Add ability to update phrase matchers ([#128](https://www.github.com/googleapis/java-contact-center-insights/issues/128)) ([9bbbb39](https://www.github.com/googleapis/java-contact-center-insights/commit/9bbbb39a14dadfca14ece1fff8e4c34cdaba78b2))
+* Add WriteDisposition to BigQuery Export API ([#146](https://www.github.com/googleapis/java-contact-center-insights/issues/146)) ([8618f7f](https://www.github.com/googleapis/java-contact-center-insights/commit/8618f7f8d5e6b6851afb41e9e9dff82963287b69))
+* new feature flag disable_issue_modeling ([#139](https://www.github.com/googleapis/java-contact-center-insights/issues/139)) ([446dd2c](https://www.github.com/googleapis/java-contact-center-insights/commit/446dd2c8d3c80951d55d2bc3f9edf54eddd955d0))
+* remove feature flag disable_issue_modeling ([#140](https://www.github.com/googleapis/java-contact-center-insights/issues/140)) ([87df5c1](https://www.github.com/googleapis/java-contact-center-insights/commit/87df5c179b2e8e1ba2a31da313847e5dc72584d8))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-contact-center-insights/issues/1299)) ([#148](https://www.github.com/googleapis/java-contact-center-insights/issues/148)) ([848201f](https://www.github.com/googleapis/java-contact-center-insights/commit/848201ff769642d985ba481de89bd34e0a41fd62))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-contact-center-insights/issues/1266)) ([#124](https://www.github.com/googleapis/java-contact-center-insights/issues/124)) ([72abeb7](https://www.github.com/googleapis/java-contact-center-insights/commit/72abeb7bc44e60cdf107fd69bba5dbf90792ffaf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.3.3 ([#126](https://www.github.com/googleapis/java-contact-center-insights/issues/126)) ([ff5cf39](https://www.github.com/googleapis/java-contact-center-insights/commit/ff5cf396cc5d2319a2ac97ff25a42dfabb8e2cd8))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.4.1 ([#137](https://www.github.com/googleapis/java-contact-center-insights/issues/137)) ([b99e521](https://www.github.com/googleapis/java-contact-center-insights/commit/b99e52148cdf72a23e28b58d6811340753b01bd2))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.5.0 ([#143](https://www.github.com/googleapis/java-contact-center-insights/issues/143)) ([cc9cba8](https://www.github.com/googleapis/java-contact-center-insights/commit/cc9cba8b3c2bc372500271408ef88ea8db4f550d))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.5.1 ([#147](https://www.github.com/googleapis/java-contact-center-insights/issues/147)) ([f5a10b4](https://www.github.com/googleapis/java-contact-center-insights/commit/f5a10b45c66dd06ab0c09e82356267bfd30f127a))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.6.0 ([#162](https://www.github.com/googleapis/java-contact-center-insights/issues/162)) ([faedee9](https://www.github.com/googleapis/java-contact-center-insights/commit/faedee93175f0459bf03deee7cd7f1fcc356025b))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.115.0 ([#149](https://www.github.com/googleapis/java-contact-center-insights/issues/149)) ([479c38e](https://www.github.com/googleapis/java-contact-center-insights/commit/479c38e22ea94616a3229f956ef52bfe0b73dadb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#136](https://www.github.com/googleapis/java-contact-center-insights/issues/136)) ([cfe22c4](https://www.github.com/googleapis/java-contact-center-insights/commit/cfe22c43f41fbd405a6799c83c78e0c806f84317))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#145](https://www.github.com/googleapis/java-contact-center-insights/issues/145)) ([a055713](https://www.github.com/googleapis/java-contact-center-insights/commit/a055713249e757e7e38544f5645ec57a4dd46266))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#167](https://www.github.com/googleapis/java-contact-center-insights/issues/167)) ([fb9d6f3](https://www.github.com/googleapis/java-contact-center-insights/commit/fb9d6f351ba5181b36dbcf85503fc8d85ba3843e))
+
 ### [2.1.3](https://www.github.com/googleapis/java-contact-center-insights/compare/v2.1.2...v2.1.3) (2021-10-20)
 
 
