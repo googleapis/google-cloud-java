@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.5.3](https://www.github.com/googleapis/java-aiplatform/compare/v2.5.2...v2.5.3) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-aiplatform/issues/1299)) ([#745](https://www.github.com/googleapis/java-aiplatform/issues/745)) ([30b2026](https://www.github.com/googleapis/java-aiplatform/commit/30b2026e612de04720c2895f511a61fb452ecd45))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-aiplatform/issues/1301)) ([#756](https://www.github.com/googleapis/java-aiplatform/issues/756)) ([720665d](https://www.github.com/googleapis/java-aiplatform/commit/720665d04bafd6f98c1bb2507b340a3180791a02))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.11.2 ([#744](https://www.github.com/googleapis/java-aiplatform/issues/744)) ([da767b8](https://www.github.com/googleapis/java-aiplatform/commit/da767b803d5079d3b145f3b0cd88840df34dba4f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#759](https://www.github.com/googleapis/java-aiplatform/issues/759)) ([7bce375](https://www.github.com/googleapis/java-aiplatform/commit/7bce3755ba8251b06aedaef85e673deee79b1abd))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.2 ([#747](https://www.github.com/googleapis/java-aiplatform/issues/747)) ([b89815f](https://www.github.com/googleapis/java-aiplatform/commit/b89815fe52e94935ce8c10ffd1cc14d490cd4a81))
+
 ### [2.5.2](https://www.github.com/googleapis/java-aiplatform/compare/v2.5.1...v2.5.2) (2021-12-03)
 
 
