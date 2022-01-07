@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.5.1](https://www.github.com/googleapis/java-bigtable/compare/v2.5.0...v2.5.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* Revert "fix: remove stats from javadoc" ([#1118](https://www.github.com/googleapis/java-bigtable/issues/1118)) ([ba8f344](https://www.github.com/googleapis/java-bigtable/commit/ba8f344d19163627553a0a268742af2a1a792db5))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#1124](https://www.github.com/googleapis/java-bigtable/issues/1124)) ([55ebf69](https://www.github.com/googleapis/java-bigtable/commit/55ebf6932bbe93e8b7635a7550320099eb4fbe93))
+
 ## [2.5.0](https://www.github.com/googleapis/java-bigtable/compare/v2.4.0...v2.5.0) (2022-01-05)
 
 
