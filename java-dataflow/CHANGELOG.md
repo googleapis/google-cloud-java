@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.3.3](https://www.github.com/googleapis/java-dataflow/compare/v0.3.2...v0.3.3) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-dataflow/issues/1299)) ([#96](https://www.github.com/googleapis/java-dataflow/issues/96)) ([69d6356](https://www.github.com/googleapis/java-dataflow/commit/69d6356a4a72ee06f380faa6b8d6b82021be1945))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-dataflow/issues/1301)) ([#102](https://www.github.com/googleapis/java-dataflow/issues/102)) ([155c14a](https://www.github.com/googleapis/java-dataflow/commit/155c14ab3efca39d1c5ef33095c712b89faef12a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#104](https://www.github.com/googleapis/java-dataflow/issues/104)) ([db90720](https://www.github.com/googleapis/java-dataflow/commit/db9072048a4bff485d7d13bd8f9ee0352b46b6b3))
+
 ### [0.3.2](https://www.github.com/googleapis/java-dataflow/compare/v0.3.1...v0.3.2) (2021-12-03)
 
 
