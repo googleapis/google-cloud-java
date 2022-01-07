@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.0.4](https://www.github.com/googleapis/java-dns/compare/v2.0.3...v2.0.4) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-dns/issues/1299)) ([#565](https://www.github.com/googleapis/java-dns/issues/565)) ([7cb2b52](https://www.github.com/googleapis/java-dns/commit/7cb2b52c03a16eb13cfdf5ecbebacbaa4e64c692))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-dns/issues/1301)) ([#573](https://www.github.com/googleapis/java-dns/issues/573)) ([17dc4a1](https://www.github.com/googleapis/java-dns/commit/17dc4a1dd5fa420ff0547651fb59ea063bd6b345))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-dns to v1-rev20211215-1.32.1 ([#568](https://www.github.com/googleapis/java-dns/issues/568)) ([e7fe6bb](https://www.github.com/googleapis/java-dns/commit/e7fe6bbf1517f6e57fd88eeb118a9f4be5c46a03))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#577](https://www.github.com/googleapis/java-dns/issues/577)) ([9c0d330](https://www.github.com/googleapis/java-dns/commit/9c0d330bb432ab0a7ba31c515eabb6016939ae94))
+
 ### [2.0.3](https://www.github.com/googleapis/java-dns/compare/v2.0.2...v2.0.3) (2021-12-03)
 
 
