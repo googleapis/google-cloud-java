@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.3.1](https://www.github.com/googleapis/java-os-config/compare/v2.3.0...v2.3.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-os-config/issues/1299)) ([#406](https://www.github.com/googleapis/java-os-config/issues/406)) ([2d661cb](https://www.github.com/googleapis/java-os-config/commit/2d661cba07ec0937ec4307f18b003e7ba4f6841c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#413](https://www.github.com/googleapis/java-os-config/issues/413)) ([47df2bb](https://www.github.com/googleapis/java-os-config/commit/47df2bb49d7e0445b2052676ae0c3180889deb26))
+
 ## [2.3.0](https://www.github.com/googleapis/java-os-config/compare/v2.2.2...v2.3.0) (2021-12-03)
 
 
