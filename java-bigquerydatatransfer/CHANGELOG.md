@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.0.27](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v2.0.26...v2.0.27) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/1299)) ([#1150](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/1150)) ([d47c56b](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/d47c56b289378486ba871949ea15763e2205d0f0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.6.0 ([#1176](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/1176)) ([493c161](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/493c161a1fae6c92ccc2ba51063f51d1738329e4))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.115.0 ([#1152](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/1152)) ([bd4bece](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/bd4bece02efe04d31107a5b4bbc01f086aadf4af))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#1182](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/1182)) ([550f8dc](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/550f8dcd75bdf54b4f7860cf3286b27c2385c75d))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.2 ([#1179](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/1179)) ([0c021ff](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/0c021ff5a2070f2ccd54c1e6e958ef0cd33c018b))
+
 ### [2.0.26](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v2.0.25...v2.0.26) (2021-12-05)
 
 
