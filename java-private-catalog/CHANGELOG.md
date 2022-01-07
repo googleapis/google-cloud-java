@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.2.3](https://www.github.com/googleapis/java-private-catalog/compare/v0.2.2...v0.2.3) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-private-catalog/issues/1301)) ([#110](https://www.github.com/googleapis/java-private-catalog/issues/110)) ([1c85a33](https://www.github.com/googleapis/java-private-catalog/commit/1c85a33a90f9241bf52579adadf3814617644939))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#113](https://www.github.com/googleapis/java-private-catalog/issues/113)) ([2d8ded3](https://www.github.com/googleapis/java-private-catalog/commit/2d8ded38a18350368534a4960cc01db09667c25a))
+
 ### [0.2.2](https://www.github.com/googleapis/java-private-catalog/compare/v0.2.1...v0.2.2) (2021-12-06)
 
 
