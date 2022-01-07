@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.2.1](https://www.github.com/googleapis/java-bigqueryreservation/compare/v2.2.0...v2.2.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-bigqueryreservation/issues/1301)) ([#583](https://www.github.com/googleapis/java-bigqueryreservation/issues/583)) ([0748026](https://www.github.com/googleapis/java-bigqueryreservation/commit/0748026404576c324f98286ced3a6af7a7c18b9c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#588](https://www.github.com/googleapis/java-bigqueryreservation/issues/588)) ([815c041](https://www.github.com/googleapis/java-bigqueryreservation/commit/815c04146980f30a78e2db77890f41a48cd4c936))
+
 ## [2.2.0](https://www.github.com/googleapis/java-bigqueryreservation/compare/v2.1.4...v2.2.0) (2021-12-27)
 
 
