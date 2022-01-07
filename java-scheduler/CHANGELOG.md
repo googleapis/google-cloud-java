@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.11](https://www.github.com/googleapis/java-scheduler/compare/v2.1.10...v2.1.11) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-scheduler/issues/1299)) ([#644](https://www.github.com/googleapis/java-scheduler/issues/644)) ([823dbde](https://www.github.com/googleapis/java-scheduler/commit/823dbde7b8f62131aca674e990f5285b05e5977b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#653](https://www.github.com/googleapis/java-scheduler/issues/653)) ([63ee31e](https://www.github.com/googleapis/java-scheduler/commit/63ee31eafd1101122afcb2c358b216626889d490))
+
 ### [2.1.10](https://www.github.com/googleapis/java-scheduler/compare/v2.1.9...v2.1.10) (2021-12-03)
 
 
