@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.7.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.6.2...v0.7.0) (2022-01-07)
+
+
+### Features
+
+* add `GetDataRetentionSettings`, `UpdateDataRetentionSettings` methods to the API ([#269](https://www.github.com/googleapis/java-analytics-admin/issues/269)) ([3d3726d](https://www.github.com/googleapis/java-analytics-admin/commit/3d3726db76a6763b3c7a2dd7132b0fefbfe7c6ac))
+* add custom output only field to ConversionEvent type ([3de05e5](https://www.github.com/googleapis/java-analytics-admin/commit/3de05e56d905d74ae7468aed7e66e24c685c5df6))
+* add display_video_360_advertiser_link, display_video_360_advertiser_link_proposal, data_retention_settings fields to ChangeHistoryChange.resource oneof field. ([3de05e5](https://www.github.com/googleapis/java-analytics-admin/commit/3de05e56d905d74ae7468aed7e66e24c685c5df6))
+* add service_level field to Property type ([3de05e5](https://www.github.com/googleapis/java-analytics-admin/commit/3de05e56d905d74ae7468aed7e66e24c685c5df6))
+* change measurement_unit field to mutable in CustomMetric type ([3de05e5](https://www.github.com/googleapis/java-analytics-admin/commit/3de05e56d905d74ae7468aed7e66e24c685c5df6))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-analytics-admin/issues/1299)) ([#322](https://www.github.com/googleapis/java-analytics-admin/issues/322)) ([259886e](https://www.github.com/googleapis/java-analytics-admin/commit/259886e2a1b1ed49adf0ba37f220e6b4059d4737))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-analytics-admin/issues/1266)) ([#307](https://www.github.com/googleapis/java-analytics-admin/issues/307)) ([4cfbf3b](https://www.github.com/googleapis/java-analytics-admin/commit/4cfbf3b3e0bc93292fdf6e80aa662356399db047))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-analytics-admin/issues/1301)) ([#326](https://www.github.com/googleapis/java-analytics-admin/issues/326)) ([e456449](https://www.github.com/googleapis/java-analytics-admin/commit/e4564497b94927eb550712364467cefa545ae1fe))
+* remove maximum_user_access field from FirebaseLink type ([3de05e5](https://www.github.com/googleapis/java-analytics-admin/commit/3de05e56d905d74ae7468aed7e66e24c685c5df6))
+* remove MaximumUserAccess enum from the API ([3de05e5](https://www.github.com/googleapis/java-analytics-admin/commit/3de05e56d905d74ae7468aed7e66e24c685c5df6))
+* remove UpdateFirebaseLink method from the API ([3de05e5](https://www.github.com/googleapis/java-analytics-admin/commit/3de05e56d905d74ae7468aed7e66e24c685c5df6))
+* rename email_address field of GoogleAdsLink type to creator_email_address ([3de05e5](https://www.github.com/googleapis/java-analytics-admin/commit/3de05e56d905d74ae7468aed7e66e24c685c5df6))
+* rename is_deletable field of ConversionEvent type to deletable ([3de05e5](https://www.github.com/googleapis/java-analytics-admin/commit/3de05e56d905d74ae7468aed7e66e24c685c5df6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#316](https://www.github.com/googleapis/java-analytics-admin/issues/316)) ([90be858](https://www.github.com/googleapis/java-analytics-admin/commit/90be858cd029c33b9c46962c12a89199c15c85c3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#321](https://www.github.com/googleapis/java-analytics-admin/issues/321)) ([6d31a66](https://www.github.com/googleapis/java-analytics-admin/commit/6d31a66c32ed7d16d10e0205f05790be76c92fe0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#329](https://www.github.com/googleapis/java-analytics-admin/issues/329)) ([462d2de](https://www.github.com/googleapis/java-analytics-admin/commit/462d2de3ca950782b90a46b978328c0f85300414))
+
 ### [0.6.2](https://www.github.com/googleapis/java-analytics-admin/compare/v0.6.1...v0.6.2) (2021-10-19)
 
 
