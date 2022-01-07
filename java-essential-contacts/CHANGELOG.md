@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.5](https://www.github.com/googleapis/java-essential-contacts/compare/v2.1.4...v2.1.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-essential-contacts/issues/1299)) ([#143](https://www.github.com/googleapis/java-essential-contacts/issues/143)) ([d3b1fcf](https://www.github.com/googleapis/java-essential-contacts/commit/d3b1fcfcf00c510ae946d3644c92451a30b9c578))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#150](https://www.github.com/googleapis/java-essential-contacts/issues/150)) ([dac73d8](https://www.github.com/googleapis/java-essential-contacts/commit/dac73d8c9bc06c594e200047eb9a09db4c582997))
+
 ### [2.1.4](https://www.github.com/googleapis/java-essential-contacts/compare/v2.1.3...v2.1.4) (2021-12-03)
 
 
