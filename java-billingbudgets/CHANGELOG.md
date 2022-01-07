@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.5](https://www.github.com/googleapis/java-billingbudgets/compare/v2.1.4...v2.1.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-billingbudgets/issues/1299)) ([#632](https://www.github.com/googleapis/java-billingbudgets/issues/632)) ([a9e7247](https://www.github.com/googleapis/java-billingbudgets/commit/a9e7247108b6a0dc9960e193c9a7ece9453589aa))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#641](https://www.github.com/googleapis/java-billingbudgets/issues/641)) ([68d2e35](https://www.github.com/googleapis/java-billingbudgets/commit/68d2e3559270c57567da6fd8ef6c37b20c61f8e0))
+
 ### [2.1.4](https://www.github.com/googleapis/java-billingbudgets/compare/v2.1.3...v2.1.4) (2021-12-03)
 
 
