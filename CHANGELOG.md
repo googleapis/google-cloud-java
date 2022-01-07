@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.8.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.8.0...v2.8.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-bigquerystorage/issues/1301)) ([#1461](https://www.github.com/googleapis/java-bigquerystorage/issues/1461)) ([6b9e08c](https://www.github.com/googleapis/java-bigquerystorage/commit/6b9e08c4736cfdb4d98bf3c8f782a87ab68580ce))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.6.0 ([#1459](https://www.github.com/googleapis/java-bigquerystorage/issues/1459)) ([323813c](https://www.github.com/googleapis/java-bigquerystorage/commit/323813c88cd673bbf3f8631f03ac1732f7d3ac53))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#1467](https://www.github.com/googleapis/java-bigquerystorage/issues/1467)) ([8ebb448](https://www.github.com/googleapis/java-bigquerystorage/commit/8ebb448ff0a1188124c1deeebe4bddbfe277e35b))
+
 ## [2.8.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.7.0...v2.8.0) (2021-12-30)
 
 
