@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.5](https://www.github.com/googleapis/java-billing/compare/v2.1.4...v2.1.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-billing/issues/1299)) ([#570](https://www.github.com/googleapis/java-billing/issues/570)) ([04302fc](https://www.github.com/googleapis/java-billing/commit/04302fc4d465ab0d21711d12b4c191917b34ca92))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-billing/issues/1301)) ([#576](https://www.github.com/googleapis/java-billing/issues/576)) ([4ef65b2](https://www.github.com/googleapis/java-billing/commit/4ef65b2548d19622f1dd534639f801f4285af7a9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#580](https://www.github.com/googleapis/java-billing/issues/580)) ([0c8d495](https://www.github.com/googleapis/java-billing/commit/0c8d495f3af03e098ab6994d603fc43af0183662))
+
 ### [2.1.4](https://www.github.com/googleapis/java-billing/compare/v2.1.3...v2.1.4) (2021-12-03)
 
 
