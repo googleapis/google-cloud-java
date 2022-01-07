@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.0.8](https://www.github.com/googleapis/java-iamcredentials/compare/v2.0.7...v2.0.8) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-iamcredentials/issues/1299)) ([#590](https://www.github.com/googleapis/java-iamcredentials/issues/590)) ([5d6ba7d](https://www.github.com/googleapis/java-iamcredentials/commit/5d6ba7df61977f6eb5459fbef74f25df0722767c))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-iamcredentials/issues/1301)) ([#596](https://www.github.com/googleapis/java-iamcredentials/issues/596)) ([a1aad4e](https://www.github.com/googleapis/java-iamcredentials/commit/a1aad4e2a4f334952160f559f82d90064ce80db7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#599](https://www.github.com/googleapis/java-iamcredentials/issues/599)) ([e39e26f](https://www.github.com/googleapis/java-iamcredentials/commit/e39e26f28a563160a05a3510cb5ac91594829b15))
+
 ### [2.0.7](https://www.github.com/googleapis/java-iamcredentials/compare/v2.0.6...v2.0.7) (2021-12-03)
 
 
