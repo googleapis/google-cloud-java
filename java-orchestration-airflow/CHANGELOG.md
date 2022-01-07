@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/googleapis/java-orchestration-airflow/compare/v1.1.0...v1.1.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-orchestration-airflow/issues/1299)) ([#113](https://www.github.com/googleapis/java-orchestration-airflow/issues/113)) ([9f87f4d](https://www.github.com/googleapis/java-orchestration-airflow/commit/9f87f4d23193d78aa2e3fb0c422d48a16d460612))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#120](https://www.github.com/googleapis/java-orchestration-airflow/issues/120)) ([cd2cd9c](https://www.github.com/googleapis/java-orchestration-airflow/commit/cd2cd9c30136c0aa953c60abbb231dca8e5def48))
+
 ## [1.1.0](https://www.github.com/googleapis/java-orchestration-airflow/compare/v1.0.0...v1.1.0) (2021-12-03)
 
 
