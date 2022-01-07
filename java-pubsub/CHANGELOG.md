@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.115.1](https://www.github.com/googleapis/java-pubsub/compare/v1.115.0...v1.115.1) (2022-01-07)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.3.4 ([#955](https://www.github.com/googleapis/java-pubsub/issues/955)) ([b39ecd5](https://www.github.com/googleapis/java-pubsub/commit/b39ecd5db18c99461206b287eb403199eea7a654))
+* update dependency com.google.cloud:google-cloud-core to v2.3.5 ([#959](https://www.github.com/googleapis/java-pubsub/issues/959)) ([5efec45](https://www.github.com/googleapis/java-pubsub/commit/5efec45e1761b642bcef309a45de4342e0f553f7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#957](https://www.github.com/googleapis/java-pubsub/issues/957)) ([b562ce8](https://www.github.com/googleapis/java-pubsub/commit/b562ce8550d227d99352df17c5c01221153f94fd))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.2 ([#954](https://www.github.com/googleapis/java-pubsub/issues/954)) ([a1ac149](https://www.github.com/googleapis/java-pubsub/commit/a1ac1491f0c682da6d84e69477823d2446a9c475))
+
 ## [1.115.0](https://www.github.com/googleapis/java-pubsub/compare/v1.114.7...v1.115.0) (2021-12-05)
 
 
