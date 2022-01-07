@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.1.5](https://www.github.com/googleapis/java-debugger-client/compare/v1.1.4...v1.1.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-debugger-client/issues/1299)) ([#111](https://www.github.com/googleapis/java-debugger-client/issues/111)) ([4b6b952](https://www.github.com/googleapis/java-debugger-client/commit/4b6b952bbc0f7f2fd8ee6ec4b6f4b89ef7b2ab7f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#117](https://www.github.com/googleapis/java-debugger-client/issues/117)) ([a555aaa](https://www.github.com/googleapis/java-debugger-client/commit/a555aaaf4192cadd311ba3c3b0a8a1147d284f82))
+
 ### [1.1.4](https://www.github.com/googleapis/java-debugger-client/compare/v1.1.3...v1.1.4) (2021-12-03)
 
 
