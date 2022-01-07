@@ -1,5 +1,25 @@
 # Changelog
 
+### [3.2.13](https://www.github.com/googleapis/java-asset/compare/v3.2.12...v3.2.13) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-asset/issues/1299)) ([#1039](https://www.github.com/googleapis/java-asset/issues/1039)) ([9d78f24](https://www.github.com/googleapis/java-asset/commit/9d78f2480df0f630f45eafb929b7dba4f9388e62))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-orgpolicy-v1 to v2.0.7 ([#1041](https://www.github.com/googleapis/java-asset/issues/1041)) ([272b9bc](https://www.github.com/googleapis/java-asset/commit/272b9bc5b3e09d9b546e5e82517d3d72f27ae6dc))
+* update dependency com.google.api.grpc:proto-google-cloud-os-config-v1 to v2.3.0 ([#1042](https://www.github.com/googleapis/java-asset/issues/1042)) ([4c82e07](https://www.github.com/googleapis/java-asset/commit/4c82e072d3eea88ddf035094001024cb67064b09))
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.97.0 ([#1043](https://www.github.com/googleapis/java-asset/issues/1043)) ([29b2b07](https://www.github.com/googleapis/java-asset/commit/29b2b07b5a485e35a3c2f68d3e3fe14c34e7a5ee))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.6.0 ([#1054](https://www.github.com/googleapis/java-asset/issues/1054)) ([4e71971](https://www.github.com/googleapis/java-asset/commit/4e7197175be59d296a161f5336138793886492b2))
+* update dependency com.google.cloud:google-cloud-core to v2.3.4 ([#1058](https://www.github.com/googleapis/java-asset/issues/1058)) ([486553b](https://www.github.com/googleapis/java-asset/commit/486553bae2e80ce07d670e4f9c9b3909edd60bb9))
+* update dependency com.google.cloud:google-cloud-core to v2.3.5 ([#1061](https://www.github.com/googleapis/java-asset/issues/1061)) ([72d2d21](https://www.github.com/googleapis/java-asset/commit/72d2d21f725deb5ff628f698bf54a72d9b52bfb9))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v1.2.0 ([#1044](https://www.github.com/googleapis/java-asset/issues/1044)) ([e87f47d](https://www.github.com/googleapis/java-asset/commit/e87f47d0902d3019e93eccfae939d81cb8fa141a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#1060](https://www.github.com/googleapis/java-asset/issues/1060)) ([7efb152](https://www.github.com/googleapis/java-asset/commit/7efb15251bfbb83006eaa11b5f2ef34e510ac147))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.2 ([#1045](https://www.github.com/googleapis/java-asset/issues/1045)) ([0adea17](https://www.github.com/googleapis/java-asset/commit/0adea171593060a8be5a50236f8c2296ab7e221b))
+
 ### [3.2.12](https://www.github.com/googleapis/java-asset/compare/v3.2.11...v3.2.12) (2021-12-05)
 
 
