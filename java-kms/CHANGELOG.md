@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.3.1](https://www.github.com/googleapis/java-kms/compare/v2.3.0...v2.3.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-kms/issues/1299)) ([#680](https://www.github.com/googleapis/java-kms/issues/680)) ([5a0469b](https://www.github.com/googleapis/java-kms/commit/5a0469b7cd007b0ce90be6263e83e5e20a446ada))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#692](https://www.github.com/googleapis/java-kms/issues/692)) ([4348d88](https://www.github.com/googleapis/java-kms/commit/4348d88c75faa46010d9c3dbc89dce1c17c52ec4))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.2 ([#691](https://www.github.com/googleapis/java-kms/issues/691)) ([bcf3f03](https://www.github.com/googleapis/java-kms/commit/bcf3f03317ff8c035ddc7299fc761380224e95a6))
+
 ## [2.3.0](https://www.github.com/googleapis/java-kms/compare/v2.2.2...v2.3.0) (2021-12-03)
 
 
