@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.4.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v2.3.1...v2.4.0) (2022-01-07)
+
+
+### Features
+
+* add new reCAPTCHA Enterprise fraud annotations ([#663](https://www.github.com/googleapis/java-recaptchaenterprise/issues/663)) ([205465a](https://www.github.com/googleapis/java-recaptchaenterprise/commit/205465a25131acc9f42b2cc13b5405eefe8eee82))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-recaptchaenterprise/issues/1299)) ([#659](https://www.github.com/googleapis/java-recaptchaenterprise/issues/659)) ([6d45bd8](https://www.github.com/googleapis/java-recaptchaenterprise/commit/6d45bd855dbdabfc1464a17fcc66bbfdb3fb1085))
+
+
+### Documentation
+
+* **samples:** added samples and test for recaptcha key operations ([#643](https://www.github.com/googleapis/java-recaptchaenterprise/issues/643)) ([748d165](https://www.github.com/googleapis/java-recaptchaenterprise/commit/748d16547d8385447fcd528b2ee4301c29c016b6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#675](https://www.github.com/googleapis/java-recaptchaenterprise/issues/675)) ([8dbd391](https://www.github.com/googleapis/java-recaptchaenterprise/commit/8dbd39135605890226914d2869faa1a1da2a1354))
+* update dependency org.springframework.boot:spring-boot-starter-test to v2.6.1 ([#654](https://www.github.com/googleapis/java-recaptchaenterprise/issues/654)) ([113cd86](https://www.github.com/googleapis/java-recaptchaenterprise/commit/113cd86f84ca46b82882e141143b43a74f911ea2))
+* update dependency org.springframework.boot:spring-boot-starter-thymeleaf to v2.6.1 ([#655](https://www.github.com/googleapis/java-recaptchaenterprise/issues/655)) ([960cc55](https://www.github.com/googleapis/java-recaptchaenterprise/commit/960cc55230457ea9850d41ca66ecfafc2c791927))
+* update dependency org.springframework.boot:spring-boot-starter-web to v2.6.1 ([#651](https://www.github.com/googleapis/java-recaptchaenterprise/issues/651)) ([728981a](https://www.github.com/googleapis/java-recaptchaenterprise/commit/728981a6d2ab220ebb5759a347f7b2fc7fd5d507))
+
 ### [2.3.1](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v2.3.0...v2.3.1) (2021-12-03)
 
 
