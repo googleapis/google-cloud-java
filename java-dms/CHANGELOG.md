@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.5](https://www.github.com/googleapis/java-dms/compare/v2.1.4...v2.1.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-dms/issues/1299)) ([#149](https://www.github.com/googleapis/java-dms/issues/149)) ([e66b356](https://www.github.com/googleapis/java-dms/commit/e66b356120fadc8e8c6a051644c81ea2b9c4e58c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#156](https://www.github.com/googleapis/java-dms/issues/156)) ([9fa5437](https://www.github.com/googleapis/java-dms/commit/9fa5437d0550a3b7349d18bc9d39f7de94337f06))
+
 ### [2.1.4](https://www.github.com/googleapis/java-dms/compare/v2.1.3...v2.1.4) (2021-12-03)
 
 
