@@ -1,129 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
   <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/compute/**</className>
-  </difference>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
-  <!-- Originally caused by https://github.com/googleapis/googleapis-discovery/pull/31 -->
-  <difference>
-    <differenceType>6003</differenceType>
-    <className>com/google/cloud/compute/**</className>
-    <field>*FIELD_NUMBER</field>
-  </difference>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
-  <!-- Originally caused by https://github.com/googleapis/googleapis-discovery/pull/31 -->
-  <difference>
-    <differenceType>6003</differenceType>
-    <className>com/google/cloud/compute/**</className>
-    <field>*_VALUE</field>
-  </difference>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
-    <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/compute/v1/*OrBuilder</className>
     <method>* get*(*)</method>
   </difference>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
   <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/compute/v1/*OrBuilder</className>
     <method>boolean contains*(*)</method>
   </difference>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
   <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/compute/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
-  </difference>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
-  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* get*Bytes()</method>
-  </difference>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
-  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* set*Bytes(com.google.protobuf.ByteString)</method>
-  </difference>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
-  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* get*Bytes(int)</method>
-  </difference>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
-  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* add*Bytes(com.google.protobuf.ByteString)</method>
-  </difference>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
-  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
-  <difference>
-    <differenceType>7006</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* get*(*)</method>
-    <to>long</to>
-  </difference>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
-  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
-  <difference>
-    <differenceType>7006</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* get*List(*)</method>
-    <to>java.util.List</to>
-  </difference>
-  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
-  <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
-
-  <!-- changes parameter type in methods starting with add* and set* to String -->
-  <difference>
-    <differenceType>7005</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* *(*)</method>
-    <to>* *(*java.lang.String*)</to>
-  </difference>
-  <!-- changes return type in methods starting with get* to String and ProtocolStringList-->
-  <difference>
-    <differenceType>7006</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* get*(*)</method>
-    <to>java.lang.String</to>
-  </difference>
-  <difference>
-    <differenceType>7006</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* get*(*)</method>
-    <to>com.google.protobuf.ProtocolStringList</to>
-  </difference>
-  <!-- Removes method -->
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* get*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* set*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* has*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/compute/v1/**</className>
-    <method>* add*(*)</method>
   </difference>
 </differences>
