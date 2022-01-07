@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.122.10](https://www.github.com/googleapis/java-errorreporting/compare/v0.122.9...v0.122.10) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-errorreporting/issues/1299)) ([#738](https://www.github.com/googleapis/java-errorreporting/issues/738)) ([749183d](https://www.github.com/googleapis/java-errorreporting/commit/749183db777980515634af289790fefb22fada19))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.3.4 ([#753](https://www.github.com/googleapis/java-errorreporting/issues/753)) ([1e220ba](https://www.github.com/googleapis/java-errorreporting/commit/1e220ba0c49760ebfe439e823af82471e4a78412))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#755](https://www.github.com/googleapis/java-errorreporting/issues/755)) ([7b26dae](https://www.github.com/googleapis/java-errorreporting/commit/7b26daee9197f7bc1e5fb1f7cb8f662f271ea728))
+
 ### [0.122.9](https://www.github.com/googleapis/java-errorreporting/compare/v0.122.8...v0.122.9) (2021-12-05)
 
 
