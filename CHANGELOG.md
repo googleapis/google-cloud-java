@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.6.1](https://www.github.com/googleapis/java-bigquery/compare/v2.6.0...v2.6.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** Pass missing integration test flags to native image test commands ([#1309](https://www.github.com/googleapis/java-bigquery/issues/1309)) ([#1766](https://www.github.com/googleapis/java-bigquery/issues/1766)) ([5363981](https://www.github.com/googleapis/java-bigquery/commit/536398115b5567f09b32de00f64f712ce811ae6c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigtable to v2.5.0 ([#1770](https://www.github.com/googleapis/java-bigquery/issues/1770)) ([d4ae6e7](https://www.github.com/googleapis/java-bigquery/commit/d4ae6e720c5f38bdf71e1bb1ecf949d3a3a5747a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#1774](https://www.github.com/googleapis/java-bigquery/issues/1774)) ([53db89d](https://www.github.com/googleapis/java-bigquery/commit/53db89d6d20aa29480b1583393c28749875001f5))
+
 ## [2.6.0](https://www.github.com/googleapis/java-bigquery/compare/v2.5.1...v2.6.0) (2021-12-27)
 
 
