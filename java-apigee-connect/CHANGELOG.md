@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-apigee-connect/compare/v2.0.2...v2.1.0) (2022-01-07)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-apigee-connect/issues/1196)) ([#57](https://www.github.com/googleapis/java-apigee-connect/issues/57)) ([d5696b6](https://www.github.com/googleapis/java-apigee-connect/commit/d5696b60ccd29d2998a201f23bc5afd9a12d8941))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-apigee-connect/issues/1299)) ([#100](https://www.github.com/googleapis/java-apigee-connect/issues/100)) ([22d918b](https://www.github.com/googleapis/java-apigee-connect/commit/22d918b3efdbc3b5e381a93737ad7c0e2a24e100))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-apigee-connect/issues/1266)) ([#86](https://www.github.com/googleapis/java-apigee-connect/issues/86)) ([d13e1e4](https://www.github.com/googleapis/java-apigee-connect/commit/d13e1e4f30bf75183bd839003f250c750fade84d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#60](https://www.github.com/googleapis/java-apigee-connect/issues/60)) ([50b9837](https://www.github.com/googleapis/java-apigee-connect/commit/50b98379dad3567d2fa88e22a885a1e3dd8d565e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#70](https://www.github.com/googleapis/java-apigee-connect/issues/70)) ([7733844](https://www.github.com/googleapis/java-apigee-connect/commit/773384494b24195b9fce1d0c9ea5247b90b59675))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#74](https://www.github.com/googleapis/java-apigee-connect/issues/74)) ([36da818](https://www.github.com/googleapis/java-apigee-connect/commit/36da81836c21551f1867bc8ac53552f7851aa5f2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#84](https://www.github.com/googleapis/java-apigee-connect/issues/84)) ([4b4aa07](https://www.github.com/googleapis/java-apigee-connect/commit/4b4aa078e1e924016fcec0e5e8591bef5e2bae96))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#94](https://www.github.com/googleapis/java-apigee-connect/issues/94)) ([623d991](https://www.github.com/googleapis/java-apigee-connect/commit/623d99140da5bb475cb243720b2b84a29e15d619))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#99](https://www.github.com/googleapis/java-apigee-connect/issues/99)) ([e6f678b](https://www.github.com/googleapis/java-apigee-connect/commit/e6f678b6d7a0799be37b30dfb909973c2e2cff5f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#105](https://www.github.com/googleapis/java-apigee-connect/issues/105)) ([31bc7ad](https://www.github.com/googleapis/java-apigee-connect/commit/31bc7ada83a61908ab8a90adcaba030c3ee73347))
+
 ### [2.0.2](https://www.github.com/googleapis/java-apigee-connect/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
