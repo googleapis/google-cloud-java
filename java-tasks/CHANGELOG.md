@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.1](https://www.github.com/googleapis/java-tasks/compare/v2.1.0...v2.1.1) (2022-01-07)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#578](https://www.github.com/googleapis/java-tasks/issues/578)) ([3fb7a27](https://www.github.com/googleapis/java-tasks/commit/3fb7a279fa91958c821641c31424e3751aaad715))
+
 ## [2.1.0](https://www.github.com/googleapis/java-tasks/compare/v2.0.6...v2.1.0) (2021-12-03)
 
 
