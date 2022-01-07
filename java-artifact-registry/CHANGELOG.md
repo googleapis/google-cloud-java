@@ -1,5 +1,38 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-artifact-registry/compare/v0.4.3...v0.5.0) (2022-01-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* This will be a breaking change for languages that generate client libraries using resource annotations to provide overloads accepting resource names. Where previously such languages would have generated (in-pseudocode) GetRepository(LocationName) they will now (correctly) generate GetRepository(RepositoryName). Code using the older methods will be broken by this change, but would never have worked anyway.
+
+### Features
+
+* Artifact Registry v1 public protos ([#159](https://www.github.com/googleapis/java-artifact-registry/issues/159)) ([3764ef6](https://www.github.com/googleapis/java-artifact-registry/commit/3764ef67c52af1692e2b66a7100c203d74c75c54))
+
+
+### Bug Fixes
+
+* **artifactregistry:** fix resource pattern ID segment name ([#193](https://www.github.com/googleapis/java-artifact-registry/issues/193)) ([a3edf3d](https://www.github.com/googleapis/java-artifact-registry/commit/a3edf3dc0f21c2075febf18a1ca8d6eea399b1f5))
+* Fix the resource annotations for GetRepositoryRequest ([#171](https://www.github.com/googleapis/java-artifact-registry/issues/171)) ([dd2adb5](https://www.github.com/googleapis/java-artifact-registry/commit/dd2adb5df54f44734077b99aa9bb859f9bff8a51))
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-artifact-registry/issues/1299)) ([#192](https://www.github.com/googleapis/java-artifact-registry/issues/192)) ([4d263cd](https://www.github.com/googleapis/java-artifact-registry/commit/4d263cd96b8c26e23f6b0d4223799f0e360710e1))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-artifact-registry/issues/1266)) ([#177](https://www.github.com/googleapis/java-artifact-registry/issues/177)) ([0fa73db](https://www.github.com/googleapis/java-artifact-registry/commit/0fa73db98462b1564a6d9796202f22864034e132))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-artifact-registry/issues/1301)) ([#196](https://www.github.com/googleapis/java-artifact-registry/issues/196)) ([a876c65](https://www.github.com/googleapis/java-artifact-registry/commit/a876c654640de5a140af549c74772f67a20ca221))
+
+
+### Documentation
+
+* fix docstring formatting ([#175](https://www.github.com/googleapis/java-artifact-registry/issues/175)) ([e97c22c](https://www.github.com/googleapis/java-artifact-registry/commit/e97c22cce17721c53e5173fc153f4e6b199038f9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#174](https://www.github.com/googleapis/java-artifact-registry/issues/174)) ([7991c2a](https://www.github.com/googleapis/java-artifact-registry/commit/7991c2a2708b81cd8e33a21ec7e4419053f05fee))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#185](https://www.github.com/googleapis/java-artifact-registry/issues/185)) ([a19ed68](https://www.github.com/googleapis/java-artifact-registry/commit/a19ed68328854ee26465815ae3f3f740b24c4597))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#190](https://www.github.com/googleapis/java-artifact-registry/issues/190)) ([67de42f](https://www.github.com/googleapis/java-artifact-registry/commit/67de42f028f9e405ea1eeb18e840e3c721506ca0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#198](https://www.github.com/googleapis/java-artifact-registry/issues/198)) ([0f68c71](https://www.github.com/googleapis/java-artifact-registry/commit/0f68c719b81ed21e2001b253aa8743652a62bc8c))
+
 ### [0.4.3](https://www.github.com/googleapis/java-artifact-registry/compare/v0.4.2...v0.4.3) (2021-09-22)
 
 
