@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.2.1](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v2.2.0...v2.2.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-monitoring-dashboards/issues/1299)) ([#518](https://www.github.com/googleapis/java-monitoring-dashboards/issues/518)) ([ddd3020](https://www.github.com/googleapis/java-monitoring-dashboards/commit/ddd302041fa9b95d0c50918de679e8cc0f59f4b2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#526](https://www.github.com/googleapis/java-monitoring-dashboards/issues/526)) ([23cbc10](https://www.github.com/googleapis/java-monitoring-dashboards/commit/23cbc10bb2ff4dd50a7dbcebd2d88a39e49dff40))
+
 ## [2.2.0](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v2.1.3...v2.2.0) (2021-12-03)
 
 
