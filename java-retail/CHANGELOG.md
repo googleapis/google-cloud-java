@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.0.7](https://www.github.com/googleapis/java-retail/compare/v2.0.6...v2.0.7) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-retail/issues/1299)) ([#250](https://www.github.com/googleapis/java-retail/issues/250)) ([dd942ab](https://www.github.com/googleapis/java-retail/commit/dd942ab9d8efd582f5c83c259c5ca6e0225c88a5))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#258](https://www.github.com/googleapis/java-retail/issues/258)) ([81f1a09](https://www.github.com/googleapis/java-retail/commit/81f1a0936e779e67d39aa4d68f19b99bea90a819))
+
 ### [2.0.6](https://www.github.com/googleapis/java-retail/compare/v2.0.5...v2.0.6) (2021-12-03)
 
 
