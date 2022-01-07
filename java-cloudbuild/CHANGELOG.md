@@ -1,5 +1,17 @@
 # Changelog
 
+### [3.3.7](https://www.github.com/googleapis/java-cloudbuild/compare/v3.3.6...v3.3.7) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-cloudbuild/issues/1299)) ([#662](https://www.github.com/googleapis/java-cloudbuild/issues/662)) ([0152600](https://www.github.com/googleapis/java-cloudbuild/commit/01526006b29fb5d8d7b506c06123d3596ddf708b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#671](https://www.github.com/googleapis/java-cloudbuild/issues/671)) ([f7d1929](https://www.github.com/googleapis/java-cloudbuild/commit/f7d1929057f6902cbf7220b90c58965af83fe794))
+
 ### [3.3.6](https://www.github.com/googleapis/java-cloudbuild/compare/v3.3.5...v3.3.6) (2021-12-03)
 
 
