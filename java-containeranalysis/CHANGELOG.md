@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.2.6](https://www.github.com/googleapis/java-containeranalysis/compare/v2.2.5...v2.2.6) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-containeranalysis/issues/1299)) ([#775](https://www.github.com/googleapis/java-containeranalysis/issues/775)) ([4ae489f](https://www.github.com/googleapis/java-containeranalysis/commit/4ae489fc0dc15e23f37859896f073f94d283fc65))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-containeranalysis/issues/1301)) ([#783](https://www.github.com/googleapis/java-containeranalysis/issues/783)) ([5402490](https://www.github.com/googleapis/java-containeranalysis/commit/5402490f073ce7142766f8617f9400a7e8f0e6fb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#787](https://www.github.com/googleapis/java-containeranalysis/issues/787)) ([7a41b45](https://www.github.com/googleapis/java-containeranalysis/commit/7a41b45aa032f93f6671ea5c651f34270b0f323a))
+* update dependency io.grafeas:grafeas to v2.1.3 ([#773](https://www.github.com/googleapis/java-containeranalysis/issues/773)) ([261a275](https://www.github.com/googleapis/java-containeranalysis/commit/261a275f692636938415d6343a135e03cae7e5b8))
+
 ### [2.2.5](https://www.github.com/googleapis/java-containeranalysis/compare/v2.2.4...v2.2.5) (2021-12-03)
 
 
