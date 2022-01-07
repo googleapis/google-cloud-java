@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.7.5](https://www.github.com/googleapis/java-mediatranslation/compare/v0.7.4...v0.7.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-mediatranslation/issues/1299)) ([#578](https://www.github.com/googleapis/java-mediatranslation/issues/578)) ([d0513a3](https://www.github.com/googleapis/java-mediatranslation/commit/d0513a387fa055e5640ff6aae1cb67072252ffbc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#584](https://www.github.com/googleapis/java-mediatranslation/issues/584)) ([92bf96c](https://www.github.com/googleapis/java-mediatranslation/commit/92bf96cdd90c46913242b9da5bbbc422c7cddade))
+
 ### [0.7.4](https://www.github.com/googleapis/java-mediatranslation/compare/v0.7.3...v0.7.4) (2021-12-03)
 
 
