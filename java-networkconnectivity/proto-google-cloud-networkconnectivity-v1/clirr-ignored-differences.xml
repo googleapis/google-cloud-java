@@ -16,4 +16,8 @@
     <className>com/google/cloud/networkconnectivity/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/networkconnectivity/v1/*ctivateSpokeRequest*</className>
+  </difference>
 </differences>

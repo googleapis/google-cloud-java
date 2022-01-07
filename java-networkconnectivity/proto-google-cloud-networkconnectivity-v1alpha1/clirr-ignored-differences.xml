@@ -16,7 +16,7 @@
     <className>com/google/cloud/networkconnectivity/v1alpha1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-  <difference>
+    <difference>
     <className>
       com/google/cloud/networkconnectivity/v1alpha1/SpokeOrBuilder
     </className>
