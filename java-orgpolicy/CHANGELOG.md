@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.0.8](https://www.github.com/googleapis/java-orgpolicy/compare/v2.0.7...v2.0.8) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-orgpolicy/issues/1299)) ([#289](https://www.github.com/googleapis/java-orgpolicy/issues/289)) ([f7ce912](https://www.github.com/googleapis/java-orgpolicy/commit/f7ce912c750b46d068ccb245cd29b06440146f81))
+* **java:** remove junit version declaration ([#293](https://www.github.com/googleapis/java-orgpolicy/issues/293)) ([6a8ea36](https://www.github.com/googleapis/java-orgpolicy/commit/6a8ea363f1dda7abafed0c54a97e8c1ac07a6eb4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#297](https://www.github.com/googleapis/java-orgpolicy/issues/297)) ([f91ed8c](https://www.github.com/googleapis/java-orgpolicy/commit/f91ed8c62843eb9468dc3efe22eb9fb3ca3916c4))
+
 ### [2.0.7](https://www.github.com/googleapis/java-orgpolicy/compare/v2.0.6...v2.0.7) (2021-12-03)
 
 
