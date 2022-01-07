@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.3.1](https://www.github.com/googleapis/java-datastream/compare/v0.3.0...v0.3.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-datastream/issues/1301)) ([#93](https://www.github.com/googleapis/java-datastream/issues/93)) ([6a74b69](https://www.github.com/googleapis/java-datastream/commit/6a74b69ad51e7e713ca2ac821fec3358f4828c8b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#97](https://www.github.com/googleapis/java-datastream/issues/97)) ([824391e](https://www.github.com/googleapis/java-datastream/commit/824391eb7582afc6088b34fb9d1b2743e7bfeaab))
+
 ## [0.3.0](https://www.github.com/googleapis/java-datastream/compare/v0.2.1...v0.3.0) (2021-12-06)
 
 
