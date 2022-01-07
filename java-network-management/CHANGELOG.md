@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.1.5](https://www.github.com/googleapis/java-network-management/compare/v1.1.4...v1.1.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-network-management/issues/1299)) ([#97](https://www.github.com/googleapis/java-network-management/issues/97)) ([8d3057c](https://www.github.com/googleapis/java-network-management/commit/8d3057c64c352fa26344606bae30aa03ffb21fed))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#103](https://www.github.com/googleapis/java-network-management/issues/103)) ([ca45e37](https://www.github.com/googleapis/java-network-management/commit/ca45e37bf001365f7a1702b052cb8d758c572f39))
+
 ### [1.1.4](https://www.github.com/googleapis/java-network-management/compare/v1.1.3...v1.1.4) (2021-12-03)
 
 
