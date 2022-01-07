@@ -1,5 +1,49 @@
 # Changelog
 
+## [0.11.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.10.1...v0.11.0) (2022-01-07)
+
+
+### Features
+
+* added `TelephonyTransferCall` in response message ([#376](https://www.github.com/googleapis/java-dialogflow-cx/issues/376)) ([d7345a8](https://www.github.com/googleapis/java-dialogflow-cx/commit/d7345a81820c125be231afdd23d9d4203e904bfe))
+* added API for changelogs ([#342](https://www.github.com/googleapis/java-dialogflow-cx/issues/342)) ([67198cb](https://www.github.com/googleapis/java-dialogflow-cx/commit/67198cb851833bcb1aacb63d037a30522732ade4))
+* added API for changelogs ([#343](https://www.github.com/googleapis/java-dialogflow-cx/issues/343)) ([ff46df6](https://www.github.com/googleapis/java-dialogflow-cx/commit/ff46df6f537c8173bca42335403505cd014583c3))
+* added deployment API ([#330](https://www.github.com/googleapis/java-dialogflow-cx/issues/330)) ([a68fde8](https://www.github.com/googleapis/java-dialogflow-cx/commit/a68fde8ec9db92185d71abb399cbc3cfae5f94d2))
+* added support for comparing between versions docs: clarified security settings API reference ([#347](https://www.github.com/googleapis/java-dialogflow-cx/issues/347)) ([68c3471](https://www.github.com/googleapis/java-dialogflow-cx/commit/68c34714905a783e2979f5a616bb4f5ce1e1a67c))
+* added support for custom content types docs: reformat comments ([#375](https://www.github.com/googleapis/java-dialogflow-cx/issues/375)) ([b1affa6](https://www.github.com/googleapis/java-dialogflow-cx/commit/b1affa660f9d88dcc9e54b4f950d80a16eb61c03))
+* added support for Deployments with ListDeployments and GetDeployment apis ([#327](https://www.github.com/googleapis/java-dialogflow-cx/issues/327)) ([9000ad2](https://www.github.com/googleapis/java-dialogflow-cx/commit/9000ad2e5183f6e8156382b7a87519823c630d90))
+* added the display name of the current page in webhook requests ([#380](https://www.github.com/googleapis/java-dialogflow-cx/issues/380)) ([cbd425f](https://www.github.com/googleapis/java-dialogflow-cx/commit/cbd425f624139064f4b7700a2d7502a42f8dc92f))
+* added the display name of the current page in webhook requests ([#381](https://www.github.com/googleapis/java-dialogflow-cx/issues/381)) ([e65c733](https://www.github.com/googleapis/java-dialogflow-cx/commit/e65c7333f2f272137d5dfe4ec4cdaab1e7dbe0f8))
+* allow setting custom CA for generic webhooks ([#355](https://www.github.com/googleapis/java-dialogflow-cx/issues/355)) ([66a8c4a](https://www.github.com/googleapis/java-dialogflow-cx/commit/66a8c4ab01c5ec91f6e2d431eff779ceb4b57c41))
+* allow setting custom CA for generic webhooks and release CompareVersions API docs: clarify DLP template reader usage ([#362](https://www.github.com/googleapis/java-dialogflow-cx/issues/362)) ([1d581ad](https://www.github.com/googleapis/java-dialogflow-cx/commit/1d581ad83fbd373087bbbcee3cbe55c204a553f3))
+* expose dtmf input info in the query result ([#329](https://www.github.com/googleapis/java-dialogflow-cx/issues/329)) ([1c25f27](https://www.github.com/googleapis/java-dialogflow-cx/commit/1c25f2752427d92f169fb7b9bfede3fdda00ba8e))
+* exposed DTMF input info in the query result ([a68fde8](https://www.github.com/googleapis/java-dialogflow-cx/commit/a68fde8ec9db92185d71abb399cbc3cfae5f94d2))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-dialogflow-cx/issues/1299)) ([#377](https://www.github.com/googleapis/java-dialogflow-cx/issues/377)) ([41651be](https://www.github.com/googleapis/java-dialogflow-cx/commit/41651be08f9f8b3f9d13295cea8b7f264f58b00e))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-dialogflow-cx/issues/1266)) ([#345](https://www.github.com/googleapis/java-dialogflow-cx/issues/345)) ([8cbd520](https://www.github.com/googleapis/java-dialogflow-cx/commit/8cbd52027091460f1bf4b39ed1a0849f1ca8bad3))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-dialogflow-cx/issues/1301)) ([#384](https://www.github.com/googleapis/java-dialogflow-cx/issues/384)) ([331bf72](https://www.github.com/googleapis/java-dialogflow-cx/commit/331bf72103b8fca89d24cf599fcaa43b282be8e3))
+
+
+### Documentation
+
+* added notes on long running operation ([a68fde8](https://www.github.com/googleapis/java-dialogflow-cx/commit/a68fde8ec9db92185d71abb399cbc3cfae5f94d2))
+* clarified semantic of the streaming APIs ([ff46df6](https://www.github.com/googleapis/java-dialogflow-cx/commit/ff46df6f537c8173bca42335403505cd014583c3))
+* clarified semantic of the streaming APIs ([67198cb](https://www.github.com/googleapis/java-dialogflow-cx/commit/67198cb851833bcb1aacb63d037a30522732ade4))
+* **samples:** adds list training phrases sample ([#336](https://www.github.com/googleapis/java-dialogflow-cx/issues/336)) ([2810eb2](https://www.github.com/googleapis/java-dialogflow-cx/commit/2810eb29af292fd91cd622757510e44d0560e1eb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#340](https://www.github.com/googleapis/java-dialogflow-cx/issues/340)) ([fa55873](https://www.github.com/googleapis/java-dialogflow-cx/commit/fa55873d9e046f351392c285206e5e324c0fd608))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#360](https://www.github.com/googleapis/java-dialogflow-cx/issues/360)) ([d0319e4](https://www.github.com/googleapis/java-dialogflow-cx/commit/d0319e432c787c711bc91343ba49789c84ea23a9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#374](https://www.github.com/googleapis/java-dialogflow-cx/issues/374)) ([5c970ff](https://www.github.com/googleapis/java-dialogflow-cx/commit/5c970ffe34d4378232da42b9eb2b0dc8b7987100))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#388](https://www.github.com/googleapis/java-dialogflow-cx/issues/388)) ([3bdb3fc](https://www.github.com/googleapis/java-dialogflow-cx/commit/3bdb3fc91327ad2f84e0d236aee2fc63d9bad7ac))
+* update dependency com.google.cloud.functions:function-maven-plugin to v0.10.0 ([#358](https://www.github.com/googleapis/java-dialogflow-cx/issues/358)) ([ee7d1af](https://www.github.com/googleapis/java-dialogflow-cx/commit/ee7d1af400e483b4ce87c8f6bcd5369970af5706))
+* update dependency com.google.code.gson:gson to v2.8.9 ([#357](https://www.github.com/googleapis/java-dialogflow-cx/issues/357)) ([0cfc996](https://www.github.com/googleapis/java-dialogflow-cx/commit/0cfc996c1bd321e4b1f845d8c56197cd97faef4d))
+
 ### [0.10.1](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.10.0...v0.10.1) (2021-09-22)
 
 
