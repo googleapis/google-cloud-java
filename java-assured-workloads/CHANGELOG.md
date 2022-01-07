@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.8.0](https://www.github.com/googleapis/java-assured-workloads/compare/v0.7.2...v0.8.0) (2022-01-07)
+
+
+### Features
+
+* EU Regions and Support With Sovereign Controls ([#367](https://www.github.com/googleapis/java-assured-workloads/issues/367)) ([5ec571c](https://www.github.com/googleapis/java-assured-workloads/commit/5ec571c9b437a44b12c7909387c7e87e7bed0ebd))
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-assured-workloads/issues/1301)) ([#371](https://www.github.com/googleapis/java-assured-workloads/issues/371)) ([354bef1](https://www.github.com/googleapis/java-assured-workloads/commit/354bef1f67e2c75ca40356538a9d880ff98eb4ea))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#374](https://www.github.com/googleapis/java-assured-workloads/issues/374)) ([eae7eec](https://www.github.com/googleapis/java-assured-workloads/commit/eae7eec5c5c35b358b54a5b19d94cdc6ef0819cf))
+
 ### [0.7.2](https://www.github.com/googleapis/java-assured-workloads/compare/v0.7.1...v0.7.2) (2021-12-06)
 
 
