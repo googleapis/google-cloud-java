@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.1](https://www.github.com/googleapis/java-texttospeech/compare/v2.1.0...v2.1.1) (2022-01-07)
+
+
+### Documentation
+
+* update comments for ListVoicesRequest ([#611](https://www.github.com/googleapis/java-texttospeech/issues/611)) ([9323550](https://www.github.com/googleapis/java-texttospeech/commit/93235503915ec6848300d05baa9c7e6a64363331))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#619](https://www.github.com/googleapis/java-texttospeech/issues/619)) ([c977bff](https://www.github.com/googleapis/java-texttospeech/commit/c977bff8c3b2f0c6e4a8d6724423fb7079d2c020))
+
 ## [2.1.0](https://www.github.com/googleapis/java-texttospeech/compare/v2.0.6...v2.1.0) (2021-12-06)
 
 
