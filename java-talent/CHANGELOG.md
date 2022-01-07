@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.4](https://www.github.com/googleapis/java-talent/compare/v2.2.3...v2.2.4) (2022-01-07)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#701](https://www.github.com/googleapis/java-talent/issues/701)) ([90892a1](https://www.github.com/googleapis/java-talent/commit/90892a1d78d0d2346310fba7b862a130d7d864d2))
+
 ### [2.2.3](https://www.github.com/googleapis/java-talent/compare/v2.2.2...v2.2.3) (2021-12-03)
 
 
