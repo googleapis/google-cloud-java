@@ -1,5 +1,26 @@
 # Changelog
 
+## [4.4.0](https://www.github.com/googleapis/java-dialogflow/compare/v4.3.1...v4.4.0) (2022-01-07)
+
+
+### Features
+
+* added export documentation method ([#800](https://www.github.com/googleapis/java-dialogflow/issues/800)) ([0b7f7e9](https://www.github.com/googleapis/java-dialogflow/commit/0b7f7e94a8e37d13c86f197be5011fc6166c2f1d))
+* removed OPTIONAL for speech model variant docs: added more docs for speech model variant and improved docs format for participant ([#798](https://www.github.com/googleapis/java-dialogflow/issues/798)) ([8e9684e](https://www.github.com/googleapis/java-dialogflow/commit/8e9684ef89d211adcf5b6819fc1e0f715359ec96))
+* removed OPTIONAL for speech model variant feat: supported the knowledge base in knowledge operation metadata docs: added more docs for speech model variant and improved docs format for participant ([#799](https://www.github.com/googleapis/java-dialogflow/issues/799)) ([feac480](https://www.github.com/googleapis/java-dialogflow/commit/feac4802a6b21aaf8a3a2bd656013e835a3eaf4b))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-dialogflow/issues/1299)) ([#787](https://www.github.com/googleapis/java-dialogflow/issues/787)) ([83a2a1a](https://www.github.com/googleapis/java-dialogflow/commit/83a2a1aa017c35001653881774af1f624d2a7db4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.3.4 ([#809](https://www.github.com/googleapis/java-dialogflow/issues/809)) ([b74bcdc](https://www.github.com/googleapis/java-dialogflow/commit/b74bcdc7eff6f0fa5ecfb466069de72d1e9cefda))
+* update dependency com.google.cloud:google-cloud-core to v2.3.5 ([#811](https://www.github.com/googleapis/java-dialogflow/issues/811)) ([27a10ee](https://www.github.com/googleapis/java-dialogflow/commit/27a10eeb66c3064149d6b569f49df34280569fd7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#810](https://www.github.com/googleapis/java-dialogflow/issues/810)) ([a8d117e](https://www.github.com/googleapis/java-dialogflow/commit/a8d117efd78c2c7f022fddb13459630e53715b37))
+
 ### [4.3.1](https://www.github.com/googleapis/java-dialogflow/compare/v4.3.0...v4.3.1) (2021-12-05)
 
 
