@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.5](https://www.github.com/googleapis/java-eventarc/compare/v1.1.4...v1.1.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-eventarc/issues/1299)) ([#110](https://www.github.com/googleapis/java-eventarc/issues/110)) ([976d177](https://www.github.com/googleapis/java-eventarc/commit/976d177479dad1aee817dafd42779fb7a94cb4dc))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-eventarc/issues/1301)) ([#114](https://www.github.com/googleapis/java-eventarc/issues/114)) ([772fd83](https://www.github.com/googleapis/java-eventarc/commit/772fd838b0e791bdb69929a1cbbb1e2c7f7a3131))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#116](https://www.github.com/googleapis/java-eventarc/issues/116)) ([ea67e40](https://www.github.com/googleapis/java-eventarc/commit/ea67e406660e79b41ee9476849d6151f7f33891d))
+
 ### [1.1.4](https://www.github.com/googleapis/java-eventarc/compare/v1.1.3...v1.1.4) (2021-12-03)
 
 
