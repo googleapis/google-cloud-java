@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.6.2](https://www.github.com/googleapis/java-datacatalog/compare/v1.6.1...v1.6.2) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-datacatalog/issues/1299)) ([#702](https://www.github.com/googleapis/java-datacatalog/issues/702)) ([1c69eaa](https://www.github.com/googleapis/java-datacatalog/commit/1c69eaa282097b71990e9270cfff75424acb0e57))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-datacatalog/issues/1301)) ([#716](https://www.github.com/googleapis/java-datacatalog/issues/716)) ([5741b7f](https://www.github.com/googleapis/java-datacatalog/commit/5741b7fd9e022d3b650f737d4f2f49d4739073a3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#720](https://www.github.com/googleapis/java-datacatalog/issues/720)) ([5aacce1](https://www.github.com/googleapis/java-datacatalog/commit/5aacce16bee5c0c93342e61fd1d0c938a5ea8f13))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.2 ([#718](https://www.github.com/googleapis/java-datacatalog/issues/718)) ([86f9f50](https://www.github.com/googleapis/java-datacatalog/commit/86f9f50b54ea230bcd64460d4177a8fde711f9a5))
+
 ### [1.6.1](https://www.github.com/googleapis/java-datacatalog/compare/v1.6.0...v1.6.1) (2021-12-03)
 
 
