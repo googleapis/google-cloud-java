@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.5.4](https://www.github.com/googleapis/java-gkehub/compare/v0.5.3...v0.5.4) (2022-01-07)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#166](https://www.github.com/googleapis/java-gkehub/issues/166)) ([70d31d7](https://www.github.com/googleapis/java-gkehub/commit/70d31d795140eb6f5d091f808cfbc9f54f362b78))
+
 ### [0.5.3](https://www.github.com/googleapis/java-gkehub/compare/v0.5.2...v0.5.3) (2021-12-06)
 
 
