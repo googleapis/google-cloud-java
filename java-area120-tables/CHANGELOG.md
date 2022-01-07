@@ -1,5 +1,21 @@
 # Changelog
 
+### [0.5.3](https://www.github.com/googleapis/java-area120-tables/compare/v0.5.2...v0.5.3) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-area120-tables/issues/1299)) ([#283](https://www.github.com/googleapis/java-area120-tables/issues/283)) ([bbf985e](https://www.github.com/googleapis/java-area120-tables/commit/bbf985e5f3953af4390d7266cb12fce754ed2195))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-area120-tables/issues/1266)) ([#268](https://www.github.com/googleapis/java-area120-tables/issues/268)) ([c896c5d](https://www.github.com/googleapis/java-area120-tables/commit/c896c5d7fa30363946b0075fa63a9193e83f5f1f))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-area120-tables/issues/1301)) ([#286](https://www.github.com/googleapis/java-area120-tables/issues/286)) ([71d5cf8](https://www.github.com/googleapis/java-area120-tables/commit/71d5cf8f0c909ef2ce5167e255ca53d647045261))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#277](https://www.github.com/googleapis/java-area120-tables/issues/277)) ([f8878f8](https://www.github.com/googleapis/java-area120-tables/commit/f8878f8ec5f752f213a5df50d9ed93c38707e5b2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#282](https://www.github.com/googleapis/java-area120-tables/issues/282)) ([9808e43](https://www.github.com/googleapis/java-area120-tables/commit/9808e438d642fa0874a95c16d40f8d781a0cb173))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#288](https://www.github.com/googleapis/java-area120-tables/issues/288)) ([993ce7e](https://www.github.com/googleapis/java-area120-tables/commit/993ce7e0628b844c9e26c529e8ff70f09c23badc))
+
 ### [0.5.2](https://www.github.com/googleapis/java-area120-tables/compare/v0.5.1...v0.5.2) (2021-10-19)
 
 
