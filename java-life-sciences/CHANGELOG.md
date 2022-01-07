@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.3.3](https://www.github.com/googleapis/java-life-sciences/compare/v0.3.2...v0.3.3) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-life-sciences/issues/1301)) ([#111](https://www.github.com/googleapis/java-life-sciences/issues/111)) ([d6aebe4](https://www.github.com/googleapis/java-life-sciences/commit/d6aebe4c36c9b9fb6b2979a67d4e76abe66cd1b1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#114](https://www.github.com/googleapis/java-life-sciences/issues/114)) ([64d3c72](https://www.github.com/googleapis/java-life-sciences/commit/64d3c72465a237d6bb28878e0957e0470d6938b1))
+
 ### [0.3.2](https://www.github.com/googleapis/java-life-sciences/compare/v0.3.1...v0.3.2) (2021-12-06)
 
 
