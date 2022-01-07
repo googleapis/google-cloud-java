@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.122.5](https://www.github.com/googleapis/java-datalabeling/compare/v0.122.4...v0.122.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-datalabeling/issues/1299)) ([#652](https://www.github.com/googleapis/java-datalabeling/issues/652)) ([8908442](https://www.github.com/googleapis/java-datalabeling/commit/89084428524b044caad0f67f5de69029cb22494d))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-datalabeling/issues/1301)) ([#658](https://www.github.com/googleapis/java-datalabeling/issues/658)) ([ea1138b](https://www.github.com/googleapis/java-datalabeling/commit/ea1138b7ef938705e0b0d3d0c6c22b23e799a3e1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#662](https://www.github.com/googleapis/java-datalabeling/issues/662)) ([2837f5f](https://www.github.com/googleapis/java-datalabeling/commit/2837f5f8af81abe3ecff1aa6a1a66c8f9a7a9f69))
+
 ### [0.122.4](https://www.github.com/googleapis/java-datalabeling/compare/v0.122.3...v0.122.4) (2021-12-03)
 
 
