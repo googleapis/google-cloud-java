@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.4.1](https://www.github.com/googleapis/java-binary-authorization/compare/v0.4.0...v0.4.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-binary-authorization/issues/1301)) ([#131](https://www.github.com/googleapis/java-binary-authorization/issues/131)) ([0fd5b44](https://www.github.com/googleapis/java-binary-authorization/commit/0fd5b4439f807c37f56695c63b81693be8e5fbc1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#134](https://www.github.com/googleapis/java-binary-authorization/issues/134)) ([cc6736a](https://www.github.com/googleapis/java-binary-authorization/commit/cc6736a38ecbb1d0ec96b8a1f0b6ca828f9ed1c9))
+
 ## [0.4.0](https://www.github.com/googleapis/java-binary-authorization/compare/v0.3.3...v0.4.0) (2021-12-06)
 
 
