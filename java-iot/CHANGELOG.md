@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.5](https://www.github.com/googleapis/java-iot/compare/v2.1.4...v2.1.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-iot/issues/1299)) ([#646](https://www.github.com/googleapis/java-iot/issues/646)) ([dcb46c9](https://www.github.com/googleapis/java-iot/commit/dcb46c97122c06afe2862b9ac0a942cb0c60f795))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-iot/issues/1301)) ([#652](https://www.github.com/googleapis/java-iot/issues/652)) ([7aeb5f5](https://www.github.com/googleapis/java-iot/commit/7aeb5f5bd1174766864aa723adc1863446dc10c7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#655](https://www.github.com/googleapis/java-iot/issues/655)) ([4dec841](https://www.github.com/googleapis/java-iot/commit/4dec8416347514fc93d05d6daf25e1f8c27899d5))
+
 ### [2.1.4](https://www.github.com/googleapis/java-iot/compare/v2.1.3...v2.1.4) (2021-12-03)
 
 
