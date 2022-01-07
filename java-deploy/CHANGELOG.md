@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.1.4](https://www.github.com/googleapis/java-deploy/compare/v0.1.3...v0.1.4) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-deploy/issues/1301)) ([#48](https://www.github.com/googleapis/java-deploy/issues/48)) ([3435466](https://www.github.com/googleapis/java-deploy/commit/34354669e29091230e7587efbd0fd17e75d22549))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#52](https://www.github.com/googleapis/java-deploy/issues/52)) ([d592b37](https://www.github.com/googleapis/java-deploy/commit/d592b374187b0123f08a4cc0f70397f043f55c1c))
+
 ### [0.1.3](https://www.github.com/googleapis/java-deploy/compare/v0.1.2...v0.1.3) (2021-12-06)
 
 
