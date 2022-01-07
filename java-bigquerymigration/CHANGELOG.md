@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.1.4](https://www.github.com/googleapis/java-bigquerymigration/compare/v0.1.3...v0.1.4) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-bigquerymigration/issues/1299)) ([#44](https://www.github.com/googleapis/java-bigquerymigration/issues/44)) ([f2b9b81](https://www.github.com/googleapis/java-bigquerymigration/commit/f2b9b8117300dac20480a6f60ceb82c80a73c5b4))
+* **java:** Pass missing integration test flags to native image test commands ([#1309](https://www.github.com/googleapis/java-bigquerymigration/issues/1309)) ([#48](https://www.github.com/googleapis/java-bigquerymigration/issues/48)) ([f61d9f2](https://www.github.com/googleapis/java-bigquerymigration/commit/f61d9f2c1e9c2ecfe539c6c0ac2df1885e344176))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#52](https://www.github.com/googleapis/java-bigquerymigration/issues/52)) ([c7d1e8e](https://www.github.com/googleapis/java-bigquerymigration/commit/c7d1e8e1d901626088b075e6ad19c77162fb9800))
+
 ### [0.1.3](https://www.github.com/googleapis/java-bigquerymigration/compare/v0.1.2...v0.1.3) (2021-12-03)
 
 
