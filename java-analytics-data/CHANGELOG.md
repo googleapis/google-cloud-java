@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.11.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.10.2...v0.11.0) (2022-01-07)
+
+
+### Features
+
+* add the `schema_restriction_response` field to the `ResponseMetaData` type that contains the schema restrictions actively enforced in creating a report ([#361](https://www.github.com/googleapis/java-analytics-data/issues/361)) ([dba107a](https://www.github.com/googleapis/java-analytics-data/commit/dba107ad76ad5e5ff54c446073f54e39a6ec926a))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-analytics-data/issues/1299)) ([#378](https://www.github.com/googleapis/java-analytics-data/issues/378)) ([fd890a0](https://www.github.com/googleapis/java-analytics-data/commit/fd890a019ef695eef15325479b88ab98153c6ce3))
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-analytics-data/issues/1266)) ([#359](https://www.github.com/googleapis/java-analytics-data/issues/359)) ([96f478d](https://www.github.com/googleapis/java-analytics-data/commit/96f478dd732fa3967b095e28dfaa641ddb458c0f))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-analytics-data/issues/1301)) ([#382](https://www.github.com/googleapis/java-analytics-data/issues/382)) ([96a079f](https://www.github.com/googleapis/java-analytics-data/commit/96a079fbe2b7e31d2f516e80a555a0e6d594717e))
+* remove classes for all v1alpha methods ([#345](https://www.github.com/googleapis/java-analytics-data/issues/345)) ([d323fb9](https://www.github.com/googleapis/java-analytics-data/commit/d323fb980cb25be22eb9988e4587c4abaff06681))
+
+
+### Documentation
+
+* fix docstring formatting ([#368](https://www.github.com/googleapis/java-analytics-data/issues/368)) ([ab58086](https://www.github.com/googleapis/java-analytics-data/commit/ab5808656c6d2ca197e4649764ad64c070d338eb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#370](https://www.github.com/googleapis/java-analytics-data/issues/370)) ([bfe02e1](https://www.github.com/googleapis/java-analytics-data/commit/bfe02e118f69477cc06cf614ae9b447e026543e6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#377](https://www.github.com/googleapis/java-analytics-data/issues/377)) ([28c9ebc](https://www.github.com/googleapis/java-analytics-data/commit/28c9ebce442d56b2e5ecab10a5306fa7e91fb535))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#386](https://www.github.com/googleapis/java-analytics-data/issues/386)) ([c7d78d0](https://www.github.com/googleapis/java-analytics-data/commit/c7d78d096b985202e9c0240de53c9f15a4ade5f2))
+
 ### [0.10.2](https://www.github.com/googleapis/java-analytics-data/compare/v0.10.1...v0.10.2) (2021-10-19)
 
 
