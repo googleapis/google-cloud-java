@@ -1,5 +1,18 @@
 # Changelog
 
+### [3.1.1](https://www.github.com/googleapis/java-dlp/compare/v3.1.0...v3.1.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-dlp/issues/1299)) ([#726](https://www.github.com/googleapis/java-dlp/issues/726)) ([0f41bc9](https://www.github.com/googleapis/java-dlp/commit/0f41bc98aa0c7754dd74192441a49359ef355890))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.115.0 ([#728](https://www.github.com/googleapis/java-dlp/issues/728)) ([2d9d3c1](https://www.github.com/googleapis/java-dlp/commit/2d9d3c196041ff038051a357778f34d22d90fdf5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#787](https://www.github.com/googleapis/java-dlp/issues/787)) ([bae7e3b](https://www.github.com/googleapis/java-dlp/commit/bae7e3bc23300a8f3b51230501e2105811fabbd6))
+
 ## [3.1.0](https://www.github.com/googleapis/java-dlp/compare/v3.0.11...v3.1.0) (2021-12-03)
 
 
