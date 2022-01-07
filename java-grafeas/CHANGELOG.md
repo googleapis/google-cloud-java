@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-grafeas/compare/v2.1.3...v2.2.0) (2022-01-07)
+
+
+### Features
+
+* Updating the grafeas protos to include compliance and intoto attestation protos ([#428](https://www.github.com/googleapis/java-grafeas/issues/428)) ([2bcd97c](https://www.github.com/googleapis/java-grafeas/commit/2bcd97cfdb56199139fe0d5bd823b8810e48db86))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#426](https://www.github.com/googleapis/java-grafeas/issues/426)) ([cef2f85](https://www.github.com/googleapis/java-grafeas/commit/cef2f854f69c48cde5bad7f09845cef344497d64))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#437](https://www.github.com/googleapis/java-grafeas/issues/437)) ([edb2bfa](https://www.github.com/googleapis/java-grafeas/commit/edb2bfa780ca0c5de0d3dc030a299edb96078ab0))
+
 ### [2.1.3](https://www.github.com/googleapis/java-grafeas/compare/v2.1.2...v2.1.3) (2021-12-03)
 
 
