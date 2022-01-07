@@ -1,5 +1,18 @@
 # Changelog
 
+### [3.2.1](https://www.github.com/googleapis/java-monitoring/compare/v3.2.0...v3.2.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-monitoring/issues/1299)) ([#739](https://www.github.com/googleapis/java-monitoring/issues/739)) ([1c8d8ce](https://www.github.com/googleapis/java-monitoring/commit/1c8d8ce25d22fbf8ae812bc042a2b080f495483e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#766](https://www.github.com/googleapis/java-monitoring/issues/766)) ([4e3df7b](https://www.github.com/googleapis/java-monitoring/commit/4e3df7b957b0762fe17acd94e152829e1419b488))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.2 ([#764](https://www.github.com/googleapis/java-monitoring/issues/764)) ([0d2afb9](https://www.github.com/googleapis/java-monitoring/commit/0d2afb96951aaf1377762fe9ba71ba0a636c21c1))
+
 ## [3.2.0](https://www.github.com/googleapis/java-monitoring/compare/v3.1.0...v3.2.0) (2021-12-03)
 
 
