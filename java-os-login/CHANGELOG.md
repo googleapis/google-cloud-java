@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.0.8](https://www.github.com/googleapis/java-os-login/compare/v2.0.7...v2.0.8) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-os-login/issues/1299)) ([#597](https://www.github.com/googleapis/java-os-login/issues/597)) ([e118aaf](https://www.github.com/googleapis/java-os-login/commit/e118aaf27b21ae7a3e3d84ab282de531a35f654f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#607](https://www.github.com/googleapis/java-os-login/issues/607)) ([556f269](https://www.github.com/googleapis/java-os-login/commit/556f26982442179e91d14e3e12645103133ce4ff))
+
 ### [2.0.7](https://www.github.com/googleapis/java-os-login/compare/v2.0.6...v2.0.7) (2021-12-03)
 
 
