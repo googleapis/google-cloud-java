@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.6](https://www.github.com/googleapis/java-api-gateway/compare/v2.1.5...v2.1.6) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-api-gateway/issues/1299)) ([#181](https://www.github.com/googleapis/java-api-gateway/issues/181)) ([705727e](https://www.github.com/googleapis/java-api-gateway/commit/705727e8fb13b0ba1e442f01a2ff7db5fae283d9))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-api-gateway/issues/1301)) ([#185](https://www.github.com/googleapis/java-api-gateway/issues/185)) ([877f0be](https://www.github.com/googleapis/java-api-gateway/commit/877f0be2eb82548ecb6d9e673197ef2fdc4cc9b7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#187](https://www.github.com/googleapis/java-api-gateway/issues/187)) ([3d07288](https://www.github.com/googleapis/java-api-gateway/commit/3d07288aad3835ba358727289ee26a66e0aae45d))
+
 ### [2.1.5](https://www.github.com/googleapis/java-api-gateway/compare/v2.1.4...v2.1.5) (2021-12-03)
 
 
