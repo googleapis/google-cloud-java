@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.5](https://www.github.com/googleapis/java-profiler/compare/v2.1.4...v2.1.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-profiler/issues/1299)) ([#190](https://www.github.com/googleapis/java-profiler/issues/190)) ([db4dbfc](https://www.github.com/googleapis/java-profiler/commit/db4dbfcfed4ace31997a851256a0fea4ef4f4499))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#197](https://www.github.com/googleapis/java-profiler/issues/197)) ([834aa34](https://www.github.com/googleapis/java-profiler/commit/834aa346aec120ee8b43da63fea5575f1ad6efd7))
+
 ### [2.1.4](https://www.github.com/googleapis/java-profiler/compare/v2.1.3...v2.1.4) (2021-12-03)
 
 
