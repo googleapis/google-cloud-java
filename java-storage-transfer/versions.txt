@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-storage-transfer:0.2.2:0.2.3-SNAPSHOT
-grpc-google-cloud-storage-transfer-v1:0.2.2:0.2.3-SNAPSHOT
-proto-google-cloud-storage-transfer-v1:0.2.2:0.2.3-SNAPSHOT
+google-cloud-storage-transfer:0.2.3:0.2.3
+grpc-google-cloud-storage-transfer-v1:0.2.3:0.2.3
+proto-google-cloud-storage-transfer-v1:0.2.3:0.2.3
