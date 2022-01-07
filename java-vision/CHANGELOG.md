@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.18](https://www.github.com/googleapis/java-vision/compare/v2.0.17...v2.0.18) (2022-01-07)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.3.5 ([#779](https://www.github.com/googleapis/java-vision/issues/779)) ([27e9171](https://www.github.com/googleapis/java-vision/commit/27e9171e2e49bf754e0cafd3acff714776c3c17f))
+
 ### [2.0.17](https://www.github.com/googleapis/java-vision/compare/v2.0.16...v2.0.17) (2022-01-07)
 
 
