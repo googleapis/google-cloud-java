@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.4.4](https://www.github.com/googleapis/java-policy-troubleshooter/compare/v0.4.3...v0.4.4) (2022-01-07)
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-policy-troubleshooter/issues/1301)) ([#151](https://www.github.com/googleapis/java-policy-troubleshooter/issues/151)) ([47ea7e0](https://www.github.com/googleapis/java-policy-troubleshooter/commit/47ea7e039b316502a422d03c32fcebe19320ceba))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#154](https://www.github.com/googleapis/java-policy-troubleshooter/issues/154)) ([430dbc1](https://www.github.com/googleapis/java-policy-troubleshooter/commit/430dbc1df913e21e3011cbdcef59d8f2b579e10e))
+
 ### [0.4.3](https://www.github.com/googleapis/java-policy-troubleshooter/compare/v0.4.2...v0.4.3) (2021-12-06)
 
 
