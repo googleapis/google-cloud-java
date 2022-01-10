@@ -1,5 +1,5 @@
 {
-    "name": "cloudiot",
+    "api_shortname": "cloudiot",
     "name_pretty": "Cloud Internet of Things (IoT) Core",
     "product_documentation": "https://cloud.google.com/iot",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-iot/latest/history",
