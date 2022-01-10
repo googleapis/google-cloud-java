@@ -1,5 +1,5 @@
 {
-    "name": "accesscontextmanager",
+    "api_shortname": "accesscontextmanager",
     "name_pretty": "Identity Access Context Manager",
     "product_documentation": "n/a",
     "api_description": "n/a",
