@@ -1,5 +1,5 @@
 {
-    "name": "automl",
+    "api_shortname": "automl",
     "name_pretty": "Cloud Auto ML",
     "product_documentation": "https://cloud.google.com/automl/docs/",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-automl/latest/history",
