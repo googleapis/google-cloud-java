@@ -1,5 +1,5 @@
 {
-    "name": "area120-tables",
+    "api_shortname": "area120-tables",
     "name_pretty": "Area 120 Tables",
     "product_documentation": "https://area120.google.com/",
     "api_description": "provides programmatic methods to the Area 120 Tables API.",
