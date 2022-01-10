@@ -1,5 +1,5 @@
 {
-  "name": "contact-center-insights",
+  "api_shortname": "contact-center-insights",
   "name_pretty": "CCAI Insights",
   "product_documentation": "https://cloud.google.com/dialogflow/priv/docs/insights/",
   "api_description": " helps users detect and visualize patterns in their contact center data.",
