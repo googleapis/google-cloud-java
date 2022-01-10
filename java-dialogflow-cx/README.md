@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow-cx</artifactId>
-  <version>0.10.1</version>
+  <version>0.11.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-dialogflow-cx:0.10.1'
+implementation 'com.google.cloud:google-cloud-dialogflow-cx:0.11.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow-cx" % "0.10.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow-cx" % "0.11.0"
 ```
 
 ## Authentication
