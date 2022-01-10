@@ -1,5 +1,5 @@
 {
-  "name": "gke-connect-gateway",
+  "api_shortname": "gke-connect-gateway",
   "name_pretty": "Connect Gateway API",
   "product_documentation": "https://cloud.google.com/anthos/multicluster-management/gateway/",
   "api_description": "builds on the power of fleets to let Anthos users connect to and run commands against registered Anthos clusters in a simple, consistent, and secured way, whether the clusters are on Google Cloud, other public clouds, or on premises, and makes it easier to automate DevOps processes across all your clusters.",
