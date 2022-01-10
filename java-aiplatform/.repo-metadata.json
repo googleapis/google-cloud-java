@@ -1,5 +1,5 @@
 {
-  "name": "aiplatform",
+  "api_shortname": "aiplatform",
   "name_pretty": "Vertex AI",
   "product_documentation": "https://cloud.google.com/vertex-ai/docs",
   "api_description": "is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It offers both novices and experts the best workbench for the entire machine learning development lifecycle.",
