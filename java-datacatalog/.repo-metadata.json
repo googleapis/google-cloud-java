@@ -1,5 +1,5 @@
 {
-    "name": "datacatalog",
+    "api_shortname": "datacatalog",
     "name_pretty": "Data Catalog",
     "product_documentation": "https://cloud.google.com/data-catalog",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-datacatalog/latest/history",
