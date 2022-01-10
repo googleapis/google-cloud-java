@@ -39,13 +39,16 @@ class SpannerBenchWrapperImpl extends SpannerBenchWrapperImplBase {
   private Spanner spanner;
   private DatabaseClient dbClient;
 
-  public SpannerBenchWrapperImpl() {
-    SpannerOptions options = SpannerOptions.newBuilder().setProjectId("test-project-id").build();
+  public SpannerBenchWrapperImpl(String spannerEmulatorHost) {
+    final SpannerOptions.Builder optionsBuilder = SpannerOptions.newBuilder();
+    final SpannerOptions options = optionsBuilder
+        .setEmulatorHost(spannerEmulatorHost)
+        .build();
     spanner = options.getService();
 
     dbClient =
         spanner.getDatabaseClient(
-            DatabaseId.of(options.getProjectId(), "test-instance", "test-db"));
+            DatabaseId.of(options.getProjectId(), "someinstance", "somedatabase"));
   }
 
   public void read(ReadQuery request, StreamObserver<EmptyResponse> responseObserver) {
@@ -67,13 +70,15 @@ class SpannerBenchWrapperImpl extends SpannerBenchWrapperImplBase {
     System.out.println("insert has been called");
 
     List<Mutation> mutations = new ArrayList<>();
-    for (User user : request.getUsersList()) {
+    for (Singer singer : request.getSingersList()) {
       mutations.add(
-          Mutation.newInsertBuilder("sometable")
-              .set("name")
-              .to(user.getName())
-              .set("age")
-              .to(Long.toString(user.getAge()))
+          Mutation.newInsertBuilder("Singers")
+              .set("SingerId")
+              .to(singer.getId())
+              .set("FirstName")
+              .to(singer.getFirstName())
+              .set("LastName")
+              .to(singer.getLastName())
               .build());
     }
     dbClient.write(mutations);
