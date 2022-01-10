@@ -1,5 +1,5 @@
 {
-    "name": "mediatranslation",
+    "api_shortname": "mediatranslation",
     "name_pretty": "Media Translation API",
     "product_documentation": "https://cloud.google.com/",
     "api_description": "provides enterprise quality translation from/to various media types.",
