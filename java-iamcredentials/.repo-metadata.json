@@ -1,5 +1,5 @@
 {
-    "name": "iamcredentials",
+    "api_shortname": "iamcredentials",
     "name_pretty": "IAM Service Account Credentials API",
     "product_documentation": "https://cloud.google.com/iam/credentials/reference/rest/",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-iamcredentials/latest/history",
