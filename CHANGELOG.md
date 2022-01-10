@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.0](https://www.github.com/googleapis/java-logging/compare/v3.5.3...v3.6.0) (2022-01-07)
+
+
+### Features
+
+* enable auto-population of missing metadata in logs and opting logs redirection to stdout in JUL handler ([#808](https://www.github.com/googleapis/java-logging/issues/808)) ([bb25d5d](https://www.github.com/googleapis/java-logging/commit/bb25d5def9de42fa6e0de5658154fbf2e72e8fba))
+
 ### [3.5.3](https://www.github.com/googleapis/java-logging/compare/v3.5.2...v3.5.3) (2022-01-07)
 
 
