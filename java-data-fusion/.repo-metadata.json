@@ -1,5 +1,5 @@
 {
-  "name": "data-fusion",
+  "api_shortname": "data-fusion",
   "name_pretty": "Cloud Data Fusion",
   "product_documentation": "https://cloud.google.com/data-fusion/docs",
   "api_description": "is a fully managed, cloud-native, enterprise data integration service for quickly building and managing data pipelines.",
