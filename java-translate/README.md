@@ -57,13 +57,13 @@ implementation 'com.google.cloud:google-cloud-translate'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-translate:2.1.8'
+implementation 'com.google.cloud:google-cloud-translate:2.1.9'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "2.1.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "2.1.9"
 ```
 
 ## Authentication
