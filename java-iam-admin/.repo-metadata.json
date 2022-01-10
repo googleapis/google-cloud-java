@@ -1,5 +1,5 @@
 {
-  "name": "iam-admin",
+  "api_shortname": "iam-admin",
   "name_pretty": "IAM Admin API",
   "product_documentation": "https://cloud.google.com/iam/docs/apis",
   "api_description": "you to manage your Service Accounts and IAM bindings.",
