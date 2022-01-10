@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.122.9](https://www.github.com/googleapis/java-logging-logback/compare/v0.122.8...v0.122.9) (2022-01-10)
+
+
+### Dependencies
+
+* update logback.version to v1.2.10 ([#635](https://www.github.com/googleapis/java-logging-logback/issues/635)) ([8facf7d](https://www.github.com/googleapis/java-logging-logback/commit/8facf7d234042fb52dec04513762894f9fb373eb))
+
 ### [0.122.8](https://www.github.com/googleapis/java-logging-logback/compare/v0.122.7...v0.122.8) (2022-01-07)
 
 
