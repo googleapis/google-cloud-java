@@ -1,5 +1,5 @@
 {
-    "name": "google-cloud-core",
+    "api_shortname": "google-cloud-core",
     "name_pretty": "Google Cloud Core",
     "release_level": "ga",
     "language": "java",
