@@ -1,5 +1,5 @@
 {
-    "name": "dialogflow",
+    "api_shortname": "dialogflow",
     "name_pretty": "Dialogflow API",
     "product_documentation": "https://cloud.google.com/dialogflow-enterprise/",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/history",
