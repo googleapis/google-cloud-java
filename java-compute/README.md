@@ -30,13 +30,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-compute:1.6.0-beta'
+implementation 'com.google.cloud:google-cloud-compute:1.6.1-beta'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.6.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.6.1-beta"
 ```
 
 ## Authentication
