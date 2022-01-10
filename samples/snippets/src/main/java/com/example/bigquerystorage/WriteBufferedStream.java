@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest;
+import com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1.FlushRowsRequest;
 import com.google.cloud.bigquery.storage.v1.FlushRowsResponse;
 import com.google.cloud.bigquery.storage.v1.JsonStreamWriter;
@@ -78,7 +79,6 @@ public class WriteBufferedStream {
           ApiFuture<AppendRowsResponse> future = writer.append(jsonArr);
           AppendRowsResponse response = future.get();
         }
-
         // Flush the buffer.
         FlushRowsRequest flushRowsRequest =
             FlushRowsRequest.newBuilder()
@@ -88,6 +88,10 @@ public class WriteBufferedStream {
         FlushRowsResponse flushRowsResponse = client.flushRows(flushRowsRequest);
         // You can continue to write to the stream after flushing the buffer.
       }
+      // Finalize the stream after use.
+      FinalizeWriteStreamRequest finalizeWriteStreamRequest =
+          FinalizeWriteStreamRequest.newBuilder().setName(writeStream.getName()).build();
+      client.finalizeWriteStream(finalizeWriteStreamRequest);
       System.out.println("Appended and committed records successfully.");
     } catch (ExecutionException e) {
       // If the wrapped exception is a StatusRuntimeException, check the state of the operation.

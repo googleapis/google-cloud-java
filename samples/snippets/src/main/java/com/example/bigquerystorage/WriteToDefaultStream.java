@@ -56,7 +56,8 @@ public class WriteToDefaultStream {
     // https://googleapis.dev/java/google-cloud-bigquerystorage/latest/com/google/cloud/bigquery/storage/v1beta2/JsonStreamWriter.html
     try (JsonStreamWriter writer =
         JsonStreamWriter.newBuilder(parentTable.toString(), tableSchema).build()) {
-      // Write two batches to the stream, each with 10 JSON records.
+      // Write two batches to the stream, each with 10 JSON records. A writer should be used for as
+      // much writes as possible. Creating a writer for just one write is an antipattern.
       for (int i = 0; i < 2; i++) {
         // Create a JSON object that is compatible with the table schema.
         JSONArray jsonArr = new JSONArray();
