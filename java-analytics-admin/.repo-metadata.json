@@ -1,5 +1,5 @@
 {
-    "name": "analytics-admin",
+    "api_shortname": "analytics-admin",
     "name_pretty": "Analytics Admin",
     "product_documentation": "https://developers.google.com/analytics",
     "api_description": "allows you to manage Google Analytics accounts and properties.",
