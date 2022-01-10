@@ -1,5 +1,5 @@
 {
-    "name": "gameservices",
+    "api_shortname": "gameservices",
     "name_pretty": "Cloud Gaming",
     "product_documentation": "https://cloud.google.com/docs/games/products/",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-game-servers/latest/history",
