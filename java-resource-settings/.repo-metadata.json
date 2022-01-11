@@ -1,5 +1,5 @@
 {
-  "name": "resource-settings",
+  "api_shortname": "resource-settings",
   "name_pretty": "Resource Settings API",
   "product_documentation": "https://cloud.google.com/resource-manager/docs/reference/resource-settings/rest",
   "api_description": "allows users to control and modify the behavior of their GCP resources (e.g., VM, firewall, Project, etc.) across the Cloud Resource Hierarchy.",
