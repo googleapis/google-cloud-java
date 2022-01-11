@@ -1,5 +1,5 @@
 {
-    "name": "recommendationengine",
+    "api_shortname": "recommendationengine",
     "name_pretty": "Recommendations AI",
     "product_documentation": "https://cloud.google.com/recommendations-ai/",
     "api_description": "delivers highly personalized product recommendations at scale.",
