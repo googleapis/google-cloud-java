@@ -1,5 +1,5 @@
 {
-    "name": "datalabeling",
+    "api_shortname": "datalabeling",
     "name_pretty": "Data Labeling",
     "product_documentation": "https://cloud.google.com/ai-platform/data-labeling/docs/",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-datalabeling/latest/history",
