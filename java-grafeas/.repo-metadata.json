@@ -1,5 +1,5 @@
 {
-    "name": "grafeas",
+    "api_shortname": "grafeas",
     "name_pretty": "Grafeas",
     "product_documentation": "https://grafeas.io",
     "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?io/grafeas/v1/package-summary.html",
