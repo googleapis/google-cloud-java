@@ -1,5 +1,5 @@
 {
-  "name": "pubsub",
+  "api_shortname": "pubsub",
   "name_pretty": "Cloud Pub/Sub",
   "api_reference": "https://cloud.google.com/pubsub/",
   "product_documentation": "https://cloud.google.com/pubsub/docs/",
