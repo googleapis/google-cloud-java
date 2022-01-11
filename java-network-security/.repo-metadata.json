@@ -1,5 +1,5 @@
 {
-  "name": "network-security",
+  "api_shortname": "network-security",
   "name_pretty": "Network Security API",
   "product_documentation": "https://cloud.google.com/traffic-director/docs/reference/network-security/rest",
   "api_description": "n/a",
