@@ -1,5 +1,5 @@
 {
-    "name": "cloudscheduler",
+    "api_shortname": "cloudscheduler",
     "name_pretty": "Google Cloud Scheduler",
     "product_documentation": "https://cloud.google.com/scheduler/docs",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-scheduler/latest/history",
