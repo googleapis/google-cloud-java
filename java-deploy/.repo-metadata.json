@@ -1,5 +1,5 @@
 {
-  "name": "deploy",
+  "api_shortname": "deploy",
   "name_pretty": "Google Cloud Deploy",
   "product_documentation": "https://cloud.google.com/deploy/docs",
   "api_description": "is a service that automates delivery of your applications to a series of target environments in a defined sequence",
