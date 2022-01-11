@@ -1,5 +1,5 @@
 {
-    "name": "workflow-executions",
+    "api_shortname": "workflow-executions",
     "name_pretty": "Cloud Workflow Executions",
     "product_documentation": "https://cloud.google.com/workflows",
     "api_description": "allows you to ochestrate and automate Google Cloud and HTTP-based API services with serverless workflows.",
