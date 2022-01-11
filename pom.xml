@@ -91,7 +91,7 @@
       <dependency>
         <groupId>org.easymock</groupId>
         <artifactId>easymock</artifactId>
-        <version>3.6</version>
+        <version>4.3</version>
         <exclusions>
           <exclusion>
             <groupId>org.objenesis</groupId>
