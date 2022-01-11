@@ -1,5 +1,5 @@
 {
-    "name": "memcache",
+    "api_shortname": "memcache",
     "name_pretty": "Cloud Memcache",
     "product_documentation": "https://cloud.google.com/memorystore/",
     "api_description": "is a fully-managed in-memory data store service for Memcache.",
