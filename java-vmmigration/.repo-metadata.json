@@ -1,5 +1,5 @@
 {
-  "name": "vmmigration",
+  "api_shortname": "vmmigration",
   "name_pretty": "VM Migration",
   "product_documentation": "n/a",
   "api_description": "helps customers migrating VMs to GCP at no additional cost, as well as an extensive ecosystem of partners to help with discovery and assessment, planning, migration, special use cases, and more.",
