@@ -1,5 +1,5 @@
 {
-    "name": "bigqueryconnection",
+    "api_shortname": "bigqueryconnection",
     "name_pretty": "Cloud BigQuery Connection",
     "product_documentation": "https://cloud.google.com/bigquery/docs/reference/bigqueryconnection/rest",
     "api_description": "allows users to manage BigQuery connections to external data sources.",
