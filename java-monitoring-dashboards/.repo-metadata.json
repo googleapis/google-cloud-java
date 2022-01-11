@@ -1,5 +1,5 @@
 {
-    "name": "monitoring-dashboards",
+    "api_shortname": "monitoring-dashboards",
     "name_pretty": "Monitoring Dashboards",
     "product_documentation": "https://cloud.google.com/monitoring/charts/dashboards",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-monitoring-dashboard/latest/history",
