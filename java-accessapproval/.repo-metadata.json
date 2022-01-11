@@ -1,5 +1,5 @@
 {
-    "name": "accessapproval",
+    "api_shortname": "accessapproval",
     "name_pretty": "Access Approval",
     "product_documentation": "https://cloud.google.com/access-approval/docs/",
     "api_description": "enables controlling access to your organization's data by Google personnel.",
