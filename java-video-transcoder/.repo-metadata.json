@@ -1,5 +1,5 @@
 {
-    "name": "video-transcoder",
+    "api_shortname": "video-transcoder",
     "name_pretty": "Video Transcoder",
     "product_documentation": "https://cloud.google.com/transcoder/docs",
     "api_description": "allows you to transcode videos into a variety of formats. The Transcoder API benefits broadcasters, production companies, businesses, and individuals looking to transform their video content for use across a variety of user devices.",
