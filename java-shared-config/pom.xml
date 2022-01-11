@@ -807,6 +807,8 @@
               <excludes combine.self="override" />
               <includes>
                 <include>**/IT*.java</include>
+                <!-- Enable unit tests in generated libraries for native image testing. -->
+                <include>**/*ClientTest.java</include>
               </includes>
             </configuration>
           </plugin>
@@ -829,6 +831,7 @@
               <buildArgs>
                 <buildArg>--no-fallback</buildArg>
                 <buildArg>--no-server</buildArg>
+                <buildArg>--features=com.google.cloud.nativeimage.features.ProtobufMessageFeature</buildArg>
               </buildArgs>
             </configuration>
           </plugin>
