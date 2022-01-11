@@ -1,5 +1,5 @@
 {
-    "name": "documentai",
+    "api_shortname": "documentai",
     "name_pretty": "Document AI",
     "product_documentation": "https://cloud.google.com/compute/docs/documentai/",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/history",
