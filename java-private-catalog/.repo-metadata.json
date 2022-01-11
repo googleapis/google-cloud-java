@@ -1,5 +1,5 @@
 {
-  "name": "private-catalog",
+  "api_shortname": "private-catalog",
   "name_pretty": "Private Catalog",
   "product_documentation": "https://cloud.google.com/private-catalog/docs",
   "api_description": "allows developers and cloud admins to make their solutions discoverable to their internal enterprise users. Cloud admins can manage their solutions and ensure their users are always launching the latest versions.",
