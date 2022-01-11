@@ -1,5 +1,5 @@
 {
-  "name": "service-usage",
+  "api_shortname": "service-usage",
   "name_pretty": "Service Usage",
   "product_documentation": "https://cloud.google.com/service-usage/docs/overview",
   "api_description": "is an infrastructure service of Google Cloud that lets you list and manage other APIs and services in your Cloud projects.",
