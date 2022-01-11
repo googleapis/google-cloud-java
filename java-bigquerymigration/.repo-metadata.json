@@ -1,5 +1,5 @@
 {
-  "name": "bigquerymigration",
+  "api_shortname": "bigquerymigration",
   "name_pretty": "BigQuery Migration",
   "product_documentation": "https://cloud.google.com/bigquery/docs",
   "api_description": "BigQuery Migration API",
