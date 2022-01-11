@@ -1,5 +1,5 @@
 {
-    "name": "container",
+    "api_shortname": "container",
     "name_pretty": "Kubernetes Engine",
     "product_documentation": "https://cloud.google.com/kubernetes-engine/",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-container/latest/history",
