@@ -1,5 +1,5 @@
 {
-    "name": "redis",
+    "api_shortname": "redis",
     "name_pretty": "Cloud Redis",
     "product_documentation": "https://cloud.google.com/memorystore/docs/redis/",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-redis/latest/history",
