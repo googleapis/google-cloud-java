@@ -1,5 +1,5 @@
 {
-    "name": "bigqueryreservation",
+    "api_shortname": "bigqueryreservation",
     "name_pretty": "Cloud BigQuery Reservation",
     "product_documentation": "https://cloud.google.com/bigquery/docs/reference/reservations/rpc",
     "api_description": "allows users to manage their flat-rate BigQuery reservations.",
