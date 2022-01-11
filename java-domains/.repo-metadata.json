@@ -1,5 +1,5 @@
 {
-    "name": "domains",
+    "api_shortname": "domains",
     "name_pretty": "Cloud Domains",
     "product_documentation": "https://cloud.google.com/domains",
     "api_description": "allows you to register and manage domains by using Cloud Domains.",
