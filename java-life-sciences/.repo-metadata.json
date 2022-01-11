@@ -1,5 +1,5 @@
 {
-  "name": "life-sciences",
+  "api_shortname": "life-sciences",
   "name_pretty": "Cloud Life Sciences",
   "product_documentation": "https://cloud.google.com/life-sciences/docs",
   "api_description": "is a suite of services and tools for managing, processing, and transforming life sciences data.",
