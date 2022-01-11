@@ -1,5 +1,5 @@
 {
-    "name": "servicedirectory",
+    "api_shortname": "servicedirectory",
     "name_pretty": "Service Directory",
     "product_documentation": "https://cloud.google.com/service-directory/",
     "api_description": "allows the registration and lookup of service endpoints.",
