@@ -1,5 +1,5 @@
 {
-    "name": "cloudasset",
+    "api_shortname": "cloudasset",
     "name_pretty": "Cloud Asset Inventory",
     "product_documentation": "https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview",
     "api_reference": "https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview",
