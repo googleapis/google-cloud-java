@@ -1,5 +1,5 @@
 {
-  "name": "dms",
+  "api_shortname": "dms",
   "name_pretty": "Database Migration Service",
   "product_documentation": "https://cloud.google.com/database-migration/docs",
   "api_description": "makes it easier for you to migrate your data to Google Cloud. This service helps you lift and shift your MySQL and PostgreSQL workloads into Cloud SQL.",
