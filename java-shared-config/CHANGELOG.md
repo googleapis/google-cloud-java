@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.5](https://github.com/googleapis/java-shared-config/compare/v1.2.4...v1.2.5) (2022-01-11)
+
+
+### Bug Fixes
+
+* **java:** Enable unit tests in generated libraries for native image testing ([#394](https://github.com/googleapis/java-shared-config/issues/394)) ([a453b9f](https://github.com/googleapis/java-shared-config/commit/a453b9f141c7555f2fd5333eb17d223410ab66eb))
+
 ### [1.2.4](https://www.github.com/googleapis/java-shared-config/compare/v1.2.3...v1.2.4) (2022-01-06)
 
 
