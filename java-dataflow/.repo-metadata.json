@@ -1,5 +1,5 @@
 {
-  "name": "dataflow",
+  "api_shortname": "dataflow",
   "name_pretty": "Dataflow",
   "product_documentation": "https://cloud.google.com/dataflow/docs",
   "api_description": "is a managed service for executing a wide variety of data processing patterns.",
