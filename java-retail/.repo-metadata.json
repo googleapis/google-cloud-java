@@ -1,5 +1,5 @@
 {
-    "name": "retail",
+    "api_shortname": "retail",
     "name_pretty": "Cloud Retail",
     "product_documentation": "https://cloud.google.com/solutions/retail",
     "api_description": "Retail solutions API.",
