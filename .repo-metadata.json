@@ -1,5 +1,5 @@
 {
-  "name": "logging",
+  "api_shortname": "logging",
   "name_pretty": "Cloud Logging",
   "product_documentation": "https://cloud.google.com/logging/docs",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-logging/latest/history",
