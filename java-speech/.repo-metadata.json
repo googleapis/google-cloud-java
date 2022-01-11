@@ -1,5 +1,5 @@
 {
-    "name": "speech",
+    "api_shortname": "speech",
     "name_pretty": "Cloud Speech",
     "release_level": "ga",
     "language": "java",
