@@ -1,5 +1,5 @@
 {
-  "name": "notification",
+  "api_shortname": "notification",
   "name_pretty": "Google Cloud Pub/Sub Notifications for GCS",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-notification/latest/history",
   "release_level": "beta",
