@@ -1,5 +1,5 @@
 {
-    "name": "language",
+    "api_shortname": "language",
     "name_pretty": "Natural Language",
     "product_documentation": "https://cloud.google.com/natural-language/docs/",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-language/latest/history",
