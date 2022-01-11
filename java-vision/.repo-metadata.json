@@ -1,5 +1,5 @@
 {
-    "name": "vision",
+    "api_shortname": "vision",
     "name_pretty": "Cloud Vision",
     "product_documentation": "https://cloud.google.com/vision/docs/",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-vision/latest/history",
