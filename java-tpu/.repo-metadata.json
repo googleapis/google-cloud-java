@@ -1,5 +1,5 @@
 {
-  "name": "tpu",
+  "api_shortname": "tpu",
   "name_pretty": "Cloud TPU",
   "product_documentation": "https://cloud.google.com/tpu/docs",
   "api_description": "are Google's custom-developed application-specific integrated circuits (ASICs) used to accelerate machine learning workloads.",
