@@ -47,15 +47,15 @@ set +e
 
 case ${JOB_TYPE} in
 test)
-    mvn test -B -Dclirr.skip=true -Denforcer.skip=true
+    mvn test -B -ntp -Dclirr.skip=true -Denforcer.skip=true
     RETURN_CODE=$?
     ;;
 lint)
-    mvn com.coveo:fmt-maven-plugin:check
+    mvn com.coveo:fmt-maven-plugin:check -B -ntp
     RETURN_CODE=$?
     ;;
 javadoc)
-    mvn javadoc:javadoc javadoc:test-javadoc
+    mvn javadoc:javadoc javadoc:test-javadoc -B -ntp
     RETURN_CODE=$?
     ;;
 integration)
@@ -71,7 +71,7 @@ integration)
     ;;
 graalvm)
     # Run Unit and Integration Tests with Native Image
-    mvn -ntp -Pnative -Penable-integration-tests test
+    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative -Penable-integration-tests test
     RETURN_CODE=$?
     ;;
 samples)
@@ -104,7 +104,7 @@ samples)
     fi
     ;;
 clirr)
-    mvn -B -Denforcer.skip=true clirr:check
+    mvn -B -ntp -Denforcer.skip=true clirr:check
     RETURN_CODE=$?
     ;;
 *)
