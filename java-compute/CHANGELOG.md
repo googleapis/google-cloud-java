@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/googleapis/java-compute/compare/v1.6.1...v1.7.0) (2022-01-11)
+
+
+### Features
+
+* promote to GA ([#613](https://github.com/googleapis/java-compute/issues/613)) ([70c0534](https://github.com/googleapis/java-compute/commit/70c05347beff2d11491e606bb88340771821ca55))
+
 ### [1.6.1](https://www.github.com/googleapis/java-compute/compare/v1.6.0...v1.6.1) (2022-01-07)
 
 
