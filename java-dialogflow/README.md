@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow</artifactId>
-  <version>4.3.1</version>
+  <version>4.4.0</version>
 </dependency>
 
 ```
