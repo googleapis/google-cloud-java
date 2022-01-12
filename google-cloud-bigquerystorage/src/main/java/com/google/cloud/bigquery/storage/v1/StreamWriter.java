@@ -291,7 +291,7 @@ public class StreamWriter implements AutoCloseable {
         requestWrapper.appendResult.setException(
             new StatusRuntimeException(
                 Status.fromCode(Status.Code.FAILED_PRECONDITION)
-                    .withDescription("Stream is already closed")));
+                    .withDescription("Connection is already closed")));
         return requestWrapper.appendResult;
       }
       if (connectionFinalStatus != null) {
@@ -299,7 +299,7 @@ public class StreamWriter implements AutoCloseable {
             new StatusRuntimeException(
                 Status.fromCode(Status.Code.FAILED_PRECONDITION)
                     .withDescription(
-                        "Stream is closed due to " + connectionFinalStatus.toString())));
+                        "Connection is closed due to " + connectionFinalStatus.toString())));
         return requestWrapper.appendResult;
       }
 
@@ -593,7 +593,10 @@ public class StreamWriter implements AutoCloseable {
           Exceptions.StorageException storageException = Exceptions.toStorageException(finalStatus);
           this.connectionFinalStatus = storageException != null ? storageException : finalStatus;
           log.info(
-              "Stream finished with error " + finalStatus.toString() + " for stream " + streamName);
+              "Connection finished with error "
+                  + finalStatus.toString()
+                  + " for stream "
+                  + streamName);
         }
       }
     } finally {
