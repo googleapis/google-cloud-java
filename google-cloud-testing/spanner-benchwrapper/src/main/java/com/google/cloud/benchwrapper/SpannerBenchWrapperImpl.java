@@ -36,20 +36,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 class SpannerBenchWrapperImpl extends SpannerBenchWrapperImplBase {
+
+  private static final String PROJECT_ID = "someproject";
+  private static final String INSTANCE_ID = "someinstance";
+  private static final String DATABASE_ID = "somedatabase";
+
   private Spanner spanner;
   private DatabaseClient dbClient;
 
   public SpannerBenchWrapperImpl(String spannerEmulatorHost) {
     final SpannerOptions.Builder optionsBuilder = SpannerOptions.newBuilder();
     final SpannerOptions options = optionsBuilder
-        .setProjectId("someproject")
+        .setProjectId(PROJECT_ID)
         .setEmulatorHost(spannerEmulatorHost)
         .build();
     spanner = options.getService();
 
     dbClient =
         spanner.getDatabaseClient(
-            DatabaseId.of(options.getProjectId(), "someinstance", "somedatabase"));
+            DatabaseId.of(options.getProjectId(), INSTANCE_ID, DATABASE_ID));
   }
 
   public void read(ReadQuery request, StreamObserver<EmptyResponse> responseObserver) {
