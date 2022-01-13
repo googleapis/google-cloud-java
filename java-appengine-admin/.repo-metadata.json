@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/appengine/docs/admin-api/",
   "api_description": "you to manage your App Engine applications.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-appengine-admin/latest/history",
-  "release_level": "ga",
+  "release_level": "stable",
   "transport": "grpc",
   "language": "java",
   "repo": "googleapis/java-appengine-admin",
