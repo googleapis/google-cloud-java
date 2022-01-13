@@ -4,7 +4,7 @@
     "product_documentation": "https://developers.google.com/analytics",
     "api_description": "allows you to manage Google Analytics accounts and properties.",
     "client_documentation": "https://googleapis.dev/java/google-analytics-admin/latest/index.html",
-    "release_level": "alpha",
+    "release_level": "preview",
     "transport": "grpc",
     "language": "java",
     "repo": "googleapis/java-analytics-admin",
