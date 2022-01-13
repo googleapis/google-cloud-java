@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/life-sciences/docs",
   "api_description": "is a suite of services and tools for managing, processing, and transforming life sciences data.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-life-sciences/latest/history",
-  "release_level": "beta",
+  "release_level": "preview",
   "transport": "grpc",
   "language": "java",
   "repo": "googleapis/java-life-sciences",
