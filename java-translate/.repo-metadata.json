@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/translate/docs/",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-translate/latest/history",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559749",
-  "release_level": "ga",
+  "release_level": "stable",
   "language": "java",
   "repo": "googleapis/java-translate",
   "repo_short": "java-translate",
