@@ -10,11 +10,11 @@ squashMergeAllowed: true
 # Defaults to `false`
 mergeCommitAllowed: false
 
-# Rules for master branch protection
+# Rules for main branch protection
 branchProtectionRules:
 # Identifies the protection rule pattern. Name of the branch to be protected.
-# Defaults to `master`
-- pattern: master
+# Defaults to `main`
+- pattern: main
   # Can admins overwrite branch protection.
   # Defaults to `true`
   isAdminEnforced: true
@@ -30,7 +30,6 @@ branchProtectionRules:
   requiredStatusCheckContexts:
     - "Kokoro - Test: Code Format"
     - "Kokoro - Test: Java 11"
-    - "Kokoro - Test: Java 7"
     - "Kokoro - Test: Java 8"
     - "Kokoro - Test: Linkage Monitor"
     - "cla/google"

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,14 @@
  */
 package com.google.cloud.examples.storage.buckets;
 
-// [START storage_set_public_access_prevention_unspecified]
+// [START storage_set_public_access_prevention_inherited]
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
-public class SetPublicAccessPreventionUnspecified {
-  public static void setPublicAccessPreventionUnspecified(String projectId, String bucketName) {
+public class SetPublicAccessPreventionInherited {
+  public static void setPublicAccessPreventionInherited(String projectId, String bucketName) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -32,17 +32,16 @@ public class SetPublicAccessPreventionUnspecified {
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Bucket bucket = storage.get(bucketName);
 
-    // Sets public access prevention to 'unspecified' for the bucket
-    bucket
-        .toBuilder()
+    // Sets public access prevention to 'inherited' for the bucket
+    bucket.toBuilder()
         .setIamConfiguration(
             BucketInfo.IamConfiguration.newBuilder()
-                .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.INHERITED)
                 .build())
         .build()
         .update();
 
-    System.out.println("Public access prevention is set to unspecified for " + bucketName);
+    System.out.println("Public access prevention is set to 'inherited' for " + bucketName);
   }
 }
-// [END storage_set_public_access_prevention_unspecified]
+// [END storage_set_public_access_prevention_inherited]

@@ -33,6 +33,7 @@ import com.google.cloud.examples.storage.objects.DeleteObject;
 import com.google.cloud.examples.storage.objects.DeleteOldVersionOfObject;
 import com.google.cloud.examples.storage.objects.DownloadEncryptedObject;
 import com.google.cloud.examples.storage.objects.DownloadObject;
+import com.google.cloud.examples.storage.objects.DownloadObjectIntoMemory;
 import com.google.cloud.examples.storage.objects.DownloadPublicObject;
 import com.google.cloud.examples.storage.objects.GenerateEncryptionKey;
 import com.google.cloud.examples.storage.objects.GenerateV4GetObjectSignedUrl;
@@ -47,6 +48,7 @@ import com.google.cloud.examples.storage.objects.RotateObjectEncryptionKey;
 import com.google.cloud.examples.storage.objects.SetObjectMetadata;
 import com.google.cloud.examples.storage.objects.UploadEncryptedObject;
 import com.google.cloud.examples.storage.objects.UploadObject;
+import com.google.cloud.examples.storage.objects.UploadObjectFromMemory;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
@@ -87,7 +89,8 @@ public class ITBlobSnippets {
   private static final Logger log = Logger.getLogger(ITBlobSnippets.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final String BLOB = "blob";
-  private static final byte[] CONTENT = "Hello, World!".getBytes(UTF_8);
+  private static final String STRING_CONTENT = "Hello, World!";
+  private static final byte[] CONTENT = STRING_CONTENT.getBytes(UTF_8);
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
 
   private static Storage storage;
@@ -159,6 +162,16 @@ public class ITBlobSnippets {
     } finally {
       tempFile.delete();
     }
+  }
+
+  @Test
+  public void testDownloadObjectIntoMemory() throws IOException {
+    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(snippetOutputCapture));
+    DownloadObjectIntoMemory.downloadObjectIntoMemory(PROJECT_ID, BUCKET, BLOB);
+    String snippetOutput = snippetOutputCapture.toString();
+    assertTrue(snippetOutput.contains("Hello, World!"));
+    System.setOut(System.out);
   }
 
   @Test
@@ -282,6 +295,14 @@ public class ITBlobSnippets {
     } finally {
       tempFile.delete();
     }
+  }
+
+  @Test
+  public void testUploadObjectFromMemory() throws IOException {
+    UploadObjectFromMemory.uploadObjectFromMemory(
+        PROJECT_ID, BUCKET, "uploadobjectfrommemorytest", STRING_CONTENT);
+    final byte[] output = storage.get(BUCKET, "uploadobjectfrommemorytest").getContent();
+    assertEquals(STRING_CONTENT, new String(output, UTF_8));
   }
 
   @Test

@@ -7,7 +7,7 @@
   <groupId>com.google.cloud</groupId>
 
   <properties>
-    <grpcVersion>1.39.0</grpcVersion>
+    <grpcVersion>1.42.1</grpcVersion>
     <protobufVersion>3.9.1</protobufVersion>
   </properties>
   
@@ -76,7 +76,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pubsub</artifactId>
-      <version>1.113.5</version><!-- {x-version-update:google-cloud-pubsub:current} -->
+      <version>1.115.1</version><!-- {x-version-update:google-cloud-pubsub:current} -->
     </dependency>
 
     <!-- protobuf  -->
@@ -110,7 +110,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-tcnative-boringssl-static</artifactId>
-      <version>2.0.40.Final</version>
+      <version>2.0.46.Final</version>
     </dependency>
 
     <!-- Generated classes are generated with a @javax.annotation.Generated

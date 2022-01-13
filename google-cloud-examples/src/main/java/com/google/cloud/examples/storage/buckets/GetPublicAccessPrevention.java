@@ -32,7 +32,7 @@ public class GetPublicAccessPrevention {
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Bucket bucket = storage.get(bucketName);
 
-    // Gets Bucket Metadata and prints publicAccessPrevention value (either 'unspecified' or
+    // Gets Bucket Metadata and prints publicAccessPrevention value (either 'inherited' or
     // 'enforced').
     BucketInfo.PublicAccessPrevention publicAccessPrevention =
         bucket.getIamConfiguration().getPublicAccessPrevention();

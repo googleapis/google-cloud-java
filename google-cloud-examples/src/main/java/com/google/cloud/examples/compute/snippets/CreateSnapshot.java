@@ -17,10 +17,9 @@
 package com.google.cloud.examples.compute.snippets;
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.compute.v1.CreateSnapshotDiskHttpRequest;
-import com.google.cloud.compute.v1.DiskClient;
+import com.google.cloud.compute.v1.CreateSnapshotDiskRequest;
+import com.google.cloud.compute.v1.DisksClient;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectZoneDiskName;
 import com.google.cloud.compute.v1.Snapshot;
 import java.io.IOException;
 
@@ -32,19 +31,17 @@ public class CreateSnapshot {
   private static final String DISK_NAME = "test-disk";
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
   private static final String ZONE = "us-central1-a";
-  private static final ProjectZoneDiskName PROJECT_ZONE_DISK_NAME =
-      ProjectZoneDiskName.of(DISK_NAME, DEFAULT_PROJECT, ZONE);
 
   public static void main(String... args) throws IOException {
     Snapshot snapshotResource = Snapshot.newBuilder().setName("test-snapshot").build();
-    CreateSnapshotDiskHttpRequest diskHttpRequest =
-        CreateSnapshotDiskHttpRequest.newBuilder()
-            .setDisk(PROJECT_ZONE_DISK_NAME.toString())
+    CreateSnapshotDiskRequest diskRequest =
+        CreateSnapshotDiskRequest.newBuilder()
+            .setDisk(DISK_NAME)
             .setGuestFlush(Boolean.FALSE)
             .setSnapshotResource(snapshotResource)
             .build();
-    try (DiskClient diskClient = DiskClient.create()) {
-      Operation snapshotDisk = diskClient.createSnapshotDisk(diskHttpRequest);
+    try (DisksClient disksClient = DisksClient.create()) {
+      Operation snapshotDisk = disksClient.createSnapshot(diskRequest);
       if (snapshotDisk.getError() == null) {
         System.out.println("Snapshot was successfully created");
       } else {

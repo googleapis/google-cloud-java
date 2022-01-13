@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,32 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.examples.storage.buckets;
+package com.google.cloud.examples.storage.objects;
 
-// [START storage_set_bucket_public_iam]
-import com.google.cloud.Identity;
-import com.google.cloud.Policy;
+// [START storage_file_download_into_memory]
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import com.google.cloud.storage.StorageRoles;
+import java.nio.charset.StandardCharsets;
 
-public class MakeBucketPublic {
-  public static void makeBucketPublic(String projectId, String bucketName) {
+public class DownloadObjectIntoMemory {
+  public static void downloadObjectIntoMemory(
+      String projectId, String bucketName, String objectName) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
     // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
 
-    Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    Policy originalPolicy = storage.getIamPolicy(bucketName);
-    storage.setIamPolicy(
-        bucketName,
-        originalPolicy.toBuilder()
-            .addIdentity(StorageRoles.objectViewer(), Identity.allUsers()) // All users can view
-            .build());
+    // The ID of your GCS object
+    // String objectName = "your-object-name";
 
-    System.out.println("Bucket " + bucketName + " is now publicly readable");
+    Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+    byte[] content = storage.readAllBytes(bucketName, objectName);
+    System.out.println(
+        "The contents of "
+            + objectName
+            + " from bucket name "
+            + bucketName
+            + " are: "
+            + new String(content, StandardCharsets.UTF_8));
   }
 }
-// [END storage_set_bucket_public_iam]
+// [END storage_file_download_into_memory]
