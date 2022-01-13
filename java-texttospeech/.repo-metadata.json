@@ -5,7 +5,7 @@
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/history",
     "api_description": "enables easy integration of Google text recognition technologies into developer applications. Send text and receive synthesized audio output from the Cloud Text-to-Speech API service.",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/5235428",
-    "release_level": "ga",
+    "release_level": "stable",
     "language": "java",
     "transport": "grpc",
     "repo": "googleapis/java-texttospeech",
