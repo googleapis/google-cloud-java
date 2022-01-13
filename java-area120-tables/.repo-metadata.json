@@ -4,7 +4,7 @@
     "product_documentation": "https://area120.google.com/",
     "api_description": "provides programmatic methods to the Area 120 Tables API.",
     "client_documentation": "https://googleapis.dev/java/google-area120-tables/latest/index.html",
-    "release_level": "alpha",
+    "release_level": "preview",
     "transport": "grpc",
     "language": "java",
     "repo": "googleapis/java-area120-tables",
