@@ -4,7 +4,7 @@
     "product_documentation": "https://cloud.google.com/error-reporting",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-errorreporting/latest/history",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559780",
-    "release_level": "beta",
+    "release_level": "preview",
     "language": "java",
     "repo": "googleapis/java-errorreporting",
     "repo_short": "java-errorreporting",
