@@ -21,7 +21,7 @@ If you are still having issues, please include as much information as possible:
    General, Core, and Other are also allowed as types
 2. OS type and version:
 3. Java version:
-4. life-sciences version(s):
+4.  version(s):
 
 #### Steps to reproduce
 
