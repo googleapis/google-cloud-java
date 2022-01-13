@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/traffic-director/docs/reference/network-security/rest",
   "api_description": "n/a",
   "client_documentation": "https://googleapis.dev/java/google-cloud-network-security/latest/index.html",
-  "release_level": "beta",
+  "release_level": "preview",
   "transport": "grpc",
   "language": "java",
   "repo": "googleapis/java-network-security",
