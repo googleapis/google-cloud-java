@@ -5,7 +5,7 @@
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-bigquery/latest/history",
   "api_description": "is a fully managed, NoOps, low cost data analytics service.\nData can be streamed into BigQuery at millions of rows per second to enable real-time analysis.\nWith BigQuery you can easily deploy Petabyte-scale Databases.",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559654",
-  "release_level": "ga",
+  "release_level": "stable",
   "language": "java",
   "repo": "googleapis/java-bigquery",
   "repo_short": "java-bigquery",
