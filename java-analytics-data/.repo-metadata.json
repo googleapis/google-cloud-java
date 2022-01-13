@@ -4,7 +4,7 @@
     "product_documentation": "https://developers.google.com/analytics/trusted-testing/analytics-data",
     "api_description": "provides programmatic methods to access report data in Google Analytics App+Web properties.",
     "client_documentation": "https://googleapis.dev/java/google-analytics-data/latest/index.html",
-    "release_level": "alpha",
+    "release_level": "preview",
     "transport": "grpc",
     "language": "java",
     "repo": "googleapis/java-analytics-data",
