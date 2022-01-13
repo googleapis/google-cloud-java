@@ -5,7 +5,7 @@
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-datalabeling/latest/history",
     "api_description": "",
     "issue_tracker": "",
-    "release_level": "beta",
+    "release_level": "preview",
     "language": "java",
     "transport": "grpc",
     "repo": "googleapis/java-datalabeling",
