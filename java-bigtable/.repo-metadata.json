@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/bigtable",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/history",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559777",
-  "release_level": "ga",
+  "release_level": "stable",
   "language": "java",
   "repo": "googleapis/java-bigtable",
   "repo_short": "java-bigtable",
