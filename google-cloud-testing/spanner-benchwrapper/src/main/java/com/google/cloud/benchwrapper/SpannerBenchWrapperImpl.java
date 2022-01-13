@@ -44,6 +44,7 @@ class SpannerBenchWrapperImpl extends SpannerBenchWrapperImplBase {
   public SpannerBenchWrapperImpl(String spannerEmulatorHost) {
     final SpannerOptions.Builder optionsBuilder = SpannerOptions.newBuilder();
     final SpannerOptions options = optionsBuilder
+        .setProjectId("someproject")
         .setEmulatorHost(spannerEmulatorHost)
         .build();
     spanner = options.getService();
