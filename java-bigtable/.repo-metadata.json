@@ -10,6 +10,8 @@
   "repo_short": "java-bigtable",
   "distribution_name": "com.google.cloud:google-cloud-bigtable",
   "codeowner_team": "@googleapis/api-bigtable",
+  "api_id": "bigtable.googleapis.com",
   "library_type": "GAPIC_COMBO",
-  "api_id": "bigtable.googleapis.com"
+  "extra_versioned_modules": "google-cloud-bigtable-emulator",
+  "excluded_poms": "google-cloud-bigtable-bom"
 }

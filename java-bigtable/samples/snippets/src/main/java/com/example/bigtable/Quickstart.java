@@ -27,9 +27,9 @@ import com.google.cloud.bigtable.data.v2.models.RowCell;
 public class Quickstart {
 
   public static void main(String... args) {
-    String projectId = args[0];  // my-gcp-project-id
+    String projectId = args[0]; // my-gcp-project-id
     String instanceId = args[1]; // my-bigtable-instance-id
-    String tableId = args[2];    // my-bigtable-table-id
+    String tableId = args[2]; // my-bigtable-table-id
 
     quickstart(projectId, instanceId, tableId);
   }

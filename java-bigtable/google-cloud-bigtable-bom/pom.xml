@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.google.cloud</groupId>
@@ -14,103 +14,103 @@
     <name>Google Cloud Bigtable BOM</name>
     <url>https://github.com/googleapis/java-bigtable</url>
     <description>
-        BOM for Google Cloud Bigtable
+      BOM for Google Cloud Bigtable
     </description>
 
     <organization>
-        <name>Google LLC</name>
+      <name>Google LLC</name>
     </organization>
 
     <developers>
-        <developer>
-            <id>chingor13</id>
-            <name>Jeff Ching</name>
-            <email>chingor@google.com</email>
-            <organization>Google LLC</organization>
-            <roles>
-                <role>Developer</role>
-            </roles>
-        </developer>
-        <developer>
-            <id>igorberstein</id>
-            <name>Igor Bernstein</name>
-            <email>igorbernstein@google.com</email>
-            <organization>Google LLC</organization>
-            <roles>
-                <role>Developer</role>
-            </roles>
-        </developer>
+      <developer>
+        <id>chingor13</id>
+        <name>Jeff Ching</name>
+        <email>chingor@google.com</email>
+        <organization>Google LLC</organization>
+        <roles>
+          <role>Developer</role>
+        </roles>
+      </developer>
+      <developer>
+        <id>igorberstein</id>
+        <name>Igor Bernstein</name>
+        <email>igorbernstein@google.com</email>
+        <organization>Google LLC</organization>
+        <roles>
+          <role>Developer</role>
+        </roles>
+      </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/googleapis/java-bigtable.git</connection>
-        <developerConnection>scm:git:git@github.com:googleapis/java-bigtable.git</developerConnection>
-        <url>https://github.com/googleapis/java-bigtable</url>
+      <connection>scm:git:https://github.com/googleapis/java-bigtable.git</connection>
+      <developerConnection>scm:git:git@github.com:googleapis/java-bigtable.git</developerConnection>
+      <url>https://github.com/googleapis/java-bigtable</url>
     </scm>
 
 
     <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
+      <license>
+        <name>The Apache Software License, Version 2.0</name>
+        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        <distribution>repo</distribution>
+      </license>
     </licenses>
 
     <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.google.cloud</groupId>
-                <artifactId>google-cloud-bigtable</artifactId>
-                <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
-            </dependency>
-            <dependency>
-                <groupId>com.google.cloud</groupId>
-                <artifactId>google-cloud-bigtable-emulator</artifactId>
-                <version>0.142.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
-            </dependency>
-            <dependency>
-                <groupId>com.google.api.grpc</groupId>
-                <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
-                <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-admin-v2:current} -->
-            </dependency>
-            <dependency>
-                <groupId>com.google.api.grpc</groupId>
-                <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
-                <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
-            </dependency>
-            <dependency>
-                <groupId>com.google.api.grpc</groupId>
-                <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
-                <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:current} -->
-            </dependency>
-            <dependency>
-                <groupId>com.google.api.grpc</groupId>
-                <artifactId>proto-google-cloud-bigtable-v2</artifactId>
-                <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-v2:current} -->
-            </dependency>
-        </dependencies>
+      <dependencies>
+        <dependency>
+          <groupId>com.google.cloud</groupId>
+          <artifactId>google-cloud-bigtable</artifactId>
+          <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        </dependency>
+        <dependency>
+          <groupId>com.google.cloud</groupId>
+          <artifactId>google-cloud-bigtable-emulator</artifactId>
+          <version>0.142.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+        </dependency>
+        <dependency>
+          <groupId>com.google.api.grpc</groupId>
+          <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
+          <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-admin-v2:current} -->
+        </dependency>
+        <dependency>
+          <groupId>com.google.api.grpc</groupId>
+          <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
+          <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
+        </dependency>
+        <dependency>
+          <groupId>com.google.api.grpc</groupId>
+          <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
+          <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:current} -->
+        </dependency>
+        <dependency>
+          <groupId>com.google.api.grpc</groupId>
+          <artifactId>proto-google-cloud-bigtable-v2</artifactId>
+          <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-v2:current} -->
+        </dependency>
+      </dependencies>
     </dependencyManagement>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </plugin>
 
-            <!-- Using maven site plugin only as a hook for javadoc:aggregate, don't need the reports -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
+        <!-- Using maven site plugin only as a hook for javadoc:aggregate, don't need the reports -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
 
-                <configuration>
-                    <generateReports>false</generateReports>
-                </configuration>
-            </plugin>
-        </plugins>
+          <configuration>
+            <generateReports>false</generateReports>
+          </configuration>
+        </plugin>
+      </plugins>
     </build>
 </project>

@@ -16,7 +16,6 @@
 
 package com.example.bigtable;
 
-
 import static org.junit.Assert.assertNotNull;
 
 import java.io.ByteArrayOutputStream;
@@ -59,7 +58,7 @@ public class BigtableBaseTest {
   public static String generateTableId(String prefix) {
     return prefix + "-" + UUID.randomUUID().toString().substring(0, 20);
   }
-  
+
   public static void initializeVariables() {
     projectId = requireEnv("GOOGLE_CLOUD_PROJECT");
     instanceId = requireEnv("BIGTABLE_TESTING_INSTANCE");

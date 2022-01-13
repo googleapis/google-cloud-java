@@ -30,7 +30,6 @@ import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
-
 public class Filters {
 
   // Write your code here.

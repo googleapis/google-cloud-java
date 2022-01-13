@@ -149,11 +149,37 @@
         <dependencies>
             <!-- Production Deps have been moved to google-cloud-bigtable-deps-bom -->
 
+            <dependency>
+                <groupId>com.google.api.grpc</groupId>
+                <artifactId>proto-google-cloud-bigtable-v2</artifactId>
+                <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-v2:current} -->
+            </dependency>
+            <dependency>
+                <groupId>com.google.api.grpc</groupId>
+                <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
+                <version>2.5.2-SNAPSHOT
+                </version><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:current} -->
+            </dependency>
+            <dependency>
+                <groupId>com.google.api.grpc</groupId>
+                <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
+                <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
+            </dependency>
+            <dependency>
+                <groupId>com.google.api.grpc</groupId>
+                <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
+                <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-admin-v2:current} -->
+            </dependency>
+            <dependency>
+                <groupId>com.google.cloud</groupId>
+                <artifactId>google-cloud-bigtable</artifactId>
+                <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+            </dependency>
             <!-- Test Deps in alphabetical order -->
             <dependency>
-              <groupId>com.google.cloud</groupId>
-              <artifactId>google-cloud-conformance-tests</artifactId>
-              <version>0.2.6</version>
+                <groupId>com.google.cloud</groupId>
+                <artifactId>google-cloud-conformance-tests</artifactId>
+                <version>0.2.6</version>
             </dependency>
             <dependency>
                 <groupId>com.google.truth</groupId>
@@ -179,9 +205,9 @@
                 <version>4.13.2</version>
             </dependency>
             <dependency>
-              <groupId>org.mockito</groupId>
-              <artifactId>mockito-core</artifactId>
-              <version>4.2.0</version>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>4.2.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -325,13 +351,14 @@
     </profiles>
 
     <modules>
-        <module>proto-google-cloud-bigtable-v2</module>
-        <module>grpc-google-cloud-bigtable-v2</module>
-        <module>proto-google-cloud-bigtable-admin-v2</module>
-        <module>grpc-google-cloud-bigtable-admin-v2</module>
-        <module>google-cloud-bigtable</module>
-        <module>google-cloud-bigtable-emulator</module>
-        <module>google-cloud-bigtable-bom</module>
-        <module>google-cloud-bigtable-deps-bom</module>
-    </modules>
-</project>
+    <module>google-cloud-bigtable</module>
+    <module>grpc-google-cloud-bigtable-admin-v2</module>
+    <module>grpc-google-cloud-bigtable-v2</module>
+    <module>proto-google-cloud-bigtable-admin-v2</module>
+    <module>proto-google-cloud-bigtable-v2</module>
+    <module>google-cloud-bigtable-emulator</module>
+    <module>google-cloud-bigtable-bom</module>
+    <module>google-cloud-bigtable-deps-bom</module>
+  </modules>
+
+  </project>

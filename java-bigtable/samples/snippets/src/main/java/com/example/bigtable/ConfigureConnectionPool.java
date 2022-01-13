@@ -30,11 +30,11 @@ public class ConfigureConnectionPool {
     // String projectId = "my-project-id";
     // String instanceId = "my-instance-id";
 
-    BigtableDataSettings.Builder settingsBuilder = BigtableDataSettings.newBuilder()
-        .setProjectId(projectId)
-        .setInstanceId(instanceId);
+    BigtableDataSettings.Builder settingsBuilder =
+        BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
 
-    settingsBuilder.stubSettings()
+    settingsBuilder
+        .stubSettings()
         .setTransportChannelProvider(
             EnhancedBigtableStubSettings.defaultGrpcTransportProviderBuilder()
                 .setPoolSize(10)
@@ -43,8 +43,8 @@ public class ConfigureConnectionPool {
     BigtableDataSettings settings = settingsBuilder.build();
     try (BigtableDataClient dataClient = BigtableDataClient.create(settings)) {
       InstantiatingGrpcChannelProvider provider =
-          (InstantiatingGrpcChannelProvider) settings.getStubSettings()
-              .getTransportChannelProvider();
+          (InstantiatingGrpcChannelProvider)
+              settings.getStubSettings().getTransportChannelProvider();
 
       int poolSize = provider.toBuilder().getPoolSize();
 

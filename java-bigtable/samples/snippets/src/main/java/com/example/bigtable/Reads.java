@@ -26,8 +26,6 @@ import com.google.cloud.bigtable.data.v2.models.Filters;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
-import com.google.cloud.bigtable.data.v2.models.RowMutation;
-import com.google.protobuf.ByteString;
 import java.io.IOException;
 
 public class Reads {

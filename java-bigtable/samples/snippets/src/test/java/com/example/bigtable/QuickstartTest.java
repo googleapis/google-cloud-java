@@ -16,16 +16,13 @@
 
 package com.example.bigtable;
 
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- * Integration tests for {@link Quickstart}
- */
+/** Integration tests for {@link Quickstart} */
 public class QuickstartTest extends BigtableBaseTest {
 
   private static final String TABLE_ID = "quickstart-table";

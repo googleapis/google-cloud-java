@@ -18,7 +18,6 @@ package com.example.bigtable;
 
 import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
@@ -41,9 +40,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- * Integration tests for {@link TableAdminExample}
- */
+/** Integration tests for {@link TableAdminExample} */
 public class TableAdminExampleTest extends BigtableBaseTest {
 
   private static final String TABLE_PREFIX = "table";

@@ -16,7 +16,6 @@
 
 package com.example.bigtable;
 
-
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
@@ -37,7 +36,6 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
   public static final long TIMESTAMP_MINUS_HR =
       CURRENT_TIME.minus(1, ChronoUnit.HOURS).toEpochMilli() * 1000;
 
-
   public static void createTable() throws IOException {
     try (BigtableTableAdminClient adminClient =
         BigtableTableAdminClient.create(projectId, instanceId)) {
@@ -51,7 +49,6 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
       throw (e);
     }
   }
-
 
   public static void writeStatsData() throws IOException {
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
@@ -84,8 +81,7 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
                           ByteString.copyFrom("connected_wifi".getBytes()),
                           TIMESTAMP,
                           1)
-                      .setCell(COLUMN_FAMILY_NAME_STATS, "os_build", TIMESTAMP, "PQ2A.190405.004")
-              )
+                      .setCell(COLUMN_FAMILY_NAME_STATS, "os_build", TIMESTAMP, "PQ2A.190405.004"))
               .add(
                   "phone#4c410523#20190505",
                   Mutation.create()
@@ -99,8 +95,7 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
                           ByteString.copyFrom("connected_wifi".getBytes()),
                           TIMESTAMP,
                           1)
-                      .setCell(COLUMN_FAMILY_NAME_STATS, "os_build", TIMESTAMP, "PQ2A.190406.000")
-              )
+                      .setCell(COLUMN_FAMILY_NAME_STATS, "os_build", TIMESTAMP, "PQ2A.190406.000"))
               .add(
                   "phone#5c10102#20190501",
                   Mutation.create()
@@ -114,8 +109,7 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
                           ByteString.copyFrom("connected_wifi".getBytes()),
                           TIMESTAMP,
                           1)
-                      .setCell(COLUMN_FAMILY_NAME_STATS, "os_build", TIMESTAMP, "PQ2A.190401.002")
-              )
+                      .setCell(COLUMN_FAMILY_NAME_STATS, "os_build", TIMESTAMP, "PQ2A.190401.002"))
               .add(
                   "phone#5c10102#20190502",
                   Mutation.create()
@@ -173,7 +167,6 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
     }
   }
 
-
   public static void cleanupTable() throws IOException {
     try (BigtableTableAdminClient adminClient =
         BigtableTableAdminClient.create(projectId, instanceId)) {
@@ -183,5 +176,4 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
       throw (e);
     }
   }
-
 }

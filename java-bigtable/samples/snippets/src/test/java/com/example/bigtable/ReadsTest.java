@@ -23,7 +23,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ReadsTest  extends MobileTimeSeriesBaseTest {
+public class ReadsTest extends MobileTimeSeriesBaseTest {
 
   @BeforeClass
   public static void beforeClass() throws IOException {

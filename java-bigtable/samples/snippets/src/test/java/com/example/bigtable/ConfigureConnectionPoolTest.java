@@ -16,13 +16,9 @@
 
 package com.example.bigtable;
 
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import org.hamcrest.CoreMatchers;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
