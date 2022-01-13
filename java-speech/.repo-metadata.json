@@ -1,7 +1,7 @@
 {
     "api_shortname": "speech",
     "name_pretty": "Cloud Speech",
-    "release_level": "ga",
+    "release_level": "stable",
     "language": "java",
     "repo": "googleapis/java-speech",
     "repo_short": "java-speech",
