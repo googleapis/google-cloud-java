@@ -4,7 +4,7 @@
     "product_documentation": "https://cloud.google.com/kms",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-kms/latest/history",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/5264932",
-    "release_level": "ga",
+    "release_level": "stable",
     "repo": "googleapis/java-kms",
     "repo_short": "java-kms",
     "distribution_name": "com.google.cloud:google-cloud-kms",
