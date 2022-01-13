@@ -4,7 +4,7 @@
     "product_documentation": "https://cloud.google.com/transcoder/docs",
     "api_description": "allows you to transcode videos into a variety of formats. The Transcoder API benefits broadcasters, production companies, businesses, and individuals looking to transform their video content for use across a variety of user devices.",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-video-transcoder/latest/history",
-    "release_level": "beta",
+    "release_level": "preview",
     "transport": "grpc",
     "language": "java",
     "repo": "googleapis/java-video-transcoder",
