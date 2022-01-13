@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/datastore",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-datastore/latest/history",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559768",
-  "release_level": "ga",
+  "release_level": "stable",
   "language": "java",
   "repo": "googleapis/java-datastore",
   "repo_short": "java-datastore",
