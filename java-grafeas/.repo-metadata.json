@@ -5,7 +5,7 @@
     "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?io/grafeas/v1/package-summary.html",
     "issue_tracker": "",
     "api_description": "n/a",
-    "release_level": "ga",
+    "release_level": "stable",
     "language": "java",
     "repo": "googleapis/java-grafeas",
     "repo_short": "java-grafeas",
