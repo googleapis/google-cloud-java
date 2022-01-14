@@ -19,6 +19,7 @@ package com.google.cloud.contactcenterinsights.v1.stub;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysesPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListConversationsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListPhraseMatchersPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListViewsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -58,11 +59,13 @@ import com.google.cloud.contactcenterinsights.v1.CreateConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.CreateIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse;
@@ -75,6 +78,7 @@ import com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.GetSettingsRequest;
+import com.google.cloud.contactcenterinsights.v1.GetViewRequest;
 import com.google.cloud.contactcenterinsights.v1.Issue;
 import com.google.cloud.contactcenterinsights.v1.IssueModel;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest;
@@ -87,6 +91,8 @@ import com.google.cloud.contactcenterinsights.v1.ListIssuesRequest;
 import com.google.cloud.contactcenterinsights.v1.ListIssuesResponse;
 import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersRequest;
 import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersResponse;
+import com.google.cloud.contactcenterinsights.v1.ListViewsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListViewsResponse;
 import com.google.cloud.contactcenterinsights.v1.PhraseMatcher;
 import com.google.cloud.contactcenterinsights.v1.Settings;
 import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelMetadata;
@@ -97,6 +103,8 @@ import com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateViewRequest;
+import com.google.cloud.contactcenterinsights.v1.View;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -207,6 +215,12 @@ public class ContactCenterInsightsStubSettings
       calculateStatsSettings;
   private final UnaryCallSettings<GetSettingsRequest, Settings> getSettingsSettings;
   private final UnaryCallSettings<UpdateSettingsRequest, Settings> updateSettingsSettings;
+  private final UnaryCallSettings<CreateViewRequest, View> createViewSettings;
+  private final UnaryCallSettings<GetViewRequest, View> getViewSettings;
+  private final PagedCallSettings<ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>
+      listViewsSettings;
+  private final UnaryCallSettings<UpdateViewRequest, View> updateViewSettings;
+  private final UnaryCallSettings<DeleteViewRequest, Empty> deleteViewSettings;
 
   private static final PagedListDescriptor<
           ListConversationsRequest, ListConversationsResponse, Conversation>
@@ -324,6 +338,42 @@ public class ContactCenterInsightsStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListViewsRequest, ListViewsResponse, View>
+      LIST_VIEWS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListViewsRequest, ListViewsResponse, View>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListViewsRequest injectToken(ListViewsRequest payload, String token) {
+              return ListViewsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListViewsRequest injectPageSize(ListViewsRequest payload, int pageSize) {
+              return ListViewsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListViewsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListViewsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<View> extractResources(ListViewsResponse payload) {
+              return payload.getViewsList() == null
+                  ? ImmutableList.<View>of()
+                  : payload.getViewsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListConversationsRequest, ListConversationsResponse, ListConversationsPagedResponse>
       LIST_CONVERSATIONS_PAGE_STR_FACT =
@@ -380,6 +430,23 @@ public class ContactCenterInsightsStubSettings
                       PageContext.create(
                           callable, LIST_PHRASE_MATCHERS_PAGE_STR_DESC, request, context);
               return ListPhraseMatchersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>
+      LIST_VIEWS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>() {
+            @Override
+            public ApiFuture<ListViewsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListViewsRequest, ListViewsResponse> callable,
+                ListViewsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListViewsResponse> futureResponse) {
+              PageContext<ListViewsRequest, ListViewsResponse, View> pageContext =
+                  PageContext.create(callable, LIST_VIEWS_PAGE_STR_DESC, request, context);
+              return ListViewsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -576,6 +643,32 @@ public class ContactCenterInsightsStubSettings
     return updateSettingsSettings;
   }
 
+  /** Returns the object with the settings used for calls to createView. */
+  public UnaryCallSettings<CreateViewRequest, View> createViewSettings() {
+    return createViewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getView. */
+  public UnaryCallSettings<GetViewRequest, View> getViewSettings() {
+    return getViewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listViews. */
+  public PagedCallSettings<ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>
+      listViewsSettings() {
+    return listViewsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateView. */
+  public UnaryCallSettings<UpdateViewRequest, View> updateViewSettings() {
+    return updateViewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteView. */
+  public UnaryCallSettings<DeleteViewRequest, Empty> deleteViewSettings() {
+    return deleteViewSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ContactCenterInsightsStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -689,6 +782,11 @@ public class ContactCenterInsightsStubSettings
     calculateStatsSettings = settingsBuilder.calculateStatsSettings().build();
     getSettingsSettings = settingsBuilder.getSettingsSettings().build();
     updateSettingsSettings = settingsBuilder.updateSettingsSettings().build();
+    createViewSettings = settingsBuilder.createViewSettings().build();
+    getViewSettings = settingsBuilder.getViewSettings().build();
+    listViewsSettings = settingsBuilder.listViewsSettings().build();
+    updateViewSettings = settingsBuilder.updateViewSettings().build();
+    deleteViewSettings = settingsBuilder.deleteViewSettings().build();
   }
 
   /** Builder for ContactCenterInsightsStubSettings. */
@@ -768,6 +866,13 @@ public class ContactCenterInsightsStubSettings
         calculateStatsSettings;
     private final UnaryCallSettings.Builder<GetSettingsRequest, Settings> getSettingsSettings;
     private final UnaryCallSettings.Builder<UpdateSettingsRequest, Settings> updateSettingsSettings;
+    private final UnaryCallSettings.Builder<CreateViewRequest, View> createViewSettings;
+    private final UnaryCallSettings.Builder<GetViewRequest, View> getViewSettings;
+    private final PagedCallSettings.Builder<
+            ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>
+        listViewsSettings;
+    private final UnaryCallSettings.Builder<UpdateViewRequest, View> updateViewSettings;
+    private final UnaryCallSettings.Builder<DeleteViewRequest, Empty> deleteViewSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -841,6 +946,11 @@ public class ContactCenterInsightsStubSettings
       calculateStatsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listViewsSettings = PagedCallSettings.newBuilder(LIST_VIEWS_PAGE_STR_FACT);
+      updateViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -872,7 +982,12 @@ public class ContactCenterInsightsStubSettings
               updatePhraseMatcherSettings,
               calculateStatsSettings,
               getSettingsSettings,
-              updateSettingsSettings);
+              updateSettingsSettings,
+              createViewSettings,
+              getViewSettings,
+              listViewsSettings,
+              updateViewSettings,
+              deleteViewSettings);
       initDefaults(this);
     }
 
@@ -916,6 +1031,11 @@ public class ContactCenterInsightsStubSettings
       calculateStatsSettings = settings.calculateStatsSettings.toBuilder();
       getSettingsSettings = settings.getSettingsSettings.toBuilder();
       updateSettingsSettings = settings.updateSettingsSettings.toBuilder();
+      createViewSettings = settings.createViewSettings.toBuilder();
+      getViewSettings = settings.getViewSettings.toBuilder();
+      listViewsSettings = settings.listViewsSettings.toBuilder();
+      updateViewSettings = settings.updateViewSettings.toBuilder();
+      deleteViewSettings = settings.deleteViewSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -947,7 +1067,12 @@ public class ContactCenterInsightsStubSettings
               updatePhraseMatcherSettings,
               calculateStatsSettings,
               getSettingsSettings,
-              updateSettingsSettings);
+              updateSettingsSettings,
+              createViewSettings,
+              getViewSettings,
+              listViewsSettings,
+              updateViewSettings,
+              deleteViewSettings);
     }
 
     private static Builder createDefault() {
@@ -1106,6 +1231,31 @@ public class ContactCenterInsightsStubSettings
 
       builder
           .updateSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createViewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getViewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listViewsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateViewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteViewSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1496,6 +1646,32 @@ public class ContactCenterInsightsStubSettings
     /** Returns the builder for the settings used for calls to updateSettings. */
     public UnaryCallSettings.Builder<UpdateSettingsRequest, Settings> updateSettingsSettings() {
       return updateSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createView. */
+    public UnaryCallSettings.Builder<CreateViewRequest, View> createViewSettings() {
+      return createViewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getView. */
+    public UnaryCallSettings.Builder<GetViewRequest, View> getViewSettings() {
+      return getViewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listViews. */
+    public PagedCallSettings.Builder<ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>
+        listViewsSettings() {
+      return listViewsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateView. */
+    public UnaryCallSettings.Builder<UpdateViewRequest, View> updateViewSettings() {
+      return updateViewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteView. */
+    public UnaryCallSettings.Builder<DeleteViewRequest, Empty> deleteViewSettings() {
+      return deleteViewSettings;
     }
 
     @Override

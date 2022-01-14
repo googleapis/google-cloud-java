@@ -19,6 +19,7 @@ package com.google.cloud.contactcenterinsights.v1;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysesPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListConversationsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListPhraseMatchersPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListViewsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -109,6 +110,7 @@ public class ContactCenterInsightsClientTest {
             .setLatestAnalysis(Analysis.newBuilder().build())
             .addAllRuntimeAnnotations(new ArrayList<RuntimeAnnotation>())
             .putAllDialogflowIntents(new HashMap<String, DialogflowIntent>())
+            .setObfuscatedUserId("obfuscatedUserId971552298")
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -166,6 +168,7 @@ public class ContactCenterInsightsClientTest {
             .setLatestAnalysis(Analysis.newBuilder().build())
             .addAllRuntimeAnnotations(new ArrayList<RuntimeAnnotation>())
             .putAllDialogflowIntents(new HashMap<String, DialogflowIntent>())
+            .setObfuscatedUserId("obfuscatedUserId971552298")
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -223,6 +226,7 @@ public class ContactCenterInsightsClientTest {
             .setLatestAnalysis(Analysis.newBuilder().build())
             .addAllRuntimeAnnotations(new ArrayList<RuntimeAnnotation>())
             .putAllDialogflowIntents(new HashMap<String, DialogflowIntent>())
+            .setObfuscatedUserId("obfuscatedUserId971552298")
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -277,6 +281,7 @@ public class ContactCenterInsightsClientTest {
             .setLatestAnalysis(Analysis.newBuilder().build())
             .addAllRuntimeAnnotations(new ArrayList<RuntimeAnnotation>())
             .putAllDialogflowIntents(new HashMap<String, DialogflowIntent>())
+            .setObfuscatedUserId("obfuscatedUserId971552298")
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -328,6 +333,7 @@ public class ContactCenterInsightsClientTest {
             .setLatestAnalysis(Analysis.newBuilder().build())
             .addAllRuntimeAnnotations(new ArrayList<RuntimeAnnotation>())
             .putAllDialogflowIntents(new HashMap<String, DialogflowIntent>())
+            .setObfuscatedUserId("obfuscatedUserId971552298")
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -2413,6 +2419,381 @@ public class ContactCenterInsightsClientTest {
       Settings settings = Settings.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSettings(settings, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createViewTest() throws Exception {
+    View expectedResponse =
+        View.newBuilder()
+            .setName(ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setValue("value111972721")
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    View view = View.newBuilder().build();
+
+    View actualResponse = client.createView(parent, view);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateViewRequest actualRequest = ((CreateViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(view, actualRequest.getView());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      View view = View.newBuilder().build();
+      client.createView(parent, view);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createViewTest2() throws Exception {
+    View expectedResponse =
+        View.newBuilder()
+            .setName(ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setValue("value111972721")
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    View view = View.newBuilder().build();
+
+    View actualResponse = client.createView(parent, view);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateViewRequest actualRequest = ((CreateViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(view, actualRequest.getView());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createViewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      View view = View.newBuilder().build();
+      client.createView(parent, view);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getViewTest() throws Exception {
+    View expectedResponse =
+        View.newBuilder()
+            .setName(ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setValue("value111972721")
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    ViewName name = ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]");
+
+    View actualResponse = client.getView(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetViewRequest actualRequest = ((GetViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      ViewName name = ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]");
+      client.getView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getViewTest2() throws Exception {
+    View expectedResponse =
+        View.newBuilder()
+            .setName(ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setValue("value111972721")
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    View actualResponse = client.getView(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetViewRequest actualRequest = ((GetViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getViewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listViewsTest() throws Exception {
+    View responsesElement = View.newBuilder().build();
+    ListViewsResponse expectedResponse =
+        ListViewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllViews(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListViewsPagedResponse pagedListResponse = client.listViews(parent);
+
+    List<View> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getViewsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListViewsRequest actualRequest = ((ListViewsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listViewsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listViewsTest2() throws Exception {
+    View responsesElement = View.newBuilder().build();
+    ListViewsResponse expectedResponse =
+        ListViewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllViews(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListViewsPagedResponse pagedListResponse = client.listViews(parent);
+
+    List<View> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getViewsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListViewsRequest actualRequest = ((ListViewsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listViewsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateViewTest() throws Exception {
+    View expectedResponse =
+        View.newBuilder()
+            .setName(ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setValue("value111972721")
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    View view = View.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    View actualResponse = client.updateView(view, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateViewRequest actualRequest = ((UpdateViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(view, actualRequest.getView());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      View view = View.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateView(view, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteViewTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    ViewName name = ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]");
+
+    client.deleteView(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteViewRequest actualRequest = ((DeleteViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      ViewName name = ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]");
+      client.deleteView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteViewTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteView(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteViewRequest actualRequest = ((DeleteViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteViewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteView(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

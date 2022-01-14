@@ -28,9 +28,10 @@ public interface IssueModelResultOrBuilder
    *
    * <pre>
    * Issue model that generates the result.
+   * Format: projects/{project}/locations/{location}/issueModels/{issue_model}
    * </pre>
    *
-   * <code>string issue_model = 1;</code>
+   * <code>string issue_model = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The issueModel.
    */
@@ -40,9 +41,10 @@ public interface IssueModelResultOrBuilder
    *
    * <pre>
    * Issue model that generates the result.
+   * Format: projects/{project}/locations/{location}/issueModels/{issue_model}
    * </pre>
    *
-   * <code>string issue_model = 1;</code>
+   * <code>string issue_model = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for issueModel.
    */

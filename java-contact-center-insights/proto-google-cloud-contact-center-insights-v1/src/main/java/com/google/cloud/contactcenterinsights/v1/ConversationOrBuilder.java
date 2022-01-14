@@ -736,6 +736,31 @@ public interface ConversationOrBuilder
   com.google.cloud.contactcenterinsights.v1.DialogflowIntent getDialogflowIntentsOrThrow(
       java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * Obfuscated user ID which the customer sent to us.
+   * </pre>
+   *
+   * <code>string obfuscated_user_id = 21;</code>
+   *
+   * @return The obfuscatedUserId.
+   */
+  java.lang.String getObfuscatedUserId();
+  /**
+   *
+   *
+   * <pre>
+   * Obfuscated user ID which the customer sent to us.
+   * </pre>
+   *
+   * <code>string obfuscated_user_id = 21;</code>
+   *
+   * @return The bytes for obfuscatedUserId.
+   */
+  com.google.protobuf.ByteString getObfuscatedUserIdBytes();
+
   public com.google.cloud.contactcenterinsights.v1.Conversation.MetadataCase getMetadataCase();
 
   public com.google.cloud.contactcenterinsights.v1.Conversation.ExpirationCase getExpirationCase();

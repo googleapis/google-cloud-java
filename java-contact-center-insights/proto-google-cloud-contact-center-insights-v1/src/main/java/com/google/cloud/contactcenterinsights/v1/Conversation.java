@@ -43,6 +43,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     agentId_ = "";
     medium_ = 0;
     runtimeAnnotations_ = java.util.Collections.emptyList();
+    obfuscatedUserId_ = "";
   }
 
   @java.lang.Override
@@ -318,6 +319,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
               dialogflowIntents_
                   .getMutableMap()
                   .put(dialogflowIntents__.getKey(), dialogflowIntents__.getValue());
+              break;
+            }
+          case 170:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              obfuscatedUserId_ = s;
               break;
             }
           default:
@@ -8827,6 +8835,55 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int OBFUSCATED_USER_ID_FIELD_NUMBER = 21;
+  private volatile java.lang.Object obfuscatedUserId_;
+  /**
+   *
+   *
+   * <pre>
+   * Obfuscated user ID which the customer sent to us.
+   * </pre>
+   *
+   * <code>string obfuscated_user_id = 21;</code>
+   *
+   * @return The obfuscatedUserId.
+   */
+  @java.lang.Override
+  public java.lang.String getObfuscatedUserId() {
+    java.lang.Object ref = obfuscatedUserId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      obfuscatedUserId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Obfuscated user ID which the customer sent to us.
+   * </pre>
+   *
+   * <code>string obfuscated_user_id = 21;</code>
+   *
+   * @return The bytes for obfuscatedUserId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getObfuscatedUserIdBytes() {
+    java.lang.Object ref = obfuscatedUserId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      obfuscatedUserId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8899,6 +8956,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         internalGetDialogflowIntents(),
         DialogflowIntentsDefaultEntryHolder.defaultEntry,
         18);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(obfuscatedUserId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, obfuscatedUserId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -8988,6 +9048,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, dialogflowIntents__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(obfuscatedUserId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, obfuscatedUserId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -9040,6 +9103,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getRuntimeAnnotationsList().equals(other.getRuntimeAnnotationsList())) return false;
     if (!internalGetDialogflowIntents().equals(other.internalGetDialogflowIntents())) return false;
+    if (!getObfuscatedUserId().equals(other.getObfuscatedUserId())) return false;
     if (!getMetadataCase().equals(other.getMetadataCase())) return false;
     switch (metadataCase_) {
       case 7:
@@ -9120,6 +9184,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DIALOGFLOW_INTENTS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetDialogflowIntents().hashCode();
     }
+    hash = (37 * hash) + OBFUSCATED_USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getObfuscatedUserId().hashCode();
     switch (metadataCase_) {
       case 7:
         hash = (37 * hash) + CALL_METADATA_FIELD_NUMBER;
@@ -9372,6 +9438,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         runtimeAnnotationsBuilder_.clear();
       }
       internalGetMutableDialogflowIntents().clear();
+      obfuscatedUserId_ = "";
+
       metadataCase_ = 0;
       metadata_ = null;
       expirationCase_ = 0;
@@ -9478,6 +9546,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
       result.dialogflowIntents_ = internalGetDialogflowIntents();
       result.dialogflowIntents_.makeImmutable();
+      result.obfuscatedUserId_ = obfuscatedUserId_;
       result.metadataCase_ = metadataCase_;
       result.expirationCase_ = expirationCase_;
       onBuilt();
@@ -9598,6 +9667,10 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableDialogflowIntents().mergeFrom(other.internalGetDialogflowIntents());
+      if (!other.getObfuscatedUserId().isEmpty()) {
+        obfuscatedUserId_ = other.obfuscatedUserId_;
+        onChanged();
+      }
       switch (other.getMetadataCase()) {
         case CALL_METADATA:
           {
@@ -12998,6 +13071,112 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.DialogflowIntent>
             values) {
       internalGetMutableDialogflowIntents().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private java.lang.Object obfuscatedUserId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Obfuscated user ID which the customer sent to us.
+     * </pre>
+     *
+     * <code>string obfuscated_user_id = 21;</code>
+     *
+     * @return The obfuscatedUserId.
+     */
+    public java.lang.String getObfuscatedUserId() {
+      java.lang.Object ref = obfuscatedUserId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        obfuscatedUserId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Obfuscated user ID which the customer sent to us.
+     * </pre>
+     *
+     * <code>string obfuscated_user_id = 21;</code>
+     *
+     * @return The bytes for obfuscatedUserId.
+     */
+    public com.google.protobuf.ByteString getObfuscatedUserIdBytes() {
+      java.lang.Object ref = obfuscatedUserId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        obfuscatedUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Obfuscated user ID which the customer sent to us.
+     * </pre>
+     *
+     * <code>string obfuscated_user_id = 21;</code>
+     *
+     * @param value The obfuscatedUserId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObfuscatedUserId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      obfuscatedUserId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Obfuscated user ID which the customer sent to us.
+     * </pre>
+     *
+     * <code>string obfuscated_user_id = 21;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearObfuscatedUserId() {
+
+      obfuscatedUserId_ = getDefaultInstance().getObfuscatedUserId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Obfuscated user ID which the customer sent to us.
+     * </pre>
+     *
+     * <code>string obfuscated_user_id = 21;</code>
+     *
+     * @param value The bytes for obfuscatedUserId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObfuscatedUserIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      obfuscatedUserId_ = value;
+      onChanged();
       return this;
     }
 

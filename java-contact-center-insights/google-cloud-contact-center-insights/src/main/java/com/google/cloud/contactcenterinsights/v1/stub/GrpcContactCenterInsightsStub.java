@@ -19,6 +19,7 @@ package com.google.cloud.contactcenterinsights.v1.stub;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysesPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListConversationsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListPhraseMatchersPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListViewsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -39,11 +40,13 @@ import com.google.cloud.contactcenterinsights.v1.CreateConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.CreateIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse;
@@ -56,6 +59,7 @@ import com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.GetSettingsRequest;
+import com.google.cloud.contactcenterinsights.v1.GetViewRequest;
 import com.google.cloud.contactcenterinsights.v1.Issue;
 import com.google.cloud.contactcenterinsights.v1.IssueModel;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest;
@@ -68,6 +72,8 @@ import com.google.cloud.contactcenterinsights.v1.ListIssuesRequest;
 import com.google.cloud.contactcenterinsights.v1.ListIssuesResponse;
 import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersRequest;
 import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersResponse;
+import com.google.cloud.contactcenterinsights.v1.ListViewsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListViewsResponse;
 import com.google.cloud.contactcenterinsights.v1.PhraseMatcher;
 import com.google.cloud.contactcenterinsights.v1.Settings;
 import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelMetadata;
@@ -78,6 +84,8 @@ import com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateViewRequest;
+import com.google.cloud.contactcenterinsights.v1.View;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -412,6 +420,51 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateViewRequest, View> createViewMethodDescriptor =
+      MethodDescriptor.<CreateViewRequest, View>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateView")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateViewRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(View.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetViewRequest, View> getViewMethodDescriptor =
+      MethodDescriptor.<GetViewRequest, View>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetView")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetViewRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(View.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListViewsRequest, ListViewsResponse>
+      listViewsMethodDescriptor =
+          MethodDescriptor.<ListViewsRequest, ListViewsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListViews")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListViewsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListViewsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateViewRequest, View> updateViewMethodDescriptor =
+      MethodDescriptor.<UpdateViewRequest, View>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateView")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateViewRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(View.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteViewRequest, Empty> deleteViewMethodDescriptor =
+      MethodDescriptor.<DeleteViewRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteView")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteViewRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable;
   private final UnaryCallable<UpdateConversationRequest, Conversation> updateConversationCallable;
   private final UnaryCallable<GetConversationRequest, Conversation> getConversationCallable;
@@ -468,6 +521,12 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   private final UnaryCallable<CalculateStatsRequest, CalculateStatsResponse> calculateStatsCallable;
   private final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable;
   private final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable;
+  private final UnaryCallable<CreateViewRequest, View> createViewCallable;
+  private final UnaryCallable<GetViewRequest, View> getViewCallable;
+  private final UnaryCallable<ListViewsRequest, ListViewsResponse> listViewsCallable;
+  private final UnaryCallable<ListViewsRequest, ListViewsPagedResponse> listViewsPagedCallable;
+  private final UnaryCallable<UpdateViewRequest, View> updateViewCallable;
+  private final UnaryCallable<DeleteViewRequest, Empty> deleteViewCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -814,6 +873,56 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<CreateViewRequest, View> createViewTransportSettings =
+        GrpcCallSettings.<CreateViewRequest, View>newBuilder()
+            .setMethodDescriptor(createViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetViewRequest, View> getViewTransportSettings =
+        GrpcCallSettings.<GetViewRequest, View>newBuilder()
+            .setMethodDescriptor(getViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListViewsRequest, ListViewsResponse> listViewsTransportSettings =
+        GrpcCallSettings.<ListViewsRequest, ListViewsResponse>newBuilder()
+            .setMethodDescriptor(listViewsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateViewRequest, View> updateViewTransportSettings =
+        GrpcCallSettings.<UpdateViewRequest, View>newBuilder()
+            .setMethodDescriptor(updateViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("view.name", String.valueOf(request.getView().getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteViewRequest, Empty> deleteViewTransportSettings =
+        GrpcCallSettings.<DeleteViewRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
 
     this.createConversationCallable =
         callableFactory.createUnaryCallable(
@@ -973,6 +1082,24 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
     this.updateSettingsCallable =
         callableFactory.createUnaryCallable(
             updateSettingsTransportSettings, settings.updateSettingsSettings(), clientContext);
+    this.createViewCallable =
+        callableFactory.createUnaryCallable(
+            createViewTransportSettings, settings.createViewSettings(), clientContext);
+    this.getViewCallable =
+        callableFactory.createUnaryCallable(
+            getViewTransportSettings, settings.getViewSettings(), clientContext);
+    this.listViewsCallable =
+        callableFactory.createUnaryCallable(
+            listViewsTransportSettings, settings.listViewsSettings(), clientContext);
+    this.listViewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listViewsTransportSettings, settings.listViewsSettings(), clientContext);
+    this.updateViewCallable =
+        callableFactory.createUnaryCallable(
+            updateViewTransportSettings, settings.updateViewSettings(), clientContext);
+    this.deleteViewCallable =
+        callableFactory.createUnaryCallable(
+            deleteViewTransportSettings, settings.deleteViewSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1184,6 +1311,36 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   @Override
   public UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
     return updateSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateViewRequest, View> createViewCallable() {
+    return createViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetViewRequest, View> getViewCallable() {
+    return getViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListViewsRequest, ListViewsResponse> listViewsCallable() {
+    return listViewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListViewsRequest, ListViewsPagedResponse> listViewsPagedCallable() {
+    return listViewsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateViewRequest, View> updateViewCallable() {
+    return updateViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteViewRequest, Empty> deleteViewCallable() {
+    return deleteViewCallable;
   }
 
   @Override

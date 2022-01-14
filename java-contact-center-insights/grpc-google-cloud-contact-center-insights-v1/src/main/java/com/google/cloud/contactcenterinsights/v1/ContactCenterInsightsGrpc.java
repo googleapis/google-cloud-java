@@ -1426,6 +1426,234 @@ public final class ContactCenterInsightsGrpc {
     return getUpdateSettingsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.CreateViewRequest,
+          com.google.cloud.contactcenterinsights.v1.View>
+      getCreateViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateView",
+      requestType = com.google.cloud.contactcenterinsights.v1.CreateViewRequest.class,
+      responseType = com.google.cloud.contactcenterinsights.v1.View.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.CreateViewRequest,
+          com.google.cloud.contactcenterinsights.v1.View>
+      getCreateViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.CreateViewRequest,
+            com.google.cloud.contactcenterinsights.v1.View>
+        getCreateViewMethod;
+    if ((getCreateViewMethod = ContactCenterInsightsGrpc.getCreateViewMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getCreateViewMethod = ContactCenterInsightsGrpc.getCreateViewMethod) == null) {
+          ContactCenterInsightsGrpc.getCreateViewMethod =
+              getCreateViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.CreateViewRequest,
+                          com.google.cloud.contactcenterinsights.v1.View>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.CreateViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.View.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier("CreateView"))
+                      .build();
+        }
+      }
+    }
+    return getCreateViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.GetViewRequest,
+          com.google.cloud.contactcenterinsights.v1.View>
+      getGetViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetView",
+      requestType = com.google.cloud.contactcenterinsights.v1.GetViewRequest.class,
+      responseType = com.google.cloud.contactcenterinsights.v1.View.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.GetViewRequest,
+          com.google.cloud.contactcenterinsights.v1.View>
+      getGetViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.GetViewRequest,
+            com.google.cloud.contactcenterinsights.v1.View>
+        getGetViewMethod;
+    if ((getGetViewMethod = ContactCenterInsightsGrpc.getGetViewMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getGetViewMethod = ContactCenterInsightsGrpc.getGetViewMethod) == null) {
+          ContactCenterInsightsGrpc.getGetViewMethod =
+              getGetViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.GetViewRequest,
+                          com.google.cloud.contactcenterinsights.v1.View>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.GetViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.View.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier("GetView"))
+                      .build();
+        }
+      }
+    }
+    return getGetViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.ListViewsRequest,
+          com.google.cloud.contactcenterinsights.v1.ListViewsResponse>
+      getListViewsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListViews",
+      requestType = com.google.cloud.contactcenterinsights.v1.ListViewsRequest.class,
+      responseType = com.google.cloud.contactcenterinsights.v1.ListViewsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.ListViewsRequest,
+          com.google.cloud.contactcenterinsights.v1.ListViewsResponse>
+      getListViewsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.ListViewsRequest,
+            com.google.cloud.contactcenterinsights.v1.ListViewsResponse>
+        getListViewsMethod;
+    if ((getListViewsMethod = ContactCenterInsightsGrpc.getListViewsMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getListViewsMethod = ContactCenterInsightsGrpc.getListViewsMethod) == null) {
+          ContactCenterInsightsGrpc.getListViewsMethod =
+              getListViewsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.ListViewsRequest,
+                          com.google.cloud.contactcenterinsights.v1.ListViewsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListViews"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.ListViewsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.ListViewsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier("ListViews"))
+                      .build();
+        }
+      }
+    }
+    return getListViewsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.UpdateViewRequest,
+          com.google.cloud.contactcenterinsights.v1.View>
+      getUpdateViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateView",
+      requestType = com.google.cloud.contactcenterinsights.v1.UpdateViewRequest.class,
+      responseType = com.google.cloud.contactcenterinsights.v1.View.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.UpdateViewRequest,
+          com.google.cloud.contactcenterinsights.v1.View>
+      getUpdateViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.UpdateViewRequest,
+            com.google.cloud.contactcenterinsights.v1.View>
+        getUpdateViewMethod;
+    if ((getUpdateViewMethod = ContactCenterInsightsGrpc.getUpdateViewMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getUpdateViewMethod = ContactCenterInsightsGrpc.getUpdateViewMethod) == null) {
+          ContactCenterInsightsGrpc.getUpdateViewMethod =
+              getUpdateViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.UpdateViewRequest,
+                          com.google.cloud.contactcenterinsights.v1.View>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.UpdateViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.View.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier("UpdateView"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.DeleteViewRequest, com.google.protobuf.Empty>
+      getDeleteViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteView",
+      requestType = com.google.cloud.contactcenterinsights.v1.DeleteViewRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.DeleteViewRequest, com.google.protobuf.Empty>
+      getDeleteViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.DeleteViewRequest, com.google.protobuf.Empty>
+        getDeleteViewMethod;
+    if ((getDeleteViewMethod = ContactCenterInsightsGrpc.getDeleteViewMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getDeleteViewMethod = ContactCenterInsightsGrpc.getDeleteViewMethod) == null) {
+          ContactCenterInsightsGrpc.getDeleteViewMethod =
+              getDeleteViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.DeleteViewRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.DeleteViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier("DeleteView"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteViewMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ContactCenterInsightsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ContactCenterInsightsStub> factory =
@@ -1908,6 +2136,75 @@ public final class ContactCenterInsightsGrpc {
           getUpdateSettingsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Creates a view.
+     * </pre>
+     */
+    public void createView(
+        com.google.cloud.contactcenterinsights.v1.CreateViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.View>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a view.
+     * </pre>
+     */
+    public void getView(
+        com.google.cloud.contactcenterinsights.v1.GetViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.View>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists views.
+     * </pre>
+     */
+    public void listViews(
+        com.google.cloud.contactcenterinsights.v1.ListViewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.ListViewsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListViewsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a view.
+     * </pre>
+     */
+    public void updateView(
+        com.google.cloud.contactcenterinsights.v1.UpdateViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.View>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a view.
+     * </pre>
+     */
+    public void deleteView(
+        com.google.cloud.contactcenterinsights.v1.DeleteViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteViewMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -2104,6 +2401,37 @@ public final class ContactCenterInsightsGrpc {
                       com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest,
                       com.google.cloud.contactcenterinsights.v1.Settings>(
                       this, METHODID_UPDATE_SETTINGS)))
+          .addMethod(
+              getCreateViewMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.contactcenterinsights.v1.CreateViewRequest,
+                      com.google.cloud.contactcenterinsights.v1.View>(this, METHODID_CREATE_VIEW)))
+          .addMethod(
+              getGetViewMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.contactcenterinsights.v1.GetViewRequest,
+                      com.google.cloud.contactcenterinsights.v1.View>(this, METHODID_GET_VIEW)))
+          .addMethod(
+              getListViewsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.contactcenterinsights.v1.ListViewsRequest,
+                      com.google.cloud.contactcenterinsights.v1.ListViewsResponse>(
+                      this, METHODID_LIST_VIEWS)))
+          .addMethod(
+              getUpdateViewMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.contactcenterinsights.v1.UpdateViewRequest,
+                      com.google.cloud.contactcenterinsights.v1.View>(this, METHODID_UPDATE_VIEW)))
+          .addMethod(
+              getDeleteViewMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.contactcenterinsights.v1.DeleteViewRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_VIEW)))
           .build();
     }
   }
@@ -2614,6 +2942,80 @@ public final class ContactCenterInsightsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a view.
+     * </pre>
+     */
+    public void createView(
+        com.google.cloud.contactcenterinsights.v1.CreateViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.View>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateViewMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a view.
+     * </pre>
+     */
+    public void getView(
+        com.google.cloud.contactcenterinsights.v1.GetViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.View>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetViewMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists views.
+     * </pre>
+     */
+    public void listViews(
+        com.google.cloud.contactcenterinsights.v1.ListViewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.ListViewsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListViewsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a view.
+     * </pre>
+     */
+    public void updateView(
+        com.google.cloud.contactcenterinsights.v1.UpdateViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.View>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateViewMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a view.
+     * </pre>
+     */
+    public void deleteView(
+        com.google.cloud.contactcenterinsights.v1.DeleteViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteViewMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -3015,6 +3417,71 @@ public final class ContactCenterInsightsGrpc {
         com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a view.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.View createView(
+        com.google.cloud.contactcenterinsights.v1.CreateViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a view.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.View getView(
+        com.google.cloud.contactcenterinsights.v1.GetViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists views.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListViewsResponse listViews(
+        com.google.cloud.contactcenterinsights.v1.ListViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a view.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.View updateView(
+        com.google.cloud.contactcenterinsights.v1.UpdateViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a view.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteView(
+        com.google.cloud.contactcenterinsights.v1.DeleteViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteViewMethod(), getCallOptions(), request);
     }
   }
 
@@ -3453,6 +3920,75 @@ public final class ContactCenterInsightsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSettingsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a view.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.contactcenterinsights.v1.View>
+        createView(com.google.cloud.contactcenterinsights.v1.CreateViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a view.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.contactcenterinsights.v1.View>
+        getView(com.google.cloud.contactcenterinsights.v1.GetViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists views.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.contactcenterinsights.v1.ListViewsResponse>
+        listViews(com.google.cloud.contactcenterinsights.v1.ListViewsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListViewsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a view.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.contactcenterinsights.v1.View>
+        updateView(com.google.cloud.contactcenterinsights.v1.UpdateViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a view.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteView(
+        com.google.cloud.contactcenterinsights.v1.DeleteViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteViewMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_CONVERSATION = 0;
@@ -3484,6 +4020,11 @@ public final class ContactCenterInsightsGrpc {
   private static final int METHODID_CALCULATE_STATS = 26;
   private static final int METHODID_GET_SETTINGS = 27;
   private static final int METHODID_UPDATE_SETTINGS = 28;
+  private static final int METHODID_CREATE_VIEW = 29;
+  private static final int METHODID_GET_VIEW = 30;
+  private static final int METHODID_LIST_VIEWS = 31;
+  private static final int METHODID_UPDATE_VIEW = 32;
+  private static final int METHODID_DELETE_VIEW = 33;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3674,6 +4215,36 @@ public final class ContactCenterInsightsGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.Settings>)
                   responseObserver);
           break;
+        case METHODID_CREATE_VIEW:
+          serviceImpl.createView(
+              (com.google.cloud.contactcenterinsights.v1.CreateViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.View>)
+                  responseObserver);
+          break;
+        case METHODID_GET_VIEW:
+          serviceImpl.getView(
+              (com.google.cloud.contactcenterinsights.v1.GetViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.View>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_VIEWS:
+          serviceImpl.listViews(
+              (com.google.cloud.contactcenterinsights.v1.ListViewsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.contactcenterinsights.v1.ListViewsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_VIEW:
+          serviceImpl.updateView(
+              (com.google.cloud.contactcenterinsights.v1.UpdateViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.View>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_VIEW:
+          serviceImpl.deleteView(
+              (com.google.cloud.contactcenterinsights.v1.DeleteViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -3767,6 +4338,11 @@ public final class ContactCenterInsightsGrpc {
                       .addMethod(getCalculateStatsMethod())
                       .addMethod(getGetSettingsMethod())
                       .addMethod(getUpdateSettingsMethod())
+                      .addMethod(getCreateViewMethod())
+                      .addMethod(getGetViewMethod())
+                      .addMethod(getListViewsMethod())
+                      .addMethod(getUpdateViewMethod())
+                      .addMethod(getDeleteViewMethod())
                       .build();
         }
       }

@@ -19,6 +19,7 @@ package com.google.cloud.contactcenterinsights.v1;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysesPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListConversationsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListPhraseMatchersPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListViewsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -274,6 +275,32 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
   /** Returns the object with the settings used for calls to updateSettings. */
   public UnaryCallSettings<UpdateSettingsRequest, Settings> updateSettingsSettings() {
     return ((ContactCenterInsightsStubSettings) getStubSettings()).updateSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createView. */
+  public UnaryCallSettings<CreateViewRequest, View> createViewSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).createViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getView. */
+  public UnaryCallSettings<GetViewRequest, View> getViewSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).getViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listViews. */
+  public PagedCallSettings<ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>
+      listViewsSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).listViewsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateView. */
+  public UnaryCallSettings<UpdateViewRequest, View> updateViewSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).updateViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteView. */
+  public UnaryCallSettings<DeleteViewRequest, Empty> deleteViewSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).deleteViewSettings();
   }
 
   public static final ContactCenterInsightsSettings create(ContactCenterInsightsStubSettings stub)
@@ -582,6 +609,32 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
     /** Returns the builder for the settings used for calls to updateSettings. */
     public UnaryCallSettings.Builder<UpdateSettingsRequest, Settings> updateSettingsSettings() {
       return getStubSettingsBuilder().updateSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createView. */
+    public UnaryCallSettings.Builder<CreateViewRequest, View> createViewSettings() {
+      return getStubSettingsBuilder().createViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getView. */
+    public UnaryCallSettings.Builder<GetViewRequest, View> getViewSettings() {
+      return getStubSettingsBuilder().getViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listViews. */
+    public PagedCallSettings.Builder<ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>
+        listViewsSettings() {
+      return getStubSettingsBuilder().listViewsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateView. */
+    public UnaryCallSettings.Builder<UpdateViewRequest, View> updateViewSettings() {
+      return getStubSettingsBuilder().updateViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteView. */
+    public UnaryCallSettings.Builder<DeleteViewRequest, Empty> deleteViewSettings() {
+      return getStubSettingsBuilder().deleteViewSettings();
     }
 
     @Override

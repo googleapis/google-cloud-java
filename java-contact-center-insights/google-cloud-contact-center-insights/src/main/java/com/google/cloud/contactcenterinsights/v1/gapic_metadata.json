@@ -28,6 +28,9 @@
             "CreatePhraseMatcher": {
               "methods": ["createPhraseMatcher", "createPhraseMatcher", "createPhraseMatcher", "createPhraseMatcherCallable"]
             },
+            "CreateView": {
+              "methods": ["createView", "createView", "createView", "createViewCallable"]
+            },
             "DeleteAnalysis": {
               "methods": ["deleteAnalysis", "deleteAnalysis", "deleteAnalysis", "deleteAnalysisCallable"]
             },
@@ -39,6 +42,9 @@
             },
             "DeletePhraseMatcher": {
               "methods": ["deletePhraseMatcher", "deletePhraseMatcher", "deletePhraseMatcher", "deletePhraseMatcherCallable"]
+            },
+            "DeleteView": {
+              "methods": ["deleteView", "deleteView", "deleteView", "deleteViewCallable"]
             },
             "DeployIssueModel": {
               "methods": ["deployIssueModelAsync", "deployIssueModelAsync", "deployIssueModelAsync", "deployIssueModelOperationCallable", "deployIssueModelCallable"]
@@ -64,6 +70,9 @@
             "GetSettings": {
               "methods": ["getSettings", "getSettings", "getSettings", "getSettingsCallable"]
             },
+            "GetView": {
+              "methods": ["getView", "getView", "getView", "getViewCallable"]
+            },
             "ListAnalyses": {
               "methods": ["listAnalyses", "listAnalyses", "listAnalyses", "listAnalysesPagedCallable", "listAnalysesCallable"]
             },
@@ -78,6 +87,9 @@
             },
             "ListPhraseMatchers": {
               "methods": ["listPhraseMatchers", "listPhraseMatchers", "listPhraseMatchers", "listPhraseMatchersPagedCallable", "listPhraseMatchersCallable"]
+            },
+            "ListViews": {
+              "methods": ["listViews", "listViews", "listViews", "listViewsPagedCallable", "listViewsCallable"]
             },
             "UndeployIssueModel": {
               "methods": ["undeployIssueModelAsync", "undeployIssueModelAsync", "undeployIssueModelAsync", "undeployIssueModelOperationCallable", "undeployIssueModelCallable"]
@@ -96,6 +108,9 @@
             },
             "UpdateSettings": {
               "methods": ["updateSettings", "updateSettings", "updateSettingsCallable"]
+            },
+            "UpdateView": {
+              "methods": ["updateView", "updateView", "updateViewCallable"]
             }
           }
         }

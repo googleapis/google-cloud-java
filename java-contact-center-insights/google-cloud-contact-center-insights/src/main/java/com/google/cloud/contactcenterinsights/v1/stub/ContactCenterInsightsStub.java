@@ -19,6 +19,7 @@ package com.google.cloud.contactcenterinsights.v1.stub;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysesPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListConversationsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListPhraseMatchersPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListViewsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -35,11 +36,13 @@ import com.google.cloud.contactcenterinsights.v1.CreateConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.CreateIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse;
@@ -52,6 +55,7 @@ import com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.GetSettingsRequest;
+import com.google.cloud.contactcenterinsights.v1.GetViewRequest;
 import com.google.cloud.contactcenterinsights.v1.Issue;
 import com.google.cloud.contactcenterinsights.v1.IssueModel;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest;
@@ -64,6 +68,8 @@ import com.google.cloud.contactcenterinsights.v1.ListIssuesRequest;
 import com.google.cloud.contactcenterinsights.v1.ListIssuesResponse;
 import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersRequest;
 import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersResponse;
+import com.google.cloud.contactcenterinsights.v1.ListViewsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListViewsResponse;
 import com.google.cloud.contactcenterinsights.v1.PhraseMatcher;
 import com.google.cloud.contactcenterinsights.v1.Settings;
 import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelMetadata;
@@ -74,6 +80,8 @@ import com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateViewRequest;
+import com.google.cloud.contactcenterinsights.v1.View;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -258,6 +266,30 @@ public abstract class ContactCenterInsightsStub implements BackgroundResource {
 
   public UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSettingsCallable()");
+  }
+
+  public UnaryCallable<CreateViewRequest, View> createViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: createViewCallable()");
+  }
+
+  public UnaryCallable<GetViewRequest, View> getViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: getViewCallable()");
+  }
+
+  public UnaryCallable<ListViewsRequest, ListViewsPagedResponse> listViewsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listViewsPagedCallable()");
+  }
+
+  public UnaryCallable<ListViewsRequest, ListViewsResponse> listViewsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listViewsCallable()");
+  }
+
+  public UnaryCallable<UpdateViewRequest, View> updateViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateViewCallable()");
+  }
+
+  public UnaryCallable<DeleteViewRequest, Empty> deleteViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteViewCallable()");
   }
 
   @Override

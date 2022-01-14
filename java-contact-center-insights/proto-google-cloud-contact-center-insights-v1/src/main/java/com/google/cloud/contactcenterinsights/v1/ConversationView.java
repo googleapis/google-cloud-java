@@ -43,7 +43,8 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * Transcript field is not populated in the response.
+   * Transcript field is not populated in the response for Insights
+   * conversation.
    * </pre>
    *
    * <code>BASIC = 1;</code>
@@ -53,7 +54,7 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * All fields are populated.
+   * All fields are populated for Insights conversation.
    * </pre>
    *
    * <code>FULL = 2;</code>
@@ -77,7 +78,8 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * Transcript field is not populated in the response.
+   * Transcript field is not populated in the response for Insights
+   * conversation.
    * </pre>
    *
    * <code>BASIC = 1;</code>
@@ -87,7 +89,7 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * All fields are populated.
+   * All fields are populated for Insights conversation.
    * </pre>
    *
    * <code>FULL = 2;</code>

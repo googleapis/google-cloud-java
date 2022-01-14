@@ -3294,6 +3294,510 @@ public class ContactCenterInsightsClient implements BackgroundResource {
     return stub.updateSettingsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   View view = View.newBuilder().build();
+   *   View response = contactCenterInsightsClient.createView(parent, view);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the view. Required. The location to create a
+   *     view for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;` or
+   *     `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
+   * @param view Required. The view resource to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final View createView(LocationName parent, View view) {
+    CreateViewRequest request =
+        CreateViewRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setView(view)
+            .build();
+    return createView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   View view = View.newBuilder().build();
+   *   View response = contactCenterInsightsClient.createView(parent, view);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the view. Required. The location to create a
+   *     view for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;` or
+   *     `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
+   * @param view Required. The view resource to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final View createView(String parent, View view) {
+    CreateViewRequest request =
+        CreateViewRequest.newBuilder().setParent(parent).setView(view).build();
+    return createView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateViewRequest request =
+   *       CreateViewRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setView(View.newBuilder().build())
+   *           .build();
+   *   View response = contactCenterInsightsClient.createView(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final View createView(CreateViewRequest request) {
+    return createViewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateViewRequest request =
+   *       CreateViewRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setView(View.newBuilder().build())
+   *           .build();
+   *   ApiFuture<View> future = contactCenterInsightsClient.createViewCallable().futureCall(request);
+   *   // Do something.
+   *   View response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateViewRequest, View> createViewCallable() {
+    return stub.createViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ViewName name = ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]");
+   *   View response = contactCenterInsightsClient.getView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the view to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final View getView(ViewName name) {
+    GetViewRequest request =
+        GetViewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name = ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]").toString();
+   *   View response = contactCenterInsightsClient.getView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the view to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final View getView(String name) {
+    GetViewRequest request = GetViewRequest.newBuilder().setName(name).build();
+    return getView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetViewRequest request =
+   *       GetViewRequest.newBuilder()
+   *           .setName(ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]").toString())
+   *           .build();
+   *   View response = contactCenterInsightsClient.getView(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final View getView(GetViewRequest request) {
+    return getViewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetViewRequest request =
+   *       GetViewRequest.newBuilder()
+   *           .setName(ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]").toString())
+   *           .build();
+   *   ApiFuture<View> future = contactCenterInsightsClient.getViewCallable().futureCall(request);
+   *   // Do something.
+   *   View response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetViewRequest, View> getViewCallable() {
+    return stub.getViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists views.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (View element : contactCenterInsightsClient.listViews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the views.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListViewsPagedResponse listViews(LocationName parent) {
+    ListViewsRequest request =
+        ListViewsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists views.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (View element : contactCenterInsightsClient.listViews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the views.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListViewsPagedResponse listViews(String parent) {
+    ListViewsRequest request = ListViewsRequest.newBuilder().setParent(parent).build();
+    return listViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists views.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListViewsRequest request =
+   *       ListViewsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (View element : contactCenterInsightsClient.listViews(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListViewsPagedResponse listViews(ListViewsRequest request) {
+    return listViewsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists views.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListViewsRequest request =
+   *       ListViewsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<View> future =
+   *       contactCenterInsightsClient.listViewsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (View element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListViewsRequest, ListViewsPagedResponse> listViewsPagedCallable() {
+    return stub.listViewsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists views.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListViewsRequest request =
+   *       ListViewsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListViewsResponse response = contactCenterInsightsClient.listViewsCallable().call(request);
+   *     for (View element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListViewsRequest, ListViewsResponse> listViewsCallable() {
+    return stub.listViewsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   View view = View.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   View response = contactCenterInsightsClient.updateView(view, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param view Required. The new view.
+   * @param updateMask The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final View updateView(View view, FieldMask updateMask) {
+    UpdateViewRequest request =
+        UpdateViewRequest.newBuilder().setView(view).setUpdateMask(updateMask).build();
+    return updateView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateViewRequest request =
+   *       UpdateViewRequest.newBuilder()
+   *           .setView(View.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   View response = contactCenterInsightsClient.updateView(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final View updateView(UpdateViewRequest request) {
+    return updateViewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateViewRequest request =
+   *       UpdateViewRequest.newBuilder()
+   *           .setView(View.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<View> future = contactCenterInsightsClient.updateViewCallable().futureCall(request);
+   *   // Do something.
+   *   View response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateViewRequest, View> updateViewCallable() {
+    return stub.updateViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ViewName name = ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]");
+   *   contactCenterInsightsClient.deleteView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the view to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteView(ViewName name) {
+    DeleteViewRequest request =
+        DeleteViewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name = ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]").toString();
+   *   contactCenterInsightsClient.deleteView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the view to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteView(String name) {
+    DeleteViewRequest request = DeleteViewRequest.newBuilder().setName(name).build();
+    deleteView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteViewRequest request =
+   *       DeleteViewRequest.newBuilder()
+   *           .setName(ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]").toString())
+   *           .build();
+   *   contactCenterInsightsClient.deleteView(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteView(DeleteViewRequest request) {
+    deleteViewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteViewRequest request =
+   *       DeleteViewRequest.newBuilder()
+   *           .setName(ViewName.of("[PROJECT]", "[LOCATION]", "[VIEW]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       contactCenterInsightsClient.deleteViewCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteViewRequest, Empty> deleteViewCallable() {
+    return stub.deleteViewCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -3556,6 +4060,71 @@ public class ContactCenterInsightsClient implements BackgroundResource {
     protected ListPhraseMatchersFixedSizeCollection createCollection(
         List<ListPhraseMatchersPage> pages, int collectionSize) {
       return new ListPhraseMatchersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListViewsPagedResponse
+      extends AbstractPagedListResponse<
+          ListViewsRequest, ListViewsResponse, View, ListViewsPage, ListViewsFixedSizeCollection> {
+
+    public static ApiFuture<ListViewsPagedResponse> createAsync(
+        PageContext<ListViewsRequest, ListViewsResponse, View> context,
+        ApiFuture<ListViewsResponse> futureResponse) {
+      ApiFuture<ListViewsPage> futurePage =
+          ListViewsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListViewsPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListViewsPagedResponse(ListViewsPage page) {
+      super(page, ListViewsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListViewsPage
+      extends AbstractPage<ListViewsRequest, ListViewsResponse, View, ListViewsPage> {
+
+    private ListViewsPage(
+        PageContext<ListViewsRequest, ListViewsResponse, View> context,
+        ListViewsResponse response) {
+      super(context, response);
+    }
+
+    private static ListViewsPage createEmptyPage() {
+      return new ListViewsPage(null, null);
+    }
+
+    @Override
+    protected ListViewsPage createPage(
+        PageContext<ListViewsRequest, ListViewsResponse, View> context,
+        ListViewsResponse response) {
+      return new ListViewsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListViewsPage> createPageAsync(
+        PageContext<ListViewsRequest, ListViewsResponse, View> context,
+        ApiFuture<ListViewsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListViewsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListViewsRequest, ListViewsResponse, View, ListViewsPage, ListViewsFixedSizeCollection> {
+
+    private ListViewsFixedSizeCollection(List<ListViewsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListViewsFixedSizeCollection createEmptyCollection() {
+      return new ListViewsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListViewsFixedSizeCollection createCollection(
+        List<ListViewsPage> pages, int collectionSize) {
+      return new ListViewsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -667,4 +667,105 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createView(CreateViewRequest request, StreamObserver<View> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof View) {
+      requests.add(request);
+      responseObserver.onNext(((View) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  View.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getView(GetViewRequest request, StreamObserver<View> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof View) {
+      requests.add(request);
+      responseObserver.onNext(((View) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  View.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listViews(
+      ListViewsRequest request, StreamObserver<ListViewsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListViewsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListViewsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListViews, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListViewsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateView(UpdateViewRequest request, StreamObserver<View> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof View) {
+      requests.add(request);
+      responseObserver.onNext(((View) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  View.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteView(DeleteViewRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }
