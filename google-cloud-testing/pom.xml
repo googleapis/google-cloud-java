@@ -30,14 +30,14 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.165.0</version>
+        <version>0.166.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>2.3.4</version>
+        <version>2.3.5</version>
         <type>test-jar</type>
       </dependency>
       <dependency>
