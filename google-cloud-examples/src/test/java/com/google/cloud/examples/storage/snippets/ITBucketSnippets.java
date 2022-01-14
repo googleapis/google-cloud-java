@@ -28,6 +28,7 @@ import com.google.cloud.examples.storage.buckets.ChangeDefaultStorageClass;
 import com.google.cloud.examples.storage.buckets.ConfigureBucketCors;
 import com.google.cloud.examples.storage.buckets.CreateBucket;
 import com.google.cloud.examples.storage.buckets.CreateBucketWithStorageClassAndLocation;
+import com.google.cloud.examples.storage.buckets.CreateBucketWithTurboReplication;
 import com.google.cloud.examples.storage.buckets.DeleteBucket;
 import com.google.cloud.examples.storage.buckets.DisableBucketVersioning;
 import com.google.cloud.examples.storage.buckets.DisableLifecycleManagement;
@@ -36,6 +37,7 @@ import com.google.cloud.examples.storage.buckets.EnableBucketVersioning;
 import com.google.cloud.examples.storage.buckets.EnableLifecycleManagement;
 import com.google.cloud.examples.storage.buckets.EnableRequesterPays;
 import com.google.cloud.examples.storage.buckets.GetBucketMetadata;
+import com.google.cloud.examples.storage.buckets.GetBucketRpo;
 import com.google.cloud.examples.storage.buckets.GetPublicAccessPrevention;
 import com.google.cloud.examples.storage.buckets.ListBucketIamMembers;
 import com.google.cloud.examples.storage.buckets.ListBuckets;
@@ -45,7 +47,9 @@ import com.google.cloud.examples.storage.buckets.RemoveBucketDefaultKMSKey;
 import com.google.cloud.examples.storage.buckets.RemoveBucketIamConditionalBinding;
 import com.google.cloud.examples.storage.buckets.RemoveBucketIamMember;
 import com.google.cloud.examples.storage.buckets.RemoveBucketLabel;
+import com.google.cloud.examples.storage.buckets.SetAsyncTurboRpo;
 import com.google.cloud.examples.storage.buckets.SetBucketWebsiteInfo;
+import com.google.cloud.examples.storage.buckets.SetDefaultRpo;
 import com.google.cloud.examples.storage.buckets.SetPublicAccessPreventionEnforced;
 import com.google.cloud.examples.storage.buckets.SetPublicAccessPreventionInherited;
 import com.google.cloud.examples.storage.objects.DownloadRequesterPaysObject;
@@ -519,5 +523,34 @@ public class ITBucketSnippets {
     assertArrayEquals(content, readBytes);
     DisableRequesterPays.disableRequesterPays(PROJECT_ID, BUCKET);
     assertFalse(storage.get(BUCKET).requesterPays());
+  }
+
+  @Test
+  public void testRpo() throws Exception {
+    String rpoBucket = RemoteStorageHelper.generateBucketName();
+    try {
+      CreateBucketWithTurboReplication.createBucketWithTurboReplication(
+          PROJECT_ID, rpoBucket, "NAM4");
+      Bucket bucket = storage.get(rpoBucket);
+      assertEquals("ASYNC_TURBO", bucket.getRpo().toString());
+
+      SetDefaultRpo.setDefaultRpo(PROJECT_ID, rpoBucket);
+      bucket = storage.get(rpoBucket);
+      assertEquals("DEFAULT", bucket.getRpo().toString());
+
+      SetAsyncTurboRpo.setAsyncTurboRpo(PROJECT_ID, rpoBucket);
+      bucket = storage.get(rpoBucket);
+      assertEquals("ASYNC_TURBO", bucket.getRpo().toString());
+
+      PrintStream standardOut = System.out;
+      final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+      System.setOut(new PrintStream(snippetOutputCapture));
+      GetBucketRpo.getBucketRpo(PROJECT_ID, rpoBucket);
+      String snippetOutput = snippetOutputCapture.toString();
+      System.setOut(standardOut);
+      assertTrue(snippetOutput.contains("ASYNC_TURBO"));
+    } finally {
+      storage.delete(rpoBucket);
+    }
   }
 }
