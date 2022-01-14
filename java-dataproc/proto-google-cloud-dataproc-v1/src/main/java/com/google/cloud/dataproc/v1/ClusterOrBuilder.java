@@ -79,12 +79,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The cluster config. Note that Dataproc may set
-   * default values, and values may change when clusters are updated.
+   * Optional. The cluster config for a cluster of Compute Engine Instances.
+   * Note that Dataproc may set default values, and values may change
+   * when clusters are updated.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the config field is set.
@@ -94,12 +95,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The cluster config. Note that Dataproc may set
-   * default values, and values may change when clusters are updated.
+   * Optional. The cluster config for a cluster of Compute Engine Instances.
+   * Note that Dataproc may set default values, and values may change
+   * when clusters are updated.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The config.
@@ -109,12 +111,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The cluster config. Note that Dataproc may set
-   * default values, and values may change when clusters are updated.
+   * Optional. The cluster config for a cluster of Compute Engine Instances.
+   * Note that Dataproc may set default values, and values may change
+   * when clusters are updated.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.dataproc.v1.ClusterConfigOrBuilder getConfigOrBuilder();

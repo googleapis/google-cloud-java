@@ -29,7 +29,7 @@ public interface CreateWorkflowTemplateRequestOrBuilder
    * <pre>
    * Required. The resource name of the region or location, as described
    * in https://cloud.google.com/apis/design/resource_names.
-   * * For `projects.regions.workflowTemplates,create`, the resource name of the
+   * * For `projects.regions.workflowTemplates.create`, the resource name of the
    *   region has the following format:
    *   `projects/{project_id}/regions/{region}`
    * * For `projects.locations.workflowTemplates.create`, the resource name of
@@ -50,7 +50,7 @@ public interface CreateWorkflowTemplateRequestOrBuilder
    * <pre>
    * Required. The resource name of the region or location, as described
    * in https://cloud.google.com/apis/design/resource_names.
-   * * For `projects.regions.workflowTemplates,create`, the resource name of the
+   * * For `projects.regions.workflowTemplates.create`, the resource name of the
    *   region has the following format:
    *   `projects/{project_id}/regions/{region}`
    * * For `projects.locations.workflowTemplates.create`, the resource name of

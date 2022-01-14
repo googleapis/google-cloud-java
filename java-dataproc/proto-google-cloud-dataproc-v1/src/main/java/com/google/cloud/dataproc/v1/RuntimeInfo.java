@@ -39,6 +39,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
 
   private RuntimeInfo() {
     outputUri_ = "";
+    diagnosticOutputUri_ = "";
   }
 
   @java.lang.Override
@@ -91,6 +92,13 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               outputUri_ = s;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              diagnosticOutputUri_ = s;
               break;
             }
           default:
@@ -294,6 +302,55 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DIAGNOSTIC_OUTPUT_URI_FIELD_NUMBER = 3;
+  private volatile java.lang.Object diagnosticOutputUri_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A URI pointing to the location of the diagnostics tarball.
+   * </pre>
+   *
+   * <code>string diagnostic_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The diagnosticOutputUri.
+   */
+  @java.lang.Override
+  public java.lang.String getDiagnosticOutputUri() {
+    java.lang.Object ref = diagnosticOutputUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      diagnosticOutputUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A URI pointing to the location of the diagnostics tarball.
+   * </pre>
+   *
+   * <code>string diagnostic_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for diagnosticOutputUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDiagnosticOutputUriBytes() {
+    java.lang.Object ref = diagnosticOutputUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      diagnosticOutputUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -312,6 +369,9 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
         output, internalGetEndpoints(), EndpointsDefaultEntryHolder.defaultEntry, 1);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, outputUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diagnosticOutputUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, diagnosticOutputUri_);
     }
     unknownFields.writeTo(output);
   }
@@ -335,6 +395,9 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, outputUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diagnosticOutputUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, diagnosticOutputUri_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -352,6 +415,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
 
     if (!internalGetEndpoints().equals(other.internalGetEndpoints())) return false;
     if (!getOutputUri().equals(other.getOutputUri())) return false;
+    if (!getDiagnosticOutputUri().equals(other.getDiagnosticOutputUri())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -369,6 +433,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + OUTPUT_URI_FIELD_NUMBER;
     hash = (53 * hash) + getOutputUri().hashCode();
+    hash = (37 * hash) + DIAGNOSTIC_OUTPUT_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getDiagnosticOutputUri().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -537,6 +603,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEndpoints().clear();
       outputUri_ = "";
 
+      diagnosticOutputUri_ = "";
+
       return this;
     }
 
@@ -568,6 +636,7 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       result.endpoints_ = internalGetEndpoints();
       result.endpoints_.makeImmutable();
       result.outputUri_ = outputUri_;
+      result.diagnosticOutputUri_ = diagnosticOutputUri_;
       onBuilt();
       return result;
     }
@@ -620,6 +689,10 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEndpoints().mergeFrom(other.internalGetEndpoints());
       if (!other.getOutputUri().isEmpty()) {
         outputUri_ = other.outputUri_;
+        onChanged();
+      }
+      if (!other.getDiagnosticOutputUri().isEmpty()) {
+        diagnosticOutputUri_ = other.diagnosticOutputUri_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -928,6 +1001,112 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       outputUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object diagnosticOutputUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A URI pointing to the location of the diagnostics tarball.
+     * </pre>
+     *
+     * <code>string diagnostic_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The diagnosticOutputUri.
+     */
+    public java.lang.String getDiagnosticOutputUri() {
+      java.lang.Object ref = diagnosticOutputUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        diagnosticOutputUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A URI pointing to the location of the diagnostics tarball.
+     * </pre>
+     *
+     * <code>string diagnostic_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for diagnosticOutputUri.
+     */
+    public com.google.protobuf.ByteString getDiagnosticOutputUriBytes() {
+      java.lang.Object ref = diagnosticOutputUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        diagnosticOutputUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A URI pointing to the location of the diagnostics tarball.
+     * </pre>
+     *
+     * <code>string diagnostic_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The diagnosticOutputUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiagnosticOutputUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      diagnosticOutputUri_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A URI pointing to the location of the diagnostics tarball.
+     * </pre>
+     *
+     * <code>string diagnostic_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiagnosticOutputUri() {
+
+      diagnosticOutputUri_ = getDefaultInstance().getDiagnosticOutputUri();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A URI pointing to the location of the diagnostics tarball.
+     * </pre>
+     *
+     * <code>string diagnostic_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for diagnosticOutputUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiagnosticOutputUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      diagnosticOutputUri_ = value;
       onChanged();
       return this;
     }

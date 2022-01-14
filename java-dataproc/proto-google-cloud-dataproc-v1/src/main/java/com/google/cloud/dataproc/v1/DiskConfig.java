@@ -39,6 +39,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
 
   private DiskConfig() {
     bootDiskType_ = "";
+    localSsdInterface_ = "";
   }
 
   @java.lang.Override
@@ -85,6 +86,13 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               bootDiskType_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              localSsdInterface_ = s;
               break;
             }
           default:
@@ -219,6 +227,63 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     return numLocalSsds_;
   }
 
+  public static final int LOCAL_SSD_INTERFACE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object localSsdInterface_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Interface type of local SSDs (default is "scsi").
+   * Valid values: "scsi" (Small Computer System Interface),
+   * "nvme" (Non-Volatile Memory Express).
+   * See [SSD Interface
+   * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+   * </pre>
+   *
+   * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The localSsdInterface.
+   */
+  @java.lang.Override
+  public java.lang.String getLocalSsdInterface() {
+    java.lang.Object ref = localSsdInterface_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      localSsdInterface_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Interface type of local SSDs (default is "scsi").
+   * Valid values: "scsi" (Small Computer System Interface),
+   * "nvme" (Non-Volatile Memory Express).
+   * See [SSD Interface
+   * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+   * </pre>
+   *
+   * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for localSsdInterface.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLocalSsdInterfaceBytes() {
+    java.lang.Object ref = localSsdInterface_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      localSsdInterface_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -242,6 +307,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootDiskType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bootDiskType_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(localSsdInterface_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, localSsdInterface_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -259,6 +327,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootDiskType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bootDiskType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(localSsdInterface_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, localSsdInterface_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -278,6 +349,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getBootDiskType().equals(other.getBootDiskType())) return false;
     if (getBootDiskSizeGb() != other.getBootDiskSizeGb()) return false;
     if (getNumLocalSsds() != other.getNumLocalSsds()) return false;
+    if (!getLocalSsdInterface().equals(other.getLocalSsdInterface())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -295,6 +367,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getBootDiskSizeGb();
     hash = (37 * hash) + NUM_LOCAL_SSDS_FIELD_NUMBER;
     hash = (53 * hash) + getNumLocalSsds();
+    hash = (37 * hash) + LOCAL_SSD_INTERFACE_FIELD_NUMBER;
+    hash = (53 * hash) + getLocalSsdInterface().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -446,6 +520,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
 
       numLocalSsds_ = 0;
 
+      localSsdInterface_ = "";
+
       return this;
     }
 
@@ -476,6 +552,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       result.bootDiskType_ = bootDiskType_;
       result.bootDiskSizeGb_ = bootDiskSizeGb_;
       result.numLocalSsds_ = numLocalSsds_;
+      result.localSsdInterface_ = localSsdInterface_;
       onBuilt();
       return result;
     }
@@ -534,6 +611,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getNumLocalSsds() != 0) {
         setNumLocalSsds(other.getNumLocalSsds());
+      }
+      if (!other.getLocalSsdInterface().isEmpty()) {
+        localSsdInterface_ = other.localSsdInterface_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -805,6 +886,132 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNumLocalSsds() {
 
       numLocalSsds_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object localSsdInterface_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Interface type of local SSDs (default is "scsi").
+     * Valid values: "scsi" (Small Computer System Interface),
+     * "nvme" (Non-Volatile Memory Express).
+     * See [SSD Interface
+     * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+     * </pre>
+     *
+     * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The localSsdInterface.
+     */
+    public java.lang.String getLocalSsdInterface() {
+      java.lang.Object ref = localSsdInterface_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        localSsdInterface_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Interface type of local SSDs (default is "scsi").
+     * Valid values: "scsi" (Small Computer System Interface),
+     * "nvme" (Non-Volatile Memory Express).
+     * See [SSD Interface
+     * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+     * </pre>
+     *
+     * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for localSsdInterface.
+     */
+    public com.google.protobuf.ByteString getLocalSsdInterfaceBytes() {
+      java.lang.Object ref = localSsdInterface_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        localSsdInterface_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Interface type of local SSDs (default is "scsi").
+     * Valid values: "scsi" (Small Computer System Interface),
+     * "nvme" (Non-Volatile Memory Express).
+     * See [SSD Interface
+     * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+     * </pre>
+     *
+     * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The localSsdInterface to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocalSsdInterface(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      localSsdInterface_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Interface type of local SSDs (default is "scsi").
+     * Valid values: "scsi" (Small Computer System Interface),
+     * "nvme" (Non-Volatile Memory Express).
+     * See [SSD Interface
+     * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+     * </pre>
+     *
+     * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocalSsdInterface() {
+
+      localSsdInterface_ = getDefaultInstance().getLocalSsdInterface();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Interface type of local SSDs (default is "scsi").
+     * Valid values: "scsi" (Small Computer System Interface),
+     * "nvme" (Non-Volatile Memory Express).
+     * See [SSD Interface
+     * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+     * </pre>
+     *
+     * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for localSsdInterface to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocalSsdInterfaceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      localSsdInterface_ = value;
       onChanged();
       return this;
     }

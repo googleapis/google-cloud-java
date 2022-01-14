@@ -111,4 +111,29 @@ public interface RuntimeInfoOrBuilder
    * @return The bytes for outputUri.
    */
   com.google.protobuf.ByteString getOutputUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A URI pointing to the location of the diagnostics tarball.
+   * </pre>
+   *
+   * <code>string diagnostic_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The diagnosticOutputUri.
+   */
+  java.lang.String getDiagnosticOutputUri();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A URI pointing to the location of the diagnostics tarball.
+   * </pre>
+   *
+   * <code>string diagnostic_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for diagnosticOutputUri.
+   */
+  com.google.protobuf.ByteString getDiagnosticOutputUriBytes();
 }

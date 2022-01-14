@@ -27,6 +27,58 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Version of the batch runtime.
+   * </pre>
+   *
+   * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The version.
+   */
+  java.lang.String getVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Version of the batch runtime.
+   * </pre>
+   *
+   * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for version.
+   */
+  com.google.protobuf.ByteString getVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional custom container image for the job runtime environment. If
+   * not specified, a default container image will be used.
+   * </pre>
+   *
+   * <code>string container_image = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The containerImage.
+   */
+  java.lang.String getContainerImage();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional custom container image for the job runtime environment. If
+   * not specified, a default container image will be used.
+   * </pre>
+   *
+   * <code>string container_image = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for containerImage.
+   */
+  com.google.protobuf.ByteString getContainerImageBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A mapping of property names to values, which are used to configure workload
    * execution.
    * </pre>

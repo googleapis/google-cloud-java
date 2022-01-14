@@ -323,12 +323,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The cluster config. Note that Dataproc may set
-   * default values, and values may change when clusters are updated.
+   * Optional. The cluster config for a cluster of Compute Engine Instances.
+   * Note that Dataproc may set default values, and values may change
+   * when clusters are updated.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the config field is set.
@@ -341,12 +342,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The cluster config. Note that Dataproc may set
-   * default values, and values may change when clusters are updated.
+   * Optional. The cluster config for a cluster of Compute Engine Instances.
+   * Note that Dataproc may set default values, and values may change
+   * when clusters are updated.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The config.
@@ -361,12 +363,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The cluster config. Note that Dataproc may set
-   * default values, and values may change when clusters are updated.
+   * Optional. The cluster config for a cluster of Compute Engine Instances.
+   * Note that Dataproc may set default values, and values may change
+   * when clusters are updated.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1496,12 +1499,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Dataproc may set
-     * default values, and values may change when clusters are updated.
+     * Optional. The cluster config for a cluster of Compute Engine Instances.
+     * Note that Dataproc may set default values, and values may change
+     * when clusters are updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the config field is set.
@@ -1513,12 +1517,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Dataproc may set
-     * default values, and values may change when clusters are updated.
+     * Optional. The cluster config for a cluster of Compute Engine Instances.
+     * Note that Dataproc may set default values, and values may change
+     * when clusters are updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The config.
@@ -1536,12 +1541,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Dataproc may set
-     * default values, and values may change when clusters are updated.
+     * Optional. The cluster config for a cluster of Compute Engine Instances.
+     * Note that Dataproc may set default values, and values may change
+     * when clusters are updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setConfig(com.google.cloud.dataproc.v1.ClusterConfig value) {
@@ -1561,12 +1567,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Dataproc may set
-     * default values, and values may change when clusters are updated.
+     * Optional. The cluster config for a cluster of Compute Engine Instances.
+     * Note that Dataproc may set default values, and values may change
+     * when clusters are updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setConfig(com.google.cloud.dataproc.v1.ClusterConfig.Builder builderForValue) {
@@ -1583,12 +1590,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Dataproc may set
-     * default values, and values may change when clusters are updated.
+     * Optional. The cluster config for a cluster of Compute Engine Instances.
+     * Note that Dataproc may set default values, and values may change
+     * when clusters are updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeConfig(com.google.cloud.dataproc.v1.ClusterConfig value) {
@@ -1612,12 +1620,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Dataproc may set
-     * default values, and values may change when clusters are updated.
+     * Optional. The cluster config for a cluster of Compute Engine Instances.
+     * Note that Dataproc may set default values, and values may change
+     * when clusters are updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearConfig() {
@@ -1635,12 +1644,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Dataproc may set
-     * default values, and values may change when clusters are updated.
+     * Optional. The cluster config for a cluster of Compute Engine Instances.
+     * Note that Dataproc may set default values, and values may change
+     * when clusters are updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterConfig.Builder getConfigBuilder() {
@@ -1652,12 +1662,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Dataproc may set
-     * default values, and values may change when clusters are updated.
+     * Optional. The cluster config for a cluster of Compute Engine Instances.
+     * Note that Dataproc may set default values, and values may change
+     * when clusters are updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterConfigOrBuilder getConfigOrBuilder() {
@@ -1673,12 +1684,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cluster config. Note that Dataproc may set
-     * default values, and values may change when clusters are updated.
+     * Optional. The cluster config for a cluster of Compute Engine Instances.
+     * Note that Dataproc may set default values, and values may change
+     * when clusters are updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

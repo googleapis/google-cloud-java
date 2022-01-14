@@ -86,4 +86,37 @@ public interface DiskConfigOrBuilder
    * @return The numLocalSsds.
    */
   int getNumLocalSsds();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Interface type of local SSDs (default is "scsi").
+   * Valid values: "scsi" (Small Computer System Interface),
+   * "nvme" (Non-Volatile Memory Express).
+   * See [SSD Interface
+   * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+   * </pre>
+   *
+   * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The localSsdInterface.
+   */
+  java.lang.String getLocalSsdInterface();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Interface type of local SSDs (default is "scsi").
+   * Valid values: "scsi" (Small Computer System Interface),
+   * "nvme" (Non-Volatile Memory Express).
+   * See [SSD Interface
+   * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+   * </pre>
+   *
+   * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for localSsdInterface.
+   */
+  com.google.protobuf.ByteString getLocalSsdInterfaceBytes();
 }

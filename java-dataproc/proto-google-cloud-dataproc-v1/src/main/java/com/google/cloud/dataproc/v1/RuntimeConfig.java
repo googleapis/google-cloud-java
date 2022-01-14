@@ -37,7 +37,10 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private RuntimeConfig() {}
+  private RuntimeConfig() {
+    version_ = "";
+    containerImage_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -69,6 +72,20 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              containerImage_ = s;
+              break;
+            }
           case 26:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -127,6 +144,106 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dataproc.v1.RuntimeConfig.class,
             com.google.cloud.dataproc.v1.RuntimeConfig.Builder.class);
+  }
+
+  public static final int VERSION_FIELD_NUMBER = 1;
+  private volatile java.lang.Object version_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Version of the batch runtime.
+   * </pre>
+   *
+   * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The version.
+   */
+  @java.lang.Override
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      version_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Version of the batch runtime.
+   * </pre>
+   *
+   * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for version.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVersionBytes() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      version_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONTAINER_IMAGE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object containerImage_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional custom container image for the job runtime environment. If
+   * not specified, a default container image will be used.
+   * </pre>
+   *
+   * <code>string container_image = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The containerImage.
+   */
+  @java.lang.Override
+  public java.lang.String getContainerImage() {
+    java.lang.Object ref = containerImage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      containerImage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional custom container image for the job runtime environment. If
+   * not specified, a default container image will be used.
+   * </pre>
+   *
+   * <code>string container_image = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for containerImage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getContainerImageBytes() {
+    java.lang.Object ref = containerImage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      containerImage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PROPERTIES_FIELD_NUMBER = 3;
@@ -250,6 +367,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, version_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerImage_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, containerImage_);
+    }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetProperties(), PropertiesDefaultEntryHolder.defaultEntry, 3);
     unknownFields.writeTo(output);
@@ -261,6 +384,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, version_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerImage_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, containerImage_);
+    }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetProperties().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
@@ -287,6 +416,8 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dataproc.v1.RuntimeConfig other =
         (com.google.cloud.dataproc.v1.RuntimeConfig) obj;
 
+    if (!getVersion().equals(other.getVersion())) return false;
+    if (!getContainerImage().equals(other.getContainerImage())) return false;
     if (!internalGetProperties().equals(other.internalGetProperties())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -299,6 +430,10 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
+    hash = (37 * hash) + CONTAINER_IMAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getContainerImage().hashCode();
     if (!internalGetProperties().getMap().isEmpty()) {
       hash = (37 * hash) + PROPERTIES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetProperties().hashCode();
@@ -468,6 +603,10 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      version_ = "";
+
+      containerImage_ = "";
+
       internalGetMutableProperties().clear();
       return this;
     }
@@ -497,6 +636,8 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1.RuntimeConfig result =
           new com.google.cloud.dataproc.v1.RuntimeConfig(this);
       int from_bitField0_ = bitField0_;
+      result.version_ = version_;
+      result.containerImage_ = containerImage_;
       result.properties_ = internalGetProperties();
       result.properties_.makeImmutable();
       onBuilt();
@@ -548,6 +689,14 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1.RuntimeConfig other) {
       if (other == com.google.cloud.dataproc.v1.RuntimeConfig.getDefaultInstance()) return this;
+      if (!other.getVersion().isEmpty()) {
+        version_ = other.version_;
+        onChanged();
+      }
+      if (!other.getContainerImage().isEmpty()) {
+        containerImage_ = other.containerImage_;
+        onChanged();
+      }
       internalGetMutableProperties().mergeFrom(other.internalGetProperties());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -579,6 +728,223 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+
+    private java.lang.Object version_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Version of the batch runtime.
+     * </pre>
+     *
+     * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The version.
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Version of the batch runtime.
+     * </pre>
+     *
+     * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for version.
+     */
+    public com.google.protobuf.ByteString getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Version of the batch runtime.
+     * </pre>
+     *
+     * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      version_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Version of the batch runtime.
+     * </pre>
+     *
+     * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVersion() {
+
+      version_ = getDefaultInstance().getVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Version of the batch runtime.
+     * </pre>
+     *
+     * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for version to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      version_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object containerImage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional custom container image for the job runtime environment. If
+     * not specified, a default container image will be used.
+     * </pre>
+     *
+     * <code>string container_image = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The containerImage.
+     */
+    public java.lang.String getContainerImage() {
+      java.lang.Object ref = containerImage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        containerImage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional custom container image for the job runtime environment. If
+     * not specified, a default container image will be used.
+     * </pre>
+     *
+     * <code>string container_image = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for containerImage.
+     */
+    public com.google.protobuf.ByteString getContainerImageBytes() {
+      java.lang.Object ref = containerImage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        containerImage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional custom container image for the job runtime environment. If
+     * not specified, a default container image will be used.
+     * </pre>
+     *
+     * <code>string container_image = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The containerImage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContainerImage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      containerImage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional custom container image for the job runtime environment. If
+     * not specified, a default container image will be used.
+     * </pre>
+     *
+     * <code>string container_image = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearContainerImage() {
+
+      containerImage_ = getDefaultInstance().getContainerImage();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional custom container image for the job runtime environment. If
+     * not specified, a default container image will be used.
+     * </pre>
+     *
+     * <code>string container_image = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for containerImage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContainerImageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      containerImage_ = value;
+      onChanged();
+      return this;
+    }
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> properties_;
 
