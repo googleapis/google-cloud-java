@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "AnalyticsAdminServiceClient",
           "rpcs": {
+            "AcknowledgeUserDataCollection": {
+              "methods": ["acknowledgeUserDataCollection", "acknowledgeUserDataCollectionCallable"]
+            },
             "ApproveDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["approveDisplayVideo360AdvertiserLinkProposal", "approveDisplayVideo360AdvertiserLinkProposalCallable"]
             },
@@ -46,6 +49,9 @@
             "CreateCustomMetric": {
               "methods": ["createCustomMetric", "createCustomMetric", "createCustomMetric", "createCustomMetricCallable"]
             },
+            "CreateDataStream": {
+              "methods": ["createDataStream", "createDataStream", "createDataStream", "createDataStreamCallable"]
+            },
             "CreateDisplayVideo360AdvertiserLink": {
               "methods": ["createDisplayVideo360AdvertiserLink", "createDisplayVideo360AdvertiserLink", "createDisplayVideo360AdvertiserLink", "createDisplayVideo360AdvertiserLinkCallable"]
             },
@@ -78,6 +84,9 @@
             },
             "DeleteConversionEvent": {
               "methods": ["deleteConversionEvent", "deleteConversionEvent", "deleteConversionEvent", "deleteConversionEventCallable"]
+            },
+            "DeleteDataStream": {
+              "methods": ["deleteDataStream", "deleteDataStream", "deleteDataStream", "deleteDataStreamCallable"]
             },
             "DeleteDisplayVideo360AdvertiserLink": {
               "methods": ["deleteDisplayVideo360AdvertiserLink", "deleteDisplayVideo360AdvertiserLink", "deleteDisplayVideo360AdvertiserLink", "deleteDisplayVideo360AdvertiserLinkCallable"]
@@ -127,14 +136,14 @@
             "GetDataSharingSettings": {
               "methods": ["getDataSharingSettings", "getDataSharingSettings", "getDataSharingSettings", "getDataSharingSettingsCallable"]
             },
+            "GetDataStream": {
+              "methods": ["getDataStream", "getDataStream", "getDataStream", "getDataStreamCallable"]
+            },
             "GetDisplayVideo360AdvertiserLink": {
               "methods": ["getDisplayVideo360AdvertiserLink", "getDisplayVideo360AdvertiserLink", "getDisplayVideo360AdvertiserLink", "getDisplayVideo360AdvertiserLinkCallable"]
             },
             "GetDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["getDisplayVideo360AdvertiserLinkProposal", "getDisplayVideo360AdvertiserLinkProposal", "getDisplayVideo360AdvertiserLinkProposal", "getDisplayVideo360AdvertiserLinkProposalCallable"]
-            },
-            "GetEnhancedMeasurementSettings": {
-              "methods": ["getEnhancedMeasurementSettings", "getEnhancedMeasurementSettings", "getEnhancedMeasurementSettings", "getEnhancedMeasurementSettingsCallable"]
             },
             "GetGlobalSiteTag": {
               "methods": ["getGlobalSiteTag", "getGlobalSiteTag", "getGlobalSiteTag", "getGlobalSiteTagCallable"]
@@ -174,6 +183,9 @@
             },
             "ListCustomMetrics": {
               "methods": ["listCustomMetrics", "listCustomMetrics", "listCustomMetrics", "listCustomMetricsPagedCallable", "listCustomMetricsCallable"]
+            },
+            "ListDataStreams": {
+              "methods": ["listDataStreams", "listDataStreams", "listDataStreams", "listDataStreamsPagedCallable", "listDataStreamsCallable"]
             },
             "ListDisplayVideo360AdvertiserLinkProposals": {
               "methods": ["listDisplayVideo360AdvertiserLinkProposals", "listDisplayVideo360AdvertiserLinkProposals", "listDisplayVideo360AdvertiserLinkProposals", "listDisplayVideo360AdvertiserLinkProposalsPagedCallable", "listDisplayVideo360AdvertiserLinkProposalsCallable"]
@@ -223,11 +235,11 @@
             "UpdateDataRetentionSettings": {
               "methods": ["updateDataRetentionSettings", "updateDataRetentionSettings", "updateDataRetentionSettingsCallable"]
             },
+            "UpdateDataStream": {
+              "methods": ["updateDataStream", "updateDataStream", "updateDataStreamCallable"]
+            },
             "UpdateDisplayVideo360AdvertiserLink": {
               "methods": ["updateDisplayVideo360AdvertiserLink", "updateDisplayVideo360AdvertiserLink", "updateDisplayVideo360AdvertiserLinkCallable"]
-            },
-            "UpdateEnhancedMeasurementSettings": {
-              "methods": ["updateEnhancedMeasurementSettings", "updateEnhancedMeasurementSettings", "updateEnhancedMeasurementSettingsCallable"]
             },
             "UpdateGoogleAdsLink": {
               "methods": ["updateGoogleAdsLink", "updateGoogleAdsLink", "updateGoogleAdsLinkCallable"]

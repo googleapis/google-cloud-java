@@ -23,6 +23,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
@@ -473,6 +474,7 @@ public class AnalyticsAdminServiceClientTest {
             .setServiceLevel(ServiceLevel.forNumber(0))
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -521,6 +523,7 @@ public class AnalyticsAdminServiceClientTest {
             .setServiceLevel(ServiceLevel.forNumber(0))
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -628,6 +631,7 @@ public class AnalyticsAdminServiceClientTest {
             .setServiceLevel(ServiceLevel.forNumber(0))
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -676,6 +680,7 @@ public class AnalyticsAdminServiceClientTest {
             .setServiceLevel(ServiceLevel.forNumber(0))
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -724,6 +729,7 @@ public class AnalyticsAdminServiceClientTest {
             .setServiceLevel(ServiceLevel.forNumber(0))
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -772,6 +778,7 @@ public class AnalyticsAdminServiceClientTest {
             .setServiceLevel(ServiceLevel.forNumber(0))
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2485,168 +2492,6 @@ public class AnalyticsAdminServiceClientTest {
   }
 
   @Test
-  public void getEnhancedMeasurementSettingsTest() throws Exception {
-    EnhancedMeasurementSettings expectedResponse =
-        EnhancedMeasurementSettings.newBuilder()
-            .setName(
-                EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
-            .setStreamEnabled(true)
-            .setPageViewsEnabled(true)
-            .setScrollsEnabled(true)
-            .setOutboundClicksEnabled(true)
-            .setSiteSearchEnabled(true)
-            .setVideoEngagementEnabled(true)
-            .setFileDownloadsEnabled(true)
-            .setPageLoadsEnabled(true)
-            .setPageChangesEnabled(true)
-            .setSearchQueryParameter("searchQueryParameter-2012788855")
-            .setUriQueryParameter("uriQueryParameter1580843085")
-            .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
-
-    EnhancedMeasurementSettingsName name =
-        EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]");
-
-    EnhancedMeasurementSettings actualResponse = client.getEnhancedMeasurementSettings(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetEnhancedMeasurementSettingsRequest actualRequest =
-        ((GetEnhancedMeasurementSettingsRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void getEnhancedMeasurementSettingsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
-
-    try {
-      EnhancedMeasurementSettingsName name =
-          EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]");
-      client.getEnhancedMeasurementSettings(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getEnhancedMeasurementSettingsTest2() throws Exception {
-    EnhancedMeasurementSettings expectedResponse =
-        EnhancedMeasurementSettings.newBuilder()
-            .setName(
-                EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
-            .setStreamEnabled(true)
-            .setPageViewsEnabled(true)
-            .setScrollsEnabled(true)
-            .setOutboundClicksEnabled(true)
-            .setSiteSearchEnabled(true)
-            .setVideoEngagementEnabled(true)
-            .setFileDownloadsEnabled(true)
-            .setPageLoadsEnabled(true)
-            .setPageChangesEnabled(true)
-            .setSearchQueryParameter("searchQueryParameter-2012788855")
-            .setUriQueryParameter("uriQueryParameter1580843085")
-            .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
-
-    String name = "name3373707";
-
-    EnhancedMeasurementSettings actualResponse = client.getEnhancedMeasurementSettings(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetEnhancedMeasurementSettingsRequest actualRequest =
-        ((GetEnhancedMeasurementSettingsRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void getEnhancedMeasurementSettingsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.getEnhancedMeasurementSettings(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void updateEnhancedMeasurementSettingsTest() throws Exception {
-    EnhancedMeasurementSettings expectedResponse =
-        EnhancedMeasurementSettings.newBuilder()
-            .setName(
-                EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
-            .setStreamEnabled(true)
-            .setPageViewsEnabled(true)
-            .setScrollsEnabled(true)
-            .setOutboundClicksEnabled(true)
-            .setSiteSearchEnabled(true)
-            .setVideoEngagementEnabled(true)
-            .setFileDownloadsEnabled(true)
-            .setPageLoadsEnabled(true)
-            .setPageChangesEnabled(true)
-            .setSearchQueryParameter("searchQueryParameter-2012788855")
-            .setUriQueryParameter("uriQueryParameter1580843085")
-            .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
-
-    EnhancedMeasurementSettings enhancedMeasurementSettings =
-        EnhancedMeasurementSettings.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
-
-    EnhancedMeasurementSettings actualResponse =
-        client.updateEnhancedMeasurementSettings(enhancedMeasurementSettings, updateMask);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    UpdateEnhancedMeasurementSettingsRequest actualRequest =
-        ((UpdateEnhancedMeasurementSettingsRequest) actualRequests.get(0));
-
-    Assert.assertEquals(
-        enhancedMeasurementSettings, actualRequest.getEnhancedMeasurementSettings());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void updateEnhancedMeasurementSettingsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
-
-    try {
-      EnhancedMeasurementSettings enhancedMeasurementSettings =
-          EnhancedMeasurementSettings.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-      client.updateEnhancedMeasurementSettings(enhancedMeasurementSettings, updateMask);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void createFirebaseLinkTest() throws Exception {
     FirebaseLink expectedResponse =
         FirebaseLink.newBuilder()
@@ -3755,6 +3600,53 @@ public class AnalyticsAdminServiceClientTest {
           MeasurementProtocolSecret.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateMeasurementProtocolSecret(measurementProtocolSecret, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void acknowledgeUserDataCollectionTest() throws Exception {
+    AcknowledgeUserDataCollectionResponse expectedResponse =
+        AcknowledgeUserDataCollectionResponse.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    AcknowledgeUserDataCollectionRequest request =
+        AcknowledgeUserDataCollectionRequest.newBuilder()
+            .setProperty(PropertyName.of("[PROPERTY]").toString())
+            .setAcknowledgement("acknowledgement1769490938")
+            .build();
+
+    AcknowledgeUserDataCollectionResponse actualResponse =
+        client.acknowledgeUserDataCollection(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AcknowledgeUserDataCollectionRequest actualRequest =
+        ((AcknowledgeUserDataCollectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getProperty(), actualRequest.getProperty());
+    Assert.assertEquals(request.getAcknowledgement(), actualRequest.getAcknowledgement());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void acknowledgeUserDataCollectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      AcknowledgeUserDataCollectionRequest request =
+          AcknowledgeUserDataCollectionRequest.newBuilder()
+              .setProperty(PropertyName.of("[PROPERTY]").toString())
+              .setAcknowledgement("acknowledgement1769490938")
+              .build();
+      client.acknowledgeUserDataCollection(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -6106,6 +5998,376 @@ public class AnalyticsAdminServiceClientTest {
       DataRetentionSettings dataRetentionSettings = DataRetentionSettings.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataRetentionSettings(dataRetentionSettings, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDataStreamTest() throws Exception {
+    DataStream expectedResponse =
+        DataStream.newBuilder()
+            .setName(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    DataStream dataStream = DataStream.newBuilder().build();
+
+    DataStream actualResponse = client.createDataStream(parent, dataStream);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDataStreamRequest actualRequest = ((CreateDataStreamRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(dataStream, actualRequest.getDataStream());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDataStreamExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      DataStream dataStream = DataStream.newBuilder().build();
+      client.createDataStream(parent, dataStream);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDataStreamTest2() throws Exception {
+    DataStream expectedResponse =
+        DataStream.newBuilder()
+            .setName(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    DataStream dataStream = DataStream.newBuilder().build();
+
+    DataStream actualResponse = client.createDataStream(parent, dataStream);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDataStreamRequest actualRequest = ((CreateDataStreamRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(dataStream, actualRequest.getDataStream());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDataStreamExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      DataStream dataStream = DataStream.newBuilder().build();
+      client.createDataStream(parent, dataStream);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDataStreamTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DataStreamName name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+
+    client.deleteDataStream(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDataStreamRequest actualRequest = ((DeleteDataStreamRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDataStreamExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DataStreamName name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+      client.deleteDataStream(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDataStreamTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteDataStream(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDataStreamRequest actualRequest = ((DeleteDataStreamRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDataStreamExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDataStream(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDataStreamTest() throws Exception {
+    DataStream expectedResponse =
+        DataStream.newBuilder()
+            .setName(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DataStream dataStream = DataStream.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DataStream actualResponse = client.updateDataStream(dataStream, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDataStreamRequest actualRequest = ((UpdateDataStreamRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataStream, actualRequest.getDataStream());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDataStreamExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DataStream dataStream = DataStream.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDataStream(dataStream, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDataStreamsTest() throws Exception {
+    DataStream responsesElement = DataStream.newBuilder().build();
+    ListDataStreamsResponse expectedResponse =
+        ListDataStreamsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDataStreams(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListDataStreamsPagedResponse pagedListResponse = client.listDataStreams(parent);
+
+    List<DataStream> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDataStreamsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDataStreamsRequest actualRequest = ((ListDataStreamsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDataStreamsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listDataStreams(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDataStreamsTest2() throws Exception {
+    DataStream responsesElement = DataStream.newBuilder().build();
+    ListDataStreamsResponse expectedResponse =
+        ListDataStreamsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDataStreams(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDataStreamsPagedResponse pagedListResponse = client.listDataStreams(parent);
+
+    List<DataStream> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDataStreamsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDataStreamsRequest actualRequest = ((ListDataStreamsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDataStreamsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDataStreams(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDataStreamTest() throws Exception {
+    DataStream expectedResponse =
+        DataStream.newBuilder()
+            .setName(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DataStreamName name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+
+    DataStream actualResponse = client.getDataStream(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDataStreamRequest actualRequest = ((GetDataStreamRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDataStreamExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DataStreamName name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+      client.getDataStream(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDataStreamTest2() throws Exception {
+    DataStream expectedResponse =
+        DataStream.newBuilder()
+            .setName(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DataStream actualResponse = client.getDataStream(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDataStreamRequest actualRequest = ((GetDataStreamRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDataStreamExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDataStream(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -1689,113 +1689,6 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest,
-          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-      getGetEnhancedMeasurementSettingsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetEnhancedMeasurementSettings",
-      requestType = com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest,
-          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-      getGetEnhancedMeasurementSettingsMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest,
-            com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-        getGetEnhancedMeasurementSettingsMethod;
-    if ((getGetEnhancedMeasurementSettingsMethod =
-            AnalyticsAdminServiceGrpc.getGetEnhancedMeasurementSettingsMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getGetEnhancedMeasurementSettingsMethod =
-                AnalyticsAdminServiceGrpc.getGetEnhancedMeasurementSettingsMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getGetEnhancedMeasurementSettingsMethod =
-              getGetEnhancedMeasurementSettingsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest,
-                          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "GetEnhancedMeasurementSettings"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha
-                                  .GetEnhancedMeasurementSettingsRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier(
-                              "GetEnhancedMeasurementSettings"))
-                      .build();
-        }
-      }
-    }
-    return getGetEnhancedMeasurementSettingsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest,
-          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-      getUpdateEnhancedMeasurementSettingsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateEnhancedMeasurementSettings",
-      requestType =
-          com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest,
-          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-      getUpdateEnhancedMeasurementSettingsMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest,
-            com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-        getUpdateEnhancedMeasurementSettingsMethod;
-    if ((getUpdateEnhancedMeasurementSettingsMethod =
-            AnalyticsAdminServiceGrpc.getUpdateEnhancedMeasurementSettingsMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getUpdateEnhancedMeasurementSettingsMethod =
-                AnalyticsAdminServiceGrpc.getUpdateEnhancedMeasurementSettingsMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getUpdateEnhancedMeasurementSettingsMethod =
-              getUpdateEnhancedMeasurementSettingsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest,
-                          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "UpdateEnhancedMeasurementSettings"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha
-                                  .UpdateEnhancedMeasurementSettingsRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier(
-                              "UpdateEnhancedMeasurementSettings"))
-                      .build();
-        }
-      }
-    }
-    return getUpdateEnhancedMeasurementSettingsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest,
           com.google.analytics.admin.v1alpha.FirebaseLink>
       getCreateFirebaseLinkMethod;
@@ -2497,6 +2390,59 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getUpdateMeasurementProtocolSecretMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest,
+          com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>
+      getAcknowledgeUserDataCollectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AcknowledgeUserDataCollection",
+      requestType = com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest,
+          com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>
+      getAcknowledgeUserDataCollectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest,
+            com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>
+        getAcknowledgeUserDataCollectionMethod;
+    if ((getAcknowledgeUserDataCollectionMethod =
+            AnalyticsAdminServiceGrpc.getAcknowledgeUserDataCollectionMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getAcknowledgeUserDataCollectionMethod =
+                AnalyticsAdminServiceGrpc.getAcknowledgeUserDataCollectionMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getAcknowledgeUserDataCollectionMethod =
+              getAcknowledgeUserDataCollectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest,
+                          com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "AcknowledgeUserDataCollection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .AcknowledgeUserDataCollectionRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .AcknowledgeUserDataCollectionResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "AcknowledgeUserDataCollection"))
+                      .build();
+        }
+      }
+    }
+    return getAcknowledgeUserDataCollectionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -4095,6 +4041,238 @@ public final class AnalyticsAdminServiceGrpc {
     return getUpdateDataRetentionSettingsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateDataStreamRequest,
+          com.google.analytics.admin.v1alpha.DataStream>
+      getCreateDataStreamMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDataStream",
+      requestType = com.google.analytics.admin.v1alpha.CreateDataStreamRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.DataStream.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateDataStreamRequest,
+          com.google.analytics.admin.v1alpha.DataStream>
+      getCreateDataStreamMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateDataStreamRequest,
+            com.google.analytics.admin.v1alpha.DataStream>
+        getCreateDataStreamMethod;
+    if ((getCreateDataStreamMethod = AnalyticsAdminServiceGrpc.getCreateDataStreamMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateDataStreamMethod = AnalyticsAdminServiceGrpc.getCreateDataStreamMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateDataStreamMethod =
+              getCreateDataStreamMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateDataStreamRequest,
+                          com.google.analytics.admin.v1alpha.DataStream>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateDataStream"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateDataStreamRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("CreateDataStream"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDataStreamMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteDataStreamRequest, com.google.protobuf.Empty>
+      getDeleteDataStreamMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDataStream",
+      requestType = com.google.analytics.admin.v1alpha.DeleteDataStreamRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteDataStreamRequest, com.google.protobuf.Empty>
+      getDeleteDataStreamMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteDataStreamRequest, com.google.protobuf.Empty>
+        getDeleteDataStreamMethod;
+    if ((getDeleteDataStreamMethod = AnalyticsAdminServiceGrpc.getDeleteDataStreamMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteDataStreamMethod = AnalyticsAdminServiceGrpc.getDeleteDataStreamMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteDataStreamMethod =
+              getDeleteDataStreamMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteDataStreamRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDataStream"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteDataStreamRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("DeleteDataStream"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDataStreamMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateDataStreamRequest,
+          com.google.analytics.admin.v1alpha.DataStream>
+      getUpdateDataStreamMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDataStream",
+      requestType = com.google.analytics.admin.v1alpha.UpdateDataStreamRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.DataStream.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateDataStreamRequest,
+          com.google.analytics.admin.v1alpha.DataStream>
+      getUpdateDataStreamMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateDataStreamRequest,
+            com.google.analytics.admin.v1alpha.DataStream>
+        getUpdateDataStreamMethod;
+    if ((getUpdateDataStreamMethod = AnalyticsAdminServiceGrpc.getUpdateDataStreamMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateDataStreamMethod = AnalyticsAdminServiceGrpc.getUpdateDataStreamMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateDataStreamMethod =
+              getUpdateDataStreamMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateDataStreamRequest,
+                          com.google.analytics.admin.v1alpha.DataStream>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateDataStream"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateDataStreamRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("UpdateDataStream"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDataStreamMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListDataStreamsRequest,
+          com.google.analytics.admin.v1alpha.ListDataStreamsResponse>
+      getListDataStreamsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDataStreams",
+      requestType = com.google.analytics.admin.v1alpha.ListDataStreamsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListDataStreamsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListDataStreamsRequest,
+          com.google.analytics.admin.v1alpha.ListDataStreamsResponse>
+      getListDataStreamsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListDataStreamsRequest,
+            com.google.analytics.admin.v1alpha.ListDataStreamsResponse>
+        getListDataStreamsMethod;
+    if ((getListDataStreamsMethod = AnalyticsAdminServiceGrpc.getListDataStreamsMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListDataStreamsMethod = AnalyticsAdminServiceGrpc.getListDataStreamsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListDataStreamsMethod =
+              getListDataStreamsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListDataStreamsRequest,
+                          com.google.analytics.admin.v1alpha.ListDataStreamsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDataStreams"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListDataStreamsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListDataStreamsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListDataStreams"))
+                      .build();
+        }
+      }
+    }
+    return getListDataStreamsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetDataStreamRequest,
+          com.google.analytics.admin.v1alpha.DataStream>
+      getGetDataStreamMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDataStream",
+      requestType = com.google.analytics.admin.v1alpha.GetDataStreamRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.DataStream.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetDataStreamRequest,
+          com.google.analytics.admin.v1alpha.DataStream>
+      getGetDataStreamMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetDataStreamRequest,
+            com.google.analytics.admin.v1alpha.DataStream>
+        getGetDataStreamMethod;
+    if ((getGetDataStreamMethod = AnalyticsAdminServiceGrpc.getGetDataStreamMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetDataStreamMethod = AnalyticsAdminServiceGrpc.getGetDataStreamMethod) == null) {
+          AnalyticsAdminServiceGrpc.getGetDataStreamMethod =
+              getGetDataStreamMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetDataStreamRequest,
+                          com.google.analytics.admin.v1alpha.DataStream>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDataStream"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetDataStreamRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetDataStream"))
+                      .build();
+        }
+      }
+    }
+    return getGetDataStreamMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AnalyticsAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceStub> factory =
@@ -4685,40 +4863,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Returns the singleton enhanced measurement settings for this web stream.
-     * Note that the stream must enable enhanced measurement for these settings to
-     * take effect.
-     * </pre>
-     */
-    public void getEnhancedMeasurementSettings(
-        com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getGetEnhancedMeasurementSettingsMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the singleton enhanced measurement settings for this web stream.
-     * Note that the stream must enable enhanced measurement for these settings to
-     * take effect.
-     * </pre>
-     */
-    public void updateEnhancedMeasurementSettings(
-        com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getUpdateEnhancedMeasurementSettingsMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a FirebaseLink.
      * Properties can have at most one FirebaseLink.
      * </pre>
@@ -4926,6 +5070,24 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateMeasurementProtocolSecretMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledges the terms of user data collection for the specified property.
+     * This acknowledgement must be completed (either in the Google Analytics UI
+     * or via this API) before MeasurementProtocolSecret resources may be created.
+     * </pre>
+     */
+    public void acknowledgeUserDataCollection(
+        com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAcknowledgeUserDataCollectionMethod(), responseObserver);
     }
 
     /**
@@ -5403,6 +5565,80 @@ public final class AnalyticsAdminServiceGrpc {
           getUpdateDataRetentionSettingsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataStream.
+     * </pre>
+     */
+    public void createDataStream(
+        com.google.analytics.admin.v1alpha.CreateDataStreamRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDataStreamMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataStream on a property.
+     * </pre>
+     */
+    public void deleteDataStream(
+        com.google.analytics.admin.v1alpha.DeleteDataStreamRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDataStreamMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DataStream on a property.
+     * </pre>
+     */
+    public void updateDataStream(
+        com.google.analytics.admin.v1alpha.UpdateDataStreamRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDataStreamMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataStreams on a property.
+     * </pre>
+     */
+    public void listDataStreams(
+        com.google.analytics.admin.v1alpha.ListDataStreamsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListDataStreamsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDataStreamsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DataStream.
+     * </pre>
+     */
+    public void getDataStream(
+        com.google.analytics.admin.v1alpha.GetDataStreamRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDataStreamMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -5632,20 +5868,6 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse>(
                       this, METHODID_LIST_ANDROID_APP_DATA_STREAMS)))
           .addMethod(
-              getGetEnhancedMeasurementSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest,
-                      com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>(
-                      this, METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS)))
-          .addMethod(
-              getUpdateEnhancedMeasurementSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest,
-                      com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>(
-                      this, METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS)))
-          .addMethod(
               getCreateFirebaseLinkMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -5741,6 +5963,13 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest,
                       com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>(
                       this, METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET)))
+          .addMethod(
+              getAcknowledgeUserDataCollectionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest,
+                      com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>(
+                      this, METHODID_ACKNOWLEDGE_USER_DATA_COLLECTION)))
           .addMethod(
               getSearchChangeHistoryEventsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -5957,6 +6186,40 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest,
                       com.google.analytics.admin.v1alpha.DataRetentionSettings>(
                       this, METHODID_UPDATE_DATA_RETENTION_SETTINGS)))
+          .addMethod(
+              getCreateDataStreamMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.CreateDataStreamRequest,
+                      com.google.analytics.admin.v1alpha.DataStream>(
+                      this, METHODID_CREATE_DATA_STREAM)))
+          .addMethod(
+              getDeleteDataStreamMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.DeleteDataStreamRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_DATA_STREAM)))
+          .addMethod(
+              getUpdateDataStreamMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.UpdateDataStreamRequest,
+                      com.google.analytics.admin.v1alpha.DataStream>(
+                      this, METHODID_UPDATE_DATA_STREAM)))
+          .addMethod(
+              getListDataStreamsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ListDataStreamsRequest,
+                      com.google.analytics.admin.v1alpha.ListDataStreamsResponse>(
+                      this, METHODID_LIST_DATA_STREAMS)))
+          .addMethod(
+              getGetDataStreamMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetDataStreamRequest,
+                      com.google.analytics.admin.v1alpha.DataStream>(
+                      this, METHODID_GET_DATA_STREAM)))
           .build();
     }
   }
@@ -6587,44 +6850,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Returns the singleton enhanced measurement settings for this web stream.
-     * Note that the stream must enable enhanced measurement for these settings to
-     * take effect.
-     * </pre>
-     */
-    public void getEnhancedMeasurementSettings(
-        com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetEnhancedMeasurementSettingsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the singleton enhanced measurement settings for this web stream.
-     * Note that the stream must enable enhanced measurement for these settings to
-     * take effect.
-     * </pre>
-     */
-    public void updateEnhancedMeasurementSettings(
-        com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a FirebaseLink.
      * Properties can have at most one FirebaseLink.
      * </pre>
@@ -6858,6 +7083,26 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateMeasurementProtocolSecretMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledges the terms of user data collection for the specified property.
+     * This acknowledgement must be completed (either in the Google Analytics UI
+     * or via this API) before MeasurementProtocolSecret resources may be created.
+     * </pre>
+     */
+    public void acknowledgeUserDataCollection(
+        com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAcknowledgeUserDataCollectionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -7402,6 +7647,90 @@ public final class AnalyticsAdminServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataStream.
+     * </pre>
+     */
+    public void createDataStream(
+        com.google.analytics.admin.v1alpha.CreateDataStreamRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDataStreamMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataStream on a property.
+     * </pre>
+     */
+    public void deleteDataStream(
+        com.google.analytics.admin.v1alpha.DeleteDataStreamRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDataStreamMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DataStream on a property.
+     * </pre>
+     */
+    public void updateDataStream(
+        com.google.analytics.admin.v1alpha.UpdateDataStreamRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDataStreamMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataStreams on a property.
+     * </pre>
+     */
+    public void listDataStreams(
+        com.google.analytics.admin.v1alpha.ListDataStreamsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListDataStreamsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDataStreamsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DataStream.
+     * </pre>
+     */
+    public void getDataStream(
+        com.google.analytics.admin.v1alpha.GetDataStreamRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDataStreamMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -7910,38 +8239,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Returns the singleton enhanced measurement settings for this web stream.
-     * Note that the stream must enable enhanced measurement for these settings to
-     * take effect.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
-        getEnhancedMeasurementSettings(
-            com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the singleton enhanced measurement settings for this web stream.
-     * Note that the stream must enable enhanced measurement for these settings to
-     * take effect.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
-        updateEnhancedMeasurementSettings(
-            com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a FirebaseLink.
      * Properties can have at most one FirebaseLink.
      * </pre>
@@ -8127,6 +8424,22 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledges the terms of user data collection for the specified property.
+     * This acknowledgement must be completed (either in the Google Analytics UI
+     * or via this API) before MeasurementProtocolSecret resources may be created.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse
+        acknowledgeUserDataCollection(
+            com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAcknowledgeUserDataCollectionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8564,6 +8877,71 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDataRetentionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataStream.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataStream createDataStream(
+        com.google.analytics.admin.v1alpha.CreateDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataStream on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDataStream(
+        com.google.analytics.admin.v1alpha.DeleteDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DataStream on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataStream updateDataStream(
+        com.google.analytics.admin.v1alpha.UpdateDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataStreams on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListDataStreamsResponse listDataStreams(
+        com.google.analytics.admin.v1alpha.ListDataStreamsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataStreamsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DataStream.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataStream getDataStream(
+        com.google.analytics.admin.v1alpha.GetDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataStreamMethod(), getCallOptions(), request);
     }
   }
 
@@ -9112,42 +9490,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Returns the singleton enhanced measurement settings for this web stream.
-     * Note that the stream must enable enhanced measurement for these settings to
-     * take effect.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-        getEnhancedMeasurementSettings(
-            com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetEnhancedMeasurementSettingsMethod(), getCallOptions()),
-          request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the singleton enhanced measurement settings for this web stream.
-     * Note that the stream must enable enhanced measurement for these settings to
-     * take effect.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
-        updateEnhancedMeasurementSettings(
-            com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions()),
-          request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a FirebaseLink.
      * Properties can have at most one FirebaseLink.
      * </pre>
@@ -9349,6 +9691,24 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateMeasurementProtocolSecretMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledges the terms of user data collection for the specified property.
+     * This acknowledgement must be completed (either in the Google Analytics UI
+     * or via this API) before MeasurementProtocolSecret resources may be created.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>
+        acknowledgeUserDataCollection(
+            com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAcknowledgeUserDataCollectionMethod(), getCallOptions()),
           request);
     }
 
@@ -9825,6 +10185,75 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDataRetentionSettingsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataStream.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DataStream>
+        createDataStream(com.google.analytics.admin.v1alpha.CreateDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDataStreamMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataStream on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteDataStream(com.google.analytics.admin.v1alpha.DeleteDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDataStreamMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DataStream on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DataStream>
+        updateDataStream(com.google.analytics.admin.v1alpha.UpdateDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDataStreamMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataStreams on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListDataStreamsResponse>
+        listDataStreams(com.google.analytics.admin.v1alpha.ListDataStreamsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDataStreamsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DataStream.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DataStream>
+        getDataStream(com.google.analytics.admin.v1alpha.GetDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDataStreamMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -9861,52 +10290,56 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_DELETE_ANDROID_APP_DATA_STREAM = 31;
   private static final int METHODID_UPDATE_ANDROID_APP_DATA_STREAM = 32;
   private static final int METHODID_LIST_ANDROID_APP_DATA_STREAMS = 33;
-  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 34;
-  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 35;
-  private static final int METHODID_CREATE_FIREBASE_LINK = 36;
-  private static final int METHODID_DELETE_FIREBASE_LINK = 37;
-  private static final int METHODID_LIST_FIREBASE_LINKS = 38;
-  private static final int METHODID_GET_GLOBAL_SITE_TAG = 39;
-  private static final int METHODID_CREATE_GOOGLE_ADS_LINK = 40;
-  private static final int METHODID_UPDATE_GOOGLE_ADS_LINK = 41;
-  private static final int METHODID_DELETE_GOOGLE_ADS_LINK = 42;
-  private static final int METHODID_LIST_GOOGLE_ADS_LINKS = 43;
-  private static final int METHODID_GET_DATA_SHARING_SETTINGS = 44;
-  private static final int METHODID_GET_MEASUREMENT_PROTOCOL_SECRET = 45;
-  private static final int METHODID_LIST_MEASUREMENT_PROTOCOL_SECRETS = 46;
-  private static final int METHODID_CREATE_MEASUREMENT_PROTOCOL_SECRET = 47;
-  private static final int METHODID_DELETE_MEASUREMENT_PROTOCOL_SECRET = 48;
-  private static final int METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET = 49;
-  private static final int METHODID_SEARCH_CHANGE_HISTORY_EVENTS = 50;
-  private static final int METHODID_GET_GOOGLE_SIGNALS_SETTINGS = 51;
-  private static final int METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS = 52;
-  private static final int METHODID_CREATE_CONVERSION_EVENT = 53;
-  private static final int METHODID_GET_CONVERSION_EVENT = 54;
-  private static final int METHODID_DELETE_CONVERSION_EVENT = 55;
-  private static final int METHODID_LIST_CONVERSION_EVENTS = 56;
-  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK = 57;
-  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINKS = 58;
-  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK = 59;
-  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK = 60;
-  private static final int METHODID_UPDATE_DISPLAY_VIDEO360ADVERTISER_LINK = 61;
-  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 62;
-  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSALS = 63;
-  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 64;
-  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 65;
-  private static final int METHODID_APPROVE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 66;
-  private static final int METHODID_CANCEL_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 67;
-  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 68;
-  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 69;
-  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 70;
-  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 71;
-  private static final int METHODID_GET_CUSTOM_DIMENSION = 72;
-  private static final int METHODID_CREATE_CUSTOM_METRIC = 73;
-  private static final int METHODID_UPDATE_CUSTOM_METRIC = 74;
-  private static final int METHODID_LIST_CUSTOM_METRICS = 75;
-  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 76;
-  private static final int METHODID_GET_CUSTOM_METRIC = 77;
-  private static final int METHODID_GET_DATA_RETENTION_SETTINGS = 78;
-  private static final int METHODID_UPDATE_DATA_RETENTION_SETTINGS = 79;
+  private static final int METHODID_CREATE_FIREBASE_LINK = 34;
+  private static final int METHODID_DELETE_FIREBASE_LINK = 35;
+  private static final int METHODID_LIST_FIREBASE_LINKS = 36;
+  private static final int METHODID_GET_GLOBAL_SITE_TAG = 37;
+  private static final int METHODID_CREATE_GOOGLE_ADS_LINK = 38;
+  private static final int METHODID_UPDATE_GOOGLE_ADS_LINK = 39;
+  private static final int METHODID_DELETE_GOOGLE_ADS_LINK = 40;
+  private static final int METHODID_LIST_GOOGLE_ADS_LINKS = 41;
+  private static final int METHODID_GET_DATA_SHARING_SETTINGS = 42;
+  private static final int METHODID_GET_MEASUREMENT_PROTOCOL_SECRET = 43;
+  private static final int METHODID_LIST_MEASUREMENT_PROTOCOL_SECRETS = 44;
+  private static final int METHODID_CREATE_MEASUREMENT_PROTOCOL_SECRET = 45;
+  private static final int METHODID_DELETE_MEASUREMENT_PROTOCOL_SECRET = 46;
+  private static final int METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET = 47;
+  private static final int METHODID_ACKNOWLEDGE_USER_DATA_COLLECTION = 48;
+  private static final int METHODID_SEARCH_CHANGE_HISTORY_EVENTS = 49;
+  private static final int METHODID_GET_GOOGLE_SIGNALS_SETTINGS = 50;
+  private static final int METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS = 51;
+  private static final int METHODID_CREATE_CONVERSION_EVENT = 52;
+  private static final int METHODID_GET_CONVERSION_EVENT = 53;
+  private static final int METHODID_DELETE_CONVERSION_EVENT = 54;
+  private static final int METHODID_LIST_CONVERSION_EVENTS = 55;
+  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK = 56;
+  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINKS = 57;
+  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK = 58;
+  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK = 59;
+  private static final int METHODID_UPDATE_DISPLAY_VIDEO360ADVERTISER_LINK = 60;
+  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 61;
+  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSALS = 62;
+  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 63;
+  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 64;
+  private static final int METHODID_APPROVE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 65;
+  private static final int METHODID_CANCEL_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 66;
+  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 67;
+  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 68;
+  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 69;
+  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 70;
+  private static final int METHODID_GET_CUSTOM_DIMENSION = 71;
+  private static final int METHODID_CREATE_CUSTOM_METRIC = 72;
+  private static final int METHODID_UPDATE_CUSTOM_METRIC = 73;
+  private static final int METHODID_LIST_CUSTOM_METRICS = 74;
+  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 75;
+  private static final int METHODID_GET_CUSTOM_METRIC = 76;
+  private static final int METHODID_GET_DATA_RETENTION_SETTINGS = 77;
+  private static final int METHODID_UPDATE_DATA_RETENTION_SETTINGS = 78;
+  private static final int METHODID_CREATE_DATA_STREAM = 79;
+  private static final int METHODID_DELETE_DATA_STREAM = 80;
+  private static final int METHODID_UPDATE_DATA_STREAM = 81;
+  private static final int METHODID_LIST_DATA_STREAMS = 82;
+  private static final int METHODID_GET_DATA_STREAM = 83;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10134,20 +10567,6 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse>)
                   responseObserver);
           break;
-        case METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS:
-          serviceImpl.getEnhancedMeasurementSettings(
-              (com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>)
-                  responseObserver);
-          break;
-        case METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS:
-          serviceImpl.updateEnhancedMeasurementSettings(
-              (com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>)
-                  responseObserver);
-          break;
         case METHODID_CREATE_FIREBASE_LINK:
           serviceImpl.createFirebaseLink(
               (com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest) request,
@@ -10233,6 +10652,13 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>)
+                  responseObserver);
+          break;
+        case METHODID_ACKNOWLEDGE_USER_DATA_COLLECTION:
+          serviceImpl.acknowledgeUserDataCollection(
+              (com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>)
                   responseObserver);
           break;
         case METHODID_SEARCH_CHANGE_HISTORY_EVENTS:
@@ -10444,6 +10870,36 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.DataRetentionSettings>)
                   responseObserver);
           break;
+        case METHODID_CREATE_DATA_STREAM:
+          serviceImpl.createDataStream(
+              (com.google.analytics.admin.v1alpha.CreateDataStreamRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_DATA_STREAM:
+          serviceImpl.deleteDataStream(
+              (com.google.analytics.admin.v1alpha.DeleteDataStreamRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_DATA_STREAM:
+          serviceImpl.updateDataStream(
+              (com.google.analytics.admin.v1alpha.UpdateDataStreamRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DATA_STREAMS:
+          serviceImpl.listDataStreams(
+              (com.google.analytics.admin.v1alpha.ListDataStreamsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListDataStreamsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_DATA_STREAM:
+          serviceImpl.getDataStream(
+              (com.google.analytics.admin.v1alpha.GetDataStreamRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -10542,8 +10998,6 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getDeleteAndroidAppDataStreamMethod())
                       .addMethod(getUpdateAndroidAppDataStreamMethod())
                       .addMethod(getListAndroidAppDataStreamsMethod())
-                      .addMethod(getGetEnhancedMeasurementSettingsMethod())
-                      .addMethod(getUpdateEnhancedMeasurementSettingsMethod())
                       .addMethod(getCreateFirebaseLinkMethod())
                       .addMethod(getDeleteFirebaseLinkMethod())
                       .addMethod(getListFirebaseLinksMethod())
@@ -10558,6 +11012,7 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getCreateMeasurementProtocolSecretMethod())
                       .addMethod(getDeleteMeasurementProtocolSecretMethod())
                       .addMethod(getUpdateMeasurementProtocolSecretMethod())
+                      .addMethod(getAcknowledgeUserDataCollectionMethod())
                       .addMethod(getSearchChangeHistoryEventsMethod())
                       .addMethod(getGetGoogleSignalsSettingsMethod())
                       .addMethod(getUpdateGoogleSignalsSettingsMethod())
@@ -10588,6 +11043,11 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getGetCustomMetricMethod())
                       .addMethod(getGetDataRetentionSettingsMethod())
                       .addMethod(getUpdateDataRetentionSettingsMethod())
+                      .addMethod(getCreateDataStreamMethod())
+                      .addMethod(getDeleteDataStreamMethod())
+                      .addMethod(getUpdateDataStreamMethod())
+                      .addMethod(getListDataStreamsMethod())
+                      .addMethod(getGetDataStreamMethod())
                       .build();
         }
       }

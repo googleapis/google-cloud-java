@@ -3554,213 +3554,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the singleton enhanced measurement settings for this web stream. Note that the stream
-   * must enable enhanced measurement for these settings to take effect.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   EnhancedMeasurementSettingsName name =
-   *       EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]");
-   *   EnhancedMeasurementSettings response =
-   *       analyticsAdminServiceClient.getEnhancedMeasurementSettings(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the settings to lookup. Format:
-   *     properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings Example:
-   *     "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final EnhancedMeasurementSettings getEnhancedMeasurementSettings(
-      EnhancedMeasurementSettingsName name) {
-    GetEnhancedMeasurementSettingsRequest request =
-        GetEnhancedMeasurementSettingsRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return getEnhancedMeasurementSettings(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the singleton enhanced measurement settings for this web stream. Note that the stream
-   * must enable enhanced measurement for these settings to take effect.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   String name =
-   *       EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString();
-   *   EnhancedMeasurementSettings response =
-   *       analyticsAdminServiceClient.getEnhancedMeasurementSettings(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the settings to lookup. Format:
-   *     properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings Example:
-   *     "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final EnhancedMeasurementSettings getEnhancedMeasurementSettings(String name) {
-    GetEnhancedMeasurementSettingsRequest request =
-        GetEnhancedMeasurementSettingsRequest.newBuilder().setName(name).build();
-    return getEnhancedMeasurementSettings(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the singleton enhanced measurement settings for this web stream. Note that the stream
-   * must enable enhanced measurement for these settings to take effect.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   GetEnhancedMeasurementSettingsRequest request =
-   *       GetEnhancedMeasurementSettingsRequest.newBuilder()
-   *           .setName(
-   *               EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
-   *           .build();
-   *   EnhancedMeasurementSettings response =
-   *       analyticsAdminServiceClient.getEnhancedMeasurementSettings(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final EnhancedMeasurementSettings getEnhancedMeasurementSettings(
-      GetEnhancedMeasurementSettingsRequest request) {
-    return getEnhancedMeasurementSettingsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the singleton enhanced measurement settings for this web stream. Note that the stream
-   * must enable enhanced measurement for these settings to take effect.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   GetEnhancedMeasurementSettingsRequest request =
-   *       GetEnhancedMeasurementSettingsRequest.newBuilder()
-   *           .setName(
-   *               EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
-   *           .build();
-   *   ApiFuture<EnhancedMeasurementSettings> future =
-   *       analyticsAdminServiceClient.getEnhancedMeasurementSettingsCallable().futureCall(request);
-   *   // Do something.
-   *   EnhancedMeasurementSettings response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      getEnhancedMeasurementSettingsCallable() {
-    return stub.getEnhancedMeasurementSettingsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Updates the singleton enhanced measurement settings for this web stream. Note that the stream
-   * must enable enhanced measurement for these settings to take effect.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   EnhancedMeasurementSettings enhancedMeasurementSettings =
-   *       EnhancedMeasurementSettings.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   EnhancedMeasurementSettings response =
-   *       analyticsAdminServiceClient.updateEnhancedMeasurementSettings(
-   *           enhancedMeasurementSettings, updateMask);
-   * }
-   * }</pre>
-   *
-   * @param enhancedMeasurementSettings Required. The settings to update. The `name` field is used
-   *     to identify the settings to be updated.
-   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
-   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
-   *     entity, use one path with the string "&#42;" to match all fields.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final EnhancedMeasurementSettings updateEnhancedMeasurementSettings(
-      EnhancedMeasurementSettings enhancedMeasurementSettings, FieldMask updateMask) {
-    UpdateEnhancedMeasurementSettingsRequest request =
-        UpdateEnhancedMeasurementSettingsRequest.newBuilder()
-            .setEnhancedMeasurementSettings(enhancedMeasurementSettings)
-            .setUpdateMask(updateMask)
-            .build();
-    return updateEnhancedMeasurementSettings(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Updates the singleton enhanced measurement settings for this web stream. Note that the stream
-   * must enable enhanced measurement for these settings to take effect.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   UpdateEnhancedMeasurementSettingsRequest request =
-   *       UpdateEnhancedMeasurementSettingsRequest.newBuilder()
-   *           .setEnhancedMeasurementSettings(EnhancedMeasurementSettings.newBuilder().build())
-   *           .setUpdateMask(FieldMask.newBuilder().build())
-   *           .build();
-   *   EnhancedMeasurementSettings response =
-   *       analyticsAdminServiceClient.updateEnhancedMeasurementSettings(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final EnhancedMeasurementSettings updateEnhancedMeasurementSettings(
-      UpdateEnhancedMeasurementSettingsRequest request) {
-    return updateEnhancedMeasurementSettingsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Updates the singleton enhanced measurement settings for this web stream. Note that the stream
-   * must enable enhanced measurement for these settings to take effect.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   UpdateEnhancedMeasurementSettingsRequest request =
-   *       UpdateEnhancedMeasurementSettingsRequest.newBuilder()
-   *           .setEnhancedMeasurementSettings(EnhancedMeasurementSettings.newBuilder().build())
-   *           .setUpdateMask(FieldMask.newBuilder().build())
-   *           .build();
-   *   ApiFuture<EnhancedMeasurementSettings> future =
-   *       analyticsAdminServiceClient
-   *           .updateEnhancedMeasurementSettingsCallable()
-   *           .futureCall(request);
-   *   // Do something.
-   *   EnhancedMeasurementSettings response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      updateEnhancedMeasurementSettingsCallable() {
-    return stub.updateEnhancedMeasurementSettingsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Creates a FirebaseLink.
    *
    * <p>Properties can have at most one FirebaseLink.
@@ -5351,6 +5144,66 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
       updateMeasurementProtocolSecretCallable() {
     return stub.updateMeasurementProtocolSecretCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Acknowledges the terms of user data collection for the specified property.
+   *
+   * <p>This acknowledgement must be completed (either in the Google Analytics UI or via this API)
+   * before MeasurementProtocolSecret resources may be created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AcknowledgeUserDataCollectionRequest request =
+   *       AcknowledgeUserDataCollectionRequest.newBuilder()
+   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
+   *           .setAcknowledgement("acknowledgement1769490938")
+   *           .build();
+   *   AcknowledgeUserDataCollectionResponse response =
+   *       analyticsAdminServiceClient.acknowledgeUserDataCollection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AcknowledgeUserDataCollectionResponse acknowledgeUserDataCollection(
+      AcknowledgeUserDataCollectionRequest request) {
+    return acknowledgeUserDataCollectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Acknowledges the terms of user data collection for the specified property.
+   *
+   * <p>This acknowledgement must be completed (either in the Google Analytics UI or via this API)
+   * before MeasurementProtocolSecret resources may be created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AcknowledgeUserDataCollectionRequest request =
+   *       AcknowledgeUserDataCollectionRequest.newBuilder()
+   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
+   *           .setAcknowledgement("acknowledgement1769490938")
+   *           .build();
+   *   ApiFuture<AcknowledgeUserDataCollectionResponse> future =
+   *       analyticsAdminServiceClient.acknowledgeUserDataCollectionCallable().futureCall(request);
+   *   // Do something.
+   *   AcknowledgeUserDataCollectionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+      acknowledgeUserDataCollectionCallable() {
+    return stub.acknowledgeUserDataCollectionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -8647,6 +8500,523 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     return stub.updateDataRetentionSettingsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DataStream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   DataStream dataStream = DataStream.newBuilder().build();
+   *   DataStream response = analyticsAdminServiceClient.createDataStream(parent, dataStream);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param dataStream Required. The DataStream to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataStream createDataStream(PropertyName parent, DataStream dataStream) {
+    CreateDataStreamRequest request =
+        CreateDataStreamRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDataStream(dataStream)
+            .build();
+    return createDataStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DataStream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   DataStream dataStream = DataStream.newBuilder().build();
+   *   DataStream response = analyticsAdminServiceClient.createDataStream(parent, dataStream);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param dataStream Required. The DataStream to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataStream createDataStream(String parent, DataStream dataStream) {
+    CreateDataStreamRequest request =
+        CreateDataStreamRequest.newBuilder().setParent(parent).setDataStream(dataStream).build();
+    return createDataStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DataStream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateDataStreamRequest request =
+   *       CreateDataStreamRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setDataStream(DataStream.newBuilder().build())
+   *           .build();
+   *   DataStream response = analyticsAdminServiceClient.createDataStream(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataStream createDataStream(CreateDataStreamRequest request) {
+    return createDataStreamCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DataStream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateDataStreamRequest request =
+   *       CreateDataStreamRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setDataStream(DataStream.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DataStream> future =
+   *       analyticsAdminServiceClient.createDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   DataStream response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateDataStreamRequest, DataStream> createDataStreamCallable() {
+    return stub.createDataStreamCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DataStream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DataStreamName name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+   *   analyticsAdminServiceClient.deleteDataStream(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DataStream to delete. Example format:
+   *     properties/1234/dataStreams/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDataStream(DataStreamName name) {
+    DeleteDataStreamRequest request =
+        DeleteDataStreamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteDataStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DataStream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString();
+   *   analyticsAdminServiceClient.deleteDataStream(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DataStream to delete. Example format:
+   *     properties/1234/dataStreams/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDataStream(String name) {
+    DeleteDataStreamRequest request = DeleteDataStreamRequest.newBuilder().setName(name).build();
+    deleteDataStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DataStream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteDataStreamRequest request =
+   *       DeleteDataStreamRequest.newBuilder()
+   *           .setName(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteDataStream(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDataStream(DeleteDataStreamRequest request) {
+    deleteDataStreamCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DataStream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteDataStreamRequest request =
+   *       DeleteDataStreamRequest.newBuilder()
+   *           .setName(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDataStreamRequest, Empty> deleteDataStreamCallable() {
+    return stub.deleteDataStreamCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a DataStream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DataStream dataStream = DataStream.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DataStream response = analyticsAdminServiceClient.updateDataStream(dataStream, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param dataStream The DataStream to update
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataStream updateDataStream(DataStream dataStream, FieldMask updateMask) {
+    UpdateDataStreamRequest request =
+        UpdateDataStreamRequest.newBuilder()
+            .setDataStream(dataStream)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDataStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a DataStream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateDataStreamRequest request =
+   *       UpdateDataStreamRequest.newBuilder()
+   *           .setDataStream(DataStream.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   DataStream response = analyticsAdminServiceClient.updateDataStream(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataStream updateDataStream(UpdateDataStreamRequest request) {
+    return updateDataStreamCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a DataStream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateDataStreamRequest request =
+   *       UpdateDataStreamRequest.newBuilder()
+   *           .setDataStream(DataStream.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DataStream> future =
+   *       analyticsAdminServiceClient.updateDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   DataStream response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDataStreamRequest, DataStream> updateDataStreamCallable() {
+    return stub.updateDataStreamCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DataStreams on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (DataStream element : analyticsAdminServiceClient.listDataStreams(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDataStreamsPagedResponse listDataStreams(PropertyName parent) {
+    ListDataStreamsRequest request =
+        ListDataStreamsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDataStreams(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DataStreams on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (DataStream element : analyticsAdminServiceClient.listDataStreams(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDataStreamsPagedResponse listDataStreams(String parent) {
+    ListDataStreamsRequest request = ListDataStreamsRequest.newBuilder().setParent(parent).build();
+    return listDataStreams(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DataStreams on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListDataStreamsRequest request =
+   *       ListDataStreamsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (DataStream element : analyticsAdminServiceClient.listDataStreams(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDataStreamsPagedResponse listDataStreams(ListDataStreamsRequest request) {
+    return listDataStreamsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DataStreams on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListDataStreamsRequest request =
+   *       ListDataStreamsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<DataStream> future =
+   *       analyticsAdminServiceClient.listDataStreamsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DataStream element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDataStreamsRequest, ListDataStreamsPagedResponse>
+      listDataStreamsPagedCallable() {
+    return stub.listDataStreamsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DataStreams on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListDataStreamsRequest request =
+   *       ListDataStreamsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListDataStreamsResponse response =
+   *         analyticsAdminServiceClient.listDataStreamsCallable().call(request);
+   *     for (DataStream element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDataStreamsRequest, ListDataStreamsResponse>
+      listDataStreamsCallable() {
+    return stub.listDataStreamsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single DataStream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DataStreamName name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+   *   DataStream response = analyticsAdminServiceClient.getDataStream(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DataStream to get. Example format:
+   *     properties/1234/dataStreams/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataStream getDataStream(DataStreamName name) {
+    GetDataStreamRequest request =
+        GetDataStreamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getDataStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single DataStream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString();
+   *   DataStream response = analyticsAdminServiceClient.getDataStream(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DataStream to get. Example format:
+   *     properties/1234/dataStreams/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataStream getDataStream(String name) {
+    GetDataStreamRequest request = GetDataStreamRequest.newBuilder().setName(name).build();
+    return getDataStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single DataStream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetDataStreamRequest request =
+   *       GetDataStreamRequest.newBuilder()
+   *           .setName(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .build();
+   *   DataStream response = analyticsAdminServiceClient.getDataStream(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataStream getDataStream(GetDataStreamRequest request) {
+    return getDataStreamCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single DataStream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetDataStreamRequest request =
+   *       GetDataStreamRequest.newBuilder()
+   *           .setName(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<DataStream> future =
+   *       analyticsAdminServiceClient.getDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   DataStream response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDataStreamRequest, DataStream> getDataStreamCallable() {
+    return stub.getDataStreamCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -10122,6 +10492,83 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListCustomMetricsFixedSizeCollection createCollection(
         List<ListCustomMetricsPage> pages, int collectionSize) {
       return new ListCustomMetricsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDataStreamsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDataStreamsRequest,
+          ListDataStreamsResponse,
+          DataStream,
+          ListDataStreamsPage,
+          ListDataStreamsFixedSizeCollection> {
+
+    public static ApiFuture<ListDataStreamsPagedResponse> createAsync(
+        PageContext<ListDataStreamsRequest, ListDataStreamsResponse, DataStream> context,
+        ApiFuture<ListDataStreamsResponse> futureResponse) {
+      ApiFuture<ListDataStreamsPage> futurePage =
+          ListDataStreamsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDataStreamsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDataStreamsPagedResponse(ListDataStreamsPage page) {
+      super(page, ListDataStreamsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDataStreamsPage
+      extends AbstractPage<
+          ListDataStreamsRequest, ListDataStreamsResponse, DataStream, ListDataStreamsPage> {
+
+    private ListDataStreamsPage(
+        PageContext<ListDataStreamsRequest, ListDataStreamsResponse, DataStream> context,
+        ListDataStreamsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDataStreamsPage createEmptyPage() {
+      return new ListDataStreamsPage(null, null);
+    }
+
+    @Override
+    protected ListDataStreamsPage createPage(
+        PageContext<ListDataStreamsRequest, ListDataStreamsResponse, DataStream> context,
+        ListDataStreamsResponse response) {
+      return new ListDataStreamsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDataStreamsPage> createPageAsync(
+        PageContext<ListDataStreamsRequest, ListDataStreamsResponse, DataStream> context,
+        ApiFuture<ListDataStreamsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDataStreamsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDataStreamsRequest,
+          ListDataStreamsResponse,
+          DataStream,
+          ListDataStreamsPage,
+          ListDataStreamsFixedSizeCollection> {
+
+    private ListDataStreamsFixedSizeCollection(
+        List<ListDataStreamsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDataStreamsFixedSizeCollection createEmptyCollection() {
+      return new ListDataStreamsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDataStreamsFixedSizeCollection createCollection(
+        List<ListDataStreamsPage> pages, int collectionSize) {
+      return new ListDataStreamsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -276,7 +276,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    *
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360.
-   * This can only be enabled if campaign_data_import_enabled is enabled.
+   * This can only be enabled if campaign_data_sharing_enabled is enabled.
    * If this field is not set on create, it will be defaulted to true.
    * </pre>
    *
@@ -292,7 +292,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    *
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360.
-   * This can only be enabled if campaign_data_import_enabled is enabled.
+   * This can only be enabled if campaign_data_sharing_enabled is enabled.
    * If this field is not set on create, it will be defaulted to true.
    * </pre>
    *
@@ -308,7 +308,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    *
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360.
-   * This can only be enabled if campaign_data_import_enabled is enabled.
+   * This can only be enabled if campaign_data_sharing_enabled is enabled.
    * If this field is not set on create, it will be defaulted to true.
    * </pre>
    *

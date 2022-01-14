@@ -23,6 +23,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
@@ -36,6 +37,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Sea
 
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AccountSummary;
+import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
+import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
 import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
@@ -57,6 +60,7 @@ import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.CreateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
@@ -69,9 +73,11 @@ import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
+import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
+import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
@@ -83,7 +89,6 @@ import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
-import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest;
@@ -92,9 +97,9 @@ import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
-import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest;
@@ -118,6 +123,8 @@ import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomMetricsRequest;
 import com.google.analytics.admin.v1alpha.ListCustomMetricsResponse;
+import com.google.analytics.admin.v1alpha.ListDataStreamsRequest;
+import com.google.analytics.admin.v1alpha.ListDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest;
@@ -147,8 +154,8 @@ import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
-import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest;
@@ -305,12 +312,6 @@ public class AnalyticsAdminServiceStubSettings
           ListAndroidAppDataStreamsResponse,
           ListAndroidAppDataStreamsPagedResponse>
       listAndroidAppDataStreamsSettings;
-  private final UnaryCallSettings<
-          GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      getEnhancedMeasurementSettingsSettings;
-  private final UnaryCallSettings<
-          UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      updateEnhancedMeasurementSettingsSettings;
   private final UnaryCallSettings<CreateFirebaseLinkRequest, FirebaseLink>
       createFirebaseLinkSettings;
   private final UnaryCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkSettings;
@@ -341,6 +342,9 @@ public class AnalyticsAdminServiceStubSettings
       deleteMeasurementProtocolSecretSettings;
   private final UnaryCallSettings<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
       updateMeasurementProtocolSecretSettings;
+  private final UnaryCallSettings<
+          AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+      acknowledgeUserDataCollectionSettings;
   private final PagedCallSettings<
           SearchChangeHistoryEventsRequest,
           SearchChangeHistoryEventsResponse,
@@ -423,6 +427,13 @@ public class AnalyticsAdminServiceStubSettings
       getDataRetentionSettingsSettings;
   private final UnaryCallSettings<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
       updateDataRetentionSettingsSettings;
+  private final UnaryCallSettings<CreateDataStreamRequest, DataStream> createDataStreamSettings;
+  private final UnaryCallSettings<DeleteDataStreamRequest, Empty> deleteDataStreamSettings;
+  private final UnaryCallSettings<UpdateDataStreamRequest, DataStream> updateDataStreamSettings;
+  private final PagedCallSettings<
+          ListDataStreamsRequest, ListDataStreamsResponse, ListDataStreamsPagedResponse>
+      listDataStreamsSettings;
+  private final UnaryCallSettings<GetDataStreamRequest, DataStream> getDataStreamSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -1137,6 +1148,45 @@ public class AnalyticsAdminServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListDataStreamsRequest, ListDataStreamsResponse, DataStream>
+      LIST_DATA_STREAMS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDataStreamsRequest, ListDataStreamsResponse, DataStream>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDataStreamsRequest injectToken(
+                ListDataStreamsRequest payload, String token) {
+              return ListDataStreamsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDataStreamsRequest injectPageSize(
+                ListDataStreamsRequest payload, int pageSize) {
+              return ListDataStreamsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDataStreamsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDataStreamsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DataStream> extractResources(ListDataStreamsResponse payload) {
+              return payload.getDataStreamsList() == null
+                  ? ImmutableList.<DataStream>of()
+                  : payload.getDataStreamsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>
       LIST_ACCOUNTS_PAGE_STR_FACT =
@@ -1543,6 +1593,23 @@ public class AnalyticsAdminServiceStubSettings
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListDataStreamsRequest, ListDataStreamsResponse, ListDataStreamsPagedResponse>
+      LIST_DATA_STREAMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDataStreamsRequest, ListDataStreamsResponse, ListDataStreamsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDataStreamsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDataStreamsRequest, ListDataStreamsResponse> callable,
+                ListDataStreamsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDataStreamsResponse> futureResponse) {
+              PageContext<ListDataStreamsRequest, ListDataStreamsResponse, DataStream> pageContext =
+                  PageContext.create(callable, LIST_DATA_STREAMS_PAGE_STR_DESC, request, context);
+              return ListDataStreamsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to getAccount. */
   public UnaryCallSettings<GetAccountRequest, Account> getAccountSettings() {
     return getAccountSettings;
@@ -1744,18 +1811,6 @@ public class AnalyticsAdminServiceStubSettings
     return listAndroidAppDataStreamsSettings;
   }
 
-  /** Returns the object with the settings used for calls to getEnhancedMeasurementSettings. */
-  public UnaryCallSettings<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      getEnhancedMeasurementSettingsSettings() {
-    return getEnhancedMeasurementSettingsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateEnhancedMeasurementSettings. */
-  public UnaryCallSettings<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      updateEnhancedMeasurementSettingsSettings() {
-    return updateEnhancedMeasurementSettingsSettings;
-  }
-
   /** Returns the object with the settings used for calls to createFirebaseLink. */
   public UnaryCallSettings<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkSettings() {
     return createFirebaseLinkSettings;
@@ -1839,6 +1894,13 @@ public class AnalyticsAdminServiceStubSettings
   public UnaryCallSettings<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
       updateMeasurementProtocolSecretSettings() {
     return updateMeasurementProtocolSecretSettings;
+  }
+
+  /** Returns the object with the settings used for calls to acknowledgeUserDataCollection. */
+  public UnaryCallSettings<
+          AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+      acknowledgeUserDataCollectionSettings() {
+    return acknowledgeUserDataCollectionSettings;
   }
 
   /** Returns the object with the settings used for calls to searchChangeHistoryEvents. */
@@ -2056,6 +2118,33 @@ public class AnalyticsAdminServiceStubSettings
     return updateDataRetentionSettingsSettings;
   }
 
+  /** Returns the object with the settings used for calls to createDataStream. */
+  public UnaryCallSettings<CreateDataStreamRequest, DataStream> createDataStreamSettings() {
+    return createDataStreamSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataStream. */
+  public UnaryCallSettings<DeleteDataStreamRequest, Empty> deleteDataStreamSettings() {
+    return deleteDataStreamSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDataStream. */
+  public UnaryCallSettings<UpdateDataStreamRequest, DataStream> updateDataStreamSettings() {
+    return updateDataStreamSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDataStreams. */
+  public PagedCallSettings<
+          ListDataStreamsRequest, ListDataStreamsResponse, ListDataStreamsPagedResponse>
+      listDataStreamsSettings() {
+    return listDataStreamsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDataStream. */
+  public UnaryCallSettings<GetDataStreamRequest, DataStream> getDataStreamSettings() {
+    return getDataStreamSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AnalyticsAdminServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -2168,10 +2257,6 @@ public class AnalyticsAdminServiceStubSettings
     updateAndroidAppDataStreamSettings =
         settingsBuilder.updateAndroidAppDataStreamSettings().build();
     listAndroidAppDataStreamsSettings = settingsBuilder.listAndroidAppDataStreamsSettings().build();
-    getEnhancedMeasurementSettingsSettings =
-        settingsBuilder.getEnhancedMeasurementSettingsSettings().build();
-    updateEnhancedMeasurementSettingsSettings =
-        settingsBuilder.updateEnhancedMeasurementSettingsSettings().build();
     createFirebaseLinkSettings = settingsBuilder.createFirebaseLinkSettings().build();
     deleteFirebaseLinkSettings = settingsBuilder.deleteFirebaseLinkSettings().build();
     listFirebaseLinksSettings = settingsBuilder.listFirebaseLinksSettings().build();
@@ -2191,6 +2276,8 @@ public class AnalyticsAdminServiceStubSettings
         settingsBuilder.deleteMeasurementProtocolSecretSettings().build();
     updateMeasurementProtocolSecretSettings =
         settingsBuilder.updateMeasurementProtocolSecretSettings().build();
+    acknowledgeUserDataCollectionSettings =
+        settingsBuilder.acknowledgeUserDataCollectionSettings().build();
     searchChangeHistoryEventsSettings = settingsBuilder.searchChangeHistoryEventsSettings().build();
     getGoogleSignalsSettingsSettings = settingsBuilder.getGoogleSignalsSettingsSettings().build();
     updateGoogleSignalsSettingsSettings =
@@ -2234,6 +2321,11 @@ public class AnalyticsAdminServiceStubSettings
     getDataRetentionSettingsSettings = settingsBuilder.getDataRetentionSettingsSettings().build();
     updateDataRetentionSettingsSettings =
         settingsBuilder.updateDataRetentionSettingsSettings().build();
+    createDataStreamSettings = settingsBuilder.createDataStreamSettings().build();
+    deleteDataStreamSettings = settingsBuilder.deleteDataStreamSettings().build();
+    updateDataStreamSettings = settingsBuilder.updateDataStreamSettings().build();
+    listDataStreamsSettings = settingsBuilder.listDataStreamsSettings().build();
+    getDataStreamSettings = settingsBuilder.getDataStreamSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -2314,12 +2406,6 @@ public class AnalyticsAdminServiceStubSettings
             ListAndroidAppDataStreamsResponse,
             ListAndroidAppDataStreamsPagedResponse>
         listAndroidAppDataStreamsSettings;
-    private final UnaryCallSettings.Builder<
-            GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-        getEnhancedMeasurementSettingsSettings;
-    private final UnaryCallSettings.Builder<
-            UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-        updateEnhancedMeasurementSettingsSettings;
     private final UnaryCallSettings.Builder<CreateFirebaseLinkRequest, FirebaseLink>
         createFirebaseLinkSettings;
     private final UnaryCallSettings.Builder<DeleteFirebaseLinkRequest, Empty>
@@ -2356,6 +2442,9 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<
             UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         updateMeasurementProtocolSecretSettings;
+    private final UnaryCallSettings.Builder<
+            AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+        acknowledgeUserDataCollectionSettings;
     private final PagedCallSettings.Builder<
             SearchChangeHistoryEventsRequest,
             SearchChangeHistoryEventsResponse,
@@ -2445,6 +2534,16 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<
             UpdateDataRetentionSettingsRequest, DataRetentionSettings>
         updateDataRetentionSettingsSettings;
+    private final UnaryCallSettings.Builder<CreateDataStreamRequest, DataStream>
+        createDataStreamSettings;
+    private final UnaryCallSettings.Builder<DeleteDataStreamRequest, Empty>
+        deleteDataStreamSettings;
+    private final UnaryCallSettings.Builder<UpdateDataStreamRequest, DataStream>
+        updateDataStreamSettings;
+    private final PagedCallSettings.Builder<
+            ListDataStreamsRequest, ListDataStreamsResponse, ListDataStreamsPagedResponse>
+        listDataStreamsSettings;
+    private final UnaryCallSettings.Builder<GetDataStreamRequest, DataStream> getDataStreamSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -2533,8 +2632,6 @@ public class AnalyticsAdminServiceStubSettings
       updateAndroidAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAndroidAppDataStreamsSettings =
           PagedCallSettings.newBuilder(LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_FACT);
-      getEnhancedMeasurementSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      updateEnhancedMeasurementSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listFirebaseLinksSettings = PagedCallSettings.newBuilder(LIST_FIREBASE_LINKS_PAGE_STR_FACT);
@@ -2551,6 +2648,7 @@ public class AnalyticsAdminServiceStubSettings
       createMeasurementProtocolSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteMeasurementProtocolSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateMeasurementProtocolSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      acknowledgeUserDataCollectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchChangeHistoryEventsSettings =
           PagedCallSettings.newBuilder(SEARCH_CHANGE_HISTORY_EVENTS_PAGE_STR_FACT);
       getGoogleSignalsSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2592,6 +2690,11 @@ public class AnalyticsAdminServiceStubSettings
       getCustomMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDataRetentionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateDataRetentionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDataStreamsSettings = PagedCallSettings.newBuilder(LIST_DATA_STREAMS_PAGE_STR_FACT);
+      getDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2629,8 +2732,6 @@ public class AnalyticsAdminServiceStubSettings
               deleteAndroidAppDataStreamSettings,
               updateAndroidAppDataStreamSettings,
               listAndroidAppDataStreamsSettings,
-              getEnhancedMeasurementSettingsSettings,
-              updateEnhancedMeasurementSettingsSettings,
               createFirebaseLinkSettings,
               deleteFirebaseLinkSettings,
               listFirebaseLinksSettings,
@@ -2645,6 +2746,7 @@ public class AnalyticsAdminServiceStubSettings
               createMeasurementProtocolSecretSettings,
               deleteMeasurementProtocolSecretSettings,
               updateMeasurementProtocolSecretSettings,
+              acknowledgeUserDataCollectionSettings,
               searchChangeHistoryEventsSettings,
               getGoogleSignalsSettingsSettings,
               updateGoogleSignalsSettingsSettings,
@@ -2674,7 +2776,12 @@ public class AnalyticsAdminServiceStubSettings
               archiveCustomMetricSettings,
               getCustomMetricSettings,
               getDataRetentionSettingsSettings,
-              updateDataRetentionSettingsSettings);
+              updateDataRetentionSettingsSettings,
+              createDataStreamSettings,
+              deleteDataStreamSettings,
+              updateDataStreamSettings,
+              listDataStreamsSettings,
+              getDataStreamSettings);
       initDefaults(this);
     }
 
@@ -2715,10 +2822,6 @@ public class AnalyticsAdminServiceStubSettings
       deleteAndroidAppDataStreamSettings = settings.deleteAndroidAppDataStreamSettings.toBuilder();
       updateAndroidAppDataStreamSettings = settings.updateAndroidAppDataStreamSettings.toBuilder();
       listAndroidAppDataStreamsSettings = settings.listAndroidAppDataStreamsSettings.toBuilder();
-      getEnhancedMeasurementSettingsSettings =
-          settings.getEnhancedMeasurementSettingsSettings.toBuilder();
-      updateEnhancedMeasurementSettingsSettings =
-          settings.updateEnhancedMeasurementSettingsSettings.toBuilder();
       createFirebaseLinkSettings = settings.createFirebaseLinkSettings.toBuilder();
       deleteFirebaseLinkSettings = settings.deleteFirebaseLinkSettings.toBuilder();
       listFirebaseLinksSettings = settings.listFirebaseLinksSettings.toBuilder();
@@ -2738,6 +2841,8 @@ public class AnalyticsAdminServiceStubSettings
           settings.deleteMeasurementProtocolSecretSettings.toBuilder();
       updateMeasurementProtocolSecretSettings =
           settings.updateMeasurementProtocolSecretSettings.toBuilder();
+      acknowledgeUserDataCollectionSettings =
+          settings.acknowledgeUserDataCollectionSettings.toBuilder();
       searchChangeHistoryEventsSettings = settings.searchChangeHistoryEventsSettings.toBuilder();
       getGoogleSignalsSettingsSettings = settings.getGoogleSignalsSettingsSettings.toBuilder();
       updateGoogleSignalsSettingsSettings =
@@ -2781,6 +2886,11 @@ public class AnalyticsAdminServiceStubSettings
       getDataRetentionSettingsSettings = settings.getDataRetentionSettingsSettings.toBuilder();
       updateDataRetentionSettingsSettings =
           settings.updateDataRetentionSettingsSettings.toBuilder();
+      createDataStreamSettings = settings.createDataStreamSettings.toBuilder();
+      deleteDataStreamSettings = settings.deleteDataStreamSettings.toBuilder();
+      updateDataStreamSettings = settings.updateDataStreamSettings.toBuilder();
+      listDataStreamsSettings = settings.listDataStreamsSettings.toBuilder();
+      getDataStreamSettings = settings.getDataStreamSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2818,8 +2928,6 @@ public class AnalyticsAdminServiceStubSettings
               deleteAndroidAppDataStreamSettings,
               updateAndroidAppDataStreamSettings,
               listAndroidAppDataStreamsSettings,
-              getEnhancedMeasurementSettingsSettings,
-              updateEnhancedMeasurementSettingsSettings,
               createFirebaseLinkSettings,
               deleteFirebaseLinkSettings,
               listFirebaseLinksSettings,
@@ -2834,6 +2942,7 @@ public class AnalyticsAdminServiceStubSettings
               createMeasurementProtocolSecretSettings,
               deleteMeasurementProtocolSecretSettings,
               updateMeasurementProtocolSecretSettings,
+              acknowledgeUserDataCollectionSettings,
               searchChangeHistoryEventsSettings,
               getGoogleSignalsSettingsSettings,
               updateGoogleSignalsSettingsSettings,
@@ -2863,7 +2972,12 @@ public class AnalyticsAdminServiceStubSettings
               archiveCustomMetricSettings,
               getCustomMetricSettings,
               getDataRetentionSettingsSettings,
-              updateDataRetentionSettingsSettings);
+              updateDataRetentionSettingsSettings,
+              createDataStreamSettings,
+              deleteDataStreamSettings,
+              updateDataStreamSettings,
+              listDataStreamsSettings,
+              getDataStreamSettings);
     }
 
     private static Builder createDefault() {
@@ -3051,16 +3165,6 @@ public class AnalyticsAdminServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
-          .getEnhancedMeasurementSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateEnhancedMeasurementSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
           .createFirebaseLinkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -3127,6 +3231,11 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .updateMeasurementProtocolSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .acknowledgeUserDataCollectionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -3277,6 +3386,31 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .updateDataRetentionSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createDataStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteDataStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateDataStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDataStreamsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDataStreamSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -3505,20 +3639,6 @@ public class AnalyticsAdminServiceStubSettings
       return listAndroidAppDataStreamsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getEnhancedMeasurementSettings. */
-    public UnaryCallSettings.Builder<
-            GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-        getEnhancedMeasurementSettingsSettings() {
-      return getEnhancedMeasurementSettingsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateEnhancedMeasurementSettings. */
-    public UnaryCallSettings.Builder<
-            UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-        updateEnhancedMeasurementSettingsSettings() {
-      return updateEnhancedMeasurementSettingsSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createFirebaseLink. */
     public UnaryCallSettings.Builder<CreateFirebaseLinkRequest, FirebaseLink>
         createFirebaseLinkSettings() {
@@ -3608,6 +3728,13 @@ public class AnalyticsAdminServiceStubSettings
             UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         updateMeasurementProtocolSecretSettings() {
       return updateMeasurementProtocolSecretSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to acknowledgeUserDataCollection. */
+    public UnaryCallSettings.Builder<
+            AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+        acknowledgeUserDataCollectionSettings() {
+      return acknowledgeUserDataCollectionSettings;
     }
 
     /** Returns the builder for the settings used for calls to searchChangeHistoryEvents. */
@@ -3840,6 +3967,35 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
         updateDataRetentionSettingsSettings() {
       return updateDataRetentionSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDataStream. */
+    public UnaryCallSettings.Builder<CreateDataStreamRequest, DataStream>
+        createDataStreamSettings() {
+      return createDataStreamSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataStream. */
+    public UnaryCallSettings.Builder<DeleteDataStreamRequest, Empty> deleteDataStreamSettings() {
+      return deleteDataStreamSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDataStream. */
+    public UnaryCallSettings.Builder<UpdateDataStreamRequest, DataStream>
+        updateDataStreamSettings() {
+      return updateDataStreamSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDataStreams. */
+    public PagedCallSettings.Builder<
+            ListDataStreamsRequest, ListDataStreamsResponse, ListDataStreamsPagedResponse>
+        listDataStreamsSettings() {
+      return listDataStreamsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDataStream. */
+    public UnaryCallSettings.Builder<GetDataStreamRequest, DataStream> getDataStreamSettings() {
+      return getDataStreamSettings;
     }
 
     @Override

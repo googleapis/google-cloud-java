@@ -23,6 +23,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
@@ -35,6 +36,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.Account;
+import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
+import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
 import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
@@ -54,6 +57,7 @@ import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.CreateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
@@ -66,9 +70,11 @@ import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
+import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
+import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
@@ -80,7 +86,6 @@ import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
-import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest;
@@ -89,9 +94,9 @@ import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
-import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest;
@@ -115,6 +120,8 @@ import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomMetricsRequest;
 import com.google.analytics.admin.v1alpha.ListCustomMetricsResponse;
+import com.google.analytics.admin.v1alpha.ListDataStreamsRequest;
+import com.google.analytics.admin.v1alpha.ListDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest;
@@ -144,8 +151,8 @@ import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
-import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest;
@@ -559,35 +566,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListAndroidAppDataStreamsResponse.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<
-          GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      getEnhancedMeasurementSettingsMethodDescriptor =
-          MethodDescriptor
-              .<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetEnhancedMeasurementSettings")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetEnhancedMeasurementSettingsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(EnhancedMeasurementSettings.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<
-          UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      updateEnhancedMeasurementSettingsMethodDescriptor =
-          MethodDescriptor
-              .<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateEnhancedMeasurementSettings")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(
-                      UpdateEnhancedMeasurementSettingsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(EnhancedMeasurementSettings.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<CreateFirebaseLinkRequest, FirebaseLink>
       createFirebaseLinkMethodDescriptor =
           MethodDescriptor.<CreateFirebaseLinkRequest, FirebaseLink>newBuilder()
@@ -760,6 +738,21 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       UpdateMeasurementProtocolSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MeasurementProtocolSecret.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+      acknowledgeUserDataCollectionMethodDescriptor =
+          MethodDescriptor
+              .<AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/AcknowledgeUserDataCollection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AcknowledgeUserDataCollectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AcknowledgeUserDataCollectionResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<
@@ -1159,6 +1152,62 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(DataRetentionSettings.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateDataStreamRequest, DataStream>
+      createDataStreamMethodDescriptor =
+          MethodDescriptor.<CreateDataStreamRequest, DataStream>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateDataStream")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDataStreamRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DataStream.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteDataStreamRequest, Empty>
+      deleteDataStreamMethodDescriptor =
+          MethodDescriptor.<DeleteDataStreamRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteDataStream")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDataStreamRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateDataStreamRequest, DataStream>
+      updateDataStreamMethodDescriptor =
+          MethodDescriptor.<UpdateDataStreamRequest, DataStream>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateDataStream")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDataStreamRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DataStream.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListDataStreamsRequest, ListDataStreamsResponse>
+      listDataStreamsMethodDescriptor =
+          MethodDescriptor.<ListDataStreamsRequest, ListDataStreamsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListDataStreams")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDataStreamsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDataStreamsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetDataStreamRequest, DataStream>
+      getDataStreamMethodDescriptor =
+          MethodDescriptor.<GetDataStreamRequest, DataStream>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetDataStream")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDataStreamRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DataStream.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -1225,10 +1274,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<
           ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsPagedResponse>
       listAndroidAppDataStreamsPagedCallable;
-  private final UnaryCallable<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      getEnhancedMeasurementSettingsCallable;
-  private final UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      updateEnhancedMeasurementSettingsCallable;
   private final UnaryCallable<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkCallable;
   private final UnaryCallable<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkCallable;
   private final UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
@@ -1261,6 +1306,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       deleteMeasurementProtocolSecretCallable;
   private final UnaryCallable<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
       updateMeasurementProtocolSecretCallable;
+  private final UnaryCallable<
+          AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+      acknowledgeUserDataCollectionCallable;
   private final UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsCallable;
   private final UnaryCallable<
@@ -1343,6 +1391,14 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       getDataRetentionSettingsCallable;
   private final UnaryCallable<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
       updateDataRetentionSettingsCallable;
+  private final UnaryCallable<CreateDataStreamRequest, DataStream> createDataStreamCallable;
+  private final UnaryCallable<DeleteDataStreamRequest, Empty> deleteDataStreamCallable;
+  private final UnaryCallable<UpdateDataStreamRequest, DataStream> updateDataStreamCallable;
+  private final UnaryCallable<ListDataStreamsRequest, ListDataStreamsResponse>
+      listDataStreamsCallable;
+  private final UnaryCallable<ListDataStreamsRequest, ListDataStreamsPagedResponse>
+      listDataStreamsPagedCallable;
+  private final UnaryCallable<GetDataStreamRequest, DataStream> getDataStreamCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -1724,32 +1780,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       return params.build();
                     })
                 .build();
-    GrpcCallSettings<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-        getEnhancedMeasurementSettingsTransportSettings =
-            GrpcCallSettings
-                .<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
-                .setMethodDescriptor(getEnhancedMeasurementSettingsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-        updateEnhancedMeasurementSettingsTransportSettings =
-            GrpcCallSettings
-                .<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
-                .setMethodDescriptor(updateEnhancedMeasurementSettingsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
-                          "enhanced_measurement_settings.name",
-                          String.valueOf(request.getEnhancedMeasurementSettings().getName()));
-                      return params.build();
-                    })
-                .build();
     GrpcCallSettings<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkTransportSettings =
         GrpcCallSettings.<CreateFirebaseLinkRequest, FirebaseLink>newBuilder()
             .setMethodDescriptor(createFirebaseLinkMethodDescriptor)
@@ -1906,6 +1936,19 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       params.put(
                           "measurement_protocol_secret.name",
                           String.valueOf(request.getMeasurementProtocolSecret().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+        acknowledgeUserDataCollectionTransportSettings =
+            GrpcCallSettings
+                .<AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+                    newBuilder()
+                .setMethodDescriptor(acknowledgeUserDataCollectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("property", String.valueOf(request.getProperty()));
                       return params.build();
                     })
                 .build();
@@ -2277,6 +2320,57 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<CreateDataStreamRequest, DataStream> createDataStreamTransportSettings =
+        GrpcCallSettings.<CreateDataStreamRequest, DataStream>newBuilder()
+            .setMethodDescriptor(createDataStreamMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteDataStreamRequest, Empty> deleteDataStreamTransportSettings =
+        GrpcCallSettings.<DeleteDataStreamRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteDataStreamMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateDataStreamRequest, DataStream> updateDataStreamTransportSettings =
+        GrpcCallSettings.<UpdateDataStreamRequest, DataStream>newBuilder()
+            .setMethodDescriptor(updateDataStreamMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("data_stream.name", String.valueOf(request.getDataStream().getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListDataStreamsRequest, ListDataStreamsResponse>
+        listDataStreamsTransportSettings =
+            GrpcCallSettings.<ListDataStreamsRequest, ListDataStreamsResponse>newBuilder()
+                .setMethodDescriptor(listDataStreamsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetDataStreamRequest, DataStream> getDataStreamTransportSettings =
+        GrpcCallSettings.<GetDataStreamRequest, DataStream>newBuilder()
+            .setMethodDescriptor(getDataStreamMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -2448,16 +2542,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             listAndroidAppDataStreamsTransportSettings,
             settings.listAndroidAppDataStreamsSettings(),
             clientContext);
-    this.getEnhancedMeasurementSettingsCallable =
-        callableFactory.createUnaryCallable(
-            getEnhancedMeasurementSettingsTransportSettings,
-            settings.getEnhancedMeasurementSettingsSettings(),
-            clientContext);
-    this.updateEnhancedMeasurementSettingsCallable =
-        callableFactory.createUnaryCallable(
-            updateEnhancedMeasurementSettingsTransportSettings,
-            settings.updateEnhancedMeasurementSettingsSettings(),
-            clientContext);
     this.createFirebaseLinkCallable =
         callableFactory.createUnaryCallable(
             createFirebaseLinkTransportSettings,
@@ -2540,6 +2624,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createUnaryCallable(
             updateMeasurementProtocolSecretTransportSettings,
             settings.updateMeasurementProtocolSecretSettings(),
+            clientContext);
+    this.acknowledgeUserDataCollectionCallable =
+        callableFactory.createUnaryCallable(
+            acknowledgeUserDataCollectionTransportSettings,
+            settings.acknowledgeUserDataCollectionSettings(),
             clientContext);
     this.searchChangeHistoryEventsCallable =
         callableFactory.createUnaryCallable(
@@ -2719,6 +2808,24 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             updateDataRetentionSettingsTransportSettings,
             settings.updateDataRetentionSettingsSettings(),
             clientContext);
+    this.createDataStreamCallable =
+        callableFactory.createUnaryCallable(
+            createDataStreamTransportSettings, settings.createDataStreamSettings(), clientContext);
+    this.deleteDataStreamCallable =
+        callableFactory.createUnaryCallable(
+            deleteDataStreamTransportSettings, settings.deleteDataStreamSettings(), clientContext);
+    this.updateDataStreamCallable =
+        callableFactory.createUnaryCallable(
+            updateDataStreamTransportSettings, settings.updateDataStreamSettings(), clientContext);
+    this.listDataStreamsCallable =
+        callableFactory.createUnaryCallable(
+            listDataStreamsTransportSettings, settings.listDataStreamsSettings(), clientContext);
+    this.listDataStreamsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDataStreamsTransportSettings, settings.listDataStreamsSettings(), clientContext);
+    this.getDataStreamCallable =
+        callableFactory.createUnaryCallable(
+            getDataStreamTransportSettings, settings.getDataStreamSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2958,18 +3065,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   }
 
   @Override
-  public UnaryCallable<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      getEnhancedMeasurementSettingsCallable() {
-    return getEnhancedMeasurementSettingsCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      updateEnhancedMeasurementSettingsCallable() {
-    return updateEnhancedMeasurementSettingsCallable;
-  }
-
-  @Override
   public UnaryCallable<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkCallable() {
     return createFirebaseLinkCallable;
   }
@@ -3065,6 +3160,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
       updateMeasurementProtocolSecretCallable() {
     return updateMeasurementProtocolSecretCallable;
+  }
+
+  @Override
+  public UnaryCallable<AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+      acknowledgeUserDataCollectionCallable() {
+    return acknowledgeUserDataCollectionCallable;
   }
 
   @Override
@@ -3285,6 +3386,37 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
       updateDataRetentionSettingsCallable() {
     return updateDataRetentionSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDataStreamRequest, DataStream> createDataStreamCallable() {
+    return createDataStreamCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDataStreamRequest, Empty> deleteDataStreamCallable() {
+    return deleteDataStreamCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDataStreamRequest, DataStream> updateDataStreamCallable() {
+    return updateDataStreamCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDataStreamsRequest, ListDataStreamsResponse> listDataStreamsCallable() {
+    return listDataStreamsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDataStreamsRequest, ListDataStreamsPagedResponse>
+      listDataStreamsPagedCallable() {
+    return listDataStreamsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDataStreamRequest, DataStream> getDataStreamCallable() {
+    return getDataStreamCallable;
   }
 
   @Override

@@ -23,6 +23,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
@@ -294,20 +295,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
         .listAndroidAppDataStreamsSettings();
   }
 
-  /** Returns the object with the settings used for calls to getEnhancedMeasurementSettings. */
-  public UnaryCallSettings<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      getEnhancedMeasurementSettingsSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .getEnhancedMeasurementSettingsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateEnhancedMeasurementSettings. */
-  public UnaryCallSettings<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-      updateEnhancedMeasurementSettingsSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .updateEnhancedMeasurementSettingsSettings();
-  }
-
   /** Returns the object with the settings used for calls to createFirebaseLink. */
   public UnaryCallSettings<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createFirebaseLinkSettings();
@@ -396,6 +383,14 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       updateMeasurementProtocolSecretSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
         .updateMeasurementProtocolSecretSettings();
+  }
+
+  /** Returns the object with the settings used for calls to acknowledgeUserDataCollection. */
+  public UnaryCallSettings<
+          AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+      acknowledgeUserDataCollectionSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .acknowledgeUserDataCollectionSettings();
   }
 
   /** Returns the object with the settings used for calls to searchChangeHistoryEvents. */
@@ -627,6 +622,33 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       updateDataRetentionSettingsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
         .updateDataRetentionSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDataStream. */
+  public UnaryCallSettings<CreateDataStreamRequest, DataStream> createDataStreamSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createDataStreamSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataStream. */
+  public UnaryCallSettings<DeleteDataStreamRequest, Empty> deleteDataStreamSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteDataStreamSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDataStream. */
+  public UnaryCallSettings<UpdateDataStreamRequest, DataStream> updateDataStreamSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateDataStreamSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDataStreams. */
+  public PagedCallSettings<
+          ListDataStreamsRequest, ListDataStreamsResponse, ListDataStreamsPagedResponse>
+      listDataStreamsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listDataStreamsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDataStream. */
+  public UnaryCallSettings<GetDataStreamRequest, DataStream> getDataStreamSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getDataStreamSettings();
   }
 
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
@@ -934,20 +956,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().listAndroidAppDataStreamsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getEnhancedMeasurementSettings. */
-    public UnaryCallSettings.Builder<
-            GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-        getEnhancedMeasurementSettingsSettings() {
-      return getStubSettingsBuilder().getEnhancedMeasurementSettingsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateEnhancedMeasurementSettings. */
-    public UnaryCallSettings.Builder<
-            UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
-        updateEnhancedMeasurementSettingsSettings() {
-      return getStubSettingsBuilder().updateEnhancedMeasurementSettingsSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createFirebaseLink. */
     public UnaryCallSettings.Builder<CreateFirebaseLinkRequest, FirebaseLink>
         createFirebaseLinkSettings() {
@@ -1037,6 +1045,13 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
             UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         updateMeasurementProtocolSecretSettings() {
       return getStubSettingsBuilder().updateMeasurementProtocolSecretSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to acknowledgeUserDataCollection. */
+    public UnaryCallSettings.Builder<
+            AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
+        acknowledgeUserDataCollectionSettings() {
+      return getStubSettingsBuilder().acknowledgeUserDataCollectionSettings();
     }
 
     /** Returns the builder for the settings used for calls to searchChangeHistoryEvents. */
@@ -1269,6 +1284,35 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
         updateDataRetentionSettingsSettings() {
       return getStubSettingsBuilder().updateDataRetentionSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDataStream. */
+    public UnaryCallSettings.Builder<CreateDataStreamRequest, DataStream>
+        createDataStreamSettings() {
+      return getStubSettingsBuilder().createDataStreamSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataStream. */
+    public UnaryCallSettings.Builder<DeleteDataStreamRequest, Empty> deleteDataStreamSettings() {
+      return getStubSettingsBuilder().deleteDataStreamSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDataStream. */
+    public UnaryCallSettings.Builder<UpdateDataStreamRequest, DataStream>
+        updateDataStreamSettings() {
+      return getStubSettingsBuilder().updateDataStreamSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDataStreams. */
+    public PagedCallSettings.Builder<
+            ListDataStreamsRequest, ListDataStreamsResponse, ListDataStreamsPagedResponse>
+        listDataStreamsSettings() {
+      return getStubSettingsBuilder().listDataStreamsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDataStream. */
+    public UnaryCallSettings.Builder<GetDataStreamRequest, DataStream> getDataStreamSettings() {
+      return getStubSettingsBuilder().getDataStreamSettings();
     }
 
     @Override

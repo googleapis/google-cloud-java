@@ -22,31 +22,29 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * Request message for GetEnhancedMeasurementSettings RPC.
+ * Request message for DeleteDataStream RPC.
  * </pre>
  *
- * Protobuf type {@code google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest}
+ * Protobuf type {@code google.analytics.admin.v1alpha.DeleteDataStreamRequest}
  */
-public final class GetEnhancedMeasurementSettingsRequest
-    extends com.google.protobuf.GeneratedMessageV3
+public final class DeleteDataStreamRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest)
-    GetEnhancedMeasurementSettingsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DeleteDataStreamRequest)
+    DeleteDataStreamRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetEnhancedMeasurementSettingsRequest.newBuilder() to construct.
-  private GetEnhancedMeasurementSettingsRequest(
-      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use DeleteDataStreamRequest.newBuilder() to construct.
+  private DeleteDataStreamRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetEnhancedMeasurementSettingsRequest() {
+  private DeleteDataStreamRequest() {
     name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetEnhancedMeasurementSettingsRequest();
+    return new DeleteDataStreamRequest();
   }
 
   @java.lang.Override
@@ -54,7 +52,7 @@ public final class GetEnhancedMeasurementSettingsRequest
     return this.unknownFields;
   }
 
-  private GetEnhancedMeasurementSettingsRequest(
+  private DeleteDataStreamRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -100,17 +98,17 @@ public final class GetEnhancedMeasurementSettingsRequest
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
-        .internal_static_google_analytics_admin_v1alpha_GetEnhancedMeasurementSettingsRequest_descriptor;
+        .internal_static_google_analytics_admin_v1alpha_DeleteDataStreamRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
-        .internal_static_google_analytics_admin_v1alpha_GetEnhancedMeasurementSettingsRequest_fieldAccessorTable
+        .internal_static_google_analytics_admin_v1alpha_DeleteDataStreamRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest.class,
-            com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest.Builder.class);
+            com.google.analytics.admin.v1alpha.DeleteDataStreamRequest.class,
+            com.google.analytics.admin.v1alpha.DeleteDataStreamRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -119,10 +117,8 @@ public final class GetEnhancedMeasurementSettingsRequest
    *
    *
    * <pre>
-   * Required. The name of the settings to lookup.
-   * Format:
-   * properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings
-   * Example: "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
+   * Required. The name of the DataStream to delete.
+   * Example format: properties/1234/dataStreams/5678
    * </pre>
    *
    * <code>
@@ -147,10 +143,8 @@ public final class GetEnhancedMeasurementSettingsRequest
    *
    *
    * <pre>
-   * Required. The name of the settings to lookup.
-   * Format:
-   * properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings
-   * Example: "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
+   * Required. The name of the DataStream to delete.
+   * Example format: properties/1234/dataStreams/5678
    * </pre>
    *
    * <code>
@@ -211,12 +205,11 @@ public final class GetEnhancedMeasurementSettingsRequest
     if (obj == this) {
       return true;
     }
-    if (!(obj
-        instanceof com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest)) {
+    if (!(obj instanceof com.google.analytics.admin.v1alpha.DeleteDataStreamRequest)) {
       return super.equals(obj);
     }
-    com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest other =
-        (com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest) obj;
+    com.google.analytics.admin.v1alpha.DeleteDataStreamRequest other =
+        (com.google.analytics.admin.v1alpha.DeleteDataStreamRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -237,72 +230,71 @@ public final class GetEnhancedMeasurementSettingsRequest
     return hash;
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest parseFrom(
-      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parseFrom(byte[] data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest
-      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parseDelimitedFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest
-      parseDelimitedFrom(
-          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -320,7 +312,7 @@ public final class GetEnhancedMeasurementSettingsRequest
   }
 
   public static Builder newBuilder(
-      com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest prototype) {
+      com.google.analytics.admin.v1alpha.DeleteDataStreamRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -338,33 +330,31 @@ public final class GetEnhancedMeasurementSettingsRequest
    *
    *
    * <pre>
-   * Request message for GetEnhancedMeasurementSettings RPC.
+   * Request message for DeleteDataStream RPC.
    * </pre>
    *
-   * Protobuf type {@code google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest}
+   * Protobuf type {@code google.analytics.admin.v1alpha.DeleteDataStreamRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest)
-      com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.analytics.admin.v1alpha.DeleteDataStreamRequest)
+      com.google.analytics.admin.v1alpha.DeleteDataStreamRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
-          .internal_static_google_analytics_admin_v1alpha_GetEnhancedMeasurementSettingsRequest_descriptor;
+          .internal_static_google_analytics_admin_v1alpha_DeleteDataStreamRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
-          .internal_static_google_analytics_admin_v1alpha_GetEnhancedMeasurementSettingsRequest_fieldAccessorTable
+          .internal_static_google_analytics_admin_v1alpha_DeleteDataStreamRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest.class,
-              com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest.Builder
-                  .class);
+              com.google.analytics.admin.v1alpha.DeleteDataStreamRequest.class,
+              com.google.analytics.admin.v1alpha.DeleteDataStreamRequest.Builder.class);
     }
 
-    // Construct using
-    // com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest.newBuilder()
+    // Construct using com.google.analytics.admin.v1alpha.DeleteDataStreamRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -389,20 +379,17 @@ public final class GetEnhancedMeasurementSettingsRequest
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
-          .internal_static_google_analytics_admin_v1alpha_GetEnhancedMeasurementSettingsRequest_descriptor;
+          .internal_static_google_analytics_admin_v1alpha_DeleteDataStreamRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest
-        getDefaultInstanceForType() {
-      return com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest
-          .getDefaultInstance();
+    public com.google.analytics.admin.v1alpha.DeleteDataStreamRequest getDefaultInstanceForType() {
+      return com.google.analytics.admin.v1alpha.DeleteDataStreamRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest build() {
-      com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest result =
-          buildPartial();
+    public com.google.analytics.admin.v1alpha.DeleteDataStreamRequest build() {
+      com.google.analytics.admin.v1alpha.DeleteDataStreamRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -410,9 +397,9 @@ public final class GetEnhancedMeasurementSettingsRequest
     }
 
     @java.lang.Override
-    public com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest buildPartial() {
-      com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest result =
-          new com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest(this);
+    public com.google.analytics.admin.v1alpha.DeleteDataStreamRequest buildPartial() {
+      com.google.analytics.admin.v1alpha.DeleteDataStreamRequest result =
+          new com.google.analytics.admin.v1alpha.DeleteDataStreamRequest(this);
       result.name_ = name_;
       onBuilt();
       return result;
@@ -453,21 +440,17 @@ public final class GetEnhancedMeasurementSettingsRequest
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other
-          instanceof com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest) {
-        return mergeFrom(
-            (com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest) other);
+      if (other instanceof com.google.analytics.admin.v1alpha.DeleteDataStreamRequest) {
+        return mergeFrom((com.google.analytics.admin.v1alpha.DeleteDataStreamRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(
-        com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest other) {
-      if (other
-          == com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest
-              .getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.analytics.admin.v1alpha.DeleteDataStreamRequest other) {
+      if (other == com.google.analytics.admin.v1alpha.DeleteDataStreamRequest.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -487,13 +470,12 @@ public final class GetEnhancedMeasurementSettingsRequest
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest parsedMessage = null;
+      com.google.analytics.admin.v1alpha.DeleteDataStreamRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest)
-                e.getUnfinishedMessage();
+            (com.google.analytics.admin.v1alpha.DeleteDataStreamRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -508,10 +490,8 @@ public final class GetEnhancedMeasurementSettingsRequest
      *
      *
      * <pre>
-     * Required. The name of the settings to lookup.
-     * Format:
-     * properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings
-     * Example: "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
+     * Required. The name of the DataStream to delete.
+     * Example format: properties/1234/dataStreams/5678
      * </pre>
      *
      * <code>
@@ -535,10 +515,8 @@ public final class GetEnhancedMeasurementSettingsRequest
      *
      *
      * <pre>
-     * Required. The name of the settings to lookup.
-     * Format:
-     * properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings
-     * Example: "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
+     * Required. The name of the DataStream to delete.
+     * Example format: properties/1234/dataStreams/5678
      * </pre>
      *
      * <code>
@@ -562,10 +540,8 @@ public final class GetEnhancedMeasurementSettingsRequest
      *
      *
      * <pre>
-     * Required. The name of the settings to lookup.
-     * Format:
-     * properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings
-     * Example: "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
+     * Required. The name of the DataStream to delete.
+     * Example format: properties/1234/dataStreams/5678
      * </pre>
      *
      * <code>
@@ -588,10 +564,8 @@ public final class GetEnhancedMeasurementSettingsRequest
      *
      *
      * <pre>
-     * Required. The name of the settings to lookup.
-     * Format:
-     * properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings
-     * Example: "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
+     * Required. The name of the DataStream to delete.
+     * Example format: properties/1234/dataStreams/5678
      * </pre>
      *
      * <code>
@@ -610,10 +584,8 @@ public final class GetEnhancedMeasurementSettingsRequest
      *
      *
      * <pre>
-     * Required. The name of the settings to lookup.
-     * Format:
-     * properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings
-     * Example: "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
+     * Required. The name of the DataStream to delete.
+     * Example format: properties/1234/dataStreams/5678
      * </pre>
      *
      * <code>
@@ -645,46 +617,42 @@ public final class GetEnhancedMeasurementSettingsRequest
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest)
+    // @@protoc_insertion_point(builder_scope:google.analytics.admin.v1alpha.DeleteDataStreamRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest)
-  private static final com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest
-      DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.analytics.admin.v1alpha.DeleteDataStreamRequest)
+  private static final com.google.analytics.admin.v1alpha.DeleteDataStreamRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE =
-        new com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest();
+    DEFAULT_INSTANCE = new com.google.analytics.admin.v1alpha.DeleteDataStreamRequest();
   }
 
-  public static com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest
-      getDefaultInstance() {
+  public static com.google.analytics.admin.v1alpha.DeleteDataStreamRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetEnhancedMeasurementSettingsRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetEnhancedMeasurementSettingsRequest>() {
+  private static final com.google.protobuf.Parser<DeleteDataStreamRequest> PARSER =
+      new com.google.protobuf.AbstractParser<DeleteDataStreamRequest>() {
         @java.lang.Override
-        public GetEnhancedMeasurementSettingsRequest parsePartialFrom(
+        public DeleteDataStreamRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetEnhancedMeasurementSettingsRequest(input, extensionRegistry);
+          return new DeleteDataStreamRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<GetEnhancedMeasurementSettingsRequest> parser() {
+  public static com.google.protobuf.Parser<DeleteDataStreamRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetEnhancedMeasurementSettingsRequest> getParserForType() {
+  public com.google.protobuf.Parser<DeleteDataStreamRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest
-      getDefaultInstanceForType() {
+  public com.google.analytics.admin.v1alpha.DeleteDataStreamRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

@@ -22,7 +22,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * A link between an GA4 property and a Firebase project.
+ * A link between a GA4 property and a Firebase project.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.FirebaseLink}
@@ -477,7 +477,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A link between an GA4 property and a Firebase project.
+   * A link between a GA4 property and a Firebase project.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.FirebaseLink}

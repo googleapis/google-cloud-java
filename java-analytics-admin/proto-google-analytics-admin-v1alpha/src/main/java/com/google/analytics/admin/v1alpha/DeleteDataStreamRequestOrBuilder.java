@@ -18,19 +18,17 @@
 
 package com.google.analytics.admin.v1alpha;
 
-public interface GetEnhancedMeasurementSettingsRequestOrBuilder
+public interface DeleteDataStreamRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest)
+    // @@protoc_insertion_point(interface_extends:google.analytics.admin.v1alpha.DeleteDataStreamRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The name of the settings to lookup.
-   * Format:
-   * properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings
-   * Example: "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
+   * Required. The name of the DataStream to delete.
+   * Example format: properties/1234/dataStreams/5678
    * </pre>
    *
    * <code>
@@ -44,10 +42,8 @@ public interface GetEnhancedMeasurementSettingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the settings to lookup.
-   * Format:
-   * properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings
-   * Example: "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
+   * Required. The name of the DataStream to delete.
+   * Example format: properties/1234/dataStreams/5678
    * </pre>
    *
    * <code>

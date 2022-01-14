@@ -16,4 +16,14 @@
     <className>com/google/analytics/admin/v1alpha/stub/GrpcAnalyticsAdminServiceStub*</className>
     <method>* *FirebaseLink*(*)</method>
   </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminService*</className>
+    <method>* *EnhancedMeasurementSettings*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/stub/*AnalyticsAdminServiceStub*</className>
+    <method>* *EnhancedMeasurementSettings*(*)</method>
+  </difference>
 </differences>

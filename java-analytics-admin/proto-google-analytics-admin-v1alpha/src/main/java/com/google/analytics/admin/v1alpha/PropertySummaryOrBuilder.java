@@ -56,7 +56,7 @@ public interface PropertySummaryOrBuilder
    *
    *
    * <pre>
-   * Display name for the property referred to in this account summary.
+   * Display name for the property referred to in this property summary.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -68,7 +68,7 @@ public interface PropertySummaryOrBuilder
    *
    *
    * <pre>
-   * Display name for the property referred to in this account summary.
+   * Display name for the property referred to in this property summary.
    * </pre>
    *
    * <code>string display_name = 2;</code>

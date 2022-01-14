@@ -168,6 +168,26 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>DATA_RETENTION_SETTINGS = 13;</code>
    */
   DATA_RETENTION_SETTINGS(13),
+  /**
+   *
+   *
+   * <pre>
+   * DisplayVideo360AdvertiserLink resource
+   * </pre>
+   *
+   * <code>DISPLAY_VIDEO_360_ADVERTISER_LINK = 14;</code>
+   */
+  DISPLAY_VIDEO_360_ADVERTISER_LINK(14),
+  /**
+   *
+   *
+   * <pre>
+   * DisplayVideo360AdvertiserLinkProposal resource
+   * </pre>
+   *
+   * <code>DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL = 15;</code>
+   */
+  DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL(15),
   UNRECOGNIZED(-1),
   ;
 
@@ -311,6 +331,26 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>DATA_RETENTION_SETTINGS = 13;</code>
    */
   public static final int DATA_RETENTION_SETTINGS_VALUE = 13;
+  /**
+   *
+   *
+   * <pre>
+   * DisplayVideo360AdvertiserLink resource
+   * </pre>
+   *
+   * <code>DISPLAY_VIDEO_360_ADVERTISER_LINK = 14;</code>
+   */
+  public static final int DISPLAY_VIDEO_360_ADVERTISER_LINK_VALUE = 14;
+  /**
+   *
+   *
+   * <pre>
+   * DisplayVideo360AdvertiserLinkProposal resource
+   * </pre>
+   *
+   * <code>DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL = 15;</code>
+   */
+  public static final int DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL_VALUE = 15;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -364,6 +404,10 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return CUSTOM_METRIC;
       case 13:
         return DATA_RETENTION_SETTINGS;
+      case 14:
+        return DISPLAY_VIDEO_360_ADVERTISER_LINK;
+      case 15:
+        return DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL;
       default:
         return null;
     }

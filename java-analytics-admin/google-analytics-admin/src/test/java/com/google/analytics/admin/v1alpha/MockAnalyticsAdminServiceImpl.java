@@ -780,50 +780,6 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
-  public void getEnhancedMeasurementSettings(
-      GetEnhancedMeasurementSettingsRequest request,
-      StreamObserver<EnhancedMeasurementSettings> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof EnhancedMeasurementSettings) {
-      requests.add(request);
-      responseObserver.onNext(((EnhancedMeasurementSettings) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method GetEnhancedMeasurementSettings, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  EnhancedMeasurementSettings.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void updateEnhancedMeasurementSettings(
-      UpdateEnhancedMeasurementSettingsRequest request,
-      StreamObserver<EnhancedMeasurementSettings> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof EnhancedMeasurementSettings) {
-      requests.add(request);
-      responseObserver.onNext(((EnhancedMeasurementSettings) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method UpdateEnhancedMeasurementSettings, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  EnhancedMeasurementSettings.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void createFirebaseLink(
       CreateFirebaseLinkRequest request, StreamObserver<FirebaseLink> responseObserver) {
     Object response = responses.poll();
@@ -1119,6 +1075,28 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   "Unrecognized response type %s for method UpdateMeasurementProtocolSecret, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   MeasurementProtocolSecret.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void acknowledgeUserDataCollection(
+      AcknowledgeUserDataCollectionRequest request,
+      StreamObserver<AcknowledgeUserDataCollectionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AcknowledgeUserDataCollectionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AcknowledgeUserDataCollectionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AcknowledgeUserDataCollection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AcknowledgeUserDataCollectionResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -1767,6 +1745,111 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   "Unrecognized response type %s for method UpdateDataRetentionSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataRetentionSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createDataStream(
+      CreateDataStreamRequest request, StreamObserver<DataStream> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DataStream) {
+      requests.add(request);
+      responseObserver.onNext(((DataStream) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDataStream, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DataStream.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDataStream(
+      DeleteDataStreamRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDataStream, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDataStream(
+      UpdateDataStreamRequest request, StreamObserver<DataStream> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DataStream) {
+      requests.add(request);
+      responseObserver.onNext(((DataStream) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDataStream, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DataStream.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDataStreams(
+      ListDataStreamsRequest request, StreamObserver<ListDataStreamsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDataStreamsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDataStreamsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDataStreams, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDataStreamsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDataStream(
+      GetDataStreamRequest request, StreamObserver<DataStream> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DataStream) {
+      requests.add(request);
+      responseObserver.onNext(((DataStream) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDataStream, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DataStream.class.getName(),
                   Exception.class.getName())));
     }
   }

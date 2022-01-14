@@ -11,4 +11,10 @@
     <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceGrpc</className>
     <method>* getUpdateFirebaseLinkMethod(*)</method>
   </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceGrpc*</className>
+    <method>* *EnhancedMeasurementSettings*(*)</method>
+  </difference>
+
 </differences>
