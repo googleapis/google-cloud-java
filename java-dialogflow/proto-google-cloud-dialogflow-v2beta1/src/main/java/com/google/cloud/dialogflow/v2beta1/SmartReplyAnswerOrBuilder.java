@@ -73,7 +73,7 @@ public interface SmartReplyAnswerOrBuilder
    * ID&gt;"
    * </pre>
    *
-   * <code>string answer_record = 3;</code>
+   * <code>string answer_record = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The answerRecord.
    */
@@ -87,7 +87,7 @@ public interface SmartReplyAnswerOrBuilder
    * ID&gt;"
    * </pre>
    *
-   * <code>string answer_record = 3;</code>
+   * <code>string answer_record = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for answerRecord.
    */

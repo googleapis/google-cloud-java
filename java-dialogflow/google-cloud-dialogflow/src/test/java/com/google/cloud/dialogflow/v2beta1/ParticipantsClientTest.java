@@ -771,7 +771,10 @@ public class ParticipantsClientTest {
     SuggestSmartRepliesResponse expectedResponse =
         SuggestSmartRepliesResponse.newBuilder()
             .addAllSmartReplyAnswers(new ArrayList<SmartReplyAnswer>())
-            .setLatestMessage("latestMessage-1424305536")
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
             .setContextSize(1116903569)
             .build();
     mockParticipants.addResponse(expectedResponse);
@@ -815,7 +818,10 @@ public class ParticipantsClientTest {
     SuggestSmartRepliesResponse expectedResponse =
         SuggestSmartRepliesResponse.newBuilder()
             .addAllSmartReplyAnswers(new ArrayList<SmartReplyAnswer>())
-            .setLatestMessage("latestMessage-1424305536")
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
             .setContextSize(1116903569)
             .build();
     mockParticipants.addResponse(expectedResponse);

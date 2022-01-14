@@ -232,7 +232,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string latest_message = 2;</code>
+   * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The latestMessage.
    */
@@ -258,7 +258,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string latest_message = 2;</code>
+   * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for latestMessage.
    */
@@ -1123,7 +1123,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 2;</code>
+     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The latestMessage.
      */
@@ -1148,7 +1148,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 2;</code>
+     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for latestMessage.
      */
@@ -1173,7 +1173,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 2;</code>
+     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The latestMessage to set.
      * @return This builder for chaining.
@@ -1197,7 +1197,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 2;</code>
+     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1217,7 +1217,7 @@ public final class SuggestSmartRepliesResponse extends com.google.protobuf.Gener
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 2;</code>
+     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for latestMessage to set.
      * @return This builder for chaining.

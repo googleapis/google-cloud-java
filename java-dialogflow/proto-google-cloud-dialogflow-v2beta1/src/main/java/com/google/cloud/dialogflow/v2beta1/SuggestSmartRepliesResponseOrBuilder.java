@@ -101,7 +101,7 @@ public interface SuggestSmartRepliesResponseOrBuilder
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string latest_message = 2;</code>
+   * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The latestMessage.
    */
@@ -116,7 +116,7 @@ public interface SuggestSmartRepliesResponseOrBuilder
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string latest_message = 2;</code>
+   * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for latestMessage.
    */
