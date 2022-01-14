@@ -96,6 +96,9 @@ See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter
     <!-- Optional: defaults to the default credentials of the environment -->
     <credentialsFile>/path/to/credentials/file</credentialsFile>
 
+    <!-- Optional: defaults to the project id obtained during authentication process. Project id is also used to construct resource name of the log entries -->
+    <logDestinationProjectId>String</logDestinationProjectId>
+
     <!-- Optional: add custom labels to log entries using LoggingEnhancer classes -->
     <enhancer>com.example.enhancers.TestLoggingEnhancer</enhancer>
     <enhancer>com.example.enhancers.AnotherEnhancer</enhancer>

@@ -75,6 +75,9 @@ import java.util.Set;
  *         &lt;!-- Optional: defaults to the default credentials of the environment --&gt;
  *         &lt;credentialsFile&gt;/path/to/credentials/file&lt;/credentialsFile&gt;
  *
+ *         &lt;!-- Optional: defaults to the project id obtained during authentication process. Project id is also used to construct resource name of the log entries --&gt;
+ *         &lt;logDestinationProjectId&gt;String&lt;/logDestinationProjectId&gt;
+ *
  *         &lt;!-- Optional: add custom labels to log entries using {@link LoggingEnhancer} classes --&gt;
  *         &lt;enhancer&gt;com.example.enhancers.TestLoggingEnhancer&lt/enhancer&gt;
  *         &lt;enhancer&gt;com.example.enhancers.AnotherEnhancer&lt/enhancer&gt;
@@ -101,6 +104,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private String log;
   private String resourceType;
   private String credentialsFile;
+  private String logDestinationProjectId;
   private Synchronicity writeSyncFlag = Synchronicity.ASYNC;
   private final Set<String> enhancerClassNames = new HashSet<>();
   private final Set<String> loggingEventEnhancerClassNames = new HashSet<>();
@@ -149,6 +153,16 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
    */
   public void setCredentialsFile(String credentialsFile) {
     this.credentialsFile = credentialsFile;
+  }
+
+  /**
+   * Sets project ID to be used to customize log destination name for written log entries.
+   *
+   * @param projectId The project ID to be used to construct the resource destination name for log
+   *     entries.
+   */
+  public void setLogDestinationProjectId(String projectId) {
+    this.logDestinationProjectId = projectId;
   }
 
   /**
@@ -293,15 +307,12 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   /** Gets the {@link LoggingOptions} to use for this {@link LoggingAppender}. */
   protected LoggingOptions getLoggingOptions() {
     if (loggingOptions == null) {
-      if (Strings.isNullOrEmpty(credentialsFile)) {
-        loggingOptions = LoggingOptions.getDefaultInstance();
-      } else {
+      LoggingOptions.Builder builder = LoggingOptions.newBuilder();
+      builder.setProjectId(logDestinationProjectId);
+      if (!Strings.isNullOrEmpty(credentialsFile)) {
         try {
-          loggingOptions =
-              LoggingOptions.newBuilder()
-                  .setCredentials(
-                      GoogleCredentials.fromStream(new FileInputStream(credentialsFile)))
-                  .build();
+          builder.setCredentials(
+              GoogleCredentials.fromStream(new FileInputStream(credentialsFile)));
         } catch (IOException e) {
           throw new RuntimeException(
               String.format(
@@ -310,6 +321,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
               e);
         }
       }
+      loggingOptions = builder.build();
     }
     return loggingOptions;
   }

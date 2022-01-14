@@ -50,6 +50,10 @@ import org.slf4j.MDC;
 @RunWith(EasyMockRunner.class)
 public class LoggingAppenderTest {
   private final String projectId = "test-project";
+  private final String credentialFileProjectId = "project-12345";
+  private final String overridenProjectId = "some-project-id";
+  private final String dummyCredentialsFile =
+      "src/test/java/com/google/cloud/logging/logback/dummy-credentials.json";
   private Logging logging;
   private LoggingAppender loggingAppender;
 
@@ -271,6 +275,23 @@ public class LoggingAppenderTest {
       LoggingOptions options = appender.getLoggingOptions();
       assertThat(options).isEqualTo(defaultOptions);
     }
+  }
+
+  @Test
+  public void testCreateLoggingOptionsWithCredentials() {
+    // Try to build LoggingOptions with file based credentials.
+    LoggingAppender appender = new LoggingAppender();
+    appender.setCredentialsFile(dummyCredentialsFile);
+    assertThat(appender.getLoggingOptions().getProjectId()).isEqualTo(credentialFileProjectId);
+  }
+
+  @Test
+  public void testCreateLoggingOptionsWithDestination() {
+    // Try to build LoggingOptions with file based credentials.
+    LoggingAppender appender = new LoggingAppender();
+    appender.setCredentialsFile(dummyCredentialsFile);
+    appender.setLogDestinationProjectId(overridenProjectId);
+    assertThat(appender.getLoggingOptions().getProjectId()).isEqualTo(overridenProjectId);
   }
 
   private LoggingEvent createLoggingEvent(Level level, long timestamp) {
