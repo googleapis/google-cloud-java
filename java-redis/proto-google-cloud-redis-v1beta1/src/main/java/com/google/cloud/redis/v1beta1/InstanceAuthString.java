@@ -22,29 +22,29 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Request for [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
+ * Instance AUTH string details.
  * </pre>
  *
- * Protobuf type {@code google.cloud.redis.v1beta1.DeleteInstanceRequest}
+ * Protobuf type {@code google.cloud.redis.v1beta1.InstanceAuthString}
  */
-public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMessageV3
+public final class InstanceAuthString extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.DeleteInstanceRequest)
-    DeleteInstanceRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.InstanceAuthString)
+    InstanceAuthStringOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use DeleteInstanceRequest.newBuilder() to construct.
-  private DeleteInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use InstanceAuthString.newBuilder() to construct.
+  private InstanceAuthString(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private DeleteInstanceRequest() {
-    name_ = "";
+  private InstanceAuthString() {
+    authString_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new DeleteInstanceRequest();
+    return new InstanceAuthString();
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private DeleteInstanceRequest(
+  private InstanceAuthString(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -74,7 +74,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              authString_ = s;
               break;
             }
           default:
@@ -98,45 +98,41 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
-        .internal_static_google_cloud_redis_v1beta1_DeleteInstanceRequest_descriptor;
+        .internal_static_google_cloud_redis_v1beta1_InstanceAuthString_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
-        .internal_static_google_cloud_redis_v1beta1_DeleteInstanceRequest_fieldAccessorTable
+        .internal_static_google_cloud_redis_v1beta1_InstanceAuthString_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.redis.v1beta1.DeleteInstanceRequest.class,
-            com.google.cloud.redis.v1beta1.DeleteInstanceRequest.Builder.class);
+            com.google.cloud.redis.v1beta1.InstanceAuthString.class,
+            com.google.cloud.redis.v1beta1.InstanceAuthString.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int AUTH_STRING_FIELD_NUMBER = 1;
+  private volatile java.lang.Object authString_;
   /**
    *
    *
    * <pre>
-   * Required. Redis instance resource name using the form:
-   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region.
+   * AUTH string set on the instance.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string auth_string = 1;</code>
    *
-   * @return The name.
+   * @return The authString.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getAuthString() {
+    java.lang.Object ref = authString_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      authString_ = s;
       return s;
     }
   }
@@ -144,24 +140,20 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Redis instance resource name using the form:
-   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region.
+   * AUTH string set on the instance.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string auth_string = 1;</code>
    *
-   * @return The bytes for name.
+   * @return The bytes for authString.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
+  public com.google.protobuf.ByteString getAuthStringBytes() {
+    java.lang.Object ref = authString_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
+      authString_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -182,8 +174,8 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authString_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authString_);
     }
     unknownFields.writeTo(output);
   }
@@ -194,8 +186,8 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authString_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authString_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -207,13 +199,13 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.redis.v1beta1.DeleteInstanceRequest)) {
+    if (!(obj instanceof com.google.cloud.redis.v1beta1.InstanceAuthString)) {
       return super.equals(obj);
     }
-    com.google.cloud.redis.v1beta1.DeleteInstanceRequest other =
-        (com.google.cloud.redis.v1beta1.DeleteInstanceRequest) obj;
+    com.google.cloud.redis.v1beta1.InstanceAuthString other =
+        (com.google.cloud.redis.v1beta1.InstanceAuthString) obj;
 
-    if (!getName().equals(other.getName())) return false;
+    if (!getAuthString().equals(other.getAuthString())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -225,78 +217,78 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + AUTH_STRING_FIELD_NUMBER;
+    hash = (53 * hash) + getAuthString().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(byte[] data)
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseDelimitedFrom(
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseDelimitedFrom(
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -313,7 +305,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.redis.v1beta1.DeleteInstanceRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.redis.v1beta1.InstanceAuthString prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -331,31 +323,31 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request for [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
+   * Instance AUTH string details.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.redis.v1beta1.DeleteInstanceRequest}
+   * Protobuf type {@code google.cloud.redis.v1beta1.InstanceAuthString}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.redis.v1beta1.DeleteInstanceRequest)
-      com.google.cloud.redis.v1beta1.DeleteInstanceRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.redis.v1beta1.InstanceAuthString)
+      com.google.cloud.redis.v1beta1.InstanceAuthStringOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
-          .internal_static_google_cloud_redis_v1beta1_DeleteInstanceRequest_descriptor;
+          .internal_static_google_cloud_redis_v1beta1_InstanceAuthString_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
-          .internal_static_google_cloud_redis_v1beta1_DeleteInstanceRequest_fieldAccessorTable
+          .internal_static_google_cloud_redis_v1beta1_InstanceAuthString_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.redis.v1beta1.DeleteInstanceRequest.class,
-              com.google.cloud.redis.v1beta1.DeleteInstanceRequest.Builder.class);
+              com.google.cloud.redis.v1beta1.InstanceAuthString.class,
+              com.google.cloud.redis.v1beta1.InstanceAuthString.Builder.class);
     }
 
-    // Construct using com.google.cloud.redis.v1beta1.DeleteInstanceRequest.newBuilder()
+    // Construct using com.google.cloud.redis.v1beta1.InstanceAuthString.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -372,7 +364,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      authString_ = "";
 
       return this;
     }
@@ -380,17 +372,17 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
-          .internal_static_google_cloud_redis_v1beta1_DeleteInstanceRequest_descriptor;
+          .internal_static_google_cloud_redis_v1beta1_InstanceAuthString_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.redis.v1beta1.DeleteInstanceRequest getDefaultInstanceForType() {
-      return com.google.cloud.redis.v1beta1.DeleteInstanceRequest.getDefaultInstance();
+    public com.google.cloud.redis.v1beta1.InstanceAuthString getDefaultInstanceForType() {
+      return com.google.cloud.redis.v1beta1.InstanceAuthString.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.redis.v1beta1.DeleteInstanceRequest build() {
-      com.google.cloud.redis.v1beta1.DeleteInstanceRequest result = buildPartial();
+    public com.google.cloud.redis.v1beta1.InstanceAuthString build() {
+      com.google.cloud.redis.v1beta1.InstanceAuthString result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -398,10 +390,10 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     @java.lang.Override
-    public com.google.cloud.redis.v1beta1.DeleteInstanceRequest buildPartial() {
-      com.google.cloud.redis.v1beta1.DeleteInstanceRequest result =
-          new com.google.cloud.redis.v1beta1.DeleteInstanceRequest(this);
-      result.name_ = name_;
+    public com.google.cloud.redis.v1beta1.InstanceAuthString buildPartial() {
+      com.google.cloud.redis.v1beta1.InstanceAuthString result =
+          new com.google.cloud.redis.v1beta1.InstanceAuthString(this);
+      result.authString_ = authString_;
       onBuilt();
       return result;
     }
@@ -441,19 +433,19 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.redis.v1beta1.DeleteInstanceRequest) {
-        return mergeFrom((com.google.cloud.redis.v1beta1.DeleteInstanceRequest) other);
+      if (other instanceof com.google.cloud.redis.v1beta1.InstanceAuthString) {
+        return mergeFrom((com.google.cloud.redis.v1beta1.InstanceAuthString) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.redis.v1beta1.DeleteInstanceRequest other) {
-      if (other == com.google.cloud.redis.v1beta1.DeleteInstanceRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.redis.v1beta1.InstanceAuthString other) {
+      if (other == com.google.cloud.redis.v1beta1.InstanceAuthString.getDefaultInstance())
         return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getAuthString().isEmpty()) {
+        authString_ = other.authString_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -471,12 +463,12 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.redis.v1beta1.DeleteInstanceRequest parsedMessage = null;
+      com.google.cloud.redis.v1beta1.InstanceAuthString parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.redis.v1beta1.DeleteInstanceRequest) e.getUnfinishedMessage();
+            (com.google.cloud.redis.v1beta1.InstanceAuthString) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -486,28 +478,24 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object authString_ = "";
     /**
      *
      *
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * AUTH string set on the instance.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string auth_string = 1;</code>
      *
-     * @return The name.
+     * @return The authString.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getAuthString() {
+      java.lang.Object ref = authString_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        authString_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -517,23 +505,19 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * AUTH string set on the instance.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string auth_string = 1;</code>
      *
-     * @return The bytes for name.
+     * @return The bytes for authString.
      */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
+    public com.google.protobuf.ByteString getAuthStringBytes() {
+      java.lang.Object ref = authString_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
+        authString_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -543,24 +527,20 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * AUTH string set on the instance.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string auth_string = 1;</code>
      *
-     * @param value The name to set.
+     * @param value The authString to set.
      * @return This builder for chaining.
      */
-    public Builder setName(java.lang.String value) {
+    public Builder setAuthString(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      name_ = value;
+      authString_ = value;
       onChanged();
       return this;
     }
@@ -568,20 +548,16 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * AUTH string set on the instance.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string auth_string = 1;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearAuthString() {
 
-      name_ = getDefaultInstance().getName();
+      authString_ = getDefaultInstance().getAuthString();
       onChanged();
       return this;
     }
@@ -589,25 +565,21 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * AUTH string set on the instance.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string auth_string = 1;</code>
      *
-     * @param value The bytes for name to set.
+     * @param value The bytes for authString to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setAuthStringBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      name_ = value;
+      authString_ = value;
       onChanged();
       return this;
     }
@@ -623,42 +595,42 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.redis.v1beta1.DeleteInstanceRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.redis.v1beta1.InstanceAuthString)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.redis.v1beta1.DeleteInstanceRequest)
-  private static final com.google.cloud.redis.v1beta1.DeleteInstanceRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.redis.v1beta1.InstanceAuthString)
+  private static final com.google.cloud.redis.v1beta1.InstanceAuthString DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.redis.v1beta1.DeleteInstanceRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.redis.v1beta1.InstanceAuthString();
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest getDefaultInstance() {
+  public static com.google.cloud.redis.v1beta1.InstanceAuthString getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeleteInstanceRequest> PARSER =
-      new com.google.protobuf.AbstractParser<DeleteInstanceRequest>() {
+  private static final com.google.protobuf.Parser<InstanceAuthString> PARSER =
+      new com.google.protobuf.AbstractParser<InstanceAuthString>() {
         @java.lang.Override
-        public DeleteInstanceRequest parsePartialFrom(
+        public InstanceAuthString parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeleteInstanceRequest(input, extensionRegistry);
+          return new InstanceAuthString(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<DeleteInstanceRequest> parser() {
+  public static com.google.protobuf.Parser<InstanceAuthString> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DeleteInstanceRequest> getParserForType() {
+  public com.google.protobuf.Parser<InstanceAuthString> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.redis.v1beta1.DeleteInstanceRequest getDefaultInstanceForType() {
+  public com.google.cloud.redis.v1beta1.InstanceAuthString getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

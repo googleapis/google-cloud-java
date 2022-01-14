@@ -22,8 +22,7 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Response for
- * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
+ * Response for [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.ListInstancesResponse}
@@ -558,8 +557,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response for
-   * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
+   * Response for [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.ListInstancesResponse}

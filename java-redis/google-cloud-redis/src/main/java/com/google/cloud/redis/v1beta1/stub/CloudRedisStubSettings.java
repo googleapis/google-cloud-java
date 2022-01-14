@@ -48,11 +48,14 @@ import com.google.cloud.redis.v1beta1.CreateInstanceRequest;
 import com.google.cloud.redis.v1beta1.DeleteInstanceRequest;
 import com.google.cloud.redis.v1beta1.ExportInstanceRequest;
 import com.google.cloud.redis.v1beta1.FailoverInstanceRequest;
+import com.google.cloud.redis.v1beta1.GetInstanceAuthStringRequest;
 import com.google.cloud.redis.v1beta1.GetInstanceRequest;
 import com.google.cloud.redis.v1beta1.ImportInstanceRequest;
 import com.google.cloud.redis.v1beta1.Instance;
+import com.google.cloud.redis.v1beta1.InstanceAuthString;
 import com.google.cloud.redis.v1beta1.ListInstancesRequest;
 import com.google.cloud.redis.v1beta1.ListInstancesResponse;
+import com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest;
 import com.google.cloud.redis.v1beta1.UpdateInstanceRequest;
 import com.google.cloud.redis.v1beta1.UpgradeInstanceRequest;
 import com.google.common.collect.ImmutableList;
@@ -109,6 +112,8 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       listInstancesSettings;
   private final UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings;
+  private final UnaryCallSettings<GetInstanceAuthStringRequest, InstanceAuthString>
+      getInstanceAuthStringSettings;
   private final UnaryCallSettings<CreateInstanceRequest, Operation> createInstanceSettings;
   private final OperationCallSettings<CreateInstanceRequest, Instance, Any>
       createInstanceOperationSettings;
@@ -130,6 +135,10 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings;
   private final OperationCallSettings<DeleteInstanceRequest, Empty, Any>
       deleteInstanceOperationSettings;
+  private final UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings;
+  private final OperationCallSettings<RescheduleMaintenanceRequest, Instance, Any>
+      rescheduleMaintenanceOperationSettings;
 
   private static final PagedListDescriptor<ListInstancesRequest, ListInstancesResponse, Instance>
       LIST_INSTANCES_PAGE_STR_DESC =
@@ -193,6 +202,12 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
   /** Returns the object with the settings used for calls to getInstance. */
   public UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings() {
     return getInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getInstanceAuthString. */
+  public UnaryCallSettings<GetInstanceAuthStringRequest, InstanceAuthString>
+      getInstanceAuthStringSettings() {
+    return getInstanceAuthStringSettings;
   }
 
   /** Returns the object with the settings used for calls to createInstance. */
@@ -270,6 +285,18 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
   public OperationCallSettings<DeleteInstanceRequest, Empty, Any>
       deleteInstanceOperationSettings() {
     return deleteInstanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings() {
+    return rescheduleMaintenanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public OperationCallSettings<RescheduleMaintenanceRequest, Instance, Any>
+      rescheduleMaintenanceOperationSettings() {
+    return rescheduleMaintenanceOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -350,6 +377,7 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
     getInstanceSettings = settingsBuilder.getInstanceSettings().build();
+    getInstanceAuthStringSettings = settingsBuilder.getInstanceAuthStringSettings().build();
     createInstanceSettings = settingsBuilder.createInstanceSettings().build();
     createInstanceOperationSettings = settingsBuilder.createInstanceOperationSettings().build();
     updateInstanceSettings = settingsBuilder.updateInstanceSettings().build();
@@ -364,6 +392,9 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
     failoverInstanceOperationSettings = settingsBuilder.failoverInstanceOperationSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
+    rescheduleMaintenanceSettings = settingsBuilder.rescheduleMaintenanceSettings().build();
+    rescheduleMaintenanceOperationSettings =
+        settingsBuilder.rescheduleMaintenanceOperationSettings().build();
   }
 
   /** Builder for CloudRedisStubSettings. */
@@ -373,6 +404,8 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
             ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
         listInstancesSettings;
     private final UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings;
+    private final UnaryCallSettings.Builder<GetInstanceAuthStringRequest, InstanceAuthString>
+        getInstanceAuthStringSettings;
     private final UnaryCallSettings.Builder<CreateInstanceRequest, Operation>
         createInstanceSettings;
     private final OperationCallSettings.Builder<CreateInstanceRequest, Instance, Any>
@@ -401,6 +434,10 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
         deleteInstanceSettings;
     private final OperationCallSettings.Builder<DeleteInstanceRequest, Empty, Any>
         deleteInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings;
+    private final OperationCallSettings.Builder<RescheduleMaintenanceRequest, Instance, Any>
+        rescheduleMaintenanceOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -409,6 +446,7 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           ImmutableMap.builder();
       definitions.put(
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -425,6 +463,8 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -437,6 +477,7 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
       listInstancesSettings = PagedCallSettings.newBuilder(LIST_INSTANCES_PAGE_STR_FACT);
       getInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getInstanceAuthStringSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createInstanceOperationSettings = OperationCallSettings.newBuilder();
       updateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -451,18 +492,22 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
       failoverInstanceOperationSettings = OperationCallSettings.newBuilder();
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
+      rescheduleMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rescheduleMaintenanceOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listInstancesSettings,
               getInstanceSettings,
+              getInstanceAuthStringSettings,
               createInstanceSettings,
               updateInstanceSettings,
               upgradeInstanceSettings,
               importInstanceSettings,
               exportInstanceSettings,
               failoverInstanceSettings,
-              deleteInstanceSettings);
+              deleteInstanceSettings,
+              rescheduleMaintenanceSettings);
       initDefaults(this);
     }
 
@@ -471,6 +516,7 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
       getInstanceSettings = settings.getInstanceSettings.toBuilder();
+      getInstanceAuthStringSettings = settings.getInstanceAuthStringSettings.toBuilder();
       createInstanceSettings = settings.createInstanceSettings.toBuilder();
       createInstanceOperationSettings = settings.createInstanceOperationSettings.toBuilder();
       updateInstanceSettings = settings.updateInstanceSettings.toBuilder();
@@ -485,18 +531,23 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
       failoverInstanceOperationSettings = settings.failoverInstanceOperationSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
+      rescheduleMaintenanceSettings = settings.rescheduleMaintenanceSettings.toBuilder();
+      rescheduleMaintenanceOperationSettings =
+          settings.rescheduleMaintenanceOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listInstancesSettings,
               getInstanceSettings,
+              getInstanceAuthStringSettings,
               createInstanceSettings,
               updateInstanceSettings,
               upgradeInstanceSettings,
               importInstanceSettings,
               exportInstanceSettings,
               failoverInstanceSettings,
-              deleteInstanceSettings);
+              deleteInstanceSettings,
+              rescheduleMaintenanceSettings);
     }
 
     private static Builder createDefault() {
@@ -520,6 +571,11 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
       builder
           .getInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getInstanceAuthStringSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -557,6 +613,11 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .deleteInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .rescheduleMaintenanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createInstanceOperationSettings()
@@ -719,6 +780,29 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
                       .setTotalTimeout(Duration.ofMillis(1200000L))
                       .build()));
 
+      builder
+          .rescheduleMaintenanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RescheduleMaintenanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(ProtoOperationTransformers.MetadataTransformer.create(Any.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -747,6 +831,12 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
     /** Returns the builder for the settings used for calls to getInstance. */
     public UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings() {
       return getInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getInstanceAuthString. */
+    public UnaryCallSettings.Builder<GetInstanceAuthStringRequest, InstanceAuthString>
+        getInstanceAuthStringSettings() {
+      return getInstanceAuthStringSettings;
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
@@ -839,6 +929,20 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, Any>
         deleteInstanceOperationSettings() {
       return deleteInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings() {
+      return rescheduleMaintenanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RescheduleMaintenanceRequest, Instance, Any>
+        rescheduleMaintenanceOperationSettings() {
+      return rescheduleMaintenanceOperationSettings;
     }
 
     @Override

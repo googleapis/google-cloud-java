@@ -22,8 +22,7 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Request for
- * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
+ * Request for [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.ListInstancesRequest}
@@ -212,8 +211,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The `next_page_token` value returned from a previous
-   * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances]
-   * request, if any.
+   * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -237,8 +235,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The `next_page_token` value returned from a previous
-   * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances]
-   * request, if any.
+   * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -439,8 +436,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request for
-   * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
+   * Request for [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.ListInstancesRequest}
@@ -807,8 +803,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The `next_page_token` value returned from a previous
-     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances]
-     * request, if any.
+     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -831,8 +826,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The `next_page_token` value returned from a previous
-     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances]
-     * request, if any.
+     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -855,8 +849,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The `next_page_token` value returned from a previous
-     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances]
-     * request, if any.
+     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -878,8 +871,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The `next_page_token` value returned from a previous
-     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances]
-     * request, if any.
+     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -897,8 +889,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The `next_page_token` value returned from a previous
-     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances]
-     * request, if any.
+     * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances] request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>

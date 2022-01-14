@@ -30,11 +30,14 @@ import com.google.cloud.redis.v1beta1.CreateInstanceRequest;
 import com.google.cloud.redis.v1beta1.DeleteInstanceRequest;
 import com.google.cloud.redis.v1beta1.ExportInstanceRequest;
 import com.google.cloud.redis.v1beta1.FailoverInstanceRequest;
+import com.google.cloud.redis.v1beta1.GetInstanceAuthStringRequest;
 import com.google.cloud.redis.v1beta1.GetInstanceRequest;
 import com.google.cloud.redis.v1beta1.ImportInstanceRequest;
 import com.google.cloud.redis.v1beta1.Instance;
+import com.google.cloud.redis.v1beta1.InstanceAuthString;
 import com.google.cloud.redis.v1beta1.ListInstancesRequest;
 import com.google.cloud.redis.v1beta1.ListInstancesResponse;
+import com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest;
 import com.google.cloud.redis.v1beta1.UpdateInstanceRequest;
 import com.google.cloud.redis.v1beta1.UpgradeInstanceRequest;
 import com.google.common.collect.ImmutableMap;
@@ -75,6 +78,16 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<GetInstanceAuthStringRequest, InstanceAuthString>
+      getInstanceAuthStringMethodDescriptor =
+          MethodDescriptor.<GetInstanceAuthStringRequest, InstanceAuthString>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/GetInstanceAuthString")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetInstanceAuthStringRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(InstanceAuthString.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
       createInstanceMethodDescriptor =
@@ -146,10 +159,22 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceMethodDescriptor =
+          MethodDescriptor.<RescheduleMaintenanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/RescheduleMaintenance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RescheduleMaintenanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable;
   private final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable;
+  private final UnaryCallable<GetInstanceAuthStringRequest, InstanceAuthString>
+      getInstanceAuthStringCallable;
   private final UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable;
   private final OperationCallable<CreateInstanceRequest, Instance, Any>
       createInstanceOperationCallable;
@@ -171,6 +196,10 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, Any>
       deleteInstanceOperationCallable;
+  private final UnaryCallable<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceCallable;
+  private final OperationCallable<RescheduleMaintenanceRequest, Instance, Any>
+      rescheduleMaintenanceOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -234,6 +263,17 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<GetInstanceAuthStringRequest, InstanceAuthString>
+        getInstanceAuthStringTransportSettings =
+            GrpcCallSettings.<GetInstanceAuthStringRequest, InstanceAuthString>newBuilder()
+                .setMethodDescriptor(getInstanceAuthStringMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(createInstanceMethodDescriptor)
@@ -304,6 +344,17 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceTransportSettings =
+            GrpcCallSettings.<RescheduleMaintenanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(rescheduleMaintenanceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
 
     this.listInstancesCallable =
         callableFactory.createUnaryCallable(
@@ -314,6 +365,11 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
     this.getInstanceCallable =
         callableFactory.createUnaryCallable(
             getInstanceTransportSettings, settings.getInstanceSettings(), clientContext);
+    this.getInstanceAuthStringCallable =
+        callableFactory.createUnaryCallable(
+            getInstanceAuthStringTransportSettings,
+            settings.getInstanceAuthStringSettings(),
+            clientContext);
     this.createInstanceCallable =
         callableFactory.createUnaryCallable(
             createInstanceTransportSettings, settings.createInstanceSettings(), clientContext);
@@ -377,6 +433,17 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
             settings.deleteInstanceOperationSettings(),
             clientContext,
             operationsStub);
+    this.rescheduleMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            rescheduleMaintenanceTransportSettings,
+            settings.rescheduleMaintenanceSettings(),
+            clientContext);
+    this.rescheduleMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            rescheduleMaintenanceTransportSettings,
+            settings.rescheduleMaintenanceOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -400,6 +467,12 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
   @Override
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return getInstanceCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetInstanceAuthStringRequest, InstanceAuthString>
+      getInstanceAuthStringCallable() {
+    return getInstanceAuthStringCallable;
   }
 
   @Override
@@ -472,6 +545,17 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
   @Override
   public OperationCallable<DeleteInstanceRequest, Empty, Any> deleteInstanceOperationCallable() {
     return deleteInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RescheduleMaintenanceRequest, Operation> rescheduleMaintenanceCallable() {
+    return rescheduleMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<RescheduleMaintenanceRequest, Instance, Any>
+      rescheduleMaintenanceOperationCallable() {
+    return rescheduleMaintenanceOperationCallable;
   }
 
   @Override

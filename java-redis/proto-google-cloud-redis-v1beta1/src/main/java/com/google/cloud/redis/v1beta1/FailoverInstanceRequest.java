@@ -22,8 +22,7 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Request for
- * [Failover][google.cloud.redis.v1beta1.CloudRedis.FailoverInstance].
+ * Request for [Failover][google.cloud.redis.v1beta1.CloudRedis.FailoverInstance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.FailoverInstanceRequest}
@@ -572,8 +571,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request for
-   * [Failover][google.cloud.redis.v1beta1.CloudRedis.FailoverInstance].
+   * Request for [Failover][google.cloud.redis.v1beta1.CloudRedis.FailoverInstance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.FailoverInstanceRequest}
