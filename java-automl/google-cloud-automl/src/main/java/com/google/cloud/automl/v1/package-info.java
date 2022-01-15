@@ -21,7 +21,7 @@
  *
  * <p>Service Description: AutoML Prediction API.
  *
- * <p>On any input that is documented to expect a string parameter in snake_case or kebab-case,
+ * <p>On any input that is documented to expect a string parameter in snake_case or dash-case,
  * either of those cases is accepted.
  *
  * <p>Sample for PredictionServiceClient:
@@ -48,7 +48,7 @@
  *
  * <p>Currently the only supported `location_id` is "us-central1".
  *
- * <p>On any input that is documented to expect a string parameter in snake_case or kebab-case,
+ * <p>On any input that is documented to expect a string parameter in snake_case or dash-case,
  * either of those cases is accepted.
  *
  * <p>Sample for AutoMlClient:

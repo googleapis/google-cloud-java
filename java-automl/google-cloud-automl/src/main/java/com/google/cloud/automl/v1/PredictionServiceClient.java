@@ -34,7 +34,7 @@ import javax.annotation.Generated;
 /**
  * Service Description: AutoML Prediction API.
  *
- * <p>On any input that is documented to expect a string parameter in snake_case or kebab-case,
+ * <p>On any input that is documented to expect a string parameter in snake_case or dash-case,
  * either of those cases is accepted.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
@@ -241,7 +241,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *     default is 100. The number of returned bounding boxes might be limited by the server.
    *     <p>AutoML Tables
    *     <p>`feature_importance` : (boolean) Whether
-   *     <p>[feature_importance][google.cloud.automl.v1.TablesModelColumnInfo.feature_importance] is
+   *     [feature_importance][google.cloud.automl.v1.TablesModelColumnInfo.feature_importance] is
    *     populated in the returned list of
    *     [TablesAnnotation][google.cloud.automl.v1.TablesAnnotation] objects. The default is false.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -336,7 +336,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *     default is 100. The number of returned bounding boxes might be limited by the server.
    *     <p>AutoML Tables
    *     <p>`feature_importance` : (boolean) Whether
-   *     <p>[feature_importance][google.cloud.automl.v1.TablesModelColumnInfo.feature_importance] is
+   *     [feature_importance][google.cloud.automl.v1.TablesModelColumnInfo.feature_importance] is
    *     populated in the returned list of
    *     [TablesAnnotation][google.cloud.automl.v1.TablesAnnotation] objects. The default is false.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

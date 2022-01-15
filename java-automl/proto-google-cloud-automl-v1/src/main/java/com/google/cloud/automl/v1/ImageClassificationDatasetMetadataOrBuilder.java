@@ -30,7 +30,9 @@ public interface ImageClassificationDatasetMetadataOrBuilder
    * Required. Type of the classification problem.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.ClassificationType classification_type = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1.ClassificationType classification_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for classificationType.
    */
@@ -42,7 +44,9 @@ public interface ImageClassificationDatasetMetadataOrBuilder
    * Required. Type of the classification problem.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.ClassificationType classification_type = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1.ClassificationType classification_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The classificationType.
    */

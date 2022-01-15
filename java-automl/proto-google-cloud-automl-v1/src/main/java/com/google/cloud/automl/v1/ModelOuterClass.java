@@ -45,12 +45,12 @@ public final class ModelOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"google/cloud/automl/v1/model.proto\022\026go"
-          + "ogle.cloud.automl.v1\032\031google/api/resourc"
-          + "e.proto\032\"google/cloud/automl/v1/image.pr"
-          + "oto\032!google/cloud/automl/v1/text.proto\032("
-          + "google/cloud/automl/v1/translation.proto"
-          + "\032\037google/protobuf/timestamp.proto\032\034googl"
-          + "e/api/annotations.proto\"\361\010\n\005Model\022V\n\032tra"
+          + "ogle.cloud.automl.v1\032\034google/api/annotat"
+          + "ions.proto\032\031google/api/resource.proto\032\"g"
+          + "oogle/cloud/automl/v1/image.proto\032!googl"
+          + "e/cloud/automl/v1/text.proto\032(google/clo"
+          + "ud/automl/v1/translation.proto\032\037google/p"
+          + "rotobuf/timestamp.proto\"\361\010\n\005Model\022V\n\032tra"
           + "nslation_model_metadata\030\017 \001(\01320.google.c"
           + "loud.automl.v1.TranslationModelMetadataH"
           + "\000\022g\n#image_classification_model_metadata"
@@ -89,12 +89,12 @@ public final class ModelOuterClass {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.automl.v1.ImageProto.getDescriptor(),
               com.google.cloud.automl.v1.TextProto.getDescriptor(),
               com.google.cloud.automl.v1.TranslationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_Model_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -131,12 +131,12 @@ public final class ModelOuterClass {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.automl.v1.ImageProto.getDescriptor();
     com.google.cloud.automl.v1.TextProto.getDescriptor();
     com.google.cloud.automl.v1.TranslationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

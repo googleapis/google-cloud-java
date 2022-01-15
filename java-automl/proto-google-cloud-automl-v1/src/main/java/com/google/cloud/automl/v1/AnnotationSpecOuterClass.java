@@ -41,9 +41,9 @@ public final class AnnotationSpecOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/automl/v1/annotation_spec"
-          + ".proto\022\026google.cloud.automl.v1\032\031google/a"
-          + "pi/resource.proto\032\034google/api/annotation"
-          + "s.proto\"\326\001\n\016AnnotationSpec\022\014\n\004name\030\001 \001(\t"
+          + ".proto\022\026google.cloud.automl.v1\032\034google/a"
+          + "pi/annotations.proto\032\031google/api/resourc"
+          + "e.proto\"\326\001\n\016AnnotationSpec\022\014\n\004name\030\001 \001(\t"
           + "\022\024\n\014display_name\030\002 \001(\t\022\025\n\rexample_count\030"
           + "\t \001(\005:\210\001\352A\204\001\n$automl.googleapis.com/Anno"
           + "tationSpec\022\\projects/{project}/locations"
@@ -59,8 +59,8 @@ public final class AnnotationSpecOuterClass {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.ResourceProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_AnnotationSpec_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -75,8 +75,8 @@ public final class AnnotationSpecOuterClass {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.ResourceProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

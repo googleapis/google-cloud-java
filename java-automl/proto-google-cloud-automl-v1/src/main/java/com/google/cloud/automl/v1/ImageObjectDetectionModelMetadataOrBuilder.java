@@ -52,7 +52,7 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    *               than other models.
    * </pre>
    *
-   * <code>string model_type = 1;</code>
+   * <code>string model_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The modelType.
    */
@@ -86,7 +86,7 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    *               than other models.
    * </pre>
    *
-   * <code>string model_type = 1;</code>
+   * <code>string model_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for modelType.
    */
@@ -101,7 +101,7 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * as given in the qps_per_node field.
    * </pre>
    *
-   * <code>int64 node_count = 3;</code>
+   * <code>int64 node_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The nodeCount.
    */
@@ -115,7 +115,7 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * be supported by this model per each node on which it is deployed.
    * </pre>
    *
-   * <code>double node_qps = 4;</code>
+   * <code>double node_qps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The nodeQps.
    */
@@ -129,7 +129,7 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
    * </pre>
    *
-   * <code>string stop_reason = 5;</code>
+   * <code>string stop_reason = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The stopReason.
    */
@@ -142,7 +142,7 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
    * </pre>
    *
-   * <code>string stop_reason = 5;</code>
+   * <code>string stop_reason = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for stopReason.
    */
@@ -152,7 +152,7 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    *
    *
    * <pre>
-   * The train budget of creating this model, expressed in milli node
+   * Optional. The train budget of creating this model, expressed in milli node
    * hours i.e. 1,000 value in this field means 1 node hour. The actual
    * `train_cost` will be equal or less than this value. If further model
    * training ceases to provide any improvements, it will stop without using
@@ -169,7 +169,7 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * The default value is 24, 000 which represents one day in wall time.
    * </pre>
    *
-   * <code>int64 train_budget_milli_node_hours = 6;</code>
+   * <code>int64 train_budget_milli_node_hours = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The trainBudgetMilliNodeHours.
    */
@@ -184,7 +184,8 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * Guaranteed to not exceed the train budget.
    * </pre>
    *
-   * <code>int64 train_cost_milli_node_hours = 7;</code>
+   * <code>int64 train_cost_milli_node_hours = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The trainCostMilliNodeHours.
    */

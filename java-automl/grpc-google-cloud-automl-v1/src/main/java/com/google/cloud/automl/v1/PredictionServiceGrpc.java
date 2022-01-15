@@ -23,7 +23,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * AutoML Prediction API.
  * On any input that is documented to expect a string parameter in
- * snake_case or kebab-case, either of those cases is accepted.
+ * snake_case or dash-case, either of those cases is accepted.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -167,7 +167,7 @@ public final class PredictionServiceGrpc {
    * <pre>
    * AutoML Prediction API.
    * On any input that is documented to expect a string parameter in
-   * snake_case or kebab-case, either of those cases is accepted.
+   * snake_case or dash-case, either of those cases is accepted.
    * </pre>
    */
   public abstract static class PredictionServiceImplBase implements io.grpc.BindableService {
@@ -258,7 +258,7 @@ public final class PredictionServiceGrpc {
    * <pre>
    * AutoML Prediction API.
    * On any input that is documented to expect a string parameter in
-   * snake_case or kebab-case, either of those cases is accepted.
+   * snake_case or dash-case, either of those cases is accepted.
    * </pre>
    */
   public static final class PredictionServiceStub
@@ -344,7 +344,7 @@ public final class PredictionServiceGrpc {
    * <pre>
    * AutoML Prediction API.
    * On any input that is documented to expect a string parameter in
-   * snake_case or kebab-case, either of those cases is accepted.
+   * snake_case or dash-case, either of those cases is accepted.
    * </pre>
    */
   public static final class PredictionServiceBlockingStub
@@ -427,7 +427,7 @@ public final class PredictionServiceGrpc {
    * <pre>
    * AutoML Prediction API.
    * On any input that is documented to expect a string parameter in
-   * snake_case or kebab-case, either of those cases is accepted.
+   * snake_case or dash-case, either of those cases is accepted.
    * </pre>
    */
   public static final class PredictionServiceFutureStub

@@ -61,44 +61,47 @@ public final class ImageProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\"google/cloud/automl/v1/image.proto\022\026go"
-          + "ogle.cloud.automl.v1\032\031google/api/resourc"
-          + "e.proto\032,google/cloud/automl/v1/annotati"
-          + "on_spec.proto\032+google/cloud/automl/v1/cl"
-          + "assification.proto\032\037google/protobuf/time"
-          + "stamp.proto\032\034google/api/annotations.prot"
-          + "o\"m\n\"ImageClassificationDatasetMetadata\022"
-          + "G\n\023classification_type\030\001 \001(\0162*.google.cl"
-          + "oud.automl.v1.ClassificationType\"%\n#Imag"
-          + "eObjectDetectionDatasetMetadata\"\324\001\n Imag"
-          + "eClassificationModelMetadata\022\025\n\rbase_mod"
-          + "el_id\030\001 \001(\t\022%\n\035train_budget_milli_node_h"
-          + "ours\030\020 \001(\003\022#\n\033train_cost_milli_node_hour"
-          + "s\030\021 \001(\003\022\023\n\013stop_reason\030\005 \001(\t\022\022\n\nmodel_ty"
-          + "pe\030\007 \001(\t\022\020\n\010node_qps\030\r \001(\001\022\022\n\nnode_count"
-          + "\030\016 \001(\003\"\276\001\n!ImageObjectDetectionModelMeta"
-          + "data\022\022\n\nmodel_type\030\001 \001(\t\022\022\n\nnode_count\030\003"
-          + " \001(\003\022\020\n\010node_qps\030\004 \001(\001\022\023\n\013stop_reason\030\005 "
-          + "\001(\t\022%\n\035train_budget_milli_node_hours\030\006 \001"
-          + "(\003\022#\n\033train_cost_milli_node_hours\030\007 \001(\003\""
-          + "@\n*ImageClassificationModelDeploymentMet"
-          + "adata\022\022\n\nnode_count\030\001 \001(\003\"A\n+ImageObject"
-          + "DetectionModelDeploymentMetadata\022\022\n\nnode"
-          + "_count\030\001 \001(\003B\266\001\n\032com.google.cloud.automl"
-          + ".v1B\nImageProtoP\001Z<google.golang.org/gen"
-          + "proto/googleapis/cloud/automl/v1;automl\252"
-          + "\002\026Google.Cloud.AutoML.V1\312\002\026Google\\Cloud\\"
-          + "AutoMl\\V1\352\002\031Google::Cloud::AutoML::V1b\006p"
-          + "roto3"
+          + "ogle.cloud.automl.v1\032\034google/api/annotat"
+          + "ions.proto\032\037google/api/field_behavior.pr"
+          + "oto\032\031google/api/resource.proto\032,google/c"
+          + "loud/automl/v1/annotation_spec.proto\032+go"
+          + "ogle/cloud/automl/v1/classification.prot"
+          + "o\032\037google/protobuf/timestamp.proto\"r\n\"Im"
+          + "ageClassificationDatasetMetadata\022L\n\023clas"
+          + "sification_type\030\001 \001(\0162*.google.cloud.aut"
+          + "oml.v1.ClassificationTypeB\003\340A\002\"%\n#ImageO"
+          + "bjectDetectionDatasetMetadata\"\367\001\n ImageC"
+          + "lassificationModelMetadata\022\032\n\rbase_model"
+          + "_id\030\001 \001(\tB\003\340A\001\022*\n\035train_budget_milli_nod"
+          + "e_hours\030\020 \001(\003B\003\340A\001\022(\n\033train_cost_milli_n"
+          + "ode_hours\030\021 \001(\003B\003\340A\003\022\030\n\013stop_reason\030\005 \001("
+          + "\tB\003\340A\003\022\027\n\nmodel_type\030\007 \001(\tB\003\340A\001\022\025\n\010node_"
+          + "qps\030\r \001(\001B\003\340A\003\022\027\n\nnode_count\030\016 \001(\003B\003\340A\003\""
+          + "\334\001\n!ImageObjectDetectionModelMetadata\022\027\n"
+          + "\nmodel_type\030\001 \001(\tB\003\340A\001\022\027\n\nnode_count\030\003 \001"
+          + "(\003B\003\340A\003\022\025\n\010node_qps\030\004 \001(\001B\003\340A\003\022\030\n\013stop_r"
+          + "eason\030\005 \001(\tB\003\340A\003\022*\n\035train_budget_milli_n"
+          + "ode_hours\030\006 \001(\003B\003\340A\001\022(\n\033train_cost_milli"
+          + "_node_hours\030\007 \001(\003B\003\340A\003\"E\n*ImageClassific"
+          + "ationModelDeploymentMetadata\022\027\n\nnode_cou"
+          + "nt\030\001 \001(\003B\003\340A\004\"F\n+ImageObjectDetectionMod"
+          + "elDeploymentMetadata\022\027\n\nnode_count\030\001 \001(\003"
+          + "B\003\340A\004B\266\001\n\032com.google.cloud.automl.v1B\nIm"
+          + "ageProtoP\001Z<google.golang.org/genproto/g"
+          + "oogleapis/cloud/automl/v1;automl\252\002\026Googl"
+          + "e.Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoMl\\"
+          + "V1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.automl.v1.AnnotationSpecOuterClass.getDescriptor(),
               com.google.cloud.automl.v1.ClassificationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_ImageClassificationDatasetMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -157,11 +160,17 @@ public final class ImageProto {
             new java.lang.String[] {
               "NodeCount",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.automl.v1.AnnotationSpecOuterClass.getDescriptor();
     com.google.cloud.automl.v1.ClassificationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

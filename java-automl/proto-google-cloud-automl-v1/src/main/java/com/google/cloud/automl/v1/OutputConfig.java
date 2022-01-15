@@ -33,16 +33,16 @@ package com.google.cloud.automl.v1;
  *         Output depends on whether the dataset was imported from Google Cloud
  *         Storage or BigQuery.
  *         Google Cloud Storage case:
- * [gcs_destination][google.cloud.automl.v1p1beta.OutputConfig.gcs_destination]
+ *           [gcs_destination][google.cloud.automl.v1p1beta.OutputConfig.gcs_destination]
  *           must be set. Exported are CSV file(s) `tables_1.csv`,
  *           `tables_2.csv`,...,`tables_N.csv` with each having as header line
  *           the table's column names, and all other lines contain values for
  *           the header columns.
  *         BigQuery case:
- * [bigquery_destination][google.cloud.automl.v1p1beta.OutputConfig.bigquery_destination]
+ *           [bigquery_destination][google.cloud.automl.v1p1beta.OutputConfig.bigquery_destination]
  *           pointing to a BigQuery project must be set. In the given project a
  *           new dataset will be created with name
- * `export_data_&lt;automl-dataset-display-name&gt;_&lt;timestamp-of-export-call&gt;`
+ *           `export_data_&lt;automl-dataset-display-name&gt;_&lt;timestamp-of-export-call&gt;`
  *           where &lt;automl-dataset-display-name&gt; will be made
  *           BigQuery-dataset-name compatible (e.g. most special characters will
  *           become underscores), and timestamp will be in
@@ -448,16 +448,16 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *         Output depends on whether the dataset was imported from Google Cloud
    *         Storage or BigQuery.
    *         Google Cloud Storage case:
-   * [gcs_destination][google.cloud.automl.v1p1beta.OutputConfig.gcs_destination]
+   *           [gcs_destination][google.cloud.automl.v1p1beta.OutputConfig.gcs_destination]
    *           must be set. Exported are CSV file(s) `tables_1.csv`,
    *           `tables_2.csv`,...,`tables_N.csv` with each having as header line
    *           the table's column names, and all other lines contain values for
    *           the header columns.
    *         BigQuery case:
-   * [bigquery_destination][google.cloud.automl.v1p1beta.OutputConfig.bigquery_destination]
+   *           [bigquery_destination][google.cloud.automl.v1p1beta.OutputConfig.bigquery_destination]
    *           pointing to a BigQuery project must be set. In the given project a
    *           new dataset will be created with name
-   * `export_data_&lt;automl-dataset-display-name&gt;_&lt;timestamp-of-export-call&gt;`
+   *           `export_data_&lt;automl-dataset-display-name&gt;_&lt;timestamp-of-export-call&gt;`
    *           where &lt;automl-dataset-display-name&gt; will be made
    *           BigQuery-dataset-name compatible (e.g. most special characters will
    *           become underscores), and timestamp will be in

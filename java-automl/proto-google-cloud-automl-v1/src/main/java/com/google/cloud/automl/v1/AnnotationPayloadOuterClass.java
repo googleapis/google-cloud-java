@@ -41,14 +41,14 @@ public final class AnnotationPayloadOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/automl/v1/annotation_payl"
-          + "oad.proto\022\026google.cloud.automl.v1\032+googl"
-          + "e/cloud/automl/v1/classification.proto\032&"
-          + "google/cloud/automl/v1/detection.proto\032,"
-          + "google/cloud/automl/v1/text_extraction.p"
-          + "roto\032+google/cloud/automl/v1/text_sentim"
-          + "ent.proto\032(google/cloud/automl/v1/transl"
-          + "ation.proto\032\031google/protobuf/any.proto\032\034"
-          + "google/api/annotations.proto\"\323\003\n\021Annotat"
+          + "oad.proto\022\026google.cloud.automl.v1\032\034googl"
+          + "e/api/annotations.proto\032+google/cloud/au"
+          + "toml/v1/classification.proto\032&google/clo"
+          + "ud/automl/v1/detection.proto\032,google/clo"
+          + "ud/automl/v1/text_extraction.proto\032+goog"
+          + "le/cloud/automl/v1/text_sentiment.proto\032"
+          + "(google/cloud/automl/v1/translation.prot"
+          + "o\032\031google/protobuf/any.proto\"\323\003\n\021Annotat"
           + "ionPayload\022D\n\013translation\030\002 \001(\0132-.google"
           + ".cloud.automl.v1.TranslationAnnotationH\000"
           + "\022J\n\016classification\030\003 \001(\01320.google.cloud."
@@ -70,13 +70,13 @@ public final class AnnotationPayloadOuterClass {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.automl.v1.ClassificationProto.getDescriptor(),
               com.google.cloud.automl.v1.Detection.getDescriptor(),
               com.google.cloud.automl.v1.TextExtraction.getDescriptor(),
               com.google.cloud.automl.v1.TextSentimentProto.getDescriptor(),
               com.google.cloud.automl.v1.TranslationProto.getDescriptor(),
               com.google.protobuf.AnyProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_AnnotationPayload_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -93,13 +93,13 @@ public final class AnnotationPayloadOuterClass {
               "DisplayName",
               "Detail",
             });
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1.ClassificationProto.getDescriptor();
     com.google.cloud.automl.v1.Detection.getDescriptor();
     com.google.cloud.automl.v1.TextExtraction.getDescriptor();
     com.google.cloud.automl.v1.TextSentimentProto.getDescriptor();
     com.google.cloud.automl.v1.TranslationProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

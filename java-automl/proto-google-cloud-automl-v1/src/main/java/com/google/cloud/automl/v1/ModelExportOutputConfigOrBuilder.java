@@ -114,8 +114,7 @@ public interface ModelExportOutputConfigOrBuilder
    *            the container. The container is verified to work correctly on
    *            ubuntu 16.04 operating system. See more at
    *            [containers
-   * quickstart](https:
-   * //cloud.google.com/vision/automl/docs/containers-gcs-quickstart)
+   *            quickstart](https://cloud.google.com/vision/automl/docs/containers-gcs-quickstart)
    * * core_ml - Used for iOS mobile devices.
    * </pre>
    *
@@ -153,8 +152,7 @@ public interface ModelExportOutputConfigOrBuilder
    *            the container. The container is verified to work correctly on
    *            ubuntu 16.04 operating system. See more at
    *            [containers
-   * quickstart](https:
-   * //cloud.google.com/vision/automl/docs/containers-gcs-quickstart)
+   *            quickstart](https://cloud.google.com/vision/automl/docs/containers-gcs-quickstart)
    * * core_ml - Used for iOS mobile devices.
    * </pre>
    *

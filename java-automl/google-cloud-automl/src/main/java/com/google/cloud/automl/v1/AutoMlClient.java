@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  *
  * <p>Currently the only supported `location_id` is "us-central1".
  *
- * <p>On any input that is documented to expect a string parameter in snake_case or kebab-case,
+ * <p>On any input that is documented to expect a string parameter in snake_case or dash-case,
  * either of those cases is accepted.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
@@ -1676,8 +1676,7 @@ public class AutoMlClient implements BackgroundResource {
   /**
    * Deploys a model. If a model is already deployed, deploying it with the same parameters has no
    * effect. Deploying with different parametrs (as e.g. changing
-   *
-   * <p>[node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
+   * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
    * will reset the deployment state without pausing the model's availability.
    *
    * <p>Only applicable for Text Classification, Image Object Detection , Tables, and Image
@@ -1708,8 +1707,7 @@ public class AutoMlClient implements BackgroundResource {
   /**
    * Deploys a model. If a model is already deployed, deploying it with the same parameters has no
    * effect. Deploying with different parametrs (as e.g. changing
-   *
-   * <p>[node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
+   * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
    * will reset the deployment state without pausing the model's availability.
    *
    * <p>Only applicable for Text Classification, Image Object Detection , Tables, and Image
@@ -1739,8 +1737,7 @@ public class AutoMlClient implements BackgroundResource {
   /**
    * Deploys a model. If a model is already deployed, deploying it with the same parameters has no
    * effect. Deploying with different parametrs (as e.g. changing
-   *
-   * <p>[node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
+   * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
    * will reset the deployment state without pausing the model's availability.
    *
    * <p>Only applicable for Text Classification, Image Object Detection , Tables, and Image
@@ -1773,8 +1770,7 @@ public class AutoMlClient implements BackgroundResource {
   /**
    * Deploys a model. If a model is already deployed, deploying it with the same parameters has no
    * effect. Deploying with different parametrs (as e.g. changing
-   *
-   * <p>[node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
+   * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
    * will reset the deployment state without pausing the model's availability.
    *
    * <p>Only applicable for Text Classification, Image Object Detection , Tables, and Image
@@ -1807,8 +1803,7 @@ public class AutoMlClient implements BackgroundResource {
   /**
    * Deploys a model. If a model is already deployed, deploying it with the same parameters has no
    * effect. Deploying with different parametrs (as e.g. changing
-   *
-   * <p>[node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
+   * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
    * will reset the deployment state without pausing the model's availability.
    *
    * <p>Only applicable for Text Classification, Image Object Detection , Tables, and Image

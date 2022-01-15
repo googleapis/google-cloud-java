@@ -121,7 +121,9 @@ public final class ImageClassificationDatasetMetadata extends com.google.protobu
    * Required. Type of the classification problem.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.ClassificationType classification_type = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1.ClassificationType classification_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for classificationType.
    */
@@ -136,7 +138,9 @@ public final class ImageClassificationDatasetMetadata extends com.google.protobu
    * Required. Type of the classification problem.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1.ClassificationType classification_type = 1;</code>
+   * <code>
+   * .google.cloud.automl.v1.ClassificationType classification_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The classificationType.
    */
@@ -481,7 +485,9 @@ public final class ImageClassificationDatasetMetadata extends com.google.protobu
      * Required. Type of the classification problem.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ClassificationType classification_type = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1.ClassificationType classification_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for classificationType.
      */
@@ -496,7 +502,9 @@ public final class ImageClassificationDatasetMetadata extends com.google.protobu
      * Required. Type of the classification problem.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ClassificationType classification_type = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1.ClassificationType classification_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The enum numeric value on the wire for classificationType to set.
      * @return This builder for chaining.
@@ -514,7 +522,9 @@ public final class ImageClassificationDatasetMetadata extends com.google.protobu
      * Required. Type of the classification problem.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ClassificationType classification_type = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1.ClassificationType classification_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The classificationType.
      */
@@ -532,7 +542,9 @@ public final class ImageClassificationDatasetMetadata extends com.google.protobu
      * Required. Type of the classification problem.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ClassificationType classification_type = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1.ClassificationType classification_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The classificationType to set.
      * @return This builder for chaining.
@@ -553,7 +565,9 @@ public final class ImageClassificationDatasetMetadata extends com.google.protobu
      * Required. Type of the classification problem.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1.ClassificationType classification_type = 1;</code>
+     * <code>
+     * .google.cloud.automl.v1.ClassificationType classification_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */

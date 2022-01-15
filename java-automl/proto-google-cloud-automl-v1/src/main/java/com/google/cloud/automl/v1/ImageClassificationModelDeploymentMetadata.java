@@ -122,7 +122,7 @@ public final class ImageClassificationModelDeploymentMetadata
    * Must be between 1 and 100, inclusive on both ends.
    * </pre>
    *
-   * <code>int64 node_count = 1;</code>
+   * <code>int64 node_count = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    *
    * @return The nodeCount.
    */
@@ -469,7 +469,7 @@ public final class ImageClassificationModelDeploymentMetadata
      * Must be between 1 and 100, inclusive on both ends.
      * </pre>
      *
-     * <code>int64 node_count = 1;</code>
+     * <code>int64 node_count = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      *
      * @return The nodeCount.
      */
@@ -488,7 +488,7 @@ public final class ImageClassificationModelDeploymentMetadata
      * Must be between 1 and 100, inclusive on both ends.
      * </pre>
      *
-     * <code>int64 node_count = 1;</code>
+     * <code>int64 node_count = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      *
      * @param value The nodeCount to set.
      * @return This builder for chaining.
@@ -510,7 +510,7 @@ public final class ImageClassificationModelDeploymentMetadata
      * Must be between 1 and 100, inclusive on both ends.
      * </pre>
      *
-     * <code>int64 node_count = 1;</code>
+     * <code>int64 node_count = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
