@@ -24,8 +24,6 @@ import com.google.cloud.compute.v1.AttachedDiskInitializeParams;
 import com.google.cloud.compute.v1.Firewall;
 import com.google.cloud.compute.v1.FirewallsClient;
 import com.google.cloud.compute.v1.GetInstanceRequest;
-import com.google.cloud.compute.v1.Image;
-import com.google.cloud.compute.v1.ImagesClient;
 import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceGroupManager;
 import com.google.cloud.compute.v1.InstanceGroupManagersClient;
@@ -39,7 +37,6 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ShieldedInstanceConfig;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -226,28 +223,6 @@ public class ITSmokeInstancesTest extends BaseTest {
     } catch (NotFoundException ex) {
       String message = "Not Found";
       Assert.assertEquals(message, ex.getMessage());
-    }
-  }
-
-  @Test
-  public void testInt64() throws IOException, ExecutionException, InterruptedException {
-    // we want to test a field with format:int64
-    String name = generateRandomName("image");
-    List<Long> licenseCodes = Collections.singletonList(5543610867827062957L);
-    String sourceImage = "projects/debian-cloud/global/images/debian-10-buster-v20210721";
-    ImagesClient imagesClient = ImagesClient.create();
-    Image image =
-        Image.newBuilder()
-            .setName(name)
-            .addAllLicenseCodes(licenseCodes)
-            .setSourceImage(sourceImage)
-            .build();
-    try {
-      imagesClient.insertAsync(DEFAULT_PROJECT, image).get();
-      Image fetched = imagesClient.get(DEFAULT_PROJECT, name);
-      Assert.assertEquals(licenseCodes, fetched.getLicenseCodesList());
-    } finally {
-      imagesClient.deleteAsync(DEFAULT_PROJECT, name).get();
     }
   }
 
