@@ -22,7 +22,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataflow</artifactId>
-  <version>0.3.2</version>
+  <version>0.3.3</version>
 </dependency>
 
 ```
