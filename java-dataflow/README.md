@@ -176,7 +176,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-dataflow/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-dataflow/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-dataflow/java11.html
-[stability-image]: https://img.shields.io/badge/stability-beta-yellow
+[stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dataflow.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-dataflow&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
