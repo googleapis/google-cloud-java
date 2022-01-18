@@ -1,7 +1,7 @@
 {
   "api_shortname": "livestream",
   "name_pretty": "Cloud Live Stream",
-  "product_documentation": "https://cloud.google.com/livestream",
+  "product_documentation": "https://cloud.google.com/vpc/docs/vpc",
   "api_description": "transcodes mezzanine live signals into direct-to-consumer streaming formats, including Dynamic Adaptive Streaming over HTTP (DASH/MPEG-DASH), and HTTP Live Streaming (HLS), for multiple device platforms.",
   "client_documentation": "https://googleapis.dev/java/google-cloud-livestream/latest/index.html",
   "release_level": "preview",
