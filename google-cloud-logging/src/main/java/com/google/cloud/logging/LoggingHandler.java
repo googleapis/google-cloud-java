@@ -241,7 +241,7 @@ public class LoggingHandler extends Handler {
       setLevel(level);
       baseLevel = level.equals(Level.ALL) ? Level.FINEST : level;
       flushLevel = config.getFlushLevel();
-      Boolean f1 = options.getAutoPopulateMetadata();
+      Boolean f1 = loggingOptions.getAutoPopulateMetadata();
       Boolean f2 = config.getAutoPopulateMetadata();
       autoPopulateMetadata = isTrueOrNull(f1) && isTrueOrNull(f2);
       redirectToStdout = firstNonNull(config.getRedirectToStdout(), Boolean.FALSE);

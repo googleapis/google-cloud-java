@@ -22,6 +22,7 @@ import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.reset;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.util.Strings;
@@ -52,6 +53,7 @@ public class LoggingHandlerTest {
   private static final String LOG_NAME = "java.log";
   private static final String MESSAGE = "message";
   private static final String PROJECT = "project";
+  private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
 
   private static final MonitoredResource DEFAULT_RESOURCE =
       MonitoredResource.of("global", ImmutableMap.of("project_id", PROJECT));
@@ -205,9 +207,9 @@ public class LoggingHandlerTest {
     expect(options.getService()).andStubReturn(logging);
     expect(options.getAutoPopulateMetadata()).andStubReturn(Boolean.FALSE);
     logging.setFlushSeverity(EasyMock.anyObject(Severity.class));
-    expectLastCall().once();
+    expectLastCall().anyTimes();
     logging.setWriteSynchronicity(EasyMock.anyObject(Synchronicity.class));
-    expectLastCall().once();
+    expectLastCall().anyTimes();
   }
 
   @After
@@ -219,6 +221,19 @@ public class LoggingHandlerTest {
     LogRecord record = new LogRecord(level, message);
     record.setMillis(123456789L);
     return record;
+  }
+
+  @Test
+  public void testDefaultHandlerCreation() {
+    String oldProject = System.getProperty(PROJECT_ENV_NAME);
+    System.setProperty(PROJECT_ENV_NAME, PROJECT);
+    replay(options, logging);
+    assertNotNull(new LoggingHandler());
+    if (oldProject != null) {
+      System.setProperty(PROJECT_ENV_NAME, oldProject);
+    } else {
+      System.clearProperty(PROJECT_ENV_NAME);
+    }
   }
 
   @Test
@@ -483,6 +498,7 @@ public class LoggingHandlerTest {
 
   @Test
   public void testSyncWrite() {
+    reset(logging);
     LogEntry entry =
         LogEntry.newBuilder(Payload.StringPayload.of(MESSAGE))
             .setSeverity(Severity.DEBUG)
@@ -491,10 +507,10 @@ public class LoggingHandlerTest {
             .setTimestamp(123456789L)
             .build();
 
+    logging.setWriteSynchronicity(Synchronicity.ASYNC);
     logging.setWriteSynchronicity(Synchronicity.SYNC);
-    expectLastCall().once();
     logging.write(ImmutableList.of(entry), DEFAULT_OPTIONS);
-    expectLastCall().once();
+    logging.setFlushSeverity(Severity.ERROR);
     replay(options, logging);
 
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
