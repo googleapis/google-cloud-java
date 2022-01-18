@@ -19,7 +19,16 @@ custom_content: |
       <!-- Optional: defaults to "ERROR" -->
       <flushLevel>WARNING</flushLevel>
 
-      <!-- Optional: auto detects on App Engine Flex, Standard, GCE and GKE, defaults to "global". See supported resource types  -->
+      <!-- Optional: defaults to ASYNC -->
+      <writeSynchronicity>SYNC</writeSynchronicity>
+ 
+      <!-- Optional: defaults to true -->
+      <autoPopulateMetadata>false</autoPopulateMetadata>
+ 
+      <!-- Optional: defaults to false -->
+      <redirectToStdout>true</redirectToStdout>
+
+      <!-- Optional: auto detects on App Engine Flex, Standard, GCE and GKE, defaults to "global". -->
       <resourceType></resourceType>
 
       <!-- Optional: defaults to the default credentials of the environment -->
@@ -39,7 +48,7 @@ custom_content: |
   </configuration>
   ```
 
-  In your code :
+  In your code:
 
   ```java
   import org.slf4j.Logger;
@@ -58,3 +67,30 @@ custom_content: |
       }
   }
   ```
+
+  ### Populate log entries with metadata
+
+  The library provides multiple ways to enrich log entries with additional information.
+  You can select one or more ways to customize log entries that will be written into Cloud Logging.
+
+  * Manually update a log entry using [`LoggingEnhancer`]
+  (https://github.com/googleapis/java-logging/blob/main/google-cloud-logging/src/main/java/com/google/cloud/logging/.
+  * Use [`ILoggingEvent`](https://logback.qos.ch/apidocs/ch/qos/logback/classic/spi/ILoggingEvent.html) to update a log entry with [`LoggingEventEnhancer`]
+  (https://github.com/googleapis/java-logging-logback/blob/main/src/main/java/com/google/cloud/logging/logback/LoggingEventEnhancer.java).
+  * Enable [auto-population](https://github.com/googleapis/java-logging#auto-population-of-log-entrys-metadata) of the `LogEntry` metadata using the `autoPopulateMetadata` configuration flag.
+
+  #### Optimize log ingestion
+
+  By default, the appender will ingest log entries asynchronously by calling Logging API.
+  Multiple calls may be aggregated before being sent to improve use of API quota and bandwidth.
+  You can set the `writeSynchronicity` configuration flag to `SYNC` if they want to ingest log entries synchronously.
+  Note that configuring synchronous ingestion will probably result in performance penalties to your applications.
+  If you plan to deploy your application in one of Google Cloud managed environments (e.g. Cloud Run, Cloud Function or App Engine),
+  you can leverage the support provided by the implicit logging agent and the [structured logging](https://cloud.google.com/logging/docs/structured-logging) feature.
+  To use it, set the `redirectToStdout` configuration flag to `true`.
+  This flag instructs the appender to print the log entries to `stdout` instead of ingesting them using Logging API.
+  The log entries are printed using the [structured logging Json format](https://cloud.google.com/logging/docs/structured-logging#special-payload-fields).
+  In result, the logging agent will be responsible for ingesting the logs to Logging API.
+  Note that using the structured logging Json format you cannot control the log name where the logs will be ingested.
+  The logs will be ingested into the project that hosts the environment where your application is running.
+  The configuration `logDestinationProjectId` will be ignored.

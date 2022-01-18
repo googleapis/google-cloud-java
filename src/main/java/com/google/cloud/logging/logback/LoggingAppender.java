@@ -38,6 +38,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -58,14 +59,20 @@ import java.util.Set;
  *             &lt;level&gt;INFO&lt;/level&gt;
  *         &lt;/filter&gt;
  *
- *         &lt;!-- Optional: defaults to "java.log" --&gt;
+ *         &lt;!-- Optional: defaults to {@code "java.log"} --&gt;
  *         &lt;log&gt;application.log&lt;/log&gt;
  *
- *         &lt;!-- Optional: defaults to "ERROR" --&gt;
+ *         &lt;!-- Optional: defaults to {@code "ERROR"} --&gt;
  *         &lt;flushLevel&gt;WARNING&lt;/flushLevel&gt;
  *
- *         &lt;!-- Optional: defaults to ASYNC --&gt;
+ *         &lt;!-- Optional: defaults to {@code ASYNC} --&gt;
  *         &lt;writeSynchronicity&gt;SYNC&lt;/writeSynchronicity&gt;
+ *
+ *         &lt;!-- Optional: defaults to {@code true} --&gt;
+ *         &lt;autoPopulateMetadata&gt;false&lt;/autoPopulateMetadata&gt;
+ *
+ *         &lt;!-- Optional: defaults to {@code false} --&gt;
+ *         &lt;redirectToStdout&gt;true&lt;/redirectToStdout&gt;
  *
  *         &lt;!-- Optional: auto detects on App Engine Flex, Standard, GCE and GKE, defaults to "global". See <a
  *         href=
@@ -96,6 +103,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
   private volatile Logging logging;
   private LoggingOptions loggingOptions;
+  private MonitoredResource monitoredResource;
   private List<LoggingEnhancer> loggingEnhancers;
   private List<LoggingEventEnhancer> loggingEventEnhancers;
   private WriteOption[] defaultWriteOptions;
@@ -105,14 +113,16 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private String resourceType;
   private String credentialsFile;
   private String logDestinationProjectId;
+  private boolean autoPopulateMetadata = true;
+  private boolean redirectToStdout = false;
   private Synchronicity writeSyncFlag = Synchronicity.ASYNC;
   private final Set<String> enhancerClassNames = new HashSet<>();
   private final Set<String> loggingEventEnhancerClassNames = new HashSet<>();
 
   /**
-   * Batched logging requests get immediately flushed for logs at or above this level.
+   * Sets a threshold for log severity level to flush all log entries that were batched so far.
    *
-   * <p>Defaults to Error if not set.
+   * <p>Defaults to Error.
    *
    * @param flushLevel Logback log level
    */
@@ -121,35 +131,37 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   /**
-   * Sets the log filename.
+   * Sets the LOG_ID part of the <a href="log
+   * name">https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#FIELDS.log_name</a>
+   * for which the logs are ingested.
    *
-   * @param log filename
+   * @param log LOG_ID part of the name
    */
   public void setLog(String log) {
     this.log = log;
   }
 
   /**
-   * Sets the name of the monitored resource (Optional).
+   * Sets the name of the monitored resource (Optional). If not define the appender will try to
+   * identify the resource type automatically. Currently support resource types include "gae_app",
+   * "gce_instance", "k8s_container", "cloud_run_revision" and "cloud_function". If the appender
+   * fails to identify the resource type it will be set to "global".
    *
-   * <p>Must be a <a href=
-   * "https://cloud.google.com/logging/docs/api/v2/resource-list">supported</a> resource type.
-   * gae_app, gce_instance and container are auto-detected.
+   * <p>Must be a one of the <a href=
+   * "https://cloud.google.com/logging/docs/api/v2/resource-list">supported</a> resource types.
    *
-   * <p>Defaults to "global"
-   *
-   * @param resourceType name of the monitored resource
+   * @param resourceType the name of the monitored resource.
    */
   public void setResourceType(String resourceType) {
     this.resourceType = resourceType;
   }
 
   /**
-   * Sets the credentials file to use to create the {@link LoggingOptions}. The credentials returned
-   * by {@link GoogleCredentials#getApplicationDefault()} will be used if no custom credentials file
-   * has been set.
+   * Sets the path to the <a href="credential
+   * file">https://cloud.google.com/iam/docs/creating-managing-service-account-keys</a>. If not set
+   * the appender will use {@link GoogleCredentials#getApplicationDefault()} to authenticate.
    *
-   * @param credentialsFile The credentials file to use.
+   * @param credentialsFile the path to the credentials file.
    */
   public void setCredentialsFile(String credentialsFile) {
     this.credentialsFile = credentialsFile;
@@ -166,12 +178,37 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   /**
-   * Define synchronization mode for writing log entries.
+   * Sets the log ingestion mode. It can be one of the {@link Synchronicity} values.
    *
-   * @param flag to set {@code Synchronicity} value.
+   * <p>Default to {@code Synchronicity.ASYNC}
+   *
+   * @param flag the new ingestion mode.
    */
   public void setWriteSynchronicity(Synchronicity flag) {
     this.writeSyncFlag = flag;
+  }
+
+  /**
+   * Sets the automatic population of metadata fields for ingested logs.
+   *
+   * <p>Default to {@code true}.
+   *
+   * @param flag the metadata auto-population flag.
+   */
+  public void setAutoPopulateMetadata(boolean flag) {
+    autoPopulateMetadata = flag;
+  }
+
+  /**
+   * Sets the redirect of the appender's output to STDOUT instead of ingesting logs to Cloud Logging
+   * using Logging API.
+   *
+   * <p>Default to {@code false}.
+   *
+   * @param flag the redirect flag.
+   */
+  public void setRedirectToStdout(boolean flag) {
+    redirectToStdout = flag;
   }
 
   /** Add extra labels using classes that implement {@link LoggingEnhancer}. */
@@ -183,57 +220,68 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     this.loggingEventEnhancerClassNames.add(enhancerClassName);
   }
 
-  Level getFlushLevel() {
-    return (flushLevel != null) ? flushLevel : Level.ERROR;
-  }
-
-  String getLogName() {
-    return (log != null) ? log : "java.log";
-  }
-
+  /**
+   * Returns the current value of the ingestion mode.
+   *
+   * <p>The method is deprecated. Use appender configuration to setup the ingestion
+   *
+   * @return a {@link Synchronicity} value of the ingestion module.
+   */
+  @Deprecated
   public Synchronicity getWriteSynchronicity() {
     return (this.writeSyncFlag != null) ? this.writeSyncFlag : Synchronicity.ASYNC;
   }
 
-  MonitoredResource getMonitoredResource(String projectId) {
-    return MonitoredResourceUtil.getResource(projectId, resourceType);
-  }
-
-  List<LoggingEnhancer> getLoggingEnhancers() {
-    return getEnhancers(enhancerClassNames);
-  }
-
-  List<LoggingEventEnhancer> getLoggingEventEnhancers() {
-    if (loggingEventEnhancerClassNames.isEmpty()) {
-      return DEFAULT_LOGGING_EVENT_ENHANCERS;
-    } else {
-      return getEnhancers(loggingEventEnhancerClassNames);
+  private void setupMonitoredResource() {
+    if (monitoredResource == null && autoPopulateMetadata) {
+      monitoredResource = MonitoredResourceUtil.getResource(getProjectId(), resourceType);
     }
   }
 
-  <T> List<T> getEnhancers(Set<String> classNames) {
-    List<T> loggingEnhancers = new ArrayList<>();
+  @InternalApi("Visible for testing")
+  void setupMonitoredResource(MonitoredResource monitoredResource) {
+    this.monitoredResource = monitoredResource;
+  }
+
+  private Level getFlushLevel() {
+    return (flushLevel != null) ? flushLevel : Level.ERROR;
+  }
+
+  private String getLogName() {
+    return (log != null) ? log : "java.log";
+  }
+
+  private List<LoggingEnhancer> getLoggingEnhancers() {
+    return getEnhancers(enhancerClassNames, LoggingEnhancer.class);
+  }
+
+  private List<LoggingEventEnhancer> getLoggingEventEnhancers() {
+    if (loggingEventEnhancerClassNames.isEmpty()) {
+      return DEFAULT_LOGGING_EVENT_ENHANCERS;
+    } else {
+      return getEnhancers(loggingEventEnhancerClassNames, LoggingEventEnhancer.class);
+    }
+  }
+
+  private <T> List<T> getEnhancers(Set<String> classNames, Class<T> classOfT) {
+    List<T> enhancers = new ArrayList<>();
     if (classNames != null) {
-      for (String enhancerClassName : classNames) {
-        if (enhancerClassName != null) {
-          T enhancer = getEnhancer(enhancerClassName);
-          if (enhancer != null) {
-            loggingEnhancers.add(enhancer);
+      for (String className : classNames) {
+        if (className != null) {
+          try {
+            T enhancer =
+                Loader.loadClass(className.trim())
+                    .asSubclass(classOfT)
+                    .getDeclaredConstructor()
+                    .newInstance();
+            enhancers.add(enhancer);
+          } catch (Exception ex) {
+            // invalid className: ignore
           }
         }
       }
     }
-    return loggingEnhancers;
-  }
-
-  private <T> T getEnhancer(String enhancerClassName) {
-    try {
-      Class<T> clz = (Class<T>) Loader.loadClass(enhancerClassName.trim());
-      return clz.getDeclaredConstructor().newInstance();
-    } catch (Exception ex) {
-      // If we cannot create the enhancer we fallback to null
-    }
-    return null;
+    return enhancers;
   }
 
   /** Initialize and configure the cloud logging service. */
@@ -242,9 +290,13 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     if (isStarted()) {
       return;
     }
-    MonitoredResource resource = getMonitoredResource(getProjectId());
+
+    setupMonitoredResource();
+
     defaultWriteOptions =
-        new WriteOption[] {WriteOption.logName(getLogName()), WriteOption.resource(resource)};
+        new WriteOption[] {
+          WriteOption.logName(getLogName()), WriteOption.resource(monitoredResource)
+        };
     Level flushLevel = getFlushLevel();
     if (flushLevel != Level.OFF) {
       getLogging().setFlushSeverity(severityFor(flushLevel));
@@ -265,8 +317,26 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
   @Override
   protected void append(ILoggingEvent e) {
-    LogEntry logEntry = logEntryFor(e);
-    getLogging().write(Collections.singleton(logEntry), defaultWriteOptions);
+    Iterable<LogEntry> entries = Collections.singleton(logEntryFor(e));
+    if (autoPopulateMetadata) {
+      entries =
+          getLogging()
+              .populateMetadata(
+                  entries,
+                  monitoredResource,
+                  "com.google.cloud.logging",
+                  "jdk",
+                  "sun",
+                  "java",
+                  "ch.qos.logback");
+    }
+    if (redirectToStdout) {
+      for (LogEntry entry : entries) {
+        System.out.println(entry.toStructuredJsonString());
+      }
+    } else {
+      getLogging().write(entries, defaultWriteOptions);
+    }
   }
 
   @Override
@@ -295,6 +365,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   /** Flushes any pending asynchronous logging writes. */
+  @Deprecated
   public void flush() {
     if (!isStarted()) {
       return;
@@ -321,6 +392,8 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
               e);
         }
       }
+      // opt-out metadata auto-population to control it in the appender code
+      builder.setAutoPopulateMetadata(false);
       loggingOptions = builder.build();
     }
     return loggingOptions;
@@ -340,7 +413,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     }
     LogEntry.Builder builder =
         LogEntry.newBuilder(Payload.JsonPayload.of(jsonContent))
-            .setTimestamp(e.getTimeStamp())
+            .setTimestamp(Instant.ofEpochMilli(e.getTimeStamp()))
             .setSeverity(severity);
     builder
         .addLabel(LEVEL_NAME_KEY, level.toString())
