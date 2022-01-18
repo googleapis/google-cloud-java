@@ -8,9 +8,6 @@ Java idiomatic client for [Artifact Registry][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 
 ## Quickstart
 
@@ -132,9 +129,6 @@ and on [google-cloud-java][g-c-j].
 This library follows [Semantic Versioning](http://semver.org/).
 
 
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time
-and the public API should not be considered stable.
-
 
 ## Contributing
 
@@ -175,7 +169,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-artifact-registry/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-artifact-registry/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-artifact-registry/java11.html
-[stability-image]: https://img.shields.io/badge/stability-preview-yellow
+[stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-artifact-registry.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-artifact-registry&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
