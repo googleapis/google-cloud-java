@@ -4,7 +4,7 @@
     "product_documentation": "https://cloud.google.com/domains",
     "api_description": "allows you to register and manage domains by using Cloud Domains.",
     "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-domains/latest/history",
-    "release_level": "preview",
+    "release_level": "stable",
     "transport": "grpc",
     "language": "java",
     "repo": "googleapis/java-domains",
