@@ -1,5 +1,17 @@
 # Changelog
 
+### [3.6.1](https://github.com/googleapis/java-logging/compare/v3.6.0...v3.6.1) (2022-01-18)
+
+
+### Bug Fixes
+
+* use initialized logging option in constructor ([#843](https://github.com/googleapis/java-logging/issues/843)) ([99fb678](https://github.com/googleapis/java-logging/commit/99fb6782f2a37be569309cc37591ce7b9c86092b))
+
+
+### Dependencies
+
+* update dependency org.easymock:easymock to v4 ([#830](https://github.com/googleapis/java-logging/issues/830)) ([21c2436](https://github.com/googleapis/java-logging/commit/21c243619e3b00891a0ff828e0f3e087b6e17d4b))
+
 ## [3.6.0](https://www.github.com/googleapis/java-logging/compare/v3.5.3...v3.6.0) (2022-01-07)
 
 
