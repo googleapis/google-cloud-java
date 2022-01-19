@@ -11,7 +11,7 @@
     "repo": "googleapis/java-cloudbuild",
     "repo_short": "java-cloudbuild",
     "distribution_name": "com.google.cloud:google-cloud-build",
-    "codeowner_team": "@googleapis/cicd",
+    "codeowner_team": "@googleapis/aap-dpes",
     "api_id": "cloudbuild.googleapis.com",
     "requires_billing": true,
     "library_type": "GAPIC_AUTO"
