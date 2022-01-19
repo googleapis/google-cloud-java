@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.6](https://github.com/googleapis/java-shared-config/compare/v1.2.5...v1.2.6) (2022-01-19)
+
+
+### Bug Fixes
+
+* library should released as 1.2.6 ([#408](https://github.com/googleapis/java-shared-config/issues/408)) ([4972daa](https://github.com/googleapis/java-shared-config/commit/4972daa60467797566c4b043cebd322577b8eb73))
+
 ### [1.2.5](https://github.com/googleapis/java-shared-config/compare/v1.2.4...v1.2.5) (2022-01-11)
 
 
