@@ -204,7 +204,8 @@ public interface TransferConfigOrBuilder
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-   * NOTE: the granularity should be at least 8 hours, or less frequent.
+   * NOTE: The minimum interval time between recurring transfers depends on the
+   * data source; refer to the documentation for your data source.
    * </pre>
    *
    * <code>string schedule = 7;</code>
@@ -227,7 +228,8 @@ public interface TransferConfigOrBuilder
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-   * NOTE: the granularity should be at least 8 hours, or less frequent.
+   * NOTE: The minimum interval time between recurring transfers depends on the
+   * data source; refer to the documentation for your data source.
    * </pre>
    *
    * <code>string schedule = 7;</code>
@@ -518,6 +520,53 @@ public interface TransferConfigOrBuilder
    */
   com.google.cloud.bigquery.datatransfer.v1.EmailPreferencesOrBuilder
       getEmailPreferencesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the user whose credentials are used to transfer data.
+   * Populated only for `transferConfigs.get` requests. In case the user
+   * information is not available, this field will not be populated.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the ownerInfo field is set.
+   */
+  boolean hasOwnerInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the user whose credentials are used to transfer data.
+   * Populated only for `transferConfigs.get` requests. In case the user
+   * information is not available, this field will not be populated.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The ownerInfo.
+   */
+  com.google.cloud.bigquery.datatransfer.v1.UserInfo getOwnerInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the user whose credentials are used to transfer data.
+   * Populated only for `transferConfigs.get` requests. In case the user
+   * information is not available, this field will not be populated.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.datatransfer.v1.UserInfoOrBuilder getOwnerInfoOrBuilder();
 
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.DestinationCase
       getDestinationCase();

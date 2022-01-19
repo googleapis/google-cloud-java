@@ -33,6 +33,7 @@ import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest;
+import com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest;
@@ -231,6 +232,17 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(CheckValidCredsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<EnrollDataSourcesRequest, Empty>
+      enrollDataSourcesMethodDescriptor =
+          MethodDescriptor.<EnrollDataSourcesRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/EnrollDataSources")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EnrollDataSourcesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable;
   private final UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse>
       listDataSourcesCallable;
@@ -262,6 +274,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
       listTransferLogsPagedCallable;
   private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable;
+  private final UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -459,6 +472,16 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesTransportSettings =
+        GrpcCallSettings.<EnrollDataSourcesRequest, Empty>newBuilder()
+            .setMethodDescriptor(enrollDataSourcesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
 
     this.getDataSourceCallable =
         callableFactory.createUnaryCallable(
@@ -532,6 +555,11 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     this.checkValidCredsCallable =
         callableFactory.createUnaryCallable(
             checkValidCredsTransportSettings, settings.checkValidCredsSettings(), clientContext);
+    this.enrollDataSourcesCallable =
+        callableFactory.createUnaryCallable(
+            enrollDataSourcesTransportSettings,
+            settings.enrollDataSourcesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -638,6 +666,11 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   @Override
   public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
     return checkValidCredsCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable() {
+    return enrollDataSourcesCallable;
   }
 
   @Override

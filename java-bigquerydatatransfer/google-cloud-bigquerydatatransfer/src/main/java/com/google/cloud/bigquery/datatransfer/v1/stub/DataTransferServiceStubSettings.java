@@ -49,6 +49,7 @@ import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest;
+import com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest;
@@ -146,6 +147,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       listTransferLogsSettings;
   private final UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsSettings;
+  private final UnaryCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings;
 
   private static final PagedListDescriptor<
           ListDataSourcesRequest, ListDataSourcesResponse, DataSource>
@@ -470,6 +472,11 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     return checkValidCredsSettings;
   }
 
+  /** Returns the object with the settings used for calls to enrollDataSources. */
+  public UnaryCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings() {
+    return enrollDataSourcesSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataTransferServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -560,6 +567,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     listTransferRunsSettings = settingsBuilder.listTransferRunsSettings().build();
     listTransferLogsSettings = settingsBuilder.listTransferLogsSettings().build();
     checkValidCredsSettings = settingsBuilder.checkValidCredsSettings().build();
+    enrollDataSourcesSettings = settingsBuilder.enrollDataSourcesSettings().build();
   }
 
   /** Builder for DataTransferServiceStubSettings. */
@@ -601,6 +609,8 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
         listTransferLogsSettings;
     private final UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsSettings;
+    private final UnaryCallSettings.Builder<EnrollDataSourcesRequest, Empty>
+        enrollDataSourcesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -669,6 +679,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       listTransferRunsSettings = PagedCallSettings.newBuilder(LIST_TRANSFER_RUNS_PAGE_STR_FACT);
       listTransferLogsSettings = PagedCallSettings.newBuilder(LIST_TRANSFER_LOGS_PAGE_STR_FACT);
       checkValidCredsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      enrollDataSourcesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -685,7 +696,8 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               deleteTransferRunSettings,
               listTransferRunsSettings,
               listTransferLogsSettings,
-              checkValidCredsSettings);
+              checkValidCredsSettings,
+              enrollDataSourcesSettings);
       initDefaults(this);
     }
 
@@ -706,6 +718,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       listTransferRunsSettings = settings.listTransferRunsSettings.toBuilder();
       listTransferLogsSettings = settings.listTransferLogsSettings.toBuilder();
       checkValidCredsSettings = settings.checkValidCredsSettings.toBuilder();
+      enrollDataSourcesSettings = settings.enrollDataSourcesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -722,7 +735,8 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               deleteTransferRunSettings,
               listTransferRunsSettings,
               listTransferLogsSettings,
-              checkValidCredsSettings);
+              checkValidCredsSettings,
+              enrollDataSourcesSettings);
     }
 
     private static Builder createDefault() {
@@ -808,6 +822,11 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
           .checkValidCredsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .enrollDataSourcesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
@@ -918,6 +937,11 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     public UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsSettings() {
       return checkValidCredsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to enrollDataSources. */
+    public UnaryCallSettings.Builder<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings() {
+      return enrollDataSourcesSettings;
     }
 
     @Override

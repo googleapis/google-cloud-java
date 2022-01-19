@@ -21,10 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * The Google BigQuery Data Transfer Service API enables BigQuery users to
- * configure the transfer of their data from other Google Products into
- * BigQuery. This service contains methods that are end user exposed. It backs
- * up the frontend.
+ * This API allows users to manage their data transfers into BigQuery.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -721,6 +718,53 @@ public final class DataTransferServiceGrpc {
     return getCheckValidCredsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest,
+          com.google.protobuf.Empty>
+      getEnrollDataSourcesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EnrollDataSources",
+      requestType = com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest,
+          com.google.protobuf.Empty>
+      getEnrollDataSourcesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest,
+            com.google.protobuf.Empty>
+        getEnrollDataSourcesMethod;
+    if ((getEnrollDataSourcesMethod = DataTransferServiceGrpc.getEnrollDataSourcesMethod) == null) {
+      synchronized (DataTransferServiceGrpc.class) {
+        if ((getEnrollDataSourcesMethod = DataTransferServiceGrpc.getEnrollDataSourcesMethod)
+            == null) {
+          DataTransferServiceGrpc.getEnrollDataSourcesMethod =
+              getEnrollDataSourcesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnrollDataSources"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataTransferServiceMethodDescriptorSupplier("EnrollDataSources"))
+                      .build();
+        }
+      }
+    }
+    return getEnrollDataSourcesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DataTransferServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DataTransferServiceStub> factory =
@@ -766,10 +810,7 @@ public final class DataTransferServiceGrpc {
    *
    *
    * <pre>
-   * The Google BigQuery Data Transfer Service API enables BigQuery users to
-   * configure the transfer of their data from other Google Products into
-   * BigQuery. This service contains methods that are end user exposed. It backs
-   * up the frontend.
+   * This API allows users to manage their data transfers into BigQuery.
    * </pre>
    */
   public abstract static class DataTransferServiceImplBase implements io.grpc.BindableService {
@@ -778,8 +819,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a supported data source and returns its settings,
-     * which can be used for UI rendering.
+     * Retrieves a supported data source and returns its settings.
      * </pre>
      */
     public void getDataSource(
@@ -794,8 +834,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Lists supported data sources and returns their settings,
-     * which can be used for UI rendering.
+     * Lists supported data sources and returns their settings.
      * </pre>
      */
     public void listDataSources(
@@ -842,8 +881,8 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a data transfer configuration,
-     * including any associated transfer runs and logs.
+     * Deletes a data transfer configuration, including any associated transfer
+     * runs and logs.
      * </pre>
      */
     public void deleteTransferConfig(
@@ -958,7 +997,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Returns information about running and completed jobs.
+     * Returns information about running and completed transfer runs.
      * </pre>
      */
     public void listTransferRuns(
@@ -974,7 +1013,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Returns user facing log messages for the data transfer run.
+     * Returns log messages for the transfer run.
      * </pre>
      */
     public void listTransferLogs(
@@ -992,10 +1031,6 @@ public final class DataTransferServiceGrpc {
      * <pre>
      * Returns true if valid credentials exist for the given data source and
      * requesting user.
-     * Some data sources doesn't support service account, so we need to talk to
-     * them on behalf of the end user. This API just checks whether we have OAuth
-     * token for the particular user, which is a pre-requisite before user can
-     * create a transfer config.
      * </pre>
      */
     public void checkValidCreds(
@@ -1005,6 +1040,25 @@ public final class DataTransferServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCheckValidCredsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enroll data sources in a user project. This allows users to create transfer
+     * configurations for these data sources. They will also appear in the
+     * ListDataSources RPC and as such, will appear in the BigQuery UI
+     * 'https://bigquery.cloud.google.com' (and the documents can be found at
+     * https://cloud.google.com/bigquery/bigquery-web-ui and
+     * https://cloud.google.com/bigquery/docs/working-with-transfers).
+     * </pre>
+     */
+    public void enrollDataSources(
+        com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEnrollDataSourcesMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -1106,6 +1160,12 @@ public final class DataTransferServiceGrpc {
                       com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest,
                       com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse>(
                       this, METHODID_CHECK_VALID_CREDS)))
+          .addMethod(
+              getEnrollDataSourcesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest,
+                      com.google.protobuf.Empty>(this, METHODID_ENROLL_DATA_SOURCES)))
           .build();
     }
   }
@@ -1114,10 +1174,7 @@ public final class DataTransferServiceGrpc {
    *
    *
    * <pre>
-   * The Google BigQuery Data Transfer Service API enables BigQuery users to
-   * configure the transfer of their data from other Google Products into
-   * BigQuery. This service contains methods that are end user exposed. It backs
-   * up the frontend.
+   * This API allows users to manage their data transfers into BigQuery.
    * </pre>
    */
   public static final class DataTransferServiceStub
@@ -1136,8 +1193,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a supported data source and returns its settings,
-     * which can be used for UI rendering.
+     * Retrieves a supported data source and returns its settings.
      * </pre>
      */
     public void getDataSource(
@@ -1154,8 +1210,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Lists supported data sources and returns their settings,
-     * which can be used for UI rendering.
+     * Lists supported data sources and returns their settings.
      * </pre>
      */
     public void listDataSources(
@@ -1208,8 +1263,8 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a data transfer configuration,
-     * including any associated transfer runs and logs.
+     * Deletes a data transfer configuration, including any associated transfer
+     * runs and logs.
      * </pre>
      */
     public void deleteTransferConfig(
@@ -1338,7 +1393,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Returns information about running and completed jobs.
+     * Returns information about running and completed transfer runs.
      * </pre>
      */
     public void listTransferRuns(
@@ -1356,7 +1411,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Returns user facing log messages for the data transfer run.
+     * Returns log messages for the transfer run.
      * </pre>
      */
     public void listTransferLogs(
@@ -1376,10 +1431,6 @@ public final class DataTransferServiceGrpc {
      * <pre>
      * Returns true if valid credentials exist for the given data source and
      * requesting user.
-     * Some data sources doesn't support service account, so we need to talk to
-     * them on behalf of the end user. This API just checks whether we have OAuth
-     * token for the particular user, which is a pre-requisite before user can
-     * create a transfer config.
      * </pre>
      */
     public void checkValidCreds(
@@ -1392,16 +1443,34 @@ public final class DataTransferServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enroll data sources in a user project. This allows users to create transfer
+     * configurations for these data sources. They will also appear in the
+     * ListDataSources RPC and as such, will appear in the BigQuery UI
+     * 'https://bigquery.cloud.google.com' (and the documents can be found at
+     * https://cloud.google.com/bigquery/bigquery-web-ui and
+     * https://cloud.google.com/bigquery/docs/working-with-transfers).
+     * </pre>
+     */
+    public void enrollDataSources(
+        com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEnrollDataSourcesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    *
    *
    * <pre>
-   * The Google BigQuery Data Transfer Service API enables BigQuery users to
-   * configure the transfer of their data from other Google Products into
-   * BigQuery. This service contains methods that are end user exposed. It backs
-   * up the frontend.
+   * This API allows users to manage their data transfers into BigQuery.
    * </pre>
    */
   public static final class DataTransferServiceBlockingStub
@@ -1421,8 +1490,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a supported data source and returns its settings,
-     * which can be used for UI rendering.
+     * Retrieves a supported data source and returns its settings.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.DataSource getDataSource(
@@ -1435,8 +1503,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Lists supported data sources and returns their settings,
-     * which can be used for UI rendering.
+     * Lists supported data sources and returns their settings.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse listDataSources(
@@ -1476,8 +1543,8 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a data transfer configuration,
-     * including any associated transfer runs and logs.
+     * Deletes a data transfer configuration, including any associated transfer
+     * runs and logs.
      * </pre>
      */
     public com.google.protobuf.Empty deleteTransferConfig(
@@ -1580,7 +1647,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Returns information about running and completed jobs.
+     * Returns information about running and completed transfer runs.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse listTransferRuns(
@@ -1593,7 +1660,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Returns user facing log messages for the data transfer run.
+     * Returns log messages for the transfer run.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse listTransferLogs(
@@ -1608,10 +1675,6 @@ public final class DataTransferServiceGrpc {
      * <pre>
      * Returns true if valid credentials exist for the given data source and
      * requesting user.
-     * Some data sources doesn't support service account, so we need to talk to
-     * them on behalf of the end user. This API just checks whether we have OAuth
-     * token for the particular user, which is a pre-requisite before user can
-     * create a transfer config.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse checkValidCreds(
@@ -1619,16 +1682,31 @@ public final class DataTransferServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckValidCredsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enroll data sources in a user project. This allows users to create transfer
+     * configurations for these data sources. They will also appear in the
+     * ListDataSources RPC and as such, will appear in the BigQuery UI
+     * 'https://bigquery.cloud.google.com' (and the documents can be found at
+     * https://cloud.google.com/bigquery/bigquery-web-ui and
+     * https://cloud.google.com/bigquery/docs/working-with-transfers).
+     * </pre>
+     */
+    public com.google.protobuf.Empty enrollDataSources(
+        com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnrollDataSourcesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
    *
    *
    * <pre>
-   * The Google BigQuery Data Transfer Service API enables BigQuery users to
-   * configure the transfer of their data from other Google Products into
-   * BigQuery. This service contains methods that are end user exposed. It backs
-   * up the frontend.
+   * This API allows users to manage their data transfers into BigQuery.
    * </pre>
    */
   public static final class DataTransferServiceFutureStub
@@ -1648,8 +1726,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a supported data source and returns its settings,
-     * which can be used for UI rendering.
+     * Retrieves a supported data source and returns its settings.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1663,8 +1740,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Lists supported data sources and returns their settings,
-     * which can be used for UI rendering.
+     * Lists supported data sources and returns their settings.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1709,8 +1785,8 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a data transfer configuration,
-     * including any associated transfer runs and logs.
+     * Deletes a data transfer configuration, including any associated transfer
+     * runs and logs.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -1821,7 +1897,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Returns information about running and completed jobs.
+     * Returns information about running and completed transfer runs.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1836,7 +1912,7 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Returns user facing log messages for the data transfer run.
+     * Returns log messages for the transfer run.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1853,10 +1929,6 @@ public final class DataTransferServiceGrpc {
      * <pre>
      * Returns true if valid credentials exist for the given data source and
      * requesting user.
-     * Some data sources doesn't support service account, so we need to talk to
-     * them on behalf of the end user. This API just checks whether we have OAuth
-     * token for the particular user, which is a pre-requisite before user can
-     * create a transfer config.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1864,6 +1936,25 @@ public final class DataTransferServiceGrpc {
         checkValidCreds(com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCheckValidCredsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enroll data sources in a user project. This allows users to create transfer
+     * configurations for these data sources. They will also appear in the
+     * ListDataSources RPC and as such, will appear in the BigQuery UI
+     * 'https://bigquery.cloud.google.com' (and the documents can be found at
+     * https://cloud.google.com/bigquery/bigquery-web-ui and
+     * https://cloud.google.com/bigquery/docs/working-with-transfers).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        enrollDataSources(
+            com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEnrollDataSourcesMethod(), getCallOptions()), request);
     }
   }
 
@@ -1881,6 +1972,7 @@ public final class DataTransferServiceGrpc {
   private static final int METHODID_LIST_TRANSFER_RUNS = 11;
   private static final int METHODID_LIST_TRANSFER_LOGS = 12;
   private static final int METHODID_CHECK_VALID_CREDS = 13;
+  private static final int METHODID_ENROLL_DATA_SOURCES = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1991,6 +2083,11 @@ public final class DataTransferServiceGrpc {
                       com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse>)
                   responseObserver);
           break;
+        case METHODID_ENROLL_DATA_SOURCES:
+          serviceImpl.enrollDataSources(
+              (com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2069,6 +2166,7 @@ public final class DataTransferServiceGrpc {
                       .addMethod(getListTransferRunsMethod())
                       .addMethod(getListTransferLogsMethod())
                       .addMethod(getCheckValidCredsMethod())
+                      .addMethod(getEnrollDataSourcesMethod())
                       .build();
         }
       }

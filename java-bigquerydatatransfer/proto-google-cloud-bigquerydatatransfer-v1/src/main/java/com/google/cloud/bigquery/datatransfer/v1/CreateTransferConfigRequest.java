@@ -25,9 +25,9 @@ package com.google.cloud.bigquery.datatransfer.v1;
  * A request to create a data transfer configuration. If new credentials are
  * needed for this transfer configuration, an authorization code must be
  * provided. If an authorization code is provided, the transfer configuration
- * will be associated with the user id corresponding to the
- * authorization code. Otherwise, the transfer configuration will be associated
- * with the calling user.
+ * will be associated with the user id corresponding to the authorization code.
+ * Otherwise, the transfer configuration will be associated with the calling
+ * user.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest}
@@ -671,9 +671,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * A request to create a data transfer configuration. If new credentials are
    * needed for this transfer configuration, an authorization code must be
    * provided. If an authorization code is provided, the transfer configuration
-   * will be associated with the user id corresponding to the
-   * authorization code. Otherwise, the transfer configuration will be associated
-   * with the calling user.
+   * will be associated with the user id corresponding to the authorization code.
+   * Otherwise, the transfer configuration will be associated with the calling
+   * user.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest}

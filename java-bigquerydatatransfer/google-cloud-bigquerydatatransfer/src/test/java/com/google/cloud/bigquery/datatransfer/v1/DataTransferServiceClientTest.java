@@ -349,6 +349,7 @@ public class DataTransferServiceClientTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
+            .setOwnerInfo(UserInfo.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -407,6 +408,7 @@ public class DataTransferServiceClientTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
+            .setOwnerInfo(UserInfo.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -465,6 +467,7 @@ public class DataTransferServiceClientTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
+            .setOwnerInfo(UserInfo.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -523,6 +526,7 @@ public class DataTransferServiceClientTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
+            .setOwnerInfo(UserInfo.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -653,6 +657,7 @@ public class DataTransferServiceClientTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
+            .setOwnerInfo(UserInfo.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -709,6 +714,7 @@ public class DataTransferServiceClientTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
+            .setOwnerInfo(UserInfo.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -1439,6 +1445,49 @@ public class DataTransferServiceClientTest {
     try {
       String name = "name3373707";
       client.checkValidCreds(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void enrollDataSourcesTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataTransferService.addResponse(expectedResponse);
+
+    EnrollDataSourcesRequest request =
+        EnrollDataSourcesRequest.newBuilder()
+            .setName("name3373707")
+            .addAllDataSourceIds(new ArrayList<String>())
+            .build();
+
+    client.enrollDataSources(request);
+
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EnrollDataSourcesRequest actualRequest = ((EnrollDataSourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getDataSourceIdsList(), actualRequest.getDataSourceIdsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void enrollDataSourcesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataTransferService.addException(exception);
+
+    try {
+      EnrollDataSourcesRequest request =
+          EnrollDataSourcesRequest.newBuilder()
+              .setName("name3373707")
+              .addAllDataSourceIds(new ArrayList<String>())
+              .build();
+      client.enrollDataSources(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

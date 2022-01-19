@@ -29,6 +29,7 @@ import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest;
+import com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest;
@@ -139,6 +140,10 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
 
   public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
     throw new UnsupportedOperationException("Not implemented: checkValidCredsCallable()");
+  }
+
+  public UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable() {
+    throw new UnsupportedOperationException("Not implemented: enrollDataSourcesCallable()");
   }
 
   @Override

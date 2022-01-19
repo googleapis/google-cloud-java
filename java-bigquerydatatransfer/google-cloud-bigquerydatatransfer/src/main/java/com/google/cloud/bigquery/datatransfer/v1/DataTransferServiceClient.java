@@ -38,9 +38,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: The Google BigQuery Data Transfer Service API enables BigQuery users to
- * configure the transfer of their data from other Google Products into BigQuery. This service
- * contains methods that are end user exposed. It backs up the frontend.
+ * Service Description: This API allows users to manage their data transfers into BigQuery.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -156,7 +154,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a supported data source and returns its settings, which can be used for UI rendering.
+   * Retrieves a supported data source and returns its settings.
    *
    * <p>Sample code:
    *
@@ -180,7 +178,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a supported data source and returns its settings, which can be used for UI rendering.
+   * Retrieves a supported data source and returns its settings.
    *
    * <p>Sample code:
    *
@@ -203,7 +201,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a supported data source and returns its settings, which can be used for UI rendering.
+   * Retrieves a supported data source and returns its settings.
    *
    * <p>Sample code:
    *
@@ -227,7 +225,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a supported data source and returns its settings, which can be used for UI rendering.
+   * Retrieves a supported data source and returns its settings.
    *
    * <p>Sample code:
    *
@@ -251,7 +249,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists supported data sources and returns their settings, which can be used for UI rendering.
+   * Lists supported data sources and returns their settings.
    *
    * <p>Sample code:
    *
@@ -278,7 +276,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists supported data sources and returns their settings, which can be used for UI rendering.
+   * Lists supported data sources and returns their settings.
    *
    * <p>Sample code:
    *
@@ -305,7 +303,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists supported data sources and returns their settings, which can be used for UI rendering.
+   * Lists supported data sources and returns their settings.
    *
    * <p>Sample code:
    *
@@ -329,7 +327,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists supported data sources and returns their settings, which can be used for UI rendering.
+   * Lists supported data sources and returns their settings.
    *
    * <p>Sample code:
    *
@@ -356,7 +354,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists supported data sources and returns their settings, which can be used for UI rendering.
+   * Lists supported data sources and returns their settings.
    *
    * <p>Sample code:
    *
@@ -384,7 +382,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists supported data sources and returns their settings, which can be used for UI rendering.
+   * Lists supported data sources and returns their settings.
    *
    * <p>Sample code:
    *
@@ -1447,7 +1445,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about running and completed jobs.
+   * Returns information about running and completed transfer runs.
    *
    * <p>Sample code:
    *
@@ -1477,7 +1475,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about running and completed jobs.
+   * Returns information about running and completed transfer runs.
    *
    * <p>Sample code:
    *
@@ -1506,7 +1504,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about running and completed jobs.
+   * Returns information about running and completed transfer runs.
    *
    * <p>Sample code:
    *
@@ -1536,7 +1534,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about running and completed jobs.
+   * Returns information about running and completed transfer runs.
    *
    * <p>Sample code:
    *
@@ -1567,7 +1565,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about running and completed jobs.
+   * Returns information about running and completed transfer runs.
    *
    * <p>Sample code:
    *
@@ -1605,7 +1603,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns user facing log messages for the data transfer run.
+   * Returns log messages for the transfer run.
    *
    * <p>Sample code:
    *
@@ -1635,7 +1633,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns user facing log messages for the data transfer run.
+   * Returns log messages for the transfer run.
    *
    * <p>Sample code:
    *
@@ -1664,7 +1662,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns user facing log messages for the data transfer run.
+   * Returns log messages for the transfer run.
    *
    * <p>Sample code:
    *
@@ -1695,7 +1693,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns user facing log messages for the data transfer run.
+   * Returns log messages for the transfer run.
    *
    * <p>Sample code:
    *
@@ -1726,7 +1724,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns user facing log messages for the data transfer run.
+   * Returns log messages for the transfer run.
    *
    * <p>Sample code:
    *
@@ -1764,10 +1762,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns true if valid credentials exist for the given data source and requesting user. Some
-   * data sources doesn't support service account, so we need to talk to them on behalf of the end
-   * user. This API just checks whether we have OAuth token for the particular user, which is a
-   * pre-requisite before user can create a transfer config.
+   * Returns true if valid credentials exist for the given data source and requesting user.
    *
    * <p>Sample code:
    *
@@ -1791,10 +1786,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns true if valid credentials exist for the given data source and requesting user. Some
-   * data sources doesn't support service account, so we need to talk to them on behalf of the end
-   * user. This API just checks whether we have OAuth token for the particular user, which is a
-   * pre-requisite before user can create a transfer config.
+   * Returns true if valid credentials exist for the given data source and requesting user.
    *
    * <p>Sample code:
    *
@@ -1817,10 +1809,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns true if valid credentials exist for the given data source and requesting user. Some
-   * data sources doesn't support service account, so we need to talk to them on behalf of the end
-   * user. This API just checks whether we have OAuth token for the particular user, which is a
-   * pre-requisite before user can create a transfer config.
+   * Returns true if valid credentials exist for the given data source and requesting user.
    *
    * <p>Sample code:
    *
@@ -1844,10 +1833,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns true if valid credentials exist for the given data source and requesting user. Some
-   * data sources doesn't support service account, so we need to talk to them on behalf of the end
-   * user. This API just checks whether we have OAuth token for the particular user, which is a
-   * pre-requisite before user can create a transfer config.
+   * Returns true if valid credentials exist for the given data source and requesting user.
    *
    * <p>Sample code:
    *
@@ -1868,6 +1854,62 @@ public class DataTransferServiceClient implements BackgroundResource {
   public final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable() {
     return stub.checkValidCredsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enroll data sources in a user project. This allows users to create transfer configurations for
+   * these data sources. They will also appear in the ListDataSources RPC and as such, will appear
+   * in the BigQuery UI 'https://bigquery.cloud.google.com' (and the documents can be found at
+   * https://cloud.google.com/bigquery/bigquery-web-ui and
+   * https://cloud.google.com/bigquery/docs/working-with-transfers).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+   *   EnrollDataSourcesRequest request =
+   *       EnrollDataSourcesRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .addAllDataSourceIds(new ArrayList<String>())
+   *           .build();
+   *   dataTransferServiceClient.enrollDataSources(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void enrollDataSources(EnrollDataSourcesRequest request) {
+    enrollDataSourcesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enroll data sources in a user project. This allows users to create transfer configurations for
+   * these data sources. They will also appear in the ListDataSources RPC and as such, will appear
+   * in the BigQuery UI 'https://bigquery.cloud.google.com' (and the documents can be found at
+   * https://cloud.google.com/bigquery/bigquery-web-ui and
+   * https://cloud.google.com/bigquery/docs/working-with-transfers).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+   *   EnrollDataSourcesRequest request =
+   *       EnrollDataSourcesRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .addAllDataSourceIds(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       dataTransferServiceClient.enrollDataSourcesCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable() {
+    return stub.enrollDataSourcesCallable();
   }
 
   @Override

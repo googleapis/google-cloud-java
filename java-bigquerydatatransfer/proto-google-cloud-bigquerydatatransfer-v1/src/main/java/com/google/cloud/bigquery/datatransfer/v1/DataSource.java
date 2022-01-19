@@ -22,8 +22,7 @@ package com.google.cloud.bigquery.datatransfer.v1;
  *
  *
  * <pre>
- * Represents data source metadata. Metadata is sufficient to
- * render UI and request proper OAuth tokens.
+ * Defines the properties and custom parameters for a data source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.DataSource}
@@ -1739,8 +1738,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents data source metadata. Metadata is sufficient to
-   * render UI and request proper OAuth tokens.
+   * Defines the properties and custom parameters for a data source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.DataSource}

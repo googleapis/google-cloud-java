@@ -163,6 +163,11 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     return ((DataTransferServiceStubSettings) getStubSettings()).checkValidCredsSettings();
   }
 
+  /** Returns the object with the settings used for calls to enrollDataSources. */
+  public UnaryCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings() {
+    return ((DataTransferServiceStubSettings) getStubSettings()).enrollDataSourcesSettings();
+  }
+
   public static final DataTransferServiceSettings create(DataTransferServiceStubSettings stub)
       throws IOException {
     return new DataTransferServiceSettings.Builder(stub.toBuilder()).build();
@@ -351,6 +356,11 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     public UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsSettings() {
       return getStubSettingsBuilder().checkValidCredsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to enrollDataSources. */
+    public UnaryCallSettings.Builder<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings() {
+      return getStubSettingsBuilder().enrollDataSourcesSettings();
     }
 
     @Override

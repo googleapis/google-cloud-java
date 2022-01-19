@@ -22,6 +22,9 @@
             "DeleteTransferRun": {
               "methods": ["deleteTransferRun", "deleteTransferRun", "deleteTransferRun", "deleteTransferRunCallable"]
             },
+            "EnrollDataSources": {
+              "methods": ["enrollDataSources", "enrollDataSourcesCallable"]
+            },
             "GetDataSource": {
               "methods": ["getDataSource", "getDataSource", "getDataSource", "getDataSourceCallable"]
             },

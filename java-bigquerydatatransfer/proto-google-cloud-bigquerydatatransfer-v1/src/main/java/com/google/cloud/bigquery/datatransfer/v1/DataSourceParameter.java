@@ -22,12 +22,7 @@ package com.google.cloud.bigquery.datatransfer.v1;
  *
  *
  * <pre>
- * Represents a data source parameter with validation rules, so that
- * parameters can be rendered in the UI. These parameters are given to us by
- * supported data sources, and include all needed information for rendering
- * and validation.
- * Thus, whoever uses this api can decide to generate either generic ui,
- * or custom data source specific forms.
+ * A parameter used to define custom fields in a data source definition.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.DataSourceParameter}
@@ -1473,12 +1468,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Represents a data source parameter with validation rules, so that
-   * parameters can be rendered in the UI. These parameters are given to us by
-   * supported data sources, and include all needed information for rendering
-   * and validation.
-   * Thus, whoever uses this api can decide to generate either generic ui,
-   * or custom data source specific forms.
+   * A parameter used to define custom fields in a data source definition.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.DataSourceParameter}

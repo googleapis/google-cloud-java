@@ -36,6 +36,10 @@ public final class TransferProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_datatransfer_v1_ScheduleOptions_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_datatransfer_v1_UserInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_datatransfer_v1_UserInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_datatransfer_v1_TransferConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_datatransfer_v1_TransferConfig_fieldAccessorTable;
@@ -67,70 +71,73 @@ public final class TransferProto {
           + "\001(\010\"\220\001\n\017ScheduleOptions\022\037\n\027disable_auto_"
           + "scheduling\030\003 \001(\010\022.\n\nstart_time\030\001 \001(\0132\032.g"
           + "oogle.protobuf.Timestamp\022,\n\010end_time\030\002 \001"
-          + "(\0132\032.google.protobuf.Timestamp\"\327\006\n\016Trans"
-          + "ferConfig\022\014\n\004name\030\001 \001(\t\022 \n\026destination_d"
-          + "ataset_id\030\002 \001(\tH\000\022\024\n\014display_name\030\003 \001(\t\022"
-          + "\026\n\016data_source_id\030\005 \001(\t\022\'\n\006params\030\t \001(\0132"
-          + "\027.google.protobuf.Struct\022\020\n\010schedule\030\007 \001"
-          + "(\t\022P\n\020schedule_options\030\030 \001(\01326.google.cl"
-          + "oud.bigquery.datatransfer.v1.ScheduleOpt"
-          + "ions\022 \n\030data_refresh_window_days\030\014 \001(\005\022\020"
-          + "\n\010disabled\030\r \001(\010\0224\n\013update_time\030\004 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\0226\n\rnext_r"
-          + "un_time\030\010 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\003\022H\n\005state\030\n \001(\01624.google.cloud.big"
-          + "query.datatransfer.v1.TransferStateB\003\340A\003"
-          + "\022\017\n\007user_id\030\013 \001(\003\022\033\n\016dataset_region\030\016 \001("
-          + "\tB\003\340A\003\022!\n\031notification_pubsub_topic\030\017 \001("
-          + "\t\022R\n\021email_preferences\030\022 \001(\01327.google.cl"
-          + "oud.bigquery.datatransfer.v1.EmailPrefer"
-          + "ences:\271\001\352A\265\001\n2bigquerydatatransfer.googl"
-          + "eapis.com/TransferConfig\0224projects/{proj"
-          + "ect}/transferConfigs/{transfer_config}\022I"
-          + "projects/{project}/locations/{location}/"
-          + "transferConfigs/{transfer_config}B\r\n\013des"
-          + "tination\"\372\006\n\013TransferRun\022\014\n\004name\030\001 \001(\t\0221"
-          + "\n\rschedule_time\030\003 \001(\0132\032.google.protobuf."
-          + "Timestamp\022,\n\010run_time\030\n \001(\0132\032.google.pro"
-          + "tobuf.Timestamp\022(\n\014error_status\030\025 \001(\0132\022."
-          + "google.rpc.Status\0223\n\nstart_time\030\004 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\0221\n\010end_ti"
-          + "me\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\0224\n\013update_time\030\006 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\022,\n\006params\030\t \001(\0132\027.google"
-          + ".protobuf.StructB\003\340A\003\022%\n\026destination_dat"
-          + "aset_id\030\002 \001(\tB\003\340A\003H\000\022\033\n\016data_source_id\030\007"
-          + " \001(\tB\003\340A\003\022C\n\005state\030\010 \001(\01624.google.cloud."
-          + "bigquery.datatransfer.v1.TransferState\022\017"
-          + "\n\007user_id\030\013 \001(\003\022\025\n\010schedule\030\014 \001(\tB\003\340A\003\022&"
-          + "\n\031notification_pubsub_topic\030\027 \001(\tB\003\340A\003\022W"
-          + "\n\021email_preferences\030\031 \001(\01327.google.cloud"
-          + ".bigquery.datatransfer.v1.EmailPreferenc"
-          + "esB\003\340A\003:\304\001\352A\300\001\n\'bigquerydatatransfer.goo"
-          + "gleapis.com/Run\022?projects/{project}/tran"
-          + "sferConfigs/{transfer_config}/runs/{run}"
-          + "\022Tprojects/{project}/locations/{location"
-          + "}/transferConfigs/{transfer_config}/runs"
-          + "/{run}B\r\n\013destination\"\212\002\n\017TransferMessag"
-          + "e\0220\n\014message_time\030\001 \001(\0132\032.google.protobu"
-          + "f.Timestamp\022X\n\010severity\030\002 \001(\0162F.google.c"
-          + "loud.bigquery.datatransfer.v1.TransferMe"
-          + "ssage.MessageSeverity\022\024\n\014message_text\030\003 "
-          + "\001(\t\"U\n\017MessageSeverity\022 \n\034MESSAGE_SEVERI"
-          + "TY_UNSPECIFIED\020\000\022\010\n\004INFO\020\001\022\013\n\007WARNING\020\002\022"
-          + "\t\n\005ERROR\020\003*K\n\014TransferType\022\035\n\031TRANSFER_T"
-          + "YPE_UNSPECIFIED\020\000\022\t\n\005BATCH\020\001\022\r\n\tSTREAMIN"
-          + "G\020\002\032\002\030\001*s\n\rTransferState\022\036\n\032TRANSFER_STA"
-          + "TE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\002\022\013\n\007RUNNING"
-          + "\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006FAILED\020\005\022\r\n\tCANCELL"
-          + "ED\020\006B\223\002\n)com.google.cloud.bigquery.datat"
-          + "ransfer.v1B\rTransferProtoP\001ZQgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/bigquer"
-          + "y/datatransfer/v1;datatransfer\242\002\005GCBDT\252\002"
-          + "%Google.Cloud.BigQuery.DataTransfer.V1\312\002"
-          + "%Google\\Cloud\\BigQuery\\DataTransfer\\V1\352\002"
-          + ")Google::Cloud::Bigquery::DataTransfer::"
-          + "V1b\006proto3"
+          + "(\0132\032.google.protobuf.Timestamp\"(\n\010UserIn"
+          + "fo\022\022\n\005email\030\001 \001(\tH\000\210\001\001B\010\n\006_email\"\265\007\n\016Tra"
+          + "nsferConfig\022\014\n\004name\030\001 \001(\t\022 \n\026destination"
+          + "_dataset_id\030\002 \001(\tH\000\022\024\n\014display_name\030\003 \001("
+          + "\t\022\026\n\016data_source_id\030\005 \001(\t\022\'\n\006params\030\t \001("
+          + "\0132\027.google.protobuf.Struct\022\020\n\010schedule\030\007"
+          + " \001(\t\022P\n\020schedule_options\030\030 \001(\01326.google."
+          + "cloud.bigquery.datatransfer.v1.ScheduleO"
+          + "ptions\022 \n\030data_refresh_window_days\030\014 \001(\005"
+          + "\022\020\n\010disabled\030\r \001(\010\0224\n\013update_time\030\004 \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\003\0226\n\rnext"
+          + "_run_time\030\010 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\022H\n\005state\030\n \001(\01624.google.cloud.b"
+          + "igquery.datatransfer.v1.TransferStateB\003\340"
+          + "A\003\022\017\n\007user_id\030\013 \001(\003\022\033\n\016dataset_region\030\016 "
+          + "\001(\tB\003\340A\003\022!\n\031notification_pubsub_topic\030\017 "
+          + "\001(\t\022R\n\021email_preferences\030\022 \001(\01327.google."
+          + "cloud.bigquery.datatransfer.v1.EmailPref"
+          + "erences\022M\n\nowner_info\030\033 \001(\0132/.google.clo"
+          + "ud.bigquery.datatransfer.v1.UserInfoB\003\340A"
+          + "\003H\001\210\001\001:\271\001\352A\265\001\n2bigquerydatatransfer.goog"
+          + "leapis.com/TransferConfig\0224projects/{pro"
+          + "ject}/transferConfigs/{transfer_config}\022"
+          + "Iprojects/{project}/locations/{location}"
+          + "/transferConfigs/{transfer_config}B\r\n\013de"
+          + "stinationB\r\n\013_owner_info\"\372\006\n\013TransferRun"
+          + "\022\014\n\004name\030\001 \001(\t\0221\n\rschedule_time\030\003 \001(\0132\032."
+          + "google.protobuf.Timestamp\022,\n\010run_time\030\n "
+          + "\001(\0132\032.google.protobuf.Timestamp\022(\n\014error"
+          + "_status\030\025 \001(\0132\022.google.rpc.Status\0223\n\nsta"
+          + "rt_time\030\004 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003\0221\n\010end_time\030\005 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\022,\n\006param"
+          + "s\030\t \001(\0132\027.google.protobuf.StructB\003\340A\003\022%\n"
+          + "\026destination_dataset_id\030\002 \001(\tB\003\340A\003H\000\022\033\n\016"
+          + "data_source_id\030\007 \001(\tB\003\340A\003\022C\n\005state\030\010 \001(\016"
+          + "24.google.cloud.bigquery.datatransfer.v1"
+          + ".TransferState\022\017\n\007user_id\030\013 \001(\003\022\025\n\010sched"
+          + "ule\030\014 \001(\tB\003\340A\003\022&\n\031notification_pubsub_to"
+          + "pic\030\027 \001(\tB\003\340A\003\022W\n\021email_preferences\030\031 \001("
+          + "\01327.google.cloud.bigquery.datatransfer.v"
+          + "1.EmailPreferencesB\003\340A\003:\304\001\352A\300\001\n\'bigquery"
+          + "datatransfer.googleapis.com/Run\022?project"
+          + "s/{project}/transferConfigs/{transfer_co"
+          + "nfig}/runs/{run}\022Tprojects/{project}/loc"
+          + "ations/{location}/transferConfigs/{trans"
+          + "fer_config}/runs/{run}B\r\n\013destination\"\212\002"
+          + "\n\017TransferMessage\0220\n\014message_time\030\001 \001(\0132"
+          + "\032.google.protobuf.Timestamp\022X\n\010severity\030"
+          + "\002 \001(\0162F.google.cloud.bigquery.datatransf"
+          + "er.v1.TransferMessage.MessageSeverity\022\024\n"
+          + "\014message_text\030\003 \001(\t\"U\n\017MessageSeverity\022 "
+          + "\n\034MESSAGE_SEVERITY_UNSPECIFIED\020\000\022\010\n\004INFO"
+          + "\020\001\022\013\n\007WARNING\020\002\022\t\n\005ERROR\020\003*K\n\014TransferTy"
+          + "pe\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\t\n\005BAT"
+          + "CH\020\001\022\r\n\tSTREAMING\020\002\032\002\030\001*s\n\rTransferState"
+          + "\022\036\n\032TRANSFER_STATE_UNSPECIFIED\020\000\022\013\n\007PEND"
+          + "ING\020\002\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006FAI"
+          + "LED\020\005\022\r\n\tCANCELLED\020\006B\223\002\n)com.google.clou"
+          + "d.bigquery.datatransfer.v1B\rTransferProt"
+          + "oP\001ZQgoogle.golang.org/genproto/googleap"
+          + "is/cloud/bigquery/datatransfer/v1;datatr"
+          + "ansfer\242\002\005GCBDT\252\002%Google.Cloud.BigQuery.D"
+          + "ataTransfer.V1\312\002%Google\\Cloud\\BigQuery\\D"
+          + "ataTransfer\\V1\352\002)Google::Cloud::Bigquery"
+          + "::DataTransfer::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -159,8 +166,16 @@ public final class TransferProto {
             new java.lang.String[] {
               "DisableAutoScheduling", "StartTime", "EndTime",
             });
-    internal_static_google_cloud_bigquery_datatransfer_v1_TransferConfig_descriptor =
+    internal_static_google_cloud_bigquery_datatransfer_v1_UserInfo_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_bigquery_datatransfer_v1_UserInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_datatransfer_v1_UserInfo_descriptor,
+            new java.lang.String[] {
+              "Email", "Email",
+            });
+    internal_static_google_cloud_bigquery_datatransfer_v1_TransferConfig_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_bigquery_datatransfer_v1_TransferConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_datatransfer_v1_TransferConfig_descriptor,
@@ -181,10 +196,12 @@ public final class TransferProto {
               "DatasetRegion",
               "NotificationPubsubTopic",
               "EmailPreferences",
+              "OwnerInfo",
               "Destination",
+              "OwnerInfo",
             });
     internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor,
@@ -207,7 +224,7 @@ public final class TransferProto {
               "Destination",
             });
     internal_static_google_cloud_bigquery_datatransfer_v1_TransferMessage_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_bigquery_datatransfer_v1_TransferMessage_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_datatransfer_v1_TransferMessage_descriptor,

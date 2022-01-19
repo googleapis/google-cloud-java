@@ -22,9 +22,7 @@ package com.google.cloud.bigquery.datatransfer.v1;
  *
  *
  * <pre>
- * A request to list data transfer runs. UI can use this method to show/filter
- * specific data transfer runs. The data source can use this method to request
- * all scheduled transfer runs.
+ * A request to list data transfer runs.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest}
@@ -801,9 +799,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A request to list data transfer runs. UI can use this method to show/filter
-   * specific data transfer runs. The data source can use this method to request
-   * all scheduled transfer runs.
+   * A request to list data transfer runs.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest}

@@ -71,6 +71,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -230,6 +231,23 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 218:
+            {
+              com.google.cloud.bigquery.datatransfer.v1.UserInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) != 0)) {
+                subBuilder = ownerInfo_.toBuilder();
+              }
+              ownerInfo_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.datatransfer.v1.UserInfo.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(ownerInfo_);
+                ownerInfo_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -264,6 +282,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder.class);
   }
 
+  private int bitField0_;
   private int destinationCase_ = 0;
   private java.lang.Object destination_;
 
@@ -607,7 +626,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-   * NOTE: the granularity should be at least 8 hours, or less frequent.
+   * NOTE: The minimum interval time between recurring transfers depends on the
+   * data source; refer to the documentation for your data source.
    * </pre>
    *
    * <code>string schedule = 7;</code>
@@ -641,7 +661,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-   * NOTE: the granularity should be at least 8 hours, or less frequent.
+   * NOTE: The minimum interval time between recurring transfers depends on the
+   * data source; refer to the documentation for your data source.
    * </pre>
    *
    * <code>string schedule = 7;</code>
@@ -1069,6 +1090,68 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     return getEmailPreferences();
   }
 
+  public static final int OWNER_INFO_FIELD_NUMBER = 27;
+  private com.google.cloud.bigquery.datatransfer.v1.UserInfo ownerInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the user whose credentials are used to transfer data.
+   * Populated only for `transferConfigs.get` requests. In case the user
+   * information is not available, this field will not be populated.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the ownerInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasOwnerInfo() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the user whose credentials are used to transfer data.
+   * Populated only for `transferConfigs.get` requests. In case the user
+   * information is not available, this field will not be populated.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The ownerInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.datatransfer.v1.UserInfo getOwnerInfo() {
+    return ownerInfo_ == null
+        ? com.google.cloud.bigquery.datatransfer.v1.UserInfo.getDefaultInstance()
+        : ownerInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the user whose credentials are used to transfer data.
+   * Populated only for `transferConfigs.get` requests. In case the user
+   * information is not available, this field will not be populated.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.datatransfer.v1.UserInfoOrBuilder getOwnerInfoOrBuilder() {
+    return ownerInfo_ == null
+        ? com.google.cloud.bigquery.datatransfer.v1.UserInfo.getDefaultInstance()
+        : ownerInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1133,6 +1216,9 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (scheduleOptions_ != null) {
       output.writeMessage(24, getScheduleOptions());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(27, getOwnerInfo());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1193,6 +1279,9 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (scheduleOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getScheduleOptions());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getOwnerInfo());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1238,6 +1327,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasEmailPreferences() != other.hasEmailPreferences()) return false;
     if (hasEmailPreferences()) {
       if (!getEmailPreferences().equals(other.getEmailPreferences())) return false;
+    }
+    if (hasOwnerInfo() != other.hasOwnerInfo()) return false;
+    if (hasOwnerInfo()) {
+      if (!getOwnerInfo().equals(other.getOwnerInfo())) return false;
     }
     if (!getDestinationCase().equals(other.getDestinationCase())) return false;
     switch (destinationCase_) {
@@ -1297,6 +1390,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasEmailPreferences()) {
       hash = (37 * hash) + EMAIL_PREFERENCES_FIELD_NUMBER;
       hash = (53 * hash) + getEmailPreferences().hashCode();
+    }
+    if (hasOwnerInfo()) {
+      hash = (37 * hash) + OWNER_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getOwnerInfo().hashCode();
     }
     switch (destinationCase_) {
       case 2:
@@ -1451,7 +1548,9 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getOwnerInfoFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1507,6 +1606,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
         emailPreferences_ = null;
         emailPreferencesBuilder_ = null;
       }
+      if (ownerInfoBuilder_ == null) {
+        ownerInfo_ = null;
+      } else {
+        ownerInfoBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -1536,6 +1641,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.TransferConfig result =
           new com.google.cloud.bigquery.datatransfer.v1.TransferConfig(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.name_ = name_;
       if (destinationCase_ == 2) {
         result.destination_ = destination_;
@@ -1574,6 +1681,15 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.emailPreferences_ = emailPreferencesBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (ownerInfoBuilder_ == null) {
+          result.ownerInfo_ = ownerInfo_;
+        } else {
+          result.ownerInfo_ = ownerInfoBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       result.destinationCase_ = destinationCase_;
       onBuilt();
       return result;
@@ -1676,6 +1792,9 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEmailPreferences()) {
         mergeEmailPreferences(other.getEmailPreferences());
       }
+      if (other.hasOwnerInfo()) {
+        mergeOwnerInfo(other.getOwnerInfo());
+      }
       switch (other.getDestinationCase()) {
         case DESTINATION_DATASET_ID:
           {
@@ -1732,6 +1851,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2431,7 +2552,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-     * NOTE: the granularity should be at least 8 hours, or less frequent.
+     * NOTE: The minimum interval time between recurring transfers depends on the
+     * data source; refer to the documentation for your data source.
      * </pre>
      *
      * <code>string schedule = 7;</code>
@@ -2464,7 +2586,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-     * NOTE: the granularity should be at least 8 hours, or less frequent.
+     * NOTE: The minimum interval time between recurring transfers depends on the
+     * data source; refer to the documentation for your data source.
      * </pre>
      *
      * <code>string schedule = 7;</code>
@@ -2497,7 +2620,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-     * NOTE: the granularity should be at least 8 hours, or less frequent.
+     * NOTE: The minimum interval time between recurring transfers depends on the
+     * data source; refer to the documentation for your data source.
      * </pre>
      *
      * <code>string schedule = 7;</code>
@@ -2529,7 +2653,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-     * NOTE: the granularity should be at least 8 hours, or less frequent.
+     * NOTE: The minimum interval time between recurring transfers depends on the
+     * data source; refer to the documentation for your data source.
      * </pre>
      *
      * <code>string schedule = 7;</code>
@@ -2557,7 +2682,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-     * NOTE: the granularity should be at least 8 hours, or less frequent.
+     * NOTE: The minimum interval time between recurring transfers depends on the
+     * data source; refer to the documentation for your data source.
      * </pre>
      *
      * <code>string schedule = 7;</code>
@@ -3872,6 +3998,230 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
         emailPreferences_ = null;
       }
       return emailPreferencesBuilder_;
+    }
+
+    private com.google.cloud.bigquery.datatransfer.v1.UserInfo ownerInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.datatransfer.v1.UserInfo,
+            com.google.cloud.bigquery.datatransfer.v1.UserInfo.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.UserInfoOrBuilder>
+        ownerInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the user whose credentials are used to transfer data.
+     * Populated only for `transferConfigs.get` requests. In case the user
+     * information is not available, this field will not be populated.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the ownerInfo field is set.
+     */
+    public boolean hasOwnerInfo() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the user whose credentials are used to transfer data.
+     * Populated only for `transferConfigs.get` requests. In case the user
+     * information is not available, this field will not be populated.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The ownerInfo.
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.UserInfo getOwnerInfo() {
+      if (ownerInfoBuilder_ == null) {
+        return ownerInfo_ == null
+            ? com.google.cloud.bigquery.datatransfer.v1.UserInfo.getDefaultInstance()
+            : ownerInfo_;
+      } else {
+        return ownerInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the user whose credentials are used to transfer data.
+     * Populated only for `transferConfigs.get` requests. In case the user
+     * information is not available, this field will not be populated.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setOwnerInfo(com.google.cloud.bigquery.datatransfer.v1.UserInfo value) {
+      if (ownerInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ownerInfo_ = value;
+        onChanged();
+      } else {
+        ownerInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the user whose credentials are used to transfer data.
+     * Populated only for `transferConfigs.get` requests. In case the user
+     * information is not available, this field will not be populated.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setOwnerInfo(
+        com.google.cloud.bigquery.datatransfer.v1.UserInfo.Builder builderForValue) {
+      if (ownerInfoBuilder_ == null) {
+        ownerInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        ownerInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the user whose credentials are used to transfer data.
+     * Populated only for `transferConfigs.get` requests. In case the user
+     * information is not available, this field will not be populated.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeOwnerInfo(com.google.cloud.bigquery.datatransfer.v1.UserInfo value) {
+      if (ownerInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && ownerInfo_ != null
+            && ownerInfo_
+                != com.google.cloud.bigquery.datatransfer.v1.UserInfo.getDefaultInstance()) {
+          ownerInfo_ =
+              com.google.cloud.bigquery.datatransfer.v1.UserInfo.newBuilder(ownerInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          ownerInfo_ = value;
+        }
+        onChanged();
+      } else {
+        ownerInfoBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the user whose credentials are used to transfer data.
+     * Populated only for `transferConfigs.get` requests. In case the user
+     * information is not available, this field will not be populated.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearOwnerInfo() {
+      if (ownerInfoBuilder_ == null) {
+        ownerInfo_ = null;
+        onChanged();
+      } else {
+        ownerInfoBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the user whose credentials are used to transfer data.
+     * Populated only for `transferConfigs.get` requests. In case the user
+     * information is not available, this field will not be populated.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.UserInfo.Builder getOwnerInfoBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getOwnerInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the user whose credentials are used to transfer data.
+     * Populated only for `transferConfigs.get` requests. In case the user
+     * information is not available, this field will not be populated.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.UserInfoOrBuilder getOwnerInfoOrBuilder() {
+      if (ownerInfoBuilder_ != null) {
+        return ownerInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return ownerInfo_ == null
+            ? com.google.cloud.bigquery.datatransfer.v1.UserInfo.getDefaultInstance()
+            : ownerInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the user whose credentials are used to transfer data.
+     * Populated only for `transferConfigs.get` requests. In case the user
+     * information is not available, this field will not be populated.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.datatransfer.v1.UserInfo,
+            com.google.cloud.bigquery.datatransfer.v1.UserInfo.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.UserInfoOrBuilder>
+        getOwnerInfoFieldBuilder() {
+      if (ownerInfoBuilder_ == null) {
+        ownerInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.datatransfer.v1.UserInfo,
+                com.google.cloud.bigquery.datatransfer.v1.UserInfo.Builder,
+                com.google.cloud.bigquery.datatransfer.v1.UserInfoOrBuilder>(
+                getOwnerInfo(), getParentForChildren(), isClean());
+        ownerInfo_ = null;
+      }
+      return ownerInfoBuilder_;
     }
 
     @java.lang.Override
