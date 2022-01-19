@@ -22,7 +22,7 @@ package com.google.cloud.contactcenterinsights.v1;
  *
  *
  * <pre>
- * Represents the options for views of a conversation.
+ * Represents the options for viewing a conversation.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.contactcenterinsights.v1.ConversationView}
@@ -32,8 +32,9 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * Not specified. Defaults to FULL on GetConversationRequest and BASIC for
-   * ListConversationsRequest.
+   * The conversation view is not specified.
+   * * Defaults to `FULL` in `GetConversationRequest`.
+   * * Defaults to `BASIC` in `ListConversationsRequest`.
    * </pre>
    *
    * <code>CONVERSATION_VIEW_UNSPECIFIED = 0;</code>
@@ -43,23 +44,22 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * Transcript field is not populated in the response for Insights
-   * conversation.
-   * </pre>
-   *
-   * <code>BASIC = 1;</code>
-   */
-  BASIC(1),
-  /**
-   *
-   *
-   * <pre>
-   * All fields are populated for Insights conversation.
+   * Populates all fields in the conversation.
    * </pre>
    *
    * <code>FULL = 2;</code>
    */
   FULL(2),
+  /**
+   *
+   *
+   * <pre>
+   * Populates all fields in the conversation except the transcript.
+   * </pre>
+   *
+   * <code>BASIC = 1;</code>
+   */
+  BASIC(1),
   UNRECOGNIZED(-1),
   ;
 
@@ -67,8 +67,9 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * Not specified. Defaults to FULL on GetConversationRequest and BASIC for
-   * ListConversationsRequest.
+   * The conversation view is not specified.
+   * * Defaults to `FULL` in `GetConversationRequest`.
+   * * Defaults to `BASIC` in `ListConversationsRequest`.
    * </pre>
    *
    * <code>CONVERSATION_VIEW_UNSPECIFIED = 0;</code>
@@ -78,23 +79,22 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * Transcript field is not populated in the response for Insights
-   * conversation.
-   * </pre>
-   *
-   * <code>BASIC = 1;</code>
-   */
-  public static final int BASIC_VALUE = 1;
-  /**
-   *
-   *
-   * <pre>
-   * All fields are populated for Insights conversation.
+   * Populates all fields in the conversation.
    * </pre>
    *
    * <code>FULL = 2;</code>
    */
   public static final int FULL_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Populates all fields in the conversation except the transcript.
+   * </pre>
+   *
+   * <code>BASIC = 1;</code>
+   */
+  public static final int BASIC_VALUE = 1;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -122,10 +122,10 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
     switch (value) {
       case 0:
         return CONVERSATION_VIEW_UNSPECIFIED;
-      case 1:
-        return BASIC;
       case 2:
         return FULL;
+      case 1:
+        return BASIC;
       default:
         return null;
     }

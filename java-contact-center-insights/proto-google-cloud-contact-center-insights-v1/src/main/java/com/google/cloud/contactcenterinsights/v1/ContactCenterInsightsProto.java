@@ -487,7 +487,7 @@ public final class ContactCenterInsightsProto {
           + "DeleteViewRequest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n"
           + ")contactcenterinsights.googleapis.com/Vi"
           + "ew*J\n\020ConversationView\022!\n\035CONVERSATION_V"
-          + "IEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\0022\345"
+          + "IEW_UNSPECIFIED\020\000\022\010\n\004FULL\020\002\022\t\n\005BASIC\020\0012\345"
           + ":\n\025ContactCenterInsights\022\372\001\n\022CreateConve"
           + "rsation\022@.google.cloud.contactcenterinsi"
           + "ghts.v1.CreateConversationRequest\0323.goog"
