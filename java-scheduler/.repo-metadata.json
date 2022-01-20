@@ -13,5 +13,6 @@
     "transport": "grpc",
     "requires_billing": false,
     "api_description": "lets you set up scheduled units of work to be executed at defined times or regular intervals. These work units are commonly known as cron jobs. Typical use cases might include sending out a report email on a daily basis, updating some cached data every 10 minutes, or updating some summary information once an hour.",
-    "library_type": "GAPIC_AUTO"
+    "library_type": "GAPIC_AUTO",
+    "codeowner_team": "@googleapis/aap-dpes"
 }
