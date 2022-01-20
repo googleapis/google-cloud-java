@@ -44,6 +44,7 @@ public class AdminIT {
   private static final String pullSubscriptionId = "iam-pull-subscription-" + _suffix;
   private static final String pushSubscriptionId = "iam-push-subscription-" + _suffix;
   private static final String orderedSubscriptionId = "iam-ordered-subscription-" + _suffix;
+  private static final String filteredSubscriptionId = "iam-filtered-subscription-" + _suffix;
   private static final String pushEndpoint = "https://my-test-project.appspot.com/push";
 
   private static final TopicName topicName = TopicName.of(projectId, topicId);
@@ -53,6 +54,8 @@ public class AdminIT {
       SubscriptionName.of(projectId, pushSubscriptionId);
   private static final SubscriptionName orderedSubscriptionName =
       SubscriptionName.of(projectId, orderedSubscriptionId);
+  private static final SubscriptionName filteredSubscriptionName =
+      SubscriptionName.of(projectId, filteredSubscriptionId);
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -82,6 +85,7 @@ public class AdminIT {
         subscriptionAdminClient.deleteSubscription(pullSubscriptionName);
         subscriptionAdminClient.deleteSubscription(pushSubscriptionName);
         subscriptionAdminClient.deleteSubscription(orderedSubscriptionName);
+        subscriptionAdminClient.deleteSubscription(filteredSubscriptionName);
       } catch (NotFoundException ignored) {
         // ignore this as resources may not have been created
       }
@@ -182,6 +186,14 @@ public class AdminIT {
         projectId, topicId, orderedSubscriptionId);
     assertThat(bout.toString()).contains("Created a subscription with ordering");
     assertThat(bout.toString()).contains("enable_message_ordering=true");
+
+    bout.reset();
+    // Test create a subscription with filtering enabled
+    CreateSubscriptionWithFiltering.createSubscriptionWithFilteringExample(
+        projectId, topicId, filteredSubscriptionId, "attributes.author=\"unknown\"");
+    assertThat(bout.toString()).contains("Created a subscription with filtering enabled");
+    assertThat(bout.toString())
+        .contains("google.pubsub.v1.Subscription.filter=attributes.author=\"unknown\"");
 
     bout.reset();
     // Test delete subscription. Run twice to delete both pull and push subscriptions.

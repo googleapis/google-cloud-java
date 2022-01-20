@@ -21,8 +21,6 @@ import static junit.framework.TestCase.assertNotNull;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.gax.core.ExecutorProvider;
-import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
@@ -58,8 +56,6 @@ public class SubscriberIT {
   private static final TopicName topicName = TopicName.of(projectId, topicId);
   private static final ProjectSubscriptionName subscriptionName =
       ProjectSubscriptionName.of(projectId, subscriptionId);
-  private static final ExecutorProvider executorProvider =
-      InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(4).build();
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
