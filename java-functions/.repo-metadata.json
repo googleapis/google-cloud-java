@@ -1,5 +1,5 @@
 {
-    "api_shortname": "functions",
+    "api_shortname": "cloudfunctions",
     "name_pretty": "Cloud Functions",
     "product_documentation": "https://cloud.google.com/functions",
     "api_description": "is a scalable pay as you go Functions-as-a-Service (FaaS) to run your code with zero server management.",

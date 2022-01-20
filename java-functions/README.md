@@ -21,7 +21,6 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-functions</artifactId>
   <version>2.3.1</version>
 </dependency>
-
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
