@@ -12,5 +12,6 @@
     "distribution_name": "com.google.cloud:google-cloud-workflow-executions",
     "api_id": "workflowexecutions.googleapis.com",
     "requires_billing": true,
-    "library_type": "GAPIC_AUTO"
+    "library_type": "GAPIC_AUTO",
+    "codeowner_team": "@googleapis/aap-dpes"
 }
