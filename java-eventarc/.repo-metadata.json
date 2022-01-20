@@ -12,5 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-eventarc",
   "api_id": "eventarc.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "requires_billing": true,
+  "codeowner_team": "@googleapis/aap-dpes"
 }
