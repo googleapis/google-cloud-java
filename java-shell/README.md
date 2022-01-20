@@ -21,7 +21,6 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-shell</artifactId>
   <version>2.1.7</version>
 </dependency>
-
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
