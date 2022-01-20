@@ -13,5 +13,6 @@
     "transport": "grpc",
     "requires_billing": true,
     "api_description": "a fully managed service that allows you to manage the execution, dispatch and delivery of a large number of distributed tasks. You can asynchronously perform work outside of a user request. Your tasks can be executed on App Engine or any arbitrary HTTP endpoint.",
-    "library_type": "GAPIC_AUTO"
+    "library_type": "GAPIC_AUTO",
+    "codeowner_team": "@googleapis/aap-dpes"
 }
