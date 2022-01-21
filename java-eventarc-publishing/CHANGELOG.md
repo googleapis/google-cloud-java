@@ -1,0 +1,13 @@
+# Changelog
+
+## 0.1.0 (2022-01-20)
+
+
+### Features
+
+* initial generation ([f09aade](https://github.com/googleapis/java-eventarc-publishing/commit/f09aade83d98d32a7a886dac2bf495c4cc15a8db))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.6.0 ([#20](https://github.com/googleapis/java-eventarc-publishing/issues/20)) ([7bea63a](https://github.com/googleapis/java-eventarc-publishing/commit/7bea63a9ddd3c9d0def80d8571b5f1ab8a8eca70))
