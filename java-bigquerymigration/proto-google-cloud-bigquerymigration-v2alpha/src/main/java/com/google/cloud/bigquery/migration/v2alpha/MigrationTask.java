@@ -153,6 +153,71 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 82:
+            {
+              com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult.Builder
+                  subBuilder = null;
+              if (orchestrationResult_ != null) {
+                subBuilder = orchestrationResult_.toBuilder();
+              }
+              orchestrationResult_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(orchestrationResult_);
+                orchestrationResult_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 98:
+            {
+              com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails.Builder subBuilder =
+                  null;
+              if (taskDetailsCase_ == 12) {
+                subBuilder =
+                    ((com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails)
+                            taskDetails_)
+                        .toBuilder();
+              }
+              taskDetails_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails)
+                        taskDetails_);
+                taskDetails_ = subBuilder.buildPartial();
+              }
+              taskDetailsCase_ = 12;
+              break;
+            }
+          case 106:
+            {
+              com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.Builder
+                  subBuilder = null;
+              if (taskDetailsCase_ == 13) {
+                subBuilder =
+                    ((com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails)
+                            taskDetails_)
+                        .toBuilder();
+              }
+              taskDetails_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails)
+                        taskDetails_);
+                taskDetails_ = subBuilder.buildPartial();
+              }
+              taskDetailsCase_ = 13;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -436,6 +501,171 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.migration.v2alpha.MigrationTask.State)
   }
 
+  private int taskDetailsCase_ = 0;
+  private java.lang.Object taskDetails_;
+
+  public enum TaskDetailsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    ASSESSMENT_TASK_DETAILS(12),
+    TRANSLATION_TASK_DETAILS(13),
+    TASKDETAILS_NOT_SET(0);
+    private final int value;
+
+    private TaskDetailsCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TaskDetailsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static TaskDetailsCase forNumber(int value) {
+      switch (value) {
+        case 12:
+          return ASSESSMENT_TASK_DETAILS;
+        case 13:
+          return TRANSLATION_TASK_DETAILS;
+        case 0:
+          return TASKDETAILS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public TaskDetailsCase getTaskDetailsCase() {
+    return TaskDetailsCase.forNumber(taskDetailsCase_);
+  }
+
+  public static final int ASSESSMENT_TASK_DETAILS_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+   * </code>
+   *
+   * @return Whether the assessmentTaskDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasAssessmentTaskDetails() {
+    return taskDetailsCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+   * </code>
+   *
+   * @return The assessmentTaskDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails
+      getAssessmentTaskDetails() {
+    if (taskDetailsCase_ == 12) {
+      return (com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails) taskDetails_;
+    }
+    return com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetailsOrBuilder
+      getAssessmentTaskDetailsOrBuilder() {
+    if (taskDetailsCase_ == 12) {
+      return (com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails) taskDetails_;
+    }
+    return com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails.getDefaultInstance();
+  }
+
+  public static final int TRANSLATION_TASK_DETAILS_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Batch/Offline SQL Translation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+   * </code>
+   *
+   * @return Whether the translationTaskDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasTranslationTaskDetails() {
+    return taskDetailsCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Batch/Offline SQL Translation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+   * </code>
+   *
+   * @return The translationTaskDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails
+      getTranslationTaskDetails() {
+    if (taskDetailsCase_ == 13) {
+      return (com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails) taskDetails_;
+    }
+    return com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Batch/Offline SQL Translation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetailsOrBuilder
+      getTranslationTaskDetailsOrBuilder() {
+    if (taskDetailsCase_ == 13) {
+      return (com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails) taskDetails_;
+    }
+    return com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.getDefaultInstance();
+  }
+
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
@@ -544,6 +774,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * DEPRECATED! Use one of the task_details below.
    * The details of the task. The type URL must be one of the supported task
    * details messages and correspond to the Task's type.
    * </pre>
@@ -560,6 +791,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * DEPRECATED! Use one of the task_details below.
    * The details of the task. The type URL must be one of the supported task
    * details messages and correspond to the Task's type.
    * </pre>
@@ -576,6 +808,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * DEPRECATED! Use one of the task_details below.
    * The details of the task. The type URL must be one of the supported task
    * details messages and correspond to the Task's type.
    * </pre>
@@ -774,6 +1007,64 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     return getLastUpdateTime();
   }
 
+  public static final int ORCHESTRATION_RESULT_FIELD_NUMBER = 10;
+  private com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+      orchestrationResult_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information about the orchestration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the orchestrationResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrchestrationResult() {
+    return orchestrationResult_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information about the orchestration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The orchestrationResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+      getOrchestrationResult() {
+    return orchestrationResult_ == null
+        ? com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+            .getDefaultInstance()
+        : orchestrationResult_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information about the orchestration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResultOrBuilder
+      getOrchestrationResultOrBuilder() {
+    return getOrchestrationResult();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -811,6 +1102,17 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     if (lastUpdateTime_ != null) {
       output.writeMessage(7, getLastUpdateTime());
     }
+    if (orchestrationResult_ != null) {
+      output.writeMessage(10, getOrchestrationResult());
+    }
+    if (taskDetailsCase_ == 12) {
+      output.writeMessage(
+          12, (com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails) taskDetails_);
+    }
+    if (taskDetailsCase_ == 13) {
+      output.writeMessage(
+          13, (com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails) taskDetails_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -842,6 +1144,21 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     }
     if (lastUpdateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getLastUpdateTime());
+    }
+    if (orchestrationResult_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(10, getOrchestrationResult());
+    }
+    if (taskDetailsCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails) taskDetails_);
+    }
+    if (taskDetailsCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13,
+              (com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails) taskDetails_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -878,6 +1195,21 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     if (hasLastUpdateTime()) {
       if (!getLastUpdateTime().equals(other.getLastUpdateTime())) return false;
     }
+    if (hasOrchestrationResult() != other.hasOrchestrationResult()) return false;
+    if (hasOrchestrationResult()) {
+      if (!getOrchestrationResult().equals(other.getOrchestrationResult())) return false;
+    }
+    if (!getTaskDetailsCase().equals(other.getTaskDetailsCase())) return false;
+    switch (taskDetailsCase_) {
+      case 12:
+        if (!getAssessmentTaskDetails().equals(other.getAssessmentTaskDetails())) return false;
+        break;
+      case 13:
+        if (!getTranslationTaskDetails().equals(other.getTranslationTaskDetails())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -910,6 +1242,22 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     if (hasLastUpdateTime()) {
       hash = (37 * hash) + LAST_UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastUpdateTime().hashCode();
+    }
+    if (hasOrchestrationResult()) {
+      hash = (37 * hash) + ORCHESTRATION_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getOrchestrationResult().hashCode();
+    }
+    switch (taskDetailsCase_) {
+      case 12:
+        hash = (37 * hash) + ASSESSMENT_TASK_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getAssessmentTaskDetails().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + TRANSLATION_TASK_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getTranslationTaskDetails().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1088,6 +1436,14 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         lastUpdateTime_ = null;
         lastUpdateTimeBuilder_ = null;
       }
+      if (orchestrationResultBuilder_ == null) {
+        orchestrationResult_ = null;
+      } else {
+        orchestrationResult_ = null;
+        orchestrationResultBuilder_ = null;
+      }
+      taskDetailsCase_ = 0;
+      taskDetails_ = null;
       return this;
     }
 
@@ -1115,6 +1471,20 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2alpha.MigrationTask buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.MigrationTask result =
           new com.google.cloud.bigquery.migration.v2alpha.MigrationTask(this);
+      if (taskDetailsCase_ == 12) {
+        if (assessmentTaskDetailsBuilder_ == null) {
+          result.taskDetails_ = taskDetails_;
+        } else {
+          result.taskDetails_ = assessmentTaskDetailsBuilder_.build();
+        }
+      }
+      if (taskDetailsCase_ == 13) {
+        if (translationTaskDetailsBuilder_ == null) {
+          result.taskDetails_ = taskDetails_;
+        } else {
+          result.taskDetails_ = translationTaskDetailsBuilder_.build();
+        }
+      }
       result.id_ = id_;
       result.type_ = type_;
       if (detailsBuilder_ == null) {
@@ -1138,6 +1508,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.lastUpdateTime_ = lastUpdateTimeBuilder_.build();
       }
+      if (orchestrationResultBuilder_ == null) {
+        result.orchestrationResult_ = orchestrationResult_;
+      } else {
+        result.orchestrationResult_ = orchestrationResultBuilder_.build();
+      }
+      result.taskDetailsCase_ = taskDetailsCase_;
       onBuilt();
       return result;
     }
@@ -1211,6 +1587,25 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLastUpdateTime()) {
         mergeLastUpdateTime(other.getLastUpdateTime());
       }
+      if (other.hasOrchestrationResult()) {
+        mergeOrchestrationResult(other.getOrchestrationResult());
+      }
+      switch (other.getTaskDetailsCase()) {
+        case ASSESSMENT_TASK_DETAILS:
+          {
+            mergeAssessmentTaskDetails(other.getAssessmentTaskDetails());
+            break;
+          }
+        case TRANSLATION_TASK_DETAILS:
+          {
+            mergeTranslationTaskDetails(other.getTranslationTaskDetails());
+            break;
+          }
+        case TASKDETAILS_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1239,6 +1634,501 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         }
       }
       return this;
+    }
+
+    private int taskDetailsCase_ = 0;
+    private java.lang.Object taskDetails_;
+
+    public TaskDetailsCase getTaskDetailsCase() {
+      return TaskDetailsCase.forNumber(taskDetailsCase_);
+    }
+
+    public Builder clearTaskDetails() {
+      taskDetailsCase_ = 0;
+      taskDetails_ = null;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails,
+            com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails.Builder,
+            com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetailsOrBuilder>
+        assessmentTaskDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     *
+     * @return Whether the assessmentTaskDetails field is set.
+     */
+    @java.lang.Override
+    public boolean hasAssessmentTaskDetails() {
+      return taskDetailsCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     *
+     * @return The assessmentTaskDetails.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails
+        getAssessmentTaskDetails() {
+      if (assessmentTaskDetailsBuilder_ == null) {
+        if (taskDetailsCase_ == 12) {
+          return (com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails) taskDetails_;
+        }
+        return com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails
+            .getDefaultInstance();
+      } else {
+        if (taskDetailsCase_ == 12) {
+          return assessmentTaskDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    public Builder setAssessmentTaskDetails(
+        com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails value) {
+      if (assessmentTaskDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taskDetails_ = value;
+        onChanged();
+      } else {
+        assessmentTaskDetailsBuilder_.setMessage(value);
+      }
+      taskDetailsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    public Builder setAssessmentTaskDetails(
+        com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails.Builder builderForValue) {
+      if (assessmentTaskDetailsBuilder_ == null) {
+        taskDetails_ = builderForValue.build();
+        onChanged();
+      } else {
+        assessmentTaskDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      taskDetailsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    public Builder mergeAssessmentTaskDetails(
+        com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails value) {
+      if (assessmentTaskDetailsBuilder_ == null) {
+        if (taskDetailsCase_ == 12
+            && taskDetails_
+                != com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails
+                    .getDefaultInstance()) {
+          taskDetails_ =
+              com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails.newBuilder(
+                      (com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails)
+                          taskDetails_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          taskDetails_ = value;
+        }
+        onChanged();
+      } else {
+        if (taskDetailsCase_ == 12) {
+          assessmentTaskDetailsBuilder_.mergeFrom(value);
+        }
+        assessmentTaskDetailsBuilder_.setMessage(value);
+      }
+      taskDetailsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    public Builder clearAssessmentTaskDetails() {
+      if (assessmentTaskDetailsBuilder_ == null) {
+        if (taskDetailsCase_ == 12) {
+          taskDetailsCase_ = 0;
+          taskDetails_ = null;
+          onChanged();
+        }
+      } else {
+        if (taskDetailsCase_ == 12) {
+          taskDetailsCase_ = 0;
+          taskDetails_ = null;
+        }
+        assessmentTaskDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    public com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails.Builder
+        getAssessmentTaskDetailsBuilder() {
+      return getAssessmentTaskDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetailsOrBuilder
+        getAssessmentTaskDetailsOrBuilder() {
+      if ((taskDetailsCase_ == 12) && (assessmentTaskDetailsBuilder_ != null)) {
+        return assessmentTaskDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (taskDetailsCase_ == 12) {
+          return (com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails) taskDetails_;
+        }
+        return com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails,
+            com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails.Builder,
+            com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetailsOrBuilder>
+        getAssessmentTaskDetailsFieldBuilder() {
+      if (assessmentTaskDetailsBuilder_ == null) {
+        if (!(taskDetailsCase_ == 12)) {
+          taskDetails_ =
+              com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails
+                  .getDefaultInstance();
+        }
+        assessmentTaskDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails,
+                com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails.Builder,
+                com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetailsOrBuilder>(
+                (com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails) taskDetails_,
+                getParentForChildren(),
+                isClean());
+        taskDetails_ = null;
+      }
+      taskDetailsCase_ = 12;
+      onChanged();
+      ;
+      return assessmentTaskDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails,
+            com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.Builder,
+            com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetailsOrBuilder>
+        translationTaskDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Batch/Offline SQL Translation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+     * </code>
+     *
+     * @return Whether the translationTaskDetails field is set.
+     */
+    @java.lang.Override
+    public boolean hasTranslationTaskDetails() {
+      return taskDetailsCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Batch/Offline SQL Translation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+     * </code>
+     *
+     * @return The translationTaskDetails.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails
+        getTranslationTaskDetails() {
+      if (translationTaskDetailsBuilder_ == null) {
+        if (taskDetailsCase_ == 13) {
+          return (com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails) taskDetails_;
+        }
+        return com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails
+            .getDefaultInstance();
+      } else {
+        if (taskDetailsCase_ == 13) {
+          return translationTaskDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Batch/Offline SQL Translation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+     * </code>
+     */
+    public Builder setTranslationTaskDetails(
+        com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails value) {
+      if (translationTaskDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taskDetails_ = value;
+        onChanged();
+      } else {
+        translationTaskDetailsBuilder_.setMessage(value);
+      }
+      taskDetailsCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Batch/Offline SQL Translation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+     * </code>
+     */
+    public Builder setTranslationTaskDetails(
+        com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.Builder
+            builderForValue) {
+      if (translationTaskDetailsBuilder_ == null) {
+        taskDetails_ = builderForValue.build();
+        onChanged();
+      } else {
+        translationTaskDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      taskDetailsCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Batch/Offline SQL Translation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+     * </code>
+     */
+    public Builder mergeTranslationTaskDetails(
+        com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails value) {
+      if (translationTaskDetailsBuilder_ == null) {
+        if (taskDetailsCase_ == 13
+            && taskDetails_
+                != com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails
+                    .getDefaultInstance()) {
+          taskDetails_ =
+              com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.newBuilder(
+                      (com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails)
+                          taskDetails_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          taskDetails_ = value;
+        }
+        onChanged();
+      } else {
+        if (taskDetailsCase_ == 13) {
+          translationTaskDetailsBuilder_.mergeFrom(value);
+        }
+        translationTaskDetailsBuilder_.setMessage(value);
+      }
+      taskDetailsCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Batch/Offline SQL Translation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+     * </code>
+     */
+    public Builder clearTranslationTaskDetails() {
+      if (translationTaskDetailsBuilder_ == null) {
+        if (taskDetailsCase_ == 13) {
+          taskDetailsCase_ = 0;
+          taskDetails_ = null;
+          onChanged();
+        }
+      } else {
+        if (taskDetailsCase_ == 13) {
+          taskDetailsCase_ = 0;
+          taskDetails_ = null;
+        }
+        translationTaskDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Batch/Offline SQL Translation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+     * </code>
+     */
+    public com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.Builder
+        getTranslationTaskDetailsBuilder() {
+      return getTranslationTaskDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Batch/Offline SQL Translation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetailsOrBuilder
+        getTranslationTaskDetailsOrBuilder() {
+      if ((taskDetailsCase_ == 13) && (translationTaskDetailsBuilder_ != null)) {
+        return translationTaskDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (taskDetailsCase_ == 13) {
+          return (com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails) taskDetails_;
+        }
+        return com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Batch/Offline SQL Translation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails,
+            com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.Builder,
+            com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetailsOrBuilder>
+        getTranslationTaskDetailsFieldBuilder() {
+      if (translationTaskDetailsBuilder_ == null) {
+        if (!(taskDetailsCase_ == 13)) {
+          taskDetails_ =
+              com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails
+                  .getDefaultInstance();
+        }
+        translationTaskDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails,
+                com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.Builder,
+                com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetailsOrBuilder>(
+                (com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails) taskDetails_,
+                getParentForChildren(),
+                isClean());
+        taskDetails_ = null;
+      }
+      taskDetailsCase_ = 13;
+      onChanged();
+      ;
+      return translationTaskDetailsBuilder_;
     }
 
     private java.lang.Object id_ = "";
@@ -1473,6 +2363,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED! Use one of the task_details below.
      * The details of the task. The type URL must be one of the supported task
      * details messages and correspond to the Task's type.
      * </pre>
@@ -1488,6 +2379,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED! Use one of the task_details below.
      * The details of the task. The type URL must be one of the supported task
      * details messages and correspond to the Task's type.
      * </pre>
@@ -1507,6 +2399,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED! Use one of the task_details below.
      * The details of the task. The type URL must be one of the supported task
      * details messages and correspond to the Task's type.
      * </pre>
@@ -1530,6 +2423,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED! Use one of the task_details below.
      * The details of the task. The type URL must be one of the supported task
      * details messages and correspond to the Task's type.
      * </pre>
@@ -1550,6 +2444,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED! Use one of the task_details below.
      * The details of the task. The type URL must be one of the supported task
      * details messages and correspond to the Task's type.
      * </pre>
@@ -1574,6 +2469,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED! Use one of the task_details below.
      * The details of the task. The type URL must be one of the supported task
      * details messages and correspond to the Task's type.
      * </pre>
@@ -1595,6 +2491,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED! Use one of the task_details below.
      * The details of the task. The type URL must be one of the supported task
      * details messages and correspond to the Task's type.
      * </pre>
@@ -1610,6 +2507,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED! Use one of the task_details below.
      * The details of the task. The type URL must be one of the supported task
      * details messages and correspond to the Task's type.
      * </pre>
@@ -1627,6 +2525,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DEPRECATED! Use one of the task_details below.
      * The details of the task. The type URL must be one of the supported task
      * details messages and correspond to the Task's type.
      * </pre>
@@ -2319,6 +3218,222 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         lastUpdateTime_ = null;
       }
       return lastUpdateTimeBuilder_;
+    }
+
+    private com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+        orchestrationResult_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult,
+            com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult.Builder,
+            com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResultOrBuilder>
+        orchestrationResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the orchestration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the orchestrationResult field is set.
+     */
+    public boolean hasOrchestrationResult() {
+      return orchestrationResultBuilder_ != null || orchestrationResult_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the orchestration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The orchestrationResult.
+     */
+    public com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+        getOrchestrationResult() {
+      if (orchestrationResultBuilder_ == null) {
+        return orchestrationResult_ == null
+            ? com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+                .getDefaultInstance()
+            : orchestrationResult_;
+      } else {
+        return orchestrationResultBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the orchestration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setOrchestrationResult(
+        com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult value) {
+      if (orchestrationResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        orchestrationResult_ = value;
+        onChanged();
+      } else {
+        orchestrationResultBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the orchestration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setOrchestrationResult(
+        com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult.Builder
+            builderForValue) {
+      if (orchestrationResultBuilder_ == null) {
+        orchestrationResult_ = builderForValue.build();
+        onChanged();
+      } else {
+        orchestrationResultBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the orchestration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeOrchestrationResult(
+        com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult value) {
+      if (orchestrationResultBuilder_ == null) {
+        if (orchestrationResult_ != null) {
+          orchestrationResult_ =
+              com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+                  .newBuilder(orchestrationResult_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          orchestrationResult_ = value;
+        }
+        onChanged();
+      } else {
+        orchestrationResultBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the orchestration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearOrchestrationResult() {
+      if (orchestrationResultBuilder_ == null) {
+        orchestrationResult_ = null;
+        onChanged();
+      } else {
+        orchestrationResult_ = null;
+        orchestrationResultBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the orchestration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult.Builder
+        getOrchestrationResultBuilder() {
+
+      onChanged();
+      return getOrchestrationResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the orchestration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResultOrBuilder
+        getOrchestrationResultOrBuilder() {
+      if (orchestrationResultBuilder_ != null) {
+        return orchestrationResultBuilder_.getMessageOrBuilder();
+      } else {
+        return orchestrationResult_ == null
+            ? com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+                .getDefaultInstance()
+            : orchestrationResult_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the orchestration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult,
+            com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult.Builder,
+            com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResultOrBuilder>
+        getOrchestrationResultFieldBuilder() {
+      if (orchestrationResultBuilder_ == null) {
+        orchestrationResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult,
+                com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+                    .Builder,
+                com.google.cloud.bigquery.migration.v2alpha
+                    .MigrationTaskOrchestrationResultOrBuilder>(
+                getOrchestrationResult(), getParentForChildren(), isClean());
+        orchestrationResult_ = null;
+      }
+      return orchestrationResultBuilder_;
     }
 
     @java.lang.Override

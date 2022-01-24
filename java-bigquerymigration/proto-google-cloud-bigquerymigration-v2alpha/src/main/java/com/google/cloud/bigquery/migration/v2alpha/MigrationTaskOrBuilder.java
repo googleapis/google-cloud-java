@@ -27,6 +27,90 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
+   * Task configuration for Assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+   * </code>
+   *
+   * @return Whether the assessmentTaskDetails field is set.
+   */
+  boolean hasAssessmentTaskDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+   * </code>
+   *
+   * @return The assessmentTaskDetails.
+   */
+  com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails getAssessmentTaskDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails assessment_task_details = 12;
+   * </code>
+   */
+  com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetailsOrBuilder
+      getAssessmentTaskDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Batch/Offline SQL Translation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+   * </code>
+   *
+   * @return Whether the translationTaskDetails field is set.
+   */
+  boolean hasTranslationTaskDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Batch/Offline SQL Translation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+   * </code>
+   *
+   * @return The translationTaskDetails.
+   */
+  com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails getTranslationTaskDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Batch/Offline SQL Translation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails translation_task_details = 13;
+   * </code>
+   */
+  com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetailsOrBuilder
+      getTranslationTaskDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Immutable. The unique identifier for the migration task. The ID is server-generated.
    * </pre>
    *
@@ -81,6 +165,7 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
+   * DEPRECATED! Use one of the task_details below.
    * The details of the task. The type URL must be one of the supported task
    * details messages and correspond to the Task's type.
    * </pre>
@@ -94,6 +179,7 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
+   * DEPRECATED! Use one of the task_details below.
    * The details of the task. The type URL must be one of the supported task
    * details messages and correspond to the Task's type.
    * </pre>
@@ -107,6 +193,7 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
+   * DEPRECATED! Use one of the task_details below.
    * The details of the task. The type URL must be one of the supported task
    * details messages and correspond to the Task's type.
    * </pre>
@@ -251,4 +338,50 @@ public interface MigrationTaskOrBuilder
    * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
    */
   com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information about the orchestration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the orchestrationResult field is set.
+   */
+  boolean hasOrchestrationResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information about the orchestration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The orchestrationResult.
+   */
+  com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+      getOrchestrationResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information about the orchestration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult orchestration_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResultOrBuilder
+      getOrchestrationResultOrBuilder();
+
+  public com.google.cloud.bigquery.migration.v2alpha.MigrationTask.TaskDetailsCase
+      getTaskDetailsCase();
 }
