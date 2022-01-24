@@ -1,0 +1,7 @@
+[
+  {
+    "name":"java.lang.Object",
+    "allDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "methods":[{"name":"<init>","parameterTypes":[] }]}
+]
