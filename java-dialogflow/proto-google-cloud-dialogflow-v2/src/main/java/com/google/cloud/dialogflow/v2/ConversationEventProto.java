@@ -42,9 +42,9 @@ public final class ConversationEventProto {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/dialogflow/v2/conversatio"
           + "n_event.proto\022\032google.cloud.dialogflow.v"
-          + "2\032,google/cloud/dialogflow/v2/participan"
-          + "t.proto\032\027google/rpc/status.proto\032\034google"
-          + "/api/annotations.proto\"\201\003\n\021ConversationE"
+          + "2\032\034google/api/annotations.proto\032,google/"
+          + "cloud/dialogflow/v2/participant.proto\032\027g"
+          + "oogle/rpc/status.proto\"\201\003\n\021ConversationE"
           + "vent\022\024\n\014conversation\030\001 \001(\t\022@\n\004type\030\002 \001(\016"
           + "22.google.cloud.dialogflow.v2.Conversati"
           + "onEvent.Type\022(\n\014error_status\030\003 \001(\0132\022.goo"
@@ -64,9 +64,9 @@ public final class ConversationEventProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.dialogflow.v2.ParticipantProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_v2_ConversationEvent_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -76,9 +76,9 @@ public final class ConversationEventProto {
             new java.lang.String[] {
               "Conversation", "Type", "ErrorStatus", "NewMessagePayload", "Payload",
             });
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.dialogflow.v2.ParticipantProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

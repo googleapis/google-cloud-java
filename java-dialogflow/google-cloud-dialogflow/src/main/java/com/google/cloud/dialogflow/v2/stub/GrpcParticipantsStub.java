@@ -35,6 +35,8 @@ import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest;
+import com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2.UpdateParticipantRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -126,6 +128,17 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(SuggestFaqAnswersResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
+      suggestSmartRepliesMethodDescriptor =
+          MethodDescriptor.<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2.Participants/SuggestSmartReplies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SuggestSmartRepliesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SuggestSmartRepliesResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateParticipantRequest, Participant> createParticipantCallable;
   private final UnaryCallable<GetParticipantRequest, Participant> getParticipantCallable;
   private final UnaryCallable<ListParticipantsRequest, ListParticipantsResponse>
@@ -138,6 +151,8 @@ public class GrpcParticipantsStub extends ParticipantsStub {
       suggestArticlesCallable;
   private final UnaryCallable<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
       suggestFaqAnswersCallable;
+  private final UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
+      suggestSmartRepliesCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -256,6 +271,17 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
+        suggestSmartRepliesTransportSettings =
+            GrpcCallSettings.<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>newBuilder()
+                .setMethodDescriptor(suggestSmartRepliesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
 
     this.createParticipantCallable =
         callableFactory.createUnaryCallable(
@@ -286,6 +312,11 @@ public class GrpcParticipantsStub extends ParticipantsStub {
         callableFactory.createUnaryCallable(
             suggestFaqAnswersTransportSettings,
             settings.suggestFaqAnswersSettings(),
+            clientContext);
+    this.suggestSmartRepliesCallable =
+        callableFactory.createUnaryCallable(
+            suggestSmartRepliesTransportSettings,
+            settings.suggestSmartRepliesSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -337,6 +368,12 @@ public class GrpcParticipantsStub extends ParticipantsStub {
   public UnaryCallable<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
       suggestFaqAnswersCallable() {
     return suggestFaqAnswersCallable;
+  }
+
+  @Override
+  public UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
+      suggestSmartRepliesCallable() {
+    return suggestSmartRepliesCallable;
   }
 
   @Override

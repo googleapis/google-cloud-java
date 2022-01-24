@@ -42,9 +42,9 @@ public final class HumanAgentAssistantEventProto {
     java.lang.String[] descriptorData = {
       "\nAgoogle/cloud/dialogflow/v2beta1/human_"
           + "agent_assistant_event.proto\022\037google.clou"
-          + "d.dialogflow.v2beta1\0321google/cloud/dialo"
-          + "gflow/v2beta1/participant.proto\032\034google/"
-          + "api/annotations.proto\"\224\001\n\030HumanAgentAssi"
+          + "d.dialogflow.v2beta1\032\034google/api/annotat"
+          + "ions.proto\0321google/cloud/dialogflow/v2be"
+          + "ta1/participant.proto\"\224\001\n\030HumanAgentAssi"
           + "stantEvent\022\024\n\014conversation\030\001 \001(\t\022\023\n\013part"
           + "icipant\030\003 \001(\t\022M\n\022suggestion_results\030\005 \003("
           + "\01321.google.cloud.dialogflow.v2beta1.Sugg"
@@ -59,8 +59,8 @@ public final class HumanAgentAssistantEventProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.cloud.dialogflow.v2beta1.ParticipantProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.cloud.dialogflow.v2beta1.ParticipantProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantEvent_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -70,8 +70,8 @@ public final class HumanAgentAssistantEventProto {
             new java.lang.String[] {
               "Conversation", "Participant", "SuggestionResults",
             });
-    com.google.cloud.dialogflow.v2beta1.ParticipantProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.cloud.dialogflow.v2beta1.ParticipantProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

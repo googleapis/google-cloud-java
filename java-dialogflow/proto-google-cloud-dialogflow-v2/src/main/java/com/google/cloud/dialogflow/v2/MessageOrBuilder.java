@@ -27,12 +27,12 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of the message.
+   * Optional. The unique identifier of the message.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -41,12 +41,12 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of the message.
+   * Optional. The unique identifier of the message.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -164,7 +164,7 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the message was created.
+   * Output only. The time when the message was created in Contact Center AI.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -177,7 +177,7 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the message was created.
+   * Output only. The time when the message was created in Contact Center AI.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -190,13 +190,51 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the message was created.
+   * Output only. The time when the message was created in Contact Center AI.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time when the message was sent.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sendTime field is set.
+   */
+  boolean hasSendTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time when the message was sent.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sendTime.
+   */
+  com.google.protobuf.Timestamp getSendTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time when the message was sent.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getSendTimeOrBuilder();
 
   /**
    *
@@ -238,4 +276,45 @@ public interface MessageOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.MessageAnnotationOrBuilder getMessageAnnotationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The sentiment analysis result for the message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the sentimentAnalysis field is set.
+   */
+  boolean hasSentimentAnalysis();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The sentiment analysis result for the message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The sentimentAnalysis.
+   */
+  com.google.cloud.dialogflow.v2.SentimentAnalysisResult getSentimentAnalysis();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The sentiment analysis result for the message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.SentimentAnalysisResultOrBuilder getSentimentAnalysisOrBuilder();
 }

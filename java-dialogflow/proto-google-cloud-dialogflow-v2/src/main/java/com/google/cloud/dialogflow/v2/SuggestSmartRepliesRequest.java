@@ -22,22 +22,22 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
+ * The request message for [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2.Participants.SuggestSmartReplies].
  * </pre>
  *
- * Protobuf type {@code google.cloud.dialogflow.v2.SuggestArticlesRequest}
+ * Protobuf type {@code google.cloud.dialogflow.v2.SuggestSmartRepliesRequest}
  */
-public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedMessageV3
+public final class SuggestSmartRepliesRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SuggestArticlesRequest)
-    SuggestArticlesRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SuggestSmartRepliesRequest)
+    SuggestSmartRepliesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use SuggestArticlesRequest.newBuilder() to construct.
-  private SuggestArticlesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SuggestSmartRepliesRequest.newBuilder() to construct.
+  private SuggestSmartRepliesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private SuggestArticlesRequest() {
+  private SuggestSmartRepliesRequest() {
     parent_ = "";
     latestMessage_ = "";
   }
@@ -45,7 +45,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new SuggestArticlesRequest();
+    return new SuggestSmartRepliesRequest();
   }
 
   @java.lang.Override
@@ -53,7 +53,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private SuggestArticlesRequest(
+  private SuggestSmartRepliesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -92,17 +92,16 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
             }
           case 34:
             {
-              com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder subBuilder = null;
-              if (assistQueryParams_ != null) {
-                subBuilder = assistQueryParams_.toBuilder();
+              com.google.cloud.dialogflow.v2.TextInput.Builder subBuilder = null;
+              if (currentTextInput_ != null) {
+                subBuilder = currentTextInput_.toBuilder();
               }
-              assistQueryParams_ =
+              currentTextInput_ =
                   input.readMessage(
-                      com.google.cloud.dialogflow.v2.AssistQueryParameters.parser(),
-                      extensionRegistry);
+                      com.google.cloud.dialogflow.v2.TextInput.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(assistQueryParams_);
-                assistQueryParams_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(currentTextInput_);
+                currentTextInput_ = subBuilder.buildPartial();
               }
 
               break;
@@ -128,17 +127,17 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.ParticipantProto
-        .internal_static_google_cloud_dialogflow_v2_SuggestArticlesRequest_descriptor;
+        .internal_static_google_cloud_dialogflow_v2_SuggestSmartRepliesRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.dialogflow.v2.ParticipantProto
-        .internal_static_google_cloud_dialogflow_v2_SuggestArticlesRequest_fieldAccessorTable
+        .internal_static_google_cloud_dialogflow_v2_SuggestSmartRepliesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2.SuggestArticlesRequest.class,
-            com.google.cloud.dialogflow.v2.SuggestArticlesRequest.Builder.class);
+            com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest.class,
+            com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -198,21 +197,73 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int CURRENT_TEXT_INPUT_FIELD_NUMBER = 4;
+  private com.google.cloud.dialogflow.v2.TextInput currentTextInput_;
+  /**
+   *
+   *
+   * <pre>
+   * The current natural language text segment to compile suggestion
+   * for. This provides a way for user to get follow up smart reply suggestion
+   * after a smart reply selection, without sending a text message.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.TextInput current_text_input = 4;</code>
+   *
+   * @return Whether the currentTextInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasCurrentTextInput() {
+    return currentTextInput_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The current natural language text segment to compile suggestion
+   * for. This provides a way for user to get follow up smart reply suggestion
+   * after a smart reply selection, without sending a text message.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.TextInput current_text_input = 4;</code>
+   *
+   * @return The currentTextInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.TextInput getCurrentTextInput() {
+    return currentTextInput_ == null
+        ? com.google.cloud.dialogflow.v2.TextInput.getDefaultInstance()
+        : currentTextInput_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The current natural language text segment to compile suggestion
+   * for. This provides a way for user to get follow up smart reply suggestion
+   * after a smart reply selection, without sending a text message.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.TextInput current_text_input = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.TextInputOrBuilder getCurrentTextInputOrBuilder() {
+    return getCurrentTextInput();
+  }
+
   public static final int LATEST_MESSAGE_FIELD_NUMBER = 2;
   private volatile java.lang.Object latestMessage_;
   /**
    *
    *
    * <pre>
-   * Optional. The name of the latest conversation message to compile suggestion
+   * The name of the latest conversation message to compile suggestion
    * for. If empty, it will be the latest message of the conversation.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>
-   * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The latestMessage.
    */
@@ -232,15 +283,13 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The name of the latest conversation message to compile suggestion
+   * The name of the latest conversation message to compile suggestion
    * for. If empty, it will be the latest message of the conversation.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>
-   * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for latestMessage.
    */
@@ -263,67 +312,18 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. Max number of messages prior to and including
-   * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesRequest.latest_message] to use as context
-   * when compiling the suggestion. By default 20 and at most 50.
+   * Max number of messages prior to and including
+   * [latest_message] to use as context when compiling the
+   * suggestion. By default 20 and at most 50.
    * </pre>
    *
-   * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 context_size = 3;</code>
    *
    * @return The contextSize.
    */
   @java.lang.Override
   public int getContextSize() {
     return contextSize_;
-  }
-
-  public static final int ASSIST_QUERY_PARAMS_FIELD_NUMBER = 4;
-  private com.google.cloud.dialogflow.v2.AssistQueryParameters assistQueryParams_;
-  /**
-   *
-   *
-   * <pre>
-   * Parameters for a human assist query.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
-   *
-   * @return Whether the assistQueryParams field is set.
-   */
-  @java.lang.Override
-  public boolean hasAssistQueryParams() {
-    return assistQueryParams_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Parameters for a human assist query.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
-   *
-   * @return The assistQueryParams.
-   */
-  @java.lang.Override
-  public com.google.cloud.dialogflow.v2.AssistQueryParameters getAssistQueryParams() {
-    return assistQueryParams_ == null
-        ? com.google.cloud.dialogflow.v2.AssistQueryParameters.getDefaultInstance()
-        : assistQueryParams_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Parameters for a human assist query.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.dialogflow.v2.AssistQueryParametersOrBuilder
-      getAssistQueryParamsOrBuilder() {
-    return getAssistQueryParams();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -349,8 +349,8 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
     if (contextSize_ != 0) {
       output.writeInt32(3, contextSize_);
     }
-    if (assistQueryParams_ != null) {
-      output.writeMessage(4, getAssistQueryParams());
+    if (currentTextInput_ != null) {
+      output.writeMessage(4, getCurrentTextInput());
     }
     unknownFields.writeTo(output);
   }
@@ -370,8 +370,8 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
     if (contextSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, contextSize_);
     }
-    if (assistQueryParams_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAssistQueryParams());
+    if (currentTextInput_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCurrentTextInput());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -383,19 +383,19 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.dialogflow.v2.SuggestArticlesRequest)) {
+    if (!(obj instanceof com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2.SuggestArticlesRequest other =
-        (com.google.cloud.dialogflow.v2.SuggestArticlesRequest) obj;
+    com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest other =
+        (com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
+    if (hasCurrentTextInput() != other.hasCurrentTextInput()) return false;
+    if (hasCurrentTextInput()) {
+      if (!getCurrentTextInput().equals(other.getCurrentTextInput())) return false;
+    }
     if (!getLatestMessage().equals(other.getLatestMessage())) return false;
     if (getContextSize() != other.getContextSize()) return false;
-    if (hasAssistQueryParams() != other.hasAssistQueryParams()) return false;
-    if (hasAssistQueryParams()) {
-      if (!getAssistQueryParams().equals(other.getAssistQueryParams())) return false;
-    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -409,84 +409,84 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    if (hasCurrentTextInput()) {
+      hash = (37 * hash) + CURRENT_TEXT_INPUT_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrentTextInput().hashCode();
+    }
     hash = (37 * hash) + LATEST_MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getLatestMessage().hashCode();
     hash = (37 * hash) + CONTEXT_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getContextSize();
-    if (hasAssistQueryParams()) {
-      hash = (37 * hash) + ASSIST_QUERY_PARAMS_FIELD_NUMBER;
-      hash = (53 * hash) + getAssistQueryParams().hashCode();
-    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest parseFrom(byte[] data)
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest parseDelimitedFrom(
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest parseDelimitedFrom(
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest parseFrom(
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -504,7 +504,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
   }
 
   public static Builder newBuilder(
-      com.google.cloud.dialogflow.v2.SuggestArticlesRequest prototype) {
+      com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -522,31 +522,31 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request message for [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
+   * The request message for [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2.Participants.SuggestSmartReplies].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.dialogflow.v2.SuggestArticlesRequest}
+   * Protobuf type {@code google.cloud.dialogflow.v2.SuggestSmartRepliesRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.SuggestArticlesRequest)
-      com.google.cloud.dialogflow.v2.SuggestArticlesRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.SuggestSmartRepliesRequest)
+      com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2.ParticipantProto
-          .internal_static_google_cloud_dialogflow_v2_SuggestArticlesRequest_descriptor;
+          .internal_static_google_cloud_dialogflow_v2_SuggestSmartRepliesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.v2.ParticipantProto
-          .internal_static_google_cloud_dialogflow_v2_SuggestArticlesRequest_fieldAccessorTable
+          .internal_static_google_cloud_dialogflow_v2_SuggestSmartRepliesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2.SuggestArticlesRequest.class,
-              com.google.cloud.dialogflow.v2.SuggestArticlesRequest.Builder.class);
+              com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest.class,
+              com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.dialogflow.v2.SuggestArticlesRequest.newBuilder()
+    // Construct using com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -565,33 +565,33 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
       super.clear();
       parent_ = "";
 
+      if (currentTextInputBuilder_ == null) {
+        currentTextInput_ = null;
+      } else {
+        currentTextInput_ = null;
+        currentTextInputBuilder_ = null;
+      }
       latestMessage_ = "";
 
       contextSize_ = 0;
 
-      if (assistQueryParamsBuilder_ == null) {
-        assistQueryParams_ = null;
-      } else {
-        assistQueryParams_ = null;
-        assistQueryParamsBuilder_ = null;
-      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.dialogflow.v2.ParticipantProto
-          .internal_static_google_cloud_dialogflow_v2_SuggestArticlesRequest_descriptor;
+          .internal_static_google_cloud_dialogflow_v2_SuggestSmartRepliesRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.v2.SuggestArticlesRequest getDefaultInstanceForType() {
-      return com.google.cloud.dialogflow.v2.SuggestArticlesRequest.getDefaultInstance();
+    public com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest getDefaultInstanceForType() {
+      return com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.v2.SuggestArticlesRequest build() {
-      com.google.cloud.dialogflow.v2.SuggestArticlesRequest result = buildPartial();
+    public com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest build() {
+      com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -599,17 +599,17 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.v2.SuggestArticlesRequest buildPartial() {
-      com.google.cloud.dialogflow.v2.SuggestArticlesRequest result =
-          new com.google.cloud.dialogflow.v2.SuggestArticlesRequest(this);
+    public com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest buildPartial() {
+      com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest result =
+          new com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest(this);
       result.parent_ = parent_;
+      if (currentTextInputBuilder_ == null) {
+        result.currentTextInput_ = currentTextInput_;
+      } else {
+        result.currentTextInput_ = currentTextInputBuilder_.build();
+      }
       result.latestMessage_ = latestMessage_;
       result.contextSize_ = contextSize_;
-      if (assistQueryParamsBuilder_ == null) {
-        result.assistQueryParams_ = assistQueryParams_;
-      } else {
-        result.assistQueryParams_ = assistQueryParamsBuilder_.build();
-      }
       onBuilt();
       return result;
     }
@@ -649,20 +649,23 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.dialogflow.v2.SuggestArticlesRequest) {
-        return mergeFrom((com.google.cloud.dialogflow.v2.SuggestArticlesRequest) other);
+      if (other instanceof com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest) {
+        return mergeFrom((com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.dialogflow.v2.SuggestArticlesRequest other) {
-      if (other == com.google.cloud.dialogflow.v2.SuggestArticlesRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest other) {
+      if (other == com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest.getDefaultInstance())
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
+      }
+      if (other.hasCurrentTextInput()) {
+        mergeCurrentTextInput(other.getCurrentTextInput());
       }
       if (!other.getLatestMessage().isEmpty()) {
         latestMessage_ = other.latestMessage_;
@@ -670,9 +673,6 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
       }
       if (other.getContextSize() != 0) {
         setContextSize(other.getContextSize());
-      }
-      if (other.hasAssistQueryParams()) {
-        mergeAssistQueryParams(other.getAssistQueryParams());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -689,12 +689,12 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.v2.SuggestArticlesRequest parsedMessage = null;
+      com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.dialogflow.v2.SuggestArticlesRequest) e.getUnfinishedMessage();
+            (com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -830,20 +830,222 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private com.google.cloud.dialogflow.v2.TextInput currentTextInput_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.TextInput,
+            com.google.cloud.dialogflow.v2.TextInput.Builder,
+            com.google.cloud.dialogflow.v2.TextInputOrBuilder>
+        currentTextInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The current natural language text segment to compile suggestion
+     * for. This provides a way for user to get follow up smart reply suggestion
+     * after a smart reply selection, without sending a text message.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextInput current_text_input = 4;</code>
+     *
+     * @return Whether the currentTextInput field is set.
+     */
+    public boolean hasCurrentTextInput() {
+      return currentTextInputBuilder_ != null || currentTextInput_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current natural language text segment to compile suggestion
+     * for. This provides a way for user to get follow up smart reply suggestion
+     * after a smart reply selection, without sending a text message.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextInput current_text_input = 4;</code>
+     *
+     * @return The currentTextInput.
+     */
+    public com.google.cloud.dialogflow.v2.TextInput getCurrentTextInput() {
+      if (currentTextInputBuilder_ == null) {
+        return currentTextInput_ == null
+            ? com.google.cloud.dialogflow.v2.TextInput.getDefaultInstance()
+            : currentTextInput_;
+      } else {
+        return currentTextInputBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current natural language text segment to compile suggestion
+     * for. This provides a way for user to get follow up smart reply suggestion
+     * after a smart reply selection, without sending a text message.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextInput current_text_input = 4;</code>
+     */
+    public Builder setCurrentTextInput(com.google.cloud.dialogflow.v2.TextInput value) {
+      if (currentTextInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        currentTextInput_ = value;
+        onChanged();
+      } else {
+        currentTextInputBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current natural language text segment to compile suggestion
+     * for. This provides a way for user to get follow up smart reply suggestion
+     * after a smart reply selection, without sending a text message.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextInput current_text_input = 4;</code>
+     */
+    public Builder setCurrentTextInput(
+        com.google.cloud.dialogflow.v2.TextInput.Builder builderForValue) {
+      if (currentTextInputBuilder_ == null) {
+        currentTextInput_ = builderForValue.build();
+        onChanged();
+      } else {
+        currentTextInputBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current natural language text segment to compile suggestion
+     * for. This provides a way for user to get follow up smart reply suggestion
+     * after a smart reply selection, without sending a text message.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextInput current_text_input = 4;</code>
+     */
+    public Builder mergeCurrentTextInput(com.google.cloud.dialogflow.v2.TextInput value) {
+      if (currentTextInputBuilder_ == null) {
+        if (currentTextInput_ != null) {
+          currentTextInput_ =
+              com.google.cloud.dialogflow.v2.TextInput.newBuilder(currentTextInput_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          currentTextInput_ = value;
+        }
+        onChanged();
+      } else {
+        currentTextInputBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current natural language text segment to compile suggestion
+     * for. This provides a way for user to get follow up smart reply suggestion
+     * after a smart reply selection, without sending a text message.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextInput current_text_input = 4;</code>
+     */
+    public Builder clearCurrentTextInput() {
+      if (currentTextInputBuilder_ == null) {
+        currentTextInput_ = null;
+        onChanged();
+      } else {
+        currentTextInput_ = null;
+        currentTextInputBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current natural language text segment to compile suggestion
+     * for. This provides a way for user to get follow up smart reply suggestion
+     * after a smart reply selection, without sending a text message.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextInput current_text_input = 4;</code>
+     */
+    public com.google.cloud.dialogflow.v2.TextInput.Builder getCurrentTextInputBuilder() {
+
+      onChanged();
+      return getCurrentTextInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current natural language text segment to compile suggestion
+     * for. This provides a way for user to get follow up smart reply suggestion
+     * after a smart reply selection, without sending a text message.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextInput current_text_input = 4;</code>
+     */
+    public com.google.cloud.dialogflow.v2.TextInputOrBuilder getCurrentTextInputOrBuilder() {
+      if (currentTextInputBuilder_ != null) {
+        return currentTextInputBuilder_.getMessageOrBuilder();
+      } else {
+        return currentTextInput_ == null
+            ? com.google.cloud.dialogflow.v2.TextInput.getDefaultInstance()
+            : currentTextInput_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current natural language text segment to compile suggestion
+     * for. This provides a way for user to get follow up smart reply suggestion
+     * after a smart reply selection, without sending a text message.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextInput current_text_input = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.TextInput,
+            com.google.cloud.dialogflow.v2.TextInput.Builder,
+            com.google.cloud.dialogflow.v2.TextInputOrBuilder>
+        getCurrentTextInputFieldBuilder() {
+      if (currentTextInputBuilder_ == null) {
+        currentTextInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.TextInput,
+                com.google.cloud.dialogflow.v2.TextInput.Builder,
+                com.google.cloud.dialogflow.v2.TextInputOrBuilder>(
+                getCurrentTextInput(), getParentForChildren(), isClean());
+        currentTextInput_ = null;
+      }
+      return currentTextInputBuilder_;
+    }
+
     private java.lang.Object latestMessage_ = "";
     /**
      *
      *
      * <pre>
-     * Optional. The name of the latest conversation message to compile suggestion
+     * The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The latestMessage.
      */
@@ -862,15 +1064,13 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The name of the latest conversation message to compile suggestion
+     * The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for latestMessage.
      */
@@ -889,15 +1089,13 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The name of the latest conversation message to compile suggestion
+     * The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The latestMessage to set.
      * @return This builder for chaining.
@@ -915,15 +1113,13 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The name of the latest conversation message to compile suggestion
+     * The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -937,15 +1133,13 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The name of the latest conversation message to compile suggestion
+     * The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for latestMessage to set.
      * @return This builder for chaining.
@@ -966,12 +1160,12 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Max number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesRequest.latest_message] to use as context
-     * when compiling the suggestion. By default 20 and at most 50.
+     * Max number of messages prior to and including
+     * [latest_message] to use as context when compiling the
+     * suggestion. By default 20 and at most 50.
      * </pre>
      *
-     * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 context_size = 3;</code>
      *
      * @return The contextSize.
      */
@@ -983,12 +1177,12 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Max number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesRequest.latest_message] to use as context
-     * when compiling the suggestion. By default 20 and at most 50.
+     * Max number of messages prior to and including
+     * [latest_message] to use as context when compiling the
+     * suggestion. By default 20 and at most 50.
      * </pre>
      *
-     * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 context_size = 3;</code>
      *
      * @param value The contextSize to set.
      * @return This builder for chaining.
@@ -1003,12 +1197,12 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Max number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesRequest.latest_message] to use as context
-     * when compiling the suggestion. By default 20 and at most 50.
+     * Max number of messages prior to and including
+     * [latest_message] to use as context when compiling the
+     * suggestion. By default 20 and at most 50.
      * </pre>
      *
-     * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 context_size = 3;</code>
      *
      * @return This builder for chaining.
      */
@@ -1017,196 +1211,6 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
       contextSize_ = 0;
       onChanged();
       return this;
-    }
-
-    private com.google.cloud.dialogflow.v2.AssistQueryParameters assistQueryParams_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2.AssistQueryParameters,
-            com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder,
-            com.google.cloud.dialogflow.v2.AssistQueryParametersOrBuilder>
-        assistQueryParamsBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Parameters for a human assist query.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
-     *
-     * @return Whether the assistQueryParams field is set.
-     */
-    public boolean hasAssistQueryParams() {
-      return assistQueryParamsBuilder_ != null || assistQueryParams_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Parameters for a human assist query.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
-     *
-     * @return The assistQueryParams.
-     */
-    public com.google.cloud.dialogflow.v2.AssistQueryParameters getAssistQueryParams() {
-      if (assistQueryParamsBuilder_ == null) {
-        return assistQueryParams_ == null
-            ? com.google.cloud.dialogflow.v2.AssistQueryParameters.getDefaultInstance()
-            : assistQueryParams_;
-      } else {
-        return assistQueryParamsBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Parameters for a human assist query.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
-     */
-    public Builder setAssistQueryParams(
-        com.google.cloud.dialogflow.v2.AssistQueryParameters value) {
-      if (assistQueryParamsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        assistQueryParams_ = value;
-        onChanged();
-      } else {
-        assistQueryParamsBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Parameters for a human assist query.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
-     */
-    public Builder setAssistQueryParams(
-        com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder builderForValue) {
-      if (assistQueryParamsBuilder_ == null) {
-        assistQueryParams_ = builderForValue.build();
-        onChanged();
-      } else {
-        assistQueryParamsBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Parameters for a human assist query.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
-     */
-    public Builder mergeAssistQueryParams(
-        com.google.cloud.dialogflow.v2.AssistQueryParameters value) {
-      if (assistQueryParamsBuilder_ == null) {
-        if (assistQueryParams_ != null) {
-          assistQueryParams_ =
-              com.google.cloud.dialogflow.v2.AssistQueryParameters.newBuilder(assistQueryParams_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          assistQueryParams_ = value;
-        }
-        onChanged();
-      } else {
-        assistQueryParamsBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Parameters for a human assist query.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
-     */
-    public Builder clearAssistQueryParams() {
-      if (assistQueryParamsBuilder_ == null) {
-        assistQueryParams_ = null;
-        onChanged();
-      } else {
-        assistQueryParams_ = null;
-        assistQueryParamsBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Parameters for a human assist query.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
-     */
-    public com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder
-        getAssistQueryParamsBuilder() {
-
-      onChanged();
-      return getAssistQueryParamsFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Parameters for a human assist query.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
-     */
-    public com.google.cloud.dialogflow.v2.AssistQueryParametersOrBuilder
-        getAssistQueryParamsOrBuilder() {
-      if (assistQueryParamsBuilder_ != null) {
-        return assistQueryParamsBuilder_.getMessageOrBuilder();
-      } else {
-        return assistQueryParams_ == null
-            ? com.google.cloud.dialogflow.v2.AssistQueryParameters.getDefaultInstance()
-            : assistQueryParams_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Parameters for a human assist query.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 4;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2.AssistQueryParameters,
-            com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder,
-            com.google.cloud.dialogflow.v2.AssistQueryParametersOrBuilder>
-        getAssistQueryParamsFieldBuilder() {
-      if (assistQueryParamsBuilder_ == null) {
-        assistQueryParamsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.dialogflow.v2.AssistQueryParameters,
-                com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder,
-                com.google.cloud.dialogflow.v2.AssistQueryParametersOrBuilder>(
-                getAssistQueryParams(), getParentForChildren(), isClean());
-        assistQueryParams_ = null;
-      }
-      return assistQueryParamsBuilder_;
     }
 
     @java.lang.Override
@@ -1220,42 +1224,42 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SuggestArticlesRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SuggestSmartRepliesRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.SuggestArticlesRequest)
-  private static final com.google.cloud.dialogflow.v2.SuggestArticlesRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.SuggestSmartRepliesRequest)
+  private static final com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2.SuggestArticlesRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest();
   }
 
-  public static com.google.cloud.dialogflow.v2.SuggestArticlesRequest getDefaultInstance() {
+  public static com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SuggestArticlesRequest> PARSER =
-      new com.google.protobuf.AbstractParser<SuggestArticlesRequest>() {
+  private static final com.google.protobuf.Parser<SuggestSmartRepliesRequest> PARSER =
+      new com.google.protobuf.AbstractParser<SuggestSmartRepliesRequest>() {
         @java.lang.Override
-        public SuggestArticlesRequest parsePartialFrom(
+        public SuggestSmartRepliesRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SuggestArticlesRequest(input, extensionRegistry);
+          return new SuggestSmartRepliesRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<SuggestArticlesRequest> parser() {
+  public static com.google.protobuf.Parser<SuggestSmartRepliesRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SuggestArticlesRequest> getParserForType() {
+  public com.google.protobuf.Parser<SuggestSmartRepliesRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.dialogflow.v2.SuggestArticlesRequest getDefaultInstanceForType() {
+  public com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

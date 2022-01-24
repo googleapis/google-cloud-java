@@ -204,13 +204,15 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The name of the latest conversation message to compile suggestion
+   * Optional. The name of the latest conversation message to compile suggestion
    * for. If empty, it will be the latest message of the conversation.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The latestMessage.
    */
@@ -230,13 +232,15 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The name of the latest conversation message to compile suggestion
+   * Optional. The name of the latest conversation message to compile suggestion
    * for. If empty, it will be the latest message of the conversation.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for latestMessage.
    */
@@ -259,12 +263,12 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Max number of messages prior to and including
+   * Optional. Max number of messages prior to and including
    * [latest_message] to use as context when compiling the
    * suggestion. By default 20 and at most 50.
    * </pre>
    *
-   * <code>int32 context_size = 3;</code>
+   * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The contextSize.
    */
@@ -831,13 +835,15 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name of the latest conversation message to compile suggestion
+     * Optional. The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The latestMessage.
      */
@@ -856,13 +862,15 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name of the latest conversation message to compile suggestion
+     * Optional. The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for latestMessage.
      */
@@ -881,13 +889,15 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name of the latest conversation message to compile suggestion
+     * Optional. The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The latestMessage to set.
      * @return This builder for chaining.
@@ -905,13 +915,15 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name of the latest conversation message to compile suggestion
+     * Optional. The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -925,13 +937,15 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name of the latest conversation message to compile suggestion
+     * Optional. The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for latestMessage to set.
      * @return This builder for chaining.
@@ -952,12 +966,12 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Max number of messages prior to and including
+     * Optional. Max number of messages prior to and including
      * [latest_message] to use as context when compiling the
      * suggestion. By default 20 and at most 50.
      * </pre>
      *
-     * <code>int32 context_size = 3;</code>
+     * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The contextSize.
      */
@@ -969,12 +983,12 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Max number of messages prior to and including
+     * Optional. Max number of messages prior to and including
      * [latest_message] to use as context when compiling the
      * suggestion. By default 20 and at most 50.
      * </pre>
      *
-     * <code>int32 context_size = 3;</code>
+     * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The contextSize to set.
      * @return This builder for chaining.
@@ -989,12 +1003,12 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Max number of messages prior to and including
+     * Optional. Max number of messages prior to and including
      * [latest_message] to use as context when compiling the
      * suggestion. By default 20 and at most 50.
      * </pre>
      *
-     * <code>int32 context_size = 3;</code>
+     * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

@@ -140,6 +140,38 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 66:
+            {
+              com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder subBuilder = null;
+              if (sentimentAnalysis_ != null) {
+                subBuilder = sentimentAnalysis_.toBuilder();
+              }
+              sentimentAnalysis_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.SentimentAnalysisResult.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sentimentAnalysis_);
+                sentimentAnalysis_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 74:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (sendTime_ != null) {
+                subBuilder = sendTime_.toBuilder();
+              }
+              sendTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sendTime_);
+                sendTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -180,12 +212,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The unique identifier of the message.
+   * Optional. The unique identifier of the message.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -205,12 +237,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The unique identifier of the message.
+   * Optional. The unique identifier of the message.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -424,7 +456,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the message was created.
+   * Output only. The time when the message was created in Contact Center AI.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -440,7 +472,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the message was created.
+   * Output only. The time when the message was created in Contact Center AI.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -456,7 +488,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the message was created.
+   * Output only. The time when the message was created in Contact Center AI.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -465,6 +497,55 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
+  }
+
+  public static final int SEND_TIME_FIELD_NUMBER = 9;
+  private com.google.protobuf.Timestamp sendTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time when the message was sent.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sendTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasSendTime() {
+    return sendTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time when the message was sent.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sendTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getSendTime() {
+    return sendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time when the message was sent.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getSendTimeOrBuilder() {
+    return getSendTime();
   }
 
   public static final int MESSAGE_ANNOTATION_FIELD_NUMBER = 7;
@@ -521,6 +602,61 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
     return getMessageAnnotation();
   }
 
+  public static final int SENTIMENT_ANALYSIS_FIELD_NUMBER = 8;
+  private com.google.cloud.dialogflow.v2.SentimentAnalysisResult sentimentAnalysis_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The sentiment analysis result for the message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the sentimentAnalysis field is set.
+   */
+  @java.lang.Override
+  public boolean hasSentimentAnalysis() {
+    return sentimentAnalysis_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The sentiment analysis result for the message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The sentimentAnalysis.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SentimentAnalysisResult getSentimentAnalysis() {
+    return sentimentAnalysis_ == null
+        ? com.google.cloud.dialogflow.v2.SentimentAnalysisResult.getDefaultInstance()
+        : sentimentAnalysis_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The sentiment analysis result for the message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SentimentAnalysisResultOrBuilder
+      getSentimentAnalysisOrBuilder() {
+    return getSentimentAnalysis();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -557,6 +693,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
     if (messageAnnotation_ != null) {
       output.writeMessage(7, getMessageAnnotation());
     }
+    if (sentimentAnalysis_ != null) {
+      output.writeMessage(8, getSentimentAnalysis());
+    }
+    if (sendTime_ != null) {
+      output.writeMessage(9, getSendTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -588,6 +730,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
     if (messageAnnotation_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getMessageAnnotation());
     }
+    if (sentimentAnalysis_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSentimentAnalysis());
+    }
+    if (sendTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSendTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -612,9 +760,17 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (hasSendTime() != other.hasSendTime()) return false;
+    if (hasSendTime()) {
+      if (!getSendTime().equals(other.getSendTime())) return false;
+    }
     if (hasMessageAnnotation() != other.hasMessageAnnotation()) return false;
     if (hasMessageAnnotation()) {
       if (!getMessageAnnotation().equals(other.getMessageAnnotation())) return false;
+    }
+    if (hasSentimentAnalysis() != other.hasSentimentAnalysis()) return false;
+    if (hasSentimentAnalysis()) {
+      if (!getSentimentAnalysis().equals(other.getSentimentAnalysis())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -641,9 +797,17 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
     }
+    if (hasSendTime()) {
+      hash = (37 * hash) + SEND_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getSendTime().hashCode();
+    }
     if (hasMessageAnnotation()) {
       hash = (37 * hash) + MESSAGE_ANNOTATION_FIELD_NUMBER;
       hash = (53 * hash) + getMessageAnnotation().hashCode();
+    }
+    if (hasSentimentAnalysis()) {
+      hash = (37 * hash) + SENTIMENT_ANALYSIS_FIELD_NUMBER;
+      hash = (53 * hash) + getSentimentAnalysis().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -806,11 +970,23 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
         createTimeBuilder_ = null;
       }
+      if (sendTimeBuilder_ == null) {
+        sendTime_ = null;
+      } else {
+        sendTime_ = null;
+        sendTimeBuilder_ = null;
+      }
       if (messageAnnotationBuilder_ == null) {
         messageAnnotation_ = null;
       } else {
         messageAnnotation_ = null;
         messageAnnotationBuilder_ = null;
+      }
+      if (sentimentAnalysisBuilder_ == null) {
+        sentimentAnalysis_ = null;
+      } else {
+        sentimentAnalysis_ = null;
+        sentimentAnalysisBuilder_ = null;
       }
       return this;
     }
@@ -849,10 +1025,20 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.createTime_ = createTimeBuilder_.build();
       }
+      if (sendTimeBuilder_ == null) {
+        result.sendTime_ = sendTime_;
+      } else {
+        result.sendTime_ = sendTimeBuilder_.build();
+      }
       if (messageAnnotationBuilder_ == null) {
         result.messageAnnotation_ = messageAnnotation_;
       } else {
         result.messageAnnotation_ = messageAnnotationBuilder_.build();
+      }
+      if (sentimentAnalysisBuilder_ == null) {
+        result.sentimentAnalysis_ = sentimentAnalysis_;
+      } else {
+        result.sentimentAnalysis_ = sentimentAnalysisBuilder_.build();
       }
       onBuilt();
       return result;
@@ -925,8 +1111,14 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.hasSendTime()) {
+        mergeSendTime(other.getSendTime());
+      }
       if (other.hasMessageAnnotation()) {
         mergeMessageAnnotation(other.getMessageAnnotation());
+      }
+      if (other.hasSentimentAnalysis()) {
+        mergeSentimentAnalysis(other.getSentimentAnalysis());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -962,12 +1154,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of the message.
+     * Optional. The unique identifier of the message.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -986,12 +1178,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of the message.
+     * Optional. The unique identifier of the message.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -1010,12 +1202,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of the message.
+     * Optional. The unique identifier of the message.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1033,12 +1225,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of the message.
+     * Optional. The unique identifier of the message.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1052,12 +1244,12 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of the message.
+     * Optional. The unique identifier of the message.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1512,7 +1704,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the message was created.
+     * Output only. The time when the message was created in Contact Center AI.
      * </pre>
      *
      * <code>
@@ -1528,7 +1720,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the message was created.
+     * Output only. The time when the message was created in Contact Center AI.
      * </pre>
      *
      * <code>
@@ -1550,7 +1742,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the message was created.
+     * Output only. The time when the message was created in Contact Center AI.
      * </pre>
      *
      * <code>
@@ -1574,7 +1766,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the message was created.
+     * Output only. The time when the message was created in Contact Center AI.
      * </pre>
      *
      * <code>
@@ -1595,7 +1787,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the message was created.
+     * Output only. The time when the message was created in Contact Center AI.
      * </pre>
      *
      * <code>
@@ -1621,7 +1813,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the message was created.
+     * Output only. The time when the message was created in Contact Center AI.
      * </pre>
      *
      * <code>
@@ -1643,7 +1835,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the message was created.
+     * Output only. The time when the message was created in Contact Center AI.
      * </pre>
      *
      * <code>
@@ -1659,7 +1851,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the message was created.
+     * Output only. The time when the message was created in Contact Center AI.
      * </pre>
      *
      * <code>
@@ -1679,7 +1871,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the message was created.
+     * Output only. The time when the message was created in Contact Center AI.
      * </pre>
      *
      * <code>
@@ -1701,6 +1893,194 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp sendTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        sendTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the message was sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sendTime field is set.
+     */
+    public boolean hasSendTime() {
+      return sendTimeBuilder_ != null || sendTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the message was sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sendTime.
+     */
+    public com.google.protobuf.Timestamp getSendTime() {
+      if (sendTimeBuilder_ == null) {
+        return sendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
+      } else {
+        return sendTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the message was sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSendTime(com.google.protobuf.Timestamp value) {
+      if (sendTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sendTime_ = value;
+        onChanged();
+      } else {
+        sendTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the message was sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSendTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (sendTimeBuilder_ == null) {
+        sendTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        sendTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the message was sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSendTime(com.google.protobuf.Timestamp value) {
+      if (sendTimeBuilder_ == null) {
+        if (sendTime_ != null) {
+          sendTime_ =
+              com.google.protobuf.Timestamp.newBuilder(sendTime_).mergeFrom(value).buildPartial();
+        } else {
+          sendTime_ = value;
+        }
+        onChanged();
+      } else {
+        sendTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the message was sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSendTime() {
+      if (sendTimeBuilder_ == null) {
+        sendTime_ = null;
+        onChanged();
+      } else {
+        sendTime_ = null;
+        sendTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the message was sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getSendTimeBuilder() {
+
+      onChanged();
+      return getSendTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the message was sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getSendTimeOrBuilder() {
+      if (sendTimeBuilder_ != null) {
+        return sendTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return sendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the message was sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getSendTimeFieldBuilder() {
+      if (sendTimeBuilder_ == null) {
+        sendTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getSendTime(), getParentForChildren(), isClean());
+        sendTime_ = null;
+      }
+      return sendTimeBuilder_;
     }
 
     private com.google.cloud.dialogflow.v2.MessageAnnotation messageAnnotation_;
@@ -1906,6 +2286,214 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
         messageAnnotation_ = null;
       }
       return messageAnnotationBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.v2.SentimentAnalysisResult sentimentAnalysis_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SentimentAnalysisResult,
+            com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder,
+            com.google.cloud.dialogflow.v2.SentimentAnalysisResultOrBuilder>
+        sentimentAnalysisBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The sentiment analysis result for the message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the sentimentAnalysis field is set.
+     */
+    public boolean hasSentimentAnalysis() {
+      return sentimentAnalysisBuilder_ != null || sentimentAnalysis_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The sentiment analysis result for the message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The sentimentAnalysis.
+     */
+    public com.google.cloud.dialogflow.v2.SentimentAnalysisResult getSentimentAnalysis() {
+      if (sentimentAnalysisBuilder_ == null) {
+        return sentimentAnalysis_ == null
+            ? com.google.cloud.dialogflow.v2.SentimentAnalysisResult.getDefaultInstance()
+            : sentimentAnalysis_;
+      } else {
+        return sentimentAnalysisBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The sentiment analysis result for the message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSentimentAnalysis(
+        com.google.cloud.dialogflow.v2.SentimentAnalysisResult value) {
+      if (sentimentAnalysisBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sentimentAnalysis_ = value;
+        onChanged();
+      } else {
+        sentimentAnalysisBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The sentiment analysis result for the message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSentimentAnalysis(
+        com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder builderForValue) {
+      if (sentimentAnalysisBuilder_ == null) {
+        sentimentAnalysis_ = builderForValue.build();
+        onChanged();
+      } else {
+        sentimentAnalysisBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The sentiment analysis result for the message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeSentimentAnalysis(
+        com.google.cloud.dialogflow.v2.SentimentAnalysisResult value) {
+      if (sentimentAnalysisBuilder_ == null) {
+        if (sentimentAnalysis_ != null) {
+          sentimentAnalysis_ =
+              com.google.cloud.dialogflow.v2.SentimentAnalysisResult.newBuilder(sentimentAnalysis_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sentimentAnalysis_ = value;
+        }
+        onChanged();
+      } else {
+        sentimentAnalysisBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The sentiment analysis result for the message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSentimentAnalysis() {
+      if (sentimentAnalysisBuilder_ == null) {
+        sentimentAnalysis_ = null;
+        onChanged();
+      } else {
+        sentimentAnalysis_ = null;
+        sentimentAnalysisBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The sentiment analysis result for the message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder
+        getSentimentAnalysisBuilder() {
+
+      onChanged();
+      return getSentimentAnalysisFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The sentiment analysis result for the message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SentimentAnalysisResultOrBuilder
+        getSentimentAnalysisOrBuilder() {
+      if (sentimentAnalysisBuilder_ != null) {
+        return sentimentAnalysisBuilder_.getMessageOrBuilder();
+      } else {
+        return sentimentAnalysis_ == null
+            ? com.google.cloud.dialogflow.v2.SentimentAnalysisResult.getDefaultInstance()
+            : sentimentAnalysis_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The sentiment analysis result for the message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SentimentAnalysisResult,
+            com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder,
+            com.google.cloud.dialogflow.v2.SentimentAnalysisResultOrBuilder>
+        getSentimentAnalysisFieldBuilder() {
+      if (sentimentAnalysisBuilder_ == null) {
+        sentimentAnalysisBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.SentimentAnalysisResult,
+                com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder,
+                com.google.cloud.dialogflow.v2.SentimentAnalysisResultOrBuilder>(
+                getSentimentAnalysis(), getParentForChildren(), isClean());
+        sentimentAnalysis_ = null;
+      }
+      return sentimentAnalysisBuilder_;
     }
 
     @java.lang.Override

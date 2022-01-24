@@ -28,6 +28,10 @@ public final class GcsProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_GcsSources_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_GcsSources_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2_GcsDestination_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_GcsDestination_fieldAccessorTable;
@@ -41,32 +45,45 @@ public final class GcsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n$google/cloud/dialogflow/v2/gcs.proto\022\032"
-          + "google.cloud.dialogflow.v2\032\037google/api/f"
-          + "ield_behavior.proto\032\034google/api/annotati"
-          + "ons.proto\"\035\n\016GcsDestination\022\013\n\003uri\030\001 \001(\t"
-          + "B\227\001\n\036com.google.cloud.dialogflow.v2B\010Gcs"
-          + "ProtoP\001ZDgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/dialogflow/v2;dialogflow\370\001\001"
-          + "\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006prot"
-          + "o3"
+          + "google.cloud.dialogflow.v2\032\034google/api/a"
+          + "nnotations.proto\032\037google/api/field_behav"
+          + "ior.proto\"\037\n\nGcsSources\022\021\n\004uris\030\002 \003(\tB\003\340"
+          + "A\002\"\035\n\016GcsDestination\022\013\n\003uri\030\001 \001(\tB\227\001\n\036co"
+          + "m.google.cloud.dialogflow.v2B\010GcsProtoP\001"
+          + "ZDgoogle.golang.org/genproto/googleapis/"
+          + "cloud/dialogflow/v2;dialogflow\370\001\001\242\002\002DF\252\002"
+          + "\032Google.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+            });
+    internal_static_google_cloud_dialogflow_v2_GcsSources_descriptor =
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_dialogflow_v2_GcsSources_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_GcsSources_descriptor,
+            new java.lang.String[] {
+              "Uris",
             });
     internal_static_google_cloud_dialogflow_v2_GcsDestination_descriptor =
-        getDescriptor().getMessageTypes().get(0);
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_dialogflow_v2_GcsDestination_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_GcsDestination_descriptor,
             new java.lang.String[] {
               "Uri",
             });
-    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

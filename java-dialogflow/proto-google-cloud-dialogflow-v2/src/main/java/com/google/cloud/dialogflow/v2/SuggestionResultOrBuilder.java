@@ -133,6 +133,48 @@ public interface SuggestionResultOrBuilder
   com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponseOrBuilder
       getSuggestFaqAnswersResponseOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+   * </code>
+   *
+   * @return Whether the suggestSmartRepliesResponse field is set.
+   */
+  boolean hasSuggestSmartRepliesResponse();
+  /**
+   *
+   *
+   * <pre>
+   * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+   * </code>
+   *
+   * @return The suggestSmartRepliesResponse.
+   */
+  com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse getSuggestSmartRepliesResponse();
+  /**
+   *
+   *
+   * <pre>
+   * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponseOrBuilder
+      getSuggestSmartRepliesResponseOrBuilder();
+
   public com.google.cloud.dialogflow.v2.SuggestionResult.SuggestionResponseCase
       getSuggestionResponseCase();
 }

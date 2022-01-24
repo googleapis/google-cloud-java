@@ -148,6 +148,9 @@
             "GetDocument": {
               "methods": ["getDocument", "getDocument", "getDocument", "getDocumentCallable"]
             },
+            "ImportDocuments": {
+              "methods": ["importDocumentsAsync", "importDocumentsOperationCallable", "importDocumentsCallable"]
+            },
             "ListDocuments": {
               "methods": ["listDocuments", "listDocuments", "listDocuments", "listDocumentsPagedCallable", "listDocumentsCallable"]
             },
@@ -318,6 +321,9 @@
             },
             "SuggestFaqAnswers": {
               "methods": ["suggestFaqAnswers", "suggestFaqAnswers", "suggestFaqAnswers", "suggestFaqAnswersCallable"]
+            },
+            "SuggestSmartReplies": {
+              "methods": ["suggestSmartReplies", "suggestSmartReplies", "suggestSmartReplies", "suggestSmartRepliesCallable"]
             },
             "UpdateParticipant": {
               "methods": ["updateParticipant", "updateParticipant", "updateParticipantCallable"]

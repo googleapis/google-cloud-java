@@ -31,6 +31,8 @@ import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest;
+import com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2.UpdateParticipantRequest;
 import javax.annotation.Generated;
 
@@ -76,6 +78,11 @@ public abstract class ParticipantsStub implements BackgroundResource {
   public UnaryCallable<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
       suggestFaqAnswersCallable() {
     throw new UnsupportedOperationException("Not implemented: suggestFaqAnswersCallable()");
+  }
+
+  public UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
+      suggestSmartRepliesCallable() {
+    throw new UnsupportedOperationException("Not implemented: suggestSmartRepliesCallable()");
   }
 
   @Override

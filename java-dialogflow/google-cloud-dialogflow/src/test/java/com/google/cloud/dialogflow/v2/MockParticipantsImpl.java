@@ -205,4 +205,26 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void suggestSmartReplies(
+      SuggestSmartRepliesRequest request,
+      StreamObserver<SuggestSmartRepliesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SuggestSmartRepliesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SuggestSmartRepliesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SuggestSmartReplies, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SuggestSmartRepliesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

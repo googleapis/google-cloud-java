@@ -764,4 +764,94 @@ public class ParticipantsClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void suggestSmartRepliesTest() throws Exception {
+    SuggestSmartRepliesResponse expectedResponse =
+        SuggestSmartRepliesResponse.newBuilder()
+            .addAllSmartReplyAnswers(new ArrayList<SmartReplyAnswer>())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setContextSize(1116903569)
+            .build();
+    mockParticipants.addResponse(expectedResponse);
+
+    ParticipantName parent =
+        ParticipantName.ofProjectConversationParticipantName(
+            "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+
+    SuggestSmartRepliesResponse actualResponse = client.suggestSmartReplies(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockParticipants.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SuggestSmartRepliesRequest actualRequest = ((SuggestSmartRepliesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void suggestSmartRepliesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParticipants.addException(exception);
+
+    try {
+      ParticipantName parent =
+          ParticipantName.ofProjectConversationParticipantName(
+              "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+      client.suggestSmartReplies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void suggestSmartRepliesTest2() throws Exception {
+    SuggestSmartRepliesResponse expectedResponse =
+        SuggestSmartRepliesResponse.newBuilder()
+            .addAllSmartReplyAnswers(new ArrayList<SmartReplyAnswer>())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setContextSize(1116903569)
+            .build();
+    mockParticipants.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    SuggestSmartRepliesResponse actualResponse = client.suggestSmartReplies(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockParticipants.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SuggestSmartRepliesRequest actualRequest = ((SuggestSmartRepliesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void suggestSmartRepliesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParticipants.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.suggestSmartReplies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

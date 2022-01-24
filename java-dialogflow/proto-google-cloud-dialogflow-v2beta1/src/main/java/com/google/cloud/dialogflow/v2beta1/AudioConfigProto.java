@@ -70,11 +70,11 @@ public final class AudioConfigProto {
     java.lang.String[] descriptorData = {
       "\n2google/cloud/dialogflow/v2beta1/audio_"
           + "config.proto\022\037google.cloud.dialogflow.v2"
-          + "beta1\032\037google/api/field_behavior.proto\032\031"
-          + "google/api/resource.proto\032\036google/protob"
-          + "uf/duration.proto\032 google/protobuf/field"
-          + "_mask.proto\032\037google/protobuf/timestamp.p"
-          + "roto\032\034google/api/annotations.proto\"/\n\rSp"
+          + "beta1\032\034google/api/annotations.proto\032\037goo"
+          + "gle/api/field_behavior.proto\032\031google/api"
+          + "/resource.proto\032\036google/protobuf/duratio"
+          + "n.proto\032 google/protobuf/field_mask.prot"
+          + "o\032\037google/protobuf/timestamp.proto\"/\n\rSp"
           + "eechContext\022\017\n\007phrases\030\001 \003(\t\022\r\n\005boost\030\002 "
           + "\001(\002\"\222\001\n\016SpeechWordInfo\022\014\n\004word\030\003 \001(\t\022/\n\014"
           + "start_offset\030\001 \001(\0132\031.google.protobuf.Dur"
@@ -144,12 +144,12 @@ public final class AudioConfigProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_v2beta1_SpeechContext_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -229,12 +229,12 @@ public final class AudioConfigProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -107,6 +107,12 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
     return ((ParticipantsStubSettings) getStubSettings()).suggestFaqAnswersSettings();
   }
 
+  /** Returns the object with the settings used for calls to suggestSmartReplies. */
+  public UnaryCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
+      suggestSmartRepliesSettings() {
+    return ((ParticipantsStubSettings) getStubSettings()).suggestSmartRepliesSettings();
+  }
+
   public static final ParticipantsSettings create(ParticipantsStubSettings stub)
       throws IOException {
     return new ParticipantsSettings.Builder(stub.toBuilder()).build();
@@ -244,6 +250,12 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
     public UnaryCallSettings.Builder<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
         suggestFaqAnswersSettings() {
       return getStubSettingsBuilder().suggestFaqAnswersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to suggestSmartReplies. */
+    public UnaryCallSettings.Builder<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
+        suggestSmartRepliesSettings() {
+      return getStubSettingsBuilder().suggestSmartRepliesSettings();
     }
 
     @Override

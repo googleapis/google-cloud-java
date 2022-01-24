@@ -598,6 +598,116 @@ public class DocumentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates documents by importing data from external sources. Dialogflow supports up to 350
+   * documents in each request. If you try to import more, Dialogflow will return an error.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [ImportDocumentsResponse][google.cloud.dialogflow.v2.ImportDocumentsResponse]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ImportDocumentsRequest request =
+   *       ImportDocumentsRequest.newBuilder()
+   *           .setParent(
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+   *                   .toString())
+   *           .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
+   *           .setImportGcsCustomMetadata(true)
+   *           .build();
+   *   ImportDocumentsResponse response = documentsClient.importDocumentsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportDocumentsResponse, KnowledgeOperationMetadata>
+      importDocumentsAsync(ImportDocumentsRequest request) {
+    return importDocumentsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates documents by importing data from external sources. Dialogflow supports up to 350
+   * documents in each request. If you try to import more, Dialogflow will return an error.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [ImportDocumentsResponse][google.cloud.dialogflow.v2.ImportDocumentsResponse]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ImportDocumentsRequest request =
+   *       ImportDocumentsRequest.newBuilder()
+   *           .setParent(
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+   *                   .toString())
+   *           .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
+   *           .setImportGcsCustomMetadata(true)
+   *           .build();
+   *   OperationFuture<ImportDocumentsResponse, KnowledgeOperationMetadata> future =
+   *       documentsClient.importDocumentsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportDocumentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ImportDocumentsRequest, ImportDocumentsResponse, KnowledgeOperationMetadata>
+      importDocumentsOperationCallable() {
+    return stub.importDocumentsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates documents by importing data from external sources. Dialogflow supports up to 350
+   * documents in each request. If you try to import more, Dialogflow will return an error.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [ImportDocumentsResponse][google.cloud.dialogflow.v2.ImportDocumentsResponse]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ImportDocumentsRequest request =
+   *       ImportDocumentsRequest.newBuilder()
+   *           .setParent(
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+   *                   .toString())
+   *           .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
+   *           .setImportGcsCustomMetadata(true)
+   *           .build();
+   *   ApiFuture<Operation> future = documentsClient.importDocumentsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportDocumentsRequest, Operation> importDocumentsCallable() {
+    return stub.importDocumentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes the specified document.
    *
    * <p>This method is a [long-running

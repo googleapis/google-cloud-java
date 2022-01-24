@@ -361,6 +361,55 @@ public final class ParticipantsGrpc {
     return getSuggestFaqAnswersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest,
+          com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse>
+      getSuggestSmartRepliesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SuggestSmartReplies",
+      requestType = com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest.class,
+      responseType = com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest,
+          com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse>
+      getSuggestSmartRepliesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest,
+            com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse>
+        getSuggestSmartRepliesMethod;
+    if ((getSuggestSmartRepliesMethod = ParticipantsGrpc.getSuggestSmartRepliesMethod) == null) {
+      synchronized (ParticipantsGrpc.class) {
+        if ((getSuggestSmartRepliesMethod = ParticipantsGrpc.getSuggestSmartRepliesMethod)
+            == null) {
+          ParticipantsGrpc.getSuggestSmartRepliesMethod =
+              getSuggestSmartRepliesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest,
+                          com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SuggestSmartReplies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParticipantsMethodDescriptorSupplier("SuggestSmartReplies"))
+                      .build();
+        }
+      }
+    }
+    return getSuggestSmartRepliesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ParticipantsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ParticipantsStub> factory =
@@ -519,6 +568,22 @@ public final class ParticipantsGrpc {
           getSuggestFaqAnswersMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Gets smart replies for a participant based on specific historical
+     * messages.
+     * </pre>
+     */
+    public void suggestSmartReplies(
+        com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSuggestSmartRepliesMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -570,6 +635,13 @@ public final class ParticipantsGrpc {
                       com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest,
                       com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse>(
                       this, METHODID_SUGGEST_FAQ_ANSWERS)))
+          .addMethod(
+              getSuggestSmartRepliesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest,
+                      com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse>(
+                      this, METHODID_SUGGEST_SMART_REPLIES)))
           .build();
     }
   }
@@ -713,6 +785,24 @@ public final class ParticipantsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets smart replies for a participant based on specific historical
+     * messages.
+     * </pre>
+     */
+    public void suggestSmartReplies(
+        com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSuggestSmartRepliesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -829,6 +919,20 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSuggestFaqAnswersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets smart replies for a participant based on specific historical
+     * messages.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggestSmartReplies(
+        com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSuggestSmartRepliesMethod(), getCallOptions(), request);
     }
   }
 
@@ -954,6 +1058,21 @@ public final class ParticipantsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSuggestFaqAnswersMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets smart replies for a participant based on specific historical
+     * messages.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse>
+        suggestSmartReplies(com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSuggestSmartRepliesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_PARTICIPANT = 0;
@@ -963,6 +1082,7 @@ public final class ParticipantsGrpc {
   private static final int METHODID_ANALYZE_CONTENT = 4;
   private static final int METHODID_SUGGEST_ARTICLES = 5;
   private static final int METHODID_SUGGEST_FAQ_ANSWERS = 6;
+  private static final int METHODID_SUGGEST_SMART_REPLIES = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1022,6 +1142,13 @@ public final class ParticipantsGrpc {
               (com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SUGGEST_SMART_REPLIES:
+          serviceImpl.suggestSmartReplies(
+              (com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse>)
                   responseObserver);
           break;
         default:
@@ -1095,6 +1222,7 @@ public final class ParticipantsGrpc {
                       .addMethod(getAnalyzeContentMethod())
                       .addMethod(getSuggestArticlesMethod())
                       .addMethod(getSuggestFaqAnswersMethod())
+                      .addMethod(getSuggestSmartRepliesMethod())
                       .build();
         }
       }

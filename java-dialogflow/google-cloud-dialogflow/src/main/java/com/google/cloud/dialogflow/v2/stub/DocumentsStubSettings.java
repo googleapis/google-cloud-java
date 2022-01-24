@@ -49,6 +49,8 @@ import com.google.cloud.dialogflow.v2.DeleteDocumentRequest;
 import com.google.cloud.dialogflow.v2.Document;
 import com.google.cloud.dialogflow.v2.ExportDocumentRequest;
 import com.google.cloud.dialogflow.v2.GetDocumentRequest;
+import com.google.cloud.dialogflow.v2.ImportDocumentsRequest;
+import com.google.cloud.dialogflow.v2.ImportDocumentsResponse;
 import com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata;
 import com.google.cloud.dialogflow.v2.ListDocumentsRequest;
 import com.google.cloud.dialogflow.v2.ListDocumentsResponse;
@@ -112,6 +114,10 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
   private final UnaryCallSettings<CreateDocumentRequest, Operation> createDocumentSettings;
   private final OperationCallSettings<CreateDocumentRequest, Document, KnowledgeOperationMetadata>
       createDocumentOperationSettings;
+  private final UnaryCallSettings<ImportDocumentsRequest, Operation> importDocumentsSettings;
+  private final OperationCallSettings<
+          ImportDocumentsRequest, ImportDocumentsResponse, KnowledgeOperationMetadata>
+      importDocumentsOperationSettings;
   private final UnaryCallSettings<DeleteDocumentRequest, Operation> deleteDocumentSettings;
   private final OperationCallSettings<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
       deleteDocumentOperationSettings;
@@ -198,6 +204,18 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
   public OperationCallSettings<CreateDocumentRequest, Document, KnowledgeOperationMetadata>
       createDocumentOperationSettings() {
     return createDocumentOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importDocuments. */
+  public UnaryCallSettings<ImportDocumentsRequest, Operation> importDocumentsSettings() {
+    return importDocumentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importDocuments. */
+  public OperationCallSettings<
+          ImportDocumentsRequest, ImportDocumentsResponse, KnowledgeOperationMetadata>
+      importDocumentsOperationSettings() {
+    return importDocumentsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteDocument. */
@@ -323,6 +341,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     getDocumentSettings = settingsBuilder.getDocumentSettings().build();
     createDocumentSettings = settingsBuilder.createDocumentSettings().build();
     createDocumentOperationSettings = settingsBuilder.createDocumentOperationSettings().build();
+    importDocumentsSettings = settingsBuilder.importDocumentsSettings().build();
+    importDocumentsOperationSettings = settingsBuilder.importDocumentsOperationSettings().build();
     deleteDocumentSettings = settingsBuilder.deleteDocumentSettings().build();
     deleteDocumentOperationSettings = settingsBuilder.deleteDocumentOperationSettings().build();
     updateDocumentSettings = settingsBuilder.updateDocumentSettings().build();
@@ -345,6 +365,11 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     private final OperationCallSettings.Builder<
             CreateDocumentRequest, Document, KnowledgeOperationMetadata>
         createDocumentOperationSettings;
+    private final UnaryCallSettings.Builder<ImportDocumentsRequest, Operation>
+        importDocumentsSettings;
+    private final OperationCallSettings.Builder<
+            ImportDocumentsRequest, ImportDocumentsResponse, KnowledgeOperationMetadata>
+        importDocumentsOperationSettings;
     private final UnaryCallSettings.Builder<DeleteDocumentRequest, Operation>
         deleteDocumentSettings;
     private final OperationCallSettings.Builder<
@@ -407,6 +432,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
       getDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDocumentOperationSettings = OperationCallSettings.newBuilder();
+      importDocumentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importDocumentsOperationSettings = OperationCallSettings.newBuilder();
       deleteDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDocumentOperationSettings = OperationCallSettings.newBuilder();
       updateDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -421,6 +448,7 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
               listDocumentsSettings,
               getDocumentSettings,
               createDocumentSettings,
+              importDocumentsSettings,
               deleteDocumentSettings,
               updateDocumentSettings,
               reloadDocumentSettings,
@@ -435,6 +463,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
       getDocumentSettings = settings.getDocumentSettings.toBuilder();
       createDocumentSettings = settings.createDocumentSettings.toBuilder();
       createDocumentOperationSettings = settings.createDocumentOperationSettings.toBuilder();
+      importDocumentsSettings = settings.importDocumentsSettings.toBuilder();
+      importDocumentsOperationSettings = settings.importDocumentsOperationSettings.toBuilder();
       deleteDocumentSettings = settings.deleteDocumentSettings.toBuilder();
       deleteDocumentOperationSettings = settings.deleteDocumentOperationSettings.toBuilder();
       updateDocumentSettings = settings.updateDocumentSettings.toBuilder();
@@ -449,6 +479,7 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
               listDocumentsSettings,
               getDocumentSettings,
               createDocumentSettings,
+              importDocumentsSettings,
               deleteDocumentSettings,
               updateDocumentSettings,
               reloadDocumentSettings,
@@ -485,6 +516,11 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .importDocumentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .deleteDocumentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -514,6 +550,31 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Document.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  KnowledgeOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importDocumentsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ImportDocumentsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ImportDocumentsResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   KnowledgeOperationMetadata.class))
@@ -671,6 +732,20 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
             CreateDocumentRequest, Document, KnowledgeOperationMetadata>
         createDocumentOperationSettings() {
       return createDocumentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importDocuments. */
+    public UnaryCallSettings.Builder<ImportDocumentsRequest, Operation> importDocumentsSettings() {
+      return importDocumentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importDocuments. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportDocumentsRequest, ImportDocumentsResponse, KnowledgeOperationMetadata>
+        importDocumentsOperationSettings() {
+      return importDocumentsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteDocument. */

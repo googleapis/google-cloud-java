@@ -125,6 +125,28 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
               suggestionResponseCase_ = 3;
               break;
             }
+          case 34:
+            {
+              com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.Builder subBuilder = null;
+              if (suggestionResponseCase_ == 4) {
+                subBuilder =
+                    ((com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse)
+                            suggestionResponse_)
+                        .toBuilder();
+              }
+              suggestionResponse_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse)
+                        suggestionResponse_);
+                suggestionResponse_ = subBuilder.buildPartial();
+              }
+              suggestionResponseCase_ = 4;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -169,6 +191,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     ERROR(1),
     SUGGEST_ARTICLES_RESPONSE(2),
     SUGGEST_FAQ_ANSWERS_RESPONSE(3),
+    SUGGEST_SMART_REPLIES_RESPONSE(4),
     SUGGESTIONRESPONSE_NOT_SET(0);
     private final int value;
 
@@ -193,6 +216,8 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
           return SUGGEST_ARTICLES_RESPONSE;
         case 3:
           return SUGGEST_FAQ_ANSWERS_RESPONSE;
+        case 4:
+          return SUGGEST_SMART_REPLIES_RESPONSE;
         case 0:
           return SUGGESTIONRESPONSE_NOT_SET;
         default:
@@ -367,6 +392,65 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse.getDefaultInstance();
   }
 
+  public static final int SUGGEST_SMART_REPLIES_RESPONSE_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+   * </code>
+   *
+   * @return Whether the suggestSmartRepliesResponse field is set.
+   */
+  @java.lang.Override
+  public boolean hasSuggestSmartRepliesResponse() {
+    return suggestionResponseCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+   * </code>
+   *
+   * @return The suggestSmartRepliesResponse.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse
+      getSuggestSmartRepliesResponse() {
+    if (suggestionResponseCase_ == 4) {
+      return (com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse) suggestionResponse_;
+    }
+    return com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponseOrBuilder
+      getSuggestSmartRepliesResponseOrBuilder() {
+    if (suggestionResponseCase_ == 4) {
+      return (com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse) suggestionResponse_;
+    }
+    return com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -392,6 +476,10 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           3, (com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse) suggestionResponse_);
     }
+    if (suggestionResponseCase_ == 4) {
+      output.writeMessage(
+          4, (com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse) suggestionResponse_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -415,6 +503,11 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse) suggestionResponse_);
+    }
+    if (suggestionResponseCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse) suggestionResponse_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -444,6 +537,10 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         if (!getSuggestFaqAnswersResponse().equals(other.getSuggestFaqAnswersResponse()))
           return false;
         break;
+      case 4:
+        if (!getSuggestSmartRepliesResponse().equals(other.getSuggestSmartRepliesResponse()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -470,6 +567,10 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       case 3:
         hash = (37 * hash) + SUGGEST_FAQ_ANSWERS_RESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getSuggestFaqAnswersResponse().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + SUGGEST_SMART_REPLIES_RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getSuggestSmartRepliesResponse().hashCode();
         break;
       case 0:
       default:
@@ -671,6 +772,13 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
           result.suggestionResponse_ = suggestFaqAnswersResponseBuilder_.build();
         }
       }
+      if (suggestionResponseCase_ == 4) {
+        if (suggestSmartRepliesResponseBuilder_ == null) {
+          result.suggestionResponse_ = suggestionResponse_;
+        } else {
+          result.suggestionResponse_ = suggestSmartRepliesResponseBuilder_.build();
+        }
+      }
       result.suggestionResponseCase_ = suggestionResponseCase_;
       onBuilt();
       return result;
@@ -736,6 +844,11 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         case SUGGEST_FAQ_ANSWERS_RESPONSE:
           {
             mergeSuggestFaqAnswersResponse(other.getSuggestFaqAnswersResponse());
+            break;
+          }
+        case SUGGEST_SMART_REPLIES_RESPONSE:
+          {
+            mergeSuggestSmartRepliesResponse(other.getSuggestSmartRepliesResponse());
             break;
           }
         case SUGGESTIONRESPONSE_NOT_SET:
@@ -1434,6 +1547,242 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       ;
       return suggestFaqAnswersResponseBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse,
+            com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.Builder,
+            com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponseOrBuilder>
+        suggestSmartRepliesResponseBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+     * </code>
+     *
+     * @return Whether the suggestSmartRepliesResponse field is set.
+     */
+    @java.lang.Override
+    public boolean hasSuggestSmartRepliesResponse() {
+      return suggestionResponseCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+     * </code>
+     *
+     * @return The suggestSmartRepliesResponse.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse
+        getSuggestSmartRepliesResponse() {
+      if (suggestSmartRepliesResponseBuilder_ == null) {
+        if (suggestionResponseCase_ == 4) {
+          return (com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse) suggestionResponse_;
+        }
+        return com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.getDefaultInstance();
+      } else {
+        if (suggestionResponseCase_ == 4) {
+          return suggestSmartRepliesResponseBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+     * </code>
+     */
+    public Builder setSuggestSmartRepliesResponse(
+        com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse value) {
+      if (suggestSmartRepliesResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        suggestionResponse_ = value;
+        onChanged();
+      } else {
+        suggestSmartRepliesResponseBuilder_.setMessage(value);
+      }
+      suggestionResponseCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+     * </code>
+     */
+    public Builder setSuggestSmartRepliesResponse(
+        com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.Builder builderForValue) {
+      if (suggestSmartRepliesResponseBuilder_ == null) {
+        suggestionResponse_ = builderForValue.build();
+        onChanged();
+      } else {
+        suggestSmartRepliesResponseBuilder_.setMessage(builderForValue.build());
+      }
+      suggestionResponseCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+     * </code>
+     */
+    public Builder mergeSuggestSmartRepliesResponse(
+        com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse value) {
+      if (suggestSmartRepliesResponseBuilder_ == null) {
+        if (suggestionResponseCase_ == 4
+            && suggestionResponse_
+                != com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse
+                    .getDefaultInstance()) {
+          suggestionResponse_ =
+              com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.newBuilder(
+                      (com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse)
+                          suggestionResponse_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          suggestionResponse_ = value;
+        }
+        onChanged();
+      } else {
+        if (suggestionResponseCase_ == 4) {
+          suggestSmartRepliesResponseBuilder_.mergeFrom(value);
+        }
+        suggestSmartRepliesResponseBuilder_.setMessage(value);
+      }
+      suggestionResponseCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+     * </code>
+     */
+    public Builder clearSuggestSmartRepliesResponse() {
+      if (suggestSmartRepliesResponseBuilder_ == null) {
+        if (suggestionResponseCase_ == 4) {
+          suggestionResponseCase_ = 0;
+          suggestionResponse_ = null;
+          onChanged();
+        }
+      } else {
+        if (suggestionResponseCase_ == 4) {
+          suggestionResponseCase_ = 0;
+          suggestionResponse_ = null;
+        }
+        suggestSmartRepliesResponseBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.Builder
+        getSuggestSmartRepliesResponseBuilder() {
+      return getSuggestSmartRepliesResponseFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponseOrBuilder
+        getSuggestSmartRepliesResponseOrBuilder() {
+      if ((suggestionResponseCase_ == 4) && (suggestSmartRepliesResponseBuilder_ != null)) {
+        return suggestSmartRepliesResponseBuilder_.getMessageOrBuilder();
+      } else {
+        if (suggestionResponseCase_ == 4) {
+          return (com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse) suggestionResponse_;
+        }
+        return com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestSmartRepliesResponse if request is for SMART_REPLY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggest_smart_replies_response = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse,
+            com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.Builder,
+            com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponseOrBuilder>
+        getSuggestSmartRepliesResponseFieldBuilder() {
+      if (suggestSmartRepliesResponseBuilder_ == null) {
+        if (!(suggestionResponseCase_ == 4)) {
+          suggestionResponse_ =
+              com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.getDefaultInstance();
+        }
+        suggestSmartRepliesResponseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse,
+                com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.Builder,
+                com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponseOrBuilder>(
+                (com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse) suggestionResponse_,
+                getParentForChildren(),
+                isClean());
+        suggestionResponse_ = null;
+      }
+      suggestionResponseCase_ = 4;
+      onChanged();
+      ;
+      return suggestSmartRepliesResponseBuilder_;
     }
 
     @java.lang.Override

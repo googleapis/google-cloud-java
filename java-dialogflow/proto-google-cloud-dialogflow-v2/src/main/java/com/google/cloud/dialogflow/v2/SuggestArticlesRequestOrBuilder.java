@@ -60,13 +60,15 @@ public interface SuggestArticlesRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the latest conversation message to compile suggestion
+   * Optional. The name of the latest conversation message to compile suggestion
    * for. If empty, it will be the latest message of the conversation.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The latestMessage.
    */
@@ -75,13 +77,15 @@ public interface SuggestArticlesRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the latest conversation message to compile suggestion
+   * Optional. The name of the latest conversation message to compile suggestion
    * for. If empty, it will be the latest message of the conversation.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string latest_message = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string latest_message = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for latestMessage.
    */
@@ -91,12 +95,12 @@ public interface SuggestArticlesRequestOrBuilder
    *
    *
    * <pre>
-   * Max number of messages prior to and including
+   * Optional. Max number of messages prior to and including
    * [latest_message][google.cloud.dialogflow.v2.SuggestArticlesRequest.latest_message] to use as context
    * when compiling the suggestion. By default 20 and at most 50.
    * </pre>
    *
-   * <code>int32 context_size = 3;</code>
+   * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The contextSize.
    */

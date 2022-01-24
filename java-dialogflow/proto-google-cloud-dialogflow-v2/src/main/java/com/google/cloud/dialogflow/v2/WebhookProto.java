@@ -49,13 +49,13 @@ public final class WebhookProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/dialogflow/v2/webhook.pro"
-          + "to\022\032google.cloud.dialogflow.v2\032(google/c"
-          + "loud/dialogflow/v2/context.proto\032\'google"
-          + "/cloud/dialogflow/v2/intent.proto\032(googl"
-          + "e/cloud/dialogflow/v2/session.proto\0324goo"
-          + "gle/cloud/dialogflow/v2/session_entity_t"
-          + "ype.proto\032\034google/protobuf/struct.proto\032"
-          + "\034google/api/annotations.proto\"\326\001\n\016Webhoo"
+          + "to\022\032google.cloud.dialogflow.v2\032\034google/a"
+          + "pi/annotations.proto\032(google/cloud/dialo"
+          + "gflow/v2/context.proto\032\'google/cloud/dia"
+          + "logflow/v2/intent.proto\032(google/cloud/di"
+          + "alogflow/v2/session.proto\0324google/cloud/"
+          + "dialogflow/v2/session_entity_type.proto\032"
+          + "\034google/protobuf/struct.proto\"\326\001\n\016Webhoo"
           + "kRequest\022\017\n\007session\030\004 \001(\t\022\023\n\013response_id"
           + "\030\001 \001(\t\022=\n\014query_result\030\002 \001(\0132\'.google.cl"
           + "oud.dialogflow.v2.QueryResult\022_\n\036origina"
@@ -83,12 +83,12 @@ public final class WebhookProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.dialogflow.v2.ContextProto.getDescriptor(),
               com.google.cloud.dialogflow.v2.IntentProto.getDescriptor(),
               com.google.cloud.dialogflow.v2.SessionProto.getDescriptor(),
               com.google.cloud.dialogflow.v2.SessionEntityTypeProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_v2_WebhookRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -120,12 +120,12 @@ public final class WebhookProto {
             new java.lang.String[] {
               "Source", "Version", "Payload",
             });
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.dialogflow.v2.ContextProto.getDescriptor();
     com.google.cloud.dialogflow.v2.IntentProto.getDescriptor();
     com.google.cloud.dialogflow.v2.SessionProto.getDescriptor();
     com.google.cloud.dialogflow.v2.SessionEntityTypeProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

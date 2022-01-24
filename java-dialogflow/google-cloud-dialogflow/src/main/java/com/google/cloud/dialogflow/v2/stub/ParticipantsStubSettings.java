@@ -51,6 +51,8 @@ import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest;
+import com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2.UpdateParticipantRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -114,6 +116,8 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       suggestArticlesSettings;
   private final UnaryCallSettings<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
       suggestFaqAnswersSettings;
+  private final UnaryCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
+      suggestSmartRepliesSettings;
 
   private static final PagedListDescriptor<
           ListParticipantsRequest, ListParticipantsResponse, Participant>
@@ -213,6 +217,12 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     return suggestFaqAnswersSettings;
   }
 
+  /** Returns the object with the settings used for calls to suggestSmartReplies. */
+  public UnaryCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
+      suggestSmartRepliesSettings() {
+    return suggestSmartRepliesSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ParticipantsStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -296,6 +306,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     analyzeContentSettings = settingsBuilder.analyzeContentSettings().build();
     suggestArticlesSettings = settingsBuilder.suggestArticlesSettings().build();
     suggestFaqAnswersSettings = settingsBuilder.suggestFaqAnswersSettings().build();
+    suggestSmartRepliesSettings = settingsBuilder.suggestSmartRepliesSettings().build();
   }
 
   /** Builder for ParticipantsStubSettings. */
@@ -316,6 +327,8 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
         suggestArticlesSettings;
     private final UnaryCallSettings.Builder<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
         suggestFaqAnswersSettings;
+    private final UnaryCallSettings.Builder<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
+        suggestSmartRepliesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -375,6 +388,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       analyzeContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       suggestArticlesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       suggestFaqAnswersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      suggestSmartRepliesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -384,7 +398,8 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
               updateParticipantSettings,
               analyzeContentSettings,
               suggestArticlesSettings,
-              suggestFaqAnswersSettings);
+              suggestFaqAnswersSettings,
+              suggestSmartRepliesSettings);
       initDefaults(this);
     }
 
@@ -398,6 +413,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       analyzeContentSettings = settings.analyzeContentSettings.toBuilder();
       suggestArticlesSettings = settings.suggestArticlesSettings.toBuilder();
       suggestFaqAnswersSettings = settings.suggestFaqAnswersSettings.toBuilder();
+      suggestSmartRepliesSettings = settings.suggestSmartRepliesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -407,7 +423,8 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
               updateParticipantSettings,
               analyzeContentSettings,
               suggestArticlesSettings,
-              suggestFaqAnswersSettings);
+              suggestFaqAnswersSettings,
+              suggestSmartRepliesSettings);
     }
 
     private static Builder createDefault() {
@@ -456,6 +473,11 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
 
       builder
           .suggestFaqAnswersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .suggestSmartRepliesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -517,6 +539,12 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     public UnaryCallSettings.Builder<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
         suggestFaqAnswersSettings() {
       return suggestFaqAnswersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to suggestSmartReplies. */
+    public UnaryCallSettings.Builder<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
+        suggestSmartRepliesSettings() {
+      return suggestSmartRepliesSettings;
     }
 
     @Override

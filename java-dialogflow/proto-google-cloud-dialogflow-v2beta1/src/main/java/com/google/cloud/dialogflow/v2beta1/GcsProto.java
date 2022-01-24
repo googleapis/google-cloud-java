@@ -45,9 +45,9 @@ public final class GcsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/dialogflow/v2beta1/gcs.pr"
-          + "oto\022\037google.cloud.dialogflow.v2beta1\032\037go"
-          + "ogle/api/field_behavior.proto\032\034google/ap"
-          + "i/annotations.proto\"\037\n\nGcsSources\022\021\n\004uri"
+          + "oto\022\037google.cloud.dialogflow.v2beta1\032\034go"
+          + "ogle/api/annotations.proto\032\037google/api/f"
+          + "ield_behavior.proto\"\037\n\nGcsSources\022\021\n\004uri"
           + "s\030\002 \003(\tB\003\340A\002\"\030\n\tGcsSource\022\013\n\003uri\030\001 \001(\tB\246"
           + "\001\n#com.google.cloud.dialogflow.v2beta1B\010"
           + "GcsProtoP\001ZIgoogle.golang.org/genproto/g"
@@ -59,8 +59,8 @@ public final class GcsProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_v2beta1_GcsSources_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -83,8 +83,8 @@ public final class GcsProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

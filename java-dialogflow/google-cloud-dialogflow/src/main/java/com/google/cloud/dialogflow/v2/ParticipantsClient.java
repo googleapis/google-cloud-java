@@ -1040,6 +1040,126 @@ public class ParticipantsClient implements BackgroundResource {
     return stub.suggestFaqAnswersCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets smart replies for a participant based on specific historical messages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   ParticipantName parent =
+   *       ParticipantName.ofProjectConversationParticipantName(
+   *           "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+   *   SuggestSmartRepliesResponse response = participantsClient.suggestSmartReplies(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the participant to fetch suggestion for. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
+   *     ID&gt;/participants/&lt;Participant ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SuggestSmartRepliesResponse suggestSmartReplies(ParticipantName parent) {
+    SuggestSmartRepliesRequest request =
+        SuggestSmartRepliesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return suggestSmartReplies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets smart replies for a participant based on specific historical messages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   String parent =
+   *       ParticipantName.ofProjectConversationParticipantName(
+   *               "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *           .toString();
+   *   SuggestSmartRepliesResponse response = participantsClient.suggestSmartReplies(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the participant to fetch suggestion for. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
+   *     ID&gt;/participants/&lt;Participant ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SuggestSmartRepliesResponse suggestSmartReplies(String parent) {
+    SuggestSmartRepliesRequest request =
+        SuggestSmartRepliesRequest.newBuilder().setParent(parent).build();
+    return suggestSmartReplies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets smart replies for a participant based on specific historical messages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   SuggestSmartRepliesRequest request =
+   *       SuggestSmartRepliesRequest.newBuilder()
+   *           .setParent(
+   *               ParticipantName.ofProjectConversationParticipantName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *                   .toString())
+   *           .setCurrentTextInput(TextInput.newBuilder().build())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .setContextSize(1116903569)
+   *           .build();
+   *   SuggestSmartRepliesResponse response = participantsClient.suggestSmartReplies(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SuggestSmartRepliesResponse suggestSmartReplies(SuggestSmartRepliesRequest request) {
+    return suggestSmartRepliesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets smart replies for a participant based on specific historical messages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   SuggestSmartRepliesRequest request =
+   *       SuggestSmartRepliesRequest.newBuilder()
+   *           .setParent(
+   *               ParticipantName.ofProjectConversationParticipantName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *                   .toString())
+   *           .setCurrentTextInput(TextInput.newBuilder().build())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .setContextSize(1116903569)
+   *           .build();
+   *   ApiFuture<SuggestSmartRepliesResponse> future =
+   *       participantsClient.suggestSmartRepliesCallable().futureCall(request);
+   *   // Do something.
+   *   SuggestSmartRepliesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
+      suggestSmartRepliesCallable() {
+    return stub.suggestSmartRepliesCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

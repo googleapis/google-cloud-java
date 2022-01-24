@@ -32,6 +32,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -384,6 +385,68 @@ public class DocumentsClientTest {
       String parent = "parent-995424086";
       Document document = Document.newBuilder().build();
       client.createDocumentAsync(parent, document).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void importDocumentsTest() throws Exception {
+    ImportDocumentsResponse expectedResponse =
+        ImportDocumentsResponse.newBuilder().addAllWarnings(new ArrayList<Status>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importDocumentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocuments.addResponse(resultOperation);
+
+    ImportDocumentsRequest request =
+        ImportDocumentsRequest.newBuilder()
+            .setParent(
+                KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+                    .toString())
+            .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
+            .setImportGcsCustomMetadata(true)
+            .build();
+
+    ImportDocumentsResponse actualResponse = client.importDocumentsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocuments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportDocumentsRequest actualRequest = ((ImportDocumentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getGcsSource(), actualRequest.getGcsSource());
+    Assert.assertEquals(request.getDocumentTemplate(), actualRequest.getDocumentTemplate());
+    Assert.assertEquals(
+        request.getImportGcsCustomMetadata(), actualRequest.getImportGcsCustomMetadata());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importDocumentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocuments.addException(exception);
+
+    try {
+      ImportDocumentsRequest request =
+          ImportDocumentsRequest.newBuilder()
+              .setParent(
+                  KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+                      .toString())
+              .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
+              .setImportGcsCustomMetadata(true)
+              .build();
+      client.importDocumentsAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
