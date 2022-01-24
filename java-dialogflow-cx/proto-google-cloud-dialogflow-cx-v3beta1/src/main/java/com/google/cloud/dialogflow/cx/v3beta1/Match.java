@@ -468,8 +468,9 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The event that matched the query. Only filled for
-   * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+   * The event that matched the query. Filled for
+   * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType], [`NO_MATCH`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] and
+   * [`NO_INPUT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match types.
    * </pre>
    *
    * <code>string event = 6;</code>
@@ -492,8 +493,9 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The event that matched the query. Only filled for
-   * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+   * The event that matched the query. Filled for
+   * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType], [`NO_MATCH`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] and
+   * [`NO_INPUT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match types.
    * </pre>
    *
    * <code>string event = 6;</code>
@@ -1344,8 +1346,9 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event that matched the query. Only filled for
-     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The event that matched the query. Filled for
+     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType], [`NO_MATCH`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] and
+     * [`NO_INPUT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match types.
      * </pre>
      *
      * <code>string event = 6;</code>
@@ -1367,8 +1370,9 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event that matched the query. Only filled for
-     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The event that matched the query. Filled for
+     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType], [`NO_MATCH`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] and
+     * [`NO_INPUT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match types.
      * </pre>
      *
      * <code>string event = 6;</code>
@@ -1390,8 +1394,9 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event that matched the query. Only filled for
-     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The event that matched the query. Filled for
+     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType], [`NO_MATCH`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] and
+     * [`NO_INPUT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match types.
      * </pre>
      *
      * <code>string event = 6;</code>
@@ -1412,8 +1417,9 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event that matched the query. Only filled for
-     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The event that matched the query. Filled for
+     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType], [`NO_MATCH`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] and
+     * [`NO_INPUT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match types.
      * </pre>
      *
      * <code>string event = 6;</code>
@@ -1430,8 +1436,9 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event that matched the query. Only filled for
-     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The event that matched the query. Filled for
+     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType], [`NO_MATCH`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] and
+     * [`NO_INPUT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match types.
      * </pre>
      *
      * <code>string event = 6;</code>

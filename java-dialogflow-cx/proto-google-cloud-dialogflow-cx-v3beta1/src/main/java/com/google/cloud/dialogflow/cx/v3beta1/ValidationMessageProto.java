@@ -46,8 +46,8 @@ public final class ValidationMessageProto {
     java.lang.String[] descriptorData = {
       "\n;google/cloud/dialogflow/cx/v3beta1/val"
           + "idation_message.proto\022\"google.cloud.dial"
-          + "ogflow.cx.v3beta1\032\034google/protobuf/struc"
-          + "t.proto\032\034google/api/annotations.proto\"\207\005"
+          + "ogflow.cx.v3beta1\032\034google/api/annotation"
+          + "s.proto\032\034google/protobuf/struct.proto\"\207\005"
           + "\n\021ValidationMessage\022Y\n\rresource_type\030\001 \001"
           + "(\0162B.google.cloud.dialogflow.cx.v3beta1."
           + "ValidationMessage.ResourceType\022\025\n\tresour"
@@ -77,8 +77,8 @@ public final class ValidationMessageProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.protobuf.StructProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ValidationMessage_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -96,8 +96,8 @@ public final class ValidationMessageProto {
             new java.lang.String[] {
               "Name", "DisplayName",
             });
-    com.google.protobuf.StructProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

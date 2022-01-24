@@ -939,7 +939,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
-     * Default false. If set to ture, run once a day.
+     * Default false. If set to true, run once a day.
      * </pre>
      *
      * <code>bool enable_continuous_run = 2;</code>
@@ -1148,7 +1148,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
-     * Default false. If set to ture, run once a day.
+     * Default false. If set to true, run once a day.
      * </pre>
      *
      * <code>bool enable_continuous_run = 2;</code>
@@ -1748,7 +1748,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
-       * Default false. If set to ture, run once a day.
+       * Default false. If set to true, run once a day.
        * </pre>
        *
        * <code>bool enable_continuous_run = 2;</code>
@@ -1764,7 +1764,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
-       * Default false. If set to ture, run once a day.
+       * Default false. If set to true, run once a day.
        * </pre>
        *
        * <code>bool enable_continuous_run = 2;</code>
@@ -1783,7 +1783,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
-       * Default false. If set to ture, run once a day.
+       * Default false. If set to true, run once a day.
        * </pre>
        *
        * <code>bool enable_continuous_run = 2;</code>

@@ -58,11 +58,11 @@ public final class FulfillmentProto {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/dialogflow/cx/v3/fulfillm"
           + "ent.proto\022\035google.cloud.dialogflow.cx.v3"
-          + "\032\031google/api/resource.proto\0325google/clou"
-          + "d/dialogflow/cx/v3/advanced_settings.pro"
-          + "to\0324google/cloud/dialogflow/cx/v3/respon"
-          + "se_message.proto\032\034google/protobuf/struct"
-          + ".proto\032\034google/api/annotations.proto\"\343\006\n"
+          + "\032\034google/api/annotations.proto\032\031google/a"
+          + "pi/resource.proto\0325google/cloud/dialogfl"
+          + "ow/cx/v3/advanced_settings.proto\0324google"
+          + "/cloud/dialogflow/cx/v3/response_message"
+          + ".proto\032\034google/protobuf/struct.proto\"\343\006\n"
           + "\013Fulfillment\022@\n\010messages\030\001 \003(\0132..google."
           + "cloud.dialogflow.cx.v3.ResponseMessage\0227"
           + "\n\007webhook\030\002 \001(\tB&\372A#\n!dialogflow.googlea"
@@ -95,11 +95,11 @@ public final class FulfillmentProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3.ResponseMessageProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -159,11 +159,11 @@ public final class FulfillmentProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3.ResponseMessageProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

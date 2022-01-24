@@ -46,9 +46,9 @@ public final class AdvancedSettingsProto {
     java.lang.String[] descriptorData = {
       "\n5google/cloud/dialogflow/cx/v3/advanced"
           + "_settings.proto\022\035google.cloud.dialogflow"
-          + ".cx.v3\032\037google/api/field_behavior.proto\032"
-          + "\036google/protobuf/duration.proto\032\034google/"
-          + "api/annotations.proto\"\310\001\n\020AdvancedSettin"
+          + ".cx.v3\032\034google/api/annotations.proto\032\037go"
+          + "ogle/api/field_behavior.proto\032\036google/pr"
+          + "otobuf/duration.proto\"\310\001\n\020AdvancedSettin"
           + "gs\022Y\n\020logging_settings\030\006 \001(\0132?.google.cl"
           + "oud.dialogflow.cx.v3.AdvancedSettings.Lo"
           + "ggingSettings\032Y\n\017LoggingSettings\022\"\n\032enab"
@@ -64,9 +64,9 @@ public final class AdvancedSettingsProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_cx_v3_AdvancedSettings_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -86,9 +86,9 @@ public final class AdvancedSettingsProto {
             new java.lang.String[] {
               "EnableStackdriverLogging", "EnableInteractionLogging",
             });
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

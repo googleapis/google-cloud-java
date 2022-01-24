@@ -118,22 +118,22 @@ public final class SessionProto {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/dialogflow/cx/v3beta1/ses"
           + "sion.proto\022\"google.cloud.dialogflow.cx.v"
-          + "3beta1\032\034google/api/annotations.proto\032\037go"
-          + "ogle/api/field_behavior.proto\032\031google/ap"
-          + "i/resource.proto\032:google/cloud/dialogflo"
-          + "w/cx/v3beta1/advanced_settings.proto\0325go"
-          + "ogle/cloud/dialogflow/cx/v3beta1/audio_c"
-          + "onfig.proto\032-google/cloud/dialogflow/cx/"
-          + "v3beta1/flow.proto\032/google/cloud/dialogf"
-          + "low/cx/v3beta1/intent.proto\032-google/clou"
-          + "d/dialogflow/cx/v3beta1/page.proto\0329goog"
-          + "le/cloud/dialogflow/cx/v3beta1/response_"
-          + "message.proto\032<google/cloud/dialogflow/c"
-          + "x/v3beta1/session_entity_type.proto\032\036goo"
-          + "gle/protobuf/duration.proto\032\034google/prot"
-          + "obuf/struct.proto\032\027google/rpc/status.pro"
-          + "to\032\030google/type/latlng.proto\032\027google/api"
-          + "/client.proto\"\272\002\n\023DetectIntentRequest\022:\n"
+          + "3beta1\032\034google/api/annotations.proto\032\027go"
+          + "ogle/api/client.proto\032\037google/api/field_"
+          + "behavior.proto\032\031google/api/resource.prot"
+          + "o\032:google/cloud/dialogflow/cx/v3beta1/ad"
+          + "vanced_settings.proto\0325google/cloud/dial"
+          + "ogflow/cx/v3beta1/audio_config.proto\032-go"
+          + "ogle/cloud/dialogflow/cx/v3beta1/flow.pr"
+          + "oto\032/google/cloud/dialogflow/cx/v3beta1/"
+          + "intent.proto\032-google/cloud/dialogflow/cx"
+          + "/v3beta1/page.proto\0329google/cloud/dialog"
+          + "flow/cx/v3beta1/response_message.proto\032<"
+          + "google/cloud/dialogflow/cx/v3beta1/sessi"
+          + "on_entity_type.proto\032\036google/protobuf/du"
+          + "ration.proto\032\034google/protobuf/struct.pro"
+          + "to\032\027google/rpc/status.proto\032\030google/type"
+          + "/latlng.proto\"\272\002\n\023DetectIntentRequest\022:\n"
           + "\007session\030\001 \001(\tB)\340A\002\372A#\n!dialogflow.googl"
           + "eapis.com/Session\022I\n\014query_params\030\002 \001(\0132"
           + "3.google.cloud.dialogflow.cx.v3beta1.Que"
@@ -316,6 +316,7 @@ public final class SessionProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsProto.getDescriptor(),
@@ -329,7 +330,6 @@ public final class SessionProto {
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
               com.google.type.LatLngProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_DetectIntentRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -547,6 +547,7 @@ public final class SessionProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsProto.getDescriptor();
@@ -560,7 +561,6 @@ public final class SessionProto {
     com.google.protobuf.StructProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

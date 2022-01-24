@@ -118,21 +118,21 @@ public final class SessionProto {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/dialogflow/cx/v3/session."
           + "proto\022\035google.cloud.dialogflow.cx.v3\032\034go"
-          + "ogle/api/annotations.proto\032\037google/api/f"
-          + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\0325google/cloud/dialogflow/cx/v3/ad"
-          + "vanced_settings.proto\0320google/cloud/dial"
-          + "ogflow/cx/v3/audio_config.proto\032(google/"
-          + "cloud/dialogflow/cx/v3/flow.proto\032*googl"
-          + "e/cloud/dialogflow/cx/v3/intent.proto\032(g"
-          + "oogle/cloud/dialogflow/cx/v3/page.proto\032"
-          + "4google/cloud/dialogflow/cx/v3/response_"
-          + "message.proto\0327google/cloud/dialogflow/c"
-          + "x/v3/session_entity_type.proto\032\036google/p"
-          + "rotobuf/duration.proto\032\034google/protobuf/"
-          + "struct.proto\032\027google/rpc/status.proto\032\030g"
-          + "oogle/type/latlng.proto\032\027google/api/clie"
-          + "nt.proto\"\253\002\n\023DetectIntentRequest\022:\n\007sess"
+          + "ogle/api/annotations.proto\032\027google/api/c"
+          + "lient.proto\032\037google/api/field_behavior.p"
+          + "roto\032\031google/api/resource.proto\0325google/"
+          + "cloud/dialogflow/cx/v3/advanced_settings"
+          + ".proto\0320google/cloud/dialogflow/cx/v3/au"
+          + "dio_config.proto\032(google/cloud/dialogflo"
+          + "w/cx/v3/flow.proto\032*google/cloud/dialogf"
+          + "low/cx/v3/intent.proto\032(google/cloud/dia"
+          + "logflow/cx/v3/page.proto\0324google/cloud/d"
+          + "ialogflow/cx/v3/response_message.proto\0327"
+          + "google/cloud/dialogflow/cx/v3/session_en"
+          + "tity_type.proto\032\036google/protobuf/duratio"
+          + "n.proto\032\034google/protobuf/struct.proto\032\027g"
+          + "oogle/rpc/status.proto\032\030google/type/latl"
+          + "ng.proto\"\253\002\n\023DetectIntentRequest\022:\n\007sess"
           + "ion\030\001 \001(\tB)\340A\002\372A#\n!dialogflow.googleapis"
           + ".com/Session\022D\n\014query_params\030\002 \001(\0132..goo"
           + "gle.cloud.dialogflow.cx.v3.QueryParamete"
@@ -307,6 +307,7 @@ public final class SessionProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto.getDescriptor(),
@@ -320,7 +321,6 @@ public final class SessionProto {
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
               com.google.type.LatLngProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_cx_v3_DetectIntentRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -538,6 +538,7 @@ public final class SessionProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto.getDescriptor();
@@ -551,7 +552,6 @@ public final class SessionProto {
     com.google.protobuf.StructProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

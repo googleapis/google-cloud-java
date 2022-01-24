@@ -78,9 +78,9 @@ public final class ResponseMessageProto {
     java.lang.String[] descriptorData = {
       "\n4google/cloud/dialogflow/cx/v3/response"
           + "_message.proto\022\035google.cloud.dialogflow."
-          + "cx.v3\032\037google/api/field_behavior.proto\032\034"
-          + "google/protobuf/struct.proto\032\034google/api"
-          + "/annotations.proto\"\253\013\n\017ResponseMessage\022C"
+          + "cx.v3\032\034google/api/annotations.proto\032\037goo"
+          + "gle/api/field_behavior.proto\032\034google/pro"
+          + "tobuf/struct.proto\"\253\013\n\017ResponseMessage\022C"
           + "\n\004text\030\001 \001(\01323.google.cloud.dialogflow.c"
           + "x.v3.ResponseMessage.TextH\000\022*\n\007payload\030\002"
           + " \001(\0132\027.google.protobuf.StructH\000\022b\n\024conve"
@@ -128,9 +128,9 @@ public final class ResponseMessageProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -242,9 +242,9 @@ public final class ResponseMessageProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

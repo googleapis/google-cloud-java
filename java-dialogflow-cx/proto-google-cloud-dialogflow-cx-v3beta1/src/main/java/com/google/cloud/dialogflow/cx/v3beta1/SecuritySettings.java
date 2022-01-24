@@ -652,7 +652,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Settings for exporting conversations to
-   * [Insights](https://cloud.google.com/dialogflow/priv/docs/insights).
+   * [Insights](https://cloud.google.com/contact-center/insights/docs).
    * </pre>
    *
    * Protobuf type {@code
@@ -932,7 +932,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Settings for exporting conversations to
-     * [Insights](https://cloud.google.com/dialogflow/priv/docs/insights).
+     * [Insights](https://cloud.google.com/contact-center/insights/docs).
      * </pre>
      *
      * Protobuf type {@code
