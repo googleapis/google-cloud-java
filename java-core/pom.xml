@@ -156,7 +156,7 @@
     <google.common-protos.version>2.7.1</google.common-protos.version>
     <google.iam.version>1.2.1</google.iam.version>
     <google.auth.version>1.4.0</google.auth.version>
-    <google.api.version>1.33.0</google.api.version>
+    <google.api.version>1.33.1</google.api.version>
     <google.http.version>1.41.1</google.http.version>
     <graalvm.version>22.0.0</graalvm.version>
     <grpc.version>1.43.2</grpc.version>
