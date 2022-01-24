@@ -32,7 +32,7 @@ public enum ChannelPartnerLinkState implements com.google.protobuf.ProtocolMessa
    *
    *
    * <pre>
-   * The state is not specified.
+   * Not used.
    * </pre>
    *
    * <code>CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED = 0;</code>
@@ -86,7 +86,7 @@ public enum ChannelPartnerLinkState implements com.google.protobuf.ProtocolMessa
    *
    *
    * <pre>
-   * The state is not specified.
+   * Not used.
    * </pre>
    *
    * <code>CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED = 0;</code>

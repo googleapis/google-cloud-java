@@ -288,7 +288,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>PROVISIONING_STATE_UNSPECIFIED = 0;</code>
@@ -321,7 +321,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>PROVISIONING_STATE_UNSPECIFIED = 0;</code>
@@ -448,7 +448,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>SUSPENSION_REASON_UNSPECIFIED = 0;</code>
@@ -512,7 +512,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>SUSPENSION_REASON_UNSPECIFIED = 0;</code>

@@ -53,8 +53,8 @@ public final class ProductsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/channel/v1/products.proto"
-          + "\022\027google.cloud.channel.v1\032\031google/api/re"
-          + "source.proto\032\034google/api/annotations.pro"
+          + "\022\027google.cloud.channel.v1\032\034google/api/an"
+          + "notations.proto\032\031google/api/resource.pro"
           + "to\"\225\001\n\007Product\022\014\n\004name\030\001 \001(\t\022>\n\016marketin"
           + "g_info\030\002 \001(\0132&.google.cloud.channel.v1.M"
           + "arketingInfo:<\352A9\n#cloudchannel.googleap"
@@ -79,8 +79,8 @@ public final class ProductsProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.ResourceProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_channel_v1_Product_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -119,8 +119,8 @@ public final class ProductsProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.ResourceProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

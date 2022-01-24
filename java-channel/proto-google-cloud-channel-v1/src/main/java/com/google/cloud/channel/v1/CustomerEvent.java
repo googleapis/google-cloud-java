@@ -133,7 +133,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>TYPE_UNSPECIFIED = 0;</code>
@@ -166,7 +166,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>TYPE_UNSPECIFIED = 0;</code>

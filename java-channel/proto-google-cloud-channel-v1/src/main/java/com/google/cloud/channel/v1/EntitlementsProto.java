@@ -73,14 +73,14 @@ public final class EntitlementsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/channel/v1/entitlements.p"
-          + "roto\022\027google.cloud.channel.v1\032\037google/ap"
-          + "i/field_behavior.proto\032\031google/api/resou"
-          + "rce.proto\032$google/cloud/channel/v1/commo"
-          + "n.proto\032$google/cloud/channel/v1/offers."
-          + "proto\032&google/cloud/channel/v1/products."
-          + "proto\032\037google/protobuf/timestamp.proto\032\036"
-          + "google/protobuf/wrappers.proto\032\034google/a"
-          + "pi/annotations.proto\"\335\010\n\013Entitlement\022\021\n\004"
+          + "roto\022\027google.cloud.channel.v1\032\034google/ap"
+          + "i/annotations.proto\032\037google/api/field_be"
+          + "havior.proto\032\031google/api/resource.proto\032"
+          + "$google/cloud/channel/v1/common.proto\032$g"
+          + "oogle/cloud/channel/v1/offers.proto\032&goo"
+          + "gle/cloud/channel/v1/products.proto\032\037goo"
+          + "gle/protobuf/timestamp.proto\032\036google/pro"
+          + "tobuf/wrappers.proto\"\335\010\n\013Entitlement\022\021\n\004"
           + "name\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\005 \001(\0132\032.g"
           + "oogle.protobuf.TimestampB\003\340A\003\0224\n\013update_"
           + "time\030\006 \001(\0132\032.google.protobuf.TimestampB\003"
@@ -147,6 +147,7 @@ public final class EntitlementsProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.channel.v1.CommonProto.getDescriptor(),
@@ -154,7 +155,6 @@ public final class EntitlementsProto {
               com.google.cloud.channel.v1.ProductsProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.protobuf.WrappersProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_channel_v1_Entitlement_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -246,6 +246,7 @@ public final class EntitlementsProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.channel.v1.CommonProto.getDescriptor();
@@ -253,7 +254,6 @@ public final class EntitlementsProto {
     com.google.cloud.channel.v1.ProductsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

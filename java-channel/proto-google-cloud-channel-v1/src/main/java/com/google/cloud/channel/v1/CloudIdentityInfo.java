@@ -186,7 +186,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>CUSTOMER_TYPE_UNSPECIFIED = 0;</code>
@@ -219,7 +219,7 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>CUSTOMER_TYPE_UNSPECIFIED = 0;</code>

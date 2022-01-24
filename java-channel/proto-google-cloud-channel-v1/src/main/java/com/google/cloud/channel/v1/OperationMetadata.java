@@ -125,7 +125,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>OPERATION_TYPE_UNSPECIFIED = 0;</code>
@@ -248,7 +248,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>OPERATION_TYPE_UNSPECIFIED = 0;</code>

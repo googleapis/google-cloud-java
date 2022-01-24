@@ -77,13 +77,13 @@ public final class OffersProto {
   static {
     java.lang.String[] descriptorData = {
       "\n$google/cloud/channel/v1/offers.proto\022\027"
-          + "google.cloud.channel.v1\032\037google/api/fiel"
-          + "d_behavior.proto\032\031google/api/resource.pr"
-          + "oto\032$google/cloud/channel/v1/common.prot"
-          + "o\032&google/cloud/channel/v1/products.prot"
-          + "o\032\037google/protobuf/timestamp.proto\032\027goog"
-          + "le/type/money.proto\032\034google/api/annotati"
-          + "ons.proto\"\251\004\n\005Offer\022\014\n\004name\030\001 \001(\t\022>\n\016mar"
+          + "google.cloud.channel.v1\032\034google/api/anno"
+          + "tations.proto\032\037google/api/field_behavior"
+          + ".proto\032\031google/api/resource.proto\032$googl"
+          + "e/cloud/channel/v1/common.proto\032&google/"
+          + "cloud/channel/v1/products.proto\032\037google/"
+          + "protobuf/timestamp.proto\032\027google/type/mo"
+          + "ney.proto\"\251\004\n\005Offer\022\014\n\004name\030\001 \001(\t\022>\n\016mar"
           + "keting_info\030\002 \001(\0132&.google.cloud.channel"
           + ".v1.MarketingInfo\022)\n\003sku\030\003 \001(\0132\034.google."
           + "cloud.channel.v1.Sku\022+\n\004plan\030\004 \001(\0132\035.goo"
@@ -161,13 +161,13 @@ public final class OffersProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.channel.v1.CommonProto.getDescriptor(),
               com.google.cloud.channel.v1.ProductsProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.MoneyProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_channel_v1_Offer_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -263,13 +263,13 @@ public final class OffersProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.channel.v1.CommonProto.getDescriptor();
     com.google.cloud.channel.v1.ProductsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.MoneyProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

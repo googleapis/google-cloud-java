@@ -133,7 +133,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>TYPE_UNSPECIFIED = 0;</code>
@@ -269,7 +269,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>TYPE_UNSPECIFIED = 0;</code>

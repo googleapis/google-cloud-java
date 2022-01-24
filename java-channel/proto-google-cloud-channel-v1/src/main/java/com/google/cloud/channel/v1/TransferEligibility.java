@@ -138,7 +138,7 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Reason is not available.
+     * Not used.
      * </pre>
      *
      * <code>REASON_UNSPECIFIED = 0;</code>
@@ -181,7 +181,7 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Reason is not available.
+     * Not used.
      * </pre>
      *
      * <code>REASON_UNSPECIFIED = 0;</code>

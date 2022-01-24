@@ -53,9 +53,9 @@ public final class CommonProto {
   static {
     java.lang.String[] descriptorData = {
       "\n$google/cloud/channel/v1/common.proto\022\027"
-          + "google.cloud.channel.v1\032\037google/api/fiel"
-          + "d_behavior.proto\032\031google/protobuf/any.pr"
-          + "oto\032\034google/api/annotations.proto\"\260\003\n\007Ed"
+          + "google.cloud.channel.v1\032\034google/api/anno"
+          + "tations.proto\032\037google/api/field_behavior"
+          + ".proto\032\031google/protobuf/any.proto\"\260\003\n\007Ed"
           + "uData\022F\n\016institute_type\030\001 \001(\0162..google.c"
           + "loud.channel.v1.EduData.InstituteType\022F\n"
           + "\016institute_size\030\002 \001(\0162..google.cloud.cha"
@@ -90,9 +90,9 @@ public final class CommonProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.AnyProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_channel_v1_EduData_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -138,9 +138,9 @@ public final class CommonProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

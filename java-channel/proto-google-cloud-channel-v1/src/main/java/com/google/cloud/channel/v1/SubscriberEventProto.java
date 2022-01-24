@@ -49,9 +49,9 @@ public final class SubscriberEventProto {
   static {
     java.lang.String[] descriptorData = {
       "\n.google/cloud/channel/v1/subscriber_eve"
-          + "nt.proto\022\027google.cloud.channel.v1\032\031googl"
-          + "e/api/resource.proto\032\034google/api/annotat"
-          + "ions.proto\"\344\001\n\rCustomerEvent\022;\n\010customer"
+          + "nt.proto\022\027google.cloud.channel.v1\032\034googl"
+          + "e/api/annotations.proto\032\031google/api/reso"
+          + "urce.proto\"\344\001\n\rCustomerEvent\022;\n\010customer"
           + "\030\001 \001(\tB)\372A&\n$cloudchannel.googleapis.com"
           + "/Customer\022?\n\nevent_type\030\002 \001(\0162+.google.c"
           + "loud.channel.v1.CustomerEvent.Type\"U\n\004Ty"
@@ -81,8 +81,8 @@ public final class SubscriberEventProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.ResourceProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_channel_v1_CustomerEvent_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -113,8 +113,8 @@ public final class SubscriberEventProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.ResourceProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

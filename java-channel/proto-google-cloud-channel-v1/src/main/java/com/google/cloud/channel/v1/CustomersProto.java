@@ -45,12 +45,12 @@ public final class CustomersProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/cloud/channel/v1/customers.prot"
-          + "o\022\027google.cloud.channel.v1\032\037google/api/f"
-          + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\032$google/cloud/channel/v1/common.p"
-          + "roto\032\037google/protobuf/timestamp.proto\032 g"
-          + "oogle/type/postal_address.proto\032\034google/"
-          + "api/annotations.proto\"\321\004\n\010Customer\022\021\n\004na"
+          + "o\022\027google.cloud.channel.v1\032\034google/api/a"
+          + "nnotations.proto\032\037google/api/field_behav"
+          + "ior.proto\032\031google/api/resource.proto\032$go"
+          + "ogle/cloud/channel/v1/common.proto\032\037goog"
+          + "le/protobuf/timestamp.proto\032 google/type"
+          + "/postal_address.proto\"\321\004\n\010Customer\022\021\n\004na"
           + "me\030\001 \001(\tB\003\340A\003\022\035\n\020org_display_name\030\002 \001(\tB"
           + "\003\340A\002\022;\n\022org_postal_address\030\003 \001(\0132\032.googl"
           + "e.type.PostalAddressB\003\340A\002\022B\n\024primary_con"
@@ -77,12 +77,12 @@ public final class CustomersProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.channel.v1.CommonProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.PostalAddressProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_channel_v1_Customer_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -117,12 +117,12 @@ public final class CustomersProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.channel.v1.CommonProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.PostalAddressProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -41,11 +41,11 @@ public final class ChannelPartnerLinksProto {
   static {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/channel/v1/channel_partne"
-          + "r_links.proto\022\027google.cloud.channel.v1\032\037"
-          + "google/api/field_behavior.proto\032\031google/"
-          + "api/resource.proto\032$google/cloud/channel"
-          + "/v1/common.proto\032\037google/protobuf/timest"
-          + "amp.proto\032\034google/api/annotations.proto\""
+          + "r_links.proto\022\027google.cloud.channel.v1\032\034"
+          + "google/api/annotations.proto\032\037google/api"
+          + "/field_behavior.proto\032\031google/api/resour"
+          + "ce.proto\032$google/cloud/channel/v1/common"
+          + ".proto\032\037google/protobuf/timestamp.proto\""
           + "\217\004\n\022ChannelPartnerLink\022\021\n\004name\030\001 \001(\tB\003\340A"
           + "\003\022\'\n\032reseller_cloud_identity_id\030\002 \001(\tB\003\340"
           + "A\002\022I\n\nlink_state\030\003 \001(\01620.google.cloud.ch"
@@ -73,11 +73,11 @@ public final class ChannelPartnerLinksProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.channel.v1.CommonProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_channel_v1_ChannelPartnerLink_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -100,11 +100,11 @@ public final class ChannelPartnerLinksProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.channel.v1.CommonProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -141,7 +141,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value.  This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>INSTITUTE_TYPE_UNSPECIFIED = 0;</code>
@@ -174,7 +174,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value.  This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>INSTITUTE_TYPE_UNSPECIFIED = 0;</code>
@@ -298,7 +298,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>INSTITUTE_SIZE_UNSPECIFIED = 0;</code>
@@ -381,7 +381,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value. This state doesn't show unless an error occurs.
+     * Not used.
      * </pre>
      *
      * <code>INSTITUTE_SIZE_UNSPECIFIED = 0;</code>
