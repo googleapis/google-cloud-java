@@ -29,7 +29,7 @@ jobs:
           architecture: 'x64'
       - run: python3 -m pip install requests
       - run: python3 generate-readme.py
-      - uses: googleapis/code-suggester@v1 # takes the changes from git directory
+      - uses: googleapis/code-suggester@v1
         env:
           ACCESS_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
         with:
