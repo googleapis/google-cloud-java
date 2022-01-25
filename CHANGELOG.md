@@ -1,5 +1,26 @@
 # Changelog
 
+### [2.8.2](https://github.com/googleapis/java-bigquerystorage/compare/v2.8.1...v2.8.2) (2022-01-25)
+
+
+### Bug Fixes
+
+* **java:** add reflection configuration for native-image testing ([#1488](https://github.com/googleapis/java-bigquerystorage/issues/1488)) ([d87fe28](https://github.com/googleapis/java-bigquerystorage/commit/d87fe282800b4ef4a9c5ecf918278a84eb20ce5d))
+
+
+### Documentation
+
+* **samples:** add finalize call to our samples ([#1471](https://github.com/googleapis/java-bigquerystorage/issues/1471)) ([47e3654](https://github.com/googleapis/java-bigquerystorage/commit/47e36543480bf495f4caea63419bb3b31ac7638c))
+* **samples:** update to v1 in doc URls ([#1489](https://github.com/googleapis/java-bigquerystorage/issues/1489)) ([7efe427](https://github.com/googleapis/java-bigquerystorage/commit/7efe4273d9afebac6f67ed46763d5896b4b1bbcd))
+
+
+### Dependencies
+
+* exclude un-used runtime dependencies brought in by gax-grpc ([#1490](https://github.com/googleapis/java-bigquerystorage/issues/1490)) ([3e7833e](https://github.com/googleapis/java-bigquerystorage/commit/3e7833ea33ceac5f3e7cb9696a6e7ef6e914469b))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.6.1 ([#1473](https://github.com/googleapis/java-bigquerystorage/issues/1473)) ([f996cdb](https://github.com/googleapis/java-bigquerystorage/commit/f996cdbbc6cc9ad7c6a649ebb649ae005054f36e))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.6.2 ([#1475](https://github.com/googleapis/java-bigquerystorage/issues/1475)) ([37c1fd8](https://github.com/googleapis/java-bigquerystorage/commit/37c1fd887acfc5676ebb55e085b6e3514b6e5ca4))
+* update dependency kr.motd.maven:os-maven-plugin to v1.7.0 ([#1476](https://github.com/googleapis/java-bigquerystorage/issues/1476)) ([e038151](https://github.com/googleapis/java-bigquerystorage/commit/e038151442c4fd86e94ab7f3d02989c73a23ee91))
+
 ### [2.8.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.8.0...v2.8.1) (2022-01-07)
 
 
