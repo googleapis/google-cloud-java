@@ -18,6 +18,7 @@ package beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingAnnotation;
 import com.google.cloud.videointelligence.v1p2beta1.TextAnnotation;
 import com.google.cloud.videointelligence.v1p2beta1.VideoAnnotationResults;
@@ -29,6 +30,7 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -56,6 +58,8 @@ public class DetectIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
+
+  @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   @Before
   public void setUp() {
