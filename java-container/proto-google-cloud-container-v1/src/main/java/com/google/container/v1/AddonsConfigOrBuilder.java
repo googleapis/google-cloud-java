@@ -306,4 +306,85 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
    */
   com.google.container.v1.ConfigConnectorConfigOrBuilder getConfigConnectorConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Compute Engine Persistent Disk CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+   * </code>
+   *
+   * @return Whether the gcePersistentDiskCsiDriverConfig field is set.
+   */
+  boolean hasGcePersistentDiskCsiDriverConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Compute Engine Persistent Disk CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+   * </code>
+   *
+   * @return The gcePersistentDiskCsiDriverConfig.
+   */
+  com.google.container.v1.GcePersistentDiskCsiDriverConfig getGcePersistentDiskCsiDriverConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Compute Engine Persistent Disk CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+   * </code>
+   */
+  com.google.container.v1.GcePersistentDiskCsiDriverConfigOrBuilder
+      getGcePersistentDiskCsiDriverConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the GCP Filestore CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+   * </code>
+   *
+   * @return Whether the gcpFilestoreCsiDriverConfig field is set.
+   */
+  boolean hasGcpFilestoreCsiDriverConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the GCP Filestore CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+   * </code>
+   *
+   * @return The gcpFilestoreCsiDriverConfig.
+   */
+  com.google.container.v1.GcpFilestoreCsiDriverConfig getGcpFilestoreCsiDriverConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the GCP Filestore CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+   * </code>
+   */
+  com.google.container.v1.GcpFilestoreCsiDriverConfigOrBuilder
+      getGcpFilestoreCsiDriverConfigOrBuilder();
 }

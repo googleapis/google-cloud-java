@@ -98,6 +98,25 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 26:
+            {
+              com.google.container.v1.MaintenanceExclusionOptions.Builder subBuilder = null;
+              if (optionsCase_ == 3) {
+                subBuilder =
+                    ((com.google.container.v1.MaintenanceExclusionOptions) options_).toBuilder();
+              }
+              options_ =
+                  input.readMessage(
+                      com.google.container.v1.MaintenanceExclusionOptions.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.container.v1.MaintenanceExclusionOptions) options_);
+                options_ = subBuilder.buildPartial();
+              }
+              optionsCase_ = 3;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -130,6 +149,108 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.container.v1.TimeWindow.class,
             com.google.container.v1.TimeWindow.Builder.class);
+  }
+
+  private int optionsCase_ = 0;
+  private java.lang.Object options_;
+
+  public enum OptionsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    MAINTENANCE_EXCLUSION_OPTIONS(3),
+    OPTIONS_NOT_SET(0);
+    private final int value;
+
+    private OptionsCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OptionsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static OptionsCase forNumber(int value) {
+      switch (value) {
+        case 3:
+          return MAINTENANCE_EXCLUSION_OPTIONS;
+        case 0:
+          return OPTIONS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public OptionsCase getOptionsCase() {
+    return OptionsCase.forNumber(optionsCase_);
+  }
+
+  public static final int MAINTENANCE_EXCLUSION_OPTIONS_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * MaintenanceExclusionOptions provides maintenance exclusion related
+   * options.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+   * </code>
+   *
+   * @return Whether the maintenanceExclusionOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceExclusionOptions() {
+    return optionsCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * MaintenanceExclusionOptions provides maintenance exclusion related
+   * options.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+   * </code>
+   *
+   * @return The maintenanceExclusionOptions.
+   */
+  @java.lang.Override
+  public com.google.container.v1.MaintenanceExclusionOptions getMaintenanceExclusionOptions() {
+    if (optionsCase_ == 3) {
+      return (com.google.container.v1.MaintenanceExclusionOptions) options_;
+    }
+    return com.google.container.v1.MaintenanceExclusionOptions.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * MaintenanceExclusionOptions provides maintenance exclusion related
+   * options.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.MaintenanceExclusionOptionsOrBuilder
+      getMaintenanceExclusionOptionsOrBuilder() {
+    if (optionsCase_ == 3) {
+      return (com.google.container.v1.MaintenanceExclusionOptions) options_;
+    }
+    return com.google.container.v1.MaintenanceExclusionOptions.getDefaultInstance();
   }
 
   public static final int START_TIME_FIELD_NUMBER = 1;
@@ -247,6 +368,9 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     if (endTime_ != null) {
       output.writeMessage(2, getEndTime());
     }
+    if (optionsCase_ == 3) {
+      output.writeMessage(3, (com.google.container.v1.MaintenanceExclusionOptions) options_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -261,6 +385,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     }
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
+    }
+    if (optionsCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.container.v1.MaintenanceExclusionOptions) options_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -285,6 +414,15 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
+    if (!getOptionsCase().equals(other.getOptionsCase())) return false;
+    switch (optionsCase_) {
+      case 3:
+        if (!getMaintenanceExclusionOptions().equals(other.getMaintenanceExclusionOptions()))
+          return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -303,6 +441,14 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     if (hasEndTime()) {
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
+    }
+    switch (optionsCase_) {
+      case 3:
+        hash = (37 * hash) + MAINTENANCE_EXCLUSION_OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getMaintenanceExclusionOptions().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -460,6 +606,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
         endTime_ = null;
         endTimeBuilder_ = null;
       }
+      optionsCase_ = 0;
+      options_ = null;
       return this;
     }
 
@@ -486,6 +634,13 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.container.v1.TimeWindow buildPartial() {
       com.google.container.v1.TimeWindow result = new com.google.container.v1.TimeWindow(this);
+      if (optionsCase_ == 3) {
+        if (maintenanceExclusionOptionsBuilder_ == null) {
+          result.options_ = options_;
+        } else {
+          result.options_ = maintenanceExclusionOptionsBuilder_.build();
+        }
+      }
       if (startTimeBuilder_ == null) {
         result.startTime_ = startTime_;
       } else {
@@ -496,6 +651,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.endTime_ = endTimeBuilder_.build();
       }
+      result.optionsCase_ = optionsCase_;
       onBuilt();
       return result;
     }
@@ -551,6 +707,17 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
       }
+      switch (other.getOptionsCase()) {
+        case MAINTENANCE_EXCLUSION_OPTIONS:
+          {
+            mergeMaintenanceExclusionOptions(other.getMaintenanceExclusionOptions());
+            break;
+          }
+        case OPTIONS_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -578,6 +745,252 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
         }
       }
       return this;
+    }
+
+    private int optionsCase_ = 0;
+    private java.lang.Object options_;
+
+    public OptionsCase getOptionsCase() {
+      return OptionsCase.forNumber(optionsCase_);
+    }
+
+    public Builder clearOptions() {
+      optionsCase_ = 0;
+      options_ = null;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.MaintenanceExclusionOptions,
+            com.google.container.v1.MaintenanceExclusionOptions.Builder,
+            com.google.container.v1.MaintenanceExclusionOptionsOrBuilder>
+        maintenanceExclusionOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * MaintenanceExclusionOptions provides maintenance exclusion related
+     * options.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+     * </code>
+     *
+     * @return Whether the maintenanceExclusionOptions field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaintenanceExclusionOptions() {
+      return optionsCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MaintenanceExclusionOptions provides maintenance exclusion related
+     * options.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+     * </code>
+     *
+     * @return The maintenanceExclusionOptions.
+     */
+    @java.lang.Override
+    public com.google.container.v1.MaintenanceExclusionOptions getMaintenanceExclusionOptions() {
+      if (maintenanceExclusionOptionsBuilder_ == null) {
+        if (optionsCase_ == 3) {
+          return (com.google.container.v1.MaintenanceExclusionOptions) options_;
+        }
+        return com.google.container.v1.MaintenanceExclusionOptions.getDefaultInstance();
+      } else {
+        if (optionsCase_ == 3) {
+          return maintenanceExclusionOptionsBuilder_.getMessage();
+        }
+        return com.google.container.v1.MaintenanceExclusionOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MaintenanceExclusionOptions provides maintenance exclusion related
+     * options.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+     * </code>
+     */
+    public Builder setMaintenanceExclusionOptions(
+        com.google.container.v1.MaintenanceExclusionOptions value) {
+      if (maintenanceExclusionOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        options_ = value;
+        onChanged();
+      } else {
+        maintenanceExclusionOptionsBuilder_.setMessage(value);
+      }
+      optionsCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MaintenanceExclusionOptions provides maintenance exclusion related
+     * options.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+     * </code>
+     */
+    public Builder setMaintenanceExclusionOptions(
+        com.google.container.v1.MaintenanceExclusionOptions.Builder builderForValue) {
+      if (maintenanceExclusionOptionsBuilder_ == null) {
+        options_ = builderForValue.build();
+        onChanged();
+      } else {
+        maintenanceExclusionOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      optionsCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MaintenanceExclusionOptions provides maintenance exclusion related
+     * options.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+     * </code>
+     */
+    public Builder mergeMaintenanceExclusionOptions(
+        com.google.container.v1.MaintenanceExclusionOptions value) {
+      if (maintenanceExclusionOptionsBuilder_ == null) {
+        if (optionsCase_ == 3
+            && options_
+                != com.google.container.v1.MaintenanceExclusionOptions.getDefaultInstance()) {
+          options_ =
+              com.google.container.v1.MaintenanceExclusionOptions.newBuilder(
+                      (com.google.container.v1.MaintenanceExclusionOptions) options_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          options_ = value;
+        }
+        onChanged();
+      } else {
+        if (optionsCase_ == 3) {
+          maintenanceExclusionOptionsBuilder_.mergeFrom(value);
+        }
+        maintenanceExclusionOptionsBuilder_.setMessage(value);
+      }
+      optionsCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MaintenanceExclusionOptions provides maintenance exclusion related
+     * options.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+     * </code>
+     */
+    public Builder clearMaintenanceExclusionOptions() {
+      if (maintenanceExclusionOptionsBuilder_ == null) {
+        if (optionsCase_ == 3) {
+          optionsCase_ = 0;
+          options_ = null;
+          onChanged();
+        }
+      } else {
+        if (optionsCase_ == 3) {
+          optionsCase_ = 0;
+          options_ = null;
+        }
+        maintenanceExclusionOptionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MaintenanceExclusionOptions provides maintenance exclusion related
+     * options.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+     * </code>
+     */
+    public com.google.container.v1.MaintenanceExclusionOptions.Builder
+        getMaintenanceExclusionOptionsBuilder() {
+      return getMaintenanceExclusionOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MaintenanceExclusionOptions provides maintenance exclusion related
+     * options.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.container.v1.MaintenanceExclusionOptionsOrBuilder
+        getMaintenanceExclusionOptionsOrBuilder() {
+      if ((optionsCase_ == 3) && (maintenanceExclusionOptionsBuilder_ != null)) {
+        return maintenanceExclusionOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        if (optionsCase_ == 3) {
+          return (com.google.container.v1.MaintenanceExclusionOptions) options_;
+        }
+        return com.google.container.v1.MaintenanceExclusionOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MaintenanceExclusionOptions provides maintenance exclusion related
+     * options.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.MaintenanceExclusionOptions,
+            com.google.container.v1.MaintenanceExclusionOptions.Builder,
+            com.google.container.v1.MaintenanceExclusionOptionsOrBuilder>
+        getMaintenanceExclusionOptionsFieldBuilder() {
+      if (maintenanceExclusionOptionsBuilder_ == null) {
+        if (!(optionsCase_ == 3)) {
+          options_ = com.google.container.v1.MaintenanceExclusionOptions.getDefaultInstance();
+        }
+        maintenanceExclusionOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.MaintenanceExclusionOptions,
+                com.google.container.v1.MaintenanceExclusionOptions.Builder,
+                com.google.container.v1.MaintenanceExclusionOptionsOrBuilder>(
+                (com.google.container.v1.MaintenanceExclusionOptions) options_,
+                getParentForChildren(),
+                isClean());
+        options_ = null;
+      }
+      optionsCase_ = 3;
+      onChanged();
+      ;
+      return maintenanceExclusionOptionsBuilder_;
     }
 
     private com.google.protobuf.Timestamp startTime_;

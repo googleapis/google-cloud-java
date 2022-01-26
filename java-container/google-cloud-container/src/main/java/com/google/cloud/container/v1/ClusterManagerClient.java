@@ -697,6 +697,10 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .addAllLocations(new ArrayList<String>())
    *           .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
    *           .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+   *           .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
+   *           .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+   *           .setGcfsConfig(GcfsConfig.newBuilder().build())
+   *           .setGvnic(VirtualNIC.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
    * }
@@ -729,6 +733,10 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .addAllLocations(new ArrayList<String>())
    *           .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
    *           .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+   *           .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
+   *           .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+   *           .setGcfsConfig(GcfsConfig.newBuilder().build())
+   *           .setGvnic(VirtualNIC.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.updateNodePoolCallable().futureCall(request);
@@ -3146,7 +3154,9 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the size for a specific node pool.
+   * Sets the size for a specific node pool. The new size will be used for all replicas, including
+   * future replicas created by modifying
+   * [NodePool.locations][google.container.v1.NodePool.locations].
    *
    * <p>Sample code:
    *
@@ -3174,7 +3184,9 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the size for a specific node pool.
+   * Sets the size for a specific node pool. The new size will be used for all replicas, including
+   * future replicas created by modifying
+   * [NodePool.locations][google.container.v1.NodePool.locations].
    *
    * <p>Sample code:
    *

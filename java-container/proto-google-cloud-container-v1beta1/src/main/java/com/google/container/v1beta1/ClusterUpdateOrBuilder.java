@@ -986,6 +986,41 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired GCFS config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+   *
+   * @return Whether the desiredGcfsConfig field is set.
+   */
+  boolean hasDesiredGcfsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired GCFS config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+   *
+   * @return The desiredGcfsConfig.
+   */
+  com.google.container.v1beta1.GcfsConfig getDesiredGcfsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired GCFS config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+   */
+  com.google.container.v1beta1.GcfsConfigOrBuilder getDesiredGcfsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration of etcd encryption.
    * </pre>
    *
@@ -1094,6 +1129,44 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.WorkloadCertificatesOrBuilder
       getDesiredWorkloadCertificatesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+   *
+   * @return Whether the desiredMeshCertificates field is set.
+   */
+  boolean hasDesiredMeshCertificates();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+   *
+   * @return The desiredMeshCertificates.
+   */
+  com.google.container.v1beta1.MeshCertificates getDesiredMeshCertificates();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+   */
+  com.google.container.v1beta1.MeshCertificatesOrBuilder getDesiredMeshCertificatesOrBuilder();
 
   /**
    *

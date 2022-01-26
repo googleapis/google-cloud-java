@@ -251,6 +251,22 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
 
               break;
             }
+          case 178:
+            {
+              com.google.container.v1beta1.GcfsConfig.Builder subBuilder = null;
+              if (gcfsConfig_ != null) {
+                subBuilder = gcfsConfig_.toBuilder();
+              }
+              gcfsConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.GcfsConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gcfsConfig_);
+                gcfsConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 234:
             {
               com.google.container.v1beta1.VirtualNIC.Builder subBuilder = null;
@@ -1122,6 +1138,54 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     return getKubeletConfig();
   }
 
+  public static final int GCFS_CONFIG_FIELD_NUMBER = 22;
+  private com.google.container.v1beta1.GcfsConfig gcfsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * GCFS config.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+   *
+   * @return Whether the gcfsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcfsConfig() {
+    return gcfsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GCFS config.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+   *
+   * @return The gcfsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GcfsConfig getGcfsConfig() {
+    return gcfsConfig_ == null
+        ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
+        : gcfsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GCFS config.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GcfsConfigOrBuilder getGcfsConfigOrBuilder() {
+    return getGcfsConfig();
+  }
+
   public static final int GVNIC_FIELD_NUMBER = 29;
   private com.google.container.v1beta1.VirtualNIC gvnic_;
   /**
@@ -1227,6 +1291,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (kubeletConfig_ != null) {
       output.writeMessage(20, getKubeletConfig());
     }
+    if (gcfsConfig_ != null) {
+      output.writeMessage(22, getGcfsConfig());
+    }
     if (gvnic_ != null) {
       output.writeMessage(29, getGvnic());
     }
@@ -1290,6 +1357,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (kubeletConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getKubeletConfig());
     }
+    if (gcfsConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getGcfsConfig());
+    }
     if (gvnic_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getGvnic());
     }
@@ -1344,6 +1414,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasKubeletConfig() != other.hasKubeletConfig()) return false;
     if (hasKubeletConfig()) {
       if (!getKubeletConfig().equals(other.getKubeletConfig())) return false;
+    }
+    if (hasGcfsConfig() != other.hasGcfsConfig()) return false;
+    if (hasGcfsConfig()) {
+      if (!getGcfsConfig().equals(other.getGcfsConfig())) return false;
     }
     if (hasGvnic() != other.hasGvnic()) return false;
     if (hasGvnic()) {
@@ -1405,6 +1479,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasKubeletConfig()) {
       hash = (37 * hash) + KUBELET_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getKubeletConfig().hashCode();
+    }
+    if (hasGcfsConfig()) {
+      hash = (37 * hash) + GCFS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGcfsConfig().hashCode();
     }
     if (hasGvnic()) {
       hash = (37 * hash) + GVNIC_FIELD_NUMBER;
@@ -1613,6 +1691,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         kubeletConfig_ = null;
         kubeletConfigBuilder_ = null;
       }
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfig_ = null;
+      } else {
+        gcfsConfig_ = null;
+        gcfsConfigBuilder_ = null;
+      }
       if (gvnicBuilder_ == null) {
         gvnic_ = null;
       } else {
@@ -1693,6 +1777,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         result.kubeletConfig_ = kubeletConfig_;
       } else {
         result.kubeletConfig_ = kubeletConfigBuilder_.build();
+      }
+      if (gcfsConfigBuilder_ == null) {
+        result.gcfsConfig_ = gcfsConfig_;
+      } else {
+        result.gcfsConfig_ = gcfsConfigBuilder_.build();
       }
       if (gvnicBuilder_ == null) {
         result.gvnic_ = gvnic_;
@@ -1807,6 +1896,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasKubeletConfig()) {
         mergeKubeletConfig(other.getKubeletConfig());
+      }
+      if (other.hasGcfsConfig()) {
+        mergeGcfsConfig(other.getGcfsConfig());
       }
       if (other.hasGvnic()) {
         mergeGvnic(other.getGvnic());
@@ -4268,6 +4360,191 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         kubeletConfig_ = null;
       }
       return kubeletConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.GcfsConfig gcfsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GcfsConfig,
+            com.google.container.v1beta1.GcfsConfig.Builder,
+            com.google.container.v1beta1.GcfsConfigOrBuilder>
+        gcfsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+     *
+     * @return Whether the gcfsConfig field is set.
+     */
+    public boolean hasGcfsConfig() {
+      return gcfsConfigBuilder_ != null || gcfsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+     *
+     * @return The gcfsConfig.
+     */
+    public com.google.container.v1beta1.GcfsConfig getGcfsConfig() {
+      if (gcfsConfigBuilder_ == null) {
+        return gcfsConfig_ == null
+            ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
+            : gcfsConfig_;
+      } else {
+        return gcfsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+     */
+    public Builder setGcfsConfig(com.google.container.v1beta1.GcfsConfig value) {
+      if (gcfsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcfsConfig_ = value;
+        onChanged();
+      } else {
+        gcfsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+     */
+    public Builder setGcfsConfig(com.google.container.v1beta1.GcfsConfig.Builder builderForValue) {
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcfsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+     */
+    public Builder mergeGcfsConfig(com.google.container.v1beta1.GcfsConfig value) {
+      if (gcfsConfigBuilder_ == null) {
+        if (gcfsConfig_ != null) {
+          gcfsConfig_ =
+              com.google.container.v1beta1.GcfsConfig.newBuilder(gcfsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gcfsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gcfsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+     */
+    public Builder clearGcfsConfig() {
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfig_ = null;
+        onChanged();
+      } else {
+        gcfsConfig_ = null;
+        gcfsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+     */
+    public com.google.container.v1beta1.GcfsConfig.Builder getGcfsConfigBuilder() {
+
+      onChanged();
+      return getGcfsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+     */
+    public com.google.container.v1beta1.GcfsConfigOrBuilder getGcfsConfigOrBuilder() {
+      if (gcfsConfigBuilder_ != null) {
+        return gcfsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gcfsConfig_ == null
+            ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
+            : gcfsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GcfsConfig,
+            com.google.container.v1beta1.GcfsConfig.Builder,
+            com.google.container.v1beta1.GcfsConfigOrBuilder>
+        getGcfsConfigFieldBuilder() {
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.GcfsConfig,
+                com.google.container.v1beta1.GcfsConfig.Builder,
+                com.google.container.v1beta1.GcfsConfigOrBuilder>(
+                getGcfsConfig(), getParentForChildren(), isClean());
+        gcfsConfig_ = null;
+      }
+      return gcfsConfigBuilder_;
     }
 
     private com.google.container.v1beta1.VirtualNIC gvnic_;

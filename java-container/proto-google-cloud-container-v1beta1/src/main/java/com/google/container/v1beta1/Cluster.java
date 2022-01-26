@@ -654,6 +654,22 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 538:
+            {
+              com.google.container.v1beta1.MeshCertificates.Builder subBuilder = null;
+              if (meshCertificates_ != null) {
+                subBuilder = meshCertificates_.toBuilder();
+              }
+              meshCertificates_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.MeshCertificates.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(meshCertificates_);
+                meshCertificates_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 802:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -3134,6 +3150,57 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return getWorkloadCertificates();
   }
 
+  public static final int MESH_CERTIFICATES_FIELD_NUMBER = 67;
+  private com.google.container.v1beta1.MeshCertificates meshCertificates_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+   *
+   * @return Whether the meshCertificates field is set.
+   */
+  @java.lang.Override
+  public boolean hasMeshCertificates() {
+    return meshCertificates_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+   *
+   * @return The meshCertificates.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.MeshCertificates getMeshCertificates() {
+    return meshCertificates_ == null
+        ? com.google.container.v1beta1.MeshCertificates.getDefaultInstance()
+        : meshCertificates_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.MeshCertificatesOrBuilder getMeshCertificatesOrBuilder() {
+    return getMeshCertificates();
+  }
+
   public static final int CLUSTER_TELEMETRY_FIELD_NUMBER = 46;
   private com.google.container.v1beta1.ClusterTelemetry clusterTelemetry_;
   /**
@@ -4746,6 +4813,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (identityServiceConfig_ != null) {
       output.writeMessage(54, getIdentityServiceConfig());
     }
+    if (meshCertificates_ != null) {
+      output.writeMessage(67, getMeshCertificates());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selfLink_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, selfLink_);
     }
@@ -4981,6 +5051,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(54, getIdentityServiceConfig());
     }
+    if (meshCertificates_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(67, getMeshCertificates());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selfLink_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, selfLink_);
     }
@@ -5176,6 +5249,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasWorkloadCertificates()) {
       if (!getWorkloadCertificates().equals(other.getWorkloadCertificates())) return false;
     }
+    if (hasMeshCertificates() != other.hasMeshCertificates()) return false;
+    if (hasMeshCertificates()) {
+      if (!getMeshCertificates().equals(other.getMeshCertificates())) return false;
+    }
     if (hasClusterTelemetry() != other.hasClusterTelemetry()) return false;
     if (hasClusterTelemetry()) {
       if (!getClusterTelemetry().equals(other.getClusterTelemetry())) return false;
@@ -5369,6 +5446,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasWorkloadCertificates()) {
       hash = (37 * hash) + WORKLOAD_CERTIFICATES_FIELD_NUMBER;
       hash = (53 * hash) + getWorkloadCertificates().hashCode();
+    }
+    if (hasMeshCertificates()) {
+      hash = (37 * hash) + MESH_CERTIFICATES_FIELD_NUMBER;
+      hash = (53 * hash) + getMeshCertificates().hashCode();
     }
     if (hasClusterTelemetry()) {
       hash = (37 * hash) + CLUSTER_TELEMETRY_FIELD_NUMBER;
@@ -5783,6 +5864,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         workloadCertificates_ = null;
         workloadCertificatesBuilder_ = null;
       }
+      if (meshCertificatesBuilder_ == null) {
+        meshCertificates_ = null;
+      } else {
+        meshCertificates_ = null;
+        meshCertificatesBuilder_ = null;
+      }
       if (clusterTelemetryBuilder_ == null) {
         clusterTelemetry_ = null;
       } else {
@@ -6051,6 +6138,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         result.workloadCertificates_ = workloadCertificates_;
       } else {
         result.workloadCertificates_ = workloadCertificatesBuilder_.build();
+      }
+      if (meshCertificatesBuilder_ == null) {
+        result.meshCertificates_ = meshCertificates_;
+      } else {
+        result.meshCertificates_ = meshCertificatesBuilder_.build();
       }
       if (clusterTelemetryBuilder_ == null) {
         result.clusterTelemetry_ = clusterTelemetry_;
@@ -6336,6 +6428,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasWorkloadCertificates()) {
         mergeWorkloadCertificates(other.getWorkloadCertificates());
+      }
+      if (other.hasMeshCertificates()) {
+        mergeMeshCertificates(other.getMeshCertificates());
       }
       if (other.hasClusterTelemetry()) {
         mergeClusterTelemetry(other.getClusterTelemetry());
@@ -12805,6 +12900,201 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         workloadCertificates_ = null;
       }
       return workloadCertificatesBuilder_;
+    }
+
+    private com.google.container.v1beta1.MeshCertificates meshCertificates_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.MeshCertificates,
+            com.google.container.v1beta1.MeshCertificates.Builder,
+            com.google.container.v1beta1.MeshCertificatesOrBuilder>
+        meshCertificatesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+     *
+     * @return Whether the meshCertificates field is set.
+     */
+    public boolean hasMeshCertificates() {
+      return meshCertificatesBuilder_ != null || meshCertificates_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+     *
+     * @return The meshCertificates.
+     */
+    public com.google.container.v1beta1.MeshCertificates getMeshCertificates() {
+      if (meshCertificatesBuilder_ == null) {
+        return meshCertificates_ == null
+            ? com.google.container.v1beta1.MeshCertificates.getDefaultInstance()
+            : meshCertificates_;
+      } else {
+        return meshCertificatesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    public Builder setMeshCertificates(com.google.container.v1beta1.MeshCertificates value) {
+      if (meshCertificatesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        meshCertificates_ = value;
+        onChanged();
+      } else {
+        meshCertificatesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    public Builder setMeshCertificates(
+        com.google.container.v1beta1.MeshCertificates.Builder builderForValue) {
+      if (meshCertificatesBuilder_ == null) {
+        meshCertificates_ = builderForValue.build();
+        onChanged();
+      } else {
+        meshCertificatesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    public Builder mergeMeshCertificates(com.google.container.v1beta1.MeshCertificates value) {
+      if (meshCertificatesBuilder_ == null) {
+        if (meshCertificates_ != null) {
+          meshCertificates_ =
+              com.google.container.v1beta1.MeshCertificates.newBuilder(meshCertificates_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          meshCertificates_ = value;
+        }
+        onChanged();
+      } else {
+        meshCertificatesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    public Builder clearMeshCertificates() {
+      if (meshCertificatesBuilder_ == null) {
+        meshCertificates_ = null;
+        onChanged();
+      } else {
+        meshCertificates_ = null;
+        meshCertificatesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    public com.google.container.v1beta1.MeshCertificates.Builder getMeshCertificatesBuilder() {
+
+      onChanged();
+      return getMeshCertificatesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    public com.google.container.v1beta1.MeshCertificatesOrBuilder getMeshCertificatesOrBuilder() {
+      if (meshCertificatesBuilder_ != null) {
+        return meshCertificatesBuilder_.getMessageOrBuilder();
+      } else {
+        return meshCertificates_ == null
+            ? com.google.container.v1beta1.MeshCertificates.getDefaultInstance()
+            : meshCertificates_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.MeshCertificates,
+            com.google.container.v1beta1.MeshCertificates.Builder,
+            com.google.container.v1beta1.MeshCertificatesOrBuilder>
+        getMeshCertificatesFieldBuilder() {
+      if (meshCertificatesBuilder_ == null) {
+        meshCertificatesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.MeshCertificates,
+                com.google.container.v1beta1.MeshCertificates.Builder,
+                com.google.container.v1beta1.MeshCertificatesOrBuilder>(
+                getMeshCertificates(), getParentForChildren(), isClean());
+        meshCertificates_ = null;
+      }
+      return meshCertificatesBuilder_;
     }
 
     private com.google.container.v1beta1.ClusterTelemetry clusterTelemetry_;

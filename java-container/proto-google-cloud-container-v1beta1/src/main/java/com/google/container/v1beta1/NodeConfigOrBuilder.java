@@ -1110,6 +1110,77 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   * GCFS (Google Container File System) configs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+   *
+   * @return Whether the gcfsConfig field is set.
+   */
+  boolean hasGcfsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * GCFS (Google Container File System) configs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+   *
+   * @return The gcfsConfig.
+   */
+  com.google.container.v1beta1.GcfsConfig getGcfsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * GCFS (Google Container File System) configs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+   */
+  com.google.container.v1beta1.GcfsConfigOrBuilder getGcfsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Advanced features for the Compute Engine VM.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;</code>
+   *
+   * @return Whether the advancedMachineFeatures field is set.
+   */
+  boolean hasAdvancedMachineFeatures();
+  /**
+   *
+   *
+   * <pre>
+   * Advanced features for the Compute Engine VM.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;</code>
+   *
+   * @return The advancedMachineFeatures.
+   */
+  com.google.container.v1beta1.AdvancedMachineFeatures getAdvancedMachineFeatures();
+  /**
+   *
+   *
+   * <pre>
+   * Advanced features for the Compute Engine VM.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;</code>
+   */
+  com.google.container.v1beta1.AdvancedMachineFeaturesOrBuilder
+      getAdvancedMachineFeaturesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Enable or disable gvnic on the node pool.
    * </pre>
    *
@@ -1140,4 +1211,18 @@ public interface NodeConfigOrBuilder
    * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
    */
   com.google.container.v1beta1.VirtualNICOrBuilder getGvnicOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spot flag for enabling Spot VM, which is a rebrand of
+   * the existing preemptible flag.
+   * </pre>
+   *
+   * <code>bool spot = 32;</code>
+   *
+   * @return The spot.
+   */
+  boolean getSpot();
 }

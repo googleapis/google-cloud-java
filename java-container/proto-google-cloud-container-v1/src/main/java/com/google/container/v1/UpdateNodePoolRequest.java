@@ -169,6 +169,68 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
 
               break;
             }
+          case 154:
+            {
+              com.google.container.v1.LinuxNodeConfig.Builder subBuilder = null;
+              if (linuxNodeConfig_ != null) {
+                subBuilder = linuxNodeConfig_.toBuilder();
+              }
+              linuxNodeConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.LinuxNodeConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(linuxNodeConfig_);
+                linuxNodeConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 162:
+            {
+              com.google.container.v1.NodeKubeletConfig.Builder subBuilder = null;
+              if (kubeletConfig_ != null) {
+                subBuilder = kubeletConfig_.toBuilder();
+              }
+              kubeletConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.NodeKubeletConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(kubeletConfig_);
+                kubeletConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 178:
+            {
+              com.google.container.v1.GcfsConfig.Builder subBuilder = null;
+              if (gcfsConfig_ != null) {
+                subBuilder = gcfsConfig_.toBuilder();
+              }
+              gcfsConfig_ =
+                  input.readMessage(com.google.container.v1.GcfsConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gcfsConfig_);
+                gcfsConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 234:
+            {
+              com.google.container.v1.VirtualNIC.Builder subBuilder = null;
+              if (gvnic_ != null) {
+                subBuilder = gvnic_.toBuilder();
+              }
+              gvnic_ =
+                  input.readMessage(com.google.container.v1.VirtualNIC.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gvnic_);
+                gvnic_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -765,6 +827,196 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     return getUpgradeSettings();
   }
 
+  public static final int LINUX_NODE_CONFIG_FIELD_NUMBER = 19;
+  private com.google.container.v1.LinuxNodeConfig linuxNodeConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Linux nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+   *
+   * @return Whether the linuxNodeConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasLinuxNodeConfig() {
+    return linuxNodeConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Linux nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+   *
+   * @return The linuxNodeConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfig getLinuxNodeConfig() {
+    return linuxNodeConfig_ == null
+        ? com.google.container.v1.LinuxNodeConfig.getDefaultInstance()
+        : linuxNodeConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Linux nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfigOrBuilder getLinuxNodeConfigOrBuilder() {
+    return getLinuxNodeConfig();
+  }
+
+  public static final int KUBELET_CONFIG_FIELD_NUMBER = 20;
+  private com.google.container.v1.NodeKubeletConfig kubeletConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Node kubelet configs.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+   *
+   * @return Whether the kubeletConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasKubeletConfig() {
+    return kubeletConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Node kubelet configs.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+   *
+   * @return The kubeletConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeKubeletConfig getKubeletConfig() {
+    return kubeletConfig_ == null
+        ? com.google.container.v1.NodeKubeletConfig.getDefaultInstance()
+        : kubeletConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Node kubelet configs.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeKubeletConfigOrBuilder getKubeletConfigOrBuilder() {
+    return getKubeletConfig();
+  }
+
+  public static final int GCFS_CONFIG_FIELD_NUMBER = 22;
+  private com.google.container.v1.GcfsConfig gcfsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * GCFS config.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+   *
+   * @return Whether the gcfsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcfsConfig() {
+    return gcfsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GCFS config.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+   *
+   * @return The gcfsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.GcfsConfig getGcfsConfig() {
+    return gcfsConfig_ == null
+        ? com.google.container.v1.GcfsConfig.getDefaultInstance()
+        : gcfsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GCFS config.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.GcfsConfigOrBuilder getGcfsConfigOrBuilder() {
+    return getGcfsConfig();
+  }
+
+  public static final int GVNIC_FIELD_NUMBER = 29;
+  private com.google.container.v1.VirtualNIC gvnic_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+   *
+   * @return Whether the gvnic field is set.
+   */
+  @java.lang.Override
+  public boolean hasGvnic() {
+    return gvnic_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+   *
+   * @return The gvnic.
+   */
+  @java.lang.Override
+  public com.google.container.v1.VirtualNIC getGvnic() {
+    return gvnic_ == null ? com.google.container.v1.VirtualNIC.getDefaultInstance() : gvnic_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.VirtualNICOrBuilder getGvnicOrBuilder() {
+    return getGvnic();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -808,6 +1060,18 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (upgradeSettings_ != null) {
       output.writeMessage(15, getUpgradeSettings());
+    }
+    if (linuxNodeConfig_ != null) {
+      output.writeMessage(19, getLinuxNodeConfig());
+    }
+    if (kubeletConfig_ != null) {
+      output.writeMessage(20, getKubeletConfig());
+    }
+    if (gcfsConfig_ != null) {
+      output.writeMessage(22, getGcfsConfig());
+    }
+    if (gvnic_ != null) {
+      output.writeMessage(29, getGvnic());
     }
     unknownFields.writeTo(output);
   }
@@ -854,6 +1118,18 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (upgradeSettings_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getUpgradeSettings());
     }
+    if (linuxNodeConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getLinuxNodeConfig());
+    }
+    if (kubeletConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getKubeletConfig());
+    }
+    if (gcfsConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getGcfsConfig());
+    }
+    if (gvnic_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getGvnic());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -885,6 +1161,22 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasUpgradeSettings() != other.hasUpgradeSettings()) return false;
     if (hasUpgradeSettings()) {
       if (!getUpgradeSettings().equals(other.getUpgradeSettings())) return false;
+    }
+    if (hasLinuxNodeConfig() != other.hasLinuxNodeConfig()) return false;
+    if (hasLinuxNodeConfig()) {
+      if (!getLinuxNodeConfig().equals(other.getLinuxNodeConfig())) return false;
+    }
+    if (hasKubeletConfig() != other.hasKubeletConfig()) return false;
+    if (hasKubeletConfig()) {
+      if (!getKubeletConfig().equals(other.getKubeletConfig())) return false;
+    }
+    if (hasGcfsConfig() != other.hasGcfsConfig()) return false;
+    if (hasGcfsConfig()) {
+      if (!getGcfsConfig().equals(other.getGcfsConfig())) return false;
+    }
+    if (hasGvnic() != other.hasGvnic()) return false;
+    if (hasGvnic()) {
+      if (!getGvnic().equals(other.getGvnic())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -922,6 +1214,22 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasUpgradeSettings()) {
       hash = (37 * hash) + UPGRADE_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getUpgradeSettings().hashCode();
+    }
+    if (hasLinuxNodeConfig()) {
+      hash = (37 * hash) + LINUX_NODE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getLinuxNodeConfig().hashCode();
+    }
+    if (hasKubeletConfig()) {
+      hash = (37 * hash) + KUBELET_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getKubeletConfig().hashCode();
+    }
+    if (hasGcfsConfig()) {
+      hash = (37 * hash) + GCFS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGcfsConfig().hashCode();
+    }
+    if (hasGvnic()) {
+      hash = (37 * hash) + GVNIC_FIELD_NUMBER;
+      hash = (53 * hash) + getGvnic().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1096,6 +1404,30 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         upgradeSettings_ = null;
         upgradeSettingsBuilder_ = null;
       }
+      if (linuxNodeConfigBuilder_ == null) {
+        linuxNodeConfig_ = null;
+      } else {
+        linuxNodeConfig_ = null;
+        linuxNodeConfigBuilder_ = null;
+      }
+      if (kubeletConfigBuilder_ == null) {
+        kubeletConfig_ = null;
+      } else {
+        kubeletConfig_ = null;
+        kubeletConfigBuilder_ = null;
+      }
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfig_ = null;
+      } else {
+        gcfsConfig_ = null;
+        gcfsConfigBuilder_ = null;
+      }
+      if (gvnicBuilder_ == null) {
+        gvnic_ = null;
+      } else {
+        gvnic_ = null;
+        gvnicBuilder_ = null;
+      }
       return this;
     }
 
@@ -1145,6 +1477,26 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         result.upgradeSettings_ = upgradeSettings_;
       } else {
         result.upgradeSettings_ = upgradeSettingsBuilder_.build();
+      }
+      if (linuxNodeConfigBuilder_ == null) {
+        result.linuxNodeConfig_ = linuxNodeConfig_;
+      } else {
+        result.linuxNodeConfig_ = linuxNodeConfigBuilder_.build();
+      }
+      if (kubeletConfigBuilder_ == null) {
+        result.kubeletConfig_ = kubeletConfig_;
+      } else {
+        result.kubeletConfig_ = kubeletConfigBuilder_.build();
+      }
+      if (gcfsConfigBuilder_ == null) {
+        result.gcfsConfig_ = gcfsConfig_;
+      } else {
+        result.gcfsConfig_ = gcfsConfigBuilder_.build();
+      }
+      if (gvnicBuilder_ == null) {
+        result.gvnic_ = gvnic_;
+      } else {
+        result.gvnic_ = gvnicBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1238,6 +1590,18 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasUpgradeSettings()) {
         mergeUpgradeSettings(other.getUpgradeSettings());
+      }
+      if (other.hasLinuxNodeConfig()) {
+        mergeLinuxNodeConfig(other.getLinuxNodeConfig());
+      }
+      if (other.hasKubeletConfig()) {
+        mergeKubeletConfig(other.getKubeletConfig());
+      }
+      if (other.hasGcfsConfig()) {
+        mergeGcfsConfig(other.getGcfsConfig());
+      }
+      if (other.hasGvnic()) {
+        mergeGvnic(other.getGvnic());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2694,6 +3058,742 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         upgradeSettings_ = null;
       }
       return upgradeSettingsBuilder_;
+    }
+
+    private com.google.container.v1.LinuxNodeConfig linuxNodeConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LinuxNodeConfig,
+            com.google.container.v1.LinuxNodeConfig.Builder,
+            com.google.container.v1.LinuxNodeConfigOrBuilder>
+        linuxNodeConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Linux nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+     *
+     * @return Whether the linuxNodeConfig field is set.
+     */
+    public boolean hasLinuxNodeConfig() {
+      return linuxNodeConfigBuilder_ != null || linuxNodeConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Linux nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+     *
+     * @return The linuxNodeConfig.
+     */
+    public com.google.container.v1.LinuxNodeConfig getLinuxNodeConfig() {
+      if (linuxNodeConfigBuilder_ == null) {
+        return linuxNodeConfig_ == null
+            ? com.google.container.v1.LinuxNodeConfig.getDefaultInstance()
+            : linuxNodeConfig_;
+      } else {
+        return linuxNodeConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Linux nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+     */
+    public Builder setLinuxNodeConfig(com.google.container.v1.LinuxNodeConfig value) {
+      if (linuxNodeConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        linuxNodeConfig_ = value;
+        onChanged();
+      } else {
+        linuxNodeConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Linux nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+     */
+    public Builder setLinuxNodeConfig(
+        com.google.container.v1.LinuxNodeConfig.Builder builderForValue) {
+      if (linuxNodeConfigBuilder_ == null) {
+        linuxNodeConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        linuxNodeConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Linux nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+     */
+    public Builder mergeLinuxNodeConfig(com.google.container.v1.LinuxNodeConfig value) {
+      if (linuxNodeConfigBuilder_ == null) {
+        if (linuxNodeConfig_ != null) {
+          linuxNodeConfig_ =
+              com.google.container.v1.LinuxNodeConfig.newBuilder(linuxNodeConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          linuxNodeConfig_ = value;
+        }
+        onChanged();
+      } else {
+        linuxNodeConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Linux nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+     */
+    public Builder clearLinuxNodeConfig() {
+      if (linuxNodeConfigBuilder_ == null) {
+        linuxNodeConfig_ = null;
+        onChanged();
+      } else {
+        linuxNodeConfig_ = null;
+        linuxNodeConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Linux nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+     */
+    public com.google.container.v1.LinuxNodeConfig.Builder getLinuxNodeConfigBuilder() {
+
+      onChanged();
+      return getLinuxNodeConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Linux nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+     */
+    public com.google.container.v1.LinuxNodeConfigOrBuilder getLinuxNodeConfigOrBuilder() {
+      if (linuxNodeConfigBuilder_ != null) {
+        return linuxNodeConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return linuxNodeConfig_ == null
+            ? com.google.container.v1.LinuxNodeConfig.getDefaultInstance()
+            : linuxNodeConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Linux nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LinuxNodeConfig,
+            com.google.container.v1.LinuxNodeConfig.Builder,
+            com.google.container.v1.LinuxNodeConfigOrBuilder>
+        getLinuxNodeConfigFieldBuilder() {
+      if (linuxNodeConfigBuilder_ == null) {
+        linuxNodeConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.LinuxNodeConfig,
+                com.google.container.v1.LinuxNodeConfig.Builder,
+                com.google.container.v1.LinuxNodeConfigOrBuilder>(
+                getLinuxNodeConfig(), getParentForChildren(), isClean());
+        linuxNodeConfig_ = null;
+      }
+      return linuxNodeConfigBuilder_;
+    }
+
+    private com.google.container.v1.NodeKubeletConfig kubeletConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeKubeletConfig,
+            com.google.container.v1.NodeKubeletConfig.Builder,
+            com.google.container.v1.NodeKubeletConfigOrBuilder>
+        kubeletConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Node kubelet configs.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+     *
+     * @return Whether the kubeletConfig field is set.
+     */
+    public boolean hasKubeletConfig() {
+      return kubeletConfigBuilder_ != null || kubeletConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node kubelet configs.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+     *
+     * @return The kubeletConfig.
+     */
+    public com.google.container.v1.NodeKubeletConfig getKubeletConfig() {
+      if (kubeletConfigBuilder_ == null) {
+        return kubeletConfig_ == null
+            ? com.google.container.v1.NodeKubeletConfig.getDefaultInstance()
+            : kubeletConfig_;
+      } else {
+        return kubeletConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node kubelet configs.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+     */
+    public Builder setKubeletConfig(com.google.container.v1.NodeKubeletConfig value) {
+      if (kubeletConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kubeletConfig_ = value;
+        onChanged();
+      } else {
+        kubeletConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node kubelet configs.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+     */
+    public Builder setKubeletConfig(
+        com.google.container.v1.NodeKubeletConfig.Builder builderForValue) {
+      if (kubeletConfigBuilder_ == null) {
+        kubeletConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        kubeletConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node kubelet configs.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+     */
+    public Builder mergeKubeletConfig(com.google.container.v1.NodeKubeletConfig value) {
+      if (kubeletConfigBuilder_ == null) {
+        if (kubeletConfig_ != null) {
+          kubeletConfig_ =
+              com.google.container.v1.NodeKubeletConfig.newBuilder(kubeletConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kubeletConfig_ = value;
+        }
+        onChanged();
+      } else {
+        kubeletConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node kubelet configs.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+     */
+    public Builder clearKubeletConfig() {
+      if (kubeletConfigBuilder_ == null) {
+        kubeletConfig_ = null;
+        onChanged();
+      } else {
+        kubeletConfig_ = null;
+        kubeletConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node kubelet configs.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+     */
+    public com.google.container.v1.NodeKubeletConfig.Builder getKubeletConfigBuilder() {
+
+      onChanged();
+      return getKubeletConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node kubelet configs.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+     */
+    public com.google.container.v1.NodeKubeletConfigOrBuilder getKubeletConfigOrBuilder() {
+      if (kubeletConfigBuilder_ != null) {
+        return kubeletConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return kubeletConfig_ == null
+            ? com.google.container.v1.NodeKubeletConfig.getDefaultInstance()
+            : kubeletConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node kubelet configs.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeKubeletConfig,
+            com.google.container.v1.NodeKubeletConfig.Builder,
+            com.google.container.v1.NodeKubeletConfigOrBuilder>
+        getKubeletConfigFieldBuilder() {
+      if (kubeletConfigBuilder_ == null) {
+        kubeletConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodeKubeletConfig,
+                com.google.container.v1.NodeKubeletConfig.Builder,
+                com.google.container.v1.NodeKubeletConfigOrBuilder>(
+                getKubeletConfig(), getParentForChildren(), isClean());
+        kubeletConfig_ = null;
+      }
+      return kubeletConfigBuilder_;
+    }
+
+    private com.google.container.v1.GcfsConfig gcfsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GcfsConfig,
+            com.google.container.v1.GcfsConfig.Builder,
+            com.google.container.v1.GcfsConfigOrBuilder>
+        gcfsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+     *
+     * @return Whether the gcfsConfig field is set.
+     */
+    public boolean hasGcfsConfig() {
+      return gcfsConfigBuilder_ != null || gcfsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+     *
+     * @return The gcfsConfig.
+     */
+    public com.google.container.v1.GcfsConfig getGcfsConfig() {
+      if (gcfsConfigBuilder_ == null) {
+        return gcfsConfig_ == null
+            ? com.google.container.v1.GcfsConfig.getDefaultInstance()
+            : gcfsConfig_;
+      } else {
+        return gcfsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+     */
+    public Builder setGcfsConfig(com.google.container.v1.GcfsConfig value) {
+      if (gcfsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcfsConfig_ = value;
+        onChanged();
+      } else {
+        gcfsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+     */
+    public Builder setGcfsConfig(com.google.container.v1.GcfsConfig.Builder builderForValue) {
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcfsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+     */
+    public Builder mergeGcfsConfig(com.google.container.v1.GcfsConfig value) {
+      if (gcfsConfigBuilder_ == null) {
+        if (gcfsConfig_ != null) {
+          gcfsConfig_ =
+              com.google.container.v1.GcfsConfig.newBuilder(gcfsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gcfsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gcfsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+     */
+    public Builder clearGcfsConfig() {
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfig_ = null;
+        onChanged();
+      } else {
+        gcfsConfig_ = null;
+        gcfsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+     */
+    public com.google.container.v1.GcfsConfig.Builder getGcfsConfigBuilder() {
+
+      onChanged();
+      return getGcfsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+     */
+    public com.google.container.v1.GcfsConfigOrBuilder getGcfsConfigOrBuilder() {
+      if (gcfsConfigBuilder_ != null) {
+        return gcfsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gcfsConfig_ == null
+            ? com.google.container.v1.GcfsConfig.getDefaultInstance()
+            : gcfsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS config.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GcfsConfig,
+            com.google.container.v1.GcfsConfig.Builder,
+            com.google.container.v1.GcfsConfigOrBuilder>
+        getGcfsConfigFieldBuilder() {
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.GcfsConfig,
+                com.google.container.v1.GcfsConfig.Builder,
+                com.google.container.v1.GcfsConfigOrBuilder>(
+                getGcfsConfig(), getParentForChildren(), isClean());
+        gcfsConfig_ = null;
+      }
+      return gcfsConfigBuilder_;
+    }
+
+    private com.google.container.v1.VirtualNIC gvnic_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.VirtualNIC,
+            com.google.container.v1.VirtualNIC.Builder,
+            com.google.container.v1.VirtualNICOrBuilder>
+        gvnicBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+     *
+     * @return Whether the gvnic field is set.
+     */
+    public boolean hasGvnic() {
+      return gvnicBuilder_ != null || gvnic_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+     *
+     * @return The gvnic.
+     */
+    public com.google.container.v1.VirtualNIC getGvnic() {
+      if (gvnicBuilder_ == null) {
+        return gvnic_ == null ? com.google.container.v1.VirtualNIC.getDefaultInstance() : gvnic_;
+      } else {
+        return gvnicBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+     */
+    public Builder setGvnic(com.google.container.v1.VirtualNIC value) {
+      if (gvnicBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gvnic_ = value;
+        onChanged();
+      } else {
+        gvnicBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+     */
+    public Builder setGvnic(com.google.container.v1.VirtualNIC.Builder builderForValue) {
+      if (gvnicBuilder_ == null) {
+        gvnic_ = builderForValue.build();
+        onChanged();
+      } else {
+        gvnicBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+     */
+    public Builder mergeGvnic(com.google.container.v1.VirtualNIC value) {
+      if (gvnicBuilder_ == null) {
+        if (gvnic_ != null) {
+          gvnic_ =
+              com.google.container.v1.VirtualNIC.newBuilder(gvnic_).mergeFrom(value).buildPartial();
+        } else {
+          gvnic_ = value;
+        }
+        onChanged();
+      } else {
+        gvnicBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+     */
+    public Builder clearGvnic() {
+      if (gvnicBuilder_ == null) {
+        gvnic_ = null;
+        onChanged();
+      } else {
+        gvnic_ = null;
+        gvnicBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+     */
+    public com.google.container.v1.VirtualNIC.Builder getGvnicBuilder() {
+
+      onChanged();
+      return getGvnicFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+     */
+    public com.google.container.v1.VirtualNICOrBuilder getGvnicOrBuilder() {
+      if (gvnicBuilder_ != null) {
+        return gvnicBuilder_.getMessageOrBuilder();
+      } else {
+        return gvnic_ == null ? com.google.container.v1.VirtualNIC.getDefaultInstance() : gvnic_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.VirtualNIC,
+            com.google.container.v1.VirtualNIC.Builder,
+            com.google.container.v1.VirtualNICOrBuilder>
+        getGvnicFieldBuilder() {
+      if (gvnicBuilder_ == null) {
+        gvnicBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.VirtualNIC,
+                com.google.container.v1.VirtualNIC.Builder,
+                com.google.container.v1.VirtualNICOrBuilder>(
+                getGvnic(), getParentForChildren(), isClean());
+        gvnic_ = null;
+      }
+      return gvnicBuilder_;
     }
 
     @java.lang.Override

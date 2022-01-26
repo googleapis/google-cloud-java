@@ -233,6 +233,40 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 114:
+            {
+              com.google.container.v1beta1.GcpFilestoreCsiDriverConfig.Builder subBuilder = null;
+              if (gcpFilestoreCsiDriverConfig_ != null) {
+                subBuilder = gcpFilestoreCsiDriverConfig_.toBuilder();
+              }
+              gcpFilestoreCsiDriverConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.GcpFilestoreCsiDriverConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gcpFilestoreCsiDriverConfig_);
+                gcpFilestoreCsiDriverConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 130:
+            {
+              com.google.container.v1beta1.GkeBackupAgentConfig.Builder subBuilder = null;
+              if (gkeBackupAgentConfig_ != null) {
+                subBuilder = gkeBackupAgentConfig_.toBuilder();
+              }
+              gkeBackupAgentConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.GkeBackupAgentConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gkeBackupAgentConfig_);
+                gkeBackupAgentConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -508,11 +542,12 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * microservices.
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+   * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @return Whether the istioConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasIstioConfig() {
     return istioConfig_ != null;
   }
@@ -524,11 +559,12 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * microservices.
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+   * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @return The istioConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1beta1.IstioConfig getIstioConfig() {
     return istioConfig_ == null
         ? com.google.container.v1beta1.IstioConfig.getDefaultInstance()
@@ -542,9 +578,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * microservices.
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+   * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1beta1.IstioConfigOrBuilder getIstioConfigOrBuilder() {
     return getIstioConfig();
   }
@@ -814,6 +851,110 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     return getKalmConfig();
   }
 
+  public static final int GCP_FILESTORE_CSI_DRIVER_CONFIG_FIELD_NUMBER = 14;
+  private com.google.container.v1beta1.GcpFilestoreCsiDriverConfig gcpFilestoreCsiDriverConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the GCP Filestore CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+   * </code>
+   *
+   * @return Whether the gcpFilestoreCsiDriverConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcpFilestoreCsiDriverConfig() {
+    return gcpFilestoreCsiDriverConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the GCP Filestore CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+   * </code>
+   *
+   * @return The gcpFilestoreCsiDriverConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GcpFilestoreCsiDriverConfig getGcpFilestoreCsiDriverConfig() {
+    return gcpFilestoreCsiDriverConfig_ == null
+        ? com.google.container.v1beta1.GcpFilestoreCsiDriverConfig.getDefaultInstance()
+        : gcpFilestoreCsiDriverConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the GCP Filestore CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GcpFilestoreCsiDriverConfigOrBuilder
+      getGcpFilestoreCsiDriverConfigOrBuilder() {
+    return getGcpFilestoreCsiDriverConfig();
+  }
+
+  public static final int GKE_BACKUP_AGENT_CONFIG_FIELD_NUMBER = 16;
+  private com.google.container.v1beta1.GkeBackupAgentConfig gkeBackupAgentConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   *
+   * @return Whether the gkeBackupAgentConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGkeBackupAgentConfig() {
+    return gkeBackupAgentConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   *
+   * @return The gkeBackupAgentConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GkeBackupAgentConfig getGkeBackupAgentConfig() {
+    return gkeBackupAgentConfig_ == null
+        ? com.google.container.v1beta1.GkeBackupAgentConfig.getDefaultInstance()
+        : gkeBackupAgentConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GkeBackupAgentConfigOrBuilder
+      getGkeBackupAgentConfigOrBuilder() {
+    return getGkeBackupAgentConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -858,6 +999,12 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (kalmConfig_ != null) {
       output.writeMessage(12, getKalmConfig());
     }
+    if (gcpFilestoreCsiDriverConfig_ != null) {
+      output.writeMessage(14, getGcpFilestoreCsiDriverConfig());
+    }
+    if (gkeBackupAgentConfig_ != null) {
+      output.writeMessage(16, getGkeBackupAgentConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -901,6 +1048,15 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (kalmConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getKalmConfig());
+    }
+    if (gcpFilestoreCsiDriverConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, getGcpFilestoreCsiDriverConfig());
+    }
+    if (gkeBackupAgentConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(16, getGkeBackupAgentConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -960,6 +1116,15 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasKalmConfig()) {
       if (!getKalmConfig().equals(other.getKalmConfig())) return false;
     }
+    if (hasGcpFilestoreCsiDriverConfig() != other.hasGcpFilestoreCsiDriverConfig()) return false;
+    if (hasGcpFilestoreCsiDriverConfig()) {
+      if (!getGcpFilestoreCsiDriverConfig().equals(other.getGcpFilestoreCsiDriverConfig()))
+        return false;
+    }
+    if (hasGkeBackupAgentConfig() != other.hasGkeBackupAgentConfig()) return false;
+    if (hasGkeBackupAgentConfig()) {
+      if (!getGkeBackupAgentConfig().equals(other.getGkeBackupAgentConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1010,6 +1175,14 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasKalmConfig()) {
       hash = (37 * hash) + KALM_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getKalmConfig().hashCode();
+    }
+    if (hasGcpFilestoreCsiDriverConfig()) {
+      hash = (37 * hash) + GCP_FILESTORE_CSI_DRIVER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGcpFilestoreCsiDriverConfig().hashCode();
+    }
+    if (hasGkeBackupAgentConfig()) {
+      hash = (37 * hash) + GKE_BACKUP_AGENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGkeBackupAgentConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1217,6 +1390,18 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         kalmConfig_ = null;
         kalmConfigBuilder_ = null;
       }
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        gcpFilestoreCsiDriverConfig_ = null;
+      } else {
+        gcpFilestoreCsiDriverConfig_ = null;
+        gcpFilestoreCsiDriverConfigBuilder_ = null;
+      }
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        gkeBackupAgentConfig_ = null;
+      } else {
+        gkeBackupAgentConfig_ = null;
+        gkeBackupAgentConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1293,6 +1478,16 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         result.kalmConfig_ = kalmConfig_;
       } else {
         result.kalmConfig_ = kalmConfigBuilder_.build();
+      }
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        result.gcpFilestoreCsiDriverConfig_ = gcpFilestoreCsiDriverConfig_;
+      } else {
+        result.gcpFilestoreCsiDriverConfig_ = gcpFilestoreCsiDriverConfigBuilder_.build();
+      }
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        result.gkeBackupAgentConfig_ = gkeBackupAgentConfig_;
+      } else {
+        result.gkeBackupAgentConfig_ = gkeBackupAgentConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1372,6 +1567,12 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasKalmConfig()) {
         mergeKalmConfig(other.getKalmConfig());
+      }
+      if (other.hasGcpFilestoreCsiDriverConfig()) {
+        mergeGcpFilestoreCsiDriverConfig(other.getGcpFilestoreCsiDriverConfig());
+      }
+      if (other.hasGkeBackupAgentConfig()) {
+        mergeGkeBackupAgentConfig(other.getGkeBackupAgentConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2287,10 +2488,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * microservices.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+     * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      *
      * @return Whether the istioConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasIstioConfig() {
       return istioConfigBuilder_ != null || istioConfig_ != null;
     }
@@ -2302,10 +2504,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * microservices.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+     * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      *
      * @return The istioConfig.
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.IstioConfig getIstioConfig() {
       if (istioConfigBuilder_ == null) {
         return istioConfig_ == null
@@ -2323,8 +2526,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * microservices.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+     * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setIstioConfig(com.google.container.v1beta1.IstioConfig value) {
       if (istioConfigBuilder_ == null) {
         if (value == null) {
@@ -2346,8 +2550,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * microservices.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+     * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setIstioConfig(
         com.google.container.v1beta1.IstioConfig.Builder builderForValue) {
       if (istioConfigBuilder_ == null) {
@@ -2367,8 +2572,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * microservices.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+     * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder mergeIstioConfig(com.google.container.v1beta1.IstioConfig value) {
       if (istioConfigBuilder_ == null) {
         if (istioConfig_ != null) {
@@ -2394,8 +2600,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * microservices.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+     * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearIstioConfig() {
       if (istioConfigBuilder_ == null) {
         istioConfig_ = null;
@@ -2415,8 +2622,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * microservices.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+     * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.IstioConfig.Builder getIstioConfigBuilder() {
 
       onChanged();
@@ -2430,8 +2638,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * microservices.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+     * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.IstioConfigOrBuilder getIstioConfigOrBuilder() {
       if (istioConfigBuilder_ != null) {
         return istioConfigBuilder_.getMessageOrBuilder();
@@ -2449,7 +2658,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * microservices.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+     * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.IstioConfig,
@@ -3469,6 +3678,406 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         kalmConfig_ = null;
       }
       return kalmConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.GcpFilestoreCsiDriverConfig gcpFilestoreCsiDriverConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GcpFilestoreCsiDriverConfig,
+            com.google.container.v1beta1.GcpFilestoreCsiDriverConfig.Builder,
+            com.google.container.v1beta1.GcpFilestoreCsiDriverConfigOrBuilder>
+        gcpFilestoreCsiDriverConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     *
+     * @return Whether the gcpFilestoreCsiDriverConfig field is set.
+     */
+    public boolean hasGcpFilestoreCsiDriverConfig() {
+      return gcpFilestoreCsiDriverConfigBuilder_ != null || gcpFilestoreCsiDriverConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     *
+     * @return The gcpFilestoreCsiDriverConfig.
+     */
+    public com.google.container.v1beta1.GcpFilestoreCsiDriverConfig
+        getGcpFilestoreCsiDriverConfig() {
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        return gcpFilestoreCsiDriverConfig_ == null
+            ? com.google.container.v1beta1.GcpFilestoreCsiDriverConfig.getDefaultInstance()
+            : gcpFilestoreCsiDriverConfig_;
+      } else {
+        return gcpFilestoreCsiDriverConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    public Builder setGcpFilestoreCsiDriverConfig(
+        com.google.container.v1beta1.GcpFilestoreCsiDriverConfig value) {
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcpFilestoreCsiDriverConfig_ = value;
+        onChanged();
+      } else {
+        gcpFilestoreCsiDriverConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    public Builder setGcpFilestoreCsiDriverConfig(
+        com.google.container.v1beta1.GcpFilestoreCsiDriverConfig.Builder builderForValue) {
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        gcpFilestoreCsiDriverConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcpFilestoreCsiDriverConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    public Builder mergeGcpFilestoreCsiDriverConfig(
+        com.google.container.v1beta1.GcpFilestoreCsiDriverConfig value) {
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        if (gcpFilestoreCsiDriverConfig_ != null) {
+          gcpFilestoreCsiDriverConfig_ =
+              com.google.container.v1beta1.GcpFilestoreCsiDriverConfig.newBuilder(
+                      gcpFilestoreCsiDriverConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gcpFilestoreCsiDriverConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gcpFilestoreCsiDriverConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    public Builder clearGcpFilestoreCsiDriverConfig() {
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        gcpFilestoreCsiDriverConfig_ = null;
+        onChanged();
+      } else {
+        gcpFilestoreCsiDriverConfig_ = null;
+        gcpFilestoreCsiDriverConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    public com.google.container.v1beta1.GcpFilestoreCsiDriverConfig.Builder
+        getGcpFilestoreCsiDriverConfigBuilder() {
+
+      onChanged();
+      return getGcpFilestoreCsiDriverConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    public com.google.container.v1beta1.GcpFilestoreCsiDriverConfigOrBuilder
+        getGcpFilestoreCsiDriverConfigOrBuilder() {
+      if (gcpFilestoreCsiDriverConfigBuilder_ != null) {
+        return gcpFilestoreCsiDriverConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gcpFilestoreCsiDriverConfig_ == null
+            ? com.google.container.v1beta1.GcpFilestoreCsiDriverConfig.getDefaultInstance()
+            : gcpFilestoreCsiDriverConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GcpFilestoreCsiDriverConfig,
+            com.google.container.v1beta1.GcpFilestoreCsiDriverConfig.Builder,
+            com.google.container.v1beta1.GcpFilestoreCsiDriverConfigOrBuilder>
+        getGcpFilestoreCsiDriverConfigFieldBuilder() {
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        gcpFilestoreCsiDriverConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.GcpFilestoreCsiDriverConfig,
+                com.google.container.v1beta1.GcpFilestoreCsiDriverConfig.Builder,
+                com.google.container.v1beta1.GcpFilestoreCsiDriverConfigOrBuilder>(
+                getGcpFilestoreCsiDriverConfig(), getParentForChildren(), isClean());
+        gcpFilestoreCsiDriverConfig_ = null;
+      }
+      return gcpFilestoreCsiDriverConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.GkeBackupAgentConfig gkeBackupAgentConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GkeBackupAgentConfig,
+            com.google.container.v1beta1.GkeBackupAgentConfig.Builder,
+            com.google.container.v1beta1.GkeBackupAgentConfigOrBuilder>
+        gkeBackupAgentConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     *
+     * @return Whether the gkeBackupAgentConfig field is set.
+     */
+    public boolean hasGkeBackupAgentConfig() {
+      return gkeBackupAgentConfigBuilder_ != null || gkeBackupAgentConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     *
+     * @return The gkeBackupAgentConfig.
+     */
+    public com.google.container.v1beta1.GkeBackupAgentConfig getGkeBackupAgentConfig() {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        return gkeBackupAgentConfig_ == null
+            ? com.google.container.v1beta1.GkeBackupAgentConfig.getDefaultInstance()
+            : gkeBackupAgentConfig_;
+      } else {
+        return gkeBackupAgentConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public Builder setGkeBackupAgentConfig(
+        com.google.container.v1beta1.GkeBackupAgentConfig value) {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gkeBackupAgentConfig_ = value;
+        onChanged();
+      } else {
+        gkeBackupAgentConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public Builder setGkeBackupAgentConfig(
+        com.google.container.v1beta1.GkeBackupAgentConfig.Builder builderForValue) {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        gkeBackupAgentConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gkeBackupAgentConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public Builder mergeGkeBackupAgentConfig(
+        com.google.container.v1beta1.GkeBackupAgentConfig value) {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        if (gkeBackupAgentConfig_ != null) {
+          gkeBackupAgentConfig_ =
+              com.google.container.v1beta1.GkeBackupAgentConfig.newBuilder(gkeBackupAgentConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gkeBackupAgentConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gkeBackupAgentConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public Builder clearGkeBackupAgentConfig() {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        gkeBackupAgentConfig_ = null;
+        onChanged();
+      } else {
+        gkeBackupAgentConfig_ = null;
+        gkeBackupAgentConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public com.google.container.v1beta1.GkeBackupAgentConfig.Builder
+        getGkeBackupAgentConfigBuilder() {
+
+      onChanged();
+      return getGkeBackupAgentConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public com.google.container.v1beta1.GkeBackupAgentConfigOrBuilder
+        getGkeBackupAgentConfigOrBuilder() {
+      if (gkeBackupAgentConfigBuilder_ != null) {
+        return gkeBackupAgentConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gkeBackupAgentConfig_ == null
+            ? com.google.container.v1beta1.GkeBackupAgentConfig.getDefaultInstance()
+            : gkeBackupAgentConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GkeBackupAgentConfig,
+            com.google.container.v1beta1.GkeBackupAgentConfig.Builder,
+            com.google.container.v1beta1.GkeBackupAgentConfigOrBuilder>
+        getGkeBackupAgentConfigFieldBuilder() {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        gkeBackupAgentConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.GkeBackupAgentConfig,
+                com.google.container.v1beta1.GkeBackupAgentConfig.Builder,
+                com.google.container.v1beta1.GkeBackupAgentConfigOrBuilder>(
+                getGkeBackupAgentConfig(), getParentForChildren(), isClean());
+        gkeBackupAgentConfig_ = null;
+      }
+      return gkeBackupAgentConfigBuilder_;
     }
 
     @java.lang.Override

@@ -326,8 +326,8 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The desired configurations for the various addons available to
-   * run in the cluster.
+   * Required. The desired configurations for the various addons available to run in the
+   * cluster.
    * </pre>
    *
    * <code>
@@ -344,8 +344,8 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The desired configurations for the various addons available to
-   * run in the cluster.
+   * Required. The desired configurations for the various addons available to run in the
+   * cluster.
    * </pre>
    *
    * <code>
@@ -364,8 +364,8 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The desired configurations for the various addons available to
-   * run in the cluster.
+   * Required. The desired configurations for the various addons available to run in the
+   * cluster.
    * </pre>
    *
    * <code>
@@ -1205,8 +1205,8 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The desired configurations for the various addons available to
-     * run in the cluster.
+     * Required. The desired configurations for the various addons available to run in the
+     * cluster.
      * </pre>
      *
      * <code>
@@ -1222,8 +1222,8 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The desired configurations for the various addons available to
-     * run in the cluster.
+     * Required. The desired configurations for the various addons available to run in the
+     * cluster.
      * </pre>
      *
      * <code>
@@ -1245,8 +1245,8 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The desired configurations for the various addons available to
-     * run in the cluster.
+     * Required. The desired configurations for the various addons available to run in the
+     * cluster.
      * </pre>
      *
      * <code>
@@ -1270,8 +1270,8 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The desired configurations for the various addons available to
-     * run in the cluster.
+     * Required. The desired configurations for the various addons available to run in the
+     * cluster.
      * </pre>
      *
      * <code>
@@ -1293,8 +1293,8 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The desired configurations for the various addons available to
-     * run in the cluster.
+     * Required. The desired configurations for the various addons available to run in the
+     * cluster.
      * </pre>
      *
      * <code>
@@ -1322,8 +1322,8 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The desired configurations for the various addons available to
-     * run in the cluster.
+     * Required. The desired configurations for the various addons available to run in the
+     * cluster.
      * </pre>
      *
      * <code>
@@ -1345,8 +1345,8 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The desired configurations for the various addons available to
-     * run in the cluster.
+     * Required. The desired configurations for the various addons available to run in the
+     * cluster.
      * </pre>
      *
      * <code>
@@ -1362,8 +1362,8 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The desired configurations for the various addons available to
-     * run in the cluster.
+     * Required. The desired configurations for the various addons available to run in the
+     * cluster.
      * </pre>
      *
      * <code>
@@ -1383,8 +1383,8 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The desired configurations for the various addons available to
-     * run in the cluster.
+     * Required. The desired configurations for the various addons available to run in the
+     * cluster.
      * </pre>
      *
      * <code>

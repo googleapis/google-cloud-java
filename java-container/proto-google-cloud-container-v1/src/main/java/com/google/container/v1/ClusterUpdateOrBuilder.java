@@ -273,6 +273,44 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+   *
+   * @return Whether the desiredMeshCertificates field is set.
+   */
+  boolean hasDesiredMeshCertificates();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+   *
+   * @return The desiredMeshCertificates.
+   */
+  com.google.container.v1.MeshCertificates getDesiredMeshCertificates();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+   */
+  com.google.container.v1.MeshCertificatesOrBuilder getDesiredMeshCertificatesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration for Shielded Nodes.
    * </pre>
    *
@@ -303,6 +341,41 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
    */
   com.google.container.v1.ShieldedNodesOrBuilder getDesiredShieldedNodesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+   *
+   * @return Whether the desiredDnsConfig field is set.
+   */
+  boolean hasDesiredDnsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+   *
+   * @return The desiredDnsConfig.
+   */
+  com.google.container.v1.DNSConfig getDesiredDnsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+   */
+  com.google.container.v1.DNSConfigOrBuilder getDesiredDnsConfigOrBuilder();
 
   /**
    *
@@ -795,6 +868,128 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired L4 Internal Load Balancer Subsetting configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+   *
+   * @return Whether the desiredL4ilbSubsettingConfig field is set.
+   */
+  boolean hasDesiredL4IlbSubsettingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired L4 Internal Load Balancer Subsetting configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+   *
+   * @return The desiredL4ilbSubsettingConfig.
+   */
+  com.google.container.v1.ILBSubsettingConfig getDesiredL4IlbSubsettingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired L4 Internal Load Balancer Subsetting configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+   */
+  com.google.container.v1.ILBSubsettingConfigOrBuilder getDesiredL4IlbSubsettingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired datapath provider for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DatapathProvider desired_datapath_provider = 50;</code>
+   *
+   * @return The enum numeric value on the wire for desiredDatapathProvider.
+   */
+  int getDesiredDatapathProviderValue();
+  /**
+   *
+   *
+   * <pre>
+   * The desired datapath provider for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DatapathProvider desired_datapath_provider = 50;</code>
+   *
+   * @return The desiredDatapathProvider.
+   */
+  com.google.container.v1.DatapathProvider getDesiredDatapathProvider();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of IPv6 connectivity to Google Services.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for desiredPrivateIpv6GoogleAccess.
+   */
+  int getDesiredPrivateIpv6GoogleAccessValue();
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of IPv6 connectivity to Google Services.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;
+   * </code>
+   *
+   * @return The desiredPrivateIpv6GoogleAccess.
+   */
+  com.google.container.v1.PrivateIPv6GoogleAccess getDesiredPrivateIpv6GoogleAccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired notification configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+   *
+   * @return Whether the desiredNotificationConfig field is set.
+   */
+  boolean hasDesiredNotificationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired notification configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+   *
+   * @return The desiredNotificationConfig.
+   */
+  com.google.container.v1.NotificationConfig getDesiredNotificationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired notification configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+   */
+  com.google.container.v1.NotificationConfigOrBuilder getDesiredNotificationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The desired authenticator groups config for the cluster.
    * </pre>
    *
@@ -834,6 +1029,118 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+   *
+   * @return Whether the desiredLoggingConfig field is set.
+   */
+  boolean hasDesiredLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+   *
+   * @return The desiredLoggingConfig.
+   */
+  com.google.container.v1.LoggingConfig getDesiredLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+   */
+  com.google.container.v1.LoggingConfigOrBuilder getDesiredLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired monitoring configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+   *
+   * @return Whether the desiredMonitoringConfig field is set.
+   */
+  boolean hasDesiredMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired monitoring configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+   *
+   * @return The desiredMonitoringConfig.
+   */
+  com.google.container.v1.MonitoringConfig getDesiredMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired monitoring configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+   */
+  com.google.container.v1.MonitoringConfigOrBuilder getDesiredMonitoringConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies the config for the use of Services with
+   * ExternalIPs field.
+   * </pre>
+   *
+   * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+   * </code>
+   *
+   * @return Whether the desiredServiceExternalIpsConfig field is set.
+   */
+  boolean hasDesiredServiceExternalIpsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies the config for the use of Services with
+   * ExternalIPs field.
+   * </pre>
+   *
+   * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+   * </code>
+   *
+   * @return The desiredServiceExternalIpsConfig.
+   */
+  com.google.container.v1.ServiceExternalIPsConfig getDesiredServiceExternalIpsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies the config for the use of Services with
+   * ExternalIPs field.
+   * </pre>
+   *
+   * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+   * </code>
+   */
+  com.google.container.v1.ServiceExternalIPsConfigOrBuilder
+      getDesiredServiceExternalIpsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The Kubernetes version to change the master to.
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
@@ -868,4 +1175,39 @@ public interface ClusterUpdateOrBuilder
    * @return The bytes for desiredMasterVersion.
    */
   com.google.protobuf.ByteString getDesiredMasterVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired GCFS config for the cluster
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+   *
+   * @return Whether the desiredGcfsConfig field is set.
+   */
+  boolean hasDesiredGcfsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired GCFS config for the cluster
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+   *
+   * @return The desiredGcfsConfig.
+   */
+  com.google.container.v1.GcfsConfig getDesiredGcfsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired GCFS config for the cluster
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+   */
+  com.google.container.v1.GcfsConfigOrBuilder getDesiredGcfsConfigOrBuilder();
 }

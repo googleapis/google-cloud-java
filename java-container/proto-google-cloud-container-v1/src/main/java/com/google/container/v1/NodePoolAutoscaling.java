@@ -147,8 +147,8 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Minimum number of nodes in the NodePool. Must be &gt;= 1 and &lt;=
-   * max_node_count.
+   * Minimum number of nodes for one location in the NodePool. Must be &gt;= 1 and
+   * &lt;= max_node_count.
    * </pre>
    *
    * <code>int32 min_node_count = 2;</code>
@@ -166,8 +166,8 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Maximum number of nodes in the NodePool. Must be &gt;= min_node_count. There
-   * has to enough quota to scale up the cluster.
+   * Maximum number of nodes for one location in the NodePool. Must be &gt;=
+   * min_node_count. There has to be enough quota to scale up the cluster.
    * </pre>
    *
    * <code>int32 max_node_count = 3;</code>
@@ -615,8 +615,8 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Minimum number of nodes in the NodePool. Must be &gt;= 1 and &lt;=
-     * max_node_count.
+     * Minimum number of nodes for one location in the NodePool. Must be &gt;= 1 and
+     * &lt;= max_node_count.
      * </pre>
      *
      * <code>int32 min_node_count = 2;</code>
@@ -631,8 +631,8 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Minimum number of nodes in the NodePool. Must be &gt;= 1 and &lt;=
-     * max_node_count.
+     * Minimum number of nodes for one location in the NodePool. Must be &gt;= 1 and
+     * &lt;= max_node_count.
      * </pre>
      *
      * <code>int32 min_node_count = 2;</code>
@@ -650,8 +650,8 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Minimum number of nodes in the NodePool. Must be &gt;= 1 and &lt;=
-     * max_node_count.
+     * Minimum number of nodes for one location in the NodePool. Must be &gt;= 1 and
+     * &lt;= max_node_count.
      * </pre>
      *
      * <code>int32 min_node_count = 2;</code>
@@ -670,8 +670,8 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maximum number of nodes in the NodePool. Must be &gt;= min_node_count. There
-     * has to enough quota to scale up the cluster.
+     * Maximum number of nodes for one location in the NodePool. Must be &gt;=
+     * min_node_count. There has to be enough quota to scale up the cluster.
      * </pre>
      *
      * <code>int32 max_node_count = 3;</code>
@@ -686,8 +686,8 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maximum number of nodes in the NodePool. Must be &gt;= min_node_count. There
-     * has to enough quota to scale up the cluster.
+     * Maximum number of nodes for one location in the NodePool. Must be &gt;=
+     * min_node_count. There has to be enough quota to scale up the cluster.
      * </pre>
      *
      * <code>int32 max_node_count = 3;</code>
@@ -705,8 +705,8 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maximum number of nodes in the NodePool. Must be &gt;= min_node_count. There
-     * has to enough quota to scale up the cluster.
+     * Maximum number of nodes for one location in the NodePool. Must be &gt;=
+     * min_node_count. There has to be enough quota to scale up the cluster.
      * </pre>
      *
      * <code>int32 max_node_count = 3;</code>

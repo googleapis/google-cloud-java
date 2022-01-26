@@ -219,8 +219,6 @@ public interface NodeConfigOrBuilder
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -258,8 +256,6 @@ public interface NodeConfigOrBuilder
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -300,8 +296,6 @@ public interface NodeConfigOrBuilder
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -339,8 +333,6 @@ public interface NodeConfigOrBuilder
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -378,8 +370,6 @@ public interface NodeConfigOrBuilder
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -974,6 +964,76 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   * Parameters that can be configured on Linux nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 21;</code>
+   *
+   * @return Whether the linuxNodeConfig field is set.
+   */
+  boolean hasLinuxNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Linux nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 21;</code>
+   *
+   * @return The linuxNodeConfig.
+   */
+  com.google.container.v1.LinuxNodeConfig getLinuxNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Linux nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 21;</code>
+   */
+  com.google.container.v1.LinuxNodeConfigOrBuilder getLinuxNodeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Node kubelet configs.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 22;</code>
+   *
+   * @return Whether the kubeletConfig field is set.
+   */
+  boolean hasKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Node kubelet configs.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 22;</code>
+   *
+   * @return The kubeletConfig.
+   */
+  com.google.container.v1.NodeKubeletConfig getKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Node kubelet configs.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 22;</code>
+   */
+  com.google.container.v1.NodeKubeletConfigOrBuilder getKubeletConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The Customer Managed Encryption Key used to encrypt the boot disk attached
    * to each node in the node pool. This should be of the form
    * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -1004,4 +1064,109 @@ public interface NodeConfigOrBuilder
    * @return The bytes for bootDiskKmsKey.
    */
   com.google.protobuf.ByteString getBootDiskKmsKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Google Container File System (image streaming) configs.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig gcfs_config = 25;</code>
+   *
+   * @return Whether the gcfsConfig field is set.
+   */
+  boolean hasGcfsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Google Container File System (image streaming) configs.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig gcfs_config = 25;</code>
+   *
+   * @return The gcfsConfig.
+   */
+  com.google.container.v1.GcfsConfig getGcfsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Google Container File System (image streaming) configs.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig gcfs_config = 25;</code>
+   */
+  com.google.container.v1.GcfsConfigOrBuilder getGcfsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Advanced features for the Compute Engine VM.
+   * </pre>
+   *
+   * <code>.google.container.v1.AdvancedMachineFeatures advanced_machine_features = 26;</code>
+   *
+   * @return Whether the advancedMachineFeatures field is set.
+   */
+  boolean hasAdvancedMachineFeatures();
+  /**
+   *
+   *
+   * <pre>
+   * Advanced features for the Compute Engine VM.
+   * </pre>
+   *
+   * <code>.google.container.v1.AdvancedMachineFeatures advanced_machine_features = 26;</code>
+   *
+   * @return The advancedMachineFeatures.
+   */
+  com.google.container.v1.AdvancedMachineFeatures getAdvancedMachineFeatures();
+  /**
+   *
+   *
+   * <pre>
+   * Advanced features for the Compute Engine VM.
+   * </pre>
+   *
+   * <code>.google.container.v1.AdvancedMachineFeatures advanced_machine_features = 26;</code>
+   */
+  com.google.container.v1.AdvancedMachineFeaturesOrBuilder getAdvancedMachineFeaturesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable gvnic in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+   *
+   * @return Whether the gvnic field is set.
+   */
+  boolean hasGvnic();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable gvnic in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+   *
+   * @return The gvnic.
+   */
+  com.google.container.v1.VirtualNIC getGvnic();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable gvnic in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+   */
+  com.google.container.v1.VirtualNICOrBuilder getGvnicOrBuilder();
 }

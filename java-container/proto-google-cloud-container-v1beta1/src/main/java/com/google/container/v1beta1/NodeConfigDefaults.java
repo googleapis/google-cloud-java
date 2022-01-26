@@ -68,6 +68,22 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
           case 0:
             done = true;
             break;
+          case 10:
+            {
+              com.google.container.v1beta1.GcfsConfig.Builder subBuilder = null;
+              if (gcfsConfig_ != null) {
+                subBuilder = gcfsConfig_.toBuilder();
+              }
+              gcfsConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.GcfsConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gcfsConfig_);
+                gcfsConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -102,6 +118,54 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
             com.google.container.v1beta1.NodeConfigDefaults.Builder.class);
   }
 
+  public static final int GCFS_CONFIG_FIELD_NUMBER = 1;
+  private com.google.container.v1beta1.GcfsConfig gcfsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * GCFS (Google Container File System, a.k.a Riptide) options.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 1;</code>
+   *
+   * @return Whether the gcfsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcfsConfig() {
+    return gcfsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GCFS (Google Container File System, a.k.a Riptide) options.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 1;</code>
+   *
+   * @return The gcfsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GcfsConfig getGcfsConfig() {
+    return gcfsConfig_ == null
+        ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
+        : gcfsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GCFS (Google Container File System, a.k.a Riptide) options.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GcfsConfigOrBuilder getGcfsConfigOrBuilder() {
+    return getGcfsConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -116,6 +180,9 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (gcfsConfig_ != null) {
+      output.writeMessage(1, getGcfsConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -125,6 +192,9 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
+    if (gcfsConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getGcfsConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -141,6 +211,10 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     com.google.container.v1beta1.NodeConfigDefaults other =
         (com.google.container.v1beta1.NodeConfigDefaults) obj;
 
+    if (hasGcfsConfig() != other.hasGcfsConfig()) return false;
+    if (hasGcfsConfig()) {
+      if (!getGcfsConfig().equals(other.getGcfsConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -152,6 +226,10 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasGcfsConfig()) {
+      hash = (37 * hash) + GCFS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGcfsConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -297,6 +375,12 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfig_ = null;
+      } else {
+        gcfsConfig_ = null;
+        gcfsConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -324,6 +408,11 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     public com.google.container.v1beta1.NodeConfigDefaults buildPartial() {
       com.google.container.v1beta1.NodeConfigDefaults result =
           new com.google.container.v1beta1.NodeConfigDefaults(this);
+      if (gcfsConfigBuilder_ == null) {
+        result.gcfsConfig_ = gcfsConfig_;
+      } else {
+        result.gcfsConfig_ = gcfsConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -374,6 +463,9 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.container.v1beta1.NodeConfigDefaults other) {
       if (other == com.google.container.v1beta1.NodeConfigDefaults.getDefaultInstance())
         return this;
+      if (other.hasGcfsConfig()) {
+        mergeGcfsConfig(other.getGcfsConfig());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -401,6 +493,191 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         }
       }
       return this;
+    }
+
+    private com.google.container.v1beta1.GcfsConfig gcfsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GcfsConfig,
+            com.google.container.v1beta1.GcfsConfig.Builder,
+            com.google.container.v1beta1.GcfsConfigOrBuilder>
+        gcfsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 1;</code>
+     *
+     * @return Whether the gcfsConfig field is set.
+     */
+    public boolean hasGcfsConfig() {
+      return gcfsConfigBuilder_ != null || gcfsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 1;</code>
+     *
+     * @return The gcfsConfig.
+     */
+    public com.google.container.v1beta1.GcfsConfig getGcfsConfig() {
+      if (gcfsConfigBuilder_ == null) {
+        return gcfsConfig_ == null
+            ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
+            : gcfsConfig_;
+      } else {
+        return gcfsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 1;</code>
+     */
+    public Builder setGcfsConfig(com.google.container.v1beta1.GcfsConfig value) {
+      if (gcfsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcfsConfig_ = value;
+        onChanged();
+      } else {
+        gcfsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 1;</code>
+     */
+    public Builder setGcfsConfig(com.google.container.v1beta1.GcfsConfig.Builder builderForValue) {
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcfsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 1;</code>
+     */
+    public Builder mergeGcfsConfig(com.google.container.v1beta1.GcfsConfig value) {
+      if (gcfsConfigBuilder_ == null) {
+        if (gcfsConfig_ != null) {
+          gcfsConfig_ =
+              com.google.container.v1beta1.GcfsConfig.newBuilder(gcfsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gcfsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gcfsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 1;</code>
+     */
+    public Builder clearGcfsConfig() {
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfig_ = null;
+        onChanged();
+      } else {
+        gcfsConfig_ = null;
+        gcfsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 1;</code>
+     */
+    public com.google.container.v1beta1.GcfsConfig.Builder getGcfsConfigBuilder() {
+
+      onChanged();
+      return getGcfsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 1;</code>
+     */
+    public com.google.container.v1beta1.GcfsConfigOrBuilder getGcfsConfigOrBuilder() {
+      if (gcfsConfigBuilder_ != null) {
+        return gcfsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gcfsConfig_ == null
+            ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
+            : gcfsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GcfsConfig,
+            com.google.container.v1beta1.GcfsConfig.Builder,
+            com.google.container.v1beta1.GcfsConfigOrBuilder>
+        getGcfsConfigFieldBuilder() {
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.GcfsConfig,
+                com.google.container.v1beta1.GcfsConfig.Builder,
+                com.google.container.v1beta1.GcfsConfigOrBuilder>(
+                getGcfsConfig(), getParentForChildren(), isClean());
+        gcfsConfig_ = null;
+      }
+      return gcfsConfigBuilder_;
     }
 
     @java.lang.Override

@@ -42,6 +42,7 @@ import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DatabaseEncryption;
 import com.google.container.v1beta1.DeleteClusterRequest;
 import com.google.container.v1beta1.DeleteNodePoolRequest;
+import com.google.container.v1beta1.GcfsConfig;
 import com.google.container.v1beta1.GetClusterRequest;
 import com.google.container.v1beta1.GetJSONWebKeysRequest;
 import com.google.container.v1beta1.GetJSONWebKeysResponse;
@@ -70,6 +71,7 @@ import com.google.container.v1beta1.Master;
 import com.google.container.v1beta1.MasterAuth;
 import com.google.container.v1beta1.MasterAuthorizedNetworksConfig;
 import com.google.container.v1beta1.MaxPodsConstraint;
+import com.google.container.v1beta1.MeshCertificates;
 import com.google.container.v1beta1.MonitoringConfig;
 import com.google.container.v1beta1.NetworkConfig;
 import com.google.container.v1beta1.NetworkPolicy;
@@ -257,6 +259,7 @@ public class ClusterManagerClientTest {
             .setReleaseChannel(ReleaseChannel.newBuilder().build())
             .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setWorkloadCertificates(WorkloadCertificates.newBuilder().build())
+            .setMeshCertificates(MeshCertificates.newBuilder().build())
             .setClusterTelemetry(ClusterTelemetry.newBuilder().build())
             .setTpuConfig(TpuConfig.newBuilder().build())
             .setNotificationConfig(NotificationConfig.newBuilder().build())
@@ -477,6 +480,7 @@ public class ClusterManagerClientTest {
             .setLabels(NodeLabels.newBuilder().build())
             .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
             .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+            .setGcfsConfig(GcfsConfig.newBuilder().build())
             .setGvnic(VirtualNIC.newBuilder().build())
             .build();
 
@@ -503,6 +507,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getLabels(), actualRequest.getLabels());
     Assert.assertEquals(request.getLinuxNodeConfig(), actualRequest.getLinuxNodeConfig());
     Assert.assertEquals(request.getKubeletConfig(), actualRequest.getKubeletConfig());
+    Assert.assertEquals(request.getGcfsConfig(), actualRequest.getGcfsConfig());
     Assert.assertEquals(request.getGvnic(), actualRequest.getGvnic());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -533,6 +538,7 @@ public class ClusterManagerClientTest {
               .setLabels(NodeLabels.newBuilder().build())
               .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
               .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+              .setGcfsConfig(GcfsConfig.newBuilder().build())
               .setGvnic(VirtualNIC.newBuilder().build())
               .build();
       client.updateNodePool(request);
@@ -1320,6 +1326,7 @@ public class ClusterManagerClientTest {
             .addAllConditions(new ArrayList<StatusCondition>())
             .setPodIpv4CidrSize(1098768716)
             .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+            .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 

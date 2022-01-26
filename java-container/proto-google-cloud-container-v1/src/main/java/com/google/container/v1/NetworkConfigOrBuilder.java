@@ -142,4 +142,146 @@ public interface NetworkConfigOrBuilder
    * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
    */
   com.google.container.v1.DefaultSnatStatusOrBuilder getDefaultSnatStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether L4ILB Subsetting is enabled for this cluster.
+   * </pre>
+   *
+   * <code>bool enable_l4ilb_subsetting = 10;</code>
+   *
+   * @return The enableL4ilbSubsetting.
+   */
+  boolean getEnableL4IlbSubsetting();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired datapath provider for this cluster. By default, uses the
+   * IPTables-based kube-proxy implementation.
+   * </pre>
+   *
+   * <code>.google.container.v1.DatapathProvider datapath_provider = 11;</code>
+   *
+   * @return The enum numeric value on the wire for datapathProvider.
+   */
+  int getDatapathProviderValue();
+  /**
+   *
+   *
+   * <pre>
+   * The desired datapath provider for this cluster. By default, uses the
+   * IPTables-based kube-proxy implementation.
+   * </pre>
+   *
+   * <code>.google.container.v1.DatapathProvider datapath_provider = 11;</code>
+   *
+   * @return The datapathProvider.
+   */
+  com.google.container.v1.DatapathProvider getDatapathProvider();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of IPv6 connectivity to Google Services.
+   * By default, no private IPv6 access to or from Google Services (all access
+   * will be via IPv4)
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateIPv6GoogleAccess private_ipv6_google_access = 12;</code>
+   *
+   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   */
+  int getPrivateIpv6GoogleAccessValue();
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of IPv6 connectivity to Google Services.
+   * By default, no private IPv6 access to or from Google Services (all access
+   * will be via IPv4)
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateIPv6GoogleAccess private_ipv6_google_access = 12;</code>
+   *
+   * @return The privateIpv6GoogleAccess.
+   */
+  com.google.container.v1.PrivateIPv6GoogleAccess getPrivateIpv6GoogleAccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DNSConfig dns_config = 13;</code>
+   *
+   * @return Whether the dnsConfig field is set.
+   */
+  boolean hasDnsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DNSConfig dns_config = 13;</code>
+   *
+   * @return The dnsConfig.
+   */
+  com.google.container.v1.DNSConfig getDnsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DNSConfig dns_config = 13;</code>
+   */
+  com.google.container.v1.DNSConfigOrBuilder getDnsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies if services with externalIPs field are
+   * blocked or not.
+   * </pre>
+   *
+   * <code>.google.container.v1.ServiceExternalIPsConfig service_external_ips_config = 15;</code>
+   *
+   * @return Whether the serviceExternalIpsConfig field is set.
+   */
+  boolean hasServiceExternalIpsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies if services with externalIPs field are
+   * blocked or not.
+   * </pre>
+   *
+   * <code>.google.container.v1.ServiceExternalIPsConfig service_external_ips_config = 15;</code>
+   *
+   * @return The serviceExternalIpsConfig.
+   */
+  com.google.container.v1.ServiceExternalIPsConfig getServiceExternalIpsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies if services with externalIPs field are
+   * blocked or not.
+   * </pre>
+   *
+   * <code>.google.container.v1.ServiceExternalIPsConfig service_external_ips_config = 15;</code>
+   */
+  com.google.container.v1.ServiceExternalIPsConfigOrBuilder getServiceExternalIpsConfigOrBuilder();
 }

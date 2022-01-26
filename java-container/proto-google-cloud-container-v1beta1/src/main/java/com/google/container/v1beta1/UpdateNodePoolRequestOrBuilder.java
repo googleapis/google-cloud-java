@@ -580,6 +580,41 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
+   * GCFS config.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+   *
+   * @return Whether the gcfsConfig field is set.
+   */
+  boolean hasGcfsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * GCFS config.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+   *
+   * @return The gcfsConfig.
+   */
+  com.google.container.v1beta1.GcfsConfig getGcfsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * GCFS config.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
+   */
+  com.google.container.v1beta1.GcfsConfigOrBuilder getGcfsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Enable or disable gvnic on the node pool.
    * </pre>
    *

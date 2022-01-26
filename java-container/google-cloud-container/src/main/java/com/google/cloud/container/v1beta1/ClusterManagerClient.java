@@ -601,6 +601,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setLabels(NodeLabels.newBuilder().build())
    *           .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
    *           .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+   *           .setGcfsConfig(GcfsConfig.newBuilder().build())
    *           .setGvnic(VirtualNIC.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
@@ -639,6 +640,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setLabels(NodeLabels.newBuilder().build())
    *           .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
    *           .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+   *           .setGcfsConfig(GcfsConfig.newBuilder().build())
    *           .setGvnic(VirtualNIC.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =

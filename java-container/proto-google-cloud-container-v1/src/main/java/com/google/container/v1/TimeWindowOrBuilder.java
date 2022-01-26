@@ -27,6 +27,48 @@ public interface TimeWindowOrBuilder
    *
    *
    * <pre>
+   * MaintenanceExclusionOptions provides maintenance exclusion related
+   * options.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+   * </code>
+   *
+   * @return Whether the maintenanceExclusionOptions field is set.
+   */
+  boolean hasMaintenanceExclusionOptions();
+  /**
+   *
+   *
+   * <pre>
+   * MaintenanceExclusionOptions provides maintenance exclusion related
+   * options.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+   * </code>
+   *
+   * @return The maintenanceExclusionOptions.
+   */
+  com.google.container.v1.MaintenanceExclusionOptions getMaintenanceExclusionOptions();
+  /**
+   *
+   *
+   * <pre>
+   * MaintenanceExclusionOptions provides maintenance exclusion related
+   * options.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaintenanceExclusionOptions maintenance_exclusion_options = 3;
+   * </code>
+   */
+  com.google.container.v1.MaintenanceExclusionOptionsOrBuilder
+      getMaintenanceExclusionOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The time that the window first starts.
    * </pre>
    *
@@ -95,4 +137,6 @@ public interface TimeWindowOrBuilder
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  public com.google.container.v1.TimeWindow.OptionsCase getOptionsCase();
 }

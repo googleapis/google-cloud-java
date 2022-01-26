@@ -1291,6 +1291,114 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+   *
+   * @return Whether the meshCertificates field is set.
+   */
+  boolean hasMeshCertificates();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+   *
+   * @return The meshCertificates.
+   */
+  com.google.container.v1.MeshCertificates getMeshCertificates();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+   */
+  com.google.container.v1.MeshCertificatesOrBuilder getMeshCertificatesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Notification configuration of the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+   *
+   * @return Whether the notificationConfig field is set.
+   */
+  boolean hasNotificationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Notification configuration of the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+   *
+   * @return The notificationConfig.
+   */
+  com.google.container.v1.NotificationConfig getNotificationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Notification configuration of the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+   */
+  com.google.container.v1.NotificationConfigOrBuilder getNotificationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Confidential Nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+   *
+   * @return Whether the confidentialNodes field is set.
+   */
+  boolean hasConfidentialNodes();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Confidential Nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+   *
+   * @return The confidentialNodes.
+   */
+  com.google.container.v1.ConfidentialNodes getConfidentialNodes();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Confidential Nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+   */
+  com.google.container.v1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
@@ -1836,4 +1944,172 @@ public interface ClusterOrBuilder
    * <code>repeated .google.container.v1.StatusCondition conditions = 118;</code>
    */
   com.google.container.v1.StatusConditionOrBuilder getConditionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+   *
+   * @return Whether the autopilot field is set.
+   */
+  boolean hasAutopilot();
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+   *
+   * @return The autopilot.
+   */
+  com.google.container.v1.Autopilot getAutopilot();
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+   */
+  com.google.container.v1.AutopilotOrBuilder getAutopilotOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique id for the cluster.
+   * </pre>
+   *
+   * <code>string id = 129 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique id for the cluster.
+   * </pre>
+   *
+   * <code>string id = 129 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString getIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Default NodePool settings for the entire cluster. These settings are
+   * overridden if specified on the specific NodePool object.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+   *
+   * @return Whether the nodePoolDefaults field is set.
+   */
+  boolean hasNodePoolDefaults();
+  /**
+   *
+   *
+   * <pre>
+   * Default NodePool settings for the entire cluster. These settings are
+   * overridden if specified on the specific NodePool object.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+   *
+   * @return The nodePoolDefaults.
+   */
+  com.google.container.v1.NodePoolDefaults getNodePoolDefaults();
+  /**
+   *
+   *
+   * <pre>
+   * Default NodePool settings for the entire cluster. These settings are
+   * overridden if specified on the specific NodePool object.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+   */
+  com.google.container.v1.NodePoolDefaultsOrBuilder getNodePoolDefaultsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+   *
+   * @return Whether the loggingConfig field is set.
+   */
+  boolean hasLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+   *
+   * @return The loggingConfig.
+   */
+  com.google.container.v1.LoggingConfig getLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+   */
+  com.google.container.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+   *
+   * @return Whether the monitoringConfig field is set.
+   */
+  boolean hasMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+   *
+   * @return The monitoringConfig.
+   */
+  com.google.container.v1.MonitoringConfig getMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+   */
+  com.google.container.v1.MonitoringConfigOrBuilder getMonitoringConfigOrBuilder();
 }

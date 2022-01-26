@@ -159,24 +159,32 @@ public interface OperationOrBuilder
    *
    * <pre>
    * Output only. If an error has occurred, a textual description of the error.
+   * Deprecated. Use the field error instead.
    * </pre>
    *
-   * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The statusMessage.
    */
+  @java.lang.Deprecated
   java.lang.String getStatusMessage();
   /**
    *
    *
    * <pre>
    * Output only. If an error has occurred, a textual description of the error.
+   * Deprecated. Use the field error instead.
    * </pre>
    *
-   * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for statusMessage.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getStatusMessageBytes();
 
   /**
@@ -362,40 +370,56 @@ public interface OperationOrBuilder
    *
    * <pre>
    * Which conditions caused the current cluster state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   java.util.List<com.google.container.v1.StatusCondition> getClusterConditionsList();
   /**
    *
    *
    * <pre>
    * Which conditions caused the current cluster state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1.StatusCondition getClusterConditions(int index);
   /**
    *
    *
    * <pre>
    * Which conditions caused the current cluster state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   int getClusterConditionsCount();
   /**
    *
    *
    * <pre>
    * Which conditions caused the current cluster state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getClusterConditionsOrBuilderList();
   /**
@@ -403,10 +427,14 @@ public interface OperationOrBuilder
    *
    * <pre>
    * Which conditions caused the current cluster state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1.StatusConditionOrBuilder getClusterConditionsOrBuilder(int index);
 
   /**
@@ -414,40 +442,56 @@ public interface OperationOrBuilder
    *
    * <pre>
    * Which conditions caused the current node pool state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   java.util.List<com.google.container.v1.StatusCondition> getNodepoolConditionsList();
   /**
    *
    *
    * <pre>
    * Which conditions caused the current node pool state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1.StatusCondition getNodepoolConditions(int index);
   /**
    *
    *
    * <pre>
    * Which conditions caused the current node pool state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   int getNodepoolConditionsCount();
   /**
    *
    *
    * <pre>
    * Which conditions caused the current node pool state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getNodepoolConditionsOrBuilderList();
   /**
@@ -455,9 +499,48 @@ public interface OperationOrBuilder
    *
    * <pre>
    * Which conditions caused the current node pool state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1.StatusConditionOrBuilder getNodepoolConditionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The error result of the operation in case of failure.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 15;</code>
+   *
+   * @return Whether the error field is set.
+   */
+  boolean hasError();
+  /**
+   *
+   *
+   * <pre>
+   * The error result of the operation in case of failure.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 15;</code>
+   *
+   * @return The error.
+   */
+  com.google.rpc.Status getError();
+  /**
+   *
+   *
+   * <pre>
+   * The error result of the operation in case of failure.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 15;</code>
+   */
+  com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 }

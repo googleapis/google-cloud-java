@@ -63,6 +63,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     location_ = "";
     tpuIpv4CidrBlock_ = "";
     conditions_ = java.util.Collections.emptyList();
+    id_ = "";
   }
 
   @java.lang.Override
@@ -518,6 +519,54 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 394:
+            {
+              com.google.container.v1.NotificationConfig.Builder subBuilder = null;
+              if (notificationConfig_ != null) {
+                subBuilder = notificationConfig_.toBuilder();
+              }
+              notificationConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.NotificationConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(notificationConfig_);
+                notificationConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 402:
+            {
+              com.google.container.v1.ConfidentialNodes.Builder subBuilder = null;
+              if (confidentialNodes_ != null) {
+                subBuilder = confidentialNodes_.toBuilder();
+              }
+              confidentialNodes_ =
+                  input.readMessage(
+                      com.google.container.v1.ConfidentialNodes.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(confidentialNodes_);
+                confidentialNodes_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 538:
+            {
+              com.google.container.v1.MeshCertificates.Builder subBuilder = null;
+              if (meshCertificates_ != null) {
+                subBuilder = meshCertificates_.toBuilder();
+              }
+              meshCertificates_ =
+                  input.readMessage(
+                      com.google.container.v1.MeshCertificates.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(meshCertificates_);
+                meshCertificates_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 802:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -643,6 +692,76 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
               conditions_.add(
                   input.readMessage(
                       com.google.container.v1.StatusCondition.parser(), extensionRegistry));
+              break;
+            }
+          case 1026:
+            {
+              com.google.container.v1.Autopilot.Builder subBuilder = null;
+              if (autopilot_ != null) {
+                subBuilder = autopilot_.toBuilder();
+              }
+              autopilot_ =
+                  input.readMessage(com.google.container.v1.Autopilot.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(autopilot_);
+                autopilot_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 1034:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+          case 1050:
+            {
+              com.google.container.v1.NodePoolDefaults.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) != 0)) {
+                subBuilder = nodePoolDefaults_.toBuilder();
+              }
+              nodePoolDefaults_ =
+                  input.readMessage(
+                      com.google.container.v1.NodePoolDefaults.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(nodePoolDefaults_);
+                nodePoolDefaults_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+          case 1058:
+            {
+              com.google.container.v1.LoggingConfig.Builder subBuilder = null;
+              if (loggingConfig_ != null) {
+                subBuilder = loggingConfig_.toBuilder();
+              }
+              loggingConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.LoggingConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(loggingConfig_);
+                loggingConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 1066:
+            {
+              com.google.container.v1.MonitoringConfig.Builder subBuilder = null;
+              if (monitoringConfig_ != null) {
+                subBuilder = monitoringConfig_.toBuilder();
+              }
+              monitoringConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.MonitoringConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(monitoringConfig_);
+                monitoringConfig_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -956,6 +1075,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.container.v1.Cluster.Status)
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -2759,6 +2879,153 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return getWorkloadIdentityConfig();
   }
 
+  public static final int MESH_CERTIFICATES_FIELD_NUMBER = 67;
+  private com.google.container.v1.MeshCertificates meshCertificates_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+   *
+   * @return Whether the meshCertificates field is set.
+   */
+  @java.lang.Override
+  public boolean hasMeshCertificates() {
+    return meshCertificates_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+   *
+   * @return The meshCertificates.
+   */
+  @java.lang.Override
+  public com.google.container.v1.MeshCertificates getMeshCertificates() {
+    return meshCertificates_ == null
+        ? com.google.container.v1.MeshCertificates.getDefaultInstance()
+        : meshCertificates_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.MeshCertificatesOrBuilder getMeshCertificatesOrBuilder() {
+    return getMeshCertificates();
+  }
+
+  public static final int NOTIFICATION_CONFIG_FIELD_NUMBER = 49;
+  private com.google.container.v1.NotificationConfig notificationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Notification configuration of the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+   *
+   * @return Whether the notificationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNotificationConfig() {
+    return notificationConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Notification configuration of the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+   *
+   * @return The notificationConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NotificationConfig getNotificationConfig() {
+    return notificationConfig_ == null
+        ? com.google.container.v1.NotificationConfig.getDefaultInstance()
+        : notificationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Notification configuration of the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NotificationConfigOrBuilder getNotificationConfigOrBuilder() {
+    return getNotificationConfig();
+  }
+
+  public static final int CONFIDENTIAL_NODES_FIELD_NUMBER = 50;
+  private com.google.container.v1.ConfidentialNodes confidentialNodes_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Confidential Nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+   *
+   * @return Whether the confidentialNodes field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfidentialNodes() {
+    return confidentialNodes_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Confidential Nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+   *
+   * @return The confidentialNodes.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ConfidentialNodes getConfidentialNodes() {
+    return confidentialNodes_ == null
+        ? com.google.container.v1.ConfidentialNodes.getDefaultInstance()
+        : confidentialNodes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Confidential Nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder() {
+    return getConfidentialNodes();
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 100;
   private volatile java.lang.Object selfLink_;
   /**
@@ -3650,6 +3917,250 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return conditions_.get(index);
   }
 
+  public static final int AUTOPILOT_FIELD_NUMBER = 128;
+  private com.google.container.v1.Autopilot autopilot_;
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+   *
+   * @return Whether the autopilot field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutopilot() {
+    return autopilot_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+   *
+   * @return The autopilot.
+   */
+  @java.lang.Override
+  public com.google.container.v1.Autopilot getAutopilot() {
+    return autopilot_ == null ? com.google.container.v1.Autopilot.getDefaultInstance() : autopilot_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.AutopilotOrBuilder getAutopilotOrBuilder() {
+    return getAutopilot();
+  }
+
+  public static final int ID_FIELD_NUMBER = 129;
+  private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique id for the cluster.
+   * </pre>
+   *
+   * <code>string id = 129 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The id.
+   */
+  @java.lang.Override
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique id for the cluster.
+   * </pre>
+   *
+   * <code>string id = 129 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for id.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NODE_POOL_DEFAULTS_FIELD_NUMBER = 131;
+  private com.google.container.v1.NodePoolDefaults nodePoolDefaults_;
+  /**
+   *
+   *
+   * <pre>
+   * Default NodePool settings for the entire cluster. These settings are
+   * overridden if specified on the specific NodePool object.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+   *
+   * @return Whether the nodePoolDefaults field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodePoolDefaults() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Default NodePool settings for the entire cluster. These settings are
+   * overridden if specified on the specific NodePool object.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+   *
+   * @return The nodePoolDefaults.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePoolDefaults getNodePoolDefaults() {
+    return nodePoolDefaults_ == null
+        ? com.google.container.v1.NodePoolDefaults.getDefaultInstance()
+        : nodePoolDefaults_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Default NodePool settings for the entire cluster. These settings are
+   * overridden if specified on the specific NodePool object.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePoolDefaultsOrBuilder getNodePoolDefaultsOrBuilder() {
+    return nodePoolDefaults_ == null
+        ? com.google.container.v1.NodePoolDefaults.getDefaultInstance()
+        : nodePoolDefaults_;
+  }
+
+  public static final int LOGGING_CONFIG_FIELD_NUMBER = 132;
+  private com.google.container.v1.LoggingConfig loggingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+   *
+   * @return Whether the loggingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasLoggingConfig() {
+    return loggingConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+   *
+   * @return The loggingConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.LoggingConfig getLoggingConfig() {
+    return loggingConfig_ == null
+        ? com.google.container.v1.LoggingConfig.getDefaultInstance()
+        : loggingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
+    return getLoggingConfig();
+  }
+
+  public static final int MONITORING_CONFIG_FIELD_NUMBER = 133;
+  private com.google.container.v1.MonitoringConfig monitoringConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+   *
+   * @return Whether the monitoringConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMonitoringConfig() {
+    return monitoringConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+   *
+   * @return The monitoringConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.MonitoringConfig getMonitoringConfig() {
+    return monitoringConfig_ == null
+        ? com.google.container.v1.MonitoringConfig.getDefaultInstance()
+        : monitoringConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.MonitoringConfigOrBuilder getMonitoringConfigOrBuilder() {
+    return getMonitoringConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3762,6 +4273,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (workloadIdentityConfig_ != null) {
       output.writeMessage(43, getWorkloadIdentityConfig());
     }
+    if (notificationConfig_ != null) {
+      output.writeMessage(49, getNotificationConfig());
+    }
+    if (confidentialNodes_ != null) {
+      output.writeMessage(50, getConfidentialNodes());
+    }
+    if (meshCertificates_ != null) {
+      output.writeMessage(67, getMeshCertificates());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selfLink_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, selfLink_);
     }
@@ -3815,6 +4335,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < conditions_.size(); i++) {
       output.writeMessage(118, conditions_.get(i));
+    }
+    if (autopilot_ != null) {
+      output.writeMessage(128, getAutopilot());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 129, id_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(131, getNodePoolDefaults());
+    }
+    if (loggingConfig_ != null) {
+      output.writeMessage(132, getLoggingConfig());
+    }
+    if (monitoringConfig_ != null) {
+      output.writeMessage(133, getMonitoringConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -3948,6 +4483,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(43, getWorkloadIdentityConfig());
     }
+    if (notificationConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(49, getNotificationConfig());
+    }
+    if (confidentialNodes_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(50, getConfidentialNodes());
+    }
+    if (meshCertificates_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(67, getMeshCertificates());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selfLink_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, selfLink_);
     }
@@ -4006,6 +4550,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < conditions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(118, conditions_.get(i));
+    }
+    if (autopilot_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(128, getAutopilot());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(129, id_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(131, getNodePoolDefaults());
+    }
+    if (loggingConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(132, getLoggingConfig());
+    }
+    if (monitoringConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(133, getMonitoringConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -4119,6 +4678,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasWorkloadIdentityConfig()) {
       if (!getWorkloadIdentityConfig().equals(other.getWorkloadIdentityConfig())) return false;
     }
+    if (hasMeshCertificates() != other.hasMeshCertificates()) return false;
+    if (hasMeshCertificates()) {
+      if (!getMeshCertificates().equals(other.getMeshCertificates())) return false;
+    }
+    if (hasNotificationConfig() != other.hasNotificationConfig()) return false;
+    if (hasNotificationConfig()) {
+      if (!getNotificationConfig().equals(other.getNotificationConfig())) return false;
+    }
+    if (hasConfidentialNodes() != other.hasConfidentialNodes()) return false;
+    if (hasConfidentialNodes()) {
+      if (!getConfidentialNodes().equals(other.getConfidentialNodes())) return false;
+    }
     if (!getSelfLink().equals(other.getSelfLink())) return false;
     if (!getZone().equals(other.getZone())) return false;
     if (!getEndpoint().equals(other.getEndpoint())) return false;
@@ -4137,6 +4708,23 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (getEnableTpu() != other.getEnableTpu()) return false;
     if (!getTpuIpv4CidrBlock().equals(other.getTpuIpv4CidrBlock())) return false;
     if (!getConditionsList().equals(other.getConditionsList())) return false;
+    if (hasAutopilot() != other.hasAutopilot()) return false;
+    if (hasAutopilot()) {
+      if (!getAutopilot().equals(other.getAutopilot())) return false;
+    }
+    if (!getId().equals(other.getId())) return false;
+    if (hasNodePoolDefaults() != other.hasNodePoolDefaults()) return false;
+    if (hasNodePoolDefaults()) {
+      if (!getNodePoolDefaults().equals(other.getNodePoolDefaults())) return false;
+    }
+    if (hasLoggingConfig() != other.hasLoggingConfig()) return false;
+    if (hasLoggingConfig()) {
+      if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
+    }
+    if (hasMonitoringConfig() != other.hasMonitoringConfig()) return false;
+    if (hasMonitoringConfig()) {
+      if (!getMonitoringConfig().equals(other.getMonitoringConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -4260,6 +4848,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getWorkloadIdentityConfig().hashCode();
     }
+    if (hasMeshCertificates()) {
+      hash = (37 * hash) + MESH_CERTIFICATES_FIELD_NUMBER;
+      hash = (53 * hash) + getMeshCertificates().hashCode();
+    }
+    if (hasNotificationConfig()) {
+      hash = (37 * hash) + NOTIFICATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNotificationConfig().hashCode();
+    }
+    if (hasConfidentialNodes()) {
+      hash = (37 * hash) + CONFIDENTIAL_NODES_FIELD_NUMBER;
+      hash = (53 * hash) + getConfidentialNodes().hashCode();
+    }
     hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
     hash = (53 * hash) + getSelfLink().hashCode();
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
@@ -4299,6 +4899,24 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (getConditionsCount() > 0) {
       hash = (37 * hash) + CONDITIONS_FIELD_NUMBER;
       hash = (53 * hash) + getConditionsList().hashCode();
+    }
+    if (hasAutopilot()) {
+      hash = (37 * hash) + AUTOPILOT_FIELD_NUMBER;
+      hash = (53 * hash) + getAutopilot().hashCode();
+    }
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
+    if (hasNodePoolDefaults()) {
+      hash = (37 * hash) + NODE_POOL_DEFAULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getNodePoolDefaults().hashCode();
+    }
+    if (hasLoggingConfig()) {
+      hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getLoggingConfig().hashCode();
+    }
+    if (hasMonitoringConfig()) {
+      hash = (37 * hash) + MONITORING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMonitoringConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -4460,6 +5078,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getNodePoolsFieldBuilder();
         getConditionsFieldBuilder();
+        getNodePoolDefaultsFieldBuilder();
       }
     }
 
@@ -4615,6 +5234,24 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         workloadIdentityConfig_ = null;
         workloadIdentityConfigBuilder_ = null;
       }
+      if (meshCertificatesBuilder_ == null) {
+        meshCertificates_ = null;
+      } else {
+        meshCertificates_ = null;
+        meshCertificatesBuilder_ = null;
+      }
+      if (notificationConfigBuilder_ == null) {
+        notificationConfig_ = null;
+      } else {
+        notificationConfig_ = null;
+        notificationConfigBuilder_ = null;
+      }
+      if (confidentialNodesBuilder_ == null) {
+        confidentialNodes_ = null;
+      } else {
+        confidentialNodes_ = null;
+        confidentialNodesBuilder_ = null;
+      }
       selfLink_ = "";
 
       zone_ = "";
@@ -4655,6 +5292,32 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         conditionsBuilder_.clear();
       }
+      if (autopilotBuilder_ == null) {
+        autopilot_ = null;
+      } else {
+        autopilot_ = null;
+        autopilotBuilder_ = null;
+      }
+      id_ = "";
+
+      if (nodePoolDefaultsBuilder_ == null) {
+        nodePoolDefaults_ = null;
+      } else {
+        nodePoolDefaultsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
+      if (loggingConfigBuilder_ == null) {
+        loggingConfig_ = null;
+      } else {
+        loggingConfig_ = null;
+        loggingConfigBuilder_ = null;
+      }
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfig_ = null;
+      } else {
+        monitoringConfig_ = null;
+        monitoringConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -4682,6 +5345,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.Cluster buildPartial() {
       com.google.container.v1.Cluster result = new com.google.container.v1.Cluster(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.name_ = name_;
       result.description_ = description_;
       result.initialNodeCount_ = initialNodeCount_;
@@ -4808,6 +5472,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.workloadIdentityConfig_ = workloadIdentityConfigBuilder_.build();
       }
+      if (meshCertificatesBuilder_ == null) {
+        result.meshCertificates_ = meshCertificates_;
+      } else {
+        result.meshCertificates_ = meshCertificatesBuilder_.build();
+      }
+      if (notificationConfigBuilder_ == null) {
+        result.notificationConfig_ = notificationConfig_;
+      } else {
+        result.notificationConfig_ = notificationConfigBuilder_.build();
+      }
+      if (confidentialNodesBuilder_ == null) {
+        result.confidentialNodes_ = confidentialNodes_;
+      } else {
+        result.confidentialNodes_ = confidentialNodesBuilder_.build();
+      }
       result.selfLink_ = selfLink_;
       result.zone_ = zone_;
       result.endpoint_ = endpoint_;
@@ -4838,6 +5517,31 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
+      if (autopilotBuilder_ == null) {
+        result.autopilot_ = autopilot_;
+      } else {
+        result.autopilot_ = autopilotBuilder_.build();
+      }
+      result.id_ = id_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (nodePoolDefaultsBuilder_ == null) {
+          result.nodePoolDefaults_ = nodePoolDefaults_;
+        } else {
+          result.nodePoolDefaults_ = nodePoolDefaultsBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      if (loggingConfigBuilder_ == null) {
+        result.loggingConfig_ = loggingConfig_;
+      } else {
+        result.loggingConfig_ = loggingConfigBuilder_.build();
+      }
+      if (monitoringConfigBuilder_ == null) {
+        result.monitoringConfig_ = monitoringConfig_;
+      } else {
+        result.monitoringConfig_ = monitoringConfigBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -5023,6 +5727,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other.hasWorkloadIdentityConfig()) {
         mergeWorkloadIdentityConfig(other.getWorkloadIdentityConfig());
       }
+      if (other.hasMeshCertificates()) {
+        mergeMeshCertificates(other.getMeshCertificates());
+      }
+      if (other.hasNotificationConfig()) {
+        mergeNotificationConfig(other.getNotificationConfig());
+      }
+      if (other.hasConfidentialNodes()) {
+        mergeConfidentialNodes(other.getConfidentialNodes());
+      }
       if (!other.getSelfLink().isEmpty()) {
         selfLink_ = other.selfLink_;
         onChanged();
@@ -5119,6 +5832,22 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             conditionsBuilder_.addAllMessages(other.conditions_);
           }
         }
+      }
+      if (other.hasAutopilot()) {
+        mergeAutopilot(other.getAutopilot());
+      }
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        onChanged();
+      }
+      if (other.hasNodePoolDefaults()) {
+        mergeNodePoolDefaults(other.getNodePoolDefaults());
+      }
+      if (other.hasLoggingConfig()) {
+        mergeLoggingConfig(other.getLoggingConfig());
+      }
+      if (other.hasMonitoringConfig()) {
+        mergeMonitoringConfig(other.getMonitoringConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -11007,6 +11736,573 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return workloadIdentityConfigBuilder_;
     }
 
+    private com.google.container.v1.MeshCertificates meshCertificates_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.MeshCertificates,
+            com.google.container.v1.MeshCertificates.Builder,
+            com.google.container.v1.MeshCertificatesOrBuilder>
+        meshCertificatesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+     *
+     * @return Whether the meshCertificates field is set.
+     */
+    public boolean hasMeshCertificates() {
+      return meshCertificatesBuilder_ != null || meshCertificates_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+     *
+     * @return The meshCertificates.
+     */
+    public com.google.container.v1.MeshCertificates getMeshCertificates() {
+      if (meshCertificatesBuilder_ == null) {
+        return meshCertificates_ == null
+            ? com.google.container.v1.MeshCertificates.getDefaultInstance()
+            : meshCertificates_;
+      } else {
+        return meshCertificatesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    public Builder setMeshCertificates(com.google.container.v1.MeshCertificates value) {
+      if (meshCertificatesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        meshCertificates_ = value;
+        onChanged();
+      } else {
+        meshCertificatesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    public Builder setMeshCertificates(
+        com.google.container.v1.MeshCertificates.Builder builderForValue) {
+      if (meshCertificatesBuilder_ == null) {
+        meshCertificates_ = builderForValue.build();
+        onChanged();
+      } else {
+        meshCertificatesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    public Builder mergeMeshCertificates(com.google.container.v1.MeshCertificates value) {
+      if (meshCertificatesBuilder_ == null) {
+        if (meshCertificates_ != null) {
+          meshCertificates_ =
+              com.google.container.v1.MeshCertificates.newBuilder(meshCertificates_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          meshCertificates_ = value;
+        }
+        onChanged();
+      } else {
+        meshCertificatesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    public Builder clearMeshCertificates() {
+      if (meshCertificatesBuilder_ == null) {
+        meshCertificates_ = null;
+        onChanged();
+      } else {
+        meshCertificates_ = null;
+        meshCertificatesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    public com.google.container.v1.MeshCertificates.Builder getMeshCertificatesBuilder() {
+
+      onChanged();
+      return getMeshCertificatesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    public com.google.container.v1.MeshCertificatesOrBuilder getMeshCertificatesOrBuilder() {
+      if (meshCertificatesBuilder_ != null) {
+        return meshCertificatesBuilder_.getMessageOrBuilder();
+      } else {
+        return meshCertificates_ == null
+            ? com.google.container.v1.MeshCertificates.getDefaultInstance()
+            : meshCertificates_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates mesh_certificates = 67;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.MeshCertificates,
+            com.google.container.v1.MeshCertificates.Builder,
+            com.google.container.v1.MeshCertificatesOrBuilder>
+        getMeshCertificatesFieldBuilder() {
+      if (meshCertificatesBuilder_ == null) {
+        meshCertificatesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.MeshCertificates,
+                com.google.container.v1.MeshCertificates.Builder,
+                com.google.container.v1.MeshCertificatesOrBuilder>(
+                getMeshCertificates(), getParentForChildren(), isClean());
+        meshCertificates_ = null;
+      }
+      return meshCertificatesBuilder_;
+    }
+
+    private com.google.container.v1.NotificationConfig notificationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NotificationConfig,
+            com.google.container.v1.NotificationConfig.Builder,
+            com.google.container.v1.NotificationConfigOrBuilder>
+        notificationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Notification configuration of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+     *
+     * @return Whether the notificationConfig field is set.
+     */
+    public boolean hasNotificationConfig() {
+      return notificationConfigBuilder_ != null || notificationConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notification configuration of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+     *
+     * @return The notificationConfig.
+     */
+    public com.google.container.v1.NotificationConfig getNotificationConfig() {
+      if (notificationConfigBuilder_ == null) {
+        return notificationConfig_ == null
+            ? com.google.container.v1.NotificationConfig.getDefaultInstance()
+            : notificationConfig_;
+      } else {
+        return notificationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notification configuration of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+     */
+    public Builder setNotificationConfig(com.google.container.v1.NotificationConfig value) {
+      if (notificationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        notificationConfig_ = value;
+        onChanged();
+      } else {
+        notificationConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notification configuration of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+     */
+    public Builder setNotificationConfig(
+        com.google.container.v1.NotificationConfig.Builder builderForValue) {
+      if (notificationConfigBuilder_ == null) {
+        notificationConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        notificationConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notification configuration of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+     */
+    public Builder mergeNotificationConfig(com.google.container.v1.NotificationConfig value) {
+      if (notificationConfigBuilder_ == null) {
+        if (notificationConfig_ != null) {
+          notificationConfig_ =
+              com.google.container.v1.NotificationConfig.newBuilder(notificationConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          notificationConfig_ = value;
+        }
+        onChanged();
+      } else {
+        notificationConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notification configuration of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+     */
+    public Builder clearNotificationConfig() {
+      if (notificationConfigBuilder_ == null) {
+        notificationConfig_ = null;
+        onChanged();
+      } else {
+        notificationConfig_ = null;
+        notificationConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notification configuration of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+     */
+    public com.google.container.v1.NotificationConfig.Builder getNotificationConfigBuilder() {
+
+      onChanged();
+      return getNotificationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notification configuration of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+     */
+    public com.google.container.v1.NotificationConfigOrBuilder getNotificationConfigOrBuilder() {
+      if (notificationConfigBuilder_ != null) {
+        return notificationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return notificationConfig_ == null
+            ? com.google.container.v1.NotificationConfig.getDefaultInstance()
+            : notificationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notification configuration of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig notification_config = 49;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NotificationConfig,
+            com.google.container.v1.NotificationConfig.Builder,
+            com.google.container.v1.NotificationConfigOrBuilder>
+        getNotificationConfigFieldBuilder() {
+      if (notificationConfigBuilder_ == null) {
+        notificationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NotificationConfig,
+                com.google.container.v1.NotificationConfig.Builder,
+                com.google.container.v1.NotificationConfigOrBuilder>(
+                getNotificationConfig(), getParentForChildren(), isClean());
+        notificationConfig_ = null;
+      }
+      return notificationConfigBuilder_;
+    }
+
+    private com.google.container.v1.ConfidentialNodes confidentialNodes_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ConfidentialNodes,
+            com.google.container.v1.ConfidentialNodes.Builder,
+            com.google.container.v1.ConfidentialNodesOrBuilder>
+        confidentialNodesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Confidential Nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+     *
+     * @return Whether the confidentialNodes field is set.
+     */
+    public boolean hasConfidentialNodes() {
+      return confidentialNodesBuilder_ != null || confidentialNodes_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Confidential Nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+     *
+     * @return The confidentialNodes.
+     */
+    public com.google.container.v1.ConfidentialNodes getConfidentialNodes() {
+      if (confidentialNodesBuilder_ == null) {
+        return confidentialNodes_ == null
+            ? com.google.container.v1.ConfidentialNodes.getDefaultInstance()
+            : confidentialNodes_;
+      } else {
+        return confidentialNodesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Confidential Nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+     */
+    public Builder setConfidentialNodes(com.google.container.v1.ConfidentialNodes value) {
+      if (confidentialNodesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        confidentialNodes_ = value;
+        onChanged();
+      } else {
+        confidentialNodesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Confidential Nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+     */
+    public Builder setConfidentialNodes(
+        com.google.container.v1.ConfidentialNodes.Builder builderForValue) {
+      if (confidentialNodesBuilder_ == null) {
+        confidentialNodes_ = builderForValue.build();
+        onChanged();
+      } else {
+        confidentialNodesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Confidential Nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+     */
+    public Builder mergeConfidentialNodes(com.google.container.v1.ConfidentialNodes value) {
+      if (confidentialNodesBuilder_ == null) {
+        if (confidentialNodes_ != null) {
+          confidentialNodes_ =
+              com.google.container.v1.ConfidentialNodes.newBuilder(confidentialNodes_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          confidentialNodes_ = value;
+        }
+        onChanged();
+      } else {
+        confidentialNodesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Confidential Nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+     */
+    public Builder clearConfidentialNodes() {
+      if (confidentialNodesBuilder_ == null) {
+        confidentialNodes_ = null;
+        onChanged();
+      } else {
+        confidentialNodes_ = null;
+        confidentialNodesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Confidential Nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+     */
+    public com.google.container.v1.ConfidentialNodes.Builder getConfidentialNodesBuilder() {
+
+      onChanged();
+      return getConfidentialNodesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Confidential Nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+     */
+    public com.google.container.v1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder() {
+      if (confidentialNodesBuilder_ != null) {
+        return confidentialNodesBuilder_.getMessageOrBuilder();
+      } else {
+        return confidentialNodes_ == null
+            ? com.google.container.v1.ConfidentialNodes.getDefaultInstance()
+            : confidentialNodes_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of Confidential Nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 50;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ConfidentialNodes,
+            com.google.container.v1.ConfidentialNodes.Builder,
+            com.google.container.v1.ConfidentialNodesOrBuilder>
+        getConfidentialNodesFieldBuilder() {
+      if (confidentialNodesBuilder_ == null) {
+        confidentialNodesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ConfidentialNodes,
+                com.google.container.v1.ConfidentialNodes.Builder,
+                com.google.container.v1.ConfidentialNodesOrBuilder>(
+                getConfidentialNodes(), getParentForChildren(), isClean());
+        confidentialNodes_ = null;
+      }
+      return confidentialNodesBuilder_;
+    }
+
     private java.lang.Object selfLink_ = "";
     /**
      *
@@ -13250,6 +14546,864 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         conditions_ = null;
       }
       return conditionsBuilder_;
+    }
+
+    private com.google.container.v1.Autopilot autopilot_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.Autopilot,
+            com.google.container.v1.Autopilot.Builder,
+            com.google.container.v1.AutopilotOrBuilder>
+        autopilotBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+     *
+     * @return Whether the autopilot field is set.
+     */
+    public boolean hasAutopilot() {
+      return autopilotBuilder_ != null || autopilot_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+     *
+     * @return The autopilot.
+     */
+    public com.google.container.v1.Autopilot getAutopilot() {
+      if (autopilotBuilder_ == null) {
+        return autopilot_ == null
+            ? com.google.container.v1.Autopilot.getDefaultInstance()
+            : autopilot_;
+      } else {
+        return autopilotBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+     */
+    public Builder setAutopilot(com.google.container.v1.Autopilot value) {
+      if (autopilotBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        autopilot_ = value;
+        onChanged();
+      } else {
+        autopilotBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+     */
+    public Builder setAutopilot(com.google.container.v1.Autopilot.Builder builderForValue) {
+      if (autopilotBuilder_ == null) {
+        autopilot_ = builderForValue.build();
+        onChanged();
+      } else {
+        autopilotBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+     */
+    public Builder mergeAutopilot(com.google.container.v1.Autopilot value) {
+      if (autopilotBuilder_ == null) {
+        if (autopilot_ != null) {
+          autopilot_ =
+              com.google.container.v1.Autopilot.newBuilder(autopilot_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          autopilot_ = value;
+        }
+        onChanged();
+      } else {
+        autopilotBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+     */
+    public Builder clearAutopilot() {
+      if (autopilotBuilder_ == null) {
+        autopilot_ = null;
+        onChanged();
+      } else {
+        autopilot_ = null;
+        autopilotBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+     */
+    public com.google.container.v1.Autopilot.Builder getAutopilotBuilder() {
+
+      onChanged();
+      return getAutopilotFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+     */
+    public com.google.container.v1.AutopilotOrBuilder getAutopilotOrBuilder() {
+      if (autopilotBuilder_ != null) {
+        return autopilotBuilder_.getMessageOrBuilder();
+      } else {
+        return autopilot_ == null
+            ? com.google.container.v1.Autopilot.getDefaultInstance()
+            : autopilot_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Autopilot autopilot = 128;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.Autopilot,
+            com.google.container.v1.Autopilot.Builder,
+            com.google.container.v1.AutopilotOrBuilder>
+        getAutopilotFieldBuilder() {
+      if (autopilotBuilder_ == null) {
+        autopilotBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.Autopilot,
+                com.google.container.v1.Autopilot.Builder,
+                com.google.container.v1.AutopilotOrBuilder>(
+                getAutopilot(), getParentForChildren(), isClean());
+        autopilot_ = null;
+      }
+      return autopilotBuilder_;
+    }
+
+    private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique id for the cluster.
+     * </pre>
+     *
+     * <code>string id = 129 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique id for the cluster.
+     * </pre>
+     *
+     * <code>string id = 129 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique id for the cluster.
+     * </pre>
+     *
+     * <code>string id = 129 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      id_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique id for the cluster.
+     * </pre>
+     *
+     * <code>string id = 129 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+
+      id_ = getDefaultInstance().getId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique id for the cluster.
+     * </pre>
+     *
+     * <code>string id = 129 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      id_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1.NodePoolDefaults nodePoolDefaults_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePoolDefaults,
+            com.google.container.v1.NodePoolDefaults.Builder,
+            com.google.container.v1.NodePoolDefaultsOrBuilder>
+        nodePoolDefaultsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Default NodePool settings for the entire cluster. These settings are
+     * overridden if specified on the specific NodePool object.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+     *
+     * @return Whether the nodePoolDefaults field is set.
+     */
+    public boolean hasNodePoolDefaults() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Default NodePool settings for the entire cluster. These settings are
+     * overridden if specified on the specific NodePool object.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+     *
+     * @return The nodePoolDefaults.
+     */
+    public com.google.container.v1.NodePoolDefaults getNodePoolDefaults() {
+      if (nodePoolDefaultsBuilder_ == null) {
+        return nodePoolDefaults_ == null
+            ? com.google.container.v1.NodePoolDefaults.getDefaultInstance()
+            : nodePoolDefaults_;
+      } else {
+        return nodePoolDefaultsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Default NodePool settings for the entire cluster. These settings are
+     * overridden if specified on the specific NodePool object.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+     */
+    public Builder setNodePoolDefaults(com.google.container.v1.NodePoolDefaults value) {
+      if (nodePoolDefaultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodePoolDefaults_ = value;
+        onChanged();
+      } else {
+        nodePoolDefaultsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Default NodePool settings for the entire cluster. These settings are
+     * overridden if specified on the specific NodePool object.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+     */
+    public Builder setNodePoolDefaults(
+        com.google.container.v1.NodePoolDefaults.Builder builderForValue) {
+      if (nodePoolDefaultsBuilder_ == null) {
+        nodePoolDefaults_ = builderForValue.build();
+        onChanged();
+      } else {
+        nodePoolDefaultsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Default NodePool settings for the entire cluster. These settings are
+     * overridden if specified on the specific NodePool object.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+     */
+    public Builder mergeNodePoolDefaults(com.google.container.v1.NodePoolDefaults value) {
+      if (nodePoolDefaultsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && nodePoolDefaults_ != null
+            && nodePoolDefaults_ != com.google.container.v1.NodePoolDefaults.getDefaultInstance()) {
+          nodePoolDefaults_ =
+              com.google.container.v1.NodePoolDefaults.newBuilder(nodePoolDefaults_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          nodePoolDefaults_ = value;
+        }
+        onChanged();
+      } else {
+        nodePoolDefaultsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000020;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Default NodePool settings for the entire cluster. These settings are
+     * overridden if specified on the specific NodePool object.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+     */
+    public Builder clearNodePoolDefaults() {
+      if (nodePoolDefaultsBuilder_ == null) {
+        nodePoolDefaults_ = null;
+        onChanged();
+      } else {
+        nodePoolDefaultsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Default NodePool settings for the entire cluster. These settings are
+     * overridden if specified on the specific NodePool object.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+     */
+    public com.google.container.v1.NodePoolDefaults.Builder getNodePoolDefaultsBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getNodePoolDefaultsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Default NodePool settings for the entire cluster. These settings are
+     * overridden if specified on the specific NodePool object.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+     */
+    public com.google.container.v1.NodePoolDefaultsOrBuilder getNodePoolDefaultsOrBuilder() {
+      if (nodePoolDefaultsBuilder_ != null) {
+        return nodePoolDefaultsBuilder_.getMessageOrBuilder();
+      } else {
+        return nodePoolDefaults_ == null
+            ? com.google.container.v1.NodePoolDefaults.getDefaultInstance()
+            : nodePoolDefaults_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Default NodePool settings for the entire cluster. These settings are
+     * overridden if specified on the specific NodePool object.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.NodePoolDefaults node_pool_defaults = 131;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePoolDefaults,
+            com.google.container.v1.NodePoolDefaults.Builder,
+            com.google.container.v1.NodePoolDefaultsOrBuilder>
+        getNodePoolDefaultsFieldBuilder() {
+      if (nodePoolDefaultsBuilder_ == null) {
+        nodePoolDefaultsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodePoolDefaults,
+                com.google.container.v1.NodePoolDefaults.Builder,
+                com.google.container.v1.NodePoolDefaultsOrBuilder>(
+                getNodePoolDefaults(), getParentForChildren(), isClean());
+        nodePoolDefaults_ = null;
+      }
+      return nodePoolDefaultsBuilder_;
+    }
+
+    private com.google.container.v1.LoggingConfig loggingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LoggingConfig,
+            com.google.container.v1.LoggingConfig.Builder,
+            com.google.container.v1.LoggingConfigOrBuilder>
+        loggingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+     *
+     * @return Whether the loggingConfig field is set.
+     */
+    public boolean hasLoggingConfig() {
+      return loggingConfigBuilder_ != null || loggingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+     *
+     * @return The loggingConfig.
+     */
+    public com.google.container.v1.LoggingConfig getLoggingConfig() {
+      if (loggingConfigBuilder_ == null) {
+        return loggingConfig_ == null
+            ? com.google.container.v1.LoggingConfig.getDefaultInstance()
+            : loggingConfig_;
+      } else {
+        return loggingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+     */
+    public Builder setLoggingConfig(com.google.container.v1.LoggingConfig value) {
+      if (loggingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        loggingConfig_ = value;
+        onChanged();
+      } else {
+        loggingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+     */
+    public Builder setLoggingConfig(com.google.container.v1.LoggingConfig.Builder builderForValue) {
+      if (loggingConfigBuilder_ == null) {
+        loggingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        loggingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+     */
+    public Builder mergeLoggingConfig(com.google.container.v1.LoggingConfig value) {
+      if (loggingConfigBuilder_ == null) {
+        if (loggingConfig_ != null) {
+          loggingConfig_ =
+              com.google.container.v1.LoggingConfig.newBuilder(loggingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          loggingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        loggingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+     */
+    public Builder clearLoggingConfig() {
+      if (loggingConfigBuilder_ == null) {
+        loggingConfig_ = null;
+        onChanged();
+      } else {
+        loggingConfig_ = null;
+        loggingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+     */
+    public com.google.container.v1.LoggingConfig.Builder getLoggingConfigBuilder() {
+
+      onChanged();
+      return getLoggingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+     */
+    public com.google.container.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
+      if (loggingConfigBuilder_ != null) {
+        return loggingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return loggingConfig_ == null
+            ? com.google.container.v1.LoggingConfig.getDefaultInstance()
+            : loggingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig logging_config = 132;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LoggingConfig,
+            com.google.container.v1.LoggingConfig.Builder,
+            com.google.container.v1.LoggingConfigOrBuilder>
+        getLoggingConfigFieldBuilder() {
+      if (loggingConfigBuilder_ == null) {
+        loggingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.LoggingConfig,
+                com.google.container.v1.LoggingConfig.Builder,
+                com.google.container.v1.LoggingConfigOrBuilder>(
+                getLoggingConfig(), getParentForChildren(), isClean());
+        loggingConfig_ = null;
+      }
+      return loggingConfigBuilder_;
+    }
+
+    private com.google.container.v1.MonitoringConfig monitoringConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.MonitoringConfig,
+            com.google.container.v1.MonitoringConfig.Builder,
+            com.google.container.v1.MonitoringConfigOrBuilder>
+        monitoringConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+     *
+     * @return Whether the monitoringConfig field is set.
+     */
+    public boolean hasMonitoringConfig() {
+      return monitoringConfigBuilder_ != null || monitoringConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+     *
+     * @return The monitoringConfig.
+     */
+    public com.google.container.v1.MonitoringConfig getMonitoringConfig() {
+      if (monitoringConfigBuilder_ == null) {
+        return monitoringConfig_ == null
+            ? com.google.container.v1.MonitoringConfig.getDefaultInstance()
+            : monitoringConfig_;
+      } else {
+        return monitoringConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+     */
+    public Builder setMonitoringConfig(com.google.container.v1.MonitoringConfig value) {
+      if (monitoringConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        monitoringConfig_ = value;
+        onChanged();
+      } else {
+        monitoringConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+     */
+    public Builder setMonitoringConfig(
+        com.google.container.v1.MonitoringConfig.Builder builderForValue) {
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        monitoringConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+     */
+    public Builder mergeMonitoringConfig(com.google.container.v1.MonitoringConfig value) {
+      if (monitoringConfigBuilder_ == null) {
+        if (monitoringConfig_ != null) {
+          monitoringConfig_ =
+              com.google.container.v1.MonitoringConfig.newBuilder(monitoringConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          monitoringConfig_ = value;
+        }
+        onChanged();
+      } else {
+        monitoringConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+     */
+    public Builder clearMonitoringConfig() {
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfig_ = null;
+        onChanged();
+      } else {
+        monitoringConfig_ = null;
+        monitoringConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+     */
+    public com.google.container.v1.MonitoringConfig.Builder getMonitoringConfigBuilder() {
+
+      onChanged();
+      return getMonitoringConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+     */
+    public com.google.container.v1.MonitoringConfigOrBuilder getMonitoringConfigOrBuilder() {
+      if (monitoringConfigBuilder_ != null) {
+        return monitoringConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return monitoringConfig_ == null
+            ? com.google.container.v1.MonitoringConfig.getDefaultInstance()
+            : monitoringConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Monitoring configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig monitoring_config = 133;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.MonitoringConfig,
+            com.google.container.v1.MonitoringConfig.Builder,
+            com.google.container.v1.MonitoringConfigOrBuilder>
+        getMonitoringConfigFieldBuilder() {
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.MonitoringConfig,
+                com.google.container.v1.MonitoringConfig.Builder,
+                com.google.container.v1.MonitoringConfigOrBuilder>(
+                getMonitoringConfig(), getParentForChildren(), isClean());
+        monitoringConfig_ = null;
+      }
+      return monitoringConfigBuilder_;
     }
 
     @java.lang.Override

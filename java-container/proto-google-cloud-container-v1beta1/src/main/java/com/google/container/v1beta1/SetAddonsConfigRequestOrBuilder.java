@@ -124,8 +124,8 @@ public interface SetAddonsConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired configurations for the various addons available to
-   * run in the cluster.
+   * Required. The desired configurations for the various addons available to run in the
+   * cluster.
    * </pre>
    *
    * <code>
@@ -139,8 +139,8 @@ public interface SetAddonsConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired configurations for the various addons available to
-   * run in the cluster.
+   * Required. The desired configurations for the various addons available to run in the
+   * cluster.
    * </pre>
    *
    * <code>
@@ -154,8 +154,8 @@ public interface SetAddonsConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired configurations for the various addons available to
-   * run in the cluster.
+   * Required. The desired configurations for the various addons available to run in the
+   * cluster.
    * </pre>
    *
    * <code>

@@ -208,10 +208,11 @@ public interface AddonsConfigOrBuilder
    * microservices.
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+   * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @return Whether the istioConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasIstioConfig();
   /**
    *
@@ -221,10 +222,11 @@ public interface AddonsConfigOrBuilder
    * microservices.
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+   * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @return The istioConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.IstioConfig getIstioConfig();
   /**
    *
@@ -234,8 +236,9 @@ public interface AddonsConfigOrBuilder
    * microservices.
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig istio_config = 5;</code>
+   * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.IstioConfigOrBuilder getIstioConfigOrBuilder();
 
   /**
@@ -435,4 +438,81 @@ public interface AddonsConfigOrBuilder
    */
   @java.lang.Deprecated
   com.google.container.v1beta1.KalmConfigOrBuilder getKalmConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the GCP Filestore CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+   * </code>
+   *
+   * @return Whether the gcpFilestoreCsiDriverConfig field is set.
+   */
+  boolean hasGcpFilestoreCsiDriverConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the GCP Filestore CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+   * </code>
+   *
+   * @return The gcpFilestoreCsiDriverConfig.
+   */
+  com.google.container.v1beta1.GcpFilestoreCsiDriverConfig getGcpFilestoreCsiDriverConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the GCP Filestore CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+   * </code>
+   */
+  com.google.container.v1beta1.GcpFilestoreCsiDriverConfigOrBuilder
+      getGcpFilestoreCsiDriverConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   *
+   * @return Whether the gkeBackupAgentConfig field is set.
+   */
+  boolean hasGkeBackupAgentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   *
+   * @return The gkeBackupAgentConfig.
+   */
+  com.google.container.v1beta1.GkeBackupAgentConfig getGkeBackupAgentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   */
+  com.google.container.v1beta1.GkeBackupAgentConfigOrBuilder getGkeBackupAgentConfigOrBuilder();
 }

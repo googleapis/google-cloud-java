@@ -1394,6 +1394,44 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+   *
+   * @return Whether the meshCertificates field is set.
+   */
+  boolean hasMeshCertificates();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+   *
+   * @return The meshCertificates.
+   */
+  com.google.container.v1beta1.MeshCertificates getMeshCertificates();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MeshCertificates mesh_certificates = 67;</code>
+   */
+  com.google.container.v1beta1.MeshCertificatesOrBuilder getMeshCertificatesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Telemetry integration for the cluster.
    * </pre>
    *

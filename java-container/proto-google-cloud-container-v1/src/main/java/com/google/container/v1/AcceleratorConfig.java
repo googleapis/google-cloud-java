@@ -39,6 +39,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
   private AcceleratorConfig() {
     acceleratorType_ = "";
+    gpuPartitionSize_ = "";
   }
 
   @java.lang.Override
@@ -80,6 +81,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
               java.lang.String s = input.readStringRequireUtf8();
 
               acceleratorType_ = s;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gpuPartitionSize_ = s;
               break;
             }
           default:
@@ -185,6 +193,59 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int GPU_PARTITION_SIZE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object gpuPartitionSize_;
+  /**
+   *
+   *
+   * <pre>
+   * Size of partitions to create on the GPU. Valid values are described in the
+   * NVIDIA [mig user
+   * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+   * </pre>
+   *
+   * <code>string gpu_partition_size = 3;</code>
+   *
+   * @return The gpuPartitionSize.
+   */
+  @java.lang.Override
+  public java.lang.String getGpuPartitionSize() {
+    java.lang.Object ref = gpuPartitionSize_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gpuPartitionSize_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Size of partitions to create on the GPU. Valid values are described in the
+   * NVIDIA [mig user
+   * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+   * </pre>
+   *
+   * <code>string gpu_partition_size = 3;</code>
+   *
+   * @return The bytes for gpuPartitionSize.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGpuPartitionSizeBytes() {
+    java.lang.Object ref = gpuPartitionSize_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      gpuPartitionSize_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -205,6 +266,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acceleratorType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, acceleratorType_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gpuPartitionSize_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -219,6 +283,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acceleratorType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, acceleratorType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gpuPartitionSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -238,6 +305,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
     if (getAcceleratorCount() != other.getAcceleratorCount()) return false;
     if (!getAcceleratorType().equals(other.getAcceleratorType())) return false;
+    if (!getGpuPartitionSize().equals(other.getGpuPartitionSize())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -253,6 +321,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAcceleratorCount());
     hash = (37 * hash) + ACCELERATOR_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getAcceleratorType().hashCode();
+    hash = (37 * hash) + GPU_PARTITION_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getGpuPartitionSize().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -402,6 +472,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
       acceleratorType_ = "";
 
+      gpuPartitionSize_ = "";
+
       return this;
     }
 
@@ -431,6 +503,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
           new com.google.container.v1.AcceleratorConfig(this);
       result.acceleratorCount_ = acceleratorCount_;
       result.acceleratorType_ = acceleratorType_;
+      result.gpuPartitionSize_ = gpuPartitionSize_;
       onBuilt();
       return result;
     }
@@ -485,6 +558,10 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getAcceleratorType().isEmpty()) {
         acceleratorType_ = other.acceleratorType_;
+        onChanged();
+      }
+      if (!other.getGpuPartitionSize().isEmpty()) {
+        gpuPartitionSize_ = other.gpuPartitionSize_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -675,6 +752,122 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
 
       acceleratorType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object gpuPartitionSize_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Size of partitions to create on the GPU. Valid values are described in the
+     * NVIDIA [mig user
+     * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+     * </pre>
+     *
+     * <code>string gpu_partition_size = 3;</code>
+     *
+     * @return The gpuPartitionSize.
+     */
+    public java.lang.String getGpuPartitionSize() {
+      java.lang.Object ref = gpuPartitionSize_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gpuPartitionSize_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Size of partitions to create on the GPU. Valid values are described in the
+     * NVIDIA [mig user
+     * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+     * </pre>
+     *
+     * <code>string gpu_partition_size = 3;</code>
+     *
+     * @return The bytes for gpuPartitionSize.
+     */
+    public com.google.protobuf.ByteString getGpuPartitionSizeBytes() {
+      java.lang.Object ref = gpuPartitionSize_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gpuPartitionSize_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Size of partitions to create on the GPU. Valid values are described in the
+     * NVIDIA [mig user
+     * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+     * </pre>
+     *
+     * <code>string gpu_partition_size = 3;</code>
+     *
+     * @param value The gpuPartitionSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGpuPartitionSize(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      gpuPartitionSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Size of partitions to create on the GPU. Valid values are described in the
+     * NVIDIA [mig user
+     * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+     * </pre>
+     *
+     * <code>string gpu_partition_size = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGpuPartitionSize() {
+
+      gpuPartitionSize_ = getDefaultInstance().getGpuPartitionSize();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Size of partitions to create on the GPU. Valid values are described in the
+     * NVIDIA [mig user
+     * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+     * </pre>
+     *
+     * <code>string gpu_partition_size = 3;</code>
+     *
+     * @param value The bytes for gpuPartitionSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGpuPartitionSizeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      gpuPartitionSize_ = value;
       onChanged();
       return this;
     }

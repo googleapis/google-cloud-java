@@ -376,4 +376,144 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
    */
   com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Linux nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+   *
+   * @return Whether the linuxNodeConfig field is set.
+   */
+  boolean hasLinuxNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Linux nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+   *
+   * @return The linuxNodeConfig.
+   */
+  com.google.container.v1.LinuxNodeConfig getLinuxNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Linux nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 19;</code>
+   */
+  com.google.container.v1.LinuxNodeConfigOrBuilder getLinuxNodeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Node kubelet configs.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+   *
+   * @return Whether the kubeletConfig field is set.
+   */
+  boolean hasKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Node kubelet configs.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+   *
+   * @return The kubeletConfig.
+   */
+  com.google.container.v1.NodeKubeletConfig getKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Node kubelet configs.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 20;</code>
+   */
+  com.google.container.v1.NodeKubeletConfigOrBuilder getKubeletConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * GCFS config.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+   *
+   * @return Whether the gcfsConfig field is set.
+   */
+  boolean hasGcfsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * GCFS config.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+   *
+   * @return The gcfsConfig.
+   */
+  com.google.container.v1.GcfsConfig getGcfsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * GCFS config.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
+   */
+  com.google.container.v1.GcfsConfigOrBuilder getGcfsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+   *
+   * @return Whether the gvnic field is set.
+   */
+  boolean hasGvnic();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+   *
+   * @return The gvnic.
+   */
+  com.google.container.v1.VirtualNIC getGvnic();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
+   */
+  com.google.container.v1.VirtualNICOrBuilder getGvnicOrBuilder();
 }

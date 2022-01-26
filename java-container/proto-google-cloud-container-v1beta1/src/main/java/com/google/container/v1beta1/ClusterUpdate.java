@@ -583,11 +583,43 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 538:
+            {
+              com.google.container.v1beta1.MeshCertificates.Builder subBuilder = null;
+              if (desiredMeshCertificates_ != null) {
+                subBuilder = desiredMeshCertificates_.toBuilder();
+              }
+              desiredMeshCertificates_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.MeshCertificates.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredMeshCertificates_);
+                desiredMeshCertificates_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 802:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               desiredMasterVersion_ = s;
+              break;
+            }
+          case 874:
+            {
+              com.google.container.v1beta1.GcfsConfig.Builder subBuilder = null;
+              if (desiredGcfsConfig_ != null) {
+                subBuilder = desiredGcfsConfig_.toBuilder();
+              }
+              desiredGcfsConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.GcfsConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredGcfsConfig_);
+                desiredGcfsConfig_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -1980,6 +2012,54 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DESIRED_GCFS_CONFIG_FIELD_NUMBER = 109;
+  private com.google.container.v1beta1.GcfsConfig desiredGcfsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired GCFS config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+   *
+   * @return Whether the desiredGcfsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredGcfsConfig() {
+    return desiredGcfsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired GCFS config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+   *
+   * @return The desiredGcfsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GcfsConfig getDesiredGcfsConfig() {
+    return desiredGcfsConfig_ == null
+        ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
+        : desiredGcfsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired GCFS config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GcfsConfigOrBuilder getDesiredGcfsConfigOrBuilder() {
+    return getDesiredGcfsConfig();
+  }
+
   public static final int DESIRED_DATABASE_ENCRYPTION_FIELD_NUMBER = 46;
   private com.google.container.v1beta1.DatabaseEncryption desiredDatabaseEncryption_;
   /**
@@ -2131,6 +2211,58 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public com.google.container.v1beta1.WorkloadCertificatesOrBuilder
       getDesiredWorkloadCertificatesOrBuilder() {
     return getDesiredWorkloadCertificates();
+  }
+
+  public static final int DESIRED_MESH_CERTIFICATES_FIELD_NUMBER = 67;
+  private com.google.container.v1beta1.MeshCertificates desiredMeshCertificates_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+   *
+   * @return Whether the desiredMeshCertificates field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredMeshCertificates() {
+    return desiredMeshCertificates_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+   *
+   * @return The desiredMeshCertificates.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.MeshCertificates getDesiredMeshCertificates() {
+    return desiredMeshCertificates_ == null
+        ? com.google.container.v1beta1.MeshCertificates.getDefaultInstance()
+        : desiredMeshCertificates_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.MeshCertificatesOrBuilder
+      getDesiredMeshCertificatesOrBuilder() {
+    return getDesiredMeshCertificates();
   }
 
   public static final int DESIRED_SHIELDED_NODES_FIELD_NUMBER = 48;
@@ -2668,8 +2800,14 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredIdentityServiceConfig_ != null) {
       output.writeMessage(66, getDesiredIdentityServiceConfig());
     }
+    if (desiredMeshCertificates_ != null) {
+      output.writeMessage(67, getDesiredMeshCertificates());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desiredMasterVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, desiredMasterVersion_);
+    }
+    if (desiredGcfsConfig_ != null) {
+      output.writeMessage(109, getDesiredGcfsConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -2841,8 +2979,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               66, getDesiredIdentityServiceConfig());
     }
+    if (desiredMeshCertificates_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              67, getDesiredMeshCertificates());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desiredMasterVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, desiredMasterVersion_);
+    }
+    if (desiredGcfsConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(109, getDesiredGcfsConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2949,6 +3095,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return false;
     }
     if (!getDesiredMasterVersion().equals(other.getDesiredMasterVersion())) return false;
+    if (hasDesiredGcfsConfig() != other.hasDesiredGcfsConfig()) return false;
+    if (hasDesiredGcfsConfig()) {
+      if (!getDesiredGcfsConfig().equals(other.getDesiredGcfsConfig())) return false;
+    }
     if (hasDesiredDatabaseEncryption() != other.hasDesiredDatabaseEncryption()) return false;
     if (hasDesiredDatabaseEncryption()) {
       if (!getDesiredDatabaseEncryption().equals(other.getDesiredDatabaseEncryption()))
@@ -2964,6 +3114,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredWorkloadCertificates()) {
       if (!getDesiredWorkloadCertificates().equals(other.getDesiredWorkloadCertificates()))
         return false;
+    }
+    if (hasDesiredMeshCertificates() != other.hasDesiredMeshCertificates()) return false;
+    if (hasDesiredMeshCertificates()) {
+      if (!getDesiredMeshCertificates().equals(other.getDesiredMeshCertificates())) return false;
     }
     if (hasDesiredShieldedNodes() != other.hasDesiredShieldedNodes()) return false;
     if (hasDesiredShieldedNodes()) {
@@ -3097,6 +3251,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DESIRED_MASTER_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getDesiredMasterVersion().hashCode();
+    if (hasDesiredGcfsConfig()) {
+      hash = (37 * hash) + DESIRED_GCFS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredGcfsConfig().hashCode();
+    }
     if (hasDesiredDatabaseEncryption()) {
       hash = (37 * hash) + DESIRED_DATABASE_ENCRYPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredDatabaseEncryption().hashCode();
@@ -3108,6 +3266,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredWorkloadCertificates()) {
       hash = (37 * hash) + DESIRED_WORKLOAD_CERTIFICATES_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredWorkloadCertificates().hashCode();
+    }
+    if (hasDesiredMeshCertificates()) {
+      hash = (37 * hash) + DESIRED_MESH_CERTIFICATES_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredMeshCertificates().hashCode();
     }
     if (hasDesiredShieldedNodes()) {
       hash = (37 * hash) + DESIRED_SHIELDED_NODES_FIELD_NUMBER;
@@ -3402,6 +3564,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       desiredMasterVersion_ = "";
 
+      if (desiredGcfsConfigBuilder_ == null) {
+        desiredGcfsConfig_ = null;
+      } else {
+        desiredGcfsConfig_ = null;
+        desiredGcfsConfigBuilder_ = null;
+      }
       if (desiredDatabaseEncryptionBuilder_ == null) {
         desiredDatabaseEncryption_ = null;
       } else {
@@ -3419,6 +3587,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         desiredWorkloadCertificates_ = null;
         desiredWorkloadCertificatesBuilder_ = null;
+      }
+      if (desiredMeshCertificatesBuilder_ == null) {
+        desiredMeshCertificates_ = null;
+      } else {
+        desiredMeshCertificates_ = null;
+        desiredMeshCertificatesBuilder_ = null;
       }
       if (desiredShieldedNodesBuilder_ == null) {
         desiredShieldedNodes_ = null;
@@ -3590,6 +3764,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         result.desiredNotificationConfig_ = desiredNotificationConfigBuilder_.build();
       }
       result.desiredMasterVersion_ = desiredMasterVersion_;
+      if (desiredGcfsConfigBuilder_ == null) {
+        result.desiredGcfsConfig_ = desiredGcfsConfig_;
+      } else {
+        result.desiredGcfsConfig_ = desiredGcfsConfigBuilder_.build();
+      }
       if (desiredDatabaseEncryptionBuilder_ == null) {
         result.desiredDatabaseEncryption_ = desiredDatabaseEncryption_;
       } else {
@@ -3604,6 +3783,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         result.desiredWorkloadCertificates_ = desiredWorkloadCertificates_;
       } else {
         result.desiredWorkloadCertificates_ = desiredWorkloadCertificatesBuilder_.build();
+      }
+      if (desiredMeshCertificatesBuilder_ == null) {
+        result.desiredMeshCertificates_ = desiredMeshCertificates_;
+      } else {
+        result.desiredMeshCertificates_ = desiredMeshCertificatesBuilder_.build();
       }
       if (desiredShieldedNodesBuilder_ == null) {
         result.desiredShieldedNodes_ = desiredShieldedNodes_;
@@ -3783,6 +3967,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredMasterVersion_ = other.desiredMasterVersion_;
         onChanged();
       }
+      if (other.hasDesiredGcfsConfig()) {
+        mergeDesiredGcfsConfig(other.getDesiredGcfsConfig());
+      }
       if (other.hasDesiredDatabaseEncryption()) {
         mergeDesiredDatabaseEncryption(other.getDesiredDatabaseEncryption());
       }
@@ -3791,6 +3978,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredWorkloadCertificates()) {
         mergeDesiredWorkloadCertificates(other.getDesiredWorkloadCertificates());
+      }
+      if (other.hasDesiredMeshCertificates()) {
+        mergeDesiredMeshCertificates(other.getDesiredMeshCertificates());
       }
       if (other.hasDesiredShieldedNodes()) {
         mergeDesiredShieldedNodes(other.getDesiredShieldedNodes());
@@ -8248,6 +8438,192 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.container.v1beta1.GcfsConfig desiredGcfsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GcfsConfig,
+            com.google.container.v1beta1.GcfsConfig.Builder,
+            com.google.container.v1beta1.GcfsConfigOrBuilder>
+        desiredGcfsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+     *
+     * @return Whether the desiredGcfsConfig field is set.
+     */
+    public boolean hasDesiredGcfsConfig() {
+      return desiredGcfsConfigBuilder_ != null || desiredGcfsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+     *
+     * @return The desiredGcfsConfig.
+     */
+    public com.google.container.v1beta1.GcfsConfig getDesiredGcfsConfig() {
+      if (desiredGcfsConfigBuilder_ == null) {
+        return desiredGcfsConfig_ == null
+            ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
+            : desiredGcfsConfig_;
+      } else {
+        return desiredGcfsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    public Builder setDesiredGcfsConfig(com.google.container.v1beta1.GcfsConfig value) {
+      if (desiredGcfsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredGcfsConfig_ = value;
+        onChanged();
+      } else {
+        desiredGcfsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    public Builder setDesiredGcfsConfig(
+        com.google.container.v1beta1.GcfsConfig.Builder builderForValue) {
+      if (desiredGcfsConfigBuilder_ == null) {
+        desiredGcfsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredGcfsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    public Builder mergeDesiredGcfsConfig(com.google.container.v1beta1.GcfsConfig value) {
+      if (desiredGcfsConfigBuilder_ == null) {
+        if (desiredGcfsConfig_ != null) {
+          desiredGcfsConfig_ =
+              com.google.container.v1beta1.GcfsConfig.newBuilder(desiredGcfsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredGcfsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredGcfsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    public Builder clearDesiredGcfsConfig() {
+      if (desiredGcfsConfigBuilder_ == null) {
+        desiredGcfsConfig_ = null;
+        onChanged();
+      } else {
+        desiredGcfsConfig_ = null;
+        desiredGcfsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    public com.google.container.v1beta1.GcfsConfig.Builder getDesiredGcfsConfigBuilder() {
+
+      onChanged();
+      return getDesiredGcfsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    public com.google.container.v1beta1.GcfsConfigOrBuilder getDesiredGcfsConfigOrBuilder() {
+      if (desiredGcfsConfigBuilder_ != null) {
+        return desiredGcfsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredGcfsConfig_ == null
+            ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
+            : desiredGcfsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GcfsConfig,
+            com.google.container.v1beta1.GcfsConfig.Builder,
+            com.google.container.v1beta1.GcfsConfigOrBuilder>
+        getDesiredGcfsConfigFieldBuilder() {
+      if (desiredGcfsConfigBuilder_ == null) {
+        desiredGcfsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.GcfsConfig,
+                com.google.container.v1beta1.GcfsConfig.Builder,
+                com.google.container.v1beta1.GcfsConfigOrBuilder>(
+                getDesiredGcfsConfig(), getParentForChildren(), isClean());
+        desiredGcfsConfig_ = null;
+      }
+      return desiredGcfsConfigBuilder_;
+    }
+
     private com.google.container.v1beta1.DatabaseEncryption desiredDatabaseEncryption_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.DatabaseEncryption,
@@ -8846,6 +9222,204 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredWorkloadCertificates_ = null;
       }
       return desiredWorkloadCertificatesBuilder_;
+    }
+
+    private com.google.container.v1beta1.MeshCertificates desiredMeshCertificates_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.MeshCertificates,
+            com.google.container.v1beta1.MeshCertificates.Builder,
+            com.google.container.v1beta1.MeshCertificatesOrBuilder>
+        desiredMeshCertificatesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+     *
+     * @return Whether the desiredMeshCertificates field is set.
+     */
+    public boolean hasDesiredMeshCertificates() {
+      return desiredMeshCertificatesBuilder_ != null || desiredMeshCertificates_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+     *
+     * @return The desiredMeshCertificates.
+     */
+    public com.google.container.v1beta1.MeshCertificates getDesiredMeshCertificates() {
+      if (desiredMeshCertificatesBuilder_ == null) {
+        return desiredMeshCertificates_ == null
+            ? com.google.container.v1beta1.MeshCertificates.getDefaultInstance()
+            : desiredMeshCertificates_;
+      } else {
+        return desiredMeshCertificatesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    public Builder setDesiredMeshCertificates(com.google.container.v1beta1.MeshCertificates value) {
+      if (desiredMeshCertificatesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredMeshCertificates_ = value;
+        onChanged();
+      } else {
+        desiredMeshCertificatesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    public Builder setDesiredMeshCertificates(
+        com.google.container.v1beta1.MeshCertificates.Builder builderForValue) {
+      if (desiredMeshCertificatesBuilder_ == null) {
+        desiredMeshCertificates_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredMeshCertificatesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    public Builder mergeDesiredMeshCertificates(
+        com.google.container.v1beta1.MeshCertificates value) {
+      if (desiredMeshCertificatesBuilder_ == null) {
+        if (desiredMeshCertificates_ != null) {
+          desiredMeshCertificates_ =
+              com.google.container.v1beta1.MeshCertificates.newBuilder(desiredMeshCertificates_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredMeshCertificates_ = value;
+        }
+        onChanged();
+      } else {
+        desiredMeshCertificatesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    public Builder clearDesiredMeshCertificates() {
+      if (desiredMeshCertificatesBuilder_ == null) {
+        desiredMeshCertificates_ = null;
+        onChanged();
+      } else {
+        desiredMeshCertificates_ = null;
+        desiredMeshCertificatesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    public com.google.container.v1beta1.MeshCertificates.Builder
+        getDesiredMeshCertificatesBuilder() {
+
+      onChanged();
+      return getDesiredMeshCertificatesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    public com.google.container.v1beta1.MeshCertificatesOrBuilder
+        getDesiredMeshCertificatesOrBuilder() {
+      if (desiredMeshCertificatesBuilder_ != null) {
+        return desiredMeshCertificatesBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredMeshCertificates_ == null
+            ? com.google.container.v1beta1.MeshCertificates.getDefaultInstance()
+            : desiredMeshCertificates_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.MeshCertificates,
+            com.google.container.v1beta1.MeshCertificates.Builder,
+            com.google.container.v1beta1.MeshCertificatesOrBuilder>
+        getDesiredMeshCertificatesFieldBuilder() {
+      if (desiredMeshCertificatesBuilder_ == null) {
+        desiredMeshCertificatesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.MeshCertificates,
+                com.google.container.v1beta1.MeshCertificates.Builder,
+                com.google.container.v1beta1.MeshCertificatesOrBuilder>(
+                getDesiredMeshCertificates(), getParentForChildren(), isClean());
+        desiredMeshCertificates_ = null;
+      }
+      return desiredMeshCertificatesBuilder_;
     }
 
     private com.google.container.v1beta1.ShieldedNodes desiredShieldedNodes_;

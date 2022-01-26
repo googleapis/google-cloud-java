@@ -591,4 +591,39 @@ public interface NodePoolOrBuilder
    * <code>.google.container.v1beta1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
    */
   com.google.container.v1beta1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node placement policy.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePool.PlacementPolicy placement_policy = 108;</code>
+   *
+   * @return Whether the placementPolicy field is set.
+   */
+  boolean hasPlacementPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node placement policy.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePool.PlacementPolicy placement_policy = 108;</code>
+   *
+   * @return The placementPolicy.
+   */
+  com.google.container.v1beta1.NodePool.PlacementPolicy getPlacementPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node placement policy.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePool.PlacementPolicy placement_policy = 108;</code>
+   */
+  com.google.container.v1beta1.NodePool.PlacementPolicyOrBuilder getPlacementPolicyOrBuilder();
 }

@@ -42,6 +42,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
 
   private ClusterAutoscaling() {
     resourceLimits_ = java.util.Collections.emptyList();
+    autoscalingProfile_ = 0;
     autoprovisioningLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -89,6 +90,13 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
               resourceLimits_.add(
                   input.readMessage(
                       com.google.container.v1.ResourceLimit.parser(), extensionRegistry));
+              break;
+            }
+          case 24:
+            {
+              int rawValue = input.readEnum();
+
+              autoscalingProfile_ = rawValue;
               break;
             }
           case 34:
@@ -156,6 +164,166 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.container.v1.ClusterAutoscaling.class,
             com.google.container.v1.ClusterAutoscaling.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines possible options for autoscaling_profile field.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1.ClusterAutoscaling.AutoscalingProfile}
+   */
+  public enum AutoscalingProfile implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * No change to autoscaling configuration.
+     * </pre>
+     *
+     * <code>PROFILE_UNSPECIFIED = 0;</code>
+     */
+    PROFILE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Prioritize optimizing utilization of resources.
+     * </pre>
+     *
+     * <code>OPTIMIZE_UTILIZATION = 1;</code>
+     */
+    OPTIMIZE_UTILIZATION(1),
+    /**
+     *
+     *
+     * <pre>
+     * Use default (balanced) autoscaling configuration.
+     * </pre>
+     *
+     * <code>BALANCED = 2;</code>
+     */
+    BALANCED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * No change to autoscaling configuration.
+     * </pre>
+     *
+     * <code>PROFILE_UNSPECIFIED = 0;</code>
+     */
+    public static final int PROFILE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Prioritize optimizing utilization of resources.
+     * </pre>
+     *
+     * <code>OPTIMIZE_UTILIZATION = 1;</code>
+     */
+    public static final int OPTIMIZE_UTILIZATION_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Use default (balanced) autoscaling configuration.
+     * </pre>
+     *
+     * <code>BALANCED = 2;</code>
+     */
+    public static final int BALANCED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AutoscalingProfile valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AutoscalingProfile forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PROFILE_UNSPECIFIED;
+        case 1:
+          return OPTIMIZE_UTILIZATION;
+        case 2:
+          return BALANCED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AutoscalingProfile>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AutoscalingProfile>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AutoscalingProfile>() {
+              public AutoscalingProfile findValueByNumber(int number) {
+                return AutoscalingProfile.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1.ClusterAutoscaling.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final AutoscalingProfile[] VALUES = values();
+
+    public static AutoscalingProfile valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AutoscalingProfile(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1.ClusterAutoscaling.AutoscalingProfile)
   }
 
   public static final int ENABLE_NODE_AUTOPROVISIONING_FIELD_NUMBER = 1;
@@ -248,6 +416,46 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.container.v1.ResourceLimitOrBuilder getResourceLimitsOrBuilder(int index) {
     return resourceLimits_.get(index);
+  }
+
+  public static final int AUTOSCALING_PROFILE_FIELD_NUMBER = 3;
+  private int autoscalingProfile_;
+  /**
+   *
+   *
+   * <pre>
+   * Defines autoscaling behaviour.
+   * </pre>
+   *
+   * <code>.google.container.v1.ClusterAutoscaling.AutoscalingProfile autoscaling_profile = 3;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for autoscalingProfile.
+   */
+  @java.lang.Override
+  public int getAutoscalingProfileValue() {
+    return autoscalingProfile_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines autoscaling behaviour.
+   * </pre>
+   *
+   * <code>.google.container.v1.ClusterAutoscaling.AutoscalingProfile autoscaling_profile = 3;
+   * </code>
+   *
+   * @return The autoscalingProfile.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ClusterAutoscaling.AutoscalingProfile getAutoscalingProfile() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1.ClusterAutoscaling.AutoscalingProfile result =
+        com.google.container.v1.ClusterAutoscaling.AutoscalingProfile.valueOf(autoscalingProfile_);
+    return result == null
+        ? com.google.container.v1.ClusterAutoscaling.AutoscalingProfile.UNRECOGNIZED
+        : result;
   }
 
   public static final int AUTOPROVISIONING_NODE_POOL_DEFAULTS_FIELD_NUMBER = 4;
@@ -399,6 +607,11 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < resourceLimits_.size(); i++) {
       output.writeMessage(2, resourceLimits_.get(i));
     }
+    if (autoscalingProfile_
+        != com.google.container.v1.ClusterAutoscaling.AutoscalingProfile.PROFILE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(3, autoscalingProfile_);
+    }
     if (autoprovisioningNodePoolDefaults_ != null) {
       output.writeMessage(4, getAutoprovisioningNodePoolDefaults());
     }
@@ -420,6 +633,11 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     }
     for (int i = 0; i < resourceLimits_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, resourceLimits_.get(i));
+    }
+    if (autoscalingProfile_
+        != com.google.container.v1.ClusterAutoscaling.AutoscalingProfile.PROFILE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, autoscalingProfile_);
     }
     if (autoprovisioningNodePoolDefaults_ != null) {
       size +=
@@ -452,6 +670,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
 
     if (getEnableNodeAutoprovisioning() != other.getEnableNodeAutoprovisioning()) return false;
     if (!getResourceLimitsList().equals(other.getResourceLimitsList())) return false;
+    if (autoscalingProfile_ != other.autoscalingProfile_) return false;
     if (hasAutoprovisioningNodePoolDefaults() != other.hasAutoprovisioningNodePoolDefaults())
       return false;
     if (hasAutoprovisioningNodePoolDefaults()) {
@@ -477,6 +696,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + RESOURCE_LIMITS_FIELD_NUMBER;
       hash = (53 * hash) + getResourceLimitsList().hashCode();
     }
+    hash = (37 * hash) + AUTOSCALING_PROFILE_FIELD_NUMBER;
+    hash = (53 * hash) + autoscalingProfile_;
     if (hasAutoprovisioningNodePoolDefaults()) {
       hash = (37 * hash) + AUTOPROVISIONING_NODE_POOL_DEFAULTS_FIELD_NUMBER;
       hash = (53 * hash) + getAutoprovisioningNodePoolDefaults().hashCode();
@@ -643,6 +864,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       } else {
         resourceLimitsBuilder_.clear();
       }
+      autoscalingProfile_ = 0;
+
       if (autoprovisioningNodePoolDefaultsBuilder_ == null) {
         autoprovisioningNodePoolDefaults_ = null;
       } else {
@@ -689,6 +912,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       } else {
         result.resourceLimits_ = resourceLimitsBuilder_.build();
       }
+      result.autoscalingProfile_ = autoscalingProfile_;
       if (autoprovisioningNodePoolDefaultsBuilder_ == null) {
         result.autoprovisioningNodePoolDefaults_ = autoprovisioningNodePoolDefaults_;
       } else {
@@ -777,6 +1001,9 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
             resourceLimitsBuilder_.addAllMessages(other.resourceLimits_);
           }
         }
+      }
+      if (other.autoscalingProfile_ != 0) {
+        setAutoscalingProfileValue(other.getAutoscalingProfileValue());
       }
       if (other.hasAutoprovisioningNodePoolDefaults()) {
         mergeAutoprovisioningNodePoolDefaults(other.getAutoprovisioningNodePoolDefaults());
@@ -1244,6 +1471,106 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         resourceLimits_ = null;
       }
       return resourceLimitsBuilder_;
+    }
+
+    private int autoscalingProfile_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Defines autoscaling behaviour.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterAutoscaling.AutoscalingProfile autoscaling_profile = 3;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for autoscalingProfile.
+     */
+    @java.lang.Override
+    public int getAutoscalingProfileValue() {
+      return autoscalingProfile_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines autoscaling behaviour.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterAutoscaling.AutoscalingProfile autoscaling_profile = 3;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for autoscalingProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoscalingProfileValue(int value) {
+
+      autoscalingProfile_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines autoscaling behaviour.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterAutoscaling.AutoscalingProfile autoscaling_profile = 3;
+     * </code>
+     *
+     * @return The autoscalingProfile.
+     */
+    @java.lang.Override
+    public com.google.container.v1.ClusterAutoscaling.AutoscalingProfile getAutoscalingProfile() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.ClusterAutoscaling.AutoscalingProfile result =
+          com.google.container.v1.ClusterAutoscaling.AutoscalingProfile.valueOf(
+              autoscalingProfile_);
+      return result == null
+          ? com.google.container.v1.ClusterAutoscaling.AutoscalingProfile.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines autoscaling behaviour.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterAutoscaling.AutoscalingProfile autoscaling_profile = 3;
+     * </code>
+     *
+     * @param value The autoscalingProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoscalingProfile(
+        com.google.container.v1.ClusterAutoscaling.AutoscalingProfile value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      autoscalingProfile_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines autoscaling behaviour.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterAutoscaling.AutoscalingProfile autoscaling_profile = 3;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoscalingProfile() {
+
+      autoscalingProfile_ = 0;
+      onChanged();
+      return this;
     }
 
     private com.google.container.v1.AutoprovisioningNodePoolDefaults

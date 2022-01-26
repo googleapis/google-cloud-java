@@ -182,6 +182,44 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
+   * Networking configuration for this NodePool. If specified, it overrides the
+   * cluster-level defaults.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeNetworkConfig network_config = 14;</code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  boolean hasNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Networking configuration for this NodePool. If specified, it overrides the
+   * cluster-level defaults.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeNetworkConfig network_config = 14;</code>
+   *
+   * @return The networkConfig.
+   */
+  com.google.container.v1.NodeNetworkConfig getNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Networking configuration for this NodePool. If specified, it overrides the
+   * cluster-level defaults.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeNetworkConfig network_config = 14;</code>
+   */
+  com.google.container.v1.NodeNetworkConfigOrBuilder getNetworkConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *

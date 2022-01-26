@@ -46,6 +46,8 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     desiredImageType_ = "";
     desiredLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     desiredLoggingService_ = "";
+    desiredDatapathProvider_ = 0;
+    desiredPrivateIpv6GoogleAccess_ = 0;
     desiredMasterVersion_ = "";
   }
 
@@ -303,6 +305,22 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 314:
+            {
+              com.google.container.v1.ILBSubsettingConfig.Builder subBuilder = null;
+              if (desiredL4IlbSubsettingConfig_ != null) {
+                subBuilder = desiredL4IlbSubsettingConfig_.toBuilder();
+              }
+              desiredL4IlbSubsettingConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.ILBSubsettingConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredL4IlbSubsettingConfig_);
+                desiredL4IlbSubsettingConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 370:
             {
               com.google.container.v1.DatabaseEncryption.Builder subBuilder = null;
@@ -351,6 +369,67 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 400:
+            {
+              int rawValue = input.readEnum();
+
+              desiredDatapathProvider_ = rawValue;
+              break;
+            }
+          case 408:
+            {
+              int rawValue = input.readEnum();
+
+              desiredPrivateIpv6GoogleAccess_ = rawValue;
+              break;
+            }
+          case 426:
+            {
+              com.google.container.v1.DNSConfig.Builder subBuilder = null;
+              if (desiredDnsConfig_ != null) {
+                subBuilder = desiredDnsConfig_.toBuilder();
+              }
+              desiredDnsConfig_ =
+                  input.readMessage(com.google.container.v1.DNSConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredDnsConfig_);
+                desiredDnsConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 442:
+            {
+              com.google.container.v1.NotificationConfig.Builder subBuilder = null;
+              if (desiredNotificationConfig_ != null) {
+                subBuilder = desiredNotificationConfig_.toBuilder();
+              }
+              desiredNotificationConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.NotificationConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredNotificationConfig_);
+                desiredNotificationConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 482:
+            {
+              com.google.container.v1.ServiceExternalIPsConfig.Builder subBuilder = null;
+              if (desiredServiceExternalIpsConfig_ != null) {
+                subBuilder = desiredServiceExternalIpsConfig_.toBuilder();
+              }
+              desiredServiceExternalIpsConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.ServiceExternalIPsConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredServiceExternalIpsConfig_);
+                desiredServiceExternalIpsConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 506:
             {
               com.google.container.v1.AuthenticatorGroupsConfig.Builder subBuilder = null;
@@ -368,11 +447,74 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 514:
+            {
+              com.google.container.v1.LoggingConfig.Builder subBuilder = null;
+              if (desiredLoggingConfig_ != null) {
+                subBuilder = desiredLoggingConfig_.toBuilder();
+              }
+              desiredLoggingConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.LoggingConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredLoggingConfig_);
+                desiredLoggingConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 522:
+            {
+              com.google.container.v1.MonitoringConfig.Builder subBuilder = null;
+              if (desiredMonitoringConfig_ != null) {
+                subBuilder = desiredMonitoringConfig_.toBuilder();
+              }
+              desiredMonitoringConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.MonitoringConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredMonitoringConfig_);
+                desiredMonitoringConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 538:
+            {
+              com.google.container.v1.MeshCertificates.Builder subBuilder = null;
+              if (desiredMeshCertificates_ != null) {
+                subBuilder = desiredMeshCertificates_.toBuilder();
+              }
+              desiredMeshCertificates_ =
+                  input.readMessage(
+                      com.google.container.v1.MeshCertificates.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredMeshCertificates_);
+                desiredMeshCertificates_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 802:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               desiredMasterVersion_ = s;
+              break;
+            }
+          case 874:
+            {
+              com.google.container.v1.GcfsConfig.Builder subBuilder = null;
+              if (desiredGcfsConfig_ != null) {
+                subBuilder = desiredGcfsConfig_.toBuilder();
+              }
+              desiredGcfsConfig_ =
+                  input.readMessage(com.google.container.v1.GcfsConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredGcfsConfig_);
+                desiredGcfsConfig_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -794,6 +936,57 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredWorkloadIdentityConfig();
   }
 
+  public static final int DESIRED_MESH_CERTIFICATES_FIELD_NUMBER = 67;
+  private com.google.container.v1.MeshCertificates desiredMeshCertificates_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+   *
+   * @return Whether the desiredMeshCertificates field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredMeshCertificates() {
+    return desiredMeshCertificates_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+   *
+   * @return The desiredMeshCertificates.
+   */
+  @java.lang.Override
+  public com.google.container.v1.MeshCertificates getDesiredMeshCertificates() {
+    return desiredMeshCertificates_ == null
+        ? com.google.container.v1.MeshCertificates.getDefaultInstance()
+        : desiredMeshCertificates_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.MeshCertificatesOrBuilder getDesiredMeshCertificatesOrBuilder() {
+    return getDesiredMeshCertificates();
+  }
+
   public static final int DESIRED_SHIELDED_NODES_FIELD_NUMBER = 48;
   private com.google.container.v1.ShieldedNodes desiredShieldedNodes_;
   /**
@@ -840,6 +1033,54 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.container.v1.ShieldedNodesOrBuilder getDesiredShieldedNodesOrBuilder() {
     return getDesiredShieldedNodes();
+  }
+
+  public static final int DESIRED_DNS_CONFIG_FIELD_NUMBER = 53;
+  private com.google.container.v1.DNSConfig desiredDnsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+   *
+   * @return Whether the desiredDnsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredDnsConfig() {
+    return desiredDnsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+   *
+   * @return The desiredDnsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.DNSConfig getDesiredDnsConfig() {
+    return desiredDnsConfig_ == null
+        ? com.google.container.v1.DNSConfig.getDefaultInstance()
+        : desiredDnsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.DNSConfigOrBuilder getDesiredDnsConfigOrBuilder() {
+    return getDesiredDnsConfig();
   }
 
   public static final int DESIRED_NODE_POOL_AUTOSCALING_FIELD_NUMBER = 9;
@@ -1499,6 +1740,178 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredReleaseChannel();
   }
 
+  public static final int DESIRED_L4ILB_SUBSETTING_CONFIG_FIELD_NUMBER = 39;
+  private com.google.container.v1.ILBSubsettingConfig desiredL4IlbSubsettingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired L4 Internal Load Balancer Subsetting configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+   *
+   * @return Whether the desiredL4ilbSubsettingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredL4IlbSubsettingConfig() {
+    return desiredL4IlbSubsettingConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired L4 Internal Load Balancer Subsetting configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+   *
+   * @return The desiredL4ilbSubsettingConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ILBSubsettingConfig getDesiredL4IlbSubsettingConfig() {
+    return desiredL4IlbSubsettingConfig_ == null
+        ? com.google.container.v1.ILBSubsettingConfig.getDefaultInstance()
+        : desiredL4IlbSubsettingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired L4 Internal Load Balancer Subsetting configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ILBSubsettingConfigOrBuilder
+      getDesiredL4IlbSubsettingConfigOrBuilder() {
+    return getDesiredL4IlbSubsettingConfig();
+  }
+
+  public static final int DESIRED_DATAPATH_PROVIDER_FIELD_NUMBER = 50;
+  private int desiredDatapathProvider_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired datapath provider for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DatapathProvider desired_datapath_provider = 50;</code>
+   *
+   * @return The enum numeric value on the wire for desiredDatapathProvider.
+   */
+  @java.lang.Override
+  public int getDesiredDatapathProviderValue() {
+    return desiredDatapathProvider_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired datapath provider for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DatapathProvider desired_datapath_provider = 50;</code>
+   *
+   * @return The desiredDatapathProvider.
+   */
+  @java.lang.Override
+  public com.google.container.v1.DatapathProvider getDesiredDatapathProvider() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1.DatapathProvider result =
+        com.google.container.v1.DatapathProvider.valueOf(desiredDatapathProvider_);
+    return result == null ? com.google.container.v1.DatapathProvider.UNRECOGNIZED : result;
+  }
+
+  public static final int DESIRED_PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER = 51;
+  private int desiredPrivateIpv6GoogleAccess_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of IPv6 connectivity to Google Services.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for desiredPrivateIpv6GoogleAccess.
+   */
+  @java.lang.Override
+  public int getDesiredPrivateIpv6GoogleAccessValue() {
+    return desiredPrivateIpv6GoogleAccess_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of IPv6 connectivity to Google Services.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;
+   * </code>
+   *
+   * @return The desiredPrivateIpv6GoogleAccess.
+   */
+  @java.lang.Override
+  public com.google.container.v1.PrivateIPv6GoogleAccess getDesiredPrivateIpv6GoogleAccess() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1.PrivateIPv6GoogleAccess result =
+        com.google.container.v1.PrivateIPv6GoogleAccess.valueOf(desiredPrivateIpv6GoogleAccess_);
+    return result == null ? com.google.container.v1.PrivateIPv6GoogleAccess.UNRECOGNIZED : result;
+  }
+
+  public static final int DESIRED_NOTIFICATION_CONFIG_FIELD_NUMBER = 55;
+  private com.google.container.v1.NotificationConfig desiredNotificationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired notification configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+   *
+   * @return Whether the desiredNotificationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredNotificationConfig() {
+    return desiredNotificationConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired notification configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+   *
+   * @return The desiredNotificationConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NotificationConfig getDesiredNotificationConfig() {
+    return desiredNotificationConfig_ == null
+        ? com.google.container.v1.NotificationConfig.getDefaultInstance()
+        : desiredNotificationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired notification configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NotificationConfigOrBuilder
+      getDesiredNotificationConfigOrBuilder() {
+    return getDesiredNotificationConfig();
+  }
+
   public static final int DESIRED_AUTHENTICATOR_GROUPS_CONFIG_FIELD_NUMBER = 63;
   private com.google.container.v1.AuthenticatorGroupsConfig desiredAuthenticatorGroupsConfig_;
   /**
@@ -1549,6 +1962,157 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public com.google.container.v1.AuthenticatorGroupsConfigOrBuilder
       getDesiredAuthenticatorGroupsConfigOrBuilder() {
     return getDesiredAuthenticatorGroupsConfig();
+  }
+
+  public static final int DESIRED_LOGGING_CONFIG_FIELD_NUMBER = 64;
+  private com.google.container.v1.LoggingConfig desiredLoggingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+   *
+   * @return Whether the desiredLoggingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredLoggingConfig() {
+    return desiredLoggingConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+   *
+   * @return The desiredLoggingConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.LoggingConfig getDesiredLoggingConfig() {
+    return desiredLoggingConfig_ == null
+        ? com.google.container.v1.LoggingConfig.getDefaultInstance()
+        : desiredLoggingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.LoggingConfigOrBuilder getDesiredLoggingConfigOrBuilder() {
+    return getDesiredLoggingConfig();
+  }
+
+  public static final int DESIRED_MONITORING_CONFIG_FIELD_NUMBER = 65;
+  private com.google.container.v1.MonitoringConfig desiredMonitoringConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired monitoring configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+   *
+   * @return Whether the desiredMonitoringConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredMonitoringConfig() {
+    return desiredMonitoringConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired monitoring configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+   *
+   * @return The desiredMonitoringConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.MonitoringConfig getDesiredMonitoringConfig() {
+    return desiredMonitoringConfig_ == null
+        ? com.google.container.v1.MonitoringConfig.getDefaultInstance()
+        : desiredMonitoringConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired monitoring configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.MonitoringConfigOrBuilder getDesiredMonitoringConfigOrBuilder() {
+    return getDesiredMonitoringConfig();
+  }
+
+  public static final int DESIRED_SERVICE_EXTERNAL_IPS_CONFIG_FIELD_NUMBER = 60;
+  private com.google.container.v1.ServiceExternalIPsConfig desiredServiceExternalIpsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies the config for the use of Services with
+   * ExternalIPs field.
+   * </pre>
+   *
+   * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+   * </code>
+   *
+   * @return Whether the desiredServiceExternalIpsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredServiceExternalIpsConfig() {
+    return desiredServiceExternalIpsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies the config for the use of Services with
+   * ExternalIPs field.
+   * </pre>
+   *
+   * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+   * </code>
+   *
+   * @return The desiredServiceExternalIpsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ServiceExternalIPsConfig getDesiredServiceExternalIpsConfig() {
+    return desiredServiceExternalIpsConfig_ == null
+        ? com.google.container.v1.ServiceExternalIPsConfig.getDefaultInstance()
+        : desiredServiceExternalIpsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies the config for the use of Services with
+   * ExternalIPs field.
+   * </pre>
+   *
+   * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ServiceExternalIPsConfigOrBuilder
+      getDesiredServiceExternalIpsConfigOrBuilder() {
+    return getDesiredServiceExternalIpsConfig();
   }
 
   public static final int DESIRED_MASTER_VERSION_FIELD_NUMBER = 100;
@@ -1612,6 +2176,54 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int DESIRED_GCFS_CONFIG_FIELD_NUMBER = 109;
+  private com.google.container.v1.GcfsConfig desiredGcfsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired GCFS config for the cluster
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+   *
+   * @return Whether the desiredGcfsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredGcfsConfig() {
+    return desiredGcfsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired GCFS config for the cluster
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+   *
+   * @return The desiredGcfsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.GcfsConfig getDesiredGcfsConfig() {
+    return desiredGcfsConfig_ == null
+        ? com.google.container.v1.GcfsConfig.getDefaultInstance()
+        : desiredGcfsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired GCFS config for the cluster
+   * </pre>
+   *
+   * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.GcfsConfigOrBuilder getDesiredGcfsConfigOrBuilder() {
+    return getDesiredGcfsConfig();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1679,6 +2291,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredReleaseChannel_ != null) {
       output.writeMessage(31, getDesiredReleaseChannel());
     }
+    if (desiredL4IlbSubsettingConfig_ != null) {
+      output.writeMessage(39, getDesiredL4IlbSubsettingConfig());
+    }
     if (desiredDatabaseEncryption_ != null) {
       output.writeMessage(46, getDesiredDatabaseEncryption());
     }
@@ -1688,11 +2303,41 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredShieldedNodes_ != null) {
       output.writeMessage(48, getDesiredShieldedNodes());
     }
+    if (desiredDatapathProvider_
+        != com.google.container.v1.DatapathProvider.DATAPATH_PROVIDER_UNSPECIFIED.getNumber()) {
+      output.writeEnum(50, desiredDatapathProvider_);
+    }
+    if (desiredPrivateIpv6GoogleAccess_
+        != com.google.container.v1.PrivateIPv6GoogleAccess.PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(51, desiredPrivateIpv6GoogleAccess_);
+    }
+    if (desiredDnsConfig_ != null) {
+      output.writeMessage(53, getDesiredDnsConfig());
+    }
+    if (desiredNotificationConfig_ != null) {
+      output.writeMessage(55, getDesiredNotificationConfig());
+    }
+    if (desiredServiceExternalIpsConfig_ != null) {
+      output.writeMessage(60, getDesiredServiceExternalIpsConfig());
+    }
     if (desiredAuthenticatorGroupsConfig_ != null) {
       output.writeMessage(63, getDesiredAuthenticatorGroupsConfig());
     }
+    if (desiredLoggingConfig_ != null) {
+      output.writeMessage(64, getDesiredLoggingConfig());
+    }
+    if (desiredMonitoringConfig_ != null) {
+      output.writeMessage(65, getDesiredMonitoringConfig());
+    }
+    if (desiredMeshCertificates_ != null) {
+      output.writeMessage(67, getDesiredMeshCertificates());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desiredMasterVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, desiredMasterVersion_);
+    }
+    if (desiredGcfsConfig_ != null) {
+      output.writeMessage(109, getDesiredGcfsConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -1779,6 +2424,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(31, getDesiredReleaseChannel());
     }
+    if (desiredL4IlbSubsettingConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              39, getDesiredL4IlbSubsettingConfig());
+    }
     if (desiredDatabaseEncryption_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1793,13 +2443,54 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(48, getDesiredShieldedNodes());
     }
+    if (desiredDatapathProvider_
+        != com.google.container.v1.DatapathProvider.DATAPATH_PROVIDER_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(50, desiredDatapathProvider_);
+    }
+    if (desiredPrivateIpv6GoogleAccess_
+        != com.google.container.v1.PrivateIPv6GoogleAccess.PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              51, desiredPrivateIpv6GoogleAccess_);
+    }
+    if (desiredDnsConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(53, getDesiredDnsConfig());
+    }
+    if (desiredNotificationConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              55, getDesiredNotificationConfig());
+    }
+    if (desiredServiceExternalIpsConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              60, getDesiredServiceExternalIpsConfig());
+    }
     if (desiredAuthenticatorGroupsConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               63, getDesiredAuthenticatorGroupsConfig());
     }
+    if (desiredLoggingConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(64, getDesiredLoggingConfig());
+    }
+    if (desiredMonitoringConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              65, getDesiredMonitoringConfig());
+    }
+    if (desiredMeshCertificates_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              67, getDesiredMeshCertificates());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desiredMasterVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, desiredMasterVersion_);
+    }
+    if (desiredGcfsConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(109, getDesiredGcfsConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1835,9 +2526,17 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (!getDesiredWorkloadIdentityConfig().equals(other.getDesiredWorkloadIdentityConfig()))
         return false;
     }
+    if (hasDesiredMeshCertificates() != other.hasDesiredMeshCertificates()) return false;
+    if (hasDesiredMeshCertificates()) {
+      if (!getDesiredMeshCertificates().equals(other.getDesiredMeshCertificates())) return false;
+    }
     if (hasDesiredShieldedNodes() != other.hasDesiredShieldedNodes()) return false;
     if (hasDesiredShieldedNodes()) {
       if (!getDesiredShieldedNodes().equals(other.getDesiredShieldedNodes())) return false;
+    }
+    if (hasDesiredDnsConfig() != other.hasDesiredDnsConfig()) return false;
+    if (hasDesiredDnsConfig()) {
+      if (!getDesiredDnsConfig().equals(other.getDesiredDnsConfig())) return false;
     }
     if (hasDesiredNodePoolAutoscaling() != other.hasDesiredNodePoolAutoscaling()) return false;
     if (hasDesiredNodePoolAutoscaling()) {
@@ -1893,13 +2592,43 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredReleaseChannel()) {
       if (!getDesiredReleaseChannel().equals(other.getDesiredReleaseChannel())) return false;
     }
+    if (hasDesiredL4IlbSubsettingConfig() != other.hasDesiredL4IlbSubsettingConfig()) return false;
+    if (hasDesiredL4IlbSubsettingConfig()) {
+      if (!getDesiredL4IlbSubsettingConfig().equals(other.getDesiredL4IlbSubsettingConfig()))
+        return false;
+    }
+    if (desiredDatapathProvider_ != other.desiredDatapathProvider_) return false;
+    if (desiredPrivateIpv6GoogleAccess_ != other.desiredPrivateIpv6GoogleAccess_) return false;
+    if (hasDesiredNotificationConfig() != other.hasDesiredNotificationConfig()) return false;
+    if (hasDesiredNotificationConfig()) {
+      if (!getDesiredNotificationConfig().equals(other.getDesiredNotificationConfig()))
+        return false;
+    }
     if (hasDesiredAuthenticatorGroupsConfig() != other.hasDesiredAuthenticatorGroupsConfig())
       return false;
     if (hasDesiredAuthenticatorGroupsConfig()) {
       if (!getDesiredAuthenticatorGroupsConfig()
           .equals(other.getDesiredAuthenticatorGroupsConfig())) return false;
     }
+    if (hasDesiredLoggingConfig() != other.hasDesiredLoggingConfig()) return false;
+    if (hasDesiredLoggingConfig()) {
+      if (!getDesiredLoggingConfig().equals(other.getDesiredLoggingConfig())) return false;
+    }
+    if (hasDesiredMonitoringConfig() != other.hasDesiredMonitoringConfig()) return false;
+    if (hasDesiredMonitoringConfig()) {
+      if (!getDesiredMonitoringConfig().equals(other.getDesiredMonitoringConfig())) return false;
+    }
+    if (hasDesiredServiceExternalIpsConfig() != other.hasDesiredServiceExternalIpsConfig())
+      return false;
+    if (hasDesiredServiceExternalIpsConfig()) {
+      if (!getDesiredServiceExternalIpsConfig().equals(other.getDesiredServiceExternalIpsConfig()))
+        return false;
+    }
     if (!getDesiredMasterVersion().equals(other.getDesiredMasterVersion())) return false;
+    if (hasDesiredGcfsConfig() != other.hasDesiredGcfsConfig()) return false;
+    if (hasDesiredGcfsConfig()) {
+      if (!getDesiredGcfsConfig().equals(other.getDesiredGcfsConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1931,9 +2660,17 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredWorkloadIdentityConfig().hashCode();
     }
+    if (hasDesiredMeshCertificates()) {
+      hash = (37 * hash) + DESIRED_MESH_CERTIFICATES_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredMeshCertificates().hashCode();
+    }
     if (hasDesiredShieldedNodes()) {
       hash = (37 * hash) + DESIRED_SHIELDED_NODES_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredShieldedNodes().hashCode();
+    }
+    if (hasDesiredDnsConfig()) {
+      hash = (37 * hash) + DESIRED_DNS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredDnsConfig().hashCode();
     }
     if (hasDesiredNodePoolAutoscaling()) {
       hash = (37 * hash) + DESIRED_NODE_POOL_AUTOSCALING_FIELD_NUMBER;
@@ -1981,12 +2718,40 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_RELEASE_CHANNEL_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredReleaseChannel().hashCode();
     }
+    if (hasDesiredL4IlbSubsettingConfig()) {
+      hash = (37 * hash) + DESIRED_L4ILB_SUBSETTING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredL4IlbSubsettingConfig().hashCode();
+    }
+    hash = (37 * hash) + DESIRED_DATAPATH_PROVIDER_FIELD_NUMBER;
+    hash = (53 * hash) + desiredDatapathProvider_;
+    hash = (37 * hash) + DESIRED_PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER;
+    hash = (53 * hash) + desiredPrivateIpv6GoogleAccess_;
+    if (hasDesiredNotificationConfig()) {
+      hash = (37 * hash) + DESIRED_NOTIFICATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredNotificationConfig().hashCode();
+    }
     if (hasDesiredAuthenticatorGroupsConfig()) {
       hash = (37 * hash) + DESIRED_AUTHENTICATOR_GROUPS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredAuthenticatorGroupsConfig().hashCode();
     }
+    if (hasDesiredLoggingConfig()) {
+      hash = (37 * hash) + DESIRED_LOGGING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredLoggingConfig().hashCode();
+    }
+    if (hasDesiredMonitoringConfig()) {
+      hash = (37 * hash) + DESIRED_MONITORING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredMonitoringConfig().hashCode();
+    }
+    if (hasDesiredServiceExternalIpsConfig()) {
+      hash = (37 * hash) + DESIRED_SERVICE_EXTERNAL_IPS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredServiceExternalIpsConfig().hashCode();
+    }
     hash = (37 * hash) + DESIRED_MASTER_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getDesiredMasterVersion().hashCode();
+    if (hasDesiredGcfsConfig()) {
+      hash = (37 * hash) + DESIRED_GCFS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredGcfsConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2159,11 +2924,23 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredWorkloadIdentityConfig_ = null;
         desiredWorkloadIdentityConfigBuilder_ = null;
       }
+      if (desiredMeshCertificatesBuilder_ == null) {
+        desiredMeshCertificates_ = null;
+      } else {
+        desiredMeshCertificates_ = null;
+        desiredMeshCertificatesBuilder_ = null;
+      }
       if (desiredShieldedNodesBuilder_ == null) {
         desiredShieldedNodes_ = null;
       } else {
         desiredShieldedNodes_ = null;
         desiredShieldedNodesBuilder_ = null;
+      }
+      if (desiredDnsConfigBuilder_ == null) {
+        desiredDnsConfig_ = null;
+      } else {
+        desiredDnsConfig_ = null;
+        desiredDnsConfigBuilder_ = null;
       }
       if (desiredNodePoolAutoscalingBuilder_ == null) {
         desiredNodePoolAutoscaling_ = null;
@@ -2229,14 +3006,54 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredReleaseChannel_ = null;
         desiredReleaseChannelBuilder_ = null;
       }
+      if (desiredL4IlbSubsettingConfigBuilder_ == null) {
+        desiredL4IlbSubsettingConfig_ = null;
+      } else {
+        desiredL4IlbSubsettingConfig_ = null;
+        desiredL4IlbSubsettingConfigBuilder_ = null;
+      }
+      desiredDatapathProvider_ = 0;
+
+      desiredPrivateIpv6GoogleAccess_ = 0;
+
+      if (desiredNotificationConfigBuilder_ == null) {
+        desiredNotificationConfig_ = null;
+      } else {
+        desiredNotificationConfig_ = null;
+        desiredNotificationConfigBuilder_ = null;
+      }
       if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
         desiredAuthenticatorGroupsConfig_ = null;
       } else {
         desiredAuthenticatorGroupsConfig_ = null;
         desiredAuthenticatorGroupsConfigBuilder_ = null;
       }
+      if (desiredLoggingConfigBuilder_ == null) {
+        desiredLoggingConfig_ = null;
+      } else {
+        desiredLoggingConfig_ = null;
+        desiredLoggingConfigBuilder_ = null;
+      }
+      if (desiredMonitoringConfigBuilder_ == null) {
+        desiredMonitoringConfig_ = null;
+      } else {
+        desiredMonitoringConfig_ = null;
+        desiredMonitoringConfigBuilder_ = null;
+      }
+      if (desiredServiceExternalIpsConfigBuilder_ == null) {
+        desiredServiceExternalIpsConfig_ = null;
+      } else {
+        desiredServiceExternalIpsConfig_ = null;
+        desiredServiceExternalIpsConfigBuilder_ = null;
+      }
       desiredMasterVersion_ = "";
 
+      if (desiredGcfsConfigBuilder_ == null) {
+        desiredGcfsConfig_ = null;
+      } else {
+        desiredGcfsConfig_ = null;
+        desiredGcfsConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2284,10 +3101,20 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredWorkloadIdentityConfig_ = desiredWorkloadIdentityConfigBuilder_.build();
       }
+      if (desiredMeshCertificatesBuilder_ == null) {
+        result.desiredMeshCertificates_ = desiredMeshCertificates_;
+      } else {
+        result.desiredMeshCertificates_ = desiredMeshCertificatesBuilder_.build();
+      }
       if (desiredShieldedNodesBuilder_ == null) {
         result.desiredShieldedNodes_ = desiredShieldedNodes_;
       } else {
         result.desiredShieldedNodes_ = desiredShieldedNodesBuilder_.build();
+      }
+      if (desiredDnsConfigBuilder_ == null) {
+        result.desiredDnsConfig_ = desiredDnsConfig_;
+      } else {
+        result.desiredDnsConfig_ = desiredDnsConfigBuilder_.build();
       }
       if (desiredNodePoolAutoscalingBuilder_ == null) {
         result.desiredNodePoolAutoscaling_ = desiredNodePoolAutoscaling_;
@@ -2346,12 +3173,44 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredReleaseChannel_ = desiredReleaseChannelBuilder_.build();
       }
+      if (desiredL4IlbSubsettingConfigBuilder_ == null) {
+        result.desiredL4IlbSubsettingConfig_ = desiredL4IlbSubsettingConfig_;
+      } else {
+        result.desiredL4IlbSubsettingConfig_ = desiredL4IlbSubsettingConfigBuilder_.build();
+      }
+      result.desiredDatapathProvider_ = desiredDatapathProvider_;
+      result.desiredPrivateIpv6GoogleAccess_ = desiredPrivateIpv6GoogleAccess_;
+      if (desiredNotificationConfigBuilder_ == null) {
+        result.desiredNotificationConfig_ = desiredNotificationConfig_;
+      } else {
+        result.desiredNotificationConfig_ = desiredNotificationConfigBuilder_.build();
+      }
       if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
         result.desiredAuthenticatorGroupsConfig_ = desiredAuthenticatorGroupsConfig_;
       } else {
         result.desiredAuthenticatorGroupsConfig_ = desiredAuthenticatorGroupsConfigBuilder_.build();
       }
+      if (desiredLoggingConfigBuilder_ == null) {
+        result.desiredLoggingConfig_ = desiredLoggingConfig_;
+      } else {
+        result.desiredLoggingConfig_ = desiredLoggingConfigBuilder_.build();
+      }
+      if (desiredMonitoringConfigBuilder_ == null) {
+        result.desiredMonitoringConfig_ = desiredMonitoringConfig_;
+      } else {
+        result.desiredMonitoringConfig_ = desiredMonitoringConfigBuilder_.build();
+      }
+      if (desiredServiceExternalIpsConfigBuilder_ == null) {
+        result.desiredServiceExternalIpsConfig_ = desiredServiceExternalIpsConfig_;
+      } else {
+        result.desiredServiceExternalIpsConfig_ = desiredServiceExternalIpsConfigBuilder_.build();
+      }
       result.desiredMasterVersion_ = desiredMasterVersion_;
+      if (desiredGcfsConfigBuilder_ == null) {
+        result.desiredGcfsConfig_ = desiredGcfsConfig_;
+      } else {
+        result.desiredGcfsConfig_ = desiredGcfsConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -2426,8 +3285,14 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDesiredWorkloadIdentityConfig()) {
         mergeDesiredWorkloadIdentityConfig(other.getDesiredWorkloadIdentityConfig());
       }
+      if (other.hasDesiredMeshCertificates()) {
+        mergeDesiredMeshCertificates(other.getDesiredMeshCertificates());
+      }
       if (other.hasDesiredShieldedNodes()) {
         mergeDesiredShieldedNodes(other.getDesiredShieldedNodes());
+      }
+      if (other.hasDesiredDnsConfig()) {
+        mergeDesiredDnsConfig(other.getDesiredDnsConfig());
       }
       if (other.hasDesiredNodePoolAutoscaling()) {
         mergeDesiredNodePoolAutoscaling(other.getDesiredNodePoolAutoscaling());
@@ -2474,12 +3339,36 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDesiredReleaseChannel()) {
         mergeDesiredReleaseChannel(other.getDesiredReleaseChannel());
       }
+      if (other.hasDesiredL4IlbSubsettingConfig()) {
+        mergeDesiredL4IlbSubsettingConfig(other.getDesiredL4IlbSubsettingConfig());
+      }
+      if (other.desiredDatapathProvider_ != 0) {
+        setDesiredDatapathProviderValue(other.getDesiredDatapathProviderValue());
+      }
+      if (other.desiredPrivateIpv6GoogleAccess_ != 0) {
+        setDesiredPrivateIpv6GoogleAccessValue(other.getDesiredPrivateIpv6GoogleAccessValue());
+      }
+      if (other.hasDesiredNotificationConfig()) {
+        mergeDesiredNotificationConfig(other.getDesiredNotificationConfig());
+      }
       if (other.hasDesiredAuthenticatorGroupsConfig()) {
         mergeDesiredAuthenticatorGroupsConfig(other.getDesiredAuthenticatorGroupsConfig());
+      }
+      if (other.hasDesiredLoggingConfig()) {
+        mergeDesiredLoggingConfig(other.getDesiredLoggingConfig());
+      }
+      if (other.hasDesiredMonitoringConfig()) {
+        mergeDesiredMonitoringConfig(other.getDesiredMonitoringConfig());
+      }
+      if (other.hasDesiredServiceExternalIpsConfig()) {
+        mergeDesiredServiceExternalIpsConfig(other.getDesiredServiceExternalIpsConfig());
       }
       if (!other.getDesiredMasterVersion().isEmpty()) {
         desiredMasterVersion_ = other.desiredMasterVersion_;
         onChanged();
+      }
+      if (other.hasDesiredGcfsConfig()) {
+        mergeDesiredGcfsConfig(other.getDesiredGcfsConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3612,6 +4501,201 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredWorkloadIdentityConfigBuilder_;
     }
 
+    private com.google.container.v1.MeshCertificates desiredMeshCertificates_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.MeshCertificates,
+            com.google.container.v1.MeshCertificates.Builder,
+            com.google.container.v1.MeshCertificatesOrBuilder>
+        desiredMeshCertificatesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+     *
+     * @return Whether the desiredMeshCertificates field is set.
+     */
+    public boolean hasDesiredMeshCertificates() {
+      return desiredMeshCertificatesBuilder_ != null || desiredMeshCertificates_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+     *
+     * @return The desiredMeshCertificates.
+     */
+    public com.google.container.v1.MeshCertificates getDesiredMeshCertificates() {
+      if (desiredMeshCertificatesBuilder_ == null) {
+        return desiredMeshCertificates_ == null
+            ? com.google.container.v1.MeshCertificates.getDefaultInstance()
+            : desiredMeshCertificates_;
+      } else {
+        return desiredMeshCertificatesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    public Builder setDesiredMeshCertificates(com.google.container.v1.MeshCertificates value) {
+      if (desiredMeshCertificatesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredMeshCertificates_ = value;
+        onChanged();
+      } else {
+        desiredMeshCertificatesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    public Builder setDesiredMeshCertificates(
+        com.google.container.v1.MeshCertificates.Builder builderForValue) {
+      if (desiredMeshCertificatesBuilder_ == null) {
+        desiredMeshCertificates_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredMeshCertificatesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    public Builder mergeDesiredMeshCertificates(com.google.container.v1.MeshCertificates value) {
+      if (desiredMeshCertificatesBuilder_ == null) {
+        if (desiredMeshCertificates_ != null) {
+          desiredMeshCertificates_ =
+              com.google.container.v1.MeshCertificates.newBuilder(desiredMeshCertificates_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredMeshCertificates_ = value;
+        }
+        onChanged();
+      } else {
+        desiredMeshCertificatesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    public Builder clearDesiredMeshCertificates() {
+      if (desiredMeshCertificatesBuilder_ == null) {
+        desiredMeshCertificates_ = null;
+        onChanged();
+      } else {
+        desiredMeshCertificates_ = null;
+        desiredMeshCertificatesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    public com.google.container.v1.MeshCertificates.Builder getDesiredMeshCertificatesBuilder() {
+
+      onChanged();
+      return getDesiredMeshCertificatesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    public com.google.container.v1.MeshCertificatesOrBuilder getDesiredMeshCertificatesOrBuilder() {
+      if (desiredMeshCertificatesBuilder_ != null) {
+        return desiredMeshCertificatesBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredMeshCertificates_ == null
+            ? com.google.container.v1.MeshCertificates.getDefaultInstance()
+            : desiredMeshCertificates_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     * </pre>
+     *
+     * <code>.google.container.v1.MeshCertificates desired_mesh_certificates = 67;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.MeshCertificates,
+            com.google.container.v1.MeshCertificates.Builder,
+            com.google.container.v1.MeshCertificatesOrBuilder>
+        getDesiredMeshCertificatesFieldBuilder() {
+      if (desiredMeshCertificatesBuilder_ == null) {
+        desiredMeshCertificatesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.MeshCertificates,
+                com.google.container.v1.MeshCertificates.Builder,
+                com.google.container.v1.MeshCertificatesOrBuilder>(
+                getDesiredMeshCertificates(), getParentForChildren(), isClean());
+        desiredMeshCertificates_ = null;
+      }
+      return desiredMeshCertificatesBuilder_;
+    }
+
     private com.google.container.v1.ShieldedNodes desiredShieldedNodes_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.ShieldedNodes,
@@ -3796,6 +4880,191 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredShieldedNodes_ = null;
       }
       return desiredShieldedNodesBuilder_;
+    }
+
+    private com.google.container.v1.DNSConfig desiredDnsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DNSConfig,
+            com.google.container.v1.DNSConfig.Builder,
+            com.google.container.v1.DNSConfigOrBuilder>
+        desiredDnsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+     *
+     * @return Whether the desiredDnsConfig field is set.
+     */
+    public boolean hasDesiredDnsConfig() {
+      return desiredDnsConfigBuilder_ != null || desiredDnsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+     *
+     * @return The desiredDnsConfig.
+     */
+    public com.google.container.v1.DNSConfig getDesiredDnsConfig() {
+      if (desiredDnsConfigBuilder_ == null) {
+        return desiredDnsConfig_ == null
+            ? com.google.container.v1.DNSConfig.getDefaultInstance()
+            : desiredDnsConfig_;
+      } else {
+        return desiredDnsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+     */
+    public Builder setDesiredDnsConfig(com.google.container.v1.DNSConfig value) {
+      if (desiredDnsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredDnsConfig_ = value;
+        onChanged();
+      } else {
+        desiredDnsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+     */
+    public Builder setDesiredDnsConfig(com.google.container.v1.DNSConfig.Builder builderForValue) {
+      if (desiredDnsConfigBuilder_ == null) {
+        desiredDnsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredDnsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+     */
+    public Builder mergeDesiredDnsConfig(com.google.container.v1.DNSConfig value) {
+      if (desiredDnsConfigBuilder_ == null) {
+        if (desiredDnsConfig_ != null) {
+          desiredDnsConfig_ =
+              com.google.container.v1.DNSConfig.newBuilder(desiredDnsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredDnsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredDnsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+     */
+    public Builder clearDesiredDnsConfig() {
+      if (desiredDnsConfigBuilder_ == null) {
+        desiredDnsConfig_ = null;
+        onChanged();
+      } else {
+        desiredDnsConfig_ = null;
+        desiredDnsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+     */
+    public com.google.container.v1.DNSConfig.Builder getDesiredDnsConfigBuilder() {
+
+      onChanged();
+      return getDesiredDnsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+     */
+    public com.google.container.v1.DNSConfigOrBuilder getDesiredDnsConfigOrBuilder() {
+      if (desiredDnsConfigBuilder_ != null) {
+        return desiredDnsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredDnsConfig_ == null
+            ? com.google.container.v1.DNSConfig.getDefaultInstance()
+            : desiredDnsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DNSConfig desired_dns_config = 53;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DNSConfig,
+            com.google.container.v1.DNSConfig.Builder,
+            com.google.container.v1.DNSConfigOrBuilder>
+        getDesiredDnsConfigFieldBuilder() {
+      if (desiredDnsConfigBuilder_ == null) {
+        desiredDnsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.DNSConfig,
+                com.google.container.v1.DNSConfig.Builder,
+                com.google.container.v1.DNSConfigOrBuilder>(
+                getDesiredDnsConfig(), getParentForChildren(), isClean());
+        desiredDnsConfig_ = null;
+      }
+      return desiredDnsConfigBuilder_;
     }
 
     private com.google.container.v1.NodePoolAutoscaling desiredNodePoolAutoscaling_;
@@ -6149,6 +7418,573 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredReleaseChannelBuilder_;
     }
 
+    private com.google.container.v1.ILBSubsettingConfig desiredL4IlbSubsettingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ILBSubsettingConfig,
+            com.google.container.v1.ILBSubsettingConfig.Builder,
+            com.google.container.v1.ILBSubsettingConfigOrBuilder>
+        desiredL4IlbSubsettingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired L4 Internal Load Balancer Subsetting configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+     *
+     * @return Whether the desiredL4ilbSubsettingConfig field is set.
+     */
+    public boolean hasDesiredL4IlbSubsettingConfig() {
+      return desiredL4IlbSubsettingConfigBuilder_ != null || desiredL4IlbSubsettingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired L4 Internal Load Balancer Subsetting configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+     *
+     * @return The desiredL4ilbSubsettingConfig.
+     */
+    public com.google.container.v1.ILBSubsettingConfig getDesiredL4IlbSubsettingConfig() {
+      if (desiredL4IlbSubsettingConfigBuilder_ == null) {
+        return desiredL4IlbSubsettingConfig_ == null
+            ? com.google.container.v1.ILBSubsettingConfig.getDefaultInstance()
+            : desiredL4IlbSubsettingConfig_;
+      } else {
+        return desiredL4IlbSubsettingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired L4 Internal Load Balancer Subsetting configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+     */
+    public Builder setDesiredL4IlbSubsettingConfig(
+        com.google.container.v1.ILBSubsettingConfig value) {
+      if (desiredL4IlbSubsettingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredL4IlbSubsettingConfig_ = value;
+        onChanged();
+      } else {
+        desiredL4IlbSubsettingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired L4 Internal Load Balancer Subsetting configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+     */
+    public Builder setDesiredL4IlbSubsettingConfig(
+        com.google.container.v1.ILBSubsettingConfig.Builder builderForValue) {
+      if (desiredL4IlbSubsettingConfigBuilder_ == null) {
+        desiredL4IlbSubsettingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredL4IlbSubsettingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired L4 Internal Load Balancer Subsetting configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+     */
+    public Builder mergeDesiredL4IlbSubsettingConfig(
+        com.google.container.v1.ILBSubsettingConfig value) {
+      if (desiredL4IlbSubsettingConfigBuilder_ == null) {
+        if (desiredL4IlbSubsettingConfig_ != null) {
+          desiredL4IlbSubsettingConfig_ =
+              com.google.container.v1.ILBSubsettingConfig.newBuilder(desiredL4IlbSubsettingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredL4IlbSubsettingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredL4IlbSubsettingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired L4 Internal Load Balancer Subsetting configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+     */
+    public Builder clearDesiredL4IlbSubsettingConfig() {
+      if (desiredL4IlbSubsettingConfigBuilder_ == null) {
+        desiredL4IlbSubsettingConfig_ = null;
+        onChanged();
+      } else {
+        desiredL4IlbSubsettingConfig_ = null;
+        desiredL4IlbSubsettingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired L4 Internal Load Balancer Subsetting configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+     */
+    public com.google.container.v1.ILBSubsettingConfig.Builder
+        getDesiredL4IlbSubsettingConfigBuilder() {
+
+      onChanged();
+      return getDesiredL4IlbSubsettingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired L4 Internal Load Balancer Subsetting configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+     */
+    public com.google.container.v1.ILBSubsettingConfigOrBuilder
+        getDesiredL4IlbSubsettingConfigOrBuilder() {
+      if (desiredL4IlbSubsettingConfigBuilder_ != null) {
+        return desiredL4IlbSubsettingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredL4IlbSubsettingConfig_ == null
+            ? com.google.container.v1.ILBSubsettingConfig.getDefaultInstance()
+            : desiredL4IlbSubsettingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired L4 Internal Load Balancer Subsetting configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ILBSubsettingConfig,
+            com.google.container.v1.ILBSubsettingConfig.Builder,
+            com.google.container.v1.ILBSubsettingConfigOrBuilder>
+        getDesiredL4IlbSubsettingConfigFieldBuilder() {
+      if (desiredL4IlbSubsettingConfigBuilder_ == null) {
+        desiredL4IlbSubsettingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ILBSubsettingConfig,
+                com.google.container.v1.ILBSubsettingConfig.Builder,
+                com.google.container.v1.ILBSubsettingConfigOrBuilder>(
+                getDesiredL4IlbSubsettingConfig(), getParentForChildren(), isClean());
+        desiredL4IlbSubsettingConfig_ = null;
+      }
+      return desiredL4IlbSubsettingConfigBuilder_;
+    }
+
+    private int desiredDatapathProvider_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The desired datapath provider for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DatapathProvider desired_datapath_provider = 50;</code>
+     *
+     * @return The enum numeric value on the wire for desiredDatapathProvider.
+     */
+    @java.lang.Override
+    public int getDesiredDatapathProviderValue() {
+      return desiredDatapathProvider_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired datapath provider for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DatapathProvider desired_datapath_provider = 50;</code>
+     *
+     * @param value The enum numeric value on the wire for desiredDatapathProvider to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredDatapathProviderValue(int value) {
+
+      desiredDatapathProvider_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired datapath provider for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DatapathProvider desired_datapath_provider = 50;</code>
+     *
+     * @return The desiredDatapathProvider.
+     */
+    @java.lang.Override
+    public com.google.container.v1.DatapathProvider getDesiredDatapathProvider() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.DatapathProvider result =
+          com.google.container.v1.DatapathProvider.valueOf(desiredDatapathProvider_);
+      return result == null ? com.google.container.v1.DatapathProvider.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired datapath provider for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DatapathProvider desired_datapath_provider = 50;</code>
+     *
+     * @param value The desiredDatapathProvider to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredDatapathProvider(com.google.container.v1.DatapathProvider value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      desiredDatapathProvider_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired datapath provider for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DatapathProvider desired_datapath_provider = 50;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDesiredDatapathProvider() {
+
+      desiredDatapathProvider_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int desiredPrivateIpv6GoogleAccess_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of IPv6 connectivity to Google Services.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for desiredPrivateIpv6GoogleAccess.
+     */
+    @java.lang.Override
+    public int getDesiredPrivateIpv6GoogleAccessValue() {
+      return desiredPrivateIpv6GoogleAccess_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of IPv6 connectivity to Google Services.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for desiredPrivateIpv6GoogleAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredPrivateIpv6GoogleAccessValue(int value) {
+
+      desiredPrivateIpv6GoogleAccess_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of IPv6 connectivity to Google Services.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;
+     * </code>
+     *
+     * @return The desiredPrivateIpv6GoogleAccess.
+     */
+    @java.lang.Override
+    public com.google.container.v1.PrivateIPv6GoogleAccess getDesiredPrivateIpv6GoogleAccess() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.PrivateIPv6GoogleAccess result =
+          com.google.container.v1.PrivateIPv6GoogleAccess.valueOf(desiredPrivateIpv6GoogleAccess_);
+      return result == null ? com.google.container.v1.PrivateIPv6GoogleAccess.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of IPv6 connectivity to Google Services.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;
+     * </code>
+     *
+     * @param value The desiredPrivateIpv6GoogleAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredPrivateIpv6GoogleAccess(
+        com.google.container.v1.PrivateIPv6GoogleAccess value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      desiredPrivateIpv6GoogleAccess_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of IPv6 connectivity to Google Services.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDesiredPrivateIpv6GoogleAccess() {
+
+      desiredPrivateIpv6GoogleAccess_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1.NotificationConfig desiredNotificationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NotificationConfig,
+            com.google.container.v1.NotificationConfig.Builder,
+            com.google.container.v1.NotificationConfigOrBuilder>
+        desiredNotificationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired notification configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+     *
+     * @return Whether the desiredNotificationConfig field is set.
+     */
+    public boolean hasDesiredNotificationConfig() {
+      return desiredNotificationConfigBuilder_ != null || desiredNotificationConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired notification configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+     *
+     * @return The desiredNotificationConfig.
+     */
+    public com.google.container.v1.NotificationConfig getDesiredNotificationConfig() {
+      if (desiredNotificationConfigBuilder_ == null) {
+        return desiredNotificationConfig_ == null
+            ? com.google.container.v1.NotificationConfig.getDefaultInstance()
+            : desiredNotificationConfig_;
+      } else {
+        return desiredNotificationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired notification configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+     */
+    public Builder setDesiredNotificationConfig(com.google.container.v1.NotificationConfig value) {
+      if (desiredNotificationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredNotificationConfig_ = value;
+        onChanged();
+      } else {
+        desiredNotificationConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired notification configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+     */
+    public Builder setDesiredNotificationConfig(
+        com.google.container.v1.NotificationConfig.Builder builderForValue) {
+      if (desiredNotificationConfigBuilder_ == null) {
+        desiredNotificationConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredNotificationConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired notification configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+     */
+    public Builder mergeDesiredNotificationConfig(
+        com.google.container.v1.NotificationConfig value) {
+      if (desiredNotificationConfigBuilder_ == null) {
+        if (desiredNotificationConfig_ != null) {
+          desiredNotificationConfig_ =
+              com.google.container.v1.NotificationConfig.newBuilder(desiredNotificationConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredNotificationConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredNotificationConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired notification configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+     */
+    public Builder clearDesiredNotificationConfig() {
+      if (desiredNotificationConfigBuilder_ == null) {
+        desiredNotificationConfig_ = null;
+        onChanged();
+      } else {
+        desiredNotificationConfig_ = null;
+        desiredNotificationConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired notification configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+     */
+    public com.google.container.v1.NotificationConfig.Builder
+        getDesiredNotificationConfigBuilder() {
+
+      onChanged();
+      return getDesiredNotificationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired notification configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+     */
+    public com.google.container.v1.NotificationConfigOrBuilder
+        getDesiredNotificationConfigOrBuilder() {
+      if (desiredNotificationConfigBuilder_ != null) {
+        return desiredNotificationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredNotificationConfig_ == null
+            ? com.google.container.v1.NotificationConfig.getDefaultInstance()
+            : desiredNotificationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired notification configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NotificationConfig desired_notification_config = 55;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NotificationConfig,
+            com.google.container.v1.NotificationConfig.Builder,
+            com.google.container.v1.NotificationConfigOrBuilder>
+        getDesiredNotificationConfigFieldBuilder() {
+      if (desiredNotificationConfigBuilder_ == null) {
+        desiredNotificationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NotificationConfig,
+                com.google.container.v1.NotificationConfig.Builder,
+                com.google.container.v1.NotificationConfigOrBuilder>(
+                getDesiredNotificationConfig(), getParentForChildren(), isClean());
+        desiredNotificationConfig_ = null;
+      }
+      return desiredNotificationConfigBuilder_;
+    }
+
     private com.google.container.v1.AuthenticatorGroupsConfig desiredAuthenticatorGroupsConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.AuthenticatorGroupsConfig,
@@ -6359,6 +8195,588 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredAuthenticatorGroupsConfigBuilder_;
     }
 
+    private com.google.container.v1.LoggingConfig desiredLoggingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LoggingConfig,
+            com.google.container.v1.LoggingConfig.Builder,
+            com.google.container.v1.LoggingConfigOrBuilder>
+        desiredLoggingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+     *
+     * @return Whether the desiredLoggingConfig field is set.
+     */
+    public boolean hasDesiredLoggingConfig() {
+      return desiredLoggingConfigBuilder_ != null || desiredLoggingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+     *
+     * @return The desiredLoggingConfig.
+     */
+    public com.google.container.v1.LoggingConfig getDesiredLoggingConfig() {
+      if (desiredLoggingConfigBuilder_ == null) {
+        return desiredLoggingConfig_ == null
+            ? com.google.container.v1.LoggingConfig.getDefaultInstance()
+            : desiredLoggingConfig_;
+      } else {
+        return desiredLoggingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+     */
+    public Builder setDesiredLoggingConfig(com.google.container.v1.LoggingConfig value) {
+      if (desiredLoggingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredLoggingConfig_ = value;
+        onChanged();
+      } else {
+        desiredLoggingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+     */
+    public Builder setDesiredLoggingConfig(
+        com.google.container.v1.LoggingConfig.Builder builderForValue) {
+      if (desiredLoggingConfigBuilder_ == null) {
+        desiredLoggingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredLoggingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+     */
+    public Builder mergeDesiredLoggingConfig(com.google.container.v1.LoggingConfig value) {
+      if (desiredLoggingConfigBuilder_ == null) {
+        if (desiredLoggingConfig_ != null) {
+          desiredLoggingConfig_ =
+              com.google.container.v1.LoggingConfig.newBuilder(desiredLoggingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredLoggingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredLoggingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+     */
+    public Builder clearDesiredLoggingConfig() {
+      if (desiredLoggingConfigBuilder_ == null) {
+        desiredLoggingConfig_ = null;
+        onChanged();
+      } else {
+        desiredLoggingConfig_ = null;
+        desiredLoggingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+     */
+    public com.google.container.v1.LoggingConfig.Builder getDesiredLoggingConfigBuilder() {
+
+      onChanged();
+      return getDesiredLoggingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+     */
+    public com.google.container.v1.LoggingConfigOrBuilder getDesiredLoggingConfigOrBuilder() {
+      if (desiredLoggingConfigBuilder_ != null) {
+        return desiredLoggingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredLoggingConfig_ == null
+            ? com.google.container.v1.LoggingConfig.getDefaultInstance()
+            : desiredLoggingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.LoggingConfig desired_logging_config = 64;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LoggingConfig,
+            com.google.container.v1.LoggingConfig.Builder,
+            com.google.container.v1.LoggingConfigOrBuilder>
+        getDesiredLoggingConfigFieldBuilder() {
+      if (desiredLoggingConfigBuilder_ == null) {
+        desiredLoggingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.LoggingConfig,
+                com.google.container.v1.LoggingConfig.Builder,
+                com.google.container.v1.LoggingConfigOrBuilder>(
+                getDesiredLoggingConfig(), getParentForChildren(), isClean());
+        desiredLoggingConfig_ = null;
+      }
+      return desiredLoggingConfigBuilder_;
+    }
+
+    private com.google.container.v1.MonitoringConfig desiredMonitoringConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.MonitoringConfig,
+            com.google.container.v1.MonitoringConfig.Builder,
+            com.google.container.v1.MonitoringConfigOrBuilder>
+        desiredMonitoringConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired monitoring configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+     *
+     * @return Whether the desiredMonitoringConfig field is set.
+     */
+    public boolean hasDesiredMonitoringConfig() {
+      return desiredMonitoringConfigBuilder_ != null || desiredMonitoringConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired monitoring configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+     *
+     * @return The desiredMonitoringConfig.
+     */
+    public com.google.container.v1.MonitoringConfig getDesiredMonitoringConfig() {
+      if (desiredMonitoringConfigBuilder_ == null) {
+        return desiredMonitoringConfig_ == null
+            ? com.google.container.v1.MonitoringConfig.getDefaultInstance()
+            : desiredMonitoringConfig_;
+      } else {
+        return desiredMonitoringConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired monitoring configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+     */
+    public Builder setDesiredMonitoringConfig(com.google.container.v1.MonitoringConfig value) {
+      if (desiredMonitoringConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredMonitoringConfig_ = value;
+        onChanged();
+      } else {
+        desiredMonitoringConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired monitoring configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+     */
+    public Builder setDesiredMonitoringConfig(
+        com.google.container.v1.MonitoringConfig.Builder builderForValue) {
+      if (desiredMonitoringConfigBuilder_ == null) {
+        desiredMonitoringConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredMonitoringConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired monitoring configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+     */
+    public Builder mergeDesiredMonitoringConfig(com.google.container.v1.MonitoringConfig value) {
+      if (desiredMonitoringConfigBuilder_ == null) {
+        if (desiredMonitoringConfig_ != null) {
+          desiredMonitoringConfig_ =
+              com.google.container.v1.MonitoringConfig.newBuilder(desiredMonitoringConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredMonitoringConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredMonitoringConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired monitoring configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+     */
+    public Builder clearDesiredMonitoringConfig() {
+      if (desiredMonitoringConfigBuilder_ == null) {
+        desiredMonitoringConfig_ = null;
+        onChanged();
+      } else {
+        desiredMonitoringConfig_ = null;
+        desiredMonitoringConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired monitoring configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+     */
+    public com.google.container.v1.MonitoringConfig.Builder getDesiredMonitoringConfigBuilder() {
+
+      onChanged();
+      return getDesiredMonitoringConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired monitoring configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+     */
+    public com.google.container.v1.MonitoringConfigOrBuilder getDesiredMonitoringConfigOrBuilder() {
+      if (desiredMonitoringConfigBuilder_ != null) {
+        return desiredMonitoringConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredMonitoringConfig_ == null
+            ? com.google.container.v1.MonitoringConfig.getDefaultInstance()
+            : desiredMonitoringConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired monitoring configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.MonitoringConfig desired_monitoring_config = 65;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.MonitoringConfig,
+            com.google.container.v1.MonitoringConfig.Builder,
+            com.google.container.v1.MonitoringConfigOrBuilder>
+        getDesiredMonitoringConfigFieldBuilder() {
+      if (desiredMonitoringConfigBuilder_ == null) {
+        desiredMonitoringConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.MonitoringConfig,
+                com.google.container.v1.MonitoringConfig.Builder,
+                com.google.container.v1.MonitoringConfigOrBuilder>(
+                getDesiredMonitoringConfig(), getParentForChildren(), isClean());
+        desiredMonitoringConfig_ = null;
+      }
+      return desiredMonitoringConfigBuilder_;
+    }
+
+    private com.google.container.v1.ServiceExternalIPsConfig desiredServiceExternalIpsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ServiceExternalIPsConfig,
+            com.google.container.v1.ServiceExternalIPsConfig.Builder,
+            com.google.container.v1.ServiceExternalIPsConfigOrBuilder>
+        desiredServiceExternalIpsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies the config for the use of Services with
+     * ExternalIPs field.
+     * </pre>
+     *
+     * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+     * </code>
+     *
+     * @return Whether the desiredServiceExternalIpsConfig field is set.
+     */
+    public boolean hasDesiredServiceExternalIpsConfig() {
+      return desiredServiceExternalIpsConfigBuilder_ != null
+          || desiredServiceExternalIpsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies the config for the use of Services with
+     * ExternalIPs field.
+     * </pre>
+     *
+     * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+     * </code>
+     *
+     * @return The desiredServiceExternalIpsConfig.
+     */
+    public com.google.container.v1.ServiceExternalIPsConfig getDesiredServiceExternalIpsConfig() {
+      if (desiredServiceExternalIpsConfigBuilder_ == null) {
+        return desiredServiceExternalIpsConfig_ == null
+            ? com.google.container.v1.ServiceExternalIPsConfig.getDefaultInstance()
+            : desiredServiceExternalIpsConfig_;
+      } else {
+        return desiredServiceExternalIpsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies the config for the use of Services with
+     * ExternalIPs field.
+     * </pre>
+     *
+     * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+     * </code>
+     */
+    public Builder setDesiredServiceExternalIpsConfig(
+        com.google.container.v1.ServiceExternalIPsConfig value) {
+      if (desiredServiceExternalIpsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredServiceExternalIpsConfig_ = value;
+        onChanged();
+      } else {
+        desiredServiceExternalIpsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies the config for the use of Services with
+     * ExternalIPs field.
+     * </pre>
+     *
+     * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+     * </code>
+     */
+    public Builder setDesiredServiceExternalIpsConfig(
+        com.google.container.v1.ServiceExternalIPsConfig.Builder builderForValue) {
+      if (desiredServiceExternalIpsConfigBuilder_ == null) {
+        desiredServiceExternalIpsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredServiceExternalIpsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies the config for the use of Services with
+     * ExternalIPs field.
+     * </pre>
+     *
+     * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+     * </code>
+     */
+    public Builder mergeDesiredServiceExternalIpsConfig(
+        com.google.container.v1.ServiceExternalIPsConfig value) {
+      if (desiredServiceExternalIpsConfigBuilder_ == null) {
+        if (desiredServiceExternalIpsConfig_ != null) {
+          desiredServiceExternalIpsConfig_ =
+              com.google.container.v1.ServiceExternalIPsConfig.newBuilder(
+                      desiredServiceExternalIpsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredServiceExternalIpsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredServiceExternalIpsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies the config for the use of Services with
+     * ExternalIPs field.
+     * </pre>
+     *
+     * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+     * </code>
+     */
+    public Builder clearDesiredServiceExternalIpsConfig() {
+      if (desiredServiceExternalIpsConfigBuilder_ == null) {
+        desiredServiceExternalIpsConfig_ = null;
+        onChanged();
+      } else {
+        desiredServiceExternalIpsConfig_ = null;
+        desiredServiceExternalIpsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies the config for the use of Services with
+     * ExternalIPs field.
+     * </pre>
+     *
+     * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+     * </code>
+     */
+    public com.google.container.v1.ServiceExternalIPsConfig.Builder
+        getDesiredServiceExternalIpsConfigBuilder() {
+
+      onChanged();
+      return getDesiredServiceExternalIpsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies the config for the use of Services with
+     * ExternalIPs field.
+     * </pre>
+     *
+     * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+     * </code>
+     */
+    public com.google.container.v1.ServiceExternalIPsConfigOrBuilder
+        getDesiredServiceExternalIpsConfigOrBuilder() {
+      if (desiredServiceExternalIpsConfigBuilder_ != null) {
+        return desiredServiceExternalIpsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredServiceExternalIpsConfig_ == null
+            ? com.google.container.v1.ServiceExternalIPsConfig.getDefaultInstance()
+            : desiredServiceExternalIpsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies the config for the use of Services with
+     * ExternalIPs field.
+     * </pre>
+     *
+     * <code>.google.container.v1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ServiceExternalIPsConfig,
+            com.google.container.v1.ServiceExternalIPsConfig.Builder,
+            com.google.container.v1.ServiceExternalIPsConfigOrBuilder>
+        getDesiredServiceExternalIpsConfigFieldBuilder() {
+      if (desiredServiceExternalIpsConfigBuilder_ == null) {
+        desiredServiceExternalIpsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ServiceExternalIPsConfig,
+                com.google.container.v1.ServiceExternalIPsConfig.Builder,
+                com.google.container.v1.ServiceExternalIPsConfigOrBuilder>(
+                getDesiredServiceExternalIpsConfig(), getParentForChildren(), isClean());
+        desiredServiceExternalIpsConfig_ = null;
+      }
+      return desiredServiceExternalIpsConfigBuilder_;
+    }
+
     private java.lang.Object desiredMasterVersion_ = "";
     /**
      *
@@ -6498,6 +8916,192 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       desiredMasterVersion_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.GcfsConfig desiredGcfsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GcfsConfig,
+            com.google.container.v1.GcfsConfig.Builder,
+            com.google.container.v1.GcfsConfigOrBuilder>
+        desiredGcfsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+     *
+     * @return Whether the desiredGcfsConfig field is set.
+     */
+    public boolean hasDesiredGcfsConfig() {
+      return desiredGcfsConfigBuilder_ != null || desiredGcfsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+     *
+     * @return The desiredGcfsConfig.
+     */
+    public com.google.container.v1.GcfsConfig getDesiredGcfsConfig() {
+      if (desiredGcfsConfigBuilder_ == null) {
+        return desiredGcfsConfig_ == null
+            ? com.google.container.v1.GcfsConfig.getDefaultInstance()
+            : desiredGcfsConfig_;
+      } else {
+        return desiredGcfsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    public Builder setDesiredGcfsConfig(com.google.container.v1.GcfsConfig value) {
+      if (desiredGcfsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredGcfsConfig_ = value;
+        onChanged();
+      } else {
+        desiredGcfsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    public Builder setDesiredGcfsConfig(
+        com.google.container.v1.GcfsConfig.Builder builderForValue) {
+      if (desiredGcfsConfigBuilder_ == null) {
+        desiredGcfsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredGcfsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    public Builder mergeDesiredGcfsConfig(com.google.container.v1.GcfsConfig value) {
+      if (desiredGcfsConfigBuilder_ == null) {
+        if (desiredGcfsConfig_ != null) {
+          desiredGcfsConfig_ =
+              com.google.container.v1.GcfsConfig.newBuilder(desiredGcfsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredGcfsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredGcfsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    public Builder clearDesiredGcfsConfig() {
+      if (desiredGcfsConfigBuilder_ == null) {
+        desiredGcfsConfig_ = null;
+        onChanged();
+      } else {
+        desiredGcfsConfig_ = null;
+        desiredGcfsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    public com.google.container.v1.GcfsConfig.Builder getDesiredGcfsConfigBuilder() {
+
+      onChanged();
+      return getDesiredGcfsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    public com.google.container.v1.GcfsConfigOrBuilder getDesiredGcfsConfigOrBuilder() {
+      if (desiredGcfsConfigBuilder_ != null) {
+        return desiredGcfsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredGcfsConfig_ == null
+            ? com.google.container.v1.GcfsConfig.getDefaultInstance()
+            : desiredGcfsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired GCFS config for the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GcfsConfig,
+            com.google.container.v1.GcfsConfig.Builder,
+            com.google.container.v1.GcfsConfigOrBuilder>
+        getDesiredGcfsConfigFieldBuilder() {
+      if (desiredGcfsConfigBuilder_ == null) {
+        desiredGcfsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.GcfsConfig,
+                com.google.container.v1.GcfsConfig.Builder,
+                com.google.container.v1.GcfsConfigOrBuilder>(
+                getDesiredGcfsConfig(), getParentForChildren(), isClean());
+        desiredGcfsConfig_ = null;
+      }
+      return desiredGcfsConfigBuilder_;
     }
 
     @java.lang.Override

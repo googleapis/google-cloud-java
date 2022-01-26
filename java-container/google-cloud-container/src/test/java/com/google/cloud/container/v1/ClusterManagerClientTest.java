@@ -28,17 +28,20 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.container.v1.AddonsConfig;
 import com.google.container.v1.AuthenticatorGroupsConfig;
+import com.google.container.v1.Autopilot;
 import com.google.container.v1.BinaryAuthorization;
 import com.google.container.v1.CancelOperationRequest;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.ClusterAutoscaling;
 import com.google.container.v1.ClusterUpdate;
 import com.google.container.v1.CompleteIPRotationRequest;
+import com.google.container.v1.ConfidentialNodes;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DatabaseEncryption;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
+import com.google.container.v1.GcfsConfig;
 import com.google.container.v1.GetClusterRequest;
 import com.google.container.v1.GetJSONWebKeysRequest;
 import com.google.container.v1.GetJSONWebKeysResponse;
@@ -48,6 +51,7 @@ import com.google.container.v1.GetServerConfigRequest;
 import com.google.container.v1.IPAllocationPolicy;
 import com.google.container.v1.Jwk;
 import com.google.container.v1.LegacyAbac;
+import com.google.container.v1.LinuxNodeConfig;
 import com.google.container.v1.ListClustersRequest;
 import com.google.container.v1.ListClustersResponse;
 import com.google.container.v1.ListNodePoolsRequest;
@@ -56,16 +60,23 @@ import com.google.container.v1.ListOperationsRequest;
 import com.google.container.v1.ListOperationsResponse;
 import com.google.container.v1.ListUsableSubnetworksRequest;
 import com.google.container.v1.ListUsableSubnetworksResponse;
+import com.google.container.v1.LoggingConfig;
 import com.google.container.v1.MaintenancePolicy;
 import com.google.container.v1.MasterAuth;
 import com.google.container.v1.MasterAuthorizedNetworksConfig;
 import com.google.container.v1.MaxPodsConstraint;
+import com.google.container.v1.MeshCertificates;
+import com.google.container.v1.MonitoringConfig;
 import com.google.container.v1.NetworkConfig;
 import com.google.container.v1.NetworkPolicy;
 import com.google.container.v1.NodeConfig;
+import com.google.container.v1.NodeKubeletConfig;
 import com.google.container.v1.NodeManagement;
+import com.google.container.v1.NodeNetworkConfig;
 import com.google.container.v1.NodePool;
 import com.google.container.v1.NodePoolAutoscaling;
+import com.google.container.v1.NodePoolDefaults;
+import com.google.container.v1.NotificationConfig;
 import com.google.container.v1.Operation;
 import com.google.container.v1.OperationProgress;
 import com.google.container.v1.PrivateClusterConfig;
@@ -93,10 +104,12 @@ import com.google.container.v1.UpdateMasterRequest;
 import com.google.container.v1.UpdateNodePoolRequest;
 import com.google.container.v1.UsableSubnetwork;
 import com.google.container.v1.VerticalPodAutoscaling;
+import com.google.container.v1.VirtualNIC;
 import com.google.container.v1.WorkloadIdentityConfig;
 import com.google.container.v1.WorkloadMetadataConfig;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -268,6 +281,9 @@ public class ClusterManagerClientTest {
             .setShieldedNodes(ShieldedNodes.newBuilder().build())
             .setReleaseChannel(ReleaseChannel.newBuilder().build())
             .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
+            .setMeshCertificates(MeshCertificates.newBuilder().build())
+            .setNotificationConfig(NotificationConfig.newBuilder().build())
+            .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .setZone("zone3744684")
             .setEndpoint("endpoint1741102485")
@@ -285,6 +301,11 @@ public class ClusterManagerClientTest {
             .setEnableTpu(true)
             .setTpuIpv4CidrBlock("tpuIpv4CidrBlock997172251")
             .addAllConditions(new ArrayList<StatusCondition>())
+            .setAutopilot(Autopilot.newBuilder().build())
+            .setId("id3355")
+            .setNodePoolDefaults(NodePoolDefaults.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -355,6 +376,9 @@ public class ClusterManagerClientTest {
             .setShieldedNodes(ShieldedNodes.newBuilder().build())
             .setReleaseChannel(ReleaseChannel.newBuilder().build())
             .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
+            .setMeshCertificates(MeshCertificates.newBuilder().build())
+            .setNotificationConfig(NotificationConfig.newBuilder().build())
+            .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .setZone("zone3744684")
             .setEndpoint("endpoint1741102485")
@@ -372,6 +396,11 @@ public class ClusterManagerClientTest {
             .setEnableTpu(true)
             .setTpuIpv4CidrBlock("tpuIpv4CidrBlock997172251")
             .addAllConditions(new ArrayList<StatusCondition>())
+            .setAutopilot(Autopilot.newBuilder().build())
+            .setId("id3355")
+            .setNodePoolDefaults(NodePoolDefaults.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -427,6 +456,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -479,6 +509,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -534,6 +565,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -586,6 +618,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -644,6 +677,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -659,6 +693,10 @@ public class ClusterManagerClientTest {
             .addAllLocations(new ArrayList<String>())
             .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
             .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+            .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
+            .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+            .setGcfsConfig(GcfsConfig.newBuilder().build())
+            .setGvnic(VirtualNIC.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -679,6 +717,10 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(
         request.getWorkloadMetadataConfig(), actualRequest.getWorkloadMetadataConfig());
     Assert.assertEquals(request.getUpgradeSettings(), actualRequest.getUpgradeSettings());
+    Assert.assertEquals(request.getLinuxNodeConfig(), actualRequest.getLinuxNodeConfig());
+    Assert.assertEquals(request.getKubeletConfig(), actualRequest.getKubeletConfig());
+    Assert.assertEquals(request.getGcfsConfig(), actualRequest.getGcfsConfig());
+    Assert.assertEquals(request.getGvnic(), actualRequest.getGvnic());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -703,6 +745,10 @@ public class ClusterManagerClientTest {
               .addAllLocations(new ArrayList<String>())
               .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
               .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+              .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
+              .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+              .setGcfsConfig(GcfsConfig.newBuilder().build())
+              .setGvnic(VirtualNIC.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");
@@ -727,6 +773,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -798,6 +845,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -850,6 +898,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -908,6 +957,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -961,6 +1011,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1021,6 +1072,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1073,6 +1125,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1131,6 +1184,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1183,6 +1237,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1241,6 +1296,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1293,6 +1349,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1351,6 +1408,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1419,6 +1477,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1468,6 +1527,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1565,6 +1625,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1614,6 +1675,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1940,6 +2002,7 @@ public class ClusterManagerClientTest {
             .setConfig(NodeConfig.newBuilder().build())
             .setInitialNodeCount(1682564205)
             .addAllLocations(new ArrayList<String>())
+            .setNetworkConfig(NodeNetworkConfig.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .setVersion("version351608024")
             .addAllInstanceGroupUrls(new ArrayList<String>())
@@ -1991,6 +2054,7 @@ public class ClusterManagerClientTest {
             .setConfig(NodeConfig.newBuilder().build())
             .setInitialNodeCount(1682564205)
             .addAllLocations(new ArrayList<String>())
+            .setNetworkConfig(NodeNetworkConfig.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .setVersion("version351608024")
             .addAllInstanceGroupUrls(new ArrayList<String>())
@@ -2059,6 +2123,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2111,6 +2176,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2169,6 +2235,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2218,6 +2285,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2276,6 +2344,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2326,6 +2395,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2386,6 +2456,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2457,6 +2528,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2527,6 +2599,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2579,6 +2652,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2637,6 +2711,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2686,6 +2761,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2741,6 +2817,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2790,6 +2867,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2845,6 +2923,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2915,6 +2994,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2967,6 +3047,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -3025,6 +3106,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -3078,6 +3160,7 @@ public class ClusterManagerClientTest {
             .setProgress(OperationProgress.newBuilder().build())
             .addAllClusterConditions(new ArrayList<StatusCondition>())
             .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 

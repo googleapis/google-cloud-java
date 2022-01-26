@@ -97,6 +97,33 @@ public interface ClusterAutoscalingOrBuilder
    *
    *
    * <pre>
+   * Defines autoscaling behaviour.
+   * </pre>
+   *
+   * <code>.google.container.v1.ClusterAutoscaling.AutoscalingProfile autoscaling_profile = 3;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for autoscalingProfile.
+   */
+  int getAutoscalingProfileValue();
+  /**
+   *
+   *
+   * <pre>
+   * Defines autoscaling behaviour.
+   * </pre>
+   *
+   * <code>.google.container.v1.ClusterAutoscaling.AutoscalingProfile autoscaling_profile = 3;
+   * </code>
+   *
+   * @return The autoscalingProfile.
+   */
+  com.google.container.v1.ClusterAutoscaling.AutoscalingProfile getAutoscalingProfile();
+
+  /**
+   *
+   *
+   * <pre>
    * AutoprovisioningNodePoolDefaults contains defaults for a node pool
    * created by NAP.
    * </pre>

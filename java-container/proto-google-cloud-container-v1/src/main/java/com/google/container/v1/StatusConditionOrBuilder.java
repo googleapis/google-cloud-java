@@ -28,24 +28,28 @@ public interface StatusConditionOrBuilder
    *
    * <pre>
    * Machine-friendly representation of the condition
+   * Deprecated. Use canonical_code instead.
    * </pre>
    *
-   * <code>.google.container.v1.StatusCondition.Code code = 1;</code>
+   * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
    *
    * @return The enum numeric value on the wire for code.
    */
+  @java.lang.Deprecated
   int getCodeValue();
   /**
    *
    *
    * <pre>
    * Machine-friendly representation of the condition
+   * Deprecated. Use canonical_code instead.
    * </pre>
    *
-   * <code>.google.container.v1.StatusCondition.Code code = 1;</code>
+   * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
    *
    * @return The code.
    */
+  @java.lang.Deprecated
   com.google.container.v1.StatusCondition.Code getCode();
 
   /**
@@ -72,4 +76,29 @@ public interface StatusConditionOrBuilder
    * @return The bytes for message.
    */
   com.google.protobuf.ByteString getMessageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Canonical code of the condition.
+   * </pre>
+   *
+   * <code>.google.rpc.Code canonical_code = 3;</code>
+   *
+   * @return The enum numeric value on the wire for canonicalCode.
+   */
+  int getCanonicalCodeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Canonical code of the condition.
+   * </pre>
+   *
+   * <code>.google.rpc.Code canonical_code = 3;</code>
+   *
+   * @return The canonicalCode.
+   */
+  com.google.rpc.Code getCanonicalCode();
 }

@@ -41,6 +41,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
   private StatusCondition() {
     code_ = 0;
     message_ = "";
+    canonicalCode_ = 0;
   }
 
   @java.lang.Override
@@ -84,6 +85,13 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
               java.lang.String s = input.readStringRequireUtf8();
 
               message_ = s;
+              break;
+            }
+          case 24:
+            {
+              int rawValue = input.readEnum();
+
+              canonicalCode_ = rawValue;
               break;
             }
           default:
@@ -188,12 +196,21 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Unable to perform an encrypt operation against the CloudKMS key used for
      * etcd level encryption.
-     * More codes TBA
      * </pre>
      *
      * <code>CLOUD_KMS_KEY_ERROR = 7;</code>
      */
     CLOUD_KMS_KEY_ERROR(7),
+    /**
+     *
+     *
+     * <pre>
+     * Cluster CA is expiring soon.
+     * </pre>
+     *
+     * <code>CA_EXPIRING = 9;</code>
+     */
+    CA_EXPIRING(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -255,12 +272,21 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Unable to perform an encrypt operation against the CloudKMS key used for
      * etcd level encryption.
-     * More codes TBA
      * </pre>
      *
      * <code>CLOUD_KMS_KEY_ERROR = 7;</code>
      */
     public static final int CLOUD_KMS_KEY_ERROR_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Cluster CA is expiring soon.
+     * </pre>
+     *
+     * <code>CA_EXPIRING = 9;</code>
+     */
+    public static final int CA_EXPIRING_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -298,6 +324,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
           return SET_BY_OPERATOR;
         case 7:
           return CLOUD_KMS_KEY_ERROR;
+        case 9:
+          return CA_EXPIRING;
         default:
           return null;
       }
@@ -358,13 +386,15 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Machine-friendly representation of the condition
+   * Deprecated. Use canonical_code instead.
    * </pre>
    *
-   * <code>.google.container.v1.StatusCondition.Code code = 1;</code>
+   * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
    *
    * @return The enum numeric value on the wire for code.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getCodeValue() {
     return code_;
   }
@@ -373,13 +403,15 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Machine-friendly representation of the condition
+   * Deprecated. Use canonical_code instead.
    * </pre>
    *
-   * <code>.google.container.v1.StatusCondition.Code code = 1;</code>
+   * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
    *
    * @return The code.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1.StatusCondition.Code getCode() {
     @SuppressWarnings("deprecation")
     com.google.container.v1.StatusCondition.Code result =
@@ -436,6 +468,41 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int CANONICAL_CODE_FIELD_NUMBER = 3;
+  private int canonicalCode_;
+  /**
+   *
+   *
+   * <pre>
+   * Canonical code of the condition.
+   * </pre>
+   *
+   * <code>.google.rpc.Code canonical_code = 3;</code>
+   *
+   * @return The enum numeric value on the wire for canonicalCode.
+   */
+  @java.lang.Override
+  public int getCanonicalCodeValue() {
+    return canonicalCode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Canonical code of the condition.
+   * </pre>
+   *
+   * <code>.google.rpc.Code canonical_code = 3;</code>
+   *
+   * @return The canonicalCode.
+   */
+  @java.lang.Override
+  public com.google.rpc.Code getCanonicalCode() {
+    @SuppressWarnings("deprecation")
+    com.google.rpc.Code result = com.google.rpc.Code.valueOf(canonicalCode_);
+    return result == null ? com.google.rpc.Code.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -456,6 +523,9 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
+    if (canonicalCode_ != com.google.rpc.Code.OK.getNumber()) {
+      output.writeEnum(3, canonicalCode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -470,6 +540,9 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+    }
+    if (canonicalCode_ != com.google.rpc.Code.OK.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, canonicalCode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -488,6 +561,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
 
     if (code_ != other.code_) return false;
     if (!getMessage().equals(other.getMessage())) return false;
+    if (canonicalCode_ != other.canonicalCode_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -503,6 +577,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + code_;
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
+    hash = (37 * hash) + CANONICAL_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + canonicalCode_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -653,6 +729,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
 
       message_ = "";
 
+      canonicalCode_ = 0;
+
       return this;
     }
 
@@ -682,6 +760,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
           new com.google.container.v1.StatusCondition(this);
       result.code_ = code_;
       result.message_ = message_;
+      result.canonicalCode_ = canonicalCode_;
       onBuilt();
       return result;
     }
@@ -738,6 +817,9 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
         message_ = other.message_;
         onChanged();
       }
+      if (other.canonicalCode_ != 0) {
+        setCanonicalCodeValue(other.getCanonicalCodeValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -773,13 +855,15 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Machine-friendly representation of the condition
+     * Deprecated. Use canonical_code instead.
      * </pre>
      *
-     * <code>.google.container.v1.StatusCondition.Code code = 1;</code>
+     * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
      * @return The enum numeric value on the wire for code.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getCodeValue() {
       return code_;
     }
@@ -788,13 +872,15 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Machine-friendly representation of the condition
+     * Deprecated. Use canonical_code instead.
      * </pre>
      *
-     * <code>.google.container.v1.StatusCondition.Code code = 1;</code>
+     * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
      * @param value The enum numeric value on the wire for code to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setCodeValue(int value) {
 
       code_ = value;
@@ -806,13 +892,15 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Machine-friendly representation of the condition
+     * Deprecated. Use canonical_code instead.
      * </pre>
      *
-     * <code>.google.container.v1.StatusCondition.Code code = 1;</code>
+     * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
      * @return The code.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.container.v1.StatusCondition.Code getCode() {
       @SuppressWarnings("deprecation")
       com.google.container.v1.StatusCondition.Code result =
@@ -824,13 +912,15 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Machine-friendly representation of the condition
+     * Deprecated. Use canonical_code instead.
      * </pre>
      *
-     * <code>.google.container.v1.StatusCondition.Code code = 1;</code>
+     * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
      * @param value The code to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setCode(com.google.container.v1.StatusCondition.Code value) {
       if (value == null) {
         throw new NullPointerException();
@@ -845,12 +935,14 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Machine-friendly representation of the condition
+     * Deprecated. Use canonical_code instead.
      * </pre>
      *
-     * <code>.google.container.v1.StatusCondition.Code code = 1;</code>
+     * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearCode() {
 
       code_ = 0;
@@ -960,6 +1052,96 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       message_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int canonicalCode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Canonical code of the condition.
+     * </pre>
+     *
+     * <code>.google.rpc.Code canonical_code = 3;</code>
+     *
+     * @return The enum numeric value on the wire for canonicalCode.
+     */
+    @java.lang.Override
+    public int getCanonicalCodeValue() {
+      return canonicalCode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canonical code of the condition.
+     * </pre>
+     *
+     * <code>.google.rpc.Code canonical_code = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for canonicalCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanonicalCodeValue(int value) {
+
+      canonicalCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canonical code of the condition.
+     * </pre>
+     *
+     * <code>.google.rpc.Code canonical_code = 3;</code>
+     *
+     * @return The canonicalCode.
+     */
+    @java.lang.Override
+    public com.google.rpc.Code getCanonicalCode() {
+      @SuppressWarnings("deprecation")
+      com.google.rpc.Code result = com.google.rpc.Code.valueOf(canonicalCode_);
+      return result == null ? com.google.rpc.Code.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canonical code of the condition.
+     * </pre>
+     *
+     * <code>.google.rpc.Code canonical_code = 3;</code>
+     *
+     * @param value The canonicalCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanonicalCode(com.google.rpc.Code value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      canonicalCode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canonical code of the condition.
+     * </pre>
+     *
+     * <code>.google.rpc.Code canonical_code = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCanonicalCode() {
+
+      canonicalCode_ = 0;
       onChanged();
       return this;
     }

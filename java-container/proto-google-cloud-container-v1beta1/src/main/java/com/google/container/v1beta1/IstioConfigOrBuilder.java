@@ -30,10 +30,11 @@ public interface IstioConfigOrBuilder
    * Whether Istio is enabled for this cluster.
    * </pre>
    *
-   * <code>bool disabled = 1;</code>
+   * <code>bool disabled = 1 [deprecated = true];</code>
    *
    * @return The disabled.
    */
+  @java.lang.Deprecated
   boolean getDisabled();
 
   /**
@@ -43,10 +44,11 @@ public interface IstioConfigOrBuilder
    * The specified Istio auth mode, either none, or mutual TLS.
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2;</code>
+   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
    *
    * @return The enum numeric value on the wire for auth.
    */
+  @java.lang.Deprecated
   int getAuthValue();
   /**
    *
@@ -55,9 +57,10 @@ public interface IstioConfigOrBuilder
    * The specified Istio auth mode, either none, or mutual TLS.
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2;</code>
+   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
    *
    * @return The auth.
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.IstioConfig.IstioAuthMode getAuth();
 }

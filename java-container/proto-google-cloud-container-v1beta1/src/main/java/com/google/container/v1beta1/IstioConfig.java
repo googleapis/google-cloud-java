@@ -260,11 +260,12 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
    * Whether Istio is enabled for this cluster.
    * </pre>
    *
-   * <code>bool disabled = 1;</code>
+   * <code>bool disabled = 1 [deprecated = true];</code>
    *
    * @return The disabled.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getDisabled() {
     return disabled_;
   }
@@ -278,11 +279,12 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
    * The specified Istio auth mode, either none, or mutual TLS.
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2;</code>
+   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
    *
    * @return The enum numeric value on the wire for auth.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getAuthValue() {
     return auth_;
   }
@@ -293,11 +295,12 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
    * The specified Istio auth mode, either none, or mutual TLS.
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2;</code>
+   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
    *
    * @return The auth.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1beta1.IstioConfig.IstioAuthMode getAuth() {
     @SuppressWarnings("deprecation")
     com.google.container.v1beta1.IstioConfig.IstioAuthMode result =
@@ -644,11 +647,12 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * Whether Istio is enabled for this cluster.
      * </pre>
      *
-     * <code>bool disabled = 1;</code>
+     * <code>bool disabled = 1 [deprecated = true];</code>
      *
      * @return The disabled.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getDisabled() {
       return disabled_;
     }
@@ -659,11 +663,12 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * Whether Istio is enabled for this cluster.
      * </pre>
      *
-     * <code>bool disabled = 1;</code>
+     * <code>bool disabled = 1 [deprecated = true];</code>
      *
      * @param value The disabled to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
@@ -677,10 +682,11 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * Whether Istio is enabled for this cluster.
      * </pre>
      *
-     * <code>bool disabled = 1;</code>
+     * <code>bool disabled = 1 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearDisabled() {
 
       disabled_ = false;
@@ -696,11 +702,13 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * The specified Istio auth mode, either none, or mutual TLS.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2;</code>
+     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
+     * </code>
      *
      * @return The enum numeric value on the wire for auth.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getAuthValue() {
       return auth_;
     }
@@ -711,11 +719,13 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * The specified Istio auth mode, either none, or mutual TLS.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2;</code>
+     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
+     * </code>
      *
      * @param value The enum numeric value on the wire for auth to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setAuthValue(int value) {
 
       auth_ = value;
@@ -729,11 +739,13 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * The specified Istio auth mode, either none, or mutual TLS.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2;</code>
+     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
+     * </code>
      *
      * @return The auth.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.container.v1beta1.IstioConfig.IstioAuthMode getAuth() {
       @SuppressWarnings("deprecation")
       com.google.container.v1beta1.IstioConfig.IstioAuthMode result =
@@ -749,11 +761,13 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * The specified Istio auth mode, either none, or mutual TLS.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2;</code>
+     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
+     * </code>
      *
      * @param value The auth to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setAuth(com.google.container.v1beta1.IstioConfig.IstioAuthMode value) {
       if (value == null) {
         throw new NullPointerException();
@@ -770,10 +784,12 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * The specified Istio auth mode, either none, or mutual TLS.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2;</code>
+     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
+     * </code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearAuth() {
 
       auth_ = 0;

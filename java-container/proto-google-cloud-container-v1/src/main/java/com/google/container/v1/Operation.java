@@ -201,6 +201,20 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
                       com.google.container.v1.StatusCondition.parser(), extensionRegistry));
               break;
             }
+          case 122:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (error_ != null) {
+                subBuilder = error_.toBuilder();
+              }
+              error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(error_);
+                error_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1139,13 +1153,17 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. If an error has occurred, a textual description of the error.
+   * Deprecated. Use the field error instead.
    * </pre>
    *
-   * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The statusMessage.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getStatusMessage() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -1162,13 +1180,17 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. If an error has occurred, a textual description of the error.
+   * Deprecated. Use the field error instead.
    * </pre>
    *
-   * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -1499,11 +1521,15 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Which conditions caused the current cluster state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<com.google.container.v1.StatusCondition> getClusterConditionsList() {
     return clusterConditions_;
   }
@@ -1512,11 +1538,15 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Which conditions caused the current cluster state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getClusterConditionsOrBuilderList() {
     return clusterConditions_;
@@ -1526,11 +1556,15 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Which conditions caused the current cluster state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getClusterConditionsCount() {
     return clusterConditions_.size();
   }
@@ -1539,11 +1573,15 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Which conditions caused the current cluster state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1.StatusCondition getClusterConditions(int index) {
     return clusterConditions_.get(index);
   }
@@ -1552,11 +1590,15 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Which conditions caused the current cluster state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1.StatusConditionOrBuilder getClusterConditionsOrBuilder(int index) {
     return clusterConditions_.get(index);
   }
@@ -1568,11 +1610,15 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Which conditions caused the current node pool state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<com.google.container.v1.StatusCondition> getNodepoolConditionsList() {
     return nodepoolConditions_;
   }
@@ -1581,11 +1627,15 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Which conditions caused the current node pool state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getNodepoolConditionsOrBuilderList() {
     return nodepoolConditions_;
@@ -1595,11 +1645,15 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Which conditions caused the current node pool state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getNodepoolConditionsCount() {
     return nodepoolConditions_.size();
   }
@@ -1608,11 +1662,15 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Which conditions caused the current node pool state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1.StatusCondition getNodepoolConditions(int index) {
     return nodepoolConditions_.get(index);
   }
@@ -1621,14 +1679,64 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Which conditions caused the current node pool state.
+   * Deprecated. Use field error instead.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1.StatusConditionOrBuilder getNodepoolConditionsOrBuilder(
       int index) {
     return nodepoolConditions_.get(index);
+  }
+
+  public static final int ERROR_FIELD_NUMBER = 15;
+  private com.google.rpc.Status error_;
+  /**
+   *
+   *
+   * <pre>
+   * The error result of the operation in case of failure.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 15;</code>
+   *
+   * @return Whether the error field is set.
+   */
+  @java.lang.Override
+  public boolean hasError() {
+    return error_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The error result of the operation in case of failure.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 15;</code>
+   *
+   * @return The error.
+   */
+  @java.lang.Override
+  public com.google.rpc.Status getError() {
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The error result of the operation in case of failure.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+    return getError();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1687,6 +1795,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < nodepoolConditions_.size(); i++) {
       output.writeMessage(14, nodepoolConditions_.get(i));
     }
+    if (error_ != null) {
+      output.writeMessage(15, getError());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1740,6 +1851,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, nodepoolConditions_.get(i));
     }
+    if (error_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getError());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1772,6 +1886,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getClusterConditionsList().equals(other.getClusterConditionsList())) return false;
     if (!getNodepoolConditionsList().equals(other.getNodepoolConditionsList())) return false;
+    if (hasError() != other.hasError()) return false;
+    if (hasError()) {
+      if (!getError().equals(other.getError())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1816,6 +1934,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (getNodepoolConditionsCount() > 0) {
       hash = (37 * hash) + NODEPOOL_CONDITIONS_FIELD_NUMBER;
       hash = (53 * hash) + getNodepoolConditionsList().hashCode();
+    }
+    if (hasError()) {
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2005,6 +2127,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       } else {
         nodepoolConditionsBuilder_.clear();
       }
+      if (errorBuilder_ == null) {
+        error_ = null;
+      } else {
+        error_ = null;
+        errorBuilder_ = null;
+      }
       return this;
     }
 
@@ -2065,6 +2193,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         result.nodepoolConditions_ = nodepoolConditions_;
       } else {
         result.nodepoolConditions_ = nodepoolConditionsBuilder_.build();
+      }
+      if (errorBuilder_ == null) {
+        result.error_ = error_;
+      } else {
+        result.error_ = errorBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2213,6 +2346,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             nodepoolConditionsBuilder_.addAllMessages(other.nodepoolConditions_);
           }
         }
+      }
+      if (other.hasError()) {
+        mergeError(other.getError());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2766,12 +2902,16 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. If an error has occurred, a textual description of the error.
+     * Deprecated. Use the field error instead.
      * </pre>
      *
-     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The statusMessage.
      */
+    @java.lang.Deprecated
     public java.lang.String getStatusMessage() {
       java.lang.Object ref = statusMessage_;
       if (!(ref instanceof java.lang.String)) {
@@ -2788,12 +2928,16 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. If an error has occurred, a textual description of the error.
+     * Deprecated. Use the field error instead.
      * </pre>
      *
-     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The bytes for statusMessage.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
       if (ref instanceof String) {
@@ -2810,13 +2954,17 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. If an error has occurred, a textual description of the error.
+     * Deprecated. Use the field error instead.
      * </pre>
      *
-     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setStatusMessage(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -2831,12 +2979,16 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. If an error has occurred, a textual description of the error.
+     * Deprecated. Use the field error instead.
      * </pre>
      *
-     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearStatusMessage() {
 
       statusMessage_ = getDefaultInstance().getStatusMessage();
@@ -2848,13 +3000,17 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. If an error has occurred, a textual description of the error.
+     * Deprecated. Use the field error instead.
      * </pre>
      *
-     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -3651,10 +3807,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.container.v1.StatusCondition> getClusterConditionsList() {
       if (clusterConditionsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(clusterConditions_);
@@ -3667,10 +3827,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public int getClusterConditionsCount() {
       if (clusterConditionsBuilder_ == null) {
         return clusterConditions_.size();
@@ -3683,10 +3847,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.StatusCondition getClusterConditions(int index) {
       if (clusterConditionsBuilder_ == null) {
         return clusterConditions_.get(index);
@@ -3699,10 +3867,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setClusterConditions(int index, com.google.container.v1.StatusCondition value) {
       if (clusterConditionsBuilder_ == null) {
         if (value == null) {
@@ -3721,10 +3893,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setClusterConditions(
         int index, com.google.container.v1.StatusCondition.Builder builderForValue) {
       if (clusterConditionsBuilder_ == null) {
@@ -3741,10 +3917,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addClusterConditions(com.google.container.v1.StatusCondition value) {
       if (clusterConditionsBuilder_ == null) {
         if (value == null) {
@@ -3763,10 +3943,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addClusterConditions(int index, com.google.container.v1.StatusCondition value) {
       if (clusterConditionsBuilder_ == null) {
         if (value == null) {
@@ -3785,10 +3969,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addClusterConditions(
         com.google.container.v1.StatusCondition.Builder builderForValue) {
       if (clusterConditionsBuilder_ == null) {
@@ -3805,10 +3993,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addClusterConditions(
         int index, com.google.container.v1.StatusCondition.Builder builderForValue) {
       if (clusterConditionsBuilder_ == null) {
@@ -3825,10 +4017,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addAllClusterConditions(
         java.lang.Iterable<? extends com.google.container.v1.StatusCondition> values) {
       if (clusterConditionsBuilder_ == null) {
@@ -3845,10 +4041,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearClusterConditions() {
       if (clusterConditionsBuilder_ == null) {
         clusterConditions_ = java.util.Collections.emptyList();
@@ -3864,10 +4064,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder removeClusterConditions(int index) {
       if (clusterConditionsBuilder_ == null) {
         ensureClusterConditionsIsMutable();
@@ -3883,10 +4087,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.StatusCondition.Builder getClusterConditionsBuilder(int index) {
       return getClusterConditionsFieldBuilder().getBuilder(index);
     }
@@ -3895,10 +4103,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.StatusConditionOrBuilder getClusterConditionsOrBuilder(
         int index) {
       if (clusterConditionsBuilder_ == null) {
@@ -3912,10 +4124,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
         getClusterConditionsOrBuilderList() {
       if (clusterConditionsBuilder_ != null) {
@@ -3929,10 +4145,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.StatusCondition.Builder addClusterConditionsBuilder() {
       return getClusterConditionsFieldBuilder()
           .addBuilder(com.google.container.v1.StatusCondition.getDefaultInstance());
@@ -3942,10 +4162,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.StatusCondition.Builder addClusterConditionsBuilder(int index) {
       return getClusterConditionsFieldBuilder()
           .addBuilder(index, com.google.container.v1.StatusCondition.getDefaultInstance());
@@ -3955,10 +4179,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current cluster state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition cluster_conditions = 13 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.container.v1.StatusCondition.Builder>
         getClusterConditionsBuilderList() {
       return getClusterConditionsFieldBuilder().getBuilderList();
@@ -4006,10 +4234,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.container.v1.StatusCondition> getNodepoolConditionsList() {
       if (nodepoolConditionsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(nodepoolConditions_);
@@ -4022,10 +4254,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public int getNodepoolConditionsCount() {
       if (nodepoolConditionsBuilder_ == null) {
         return nodepoolConditions_.size();
@@ -4038,10 +4274,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.StatusCondition getNodepoolConditions(int index) {
       if (nodepoolConditionsBuilder_ == null) {
         return nodepoolConditions_.get(index);
@@ -4054,10 +4294,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setNodepoolConditions(int index, com.google.container.v1.StatusCondition value) {
       if (nodepoolConditionsBuilder_ == null) {
         if (value == null) {
@@ -4076,10 +4320,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setNodepoolConditions(
         int index, com.google.container.v1.StatusCondition.Builder builderForValue) {
       if (nodepoolConditionsBuilder_ == null) {
@@ -4096,10 +4344,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addNodepoolConditions(com.google.container.v1.StatusCondition value) {
       if (nodepoolConditionsBuilder_ == null) {
         if (value == null) {
@@ -4118,10 +4370,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addNodepoolConditions(int index, com.google.container.v1.StatusCondition value) {
       if (nodepoolConditionsBuilder_ == null) {
         if (value == null) {
@@ -4140,10 +4396,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addNodepoolConditions(
         com.google.container.v1.StatusCondition.Builder builderForValue) {
       if (nodepoolConditionsBuilder_ == null) {
@@ -4160,10 +4420,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addNodepoolConditions(
         int index, com.google.container.v1.StatusCondition.Builder builderForValue) {
       if (nodepoolConditionsBuilder_ == null) {
@@ -4180,10 +4444,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addAllNodepoolConditions(
         java.lang.Iterable<? extends com.google.container.v1.StatusCondition> values) {
       if (nodepoolConditionsBuilder_ == null) {
@@ -4200,10 +4468,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearNodepoolConditions() {
       if (nodepoolConditionsBuilder_ == null) {
         nodepoolConditions_ = java.util.Collections.emptyList();
@@ -4219,10 +4491,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder removeNodepoolConditions(int index) {
       if (nodepoolConditionsBuilder_ == null) {
         ensureNodepoolConditionsIsMutable();
@@ -4238,10 +4514,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.StatusCondition.Builder getNodepoolConditionsBuilder(int index) {
       return getNodepoolConditionsFieldBuilder().getBuilder(index);
     }
@@ -4250,10 +4530,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.StatusConditionOrBuilder getNodepoolConditionsOrBuilder(
         int index) {
       if (nodepoolConditionsBuilder_ == null) {
@@ -4267,10 +4551,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
         getNodepoolConditionsOrBuilderList() {
       if (nodepoolConditionsBuilder_ != null) {
@@ -4284,10 +4572,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.StatusCondition.Builder addNodepoolConditionsBuilder() {
       return getNodepoolConditionsFieldBuilder()
           .addBuilder(com.google.container.v1.StatusCondition.getDefaultInstance());
@@ -4297,10 +4589,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.StatusCondition.Builder addNodepoolConditionsBuilder(int index) {
       return getNodepoolConditionsFieldBuilder()
           .addBuilder(index, com.google.container.v1.StatusCondition.getDefaultInstance());
@@ -4310,10 +4606,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Which conditions caused the current node pool state.
+     * Deprecated. Use field error instead.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition nodepool_conditions = 14 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.container.v1.StatusCondition.Builder>
         getNodepoolConditionsBuilderList() {
       return getNodepoolConditionsFieldBuilder().getBuilderList();
@@ -4337,6 +4637,179 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         nodepoolConditions_ = null;
       }
       return nodepoolConditionsBuilder_;
+    }
+
+    private com.google.rpc.Status error_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        errorBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The error result of the operation in case of failure.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 15;</code>
+     *
+     * @return Whether the error field is set.
+     */
+    public boolean hasError() {
+      return errorBuilder_ != null || error_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The error result of the operation in case of failure.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 15;</code>
+     *
+     * @return The error.
+     */
+    public com.google.rpc.Status getError() {
+      if (errorBuilder_ == null) {
+        return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+      } else {
+        return errorBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The error result of the operation in case of failure.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 15;</code>
+     */
+    public Builder setError(com.google.rpc.Status value) {
+      if (errorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        error_ = value;
+        onChanged();
+      } else {
+        errorBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The error result of the operation in case of failure.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 15;</code>
+     */
+    public Builder setError(com.google.rpc.Status.Builder builderForValue) {
+      if (errorBuilder_ == null) {
+        error_ = builderForValue.build();
+        onChanged();
+      } else {
+        errorBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The error result of the operation in case of failure.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 15;</code>
+     */
+    public Builder mergeError(com.google.rpc.Status value) {
+      if (errorBuilder_ == null) {
+        if (error_ != null) {
+          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        } else {
+          error_ = value;
+        }
+        onChanged();
+      } else {
+        errorBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The error result of the operation in case of failure.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 15;</code>
+     */
+    public Builder clearError() {
+      if (errorBuilder_ == null) {
+        error_ = null;
+        onChanged();
+      } else {
+        error_ = null;
+        errorBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The error result of the operation in case of failure.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 15;</code>
+     */
+    public com.google.rpc.Status.Builder getErrorBuilder() {
+
+      onChanged();
+      return getErrorFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The error result of the operation in case of failure.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 15;</code>
+     */
+    public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+      if (errorBuilder_ != null) {
+        return errorBuilder_.getMessageOrBuilder();
+      } else {
+        return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The error result of the operation in case of failure.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        getErrorFieldBuilder() {
+      if (errorBuilder_ == null) {
+        errorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(getError(), getParentForChildren(), isClean());
+        error_ = null;
+      }
+      return errorBuilder_;
     }
 
     @java.lang.Override

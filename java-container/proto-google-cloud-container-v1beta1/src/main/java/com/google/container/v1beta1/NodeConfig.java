@@ -331,6 +331,39 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 202:
+            {
+              com.google.container.v1beta1.GcfsConfig.Builder subBuilder = null;
+              if (gcfsConfig_ != null) {
+                subBuilder = gcfsConfig_.toBuilder();
+              }
+              gcfsConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.GcfsConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gcfsConfig_);
+                gcfsConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 210:
+            {
+              com.google.container.v1beta1.AdvancedMachineFeatures.Builder subBuilder = null;
+              if (advancedMachineFeatures_ != null) {
+                subBuilder = advancedMachineFeatures_.toBuilder();
+              }
+              advancedMachineFeatures_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.AdvancedMachineFeatures.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(advancedMachineFeatures_);
+                advancedMachineFeatures_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 234:
             {
               com.google.container.v1beta1.VirtualNIC.Builder subBuilder = null;
@@ -345,6 +378,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 gvnic_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 256:
+            {
+              spot_ = input.readBool();
               break;
             }
           default:
@@ -1877,6 +1915,103 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return getEphemeralStorageConfig();
   }
 
+  public static final int GCFS_CONFIG_FIELD_NUMBER = 25;
+  private com.google.container.v1beta1.GcfsConfig gcfsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * GCFS (Google Container File System) configs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+   *
+   * @return Whether the gcfsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcfsConfig() {
+    return gcfsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GCFS (Google Container File System) configs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+   *
+   * @return The gcfsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GcfsConfig getGcfsConfig() {
+    return gcfsConfig_ == null
+        ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
+        : gcfsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GCFS (Google Container File System) configs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GcfsConfigOrBuilder getGcfsConfigOrBuilder() {
+    return getGcfsConfig();
+  }
+
+  public static final int ADVANCED_MACHINE_FEATURES_FIELD_NUMBER = 26;
+  private com.google.container.v1beta1.AdvancedMachineFeatures advancedMachineFeatures_;
+  /**
+   *
+   *
+   * <pre>
+   * Advanced features for the Compute Engine VM.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;</code>
+   *
+   * @return Whether the advancedMachineFeatures field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvancedMachineFeatures() {
+    return advancedMachineFeatures_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Advanced features for the Compute Engine VM.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;</code>
+   *
+   * @return The advancedMachineFeatures.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdvancedMachineFeatures getAdvancedMachineFeatures() {
+    return advancedMachineFeatures_ == null
+        ? com.google.container.v1beta1.AdvancedMachineFeatures.getDefaultInstance()
+        : advancedMachineFeatures_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Advanced features for the Compute Engine VM.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdvancedMachineFeaturesOrBuilder
+      getAdvancedMachineFeaturesOrBuilder() {
+    return getAdvancedMachineFeatures();
+  }
+
   public static final int GVNIC_FIELD_NUMBER = 29;
   private com.google.container.v1beta1.VirtualNIC gvnic_;
   /**
@@ -1921,6 +2056,25 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.container.v1beta1.VirtualNICOrBuilder getGvnicOrBuilder() {
     return getGvnic();
+  }
+
+  public static final int SPOT_FIELD_NUMBER = 32;
+  private boolean spot_;
+  /**
+   *
+   *
+   * <pre>
+   * Spot flag for enabling Spot VM, which is a rebrand of
+   * the existing preemptible flag.
+   * </pre>
+   *
+   * <code>bool spot = 32;</code>
+   *
+   * @return The spot.
+   */
+  @java.lang.Override
+  public boolean getSpot() {
+    return spot_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2004,8 +2158,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (ephemeralStorageConfig_ != null) {
       output.writeMessage(24, getEphemeralStorageConfig());
     }
+    if (gcfsConfig_ != null) {
+      output.writeMessage(25, getGcfsConfig());
+    }
+    if (advancedMachineFeatures_ != null) {
+      output.writeMessage(26, getAdvancedMachineFeatures());
+    }
     if (gvnic_ != null) {
       output.writeMessage(29, getGvnic());
+    }
+    if (spot_ != false) {
+      output.writeBool(32, spot_);
     }
     unknownFields.writeTo(output);
   }
@@ -2113,8 +2276,19 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(24, getEphemeralStorageConfig());
     }
+    if (gcfsConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getGcfsConfig());
+    }
+    if (advancedMachineFeatures_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              26, getAdvancedMachineFeatures());
+    }
     if (gvnic_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getGvnic());
+    }
+    if (spot_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(32, spot_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2175,10 +2349,19 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasEphemeralStorageConfig()) {
       if (!getEphemeralStorageConfig().equals(other.getEphemeralStorageConfig())) return false;
     }
+    if (hasGcfsConfig() != other.hasGcfsConfig()) return false;
+    if (hasGcfsConfig()) {
+      if (!getGcfsConfig().equals(other.getGcfsConfig())) return false;
+    }
+    if (hasAdvancedMachineFeatures() != other.hasAdvancedMachineFeatures()) return false;
+    if (hasAdvancedMachineFeatures()) {
+      if (!getAdvancedMachineFeatures().equals(other.getAdvancedMachineFeatures())) return false;
+    }
     if (hasGvnic() != other.hasGvnic()) return false;
     if (hasGvnic()) {
       if (!getGvnic().equals(other.getGvnic())) return false;
     }
+    if (getSpot() != other.getSpot()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2262,10 +2445,20 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EPHEMERAL_STORAGE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getEphemeralStorageConfig().hashCode();
     }
+    if (hasGcfsConfig()) {
+      hash = (37 * hash) + GCFS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGcfsConfig().hashCode();
+    }
+    if (hasAdvancedMachineFeatures()) {
+      hash = (37 * hash) + ADVANCED_MACHINE_FEATURES_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvancedMachineFeatures().hashCode();
+    }
     if (hasGvnic()) {
       hash = (37 * hash) + GVNIC_FIELD_NUMBER;
       hash = (53 * hash) + getGvnic().hashCode();
     }
+    hash = (37 * hash) + SPOT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSpot());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2518,12 +2711,26 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         ephemeralStorageConfig_ = null;
         ephemeralStorageConfigBuilder_ = null;
       }
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfig_ = null;
+      } else {
+        gcfsConfig_ = null;
+        gcfsConfigBuilder_ = null;
+      }
+      if (advancedMachineFeaturesBuilder_ == null) {
+        advancedMachineFeatures_ = null;
+      } else {
+        advancedMachineFeatures_ = null;
+        advancedMachineFeaturesBuilder_ = null;
+      }
       if (gvnicBuilder_ == null) {
         gvnic_ = null;
       } else {
         gvnic_ = null;
         gvnicBuilder_ = null;
       }
+      spot_ = false;
+
       return this;
     }
 
@@ -2629,11 +2836,22 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.ephemeralStorageConfig_ = ephemeralStorageConfigBuilder_.build();
       }
+      if (gcfsConfigBuilder_ == null) {
+        result.gcfsConfig_ = gcfsConfig_;
+      } else {
+        result.gcfsConfig_ = gcfsConfigBuilder_.build();
+      }
+      if (advancedMachineFeaturesBuilder_ == null) {
+        result.advancedMachineFeatures_ = advancedMachineFeatures_;
+      } else {
+        result.advancedMachineFeatures_ = advancedMachineFeaturesBuilder_.build();
+      }
       if (gvnicBuilder_ == null) {
         result.gvnic_ = gvnic_;
       } else {
         result.gvnic_ = gvnicBuilder_.build();
       }
+      result.spot_ = spot_;
       onBuilt();
       return result;
     }
@@ -2817,8 +3035,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEphemeralStorageConfig()) {
         mergeEphemeralStorageConfig(other.getEphemeralStorageConfig());
       }
+      if (other.hasGcfsConfig()) {
+        mergeGcfsConfig(other.getGcfsConfig());
+      }
+      if (other.hasAdvancedMachineFeatures()) {
+        mergeAdvancedMachineFeatures(other.getAdvancedMachineFeatures());
+      }
       if (other.hasGvnic()) {
         mergeGvnic(other.getGvnic());
+      }
+      if (other.getSpot() != false) {
+        setSpot(other.getSpot());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7030,6 +7257,391 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return ephemeralStorageConfigBuilder_;
     }
 
+    private com.google.container.v1beta1.GcfsConfig gcfsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GcfsConfig,
+            com.google.container.v1beta1.GcfsConfig.Builder,
+            com.google.container.v1beta1.GcfsConfigOrBuilder>
+        gcfsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System) configs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+     *
+     * @return Whether the gcfsConfig field is set.
+     */
+    public boolean hasGcfsConfig() {
+      return gcfsConfigBuilder_ != null || gcfsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System) configs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+     *
+     * @return The gcfsConfig.
+     */
+    public com.google.container.v1beta1.GcfsConfig getGcfsConfig() {
+      if (gcfsConfigBuilder_ == null) {
+        return gcfsConfig_ == null
+            ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
+            : gcfsConfig_;
+      } else {
+        return gcfsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System) configs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+     */
+    public Builder setGcfsConfig(com.google.container.v1beta1.GcfsConfig value) {
+      if (gcfsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcfsConfig_ = value;
+        onChanged();
+      } else {
+        gcfsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System) configs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+     */
+    public Builder setGcfsConfig(com.google.container.v1beta1.GcfsConfig.Builder builderForValue) {
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcfsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System) configs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+     */
+    public Builder mergeGcfsConfig(com.google.container.v1beta1.GcfsConfig value) {
+      if (gcfsConfigBuilder_ == null) {
+        if (gcfsConfig_ != null) {
+          gcfsConfig_ =
+              com.google.container.v1beta1.GcfsConfig.newBuilder(gcfsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gcfsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gcfsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System) configs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+     */
+    public Builder clearGcfsConfig() {
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfig_ = null;
+        onChanged();
+      } else {
+        gcfsConfig_ = null;
+        gcfsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System) configs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+     */
+    public com.google.container.v1beta1.GcfsConfig.Builder getGcfsConfigBuilder() {
+
+      onChanged();
+      return getGcfsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System) configs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+     */
+    public com.google.container.v1beta1.GcfsConfigOrBuilder getGcfsConfigOrBuilder() {
+      if (gcfsConfigBuilder_ != null) {
+        return gcfsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gcfsConfig_ == null
+            ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
+            : gcfsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GCFS (Google Container File System) configs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GcfsConfig,
+            com.google.container.v1beta1.GcfsConfig.Builder,
+            com.google.container.v1beta1.GcfsConfigOrBuilder>
+        getGcfsConfigFieldBuilder() {
+      if (gcfsConfigBuilder_ == null) {
+        gcfsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.GcfsConfig,
+                com.google.container.v1beta1.GcfsConfig.Builder,
+                com.google.container.v1beta1.GcfsConfigOrBuilder>(
+                getGcfsConfig(), getParentForChildren(), isClean());
+        gcfsConfig_ = null;
+      }
+      return gcfsConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.AdvancedMachineFeatures advancedMachineFeatures_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AdvancedMachineFeatures,
+            com.google.container.v1beta1.AdvancedMachineFeatures.Builder,
+            com.google.container.v1beta1.AdvancedMachineFeaturesOrBuilder>
+        advancedMachineFeaturesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Advanced features for the Compute Engine VM.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;
+     * </code>
+     *
+     * @return Whether the advancedMachineFeatures field is set.
+     */
+    public boolean hasAdvancedMachineFeatures() {
+      return advancedMachineFeaturesBuilder_ != null || advancedMachineFeatures_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced features for the Compute Engine VM.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;
+     * </code>
+     *
+     * @return The advancedMachineFeatures.
+     */
+    public com.google.container.v1beta1.AdvancedMachineFeatures getAdvancedMachineFeatures() {
+      if (advancedMachineFeaturesBuilder_ == null) {
+        return advancedMachineFeatures_ == null
+            ? com.google.container.v1beta1.AdvancedMachineFeatures.getDefaultInstance()
+            : advancedMachineFeatures_;
+      } else {
+        return advancedMachineFeaturesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced features for the Compute Engine VM.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;
+     * </code>
+     */
+    public Builder setAdvancedMachineFeatures(
+        com.google.container.v1beta1.AdvancedMachineFeatures value) {
+      if (advancedMachineFeaturesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        advancedMachineFeatures_ = value;
+        onChanged();
+      } else {
+        advancedMachineFeaturesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced features for the Compute Engine VM.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;
+     * </code>
+     */
+    public Builder setAdvancedMachineFeatures(
+        com.google.container.v1beta1.AdvancedMachineFeatures.Builder builderForValue) {
+      if (advancedMachineFeaturesBuilder_ == null) {
+        advancedMachineFeatures_ = builderForValue.build();
+        onChanged();
+      } else {
+        advancedMachineFeaturesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced features for the Compute Engine VM.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;
+     * </code>
+     */
+    public Builder mergeAdvancedMachineFeatures(
+        com.google.container.v1beta1.AdvancedMachineFeatures value) {
+      if (advancedMachineFeaturesBuilder_ == null) {
+        if (advancedMachineFeatures_ != null) {
+          advancedMachineFeatures_ =
+              com.google.container.v1beta1.AdvancedMachineFeatures.newBuilder(
+                      advancedMachineFeatures_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          advancedMachineFeatures_ = value;
+        }
+        onChanged();
+      } else {
+        advancedMachineFeaturesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced features for the Compute Engine VM.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;
+     * </code>
+     */
+    public Builder clearAdvancedMachineFeatures() {
+      if (advancedMachineFeaturesBuilder_ == null) {
+        advancedMachineFeatures_ = null;
+        onChanged();
+      } else {
+        advancedMachineFeatures_ = null;
+        advancedMachineFeaturesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced features for the Compute Engine VM.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;
+     * </code>
+     */
+    public com.google.container.v1beta1.AdvancedMachineFeatures.Builder
+        getAdvancedMachineFeaturesBuilder() {
+
+      onChanged();
+      return getAdvancedMachineFeaturesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced features for the Compute Engine VM.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;
+     * </code>
+     */
+    public com.google.container.v1beta1.AdvancedMachineFeaturesOrBuilder
+        getAdvancedMachineFeaturesOrBuilder() {
+      if (advancedMachineFeaturesBuilder_ != null) {
+        return advancedMachineFeaturesBuilder_.getMessageOrBuilder();
+      } else {
+        return advancedMachineFeatures_ == null
+            ? com.google.container.v1beta1.AdvancedMachineFeatures.getDefaultInstance()
+            : advancedMachineFeatures_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Advanced features for the Compute Engine VM.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdvancedMachineFeatures advanced_machine_features = 26;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AdvancedMachineFeatures,
+            com.google.container.v1beta1.AdvancedMachineFeatures.Builder,
+            com.google.container.v1beta1.AdvancedMachineFeaturesOrBuilder>
+        getAdvancedMachineFeaturesFieldBuilder() {
+      if (advancedMachineFeaturesBuilder_ == null) {
+        advancedMachineFeaturesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.AdvancedMachineFeatures,
+                com.google.container.v1beta1.AdvancedMachineFeatures.Builder,
+                com.google.container.v1beta1.AdvancedMachineFeaturesOrBuilder>(
+                getAdvancedMachineFeatures(), getParentForChildren(), isClean());
+        advancedMachineFeatures_ = null;
+      }
+      return advancedMachineFeaturesBuilder_;
+    }
+
     private com.google.container.v1beta1.VirtualNIC gvnic_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.VirtualNIC,
@@ -7213,6 +7825,61 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         gvnic_ = null;
       }
       return gvnicBuilder_;
+    }
+
+    private boolean spot_;
+    /**
+     *
+     *
+     * <pre>
+     * Spot flag for enabling Spot VM, which is a rebrand of
+     * the existing preemptible flag.
+     * </pre>
+     *
+     * <code>bool spot = 32;</code>
+     *
+     * @return The spot.
+     */
+    @java.lang.Override
+    public boolean getSpot() {
+      return spot_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spot flag for enabling Spot VM, which is a rebrand of
+     * the existing preemptible flag.
+     * </pre>
+     *
+     * <code>bool spot = 32;</code>
+     *
+     * @param value The spot to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpot(boolean value) {
+
+      spot_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spot flag for enabling Spot VM, which is a rebrand of
+     * the existing preemptible flag.
+     * </pre>
+     *
+     * <code>bool spot = 32;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSpot() {
+
+      spot_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

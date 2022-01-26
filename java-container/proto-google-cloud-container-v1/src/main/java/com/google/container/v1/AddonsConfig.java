@@ -181,6 +181,40 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 90:
+            {
+              com.google.container.v1.GcePersistentDiskCsiDriverConfig.Builder subBuilder = null;
+              if (gcePersistentDiskCsiDriverConfig_ != null) {
+                subBuilder = gcePersistentDiskCsiDriverConfig_.toBuilder();
+              }
+              gcePersistentDiskCsiDriverConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.GcePersistentDiskCsiDriverConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gcePersistentDiskCsiDriverConfig_);
+                gcePersistentDiskCsiDriverConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 114:
+            {
+              com.google.container.v1.GcpFilestoreCsiDriverConfig.Builder subBuilder = null;
+              if (gcpFilestoreCsiDriverConfig_ != null) {
+                subBuilder = gcpFilestoreCsiDriverConfig_.toBuilder();
+              }
+              gcpFilestoreCsiDriverConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.GcpFilestoreCsiDriverConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gcpFilestoreCsiDriverConfig_);
+                gcpFilestoreCsiDriverConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -592,6 +626,115 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     return getConfigConnectorConfig();
   }
 
+  public static final int GCE_PERSISTENT_DISK_CSI_DRIVER_CONFIG_FIELD_NUMBER = 11;
+  private com.google.container.v1.GcePersistentDiskCsiDriverConfig
+      gcePersistentDiskCsiDriverConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Compute Engine Persistent Disk CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+   * </code>
+   *
+   * @return Whether the gcePersistentDiskCsiDriverConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcePersistentDiskCsiDriverConfig() {
+    return gcePersistentDiskCsiDriverConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Compute Engine Persistent Disk CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+   * </code>
+   *
+   * @return The gcePersistentDiskCsiDriverConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.GcePersistentDiskCsiDriverConfig
+      getGcePersistentDiskCsiDriverConfig() {
+    return gcePersistentDiskCsiDriverConfig_ == null
+        ? com.google.container.v1.GcePersistentDiskCsiDriverConfig.getDefaultInstance()
+        : gcePersistentDiskCsiDriverConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Compute Engine Persistent Disk CSI driver.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.GcePersistentDiskCsiDriverConfigOrBuilder
+      getGcePersistentDiskCsiDriverConfigOrBuilder() {
+    return getGcePersistentDiskCsiDriverConfig();
+  }
+
+  public static final int GCP_FILESTORE_CSI_DRIVER_CONFIG_FIELD_NUMBER = 14;
+  private com.google.container.v1.GcpFilestoreCsiDriverConfig gcpFilestoreCsiDriverConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the GCP Filestore CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+   * </code>
+   *
+   * @return Whether the gcpFilestoreCsiDriverConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcpFilestoreCsiDriverConfig() {
+    return gcpFilestoreCsiDriverConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the GCP Filestore CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+   * </code>
+   *
+   * @return The gcpFilestoreCsiDriverConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.GcpFilestoreCsiDriverConfig getGcpFilestoreCsiDriverConfig() {
+    return gcpFilestoreCsiDriverConfig_ == null
+        ? com.google.container.v1.GcpFilestoreCsiDriverConfig.getDefaultInstance()
+        : gcpFilestoreCsiDriverConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the GCP Filestore CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.GcpFilestoreCsiDriverConfigOrBuilder
+      getGcpFilestoreCsiDriverConfigOrBuilder() {
+    return getGcpFilestoreCsiDriverConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -627,6 +770,12 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (configConnectorConfig_ != null) {
       output.writeMessage(10, getConfigConnectorConfig());
     }
+    if (gcePersistentDiskCsiDriverConfig_ != null) {
+      output.writeMessage(11, getGcePersistentDiskCsiDriverConfig());
+    }
+    if (gcpFilestoreCsiDriverConfig_ != null) {
+      output.writeMessage(14, getGcpFilestoreCsiDriverConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -659,6 +808,16 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (configConnectorConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(10, getConfigConnectorConfig());
+    }
+    if (gcePersistentDiskCsiDriverConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, getGcePersistentDiskCsiDriverConfig());
+    }
+    if (gcpFilestoreCsiDriverConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, getGcpFilestoreCsiDriverConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -703,6 +862,17 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasConfigConnectorConfig()) {
       if (!getConfigConnectorConfig().equals(other.getConfigConnectorConfig())) return false;
     }
+    if (hasGcePersistentDiskCsiDriverConfig() != other.hasGcePersistentDiskCsiDriverConfig())
+      return false;
+    if (hasGcePersistentDiskCsiDriverConfig()) {
+      if (!getGcePersistentDiskCsiDriverConfig()
+          .equals(other.getGcePersistentDiskCsiDriverConfig())) return false;
+    }
+    if (hasGcpFilestoreCsiDriverConfig() != other.hasGcpFilestoreCsiDriverConfig()) return false;
+    if (hasGcpFilestoreCsiDriverConfig()) {
+      if (!getGcpFilestoreCsiDriverConfig().equals(other.getGcpFilestoreCsiDriverConfig()))
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -741,6 +911,14 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasConfigConnectorConfig()) {
       hash = (37 * hash) + CONFIG_CONNECTOR_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getConfigConnectorConfig().hashCode();
+    }
+    if (hasGcePersistentDiskCsiDriverConfig()) {
+      hash = (37 * hash) + GCE_PERSISTENT_DISK_CSI_DRIVER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGcePersistentDiskCsiDriverConfig().hashCode();
+    }
+    if (hasGcpFilestoreCsiDriverConfig()) {
+      hash = (37 * hash) + GCP_FILESTORE_CSI_DRIVER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGcpFilestoreCsiDriverConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -929,6 +1107,18 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         configConnectorConfig_ = null;
         configConnectorConfigBuilder_ = null;
       }
+      if (gcePersistentDiskCsiDriverConfigBuilder_ == null) {
+        gcePersistentDiskCsiDriverConfig_ = null;
+      } else {
+        gcePersistentDiskCsiDriverConfig_ = null;
+        gcePersistentDiskCsiDriverConfigBuilder_ = null;
+      }
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        gcpFilestoreCsiDriverConfig_ = null;
+      } else {
+        gcpFilestoreCsiDriverConfig_ = null;
+        gcpFilestoreCsiDriverConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -989,6 +1179,16 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         result.configConnectorConfig_ = configConnectorConfig_;
       } else {
         result.configConnectorConfig_ = configConnectorConfigBuilder_.build();
+      }
+      if (gcePersistentDiskCsiDriverConfigBuilder_ == null) {
+        result.gcePersistentDiskCsiDriverConfig_ = gcePersistentDiskCsiDriverConfig_;
+      } else {
+        result.gcePersistentDiskCsiDriverConfig_ = gcePersistentDiskCsiDriverConfigBuilder_.build();
+      }
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        result.gcpFilestoreCsiDriverConfig_ = gcpFilestoreCsiDriverConfig_;
+      } else {
+        result.gcpFilestoreCsiDriverConfig_ = gcpFilestoreCsiDriverConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1059,6 +1259,12 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasConfigConnectorConfig()) {
         mergeConfigConnectorConfig(other.getConfigConnectorConfig());
+      }
+      if (other.hasGcePersistentDiskCsiDriverConfig()) {
+        mergeGcePersistentDiskCsiDriverConfig(other.getGcePersistentDiskCsiDriverConfig());
+      }
+      if (other.hasGcpFilestoreCsiDriverConfig()) {
+        mergeGcpFilestoreCsiDriverConfig(other.getGcpFilestoreCsiDriverConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2510,6 +2716,418 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         configConnectorConfig_ = null;
       }
       return configConnectorConfigBuilder_;
+    }
+
+    private com.google.container.v1.GcePersistentDiskCsiDriverConfig
+        gcePersistentDiskCsiDriverConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GcePersistentDiskCsiDriverConfig,
+            com.google.container.v1.GcePersistentDiskCsiDriverConfig.Builder,
+            com.google.container.v1.GcePersistentDiskCsiDriverConfigOrBuilder>
+        gcePersistentDiskCsiDriverConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Compute Engine Persistent Disk CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+     * </code>
+     *
+     * @return Whether the gcePersistentDiskCsiDriverConfig field is set.
+     */
+    public boolean hasGcePersistentDiskCsiDriverConfig() {
+      return gcePersistentDiskCsiDriverConfigBuilder_ != null
+          || gcePersistentDiskCsiDriverConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Compute Engine Persistent Disk CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+     * </code>
+     *
+     * @return The gcePersistentDiskCsiDriverConfig.
+     */
+    public com.google.container.v1.GcePersistentDiskCsiDriverConfig
+        getGcePersistentDiskCsiDriverConfig() {
+      if (gcePersistentDiskCsiDriverConfigBuilder_ == null) {
+        return gcePersistentDiskCsiDriverConfig_ == null
+            ? com.google.container.v1.GcePersistentDiskCsiDriverConfig.getDefaultInstance()
+            : gcePersistentDiskCsiDriverConfig_;
+      } else {
+        return gcePersistentDiskCsiDriverConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Compute Engine Persistent Disk CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+     * </code>
+     */
+    public Builder setGcePersistentDiskCsiDriverConfig(
+        com.google.container.v1.GcePersistentDiskCsiDriverConfig value) {
+      if (gcePersistentDiskCsiDriverConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcePersistentDiskCsiDriverConfig_ = value;
+        onChanged();
+      } else {
+        gcePersistentDiskCsiDriverConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Compute Engine Persistent Disk CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+     * </code>
+     */
+    public Builder setGcePersistentDiskCsiDriverConfig(
+        com.google.container.v1.GcePersistentDiskCsiDriverConfig.Builder builderForValue) {
+      if (gcePersistentDiskCsiDriverConfigBuilder_ == null) {
+        gcePersistentDiskCsiDriverConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcePersistentDiskCsiDriverConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Compute Engine Persistent Disk CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+     * </code>
+     */
+    public Builder mergeGcePersistentDiskCsiDriverConfig(
+        com.google.container.v1.GcePersistentDiskCsiDriverConfig value) {
+      if (gcePersistentDiskCsiDriverConfigBuilder_ == null) {
+        if (gcePersistentDiskCsiDriverConfig_ != null) {
+          gcePersistentDiskCsiDriverConfig_ =
+              com.google.container.v1.GcePersistentDiskCsiDriverConfig.newBuilder(
+                      gcePersistentDiskCsiDriverConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gcePersistentDiskCsiDriverConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gcePersistentDiskCsiDriverConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Compute Engine Persistent Disk CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+     * </code>
+     */
+    public Builder clearGcePersistentDiskCsiDriverConfig() {
+      if (gcePersistentDiskCsiDriverConfigBuilder_ == null) {
+        gcePersistentDiskCsiDriverConfig_ = null;
+        onChanged();
+      } else {
+        gcePersistentDiskCsiDriverConfig_ = null;
+        gcePersistentDiskCsiDriverConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Compute Engine Persistent Disk CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+     * </code>
+     */
+    public com.google.container.v1.GcePersistentDiskCsiDriverConfig.Builder
+        getGcePersistentDiskCsiDriverConfigBuilder() {
+
+      onChanged();
+      return getGcePersistentDiskCsiDriverConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Compute Engine Persistent Disk CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+     * </code>
+     */
+    public com.google.container.v1.GcePersistentDiskCsiDriverConfigOrBuilder
+        getGcePersistentDiskCsiDriverConfigOrBuilder() {
+      if (gcePersistentDiskCsiDriverConfigBuilder_ != null) {
+        return gcePersistentDiskCsiDriverConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gcePersistentDiskCsiDriverConfig_ == null
+            ? com.google.container.v1.GcePersistentDiskCsiDriverConfig.getDefaultInstance()
+            : gcePersistentDiskCsiDriverConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Compute Engine Persistent Disk CSI driver.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.GcePersistentDiskCsiDriverConfig gce_persistent_disk_csi_driver_config = 11;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GcePersistentDiskCsiDriverConfig,
+            com.google.container.v1.GcePersistentDiskCsiDriverConfig.Builder,
+            com.google.container.v1.GcePersistentDiskCsiDriverConfigOrBuilder>
+        getGcePersistentDiskCsiDriverConfigFieldBuilder() {
+      if (gcePersistentDiskCsiDriverConfigBuilder_ == null) {
+        gcePersistentDiskCsiDriverConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.GcePersistentDiskCsiDriverConfig,
+                com.google.container.v1.GcePersistentDiskCsiDriverConfig.Builder,
+                com.google.container.v1.GcePersistentDiskCsiDriverConfigOrBuilder>(
+                getGcePersistentDiskCsiDriverConfig(), getParentForChildren(), isClean());
+        gcePersistentDiskCsiDriverConfig_ = null;
+      }
+      return gcePersistentDiskCsiDriverConfigBuilder_;
+    }
+
+    private com.google.container.v1.GcpFilestoreCsiDriverConfig gcpFilestoreCsiDriverConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GcpFilestoreCsiDriverConfig,
+            com.google.container.v1.GcpFilestoreCsiDriverConfig.Builder,
+            com.google.container.v1.GcpFilestoreCsiDriverConfigOrBuilder>
+        gcpFilestoreCsiDriverConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     *
+     * @return Whether the gcpFilestoreCsiDriverConfig field is set.
+     */
+    public boolean hasGcpFilestoreCsiDriverConfig() {
+      return gcpFilestoreCsiDriverConfigBuilder_ != null || gcpFilestoreCsiDriverConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     *
+     * @return The gcpFilestoreCsiDriverConfig.
+     */
+    public com.google.container.v1.GcpFilestoreCsiDriverConfig getGcpFilestoreCsiDriverConfig() {
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        return gcpFilestoreCsiDriverConfig_ == null
+            ? com.google.container.v1.GcpFilestoreCsiDriverConfig.getDefaultInstance()
+            : gcpFilestoreCsiDriverConfig_;
+      } else {
+        return gcpFilestoreCsiDriverConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    public Builder setGcpFilestoreCsiDriverConfig(
+        com.google.container.v1.GcpFilestoreCsiDriverConfig value) {
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcpFilestoreCsiDriverConfig_ = value;
+        onChanged();
+      } else {
+        gcpFilestoreCsiDriverConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    public Builder setGcpFilestoreCsiDriverConfig(
+        com.google.container.v1.GcpFilestoreCsiDriverConfig.Builder builderForValue) {
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        gcpFilestoreCsiDriverConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcpFilestoreCsiDriverConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    public Builder mergeGcpFilestoreCsiDriverConfig(
+        com.google.container.v1.GcpFilestoreCsiDriverConfig value) {
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        if (gcpFilestoreCsiDriverConfig_ != null) {
+          gcpFilestoreCsiDriverConfig_ =
+              com.google.container.v1.GcpFilestoreCsiDriverConfig.newBuilder(
+                      gcpFilestoreCsiDriverConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gcpFilestoreCsiDriverConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gcpFilestoreCsiDriverConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    public Builder clearGcpFilestoreCsiDriverConfig() {
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        gcpFilestoreCsiDriverConfig_ = null;
+        onChanged();
+      } else {
+        gcpFilestoreCsiDriverConfig_ = null;
+        gcpFilestoreCsiDriverConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    public com.google.container.v1.GcpFilestoreCsiDriverConfig.Builder
+        getGcpFilestoreCsiDriverConfigBuilder() {
+
+      onChanged();
+      return getGcpFilestoreCsiDriverConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    public com.google.container.v1.GcpFilestoreCsiDriverConfigOrBuilder
+        getGcpFilestoreCsiDriverConfigOrBuilder() {
+      if (gcpFilestoreCsiDriverConfigBuilder_ != null) {
+        return gcpFilestoreCsiDriverConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gcpFilestoreCsiDriverConfig_ == null
+            ? com.google.container.v1.GcpFilestoreCsiDriverConfig.getDefaultInstance()
+            : gcpFilestoreCsiDriverConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the GCP Filestore CSI driver.
+     * </pre>
+     *
+     * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GcpFilestoreCsiDriverConfig,
+            com.google.container.v1.GcpFilestoreCsiDriverConfig.Builder,
+            com.google.container.v1.GcpFilestoreCsiDriverConfigOrBuilder>
+        getGcpFilestoreCsiDriverConfigFieldBuilder() {
+      if (gcpFilestoreCsiDriverConfigBuilder_ == null) {
+        gcpFilestoreCsiDriverConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.GcpFilestoreCsiDriverConfig,
+                com.google.container.v1.GcpFilestoreCsiDriverConfig.Builder,
+                com.google.container.v1.GcpFilestoreCsiDriverConfigOrBuilder>(
+                getGcpFilestoreCsiDriverConfig(), getParentForChildren(), isClean());
+        gcpFilestoreCsiDriverConfig_ = null;
+      }
+      return gcpFilestoreCsiDriverConfigBuilder_;
     }
 
     @java.lang.Override

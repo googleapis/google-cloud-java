@@ -118,7 +118,7 @@ public final class GetOpenIDConfigRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The cluster (project, location, cluster id) to get the discovery document
+   * The cluster (project, location, cluster name) to get the discovery document
    * for. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -142,7 +142,7 @@ public final class GetOpenIDConfigRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The cluster (project, location, cluster id) to get the discovery document
+   * The cluster (project, location, cluster name) to get the discovery document
    * for. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -487,7 +487,7 @@ public final class GetOpenIDConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The cluster (project, location, cluster id) to get the discovery document
+     * The cluster (project, location, cluster name) to get the discovery document
      * for. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -510,7 +510,7 @@ public final class GetOpenIDConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The cluster (project, location, cluster id) to get the discovery document
+     * The cluster (project, location, cluster name) to get the discovery document
      * for. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -533,7 +533,7 @@ public final class GetOpenIDConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The cluster (project, location, cluster id) to get the discovery document
+     * The cluster (project, location, cluster name) to get the discovery document
      * for. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -555,7 +555,7 @@ public final class GetOpenIDConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The cluster (project, location, cluster id) to get the discovery document
+     * The cluster (project, location, cluster name) to get the discovery document
      * for. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -573,7 +573,7 @@ public final class GetOpenIDConfigRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The cluster (project, location, cluster id) to get the discovery document
+     * The cluster (project, location, cluster name) to get the discovery document
      * for. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
