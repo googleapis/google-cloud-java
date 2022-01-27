@@ -1,0 +1,117 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.dataplex.v1",
+  "libraryPackage": "com.google.cloud.dataplex.v1",
+  "services": {
+    "MetadataService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MetadataServiceClient",
+          "rpcs": {
+            "GetEntity": {
+              "methods": ["getEntity", "getEntity", "getEntity", "getEntityCallable"]
+            },
+            "GetPartition": {
+              "methods": ["getPartition", "getPartition", "getPartition", "getPartitionCallable"]
+            },
+            "ListEntities": {
+              "methods": ["listEntities", "listEntities", "listEntities", "listEntitiesPagedCallable", "listEntitiesCallable"]
+            },
+            "ListPartitions": {
+              "methods": ["listPartitions", "listPartitions", "listPartitions", "listPartitionsPagedCallable", "listPartitionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DataplexService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataplexServiceClient",
+          "rpcs": {
+            "CancelJob": {
+              "methods": ["cancelJob", "cancelJob", "cancelJob", "cancelJobCallable"]
+            },
+            "CreateAsset": {
+              "methods": ["createAssetAsync", "createAssetAsync", "createAssetAsync", "createAssetOperationCallable", "createAssetCallable"]
+            },
+            "CreateLake": {
+              "methods": ["createLakeAsync", "createLakeAsync", "createLakeAsync", "createLakeOperationCallable", "createLakeCallable"]
+            },
+            "CreateTask": {
+              "methods": ["createTaskAsync", "createTaskAsync", "createTaskAsync", "createTaskOperationCallable", "createTaskCallable"]
+            },
+            "CreateZone": {
+              "methods": ["createZoneAsync", "createZoneAsync", "createZoneAsync", "createZoneOperationCallable", "createZoneCallable"]
+            },
+            "DeleteAsset": {
+              "methods": ["deleteAssetAsync", "deleteAssetAsync", "deleteAssetAsync", "deleteAssetOperationCallable", "deleteAssetCallable"]
+            },
+            "DeleteLake": {
+              "methods": ["deleteLakeAsync", "deleteLakeAsync", "deleteLakeAsync", "deleteLakeOperationCallable", "deleteLakeCallable"]
+            },
+            "DeleteTask": {
+              "methods": ["deleteTaskAsync", "deleteTaskAsync", "deleteTaskAsync", "deleteTaskOperationCallable", "deleteTaskCallable"]
+            },
+            "DeleteZone": {
+              "methods": ["deleteZoneAsync", "deleteZoneAsync", "deleteZoneAsync", "deleteZoneOperationCallable", "deleteZoneCallable"]
+            },
+            "GetAsset": {
+              "methods": ["getAsset", "getAsset", "getAsset", "getAssetCallable"]
+            },
+            "GetJob": {
+              "methods": ["getJob", "getJob", "getJob", "getJobCallable"]
+            },
+            "GetLake": {
+              "methods": ["getLake", "getLake", "getLake", "getLakeCallable"]
+            },
+            "GetTask": {
+              "methods": ["getTask", "getTask", "getTask", "getTaskCallable"]
+            },
+            "GetZone": {
+              "methods": ["getZone", "getZone", "getZone", "getZoneCallable"]
+            },
+            "ListAssetActions": {
+              "methods": ["listAssetActions", "listAssetActions", "listAssetActions", "listAssetActionsPagedCallable", "listAssetActionsCallable"]
+            },
+            "ListAssets": {
+              "methods": ["listAssets", "listAssets", "listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
+            },
+            "ListJobs": {
+              "methods": ["listJobs", "listJobs", "listJobs", "listJobsPagedCallable", "listJobsCallable"]
+            },
+            "ListLakeActions": {
+              "methods": ["listLakeActions", "listLakeActions", "listLakeActions", "listLakeActionsPagedCallable", "listLakeActionsCallable"]
+            },
+            "ListLakes": {
+              "methods": ["listLakes", "listLakes", "listLakes", "listLakesPagedCallable", "listLakesCallable"]
+            },
+            "ListTasks": {
+              "methods": ["listTasks", "listTasks", "listTasks", "listTasksPagedCallable", "listTasksCallable"]
+            },
+            "ListZoneActions": {
+              "methods": ["listZoneActions", "listZoneActions", "listZoneActions", "listZoneActionsPagedCallable", "listZoneActionsCallable"]
+            },
+            "ListZones": {
+              "methods": ["listZones", "listZones", "listZones", "listZonesPagedCallable", "listZonesCallable"]
+            },
+            "UpdateAsset": {
+              "methods": ["updateAssetAsync", "updateAssetAsync", "updateAssetOperationCallable", "updateAssetCallable"]
+            },
+            "UpdateLake": {
+              "methods": ["updateLakeAsync", "updateLakeAsync", "updateLakeOperationCallable", "updateLakeCallable"]
+            },
+            "UpdateTask": {
+              "methods": ["updateTaskAsync", "updateTaskAsync", "updateTaskOperationCallable", "updateTaskCallable"]
+            },
+            "UpdateZone": {
+              "methods": ["updateZoneAsync", "updateZoneAsync", "updateZoneOperationCallable", "updateZoneCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
