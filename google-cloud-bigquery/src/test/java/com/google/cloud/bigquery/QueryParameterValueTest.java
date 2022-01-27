@@ -24,6 +24,7 @@ import static org.threeten.bp.temporal.ChronoField.SECOND_OF_MINUTE;
 
 import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.common.collect.ImmutableMap;
+import com.google.gson.JsonObject;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.Date;
@@ -191,6 +192,24 @@ public class QueryParameterValueTest {
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.STRING);
     assertThat(value.getArrayType()).isNull();
     assertThat(value.getArrayValues()).isNull();
+  }
+
+  @Test
+  public void testJson() {
+    QueryParameterValue value =
+        QueryParameterValue.json("{\"class\" : {\"students\" : [{\"name\" : \"Jane\"}]}}");
+    JsonObject jsonObject = new JsonObject();
+    jsonObject.addProperty("class", "student");
+    QueryParameterValue value1 = QueryParameterValue.json(jsonObject);
+    assertThat(value.getValue())
+        .isEqualTo("{\"class\" : {\"students\" : [{\"name\" : \"Jane\"}]}}");
+    assertThat(value1.getValue()).isEqualTo("{\"class\":\"student\"}");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.JSON);
+    assertThat(value1.getType()).isEqualTo(StandardSQLTypeName.JSON);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value1.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
+    assertThat(value1.getArrayType()).isNull();
   }
 
   @Test

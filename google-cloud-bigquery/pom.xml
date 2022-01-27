@@ -81,6 +81,10 @@
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+    </dependency>
 
     <!-- auto-value creates a class that uses an annotation from error_prone_annotations -->
     <dependency>
