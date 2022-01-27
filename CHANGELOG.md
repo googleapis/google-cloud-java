@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.7.0](https://github.com/googleapis/java-bigquery/compare/v2.6.2...v2.7.0) (2022-01-27)
+
+
+### Features
+
+* add JSON type support ([#1799](https://github.com/googleapis/java-bigquery/issues/1799)) ([73c4a73](https://github.com/googleapis/java-bigquery/commit/73c4a7330b717416fb0c9ce21215460f25faa930))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-bigquery/issues/1339)) ([#1809](https://github.com/googleapis/java-bigquery/issues/1809)) ([90afea5](https://github.com/googleapis/java-bigquery/commit/90afea5d50218c89d350fbb572072f2d75710072))
+* update actions/github-script action to v5 ([#1808](https://github.com/googleapis/java-bigquery/issues/1808)) ([8e5f585](https://github.com/googleapis/java-bigquery/commit/8e5f58552e83abf309e314bddbfdc9ab3527181e))
+* update dependency com.google.cloud:google-cloud-storage to v2.3.0 ([#1796](https://github.com/googleapis/java-bigquery/issues/1796)) ([8b77d9b](https://github.com/googleapis/java-bigquery/commit/8b77d9b207b96dcbb4afc2e8f06fb9c147ce6a90))
+* update dependency com.google.oauth-client:google-oauth-client-java6 to v1.33.0 ([#1802](https://github.com/googleapis/java-bigquery/issues/1802)) ([c78fc77](https://github.com/googleapis/java-bigquery/commit/c78fc775fb5278e7925a1d473d40e3a801eb4acf))
+* update dependency com.google.oauth-client:google-oauth-client-jetty to v1.33.0 ([#1803](https://github.com/googleapis/java-bigquery/issues/1803)) ([8e34e59](https://github.com/googleapis/java-bigquery/commit/8e34e59f13d289bcc9ea42d954c16db9eed1a423))
+* update dependency org.assertj:assertj-core to v3 ([#1786](https://github.com/googleapis/java-bigquery/issues/1786)) ([69fcabf](https://github.com/googleapis/java-bigquery/commit/69fcabf478c6fab23c4da3fcc516f820cc178a5b))
+
 ### [2.6.2](https://www.github.com/googleapis/java-bigquery/compare/v2.6.1...v2.6.2) (2022-01-09)
 
 
