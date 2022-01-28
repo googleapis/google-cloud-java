@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.7.0](https://github.com/googleapis/java-shared-dependencies/compare/v2.6.0...v2.7.0) (2022-01-28)
+
+
+### Dependencies
+
+* update dependency com.fasterxml.jackson:jackson-bom to v2.13.1 ([#555](https://github.com/googleapis/java-shared-dependencies/issues/555)) ([67b5663](https://github.com/googleapis/java-shared-dependencies/commit/67b56635509215fd132b2ffbcaed995a6de93879))
+* update dependency com.google.api-client:google-api-client-bom to v1.33.1 ([#580](https://github.com/googleapis/java-shared-dependencies/issues/580)) ([895dba2](https://github.com/googleapis/java-shared-dependencies/commit/895dba2afef6c295b0e21a4ccd27feee1b6af8e2))
+* update dependency com.google.api:api-common to v2.1.3 ([#587](https://github.com/googleapis/java-shared-dependencies/issues/587)) ([5dbbce8](https://github.com/googleapis/java-shared-dependencies/commit/5dbbce80baa045818757912e6db4f222c12b75f6))
+* update dependency com.google.auth:google-auth-library-bom to v1.4.0 ([#578](https://github.com/googleapis/java-shared-dependencies/issues/578)) ([c274c62](https://github.com/googleapis/java-shared-dependencies/commit/c274c62905192bcc48c82104bf50cbeaa1894c2b))
+* update dependency com.google.errorprone:error_prone_annotations to v2.11.0 ([#582](https://github.com/googleapis/java-shared-dependencies/issues/582)) ([314da38](https://github.com/googleapis/java-shared-dependencies/commit/314da38c9f12cf425b5d1be8297e9f2a78d13948))
+* update dependency com.google.http-client:google-http-client-bom to v1.41.2 ([#579](https://github.com/googleapis/java-shared-dependencies/issues/579)) ([c8df06d](https://github.com/googleapis/java-shared-dependencies/commit/c8df06ddb3f4a975e928bbdd9dfae293e81efa39))
+* update dependency com.google.oauth-client:google-oauth-client-bom to v1.33.0 ([#576](https://github.com/googleapis/java-shared-dependencies/issues/576)) ([3315988](https://github.com/googleapis/java-shared-dependencies/commit/3315988059ca0223f078b0f760960674bfa8c04a))
+* update dependency com.google.protobuf:protobuf-bom to v3.19.3 ([#571](https://github.com/googleapis/java-shared-dependencies/issues/571)) ([c1931e1](https://github.com/googleapis/java-shared-dependencies/commit/c1931e1c4611ca3d1e2afac1c9e983cf1ec4a7de))
+* update dependency io.grpc:grpc-bom to v1.44.0 ([#586](https://github.com/googleapis/java-shared-dependencies/issues/586)) ([52c47b7](https://github.com/googleapis/java-shared-dependencies/commit/52c47b7425af438ba1a82dac87f9002353a6a87a))
+* update dependency org.checkerframework:checker-qual to v3.21.1 ([#554](https://github.com/googleapis/java-shared-dependencies/issues/554)) ([81bbb91](https://github.com/googleapis/java-shared-dependencies/commit/81bbb91774ab67161371bfd0dfd143de89dee4c9))
+* update gax.version to v2.11.0 ([#581](https://github.com/googleapis/java-shared-dependencies/issues/581)) ([1899612](https://github.com/googleapis/java-shared-dependencies/commit/189961226f84cdd4e283780d2c7d4a4dffc3e00c))
+* update gax.version to v2.9.0 ([#573](https://github.com/googleapis/java-shared-dependencies/issues/573)) ([ee5e38e](https://github.com/googleapis/java-shared-dependencies/commit/ee5e38efea574eeb2b5803192da98ba1ce1c8e6e))
+* update google.common-protos.version to v2.7.2 ([#588](https://github.com/googleapis/java-shared-dependencies/issues/588)) ([caac0e6](https://github.com/googleapis/java-shared-dependencies/commit/caac0e68e336b801becb6322b5b81fce1824ad8a))
+* update google.core.version to v2.4.0 ([#589](https://github.com/googleapis/java-shared-dependencies/issues/589)) ([6a292e3](https://github.com/googleapis/java-shared-dependencies/commit/6a292e3530a06d6b228f3154ed4e979ef68d7aeb))
+* update iam.version to v1.2.1 ([#569](https://github.com/googleapis/java-shared-dependencies/issues/569)) ([62dd270](https://github.com/googleapis/java-shared-dependencies/commit/62dd2705b257c4bb539bfe619234f38d0e13b138))
+* update opencensus.version to v0.30.0 ([#552](https://github.com/googleapis/java-shared-dependencies/issues/552)) ([ebae62e](https://github.com/googleapis/java-shared-dependencies/commit/ebae62eca75234db4fd571f42b8ed0f6ce1bd1f7))
+* update opencensus.version to v0.31.0 ([#585](https://github.com/googleapis/java-shared-dependencies/issues/585)) ([021b066](https://github.com/googleapis/java-shared-dependencies/commit/021b066a833af1629c89fcca593d16b9786ee0bf))
+
 ## [2.6.0](https://www.github.com/googleapis/java-shared-dependencies/compare/2.5.1...v2.6.0) (2022-01-07)
 
 
