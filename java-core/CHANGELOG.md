@@ -1,5 +1,40 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-core/compare/v2.3.5...v2.4.0) (2022-01-28)
+
+
+### Features
+
+* **java:** Add native-image support classes to java-core module  ([#637](https://github.com/googleapis/java-core/issues/637)) ([154bc18](https://github.com/googleapis/java-core/commit/154bc18ba86328d29665c502db1d35e265c92bbf))
+
+
+### Bug Fixes
+
+* **java:** initialize LoggerFactory at build time ([#685](https://github.com/googleapis/java-core/issues/685)) ([eb3aba2](https://github.com/googleapis/java-core/commit/eb3aba2455a0ab6ffec2c6beb3f3cbb4bcb6008d))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-core/issues/1339)) ([#689](https://github.com/googleapis/java-core/issues/689)) ([eb462c7](https://github.com/googleapis/java-core/commit/eb462c7b1a005ce37d1be58900a244f6b807e5d5))
+* update dependency com.google.api-client:google-api-client-bom to v1.33.1 ([#684](https://github.com/googleapis/java-core/issues/684)) ([9ff47e6](https://github.com/googleapis/java-core/commit/9ff47e68d0c435d7636d89b03369aabbdfe3663b))
+* update dependency com.google.api:api-common to v2.1.3 ([#694](https://github.com/googleapis/java-core/issues/694)) ([684ae80](https://github.com/googleapis/java-core/commit/684ae805b8d25747830ce9266fd51a287c018cc9))
+* update dependency com.google.api:gax-bom to v2.11.0 ([#677](https://github.com/googleapis/java-core/issues/677)) ([1a578bd](https://github.com/googleapis/java-core/commit/1a578bdee2fa229ffbdd8fdde3d66d7e29dedf98))
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.7.2 ([#695](https://github.com/googleapis/java-core/issues/695)) ([1085d2c](https://github.com/googleapis/java-core/commit/1085d2cb1d7e8391f981d1f4b97c7724b0107e94))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.2.1 ([#667](https://github.com/googleapis/java-core/issues/667)) ([b57ec04](https://github.com/googleapis/java-core/commit/b57ec047234a1a044458980a8cf7de6a3156bf41))
+* update dependency com.google.auth:google-auth-library-bom to v1.4.0 ([#681](https://github.com/googleapis/java-core/issues/681)) ([3273b1e](https://github.com/googleapis/java-core/commit/3273b1ed0b1db610790e7832a6c92797a341cc7d))
+* update dependency com.google.errorprone:error_prone_annotations to v2.11.0 ([#687](https://github.com/googleapis/java-core/issues/687)) ([dc4d18d](https://github.com/googleapis/java-core/commit/dc4d18de86695fddbcb9d221cc53fdca3faf09f5))
+* update dependency com.google.http-client:google-http-client-bom to v1.41.1 ([#683](https://github.com/googleapis/java-core/issues/683)) ([45cb753](https://github.com/googleapis/java-core/commit/45cb7535151cfcffa282b4c8d9cd56265cca2ece))
+* update dependency com.google.http-client:google-http-client-bom to v1.41.2 ([#696](https://github.com/googleapis/java-core/issues/696)) ([f4875c0](https://github.com/googleapis/java-core/commit/f4875c0deecfea3728925e5ee0ef95ee90852301))
+* update dependency com.google.protobuf:protobuf-bom to v3.19.3 ([#674](https://github.com/googleapis/java-core/issues/674)) ([c54f997](https://github.com/googleapis/java-core/commit/c54f9973b71c91c1fde0a1d128957cd022a27902))
+* update dependency io.grpc:grpc-bom to v1.43.2 ([#665](https://github.com/googleapis/java-core/issues/665)) ([752ba6e](https://github.com/googleapis/java-core/commit/752ba6e384c382d0e39d8335640eaaea2beee9e1))
+* update dependency io.grpc:grpc-bom to v1.44.0 ([#693](https://github.com/googleapis/java-core/issues/693)) ([ed85045](https://github.com/googleapis/java-core/commit/ed850455995fc5b5c2dae3595116721316f63698))
+* update dependency org.easymock:easymock to v4 ([#668](https://github.com/googleapis/java-core/issues/668)) ([c36e976](https://github.com/googleapis/java-core/commit/c36e976c0379c1119dfe643dc3131f2e52130c5c))
+* update dependency org.graalvm.sdk:graal-sdk to v22 ([#680](https://github.com/googleapis/java-core/issues/680)) ([0f535f8](https://github.com/googleapis/java-core/commit/0f535f869f7ce68192f821d0f3361634676dddf7))
+* update graalvm.version to v21.3.1 ([#679](https://github.com/googleapis/java-core/issues/679)) ([dfb305a](https://github.com/googleapis/java-core/commit/dfb305acaf9d6db91727e42509fc6b043f07a5ce))
+* update graalvm.version to v22.0.0.2 ([#691](https://github.com/googleapis/java-core/issues/691)) ([780b734](https://github.com/googleapis/java-core/commit/780b734bb4f26fab49065f303d102033b2c3a3d0))
+* update opencensus.version to v0.30.0 ([#646](https://github.com/googleapis/java-core/issues/646)) ([c2caaa7](https://github.com/googleapis/java-core/commit/c2caaa7cb2c094318e611ba2c082a8a31fee21ea))
+* update opencensus.version to v0.31.0 ([#692](https://github.com/googleapis/java-core/issues/692)) ([bdf7d4e](https://github.com/googleapis/java-core/commit/bdf7d4ec05c5314e5f2667287ed3e7cb83667c35))
+
 ### [2.3.5](https://www.github.com/googleapis/java-core/compare/v2.3.4...v2.3.5) (2022-01-06)
 
 
