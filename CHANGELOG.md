@@ -1,5 +1,21 @@
 # Changelog
 
+### [2.8.3](https://github.com/googleapis/java-bigquerystorage/compare/v2.8.2...v2.8.3) (2022-01-28)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-bigquerystorage/issues/1339)) ([#1491](https://github.com/googleapis/java-bigquerystorage/issues/1491)) ([7eea012](https://github.com/googleapis/java-bigquerystorage/commit/7eea012ee49ebba9c97273abd6331a63868bf72e))
+* update actions/github-script action to v5 ([#1492](https://github.com/googleapis/java-bigquerystorage/issues/1492)) ([580c033](https://github.com/googleapis/java-bigquerystorage/commit/580c03363e5f3b8231e8ef491164badf0b126ca8))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.7.0 ([#1499](https://github.com/googleapis/java-bigquerystorage/issues/1499)) ([0d414f8](https://github.com/googleapis/java-bigquerystorage/commit/0d414f8eaca6daf89b3f981f2c727b217a59e658))
+* upgrade google-cloud-shared-dependencies to v2.7.0 ([#1501](https://github.com/googleapis/java-bigquerystorage/issues/1501)) ([3f75e83](https://github.com/googleapis/java-bigquerystorage/commit/3f75e83cb5140f633204374a315831ccd09dfae3))
+
+
+### Documentation
+
+* **tutorials:** add a README.md ([#1500](https://github.com/googleapis/java-bigquerystorage/issues/1500)) ([c50c6a0](https://github.com/googleapis/java-bigquerystorage/commit/c50c6a039a47cc6e0a1e56966142b21e476074c8))
+* **tutorials:** add new tutorials directory and JsonWriterDefaultStream tutorial ([#1498](https://github.com/googleapis/java-bigquerystorage/issues/1498)) ([fd1ecf2](https://github.com/googleapis/java-bigquerystorage/commit/fd1ecf2a8e7b96b7edbf5c9b6d12dedee8c9ba49))
+
 ### [2.8.2](https://github.com/googleapis/java-bigquerystorage/compare/v2.8.1...v2.8.2) (2022-01-25)
 
 
