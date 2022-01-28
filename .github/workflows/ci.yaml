@@ -1,5 +1,7 @@
 on:
   push:
+    paths-ignore:
+      - 'tutorials/**'
     branches:
     - main
   pull_request:

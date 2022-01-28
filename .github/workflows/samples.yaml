@@ -1,5 +1,7 @@
 on:
   pull_request:
+    paths-ignore:
+      - 'tutorials/**'
 name: samples
 jobs:
   checkstyle:

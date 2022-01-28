@@ -1,5 +1,7 @@
 on:
   pull_request:
+    paths-ignore:
+      - 'tutorials/**'
 name: auto-merge-readme
 jobs:
   approve:

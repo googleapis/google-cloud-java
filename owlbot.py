@@ -27,6 +27,10 @@ java.common_templates(
         ".kokoro/build.sh",
         ".kokoro/nightly/samples.cfg",
         ".kokoro/presubmit/samples.cfg",
-        ".kokoro/dependencies.sh"
+        ".kokoro/dependencies.sh",
+        ".github/workflows/approve-readme.yaml",
+        ".github/workflows/auto-release.yaml",
+        ".github/workflows/ci.yaml",
+        ".github/workflows/samples.yaml"
     ]
 )
