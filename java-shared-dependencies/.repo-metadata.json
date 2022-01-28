@@ -1,9 +1,11 @@
 {
-  "name": "google-cloud-shared-dependencies",
+  "api_shortname": "google-cloud-shared-dependencies",
   "name_pretty": "Google Cloud Shared Dependencies BOM",
-  "release_level": "ga",
+  "client_documentation": "n/a",
+  "release_level": "stable",
   "language": "java",
   "repo": "googleapis/java-shared-dependencies",
   "repo_short": "java-shared-dependencies",
-  "distribution_name": "com.google.cloud:google-cloud-shared-dependencies"
+  "distribution_name": "com.google.cloud:google-cloud-shared-dependencies",
+  "library_type": "OTHER"
 }
