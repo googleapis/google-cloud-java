@@ -114,4 +114,75 @@ public class AppProfileTest {
 
     assertThat(actualException).isInstanceOf(IllegalArgumentException.class);
   }
+
+  @Test
+  public void testEquals() {
+    AppProfile profile =
+        AppProfile.fromProto(
+            com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                .setName(AppProfileName.of("my-project", "my-instance", "my-profile").toString())
+                .setDescription("my description")
+                .setMultiClusterRoutingUseAny(
+                    com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
+                        .addAllClusterIds(ImmutableList.of("cluster-id-1", "cluster-id-2"))
+                        .build())
+                .setEtag("my-etag")
+                .build());
+
+    UpdateAppProfileRequest updateAppProfileRequest = UpdateAppProfileRequest.of(profile);
+    UpdateAppProfileRequest updateAppProfileRequest2 = UpdateAppProfileRequest.of(profile);
+
+    assertThat(updateAppProfileRequest).isEqualTo(updateAppProfileRequest2);
+
+    AppProfile profile2 =
+        AppProfile.fromProto(
+            com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                .setName(AppProfileName.of("my-project-2", "my-instance", "my-profile").toString())
+                .setDescription("my description")
+                .setMultiClusterRoutingUseAny(
+                    com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
+                        .addAllClusterIds(ImmutableList.of("cluster-id-1", "cluster-id-2"))
+                        .build())
+                .setEtag("my-etag")
+                .build());
+    UpdateAppProfileRequest updateAppProfileRequest3 = UpdateAppProfileRequest.of(profile2);
+
+    assertThat(updateAppProfileRequest).isNotEqualTo(updateAppProfileRequest3);
+  }
+
+  @Test
+  public void testHashCode() {
+    AppProfile profile =
+        AppProfile.fromProto(
+            com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                .setName(AppProfileName.of("my-project", "my-instance", "my-profile").toString())
+                .setDescription("my description")
+                .setMultiClusterRoutingUseAny(
+                    com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
+                        .addAllClusterIds(ImmutableList.of("cluster-id-1", "cluster-id-2"))
+                        .build())
+                .setEtag("my-etag")
+                .build());
+
+    UpdateAppProfileRequest updateAppProfileRequest = UpdateAppProfileRequest.of(profile);
+    UpdateAppProfileRequest updateAppProfileRequest2 = UpdateAppProfileRequest.of(profile);
+
+    assertThat(updateAppProfileRequest.hashCode()).isEqualTo(updateAppProfileRequest2.hashCode());
+
+    AppProfile profile2 =
+        AppProfile.fromProto(
+            com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                .setName(AppProfileName.of("my-project-2", "my-instance", "my-profile").toString())
+                .setDescription("my description")
+                .setMultiClusterRoutingUseAny(
+                    com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
+                        .addAllClusterIds(ImmutableList.of("cluster-id-1", "cluster-id-2"))
+                        .build())
+                .setEtag("my-etag")
+                .build());
+    UpdateAppProfileRequest updateAppProfileRequest3 = UpdateAppProfileRequest.of(profile2);
+
+    assertThat(updateAppProfileRequest.hashCode())
+        .isNotEqualTo(updateAppProfileRequest3.hashCode());
+  }
 }

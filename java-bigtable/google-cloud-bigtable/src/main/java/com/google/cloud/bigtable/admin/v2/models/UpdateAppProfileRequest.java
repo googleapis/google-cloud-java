@@ -151,11 +151,11 @@ public final class UpdateAppProfileRequest {
     UpdateAppProfileRequest that = (UpdateAppProfileRequest) o;
     return Objects.equal(instanceId, that.instanceId)
         && Objects.equal(appProfileId, that.appProfileId)
-        && Objects.equal(proto, that.proto);
+        && Objects.equal(proto.build(), that.proto.build());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(instanceId, appProfileId, proto);
+    return Objects.hashCode(instanceId, appProfileId, proto.build());
   }
 }
