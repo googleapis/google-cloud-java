@@ -53,4 +53,34 @@ public interface ReadChannel extends ReadableByteChannel, Closeable, Restorable<
    */
   @Override
   RestorableState<ReadChannel> capture();
+
+  /**
+   * Limit the maximum number of bytes available to be read from this channel. If the limit is
+   * larger than the actual size of the content this will have no material impact.
+   *
+   * <p><i>NOTE:</i>Implementers are not required to return a new instance from this method, however
+   * they are allowed to. Users of this method should always use the instance returned from this
+   * method.
+   *
+   * <p><i>Default Implementation:</i>By default, this method will simply return {@code this}.
+   *
+   * @param limit the maximum number of bytes to limit this channel to
+   * @return The instance of channel which will respect the limit.
+   * @throws UnsupportedOperationException If the {@code this} instances does not support limiting
+   * @since 2.4.0
+   */
+  default ReadChannel limit(long limit) {
+    return this;
+  }
+
+  /**
+   * The currently defined limit for this channel. Initial value is {@link Long#MAX_VALUE}
+   *
+   * @return the current limit for this channel
+   * @throws UnsupportedOperationException If the {@code this} instances does not support limiting
+   * @since 2.4.0
+   */
+  default long limit() {
+    return Long.MAX_VALUE;
+  }
 }
