@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.2.0](https://github.com/googleapis/java-bigquerymigration/compare/v0.1.4...v0.2.0) (2022-01-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* Consolidate task details into service API and add orchestration result details BREAKING CHANGE: This change relocates some task proto definitions and updates message fields, necessitating updates to imports. (#64)
+
+### Features
+
+* Consolidate task details into service API and add orchestration result details BREAKING CHANGE: This change relocates some task proto definitions and updates message fields, necessitating updates to imports. ([#64](https://github.com/googleapis/java-bigquerymigration/issues/64)) ([ee2316f](https://github.com/googleapis/java-bigquerymigration/commit/ee2316fc875f8a50290e40145f2523c8f934ae3c))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-bigquerymigration/issues/1339)) ([#69](https://github.com/googleapis/java-bigquerymigration/issues/69)) ([98119cb](https://github.com/googleapis/java-bigquerymigration/commit/98119cb873a681675ba253e9861a7a13b0600d6f))
+* update actions/github-script action to v5 ([#67](https://github.com/googleapis/java-bigquerymigration/issues/67)) ([24c16f5](https://github.com/googleapis/java-bigquerymigration/commit/24c16f544b8f0b697486370f1f61ef741bd1632f))
+* update actions/setup-java action to v2 ([#68](https://github.com/googleapis/java-bigquerymigration/issues/68)) ([a383904](https://github.com/googleapis/java-bigquerymigration/commit/a383904d1bdb3392f0610d17c785390b33827e7d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#70](https://github.com/googleapis/java-bigquerymigration/issues/70)) ([6bddefa](https://github.com/googleapis/java-bigquerymigration/commit/6bddefa4a5012b1022c98647b5eed22ff00ac8a1))
+
 ### [0.1.4](https://www.github.com/googleapis/java-bigquerymigration/compare/v0.1.3...v0.1.4) (2022-01-07)
 
 
