@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.1.0](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.0.27...v2.1.0) (2022-01-31)
+
+
+### Features
+
+* add owner email to TransferConfig message feat: allow customer to enroll a datasource programmatically docs: improvements to various message and field descriptions ([#1199](https://github.com/googleapis/java-bigquerydatatransfer/issues/1199)) ([b1e4595](https://github.com/googleapis/java-bigquerydatatransfer/commit/b1e459572eee677fc787351d93bc93eee2895d08))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-bigquerydatatransfer/issues/1339)) ([#1205](https://github.com/googleapis/java-bigquerydatatransfer/issues/1205)) ([f32897d](https://github.com/googleapis/java-bigquerydatatransfer/commit/f32897d6d42d5917c6a669a0aeb3df8574474e3d))
+* update actions/github-script action to v5 ([#1204](https://github.com/googleapis/java-bigquerydatatransfer/issues/1204)) ([8042d3c](https://github.com/googleapis/java-bigquerydatatransfer/commit/8042d3ce9f79c8e14490a8cb63b0335762a015a4))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.6.1 ([#1187](https://github.com/googleapis/java-bigquerydatatransfer/issues/1187)) ([c845ad0](https://github.com/googleapis/java-bigquerydatatransfer/commit/c845ad0f69d3c5c2a180f913ac25d073218f3de5))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.6.2 ([#1189](https://github.com/googleapis/java-bigquerydatatransfer/issues/1189)) ([4bfee54](https://github.com/googleapis/java-bigquerydatatransfer/commit/4bfee54e95dc837570ba4bda32efb77c11d45336))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.115.1 ([#1186](https://github.com/googleapis/java-bigquerydatatransfer/issues/1186)) ([f29043c](https://github.com/googleapis/java-bigquerydatatransfer/commit/f29043c1b97b502fda8602befee76df5a2ee88a7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#1211](https://github.com/googleapis/java-bigquerydatatransfer/issues/1211)) ([353ec0b](https://github.com/googleapis/java-bigquerydatatransfer/commit/353ec0be3652ab9fea65075067abde1171f87b51))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.3 ([#1195](https://github.com/googleapis/java-bigquerydatatransfer/issues/1195)) ([cd9d23a](https://github.com/googleapis/java-bigquerydatatransfer/commit/cd9d23a5722e243e322ca716724ee7eea34b0e29))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.4 ([#1210](https://github.com/googleapis/java-bigquerydatatransfer/issues/1210)) ([8dcf098](https://github.com/googleapis/java-bigquerydatatransfer/commit/8dcf0987eed05013b936cec47c25ca255d34e36a))
+
 ### [2.0.27](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v2.0.26...v2.0.27) (2022-01-07)
 
 
