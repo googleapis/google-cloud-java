@@ -58,13 +58,13 @@ public final class DatasetProto {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/aiplatform/v1beta1/datase"
           + "t.proto\022\037google.cloud.aiplatform.v1beta1"
-          + "\032\037google/api/field_behavior.proto\032\031googl"
-          + "e/api/resource.proto\0325google/cloud/aipla"
-          + "tform/v1beta1/encryption_spec.proto\032(goo"
-          + "gle/cloud/aiplatform/v1beta1/io.proto\032\034g"
-          + "oogle/protobuf/struct.proto\032\037google/prot"
-          + "obuf/timestamp.proto\032\034google/api/annotat"
-          + "ions.proto\"\277\004\n\007Dataset\022\021\n\004name\030\001 \001(\tB\003\340A"
+          + "\032\034google/api/annotations.proto\032\037google/a"
+          + "pi/field_behavior.proto\032\031google/api/reso"
+          + "urce.proto\0325google/cloud/aiplatform/v1be"
+          + "ta1/encryption_spec.proto\032(google/cloud/"
+          + "aiplatform/v1beta1/io.proto\032\034google/prot"
+          + "obuf/struct.proto\032\037google/protobuf/times"
+          + "tamp.proto\"\277\004\n\007Dataset\022\021\n\004name\030\001 \001(\tB\003\340A"
           + "\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022\030\n\013descript"
           + "ion\030\020 \001(\tB\003\340A\001\022 \n\023metadata_schema_uri\030\003 "
           + "\001(\tB\003\340A\002\022-\n\010metadata\030\010 \001(\0132\026.google.prot"
@@ -101,13 +101,13 @@ public final class DatasetProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_Dataset_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -166,13 +166,13 @@ public final class DatasetProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

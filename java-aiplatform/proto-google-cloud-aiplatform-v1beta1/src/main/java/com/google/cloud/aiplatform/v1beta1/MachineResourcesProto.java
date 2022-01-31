@@ -66,10 +66,10 @@ public final class MachineResourcesProto {
     java.lang.String[] descriptorData = {
       "\n7google/cloud/aiplatform/v1beta1/machin"
           + "e_resources.proto\022\037google.cloud.aiplatfo"
-          + "rm.v1beta1\032\037google/api/field_behavior.pr"
-          + "oto\0326google/cloud/aiplatform/v1beta1/acc"
-          + "elerator_type.proto\032\034google/api/annotati"
-          + "ons.proto\"\224\001\n\013MachineSpec\022\031\n\014machine_typ"
+          + "rm.v1beta1\032\034google/api/annotations.proto"
+          + "\032\037google/api/field_behavior.proto\0326googl"
+          + "e/cloud/aiplatform/v1beta1/accelerator_t"
+          + "ype.proto\"\224\001\n\013MachineSpec\022\031\n\014machine_typ"
           + "e\030\001 \001(\tB\003\340A\005\022O\n\020accelerator_type\030\002 \001(\01620"
           + ".google.cloud.aiplatform.v1beta1.Acceler"
           + "atorTypeB\003\340A\005\022\031\n\021accelerator_count\030\003 \001(\005"
@@ -102,9 +102,9 @@ public final class MachineResourcesProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.AcceleratorTypeProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_MachineSpec_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -167,9 +167,9 @@ public final class MachineResourcesProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.AcceleratorTypeProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

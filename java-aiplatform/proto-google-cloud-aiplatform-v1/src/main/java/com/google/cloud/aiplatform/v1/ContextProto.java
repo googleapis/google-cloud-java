@@ -45,12 +45,12 @@ public final class ContextProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/aiplatform/v1/context.pro"
-          + "to\022\032google.cloud.aiplatform.v1\032\037google/a"
-          + "pi/field_behavior.proto\032\031google/api/reso"
-          + "urce.proto\032&google/cloud/aiplatform/v1/v"
-          + "alue.proto\032\034google/protobuf/struct.proto"
-          + "\032\037google/protobuf/timestamp.proto\032\034googl"
-          + "e/api/annotations.proto\"\323\004\n\007Context\022\021\n\004n"
+          + "to\022\032google.cloud.aiplatform.v1\032\034google/a"
+          + "pi/annotations.proto\032\037google/api/field_b"
+          + "ehavior.proto\032\031google/api/resource.proto"
+          + "\032&google/cloud/aiplatform/v1/value.proto"
+          + "\032\034google/protobuf/struct.proto\032\037google/p"
+          + "rotobuf/timestamp.proto\"\323\004\n\007Context\022\021\n\004n"
           + "ame\030\001 \001(\tB\003\340A\003\022\024\n\014display_name\030\002 \001(\t\022\014\n\004"
           + "etag\030\010 \001(\t\022?\n\006labels\030\t \003(\0132/.google.clou"
           + "d.aiplatform.v1.Context.LabelsEntry\0224\n\013c"
@@ -76,12 +76,12 @@ public final class ContextProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.ValueProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_Context_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -116,12 +116,12 @@ public final class ContextProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.ValueProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

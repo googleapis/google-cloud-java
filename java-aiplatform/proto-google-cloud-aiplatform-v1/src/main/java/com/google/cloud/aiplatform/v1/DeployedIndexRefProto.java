@@ -42,9 +42,9 @@ public final class DeployedIndexRefProto {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/aiplatform/v1/deployed_in"
           + "dex_ref.proto\022\032google.cloud.aiplatform.v"
-          + "1\032\037google/api/field_behavior.proto\032\031goog"
-          + "le/api/resource.proto\032\034google/api/annota"
-          + "tions.proto\"{\n\020DeployedIndexRef\022G\n\016index"
+          + "1\032\034google/api/annotations.proto\032\037google/"
+          + "api/field_behavior.proto\032\031google/api/res"
+          + "ource.proto\"{\n\020DeployedIndexRef\022G\n\016index"
           + "_endpoint\030\001 \001(\tB/\340A\005\372A)\n\'aiplatform.goog"
           + "leapis.com/IndexEndpoint\022\036\n\021deployed_ind"
           + "ex_id\030\002 \001(\tB\003\340A\005B\331\001\n\036com.google.cloud.ai"
@@ -59,9 +59,9 @@ public final class DeployedIndexRefProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_DeployedIndexRef_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -77,9 +77,9 @@ public final class DeployedIndexRefProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

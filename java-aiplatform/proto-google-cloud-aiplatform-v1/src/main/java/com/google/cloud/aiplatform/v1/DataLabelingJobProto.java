@@ -62,16 +62,16 @@ public final class DataLabelingJobProto {
     java.lang.String[] descriptorData = {
       "\n2google/cloud/aiplatform/v1/data_labeli"
           + "ng_job.proto\022\032google.cloud.aiplatform.v1"
-          + "\032\037google/api/field_behavior.proto\032\031googl"
-          + "e/api/resource.proto\0321google/cloud/aipla"
-          + "tform/v1/accelerator_type.proto\0320google/"
-          + "cloud/aiplatform/v1/encryption_spec.prot"
-          + "o\032*google/cloud/aiplatform/v1/job_state."
-          + "proto\0320google/cloud/aiplatform/v1/specia"
-          + "list_pool.proto\032\034google/protobuf/struct."
-          + "proto\032\037google/protobuf/timestamp.proto\032\027"
-          + "google/rpc/status.proto\032\027google/type/mon"
-          + "ey.proto\032\034google/api/annotations.proto\"\337"
+          + "\032\034google/api/annotations.proto\032\037google/a"
+          + "pi/field_behavior.proto\032\031google/api/reso"
+          + "urce.proto\0321google/cloud/aiplatform/v1/a"
+          + "ccelerator_type.proto\0320google/cloud/aipl"
+          + "atform/v1/encryption_spec.proto\032*google/"
+          + "cloud/aiplatform/v1/job_state.proto\0320goo"
+          + "gle/cloud/aiplatform/v1/specialist_pool."
+          + "proto\032\034google/protobuf/struct.proto\032\037goo"
+          + "gle/protobuf/timestamp.proto\032\027google/rpc"
+          + "/status.proto\032\027google/type/money.proto\"\337"
           + "\010\n\017DataLabelingJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022;\n\010datasets\030\003 \003"
           + "(\tB)\340A\002\372A#\n!aiplatform.googleapis.com/Da"
@@ -127,6 +127,7 @@ public final class DataLabelingJobProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.AcceleratorTypeProto.getDescriptor(),
@@ -137,7 +138,6 @@ public final class DataLabelingJobProto {
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
               com.google.type.MoneyProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_DataLabelingJob_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -223,6 +223,7 @@ public final class DataLabelingJobProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.AcceleratorTypeProto.getDescriptor();
@@ -233,7 +234,6 @@ public final class DataLabelingJobProto {
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
     com.google.type.MoneyProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -62,12 +62,12 @@ public final class IndexEndpointProto {
     java.lang.String[] descriptorData = {
       "\n4google/cloud/aiplatform/v1beta1/index_"
           + "endpoint.proto\022\037google.cloud.aiplatform."
-          + "v1beta1\032+google/cloud/aiplatform/v1beta1"
-          + "/index.proto\032\037google/api/field_behavior."
-          + "proto\032\031google/api/resource.proto\0327google"
-          + "/cloud/aiplatform/v1beta1/machine_resour"
-          + "ces.proto\032\037google/protobuf/timestamp.pro"
-          + "to\032\034google/api/annotations.proto\"\320\004\n\rInd"
+          + "v1beta1\032\034google/api/annotations.proto\032\037g"
+          + "oogle/api/field_behavior.proto\032\031google/a"
+          + "pi/resource.proto\032+google/cloud/aiplatfo"
+          + "rm/v1beta1/index.proto\0327google/cloud/aip"
+          + "latform/v1beta1/machine_resources.proto\032"
+          + "\037google/protobuf/timestamp.proto\"\320\004\n\rInd"
           + "exEndpoint\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display"
           + "_name\030\002 \001(\tB\003\340A\002\022\023\n\013description\030\003 \001(\t\022M\n"
           + "\020deployed_indexes\030\004 \003(\0132..google.cloud.a"
@@ -82,7 +82,7 @@ public final class IndexEndpointProto {
           + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:u\352Ar\n\'aipla"
           + "tform.googleapis.com/IndexEndpoint\022Gproj"
           + "ects/{project}/locations/{location}/inde"
-          + "xEndpoints/{index_endpoint}\"\324\004\n\rDeployed"
+          + "xEndpoints/{index_endpoint}\"\253\005\n\rDeployed"
           + "Index\022\017\n\002id\030\001 \001(\tB\003\340A\002\0226\n\005index\030\002 \001(\tB\'\340"
           + "A\002\372A!\n\037aiplatform.googleapis.com/Index\022\024"
           + "\n\014display_name\030\003 \001(\t\0224\n\013create_time\030\004 \001("
@@ -92,36 +92,38 @@ public final class IndexEndpointProto {
           + "A\003\0228\n\017index_sync_time\030\006 \001(\0132\032.google.pro"
           + "tobuf.TimestampB\003\340A\003\022U\n\023automatic_resour"
           + "ces\030\007 \001(\01323.google.cloud.aiplatform.v1be"
-          + "ta1.AutomaticResourcesB\003\340A\001\022\"\n\025enable_ac"
-          + "cess_logging\030\010 \001(\010B\003\340A\001\022a\n\032deployed_inde"
-          + "x_auth_config\030\t \001(\01328.google.cloud.aipla"
-          + "tform.v1beta1.DeployedIndexAuthConfigB\003\340"
-          + "A\001\022\037\n\022reserved_ip_ranges\030\n \003(\tB\003\340A\001\022\035\n\020d"
-          + "eployment_group\030\013 \001(\tB\003\340A\001\"\263\001\n\027DeployedI"
-          + "ndexAuthConfig\022\\\n\rauth_provider\030\001 \001(\0132E."
-          + "google.cloud.aiplatform.v1beta1.Deployed"
-          + "IndexAuthConfig.AuthProvider\032:\n\014AuthProv"
-          + "ider\022\021\n\taudiences\030\001 \003(\t\022\027\n\017allowed_issue"
-          + "rs\030\002 \003(\t\"Y\n\025IndexPrivateEndpoints\022\037\n\022mat"
-          + "ch_grpc_address\030\001 \001(\tB\003\340A\003\022\037\n\022service_at"
-          + "tachment\030\002 \001(\tB\003\340A\003B\357\001\n#com.google.cloud"
-          + ".aiplatform.v1beta1B\022IndexEndpointProtoP"
-          + "\001ZIgoogle.golang.org/genproto/googleapis"
-          + "/cloud/aiplatform/v1beta1;aiplatform\252\002\037G"
-          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
-          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud"
-          + "::AIPlatform::V1beta1b\006proto3"
+          + "ta1.AutomaticResourcesB\003\340A\001\022U\n\023dedicated"
+          + "_resources\030\020 \001(\01323.google.cloud.aiplatfo"
+          + "rm.v1beta1.DedicatedResourcesB\003\340A\001\022\"\n\025en"
+          + "able_access_logging\030\010 \001(\010B\003\340A\001\022a\n\032deploy"
+          + "ed_index_auth_config\030\t \001(\01328.google.clou"
+          + "d.aiplatform.v1beta1.DeployedIndexAuthCo"
+          + "nfigB\003\340A\001\022\037\n\022reserved_ip_ranges\030\n \003(\tB\003\340"
+          + "A\001\022\035\n\020deployment_group\030\013 \001(\tB\003\340A\001\"\263\001\n\027De"
+          + "ployedIndexAuthConfig\022\\\n\rauth_provider\030\001"
+          + " \001(\0132E.google.cloud.aiplatform.v1beta1.D"
+          + "eployedIndexAuthConfig.AuthProvider\032:\n\014A"
+          + "uthProvider\022\021\n\taudiences\030\001 \003(\t\022\027\n\017allowe"
+          + "d_issuers\030\002 \003(\t\"Y\n\025IndexPrivateEndpoints"
+          + "\022\037\n\022match_grpc_address\030\001 \001(\tB\003\340A\003\022\037\n\022ser"
+          + "vice_attachment\030\002 \001(\tB\003\340A\003B\357\001\n#com.googl"
+          + "e.cloud.aiplatform.v1beta1B\022IndexEndpoin"
+          + "tProtoP\001ZIgoogle.golang.org/genproto/goo"
+          + "gleapis/cloud/aiplatform/v1beta1;aiplatf"
+          + "orm\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037"
+          + "Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google"
+          + "::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.cloud.aiplatform.v1beta1.IndexProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.IndexProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.MachineResourcesProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_IndexEndpoint_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -163,6 +165,7 @@ public final class IndexEndpointProto {
               "PrivateEndpoints",
               "IndexSyncTime",
               "AutomaticResources",
+              "DedicatedResources",
               "EnableAccessLogging",
               "DeployedIndexAuthConfig",
               "ReservedIpRanges",
@@ -201,12 +204,12 @@ public final class IndexEndpointProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.cloud.aiplatform.v1beta1.IndexProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.IndexProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.MachineResourcesProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

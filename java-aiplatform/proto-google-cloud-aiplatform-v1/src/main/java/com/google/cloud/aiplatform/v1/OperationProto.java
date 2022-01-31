@@ -45,10 +45,10 @@ public final class OperationProto {
   static {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/aiplatform/v1/operation.p"
-          + "roto\022\032google.cloud.aiplatform.v1\032\037google"
-          + "/api/field_behavior.proto\032\037google/protob"
-          + "uf/timestamp.proto\032\027google/rpc/status.pr"
-          + "oto\032\034google/api/annotations.proto\"\271\001\n\030Ge"
+          + "roto\022\032google.cloud.aiplatform.v1\032\034google"
+          + "/api/annotations.proto\032\037google/api/field"
+          + "_behavior.proto\032\037google/protobuf/timesta"
+          + "mp.proto\032\027google/rpc/status.proto\"\271\001\n\030Ge"
           + "nericOperationMetadata\0221\n\020partial_failur"
           + "es\030\001 \003(\0132\022.google.rpc.StatusB\003\340A\003\0224\n\013cre"
           + "ate_time\030\002 \001(\0132\032.google.protobuf.Timesta"
@@ -67,10 +67,10 @@ public final class OperationProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_GenericOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -93,10 +93,10 @@ public final class OperationProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

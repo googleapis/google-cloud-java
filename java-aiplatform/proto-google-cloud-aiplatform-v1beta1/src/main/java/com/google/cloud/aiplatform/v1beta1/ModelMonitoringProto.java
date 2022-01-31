@@ -98,9 +98,9 @@ public final class ModelMonitoringProto {
     java.lang.String[] descriptorData = {
       "\n6google/cloud/aiplatform/v1beta1/model_"
           + "monitoring.proto\022\037google.cloud.aiplatfor"
-          + "m.v1beta1\032\031google/api/resource.proto\032(go"
-          + "ogle/cloud/aiplatform/v1beta1/io.proto\032\034"
-          + "google/api/annotations.proto\"\205\025\n\036ModelMo"
+          + "m.v1beta1\032\034google/api/annotations.proto\032"
+          + "\031google/api/resource.proto\032(google/cloud"
+          + "/aiplatform/v1beta1/io.proto\"\205\025\n\036ModelMo"
           + "nitoringObjectiveConfig\022i\n\020training_data"
           + "set\030\001 \001(\0132O.google.cloud.aiplatform.v1be"
           + "ta1.ModelMonitoringObjectiveConfig.Train"
@@ -191,9 +191,9 @@ public final class ModelMonitoringProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -351,9 +351,9 @@ public final class ModelMonitoringProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

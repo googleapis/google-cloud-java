@@ -199,6 +199,23 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
               deploymentGroup_ = s;
               break;
             }
+          case 130:
+            {
+              com.google.cloud.aiplatform.v1beta1.DedicatedResources.Builder subBuilder = null;
+              if (dedicatedResources_ != null) {
+                subBuilder = dedicatedResources_.toBuilder();
+              }
+              dedicatedResources_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.DedicatedResources.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dedicatedResources_);
+                dedicatedResources_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -673,6 +690,85 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     return getAutomaticResources();
   }
 
+  public static final int DEDICATED_RESOURCES_FIELD_NUMBER = 16;
+  private com.google.cloud.aiplatform.v1beta1.DedicatedResources dedicatedResources_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of resources that are dedicated to the DeployedIndex, and
+   * that need a higher degree of manual configuration.
+   * If min_replica_count is not set, the default value is 2 (we don't provide
+   * SLA when min_replica_count=1). If max_replica_count is not set, the
+   * default value is min_replica_count. The max allowed replica count is
+   * 1000.
+   * Available machine types:
+   * n1-standard-16
+   * n1-standard-32
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dedicatedResources field is set.
+   */
+  @java.lang.Override
+  public boolean hasDedicatedResources() {
+    return dedicatedResources_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of resources that are dedicated to the DeployedIndex, and
+   * that need a higher degree of manual configuration.
+   * If min_replica_count is not set, the default value is 2 (we don't provide
+   * SLA when min_replica_count=1). If max_replica_count is not set, the
+   * default value is min_replica_count. The max allowed replica count is
+   * 1000.
+   * Available machine types:
+   * n1-standard-16
+   * n1-standard-32
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dedicatedResources.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.DedicatedResources getDedicatedResources() {
+    return dedicatedResources_ == null
+        ? com.google.cloud.aiplatform.v1beta1.DedicatedResources.getDefaultInstance()
+        : dedicatedResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of resources that are dedicated to the DeployedIndex, and
+   * that need a higher degree of manual configuration.
+   * If min_replica_count is not set, the default value is 2 (we don't provide
+   * SLA when min_replica_count=1). If max_replica_count is not set, the
+   * default value is min_replica_count. The max allowed replica count is
+   * 1000.
+   * Available machine types:
+   * n1-standard-16
+   * n1-standard-32
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.DedicatedResourcesOrBuilder
+      getDedicatedResourcesOrBuilder() {
+    return getDedicatedResources();
+  }
+
   public static final int ENABLE_ACCESS_LOGGING_FIELD_NUMBER = 8;
   private boolean enableAccessLogging_;
   /**
@@ -954,6 +1050,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deploymentGroup_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, deploymentGroup_);
     }
+    if (dedicatedResources_ != null) {
+      output.writeMessage(16, getDedicatedResources());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1002,6 +1101,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deploymentGroup_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, deploymentGroup_);
     }
+    if (dedicatedResources_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getDedicatedResources());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1036,6 +1138,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     if (hasAutomaticResources() != other.hasAutomaticResources()) return false;
     if (hasAutomaticResources()) {
       if (!getAutomaticResources().equals(other.getAutomaticResources())) return false;
+    }
+    if (hasDedicatedResources() != other.hasDedicatedResources()) return false;
+    if (hasDedicatedResources()) {
+      if (!getDedicatedResources().equals(other.getDedicatedResources())) return false;
     }
     if (getEnableAccessLogging() != other.getEnableAccessLogging()) return false;
     if (hasDeployedIndexAuthConfig() != other.hasDeployedIndexAuthConfig()) return false;
@@ -1076,6 +1182,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     if (hasAutomaticResources()) {
       hash = (37 * hash) + AUTOMATIC_RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getAutomaticResources().hashCode();
+    }
+    if (hasDedicatedResources()) {
+      hash = (37 * hash) + DEDICATED_RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getDedicatedResources().hashCode();
     }
     hash = (37 * hash) + ENABLE_ACCESS_LOGGING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAccessLogging());
@@ -1264,6 +1374,12 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         automaticResources_ = null;
         automaticResourcesBuilder_ = null;
       }
+      if (dedicatedResourcesBuilder_ == null) {
+        dedicatedResources_ = null;
+      } else {
+        dedicatedResources_ = null;
+        dedicatedResourcesBuilder_ = null;
+      }
       enableAccessLogging_ = false;
 
       if (deployedIndexAuthConfigBuilder_ == null) {
@@ -1326,6 +1442,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         result.automaticResources_ = automaticResources_;
       } else {
         result.automaticResources_ = automaticResourcesBuilder_.build();
+      }
+      if (dedicatedResourcesBuilder_ == null) {
+        result.dedicatedResources_ = dedicatedResources_;
+      } else {
+        result.dedicatedResources_ = dedicatedResourcesBuilder_.build();
       }
       result.enableAccessLogging_ = enableAccessLogging_;
       if (deployedIndexAuthConfigBuilder_ == null) {
@@ -1412,6 +1533,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAutomaticResources()) {
         mergeAutomaticResources(other.getAutomaticResources());
+      }
+      if (other.hasDedicatedResources()) {
+        mergeDedicatedResources(other.getDedicatedResources());
       }
       if (other.getEnableAccessLogging() != false) {
         setEnableAccessLogging(other.getEnableAccessLogging());
@@ -2826,6 +2950,286 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         automaticResources_ = null;
       }
       return automaticResourcesBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.DedicatedResources dedicatedResources_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.DedicatedResources,
+            com.google.cloud.aiplatform.v1beta1.DedicatedResources.Builder,
+            com.google.cloud.aiplatform.v1beta1.DedicatedResourcesOrBuilder>
+        dedicatedResourcesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that are dedicated to the DeployedIndex, and
+     * that need a higher degree of manual configuration.
+     * If min_replica_count is not set, the default value is 2 (we don't provide
+     * SLA when min_replica_count=1). If max_replica_count is not set, the
+     * default value is min_replica_count. The max allowed replica count is
+     * 1000.
+     * Available machine types:
+     * n1-standard-16
+     * n1-standard-32
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dedicatedResources field is set.
+     */
+    public boolean hasDedicatedResources() {
+      return dedicatedResourcesBuilder_ != null || dedicatedResources_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that are dedicated to the DeployedIndex, and
+     * that need a higher degree of manual configuration.
+     * If min_replica_count is not set, the default value is 2 (we don't provide
+     * SLA when min_replica_count=1). If max_replica_count is not set, the
+     * default value is min_replica_count. The max allowed replica count is
+     * 1000.
+     * Available machine types:
+     * n1-standard-16
+     * n1-standard-32
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dedicatedResources.
+     */
+    public com.google.cloud.aiplatform.v1beta1.DedicatedResources getDedicatedResources() {
+      if (dedicatedResourcesBuilder_ == null) {
+        return dedicatedResources_ == null
+            ? com.google.cloud.aiplatform.v1beta1.DedicatedResources.getDefaultInstance()
+            : dedicatedResources_;
+      } else {
+        return dedicatedResourcesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that are dedicated to the DeployedIndex, and
+     * that need a higher degree of manual configuration.
+     * If min_replica_count is not set, the default value is 2 (we don't provide
+     * SLA when min_replica_count=1). If max_replica_count is not set, the
+     * default value is min_replica_count. The max allowed replica count is
+     * 1000.
+     * Available machine types:
+     * n1-standard-16
+     * n1-standard-32
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDedicatedResources(
+        com.google.cloud.aiplatform.v1beta1.DedicatedResources value) {
+      if (dedicatedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dedicatedResources_ = value;
+        onChanged();
+      } else {
+        dedicatedResourcesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that are dedicated to the DeployedIndex, and
+     * that need a higher degree of manual configuration.
+     * If min_replica_count is not set, the default value is 2 (we don't provide
+     * SLA when min_replica_count=1). If max_replica_count is not set, the
+     * default value is min_replica_count. The max allowed replica count is
+     * 1000.
+     * Available machine types:
+     * n1-standard-16
+     * n1-standard-32
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDedicatedResources(
+        com.google.cloud.aiplatform.v1beta1.DedicatedResources.Builder builderForValue) {
+      if (dedicatedResourcesBuilder_ == null) {
+        dedicatedResources_ = builderForValue.build();
+        onChanged();
+      } else {
+        dedicatedResourcesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that are dedicated to the DeployedIndex, and
+     * that need a higher degree of manual configuration.
+     * If min_replica_count is not set, the default value is 2 (we don't provide
+     * SLA when min_replica_count=1). If max_replica_count is not set, the
+     * default value is min_replica_count. The max allowed replica count is
+     * 1000.
+     * Available machine types:
+     * n1-standard-16
+     * n1-standard-32
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDedicatedResources(
+        com.google.cloud.aiplatform.v1beta1.DedicatedResources value) {
+      if (dedicatedResourcesBuilder_ == null) {
+        if (dedicatedResources_ != null) {
+          dedicatedResources_ =
+              com.google.cloud.aiplatform.v1beta1.DedicatedResources.newBuilder(dedicatedResources_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dedicatedResources_ = value;
+        }
+        onChanged();
+      } else {
+        dedicatedResourcesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that are dedicated to the DeployedIndex, and
+     * that need a higher degree of manual configuration.
+     * If min_replica_count is not set, the default value is 2 (we don't provide
+     * SLA when min_replica_count=1). If max_replica_count is not set, the
+     * default value is min_replica_count. The max allowed replica count is
+     * 1000.
+     * Available machine types:
+     * n1-standard-16
+     * n1-standard-32
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDedicatedResources() {
+      if (dedicatedResourcesBuilder_ == null) {
+        dedicatedResources_ = null;
+        onChanged();
+      } else {
+        dedicatedResources_ = null;
+        dedicatedResourcesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that are dedicated to the DeployedIndex, and
+     * that need a higher degree of manual configuration.
+     * If min_replica_count is not set, the default value is 2 (we don't provide
+     * SLA when min_replica_count=1). If max_replica_count is not set, the
+     * default value is min_replica_count. The max allowed replica count is
+     * 1000.
+     * Available machine types:
+     * n1-standard-16
+     * n1-standard-32
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DedicatedResources.Builder
+        getDedicatedResourcesBuilder() {
+
+      onChanged();
+      return getDedicatedResourcesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that are dedicated to the DeployedIndex, and
+     * that need a higher degree of manual configuration.
+     * If min_replica_count is not set, the default value is 2 (we don't provide
+     * SLA when min_replica_count=1). If max_replica_count is not set, the
+     * default value is min_replica_count. The max allowed replica count is
+     * 1000.
+     * Available machine types:
+     * n1-standard-16
+     * n1-standard-32
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DedicatedResourcesOrBuilder
+        getDedicatedResourcesOrBuilder() {
+      if (dedicatedResourcesBuilder_ != null) {
+        return dedicatedResourcesBuilder_.getMessageOrBuilder();
+      } else {
+        return dedicatedResources_ == null
+            ? com.google.cloud.aiplatform.v1beta1.DedicatedResources.getDefaultInstance()
+            : dedicatedResources_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that are dedicated to the DeployedIndex, and
+     * that need a higher degree of manual configuration.
+     * If min_replica_count is not set, the default value is 2 (we don't provide
+     * SLA when min_replica_count=1). If max_replica_count is not set, the
+     * default value is min_replica_count. The max allowed replica count is
+     * 1000.
+     * Available machine types:
+     * n1-standard-16
+     * n1-standard-32
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.DedicatedResources,
+            com.google.cloud.aiplatform.v1beta1.DedicatedResources.Builder,
+            com.google.cloud.aiplatform.v1beta1.DedicatedResourcesOrBuilder>
+        getDedicatedResourcesFieldBuilder() {
+      if (dedicatedResourcesBuilder_ == null) {
+        dedicatedResourcesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.DedicatedResources,
+                com.google.cloud.aiplatform.v1beta1.DedicatedResources.Builder,
+                com.google.cloud.aiplatform.v1beta1.DedicatedResourcesOrBuilder>(
+                getDedicatedResources(), getParentForChildren(), isClean());
+        dedicatedResources_ = null;
+      }
+      return dedicatedResourcesBuilder_;
     }
 
     private boolean enableAccessLogging_;

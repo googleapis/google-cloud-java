@@ -66,9 +66,9 @@ public final class MachineResourcesProto {
     java.lang.String[] descriptorData = {
       "\n2google/cloud/aiplatform/v1/machine_res"
           + "ources.proto\022\032google.cloud.aiplatform.v1"
-          + "\032\037google/api/field_behavior.proto\0321googl"
-          + "e/cloud/aiplatform/v1/accelerator_type.p"
-          + "roto\032\034google/api/annotations.proto\"\217\001\n\013M"
+          + "\032\034google/api/annotations.proto\032\037google/a"
+          + "pi/field_behavior.proto\0321google/cloud/ai"
+          + "platform/v1/accelerator_type.proto\"\217\001\n\013M"
           + "achineSpec\022\031\n\014machine_type\030\001 \001(\tB\003\340A\005\022J\n"
           + "\020accelerator_type\030\002 \001(\0162+.google.cloud.a"
           + "iplatform.v1.AcceleratorTypeB\003\340A\005\022\031\n\021acc"
@@ -101,9 +101,9 @@ public final class MachineResourcesProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.AcceleratorTypeProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_MachineSpec_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -166,9 +166,9 @@ public final class MachineResourcesProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.aiplatform.v1.AcceleratorTypeProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

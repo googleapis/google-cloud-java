@@ -62,10 +62,10 @@ public final class TensorboardDataProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1/tensorboard"
           + "_data.proto\022\032google.cloud.aiplatform.v1\032"
-          + "\037google/api/field_behavior.proto\0328google"
-          + "/cloud/aiplatform/v1/tensorboard_time_se"
-          + "ries.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\032\034google/api/annotations.proto\"\330\001\n\016Ti"
+          + "\034google/api/annotations.proto\032\037google/ap"
+          + "i/field_behavior.proto\0328google/cloud/aip"
+          + "latform/v1/tensorboard_time_series.proto"
+          + "\032\037google/protobuf/timestamp.proto\"\330\001\n\016Ti"
           + "meSeriesData\022\'\n\032tensorboard_time_series_"
           + "id\030\001 \001(\tB\003\340A\002\022W\n\nvalue_type\030\002 \001(\0162;.goog"
           + "le.cloud.aiplatform.v1.TensorboardTimeSe"
@@ -95,10 +95,10 @@ public final class TensorboardDataProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.TensorboardTimeSeriesProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_TimeSeriesData_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -153,10 +153,10 @@ public final class TensorboardDataProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.aiplatform.v1.TensorboardTimeSeriesProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -24,7 +24,7 @@ package com.google.cloud.aiplatform.v1;
  * <pre>
  * Specification of a container for serving predictions. Some fields in this
  * message correspond to fields in the [Kubernetes Container v1 core
- * specification](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+ * specification](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ModelContainerSpec}
@@ -303,7 +303,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `command` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -349,7 +349,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `command` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -395,7 +395,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `command` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -442,7 +442,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `command` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -492,7 +492,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `args` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -538,7 +538,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `args` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -584,7 +584,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `args` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -631,7 +631,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `args` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -672,7 +672,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * does not occur.
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -710,7 +710,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * does not occur.
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -749,7 +749,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * does not occur.
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -787,7 +787,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * does not occur.
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -825,7 +825,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * does not occur.
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -860,7 +860,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -892,7 +892,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -925,7 +925,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -957,7 +957,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -989,7 +989,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -1422,7 +1422,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Specification of a container for serving predictions. Some fields in this
    * message correspond to fields in the [Kubernetes Container v1 core
-   * specification](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * specification](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ModelContainerSpec}
@@ -1936,7 +1936,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `command` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1982,7 +1982,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `command` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2028,7 +2028,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `command` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2075,7 +2075,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `command` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2122,7 +2122,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `command` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2176,7 +2176,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `command` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2229,7 +2229,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `command` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2279,7 +2279,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `command` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2328,7 +2328,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `command` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2392,7 +2392,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `args` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2438,7 +2438,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `args` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2484,7 +2484,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `args` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2531,7 +2531,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `args` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2578,7 +2578,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `args` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2632,7 +2632,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `args` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2685,7 +2685,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `args` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2735,7 +2735,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `args` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2784,7 +2784,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
      * This field corresponds to the `args` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2846,7 +2846,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -2887,7 +2887,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -2928,7 +2928,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -2969,7 +2969,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3016,7 +3016,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3061,7 +3061,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3108,7 +3108,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3155,7 +3155,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3199,7 +3199,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3244,7 +3244,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3289,7 +3289,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3333,7 +3333,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3377,7 +3377,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3414,7 +3414,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3455,7 +3455,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3497,7 +3497,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3535,7 +3535,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3573,7 +3573,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * does not occur.
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3638,7 +3638,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3673,7 +3673,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3708,7 +3708,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3743,7 +3743,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3784,7 +3784,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3823,7 +3823,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3864,7 +3864,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3905,7 +3905,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3943,7 +3943,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -3982,7 +3982,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -4021,7 +4021,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -4059,7 +4059,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -4097,7 +4097,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -4128,7 +4128,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -4163,7 +4163,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -4199,7 +4199,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -4231,7 +4231,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>
@@ -4263,7 +4263,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
-     * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+     * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
      * </pre>
      *
      * <code>

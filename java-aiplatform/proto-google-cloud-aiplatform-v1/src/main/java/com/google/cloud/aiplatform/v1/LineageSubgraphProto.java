@@ -42,10 +42,10 @@ public final class LineageSubgraphProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1/lineage_sub"
           + "graph.proto\022\032google.cloud.aiplatform.v1\032"
-          + ")google/cloud/aiplatform/v1/artifact.pro"
-          + "to\032&google/cloud/aiplatform/v1/event.pro"
-          + "to\032*google/cloud/aiplatform/v1/execution"
-          + ".proto\032\034google/api/annotations.proto\"\270\001\n"
+          + "\034google/api/annotations.proto\032)google/cl"
+          + "oud/aiplatform/v1/artifact.proto\032&google"
+          + "/cloud/aiplatform/v1/event.proto\032*google"
+          + "/cloud/aiplatform/v1/execution.proto\"\270\001\n"
           + "\017LineageSubgraph\0227\n\tartifacts\030\001 \003(\0132$.go"
           + "ogle.cloud.aiplatform.v1.Artifact\0229\n\nexe"
           + "cutions\030\002 \003(\0132%.google.cloud.aiplatform."
@@ -62,10 +62,10 @@ public final class LineageSubgraphProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.ArtifactProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.EventProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.ExecutionProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_LineageSubgraph_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -75,10 +75,10 @@ public final class LineageSubgraphProto {
             new java.lang.String[] {
               "Artifacts", "Executions", "Events",
             });
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.aiplatform.v1.ArtifactProto.getDescriptor();
     com.google.cloud.aiplatform.v1.EventProto.getDescriptor();
     com.google.cloud.aiplatform.v1.ExecutionProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

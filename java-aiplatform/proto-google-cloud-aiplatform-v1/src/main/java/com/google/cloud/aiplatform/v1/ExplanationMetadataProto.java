@@ -66,9 +66,9 @@ public final class ExplanationMetadataProto {
     java.lang.String[] descriptorData = {
       "\n5google/cloud/aiplatform/v1/explanation"
           + "_metadata.proto\022\032google.cloud.aiplatform"
-          + ".v1\032\037google/api/field_behavior.proto\032\034go"
-          + "ogle/protobuf/struct.proto\032\034google/api/a"
-          + "nnotations.proto\"\262\022\n\023ExplanationMetadata"
+          + ".v1\032\034google/api/annotations.proto\032\037googl"
+          + "e/api/field_behavior.proto\032\034google/proto"
+          + "buf/struct.proto\"\262\022\n\023ExplanationMetadata"
           + "\022P\n\006inputs\030\001 \003(\0132;.google.cloud.aiplatfo"
           + "rm.v1.ExplanationMetadata.InputsEntryB\003\340"
           + "A\002\022R\n\007outputs\030\002 \003(\0132<.google.cloud.aipla"
@@ -139,9 +139,9 @@ public final class ExplanationMetadataProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_ExplanationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -235,9 +235,9 @@ public final class ExplanationMetadataProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

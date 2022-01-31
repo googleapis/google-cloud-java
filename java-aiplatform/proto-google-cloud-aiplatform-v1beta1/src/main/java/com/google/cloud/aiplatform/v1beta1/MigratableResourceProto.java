@@ -62,10 +62,10 @@ public final class MigratableResourceProto {
     java.lang.String[] descriptorData = {
       "\n9google/cloud/aiplatform/v1beta1/migrat"
           + "able_resource.proto\022\037google.cloud.aiplat"
-          + "form.v1beta1\032\037google/api/field_behavior."
-          + "proto\032\031google/api/resource.proto\032\037google"
-          + "/protobuf/timestamp.proto\032\034google/api/an"
-          + "notations.proto\"\354\t\n\022MigratableResource\022p"
+          + "form.v1beta1\032\034google/api/annotations.pro"
+          + "to\032\037google/api/field_behavior.proto\032\031goo"
+          + "gle/api/resource.proto\032\037google/protobuf/"
+          + "timestamp.proto\"\354\t\n\022MigratableResource\022p"
           + "\n\027ml_engine_model_version\030\001 \001(\0132H.google"
           + ".cloud.aiplatform.v1beta1.MigratableReso"
           + "urce.MlEngineModelVersionB\003\340A\003H\000\022\\\n\014auto"
@@ -121,10 +121,10 @@ public final class MigratableResourceProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_MigratableResource_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -197,10 +197,10 @@ public final class MigratableResourceProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

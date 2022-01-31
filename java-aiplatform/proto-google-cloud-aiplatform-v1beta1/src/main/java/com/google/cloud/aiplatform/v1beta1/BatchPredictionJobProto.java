@@ -58,24 +58,24 @@ public final class BatchPredictionJobProto {
     java.lang.String[] descriptorData = {
       "\n:google/cloud/aiplatform/v1beta1/batch_"
           + "prediction_job.proto\022\037google.cloud.aipla"
-          + "tform.v1beta1\032\037google/api/field_behavior"
-          + ".proto\032\031google/api/resource.proto\0326googl"
-          + "e/cloud/aiplatform/v1beta1/completion_st"
-          + "ats.proto\0325google/cloud/aiplatform/v1bet"
-          + "a1/encryption_spec.proto\0321google/cloud/a"
-          + "iplatform/v1beta1/explanation.proto\032(goo"
-          + "gle/cloud/aiplatform/v1beta1/io.proto\032/g"
-          + "oogle/cloud/aiplatform/v1beta1/job_state"
-          + ".proto\0327google/cloud/aiplatform/v1beta1/"
-          + "machine_resources.proto\032Dgoogle/cloud/ai"
-          + "platform/v1beta1/manual_batch_tuning_par"
-          + "ameters.proto\0326google/cloud/aiplatform/v"
-          + "1beta1/model_monitoring.proto\032?google/cl"
-          + "oud/aiplatform/v1beta1/unmanaged_contain"
-          + "er_model.proto\032\034google/protobuf/struct.p"
-          + "roto\032\037google/protobuf/timestamp.proto\032\027g"
-          + "oogle/rpc/status.proto\032\034google/api/annot"
-          + "ations.proto\"\352\021\n\022BatchPredictionJob\022\021\n\004n"
+          + "tform.v1beta1\032\034google/api/annotations.pr"
+          + "oto\032\037google/api/field_behavior.proto\032\031go"
+          + "ogle/api/resource.proto\0326google/cloud/ai"
+          + "platform/v1beta1/completion_stats.proto\032"
+          + "5google/cloud/aiplatform/v1beta1/encrypt"
+          + "ion_spec.proto\0321google/cloud/aiplatform/"
+          + "v1beta1/explanation.proto\032(google/cloud/"
+          + "aiplatform/v1beta1/io.proto\032/google/clou"
+          + "d/aiplatform/v1beta1/job_state.proto\0327go"
+          + "ogle/cloud/aiplatform/v1beta1/machine_re"
+          + "sources.proto\032Dgoogle/cloud/aiplatform/v"
+          + "1beta1/manual_batch_tuning_parameters.pr"
+          + "oto\0326google/cloud/aiplatform/v1beta1/mod"
+          + "el_monitoring.proto\032?google/cloud/aiplat"
+          + "form/v1beta1/unmanaged_container_model.p"
+          + "roto\032\034google/protobuf/struct.proto\032\037goog"
+          + "le/protobuf/timestamp.proto\032\027google/rpc/"
+          + "status.proto\"\352\021\n\022BatchPredictionJob\022\021\n\004n"
           + "ame\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A"
           + "\002\0223\n\005model\030\003 \001(\tB$\372A!\n\037aiplatform.google"
           + "apis.com/Model\022[\n\031unmanaged_container_mo"
@@ -144,6 +144,7 @@ public final class BatchPredictionJobProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.CompletionStatsProto.getDescriptor(),
@@ -158,7 +159,6 @@ public final class BatchPredictionJobProto {
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -240,6 +240,7 @@ public final class BatchPredictionJobProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.CompletionStatsProto.getDescriptor();
@@ -254,7 +255,6 @@ public final class BatchPredictionJobProto {
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -42,8 +42,8 @@ public final class EncryptionSpecProto {
     java.lang.String[] descriptorData = {
       "\n5google/cloud/aiplatform/v1beta1/encryp"
           + "tion_spec.proto\022\037google.cloud.aiplatform"
-          + ".v1beta1\032\037google/api/field_behavior.prot"
-          + "o\032\034google/api/annotations.proto\"+\n\016Encry"
+          + ".v1beta1\032\034google/api/annotations.proto\032\037"
+          + "google/api/field_behavior.proto\"+\n\016Encry"
           + "ptionSpec\022\031\n\014kms_key_name\030\001 \001(\tB\003\340A\002B\360\001\n"
           + "#com.google.cloud.aiplatform.v1beta1B\023En"
           + "cryptionSpecProtoP\001ZIgoogle.golang.org/g"
@@ -57,8 +57,8 @@ public final class EncryptionSpecProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_EncryptionSpec_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -73,8 +73,8 @@ public final class EncryptionSpecProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -46,13 +46,13 @@ public final class FeatureProto {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/aiplatform/v1beta1/featur"
           + "e.proto\022\037google.cloud.aiplatform.v1beta1"
-          + "\032\037google/api/field_behavior.proto\032\031googl"
-          + "e/api/resource.proto\032>google/cloud/aipla"
-          + "tform/v1beta1/feature_monitoring_stats.p"
-          + "roto\032=google/cloud/aiplatform/v1beta1/fe"
-          + "aturestore_monitoring.proto\032\037google/prot"
-          + "obuf/timestamp.proto\032\034google/api/annotat"
-          + "ions.proto\"\355\006\n\007Feature\022\021\n\004name\030\001 \001(\tB\003\340A"
+          + "\032\034google/api/annotations.proto\032\037google/a"
+          + "pi/field_behavior.proto\032\031google/api/reso"
+          + "urce.proto\032>google/cloud/aiplatform/v1be"
+          + "ta1/feature_monitoring_stats.proto\032=goog"
+          + "le/cloud/aiplatform/v1beta1/featurestore"
+          + "_monitoring.proto\032\037google/protobuf/times"
+          + "tamp.proto\"\355\006\n\007Feature\022\021\n\004name\030\001 \001(\tB\003\340A"
           + "\005\022\023\n\013description\030\002 \001(\t\022N\n\nvalue_type\030\003 \001"
           + "(\01622.google.cloud.aiplatform.v1beta1.Fea"
           + "ture.ValueTypeB\006\340A\002\340A\005\0224\n\013create_time\030\004 "
@@ -86,12 +86,12 @@ public final class FeatureProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.FeatureMonitoringStatsProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_Feature_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -123,12 +123,12 @@ public final class FeatureProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.FeatureMonitoringStatsProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

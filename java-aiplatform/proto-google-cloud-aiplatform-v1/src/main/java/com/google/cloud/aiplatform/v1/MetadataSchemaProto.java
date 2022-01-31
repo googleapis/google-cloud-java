@@ -41,10 +41,10 @@ public final class MetadataSchemaProto {
   static {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/aiplatform/v1/metadata_sc"
-          + "hema.proto\022\032google.cloud.aiplatform.v1\032\037"
-          + "google/api/field_behavior.proto\032\031google/"
-          + "api/resource.proto\032\037google/protobuf/time"
-          + "stamp.proto\032\034google/api/annotations.prot"
+          + "hema.proto\022\032google.cloud.aiplatform.v1\032\034"
+          + "google/api/annotations.proto\032\037google/api"
+          + "/field_behavior.proto\032\031google/api/resour"
+          + "ce.proto\032\037google/protobuf/timestamp.prot"
           + "o\"\200\004\n\016MetadataSchema\022\021\n\004name\030\001 \001(\tB\003\340A\003\022"
           + "\026\n\016schema_version\030\002 \001(\t\022\023\n\006schema\030\003 \001(\tB"
           + "\003\340A\002\022R\n\013schema_type\030\004 \001(\0162=.google.cloud"
@@ -69,10 +69,10 @@ public final class MetadataSchemaProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_MetadataSchema_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -88,10 +88,10 @@ public final class MetadataSchemaProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

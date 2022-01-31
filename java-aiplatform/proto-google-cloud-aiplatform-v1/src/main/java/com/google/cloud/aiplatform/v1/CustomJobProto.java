@@ -69,17 +69,17 @@ public final class CustomJobProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/aiplatform/v1/custom_job."
-          + "proto\022\032google.cloud.aiplatform.v1\032\037googl"
-          + "e/api/field_behavior.proto\032\031google/api/r"
-          + "esource.proto\0320google/cloud/aiplatform/v"
-          + "1/encryption_spec.proto\032(google/cloud/ai"
-          + "platform/v1/env_var.proto\032#google/cloud/"
-          + "aiplatform/v1/io.proto\032*google/cloud/aip"
-          + "latform/v1/job_state.proto\0322google/cloud"
-          + "/aiplatform/v1/machine_resources.proto\032\036"
-          + "google/protobuf/duration.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\032\027google/rpc/stat"
-          + "us.proto\032\034google/api/annotations.proto\"\341"
+          + "proto\022\032google.cloud.aiplatform.v1\032\034googl"
+          + "e/api/annotations.proto\032\037google/api/fiel"
+          + "d_behavior.proto\032\031google/api/resource.pr"
+          + "oto\0320google/cloud/aiplatform/v1/encrypti"
+          + "on_spec.proto\032(google/cloud/aiplatform/v"
+          + "1/env_var.proto\032#google/cloud/aiplatform"
+          + "/v1/io.proto\032*google/cloud/aiplatform/v1"
+          + "/job_state.proto\0322google/cloud/aiplatfor"
+          + "m/v1/machine_resources.proto\032\036google/pro"
+          + "tobuf/duration.proto\032\037google/protobuf/ti"
+          + "mestamp.proto\032\027google/rpc/status.proto\"\341"
           + "\006\n\tCustomJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014displ"
           + "ay_name\030\002 \001(\tB\003\340A\002\022@\n\010job_spec\030\004 \001(\0132).g"
           + "oogle.cloud.aiplatform.v1.CustomJobSpecB"
@@ -141,6 +141,7 @@ public final class CustomJobProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor(),
@@ -151,7 +152,6 @@ public final class CustomJobProto {
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_CustomJob_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -246,6 +246,7 @@ public final class CustomJobProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor();
@@ -256,7 +257,6 @@ public final class CustomJobProto {
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

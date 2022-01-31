@@ -46,12 +46,12 @@ public final class AnnotationProto {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/aiplatform/v1beta1/annota"
           + "tion.proto\022\037google.cloud.aiplatform.v1be"
-          + "ta1\032\037google/api/field_behavior.proto\032\031go"
-          + "ogle/api/resource.proto\032;google/cloud/ai"
-          + "platform/v1beta1/user_action_reference.p"
-          + "roto\032\034google/protobuf/struct.proto\032\037goog"
-          + "le/protobuf/timestamp.proto\032\034google/api/"
-          + "annotations.proto\"\330\004\n\nAnnotation\022\021\n\004name"
+          + "ta1\032\034google/api/annotations.proto\032\037googl"
+          + "e/api/field_behavior.proto\032\031google/api/r"
+          + "esource.proto\032;google/cloud/aiplatform/v"
+          + "1beta1/user_action_reference.proto\032\034goog"
+          + "le/protobuf/struct.proto\032\037google/protobu"
+          + "f/timestamp.proto\"\330\004\n\nAnnotation\022\021\n\004name"
           + "\030\001 \001(\tB\003\340A\003\022\037\n\022payload_schema_uri\030\002 \001(\tB"
           + "\003\340A\002\022,\n\007payload\030\003 \001(\0132\026.google.protobuf."
           + "ValueB\003\340A\002\0224\n\013create_time\030\004 \001(\0132\032.google"
@@ -78,12 +78,12 @@ public final class AnnotationProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.UserActionReferenceProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_Annotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -116,12 +116,12 @@ public final class AnnotationProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.UserActionReferenceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

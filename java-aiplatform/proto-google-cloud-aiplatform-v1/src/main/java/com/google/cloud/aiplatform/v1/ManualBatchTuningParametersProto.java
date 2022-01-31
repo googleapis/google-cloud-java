@@ -42,8 +42,8 @@ public final class ManualBatchTuningParametersProto {
     java.lang.String[] descriptorData = {
       "\n?google/cloud/aiplatform/v1/manual_batc"
           + "h_tuning_parameters.proto\022\032google.cloud."
-          + "aiplatform.v1\032\037google/api/field_behavior"
-          + ".proto\032\034google/api/annotations.proto\"6\n\033"
+          + "aiplatform.v1\032\034google/api/annotations.pr"
+          + "oto\032\037google/api/field_behavior.proto\"6\n\033"
           + "ManualBatchTuningParameters\022\027\n\nbatch_siz"
           + "e\030\001 \001(\005B\003\340A\005B\344\001\n\036com.google.cloud.aiplat"
           + "form.v1B ManualBatchTuningParametersProt"
@@ -57,8 +57,8 @@ public final class ManualBatchTuningParametersProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_ManualBatchTuningParameters_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -73,8 +73,8 @@ public final class ManualBatchTuningParametersProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

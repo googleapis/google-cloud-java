@@ -45,12 +45,12 @@ public final class FeatureProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/aiplatform/v1/feature.pro"
-          + "to\022\032google.cloud.aiplatform.v1\032\037google/a"
-          + "pi/field_behavior.proto\032\031google/api/reso"
-          + "urce.proto\0329google/cloud/aiplatform/v1/f"
-          + "eature_monitoring_stats.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\032\034google/api/annot"
-          + "ations.proto\"\257\005\n\007Feature\022\021\n\004name\030\001 \001(\tB\003"
+          + "to\022\032google.cloud.aiplatform.v1\032\034google/a"
+          + "pi/annotations.proto\032\037google/api/field_b"
+          + "ehavior.proto\032\031google/api/resource.proto"
+          + "\0329google/cloud/aiplatform/v1/feature_mon"
+          + "itoring_stats.proto\032\037google/protobuf/tim"
+          + "estamp.proto\"\257\005\n\007Feature\022\021\n\004name\030\001 \001(\tB\003"
           + "\340A\005\022\023\n\013description\030\002 \001(\t\022I\n\nvalue_type\030\003"
           + " \001(\0162-.google.cloud.aiplatform.v1.Featur"
           + "e.ValueTypeB\006\340A\002\340A\005\0224\n\013create_time\030\004 \001(\013"
@@ -79,11 +79,11 @@ public final class FeatureProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.FeatureMonitoringStatsProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_Feature_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -107,11 +107,11 @@ public final class FeatureProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.FeatureMonitoringStatsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

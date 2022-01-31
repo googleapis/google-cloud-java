@@ -125,8 +125,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
    *
    *
    * <pre>
-   * Required. The model monitoring job running interval. It will be rounded up to next
-   * full hour.
+   * Required. The model monitoring job scheduling interval. It will be rounded up to next
+   * full hour. This defines how often the monitoring jobs are triggered.
    * </pre>
    *
    * <code>.google.protobuf.Duration monitor_interval = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -142,8 +142,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
    *
    *
    * <pre>
-   * Required. The model monitoring job running interval. It will be rounded up to next
-   * full hour.
+   * Required. The model monitoring job scheduling interval. It will be rounded up to next
+   * full hour. This defines how often the monitoring jobs are triggered.
    * </pre>
    *
    * <code>.google.protobuf.Duration monitor_interval = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -161,8 +161,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
    *
    *
    * <pre>
-   * Required. The model monitoring job running interval. It will be rounded up to next
-   * full hour.
+   * Required. The model monitoring job scheduling interval. It will be rounded up to next
+   * full hour. This defines how often the monitoring jobs are triggered.
    * </pre>
    *
    * <code>.google.protobuf.Duration monitor_interval = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -523,8 +523,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
      *
      *
      * <pre>
-     * Required. The model monitoring job running interval. It will be rounded up to next
-     * full hour.
+     * Required. The model monitoring job scheduling interval. It will be rounded up to next
+     * full hour. This defines how often the monitoring jobs are triggered.
      * </pre>
      *
      * <code>
@@ -540,8 +540,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
      *
      *
      * <pre>
-     * Required. The model monitoring job running interval. It will be rounded up to next
-     * full hour.
+     * Required. The model monitoring job scheduling interval. It will be rounded up to next
+     * full hour. This defines how often the monitoring jobs are triggered.
      * </pre>
      *
      * <code>
@@ -563,8 +563,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
      *
      *
      * <pre>
-     * Required. The model monitoring job running interval. It will be rounded up to next
-     * full hour.
+     * Required. The model monitoring job scheduling interval. It will be rounded up to next
+     * full hour. This defines how often the monitoring jobs are triggered.
      * </pre>
      *
      * <code>
@@ -588,8 +588,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
      *
      *
      * <pre>
-     * Required. The model monitoring job running interval. It will be rounded up to next
-     * full hour.
+     * Required. The model monitoring job scheduling interval. It will be rounded up to next
+     * full hour. This defines how often the monitoring jobs are triggered.
      * </pre>
      *
      * <code>
@@ -610,8 +610,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
      *
      *
      * <pre>
-     * Required. The model monitoring job running interval. It will be rounded up to next
-     * full hour.
+     * Required. The model monitoring job scheduling interval. It will be rounded up to next
+     * full hour. This defines how often the monitoring jobs are triggered.
      * </pre>
      *
      * <code>
@@ -639,8 +639,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
      *
      *
      * <pre>
-     * Required. The model monitoring job running interval. It will be rounded up to next
-     * full hour.
+     * Required. The model monitoring job scheduling interval. It will be rounded up to next
+     * full hour. This defines how often the monitoring jobs are triggered.
      * </pre>
      *
      * <code>
@@ -662,8 +662,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
      *
      *
      * <pre>
-     * Required. The model monitoring job running interval. It will be rounded up to next
-     * full hour.
+     * Required. The model monitoring job scheduling interval. It will be rounded up to next
+     * full hour. This defines how often the monitoring jobs are triggered.
      * </pre>
      *
      * <code>
@@ -679,8 +679,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
      *
      *
      * <pre>
-     * Required. The model monitoring job running interval. It will be rounded up to next
-     * full hour.
+     * Required. The model monitoring job scheduling interval. It will be rounded up to next
+     * full hour. This defines how often the monitoring jobs are triggered.
      * </pre>
      *
      * <code>
@@ -700,8 +700,8 @@ public final class ModelDeploymentMonitoringScheduleConfig
      *
      *
      * <pre>
-     * Required. The model monitoring job running interval. It will be rounded up to next
-     * full hour.
+     * Required. The model monitoring job scheduling interval. It will be rounded up to next
+     * full hour. This defines how often the monitoring jobs are triggered.
      * </pre>
      *
      * <code>

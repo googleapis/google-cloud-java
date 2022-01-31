@@ -45,13 +45,13 @@ public final class IndexProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/aiplatform/v1beta1/index."
-          + "proto\022\037google.cloud.aiplatform.v1beta1\032\037"
-          + "google/api/field_behavior.proto\032\031google/"
-          + "api/resource.proto\0328google/cloud/aiplatf"
-          + "orm/v1beta1/deployed_index_ref.proto\032\034go"
-          + "ogle/protobuf/struct.proto\032\037google/proto"
-          + "buf/timestamp.proto\032\034google/api/annotati"
-          + "ons.proto\"\264\004\n\005Index\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031"
+          + "proto\022\037google.cloud.aiplatform.v1beta1\032\034"
+          + "google/api/annotations.proto\032\037google/api"
+          + "/field_behavior.proto\032\031google/api/resour"
+          + "ce.proto\0328google/cloud/aiplatform/v1beta"
+          + "1/deployed_index_ref.proto\032\034google/proto"
+          + "buf/struct.proto\032\037google/protobuf/timest"
+          + "amp.proto\"\264\004\n\005Index\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031"
           + "\n\014display_name\030\002 \001(\tB\003\340A\002\022\023\n\013description"
           + "\030\003 \001(\t\022 \n\023metadata_schema_uri\030\004 \001(\tB\003\340A\005"
           + "\022(\n\010metadata\030\006 \001(\0132\026.google.protobuf.Val"
@@ -77,12 +77,12 @@ public final class IndexProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.DeployedIndexRefProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_Index_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -115,12 +115,12 @@ public final class IndexProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.DeployedIndexRefProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

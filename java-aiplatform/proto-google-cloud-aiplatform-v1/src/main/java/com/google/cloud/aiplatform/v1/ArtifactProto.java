@@ -45,12 +45,12 @@ public final class ArtifactProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/aiplatform/v1/artifact.pr"
-          + "oto\022\032google.cloud.aiplatform.v1\032\037google/"
-          + "api/field_behavior.proto\032\031google/api/res"
-          + "ource.proto\032&google/cloud/aiplatform/v1/"
-          + "value.proto\032\034google/protobuf/struct.prot"
-          + "o\032\037google/protobuf/timestamp.proto\032\034goog"
-          + "le/api/annotations.proto\"\224\005\n\010Artifact\022\021\n"
+          + "oto\022\032google.cloud.aiplatform.v1\032\034google/"
+          + "api/annotations.proto\032\037google/api/field_"
+          + "behavior.proto\032\031google/api/resource.prot"
+          + "o\032&google/cloud/aiplatform/v1/value.prot"
+          + "o\032\034google/protobuf/struct.proto\032\037google/"
+          + "protobuf/timestamp.proto\"\224\005\n\010Artifact\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\024\n\014display_name\030\002 \001(\t\022\013"
           + "\n\003uri\030\006 \001(\t\022\014\n\004etag\030\t \001(\t\022@\n\006labels\030\n \003("
           + "\01320.google.cloud.aiplatform.v1.Artifact."
@@ -78,12 +78,12 @@ public final class ArtifactProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.ValueProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_Artifact_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -118,12 +118,12 @@ public final class ArtifactProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.ValueProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

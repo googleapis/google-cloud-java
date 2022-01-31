@@ -45,12 +45,12 @@ public final class TensorboardProto {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/aiplatform/v1/tensorboard"
-          + ".proto\022\032google.cloud.aiplatform.v1\032\037goog"
-          + "le/api/field_behavior.proto\032\031google/api/"
-          + "resource.proto\0320google/cloud/aiplatform/"
-          + "v1/encryption_spec.proto\032\037google/protobu"
-          + "f/timestamp.proto\032\034google/api/annotation"
-          + "s.proto\"\262\004\n\013Tensorboard\022\021\n\004name\030\001 \001(\tB\003\340"
+          + ".proto\022\032google.cloud.aiplatform.v1\032\034goog"
+          + "le/api/annotations.proto\032\037google/api/fie"
+          + "ld_behavior.proto\032\031google/api/resource.p"
+          + "roto\0320google/cloud/aiplatform/v1/encrypt"
+          + "ion_spec.proto\032\037google/protobuf/timestam"
+          + "p.proto\"\262\004\n\013Tensorboard\022\021\n\004name\030\001 \001(\tB\003\340"
           + "A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022\023\n\013descrip"
           + "tion\030\003 \001(\t\022C\n\017encryption_spec\030\013 \001(\0132*.go"
           + "ogle.cloud.aiplatform.v1.EncryptionSpec\022"
@@ -75,11 +75,11 @@ public final class TensorboardProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_Tensorboard_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -112,11 +112,11 @@ public final class TensorboardProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

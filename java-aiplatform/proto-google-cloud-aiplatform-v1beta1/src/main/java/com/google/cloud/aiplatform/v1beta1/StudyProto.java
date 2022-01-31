@@ -117,12 +117,12 @@ public final class StudyProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/aiplatform/v1beta1/study."
-          + "proto\022\037google.cloud.aiplatform.v1beta1\032\037"
-          + "google/api/field_behavior.proto\032\031google/"
-          + "api/resource.proto\032\036google/protobuf/dura"
-          + "tion.proto\032\034google/protobuf/struct.proto"
-          + "\032\037google/protobuf/timestamp.proto\032\034googl"
-          + "e/api/annotations.proto\"\270\003\n\005Study\022\021\n\004nam"
+          + "proto\022\037google.cloud.aiplatform.v1beta1\032\034"
+          + "google/api/annotations.proto\032\037google/api"
+          + "/field_behavior.proto\032\031google/api/resour"
+          + "ce.proto\032\036google/protobuf/duration.proto"
+          + "\032\034google/protobuf/struct.proto\032\037google/p"
+          + "rotobuf/timestamp.proto\"\270\003\n\005Study\022\021\n\004nam"
           + "e\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022"
           + "C\n\nstudy_spec\030\003 \001(\0132*.google.cloud.aipla"
           + "tform.v1beta1.StudySpecB\003\340A\002\022@\n\005state\030\004 "
@@ -262,12 +262,12 @@ public final class StudyProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_Study_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -498,12 +498,12 @@ public final class StudyProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -61,17 +61,17 @@ public final class ModelProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/aiplatform/v1/model.proto"
-          + "\022\032google.cloud.aiplatform.v1\032\037google/api"
-          + "/field_behavior.proto\032\031google/api/resour"
-          + "ce.proto\032(google/cloud/aiplatform/v1/dat"
-          + "aset.proto\0323google/cloud/aiplatform/v1/d"
-          + "eployed_model_ref.proto\0320google/cloud/ai"
-          + "platform/v1/encryption_spec.proto\032(googl"
-          + "e/cloud/aiplatform/v1/env_var.proto\032,goo"
-          + "gle/cloud/aiplatform/v1/explanation.prot"
-          + "o\032\034google/protobuf/struct.proto\032\037google/"
-          + "protobuf/timestamp.proto\032\034google/api/ann"
-          + "otations.proto\"\244\014\n\005Model\022\014\n\004name\030\001 \001(\t\022\031"
+          + "\022\032google.cloud.aiplatform.v1\032\034google/api"
+          + "/annotations.proto\032\037google/api/field_beh"
+          + "avior.proto\032\031google/api/resource.proto\032("
+          + "google/cloud/aiplatform/v1/dataset.proto"
+          + "\0323google/cloud/aiplatform/v1/deployed_mo"
+          + "del_ref.proto\0320google/cloud/aiplatform/v"
+          + "1/encryption_spec.proto\032(google/cloud/ai"
+          + "platform/v1/env_var.proto\032,google/cloud/"
+          + "aiplatform/v1/explanation.proto\032\034google/"
+          + "protobuf/struct.proto\032\037google/protobuf/t"
+          + "imestamp.proto\"\244\014\n\005Model\022\014\n\004name\030\001 \001(\t\022\031"
           + "\n\014display_name\030\002 \001(\tB\003\340A\002\022\023\n\013description"
           + "\030\003 \001(\t\022E\n\020predict_schemata\030\004 \001(\0132+.googl"
           + "e.cloud.aiplatform.v1.PredictSchemata\022 \n"
@@ -132,6 +132,7 @@ public final class ModelProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.DatasetProto.getDescriptor(),
@@ -141,7 +142,6 @@ public final class ModelProto {
               com.google.cloud.aiplatform.v1.ExplanationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_Model_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -217,6 +217,7 @@ public final class ModelProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.DatasetProto.getDescriptor();
@@ -226,7 +227,6 @@ public final class ModelProto {
     com.google.cloud.aiplatform.v1.ExplanationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

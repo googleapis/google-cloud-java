@@ -42,9 +42,9 @@ public final class UnmanagedContainerModelProto {
     java.lang.String[] descriptorData = {
       "\n?google/cloud/aiplatform/v1beta1/unmana"
           + "ged_container_model.proto\022\037google.cloud."
-          + "aiplatform.v1beta1\032\037google/api/field_beh"
-          + "avior.proto\032+google/cloud/aiplatform/v1b"
-          + "eta1/model.proto\032\034google/api/annotations"
+          + "aiplatform.v1beta1\032\034google/api/annotatio"
+          + "ns.proto\032\037google/api/field_behavior.prot"
+          + "o\032+google/cloud/aiplatform/v1beta1/model"
           + ".proto\"\315\001\n\027UnmanagedContainerModel\022\024\n\014ar"
           + "tifact_uri\030\001 \001(\t\022J\n\020predict_schemata\030\002 \001"
           + "(\01320.google.cloud.aiplatform.v1beta1.Pre"
@@ -62,9 +62,9 @@ public final class UnmanagedContainerModelProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ModelProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_UnmanagedContainerModel_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -79,9 +79,9 @@ public final class UnmanagedContainerModelProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ModelProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

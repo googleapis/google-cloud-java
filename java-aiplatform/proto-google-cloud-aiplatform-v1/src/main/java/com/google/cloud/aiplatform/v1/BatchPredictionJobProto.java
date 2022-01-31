@@ -58,22 +58,22 @@ public final class BatchPredictionJobProto {
     java.lang.String[] descriptorData = {
       "\n5google/cloud/aiplatform/v1/batch_predi"
           + "ction_job.proto\022\032google.cloud.aiplatform"
-          + ".v1\032\037google/api/field_behavior.proto\032\031go"
-          + "ogle/api/resource.proto\0321google/cloud/ai"
-          + "platform/v1/completion_stats.proto\0320goog"
-          + "le/cloud/aiplatform/v1/encryption_spec.p"
-          + "roto\032,google/cloud/aiplatform/v1/explana"
-          + "tion.proto\032#google/cloud/aiplatform/v1/i"
-          + "o.proto\032*google/cloud/aiplatform/v1/job_"
-          + "state.proto\0322google/cloud/aiplatform/v1/"
-          + "machine_resources.proto\032?google/cloud/ai"
-          + "platform/v1/manual_batch_tuning_paramete"
-          + "rs.proto\0321google/cloud/aiplatform/v1/mod"
-          + "el_monitoring.proto\032:google/cloud/aiplat"
-          + "form/v1/unmanaged_container_model.proto\032"
-          + "\034google/protobuf/struct.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\032\027google/rpc/statu"
-          + "s.proto\032\034google/api/annotations.proto\"\232\021"
+          + ".v1\032\034google/api/annotations.proto\032\037googl"
+          + "e/api/field_behavior.proto\032\031google/api/r"
+          + "esource.proto\0321google/cloud/aiplatform/v"
+          + "1/completion_stats.proto\0320google/cloud/a"
+          + "iplatform/v1/encryption_spec.proto\032,goog"
+          + "le/cloud/aiplatform/v1/explanation.proto"
+          + "\032#google/cloud/aiplatform/v1/io.proto\032*g"
+          + "oogle/cloud/aiplatform/v1/job_state.prot"
+          + "o\0322google/cloud/aiplatform/v1/machine_re"
+          + "sources.proto\032?google/cloud/aiplatform/v"
+          + "1/manual_batch_tuning_parameters.proto\0321"
+          + "google/cloud/aiplatform/v1/model_monitor"
+          + "ing.proto\032:google/cloud/aiplatform/v1/un"
+          + "managed_container_model.proto\032\034google/pr"
+          + "otobuf/struct.proto\032\037google/protobuf/tim"
+          + "estamp.proto\032\027google/rpc/status.proto\"\232\021"
           + "\n\022BatchPredictionJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022"
           + "\031\n\014display_name\030\002 \001(\tB\003\340A\002\0223\n\005model\030\003 \001("
           + "\tB$\372A!\n\037aiplatform.googleapis.com/Model\022"
@@ -140,6 +140,7 @@ public final class BatchPredictionJobProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.CompletionStatsProto.getDescriptor(),
@@ -154,7 +155,6 @@ public final class BatchPredictionJobProto {
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_BatchPredictionJob_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -236,6 +236,7 @@ public final class BatchPredictionJobProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.CompletionStatsProto.getDescriptor();
@@ -250,7 +251,6 @@ public final class BatchPredictionJobProto {
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

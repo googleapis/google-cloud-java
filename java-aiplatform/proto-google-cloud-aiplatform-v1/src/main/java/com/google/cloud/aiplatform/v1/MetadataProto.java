@@ -45,12 +45,12 @@ public final class MetadataProto {
   static {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/aiplatform/v1/metadata_st"
-          + "ore.proto\022\032google.cloud.aiplatform.v1\032\037g"
-          + "oogle/api/field_behavior.proto\032\031google/a"
-          + "pi/resource.proto\0320google/cloud/aiplatfo"
-          + "rm/v1/encryption_spec.proto\032\037google/prot"
-          + "obuf/timestamp.proto\032\034google/api/annotat"
-          + "ions.proto\"\347\003\n\rMetadataStore\022\021\n\004name\030\001 \001"
+          + "ore.proto\022\032google.cloud.aiplatform.v1\032\034g"
+          + "oogle/api/annotations.proto\032\037google/api/"
+          + "field_behavior.proto\032\031google/api/resourc"
+          + "e.proto\0320google/cloud/aiplatform/v1/encr"
+          + "yption_spec.proto\032\037google/protobuf/times"
+          + "tamp.proto\"\347\003\n\rMetadataStore\022\021\n\004name\030\001 \001"
           + "(\tB\003\340A\003\0224\n\013create_time\030\003 \001(\0132\032.google.pr"
           + "otobuf.TimestampB\003\340A\003\0224\n\013update_time\030\004 \001"
           + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022C\n\017e"
@@ -73,11 +73,11 @@ public final class MetadataProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_MetadataStore_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -101,11 +101,11 @@ public final class MetadataProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

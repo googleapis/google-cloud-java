@@ -46,12 +46,12 @@ public final class ModelEvaluationProto {
     java.lang.String[] descriptorData = {
       "\n6google/cloud/aiplatform/v1beta1/model_"
           + "evaluation.proto\022\037google.cloud.aiplatfor"
-          + "m.v1beta1\032\037google/api/field_behavior.pro"
-          + "to\032\031google/api/resource.proto\0321google/cl"
-          + "oud/aiplatform/v1beta1/explanation.proto"
-          + "\032\034google/protobuf/struct.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\032\034google/api/anno"
-          + "tations.proto\"\226\005\n\017ModelEvaluation\022\021\n\004nam"
+          + "m.v1beta1\032\034google/api/annotations.proto\032"
+          + "\037google/api/field_behavior.proto\032\031google"
+          + "/api/resource.proto\0321google/cloud/aiplat"
+          + "form/v1beta1/explanation.proto\032\034google/p"
+          + "rotobuf/struct.proto\032\037google/protobuf/ti"
+          + "mestamp.proto\"\226\005\n\017ModelEvaluation\022\021\n\004nam"
           + "e\030\001 \001(\tB\003\340A\003\022\037\n\022metrics_schema_uri\030\002 \001(\t"
           + "B\003\340A\003\022,\n\007metrics\030\003 \001(\0132\026.google.protobuf"
           + ".ValueB\003\340A\003\0224\n\013create_time\030\004 \001(\0132\032.googl"
@@ -80,12 +80,12 @@ public final class ModelEvaluationProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ExplanationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -117,12 +117,12 @@ public final class ModelEvaluationProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ExplanationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -46,8 +46,8 @@ public final class FeatureSelectorProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1/feature_sel"
           + "ector.proto\022\032google.cloud.aiplatform.v1\032"
-          + "\037google/api/field_behavior.proto\032\034google"
-          + "/api/annotations.proto\"\035\n\tIdMatcher\022\020\n\003i"
+          + "\034google/api/annotations.proto\032\037google/ap"
+          + "i/field_behavior.proto\"\035\n\tIdMatcher\022\020\n\003i"
           + "ds\030\001 \003(\tB\003\340A\002\"Q\n\017FeatureSelector\022>\n\nid_m"
           + "atcher\030\001 \001(\0132%.google.cloud.aiplatform.v"
           + "1.IdMatcherB\003\340A\002B\330\001\n\036com.google.cloud.ai"
@@ -62,8 +62,8 @@ public final class FeatureSelectorProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_IdMatcher_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -86,8 +86,8 @@ public final class FeatureSelectorProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

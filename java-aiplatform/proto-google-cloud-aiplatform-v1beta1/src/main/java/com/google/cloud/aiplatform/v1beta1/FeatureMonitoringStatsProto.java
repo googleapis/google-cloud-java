@@ -42,8 +42,8 @@ public final class FeatureMonitoringStatsProto {
     java.lang.String[] descriptorData = {
       "\n>google/cloud/aiplatform/v1beta1/featur"
           + "e_monitoring_stats.proto\022\037google.cloud.a"
-          + "iplatform.v1beta1\032\037google/protobuf/times"
-          + "tamp.proto\032\034google/api/annotations.proto"
+          + "iplatform.v1beta1\032\034google/api/annotation"
+          + "s.proto\032\037google/protobuf/timestamp.proto"
           + "\"\357\001\n\023FeatureStatsAnomaly\022\r\n\005score\030\001 \001(\001\022"
           + "\021\n\tstats_uri\030\003 \001(\t\022\023\n\013anomaly_uri\030\004 \001(\t\022"
           + "\036\n\026distribution_deviation\030\005 \001(\001\022#\n\033anoma"
@@ -62,8 +62,8 @@ public final class FeatureMonitoringStatsProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_FeatureStatsAnomaly_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -79,8 +79,8 @@ public final class FeatureMonitoringStatsProto {
               "StartTime",
               "EndTime",
             });
-    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

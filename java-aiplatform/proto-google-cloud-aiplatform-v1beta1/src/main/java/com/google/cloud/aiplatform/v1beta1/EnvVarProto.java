@@ -42,8 +42,8 @@ public final class EnvVarProto {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/aiplatform/v1beta1/env_va"
           + "r.proto\022\037google.cloud.aiplatform.v1beta1"
-          + "\032\037google/api/field_behavior.proto\032\034googl"
-          + "e/api/annotations.proto\"/\n\006EnvVar\022\021\n\004nam"
+          + "\032\034google/api/annotations.proto\032\037google/a"
+          + "pi/field_behavior.proto\"/\n\006EnvVar\022\021\n\004nam"
           + "e\030\001 \001(\tB\003\340A\002\022\022\n\005value\030\002 \001(\tB\003\340A\002B\350\001\n#com"
           + ".google.cloud.aiplatform.v1beta1B\013EnvVar"
           + "ProtoP\001ZIgoogle.golang.org/genproto/goog"
@@ -56,8 +56,8 @@ public final class EnvVarProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_EnvVar_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -72,8 +72,8 @@ public final class EnvVarProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

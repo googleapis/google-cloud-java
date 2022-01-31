@@ -405,6 +405,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * The number of nodes for each cluster. The number of nodes will not
      * scale automatically but can be scaled manually by providing different
      * values when updating.
+     * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+     * reset the other.
      * </pre>
      *
      * <code>int32 fixed_node_count = 2;</code>
@@ -512,6 +514,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * The number of nodes for each cluster. The number of nodes will not
      * scale automatically but can be scaled manually by providing different
      * values when updating.
+     * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+     * reset the other.
      * </pre>
      *
      * <code>int32 fixed_node_count = 2;</code>
@@ -860,6 +864,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        * The number of nodes for each cluster. The number of nodes will not
        * scale automatically but can be scaled manually by providing different
        * values when updating.
+       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+       * reset the other.
        * </pre>
        *
        * <code>int32 fixed_node_count = 2;</code>
@@ -877,6 +883,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        * The number of nodes for each cluster. The number of nodes will not
        * scale automatically but can be scaled manually by providing different
        * values when updating.
+       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+       * reset the other.
        * </pre>
        *
        * <code>int32 fixed_node_count = 2;</code>
@@ -897,6 +905,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        * The number of nodes for each cluster. The number of nodes will not
        * scale automatically but can be scaled manually by providing different
        * values when updating.
+       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+       * reset the other.
        * </pre>
        *
        * <code>int32 fixed_node_count = 2;</code>

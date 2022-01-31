@@ -112,7 +112,7 @@ public interface ModelContainerSpecOrBuilder
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `command` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -156,7 +156,7 @@ public interface ModelContainerSpecOrBuilder
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `command` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -200,7 +200,7 @@ public interface ModelContainerSpecOrBuilder
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `command` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -245,7 +245,7 @@ public interface ModelContainerSpecOrBuilder
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `command` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -291,7 +291,7 @@ public interface ModelContainerSpecOrBuilder
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `args` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -335,7 +335,7 @@ public interface ModelContainerSpecOrBuilder
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `args` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -379,7 +379,7 @@ public interface ModelContainerSpecOrBuilder
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `args` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -424,7 +424,7 @@ public interface ModelContainerSpecOrBuilder
    * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
    * This field corresponds to the `args` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -461,7 +461,7 @@ public interface ModelContainerSpecOrBuilder
    * does not occur.
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -496,7 +496,7 @@ public interface ModelContainerSpecOrBuilder
    * does not occur.
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -531,7 +531,7 @@ public interface ModelContainerSpecOrBuilder
    * does not occur.
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -566,7 +566,7 @@ public interface ModelContainerSpecOrBuilder
    * does not occur.
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -601,7 +601,7 @@ public interface ModelContainerSpecOrBuilder
    * does not occur.
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -631,7 +631,7 @@ public interface ModelContainerSpecOrBuilder
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -660,7 +660,7 @@ public interface ModelContainerSpecOrBuilder
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -689,7 +689,7 @@ public interface ModelContainerSpecOrBuilder
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -718,7 +718,7 @@ public interface ModelContainerSpecOrBuilder
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -747,7 +747,7 @@ public interface ModelContainerSpecOrBuilder
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
-   * API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#container-v1-core).
+   * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
    * <code>

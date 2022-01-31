@@ -340,6 +340,71 @@ public interface DeployedIndexOrBuilder
    *
    *
    * <pre>
+   * Optional. A description of resources that are dedicated to the DeployedIndex, and
+   * that need a higher degree of manual configuration.
+   * If min_replica_count is not set, the default value is 2 (we don't provide
+   * SLA when min_replica_count=1). If max_replica_count is not set, the
+   * default value is min_replica_count. The max allowed replica count is
+   * 1000.
+   * Available machine types:
+   * n1-standard-16
+   * n1-standard-32
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dedicatedResources field is set.
+   */
+  boolean hasDedicatedResources();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of resources that are dedicated to the DeployedIndex, and
+   * that need a higher degree of manual configuration.
+   * If min_replica_count is not set, the default value is 2 (we don't provide
+   * SLA when min_replica_count=1). If max_replica_count is not set, the
+   * default value is min_replica_count. The max allowed replica count is
+   * 1000.
+   * Available machine types:
+   * n1-standard-16
+   * n1-standard-32
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dedicatedResources.
+   */
+  com.google.cloud.aiplatform.v1.DedicatedResources getDedicatedResources();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of resources that are dedicated to the DeployedIndex, and
+   * that need a higher degree of manual configuration.
+   * If min_replica_count is not set, the default value is 2 (we don't provide
+   * SLA when min_replica_count=1). If max_replica_count is not set, the
+   * default value is min_replica_count. The max allowed replica count is
+   * 1000.
+   * Available machine types:
+   * n1-standard-16
+   * n1-standard-32
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DedicatedResources dedicated_resources = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.DedicatedResourcesOrBuilder getDedicatedResourcesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. If true, private endpoint's access logs are sent to StackDriver Logging.
    * These logs are like standard server access logs, containing
    * information like timestamp and latency for each MatchRequest.

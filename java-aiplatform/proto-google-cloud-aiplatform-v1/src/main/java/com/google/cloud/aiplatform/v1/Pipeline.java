@@ -93,18 +93,18 @@ public final class Pipeline {
   static {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/aiplatform/v1/pipeline_jo"
-          + "b.proto\022\032google.cloud.aiplatform.v1\032\037goo"
-          + "gle/api/field_behavior.proto\032\031google/api"
-          + "/resource.proto\032)google/cloud/aiplatform"
-          + "/v1/artifact.proto\032(google/cloud/aiplatf"
-          + "orm/v1/context.proto\0320google/cloud/aipla"
-          + "tform/v1/encryption_spec.proto\032*google/c"
-          + "loud/aiplatform/v1/execution.proto\032/goog"
-          + "le/cloud/aiplatform/v1/pipeline_state.pr"
-          + "oto\032&google/cloud/aiplatform/v1/value.pr"
-          + "oto\032\034google/protobuf/struct.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\032\027google/rpc/s"
-          + "tatus.proto\032\034google/api/annotations.prot"
+          + "b.proto\022\032google.cloud.aiplatform.v1\032\034goo"
+          + "gle/api/annotations.proto\032\037google/api/fi"
+          + "eld_behavior.proto\032\031google/api/resource."
+          + "proto\032)google/cloud/aiplatform/v1/artifa"
+          + "ct.proto\032(google/cloud/aiplatform/v1/con"
+          + "text.proto\0320google/cloud/aiplatform/v1/e"
+          + "ncryption_spec.proto\032*google/cloud/aipla"
+          + "tform/v1/execution.proto\032/google/cloud/a"
+          + "iplatform/v1/pipeline_state.proto\032&googl"
+          + "e/cloud/aiplatform/v1/value.proto\032\034googl"
+          + "e/protobuf/struct.proto\032\037google/protobuf"
+          + "/timestamp.proto\032\027google/rpc/status.prot"
           + "o\"\326\n\n\013PipelineJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014"
           + "display_name\030\002 \001(\t\0224\n\013create_time\030\003 \001(\0132"
           + "\032.google.protobuf.TimestampB\003\340A\003\0223\n\nstar"
@@ -206,6 +206,7 @@ public final class Pipeline {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.ArtifactProto.getDescriptor(),
@@ -217,7 +218,6 @@ public final class Pipeline {
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_PipelineJob_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -381,6 +381,7 @@ public final class Pipeline {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.ArtifactProto.getDescriptor();
@@ -392,7 +393,6 @@ public final class Pipeline {
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

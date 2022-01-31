@@ -73,9 +73,9 @@ public final class IoProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/aiplatform/v1beta1/io.pro"
-          + "to\022\037google.cloud.aiplatform.v1beta1\032\037goo"
-          + "gle/api/field_behavior.proto\032\034google/api"
-          + "/annotations.proto\"Q\n\nAvroSource\022C\n\ngcs_"
+          + "to\022\037google.cloud.aiplatform.v1beta1\032\034goo"
+          + "gle/api/annotations.proto\032\037google/api/fi"
+          + "eld_behavior.proto\"Q\n\nAvroSource\022C\n\ngcs_"
           + "source\030\001 \001(\0132*.google.cloud.aiplatform.v"
           + "1beta1.GcsSourceB\003\340A\002\"P\n\tCsvSource\022C\n\ngc"
           + "s_source\030\001 \001(\0132*.google.cloud.aiplatform"
@@ -102,8 +102,8 @@ public final class IoProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_AvroSource_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -182,8 +182,8 @@ public final class IoProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

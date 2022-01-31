@@ -42,10 +42,10 @@ public final class MetadataSchemaProto {
     java.lang.String[] descriptorData = {
       "\n5google/cloud/aiplatform/v1beta1/metada"
           + "ta_schema.proto\022\037google.cloud.aiplatform"
-          + ".v1beta1\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\032\037google/pro"
-          + "tobuf/timestamp.proto\032\034google/api/annota"
-          + "tions.proto\"\205\004\n\016MetadataSchema\022\021\n\004name\030\001"
+          + ".v1beta1\032\034google/api/annotations.proto\032\037"
+          + "google/api/field_behavior.proto\032\031google/"
+          + "api/resource.proto\032\037google/protobuf/time"
+          + "stamp.proto\"\205\004\n\016MetadataSchema\022\021\n\004name\030\001"
           + " \001(\tB\003\340A\003\022\026\n\016schema_version\030\002 \001(\t\022\023\n\006sch"
           + "ema\030\003 \001(\tB\003\340A\002\022W\n\013schema_type\030\004 \001(\0162B.go"
           + "ogle.cloud.aiplatform.v1beta1.MetadataSc"
@@ -70,10 +70,10 @@ public final class MetadataSchemaProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_MetadataSchema_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -89,10 +89,10 @@ public final class MetadataSchemaProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -58,18 +58,18 @@ public final class EndpointProto {
     java.lang.String[] descriptorData = {
       "\n.google/cloud/aiplatform/v1beta1/endpoi"
           + "nt.proto\022\037google.cloud.aiplatform.v1beta"
-          + "1\032\037google/api/field_behavior.proto\032\031goog"
-          + "le/api/resource.proto\0325google/cloud/aipl"
-          + "atform/v1beta1/encryption_spec.proto\0321go"
-          + "ogle/cloud/aiplatform/v1beta1/explanatio"
-          + "n.proto\032(google/cloud/aiplatform/v1beta1"
-          + "/io.proto\0327google/cloud/aiplatform/v1bet"
-          + "a1/machine_resources.proto\032Egoogle/cloud"
-          + "/aiplatform/v1beta1/model_deployment_mon"
-          + "itoring_job.proto\0326google/cloud/aiplatfo"
-          + "rm/v1beta1/model_monitoring.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\032\034google/api/a"
-          + "nnotations.proto\"\214\007\n\010Endpoint\022\021\n\004name\030\001 "
+          + "1\032\034google/api/annotations.proto\032\037google/"
+          + "api/field_behavior.proto\032\031google/api/res"
+          + "ource.proto\0325google/cloud/aiplatform/v1b"
+          + "eta1/encryption_spec.proto\0321google/cloud"
+          + "/aiplatform/v1beta1/explanation.proto\032(g"
+          + "oogle/cloud/aiplatform/v1beta1/io.proto\032"
+          + "7google/cloud/aiplatform/v1beta1/machine"
+          + "_resources.proto\032Egoogle/cloud/aiplatfor"
+          + "m/v1beta1/model_deployment_monitoring_jo"
+          + "b.proto\0326google/cloud/aiplatform/v1beta1"
+          + "/model_monitoring.proto\032\037google/protobuf"
+          + "/timestamp.proto\"\214\007\n\010Endpoint\022\021\n\004name\030\001 "
           + "\001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022\023\n\013d"
           + "escription\030\003 \001(\t\022L\n\017deployed_models\030\004 \003("
           + "\0132..google.cloud.aiplatform.v1beta1.Depl"
@@ -123,6 +123,7 @@ public final class EndpointProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
@@ -132,7 +133,6 @@ public final class EndpointProto {
               com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJobProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_Endpoint_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -204,6 +204,7 @@ public final class EndpointProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
@@ -213,7 +214,6 @@ public final class EndpointProto {
     com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJobProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

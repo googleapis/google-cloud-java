@@ -41,10 +41,10 @@ public final class SpecialistPoolProto {
   static {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/aiplatform/v1/specialist_"
-          + "pool.proto\022\032google.cloud.aiplatform.v1\032\037"
-          + "google/api/field_behavior.proto\032\031google/"
-          + "api/resource.proto\032\034google/api/annotatio"
-          + "ns.proto\"\316\002\n\016SpecialistPool\022\021\n\004name\030\001 \001("
+          + "pool.proto\022\032google.cloud.aiplatform.v1\032\034"
+          + "google/api/annotations.proto\032\037google/api"
+          + "/field_behavior.proto\032\031google/api/resour"
+          + "ce.proto\"\316\002\n\016SpecialistPool\022\021\n\004name\030\001 \001("
           + "\tB\003\340A\002\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022&\n\031spe"
           + "cialist_managers_count\030\003 \001(\005B\003\340A\003\022!\n\031spe"
           + "cialist_manager_emails\030\004 \003(\t\022\'\n\032pending_"
@@ -64,9 +64,9 @@ public final class SpecialistPoolProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_SpecialistPool_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -87,9 +87,9 @@ public final class SpecialistPoolProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

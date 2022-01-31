@@ -90,13 +90,13 @@ public final class MigrationServiceProto {
     java.lang.String[] descriptorData = {
       "\n7google/cloud/aiplatform/v1beta1/migrat"
           + "ion_service.proto\022\037google.cloud.aiplatfo"
-          + "rm.v1beta1\032-google/cloud/aiplatform/v1be"
-          + "ta1/dataset.proto\032+google/cloud/aiplatfo"
-          + "rm/v1beta1/model.proto\032\034google/api/annot"
-          + "ations.proto\032\027google/api/client.proto\032\037g"
-          + "oogle/api/field_behavior.proto\032\031google/a"
-          + "pi/resource.proto\0329google/cloud/aiplatfo"
-          + "rm/v1beta1/migratable_resource.proto\032/go"
+          + "rm.v1beta1\032\034google/api/annotations.proto"
+          + "\032\027google/api/client.proto\032\037google/api/fi"
+          + "eld_behavior.proto\032\031google/api/resource."
+          + "proto\032-google/cloud/aiplatform/v1beta1/d"
+          + "ataset.proto\0329google/cloud/aiplatform/v1"
+          + "beta1/migratable_resource.proto\032+google/"
+          + "cloud/aiplatform/v1beta1/model.proto\032/go"
           + "ogle/cloud/aiplatform/v1beta1/operation."
           + "proto\032#google/longrunning/operations.pro"
           + "to\032\027google/rpc/status.proto\"\224\001\n SearchMi"
@@ -197,13 +197,13 @@ public final class MigrationServiceProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.cloud.aiplatform.v1beta1.DatasetProto.getDescriptor(),
-              com.google.cloud.aiplatform.v1beta1.ModelProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.DatasetProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.MigratableResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.ModelProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
@@ -339,13 +339,13 @@ public final class MigrationServiceProto {
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.cloud.aiplatform.v1beta1.DatasetProto.getDescriptor();
-    com.google.cloud.aiplatform.v1beta1.ModelProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.DatasetProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.MigratableResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.ModelProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();

@@ -42,8 +42,8 @@ public final class CompletionStatsProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1/completion_"
           + "stats.proto\022\032google.cloud.aiplatform.v1\032"
-          + "\037google/api/field_behavior.proto\032\027google"
-          + "/rpc/status.proto\032\034google/api/annotation"
+          + "\034google/api/annotations.proto\032\037google/ap"
+          + "i/field_behavior.proto\032\027google/rpc/statu"
           + "s.proto\"j\n\017CompletionStats\022\035\n\020successful"
           + "_count\030\001 \001(\003B\003\340A\003\022\031\n\014failed_count\030\002 \001(\003B"
           + "\003\340A\003\022\035\n\020incomplete_count\030\003 \001(\003B\003\340A\003B\330\001\n\036"
@@ -58,9 +58,9 @@ public final class CompletionStatsProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_CompletionStats_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -75,9 +75,9 @@ public final class CompletionStatsProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -46,15 +46,15 @@ public final class HyperparameterTuningJobProto {
     java.lang.String[] descriptorData = {
       "\n:google/cloud/aiplatform/v1/hyperparame"
           + "ter_tuning_job.proto\022\032google.cloud.aipla"
-          + "tform.v1\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\032+google/clo"
-          + "ud/aiplatform/v1/custom_job.proto\0320googl"
-          + "e/cloud/aiplatform/v1/encryption_spec.pr"
-          + "oto\032*google/cloud/aiplatform/v1/job_stat"
-          + "e.proto\032&google/cloud/aiplatform/v1/stud"
-          + "y.proto\032\037google/protobuf/timestamp.proto"
-          + "\032\027google/rpc/status.proto\032\034google/api/an"
-          + "notations.proto\"\373\007\n\027HyperparameterTuning"
+          + "tform.v1\032\034google/api/annotations.proto\032\037"
+          + "google/api/field_behavior.proto\032\031google/"
+          + "api/resource.proto\032+google/cloud/aiplatf"
+          + "orm/v1/custom_job.proto\0320google/cloud/ai"
+          + "platform/v1/encryption_spec.proto\032*googl"
+          + "e/cloud/aiplatform/v1/job_state.proto\032&g"
+          + "oogle/cloud/aiplatform/v1/study.proto\032\037g"
+          + "oogle/protobuf/timestamp.proto\032\027google/r"
+          + "pc/status.proto\"\373\007\n\027HyperparameterTuning"
           + "Job\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002"
           + " \001(\tB\003\340A\002\022>\n\nstudy_spec\030\004 \001(\0132%.google.c"
           + "loud.aiplatform.v1.StudySpecB\003\340A\002\022\034\n\017max"
@@ -91,6 +91,7 @@ public final class HyperparameterTuningJobProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.CustomJobProto.getDescriptor(),
@@ -99,7 +100,6 @@ public final class HyperparameterTuningJobProto {
               com.google.cloud.aiplatform.v1.StudyProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_HyperparameterTuningJob_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -140,6 +140,7 @@ public final class HyperparameterTuningJobProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.CustomJobProto.getDescriptor();
@@ -148,7 +149,6 @@ public final class HyperparameterTuningJobProto {
     com.google.cloud.aiplatform.v1.StudyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

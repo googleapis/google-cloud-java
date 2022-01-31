@@ -46,8 +46,8 @@ public final class FeaturestoreMonitoringProto {
     java.lang.String[] descriptorData = {
       "\n=google/cloud/aiplatform/v1beta1/featur"
           + "estore_monitoring.proto\022\037google.cloud.ai"
-          + "platform.v1beta1\032\036google/protobuf/durati"
-          + "on.proto\032\034google/api/annotations.proto\"\216"
+          + "platform.v1beta1\032\034google/api/annotations"
+          + ".proto\032\036google/protobuf/duration.proto\"\216"
           + "\002\n\034FeaturestoreMonitoringConfig\022i\n\021snaps"
           + "hot_analysis\030\001 \001(\0132N.google.cloud.aiplat"
           + "form.v1beta1.FeaturestoreMonitoringConfi"
@@ -67,8 +67,8 @@ public final class FeaturestoreMonitoringProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -88,8 +88,8 @@ public final class FeaturestoreMonitoringProto {
             new java.lang.String[] {
               "Disabled", "MonitoringInterval", "MonitoringIntervalDays",
             });
-    com.google.protobuf.DurationProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

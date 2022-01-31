@@ -42,9 +42,9 @@ public final class DeployedModelNameProto {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/aiplatform/v1/deployed_mo"
           + "del_ref.proto\022\032google.cloud.aiplatform.v"
-          + "1\032\037google/api/field_behavior.proto\032\031goog"
-          + "le/api/resource.proto\032\034google/api/annota"
-          + "tions.proto\"p\n\020DeployedModelRef\022<\n\010endpo"
+          + "1\032\034google/api/annotations.proto\032\037google/"
+          + "api/field_behavior.proto\032\031google/api/res"
+          + "ource.proto\"p\n\020DeployedModelRef\022<\n\010endpo"
           + "int\030\001 \001(\tB*\340A\005\372A$\n\"aiplatform.googleapis"
           + ".com/Endpoint\022\036\n\021deployed_model_id\030\002 \001(\t"
           + "B\003\340A\005B\332\001\n\036com.google.cloud.aiplatform.v1"
@@ -58,9 +58,9 @@ public final class DeployedModelNameProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_DeployedModelRef_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -76,9 +76,9 @@ public final class DeployedModelNameProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

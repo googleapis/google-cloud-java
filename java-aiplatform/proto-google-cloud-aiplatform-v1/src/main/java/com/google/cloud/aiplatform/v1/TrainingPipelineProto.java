@@ -70,18 +70,18 @@ public final class TrainingPipelineProto {
     java.lang.String[] descriptorData = {
       "\n2google/cloud/aiplatform/v1/training_pi"
           + "peline.proto\022\032google.cloud.aiplatform.v1"
-          + "\032\037google/api/field_behavior.proto\032\031googl"
-          + "e/api/resource.proto\0320google/cloud/aipla"
-          + "tform/v1/encryption_spec.proto\032#google/c"
-          + "loud/aiplatform/v1/io.proto\0322google/clou"
-          + "d/aiplatform/v1/machine_resources.proto\032"
-          + "?google/cloud/aiplatform/v1/manual_batch"
-          + "_tuning_parameters.proto\032&google/cloud/a"
-          + "iplatform/v1/model.proto\032/google/cloud/a"
-          + "iplatform/v1/pipeline_state.proto\032\034googl"
-          + "e/protobuf/struct.proto\032\037google/protobuf"
-          + "/timestamp.proto\032\027google/rpc/status.prot"
-          + "o\032\034google/api/annotations.proto\"\334\007\n\020Trai"
+          + "\032\034google/api/annotations.proto\032\037google/a"
+          + "pi/field_behavior.proto\032\031google/api/reso"
+          + "urce.proto\0320google/cloud/aiplatform/v1/e"
+          + "ncryption_spec.proto\032#google/cloud/aipla"
+          + "tform/v1/io.proto\0322google/cloud/aiplatfo"
+          + "rm/v1/machine_resources.proto\032?google/cl"
+          + "oud/aiplatform/v1/manual_batch_tuning_pa"
+          + "rameters.proto\032&google/cloud/aiplatform/"
+          + "v1/model.proto\032/google/cloud/aiplatform/"
+          + "v1/pipeline_state.proto\032\034google/protobuf"
+          + "/struct.proto\032\037google/protobuf/timestamp"
+          + ".proto\032\027google/rpc/status.proto\"\334\007\n\020Trai"
           + "ningPipeline\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014displ"
           + "ay_name\030\002 \001(\tB\003\340A\002\022F\n\021input_data_config\030"
           + "\003 \001(\0132+.google.cloud.aiplatform.v1.Input"
@@ -145,6 +145,7 @@ public final class TrainingPipelineProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor(),
@@ -156,7 +157,6 @@ public final class TrainingPipelineProto {
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_TrainingPipeline_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -255,6 +255,7 @@ public final class TrainingPipelineProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor();
@@ -266,7 +267,6 @@ public final class TrainingPipelineProto {
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
