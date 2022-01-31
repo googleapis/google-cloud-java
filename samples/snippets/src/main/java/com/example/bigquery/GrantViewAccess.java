@@ -22,7 +22,6 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Dataset;
-import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Table;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,8 +43,8 @@ public class GrantViewAccess {
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-      Dataset srcDataset = bigquery.getDataset(DatasetId.of(srcDatasetId));
-      Dataset viewDataset = bigquery.getDataset(DatasetId.of(viewDatasetId));
+      Dataset srcDataset = bigquery.getDataset(srcDatasetId);
+      Dataset viewDataset = bigquery.getDataset(viewDatasetId);
       Table view = viewDataset.get(viewId);
       // First, we'll add a group to the ACL for the dataset containing the view. This will allow
       // users within that group to query the view, but they must have direct access to any tables

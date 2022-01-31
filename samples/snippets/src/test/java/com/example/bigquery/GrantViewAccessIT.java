@@ -36,6 +36,7 @@ public class GrantViewAccessIT {
 
   private final Logger log = Logger.getLogger(this.getClass().getName());
   private String datasetName;
+  private String viewDatasetName;
   private String tableName;
   private String viewName;
   private ByteArrayOutputStream bout;
@@ -43,7 +44,6 @@ public class GrantViewAccessIT {
   private PrintStream originalPrintStream;
 
   private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
-  private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
 
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
@@ -56,7 +56,6 @@ public class GrantViewAccessIT {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_CLOUD_PROJECT");
-    requireEnvVar("BIGQUERY_DATASET_NAME");
   }
 
   @Before
@@ -68,30 +67,32 @@ public class GrantViewAccessIT {
 
     // create a temporary dataset, table and view to be deleted.
     datasetName = "MY_DATASET_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
+    viewDatasetName = "MY_VIEW_DATASET_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     tableName = "MY_TABLE_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     viewName = "MY_VIEW_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
 
     CreateDataset.createDataset(datasetName);
+    CreateDataset.createDataset(viewDatasetName);
 
     Schema schema =
         Schema.of(
             Field.of("timestampField", StandardSQLTypeName.TIMESTAMP),
             Field.of("stringField", StandardSQLTypeName.STRING),
             Field.of("booleanField", StandardSQLTypeName.BOOL));
-    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
+    CreateTable.createTable(viewDatasetName, tableName, schema);
 
     String query =
         String.format(
             "SELECT timestampField, stringField, booleanField FROM %s.%s",
-            BIGQUERY_DATASET_NAME, tableName);
-    CreateView.createView(BIGQUERY_DATASET_NAME, viewName, query);
+            viewDatasetName, tableName);
+    CreateView.createView(viewDatasetName, viewName, query);
   }
 
   @After
   public void tearDown() {
     // Clean up
-    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, viewName);
-    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
+    DeleteTable.deleteTable(viewDatasetName, viewName);
+    DeleteTable.deleteTable(viewDatasetName, tableName);
     DeleteDataset.deleteDataset(PROJECT_ID, datasetName);
     // restores print statements in the original method
     System.out.flush();
@@ -101,7 +102,7 @@ public class GrantViewAccessIT {
 
   @Test
   public void testGrantViewAccess() {
-    GrantViewAccess.grantViewAccess(datasetName, BIGQUERY_DATASET_NAME, viewName);
+    GrantViewAccess.grantViewAccess(datasetName, viewDatasetName, viewName);
     assertThat(bout.toString()).contains("Grant view access successfully");
   }
 }
