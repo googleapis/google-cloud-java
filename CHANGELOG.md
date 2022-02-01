@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.2.3](https://github.com/googleapis/java-datastore/compare/v2.2.2...v2.2.3) (2022-02-01)
+
+
+### Dependencies
+
+* update dependency org.easymock:easymock to v4 ([#614](https://github.com/googleapis/java-datastore/issues/614)) ([a24215c](https://github.com/googleapis/java-datastore/commit/a24215c650c8cb2eb20bbc99f0ccc4c2fd91ac9a))
+* update shared dependencies to 2.7.0 and remove google-oauth-client from dependency management ([#629](https://github.com/googleapis/java-datastore/issues/629)) ([298e0b0](https://github.com/googleapis/java-datastore/commit/298e0b0651355649629888dcbacafc2970df4167))
+
 ### [2.2.2](https://www.github.com/googleapis/java-datastore/compare/v2.2.1...v2.2.2) (2022-01-07)
 
 
