@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.7.1](https://github.com/googleapis/java-bigquery/compare/v2.7.0...v2.7.1) (2022-02-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#1813](https://github.com/googleapis/java-bigquery/issues/1813)) ([f2cfc8b](https://github.com/googleapis/java-bigquery/commit/f2cfc8bc5f97359a69ac3647919670bd714ac953))
+
+
+### Documentation
+
+* **samples:** fix CopyMultipleTables sample IT failure and improve a few other samples ([#1817](https://github.com/googleapis/java-bigquery/issues/1817)) ([e12122c](https://github.com/googleapis/java-bigquery/commit/e12122c4472ed4c3d00fc8c7515be210bbf68df3))
+* **samples:** fix GrantViewAccess sample IT failure ([#1816](https://github.com/googleapis/java-bigquery/issues/1816)) ([d48ae41](https://github.com/googleapis/java-bigquery/commit/d48ae41d1437bd9246d973a9f0b56f230a1eea68))
+
 ## [2.7.0](https://github.com/googleapis/java-bigquery/compare/v2.6.2...v2.7.0) (2022-01-27)
 
 
