@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.5.2](https://github.com/googleapis/java-bigtable/compare/v2.5.1...v2.5.2) (2022-01-31)
+
+
+### Bug Fixes
+
+* UpdateAppProfileRequest equals and hashcode should build proto ([#1142](https://github.com/googleapis/java-bigtable/issues/1142)) ([c9f1ed8](https://github.com/googleapis/java-bigtable/commit/c9f1ed8a5fdf44487a8c56388b35067ecfc4daea))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-bigtable/issues/1339)) ([#1147](https://github.com/googleapis/java-bigtable/issues/1147)) ([9bfcccf](https://github.com/googleapis/java-bigtable/commit/9bfcccfd76d2a03412cf9fe8c115874f15a95c57))
+* update actions/github-script action to v5 ([#1146](https://github.com/googleapis/java-bigtable/issues/1146)) ([9b2c918](https://github.com/googleapis/java-bigtable/commit/9b2c918c3fad38d3b26d141b53f6dc037a23bed7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#1150](https://github.com/googleapis/java-bigtable/issues/1150)) ([744e483](https://github.com/googleapis/java-bigtable/commit/744e4830238b6ebe7bab6115ff26600b0c150b62))
+
 ### [2.5.1](https://www.github.com/googleapis/java-bigtable/compare/v2.5.0...v2.5.1) (2022-01-07)
 
 
