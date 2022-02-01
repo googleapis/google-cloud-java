@@ -17,6 +17,8 @@
 package com.example.bigquery;
 
 // [START bigquery_query_external_bigtable_perm]
+
+import com.google.api.client.util.Base64;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -29,7 +31,6 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TableResult;
 import com.google.common.collect.ImmutableList;
-import org.apache.commons.codec.binary.Base64;
 
 // Sample to queries an external bigtable data source using a permanent table
 public class QueryExternalBigtablePerm {

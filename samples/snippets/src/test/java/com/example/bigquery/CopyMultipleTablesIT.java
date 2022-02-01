@@ -19,6 +19,9 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
@@ -32,22 +35,27 @@ import org.junit.Test;
 public class CopyMultipleTablesIT {
 
   private final Logger log = Logger.getLogger(this.getClass().getName());
+  private String datasetName;
   private String tableName;
+  private String sourceTable1Name;
+  private String sourceTable2Name;
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
 
-  private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
+  private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
 
-  private static void requireEnvVar(String varName) {
+  private static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
     assertNotNull(
         "Environment variable " + varName + " is required to perform these tests.",
         System.getenv(varName));
+    return value;
   }
 
   @BeforeClass
   public static void checkRequirements() {
-    requireEnvVar("BIGQUERY_DATASET_NAME");
+    requireEnvVar("GOOGLE_CLOUD_PROJECT");
   }
 
   @Before
@@ -56,15 +64,30 @@ public class CopyMultipleTablesIT {
     out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
+
     // Create a new destination table for each test since existing table cannot be overwritten
+    datasetName = "MY_DATASET_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     tableName = "COPY_MULTIPLE_TABLE_TEST" + UUID.randomUUID().toString().substring(0, 8);
-    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, null);
+    sourceTable1Name =
+        "COPY_MULTIPLE_TABLE_SOURCE1_TEST" + UUID.randomUUID().toString().substring(0, 8);
+    sourceTable2Name =
+        "COPY_MULTIPLE_TABLE_SOURCE2_TEST" + UUID.randomUUID().toString().substring(0, 8);
+    CreateDataset.createDataset(datasetName);
+
+    Schema schema =
+        Schema.of(
+            Field.of("timestampField", StandardSQLTypeName.TIMESTAMP),
+            Field.of("stringField", StandardSQLTypeName.STRING),
+            Field.of("booleanField", StandardSQLTypeName.BOOL));
+    CreateTable.createTable(datasetName, tableName, schema);
+    CreateTable.createTable(datasetName, sourceTable1Name, schema);
+    CreateTable.createTable(datasetName, sourceTable2Name, schema);
   }
 
   @After
   public void tearDown() {
     // Clean up
-    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
+    DeleteDataset.deleteDataset(PROJECT_ID, datasetName);
     // restores print statements in the original method
     System.out.flush();
     System.setOut(originalPrintStream);
@@ -73,7 +96,8 @@ public class CopyMultipleTablesIT {
 
   @Test
   public void testCopyMultipleTables() {
-    CopyMultipleTables.copyMultipleTables(BIGQUERY_DATASET_NAME, tableName);
+    CopyMultipleTables.copyMultipleTables(
+        datasetName, tableName, sourceTable1Name, sourceTable2Name);
     assertThat(bout.toString()).contains("Table copied successfully.");
   }
 }

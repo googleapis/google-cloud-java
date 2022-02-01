@@ -32,25 +32,30 @@ public class CopyMultipleTables {
     // TODO(developer): Replace these variables before running the sample.
     String destinationDatasetName = "MY_DATASET_NAME";
     String destinationTableId = "MY_TABLE_NAME";
-    copyMultipleTables(destinationDatasetName, destinationTableId);
+    String sourceTable1Id = "MY_SOURCE_TABLE_1";
+    String sourceTable2Id = "MY_SOURCE_TABLE_2";
+    copyMultipleTables(destinationDatasetName, destinationTableId, sourceTable1Id, sourceTable2Id);
   }
 
-  public static void copyMultipleTables(String destinationDatasetName, String destinationTableId) {
+  public static void copyMultipleTables(
+      String destinationDatasetName,
+      String destinationTableId,
+      String sourceTable1Id,
+      String sourceTable2Id) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
       TableId destinationTable = TableId.of(destinationDatasetName, destinationTableId);
+      TableId sourceTable1 = TableId.of(destinationDatasetName, sourceTable1Id);
+      TableId sourceTable2 = TableId.of(destinationDatasetName, sourceTable2Id);
 
       // For more information on CopyJobConfiguration see:
       // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigquery/JobConfiguration.html
       CopyJobConfiguration configuration =
           CopyJobConfiguration.newBuilder(
-                  destinationTable,
-                  Arrays.asList(
-                      TableId.of(destinationDatasetName, "table1"),
-                      TableId.of(destinationDatasetName, "table2")))
+                  destinationTable, Arrays.asList(sourceTable1, sourceTable2))
               .build();
 
       // For more information on Job see:
