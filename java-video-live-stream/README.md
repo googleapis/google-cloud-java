@@ -1,6 +1,6 @@
-# Google Cloud Live Stream Client for Java
+# Google Live Stream API Client for Java
 
-Java idiomatic client for [Cloud Live Stream][product-docs].
+Java idiomatic client for [Live Stream API][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -44,14 +44,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Cloud Live Stream APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Cloud Live Stream API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Live Stream API APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Live Stream API API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Live Stream [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Cloud Live Stream.
+You will need a [Google Cloud Platform Console][developer-console] project with the Live Stream API [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Live Stream API.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -61,13 +61,13 @@ You will need to [enable billing][enable-billing] to use Google Cloud Live Strea
 You'll need to obtain the `google-cloud-livestream` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-livestream` as a dependency in your code.
 
-## About Cloud Live Stream
+## About Live Stream API
 
 
-[Cloud Live Stream][product-docs] transcodes mezzanine live signals into direct-to-consumer streaming formats, including Dynamic Adaptive Streaming over HTTP (DASH/MPEG-DASH), and HTTP Live Streaming (HLS), for multiple device platforms.
+[Live Stream API][product-docs] transcodes mezzanine live signals into direct-to-consumer streaming formats, including Dynamic Adaptive Streaming over HTTP (DASH/MPEG-DASH), and HTTP Live Streaming (HLS), for multiple device platforms.
 
-See the [Cloud Live Stream client library docs][javadocs] to learn how to
-use this Cloud Live Stream Client Library.
+See the [Live Stream API client library docs][javadocs] to learn how to
+use this Live Stream API Client Library.
 
 
 
@@ -80,7 +80,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Cloud Live Stream uses gRPC for the transport layer.
+Live Stream API uses gRPC for the transport layer.
 
 ## Supported Java Versions
 
@@ -163,7 +163,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/livestream
+[product-docs]: https://cloud.google.com/livestream/
 [javadocs]: https://googleapis.dev/java/google-cloud-livestream/latest/index.html
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-livestream/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-livestream/java7.html
