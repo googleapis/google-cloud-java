@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.head_ref, 'release-please')
     steps:
-    - uses: actions/github-script@v3
+    - uses: actions/github-script@v5
       with:
         github-token: ${{secrets.YOSHI_APPROVER_TOKEN}}
         debug: true
