@@ -332,6 +332,22 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               readReplicasMode_ = rawValue;
               break;
             }
+          case 298:
+            {
+              com.google.cloud.redis.v1beta1.PersistenceConfig.Builder subBuilder = null;
+              if (persistenceConfig_ != null) {
+                subBuilder = persistenceConfig_.toBuilder();
+              }
+              persistenceConfig_ =
+                  input.readMessage(
+                      com.google.cloud.redis.v1beta1.PersistenceConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(persistenceConfig_);
+                persistenceConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -2881,6 +2897,60 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int PERSISTENCE_CONFIG_FIELD_NUMBER = 37;
+  private com.google.cloud.redis.v1beta1.PersistenceConfig persistenceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence configuration parameters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the persistenceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPersistenceConfig() {
+    return persistenceConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence configuration parameters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The persistenceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1beta1.PersistenceConfig getPersistenceConfig() {
+    return persistenceConfig_ == null
+        ? com.google.cloud.redis.v1beta1.PersistenceConfig.getDefaultInstance()
+        : persistenceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence configuration parameters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1beta1.PersistenceConfigOrBuilder getPersistenceConfigOrBuilder() {
+    return getPersistenceConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2986,6 +3056,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode.READ_REPLICAS_MODE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(35, readReplicasMode_);
+    }
+    if (persistenceConfig_ != null) {
+      output.writeMessage(37, getPersistenceConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -3105,6 +3178,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(35, readReplicasMode_);
     }
+    if (persistenceConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(37, getPersistenceConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3158,6 +3234,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getReadEndpoint().equals(other.getReadEndpoint())) return false;
     if (getReadEndpointPort() != other.getReadEndpointPort()) return false;
     if (readReplicasMode_ != other.readReplicasMode_) return false;
+    if (hasPersistenceConfig() != other.hasPersistenceConfig()) return false;
+    if (hasPersistenceConfig()) {
+      if (!getPersistenceConfig().equals(other.getPersistenceConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -3241,6 +3321,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getReadEndpointPort();
     hash = (37 * hash) + READ_REPLICAS_MODE_FIELD_NUMBER;
     hash = (53 * hash) + readReplicasMode_;
+    if (hasPersistenceConfig()) {
+      hash = (37 * hash) + PERSISTENCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPersistenceConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3489,6 +3573,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
       readReplicasMode_ = 0;
 
+      if (persistenceConfigBuilder_ == null) {
+        persistenceConfig_ = null;
+      } else {
+        persistenceConfig_ = null;
+        persistenceConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -3576,6 +3666,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       result.readEndpoint_ = readEndpoint_;
       result.readEndpointPort_ = readEndpointPort_;
       result.readReplicasMode_ = readReplicasMode_;
+      if (persistenceConfigBuilder_ == null) {
+        result.persistenceConfig_ = persistenceConfig_;
+      } else {
+        result.persistenceConfig_ = persistenceConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -3767,6 +3862,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.readReplicasMode_ != 0) {
         setReadReplicasModeValue(other.getReadReplicasModeValue());
+      }
+      if (other.hasPersistenceConfig()) {
+        mergePersistenceConfig(other.getPersistenceConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7921,6 +8019,211 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       readReplicasMode_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.redis.v1beta1.PersistenceConfig persistenceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.v1beta1.PersistenceConfig,
+            com.google.cloud.redis.v1beta1.PersistenceConfig.Builder,
+            com.google.cloud.redis.v1beta1.PersistenceConfigOrBuilder>
+        persistenceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the persistenceConfig field is set.
+     */
+    public boolean hasPersistenceConfig() {
+      return persistenceConfigBuilder_ != null || persistenceConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The persistenceConfig.
+     */
+    public com.google.cloud.redis.v1beta1.PersistenceConfig getPersistenceConfig() {
+      if (persistenceConfigBuilder_ == null) {
+        return persistenceConfig_ == null
+            ? com.google.cloud.redis.v1beta1.PersistenceConfig.getDefaultInstance()
+            : persistenceConfig_;
+      } else {
+        return persistenceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPersistenceConfig(com.google.cloud.redis.v1beta1.PersistenceConfig value) {
+      if (persistenceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        persistenceConfig_ = value;
+        onChanged();
+      } else {
+        persistenceConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPersistenceConfig(
+        com.google.cloud.redis.v1beta1.PersistenceConfig.Builder builderForValue) {
+      if (persistenceConfigBuilder_ == null) {
+        persistenceConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        persistenceConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePersistenceConfig(com.google.cloud.redis.v1beta1.PersistenceConfig value) {
+      if (persistenceConfigBuilder_ == null) {
+        if (persistenceConfig_ != null) {
+          persistenceConfig_ =
+              com.google.cloud.redis.v1beta1.PersistenceConfig.newBuilder(persistenceConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          persistenceConfig_ = value;
+        }
+        onChanged();
+      } else {
+        persistenceConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPersistenceConfig() {
+      if (persistenceConfigBuilder_ == null) {
+        persistenceConfig_ = null;
+        onChanged();
+      } else {
+        persistenceConfig_ = null;
+        persistenceConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.v1beta1.PersistenceConfig.Builder getPersistenceConfigBuilder() {
+
+      onChanged();
+      return getPersistenceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.v1beta1.PersistenceConfigOrBuilder
+        getPersistenceConfigOrBuilder() {
+      if (persistenceConfigBuilder_ != null) {
+        return persistenceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return persistenceConfig_ == null
+            ? com.google.cloud.redis.v1beta1.PersistenceConfig.getDefaultInstance()
+            : persistenceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.v1beta1.PersistenceConfig,
+            com.google.cloud.redis.v1beta1.PersistenceConfig.Builder,
+            com.google.cloud.redis.v1beta1.PersistenceConfigOrBuilder>
+        getPersistenceConfigFieldBuilder() {
+      if (persistenceConfigBuilder_ == null) {
+        persistenceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.v1beta1.PersistenceConfig,
+                com.google.cloud.redis.v1beta1.PersistenceConfig.Builder,
+                com.google.cloud.redis.v1beta1.PersistenceConfigOrBuilder>(
+                getPersistenceConfig(), getParentForChildren(), isClean());
+        persistenceConfig_ = null;
+      }
+      return persistenceConfigBuilder_;
     }
 
     @java.lang.Override

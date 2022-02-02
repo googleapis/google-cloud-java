@@ -1057,4 +1057,45 @@ public interface InstanceOrBuilder
    * @return The readReplicasMode.
    */
   com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode getReadReplicasMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence configuration parameters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the persistenceConfig field is set.
+   */
+  boolean hasPersistenceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence configuration parameters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The persistenceConfig.
+   */
+  com.google.cloud.redis.v1beta1.PersistenceConfig getPersistenceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence configuration parameters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1beta1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.redis.v1beta1.PersistenceConfigOrBuilder getPersistenceConfigOrBuilder();
 }

@@ -203,6 +203,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     mockCloudRedis.addResponse(expectedResponse);
 
@@ -264,6 +265,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     mockCloudRedis.addResponse(expectedResponse);
 
@@ -399,6 +401,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -474,6 +477,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -549,6 +553,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -621,6 +626,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -693,6 +699,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -765,6 +772,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -837,6 +845,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -909,6 +918,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -983,6 +993,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1141,6 +1152,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1220,6 +1232,7 @@ public class CloudRedisClientTest {
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
             .setReadEndpointPort(-1676143102)
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
