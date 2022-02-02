@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.3.2](https://github.com/googleapis/java-container/compare/v2.3.1...v2.3.2) (2022-02-01)
+
+
+### Bug Fixes
+
+* reverting unintentional breaking change: GetOpenIdConfigRequest, GetOpenIdConfigResponse ([#664](https://github.com/googleapis/java-container/issues/664)) ([b0c296a](https://github.com/googleapis/java-container/commit/b0c296afbc49e7ae7a0501bce262473d9261889a))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-container/issues/1339)) ([#666](https://github.com/googleapis/java-container/issues/666)) ([b828680](https://github.com/googleapis/java-container/commit/b82868045ed572bc33c04ddd6797fa18b740686a))
+* update actions/github-script action to v5 ([#665](https://github.com/googleapis/java-container/issues/665)) ([d769fd5](https://github.com/googleapis/java-container/commit/d769fd517516845970e697ae379563c8fa598228))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#668](https://github.com/googleapis/java-container/issues/668)) ([6105b87](https://github.com/googleapis/java-container/commit/6105b87e24b0ef458f1f21e6a3edc68bcfbb158a))
+
 ### [2.3.1](https://www.github.com/googleapis/java-container/compare/v2.3.0...v2.3.1) (2022-01-07)
 
 
