@@ -11,31 +11,8 @@ Java idiomatic client for [Cloud Translation][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>24.2.0</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-translate</artifactId>
-  </dependency>
-</dependencies>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
@@ -44,16 +21,8 @@ If you are using Maven without BOM, add this to your dependencies:
   <artifactId>google-cloud-translate</artifactId>
   <version>2.1.9</version>
 </dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:24.2.0')
-
-implementation 'com.google.cloud:google-cloud-translate'
-```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy

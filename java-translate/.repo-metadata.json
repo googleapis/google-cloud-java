@@ -1,5 +1,5 @@
 {
-  "api_shortname": "translation",
+  "api_shortname": "translate",
   "name_pretty": "Cloud Translation",
   "product_documentation": "https://cloud.google.com/translate/docs/",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-translate/latest/history",
