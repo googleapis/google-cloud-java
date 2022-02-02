@@ -1,5 +1,6 @@
 # Changelog
 
+
 ## [0.123.0](https://github.com/googleapis/java-logging-logback/compare/v0.122.9...v0.123.0) (2022-01-18)
 
 
@@ -11,14 +12,14 @@
 
 ### Bug Fixes
 
-* **java:** run Maven in plain console-friendly mode ([#1301](https://github.com/googleapis/java-logging-logback/issues/1301)) ([#621](https://github.com/googleapis/java-logging-logback/issues/621)) ([e5de531](https://github.com/googleapis/java-logging-logback/commit/e5de531465015ae735e45ee5b6dc52bdd281ee6e))
-
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-logging-logback/issues/1301)) ([#621](https://www.github.com/googleapis/java-logging-logback/issues/621)) ([e5de531](https://www.github.com/googleapis/java-logging-logback/commit/e5de531465015ae735e45ee5b6dc52bdd281ee6e))
 
 ### Dependencies
 
 * update dependency com.google.cloud:google-cloud-logging to v3.6.0 ([#643](https://github.com/googleapis/java-logging-logback/issues/643)) ([21fdd35](https://github.com/googleapis/java-logging-logback/commit/21fdd3554ed2778075fec62a87176ad5e8a6f391))
 * update dependency org.easymock:easymock to v4 ([#640](https://github.com/googleapis/java-logging-logback/issues/640)) ([c1c5afc](https://github.com/googleapis/java-logging-logback/commit/c1c5afcf7a4501295e253c663fd4ac05c2fcd339))
 * update dependency org.slf4j:slf4j-api to v1.7.33 ([#652](https://github.com/googleapis/java-logging-logback/issues/652)) ([37ca717](https://github.com/googleapis/java-logging-logback/commit/37ca7179c455451fdd34baae0463223d67a36b5b))
+
 
 ### [0.122.9](https://www.github.com/googleapis/java-logging-logback/compare/v0.122.8...v0.122.9) (2022-01-10)
 
