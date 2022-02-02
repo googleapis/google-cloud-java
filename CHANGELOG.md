@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.8.0](https://github.com/googleapis/java-bigquery/compare/v2.7.1...v2.8.0) (2022-02-02)
+
+
+### Features
+
+* add Dataset ACL support ([#1763](https://github.com/googleapis/java-bigquery/issues/1763)) ([18a11e8](https://github.com/googleapis/java-bigquery/commit/18a11e88c0be5c0d5cf89d498439d5f8347e589d))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20220123-1.32.1 ([#1819](https://github.com/googleapis/java-bigquery/issues/1819)) ([82175f1](https://github.com/googleapis/java-bigquery/commit/82175f19634550f8b16c830362798396cd28e79d))
+* update dependency com.google.cloud:google-cloud-bigtable to v2.5.2 ([#1821](https://github.com/googleapis/java-bigquery/issues/1821)) ([0fe0a78](https://github.com/googleapis/java-bigquery/commit/0fe0a78db110794f9d2797bd74792d361acef96c))
+
 ### [2.7.1](https://github.com/googleapis/java-bigquery/compare/v2.7.0...v2.7.1) (2022-02-01)
 
 
