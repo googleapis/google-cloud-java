@@ -71,7 +71,7 @@ function completenessCheck() {
   # due to maven dependency plugin setting transitive compile/runtime deps scope to test when it is also a test dep
   # Raised issue: https://issues.apache.org/jira/browse/MDEP-737
   msg "Generating dependency list using flattened pom..."
-  mvn dependency:list -f .flattened-pom.xml -DincludeScope=runtime -DexcludeArtifactIds=annotations,commons-codec,commons-logging,animal-sniffer-annotations -Dsort=true | grep '\[INFO]    .*:.*:.*:.*:.*' >.new-list.txt
+  mvn dependency:list -f .flattened-pom.xml -DincludeScope=runtime -DexcludeArtifactIds=annotations,commons-codec,commons-logging,animal-sniffer-annotations,bcprov-jdk15on -Dsort=true | grep '\[INFO]    .*:.*:.*:.*:.*' >.new-list.txt
 
   # Compare two dependency lists
   msg "Comparing dependency lists..."
