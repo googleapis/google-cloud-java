@@ -61,6 +61,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,6 +75,12 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
           case 10:
             {
               data_ = input.readBytes();
+              break;
+            }
+          case 16:
+            {
+              bitField0_ |= 0x00000001;
+              dataCrc32C_ = input.readInt64();
               break;
             }
           default:
@@ -110,6 +117,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.secretmanager.v1.SecretPayload.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DATA_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString data_;
   /**
@@ -126,6 +134,55 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.ByteString getData() {
     return data_;
+  }
+
+  public static final int DATA_CRC32C_FIELD_NUMBER = 2;
+  private long dataCrc32C_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If specified, [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will verify the integrity of the
+   * received [data][google.cloud.secretmanager.v1.SecretPayload.data] on [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] calls using
+   * the crc32c checksum and store it to include in future
+   * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion] responses. If a checksum is
+   * not provided in the [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] request, the
+   * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will generate and store one for you.
+   * The CRC32C value is encoded as a Int64 for compatibility, and can be
+   * safely downconverted to uint32 in languages that support this type.
+   * https://cloud.google.com/apis/design/design_patterns#integer_types
+   * </pre>
+   *
+   * <code>optional int64 data_crc32c = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the dataCrc32c field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataCrc32C() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If specified, [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will verify the integrity of the
+   * received [data][google.cloud.secretmanager.v1.SecretPayload.data] on [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] calls using
+   * the crc32c checksum and store it to include in future
+   * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion] responses. If a checksum is
+   * not provided in the [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] request, the
+   * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will generate and store one for you.
+   * The CRC32C value is encoded as a Int64 for compatibility, and can be
+   * safely downconverted to uint32 in languages that support this type.
+   * https://cloud.google.com/apis/design/design_patterns#integer_types
+   * </pre>
+   *
+   * <code>optional int64 data_crc32c = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dataCrc32c.
+   */
+  @java.lang.Override
+  public long getDataCrc32C() {
+    return dataCrc32C_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -145,6 +202,9 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     if (!data_.isEmpty()) {
       output.writeBytes(1, data_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt64(2, dataCrc32C_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -156,6 +216,9 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!data_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, data_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, dataCrc32C_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -174,6 +237,10 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.secretmanager.v1.SecretPayload) obj;
 
     if (!getData().equals(other.getData())) return false;
+    if (hasDataCrc32C() != other.hasDataCrc32C()) return false;
+    if (hasDataCrc32C()) {
+      if (getDataCrc32C() != other.getDataCrc32C()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -187,6 +254,10 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DATA_FIELD_NUMBER;
     hash = (53 * hash) + getData().hashCode();
+    if (hasDataCrc32C()) {
+      hash = (37 * hash) + DATA_CRC32C_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDataCrc32C());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -335,6 +406,8 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       data_ = com.google.protobuf.ByteString.EMPTY;
 
+      dataCrc32C_ = 0L;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -362,7 +435,14 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.secretmanager.v1.SecretPayload buildPartial() {
       com.google.cloud.secretmanager.v1.SecretPayload result =
           new com.google.cloud.secretmanager.v1.SecretPayload(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.data_ = data_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dataCrc32C_ = dataCrc32C_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -416,6 +496,9 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
       if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
         setData(other.getData());
       }
+      if (other.hasDataCrc32C()) {
+        setDataCrc32C(other.getDataCrc32C());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -444,6 +527,8 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -496,6 +581,105 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     public Builder clearData() {
 
       data_ = getDefaultInstance().getData();
+      onChanged();
+      return this;
+    }
+
+    private long dataCrc32C_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will verify the integrity of the
+     * received [data][google.cloud.secretmanager.v1.SecretPayload.data] on [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] calls using
+     * the crc32c checksum and store it to include in future
+     * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion] responses. If a checksum is
+     * not provided in the [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] request, the
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will generate and store one for you.
+     * The CRC32C value is encoded as a Int64 for compatibility, and can be
+     * safely downconverted to uint32 in languages that support this type.
+     * https://cloud.google.com/apis/design/design_patterns#integer_types
+     * </pre>
+     *
+     * <code>optional int64 data_crc32c = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the dataCrc32c field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataCrc32C() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will verify the integrity of the
+     * received [data][google.cloud.secretmanager.v1.SecretPayload.data] on [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] calls using
+     * the crc32c checksum and store it to include in future
+     * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion] responses. If a checksum is
+     * not provided in the [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] request, the
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will generate and store one for you.
+     * The CRC32C value is encoded as a Int64 for compatibility, and can be
+     * safely downconverted to uint32 in languages that support this type.
+     * https://cloud.google.com/apis/design/design_patterns#integer_types
+     * </pre>
+     *
+     * <code>optional int64 data_crc32c = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dataCrc32c.
+     */
+    @java.lang.Override
+    public long getDataCrc32C() {
+      return dataCrc32C_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will verify the integrity of the
+     * received [data][google.cloud.secretmanager.v1.SecretPayload.data] on [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] calls using
+     * the crc32c checksum and store it to include in future
+     * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion] responses. If a checksum is
+     * not provided in the [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] request, the
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will generate and store one for you.
+     * The CRC32C value is encoded as a Int64 for compatibility, and can be
+     * safely downconverted to uint32 in languages that support this type.
+     * https://cloud.google.com/apis/design/design_patterns#integer_types
+     * </pre>
+     *
+     * <code>optional int64 data_crc32c = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The dataCrc32c to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataCrc32C(long value) {
+      bitField0_ |= 0x00000001;
+      dataCrc32C_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will verify the integrity of the
+     * received [data][google.cloud.secretmanager.v1.SecretPayload.data] on [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] calls using
+     * the crc32c checksum and store it to include in future
+     * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion] responses. If a checksum is
+     * not provided in the [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] request, the
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will generate and store one for you.
+     * The CRC32C value is encoded as a Int64 for compatibility, and can be
+     * safely downconverted to uint32 in languages that support this type.
+     * https://cloud.google.com/apis/design/design_patterns#integer_types
+     * </pre>
+     *
+     * <code>optional int64 data_crc32c = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDataCrc32C() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dataCrc32C_ = 0L;
       onChanged();
       return this;
     }

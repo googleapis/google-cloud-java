@@ -140,6 +140,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
               etag_ = s;
               break;
             }
+          case 56:
+            {
+              clientSpecifiedPayloadChecksum_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -658,6 +663,27 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CLIENT_SPECIFIED_PAYLOAD_CHECKSUM_FIELD_NUMBER = 7;
+  private boolean clientSpecifiedPayloadChecksum_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. True if payload checksum specified in [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has been
+   * received by [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] on
+   * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion].
+   * </pre>
+   *
+   * <code>bool client_specified_payload_checksum = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The clientSpecifiedPayloadChecksum.
+   */
+  @java.lang.Override
+  public boolean getClientSpecifiedPayloadChecksum() {
+    return clientSpecifiedPayloadChecksum_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -691,6 +717,9 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, etag_);
     }
+    if (clientSpecifiedPayloadChecksum_ != false) {
+      output.writeBool(7, clientSpecifiedPayloadChecksum_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -718,6 +747,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, etag_);
+    }
+    if (clientSpecifiedPayloadChecksum_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(7, clientSpecifiedPayloadChecksum_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -750,6 +783,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       if (!getReplicationStatus().equals(other.getReplicationStatus())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (getClientSpecifiedPayloadChecksum() != other.getClientSpecifiedPayloadChecksum())
+      return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -779,6 +814,9 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + CLIENT_SPECIFIED_PAYLOAD_CHECKSUM_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getClientSpecifiedPayloadChecksum());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -948,6 +986,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       }
       etag_ = "";
 
+      clientSpecifiedPayloadChecksum_ = false;
+
       return this;
     }
 
@@ -993,6 +1033,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         result.replicationStatus_ = replicationStatusBuilder_.build();
       }
       result.etag_ = etag_;
+      result.clientSpecifiedPayloadChecksum_ = clientSpecifiedPayloadChecksum_;
       onBuilt();
       return result;
     }
@@ -1062,6 +1103,9 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
         onChanged();
+      }
+      if (other.getClientSpecifiedPayloadChecksum() != false) {
+        setClientSpecifiedPayloadChecksum(other.getClientSpecifiedPayloadChecksum());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2029,6 +2073,70 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       etag_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean clientSpecifiedPayloadChecksum_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. True if payload checksum specified in [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has been
+     * received by [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] on
+     * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion].
+     * </pre>
+     *
+     * <code>
+     * bool client_specified_payload_checksum = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The clientSpecifiedPayloadChecksum.
+     */
+    @java.lang.Override
+    public boolean getClientSpecifiedPayloadChecksum() {
+      return clientSpecifiedPayloadChecksum_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. True if payload checksum specified in [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has been
+     * received by [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] on
+     * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion].
+     * </pre>
+     *
+     * <code>
+     * bool client_specified_payload_checksum = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The clientSpecifiedPayloadChecksum to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientSpecifiedPayloadChecksum(boolean value) {
+
+      clientSpecifiedPayloadChecksum_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. True if payload checksum specified in [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has been
+     * received by [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] on
+     * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion].
+     * </pre>
+     *
+     * <code>
+     * bool client_specified_payload_checksum = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClientSpecifiedPayloadChecksum() {
+
+      clientSpecifiedPayloadChecksum_ = false;
       onChanged();
       return this;
     }

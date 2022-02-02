@@ -289,6 +289,7 @@ public class SecretManagerServiceClientTest {
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -334,6 +335,7 @@ public class SecretManagerServiceClientTest {
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -670,6 +672,7 @@ public class SecretManagerServiceClientTest {
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -712,6 +715,7 @@ public class SecretManagerServiceClientTest {
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -832,6 +836,7 @@ public class SecretManagerServiceClientTest {
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -875,6 +880,7 @@ public class SecretManagerServiceClientTest {
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -918,6 +924,7 @@ public class SecretManagerServiceClientTest {
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -960,6 +967,7 @@ public class SecretManagerServiceClientTest {
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -1002,6 +1010,7 @@ public class SecretManagerServiceClientTest {
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -1045,6 +1054,7 @@ public class SecretManagerServiceClientTest {
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 

@@ -224,4 +224,20 @@ public interface SecretVersionOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. True if payload checksum specified in [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has been
+   * received by [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] on
+   * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion].
+   * </pre>
+   *
+   * <code>bool client_specified_payload_checksum = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The clientSpecifiedPayloadChecksum.
+   */
+  boolean getClientSpecifiedPayloadChecksum();
 }
