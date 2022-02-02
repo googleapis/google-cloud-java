@@ -57,4 +57,29 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 5;</code>
    */
   com.google.cloud.documentai.v1.CommonOperationMetadataOrBuilder getCommonMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The question ID.
+   * </pre>
+   *
+   * <code>string question_id = 6;</code>
+   *
+   * @return The questionId.
+   */
+  java.lang.String getQuestionId();
+  /**
+   *
+   *
+   * <pre>
+   * The question ID.
+   * </pre>
+   *
+   * <code>string question_id = 6;</code>
+   *
+   * @return The bytes for questionId.
+   */
+  com.google.protobuf.ByteString getQuestionIdBytes();
 }
