@@ -38,6 +38,7 @@ import com.google.cloud.RetryOption;
 import com.google.cloud.Role;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.Acl;
+import com.google.cloud.bigquery.Acl.DatasetAclEntity;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
@@ -1895,6 +1896,47 @@ public class ITBigQueryTest {
     routineAcl.add(Acl.of(new Acl.Routine(routineId)));
     routineDataset = routineDataset.toBuilder().setAcl(routineAcl).build().update();
     assertEquals(routineAcl, routineDataset.getAcl());
+  }
+
+  @Test
+  public void testAuthorizeDataset() {
+    String datasetName = RemoteBigQueryHelper.generateDatasetName();
+    DatasetId datasetId = DatasetId.of(PROJECT_ID, datasetName);
+    List<String> targetTypes = ImmutableList.of("VIEWS");
+    // Specify the acl which will be shared to the authorized dataset
+    List<Acl> acl =
+        ImmutableList.of(
+            Acl.of(new Acl.Group("projectOwners"), Acl.Role.OWNER),
+            Acl.of(new Acl.IamMember("allUsers"), Acl.Role.READER));
+    DatasetInfo datasetInfo =
+        DatasetInfo.newBuilder(datasetId).setAcl(acl).setDescription("shared Dataset").build();
+    Dataset sharedDataset = bigquery.create(datasetInfo);
+    assertNotNull(sharedDataset);
+    assertEquals(sharedDataset.getDescription(), "shared Dataset");
+    // Get the current metadata for the dataset you want to share by calling the datasets.get method
+    List<Acl> sharedDatasetAcl = new ArrayList<>(sharedDataset.getAcl());
+
+    // Create a new dataset to be authorized
+    String authorizedDatasetName = RemoteBigQueryHelper.generateDatasetName();
+    DatasetId authorizedDatasetId = DatasetId.of(PROJECT_ID, authorizedDatasetName);
+    DatasetInfo authorizedDatasetInfo =
+        DatasetInfo.newBuilder(authorizedDatasetId)
+            .setDescription("new Dataset to be authorized by the sharedDataset")
+            .build();
+    Dataset authorizedDataset = bigquery.create(authorizedDatasetInfo);
+    assertNotNull(authorizedDataset);
+    assertEquals(
+        authorizedDataset.getDescription(), "new Dataset to be authorized by the sharedDataset");
+
+    // Add the new DatasetAccessEntry object to the existing sharedDatasetAcl list
+    DatasetAclEntity datasetEntity = new DatasetAclEntity(authorizedDatasetId, targetTypes);
+    sharedDatasetAcl.add(Acl.of(datasetEntity));
+
+    // Update the dataset with the added authorization
+    Dataset updatedDataset = sharedDataset.toBuilder().setAcl(sharedDatasetAcl).build().update();
+
+    // Verify that the authorized dataset has been added
+    assertEquals(sharedDatasetAcl, updatedDataset.getAcl());
   }
 
   @Test

@@ -20,9 +20,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.services.bigquery.model.Dataset.Access;
+import com.google.api.services.bigquery.model.DatasetAccessEntry;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -105,7 +107,8 @@ public final class Acl implements Serializable {
       USER,
       VIEW,
       IAM_MEMBER,
-      ROUTINE
+      ROUTINE,
+      DATASET
     }
 
     Entity(Type type) {
@@ -119,6 +122,11 @@ public final class Acl implements Serializable {
     abstract Access toPb();
 
     static Entity fromPb(Access access) {
+      if (access.getDataset() != null) {
+        return new DatasetAclEntity(
+            DatasetId.fromPb(access.getDataset().getDataset()),
+            access.getDataset().getTargetTypes());
+      }
       if (access.getDomain() != null) {
         return new Domain(access.getDomain());
       }
@@ -143,6 +151,65 @@ public final class Acl implements Serializable {
       // Unreachable
       throw new BigQueryException(
           BigQueryException.UNKNOWN_CODE, "Unrecognized access configuration");
+    }
+  }
+
+  /**
+   * Class for a BigQuery DatasetAclEntity ACL entity. Objects of this class represent a
+   * DatasetAclEntity from a different DatasetAclEntity to grant access to. Only views are supported
+   * for now. The role field is not required when this field is set. If that DatasetAclEntity is
+   * deleted and re-created, its access needs to be granted again via an update operation.
+   */
+  public static final class DatasetAclEntity extends Entity {
+
+    private static final long serialVersionUID = -8392885851733136526L;
+
+    private final DatasetId id;
+    private final List<String> targetTypes;
+
+    /** Creates a DatasetAclEntity given the DatasetAclEntity's id. */
+    public DatasetAclEntity(DatasetId id, List<String> targetTypes) {
+      super(Type.DATASET);
+      this.id = id;
+      this.targetTypes = targetTypes;
+    }
+
+    /** Returns DatasetAclEntity's identity. */
+    public DatasetId getId() {
+      return id;
+    }
+
+    public List<String> getTargetTypes() {
+      return targetTypes;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (this == obj) {
+        return true;
+      }
+      if (obj == null || getClass() != obj.getClass()) {
+        return false;
+      }
+      DatasetAclEntity datasetAclEntity = (DatasetAclEntity) obj;
+      return Objects.equals(getType(), datasetAclEntity.getType())
+          && Objects.equals(id, datasetAclEntity.id);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(getType(), id);
+    }
+
+    @Override
+    public String toString() {
+      return toPb().toString();
+    }
+
+    @Override
+    Access toPb() {
+      return new Access()
+          .setDataset(new DatasetAccessEntry().setDataset(id.toPb()).setTargetTypes(targetTypes));
     }
   }
 
@@ -342,9 +409,10 @@ public final class Acl implements Serializable {
 
   /**
    * Class for a BigQuery View entity. Objects of this class represent a view from a different
-   * dataset to grant access to. Queries executed against that view will have read access to tables
-   * in this dataset. The role field is not required when this field is set. If that view is updated
-   * by any user, access to the view needs to be granted again via an update operation.
+   * datasetAclEntity to grant access to. Queries executed against that view will have read access
+   * to tables in this datasetAclEntity. The role field is not required when this field is set. If
+   * that view is updated by any user, access to the view needs to be granted again via an update
+   * operation.
    */
   public static final class View extends Entity {
 
@@ -393,10 +461,10 @@ public final class Acl implements Serializable {
 
   /**
    * Class for a BigQuery Routine entity. Objects of this class represent a routine from a different
-   * dataset to grant access to. Queries executed against that routine will have read access to
-   * views/tables/routines in this dataset. Only UDF is supported for now. The role field is not
-   * required when this field is set. If that routine is updated by any user, access to the routine
-   * needs to be granted again via an update operation.
+   * datasetAclEntity to grant access to. Queries executed against that routine will have read
+   * access to views/tables/routines in this datasetAclEntity. Only UDF is supported for now. The
+   * role field is not required when this field is set. If that routine is updated by any user,
+   * access to the routine needs to be granted again via an update operation.
    */
   public static final class Routine extends Entity {
 
@@ -514,6 +582,11 @@ public final class Acl implements Serializable {
    */
   public static Acl of(Entity entity, Role role) {
     return new Acl(entity, role);
+  }
+
+  /** Returns an Acl object for a datasetAclEntity. */
+  public static Acl of(DatasetAclEntity datasetAclEntity) {
+    return new Acl(datasetAclEntity, null);
   }
 
   /** Returns an Acl object for a view entity. */
