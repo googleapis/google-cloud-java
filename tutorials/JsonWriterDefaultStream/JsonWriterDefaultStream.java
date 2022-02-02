@@ -67,7 +67,7 @@ public class JsonWriterDefaultStream {
                 .build(),
             Field.of("author", StandardSQLTypeName.STRING),
             Field.of("committer", StandardSQLTypeName.STRING),
-            Field.of("time_sec", StandardSQLTypeName.INT64),
+            Field.of("ts", StandardSQLTypeName.DATETIME),
             Field.of("subject", StandardSQLTypeName.STRING),
             Field.of("message", StandardSQLTypeName.STRING),
             Field.of("repo_name", StandardSQLTypeName.STRING));
