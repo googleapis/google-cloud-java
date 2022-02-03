@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.5.4](https://github.com/googleapis/java-area120-tables/compare/v0.5.3...v0.5.4) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-area120-tables/issues/1339)) ([#301](https://github.com/googleapis/java-area120-tables/issues/301)) ([d9f112b](https://github.com/googleapis/java-area120-tables/commit/d9f112bcd4ac57cb5c1270915b227efc9d62d46a))
+* update actions/github-script action to v5 ([#300](https://github.com/googleapis/java-area120-tables/issues/300)) ([d1a145b](https://github.com/googleapis/java-area120-tables/commit/d1a145ba561a1672a1ea19435bcecc6720de2052))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#303](https://github.com/googleapis/java-area120-tables/issues/303)) ([c51a73b](https://github.com/googleapis/java-area120-tables/commit/c51a73b97614fb64b0a4d81d555db0d061c86c0b))
+
 ### [0.5.3](https://www.github.com/googleapis/java-area120-tables/compare/v0.5.2...v0.5.3) (2022-01-07)
 
 
