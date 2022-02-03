@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.1.6](https://github.com/googleapis/java-vpcaccess/compare/v2.1.5...v2.1.6) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-vpcaccess/issues/1339)) ([#138](https://github.com/googleapis/java-vpcaccess/issues/138)) ([9d39e36](https://github.com/googleapis/java-vpcaccess/commit/9d39e36bddd876b17eeb8d134a7533d5315d1e5f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#142](https://github.com/googleapis/java-vpcaccess/issues/142)) ([eb01db9](https://github.com/googleapis/java-vpcaccess/commit/eb01db993c5d71a4b55be581a37ad57df26a54d6))
+
 ### [2.1.5](https://www.github.com/googleapis/java-vpcaccess/compare/v2.1.4...v2.1.5) (2022-01-07)
 
 
