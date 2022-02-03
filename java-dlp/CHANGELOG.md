@@ -1,5 +1,15 @@
 # Changelog
 
+### [3.1.2](https://github.com/googleapis/java-dlp/compare/v3.1.1...v3.1.2) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-dlp/issues/1339)) ([#806](https://github.com/googleapis/java-dlp/issues/806)) ([3f0d2b5](https://github.com/googleapis/java-dlp/commit/3f0d2b5acc036d1a4be5f1ca708d5fd3181fa86e))
+* update actions/github-script action to v5 ([#805](https://github.com/googleapis/java-dlp/issues/805)) ([b4cf05f](https://github.com/googleapis/java-dlp/commit/b4cf05f2b4969bb4365ec2159cbd0297a837ab36))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.115.1 ([#793](https://github.com/googleapis/java-dlp/issues/793)) ([c524a47](https://github.com/googleapis/java-dlp/commit/c524a4712df8a8bee105e6470788c8e3a0bfa241))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#809](https://github.com/googleapis/java-dlp/issues/809)) ([9b8c0f7](https://github.com/googleapis/java-dlp/commit/9b8c0f7ce2e843013d4b0872c9b6b4b5201a2110))
+
 ### [3.1.1](https://www.github.com/googleapis/java-dlp/compare/v3.1.0...v3.1.1) (2022-01-07)
 
 
