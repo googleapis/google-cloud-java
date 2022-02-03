@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.1.6](https://github.com/googleapis/java-service-management/compare/v2.1.5...v2.1.6) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-service-management/issues/1339)) ([#188](https://github.com/googleapis/java-service-management/issues/188)) ([459d460](https://github.com/googleapis/java-service-management/commit/459d4603ef3360677371c35b9a65dd16e8552feb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#190](https://github.com/googleapis/java-service-management/issues/190)) ([1174e5b](https://github.com/googleapis/java-service-management/commit/1174e5b75aa66e9161c48501fe1047be3262dc46))
+
 ### [2.1.5](https://www.github.com/googleapis/java-service-management/compare/v2.1.4...v2.1.5) (2022-01-07)
 
 
