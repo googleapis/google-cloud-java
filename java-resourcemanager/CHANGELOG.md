@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.2.2](https://github.com/googleapis/java-resourcemanager/compare/v1.2.1...v1.2.2) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-resourcemanager/issues/1339)) ([#705](https://github.com/googleapis/java-resourcemanager/issues/705)) ([77f0e48](https://github.com/googleapis/java-resourcemanager/commit/77f0e488158656f500ddbf0fa344b47647db805c))
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20220109-1.32.1 ([#702](https://github.com/googleapis/java-resourcemanager/issues/702)) ([d78edb5](https://github.com/googleapis/java-resourcemanager/commit/d78edb5e857e5f1b9036127a02ee1ce3a8d43217))
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v3 ([#692](https://github.com/googleapis/java-resourcemanager/issues/692)) ([747e7e0](https://github.com/googleapis/java-resourcemanager/commit/747e7e045624e8a8ef3dce96b3e92e6207a12a84))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#707](https://github.com/googleapis/java-resourcemanager/issues/707)) ([fb064cb](https://github.com/googleapis/java-resourcemanager/commit/fb064cb54aaead53abb113648517f28a7875604e))
+* update dependency com.google.errorprone:error_prone_annotations to v2.11.0 ([#704](https://github.com/googleapis/java-resourcemanager/issues/704)) ([23169df](https://github.com/googleapis/java-resourcemanager/commit/23169df67aa9cd49c976feeb5cfb5f4a6e360dde))
+* update dependency org.easymock:easymock to v4 ([#693](https://github.com/googleapis/java-resourcemanager/issues/693)) ([e68dd34](https://github.com/googleapis/java-resourcemanager/commit/e68dd34311f783a71ef1d04343f0c92fbf226f3c))
+
 ### [1.2.1](https://www.github.com/googleapis/java-resourcemanager/compare/v1.2.0...v1.2.1) (2022-01-07)
 
 
