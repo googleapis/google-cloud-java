@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-assured-workloads/compare/v0.8.0...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#385](https://github.com/googleapis/java-assured-workloads/issues/385)) ([079376f](https://github.com/googleapis/java-assured-workloads/commit/079376fce67f02fc4f20957770ab9446abf07cc5))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-assured-workloads/issues/1339)) ([#388](https://github.com/googleapis/java-assured-workloads/issues/388)) ([f149440](https://github.com/googleapis/java-assured-workloads/commit/f149440fcb28b62b410d33205f6d2a6fc311d635))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#390](https://github.com/googleapis/java-assured-workloads/issues/390)) ([482fd03](https://github.com/googleapis/java-assured-workloads/commit/482fd03184c305b9f1847dd4d127ce4f7abf4f1b))
+
 ## [0.8.0](https://www.github.com/googleapis/java-assured-workloads/compare/v0.7.2...v0.8.0) (2022-01-07)
 
 
