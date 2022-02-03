@@ -1,5 +1,15 @@
 # Changelog
 
+### [2.2.2](https://github.com/googleapis/java-tpu/compare/v2.2.1...v2.2.2) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-tpu/issues/1339)) ([#143](https://github.com/googleapis/java-tpu/issues/143)) ([cd75a6d](https://github.com/googleapis/java-tpu/commit/cd75a6d44307758b86f52e111f7667baefd951fa))
+* update actions/github-script action to v5 ([#141](https://github.com/googleapis/java-tpu/issues/141)) ([8260a46](https://github.com/googleapis/java-tpu/commit/8260a462437a1c9277908e5c1214243f2114fc97))
+* update actions/setup-java action to v2 ([#142](https://github.com/googleapis/java-tpu/issues/142)) ([4f95da6](https://github.com/googleapis/java-tpu/commit/4f95da6dab957b3e665c22278b66e9a99f4689f1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#145](https://github.com/googleapis/java-tpu/issues/145)) ([e3bc13d](https://github.com/googleapis/java-tpu/commit/e3bc13dba2ca30d6630c25c62cb346c1921a6208))
+
 ### [2.2.1](https://www.github.com/googleapis/java-tpu/compare/v2.2.0...v2.2.1) (2022-01-07)
 
 
