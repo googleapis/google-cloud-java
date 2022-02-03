@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-ids/compare/v0.1.2...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#40](https://github.com/googleapis/java-ids/issues/40)) ([f7c4ed1](https://github.com/googleapis/java-ids/commit/f7c4ed1f9eb733d6d9944fa61d058ee497b4998a))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-ids/issues/1339)) ([#43](https://github.com/googleapis/java-ids/issues/43)) ([fc970d7](https://github.com/googleapis/java-ids/commit/fc970d722f3a90e48a1537630d0f077e94c71d62))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#46](https://github.com/googleapis/java-ids/issues/46)) ([18147b4](https://github.com/googleapis/java-ids/commit/18147b4fda6e03dfc5ad6b347ca1db4bbffa4cb9))
+
 ### [0.1.2](https://www.github.com/googleapis/java-ids/compare/v0.1.1...v0.1.2) (2022-01-07)
 
 
