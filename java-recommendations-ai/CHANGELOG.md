@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.8.5](https://github.com/googleapis/java-recommendations-ai/compare/v0.8.4...v0.8.5) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-recommendations-ai/issues/1339)) ([#469](https://github.com/googleapis/java-recommendations-ai/issues/469)) ([5ca0563](https://github.com/googleapis/java-recommendations-ai/commit/5ca0563ee8ec5c92a9814c82c5a0e982f697f835))
+* update actions/github-script action to v5 ([#468](https://github.com/googleapis/java-recommendations-ai/issues/468)) ([d43336e](https://github.com/googleapis/java-recommendations-ai/commit/d43336e15142b50f7d0e7182ddf11111a568ce8b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#471](https://github.com/googleapis/java-recommendations-ai/issues/471)) ([ff507c9](https://github.com/googleapis/java-recommendations-ai/commit/ff507c99033a719f1ae76fb0422054bd74e3b3f2))
+
 ### [0.8.4](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.8.3...v0.8.4) (2022-01-07)
 
 
