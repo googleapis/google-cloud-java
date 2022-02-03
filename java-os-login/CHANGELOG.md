@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.0.9](https://github.com/googleapis/java-os-login/compare/v2.0.8...v2.0.9) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-os-login/issues/1339)) ([#621](https://github.com/googleapis/java-os-login/issues/621)) ([39ac382](https://github.com/googleapis/java-os-login/commit/39ac382d4bc3d7224664069d0eb01d9d10180adb))
+* update actions/github-script action to v5 ([#620](https://github.com/googleapis/java-os-login/issues/620)) ([b398d61](https://github.com/googleapis/java-os-login/commit/b398d6186ef071121b96a23d86f92b1f9062f67e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#623](https://github.com/googleapis/java-os-login/issues/623)) ([2427ee3](https://github.com/googleapis/java-os-login/commit/2427ee3a0a655b66629f285c5a7f03941c19a16c))
+
 ### [2.0.8](https://www.github.com/googleapis/java-os-login/compare/v2.0.7...v2.0.8) (2022-01-07)
 
 
