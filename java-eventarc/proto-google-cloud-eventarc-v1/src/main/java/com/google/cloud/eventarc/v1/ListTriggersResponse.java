@@ -22,7 +22,7 @@ package com.google.cloud.eventarc.v1;
  *
  *
  * <pre>
- * The response message for the ListTriggers method.
+ * The response message for the `ListTriggers` method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.eventarc.v1.ListTriggersResponse}
@@ -512,7 +512,7 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The response message for the ListTriggers method.
+   * The response message for the `ListTriggers` method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.eventarc.v1.ListTriggersResponse}

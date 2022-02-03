@@ -40,6 +40,7 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
   private EventFilter() {
     attribute_ = "";
     value_ = "";
+    operator_ = "";
   }
 
   @java.lang.Override
@@ -85,6 +86,13 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
               value_ = s;
               break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              operator_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -125,8 +133,8 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of a CloudEvents attribute. Currently, only a subset of
-   * attributes are supported for filtering.
+   * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
+   * are supported for filtering.
    * All triggers MUST provide a filter for the 'type' attribute.
    * </pre>
    *
@@ -150,8 +158,8 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of a CloudEvents attribute. Currently, only a subset of
-   * attributes are supported for filtering.
+   * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
+   * are supported for filtering.
    * All triggers MUST provide a filter for the 'type' attribute.
    * </pre>
    *
@@ -221,6 +229,61 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int OPERATOR_FIELD_NUMBER = 3;
+  private volatile java.lang.Object operator_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The operator used for matching the events with the value of the
+   * filter. If not specified, only events that have an exact key-value pair
+   * specified in the filter are matched. The only allowed value is
+   * `match-path-pattern`.
+   * </pre>
+   *
+   * <code>string operator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The operator.
+   */
+  @java.lang.Override
+  public java.lang.String getOperator() {
+    java.lang.Object ref = operator_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      operator_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The operator used for matching the events with the value of the
+   * filter. If not specified, only events that have an exact key-value pair
+   * specified in the filter are matched. The only allowed value is
+   * `match-path-pattern`.
+   * </pre>
+   *
+   * <code>string operator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for operator.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOperatorBytes() {
+    java.lang.Object ref = operator_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      operator_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -241,6 +304,9 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operator_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, operator_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -255,6 +321,9 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operator_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, operator_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -273,6 +342,7 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
 
     if (!getAttribute().equals(other.getAttribute())) return false;
     if (!getValue().equals(other.getValue())) return false;
+    if (!getOperator().equals(other.getOperator())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -288,6 +358,8 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getAttribute().hashCode();
     hash = (37 * hash) + VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getValue().hashCode();
+    hash = (37 * hash) + OPERATOR_FIELD_NUMBER;
+    hash = (53 * hash) + getOperator().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -437,6 +509,8 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
 
       value_ = "";
 
+      operator_ = "";
+
       return this;
     }
 
@@ -466,6 +540,7 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
           new com.google.cloud.eventarc.v1.EventFilter(this);
       result.attribute_ = attribute_;
       result.value_ = value_;
+      result.operator_ = operator_;
       onBuilt();
       return result;
     }
@@ -523,6 +598,10 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
         value_ = other.value_;
         onChanged();
       }
+      if (!other.getOperator().isEmpty()) {
+        operator_ = other.operator_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -557,8 +636,8 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of a CloudEvents attribute. Currently, only a subset of
-     * attributes are supported for filtering.
+     * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
+     * are supported for filtering.
      * All triggers MUST provide a filter for the 'type' attribute.
      * </pre>
      *
@@ -581,8 +660,8 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of a CloudEvents attribute. Currently, only a subset of
-     * attributes are supported for filtering.
+     * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
+     * are supported for filtering.
      * All triggers MUST provide a filter for the 'type' attribute.
      * </pre>
      *
@@ -605,8 +684,8 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of a CloudEvents attribute. Currently, only a subset of
-     * attributes are supported for filtering.
+     * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
+     * are supported for filtering.
      * All triggers MUST provide a filter for the 'type' attribute.
      * </pre>
      *
@@ -628,8 +707,8 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of a CloudEvents attribute. Currently, only a subset of
-     * attributes are supported for filtering.
+     * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
+     * are supported for filtering.
      * All triggers MUST provide a filter for the 'type' attribute.
      * </pre>
      *
@@ -647,8 +726,8 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of a CloudEvents attribute. Currently, only a subset of
-     * attributes are supported for filtering.
+     * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
+     * are supported for filtering.
      * All triggers MUST provide a filter for the 'type' attribute.
      * </pre>
      *
@@ -770,6 +849,127 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       value_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object operator_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The operator used for matching the events with the value of the
+     * filter. If not specified, only events that have an exact key-value pair
+     * specified in the filter are matched. The only allowed value is
+     * `match-path-pattern`.
+     * </pre>
+     *
+     * <code>string operator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The operator.
+     */
+    public java.lang.String getOperator() {
+      java.lang.Object ref = operator_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        operator_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The operator used for matching the events with the value of the
+     * filter. If not specified, only events that have an exact key-value pair
+     * specified in the filter are matched. The only allowed value is
+     * `match-path-pattern`.
+     * </pre>
+     *
+     * <code>string operator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for operator.
+     */
+    public com.google.protobuf.ByteString getOperatorBytes() {
+      java.lang.Object ref = operator_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        operator_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The operator used for matching the events with the value of the
+     * filter. If not specified, only events that have an exact key-value pair
+     * specified in the filter are matched. The only allowed value is
+     * `match-path-pattern`.
+     * </pre>
+     *
+     * <code>string operator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The operator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOperator(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      operator_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The operator used for matching the events with the value of the
+     * filter. If not specified, only events that have an exact key-value pair
+     * specified in the filter are matched. The only allowed value is
+     * `match-path-pattern`.
+     * </pre>
+     *
+     * <code>string operator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOperator() {
+
+      operator_ = getDefaultInstance().getOperator();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The operator used for matching the events with the value of the
+     * filter. If not specified, only events that have an exact key-value pair
+     * specified in the filter are matched. The only allowed value is
+     * `match-path-pattern`.
+     * </pre>
+     *
+     * <code>string operator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for operator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOperatorBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      operator_ = value;
       onChanged();
       return this;
     }

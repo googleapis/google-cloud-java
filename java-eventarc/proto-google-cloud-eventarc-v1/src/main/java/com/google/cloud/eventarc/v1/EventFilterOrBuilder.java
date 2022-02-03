@@ -27,8 +27,8 @@ public interface EventFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The name of a CloudEvents attribute. Currently, only a subset of
-   * attributes are supported for filtering.
+   * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
+   * are supported for filtering.
    * All triggers MUST provide a filter for the 'type' attribute.
    * </pre>
    *
@@ -41,8 +41,8 @@ public interface EventFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The name of a CloudEvents attribute. Currently, only a subset of
-   * attributes are supported for filtering.
+   * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
+   * are supported for filtering.
    * All triggers MUST provide a filter for the 'type' attribute.
    * </pre>
    *
@@ -76,4 +76,35 @@ public interface EventFilterOrBuilder
    * @return The bytes for value.
    */
   com.google.protobuf.ByteString getValueBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The operator used for matching the events with the value of the
+   * filter. If not specified, only events that have an exact key-value pair
+   * specified in the filter are matched. The only allowed value is
+   * `match-path-pattern`.
+   * </pre>
+   *
+   * <code>string operator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The operator.
+   */
+  java.lang.String getOperator();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The operator used for matching the events with the value of the
+   * filter. If not specified, only events that have an exact key-value pair
+   * specified in the filter are matched. The only allowed value is
+   * `match-path-pattern`.
+   * </pre>
+   *
+   * <code>string operator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for operator.
+   */
+  com.google.protobuf.ByteString getOperatorBytes();
 }

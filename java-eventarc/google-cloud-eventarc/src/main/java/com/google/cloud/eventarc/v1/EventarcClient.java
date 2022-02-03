@@ -545,9 +545,9 @@ public class EventarcClient implements BackgroundResource {
    * }</pre>
    *
    * @param trigger The trigger to be updated.
-   * @param updateMask The fields to be updated; only fields explicitly provided will be updated. If
-   *     no field mask is provided, all provided fields in the request will be updated. To update
-   *     all fields, provide a field mask of "&#42;".
+   * @param updateMask The fields to be updated; only fields explicitly provided are updated. If no
+   *     field mask is provided, all provided fields in the request are updated. To update all
+   *     fields, provide a field mask of "&#42;".
    * @param allowMissing If set to true, and the trigger is not found, a new trigger will be
    *     created. In this situation, `update_mask` is ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -776,6 +776,1112 @@ public class EventarcClient implements BackgroundResource {
     return stub.deleteTriggerCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single Channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+   *   Channel response = eventarcClient.getChannel(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the channel to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Channel getChannel(ChannelName name) {
+    GetChannelRequest request =
+        GetChannelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getChannel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single Channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   String name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
+   *   Channel response = eventarcClient.getChannel(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the channel to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Channel getChannel(String name) {
+    GetChannelRequest request = GetChannelRequest.newBuilder().setName(name).build();
+    return getChannel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single Channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GetChannelRequest request =
+   *       GetChannelRequest.newBuilder()
+   *           .setName(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .build();
+   *   Channel response = eventarcClient.getChannel(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Channel getChannel(GetChannelRequest request) {
+    return getChannelCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single Channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GetChannelRequest request =
+   *       GetChannelRequest.newBuilder()
+   *           .setName(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .build();
+   *   ApiFuture<Channel> future = eventarcClient.getChannelCallable().futureCall(request);
+   *   // Do something.
+   *   Channel response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetChannelRequest, Channel> getChannelCallable() {
+    return stub.getChannelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List channels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Channel element : eventarcClient.listChannels(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection to list channels on.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListChannelsPagedResponse listChannels(LocationName parent) {
+    ListChannelsRequest request =
+        ListChannelsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listChannels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List channels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Channel element : eventarcClient.listChannels(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection to list channels on.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListChannelsPagedResponse listChannels(String parent) {
+    ListChannelsRequest request = ListChannelsRequest.newBuilder().setParent(parent).build();
+    return listChannels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List channels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ListChannelsRequest request =
+   *       ListChannelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Channel element : eventarcClient.listChannels(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListChannelsPagedResponse listChannels(ListChannelsRequest request) {
+    return listChannelsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List channels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ListChannelsRequest request =
+   *       ListChannelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Channel> future = eventarcClient.listChannelsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Channel element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListChannelsRequest, ListChannelsPagedResponse>
+      listChannelsPagedCallable() {
+    return stub.listChannelsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List channels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ListChannelsRequest request =
+   *       ListChannelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListChannelsResponse response = eventarcClient.listChannelsCallable().call(request);
+   *     for (Channel element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListChannelsRequest, ListChannelsResponse> listChannelsCallable() {
+    return stub.listChannelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new channel in a particular project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Channel channel = Channel.newBuilder().build();
+   *   String channelId = "channelId1461735806";
+   *   Channel response = eventarcClient.createChannelAsync(parent, channel, channelId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection in which to add this channel.
+   * @param channel Required. The channel to create.
+   * @param channelId Required. The user-provided ID to be assigned to the channel.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Channel, OperationMetadata> createChannelAsync(
+      LocationName parent, Channel channel, String channelId) {
+    CreateChannelRequest request =
+        CreateChannelRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setChannel(channel)
+            .setChannelId(channelId)
+            .build();
+    return createChannelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new channel in a particular project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Channel channel = Channel.newBuilder().build();
+   *   String channelId = "channelId1461735806";
+   *   Channel response = eventarcClient.createChannelAsync(parent, channel, channelId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection in which to add this channel.
+   * @param channel Required. The channel to create.
+   * @param channelId Required. The user-provided ID to be assigned to the channel.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Channel, OperationMetadata> createChannelAsync(
+      String parent, Channel channel, String channelId) {
+    CreateChannelRequest request =
+        CreateChannelRequest.newBuilder()
+            .setParent(parent)
+            .setChannel(channel)
+            .setChannelId(channelId)
+            .build();
+    return createChannelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new channel in a particular project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   CreateChannelRequest request =
+   *       CreateChannelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setChannel(Channel.newBuilder().build())
+   *           .setChannelId("channelId1461735806")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Channel response = eventarcClient.createChannelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Channel, OperationMetadata> createChannelAsync(
+      CreateChannelRequest request) {
+    return createChannelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new channel in a particular project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   CreateChannelRequest request =
+   *       CreateChannelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setChannel(Channel.newBuilder().build())
+   *           .setChannelId("channelId1461735806")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Channel, OperationMetadata> future =
+   *       eventarcClient.createChannelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Channel response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateChannelRequest, Channel, OperationMetadata>
+      createChannelOperationCallable() {
+    return stub.createChannelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new channel in a particular project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   CreateChannelRequest request =
+   *       CreateChannelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setChannel(Channel.newBuilder().build())
+   *           .setChannelId("channelId1461735806")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future = eventarcClient.createChannelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateChannelRequest, Operation> createChannelCallable() {
+    return stub.createChannelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a single channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   Channel channel = Channel.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Channel response = eventarcClient.updateChannelAsync(channel, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param channel The channel to be updated.
+   * @param updateMask The fields to be updated; only fields explicitly provided are updated. If no
+   *     field mask is provided, all provided fields in the request are updated. To update all
+   *     fields, provide a field mask of "&#42;".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Channel, OperationMetadata> updateChannelAsync(
+      Channel channel, FieldMask updateMask) {
+    UpdateChannelRequest request =
+        UpdateChannelRequest.newBuilder().setChannel(channel).setUpdateMask(updateMask).build();
+    return updateChannelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a single channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   UpdateChannelRequest request =
+   *       UpdateChannelRequest.newBuilder()
+   *           .setChannel(Channel.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Channel response = eventarcClient.updateChannelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Channel, OperationMetadata> updateChannelAsync(
+      UpdateChannelRequest request) {
+    return updateChannelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a single channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   UpdateChannelRequest request =
+   *       UpdateChannelRequest.newBuilder()
+   *           .setChannel(Channel.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Channel, OperationMetadata> future =
+   *       eventarcClient.updateChannelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Channel response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateChannelRequest, Channel, OperationMetadata>
+      updateChannelOperationCallable() {
+    return stub.updateChannelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a single channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   UpdateChannelRequest request =
+   *       UpdateChannelRequest.newBuilder()
+   *           .setChannel(Channel.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future = eventarcClient.updateChannelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateChannelRequest, Operation> updateChannelCallable() {
+    return stub.updateChannelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a single channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+   *   Channel response = eventarcClient.deleteChannelAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the channel to be deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Channel, OperationMetadata> deleteChannelAsync(ChannelName name) {
+    DeleteChannelRequest request =
+        DeleteChannelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteChannelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a single channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   String name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
+   *   Channel response = eventarcClient.deleteChannelAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the channel to be deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Channel, OperationMetadata> deleteChannelAsync(String name) {
+    DeleteChannelRequest request = DeleteChannelRequest.newBuilder().setName(name).build();
+    return deleteChannelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a single channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   DeleteChannelRequest request =
+   *       DeleteChannelRequest.newBuilder()
+   *           .setName(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Channel response = eventarcClient.deleteChannelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Channel, OperationMetadata> deleteChannelAsync(
+      DeleteChannelRequest request) {
+    return deleteChannelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a single channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   DeleteChannelRequest request =
+   *       DeleteChannelRequest.newBuilder()
+   *           .setName(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Channel, OperationMetadata> future =
+   *       eventarcClient.deleteChannelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Channel response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteChannelRequest, Channel, OperationMetadata>
+      deleteChannelOperationCallable() {
+    return stub.deleteChannelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a single channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   DeleteChannelRequest request =
+   *       DeleteChannelRequest.newBuilder()
+   *           .setName(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future = eventarcClient.deleteChannelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteChannelRequest, Operation> deleteChannelCallable() {
+    return stub.deleteChannelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single ChannelConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ChannelConnectionName name =
+   *       ChannelConnectionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL_CONNECTION]");
+   *   ChannelConnection response = eventarcClient.getChannelConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the channel connection to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelConnection getChannelConnection(ChannelConnectionName name) {
+    GetChannelConnectionRequest request =
+        GetChannelConnectionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getChannelConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single ChannelConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   String name =
+   *       ChannelConnectionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL_CONNECTION]").toString();
+   *   ChannelConnection response = eventarcClient.getChannelConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the channel connection to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelConnection getChannelConnection(String name) {
+    GetChannelConnectionRequest request =
+        GetChannelConnectionRequest.newBuilder().setName(name).build();
+    return getChannelConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single ChannelConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GetChannelConnectionRequest request =
+   *       GetChannelConnectionRequest.newBuilder()
+   *           .setName(
+   *               ChannelConnectionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL_CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   ChannelConnection response = eventarcClient.getChannelConnection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelConnection getChannelConnection(GetChannelConnectionRequest request) {
+    return getChannelConnectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single ChannelConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GetChannelConnectionRequest request =
+   *       GetChannelConnectionRequest.newBuilder()
+   *           .setName(
+   *               ChannelConnectionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL_CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ChannelConnection> future =
+   *       eventarcClient.getChannelConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   ChannelConnection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetChannelConnectionRequest, ChannelConnection>
+      getChannelConnectionCallable() {
+    return stub.getChannelConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List channel connections.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (ChannelConnection element : eventarcClient.listChannelConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection from which to list channel connections.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListChannelConnectionsPagedResponse listChannelConnections(LocationName parent) {
+    ListChannelConnectionsRequest request =
+        ListChannelConnectionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listChannelConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List channel connections.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (ChannelConnection element : eventarcClient.listChannelConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection from which to list channel connections.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListChannelConnectionsPagedResponse listChannelConnections(String parent) {
+    ListChannelConnectionsRequest request =
+        ListChannelConnectionsRequest.newBuilder().setParent(parent).build();
+    return listChannelConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List channel connections.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ListChannelConnectionsRequest request =
+   *       ListChannelConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ChannelConnection element :
+   *       eventarcClient.listChannelConnections(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListChannelConnectionsPagedResponse listChannelConnections(
+      ListChannelConnectionsRequest request) {
+    return listChannelConnectionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List channel connections.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ListChannelConnectionsRequest request =
+   *       ListChannelConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ChannelConnection> future =
+   *       eventarcClient.listChannelConnectionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ChannelConnection element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListChannelConnectionsRequest, ListChannelConnectionsPagedResponse>
+      listChannelConnectionsPagedCallable() {
+    return stub.listChannelConnectionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List channel connections.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ListChannelConnectionsRequest request =
+   *       ListChannelConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListChannelConnectionsResponse response =
+   *         eventarcClient.listChannelConnectionsCallable().call(request);
+   *     for (ChannelConnection element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListChannelConnectionsRequest, ListChannelConnectionsResponse>
+      listChannelConnectionsCallable() {
+    return stub.listChannelConnectionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new ChannelConnection in a particular project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ChannelConnection channelConnection = ChannelConnection.newBuilder().build();
+   *   String channelConnectionId = "channelConnectionId-1246974660";
+   *   ChannelConnection response =
+   *       eventarcClient
+   *           .createChannelConnectionAsync(parent, channelConnection, channelConnectionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection in which to add this channel connection.
+   * @param channelConnection Required. Channel connection to create.
+   * @param channelConnectionId Required. The user-provided ID to be assigned to the channel
+   *     connection.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ChannelConnection, OperationMetadata> createChannelConnectionAsync(
+      LocationName parent, ChannelConnection channelConnection, String channelConnectionId) {
+    CreateChannelConnectionRequest request =
+        CreateChannelConnectionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setChannelConnection(channelConnection)
+            .setChannelConnectionId(channelConnectionId)
+            .build();
+    return createChannelConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new ChannelConnection in a particular project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   ChannelConnection channelConnection = ChannelConnection.newBuilder().build();
+   *   String channelConnectionId = "channelConnectionId-1246974660";
+   *   ChannelConnection response =
+   *       eventarcClient
+   *           .createChannelConnectionAsync(parent, channelConnection, channelConnectionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection in which to add this channel connection.
+   * @param channelConnection Required. Channel connection to create.
+   * @param channelConnectionId Required. The user-provided ID to be assigned to the channel
+   *     connection.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ChannelConnection, OperationMetadata> createChannelConnectionAsync(
+      String parent, ChannelConnection channelConnection, String channelConnectionId) {
+    CreateChannelConnectionRequest request =
+        CreateChannelConnectionRequest.newBuilder()
+            .setParent(parent)
+            .setChannelConnection(channelConnection)
+            .setChannelConnectionId(channelConnectionId)
+            .build();
+    return createChannelConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new ChannelConnection in a particular project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   CreateChannelConnectionRequest request =
+   *       CreateChannelConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setChannelConnection(ChannelConnection.newBuilder().build())
+   *           .setChannelConnectionId("channelConnectionId-1246974660")
+   *           .build();
+   *   ChannelConnection response = eventarcClient.createChannelConnectionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ChannelConnection, OperationMetadata> createChannelConnectionAsync(
+      CreateChannelConnectionRequest request) {
+    return createChannelConnectionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new ChannelConnection in a particular project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   CreateChannelConnectionRequest request =
+   *       CreateChannelConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setChannelConnection(ChannelConnection.newBuilder().build())
+   *           .setChannelConnectionId("channelConnectionId-1246974660")
+   *           .build();
+   *   OperationFuture<ChannelConnection, OperationMetadata> future =
+   *       eventarcClient.createChannelConnectionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ChannelConnection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateChannelConnectionRequest, ChannelConnection, OperationMetadata>
+      createChannelConnectionOperationCallable() {
+    return stub.createChannelConnectionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a new ChannelConnection in a particular project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   CreateChannelConnectionRequest request =
+   *       CreateChannelConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setChannelConnection(ChannelConnection.newBuilder().build())
+   *           .setChannelConnectionId("channelConnectionId-1246974660")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       eventarcClient.createChannelConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateChannelConnectionRequest, Operation>
+      createChannelConnectionCallable() {
+    return stub.createChannelConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a single ChannelConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ChannelConnectionName name =
+   *       ChannelConnectionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL_CONNECTION]");
+   *   ChannelConnection response = eventarcClient.deleteChannelConnectionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the channel connection to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ChannelConnection, OperationMetadata> deleteChannelConnectionAsync(
+      ChannelConnectionName name) {
+    DeleteChannelConnectionRequest request =
+        DeleteChannelConnectionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteChannelConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a single ChannelConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   String name =
+   *       ChannelConnectionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL_CONNECTION]").toString();
+   *   ChannelConnection response = eventarcClient.deleteChannelConnectionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the channel connection to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ChannelConnection, OperationMetadata> deleteChannelConnectionAsync(
+      String name) {
+    DeleteChannelConnectionRequest request =
+        DeleteChannelConnectionRequest.newBuilder().setName(name).build();
+    return deleteChannelConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a single ChannelConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   DeleteChannelConnectionRequest request =
+   *       DeleteChannelConnectionRequest.newBuilder()
+   *           .setName(
+   *               ChannelConnectionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL_CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   ChannelConnection response = eventarcClient.deleteChannelConnectionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ChannelConnection, OperationMetadata> deleteChannelConnectionAsync(
+      DeleteChannelConnectionRequest request) {
+    return deleteChannelConnectionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a single ChannelConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   DeleteChannelConnectionRequest request =
+   *       DeleteChannelConnectionRequest.newBuilder()
+   *           .setName(
+   *               ChannelConnectionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL_CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<ChannelConnection, OperationMetadata> future =
+   *       eventarcClient.deleteChannelConnectionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ChannelConnection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
+      deleteChannelConnectionOperationCallable() {
+    return stub.deleteChannelConnectionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a single ChannelConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   DeleteChannelConnectionRequest request =
+   *       DeleteChannelConnectionRequest.newBuilder()
+   *           .setName(
+   *               ChannelConnectionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL_CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       eventarcClient.deleteChannelConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteChannelConnectionRequest, Operation>
+      deleteChannelConnectionCallable() {
+    return stub.deleteChannelConnectionCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -878,6 +1984,169 @@ public class EventarcClient implements BackgroundResource {
     protected ListTriggersFixedSizeCollection createCollection(
         List<ListTriggersPage> pages, int collectionSize) {
       return new ListTriggersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListChannelsPagedResponse
+      extends AbstractPagedListResponse<
+          ListChannelsRequest,
+          ListChannelsResponse,
+          Channel,
+          ListChannelsPage,
+          ListChannelsFixedSizeCollection> {
+
+    public static ApiFuture<ListChannelsPagedResponse> createAsync(
+        PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
+        ApiFuture<ListChannelsResponse> futureResponse) {
+      ApiFuture<ListChannelsPage> futurePage =
+          ListChannelsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListChannelsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListChannelsPagedResponse(ListChannelsPage page) {
+      super(page, ListChannelsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListChannelsPage
+      extends AbstractPage<ListChannelsRequest, ListChannelsResponse, Channel, ListChannelsPage> {
+
+    private ListChannelsPage(
+        PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
+        ListChannelsResponse response) {
+      super(context, response);
+    }
+
+    private static ListChannelsPage createEmptyPage() {
+      return new ListChannelsPage(null, null);
+    }
+
+    @Override
+    protected ListChannelsPage createPage(
+        PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
+        ListChannelsResponse response) {
+      return new ListChannelsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListChannelsPage> createPageAsync(
+        PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
+        ApiFuture<ListChannelsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListChannelsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListChannelsRequest,
+          ListChannelsResponse,
+          Channel,
+          ListChannelsPage,
+          ListChannelsFixedSizeCollection> {
+
+    private ListChannelsFixedSizeCollection(List<ListChannelsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListChannelsFixedSizeCollection createEmptyCollection() {
+      return new ListChannelsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListChannelsFixedSizeCollection createCollection(
+        List<ListChannelsPage> pages, int collectionSize) {
+      return new ListChannelsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListChannelConnectionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListChannelConnectionsRequest,
+          ListChannelConnectionsResponse,
+          ChannelConnection,
+          ListChannelConnectionsPage,
+          ListChannelConnectionsFixedSizeCollection> {
+
+    public static ApiFuture<ListChannelConnectionsPagedResponse> createAsync(
+        PageContext<
+                ListChannelConnectionsRequest, ListChannelConnectionsResponse, ChannelConnection>
+            context,
+        ApiFuture<ListChannelConnectionsResponse> futureResponse) {
+      ApiFuture<ListChannelConnectionsPage> futurePage =
+          ListChannelConnectionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListChannelConnectionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListChannelConnectionsPagedResponse(ListChannelConnectionsPage page) {
+      super(page, ListChannelConnectionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListChannelConnectionsPage
+      extends AbstractPage<
+          ListChannelConnectionsRequest,
+          ListChannelConnectionsResponse,
+          ChannelConnection,
+          ListChannelConnectionsPage> {
+
+    private ListChannelConnectionsPage(
+        PageContext<
+                ListChannelConnectionsRequest, ListChannelConnectionsResponse, ChannelConnection>
+            context,
+        ListChannelConnectionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListChannelConnectionsPage createEmptyPage() {
+      return new ListChannelConnectionsPage(null, null);
+    }
+
+    @Override
+    protected ListChannelConnectionsPage createPage(
+        PageContext<
+                ListChannelConnectionsRequest, ListChannelConnectionsResponse, ChannelConnection>
+            context,
+        ListChannelConnectionsResponse response) {
+      return new ListChannelConnectionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListChannelConnectionsPage> createPageAsync(
+        PageContext<
+                ListChannelConnectionsRequest, ListChannelConnectionsResponse, ChannelConnection>
+            context,
+        ApiFuture<ListChannelConnectionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListChannelConnectionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListChannelConnectionsRequest,
+          ListChannelConnectionsResponse,
+          ChannelConnection,
+          ListChannelConnectionsPage,
+          ListChannelConnectionsFixedSizeCollection> {
+
+    private ListChannelConnectionsFixedSizeCollection(
+        List<ListChannelConnectionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListChannelConnectionsFixedSizeCollection createEmptyCollection() {
+      return new ListChannelConnectionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListChannelConnectionsFixedSizeCollection createCollection(
+        List<ListChannelConnectionsPage> pages, int collectionSize) {
+      return new ListChannelConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

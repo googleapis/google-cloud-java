@@ -249,6 +249,413 @@ public final class EventarcGrpc {
     return getDeleteTriggerMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetChannelRequest, com.google.cloud.eventarc.v1.Channel>
+      getGetChannelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetChannel",
+      requestType = com.google.cloud.eventarc.v1.GetChannelRequest.class,
+      responseType = com.google.cloud.eventarc.v1.Channel.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetChannelRequest, com.google.cloud.eventarc.v1.Channel>
+      getGetChannelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.GetChannelRequest, com.google.cloud.eventarc.v1.Channel>
+        getGetChannelMethod;
+    if ((getGetChannelMethod = EventarcGrpc.getGetChannelMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getGetChannelMethod = EventarcGrpc.getGetChannelMethod) == null) {
+          EventarcGrpc.getGetChannelMethod =
+              getGetChannelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.GetChannelRequest,
+                          com.google.cloud.eventarc.v1.Channel>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetChannel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.GetChannelRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.Channel.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("GetChannel"))
+                      .build();
+        }
+      }
+    }
+    return getGetChannelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListChannelsRequest,
+          com.google.cloud.eventarc.v1.ListChannelsResponse>
+      getListChannelsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListChannels",
+      requestType = com.google.cloud.eventarc.v1.ListChannelsRequest.class,
+      responseType = com.google.cloud.eventarc.v1.ListChannelsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListChannelsRequest,
+          com.google.cloud.eventarc.v1.ListChannelsResponse>
+      getListChannelsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.ListChannelsRequest,
+            com.google.cloud.eventarc.v1.ListChannelsResponse>
+        getListChannelsMethod;
+    if ((getListChannelsMethod = EventarcGrpc.getListChannelsMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getListChannelsMethod = EventarcGrpc.getListChannelsMethod) == null) {
+          EventarcGrpc.getListChannelsMethod =
+              getListChannelsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.ListChannelsRequest,
+                          com.google.cloud.eventarc.v1.ListChannelsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListChannels"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListChannelsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListChannelsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("ListChannels"))
+                      .build();
+        }
+      }
+    }
+    return getListChannelsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.CreateChannelRequest, com.google.longrunning.Operation>
+      getCreateChannelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateChannel",
+      requestType = com.google.cloud.eventarc.v1.CreateChannelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.CreateChannelRequest, com.google.longrunning.Operation>
+      getCreateChannelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.CreateChannelRequest, com.google.longrunning.Operation>
+        getCreateChannelMethod;
+    if ((getCreateChannelMethod = EventarcGrpc.getCreateChannelMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getCreateChannelMethod = EventarcGrpc.getCreateChannelMethod) == null) {
+          EventarcGrpc.getCreateChannelMethod =
+              getCreateChannelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.CreateChannelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateChannel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.CreateChannelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("CreateChannel"))
+                      .build();
+        }
+      }
+    }
+    return getCreateChannelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.UpdateChannelRequest, com.google.longrunning.Operation>
+      getUpdateChannelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateChannel",
+      requestType = com.google.cloud.eventarc.v1.UpdateChannelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.UpdateChannelRequest, com.google.longrunning.Operation>
+      getUpdateChannelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.UpdateChannelRequest, com.google.longrunning.Operation>
+        getUpdateChannelMethod;
+    if ((getUpdateChannelMethod = EventarcGrpc.getUpdateChannelMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getUpdateChannelMethod = EventarcGrpc.getUpdateChannelMethod) == null) {
+          EventarcGrpc.getUpdateChannelMethod =
+              getUpdateChannelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.UpdateChannelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateChannel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.UpdateChannelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("UpdateChannel"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateChannelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.DeleteChannelRequest, com.google.longrunning.Operation>
+      getDeleteChannelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteChannel",
+      requestType = com.google.cloud.eventarc.v1.DeleteChannelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.DeleteChannelRequest, com.google.longrunning.Operation>
+      getDeleteChannelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.DeleteChannelRequest, com.google.longrunning.Operation>
+        getDeleteChannelMethod;
+    if ((getDeleteChannelMethod = EventarcGrpc.getDeleteChannelMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getDeleteChannelMethod = EventarcGrpc.getDeleteChannelMethod) == null) {
+          EventarcGrpc.getDeleteChannelMethod =
+              getDeleteChannelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.DeleteChannelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteChannel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.DeleteChannelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("DeleteChannel"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteChannelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetChannelConnectionRequest,
+          com.google.cloud.eventarc.v1.ChannelConnection>
+      getGetChannelConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetChannelConnection",
+      requestType = com.google.cloud.eventarc.v1.GetChannelConnectionRequest.class,
+      responseType = com.google.cloud.eventarc.v1.ChannelConnection.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetChannelConnectionRequest,
+          com.google.cloud.eventarc.v1.ChannelConnection>
+      getGetChannelConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.GetChannelConnectionRequest,
+            com.google.cloud.eventarc.v1.ChannelConnection>
+        getGetChannelConnectionMethod;
+    if ((getGetChannelConnectionMethod = EventarcGrpc.getGetChannelConnectionMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getGetChannelConnectionMethod = EventarcGrpc.getGetChannelConnectionMethod) == null) {
+          EventarcGrpc.getGetChannelConnectionMethod =
+              getGetChannelConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.GetChannelConnectionRequest,
+                          com.google.cloud.eventarc.v1.ChannelConnection>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetChannelConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.GetChannelConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ChannelConnection.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EventarcMethodDescriptorSupplier("GetChannelConnection"))
+                      .build();
+        }
+      }
+    }
+    return getGetChannelConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListChannelConnectionsRequest,
+          com.google.cloud.eventarc.v1.ListChannelConnectionsResponse>
+      getListChannelConnectionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListChannelConnections",
+      requestType = com.google.cloud.eventarc.v1.ListChannelConnectionsRequest.class,
+      responseType = com.google.cloud.eventarc.v1.ListChannelConnectionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListChannelConnectionsRequest,
+          com.google.cloud.eventarc.v1.ListChannelConnectionsResponse>
+      getListChannelConnectionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.ListChannelConnectionsRequest,
+            com.google.cloud.eventarc.v1.ListChannelConnectionsResponse>
+        getListChannelConnectionsMethod;
+    if ((getListChannelConnectionsMethod = EventarcGrpc.getListChannelConnectionsMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getListChannelConnectionsMethod = EventarcGrpc.getListChannelConnectionsMethod)
+            == null) {
+          EventarcGrpc.getListChannelConnectionsMethod =
+              getListChannelConnectionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.ListChannelConnectionsRequest,
+                          com.google.cloud.eventarc.v1.ListChannelConnectionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListChannelConnections"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListChannelConnectionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListChannelConnectionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EventarcMethodDescriptorSupplier("ListChannelConnections"))
+                      .build();
+        }
+      }
+    }
+    return getListChannelConnectionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.CreateChannelConnectionRequest,
+          com.google.longrunning.Operation>
+      getCreateChannelConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateChannelConnection",
+      requestType = com.google.cloud.eventarc.v1.CreateChannelConnectionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.CreateChannelConnectionRequest,
+          com.google.longrunning.Operation>
+      getCreateChannelConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.CreateChannelConnectionRequest,
+            com.google.longrunning.Operation>
+        getCreateChannelConnectionMethod;
+    if ((getCreateChannelConnectionMethod = EventarcGrpc.getCreateChannelConnectionMethod)
+        == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getCreateChannelConnectionMethod = EventarcGrpc.getCreateChannelConnectionMethod)
+            == null) {
+          EventarcGrpc.getCreateChannelConnectionMethod =
+              getCreateChannelConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.CreateChannelConnectionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateChannelConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.CreateChannelConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EventarcMethodDescriptorSupplier("CreateChannelConnection"))
+                      .build();
+        }
+      }
+    }
+    return getCreateChannelConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest,
+          com.google.longrunning.Operation>
+      getDeleteChannelConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteChannelConnection",
+      requestType = com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest,
+          com.google.longrunning.Operation>
+      getDeleteChannelConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest,
+            com.google.longrunning.Operation>
+        getDeleteChannelConnectionMethod;
+    if ((getDeleteChannelConnectionMethod = EventarcGrpc.getDeleteChannelConnectionMethod)
+        == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getDeleteChannelConnectionMethod = EventarcGrpc.getDeleteChannelConnectionMethod)
+            == null) {
+          EventarcGrpc.getDeleteChannelConnectionMethod =
+              getDeleteChannelConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteChannelConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EventarcMethodDescriptorSupplier("DeleteChannelConnection"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteChannelConnectionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EventarcStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EventarcStub> factory =
@@ -369,6 +776,134 @@ public final class EventarcGrpc {
           getDeleteTriggerMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Channel.
+     * </pre>
+     */
+    public void getChannel(
+        com.google.cloud.eventarc.v1.GetChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.Channel> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetChannelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List channels.
+     * </pre>
+     */
+    public void listChannels(
+        com.google.cloud.eventarc.v1.ListChannelsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListChannelsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListChannelsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new channel in a particular project and location.
+     * </pre>
+     */
+    public void createChannel(
+        com.google.cloud.eventarc.v1.CreateChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateChannelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single channel.
+     * </pre>
+     */
+    public void updateChannel(
+        com.google.cloud.eventarc.v1.UpdateChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateChannelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single channel.
+     * </pre>
+     */
+    public void deleteChannel(
+        com.google.cloud.eventarc.v1.DeleteChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteChannelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single ChannelConnection.
+     * </pre>
+     */
+    public void getChannelConnection(
+        com.google.cloud.eventarc.v1.GetChannelConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ChannelConnection>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetChannelConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List channel connections.
+     * </pre>
+     */
+    public void listChannelConnections(
+        com.google.cloud.eventarc.v1.ListChannelConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListChannelConnectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListChannelConnectionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new ChannelConnection in a particular project and location.
+     * </pre>
+     */
+    public void createChannelConnection(
+        com.google.cloud.eventarc.v1.CreateChannelConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateChannelConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single ChannelConnection.
+     * </pre>
+     */
+    public void deleteChannelConnection(
+        com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteChannelConnectionMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -403,6 +938,63 @@ public final class EventarcGrpc {
                   new MethodHandlers<
                       com.google.cloud.eventarc.v1.DeleteTriggerRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_TRIGGER)))
+          .addMethod(
+              getGetChannelMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.GetChannelRequest,
+                      com.google.cloud.eventarc.v1.Channel>(this, METHODID_GET_CHANNEL)))
+          .addMethod(
+              getListChannelsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.ListChannelsRequest,
+                      com.google.cloud.eventarc.v1.ListChannelsResponse>(
+                      this, METHODID_LIST_CHANNELS)))
+          .addMethod(
+              getCreateChannelMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.CreateChannelRequest,
+                      com.google.longrunning.Operation>(this, METHODID_CREATE_CHANNEL)))
+          .addMethod(
+              getUpdateChannelMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.UpdateChannelRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CHANNEL)))
+          .addMethod(
+              getDeleteChannelMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.DeleteChannelRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DELETE_CHANNEL)))
+          .addMethod(
+              getGetChannelConnectionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.GetChannelConnectionRequest,
+                      com.google.cloud.eventarc.v1.ChannelConnection>(
+                      this, METHODID_GET_CHANNEL_CONNECTION)))
+          .addMethod(
+              getListChannelConnectionsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.ListChannelConnectionsRequest,
+                      com.google.cloud.eventarc.v1.ListChannelConnectionsResponse>(
+                      this, METHODID_LIST_CHANNEL_CONNECTIONS)))
+          .addMethod(
+              getCreateChannelConnectionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.CreateChannelConnectionRequest,
+                      com.google.longrunning.Operation>(this, METHODID_CREATE_CHANNEL_CONNECTION)))
+          .addMethod(
+              getDeleteChannelConnectionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DELETE_CHANNEL_CONNECTION)))
           .build();
     }
   }
@@ -503,6 +1095,151 @@ public final class EventarcGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Channel.
+     * </pre>
+     */
+    public void getChannel(
+        com.google.cloud.eventarc.v1.GetChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.Channel> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetChannelMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List channels.
+     * </pre>
+     */
+    public void listChannels(
+        com.google.cloud.eventarc.v1.ListChannelsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListChannelsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListChannelsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new channel in a particular project and location.
+     * </pre>
+     */
+    public void createChannel(
+        com.google.cloud.eventarc.v1.CreateChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateChannelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single channel.
+     * </pre>
+     */
+    public void updateChannel(
+        com.google.cloud.eventarc.v1.UpdateChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateChannelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single channel.
+     * </pre>
+     */
+    public void deleteChannel(
+        com.google.cloud.eventarc.v1.DeleteChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteChannelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single ChannelConnection.
+     * </pre>
+     */
+    public void getChannelConnection(
+        com.google.cloud.eventarc.v1.GetChannelConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ChannelConnection>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetChannelConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List channel connections.
+     * </pre>
+     */
+    public void listChannelConnections(
+        com.google.cloud.eventarc.v1.ListChannelConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListChannelConnectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListChannelConnectionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new ChannelConnection in a particular project and location.
+     * </pre>
+     */
+    public void createChannelConnection(
+        com.google.cloud.eventarc.v1.CreateChannelConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateChannelConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single ChannelConnection.
+     * </pre>
+     */
+    public void deleteChannelConnection(
+        com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteChannelConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -587,6 +1324,123 @@ public final class EventarcGrpc {
         com.google.cloud.eventarc.v1.DeleteTriggerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Channel.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.Channel getChannel(
+        com.google.cloud.eventarc.v1.GetChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List channels.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListChannelsResponse listChannels(
+        com.google.cloud.eventarc.v1.ListChannelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListChannelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new channel in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createChannel(
+        com.google.cloud.eventarc.v1.CreateChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateChannel(
+        com.google.cloud.eventarc.v1.UpdateChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteChannel(
+        com.google.cloud.eventarc.v1.DeleteChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single ChannelConnection.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ChannelConnection getChannelConnection(
+        com.google.cloud.eventarc.v1.GetChannelConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetChannelConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List channel connections.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListChannelConnectionsResponse listChannelConnections(
+        com.google.cloud.eventarc.v1.ListChannelConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListChannelConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new ChannelConnection in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createChannelConnection(
+        com.google.cloud.eventarc.v1.CreateChannelConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateChannelConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single ChannelConnection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteChannelConnection(
+        com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteChannelConnectionMethod(), getCallOptions(), request);
     }
   }
 
@@ -674,6 +1528,128 @@ public final class EventarcGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTriggerMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Channel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.eventarc.v1.Channel>
+        getChannel(com.google.cloud.eventarc.v1.GetChannelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetChannelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List channels.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.ListChannelsResponse>
+        listChannels(com.google.cloud.eventarc.v1.ListChannelsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListChannelsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new channel in a particular project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createChannel(com.google.cloud.eventarc.v1.CreateChannelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateChannelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single channel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateChannel(com.google.cloud.eventarc.v1.UpdateChannelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateChannelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single channel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteChannel(com.google.cloud.eventarc.v1.DeleteChannelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteChannelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single ChannelConnection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.ChannelConnection>
+        getChannelConnection(com.google.cloud.eventarc.v1.GetChannelConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetChannelConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List channel connections.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.ListChannelConnectionsResponse>
+        listChannelConnections(com.google.cloud.eventarc.v1.ListChannelConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListChannelConnectionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new ChannelConnection in a particular project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createChannelConnection(
+            com.google.cloud.eventarc.v1.CreateChannelConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateChannelConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single ChannelConnection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteChannelConnection(
+            com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteChannelConnectionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_TRIGGER = 0;
@@ -681,6 +1657,15 @@ public final class EventarcGrpc {
   private static final int METHODID_CREATE_TRIGGER = 2;
   private static final int METHODID_UPDATE_TRIGGER = 3;
   private static final int METHODID_DELETE_TRIGGER = 4;
+  private static final int METHODID_GET_CHANNEL = 5;
+  private static final int METHODID_LIST_CHANNELS = 6;
+  private static final int METHODID_CREATE_CHANNEL = 7;
+  private static final int METHODID_UPDATE_CHANNEL = 8;
+  private static final int METHODID_DELETE_CHANNEL = 9;
+  private static final int METHODID_GET_CHANNEL_CONNECTION = 10;
+  private static final int METHODID_LIST_CHANNEL_CONNECTIONS = 11;
+  private static final int METHODID_CREATE_CHANNEL_CONNECTION = 12;
+  private static final int METHODID_DELETE_CHANNEL_CONNECTION = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -723,6 +1708,55 @@ public final class EventarcGrpc {
         case METHODID_DELETE_TRIGGER:
           serviceImpl.deleteTrigger(
               (com.google.cloud.eventarc.v1.DeleteTriggerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_CHANNEL:
+          serviceImpl.getChannel(
+              (com.google.cloud.eventarc.v1.GetChannelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.Channel>) responseObserver);
+          break;
+        case METHODID_LIST_CHANNELS:
+          serviceImpl.listChannels(
+              (com.google.cloud.eventarc.v1.ListChannelsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListChannelsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CHANNEL:
+          serviceImpl.createChannel(
+              (com.google.cloud.eventarc.v1.CreateChannelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_CHANNEL:
+          serviceImpl.updateChannel(
+              (com.google.cloud.eventarc.v1.UpdateChannelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_CHANNEL:
+          serviceImpl.deleteChannel(
+              (com.google.cloud.eventarc.v1.DeleteChannelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_CHANNEL_CONNECTION:
+          serviceImpl.getChannelConnection(
+              (com.google.cloud.eventarc.v1.GetChannelConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ChannelConnection>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_CHANNEL_CONNECTIONS:
+          serviceImpl.listChannelConnections(
+              (com.google.cloud.eventarc.v1.ListChannelConnectionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.eventarc.v1.ListChannelConnectionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CHANNEL_CONNECTION:
+          serviceImpl.createChannelConnection(
+              (com.google.cloud.eventarc.v1.CreateChannelConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_CHANNEL_CONNECTION:
+          serviceImpl.deleteChannelConnection(
+              (com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -792,6 +1826,15 @@ public final class EventarcGrpc {
                       .addMethod(getCreateTriggerMethod())
                       .addMethod(getUpdateTriggerMethod())
                       .addMethod(getDeleteTriggerMethod())
+                      .addMethod(getGetChannelMethod())
+                      .addMethod(getListChannelsMethod())
+                      .addMethod(getCreateChannelMethod())
+                      .addMethod(getUpdateChannelMethod())
+                      .addMethod(getDeleteChannelMethod())
+                      .addMethod(getGetChannelConnectionMethod())
+                      .addMethod(getListChannelConnectionsMethod())
+                      .addMethod(getCreateChannelConnectionMethod())
+                      .addMethod(getDeleteChannelConnectionMethod())
                       .build();
         }
       }

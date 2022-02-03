@@ -119,7 +119,7 @@ public interface CreateTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * Required. If set, validate the request and preview the review, but do not actually
+   * Required. If set, validate the request and preview the review, but do not
    * post it.
    * </pre>
    *

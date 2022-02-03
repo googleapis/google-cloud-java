@@ -265,9 +265,9 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The sorting order of the resources returned. Value should be a comma
-   * separated list of fields. The default sorting oder is ascending. To specify
-   * descending order for a field, append a ` desc` suffix; for example:
+   * The sorting order of the resources returned. Value should be a
+   * comma-separated list of fields. The default sorting order is ascending. To
+   * specify descending order for a field, append a `desc` suffix; for example:
    * `name desc, trigger_id`.
    * </pre>
    *
@@ -291,9 +291,9 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The sorting order of the resources returned. Value should be a comma
-   * separated list of fields. The default sorting oder is ascending. To specify
-   * descending order for a field, append a ` desc` suffix; for example:
+   * The sorting order of the resources returned. Value should be a
+   * comma-separated list of fields. The default sorting order is ascending. To
+   * specify descending order for a field, append a `desc` suffix; for example:
    * `name desc, trigger_id`.
    * </pre>
    *
@@ -975,9 +975,9 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The sorting order of the resources returned. Value should be a comma
-     * separated list of fields. The default sorting oder is ascending. To specify
-     * descending order for a field, append a ` desc` suffix; for example:
+     * The sorting order of the resources returned. Value should be a
+     * comma-separated list of fields. The default sorting order is ascending. To
+     * specify descending order for a field, append a `desc` suffix; for example:
      * `name desc, trigger_id`.
      * </pre>
      *
@@ -1000,9 +1000,9 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The sorting order of the resources returned. Value should be a comma
-     * separated list of fields. The default sorting oder is ascending. To specify
-     * descending order for a field, append a ` desc` suffix; for example:
+     * The sorting order of the resources returned. Value should be a
+     * comma-separated list of fields. The default sorting order is ascending. To
+     * specify descending order for a field, append a `desc` suffix; for example:
      * `name desc, trigger_id`.
      * </pre>
      *
@@ -1025,9 +1025,9 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The sorting order of the resources returned. Value should be a comma
-     * separated list of fields. The default sorting oder is ascending. To specify
-     * descending order for a field, append a ` desc` suffix; for example:
+     * The sorting order of the resources returned. Value should be a
+     * comma-separated list of fields. The default sorting order is ascending. To
+     * specify descending order for a field, append a `desc` suffix; for example:
      * `name desc, trigger_id`.
      * </pre>
      *
@@ -1049,9 +1049,9 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The sorting order of the resources returned. Value should be a comma
-     * separated list of fields. The default sorting oder is ascending. To specify
-     * descending order for a field, append a ` desc` suffix; for example:
+     * The sorting order of the resources returned. Value should be a
+     * comma-separated list of fields. The default sorting order is ascending. To
+     * specify descending order for a field, append a `desc` suffix; for example:
      * `name desc, trigger_id`.
      * </pre>
      *
@@ -1069,9 +1069,9 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The sorting order of the resources returned. Value should be a comma
-     * separated list of fields. The default sorting oder is ascending. To specify
-     * descending order for a field, append a ` desc` suffix; for example:
+     * The sorting order of the resources returned. Value should be a
+     * comma-separated list of fields. The default sorting order is ascending. To
+     * specify descending order for a field, append a `desc` suffix; for example:
      * `name desc, trigger_id`.
      * </pre>
      *

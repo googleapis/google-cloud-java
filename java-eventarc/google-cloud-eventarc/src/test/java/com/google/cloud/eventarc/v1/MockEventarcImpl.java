@@ -162,4 +162,193 @@ public class MockEventarcImpl extends EventarcImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getChannel(GetChannelRequest request, StreamObserver<Channel> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Channel) {
+      requests.add(request);
+      responseObserver.onNext(((Channel) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetChannel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Channel.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listChannels(
+      ListChannelsRequest request, StreamObserver<ListChannelsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListChannelsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListChannelsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListChannels, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListChannelsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createChannel(
+      CreateChannelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateChannel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateChannel(
+      UpdateChannelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateChannel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteChannel(
+      DeleteChannelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteChannel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getChannelConnection(
+      GetChannelConnectionRequest request, StreamObserver<ChannelConnection> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ChannelConnection) {
+      requests.add(request);
+      responseObserver.onNext(((ChannelConnection) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetChannelConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ChannelConnection.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listChannelConnections(
+      ListChannelConnectionsRequest request,
+      StreamObserver<ListChannelConnectionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListChannelConnectionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListChannelConnectionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListChannelConnections, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListChannelConnectionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createChannelConnection(
+      CreateChannelConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateChannelConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteChannelConnection(
+      DeleteChannelConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteChannelConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

@@ -27,7 +27,7 @@ public interface TransportOrBuilder
    *
    *
    * <pre>
-   * The Pub/Sub topic and subscription used by Eventarc as delivery
+   * The Pub/Sub topic and subscription used by Eventarc as a transport
    * intermediary.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface TransportOrBuilder
    *
    *
    * <pre>
-   * The Pub/Sub topic and subscription used by Eventarc as delivery
+   * The Pub/Sub topic and subscription used by Eventarc as a transport
    * intermediary.
    * </pre>
    *
@@ -53,7 +53,7 @@ public interface TransportOrBuilder
    *
    *
    * <pre>
-   * The Pub/Sub topic and subscription used by Eventarc as delivery
+   * The Pub/Sub topic and subscription used by Eventarc as a transport
    * intermediary.
    * </pre>
    *

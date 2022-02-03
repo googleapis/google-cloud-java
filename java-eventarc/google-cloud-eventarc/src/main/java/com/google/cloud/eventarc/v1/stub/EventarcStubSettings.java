@@ -16,6 +16,8 @@
 
 package com.google.cloud.eventarc.v1.stub;
 
+import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -44,13 +46,26 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.eventarc.v1.Channel;
+import com.google.cloud.eventarc.v1.ChannelConnection;
+import com.google.cloud.eventarc.v1.CreateChannelConnectionRequest;
+import com.google.cloud.eventarc.v1.CreateChannelRequest;
 import com.google.cloud.eventarc.v1.CreateTriggerRequest;
+import com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest;
+import com.google.cloud.eventarc.v1.DeleteChannelRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
+import com.google.cloud.eventarc.v1.GetChannelConnectionRequest;
+import com.google.cloud.eventarc.v1.GetChannelRequest;
 import com.google.cloud.eventarc.v1.GetTriggerRequest;
+import com.google.cloud.eventarc.v1.ListChannelConnectionsRequest;
+import com.google.cloud.eventarc.v1.ListChannelConnectionsResponse;
+import com.google.cloud.eventarc.v1.ListChannelsRequest;
+import com.google.cloud.eventarc.v1.ListChannelsResponse;
 import com.google.cloud.eventarc.v1.ListTriggersRequest;
 import com.google.cloud.eventarc.v1.ListTriggersResponse;
 import com.google.cloud.eventarc.v1.OperationMetadata;
 import com.google.cloud.eventarc.v1.Trigger;
+import com.google.cloud.eventarc.v1.UpdateChannelRequest;
 import com.google.cloud.eventarc.v1.UpdateTriggerRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -112,6 +127,36 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
   private final UnaryCallSettings<DeleteTriggerRequest, Operation> deleteTriggerSettings;
   private final OperationCallSettings<DeleteTriggerRequest, Trigger, OperationMetadata>
       deleteTriggerOperationSettings;
+  private final UnaryCallSettings<GetChannelRequest, Channel> getChannelSettings;
+  private final PagedCallSettings<
+          ListChannelsRequest, ListChannelsResponse, ListChannelsPagedResponse>
+      listChannelsSettings;
+  private final UnaryCallSettings<CreateChannelRequest, Operation> createChannelSettings;
+  private final OperationCallSettings<CreateChannelRequest, Channel, OperationMetadata>
+      createChannelOperationSettings;
+  private final UnaryCallSettings<UpdateChannelRequest, Operation> updateChannelSettings;
+  private final OperationCallSettings<UpdateChannelRequest, Channel, OperationMetadata>
+      updateChannelOperationSettings;
+  private final UnaryCallSettings<DeleteChannelRequest, Operation> deleteChannelSettings;
+  private final OperationCallSettings<DeleteChannelRequest, Channel, OperationMetadata>
+      deleteChannelOperationSettings;
+  private final UnaryCallSettings<GetChannelConnectionRequest, ChannelConnection>
+      getChannelConnectionSettings;
+  private final PagedCallSettings<
+          ListChannelConnectionsRequest,
+          ListChannelConnectionsResponse,
+          ListChannelConnectionsPagedResponse>
+      listChannelConnectionsSettings;
+  private final UnaryCallSettings<CreateChannelConnectionRequest, Operation>
+      createChannelConnectionSettings;
+  private final OperationCallSettings<
+          CreateChannelConnectionRequest, ChannelConnection, OperationMetadata>
+      createChannelConnectionOperationSettings;
+  private final UnaryCallSettings<DeleteChannelConnectionRequest, Operation>
+      deleteChannelConnectionSettings;
+  private final OperationCallSettings<
+          DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
+      deleteChannelConnectionOperationSettings;
 
   private static final PagedListDescriptor<ListTriggersRequest, ListTriggersResponse, Trigger>
       LIST_TRIGGERS_PAGE_STR_DESC =
@@ -149,6 +194,85 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListChannelsRequest, ListChannelsResponse, Channel>
+      LIST_CHANNELS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListChannelsRequest, ListChannelsResponse, Channel>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListChannelsRequest injectToken(ListChannelsRequest payload, String token) {
+              return ListChannelsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListChannelsRequest injectPageSize(ListChannelsRequest payload, int pageSize) {
+              return ListChannelsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListChannelsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListChannelsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Channel> extractResources(ListChannelsResponse payload) {
+              return payload.getChannelsList() == null
+                  ? ImmutableList.<Channel>of()
+                  : payload.getChannelsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListChannelConnectionsRequest, ListChannelConnectionsResponse, ChannelConnection>
+      LIST_CHANNEL_CONNECTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListChannelConnectionsRequest, ListChannelConnectionsResponse, ChannelConnection>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListChannelConnectionsRequest injectToken(
+                ListChannelConnectionsRequest payload, String token) {
+              return ListChannelConnectionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListChannelConnectionsRequest injectPageSize(
+                ListChannelConnectionsRequest payload, int pageSize) {
+              return ListChannelConnectionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListChannelConnectionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListChannelConnectionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ChannelConnection> extractResources(
+                ListChannelConnectionsResponse payload) {
+              return payload.getChannelConnectionsList() == null
+                  ? ImmutableList.<ChannelConnection>of()
+                  : payload.getChannelConnectionsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListTriggersRequest, ListTriggersResponse, ListTriggersPagedResponse>
       LIST_TRIGGERS_PAGE_STR_FACT =
@@ -163,6 +287,50 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
               PageContext<ListTriggersRequest, ListTriggersResponse, Trigger> pageContext =
                   PageContext.create(callable, LIST_TRIGGERS_PAGE_STR_DESC, request, context);
               return ListTriggersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListChannelsRequest, ListChannelsResponse, ListChannelsPagedResponse>
+      LIST_CHANNELS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListChannelsRequest, ListChannelsResponse, ListChannelsPagedResponse>() {
+            @Override
+            public ApiFuture<ListChannelsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListChannelsRequest, ListChannelsResponse> callable,
+                ListChannelsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListChannelsResponse> futureResponse) {
+              PageContext<ListChannelsRequest, ListChannelsResponse, Channel> pageContext =
+                  PageContext.create(callable, LIST_CHANNELS_PAGE_STR_DESC, request, context);
+              return ListChannelsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListChannelConnectionsRequest,
+          ListChannelConnectionsResponse,
+          ListChannelConnectionsPagedResponse>
+      LIST_CHANNEL_CONNECTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListChannelConnectionsRequest,
+              ListChannelConnectionsResponse,
+              ListChannelConnectionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListChannelConnectionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListChannelConnectionsRequest, ListChannelConnectionsResponse>
+                    callable,
+                ListChannelConnectionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListChannelConnectionsResponse> futureResponse) {
+              PageContext<
+                      ListChannelConnectionsRequest,
+                      ListChannelConnectionsResponse,
+                      ChannelConnection>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CHANNEL_CONNECTIONS_PAGE_STR_DESC, request, context);
+              return ListChannelConnectionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -208,6 +376,89 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
   public OperationCallSettings<DeleteTriggerRequest, Trigger, OperationMetadata>
       deleteTriggerOperationSettings() {
     return deleteTriggerOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getChannel. */
+  public UnaryCallSettings<GetChannelRequest, Channel> getChannelSettings() {
+    return getChannelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listChannels. */
+  public PagedCallSettings<ListChannelsRequest, ListChannelsResponse, ListChannelsPagedResponse>
+      listChannelsSettings() {
+    return listChannelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createChannel. */
+  public UnaryCallSettings<CreateChannelRequest, Operation> createChannelSettings() {
+    return createChannelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createChannel. */
+  public OperationCallSettings<CreateChannelRequest, Channel, OperationMetadata>
+      createChannelOperationSettings() {
+    return createChannelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateChannel. */
+  public UnaryCallSettings<UpdateChannelRequest, Operation> updateChannelSettings() {
+    return updateChannelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateChannel. */
+  public OperationCallSettings<UpdateChannelRequest, Channel, OperationMetadata>
+      updateChannelOperationSettings() {
+    return updateChannelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteChannel. */
+  public UnaryCallSettings<DeleteChannelRequest, Operation> deleteChannelSettings() {
+    return deleteChannelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteChannel. */
+  public OperationCallSettings<DeleteChannelRequest, Channel, OperationMetadata>
+      deleteChannelOperationSettings() {
+    return deleteChannelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getChannelConnection. */
+  public UnaryCallSettings<GetChannelConnectionRequest, ChannelConnection>
+      getChannelConnectionSettings() {
+    return getChannelConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listChannelConnections. */
+  public PagedCallSettings<
+          ListChannelConnectionsRequest,
+          ListChannelConnectionsResponse,
+          ListChannelConnectionsPagedResponse>
+      listChannelConnectionsSettings() {
+    return listChannelConnectionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createChannelConnection. */
+  public UnaryCallSettings<CreateChannelConnectionRequest, Operation>
+      createChannelConnectionSettings() {
+    return createChannelConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createChannelConnection. */
+  public OperationCallSettings<CreateChannelConnectionRequest, ChannelConnection, OperationMetadata>
+      createChannelConnectionOperationSettings() {
+    return createChannelConnectionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteChannelConnection. */
+  public UnaryCallSettings<DeleteChannelConnectionRequest, Operation>
+      deleteChannelConnectionSettings() {
+    return deleteChannelConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteChannelConnection. */
+  public OperationCallSettings<DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
+      deleteChannelConnectionOperationSettings() {
+    return deleteChannelConnectionOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -293,6 +544,22 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     updateTriggerOperationSettings = settingsBuilder.updateTriggerOperationSettings().build();
     deleteTriggerSettings = settingsBuilder.deleteTriggerSettings().build();
     deleteTriggerOperationSettings = settingsBuilder.deleteTriggerOperationSettings().build();
+    getChannelSettings = settingsBuilder.getChannelSettings().build();
+    listChannelsSettings = settingsBuilder.listChannelsSettings().build();
+    createChannelSettings = settingsBuilder.createChannelSettings().build();
+    createChannelOperationSettings = settingsBuilder.createChannelOperationSettings().build();
+    updateChannelSettings = settingsBuilder.updateChannelSettings().build();
+    updateChannelOperationSettings = settingsBuilder.updateChannelOperationSettings().build();
+    deleteChannelSettings = settingsBuilder.deleteChannelSettings().build();
+    deleteChannelOperationSettings = settingsBuilder.deleteChannelOperationSettings().build();
+    getChannelConnectionSettings = settingsBuilder.getChannelConnectionSettings().build();
+    listChannelConnectionsSettings = settingsBuilder.listChannelConnectionsSettings().build();
+    createChannelConnectionSettings = settingsBuilder.createChannelConnectionSettings().build();
+    createChannelConnectionOperationSettings =
+        settingsBuilder.createChannelConnectionOperationSettings().build();
+    deleteChannelConnectionSettings = settingsBuilder.deleteChannelConnectionSettings().build();
+    deleteChannelConnectionOperationSettings =
+        settingsBuilder.deleteChannelConnectionOperationSettings().build();
   }
 
   /** Builder for EventarcStubSettings. */
@@ -311,6 +578,36 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     private final UnaryCallSettings.Builder<DeleteTriggerRequest, Operation> deleteTriggerSettings;
     private final OperationCallSettings.Builder<DeleteTriggerRequest, Trigger, OperationMetadata>
         deleteTriggerOperationSettings;
+    private final UnaryCallSettings.Builder<GetChannelRequest, Channel> getChannelSettings;
+    private final PagedCallSettings.Builder<
+            ListChannelsRequest, ListChannelsResponse, ListChannelsPagedResponse>
+        listChannelsSettings;
+    private final UnaryCallSettings.Builder<CreateChannelRequest, Operation> createChannelSettings;
+    private final OperationCallSettings.Builder<CreateChannelRequest, Channel, OperationMetadata>
+        createChannelOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateChannelRequest, Operation> updateChannelSettings;
+    private final OperationCallSettings.Builder<UpdateChannelRequest, Channel, OperationMetadata>
+        updateChannelOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteChannelRequest, Operation> deleteChannelSettings;
+    private final OperationCallSettings.Builder<DeleteChannelRequest, Channel, OperationMetadata>
+        deleteChannelOperationSettings;
+    private final UnaryCallSettings.Builder<GetChannelConnectionRequest, ChannelConnection>
+        getChannelConnectionSettings;
+    private final PagedCallSettings.Builder<
+            ListChannelConnectionsRequest,
+            ListChannelConnectionsResponse,
+            ListChannelConnectionsPagedResponse>
+        listChannelConnectionsSettings;
+    private final UnaryCallSettings.Builder<CreateChannelConnectionRequest, Operation>
+        createChannelConnectionSettings;
+    private final OperationCallSettings.Builder<
+            CreateChannelConnectionRequest, ChannelConnection, OperationMetadata>
+        createChannelConnectionOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteChannelConnectionRequest, Operation>
+        deleteChannelConnectionSettings;
+    private final OperationCallSettings.Builder<
+            DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
+        deleteChannelConnectionOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -346,6 +643,21 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
       updateTriggerOperationSettings = OperationCallSettings.newBuilder();
       deleteTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTriggerOperationSettings = OperationCallSettings.newBuilder();
+      getChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listChannelsSettings = PagedCallSettings.newBuilder(LIST_CHANNELS_PAGE_STR_FACT);
+      createChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createChannelOperationSettings = OperationCallSettings.newBuilder();
+      updateChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateChannelOperationSettings = OperationCallSettings.newBuilder();
+      deleteChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteChannelOperationSettings = OperationCallSettings.newBuilder();
+      getChannelConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listChannelConnectionsSettings =
+          PagedCallSettings.newBuilder(LIST_CHANNEL_CONNECTIONS_PAGE_STR_FACT);
+      createChannelConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createChannelConnectionOperationSettings = OperationCallSettings.newBuilder();
+      deleteChannelConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteChannelConnectionOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -353,7 +665,16 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
               listTriggersSettings,
               createTriggerSettings,
               updateTriggerSettings,
-              deleteTriggerSettings);
+              deleteTriggerSettings,
+              getChannelSettings,
+              listChannelsSettings,
+              createChannelSettings,
+              updateChannelSettings,
+              deleteChannelSettings,
+              getChannelConnectionSettings,
+              listChannelConnectionsSettings,
+              createChannelConnectionSettings,
+              deleteChannelConnectionSettings);
       initDefaults(this);
     }
 
@@ -368,6 +689,22 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
       updateTriggerOperationSettings = settings.updateTriggerOperationSettings.toBuilder();
       deleteTriggerSettings = settings.deleteTriggerSettings.toBuilder();
       deleteTriggerOperationSettings = settings.deleteTriggerOperationSettings.toBuilder();
+      getChannelSettings = settings.getChannelSettings.toBuilder();
+      listChannelsSettings = settings.listChannelsSettings.toBuilder();
+      createChannelSettings = settings.createChannelSettings.toBuilder();
+      createChannelOperationSettings = settings.createChannelOperationSettings.toBuilder();
+      updateChannelSettings = settings.updateChannelSettings.toBuilder();
+      updateChannelOperationSettings = settings.updateChannelOperationSettings.toBuilder();
+      deleteChannelSettings = settings.deleteChannelSettings.toBuilder();
+      deleteChannelOperationSettings = settings.deleteChannelOperationSettings.toBuilder();
+      getChannelConnectionSettings = settings.getChannelConnectionSettings.toBuilder();
+      listChannelConnectionsSettings = settings.listChannelConnectionsSettings.toBuilder();
+      createChannelConnectionSettings = settings.createChannelConnectionSettings.toBuilder();
+      createChannelConnectionOperationSettings =
+          settings.createChannelConnectionOperationSettings.toBuilder();
+      deleteChannelConnectionSettings = settings.deleteChannelConnectionSettings.toBuilder();
+      deleteChannelConnectionOperationSettings =
+          settings.deleteChannelConnectionOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -375,7 +712,16 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
               listTriggersSettings,
               createTriggerSettings,
               updateTriggerSettings,
-              deleteTriggerSettings);
+              deleteTriggerSettings,
+              getChannelSettings,
+              listChannelsSettings,
+              createChannelSettings,
+              updateChannelSettings,
+              deleteChannelSettings,
+              getChannelConnectionSettings,
+              listChannelConnectionsSettings,
+              createChannelConnectionSettings,
+              deleteChannelConnectionSettings);
     }
 
     private static Builder createDefault() {
@@ -414,6 +760,51 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
 
       builder
           .deleteTriggerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listChannelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getChannelConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listChannelConnectionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createChannelConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteChannelConnectionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -475,6 +866,126 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Trigger.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createChannelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateChannelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Channel.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateChannelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateChannelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Channel.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteChannelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteChannelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Channel.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createChannelConnectionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateChannelConnectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ChannelConnection.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteChannelConnectionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteChannelConnectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ChannelConnection.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -556,6 +1067,102 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     public OperationCallSettings.Builder<DeleteTriggerRequest, Trigger, OperationMetadata>
         deleteTriggerOperationSettings() {
       return deleteTriggerOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getChannel. */
+    public UnaryCallSettings.Builder<GetChannelRequest, Channel> getChannelSettings() {
+      return getChannelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listChannels. */
+    public PagedCallSettings.Builder<
+            ListChannelsRequest, ListChannelsResponse, ListChannelsPagedResponse>
+        listChannelsSettings() {
+      return listChannelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createChannel. */
+    public UnaryCallSettings.Builder<CreateChannelRequest, Operation> createChannelSettings() {
+      return createChannelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createChannel. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateChannelRequest, Channel, OperationMetadata>
+        createChannelOperationSettings() {
+      return createChannelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateChannel. */
+    public UnaryCallSettings.Builder<UpdateChannelRequest, Operation> updateChannelSettings() {
+      return updateChannelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateChannel. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateChannelRequest, Channel, OperationMetadata>
+        updateChannelOperationSettings() {
+      return updateChannelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteChannel. */
+    public UnaryCallSettings.Builder<DeleteChannelRequest, Operation> deleteChannelSettings() {
+      return deleteChannelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteChannel. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteChannelRequest, Channel, OperationMetadata>
+        deleteChannelOperationSettings() {
+      return deleteChannelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getChannelConnection. */
+    public UnaryCallSettings.Builder<GetChannelConnectionRequest, ChannelConnection>
+        getChannelConnectionSettings() {
+      return getChannelConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listChannelConnections. */
+    public PagedCallSettings.Builder<
+            ListChannelConnectionsRequest,
+            ListChannelConnectionsResponse,
+            ListChannelConnectionsPagedResponse>
+        listChannelConnectionsSettings() {
+      return listChannelConnectionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createChannelConnection. */
+    public UnaryCallSettings.Builder<CreateChannelConnectionRequest, Operation>
+        createChannelConnectionSettings() {
+      return createChannelConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createChannelConnection. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            CreateChannelConnectionRequest, ChannelConnection, OperationMetadata>
+        createChannelConnectionOperationSettings() {
+      return createChannelConnectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteChannelConnection. */
+    public UnaryCallSettings.Builder<DeleteChannelConnectionRequest, Operation>
+        deleteChannelConnectionSettings() {
+      return deleteChannelConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteChannelConnection. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
+        deleteChannelConnectionOperationSettings() {
+      return deleteChannelConnectionOperationSettings;
     }
 
     @Override

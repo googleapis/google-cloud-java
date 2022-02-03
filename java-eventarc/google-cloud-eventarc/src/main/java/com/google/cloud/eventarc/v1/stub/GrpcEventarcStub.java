@@ -16,6 +16,8 @@
 
 package com.google.cloud.eventarc.v1.stub;
 
+import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -25,13 +27,26 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.eventarc.v1.Channel;
+import com.google.cloud.eventarc.v1.ChannelConnection;
+import com.google.cloud.eventarc.v1.CreateChannelConnectionRequest;
+import com.google.cloud.eventarc.v1.CreateChannelRequest;
 import com.google.cloud.eventarc.v1.CreateTriggerRequest;
+import com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest;
+import com.google.cloud.eventarc.v1.DeleteChannelRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
+import com.google.cloud.eventarc.v1.GetChannelConnectionRequest;
+import com.google.cloud.eventarc.v1.GetChannelRequest;
 import com.google.cloud.eventarc.v1.GetTriggerRequest;
+import com.google.cloud.eventarc.v1.ListChannelConnectionsRequest;
+import com.google.cloud.eventarc.v1.ListChannelConnectionsResponse;
+import com.google.cloud.eventarc.v1.ListChannelsRequest;
+import com.google.cloud.eventarc.v1.ListChannelsResponse;
 import com.google.cloud.eventarc.v1.ListTriggersRequest;
 import com.google.cloud.eventarc.v1.ListTriggersResponse;
 import com.google.cloud.eventarc.v1.OperationMetadata;
 import com.google.cloud.eventarc.v1.Trigger;
+import com.google.cloud.eventarc.v1.UpdateChannelRequest;
 import com.google.cloud.eventarc.v1.UpdateTriggerRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -98,6 +113,97 @@ public class GrpcEventarcStub extends EventarcStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetChannelRequest, Channel> getChannelMethodDescriptor =
+      MethodDescriptor.<GetChannelRequest, Channel>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetChannel")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetChannelRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Channel.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListChannelsRequest, ListChannelsResponse>
+      listChannelsMethodDescriptor =
+          MethodDescriptor.<ListChannelsRequest, ListChannelsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/ListChannels")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListChannelsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListChannelsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateChannelRequest, Operation>
+      createChannelMethodDescriptor =
+          MethodDescriptor.<CreateChannelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/CreateChannel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateChannelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateChannelRequest, Operation>
+      updateChannelMethodDescriptor =
+          MethodDescriptor.<UpdateChannelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/UpdateChannel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateChannelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteChannelRequest, Operation>
+      deleteChannelMethodDescriptor =
+          MethodDescriptor.<DeleteChannelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/DeleteChannel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteChannelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetChannelConnectionRequest, ChannelConnection>
+      getChannelConnectionMethodDescriptor =
+          MethodDescriptor.<GetChannelConnectionRequest, ChannelConnection>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetChannelConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetChannelConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ChannelConnection.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListChannelConnectionsRequest, ListChannelConnectionsResponse>
+      listChannelConnectionsMethodDescriptor =
+          MethodDescriptor
+              .<ListChannelConnectionsRequest, ListChannelConnectionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/ListChannelConnections")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListChannelConnectionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListChannelConnectionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateChannelConnectionRequest, Operation>
+      createChannelConnectionMethodDescriptor =
+          MethodDescriptor.<CreateChannelConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/CreateChannelConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateChannelConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteChannelConnectionRequest, Operation>
+      deleteChannelConnectionMethodDescriptor =
+          MethodDescriptor.<DeleteChannelConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/DeleteChannelConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteChannelConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetTriggerRequest, Trigger> getTriggerCallable;
   private final UnaryCallable<ListTriggersRequest, ListTriggersResponse> listTriggersCallable;
   private final UnaryCallable<ListTriggersRequest, ListTriggersPagedResponse>
@@ -111,6 +217,35 @@ public class GrpcEventarcStub extends EventarcStub {
   private final UnaryCallable<DeleteTriggerRequest, Operation> deleteTriggerCallable;
   private final OperationCallable<DeleteTriggerRequest, Trigger, OperationMetadata>
       deleteTriggerOperationCallable;
+  private final UnaryCallable<GetChannelRequest, Channel> getChannelCallable;
+  private final UnaryCallable<ListChannelsRequest, ListChannelsResponse> listChannelsCallable;
+  private final UnaryCallable<ListChannelsRequest, ListChannelsPagedResponse>
+      listChannelsPagedCallable;
+  private final UnaryCallable<CreateChannelRequest, Operation> createChannelCallable;
+  private final OperationCallable<CreateChannelRequest, Channel, OperationMetadata>
+      createChannelOperationCallable;
+  private final UnaryCallable<UpdateChannelRequest, Operation> updateChannelCallable;
+  private final OperationCallable<UpdateChannelRequest, Channel, OperationMetadata>
+      updateChannelOperationCallable;
+  private final UnaryCallable<DeleteChannelRequest, Operation> deleteChannelCallable;
+  private final OperationCallable<DeleteChannelRequest, Channel, OperationMetadata>
+      deleteChannelOperationCallable;
+  private final UnaryCallable<GetChannelConnectionRequest, ChannelConnection>
+      getChannelConnectionCallable;
+  private final UnaryCallable<ListChannelConnectionsRequest, ListChannelConnectionsResponse>
+      listChannelConnectionsCallable;
+  private final UnaryCallable<ListChannelConnectionsRequest, ListChannelConnectionsPagedResponse>
+      listChannelConnectionsPagedCallable;
+  private final UnaryCallable<CreateChannelConnectionRequest, Operation>
+      createChannelConnectionCallable;
+  private final OperationCallable<
+          CreateChannelConnectionRequest, ChannelConnection, OperationMetadata>
+      createChannelConnectionOperationCallable;
+  private final UnaryCallable<DeleteChannelConnectionRequest, Operation>
+      deleteChannelConnectionCallable;
+  private final OperationCallable<
+          DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
+      deleteChannelConnectionOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -201,6 +336,101 @@ public class GrpcEventarcStub extends EventarcStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<GetChannelRequest, Channel> getChannelTransportSettings =
+        GrpcCallSettings.<GetChannelRequest, Channel>newBuilder()
+            .setMethodDescriptor(getChannelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListChannelsRequest, ListChannelsResponse> listChannelsTransportSettings =
+        GrpcCallSettings.<ListChannelsRequest, ListChannelsResponse>newBuilder()
+            .setMethodDescriptor(listChannelsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<CreateChannelRequest, Operation> createChannelTransportSettings =
+        GrpcCallSettings.<CreateChannelRequest, Operation>newBuilder()
+            .setMethodDescriptor(createChannelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateChannelRequest, Operation> updateChannelTransportSettings =
+        GrpcCallSettings.<UpdateChannelRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateChannelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("channel.name", String.valueOf(request.getChannel().getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteChannelRequest, Operation> deleteChannelTransportSettings =
+        GrpcCallSettings.<DeleteChannelRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteChannelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetChannelConnectionRequest, ChannelConnection>
+        getChannelConnectionTransportSettings =
+            GrpcCallSettings.<GetChannelConnectionRequest, ChannelConnection>newBuilder()
+                .setMethodDescriptor(getChannelConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListChannelConnectionsRequest, ListChannelConnectionsResponse>
+        listChannelConnectionsTransportSettings =
+            GrpcCallSettings
+                .<ListChannelConnectionsRequest, ListChannelConnectionsResponse>newBuilder()
+                .setMethodDescriptor(listChannelConnectionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateChannelConnectionRequest, Operation>
+        createChannelConnectionTransportSettings =
+            GrpcCallSettings.<CreateChannelConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createChannelConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteChannelConnectionRequest, Operation>
+        deleteChannelConnectionTransportSettings =
+            GrpcCallSettings.<DeleteChannelConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteChannelConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
 
     this.getTriggerCallable =
         callableFactory.createUnaryCallable(
@@ -236,6 +466,79 @@ public class GrpcEventarcStub extends EventarcStub {
         callableFactory.createOperationCallable(
             deleteTriggerTransportSettings,
             settings.deleteTriggerOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getChannelCallable =
+        callableFactory.createUnaryCallable(
+            getChannelTransportSettings, settings.getChannelSettings(), clientContext);
+    this.listChannelsCallable =
+        callableFactory.createUnaryCallable(
+            listChannelsTransportSettings, settings.listChannelsSettings(), clientContext);
+    this.listChannelsPagedCallable =
+        callableFactory.createPagedCallable(
+            listChannelsTransportSettings, settings.listChannelsSettings(), clientContext);
+    this.createChannelCallable =
+        callableFactory.createUnaryCallable(
+            createChannelTransportSettings, settings.createChannelSettings(), clientContext);
+    this.createChannelOperationCallable =
+        callableFactory.createOperationCallable(
+            createChannelTransportSettings,
+            settings.createChannelOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateChannelCallable =
+        callableFactory.createUnaryCallable(
+            updateChannelTransportSettings, settings.updateChannelSettings(), clientContext);
+    this.updateChannelOperationCallable =
+        callableFactory.createOperationCallable(
+            updateChannelTransportSettings,
+            settings.updateChannelOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteChannelCallable =
+        callableFactory.createUnaryCallable(
+            deleteChannelTransportSettings, settings.deleteChannelSettings(), clientContext);
+    this.deleteChannelOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteChannelTransportSettings,
+            settings.deleteChannelOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getChannelConnectionCallable =
+        callableFactory.createUnaryCallable(
+            getChannelConnectionTransportSettings,
+            settings.getChannelConnectionSettings(),
+            clientContext);
+    this.listChannelConnectionsCallable =
+        callableFactory.createUnaryCallable(
+            listChannelConnectionsTransportSettings,
+            settings.listChannelConnectionsSettings(),
+            clientContext);
+    this.listChannelConnectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listChannelConnectionsTransportSettings,
+            settings.listChannelConnectionsSettings(),
+            clientContext);
+    this.createChannelConnectionCallable =
+        callableFactory.createUnaryCallable(
+            createChannelConnectionTransportSettings,
+            settings.createChannelConnectionSettings(),
+            clientContext);
+    this.createChannelConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            createChannelConnectionTransportSettings,
+            settings.createChannelConnectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteChannelConnectionCallable =
+        callableFactory.createUnaryCallable(
+            deleteChannelConnectionTransportSettings,
+            settings.deleteChannelConnectionSettings(),
+            clientContext);
+    this.deleteChannelConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteChannelConnectionTransportSettings,
+            settings.deleteChannelConnectionOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -293,6 +596,96 @@ public class GrpcEventarcStub extends EventarcStub {
   public OperationCallable<DeleteTriggerRequest, Trigger, OperationMetadata>
       deleteTriggerOperationCallable() {
     return deleteTriggerOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetChannelRequest, Channel> getChannelCallable() {
+    return getChannelCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListChannelsRequest, ListChannelsResponse> listChannelsCallable() {
+    return listChannelsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListChannelsRequest, ListChannelsPagedResponse> listChannelsPagedCallable() {
+    return listChannelsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateChannelRequest, Operation> createChannelCallable() {
+    return createChannelCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateChannelRequest, Channel, OperationMetadata>
+      createChannelOperationCallable() {
+    return createChannelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateChannelRequest, Operation> updateChannelCallable() {
+    return updateChannelCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateChannelRequest, Channel, OperationMetadata>
+      updateChannelOperationCallable() {
+    return updateChannelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteChannelRequest, Operation> deleteChannelCallable() {
+    return deleteChannelCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteChannelRequest, Channel, OperationMetadata>
+      deleteChannelOperationCallable() {
+    return deleteChannelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetChannelConnectionRequest, ChannelConnection>
+      getChannelConnectionCallable() {
+    return getChannelConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListChannelConnectionsRequest, ListChannelConnectionsResponse>
+      listChannelConnectionsCallable() {
+    return listChannelConnectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListChannelConnectionsRequest, ListChannelConnectionsPagedResponse>
+      listChannelConnectionsPagedCallable() {
+    return listChannelConnectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateChannelConnectionRequest, Operation>
+      createChannelConnectionCallable() {
+    return createChannelConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateChannelConnectionRequest, ChannelConnection, OperationMetadata>
+      createChannelConnectionOperationCallable() {
+    return createChannelConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteChannelConnectionRequest, Operation>
+      deleteChannelConnectionCallable() {
+    return deleteChannelConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
+      deleteChannelConnectionOperationCallable() {
+    return deleteChannelConnectionOperationCallable;
   }
 
   @Override

@@ -84,6 +84,28 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
               descriptorCase_ = 1;
               break;
             }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              descriptorCase_ = 2;
+              descriptor_ = s;
+              break;
+            }
+          case 26:
+            {
+              com.google.cloud.eventarc.v1.GKE.Builder subBuilder = null;
+              if (descriptorCase_ == 3) {
+                subBuilder = ((com.google.cloud.eventarc.v1.GKE) descriptor_).toBuilder();
+              }
+              descriptor_ =
+                  input.readMessage(com.google.cloud.eventarc.v1.GKE.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.eventarc.v1.GKE) descriptor_);
+                descriptor_ = subBuilder.buildPartial();
+              }
+              descriptorCase_ = 3;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -126,6 +148,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CLOUD_RUN(1),
+    CLOUD_FUNCTION(2),
+    GKE(3),
     DESCRIPTOR_NOT_SET(0);
     private final int value;
 
@@ -146,6 +170,10 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 1:
           return CLOUD_RUN;
+        case 2:
+          return CLOUD_FUNCTION;
+        case 3:
+          return GKE;
         case 0:
           return DESCRIPTOR_NOT_SET;
         default:
@@ -167,8 +195,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Run fully-managed service that receives the events. The service
-   * should be running in the same project of the trigger.
+   * Cloud Run fully-managed resource that receives the events. The resource
+   * should be in the same project as the trigger.
    * </pre>
    *
    * <code>.google.cloud.eventarc.v1.CloudRun cloud_run = 1;</code>
@@ -183,8 +211,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Run fully-managed service that receives the events. The service
-   * should be running in the same project of the trigger.
+   * Cloud Run fully-managed resource that receives the events. The resource
+   * should be in the same project as the trigger.
    * </pre>
    *
    * <code>.google.cloud.eventarc.v1.CloudRun cloud_run = 1;</code>
@@ -202,8 +230,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Run fully-managed service that receives the events. The service
-   * should be running in the same project of the trigger.
+   * Cloud Run fully-managed resource that receives the events. The resource
+   * should be in the same project as the trigger.
    * </pre>
    *
    * <code>.google.cloud.eventarc.v1.CloudRun cloud_run = 1;</code>
@@ -214,6 +242,133 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.eventarc.v1.CloudRun) descriptor_;
     }
     return com.google.cloud.eventarc.v1.CloudRun.getDefaultInstance();
+  }
+
+  public static final int CLOUD_FUNCTION_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+   * Format: `projects/{project}/locations/{location}/functions/{function}`
+   * </pre>
+   *
+   * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the cloudFunction field is set.
+   */
+  public boolean hasCloudFunction() {
+    return descriptorCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+   * Format: `projects/{project}/locations/{location}/functions/{function}`
+   * </pre>
+   *
+   * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The cloudFunction.
+   */
+  public java.lang.String getCloudFunction() {
+    java.lang.Object ref = "";
+    if (descriptorCase_ == 2) {
+      ref = descriptor_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (descriptorCase_ == 2) {
+        descriptor_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+   * Format: `projects/{project}/locations/{location}/functions/{function}`
+   * </pre>
+   *
+   * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for cloudFunction.
+   */
+  public com.google.protobuf.ByteString getCloudFunctionBytes() {
+    java.lang.Object ref = "";
+    if (descriptorCase_ == 2) {
+      ref = descriptor_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (descriptorCase_ == 2) {
+        descriptor_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int GKE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * A GKE service capable of receiving events. The service should be running
+   * in the same project as the trigger.
+   * </pre>
+   *
+   * <code>.google.cloud.eventarc.v1.GKE gke = 3;</code>
+   *
+   * @return Whether the gke field is set.
+   */
+  @java.lang.Override
+  public boolean hasGke() {
+    return descriptorCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A GKE service capable of receiving events. The service should be running
+   * in the same project as the trigger.
+   * </pre>
+   *
+   * <code>.google.cloud.eventarc.v1.GKE gke = 3;</code>
+   *
+   * @return The gke.
+   */
+  @java.lang.Override
+  public com.google.cloud.eventarc.v1.GKE getGke() {
+    if (descriptorCase_ == 3) {
+      return (com.google.cloud.eventarc.v1.GKE) descriptor_;
+    }
+    return com.google.cloud.eventarc.v1.GKE.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A GKE service capable of receiving events. The service should be running
+   * in the same project as the trigger.
+   * </pre>
+   *
+   * <code>.google.cloud.eventarc.v1.GKE gke = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.eventarc.v1.GKEOrBuilder getGkeOrBuilder() {
+    if (descriptorCase_ == 3) {
+      return (com.google.cloud.eventarc.v1.GKE) descriptor_;
+    }
+    return com.google.cloud.eventarc.v1.GKE.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -233,6 +388,12 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     if (descriptorCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.eventarc.v1.CloudRun) descriptor_);
     }
+    if (descriptorCase_ == 2) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, descriptor_);
+    }
+    if (descriptorCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.eventarc.v1.GKE) descriptor_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -246,6 +407,14 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.cloud.eventarc.v1.CloudRun) descriptor_);
+    }
+    if (descriptorCase_ == 2) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, descriptor_);
+    }
+    if (descriptorCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.eventarc.v1.GKE) descriptor_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -267,6 +436,12 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       case 1:
         if (!getCloudRun().equals(other.getCloudRun())) return false;
         break;
+      case 2:
+        if (!getCloudFunction().equals(other.getCloudFunction())) return false;
+        break;
+      case 3:
+        if (!getGke().equals(other.getGke())) return false;
+        break;
       case 0:
       default:
     }
@@ -285,6 +460,14 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       case 1:
         hash = (37 * hash) + CLOUD_RUN_FIELD_NUMBER;
         hash = (53 * hash) + getCloudRun().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + CLOUD_FUNCTION_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudFunction().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + GKE_FIELD_NUMBER;
+        hash = (53 * hash) + getGke().hashCode();
         break;
       case 0:
       default:
@@ -470,6 +653,16 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
           result.descriptor_ = cloudRunBuilder_.build();
         }
       }
+      if (descriptorCase_ == 2) {
+        result.descriptor_ = descriptor_;
+      }
+      if (descriptorCase_ == 3) {
+        if (gkeBuilder_ == null) {
+          result.descriptor_ = descriptor_;
+        } else {
+          result.descriptor_ = gkeBuilder_.build();
+        }
+      }
       result.descriptorCase_ = descriptorCase_;
       onBuilt();
       return result;
@@ -524,6 +717,18 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         case CLOUD_RUN:
           {
             mergeCloudRun(other.getCloudRun());
+            break;
+          }
+        case CLOUD_FUNCTION:
+          {
+            descriptorCase_ = 2;
+            descriptor_ = other.descriptor_;
+            onChanged();
+            break;
+          }
+        case GKE:
+          {
+            mergeGke(other.getGke());
             break;
           }
         case DESCRIPTOR_NOT_SET:
@@ -583,8 +788,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run fully-managed service that receives the events. The service
-     * should be running in the same project of the trigger.
+     * Cloud Run fully-managed resource that receives the events. The resource
+     * should be in the same project as the trigger.
      * </pre>
      *
      * <code>.google.cloud.eventarc.v1.CloudRun cloud_run = 1;</code>
@@ -599,8 +804,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run fully-managed service that receives the events. The service
-     * should be running in the same project of the trigger.
+     * Cloud Run fully-managed resource that receives the events. The resource
+     * should be in the same project as the trigger.
      * </pre>
      *
      * <code>.google.cloud.eventarc.v1.CloudRun cloud_run = 1;</code>
@@ -625,8 +830,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run fully-managed service that receives the events. The service
-     * should be running in the same project of the trigger.
+     * Cloud Run fully-managed resource that receives the events. The resource
+     * should be in the same project as the trigger.
      * </pre>
      *
      * <code>.google.cloud.eventarc.v1.CloudRun cloud_run = 1;</code>
@@ -648,8 +853,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run fully-managed service that receives the events. The service
-     * should be running in the same project of the trigger.
+     * Cloud Run fully-managed resource that receives the events. The resource
+     * should be in the same project as the trigger.
      * </pre>
      *
      * <code>.google.cloud.eventarc.v1.CloudRun cloud_run = 1;</code>
@@ -668,8 +873,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run fully-managed service that receives the events. The service
-     * should be running in the same project of the trigger.
+     * Cloud Run fully-managed resource that receives the events. The resource
+     * should be in the same project as the trigger.
      * </pre>
      *
      * <code>.google.cloud.eventarc.v1.CloudRun cloud_run = 1;</code>
@@ -700,8 +905,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run fully-managed service that receives the events. The service
-     * should be running in the same project of the trigger.
+     * Cloud Run fully-managed resource that receives the events. The resource
+     * should be in the same project as the trigger.
      * </pre>
      *
      * <code>.google.cloud.eventarc.v1.CloudRun cloud_run = 1;</code>
@@ -726,8 +931,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run fully-managed service that receives the events. The service
-     * should be running in the same project of the trigger.
+     * Cloud Run fully-managed resource that receives the events. The resource
+     * should be in the same project as the trigger.
      * </pre>
      *
      * <code>.google.cloud.eventarc.v1.CloudRun cloud_run = 1;</code>
@@ -739,8 +944,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run fully-managed service that receives the events. The service
-     * should be running in the same project of the trigger.
+     * Cloud Run fully-managed resource that receives the events. The resource
+     * should be in the same project as the trigger.
      * </pre>
      *
      * <code>.google.cloud.eventarc.v1.CloudRun cloud_run = 1;</code>
@@ -760,8 +965,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run fully-managed service that receives the events. The service
-     * should be running in the same project of the trigger.
+     * Cloud Run fully-managed resource that receives the events. The resource
+     * should be in the same project as the trigger.
      * </pre>
      *
      * <code>.google.cloud.eventarc.v1.CloudRun cloud_run = 1;</code>
@@ -789,6 +994,365 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return cloudRunBuilder_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+     * Format: `projects/{project}/locations/{location}/functions/{function}`
+     * </pre>
+     *
+     * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the cloudFunction field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudFunction() {
+      return descriptorCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+     * Format: `projects/{project}/locations/{location}/functions/{function}`
+     * </pre>
+     *
+     * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The cloudFunction.
+     */
+    @java.lang.Override
+    public java.lang.String getCloudFunction() {
+      java.lang.Object ref = "";
+      if (descriptorCase_ == 2) {
+        ref = descriptor_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (descriptorCase_ == 2) {
+          descriptor_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+     * Format: `projects/{project}/locations/{location}/functions/{function}`
+     * </pre>
+     *
+     * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for cloudFunction.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCloudFunctionBytes() {
+      java.lang.Object ref = "";
+      if (descriptorCase_ == 2) {
+        ref = descriptor_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (descriptorCase_ == 2) {
+          descriptor_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+     * Format: `projects/{project}/locations/{location}/functions/{function}`
+     * </pre>
+     *
+     * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The cloudFunction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudFunction(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      descriptorCase_ = 2;
+      descriptor_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+     * Format: `projects/{project}/locations/{location}/functions/{function}`
+     * </pre>
+     *
+     * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCloudFunction() {
+      if (descriptorCase_ == 2) {
+        descriptorCase_ = 0;
+        descriptor_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+     * Format: `projects/{project}/locations/{location}/functions/{function}`
+     * </pre>
+     *
+     * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for cloudFunction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudFunctionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      descriptorCase_ = 2;
+      descriptor_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.eventarc.v1.GKE,
+            com.google.cloud.eventarc.v1.GKE.Builder,
+            com.google.cloud.eventarc.v1.GKEOrBuilder>
+        gkeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A GKE service capable of receiving events. The service should be running
+     * in the same project as the trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.GKE gke = 3;</code>
+     *
+     * @return Whether the gke field is set.
+     */
+    @java.lang.Override
+    public boolean hasGke() {
+      return descriptorCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A GKE service capable of receiving events. The service should be running
+     * in the same project as the trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.GKE gke = 3;</code>
+     *
+     * @return The gke.
+     */
+    @java.lang.Override
+    public com.google.cloud.eventarc.v1.GKE getGke() {
+      if (gkeBuilder_ == null) {
+        if (descriptorCase_ == 3) {
+          return (com.google.cloud.eventarc.v1.GKE) descriptor_;
+        }
+        return com.google.cloud.eventarc.v1.GKE.getDefaultInstance();
+      } else {
+        if (descriptorCase_ == 3) {
+          return gkeBuilder_.getMessage();
+        }
+        return com.google.cloud.eventarc.v1.GKE.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A GKE service capable of receiving events. The service should be running
+     * in the same project as the trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.GKE gke = 3;</code>
+     */
+    public Builder setGke(com.google.cloud.eventarc.v1.GKE value) {
+      if (gkeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        descriptor_ = value;
+        onChanged();
+      } else {
+        gkeBuilder_.setMessage(value);
+      }
+      descriptorCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A GKE service capable of receiving events. The service should be running
+     * in the same project as the trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.GKE gke = 3;</code>
+     */
+    public Builder setGke(com.google.cloud.eventarc.v1.GKE.Builder builderForValue) {
+      if (gkeBuilder_ == null) {
+        descriptor_ = builderForValue.build();
+        onChanged();
+      } else {
+        gkeBuilder_.setMessage(builderForValue.build());
+      }
+      descriptorCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A GKE service capable of receiving events. The service should be running
+     * in the same project as the trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.GKE gke = 3;</code>
+     */
+    public Builder mergeGke(com.google.cloud.eventarc.v1.GKE value) {
+      if (gkeBuilder_ == null) {
+        if (descriptorCase_ == 3
+            && descriptor_ != com.google.cloud.eventarc.v1.GKE.getDefaultInstance()) {
+          descriptor_ =
+              com.google
+                  .cloud
+                  .eventarc
+                  .v1
+                  .GKE
+                  .newBuilder((com.google.cloud.eventarc.v1.GKE) descriptor_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          descriptor_ = value;
+        }
+        onChanged();
+      } else {
+        if (descriptorCase_ == 3) {
+          gkeBuilder_.mergeFrom(value);
+        }
+        gkeBuilder_.setMessage(value);
+      }
+      descriptorCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A GKE service capable of receiving events. The service should be running
+     * in the same project as the trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.GKE gke = 3;</code>
+     */
+    public Builder clearGke() {
+      if (gkeBuilder_ == null) {
+        if (descriptorCase_ == 3) {
+          descriptorCase_ = 0;
+          descriptor_ = null;
+          onChanged();
+        }
+      } else {
+        if (descriptorCase_ == 3) {
+          descriptorCase_ = 0;
+          descriptor_ = null;
+        }
+        gkeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A GKE service capable of receiving events. The service should be running
+     * in the same project as the trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.GKE gke = 3;</code>
+     */
+    public com.google.cloud.eventarc.v1.GKE.Builder getGkeBuilder() {
+      return getGkeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A GKE service capable of receiving events. The service should be running
+     * in the same project as the trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.GKE gke = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.eventarc.v1.GKEOrBuilder getGkeOrBuilder() {
+      if ((descriptorCase_ == 3) && (gkeBuilder_ != null)) {
+        return gkeBuilder_.getMessageOrBuilder();
+      } else {
+        if (descriptorCase_ == 3) {
+          return (com.google.cloud.eventarc.v1.GKE) descriptor_;
+        }
+        return com.google.cloud.eventarc.v1.GKE.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A GKE service capable of receiving events. The service should be running
+     * in the same project as the trigger.
+     * </pre>
+     *
+     * <code>.google.cloud.eventarc.v1.GKE gke = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.eventarc.v1.GKE,
+            com.google.cloud.eventarc.v1.GKE.Builder,
+            com.google.cloud.eventarc.v1.GKEOrBuilder>
+        getGkeFieldBuilder() {
+      if (gkeBuilder_ == null) {
+        if (!(descriptorCase_ == 3)) {
+          descriptor_ = com.google.cloud.eventarc.v1.GKE.getDefaultInstance();
+        }
+        gkeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.eventarc.v1.GKE,
+                com.google.cloud.eventarc.v1.GKE.Builder,
+                com.google.cloud.eventarc.v1.GKEOrBuilder>(
+                (com.google.cloud.eventarc.v1.GKE) descriptor_, getParentForChildren(), isClean());
+        descriptor_ = null;
+      }
+      descriptorCase_ = 3;
+      onChanged();
+      ;
+      return gkeBuilder_;
     }
 
     @java.lang.Override

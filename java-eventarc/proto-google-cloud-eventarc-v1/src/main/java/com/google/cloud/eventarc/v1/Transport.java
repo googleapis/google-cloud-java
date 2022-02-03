@@ -22,7 +22,7 @@ package com.google.cloud.eventarc.v1;
  *
  *
  * <pre>
- * Represents the transport intermediaries created for the trigger in order to
+ * Represents the transport intermediaries created for the trigger to
  * deliver events.
  * </pre>
  *
@@ -168,7 +168,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Pub/Sub topic and subscription used by Eventarc as delivery
+   * The Pub/Sub topic and subscription used by Eventarc as a transport
    * intermediary.
    * </pre>
    *
@@ -184,7 +184,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Pub/Sub topic and subscription used by Eventarc as delivery
+   * The Pub/Sub topic and subscription used by Eventarc as a transport
    * intermediary.
    * </pre>
    *
@@ -203,7 +203,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Pub/Sub topic and subscription used by Eventarc as delivery
+   * The Pub/Sub topic and subscription used by Eventarc as a transport
    * intermediary.
    * </pre>
    *
@@ -394,7 +394,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents the transport intermediaries created for the trigger in order to
+   * Represents the transport intermediaries created for the trigger to
    * deliver events.
    * </pre>
    *
@@ -585,7 +585,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Pub/Sub topic and subscription used by Eventarc as delivery
+     * The Pub/Sub topic and subscription used by Eventarc as a transport
      * intermediary.
      * </pre>
      *
@@ -601,7 +601,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Pub/Sub topic and subscription used by Eventarc as delivery
+     * The Pub/Sub topic and subscription used by Eventarc as a transport
      * intermediary.
      * </pre>
      *
@@ -627,7 +627,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Pub/Sub topic and subscription used by Eventarc as delivery
+     * The Pub/Sub topic and subscription used by Eventarc as a transport
      * intermediary.
      * </pre>
      *
@@ -650,7 +650,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Pub/Sub topic and subscription used by Eventarc as delivery
+     * The Pub/Sub topic and subscription used by Eventarc as a transport
      * intermediary.
      * </pre>
      *
@@ -670,7 +670,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Pub/Sub topic and subscription used by Eventarc as delivery
+     * The Pub/Sub topic and subscription used by Eventarc as a transport
      * intermediary.
      * </pre>
      *
@@ -702,7 +702,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Pub/Sub topic and subscription used by Eventarc as delivery
+     * The Pub/Sub topic and subscription used by Eventarc as a transport
      * intermediary.
      * </pre>
      *
@@ -728,7 +728,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Pub/Sub topic and subscription used by Eventarc as delivery
+     * The Pub/Sub topic and subscription used by Eventarc as a transport
      * intermediary.
      * </pre>
      *
@@ -741,7 +741,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Pub/Sub topic and subscription used by Eventarc as delivery
+     * The Pub/Sub topic and subscription used by Eventarc as a transport
      * intermediary.
      * </pre>
      *
@@ -762,7 +762,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Pub/Sub topic and subscription used by Eventarc as delivery
+     * The Pub/Sub topic and subscription used by Eventarc as a transport
      * intermediary.
      * </pre>
      *

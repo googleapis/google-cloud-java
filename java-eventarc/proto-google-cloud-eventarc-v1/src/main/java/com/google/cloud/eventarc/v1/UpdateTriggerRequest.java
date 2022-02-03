@@ -195,8 +195,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The fields to be updated; only fields explicitly provided will be updated.
-   * If no field mask is provided, all provided fields in the request will be
+   * The fields to be updated; only fields explicitly provided are updated.
+   * If no field mask is provided, all provided fields in the request are
    * updated. To update all fields, provide a field mask of "*".
    * </pre>
    *
@@ -212,8 +212,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The fields to be updated; only fields explicitly provided will be updated.
-   * If no field mask is provided, all provided fields in the request will be
+   * The fields to be updated; only fields explicitly provided are updated.
+   * If no field mask is provided, all provided fields in the request are
    * updated. To update all fields, provide a field mask of "*".
    * </pre>
    *
@@ -229,8 +229,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The fields to be updated; only fields explicitly provided will be updated.
-   * If no field mask is provided, all provided fields in the request will be
+   * The fields to be updated; only fields explicitly provided are updated.
+   * If no field mask is provided, all provided fields in the request are
    * updated. To update all fields, provide a field mask of "*".
    * </pre>
    *
@@ -266,7 +266,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. If set, validate the request and preview the review, but do not actually
+   * Required. If set, validate the request and preview the review, but do not
    * post it.
    * </pre>
    *
@@ -862,8 +862,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to be updated; only fields explicitly provided will be updated.
-     * If no field mask is provided, all provided fields in the request will be
+     * The fields to be updated; only fields explicitly provided are updated.
+     * If no field mask is provided, all provided fields in the request are
      * updated. To update all fields, provide a field mask of "*".
      * </pre>
      *
@@ -878,8 +878,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to be updated; only fields explicitly provided will be updated.
-     * If no field mask is provided, all provided fields in the request will be
+     * The fields to be updated; only fields explicitly provided are updated.
+     * If no field mask is provided, all provided fields in the request are
      * updated. To update all fields, provide a field mask of "*".
      * </pre>
      *
@@ -900,8 +900,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to be updated; only fields explicitly provided will be updated.
-     * If no field mask is provided, all provided fields in the request will be
+     * The fields to be updated; only fields explicitly provided are updated.
+     * If no field mask is provided, all provided fields in the request are
      * updated. To update all fields, provide a field mask of "*".
      * </pre>
      *
@@ -924,8 +924,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to be updated; only fields explicitly provided will be updated.
-     * If no field mask is provided, all provided fields in the request will be
+     * The fields to be updated; only fields explicitly provided are updated.
+     * If no field mask is provided, all provided fields in the request are
      * updated. To update all fields, provide a field mask of "*".
      * </pre>
      *
@@ -945,8 +945,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to be updated; only fields explicitly provided will be updated.
-     * If no field mask is provided, all provided fields in the request will be
+     * The fields to be updated; only fields explicitly provided are updated.
+     * If no field mask is provided, all provided fields in the request are
      * updated. To update all fields, provide a field mask of "*".
      * </pre>
      *
@@ -971,8 +971,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to be updated; only fields explicitly provided will be updated.
-     * If no field mask is provided, all provided fields in the request will be
+     * The fields to be updated; only fields explicitly provided are updated.
+     * If no field mask is provided, all provided fields in the request are
      * updated. To update all fields, provide a field mask of "*".
      * </pre>
      *
@@ -993,8 +993,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to be updated; only fields explicitly provided will be updated.
-     * If no field mask is provided, all provided fields in the request will be
+     * The fields to be updated; only fields explicitly provided are updated.
+     * If no field mask is provided, all provided fields in the request are
      * updated. To update all fields, provide a field mask of "*".
      * </pre>
      *
@@ -1009,8 +1009,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to be updated; only fields explicitly provided will be updated.
-     * If no field mask is provided, all provided fields in the request will be
+     * The fields to be updated; only fields explicitly provided are updated.
+     * If no field mask is provided, all provided fields in the request are
      * updated. To update all fields, provide a field mask of "*".
      * </pre>
      *
@@ -1029,8 +1029,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The fields to be updated; only fields explicitly provided will be updated.
-     * If no field mask is provided, all provided fields in the request will be
+     * The fields to be updated; only fields explicitly provided are updated.
+     * If no field mask is provided, all provided fields in the request are
      * updated. To update all fields, provide a field mask of "*".
      * </pre>
      *
@@ -1113,7 +1113,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. If set, validate the request and preview the review, but do not actually
+     * Required. If set, validate the request and preview the review, but do not
      * post it.
      * </pre>
      *
@@ -1129,7 +1129,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. If set, validate the request and preview the review, but do not actually
+     * Required. If set, validate the request and preview the review, but do not
      * post it.
      * </pre>
      *
@@ -1148,7 +1148,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. If set, validate the request and preview the review, but do not actually
+     * Required. If set, validate the request and preview the review, but do not
      * post it.
      * </pre>
      *

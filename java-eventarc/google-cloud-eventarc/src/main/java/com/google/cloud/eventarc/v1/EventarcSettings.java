@@ -16,6 +16,8 @@
 
 package com.google.cloud.eventarc.v1;
 
+import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -112,6 +114,89 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
   public OperationCallSettings<DeleteTriggerRequest, Trigger, OperationMetadata>
       deleteTriggerOperationSettings() {
     return ((EventarcStubSettings) getStubSettings()).deleteTriggerOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getChannel. */
+  public UnaryCallSettings<GetChannelRequest, Channel> getChannelSettings() {
+    return ((EventarcStubSettings) getStubSettings()).getChannelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listChannels. */
+  public PagedCallSettings<ListChannelsRequest, ListChannelsResponse, ListChannelsPagedResponse>
+      listChannelsSettings() {
+    return ((EventarcStubSettings) getStubSettings()).listChannelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createChannel. */
+  public UnaryCallSettings<CreateChannelRequest, Operation> createChannelSettings() {
+    return ((EventarcStubSettings) getStubSettings()).createChannelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createChannel. */
+  public OperationCallSettings<CreateChannelRequest, Channel, OperationMetadata>
+      createChannelOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).createChannelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateChannel. */
+  public UnaryCallSettings<UpdateChannelRequest, Operation> updateChannelSettings() {
+    return ((EventarcStubSettings) getStubSettings()).updateChannelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateChannel. */
+  public OperationCallSettings<UpdateChannelRequest, Channel, OperationMetadata>
+      updateChannelOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).updateChannelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteChannel. */
+  public UnaryCallSettings<DeleteChannelRequest, Operation> deleteChannelSettings() {
+    return ((EventarcStubSettings) getStubSettings()).deleteChannelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteChannel. */
+  public OperationCallSettings<DeleteChannelRequest, Channel, OperationMetadata>
+      deleteChannelOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).deleteChannelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getChannelConnection. */
+  public UnaryCallSettings<GetChannelConnectionRequest, ChannelConnection>
+      getChannelConnectionSettings() {
+    return ((EventarcStubSettings) getStubSettings()).getChannelConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listChannelConnections. */
+  public PagedCallSettings<
+          ListChannelConnectionsRequest,
+          ListChannelConnectionsResponse,
+          ListChannelConnectionsPagedResponse>
+      listChannelConnectionsSettings() {
+    return ((EventarcStubSettings) getStubSettings()).listChannelConnectionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createChannelConnection. */
+  public UnaryCallSettings<CreateChannelConnectionRequest, Operation>
+      createChannelConnectionSettings() {
+    return ((EventarcStubSettings) getStubSettings()).createChannelConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createChannelConnection. */
+  public OperationCallSettings<CreateChannelConnectionRequest, ChannelConnection, OperationMetadata>
+      createChannelConnectionOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).createChannelConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteChannelConnection. */
+  public UnaryCallSettings<DeleteChannelConnectionRequest, Operation>
+      deleteChannelConnectionSettings() {
+    return ((EventarcStubSettings) getStubSettings()).deleteChannelConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteChannelConnection. */
+  public OperationCallSettings<DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
+      deleteChannelConnectionOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).deleteChannelConnectionOperationSettings();
   }
 
   public static final EventarcSettings create(EventarcStubSettings stub) throws IOException {
@@ -253,6 +338,92 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
     public OperationCallSettings.Builder<DeleteTriggerRequest, Trigger, OperationMetadata>
         deleteTriggerOperationSettings() {
       return getStubSettingsBuilder().deleteTriggerOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getChannel. */
+    public UnaryCallSettings.Builder<GetChannelRequest, Channel> getChannelSettings() {
+      return getStubSettingsBuilder().getChannelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listChannels. */
+    public PagedCallSettings.Builder<
+            ListChannelsRequest, ListChannelsResponse, ListChannelsPagedResponse>
+        listChannelsSettings() {
+      return getStubSettingsBuilder().listChannelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createChannel. */
+    public UnaryCallSettings.Builder<CreateChannelRequest, Operation> createChannelSettings() {
+      return getStubSettingsBuilder().createChannelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createChannel. */
+    public OperationCallSettings.Builder<CreateChannelRequest, Channel, OperationMetadata>
+        createChannelOperationSettings() {
+      return getStubSettingsBuilder().createChannelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateChannel. */
+    public UnaryCallSettings.Builder<UpdateChannelRequest, Operation> updateChannelSettings() {
+      return getStubSettingsBuilder().updateChannelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateChannel. */
+    public OperationCallSettings.Builder<UpdateChannelRequest, Channel, OperationMetadata>
+        updateChannelOperationSettings() {
+      return getStubSettingsBuilder().updateChannelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteChannel. */
+    public UnaryCallSettings.Builder<DeleteChannelRequest, Operation> deleteChannelSettings() {
+      return getStubSettingsBuilder().deleteChannelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteChannel. */
+    public OperationCallSettings.Builder<DeleteChannelRequest, Channel, OperationMetadata>
+        deleteChannelOperationSettings() {
+      return getStubSettingsBuilder().deleteChannelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getChannelConnection. */
+    public UnaryCallSettings.Builder<GetChannelConnectionRequest, ChannelConnection>
+        getChannelConnectionSettings() {
+      return getStubSettingsBuilder().getChannelConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listChannelConnections. */
+    public PagedCallSettings.Builder<
+            ListChannelConnectionsRequest,
+            ListChannelConnectionsResponse,
+            ListChannelConnectionsPagedResponse>
+        listChannelConnectionsSettings() {
+      return getStubSettingsBuilder().listChannelConnectionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createChannelConnection. */
+    public UnaryCallSettings.Builder<CreateChannelConnectionRequest, Operation>
+        createChannelConnectionSettings() {
+      return getStubSettingsBuilder().createChannelConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createChannelConnection. */
+    public OperationCallSettings.Builder<
+            CreateChannelConnectionRequest, ChannelConnection, OperationMetadata>
+        createChannelConnectionOperationSettings() {
+      return getStubSettingsBuilder().createChannelConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteChannelConnection. */
+    public UnaryCallSettings.Builder<DeleteChannelConnectionRequest, Operation>
+        deleteChannelConnectionSettings() {
+      return getStubSettingsBuilder().deleteChannelConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteChannelConnection. */
+    public OperationCallSettings.Builder<
+            DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
+        deleteChannelConnectionOperationSettings() {
+      return getStubSettingsBuilder().deleteChannelConnectionOperationSettings();
     }
 
     @Override

@@ -42,6 +42,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     uid_ = "";
     eventFilters_ = java.util.Collections.emptyList();
     serviceAccount_ = "";
+    channel_ = "";
     etag_ = "";
   }
 
@@ -182,6 +183,13 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
               break;
             }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              channel_ = s;
+              break;
+            }
           case 794:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -243,8 +251,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the trigger. Must be unique within the
-   * location on the project and must be in
+   * Required. The resource name of the trigger. Must be unique within the location of the
+   * project and must be in
    * `projects/{project}/locations/{location}/triggers/{trigger}` format.
    * </pre>
    *
@@ -268,8 +276,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the trigger. Must be unique within the
-   * location on the project and must be in
+   * Required. The resource name of the trigger. Must be unique within the location of the
+   * project and must be in
    * `projects/{project}/locations/{location}/triggers/{trigger}` format.
    * </pre>
    *
@@ -296,9 +304,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the trigger. The value
-   * is a UUID4 string and guaranteed to remain unchanged until the resource is
-   * deleted.
+   * Output only. Server-assigned unique identifier for the trigger. The value is a UUID4
+   * string and guaranteed to remain unchanged until the resource is deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -321,9 +328,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the trigger. The value
-   * is a UUID4 string and guaranteed to remain unchanged until the resource is
-   * deleted.
+   * Output only. Server-assigned unique identifier for the trigger. The value is a UUID4
+   * string and guaranteed to remain unchanged until the resource is deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -447,8 +453,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. null The list of filters that applies to event attributes. Only
-   * events that match all the provided filters will be sent to the destination.
+   * Required. null The list of filters that applies to event attributes. Only events that
+   * match all the provided filters are sent to the destination.
    * </pre>
    *
    * <code>
@@ -463,8 +469,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. null The list of filters that applies to event attributes. Only
-   * events that match all the provided filters will be sent to the destination.
+   * Required. null The list of filters that applies to event attributes. Only events that
+   * match all the provided filters are sent to the destination.
    * </pre>
    *
    * <code>
@@ -480,8 +486,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. null The list of filters that applies to event attributes. Only
-   * events that match all the provided filters will be sent to the destination.
+   * Required. null The list of filters that applies to event attributes. Only events that
+   * match all the provided filters are sent to the destination.
    * </pre>
    *
    * <code>
@@ -496,8 +502,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. null The list of filters that applies to event attributes. Only
-   * events that match all the provided filters will be sent to the destination.
+   * Required. null The list of filters that applies to event attributes. Only events that
+   * match all the provided filters are sent to the destination.
    * </pre>
    *
    * <code>
@@ -512,8 +518,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. null The list of filters that applies to event attributes. Only
-   * events that match all the provided filters will be sent to the destination.
+   * Required. null The list of filters that applies to event attributes. Only events that
+   * match all the provided filters are sent to the destination.
    * </pre>
    *
    * <code>
@@ -533,7 +539,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The IAM service account email associated with the trigger. The
    * service account represents the identity of the trigger.
-   * The principal who calls this API must have `iam.serviceAccounts.actAs`
+   * The principal who calls this API must have the `iam.serviceAccounts.actAs`
    * permission in the service account. See
    * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
    * for more information.
@@ -541,8 +547,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    * identity tokens when invoking the service. See
    * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
    * for information on how to invoke authenticated Cloud Run services.
-   * In order to create Audit Log triggers, the service account should also
-   * have `roles/eventarc.eventReceiver` IAM role.
+   * To create Audit Log triggers, the service account should also
+   * have the `roles/eventarc.eventReceiver` IAM role.
    * </pre>
    *
    * <code>
@@ -569,7 +575,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The IAM service account email associated with the trigger. The
    * service account represents the identity of the trigger.
-   * The principal who calls this API must have `iam.serviceAccounts.actAs`
+   * The principal who calls this API must have the `iam.serviceAccounts.actAs`
    * permission in the service account. See
    * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
    * for more information.
@@ -577,8 +583,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    * identity tokens when invoking the service. See
    * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
    * for information on how to invoke authenticated Cloud Run services.
-   * In order to create Audit Log triggers, the service account should also
-   * have `roles/eventarc.eventReceiver` IAM role.
+   * To create Audit Log triggers, the service account should also
+   * have the `roles/eventarc.eventReceiver` IAM role.
    * </pre>
    *
    * <code>
@@ -660,9 +666,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. In order to deliver messages, Eventarc may use other GCP
-   * products as transport intermediary. This field contains a reference to that
-   * transport intermediary. This information can be used for debugging
+   * Optional. To deliver messages, Eventarc might use other GCP
+   * products as a transport intermediary. This field contains a reference to
+   * that transport intermediary. This information can be used for debugging
    * purposes.
    * </pre>
    *
@@ -680,9 +686,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. In order to deliver messages, Eventarc may use other GCP
-   * products as transport intermediary. This field contains a reference to that
-   * transport intermediary. This information can be used for debugging
+   * Optional. To deliver messages, Eventarc might use other GCP
+   * products as a transport intermediary. This field contains a reference to
+   * that transport intermediary. This information can be used for debugging
    * purposes.
    * </pre>
    *
@@ -702,9 +708,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. In order to deliver messages, Eventarc may use other GCP
-   * products as transport intermediary. This field contains a reference to that
-   * transport intermediary. This information can be used for debugging
+   * Optional. To deliver messages, Eventarc might use other GCP
+   * products as a transport intermediary. This field contains a reference to
+   * that transport intermediary. This information can be used for debugging
    * purposes.
    * </pre>
    *
@@ -746,8 +752,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User labels attached to the triggers that can be used to group
-   * resources.
+   * Optional. User labels attached to the triggers that can be used to group resources.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -769,8 +774,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User labels attached to the triggers that can be used to group
-   * resources.
+   * Optional. User labels attached to the triggers that can be used to group resources.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -783,8 +787,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User labels attached to the triggers that can be used to group
-   * resources.
+   * Optional. User labels attached to the triggers that can be used to group resources.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -801,8 +804,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User labels attached to the triggers that can be used to group
-   * resources.
+   * Optional. User labels attached to the triggers that can be used to group resources.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -819,15 +821,68 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int CHANNEL_FIELD_NUMBER = 13;
+  private volatile java.lang.Object channel_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the channel associated with the trigger in
+   * `projects/{project}/locations/{location}/channels/{channel}` format.
+   * You must provide a channel to receive events from Eventarc SaaS partners.
+   * </pre>
+   *
+   * <code>string channel = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The channel.
+   */
+  @java.lang.Override
+  public java.lang.String getChannel() {
+    java.lang.Object ref = channel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      channel_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the channel associated with the trigger in
+   * `projects/{project}/locations/{location}/channels/{channel}` format.
+   * You must provide a channel to receive events from Eventarc SaaS partners.
+   * </pre>
+   *
+   * <code>string channel = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for channel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getChannelBytes() {
+    java.lang.Object ref = channel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      channel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ETAG_FIELD_NUMBER = 99;
   private volatile java.lang.Object etag_;
   /**
    *
    *
    * <pre>
-   * Output only. This checksum is computed by the server based on the value of
-   * other fields, and may be sent only on create requests to ensure the client
-   * has an up-to-date value before proceeding.
+   * Output only. This checksum is computed by the server based on the value of other
+   * fields, and might be sent only on create requests to ensure that the
+   * client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -850,9 +905,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This checksum is computed by the server based on the value of
-   * other fields, and may be sent only on create requests to ensure the client
-   * has an up-to-date value before proceeding.
+   * Output only. This checksum is computed by the server based on the value of other
+   * fields, and might be sent only on create requests to ensure that the
+   * client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -912,6 +967,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 12);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channel_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, channel_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 99, etag_);
     }
@@ -958,6 +1016,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, labels__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channel_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, channel_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(99, etag_);
     }
@@ -997,6 +1058,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       if (!getTransport().equals(other.getTransport())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getChannel().equals(other.getChannel())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1039,6 +1101,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
+    hash = (53 * hash) + getChannel().hashCode();
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -1244,6 +1308,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         transportBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      channel_ = "";
+
       etag_ = "";
 
       return this;
@@ -1307,6 +1373,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      result.channel_ = channel_;
       result.etag_ = etag_;
       onBuilt();
       return result;
@@ -1409,6 +1476,10 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         mergeTransport(other.getTransport());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (!other.getChannel().isEmpty()) {
+        channel_ = other.channel_;
+        onChanged();
+      }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
         onChanged();
@@ -1449,8 +1520,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the trigger. Must be unique within the
-     * location on the project and must be in
+     * Required. The resource name of the trigger. Must be unique within the location of the
+     * project and must be in
      * `projects/{project}/locations/{location}/triggers/{trigger}` format.
      * </pre>
      *
@@ -1473,8 +1544,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the trigger. Must be unique within the
-     * location on the project and must be in
+     * Required. The resource name of the trigger. Must be unique within the location of the
+     * project and must be in
      * `projects/{project}/locations/{location}/triggers/{trigger}` format.
      * </pre>
      *
@@ -1497,8 +1568,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the trigger. Must be unique within the
-     * location on the project and must be in
+     * Required. The resource name of the trigger. Must be unique within the location of the
+     * project and must be in
      * `projects/{project}/locations/{location}/triggers/{trigger}` format.
      * </pre>
      *
@@ -1520,8 +1591,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the trigger. Must be unique within the
-     * location on the project and must be in
+     * Required. The resource name of the trigger. Must be unique within the location of the
+     * project and must be in
      * `projects/{project}/locations/{location}/triggers/{trigger}` format.
      * </pre>
      *
@@ -1539,8 +1610,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the trigger. Must be unique within the
-     * location on the project and must be in
+     * Required. The resource name of the trigger. Must be unique within the location of the
+     * project and must be in
      * `projects/{project}/locations/{location}/triggers/{trigger}` format.
      * </pre>
      *
@@ -1565,9 +1636,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the trigger. The value
-     * is a UUID4 string and guaranteed to remain unchanged until the resource is
-     * deleted.
+     * Output only. Server-assigned unique identifier for the trigger. The value is a UUID4
+     * string and guaranteed to remain unchanged until the resource is deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1589,9 +1659,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the trigger. The value
-     * is a UUID4 string and guaranteed to remain unchanged until the resource is
-     * deleted.
+     * Output only. Server-assigned unique identifier for the trigger. The value is a UUID4
+     * string and guaranteed to remain unchanged until the resource is deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1613,9 +1682,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the trigger. The value
-     * is a UUID4 string and guaranteed to remain unchanged until the resource is
-     * deleted.
+     * Output only. Server-assigned unique identifier for the trigger. The value is a UUID4
+     * string and guaranteed to remain unchanged until the resource is deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1636,9 +1704,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the trigger. The value
-     * is a UUID4 string and guaranteed to remain unchanged until the resource is
-     * deleted.
+     * Output only. Server-assigned unique identifier for the trigger. The value is a UUID4
+     * string and guaranteed to remain unchanged until the resource is deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1655,9 +1722,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the trigger. The value
-     * is a UUID4 string and guaranteed to remain unchanged until the resource is
-     * deleted.
+     * Output only. Server-assigned unique identifier for the trigger. The value is a UUID4
+     * string and guaranteed to remain unchanged until the resource is deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2099,8 +2165,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2118,8 +2184,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2137,8 +2203,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2156,8 +2222,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2181,8 +2247,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2204,8 +2270,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2229,8 +2295,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2254,8 +2320,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2277,8 +2343,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2300,8 +2366,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2323,8 +2389,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2345,8 +2411,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2367,8 +2433,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2382,8 +2448,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2401,8 +2467,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2421,8 +2487,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2437,8 +2503,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2453,8 +2519,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. null The list of filters that applies to event attributes. Only
-     * events that match all the provided filters will be sent to the destination.
+     * Required. null The list of filters that applies to event attributes. Only events that
+     * match all the provided filters are sent to the destination.
      * </pre>
      *
      * <code>
@@ -2490,7 +2556,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The IAM service account email associated with the trigger. The
      * service account represents the identity of the trigger.
-     * The principal who calls this API must have `iam.serviceAccounts.actAs`
+     * The principal who calls this API must have the `iam.serviceAccounts.actAs`
      * permission in the service account. See
      * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
      * for more information.
@@ -2498,8 +2564,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * identity tokens when invoking the service. See
      * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
      * for information on how to invoke authenticated Cloud Run services.
-     * In order to create Audit Log triggers, the service account should also
-     * have `roles/eventarc.eventReceiver` IAM role.
+     * To create Audit Log triggers, the service account should also
+     * have the `roles/eventarc.eventReceiver` IAM role.
      * </pre>
      *
      * <code>
@@ -2525,7 +2591,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The IAM service account email associated with the trigger. The
      * service account represents the identity of the trigger.
-     * The principal who calls this API must have `iam.serviceAccounts.actAs`
+     * The principal who calls this API must have the `iam.serviceAccounts.actAs`
      * permission in the service account. See
      * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
      * for more information.
@@ -2533,8 +2599,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * identity tokens when invoking the service. See
      * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
      * for information on how to invoke authenticated Cloud Run services.
-     * In order to create Audit Log triggers, the service account should also
-     * have `roles/eventarc.eventReceiver` IAM role.
+     * To create Audit Log triggers, the service account should also
+     * have the `roles/eventarc.eventReceiver` IAM role.
      * </pre>
      *
      * <code>
@@ -2560,7 +2626,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The IAM service account email associated with the trigger. The
      * service account represents the identity of the trigger.
-     * The principal who calls this API must have `iam.serviceAccounts.actAs`
+     * The principal who calls this API must have the `iam.serviceAccounts.actAs`
      * permission in the service account. See
      * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
      * for more information.
@@ -2568,8 +2634,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * identity tokens when invoking the service. See
      * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
      * for information on how to invoke authenticated Cloud Run services.
-     * In order to create Audit Log triggers, the service account should also
-     * have `roles/eventarc.eventReceiver` IAM role.
+     * To create Audit Log triggers, the service account should also
+     * have the `roles/eventarc.eventReceiver` IAM role.
      * </pre>
      *
      * <code>
@@ -2594,7 +2660,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The IAM service account email associated with the trigger. The
      * service account represents the identity of the trigger.
-     * The principal who calls this API must have `iam.serviceAccounts.actAs`
+     * The principal who calls this API must have the `iam.serviceAccounts.actAs`
      * permission in the service account. See
      * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
      * for more information.
@@ -2602,8 +2668,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * identity tokens when invoking the service. See
      * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
      * for information on how to invoke authenticated Cloud Run services.
-     * In order to create Audit Log triggers, the service account should also
-     * have `roles/eventarc.eventReceiver` IAM role.
+     * To create Audit Log triggers, the service account should also
+     * have the `roles/eventarc.eventReceiver` IAM role.
      * </pre>
      *
      * <code>
@@ -2624,7 +2690,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The IAM service account email associated with the trigger. The
      * service account represents the identity of the trigger.
-     * The principal who calls this API must have `iam.serviceAccounts.actAs`
+     * The principal who calls this API must have the `iam.serviceAccounts.actAs`
      * permission in the service account. See
      * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
      * for more information.
@@ -2632,8 +2698,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * identity tokens when invoking the service. See
      * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
      * for information on how to invoke authenticated Cloud Run services.
-     * In order to create Audit Log triggers, the service account should also
-     * have `roles/eventarc.eventReceiver` IAM role.
+     * To create Audit Log triggers, the service account should also
+     * have the `roles/eventarc.eventReceiver` IAM role.
      * </pre>
      *
      * <code>
@@ -2868,9 +2934,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. In order to deliver messages, Eventarc may use other GCP
-     * products as transport intermediary. This field contains a reference to that
-     * transport intermediary. This information can be used for debugging
+     * Optional. To deliver messages, Eventarc might use other GCP
+     * products as a transport intermediary. This field contains a reference to
+     * that transport intermediary. This information can be used for debugging
      * purposes.
      * </pre>
      *
@@ -2887,9 +2953,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. In order to deliver messages, Eventarc may use other GCP
-     * products as transport intermediary. This field contains a reference to that
-     * transport intermediary. This information can be used for debugging
+     * Optional. To deliver messages, Eventarc might use other GCP
+     * products as a transport intermediary. This field contains a reference to
+     * that transport intermediary. This information can be used for debugging
      * purposes.
      * </pre>
      *
@@ -2912,9 +2978,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. In order to deliver messages, Eventarc may use other GCP
-     * products as transport intermediary. This field contains a reference to that
-     * transport intermediary. This information can be used for debugging
+     * Optional. To deliver messages, Eventarc might use other GCP
+     * products as a transport intermediary. This field contains a reference to
+     * that transport intermediary. This information can be used for debugging
      * purposes.
      * </pre>
      *
@@ -2939,9 +3005,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. In order to deliver messages, Eventarc may use other GCP
-     * products as transport intermediary. This field contains a reference to that
-     * transport intermediary. This information can be used for debugging
+     * Optional. To deliver messages, Eventarc might use other GCP
+     * products as a transport intermediary. This field contains a reference to
+     * that transport intermediary. This information can be used for debugging
      * purposes.
      * </pre>
      *
@@ -2963,9 +3029,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. In order to deliver messages, Eventarc may use other GCP
-     * products as transport intermediary. This field contains a reference to that
-     * transport intermediary. This information can be used for debugging
+     * Optional. To deliver messages, Eventarc might use other GCP
+     * products as a transport intermediary. This field contains a reference to
+     * that transport intermediary. This information can be used for debugging
      * purposes.
      * </pre>
      *
@@ -2994,9 +3060,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. In order to deliver messages, Eventarc may use other GCP
-     * products as transport intermediary. This field contains a reference to that
-     * transport intermediary. This information can be used for debugging
+     * Optional. To deliver messages, Eventarc might use other GCP
+     * products as a transport intermediary. This field contains a reference to
+     * that transport intermediary. This information can be used for debugging
      * purposes.
      * </pre>
      *
@@ -3019,9 +3085,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. In order to deliver messages, Eventarc may use other GCP
-     * products as transport intermediary. This field contains a reference to that
-     * transport intermediary. This information can be used for debugging
+     * Optional. To deliver messages, Eventarc might use other GCP
+     * products as a transport intermediary. This field contains a reference to
+     * that transport intermediary. This information can be used for debugging
      * purposes.
      * </pre>
      *
@@ -3038,9 +3104,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. In order to deliver messages, Eventarc may use other GCP
-     * products as transport intermediary. This field contains a reference to that
-     * transport intermediary. This information can be used for debugging
+     * Optional. To deliver messages, Eventarc might use other GCP
+     * products as a transport intermediary. This field contains a reference to
+     * that transport intermediary. This information can be used for debugging
      * purposes.
      * </pre>
      *
@@ -3061,9 +3127,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. In order to deliver messages, Eventarc may use other GCP
-     * products as transport intermediary. This field contains a reference to that
-     * transport intermediary. This information can be used for debugging
+     * Optional. To deliver messages, Eventarc might use other GCP
+     * products as a transport intermediary. This field contains a reference to
+     * that transport intermediary. This information can be used for debugging
      * purposes.
      * </pre>
      *
@@ -3117,8 +3183,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User labels attached to the triggers that can be used to group
-     * resources.
+     * Optional. User labels attached to the triggers that can be used to group resources.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3140,8 +3205,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User labels attached to the triggers that can be used to group
-     * resources.
+     * Optional. User labels attached to the triggers that can be used to group resources.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3154,8 +3218,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User labels attached to the triggers that can be used to group
-     * resources.
+     * Optional. User labels attached to the triggers that can be used to group resources.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3173,8 +3236,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User labels attached to the triggers that can be used to group
-     * resources.
+     * Optional. User labels attached to the triggers that can be used to group resources.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3199,8 +3261,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User labels attached to the triggers that can be used to group
-     * resources.
+     * Optional. User labels attached to the triggers that can be used to group resources.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3221,8 +3282,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User labels attached to the triggers that can be used to group
-     * resources.
+     * Optional. User labels attached to the triggers that can be used to group resources.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3241,8 +3301,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User labels attached to the triggers that can be used to group
-     * resources.
+     * Optional. User labels attached to the triggers that can be used to group resources.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3252,14 +3311,130 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object channel_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the channel associated with the trigger in
+     * `projects/{project}/locations/{location}/channels/{channel}` format.
+     * You must provide a channel to receive events from Eventarc SaaS partners.
+     * </pre>
+     *
+     * <code>string channel = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The channel.
+     */
+    public java.lang.String getChannel() {
+      java.lang.Object ref = channel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        channel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the channel associated with the trigger in
+     * `projects/{project}/locations/{location}/channels/{channel}` format.
+     * You must provide a channel to receive events from Eventarc SaaS partners.
+     * </pre>
+     *
+     * <code>string channel = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for channel.
+     */
+    public com.google.protobuf.ByteString getChannelBytes() {
+      java.lang.Object ref = channel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        channel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the channel associated with the trigger in
+     * `projects/{project}/locations/{location}/channels/{channel}` format.
+     * You must provide a channel to receive events from Eventarc SaaS partners.
+     * </pre>
+     *
+     * <code>string channel = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The channel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChannel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      channel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the channel associated with the trigger in
+     * `projects/{project}/locations/{location}/channels/{channel}` format.
+     * You must provide a channel to receive events from Eventarc SaaS partners.
+     * </pre>
+     *
+     * <code>string channel = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearChannel() {
+
+      channel_ = getDefaultInstance().getChannel();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the channel associated with the trigger in
+     * `projects/{project}/locations/{location}/channels/{channel}` format.
+     * You must provide a channel to receive events from Eventarc SaaS partners.
+     * </pre>
+     *
+     * <code>string channel = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for channel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChannelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      channel_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object etag_ = "";
     /**
      *
      *
      * <pre>
-     * Output only. This checksum is computed by the server based on the value of
-     * other fields, and may be sent only on create requests to ensure the client
-     * has an up-to-date value before proceeding.
+     * Output only. This checksum is computed by the server based on the value of other
+     * fields, and might be sent only on create requests to ensure that the
+     * client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3281,9 +3456,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This checksum is computed by the server based on the value of
-     * other fields, and may be sent only on create requests to ensure the client
-     * has an up-to-date value before proceeding.
+     * Output only. This checksum is computed by the server based on the value of other
+     * fields, and might be sent only on create requests to ensure that the
+     * client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3305,9 +3480,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This checksum is computed by the server based on the value of
-     * other fields, and may be sent only on create requests to ensure the client
-     * has an up-to-date value before proceeding.
+     * Output only. This checksum is computed by the server based on the value of other
+     * fields, and might be sent only on create requests to ensure that the
+     * client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3328,9 +3503,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This checksum is computed by the server based on the value of
-     * other fields, and may be sent only on create requests to ensure the client
-     * has an up-to-date value before proceeding.
+     * Output only. This checksum is computed by the server based on the value of other
+     * fields, and might be sent only on create requests to ensure that the
+     * client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3347,9 +3522,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This checksum is computed by the server based on the value of
-     * other fields, and may be sent only on create requests to ensure the client
-     * has an up-to-date value before proceeding.
+     * Output only. This checksum is computed by the server based on the value of other
+     * fields, and might be sent only on create requests to ensure that the
+     * client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
