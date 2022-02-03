@@ -1,5 +1,14 @@
 # Changelog
 
+### [3.3.8](https://github.com/googleapis/java-cloudbuild/compare/v3.3.7...v3.3.8) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-cloudbuild/issues/1339)) ([#689](https://github.com/googleapis/java-cloudbuild/issues/689)) ([87d3496](https://github.com/googleapis/java-cloudbuild/commit/87d349672b035547a5c7236d17d8f4a0857db3b1))
+* update actions/github-script action to v5 ([#688](https://github.com/googleapis/java-cloudbuild/issues/688)) ([0e9b3d5](https://github.com/googleapis/java-cloudbuild/commit/0e9b3d5f6a396fd9f64156a81ad1f3e8c0dbb6c6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#691](https://github.com/googleapis/java-cloudbuild/issues/691)) ([b22d4e9](https://github.com/googleapis/java-cloudbuild/commit/b22d4e9bc869c21cfb243a465fb4cce1b679e8d3))
+
 ### [3.3.7](https://www.github.com/googleapis/java-cloudbuild/compare/v3.3.6...v3.3.7) (2022-01-07)
 
 
