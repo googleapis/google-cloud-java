@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.115.2](https://github.com/googleapis/java-pubsub/compare/v1.115.1...v1.115.2) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-pubsub/issues/1339)) ([#984](https://github.com/googleapis/java-pubsub/issues/984)) ([9a1cc0e](https://github.com/googleapis/java-pubsub/commit/9a1cc0eaf344e2f9cded1c331b0e71543f20ef65))
+* update dependency com.google.cloud:google-cloud-core to v2.4.0 ([#986](https://github.com/googleapis/java-pubsub/issues/986)) ([8cdf7a0](https://github.com/googleapis/java-pubsub/commit/8cdf7a0b1dffa1c01e9c739d79af552e6b42796e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#988](https://github.com/googleapis/java-pubsub/issues/988)) ([8993760](https://github.com/googleapis/java-pubsub/commit/89937606134be8e0eb8b7669c6243f1f3b8a9aad))
+* update dependency com.google.errorprone:error_prone_annotations to v2.11.0 ([#983](https://github.com/googleapis/java-pubsub/issues/983)) ([abcbb32](https://github.com/googleapis/java-pubsub/commit/abcbb32e442948ff4637df8b657a7f8a0abd3062))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.3 ([#973](https://github.com/googleapis/java-pubsub/issues/973)) ([13a9f96](https://github.com/googleapis/java-pubsub/commit/13a9f9645661324cc26b23b9eca5d833bf9d089f))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.4 ([#987](https://github.com/googleapis/java-pubsub/issues/987)) ([ff71dc7](https://github.com/googleapis/java-pubsub/commit/ff71dc73c9950973512920073a0f0491527a0678))
+
 ### [1.115.1](https://www.github.com/googleapis/java-pubsub/compare/v1.115.0...v1.115.1) (2022-01-07)
 
 
