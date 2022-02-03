@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-binary-authorization/compare/v0.4.1...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#147](https://github.com/googleapis/java-binary-authorization/issues/147)) ([f64e755](https://github.com/googleapis/java-binary-authorization/commit/f64e75577b3cb30db219ee19134e7d02abf0ecc3))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-binary-authorization/issues/1339)) ([#151](https://github.com/googleapis/java-binary-authorization/issues/151)) ([6ef4a2c](https://github.com/googleapis/java-binary-authorization/commit/6ef4a2ca0a4673ae5b0788d28e45bafe6d361803))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#154](https://github.com/googleapis/java-binary-authorization/issues/154)) ([010fea6](https://github.com/googleapis/java-binary-authorization/commit/010fea6e7fda31e4c9bc5642560340831337d3ae))
+* update dependency io.grafeas:grafeas to v2.2.0 ([#138](https://github.com/googleapis/java-binary-authorization/issues/138)) ([1d0e567](https://github.com/googleapis/java-binary-authorization/commit/1d0e567bee55a6eff0daa831449e3f090a22981b))
+
 ### [0.4.1](https://www.github.com/googleapis/java-binary-authorization/compare/v0.4.0...v0.4.1) (2022-01-07)
 
 
