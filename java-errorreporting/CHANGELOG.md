@@ -1,5 +1,15 @@
 # Changelog
 
+### [0.122.12](https://github.com/googleapis/java-errorreporting/compare/v0.122.11...v0.122.12) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-errorreporting/issues/1339)) ([#774](https://github.com/googleapis/java-errorreporting/issues/774)) ([2215c2f](https://github.com/googleapis/java-errorreporting/commit/2215c2fa63d58ba36214fc4c6658a68f444415a0))
+* update actions/github-script action to v5 ([#772](https://github.com/googleapis/java-errorreporting/issues/772)) ([f11f14d](https://github.com/googleapis/java-errorreporting/commit/f11f14d1b737bf3aa0a9bf76d4e23c2d2fe39111))
+* update dependency com.google.cloud:google-cloud-core to v2.4.0 ([#775](https://github.com/googleapis/java-errorreporting/issues/775)) ([c45c953](https://github.com/googleapis/java-errorreporting/commit/c45c953a80a608d4dd0642145efb880efdf8bd15))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#776](https://github.com/googleapis/java-errorreporting/issues/776)) ([1aedbb1](https://github.com/googleapis/java-errorreporting/commit/1aedbb18899a3d67dc02ba4143173b910d97c41b))
+
 ### [0.122.11](https://www.github.com/googleapis/java-errorreporting/compare/v0.122.10...v0.122.11) (2022-01-07)
 
 
