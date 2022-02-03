@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-gkehub/compare/v0.5.4...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#181](https://github.com/googleapis/java-gkehub/issues/181)) ([cbe1ca6](https://github.com/googleapis/java-gkehub/commit/cbe1ca609fd7dc78dfc7937a7fba74fed527764a))
+* add kubernetes_resource field docs: update API annotation
+
+
+### Bug Fixes
+
+* fix subpackage dependencies in BUILD.bezel ([#186](https://github.com/googleapis/java-gkehub/issues/186)) ([25d0ab4](https://github.com/googleapis/java-gkehub/commit/25d0ab46f8324da7cdd776b553ee89b73627ebf5))
+* **java:** run Maven in plain console-friendly mode ([#1301](https://github.com/googleapis/java-gkehub/issues/1301)) ([#164](https://github.com/googleapis/java-gkehub/issues/164)) ([dcb5b93](https://github.com/googleapis/java-gkehub/commit/dcb5b934b2d164330a020d163bcd2e5fa136857b))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-gkehub/issues/1339)) ([#184](https://github.com/googleapis/java-gkehub/issues/184)) ([cede289](https://github.com/googleapis/java-gkehub/commit/cede2896ae30e89369fa08e79a7ebe6e57f1eb5b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#187](https://github.com/googleapis/java-gkehub/issues/187)) ([3995bab](https://github.com/googleapis/java-gkehub/commit/3995babe9f8b13772f29672e543eab40cd920687))
+
 ### [0.5.4](https://www.github.com/googleapis/java-gkehub/compare/v0.5.3...v0.5.4) (2022-01-07)
 
 
