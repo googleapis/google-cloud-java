@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.122.6](https://github.com/googleapis/java-datalabeling/compare/v0.122.5...v0.122.6) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-datalabeling/issues/1339)) ([#675](https://github.com/googleapis/java-datalabeling/issues/675)) ([f529153](https://github.com/googleapis/java-datalabeling/commit/f529153c1b7297a0284490e906967707dd31044f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#677](https://github.com/googleapis/java-datalabeling/issues/677)) ([da38770](https://github.com/googleapis/java-datalabeling/commit/da387705fdf83b9a107c876ee524c1d85b859f52))
+
 ### [0.122.5](https://www.github.com/googleapis/java-datalabeling/compare/v0.122.4...v0.122.5) (2022-01-07)
 
 
