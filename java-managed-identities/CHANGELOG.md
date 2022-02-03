@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-managed-identities/compare/v0.3.7...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#174](https://github.com/googleapis/java-managed-identities/issues/174)) ([f5eb069](https://github.com/googleapis/java-managed-identities/commit/f5eb06949fa7a0f0a31c47e3a642470682660905))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-managed-identities/issues/1339)) ([#177](https://github.com/googleapis/java-managed-identities/issues/177)) ([610fac2](https://github.com/googleapis/java-managed-identities/commit/610fac2ef8d99541748504e514db410bc5c424fc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#179](https://github.com/googleapis/java-managed-identities/issues/179)) ([1d2f5d9](https://github.com/googleapis/java-managed-identities/commit/1d2f5d9303157c41cd0b586984a6a4c254fd9bc0))
+
 ### [0.3.7](https://www.github.com/googleapis/java-managed-identities/compare/v0.3.6...v0.3.7) (2022-01-07)
 
 
