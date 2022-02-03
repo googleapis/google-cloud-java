@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.8.4](https://github.com/googleapis/java-bigquerystorage/compare/v2.8.3...v2.8.4) (2022-02-03)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.7.1 ([#1505](https://github.com/googleapis/java-bigquerystorage/issues/1505)) ([a700d92](https://github.com/googleapis/java-bigquerystorage/commit/a700d92c9f591f2b653aad6d79b2f61c4c44df98))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.8.0 ([#1508](https://github.com/googleapis/java-bigquerystorage/issues/1508)) ([b9ab6aa](https://github.com/googleapis/java-bigquerystorage/commit/b9ab6aac2f360f9ab541d83ad1f2d921657a56bf))
+
+
+### Documentation
+
+* **tutorials:** add integration test file structure for tutorials ([#1507](https://github.com/googleapis/java-bigquerystorage/issues/1507)) ([ecb1fbb](https://github.com/googleapis/java-bigquerystorage/commit/ecb1fbb1186a2bb22a2c27ba85ff6ecfab883011))
+* **tutorials:** Add README, other small fixes to JsonWriterDefaultStream tutorial ([#1504](https://github.com/googleapis/java-bigquerystorage/issues/1504)) ([691eae5](https://github.com/googleapis/java-bigquerystorage/commit/691eae56f80a6751f25ef0db4f1d7b4bd6db2f66))
+
 ### [2.8.3](https://github.com/googleapis/java-bigquerystorage/compare/v2.8.2...v2.8.3) (2022-01-28)
 
 
