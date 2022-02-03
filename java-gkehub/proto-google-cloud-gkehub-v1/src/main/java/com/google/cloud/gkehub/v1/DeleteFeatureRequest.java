@@ -130,11 +130,11 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The Feature resource name in the format
+   * Required. The Feature resource name in the format
    * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The name.
    */
@@ -154,11 +154,11 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The Feature resource name in the format
+   * Required. The Feature resource name in the format
    * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for name.
    */
@@ -617,11 +617,11 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature resource name in the format
+     * Required. The Feature resource name in the format
      * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The name.
      */
@@ -640,11 +640,11 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature resource name in the format
+     * Required. The Feature resource name in the format
      * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for name.
      */
@@ -663,11 +663,11 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature resource name in the format
+     * Required. The Feature resource name in the format
      * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -685,11 +685,11 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature resource name in the format
+     * Required. The Feature resource name in the format
      * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -703,11 +703,11 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature resource name in the format
+     * Required. The Feature resource name in the format
      * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

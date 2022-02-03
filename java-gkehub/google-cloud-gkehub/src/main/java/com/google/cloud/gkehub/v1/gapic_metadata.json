@@ -11,13 +11,13 @@
           "libraryClient": "GkeHubClient",
           "rpcs": {
             "CreateFeature": {
-              "methods": ["createFeatureAsync", "createFeatureAsync", "createFeatureOperationCallable", "createFeatureCallable"]
+              "methods": ["createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureOperationCallable", "createFeatureCallable"]
             },
             "CreateMembership": {
               "methods": ["createMembershipAsync", "createMembershipAsync", "createMembershipAsync", "createMembershipOperationCallable", "createMembershipCallable"]
             },
             "DeleteFeature": {
-              "methods": ["deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureOperationCallable", "deleteFeatureCallable"]
+              "methods": ["deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureOperationCallable", "deleteFeatureCallable"]
             },
             "DeleteMembership": {
               "methods": ["deleteMembershipAsync", "deleteMembershipAsync", "deleteMembershipAsync", "deleteMembershipOperationCallable", "deleteMembershipCallable"]
@@ -26,22 +26,22 @@
               "methods": ["generateConnectManifest", "generateConnectManifestCallable"]
             },
             "GetFeature": {
-              "methods": ["getFeature", "getFeature", "getFeatureCallable"]
+              "methods": ["getFeature", "getFeature", "getFeature", "getFeatureCallable"]
             },
             "GetMembership": {
               "methods": ["getMembership", "getMembership", "getMembership", "getMembershipCallable"]
             },
             "ListFeatures": {
-              "methods": ["listFeatures", "listFeatures", "listFeaturesPagedCallable", "listFeaturesCallable"]
+              "methods": ["listFeatures", "listFeatures", "listFeatures", "listFeaturesPagedCallable", "listFeaturesCallable"]
             },
             "ListMemberships": {
               "methods": ["listMemberships", "listMemberships", "listMemberships", "listMembershipsPagedCallable", "listMembershipsCallable"]
             },
             "UpdateFeature": {
-              "methods": ["updateFeatureAsync", "updateFeatureAsync", "updateFeatureOperationCallable", "updateFeatureCallable"]
+              "methods": ["updateFeatureAsync", "updateFeatureAsync", "updateFeatureAsync", "updateFeatureOperationCallable", "updateFeatureCallable"]
             },
             "UpdateMembership": {
-              "methods": ["updateMembershipAsync", "updateMembershipAsync", "updateMembershipOperationCallable", "updateMembershipCallable"]
+              "methods": ["updateMembershipAsync", "updateMembershipAsync", "updateMembershipAsync", "updateMembershipOperationCallable", "updateMembershipCallable"]
             }
           }
         }

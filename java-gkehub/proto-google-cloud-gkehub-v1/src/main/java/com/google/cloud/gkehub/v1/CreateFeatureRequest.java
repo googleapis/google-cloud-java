@@ -148,11 +148,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The parent (project and location) where the Feature will be created.
+   * Required. The parent (project and location) where the Feature will be created.
    * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The parent.
    */
@@ -172,11 +172,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The parent (project and location) where the Feature will be created.
+   * Required. The parent (project and location) where the Feature will be created.
    * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for parent.
    */
@@ -307,7 +307,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string request_id = 4;</code>
    *
    * @return The requestId.
    */
@@ -340,7 +340,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string request_id = 4;</code>
    *
    * @return The bytes for requestId.
    */
@@ -739,11 +739,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The parent (project and location) where the Feature will be created.
+     * Required. The parent (project and location) where the Feature will be created.
      * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The parent.
      */
@@ -762,11 +762,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The parent (project and location) where the Feature will be created.
+     * Required. The parent (project and location) where the Feature will be created.
      * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for parent.
      */
@@ -785,11 +785,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The parent (project and location) where the Feature will be created.
+     * Required. The parent (project and location) where the Feature will be created.
      * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -807,11 +807,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The parent (project and location) where the Feature will be created.
+     * Required. The parent (project and location) where the Feature will be created.
      * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -825,11 +825,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The parent (project and location) where the Feature will be created.
+     * Required. The parent (project and location) where the Feature will be created.
      * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -1154,7 +1154,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string request_id = 4;</code>
      *
      * @return The requestId.
      */
@@ -1186,7 +1186,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string request_id = 4;</code>
      *
      * @return The bytes for requestId.
      */
@@ -1218,7 +1218,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string request_id = 4;</code>
      *
      * @param value The requestId to set.
      * @return This builder for chaining.
@@ -1249,7 +1249,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string request_id = 4;</code>
      *
      * @return This builder for chaining.
      */
@@ -1276,7 +1276,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string request_id = 4;</code>
      *
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.

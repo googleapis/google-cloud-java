@@ -155,11 +155,11 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The Feature resource name in the format
+   * Required. The Feature resource name in the format
    * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The name.
    */
@@ -179,11 +179,11 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The Feature resource name in the format
+   * Required. The Feature resource name in the format
    * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for name.
    */
@@ -332,7 +332,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string request_id = 4;</code>
    *
    * @return The requestId.
    */
@@ -365,7 +365,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string request_id = 4;</code>
    *
    * @return The bytes for requestId.
    */
@@ -776,11 +776,11 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature resource name in the format
+     * Required. The Feature resource name in the format
      * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The name.
      */
@@ -799,11 +799,11 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature resource name in the format
+     * Required. The Feature resource name in the format
      * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for name.
      */
@@ -822,11 +822,11 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature resource name in the format
+     * Required. The Feature resource name in the format
      * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -844,11 +844,11 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature resource name in the format
+     * Required. The Feature resource name in the format
      * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -862,11 +862,11 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature resource name in the format
+     * Required. The Feature resource name in the format
      * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1331,7 +1331,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string request_id = 4;</code>
      *
      * @return The requestId.
      */
@@ -1363,7 +1363,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string request_id = 4;</code>
      *
      * @return The bytes for requestId.
      */
@@ -1395,7 +1395,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string request_id = 4;</code>
      *
      * @param value The requestId to set.
      * @return This builder for chaining.
@@ -1426,7 +1426,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string request_id = 4;</code>
      *
      * @return This builder for chaining.
      */
@@ -1453,7 +1453,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string request_id = 4;</code>
      *
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.

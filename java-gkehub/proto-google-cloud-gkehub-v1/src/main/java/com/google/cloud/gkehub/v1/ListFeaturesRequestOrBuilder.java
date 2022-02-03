@@ -27,11 +27,11 @@ public interface ListFeaturesRequestOrBuilder
    *
    *
    * <pre>
-   * The parent (project and location) where the Features will be listed.
+   * Required. The parent (project and location) where the Features will be listed.
    * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The parent.
    */
@@ -40,11 +40,11 @@ public interface ListFeaturesRequestOrBuilder
    *
    *
    * <pre>
-   * The parent (project and location) where the Features will be listed.
+   * Required. The parent (project and location) where the Features will be listed.
    * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for parent.
    */

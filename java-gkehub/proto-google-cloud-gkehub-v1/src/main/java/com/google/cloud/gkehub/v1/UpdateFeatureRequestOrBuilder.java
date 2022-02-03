@@ -27,11 +27,11 @@ public interface UpdateFeatureRequestOrBuilder
    *
    *
    * <pre>
-   * The Feature resource name in the format
+   * Required. The Feature resource name in the format
    * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The name.
    */
@@ -40,11 +40,11 @@ public interface UpdateFeatureRequestOrBuilder
    *
    *
    * <pre>
-   * The Feature resource name in the format
+   * Required. The Feature resource name in the format
    * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for name.
    */
@@ -158,7 +158,7 @@ public interface UpdateFeatureRequestOrBuilder
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string request_id = 4;</code>
    *
    * @return The requestId.
    */
@@ -180,7 +180,7 @@ public interface UpdateFeatureRequestOrBuilder
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string request_id = 4;</code>
    *
    * @return The bytes for requestId.
    */

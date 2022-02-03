@@ -160,7 +160,9 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
    * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -184,7 +186,9 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
    * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -793,7 +797,9 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -816,7 +822,9 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -839,7 +847,9 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -861,7 +871,9 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -879,7 +891,9 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

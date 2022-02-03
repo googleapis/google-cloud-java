@@ -104,4 +104,63 @@ public interface MembershipEndpointOrBuilder
    * </code>
    */
   com.google.cloud.gkehub.v1.KubernetesMetadataOrBuilder getKubernetesMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+   * registered cluster, in the steady state. These resources:
+   *   * Ensure that the cluster is exclusively registered to one and only one
+   *     Hub Membership.
+   *   * Propagate Workload Pool Information available in the Membership
+   *     Authority field.
+   *   * Ensure proper initial configuration of default Hub Features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the kubernetesResource field is set.
+   */
+  boolean hasKubernetesResource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+   * registered cluster, in the steady state. These resources:
+   *   * Ensure that the cluster is exclusively registered to one and only one
+   *     Hub Membership.
+   *   * Propagate Workload Pool Information available in the Membership
+   *     Authority field.
+   *   * Ensure proper initial configuration of default Hub Features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The kubernetesResource.
+   */
+  com.google.cloud.gkehub.v1.KubernetesResource getKubernetesResource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+   * registered cluster, in the steady state. These resources:
+   *   * Ensure that the cluster is exclusively registered to one and only one
+   *     Hub Membership.
+   *   * Propagate Workload Pool Information available in the Membership
+   *     Authority field.
+   *   * Ensure proper initial configuration of default Hub Features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkehub.v1.KubernetesResourceOrBuilder getKubernetesResourceOrBuilder();
 }

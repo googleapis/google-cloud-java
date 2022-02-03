@@ -18,37 +18,49 @@
 
 package com.google.cloud.gkehub.v1;
 
-public interface GkeClusterOrBuilder
+public interface ResourceManifestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.gkehub.v1.GkeCluster)
+    // @@protoc_insertion_point(interface_extends:google.cloud.gkehub.v1.ResourceManifest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-   * //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-   * Zonal clusters are also supported.
+   * YAML manifest of the resource.
    * </pre>
    *
-   * <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string manifest = 1;</code>
    *
-   * @return The resourceLink.
+   * @return The manifest.
    */
-  java.lang.String getResourceLink();
+  java.lang.String getManifest();
   /**
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-   * //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-   * Zonal clusters are also supported.
+   * YAML manifest of the resource.
    * </pre>
    *
-   * <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string manifest = 1;</code>
    *
-   * @return The bytes for resourceLink.
+   * @return The bytes for manifest.
    */
-  com.google.protobuf.ByteString getResourceLinkBytes();
+  com.google.protobuf.ByteString getManifestBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether the resource provided in the manifest is `cluster_scoped`.
+   * If unset, the manifest is assumed to be namespace scoped.
+   * This field is used for REST mapping when applying the resource in a
+   * cluster.
+   * </pre>
+   *
+   * <code>bool cluster_scoped = 2;</code>
+   *
+   * @return The clusterScoped.
+   */
+  boolean getClusterScoped();
 }

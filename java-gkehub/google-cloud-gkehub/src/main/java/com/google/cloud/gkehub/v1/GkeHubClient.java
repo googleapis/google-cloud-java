@@ -328,15 +328,42 @@ public class GkeHubClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
-   *   String parent = "parent-995424086";
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Feature element : gkeHubClient.listFeatures(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * }</pre>
    *
-   * @param parent The parent (project and location) where the Features will be listed. Specified in
-   *     the format `projects/&#42;/locations/&#42;`.
+   * @param parent Required. The parent (project and location) where the Features will be listed.
+   *     Specified in the format `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFeaturesPagedResponse listFeatures(LocationName parent) {
+    ListFeaturesRequest request =
+        ListFeaturesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listFeatures(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Features in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Feature element : gkeHubClient.listFeatures(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent (project and location) where the Features will be listed.
+   *     Specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFeaturesPagedResponse listFeatures(String parent) {
@@ -354,7 +381,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   ListFeaturesRequest request =
    *       ListFeaturesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -383,7 +410,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   ListFeaturesRequest request =
    *       ListFeaturesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -412,7 +439,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   ListFeaturesRequest request =
    *       ListFeaturesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -535,12 +562,35 @@ public class GkeHubClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
-   *   String name = "name3373707";
+   *   FeatureName name = FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]");
    *   Feature response = gkeHubClient.getFeature(name);
    * }
    * }</pre>
    *
-   * @param name The Feature resource name in the format
+   * @param name Required. The Feature resource name in the format
+   *     `projects/&#42;/locations/&#42;/features/&#42;`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Feature getFeature(FeatureName name) {
+    GetFeatureRequest request =
+        GetFeatureRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getFeature(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
+   *   String name = FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString();
+   *   Feature response = gkeHubClient.getFeature(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Feature resource name in the format
    *     `projects/&#42;/locations/&#42;/features/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -557,7 +607,10 @@ public class GkeHubClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
-   *   GetFeatureRequest request = GetFeatureRequest.newBuilder().setName("name3373707").build();
+   *   GetFeatureRequest request =
+   *       GetFeatureRequest.newBuilder()
+   *           .setName(FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString())
+   *           .build();
    *   Feature response = gkeHubClient.getFeature(request);
    * }
    * }</pre>
@@ -577,7 +630,10 @@ public class GkeHubClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
-   *   GetFeatureRequest request = GetFeatureRequest.newBuilder().setName("name3373707").build();
+   *   GetFeatureRequest request =
+   *       GetFeatureRequest.newBuilder()
+   *           .setName(FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString())
+   *           .build();
    *   ApiFuture<Feature> future = gkeHubClient.getFeatureCallable().futureCall(request);
    *   // Do something.
    *   Feature response = future.get();
@@ -771,15 +827,47 @@ public class GkeHubClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
-   *   String parent = "parent-995424086";
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Feature resource = Feature.newBuilder().build();
    *   String featureId = "featureId-420503887";
    *   Feature response = gkeHubClient.createFeatureAsync(parent, resource, featureId).get();
    * }
    * }</pre>
    *
-   * @param parent The parent (project and location) where the Feature will be created. Specified in
-   *     the format `projects/&#42;/locations/&#42;`.
+   * @param parent Required. The parent (project and location) where the Feature will be created.
+   *     Specified in the format `projects/&#42;/locations/&#42;`.
+   * @param resource The Feature resource to create.
+   * @param featureId The ID of the feature to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Feature, OperationMetadata> createFeatureAsync(
+      LocationName parent, Feature resource, String featureId) {
+    CreateFeatureRequest request =
+        CreateFeatureRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setResource(resource)
+            .setFeatureId(featureId)
+            .build();
+    return createFeatureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a new Feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Feature resource = Feature.newBuilder().build();
+   *   String featureId = "featureId-420503887";
+   *   Feature response = gkeHubClient.createFeatureAsync(parent, resource, featureId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent (project and location) where the Feature will be created.
+   *     Specified in the format `projects/&#42;/locations/&#42;`.
    * @param resource The Feature resource to create.
    * @param featureId The ID of the feature to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -805,7 +893,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   CreateFeatureRequest request =
    *       CreateFeatureRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFeatureId("featureId-420503887")
    *           .setResource(Feature.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -832,7 +920,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   CreateFeatureRequest request =
    *       CreateFeatureRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFeatureId("featureId-420503887")
    *           .setResource(Feature.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -859,7 +947,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   CreateFeatureRequest request =
    *       CreateFeatureRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFeatureId("featureId-420503887")
    *           .setResource(Feature.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1021,12 +1109,35 @@ public class GkeHubClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
-   *   String name = "name3373707";
+   *   FeatureName name = FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]");
    *   gkeHubClient.deleteFeatureAsync(name).get();
    * }
    * }</pre>
    *
-   * @param name The Feature resource name in the format
+   * @param name Required. The Feature resource name in the format
+   *     `projects/&#42;/locations/&#42;/features/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteFeatureAsync(FeatureName name) {
+    DeleteFeatureRequest request =
+        DeleteFeatureRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteFeatureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes a Feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
+   *   String name = FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString();
+   *   gkeHubClient.deleteFeatureAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Feature resource name in the format
    *     `projects/&#42;/locations/&#42;/features/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1045,7 +1156,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   DeleteFeatureRequest request =
    *       DeleteFeatureRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString())
    *           .setForce(true)
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -1071,7 +1182,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   DeleteFeatureRequest request =
    *       DeleteFeatureRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString())
    *           .setForce(true)
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -1097,7 +1208,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   DeleteFeatureRequest request =
    *       DeleteFeatureRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString())
    *           .setForce(true)
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -1119,7 +1230,44 @@ public class GkeHubClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
-   *   String name = "name3373707";
+   *   MembershipName name = MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]");
+   *   Membership resource = Membership.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Membership response = gkeHubClient.updateMembershipAsync(name, resource, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Membership resource name in the format
+   *     `projects/&#42;/locations/&#42;/memberships/&#42;`.
+   * @param resource Required. Only fields specified in update_mask are updated. If you specify a
+   *     field in the update_mask but don't specify its value here that field will be deleted. If
+   *     you are updating a map field, set the value of a key to null or empty string to delete the
+   *     key from the map. It's not possible to update a key's value to the empty string. If you
+   *     specify the update_mask to be a special path "&#42;", fully replaces all user-modifiable
+   *     fields to match `resource`.
+   * @param updateMask Required. Mask of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Membership, OperationMetadata> updateMembershipAsync(
+      MembershipName name, Membership resource, FieldMask updateMask) {
+    UpdateMembershipRequest request =
+        UpdateMembershipRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setResource(resource)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateMembershipAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing Membership.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
+   *   String name = MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString();
    *   Membership resource = Membership.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   Membership response = gkeHubClient.updateMembershipAsync(name, resource, updateMask).get();
@@ -1158,7 +1306,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   UpdateMembershipRequest request =
    *       UpdateMembershipRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setResource(Membership.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1185,7 +1333,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   UpdateMembershipRequest request =
    *       UpdateMembershipRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setResource(Membership.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1212,7 +1360,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   UpdateMembershipRequest request =
    *       UpdateMembershipRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setResource(Membership.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1235,14 +1383,51 @@ public class GkeHubClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
-   *   String name = "name3373707";
+   *   FeatureName name = FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]");
    *   Feature resource = Feature.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   Feature response = gkeHubClient.updateFeatureAsync(name, resource, updateMask).get();
    * }
    * }</pre>
    *
-   * @param name The Feature resource name in the format
+   * @param name Required. The Feature resource name in the format
+   *     `projects/&#42;/locations/&#42;/features/&#42;`.
+   * @param resource Only fields specified in update_mask are updated. If you specify a field in the
+   *     update_mask but don't specify its value here that field will be deleted. If you are
+   *     updating a map field, set the value of a key to null or empty string to delete the key from
+   *     the map. It's not possible to update a key's value to the empty string. If you specify the
+   *     update_mask to be a special path "&#42;", fully replaces all user-modifiable fields to
+   *     match `resource`.
+   * @param updateMask Mask of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Feature, OperationMetadata> updateFeatureAsync(
+      FeatureName name, Feature resource, FieldMask updateMask) {
+    UpdateFeatureRequest request =
+        UpdateFeatureRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setResource(resource)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateFeatureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing Feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
+   *   String name = FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString();
+   *   Feature resource = Feature.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Feature response = gkeHubClient.updateFeatureAsync(name, resource, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Feature resource name in the format
    *     `projects/&#42;/locations/&#42;/features/&#42;`.
    * @param resource Only fields specified in update_mask are updated. If you specify a field in the
    *     update_mask but don't specify its value here that field will be deleted. If you are
@@ -1274,7 +1459,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   UpdateFeatureRequest request =
    *       UpdateFeatureRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setResource(Feature.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1301,7 +1486,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   UpdateFeatureRequest request =
    *       UpdateFeatureRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setResource(Feature.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1328,7 +1513,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   UpdateFeatureRequest request =
    *       UpdateFeatureRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setResource(Feature.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1356,7 +1541,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   GenerateConnectManifestRequest request =
    *       GenerateConnectManifestRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setNamespace("namespace1252218203")
    *           .setProxy(ByteString.EMPTY)
    *           .setVersion("version351608024")
@@ -1389,7 +1574,7 @@ public class GkeHubClient implements BackgroundResource {
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   GenerateConnectManifestRequest request =
    *       GenerateConnectManifestRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setNamespace("namespace1252218203")
    *           .setProxy(ByteString.EMPTY)
    *           .setVersion("version351608024")

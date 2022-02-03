@@ -27,11 +27,11 @@ public interface GetFeatureRequestOrBuilder
    *
    *
    * <pre>
-   * The Feature resource name in the format
+   * Required. The Feature resource name in the format
    * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The name.
    */
@@ -40,11 +40,11 @@ public interface GetFeatureRequestOrBuilder
    *
    *
    * <pre>
-   * The Feature resource name in the format
+   * Required. The Feature resource name in the format
    * `projects/&#42;&#47;locations/&#42;&#47;features/&#42;`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for name.
    */

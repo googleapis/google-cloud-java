@@ -101,6 +101,22 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
 
               break;
             }
+          case 26:
+            {
+              com.google.cloud.gkehub.v1.KubernetesResource.Builder subBuilder = null;
+              if (kubernetesResource_ != null) {
+                subBuilder = kubernetesResource_.toBuilder();
+              }
+              kubernetesResource_ =
+                  input.readMessage(
+                      com.google.cloud.gkehub.v1.KubernetesResource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(kubernetesResource_);
+                kubernetesResource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -243,6 +259,78 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     return getKubernetesMetadata();
   }
 
+  public static final int KUBERNETES_RESOURCE_FIELD_NUMBER = 3;
+  private com.google.cloud.gkehub.v1.KubernetesResource kubernetesResource_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+   * registered cluster, in the steady state. These resources:
+   *   * Ensure that the cluster is exclusively registered to one and only one
+   *     Hub Membership.
+   *   * Propagate Workload Pool Information available in the Membership
+   *     Authority field.
+   *   * Ensure proper initial configuration of default Hub Features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the kubernetesResource field is set.
+   */
+  @java.lang.Override
+  public boolean hasKubernetesResource() {
+    return kubernetesResource_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+   * registered cluster, in the steady state. These resources:
+   *   * Ensure that the cluster is exclusively registered to one and only one
+   *     Hub Membership.
+   *   * Propagate Workload Pool Information available in the Membership
+   *     Authority field.
+   *   * Ensure proper initial configuration of default Hub Features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The kubernetesResource.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1.KubernetesResource getKubernetesResource() {
+    return kubernetesResource_ == null
+        ? com.google.cloud.gkehub.v1.KubernetesResource.getDefaultInstance()
+        : kubernetesResource_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+   * registered cluster, in the steady state. These resources:
+   *   * Ensure that the cluster is exclusively registered to one and only one
+   *     Hub Membership.
+   *   * Propagate Workload Pool Information available in the Membership
+   *     Authority field.
+   *   * Ensure proper initial configuration of default Hub Features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1.KubernetesResourceOrBuilder getKubernetesResourceOrBuilder() {
+    return getKubernetesResource();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -263,6 +351,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     if (kubernetesMetadata_ != null) {
       output.writeMessage(2, getKubernetesMetadata());
     }
+    if (kubernetesResource_ != null) {
+      output.writeMessage(3, getKubernetesResource());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -277,6 +368,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     }
     if (kubernetesMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getKubernetesMetadata());
+    }
+    if (kubernetesResource_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getKubernetesResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -302,6 +396,10 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     if (hasKubernetesMetadata()) {
       if (!getKubernetesMetadata().equals(other.getKubernetesMetadata())) return false;
     }
+    if (hasKubernetesResource() != other.hasKubernetesResource()) return false;
+    if (hasKubernetesResource()) {
+      if (!getKubernetesResource().equals(other.getKubernetesResource())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -320,6 +418,10 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     if (hasKubernetesMetadata()) {
       hash = (37 * hash) + KUBERNETES_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getKubernetesMetadata().hashCode();
+    }
+    if (hasKubernetesResource()) {
+      hash = (37 * hash) + KUBERNETES_RESOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getKubernetesResource().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -479,6 +581,12 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
         kubernetesMetadata_ = null;
         kubernetesMetadataBuilder_ = null;
       }
+      if (kubernetesResourceBuilder_ == null) {
+        kubernetesResource_ = null;
+      } else {
+        kubernetesResource_ = null;
+        kubernetesResourceBuilder_ = null;
+      }
       return this;
     }
 
@@ -515,6 +623,11 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
         result.kubernetesMetadata_ = kubernetesMetadata_;
       } else {
         result.kubernetesMetadata_ = kubernetesMetadataBuilder_.build();
+      }
+      if (kubernetesResourceBuilder_ == null) {
+        result.kubernetesResource_ = kubernetesResource_;
+      } else {
+        result.kubernetesResource_ = kubernetesResourceBuilder_.build();
       }
       onBuilt();
       return result;
@@ -570,6 +683,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasKubernetesMetadata()) {
         mergeKubernetesMetadata(other.getKubernetesMetadata());
+      }
+      if (other.hasKubernetesResource()) {
+        mergeKubernetesResource(other.getKubernetesResource());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1005,6 +1121,264 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
         kubernetesMetadata_ = null;
       }
       return kubernetesMetadataBuilder_;
+    }
+
+    private com.google.cloud.gkehub.v1.KubernetesResource kubernetesResource_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.v1.KubernetesResource,
+            com.google.cloud.gkehub.v1.KubernetesResource.Builder,
+            com.google.cloud.gkehub.v1.KubernetesResourceOrBuilder>
+        kubernetesResourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
+     *   * Ensure that the cluster is exclusively registered to one and only one
+     *     Hub Membership.
+     *   * Propagate Workload Pool Information available in the Membership
+     *     Authority field.
+     *   * Ensure proper initial configuration of default Hub Features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the kubernetesResource field is set.
+     */
+    public boolean hasKubernetesResource() {
+      return kubernetesResourceBuilder_ != null || kubernetesResource_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
+     *   * Ensure that the cluster is exclusively registered to one and only one
+     *     Hub Membership.
+     *   * Propagate Workload Pool Information available in the Membership
+     *     Authority field.
+     *   * Ensure proper initial configuration of default Hub Features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The kubernetesResource.
+     */
+    public com.google.cloud.gkehub.v1.KubernetesResource getKubernetesResource() {
+      if (kubernetesResourceBuilder_ == null) {
+        return kubernetesResource_ == null
+            ? com.google.cloud.gkehub.v1.KubernetesResource.getDefaultInstance()
+            : kubernetesResource_;
+      } else {
+        return kubernetesResourceBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
+     *   * Ensure that the cluster is exclusively registered to one and only one
+     *     Hub Membership.
+     *   * Propagate Workload Pool Information available in the Membership
+     *     Authority field.
+     *   * Ensure proper initial configuration of default Hub Features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKubernetesResource(com.google.cloud.gkehub.v1.KubernetesResource value) {
+      if (kubernetesResourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kubernetesResource_ = value;
+        onChanged();
+      } else {
+        kubernetesResourceBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
+     *   * Ensure that the cluster is exclusively registered to one and only one
+     *     Hub Membership.
+     *   * Propagate Workload Pool Information available in the Membership
+     *     Authority field.
+     *   * Ensure proper initial configuration of default Hub Features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKubernetesResource(
+        com.google.cloud.gkehub.v1.KubernetesResource.Builder builderForValue) {
+      if (kubernetesResourceBuilder_ == null) {
+        kubernetesResource_ = builderForValue.build();
+        onChanged();
+      } else {
+        kubernetesResourceBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
+     *   * Ensure that the cluster is exclusively registered to one and only one
+     *     Hub Membership.
+     *   * Propagate Workload Pool Information available in the Membership
+     *     Authority field.
+     *   * Ensure proper initial configuration of default Hub Features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeKubernetesResource(com.google.cloud.gkehub.v1.KubernetesResource value) {
+      if (kubernetesResourceBuilder_ == null) {
+        if (kubernetesResource_ != null) {
+          kubernetesResource_ =
+              com.google.cloud.gkehub.v1.KubernetesResource.newBuilder(kubernetesResource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kubernetesResource_ = value;
+        }
+        onChanged();
+      } else {
+        kubernetesResourceBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
+     *   * Ensure that the cluster is exclusively registered to one and only one
+     *     Hub Membership.
+     *   * Propagate Workload Pool Information available in the Membership
+     *     Authority field.
+     *   * Ensure proper initial configuration of default Hub Features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearKubernetesResource() {
+      if (kubernetesResourceBuilder_ == null) {
+        kubernetesResource_ = null;
+        onChanged();
+      } else {
+        kubernetesResource_ = null;
+        kubernetesResourceBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
+     *   * Ensure that the cluster is exclusively registered to one and only one
+     *     Hub Membership.
+     *   * Propagate Workload Pool Information available in the Membership
+     *     Authority field.
+     *   * Ensure proper initial configuration of default Hub Features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkehub.v1.KubernetesResource.Builder getKubernetesResourceBuilder() {
+
+      onChanged();
+      return getKubernetesResourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
+     *   * Ensure that the cluster is exclusively registered to one and only one
+     *     Hub Membership.
+     *   * Propagate Workload Pool Information available in the Membership
+     *     Authority field.
+     *   * Ensure proper initial configuration of default Hub Features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkehub.v1.KubernetesResourceOrBuilder getKubernetesResourceOrBuilder() {
+      if (kubernetesResourceBuilder_ != null) {
+        return kubernetesResourceBuilder_.getMessageOrBuilder();
+      } else {
+        return kubernetesResource_ == null
+            ? com.google.cloud.gkehub.v1.KubernetesResource.getDefaultInstance()
+            : kubernetesResource_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
+     *   * Ensure that the cluster is exclusively registered to one and only one
+     *     Hub Membership.
+     *   * Propagate Workload Pool Information available in the Membership
+     *     Authority field.
+     *   * Ensure proper initial configuration of default Hub Features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.v1.KubernetesResource,
+            com.google.cloud.gkehub.v1.KubernetesResource.Builder,
+            com.google.cloud.gkehub.v1.KubernetesResourceOrBuilder>
+        getKubernetesResourceFieldBuilder() {
+      if (kubernetesResourceBuilder_ == null) {
+        kubernetesResourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkehub.v1.KubernetesResource,
+                com.google.cloud.gkehub.v1.KubernetesResource.Builder,
+                com.google.cloud.gkehub.v1.KubernetesResourceOrBuilder>(
+                getKubernetesResource(), getParentForChildren(), isClean());
+        kubernetesResource_ = null;
+      }
+      return kubernetesResourceBuilder_;
     }
 
     @java.lang.Override
