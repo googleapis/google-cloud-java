@@ -29,24 +29,27 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
 public class SnapshotName implements ResourceName {
-  private static final PathTemplate PROJECT_LOCATION_SNAPSHOT =
+  private static final PathTemplate PROJECT_LOCATION_INSTANCE_SNAPSHOT =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/snapshots/{snapshot}");
+          "projects/{project}/locations/{location}/instances/{instance}/snapshots/{snapshot}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
   private final String location;
+  private final String instance;
   private final String snapshot;
 
   @Deprecated
   protected SnapshotName() {
     project = null;
     location = null;
+    instance = null;
     snapshot = null;
   }
 
   private SnapshotName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
+    instance = Preconditions.checkNotNull(builder.getInstance());
     snapshot = Preconditions.checkNotNull(builder.getSnapshot());
   }
 
@@ -56,6 +59,10 @@ public class SnapshotName implements ResourceName {
 
   public String getLocation() {
     return location;
+  }
+
+  public String getInstance() {
+    return instance;
   }
 
   public String getSnapshot() {
@@ -70,14 +77,20 @@ public class SnapshotName implements ResourceName {
     return new Builder(this);
   }
 
-  public static SnapshotName of(String project, String location, String snapshot) {
-    return newBuilder().setProject(project).setLocation(location).setSnapshot(snapshot).build();
-  }
-
-  public static String format(String project, String location, String snapshot) {
+  public static SnapshotName of(String project, String location, String instance, String snapshot) {
     return newBuilder()
         .setProject(project)
         .setLocation(location)
+        .setInstance(instance)
+        .setSnapshot(snapshot)
+        .build();
+  }
+
+  public static String format(String project, String location, String instance, String snapshot) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setInstance(instance)
         .setSnapshot(snapshot)
         .build()
         .toString();
@@ -88,9 +101,13 @@ public class SnapshotName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_LOCATION_SNAPSHOT.validatedMatch(
+        PROJECT_LOCATION_INSTANCE_SNAPSHOT.validatedMatch(
             formattedString, "SnapshotName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("snapshot"));
+    return of(
+        matchMap.get("project"),
+        matchMap.get("location"),
+        matchMap.get("instance"),
+        matchMap.get("snapshot"));
   }
 
   public static List<SnapshotName> parseList(List<String> formattedStrings) {
@@ -114,7 +131,7 @@ public class SnapshotName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_SNAPSHOT.matches(formattedString);
+    return PROJECT_LOCATION_INSTANCE_SNAPSHOT.matches(formattedString);
   }
 
   @Override
@@ -128,6 +145,9 @@ public class SnapshotName implements ResourceName {
           }
           if (location != null) {
             fieldMapBuilder.put("location", location);
+          }
+          if (instance != null) {
+            fieldMapBuilder.put("instance", instance);
           }
           if (snapshot != null) {
             fieldMapBuilder.put("snapshot", snapshot);
@@ -145,8 +165,8 @@ public class SnapshotName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_SNAPSHOT.instantiate(
-        "project", project, "location", location, "snapshot", snapshot);
+    return PROJECT_LOCATION_INSTANCE_SNAPSHOT.instantiate(
+        "project", project, "location", location, "instance", instance, "snapshot", snapshot);
   }
 
   @Override
@@ -158,6 +178,7 @@ public class SnapshotName implements ResourceName {
       SnapshotName that = ((SnapshotName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
+          && Objects.equals(this.instance, that.instance)
           && Objects.equals(this.snapshot, that.snapshot);
     }
     return false;
@@ -171,14 +192,19 @@ public class SnapshotName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(location);
     h *= 1000003;
+    h ^= Objects.hashCode(instance);
+    h *= 1000003;
     h ^= Objects.hashCode(snapshot);
     return h;
   }
 
-  /** Builder for projects/{project}/locations/{location}/snapshots/{snapshot}. */
+  /**
+   * Builder for projects/{project}/locations/{location}/instances/{instance}/snapshots/{snapshot}.
+   */
   public static class Builder {
     private String project;
     private String location;
+    private String instance;
     private String snapshot;
 
     protected Builder() {}
@@ -189,6 +215,10 @@ public class SnapshotName implements ResourceName {
 
     public String getLocation() {
       return location;
+    }
+
+    public String getInstance() {
+      return instance;
     }
 
     public String getSnapshot() {
@@ -205,6 +235,11 @@ public class SnapshotName implements ResourceName {
       return this;
     }
 
+    public Builder setInstance(String instance) {
+      this.instance = instance;
+      return this;
+    }
+
     public Builder setSnapshot(String snapshot) {
       this.snapshot = snapshot;
       return this;
@@ -213,6 +248,7 @@ public class SnapshotName implements ResourceName {
     private Builder(SnapshotName snapshotName) {
       this.project = snapshotName.project;
       this.location = snapshotName.location;
+      this.instance = snapshotName.instance;
       this.snapshot = snapshotName.snapshot;
     }
 

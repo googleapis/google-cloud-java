@@ -30,4 +30,14 @@
     <className>com/google/cloud/filestore/v1beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/filestore/v1beta1/SnapshotName</className>
+    <method>* format*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/filestore/v1beta1/SnapshotName</className>
+    <method>* of*(*)</method>
+  </difference>
 </differences>
