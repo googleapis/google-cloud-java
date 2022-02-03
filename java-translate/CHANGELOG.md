@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.10](https://github.com/googleapis/java-translate/compare/v2.1.9...v2.1.10) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-translate/issues/1339)) ([#916](https://github.com/googleapis/java-translate/issues/916)) ([ba0f824](https://github.com/googleapis/java-translate/commit/ba0f8241765a0c73691cdc9ff8ae77a37b160f40))
+* update dependency com.google.cloud:google-cloud-core to v2.3.5 ([#899](https://github.com/googleapis/java-translate/issues/899)) ([e4b721d](https://github.com/googleapis/java-translate/commit/e4b721df1a2bd67faef457c6111c65bd0c1e2e72))
+* update dependency com.google.cloud:google-cloud-core to v2.4.0 ([#919](https://github.com/googleapis/java-translate/issues/919)) ([ad8905b](https://github.com/googleapis/java-translate/commit/ad8905b553362e57feb24cce8d0d8b6c04ace892))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#920](https://github.com/googleapis/java-translate/issues/920)) ([26a9bca](https://github.com/googleapis/java-translate/commit/26a9bca18f647eeb6d585e2baad51114a373a7d0))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.3 ([#902](https://github.com/googleapis/java-translate/issues/902)) ([61a3efd](https://github.com/googleapis/java-translate/commit/61a3efdf638dbde5fc781170046f5edfb987ebb0))
+* update dependency com.google.cloud:google-cloud-storage to v2.3.0 ([#913](https://github.com/googleapis/java-translate/issues/913)) ([c176b08](https://github.com/googleapis/java-translate/commit/c176b085a561163cd1b0ea2d185e1a67cabca26c))
+* update dependency org.easymock:easymock to v4 ([#904](https://github.com/googleapis/java-translate/issues/904)) ([676a6cd](https://github.com/googleapis/java-translate/commit/676a6cd441924bf42f8aaea9649f99037b43dc63))
+
 ### [2.1.9](https://www.github.com/googleapis/java-translate/compare/v2.1.8...v2.1.9) (2022-01-07)
 
 
