@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.0.9](https://github.com/googleapis/java-webrisk/compare/v2.0.8...v2.0.9) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-webrisk/issues/1339)) ([#603](https://github.com/googleapis/java-webrisk/issues/603)) ([fb08d43](https://github.com/googleapis/java-webrisk/commit/fb08d431c99dfb04ffd908fc267c2fa837e5645e))
+* update actions/github-script action to v5 ([#602](https://github.com/googleapis/java-webrisk/issues/602)) ([d36f412](https://github.com/googleapis/java-webrisk/commit/d36f4127056492a68da8d59bd367845e238a3d88))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#605](https://github.com/googleapis/java-webrisk/issues/605)) ([c7b4bd9](https://github.com/googleapis/java-webrisk/commit/c7b4bd9392bd26b0c0853c880f84cac41728a9fe))
+
 ### [2.0.8](https://www.github.com/googleapis/java-webrisk/compare/v2.0.7...v2.0.8) (2022-01-07)
 
 
