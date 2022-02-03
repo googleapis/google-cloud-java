@@ -1,5 +1,15 @@
 # Changelog
 
+### [2.1.10](https://github.com/googleapis/java-accessapproval/compare/v2.1.9...v2.1.10) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-accessapproval/issues/1339)) ([#657](https://github.com/googleapis/java-accessapproval/issues/657)) ([a0fc97e](https://github.com/googleapis/java-accessapproval/commit/a0fc97ed81922240b47cb2cd0592247ff9d482e1))
+* update actions/github-script action to v5 ([#656](https://github.com/googleapis/java-accessapproval/issues/656)) ([6c11703](https://github.com/googleapis/java-accessapproval/commit/6c117032c7f9c0934fbf19dc5269528624c49bf7))
+* update dependency com.google.cloud:google-cloud-core to v2.4.0 ([#659](https://github.com/googleapis/java-accessapproval/issues/659)) ([8aa776c](https://github.com/googleapis/java-accessapproval/commit/8aa776cd9b3c229a7416d81aa55d4393d165cd87))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#660](https://github.com/googleapis/java-accessapproval/issues/660)) ([e96cb5e](https://github.com/googleapis/java-accessapproval/commit/e96cb5eadc2e0847d480121abe5a4c2f5213c686))
+
 ### [2.1.9](https://www.github.com/googleapis/java-accessapproval/compare/v2.1.8...v2.1.9) (2022-01-07)
 
 
