@@ -1,5 +1,27 @@
 # Changelog
 
+### [2.1.14](https://github.com/googleapis/java-automl/compare/v2.1.13...v2.1.14) (2022-02-03)
+
+
+### Bug Fixes
+
+* proto field markdown comment for the display_name field in annotation_payload.proto to point the correct public v1/ version fix: Add back java_multiple_files option to the text_sentiment.proto to match with the previous published version of text_s... ([#1023](https://github.com/googleapis/java-automl/issues/1023)) ([2df469b](https://github.com/googleapis/java-automl/commit/2df469b4b5d26ef29927af5ca174534943dc9be7))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-automl/issues/1339)) ([#1030](https://github.com/googleapis/java-automl/issues/1030)) ([dd6a0d7](https://github.com/googleapis/java-automl/commit/dd6a0d7a71400586680c9c66d98dbf929c39037b))
+* update actions/github-script action to v5 ([#1029](https://github.com/googleapis/java-automl/issues/1029)) ([1d0ff13](https://github.com/googleapis/java-automl/commit/1d0ff1351a2eadb44544ef7e8e4d3172d59fd13a))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.6.1 ([#1014](https://github.com/googleapis/java-automl/issues/1014)) ([3084afe](https://github.com/googleapis/java-automl/commit/3084afecb6854db94b7d59573ec2cd897f30d198))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.6.2 ([#1027](https://github.com/googleapis/java-automl/issues/1027)) ([87a2d64](https://github.com/googleapis/java-automl/commit/87a2d64f9481e2049a5d9a81a2f93c8c3401347f))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.7.0 ([#1031](https://github.com/googleapis/java-automl/issues/1031)) ([b4c760c](https://github.com/googleapis/java-automl/commit/b4c760c01efbd2174d93af85c5fbab3c09eee9f2))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.7.1 ([#1034](https://github.com/googleapis/java-automl/issues/1034)) ([edf795b](https://github.com/googleapis/java-automl/commit/edf795b04ef3d798fe6a85c50e9066ce9555c308))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.8.0 ([#1035](https://github.com/googleapis/java-automl/issues/1035)) ([f5cff5d](https://github.com/googleapis/java-automl/commit/f5cff5d2c66d786ecfecebbe20b5c871ebaa0642))
+* update dependency com.google.cloud:google-cloud-core to v2.4.0 ([#1032](https://github.com/googleapis/java-automl/issues/1032)) ([6a8b1d8](https://github.com/googleapis/java-automl/commit/6a8b1d864dd7bdac9e9a4ab592651aac856ca152))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#1033](https://github.com/googleapis/java-automl/issues/1033)) ([2097af5](https://github.com/googleapis/java-automl/commit/2097af5ae37a85171a92a4706b0f23ffe60a2824))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.3 ([#1013](https://github.com/googleapis/java-automl/issues/1013)) ([20217c1](https://github.com/googleapis/java-automl/commit/20217c1e3ded16b94168e584ef563107560de95f))
+* update dependency com.google.cloud:google-cloud-storage to v2.3.0 ([#1026](https://github.com/googleapis/java-automl/issues/1026)) ([97d96cd](https://github.com/googleapis/java-automl/commit/97d96cd65ffd7b2d984de747a946e8b4b58a9c82))
+
 ### [2.1.13](https://www.github.com/googleapis/java-automl/compare/v2.1.12...v2.1.13) (2022-01-07)
 
 
