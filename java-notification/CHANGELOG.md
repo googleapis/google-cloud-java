@@ -1,5 +1,15 @@
 # Changelog
 
+### [0.122.17](https://github.com/googleapis/java-notification/compare/v0.122.16...v0.122.17) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-notification/issues/1339)) ([#506](https://github.com/googleapis/java-notification/issues/506)) ([470ab76](https://github.com/googleapis/java-notification/commit/470ab7601b6ce3d72c5af76d2ccd9fce31c1a1af))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.115.1 ([#495](https://github.com/googleapis/java-notification/issues/495)) ([0fcc5ed](https://github.com/googleapis/java-notification/commit/0fcc5ed2cf483cf1eab426cfc8f0d713edf6b5dc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#508](https://github.com/googleapis/java-notification/issues/508)) ([65f4d43](https://github.com/googleapis/java-notification/commit/65f4d43a69696ece418d6dde2b49e2f0b18b0d2d))
+* update dependency com.google.cloud:google-cloud-storage to v2.3.0 ([#496](https://github.com/googleapis/java-notification/issues/496)) ([37f1fde](https://github.com/googleapis/java-notification/commit/37f1fdef9697c053227403c28dbed5042c37091e))
+
 ### [0.122.16](https://www.github.com/googleapis/java-notification/compare/v0.122.15...v0.122.16) (2022-01-07)
 
 
