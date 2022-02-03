@@ -1,5 +1,15 @@
 # Changelog
 
+### [0.2.4](https://github.com/googleapis/java-private-catalog/compare/v0.2.3...v0.2.4) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-private-catalog/issues/1339)) ([#128](https://github.com/googleapis/java-private-catalog/issues/128)) ([11063e3](https://github.com/googleapis/java-private-catalog/commit/11063e3e09f93400ee7d9dc9d8ef6ee2d6cec3fb))
+* update actions/github-script action to v5 ([#126](https://github.com/googleapis/java-private-catalog/issues/126)) ([8bb801a](https://github.com/googleapis/java-private-catalog/commit/8bb801a8018c32adabe1baff974d65d39fa86f4c))
+* update actions/setup-java action to v2 ([#127](https://github.com/googleapis/java-private-catalog/issues/127)) ([68b2c00](https://github.com/googleapis/java-private-catalog/commit/68b2c00b75a8d03067d5b958049074aef3c4580c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#130](https://github.com/googleapis/java-private-catalog/issues/130)) ([4ff87d8](https://github.com/googleapis/java-private-catalog/commit/4ff87d898e8afa6d42325804720b8431bb4f1e17))
+
 ### [0.2.3](https://www.github.com/googleapis/java-private-catalog/compare/v0.2.2...v0.2.3) (2022-01-07)
 
 
