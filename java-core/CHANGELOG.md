@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-core/compare/v2.4.0...v2.5.0) (2022-02-02)
+
+
+### Features
+
+* add limit support to ReadChannel ([#688](https://github.com/googleapis/java-core/issues/688)) ([476109e](https://github.com/googleapis/java-core/commit/476109e1943c1a9561cc636ffc64ab8cdd1888f9))
+
+
+### Bug Fixes
+
+* **java:** Initialize AsyncSSLPrivateKeyMethod (a grpc netty class) at run-time ([#702](https://github.com/googleapis/java-core/issues/702)) ([24146a3](https://github.com/googleapis/java-core/commit/24146a35a10ae06238de9556c24dab5dbd3bcaff))
+
+
+### Dependencies
+
+* update dependency com.google.api:gax-bom to v2.12.0 ([#698](https://github.com/googleapis/java-core/issues/698)) ([c10aab8](https://github.com/googleapis/java-core/commit/c10aab8a57ff0aad07a700540085e2ed7521b1a1))
+* update dependency com.google.protobuf:protobuf-bom to v3.19.4 ([#699](https://github.com/googleapis/java-core/issues/699)) ([5d163f5](https://github.com/googleapis/java-core/commit/5d163f591547cd8e0e508b9c824a17da2074b264))
+
 ## [2.4.0](https://github.com/googleapis/java-core/compare/v2.3.5...v2.4.0) (2022-01-28)
 
 
