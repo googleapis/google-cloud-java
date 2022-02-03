@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.0.5](https://github.com/googleapis/java-dns/compare/v2.0.4...v2.0.5) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-dns/issues/1339)) ([#595](https://github.com/googleapis/java-dns/issues/595)) ([82116f4](https://github.com/googleapis/java-dns/commit/82116f4c2056414e030bf09c78d4b6b145f874d2))
+* update actions/github-script action to v5 ([#594](https://github.com/googleapis/java-dns/issues/594)) ([3ec93a8](https://github.com/googleapis/java-dns/commit/3ec93a8ee149cf685b77d7d129effe5ee39c4270))
+* update dependency com.google.apis:google-api-services-dns to v1-rev20220106-1.32.1 ([#581](https://github.com/googleapis/java-dns/issues/581)) ([1e81dae](https://github.com/googleapis/java-dns/commit/1e81dae3cdca14d4aacb5502a18187e8a8aa8d9b))
+* update dependency com.google.apis:google-api-services-dns to v1-rev20220127-1.32.1 ([#597](https://github.com/googleapis/java-dns/issues/597)) ([220f7c3](https://github.com/googleapis/java-dns/commit/220f7c3f4889e3f1b8fe658bc488548d62edfedc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#596](https://github.com/googleapis/java-dns/issues/596)) ([ab875db](https://github.com/googleapis/java-dns/commit/ab875db9b54123e5680c9c1878f9473e8dbefacd))
+* update dependency com.google.errorprone:error_prone_annotations to v2.11.0 ([#593](https://github.com/googleapis/java-dns/issues/593)) ([ddde21b](https://github.com/googleapis/java-dns/commit/ddde21b329b4fac5394b634bf3e7a4b2e239de43))
+* update dependency org.easymock:easymock to v4 ([#582](https://github.com/googleapis/java-dns/issues/582)) ([278b62b](https://github.com/googleapis/java-dns/commit/278b62bfc5697a7337da25b1d3d7aea273fbf159))
+
 ### [2.0.4](https://www.github.com/googleapis/java-dns/compare/v2.0.3...v2.0.4) (2022-01-07)
 
 
