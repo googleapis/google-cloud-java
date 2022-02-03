@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-kms/compare/v2.3.1...v2.4.0) (2022-02-03)
+
+
+### Features
+
+* add a new EkmService API ([#712](https://github.com/googleapis/java-kms/issues/712)) ([659a232](https://github.com/googleapis/java-kms/commit/659a2323a6964ffa8b7ff30d2f1ff8b53b4ac76f))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-kms/issues/1339)) ([#708](https://github.com/googleapis/java-kms/issues/708)) ([cfbfc03](https://github.com/googleapis/java-kms/commit/cfbfc034039efec3d0e2987b3642dd3425a456e1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#711](https://github.com/googleapis/java-kms/issues/711)) ([34baff6](https://github.com/googleapis/java-kms/commit/34baff6a551778e1490280353b0edddffff7078e))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.3 ([#701](https://github.com/googleapis/java-kms/issues/701)) ([9407c6d](https://github.com/googleapis/java-kms/commit/9407c6d4aca50fd22025fd7cb368e34c69ce06bd))
+
 ### [2.3.1](https://www.github.com/googleapis/java-kms/compare/v2.3.0...v2.3.1) (2022-01-07)
 
 
