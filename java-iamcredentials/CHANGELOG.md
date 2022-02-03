@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.0.9](https://github.com/googleapis/java-iamcredentials/compare/v2.0.8...v2.0.9) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-iamcredentials/issues/1339)) ([#616](https://github.com/googleapis/java-iamcredentials/issues/616)) ([cae179d](https://github.com/googleapis/java-iamcredentials/commit/cae179da90a155a70de9ef40b7f16d0d1d5f83ab))
+* update actions/github-script action to v5 ([#615](https://github.com/googleapis/java-iamcredentials/issues/615)) ([1f90459](https://github.com/googleapis/java-iamcredentials/commit/1f90459cbcef3bd0e82fbe959c003a234a3b72f0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#618](https://github.com/googleapis/java-iamcredentials/issues/618)) ([410261b](https://github.com/googleapis/java-iamcredentials/commit/410261bdd3deadbfe7d8b022c7bef506aff07a53))
+
 ### [2.0.8](https://www.github.com/googleapis/java-iamcredentials/compare/v2.0.7...v2.0.8) (2022-01-07)
 
 
