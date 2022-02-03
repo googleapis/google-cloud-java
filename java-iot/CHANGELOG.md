@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.1.6](https://github.com/googleapis/java-iot/compare/v2.1.5...v2.1.6) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-iot/issues/1339)) ([#669](https://github.com/googleapis/java-iot/issues/669)) ([1cbfb0c](https://github.com/googleapis/java-iot/commit/1cbfb0c56c4197e141871b627cad95b5b73814b2))
+* update actions/github-script action to v5 ([#668](https://github.com/googleapis/java-iot/issues/668)) ([c4d4901](https://github.com/googleapis/java-iot/commit/c4d4901d9b07be8004f3bd6b04df9fcc44a99de0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#671](https://github.com/googleapis/java-iot/issues/671)) ([8b15b63](https://github.com/googleapis/java-iot/commit/8b15b6332a75643cd8c63369b6602b295b90ebab))
+
 ### [2.1.5](https://www.github.com/googleapis/java-iot/compare/v2.1.4...v2.1.5) (2022-01-07)
 
 
