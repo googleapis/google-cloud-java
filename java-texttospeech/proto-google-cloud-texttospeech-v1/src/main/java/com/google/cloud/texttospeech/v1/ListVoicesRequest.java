@@ -118,13 +118,13 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Recommended.
-   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
-   * specified, the ListVoices call will only return voices that can be used to
-   * synthesize this language_code. E.g. when specifying `"en-NZ"`, you will get
-   * supported `"en-&#92;*"` voices; when specifying `"no"`, you will get supported
-   * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices; specifying
-   * `"zh"` will also get supported `"cmn-&#92;*"` voices; specifying `"zh-hk"` will
-   * also get supported `"yue-&#92;*"` voices.
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   * If not specified, the API will return all supported voices.
+   * If specified, the ListVoices call will only return voices that can be used
+   * to synthesize this language_code. For example, if you specify `"en-NZ"`,
+   * all `"en-NZ"` voices will be returned. If you specify `"no"`, both
+   * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices will be
+   * returned.
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -148,13 +148,13 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Recommended.
-   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
-   * specified, the ListVoices call will only return voices that can be used to
-   * synthesize this language_code. E.g. when specifying `"en-NZ"`, you will get
-   * supported `"en-&#92;*"` voices; when specifying `"no"`, you will get supported
-   * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices; specifying
-   * `"zh"` will also get supported `"cmn-&#92;*"` voices; specifying `"zh-hk"` will
-   * also get supported `"yue-&#92;*"` voices.
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   * If not specified, the API will return all supported voices.
+   * If specified, the ListVoices call will only return voices that can be used
+   * to synthesize this language_code. For example, if you specify `"en-NZ"`,
+   * all `"en-NZ"` voices will be returned. If you specify `"no"`, both
+   * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices will be
+   * returned.
    * </pre>
    *
    * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -498,13 +498,13 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Recommended.
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
-     * specified, the ListVoices call will only return voices that can be used to
-     * synthesize this language_code. E.g. when specifying `"en-NZ"`, you will get
-     * supported `"en-&#92;*"` voices; when specifying `"no"`, you will get supported
-     * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices; specifying
-     * `"zh"` will also get supported `"cmn-&#92;*"` voices; specifying `"zh-hk"` will
-     * also get supported `"yue-&#92;*"` voices.
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * If not specified, the API will return all supported voices.
+     * If specified, the ListVoices call will only return voices that can be used
+     * to synthesize this language_code. For example, if you specify `"en-NZ"`,
+     * all `"en-NZ"` voices will be returned. If you specify `"no"`, both
+     * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices will be
+     * returned.
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -527,13 +527,13 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Recommended.
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
-     * specified, the ListVoices call will only return voices that can be used to
-     * synthesize this language_code. E.g. when specifying `"en-NZ"`, you will get
-     * supported `"en-&#92;*"` voices; when specifying `"no"`, you will get supported
-     * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices; specifying
-     * `"zh"` will also get supported `"cmn-&#92;*"` voices; specifying `"zh-hk"` will
-     * also get supported `"yue-&#92;*"` voices.
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * If not specified, the API will return all supported voices.
+     * If specified, the ListVoices call will only return voices that can be used
+     * to synthesize this language_code. For example, if you specify `"en-NZ"`,
+     * all `"en-NZ"` voices will be returned. If you specify `"no"`, both
+     * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices will be
+     * returned.
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -556,13 +556,13 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Recommended.
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
-     * specified, the ListVoices call will only return voices that can be used to
-     * synthesize this language_code. E.g. when specifying `"en-NZ"`, you will get
-     * supported `"en-&#92;*"` voices; when specifying `"no"`, you will get supported
-     * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices; specifying
-     * `"zh"` will also get supported `"cmn-&#92;*"` voices; specifying `"zh-hk"` will
-     * also get supported `"yue-&#92;*"` voices.
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * If not specified, the API will return all supported voices.
+     * If specified, the ListVoices call will only return voices that can be used
+     * to synthesize this language_code. For example, if you specify `"en-NZ"`,
+     * all `"en-NZ"` voices will be returned. If you specify `"no"`, both
+     * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices will be
+     * returned.
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -584,13 +584,13 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Recommended.
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
-     * specified, the ListVoices call will only return voices that can be used to
-     * synthesize this language_code. E.g. when specifying `"en-NZ"`, you will get
-     * supported `"en-&#92;*"` voices; when specifying `"no"`, you will get supported
-     * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices; specifying
-     * `"zh"` will also get supported `"cmn-&#92;*"` voices; specifying `"zh-hk"` will
-     * also get supported `"yue-&#92;*"` voices.
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * If not specified, the API will return all supported voices.
+     * If specified, the ListVoices call will only return voices that can be used
+     * to synthesize this language_code. For example, if you specify `"en-NZ"`,
+     * all `"en-NZ"` voices will be returned. If you specify `"no"`, both
+     * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices will be
+     * returned.
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -608,13 +608,13 @@ public final class ListVoicesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Recommended.
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
-     * specified, the ListVoices call will only return voices that can be used to
-     * synthesize this language_code. E.g. when specifying `"en-NZ"`, you will get
-     * supported `"en-&#92;*"` voices; when specifying `"no"`, you will get supported
-     * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices; specifying
-     * `"zh"` will also get supported `"cmn-&#92;*"` voices; specifying `"zh-hk"` will
-     * also get supported `"yue-&#92;*"` voices.
+     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+     * If not specified, the API will return all supported voices.
+     * If specified, the ListVoices call will only return voices that can be used
+     * to synthesize this language_code. For example, if you specify `"en-NZ"`,
+     * all `"en-NZ"` voices will be returned. If you specify `"no"`, both
+     * `"no-&#92;*"` (Norwegian) and `"nb-&#92;*"` (Norwegian Bokmal) voices will be
+     * returned.
      * </pre>
      *
      * <code>string language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
