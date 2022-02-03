@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.1.6](https://github.com/googleapis/java-profiler/compare/v2.1.5...v2.1.6) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-profiler/issues/1339)) ([#211](https://github.com/googleapis/java-profiler/issues/211)) ([15d6120](https://github.com/googleapis/java-profiler/commit/15d612018cbe85f4c7a795dabd076f7c93b1271b))
+* update actions/github-script action to v5 ([#210](https://github.com/googleapis/java-profiler/issues/210)) ([27cb0ce](https://github.com/googleapis/java-profiler/commit/27cb0ce6f7e768194248acf3f617427f880e7a65))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#213](https://github.com/googleapis/java-profiler/issues/213)) ([be33f84](https://github.com/googleapis/java-profiler/commit/be33f846942c27d83e0151eeeb21a8bdc58a621c))
+
 ### [2.1.5](https://www.github.com/googleapis/java-profiler/compare/v2.1.4...v2.1.5) (2022-01-07)
 
 
