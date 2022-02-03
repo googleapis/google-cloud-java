@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-policy-troubleshooter/compare/v0.4.4...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#166](https://github.com/googleapis/java-policy-troubleshooter/issues/166)) ([14ab5bd](https://github.com/googleapis/java-policy-troubleshooter/commit/14ab5bd5c198be6be38ab5897c01b7709fc08c0b))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-policy-troubleshooter/issues/1339)) ([#169](https://github.com/googleapis/java-policy-troubleshooter/issues/169)) ([3316c2f](https://github.com/googleapis/java-policy-troubleshooter/commit/3316c2f544e127b5ec44174b8f7b64b053ffc897))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#171](https://github.com/googleapis/java-policy-troubleshooter/issues/171)) ([35a1345](https://github.com/googleapis/java-policy-troubleshooter/commit/35a134557a6fd065af571dc722057f1194767a5c))
+
 ### [0.4.4](https://www.github.com/googleapis/java-policy-troubleshooter/compare/v0.4.3...v0.4.4) (2022-01-07)
 
 
