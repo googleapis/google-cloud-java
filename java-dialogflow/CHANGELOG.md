@@ -1,5 +1,21 @@
 # Changelog
 
+## [4.5.0](https://github.com/googleapis/java-dialogflow/compare/v4.4.0...v4.5.0) (2022-02-03)
+
+
+### Features
+
+* added conversation process config, ImportDocument and SuggestSmartReplies API ([#825](https://github.com/googleapis/java-dialogflow/issues/825)) ([0de595c](https://github.com/googleapis/java-dialogflow/commit/0de595c26d2c414f4c10692fc72d369269e21fc7))
+* added option to configure the number of sentences in the suggestion context ([#808](https://github.com/googleapis/java-dialogflow/issues/808)) ([89ad722](https://github.com/googleapis/java-dialogflow/commit/89ad722de598003480dada779bf6d292827183ad))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-dialogflow/issues/1339)) ([#830](https://github.com/googleapis/java-dialogflow/issues/830)) ([3b928b6](https://github.com/googleapis/java-dialogflow/commit/3b928b6a134d13dd4450744489e46d129e5a985f))
+* update actions/github-script action to v5 ([#829](https://github.com/googleapis/java-dialogflow/issues/829)) ([7c41754](https://github.com/googleapis/java-dialogflow/commit/7c417541f25f67a91112ae5cedc535d04e01de92))
+* update dependency com.google.cloud:google-cloud-core to v2.4.0 ([#833](https://github.com/googleapis/java-dialogflow/issues/833)) ([806ed41](https://github.com/googleapis/java-dialogflow/commit/806ed41326b6c2c7443f323aaa2f1ec053f198b1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#834](https://github.com/googleapis/java-dialogflow/issues/834)) ([a1de498](https://github.com/googleapis/java-dialogflow/commit/a1de4981ef16be780e6cc4bf0a4ca000f9ce7854))
+
 ## [4.4.0](https://www.github.com/googleapis/java-dialogflow/compare/v4.3.1...v4.4.0) (2022-01-07)
 
 
