@@ -570,4 +570,114 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The bytes for sdkContainerImage.
    */
   com.google.protobuf.ByteString getSdkContainerImageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Worker disk size, in gigabytes.
+   * </pre>
+   *
+   * <code>int32 disk_size_gb = 20;</code>
+   *
+   * @return The diskSizeGb.
+   */
+  int getDiskSizeGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * The algorithm to use for autoscaling
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.AutoscalingAlgorithm autoscaling_algorithm = 21;</code>
+   *
+   * @return The enum numeric value on the wire for autoscalingAlgorithm.
+   */
+  int getAutoscalingAlgorithmValue();
+  /**
+   *
+   *
+   * <pre>
+   * The algorithm to use for autoscaling
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.AutoscalingAlgorithm autoscaling_algorithm = 21;</code>
+   *
+   * @return The autoscalingAlgorithm.
+   */
+  com.google.dataflow.v1beta3.AutoscalingAlgorithm getAutoscalingAlgorithm();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, save a heap dump before killing a thread or process which is GC
+   * thrashing or out of memory. The location of the heap file will either be
+   * echoed back to the user, or the user will be given the opportunity to
+   * download the heap file.
+   * </pre>
+   *
+   * <code>bool dump_heap_on_oom = 22;</code>
+   *
+   * @return The dumpHeapOnOom.
+   */
+  boolean getDumpHeapOnOom();
+
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage bucket (directory) to upload heap dumps to the given
+   * location. Enabling this implies that heap dumps should be generated on OOM
+   * (dump_heap_on_oom is set to true).
+   * </pre>
+   *
+   * <code>string save_heap_dumps_to_gcs_path = 23;</code>
+   *
+   * @return The saveHeapDumpsToGcsPath.
+   */
+  java.lang.String getSaveHeapDumpsToGcsPath();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage bucket (directory) to upload heap dumps to the given
+   * location. Enabling this implies that heap dumps should be generated on OOM
+   * (dump_heap_on_oom is set to true).
+   * </pre>
+   *
+   * <code>string save_heap_dumps_to_gcs_path = 23;</code>
+   *
+   * @return The bytes for saveHeapDumpsToGcsPath.
+   */
+  com.google.protobuf.ByteString getSaveHeapDumpsToGcsPathBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The machine type to use for launching the job. The default is
+   * n1-standard-1.
+   * </pre>
+   *
+   * <code>string launcher_machine_type = 24;</code>
+   *
+   * @return The launcherMachineType.
+   */
+  java.lang.String getLauncherMachineType();
+  /**
+   *
+   *
+   * <pre>
+   * The machine type to use for launching the job. The default is
+   * n1-standard-1.
+   * </pre>
+   *
+   * <code>string launcher_machine_type = 24;</code>
+   *
+   * @return The bytes for launcherMachineType.
+   */
+  com.google.protobuf.ByteString getLauncherMachineTypeBytes();
 }

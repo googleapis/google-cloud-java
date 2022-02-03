@@ -94,9 +94,9 @@ public final class MetricsProto {
     java.lang.String[] descriptorData = {
       "\n%google/dataflow/v1beta3/metrics.proto\022"
           + "\027google.dataflow.v1beta3\032\034google/api/ann"
-          + "otations.proto\032\034google/protobuf/struct.p"
-          + "roto\032\037google/protobuf/timestamp.proto\032\027g"
-          + "oogle/api/client.proto\"\261\001\n\024MetricStructu"
+          + "otations.proto\032\027google/api/client.proto\032"
+          + "\034google/protobuf/struct.proto\032\037google/pr"
+          + "otobuf/timestamp.proto\"\261\001\n\024MetricStructu"
           + "redName\022\016\n\006origin\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022K\n"
           + "\007context\030\003 \003(\0132:.google.dataflow.v1beta3"
           + ".MetricStructuredName.ContextEntry\032.\n\014Co"
@@ -160,37 +160,45 @@ public final class MetricsProto {
           + "\022\037\n\033EXECUTION_STATE_NOT_STARTED\020\001\022\033\n\027EXE"
           + "CUTION_STATE_RUNNING\020\002\022\035\n\031EXECUTION_STAT"
           + "E_SUCCEEDED\020\003\022\032\n\026EXECUTION_STATE_FAILED\020"
-          + "\004\022\035\n\031EXECUTION_STATE_CANCELLED\020\0052\332\004\n\016Met"
-          + "ricsV1Beta3\022e\n\rGetJobMetrics\022-.google.da"
-          + "taflow.v1beta3.GetJobMetricsRequest\032#.go"
-          + "ogle.dataflow.v1beta3.JobMetrics\"\000\022\200\001\n\026G"
-          + "etJobExecutionDetails\0226.google.dataflow."
-          + "v1beta3.GetJobExecutionDetailsRequest\032,."
-          + "google.dataflow.v1beta3.JobExecutionDeta"
-          + "ils\"\000\022\206\001\n\030GetStageExecutionDetails\0228.goo"
-          + "gle.dataflow.v1beta3.GetStageExecutionDe"
-          + "tailsRequest\032..google.dataflow.v1beta3.S"
-          + "tageExecutionDetails\"\000\032\324\001\312A\027dataflow.goo"
-          + "gleapis.com\322A\266\001https://www.googleapis.co"
-          + "m/auth/cloud-platform,https://www.google"
-          + "apis.com/auth/compute,https://www.google"
-          + "apis.com/auth/compute.readonly,https://w"
-          + "ww.googleapis.com/auth/userinfo.emailB\321\001"
-          + "\n\033com.google.dataflow.v1beta3B\014MetricsPr"
-          + "otoP\001Z?google.golang.org/genproto/google"
-          + "apis/dataflow/v1beta3;dataflow\252\002\035Google."
-          + "Cloud.Dataflow.V1Beta3\312\002\035Google\\Cloud\\Da"
-          + "taflow\\V1beta3\352\002 Google::Cloud::Dataflow"
-          + "::V1beta3b\006proto3"
+          + "\004\022\035\n\031EXECUTION_STATE_CANCELLED\020\0052\237\007\n\016Met"
+          + "ricsV1Beta3\022\351\001\n\rGetJobMetrics\022-.google.d"
+          + "ataflow.v1beta3.GetJobMetricsRequest\032#.g"
+          + "oogle.dataflow.v1beta3.JobMetrics\"\203\001\202\323\344\223"
+          + "\002}\0221/v1b3/projects/{project_id}/jobs/{jo"
+          + "b_id}/metricsZH\022F/v1b3/projects/{project"
+          + "_id}/locations/{location}/jobs/{job_id}/"
+          + "metrics\022\327\001\n\026GetJobExecutionDetails\0226.goo"
+          + "gle.dataflow.v1beta3.GetJobExecutionDeta"
+          + "ilsRequest\032,.google.dataflow.v1beta3.Job"
+          + "ExecutionDetails\"W\202\323\344\223\002Q\022O/v1b3/projects"
+          + "/{project_id}/locations/{location}/jobs/"
+          + "{job_id}/executionDetails\022\357\001\n\030GetStageEx"
+          + "ecutionDetails\0228.google.dataflow.v1beta3"
+          + ".GetStageExecutionDetailsRequest\032..googl"
+          + "e.dataflow.v1beta3.StageExecutionDetails"
+          + "\"i\202\323\344\223\002c\022a/v1b3/projects/{project_id}/lo"
+          + "cations/{location}/jobs/{job_id}/stages/"
+          + "{stage_id}/executionDetails\032\324\001\312A\027dataflo"
+          + "w.googleapis.com\322A\266\001https://www.googleap"
+          + "is.com/auth/cloud-platform,https://www.g"
+          + "oogleapis.com/auth/compute,https://www.g"
+          + "oogleapis.com/auth/compute.readonly,http"
+          + "s://www.googleapis.com/auth/userinfo.ema"
+          + "ilB\321\001\n\033com.google.dataflow.v1beta3B\014Metr"
+          + "icsProtoP\001Z?google.golang.org/genproto/g"
+          + "oogleapis/dataflow/v1beta3;dataflow\252\002\035Go"
+          + "ogle.Cloud.Dataflow.V1Beta3\312\002\035Google\\Clo"
+          + "ud\\Dataflow\\V1beta3\352\002 Google::Cloud::Dat"
+          + "aflow::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_dataflow_v1beta3_MetricStructuredName_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -328,13 +336,14 @@ public final class MetricsProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

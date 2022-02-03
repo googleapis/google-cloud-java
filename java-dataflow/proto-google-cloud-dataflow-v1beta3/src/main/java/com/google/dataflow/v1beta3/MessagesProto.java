@@ -62,9 +62,9 @@ public final class MessagesProto {
     java.lang.String[] descriptorData = {
       "\n&google/dataflow/v1beta3/messages.proto"
           + "\022\027google.dataflow.v1beta3\032\034google/api/an"
-          + "notations.proto\032\034google/protobuf/struct."
-          + "proto\032\037google/protobuf/timestamp.proto\032\027"
-          + "google/api/client.proto\"\243\001\n\nJobMessage\022\n"
+          + "notations.proto\032\027google/api/client.proto"
+          + "\032\034google/protobuf/struct.proto\032\037google/p"
+          + "rotobuf/timestamp.proto\"\243\001\n\nJobMessage\022\n"
           + "\n\002id\030\001 \001(\t\022(\n\004time\030\002 \001(\0132\032.google.protob"
           + "uf.Timestamp\022\024\n\014message_text\030\003 \001(\t\022I\n\022me"
           + "ssage_importance\030\004 \001(\0162-.google.dataflow"
@@ -101,30 +101,33 @@ public final class MessagesProto {
           + "\020\000\022\025\n\021JOB_MESSAGE_DEBUG\020\001\022\030\n\024JOB_MESSAGE"
           + "_DETAILED\020\002\022\025\n\021JOB_MESSAGE_BASIC\020\005\022\027\n\023JO"
           + "B_MESSAGE_WARNING\020\003\022\025\n\021JOB_MESSAGE_ERROR"
-          + "\020\0042\340\002\n\017MessagesV1Beta3\022v\n\017ListJobMessage"
-          + "s\022/.google.dataflow.v1beta3.ListJobMessa"
-          + "gesRequest\0320.google.dataflow.v1beta3.Lis"
-          + "tJobMessagesResponse\"\000\032\324\001\312A\027dataflow.goo"
-          + "gleapis.com\322A\266\001https://www.googleapis.co"
-          + "m/auth/cloud-platform,https://www.google"
-          + "apis.com/auth/compute,https://www.google"
-          + "apis.com/auth/compute.readonly,https://w"
-          + "ww.googleapis.com/auth/userinfo.emailB\322\001"
-          + "\n\033com.google.dataflow.v1beta3B\rMessagesP"
-          + "rotoP\001Z?google.golang.org/genproto/googl"
-          + "eapis/dataflow/v1beta3;dataflow\252\002\035Google"
-          + ".Cloud.Dataflow.V1Beta3\312\002\035Google\\Cloud\\D"
-          + "ataflow\\V1beta3\352\002 Google::Cloud::Dataflo"
-          + "w::V1beta3b\006proto3"
+          + "\020\0042\347\003\n\017MessagesV1Beta3\022\374\001\n\017ListJobMessag"
+          + "es\022/.google.dataflow.v1beta3.ListJobMess"
+          + "agesRequest\0320.google.dataflow.v1beta3.Li"
+          + "stJobMessagesResponse\"\205\001\202\323\344\223\002\177\0222/v1b3/pr"
+          + "ojects/{project_id}/jobs/{job_id}/messag"
+          + "esZI\022G/v1b3/projects/{project_id}/locati"
+          + "ons/{location}/jobs/{job_id}/messages\032\324\001"
+          + "\312A\027dataflow.googleapis.com\322A\266\001https://ww"
+          + "w.googleapis.com/auth/cloud-platform,htt"
+          + "ps://www.googleapis.com/auth/compute,htt"
+          + "ps://www.googleapis.com/auth/compute.rea"
+          + "donly,https://www.googleapis.com/auth/us"
+          + "erinfo.emailB\322\001\n\033com.google.dataflow.v1b"
+          + "eta3B\rMessagesProtoP\001Z?google.golang.org"
+          + "/genproto/googleapis/dataflow/v1beta3;da"
+          + "taflow\252\002\035Google.Cloud.Dataflow.V1Beta3\312\002"
+          + "\035Google\\Cloud\\Dataflow\\V1beta3\352\002 Google:"
+          + ":Cloud::Dataflow::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_dataflow_v1beta3_JobMessage_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -191,13 +194,14 @@ public final class MessagesProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

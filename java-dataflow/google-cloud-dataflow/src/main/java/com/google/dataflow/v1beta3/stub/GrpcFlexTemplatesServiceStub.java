@@ -23,6 +23,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.dataflow.v1beta3.LaunchFlexTemplateRequest;
 import com.google.dataflow.v1beta3.LaunchFlexTemplateResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -103,6 +104,13 @@ public class GrpcFlexTemplatesServiceStub extends FlexTemplatesServiceStub {
         launchFlexTemplateTransportSettings =
             GrpcCallSettings.<LaunchFlexTemplateRequest, LaunchFlexTemplateResponse>newBuilder()
                 .setMethodDescriptor(launchFlexTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("location", String.valueOf(request.getLocation()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      return params.build();
+                    })
                 .build();
 
     this.launchFlexTemplateCallable =

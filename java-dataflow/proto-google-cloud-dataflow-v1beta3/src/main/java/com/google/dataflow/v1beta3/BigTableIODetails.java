@@ -22,7 +22,7 @@ package com.google.dataflow.v1beta3;
  *
  *
  * <pre>
- * Metadata for a Cloud BigTable connector used by the job.
+ * Metadata for a Cloud Bigtable connector used by the job.
  * </pre>
  *
  * Protobuf type {@code google.dataflow.v1beta3.BigTableIODetails}
@@ -455,7 +455,7 @@ public final class BigTableIODetails extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Metadata for a Cloud BigTable connector used by the job.
+   * Metadata for a Cloud Bigtable connector used by the job.
    * </pre>
    *
    * Protobuf type {@code google.dataflow.v1beta3.BigTableIODetails}

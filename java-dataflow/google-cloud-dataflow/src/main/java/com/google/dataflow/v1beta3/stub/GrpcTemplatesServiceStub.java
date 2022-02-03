@@ -23,6 +23,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.dataflow.v1beta3.CreateJobFromTemplateRequest;
 import com.google.dataflow.v1beta3.GetTemplateRequest;
 import com.google.dataflow.v1beta3.GetTemplateResponse;
@@ -127,15 +128,36 @@ public class GrpcTemplatesServiceStub extends TemplatesServiceStub {
     GrpcCallSettings<CreateJobFromTemplateRequest, Job> createJobFromTemplateTransportSettings =
         GrpcCallSettings.<CreateJobFromTemplateRequest, Job>newBuilder()
             .setMethodDescriptor(createJobFromTemplateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("location", String.valueOf(request.getLocation()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
+                })
             .build();
     GrpcCallSettings<LaunchTemplateRequest, LaunchTemplateResponse>
         launchTemplateTransportSettings =
             GrpcCallSettings.<LaunchTemplateRequest, LaunchTemplateResponse>newBuilder()
                 .setMethodDescriptor(launchTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("location", String.valueOf(request.getLocation()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      return params.build();
+                    })
                 .build();
     GrpcCallSettings<GetTemplateRequest, GetTemplateResponse> getTemplateTransportSettings =
         GrpcCallSettings.<GetTemplateRequest, GetTemplateResponse>newBuilder()
             .setMethodDescriptor(getTemplateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("location", String.valueOf(request.getLocation()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
+                })
             .build();
 
     this.createJobFromTemplateCallable =

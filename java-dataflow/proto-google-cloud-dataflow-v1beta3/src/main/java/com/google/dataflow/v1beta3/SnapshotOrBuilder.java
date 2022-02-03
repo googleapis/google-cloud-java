@@ -197,7 +197,7 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * PubSub snapshot metadata.
+   * Pub/Sub snapshot metadata.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.PubsubSnapshotMetadata pubsub_metadata = 7;</code>
@@ -207,7 +207,7 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * PubSub snapshot metadata.
+   * Pub/Sub snapshot metadata.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.PubsubSnapshotMetadata pubsub_metadata = 7;</code>
@@ -217,7 +217,7 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * PubSub snapshot metadata.
+   * Pub/Sub snapshot metadata.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.PubsubSnapshotMetadata pubsub_metadata = 7;</code>
@@ -227,7 +227,7 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * PubSub snapshot metadata.
+   * Pub/Sub snapshot metadata.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.PubsubSnapshotMetadata pubsub_metadata = 7;</code>
@@ -238,7 +238,7 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * PubSub snapshot metadata.
+   * Pub/Sub snapshot metadata.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.PubsubSnapshotMetadata pubsub_metadata = 7;</code>

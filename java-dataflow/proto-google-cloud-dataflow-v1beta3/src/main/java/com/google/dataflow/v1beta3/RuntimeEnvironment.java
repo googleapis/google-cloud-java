@@ -515,7 +515,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Additional experiment flags for the job.
+   * Additional experiment flags for the job, specified with the
+   * `--experiments` option.
    * </pre>
    *
    * <code>repeated string additional_experiments = 7;</code>
@@ -529,7 +530,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Additional experiment flags for the job.
+   * Additional experiment flags for the job, specified with the
+   * `--experiments` option.
    * </pre>
    *
    * <code>repeated string additional_experiments = 7;</code>
@@ -543,7 +545,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Additional experiment flags for the job.
+   * Additional experiment flags for the job, specified with the
+   * `--experiments` option.
    * </pre>
    *
    * <code>repeated string additional_experiments = 7;</code>
@@ -558,7 +561,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Additional experiment flags for the job.
+   * Additional experiment flags for the job, specified with the
+   * `--experiments` option.
    * </pre>
    *
    * <code>repeated string additional_experiments = 7;</code>
@@ -2258,7 +2262,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional experiment flags for the job.
+     * Additional experiment flags for the job, specified with the
+     * `--experiments` option.
      * </pre>
      *
      * <code>repeated string additional_experiments = 7;</code>
@@ -2272,7 +2277,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional experiment flags for the job.
+     * Additional experiment flags for the job, specified with the
+     * `--experiments` option.
      * </pre>
      *
      * <code>repeated string additional_experiments = 7;</code>
@@ -2286,7 +2292,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional experiment flags for the job.
+     * Additional experiment flags for the job, specified with the
+     * `--experiments` option.
      * </pre>
      *
      * <code>repeated string additional_experiments = 7;</code>
@@ -2301,7 +2308,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional experiment flags for the job.
+     * Additional experiment flags for the job, specified with the
+     * `--experiments` option.
      * </pre>
      *
      * <code>repeated string additional_experiments = 7;</code>
@@ -2316,7 +2324,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional experiment flags for the job.
+     * Additional experiment flags for the job, specified with the
+     * `--experiments` option.
      * </pre>
      *
      * <code>repeated string additional_experiments = 7;</code>
@@ -2338,7 +2347,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional experiment flags for the job.
+     * Additional experiment flags for the job, specified with the
+     * `--experiments` option.
      * </pre>
      *
      * <code>repeated string additional_experiments = 7;</code>
@@ -2359,7 +2369,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional experiment flags for the job.
+     * Additional experiment flags for the job, specified with the
+     * `--experiments` option.
      * </pre>
      *
      * <code>repeated string additional_experiments = 7;</code>
@@ -2377,7 +2388,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional experiment flags for the job.
+     * Additional experiment flags for the job, specified with the
+     * `--experiments` option.
      * </pre>
      *
      * <code>repeated string additional_experiments = 7;</code>
@@ -2394,7 +2406,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional experiment flags for the job.
+     * Additional experiment flags for the job, specified with the
+     * `--experiments` option.
      * </pre>
      *
      * <code>repeated string additional_experiments = 7;</code>

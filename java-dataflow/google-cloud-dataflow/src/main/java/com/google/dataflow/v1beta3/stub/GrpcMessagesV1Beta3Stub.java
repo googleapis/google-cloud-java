@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.dataflow.v1beta3.ListJobMessagesRequest;
 import com.google.dataflow.v1beta3.ListJobMessagesResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -107,6 +108,14 @@ public class GrpcMessagesV1Beta3Stub extends MessagesV1Beta3Stub {
         listJobMessagesTransportSettings =
             GrpcCallSettings.<ListJobMessagesRequest, ListJobMessagesResponse>newBuilder()
                 .setMethodDescriptor(listJobMessagesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("job_id", String.valueOf(request.getJobId()));
+                      params.put("location", String.valueOf(request.getLocation()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      return params.build();
+                    })
                 .build();
 
     this.listJobMessagesCallable =

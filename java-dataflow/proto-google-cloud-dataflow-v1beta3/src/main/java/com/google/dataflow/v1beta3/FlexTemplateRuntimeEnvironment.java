@@ -53,6 +53,9 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     flexrsGoal_ = 0;
     stagingLocation_ = "";
     sdkContainerImage_ = "";
+    autoscalingAlgorithm_ = 0;
+    saveHeapDumpsToGcsPath_ = "";
+    launcherMachineType_ = "";
   }
 
   @java.lang.Override
@@ -217,6 +220,37 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
               java.lang.String s = input.readStringRequireUtf8();
 
               sdkContainerImage_ = s;
+              break;
+            }
+          case 160:
+            {
+              diskSizeGb_ = input.readInt32();
+              break;
+            }
+          case 168:
+            {
+              int rawValue = input.readEnum();
+
+              autoscalingAlgorithm_ = rawValue;
+              break;
+            }
+          case 176:
+            {
+              dumpHeapOnOom_ = input.readBool();
+              break;
+            }
+          case 186:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              saveHeapDumpsToGcsPath_ = s;
+              break;
+            }
+          case 194:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              launcherMachineType_ = s;
               break;
             }
           default:
@@ -1173,6 +1207,185 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
   }
 
+  public static final int DISK_SIZE_GB_FIELD_NUMBER = 20;
+  private int diskSizeGb_;
+  /**
+   *
+   *
+   * <pre>
+   * Worker disk size, in gigabytes.
+   * </pre>
+   *
+   * <code>int32 disk_size_gb = 20;</code>
+   *
+   * @return The diskSizeGb.
+   */
+  @java.lang.Override
+  public int getDiskSizeGb() {
+    return diskSizeGb_;
+  }
+
+  public static final int AUTOSCALING_ALGORITHM_FIELD_NUMBER = 21;
+  private int autoscalingAlgorithm_;
+  /**
+   *
+   *
+   * <pre>
+   * The algorithm to use for autoscaling
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.AutoscalingAlgorithm autoscaling_algorithm = 21;</code>
+   *
+   * @return The enum numeric value on the wire for autoscalingAlgorithm.
+   */
+  @java.lang.Override
+  public int getAutoscalingAlgorithmValue() {
+    return autoscalingAlgorithm_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The algorithm to use for autoscaling
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.AutoscalingAlgorithm autoscaling_algorithm = 21;</code>
+   *
+   * @return The autoscalingAlgorithm.
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.AutoscalingAlgorithm getAutoscalingAlgorithm() {
+    @SuppressWarnings("deprecation")
+    com.google.dataflow.v1beta3.AutoscalingAlgorithm result =
+        com.google.dataflow.v1beta3.AutoscalingAlgorithm.valueOf(autoscalingAlgorithm_);
+    return result == null ? com.google.dataflow.v1beta3.AutoscalingAlgorithm.UNRECOGNIZED : result;
+  }
+
+  public static final int DUMP_HEAP_ON_OOM_FIELD_NUMBER = 22;
+  private boolean dumpHeapOnOom_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, save a heap dump before killing a thread or process which is GC
+   * thrashing or out of memory. The location of the heap file will either be
+   * echoed back to the user, or the user will be given the opportunity to
+   * download the heap file.
+   * </pre>
+   *
+   * <code>bool dump_heap_on_oom = 22;</code>
+   *
+   * @return The dumpHeapOnOom.
+   */
+  @java.lang.Override
+  public boolean getDumpHeapOnOom() {
+    return dumpHeapOnOom_;
+  }
+
+  public static final int SAVE_HEAP_DUMPS_TO_GCS_PATH_FIELD_NUMBER = 23;
+  private volatile java.lang.Object saveHeapDumpsToGcsPath_;
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage bucket (directory) to upload heap dumps to the given
+   * location. Enabling this implies that heap dumps should be generated on OOM
+   * (dump_heap_on_oom is set to true).
+   * </pre>
+   *
+   * <code>string save_heap_dumps_to_gcs_path = 23;</code>
+   *
+   * @return The saveHeapDumpsToGcsPath.
+   */
+  @java.lang.Override
+  public java.lang.String getSaveHeapDumpsToGcsPath() {
+    java.lang.Object ref = saveHeapDumpsToGcsPath_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      saveHeapDumpsToGcsPath_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage bucket (directory) to upload heap dumps to the given
+   * location. Enabling this implies that heap dumps should be generated on OOM
+   * (dump_heap_on_oom is set to true).
+   * </pre>
+   *
+   * <code>string save_heap_dumps_to_gcs_path = 23;</code>
+   *
+   * @return The bytes for saveHeapDumpsToGcsPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSaveHeapDumpsToGcsPathBytes() {
+    java.lang.Object ref = saveHeapDumpsToGcsPath_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      saveHeapDumpsToGcsPath_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LAUNCHER_MACHINE_TYPE_FIELD_NUMBER = 24;
+  private volatile java.lang.Object launcherMachineType_;
+  /**
+   *
+   *
+   * <pre>
+   * The machine type to use for launching the job. The default is
+   * n1-standard-1.
+   * </pre>
+   *
+   * <code>string launcher_machine_type = 24;</code>
+   *
+   * @return The launcherMachineType.
+   */
+  @java.lang.Override
+  public java.lang.String getLauncherMachineType() {
+    java.lang.Object ref = launcherMachineType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      launcherMachineType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The machine type to use for launching the job. The default is
+   * n1-standard-1.
+   * </pre>
+   *
+   * <code>string launcher_machine_type = 24;</code>
+   *
+   * @return The bytes for launcherMachineType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLauncherMachineTypeBytes() {
+    java.lang.Object ref = launcherMachineType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      launcherMachineType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1246,6 +1459,23 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sdkContainerImage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, sdkContainerImage_);
+    }
+    if (diskSizeGb_ != 0) {
+      output.writeInt32(20, diskSizeGb_);
+    }
+    if (autoscalingAlgorithm_
+        != com.google.dataflow.v1beta3.AutoscalingAlgorithm.AUTOSCALING_ALGORITHM_UNKNOWN
+            .getNumber()) {
+      output.writeEnum(21, autoscalingAlgorithm_);
+    }
+    if (dumpHeapOnOom_ != false) {
+      output.writeBool(22, dumpHeapOnOom_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(saveHeapDumpsToGcsPath_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, saveHeapDumpsToGcsPath_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(launcherMachineType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 24, launcherMachineType_);
     }
     unknownFields.writeTo(output);
   }
@@ -1325,6 +1555,23 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sdkContainerImage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, sdkContainerImage_);
     }
+    if (diskSizeGb_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(20, diskSizeGb_);
+    }
+    if (autoscalingAlgorithm_
+        != com.google.dataflow.v1beta3.AutoscalingAlgorithm.AUTOSCALING_ALGORITHM_UNKNOWN
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(21, autoscalingAlgorithm_);
+    }
+    if (dumpHeapOnOom_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, dumpHeapOnOom_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(saveHeapDumpsToGcsPath_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, saveHeapDumpsToGcsPath_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(launcherMachineType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, launcherMachineType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1360,6 +1607,11 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     if (flexrsGoal_ != other.flexrsGoal_) return false;
     if (!getStagingLocation().equals(other.getStagingLocation())) return false;
     if (!getSdkContainerImage().equals(other.getSdkContainerImage())) return false;
+    if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
+    if (autoscalingAlgorithm_ != other.autoscalingAlgorithm_) return false;
+    if (getDumpHeapOnOom() != other.getDumpHeapOnOom()) return false;
+    if (!getSaveHeapDumpsToGcsPath().equals(other.getSaveHeapDumpsToGcsPath())) return false;
+    if (!getLauncherMachineType().equals(other.getLauncherMachineType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1411,6 +1663,16 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     hash = (53 * hash) + getStagingLocation().hashCode();
     hash = (37 * hash) + SDK_CONTAINER_IMAGE_FIELD_NUMBER;
     hash = (53 * hash) + getSdkContainerImage().hashCode();
+    hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
+    hash = (53 * hash) + getDiskSizeGb();
+    hash = (37 * hash) + AUTOSCALING_ALGORITHM_FIELD_NUMBER;
+    hash = (53 * hash) + autoscalingAlgorithm_;
+    hash = (37 * hash) + DUMP_HEAP_ON_OOM_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDumpHeapOnOom());
+    hash = (37 * hash) + SAVE_HEAP_DUMPS_TO_GCS_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getSaveHeapDumpsToGcsPath().hashCode();
+    hash = (37 * hash) + LAUNCHER_MACHINE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getLauncherMachineType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1612,6 +1874,16 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
       sdkContainerImage_ = "";
 
+      diskSizeGb_ = 0;
+
+      autoscalingAlgorithm_ = 0;
+
+      dumpHeapOnOom_ = false;
+
+      saveHeapDumpsToGcsPath_ = "";
+
+      launcherMachineType_ = "";
+
       return this;
     }
 
@@ -1663,6 +1935,11 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       result.flexrsGoal_ = flexrsGoal_;
       result.stagingLocation_ = stagingLocation_;
       result.sdkContainerImage_ = sdkContainerImage_;
+      result.diskSizeGb_ = diskSizeGb_;
+      result.autoscalingAlgorithm_ = autoscalingAlgorithm_;
+      result.dumpHeapOnOom_ = dumpHeapOnOom_;
+      result.saveHeapDumpsToGcsPath_ = saveHeapDumpsToGcsPath_;
+      result.launcherMachineType_ = launcherMachineType_;
       onBuilt();
       return result;
     }
@@ -1781,6 +2058,23 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       }
       if (!other.getSdkContainerImage().isEmpty()) {
         sdkContainerImage_ = other.sdkContainerImage_;
+        onChanged();
+      }
+      if (other.getDiskSizeGb() != 0) {
+        setDiskSizeGb(other.getDiskSizeGb());
+      }
+      if (other.autoscalingAlgorithm_ != 0) {
+        setAutoscalingAlgorithmValue(other.getAutoscalingAlgorithmValue());
+      }
+      if (other.getDumpHeapOnOom() != false) {
+        setDumpHeapOnOom(other.getDumpHeapOnOom());
+      }
+      if (!other.getSaveHeapDumpsToGcsPath().isEmpty()) {
+        saveHeapDumpsToGcsPath_ = other.saveHeapDumpsToGcsPath_;
+        onChanged();
+      }
+      if (!other.getLauncherMachineType().isEmpty()) {
+        launcherMachineType_ = other.launcherMachineType_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -3821,6 +4115,439 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
 
       sdkContainerImage_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int diskSizeGb_;
+    /**
+     *
+     *
+     * <pre>
+     * Worker disk size, in gigabytes.
+     * </pre>
+     *
+     * <code>int32 disk_size_gb = 20;</code>
+     *
+     * @return The diskSizeGb.
+     */
+    @java.lang.Override
+    public int getDiskSizeGb() {
+      return diskSizeGb_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Worker disk size, in gigabytes.
+     * </pre>
+     *
+     * <code>int32 disk_size_gb = 20;</code>
+     *
+     * @param value The diskSizeGb to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiskSizeGb(int value) {
+
+      diskSizeGb_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Worker disk size, in gigabytes.
+     * </pre>
+     *
+     * <code>int32 disk_size_gb = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiskSizeGb() {
+
+      diskSizeGb_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int autoscalingAlgorithm_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The algorithm to use for autoscaling
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.AutoscalingAlgorithm autoscaling_algorithm = 21;</code>
+     *
+     * @return The enum numeric value on the wire for autoscalingAlgorithm.
+     */
+    @java.lang.Override
+    public int getAutoscalingAlgorithmValue() {
+      return autoscalingAlgorithm_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The algorithm to use for autoscaling
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.AutoscalingAlgorithm autoscaling_algorithm = 21;</code>
+     *
+     * @param value The enum numeric value on the wire for autoscalingAlgorithm to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoscalingAlgorithmValue(int value) {
+
+      autoscalingAlgorithm_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The algorithm to use for autoscaling
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.AutoscalingAlgorithm autoscaling_algorithm = 21;</code>
+     *
+     * @return The autoscalingAlgorithm.
+     */
+    @java.lang.Override
+    public com.google.dataflow.v1beta3.AutoscalingAlgorithm getAutoscalingAlgorithm() {
+      @SuppressWarnings("deprecation")
+      com.google.dataflow.v1beta3.AutoscalingAlgorithm result =
+          com.google.dataflow.v1beta3.AutoscalingAlgorithm.valueOf(autoscalingAlgorithm_);
+      return result == null
+          ? com.google.dataflow.v1beta3.AutoscalingAlgorithm.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The algorithm to use for autoscaling
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.AutoscalingAlgorithm autoscaling_algorithm = 21;</code>
+     *
+     * @param value The autoscalingAlgorithm to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoscalingAlgorithm(com.google.dataflow.v1beta3.AutoscalingAlgorithm value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      autoscalingAlgorithm_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The algorithm to use for autoscaling
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.AutoscalingAlgorithm autoscaling_algorithm = 21;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoscalingAlgorithm() {
+
+      autoscalingAlgorithm_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean dumpHeapOnOom_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, save a heap dump before killing a thread or process which is GC
+     * thrashing or out of memory. The location of the heap file will either be
+     * echoed back to the user, or the user will be given the opportunity to
+     * download the heap file.
+     * </pre>
+     *
+     * <code>bool dump_heap_on_oom = 22;</code>
+     *
+     * @return The dumpHeapOnOom.
+     */
+    @java.lang.Override
+    public boolean getDumpHeapOnOom() {
+      return dumpHeapOnOom_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, save a heap dump before killing a thread or process which is GC
+     * thrashing or out of memory. The location of the heap file will either be
+     * echoed back to the user, or the user will be given the opportunity to
+     * download the heap file.
+     * </pre>
+     *
+     * <code>bool dump_heap_on_oom = 22;</code>
+     *
+     * @param value The dumpHeapOnOom to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDumpHeapOnOom(boolean value) {
+
+      dumpHeapOnOom_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, save a heap dump before killing a thread or process which is GC
+     * thrashing or out of memory. The location of the heap file will either be
+     * echoed back to the user, or the user will be given the opportunity to
+     * download the heap file.
+     * </pre>
+     *
+     * <code>bool dump_heap_on_oom = 22;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDumpHeapOnOom() {
+
+      dumpHeapOnOom_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object saveHeapDumpsToGcsPath_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage bucket (directory) to upload heap dumps to the given
+     * location. Enabling this implies that heap dumps should be generated on OOM
+     * (dump_heap_on_oom is set to true).
+     * </pre>
+     *
+     * <code>string save_heap_dumps_to_gcs_path = 23;</code>
+     *
+     * @return The saveHeapDumpsToGcsPath.
+     */
+    public java.lang.String getSaveHeapDumpsToGcsPath() {
+      java.lang.Object ref = saveHeapDumpsToGcsPath_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        saveHeapDumpsToGcsPath_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage bucket (directory) to upload heap dumps to the given
+     * location. Enabling this implies that heap dumps should be generated on OOM
+     * (dump_heap_on_oom is set to true).
+     * </pre>
+     *
+     * <code>string save_heap_dumps_to_gcs_path = 23;</code>
+     *
+     * @return The bytes for saveHeapDumpsToGcsPath.
+     */
+    public com.google.protobuf.ByteString getSaveHeapDumpsToGcsPathBytes() {
+      java.lang.Object ref = saveHeapDumpsToGcsPath_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        saveHeapDumpsToGcsPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage bucket (directory) to upload heap dumps to the given
+     * location. Enabling this implies that heap dumps should be generated on OOM
+     * (dump_heap_on_oom is set to true).
+     * </pre>
+     *
+     * <code>string save_heap_dumps_to_gcs_path = 23;</code>
+     *
+     * @param value The saveHeapDumpsToGcsPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSaveHeapDumpsToGcsPath(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      saveHeapDumpsToGcsPath_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage bucket (directory) to upload heap dumps to the given
+     * location. Enabling this implies that heap dumps should be generated on OOM
+     * (dump_heap_on_oom is set to true).
+     * </pre>
+     *
+     * <code>string save_heap_dumps_to_gcs_path = 23;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSaveHeapDumpsToGcsPath() {
+
+      saveHeapDumpsToGcsPath_ = getDefaultInstance().getSaveHeapDumpsToGcsPath();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage bucket (directory) to upload heap dumps to the given
+     * location. Enabling this implies that heap dumps should be generated on OOM
+     * (dump_heap_on_oom is set to true).
+     * </pre>
+     *
+     * <code>string save_heap_dumps_to_gcs_path = 23;</code>
+     *
+     * @param value The bytes for saveHeapDumpsToGcsPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSaveHeapDumpsToGcsPathBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      saveHeapDumpsToGcsPath_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object launcherMachineType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The machine type to use for launching the job. The default is
+     * n1-standard-1.
+     * </pre>
+     *
+     * <code>string launcher_machine_type = 24;</code>
+     *
+     * @return The launcherMachineType.
+     */
+    public java.lang.String getLauncherMachineType() {
+      java.lang.Object ref = launcherMachineType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        launcherMachineType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The machine type to use for launching the job. The default is
+     * n1-standard-1.
+     * </pre>
+     *
+     * <code>string launcher_machine_type = 24;</code>
+     *
+     * @return The bytes for launcherMachineType.
+     */
+    public com.google.protobuf.ByteString getLauncherMachineTypeBytes() {
+      java.lang.Object ref = launcherMachineType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        launcherMachineType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The machine type to use for launching the job. The default is
+     * n1-standard-1.
+     * </pre>
+     *
+     * <code>string launcher_machine_type = 24;</code>
+     *
+     * @param value The launcherMachineType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLauncherMachineType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      launcherMachineType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The machine type to use for launching the job. The default is
+     * n1-standard-1.
+     * </pre>
+     *
+     * <code>string launcher_machine_type = 24;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLauncherMachineType() {
+
+      launcherMachineType_ = getDefaultInstance().getLauncherMachineType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The machine type to use for launching the job. The default is
+     * n1-standard-1.
+     * </pre>
+     *
+     * <code>string launcher_machine_type = 24;</code>
+     *
+     * @param value The bytes for launcherMachineType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLauncherMachineTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      launcherMachineType_ = value;
       onChanged();
       return this;
     }

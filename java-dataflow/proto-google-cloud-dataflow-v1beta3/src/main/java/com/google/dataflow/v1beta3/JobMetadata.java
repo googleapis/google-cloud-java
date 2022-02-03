@@ -410,7 +410,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identification of a Cloud BigTable source used in the Dataflow job.
+   * Identification of a Cloud Bigtable source used in the Dataflow job.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -423,7 +423,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identification of a Cloud BigTable source used in the Dataflow job.
+   * Identification of a Cloud Bigtable source used in the Dataflow job.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -437,7 +437,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identification of a Cloud BigTable source used in the Dataflow job.
+   * Identification of a Cloud Bigtable source used in the Dataflow job.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -450,7 +450,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identification of a Cloud BigTable source used in the Dataflow job.
+   * Identification of a Cloud Bigtable source used in the Dataflow job.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -463,7 +463,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identification of a Cloud BigTable source used in the Dataflow job.
+   * Identification of a Cloud Bigtable source used in the Dataflow job.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -480,7 +480,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identification of a PubSub source used in the Dataflow job.
+   * Identification of a Pub/Sub source used in the Dataflow job.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -493,7 +493,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identification of a PubSub source used in the Dataflow job.
+   * Identification of a Pub/Sub source used in the Dataflow job.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -507,7 +507,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identification of a PubSub source used in the Dataflow job.
+   * Identification of a Pub/Sub source used in the Dataflow job.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -520,7 +520,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identification of a PubSub source used in the Dataflow job.
+   * Identification of a Pub/Sub source used in the Dataflow job.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -533,7 +533,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identification of a PubSub source used in the Dataflow job.
+   * Identification of a Pub/Sub source used in the Dataflow job.
    * </pre>
    *
    * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2264,7 +2264,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2280,7 +2280,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2296,7 +2296,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2312,7 +2312,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2335,7 +2335,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2355,7 +2355,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2377,7 +2377,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2400,7 +2400,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2420,7 +2420,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2440,7 +2440,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2460,7 +2460,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2479,7 +2479,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2498,7 +2498,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2511,7 +2511,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2528,7 +2528,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2545,7 +2545,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2558,7 +2558,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2572,7 +2572,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a Cloud BigTable source used in the Dataflow job.
+     * Identification of a Cloud Bigtable source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.BigTableIODetails big_table_details = 4;</code>
@@ -2623,7 +2623,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2639,7 +2639,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2655,7 +2655,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2671,7 +2671,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2693,7 +2693,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2713,7 +2713,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2735,7 +2735,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2757,7 +2757,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2777,7 +2777,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2797,7 +2797,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2817,7 +2817,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2836,7 +2836,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2855,7 +2855,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2867,7 +2867,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2884,7 +2884,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2901,7 +2901,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2914,7 +2914,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>
@@ -2927,7 +2927,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identification of a PubSub source used in the Dataflow job.
+     * Identification of a Pub/Sub source used in the Dataflow job.
      * </pre>
      *
      * <code>repeated .google.dataflow.v1beta3.PubSubIODetails pubsub_details = 5;</code>

@@ -23,6 +23,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.dataflow.v1beta3.DeleteSnapshotRequest;
 import com.google.dataflow.v1beta3.DeleteSnapshotResponse;
 import com.google.dataflow.v1beta3.GetSnapshotRequest;
@@ -126,15 +127,39 @@ public class GrpcSnapshotsV1Beta3Stub extends SnapshotsV1Beta3Stub {
     GrpcCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
         GrpcCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
             .setMethodDescriptor(getSnapshotMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("location", String.valueOf(request.getLocation()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("snapshot_id", String.valueOf(request.getSnapshotId()));
+                  return params.build();
+                })
             .build();
     GrpcCallSettings<DeleteSnapshotRequest, DeleteSnapshotResponse>
         deleteSnapshotTransportSettings =
             GrpcCallSettings.<DeleteSnapshotRequest, DeleteSnapshotResponse>newBuilder()
                 .setMethodDescriptor(deleteSnapshotMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("location", String.valueOf(request.getLocation()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      params.put("snapshot_id", String.valueOf(request.getSnapshotId()));
+                      return params.build();
+                    })
                 .build();
     GrpcCallSettings<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsTransportSettings =
         GrpcCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
             .setMethodDescriptor(listSnapshotsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("job_id", String.valueOf(request.getJobId()));
+                  params.put("location", String.valueOf(request.getLocation()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
+                })
             .build();
 
     this.getSnapshotCallable =

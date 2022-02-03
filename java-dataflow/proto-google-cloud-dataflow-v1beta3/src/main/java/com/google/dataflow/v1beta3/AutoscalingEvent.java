@@ -567,8 +567,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A short and friendly name for the worker pool this event refers to,
-   * populated from the value of PoolStageRelation::user_pool_name.
+   * A short and friendly name for the worker pool this event refers to.
    * </pre>
    *
    * <code>string worker_pool = 7;</code>
@@ -591,8 +590,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A short and friendly name for the worker pool this event refers to,
-   * populated from the value of PoolStageRelation::user_pool_name.
+   * A short and friendly name for the worker pool this event refers to.
    * </pre>
    *
    * <code>string worker_pool = 7;</code>
@@ -1628,8 +1626,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A short and friendly name for the worker pool this event refers to,
-     * populated from the value of PoolStageRelation::user_pool_name.
+     * A short and friendly name for the worker pool this event refers to.
      * </pre>
      *
      * <code>string worker_pool = 7;</code>
@@ -1651,8 +1648,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A short and friendly name for the worker pool this event refers to,
-     * populated from the value of PoolStageRelation::user_pool_name.
+     * A short and friendly name for the worker pool this event refers to.
      * </pre>
      *
      * <code>string worker_pool = 7;</code>
@@ -1674,8 +1670,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A short and friendly name for the worker pool this event refers to,
-     * populated from the value of PoolStageRelation::user_pool_name.
+     * A short and friendly name for the worker pool this event refers to.
      * </pre>
      *
      * <code>string worker_pool = 7;</code>
@@ -1696,8 +1691,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A short and friendly name for the worker pool this event refers to,
-     * populated from the value of PoolStageRelation::user_pool_name.
+     * A short and friendly name for the worker pool this event refers to.
      * </pre>
      *
      * <code>string worker_pool = 7;</code>
@@ -1714,8 +1708,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A short and friendly name for the worker pool this event refers to,
-     * populated from the value of PoolStageRelation::user_pool_name.
+     * A short and friendly name for the worker pool this event refers to.
      * </pre>
      *
      * <code>string worker_pool = 7;</code>

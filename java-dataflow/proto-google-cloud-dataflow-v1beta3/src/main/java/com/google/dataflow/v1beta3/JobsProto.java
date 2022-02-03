@@ -166,12 +166,12 @@ public final class JobsProto {
     java.lang.String[] descriptorData = {
       "\n\"google/dataflow/v1beta3/jobs.proto\022\027go"
           + "ogle.dataflow.v1beta3\032\034google/api/annota"
-          + "tions.proto\032)google/dataflow/v1beta3/env"
-          + "ironment.proto\032\'google/dataflow/v1beta3/"
-          + "snapshots.proto\032\036google/protobuf/duratio"
-          + "n.proto\032\034google/protobuf/struct.proto\032\037g"
-          + "oogle/protobuf/timestamp.proto\032\027google/a"
-          + "pi/client.proto\"\256\t\n\003Job\022\n\n\002id\030\001 \001(\t\022\022\n\np"
+          + "tions.proto\032\027google/api/client.proto\032)go"
+          + "ogle/dataflow/v1beta3/environment.proto\032"
+          + "\'google/dataflow/v1beta3/snapshots.proto"
+          + "\032\036google/protobuf/duration.proto\032\034google"
+          + "/protobuf/struct.proto\032\037google/protobuf/"
+          + "timestamp.proto\"\256\t\n\003Job\022\n\n\002id\030\001 \001(\t\022\022\n\np"
           + "roject_id\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022.\n\004type\030\004 "
           + "\001(\0162 .google.dataflow.v1beta3.JobType\0229\n"
           + "\013environment\030\005 \001(\0132$.google.dataflow.v1b"
@@ -324,47 +324,63 @@ public final class JobsProto {
           + "\"\n\036JOB_STATE_RESOURCE_CLEANING_UP\020\014*a\n\007J"
           + "obView\022\024\n\020JOB_VIEW_UNKNOWN\020\000\022\024\n\020JOB_VIEW"
           + "_SUMMARY\020\001\022\020\n\014JOB_VIEW_ALL\020\002\022\030\n\024JOB_VIEW"
-          + "_DESCRIPTION\020\0032\217\007\n\013JobsV1Beta3\022V\n\tCreate"
-          + "Job\022).google.dataflow.v1beta3.CreateJobR"
-          + "equest\032\034.google.dataflow.v1beta3.Job\"\000\022P"
-          + "\n\006GetJob\022&.google.dataflow.v1beta3.GetJo"
-          + "bRequest\032\034.google.dataflow.v1beta3.Job\"\000"
-          + "\022V\n\tUpdateJob\022).google.dataflow.v1beta3."
-          + "UpdateJobRequest\032\034.google.dataflow.v1bet"
-          + "a3.Job\"\000\022a\n\010ListJobs\022(.google.dataflow.v"
-          + "1beta3.ListJobsRequest\032).google.dataflow"
-          + ".v1beta3.ListJobsResponse\"\000\022k\n\022Aggregate"
-          + "dListJobs\022(.google.dataflow.v1beta3.List"
-          + "JobsRequest\032).google.dataflow.v1beta3.Li"
-          + "stJobsResponse\"\000\022v\n\017CheckActiveJobs\022/.go"
-          + "ogle.dataflow.v1beta3.CheckActiveJobsReq"
-          + "uest\0320.google.dataflow.v1beta3.CheckActi"
-          + "veJobsResponse\"\000\022_\n\013SnapshotJob\022+.google"
-          + ".dataflow.v1beta3.SnapshotJobRequest\032!.g"
-          + "oogle.dataflow.v1beta3.Snapshot\"\000\032\324\001\312A\027d"
-          + "ataflow.googleapis.com\322A\266\001https://www.go"
-          + "ogleapis.com/auth/cloud-platform,https:/"
-          + "/www.googleapis.com/auth/compute,https:/"
-          + "/www.googleapis.com/auth/compute.readonl"
-          + "y,https://www.googleapis.com/auth/userin"
-          + "fo.emailB\316\001\n\033com.google.dataflow.v1beta3"
-          + "B\tJobsProtoP\001Z?google.golang.org/genprot"
-          + "o/googleapis/dataflow/v1beta3;dataflow\252\002"
-          + "\035Google.Cloud.Dataflow.V1Beta3\312\002\035Google\\"
-          + "Cloud\\Dataflow\\V1beta3\352\002 Google::Cloud::"
-          + "Dataflow::V1beta3b\006proto3"
+          + "_DESCRIPTION\020\0032\221\014\n\013JobsV1Beta3\022\301\001\n\tCreat"
+          + "eJob\022).google.dataflow.v1beta3.CreateJob"
+          + "Request\032\034.google.dataflow.v1beta3.Job\"k\202"
+          + "\323\344\223\002e\" /v1b3/projects/{project_id}/jobs:"
+          + "\003jobZ<\"5/v1b3/projects/{project_id}/loca"
+          + "tions/{location}/jobs:\003job\022\303\001\n\006GetJob\022&."
+          + "google.dataflow.v1beta3.GetJobRequest\032\034."
+          + "google.dataflow.v1beta3.Job\"s\202\323\344\223\002m\022)/v1"
+          + "b3/projects/{project_id}/jobs/{job_id}Z@"
+          + "\022>/v1b3/projects/{project_id}/locations/"
+          + "{location}/jobs/{job_id}\022\323\001\n\tUpdateJob\022)"
+          + ".google.dataflow.v1beta3.UpdateJobReques"
+          + "t\032\034.google.dataflow.v1beta3.Job\"}\202\323\344\223\002w\032"
+          + ")/v1b3/projects/{project_id}/jobs/{job_i"
+          + "d}:\003jobZE\032>/v1b3/projects/{project_id}/l"
+          + "ocations/{location}/jobs/{job_id}:\003job\022\302"
+          + "\001\n\010ListJobs\022(.google.dataflow.v1beta3.Li"
+          + "stJobsRequest\032).google.dataflow.v1beta3."
+          + "ListJobsResponse\"a\202\323\344\223\002[\022 /v1b3/projects"
+          + "/{project_id}/jobsZ7\0225/v1b3/projects/{pr"
+          + "oject_id}/locations/{location}/jobs\022\236\001\n\022"
+          + "AggregatedListJobs\022(.google.dataflow.v1b"
+          + "eta3.ListJobsRequest\032).google.dataflow.v"
+          + "1beta3.ListJobsResponse\"3\202\323\344\223\002-\022+/v1b3/p"
+          + "rojects/{project_id}/jobs:aggregated\022v\n\017"
+          + "CheckActiveJobs\022/.google.dataflow.v1beta"
+          + "3.CheckActiveJobsRequest\0320.google.datafl"
+          + "ow.v1beta3.CheckActiveJobsResponse\"\000\022\354\001\n"
+          + "\013SnapshotJob\022+.google.dataflow.v1beta3.S"
+          + "napshotJobRequest\032!.google.dataflow.v1be"
+          + "ta3.Snapshot\"\214\001\202\323\344\223\002\205\001\"2/v1b3/projects/{"
+          + "project_id}/jobs/{job_id}:snapshot:\001*ZL\""
+          + "G/v1b3/projects/{project_id}/locations/{"
+          + "location}/jobs/{job_id}:snapshot:\001*\032\324\001\312A"
+          + "\027dataflow.googleapis.com\322A\266\001https://www."
+          + "googleapis.com/auth/cloud-platform,https"
+          + "://www.googleapis.com/auth/compute,https"
+          + "://www.googleapis.com/auth/compute.reado"
+          + "nly,https://www.googleapis.com/auth/user"
+          + "info.emailB\316\001\n\033com.google.dataflow.v1bet"
+          + "a3B\tJobsProtoP\001Z?google.golang.org/genpr"
+          + "oto/googleapis/dataflow/v1beta3;dataflow"
+          + "\252\002\035Google.Cloud.Dataflow.V1Beta3\312\002\035Googl"
+          + "e\\Cloud\\Dataflow\\V1beta3\352\002 Google::Cloud"
+          + "::Dataflow::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.dataflow.v1beta3.EnvironmentProto.getDescriptor(),
               com.google.dataflow.v1beta3.SnapshotsProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_dataflow_v1beta3_Job_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -680,16 +696,17 @@ public final class JobsProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.dataflow.v1beta3.EnvironmentProto.getDescriptor();
     com.google.dataflow.v1beta3.SnapshotsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -66,9 +66,9 @@ public final class SnapshotsProto {
     java.lang.String[] descriptorData = {
       "\n\'google/dataflow/v1beta3/snapshots.prot"
           + "o\022\027google.dataflow.v1beta3\032\034google/api/a"
-          + "nnotations.proto\032\036google/protobuf/durati"
-          + "on.proto\032\037google/protobuf/timestamp.prot"
-          + "o\032\027google/api/client.proto\"t\n\026PubsubSnap"
+          + "nnotations.proto\032\027google/api/client.prot"
+          + "o\032\036google/protobuf/duration.proto\032\037googl"
+          + "e/protobuf/timestamp.proto\"t\n\026PubsubSnap"
           + "shotMetadata\022\022\n\ntopic_name\030\001 \001(\t\022\025\n\rsnap"
           + "shot_name\030\002 \001(\t\022/\n\013expire_time\030\003 \001(\0132\032.g"
           + "oogle.protobuf.Timestamp\"\333\002\n\010Snapshot\022\n\n"
@@ -91,36 +91,47 @@ public final class SnapshotsProto {
           + "s\030\001 \003(\0132!.google.dataflow.v1beta3.Snapsh"
           + "ot*i\n\rSnapshotState\022\032\n\026UNKNOWN_SNAPSHOT_"
           + "STATE\020\000\022\013\n\007PENDING\020\001\022\013\n\007RUNNING\020\002\022\t\n\005REA"
-          + "DY\020\003\022\n\n\006FAILED\020\004\022\013\n\007DELETED\020\0052\261\004\n\020Snapsh"
-          + "otsV1Beta3\022_\n\013GetSnapshot\022+.google.dataf"
-          + "low.v1beta3.GetSnapshotRequest\032!.google."
-          + "dataflow.v1beta3.Snapshot\"\000\022s\n\016DeleteSna"
-          + "pshot\022..google.dataflow.v1beta3.DeleteSn"
-          + "apshotRequest\032/.google.dataflow.v1beta3."
-          + "DeleteSnapshotResponse\"\000\022p\n\rListSnapshot"
-          + "s\022-.google.dataflow.v1beta3.ListSnapshot"
-          + "sRequest\032..google.dataflow.v1beta3.ListS"
-          + "napshotsResponse\"\000\032\324\001\312A\027dataflow.googlea"
-          + "pis.com\322A\266\001https://www.googleapis.com/au"
-          + "th/cloud-platform,https://www.googleapis"
-          + ".com/auth/compute,https://www.googleapis"
-          + ".com/auth/compute.readonly,https://www.g"
-          + "oogleapis.com/auth/userinfo.emailB\323\001\n\033co"
-          + "m.google.dataflow.v1beta3B\016SnapshotsProt"
-          + "oP\001Z?google.golang.org/genproto/googleap"
-          + "is/dataflow/v1beta3;dataflow\252\002\035Google.Cl"
-          + "oud.Dataflow.V1Beta3\312\002\035Google\\Cloud\\Data"
-          + "flow\\V1beta3\352\002 Google::Cloud::Dataflow::"
-          + "V1beta3b\006proto3"
+          + "DY\020\003\022\n\n\006FAILED\020\004\022\013\n\007DELETED\020\0052\357\007\n\020Snapsh"
+          + "otsV1Beta3\022\350\001\n\013GetSnapshot\022+.google.data"
+          + "flow.v1beta3.GetSnapshotRequest\032!.google"
+          + ".dataflow.v1beta3.Snapshot\"\210\001\202\323\344\223\002\201\001\0223/v"
+          + "1b3/projects/{project_id}/snapshots/{sna"
+          + "pshot_id}ZJ\022H/v1b3/projects/{project_id}"
+          + "/locations/{location}/snapshots/{snapsho"
+          + "t_id}\022\354\001\n\016DeleteSnapshot\022..google.datafl"
+          + "ow.v1beta3.DeleteSnapshotRequest\032/.googl"
+          + "e.dataflow.v1beta3.DeleteSnapshotRespons"
+          + "e\"y\202\323\344\223\002s*%/v1b3/projects/{project_id}/s"
+          + "napshotsZJ*H/v1b3/projects/{project_id}/"
+          + "locations/{location}/snapshots/{snapshot"
+          + "_id}\022\251\002\n\rListSnapshots\022-.google.dataflow"
+          + ".v1beta3.ListSnapshotsRequest\032..google.d"
+          + "ataflow.v1beta3.ListSnapshotsResponse\"\270\001"
+          + "\202\323\344\223\002\261\001\022%/v1b3/projects/{project_id}/sna"
+          + "pshotsZ<\022:/v1b3/projects/{project_id}/lo"
+          + "cations/{location}/snapshotsZJ\022H/v1b3/pr"
+          + "ojects/{project_id}/locations/{location}"
+          + "/jobs/{job_id}/snapshots\032\324\001\312A\027dataflow.g"
+          + "oogleapis.com\322A\266\001https://www.googleapis."
+          + "com/auth/cloud-platform,https://www.goog"
+          + "leapis.com/auth/compute,https://www.goog"
+          + "leapis.com/auth/compute.readonly,https:/"
+          + "/www.googleapis.com/auth/userinfo.emailB"
+          + "\323\001\n\033com.google.dataflow.v1beta3B\016Snapsho"
+          + "tsProtoP\001Z?google.golang.org/genproto/go"
+          + "ogleapis/dataflow/v1beta3;dataflow\252\002\035Goo"
+          + "gle.Cloud.Dataflow.V1Beta3\312\002\035Google\\Clou"
+          + "d\\Dataflow\\V1beta3\352\002 Google::Cloud::Data"
+          + "flow::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_dataflow_v1beta3_PubsubSnapshotMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -188,13 +199,14 @@ public final class SnapshotsProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

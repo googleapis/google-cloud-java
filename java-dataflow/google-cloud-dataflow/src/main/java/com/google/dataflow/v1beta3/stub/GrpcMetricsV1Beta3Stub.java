@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.dataflow.v1beta3.GetJobExecutionDetailsRequest;
 import com.google.dataflow.v1beta3.GetJobMetricsRequest;
 import com.google.dataflow.v1beta3.GetStageExecutionDetailsRequest;
@@ -138,16 +139,41 @@ public class GrpcMetricsV1Beta3Stub extends MetricsV1Beta3Stub {
     GrpcCallSettings<GetJobMetricsRequest, JobMetrics> getJobMetricsTransportSettings =
         GrpcCallSettings.<GetJobMetricsRequest, JobMetrics>newBuilder()
             .setMethodDescriptor(getJobMetricsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("job_id", String.valueOf(request.getJobId()));
+                  params.put("location", String.valueOf(request.getLocation()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
+                })
             .build();
     GrpcCallSettings<GetJobExecutionDetailsRequest, JobExecutionDetails>
         getJobExecutionDetailsTransportSettings =
             GrpcCallSettings.<GetJobExecutionDetailsRequest, JobExecutionDetails>newBuilder()
                 .setMethodDescriptor(getJobExecutionDetailsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("job_id", String.valueOf(request.getJobId()));
+                      params.put("location", String.valueOf(request.getLocation()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      return params.build();
+                    })
                 .build();
     GrpcCallSettings<GetStageExecutionDetailsRequest, StageExecutionDetails>
         getStageExecutionDetailsTransportSettings =
             GrpcCallSettings.<GetStageExecutionDetailsRequest, StageExecutionDetails>newBuilder()
                 .setMethodDescriptor(getStageExecutionDetailsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("job_id", String.valueOf(request.getJobId()));
+                      params.put("location", String.valueOf(request.getLocation()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      params.put("stage_id", String.valueOf(request.getStageId()));
+                      return params.build();
+                    })
                 .build();
 
     this.getJobMetricsCallable =
