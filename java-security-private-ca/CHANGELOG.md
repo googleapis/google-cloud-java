@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.2.3](https://github.com/googleapis/java-security-private-ca/compare/v2.2.2...v2.2.3) (2022-02-03)
+
+
+### Documentation
+
+* mark CaPool.lifetime as IMMUTABLE docs: add format requirements on `custom_sans` ([#352](https://github.com/googleapis/java-security-private-ca/issues/352)) ([0717859](https://github.com/googleapis/java-security-private-ca/commit/07178595dc099c757f6e15f6349128c74b2b8a21))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-security-private-ca/issues/1339)) ([#349](https://github.com/googleapis/java-security-private-ca/issues/349)) ([cf03371](https://github.com/googleapis/java-security-private-ca/commit/cf03371296eb974118cd2f876817e995f0e3fc89))
+* update dependency com.google.api.grpc:grpc-google-iam-v1 to v1.2.1 ([#326](https://github.com/googleapis/java-security-private-ca/issues/326)) ([e842575](https://github.com/googleapis/java-security-private-ca/commit/e842575a699623c616985d05e74b0b6d83ba7f3b))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.2.1 ([#327](https://github.com/googleapis/java-security-private-ca/issues/327)) ([845072c](https://github.com/googleapis/java-security-private-ca/commit/845072c79f46f6434a07ce59517b4bb90f115d78))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#351](https://github.com/googleapis/java-security-private-ca/issues/351)) ([2045348](https://github.com/googleapis/java-security-private-ca/commit/2045348cf5d0f3f9be99dc9150f93e23c5fe24a0))
+
 ### [2.2.2](https://www.github.com/googleapis/java-security-private-ca/compare/v2.2.1...v2.2.2) (2022-01-07)
 
 
