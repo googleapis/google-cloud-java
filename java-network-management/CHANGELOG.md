@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.1.6](https://github.com/googleapis/java-network-management/compare/v1.1.5...v1.1.6) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-network-management/issues/1339)) ([#117](https://github.com/googleapis/java-network-management/issues/117)) ([91bdd2c](https://github.com/googleapis/java-network-management/commit/91bdd2c79b609117bb8c3dd2e0028105ae8110b7))
+* update actions/github-script action to v5 ([#115](https://github.com/googleapis/java-network-management/issues/115)) ([c932958](https://github.com/googleapis/java-network-management/commit/c932958681205192afc20385f8347b0992dd8fd2))
+* update actions/setup-java action to v2 ([#116](https://github.com/googleapis/java-network-management/issues/116)) ([c52ae2a](https://github.com/googleapis/java-network-management/commit/c52ae2af19744a197397d670135c33907b289e78))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#119](https://github.com/googleapis/java-network-management/issues/119)) ([108718d](https://github.com/googleapis/java-network-management/commit/108718d73ce4c8809d7712e84fb85067571803eb))
+
 ### [1.1.5](https://www.github.com/googleapis/java-network-management/compare/v1.1.4...v1.1.5) (2022-01-07)
 
 
