@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.1](https://www.github.com/googleapis/java-contact-center-insights/compare/v2.2.0...v2.2.1) (2022-01-10)
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-contact-center-insights/issues/1301)) ([#164](https://www.github.com/googleapis/java-contact-center-insights/issues/164)) ([beb0784](https://www.github.com/googleapis/java-contact-center-insights/commit/beb07847929874879fd2846f2454551fbe467ed3))
+
 ## [2.2.0](https://www.github.com/googleapis/java-contact-center-insights/compare/v2.1.3...v2.2.0) (2022-01-07)
 
 
