@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.2.5](https://github.com/googleapis/java-talent/compare/v2.2.4...v2.2.5) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-talent/issues/1339)) ([#715](https://github.com/googleapis/java-talent/issues/715)) ([0bef5f3](https://github.com/googleapis/java-talent/commit/0bef5f3c648c7618b3c2161ad98221c251689521))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#717](https://github.com/googleapis/java-talent/issues/717)) ([ba20fd8](https://github.com/googleapis/java-talent/commit/ba20fd896da7ac6e4dfac136110d289327961276))
+
 ### [2.2.4](https://www.github.com/googleapis/java-talent/compare/v2.2.3...v2.2.4) (2022-01-07)
 
 
