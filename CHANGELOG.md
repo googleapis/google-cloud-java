@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.4](https://github.com/googleapis/java-datastore/compare/v2.2.3...v2.2.4) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#626](https://github.com/googleapis/java-datastore/issues/626)) ([7ddb377](https://github.com/googleapis/java-datastore/commit/7ddb3779271338b9ff01df91ac446450eba45ba8))
+
 ### [2.2.3](https://github.com/googleapis/java-datastore/compare/v2.2.2...v2.2.3) (2022-02-01)
 
 
