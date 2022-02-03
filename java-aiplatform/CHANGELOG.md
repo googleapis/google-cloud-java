@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.6.0](https://github.com/googleapis/java-aiplatform/compare/v2.5.3...v2.6.0) (2022-02-03)
+
+
+### Features
+
+* add dedicated_resources to DeployedIndex in aiplatform v1beta1 index_endpoint.proto feat: add Scaling to OnlineServingConfig in aiplatform v1beta1 featurestore.proto chore: sort imports ([#779](https://github.com/googleapis/java-aiplatform/issues/779)) ([0c49a03](https://github.com/googleapis/java-aiplatform/commit/0c49a035e2ff1d3312ac61acfba893e9a8c0123c))
+* add dedicated_resources to DeployedIndex message in aiplatform v1 index_endpoint.proto chore: sort imports ([#778](https://github.com/googleapis/java-aiplatform/issues/778)) ([d70e48c](https://github.com/googleapis/java-aiplatform/commit/d70e48c59422d85d34d05be06d8a9dc5b09b7522))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-aiplatform/issues/1339)) ([#775](https://github.com/googleapis/java-aiplatform/issues/775)) ([76578f1](https://github.com/googleapis/java-aiplatform/commit/76578f1d161e2360fba581aa775c63ab40365a2f))
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.11.3 ([#762](https://github.com/googleapis/java-aiplatform/issues/762)) ([d233eae](https://github.com/googleapis/java-aiplatform/commit/d233eae839c4edfc9572bb2c792029e273ec34ef))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#777](https://github.com/googleapis/java-aiplatform/issues/777)) ([bfc1a15](https://github.com/googleapis/java-aiplatform/commit/bfc1a15e937a681795fdd1a49ba18296c66de978))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.3 ([#764](https://github.com/googleapis/java-aiplatform/issues/764)) ([2b99b4a](https://github.com/googleapis/java-aiplatform/commit/2b99b4ac94cae72278c594189bd1f9d4704c1b04))
+* update dependency com.google.cloud:google-cloud-storage to v2.3.0 ([#773](https://github.com/googleapis/java-aiplatform/issues/773)) ([d824684](https://github.com/googleapis/java-aiplatform/commit/d8246842dde67035800aa033e4ba7103499bea74))
+
 ### [2.5.3](https://www.github.com/googleapis/java-aiplatform/compare/v2.5.2...v2.5.3) (2022-01-07)
 
 
