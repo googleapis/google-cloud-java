@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.4.0](https://github.com/googleapis/java-channel/compare/v3.3.1...v3.4.0) (2022-02-03)
+
+
+### Features
+
+* Change description for enum default value ([#246](https://github.com/googleapis/java-channel/issues/246)) ([f410433](https://github.com/googleapis/java-channel/commit/f4104335ea3da66f62f5f9974d58e651060492af))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-channel/issues/1339)) ([#251](https://github.com/googleapis/java-channel/issues/251)) ([8e230cb](https://github.com/googleapis/java-channel/commit/8e230cbad792a296efff2b6790942c170ab09353))
+* update actions/github-script action to v5 ([#250](https://github.com/googleapis/java-channel/issues/250)) ([008a007](https://github.com/googleapis/java-channel/commit/008a007cea05f92bf8a070e838414b5c63029877))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#252](https://github.com/googleapis/java-channel/issues/252)) ([8cf2c60](https://github.com/googleapis/java-channel/commit/8cf2c6069c84d23a5e6848331d9e2d4f9900c796))
+
 ### [3.3.1](https://www.github.com/googleapis/java-channel/compare/v3.3.0...v3.3.1) (2022-01-07)
 
 
