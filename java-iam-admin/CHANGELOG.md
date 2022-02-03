@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.1.2](https://github.com/googleapis/java-iam-admin/compare/v1.1.1...v1.1.2) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-iam-admin/issues/1339)) ([#74](https://github.com/googleapis/java-iam-admin/issues/74)) ([db423b7](https://github.com/googleapis/java-iam-admin/commit/db423b76b2b4cf072d3cd7d13a4f0d0afe05ff40))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#77](https://github.com/googleapis/java-iam-admin/issues/77)) ([8f53bb1](https://github.com/googleapis/java-iam-admin/commit/8f53bb15faf887b4003cf95a9d3d989dd2da2285))
+
 ### [1.1.1](https://www.github.com/googleapis/java-iam-admin/compare/v1.1.0...v1.1.1) (2022-01-07)
 
 
