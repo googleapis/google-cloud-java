@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.1.5](https://github.com/googleapis/java-appengine-admin/compare/v2.1.4...v2.1.5) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-appengine-admin/issues/1339)) ([#182](https://github.com/googleapis/java-appengine-admin/issues/182)) ([c41ec5e](https://github.com/googleapis/java-appengine-admin/commit/c41ec5e832452a8510e5ff96c06e1f9839ad3da1))
+* update actions/github-script action to v5 ([#181](https://github.com/googleapis/java-appengine-admin/issues/181)) ([2aa3d62](https://github.com/googleapis/java-appengine-admin/commit/2aa3d6287c47691026107ccad0b0e459bd0303a3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#184](https://github.com/googleapis/java-appengine-admin/issues/184)) ([5d37148](https://github.com/googleapis/java-appengine-admin/commit/5d3714877b10fcc8f77f6a8170283d399d1154d1))
+
 ### [2.1.4](https://www.github.com/googleapis/java-appengine-admin/compare/v2.1.3...v2.1.4) (2022-01-07)
 
 
