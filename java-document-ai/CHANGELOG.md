@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-document-ai/compare/v2.1.9...v2.2.0) (2022-02-03)
+
+
+### Features
+
+* add question_id field in ReviewDocumentOperationMetadata ([#739](https://github.com/googleapis/java-document-ai/issues/739)) ([a6c1b4a](https://github.com/googleapis/java-document-ai/commit/a6c1b4a869981c62843707ce6afb4bb30858790b))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-document-ai/issues/1339)) ([#737](https://github.com/googleapis/java-document-ai/issues/737)) ([2733ea0](https://github.com/googleapis/java-document-ai/commit/2733ea09d73ba3f1594e651919590b58e917704c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#740](https://github.com/googleapis/java-document-ai/issues/740)) ([f06e5de](https://github.com/googleapis/java-document-ai/commit/f06e5de507f88352b0ee9abc032319a875f806f9))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.3 ([#724](https://github.com/googleapis/java-document-ai/issues/724)) ([db706f8](https://github.com/googleapis/java-document-ai/commit/db706f86fb612c05fd60d17f0338accabd7d1a8d))
+* update dependency com.google.cloud:google-cloud-storage to v2.3.0 ([#735](https://github.com/googleapis/java-document-ai/issues/735)) ([fb069e0](https://github.com/googleapis/java-document-ai/commit/fb069e032a08874d434c5a77ab74d7f03318e8e1))
+
 ### [2.1.9](https://www.github.com/googleapis/java-document-ai/compare/v2.1.8...v2.1.9) (2022-01-07)
 
 
