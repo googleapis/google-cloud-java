@@ -1,5 +1,15 @@
 # Changelog
 
+### [3.2.2](https://github.com/googleapis/java-monitoring/compare/v3.2.1...v3.2.2) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-monitoring/issues/1339)) ([#783](https://github.com/googleapis/java-monitoring/issues/783)) ([5c10283](https://github.com/googleapis/java-monitoring/commit/5c10283715181fb3a6400b995b414b93e5db6c56))
+* update actions/github-script action to v5 ([#782](https://github.com/googleapis/java-monitoring/issues/782)) ([6cd71ac](https://github.com/googleapis/java-monitoring/commit/6cd71acff0b460a31bfd0276984c5c3f3f4410d6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#785](https://github.com/googleapis/java-monitoring/issues/785)) ([e3a69d9](https://github.com/googleapis/java-monitoring/commit/e3a69d9e6a59a7440792b992e9cc036b994e9ecb))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.3 ([#775](https://github.com/googleapis/java-monitoring/issues/775)) ([2a5ccda](https://github.com/googleapis/java-monitoring/commit/2a5ccdad7b08461e81e5a430b1dbdea92b91f7ec))
+
 ### [3.2.1](https://www.github.com/googleapis/java-monitoring/compare/v3.2.0...v3.2.1) (2022-01-07)
 
 
