@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-deploy/compare/v0.1.4...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#63](https://github.com/googleapis/java-deploy/issues/63)) ([b95451d](https://github.com/googleapis/java-deploy/commit/b95451d32b4707fe951a68e518fbe97afdc725e2))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-deploy/issues/1339)) ([#67](https://github.com/googleapis/java-deploy/issues/67)) ([3d1ea86](https://github.com/googleapis/java-deploy/commit/3d1ea865ad8fa576f2b7cff675f9e0a0d9162352))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#70](https://github.com/googleapis/java-deploy/issues/70)) ([79521d0](https://github.com/googleapis/java-deploy/commit/79521d000ad9758a18c6530a621ef42a40f13bed))
+
 ### [0.1.4](https://www.github.com/googleapis/java-deploy/compare/v0.1.3...v0.1.4) (2022-01-07)
 
 
