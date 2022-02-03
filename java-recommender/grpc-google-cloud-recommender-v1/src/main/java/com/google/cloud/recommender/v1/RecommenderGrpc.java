@@ -476,8 +476,8 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
-     * permission for the specified insight type.
+     * Lists insights for the specified Cloud Resource. Requires the
+     * recommender.*.list IAM permission for the specified insight type.
      * </pre>
      */
     public void listInsights(
@@ -524,8 +524,8 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Lists recommendations for a Cloud project. Requires the recommender.*.list
-     * IAM permission for the specified recommender.
+     * Lists recommendations for the specified Cloud Resource. Requires the
+     * recommender.*.list IAM permission for the specified recommender.
      * </pre>
      */
     public void listRecommendations(
@@ -707,8 +707,8 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
-     * permission for the specified insight type.
+     * Lists insights for the specified Cloud Resource. Requires the
+     * recommender.*.list IAM permission for the specified insight type.
      * </pre>
      */
     public void listInsights(
@@ -760,8 +760,8 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Lists recommendations for a Cloud project. Requires the recommender.*.list
-     * IAM permission for the specified recommender.
+     * Lists recommendations for the specified Cloud Resource. Requires the
+     * recommender.*.list IAM permission for the specified recommender.
      * </pre>
      */
     public void listRecommendations(
@@ -893,8 +893,8 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
-     * permission for the specified insight type.
+     * Lists insights for the specified Cloud Resource. Requires the
+     * recommender.*.list IAM permission for the specified insight type.
      * </pre>
      */
     public com.google.cloud.recommender.v1.ListInsightsResponse listInsights(
@@ -938,8 +938,8 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Lists recommendations for a Cloud project. Requires the recommender.*.list
-     * IAM permission for the specified recommender.
+     * Lists recommendations for the specified Cloud Resource. Requires the
+     * recommender.*.list IAM permission for the specified recommender.
      * </pre>
      */
     public com.google.cloud.recommender.v1.ListRecommendationsResponse listRecommendations(
@@ -1051,8 +1051,8 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
-     * permission for the specified insight type.
+     * Lists insights for the specified Cloud Resource. Requires the
+     * recommender.*.list IAM permission for the specified insight type.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1099,8 +1099,8 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Lists recommendations for a Cloud project. Requires the recommender.*.list
-     * IAM permission for the specified recommender.
+     * Lists recommendations for the specified Cloud Resource. Requires the
+     * recommender.*.list IAM permission for the specified recommender.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

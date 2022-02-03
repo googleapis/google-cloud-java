@@ -29,8 +29,11 @@ public interface ListRecommendationsRequestOrBuilder
    * <pre>
    * Required. The container resource on which to execute the request.
    * Acceptable formats:
-   * 1.
-   * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
+   * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   * * `folders/[FOLDER_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
    * RECOMMENDER_ID refers to supported recommenders:
@@ -50,8 +53,11 @@ public interface ListRecommendationsRequestOrBuilder
    * <pre>
    * Required. The container resource on which to execute the request.
    * Acceptable formats:
-   * 1.
-   * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
+   * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   * * `folders/[FOLDER_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
    * RECOMMENDER_ID refers to supported recommenders:
@@ -117,8 +123,17 @@ public interface ListRecommendationsRequestOrBuilder
    *
    * <pre>
    * Filter expression to restrict the recommendations returned. Supported
-   * filter fields: state_info.state
-   * Eg: `state_info.state:"DISMISSED" or state_info.state:"FAILED"
+   * filter fields:
+   * * `state_info.state`
+   * * `recommenderSubtype`
+   * * `priority`
+   * Examples:
+   * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   * * `recommenderSubtype = REMOVE_ROLE OR recommenderSubtype = REPLACE_ROLE`
+   * * `priority = P1 OR priority = P2`
+   * * `stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)`
+   * (These expressions are based on the filter language described at
+   * https://google.aip.dev/160)
    * </pre>
    *
    * <code>string filter = 5;</code>
@@ -131,8 +146,17 @@ public interface ListRecommendationsRequestOrBuilder
    *
    * <pre>
    * Filter expression to restrict the recommendations returned. Supported
-   * filter fields: state_info.state
-   * Eg: `state_info.state:"DISMISSED" or state_info.state:"FAILED"
+   * filter fields:
+   * * `state_info.state`
+   * * `recommenderSubtype`
+   * * `priority`
+   * Examples:
+   * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   * * `recommenderSubtype = REMOVE_ROLE OR recommenderSubtype = REPLACE_ROLE`
+   * * `priority = P1 OR priority = P2`
+   * * `stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)`
+   * (These expressions are based on the filter language described at
+   * https://google.aip.dev/160)
    * </pre>
    *
    * <code>string filter = 5;</code>

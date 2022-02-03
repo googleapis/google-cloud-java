@@ -83,5 +83,40 @@ public interface ImpactOrBuilder
    */
   com.google.cloud.recommender.v1beta1.CostProjectionOrBuilder getCostProjectionOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SECURITY
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.SecurityProjection security_projection = 101;</code>
+   *
+   * @return Whether the securityProjection field is set.
+   */
+  boolean hasSecurityProjection();
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SECURITY
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.SecurityProjection security_projection = 101;</code>
+   *
+   * @return The securityProjection.
+   */
+  com.google.cloud.recommender.v1beta1.SecurityProjection getSecurityProjection();
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SECURITY
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.SecurityProjection security_projection = 101;</code>
+   */
+  com.google.cloud.recommender.v1beta1.SecurityProjectionOrBuilder getSecurityProjectionOrBuilder();
+
   public com.google.cloud.recommender.v1beta1.Impact.ProjectionCase getProjectionCase();
 }

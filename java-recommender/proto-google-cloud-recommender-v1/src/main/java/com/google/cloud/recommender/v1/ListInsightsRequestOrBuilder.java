@@ -29,12 +29,15 @@ public interface ListInsightsRequestOrBuilder
    * <pre>
    * Required. The container resource on which to execute the request.
    * Acceptable formats:
-   * 1.
-   * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
+   * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   * * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   * * `folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
    * INSIGHT_TYPE_ID refers to supported insight types:
-   * https://cloud.google.com/recommender/docs/insights/insight-types.)
+   * https://cloud.google.com/recommender/docs/insights/insight-types.
    * </pre>
    *
    * <code>
@@ -50,12 +53,15 @@ public interface ListInsightsRequestOrBuilder
    * <pre>
    * Required. The container resource on which to execute the request.
    * Acceptable formats:
-   * 1.
-   * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
+   * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   * * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   * * `folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
    * INSIGHT_TYPE_ID refers to supported insight types:
-   * https://cloud.google.com/recommender/docs/insights/insight-types.)
+   * https://cloud.google.com/recommender/docs/insights/insight-types.
    * </pre>
    *
    * <code>
@@ -117,8 +123,17 @@ public interface ListInsightsRequestOrBuilder
    *
    * <pre>
    * Optional. Filter expression to restrict the insights returned. Supported
-   * filter fields: state
-   * Eg: `state:"DISMISSED" or state:"ACTIVE"
+   * filter fields:
+   * * `stateInfo.state`
+   * * `insightSubtype`
+   * * `severity`
+   * Examples:
+   * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   * * `insightSubtype = PERMISSIONS_USAGE`
+   * * `severity = CRITICAL OR severity = HIGH`
+   * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+   * (These expressions are based on the filter language described at
+   * https://google.aip.dev/160)
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -131,8 +146,17 @@ public interface ListInsightsRequestOrBuilder
    *
    * <pre>
    * Optional. Filter expression to restrict the insights returned. Supported
-   * filter fields: state
-   * Eg: `state:"DISMISSED" or state:"ACTIVE"
+   * filter fields:
+   * * `stateInfo.state`
+   * * `insightSubtype`
+   * * `severity`
+   * Examples:
+   * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   * * `insightSubtype = PERMISSIONS_USAGE`
+   * * `severity = CRITICAL OR severity = HIGH`
+   * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+   * (These expressions are based on the filter language described at
+   * https://google.aip.dev/160)
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

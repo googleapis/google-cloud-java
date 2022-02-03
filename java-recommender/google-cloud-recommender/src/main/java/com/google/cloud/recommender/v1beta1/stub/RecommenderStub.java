@@ -23,8 +23,11 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommender.v1beta1.GetInsightRequest;
+import com.google.cloud.recommender.v1beta1.GetInsightTypeConfigRequest;
 import com.google.cloud.recommender.v1beta1.GetRecommendationRequest;
+import com.google.cloud.recommender.v1beta1.GetRecommenderConfigRequest;
 import com.google.cloud.recommender.v1beta1.Insight;
+import com.google.cloud.recommender.v1beta1.InsightTypeConfig;
 import com.google.cloud.recommender.v1beta1.ListInsightsRequest;
 import com.google.cloud.recommender.v1beta1.ListInsightsResponse;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsRequest;
@@ -34,6 +37,9 @@ import com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest;
 import com.google.cloud.recommender.v1beta1.Recommendation;
+import com.google.cloud.recommender.v1beta1.RecommenderConfig;
+import com.google.cloud.recommender.v1beta1.UpdateInsightTypeConfigRequest;
+import com.google.cloud.recommender.v1beta1.UpdateRecommenderConfigRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -90,6 +96,26 @@ public abstract class RecommenderStub implements BackgroundResource {
   public UnaryCallable<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedCallable() {
     throw new UnsupportedOperationException("Not implemented: markRecommendationFailedCallable()");
+  }
+
+  public UnaryCallable<GetRecommenderConfigRequest, RecommenderConfig>
+      getRecommenderConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRecommenderConfigCallable()");
+  }
+
+  public UnaryCallable<UpdateRecommenderConfigRequest, RecommenderConfig>
+      updateRecommenderConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateRecommenderConfigCallable()");
+  }
+
+  public UnaryCallable<GetInsightTypeConfigRequest, InsightTypeConfig>
+      getInsightTypeConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getInsightTypeConfigCallable()");
+  }
+
+  public UnaryCallable<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+      updateInsightTypeConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateInsightTypeConfigCallable()");
   }
 
   @Override

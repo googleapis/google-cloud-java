@@ -37,12 +37,12 @@ public class InsightName implements ResourceName {
   private static final PathTemplate BILLING_ACCOUNT_LOCATION_INSIGHT_TYPE_INSIGHT =
       PathTemplate.createWithoutUrlEncoding(
           "billingAccounts/{billing_account}/locations/{location}/insightTypes/{insight_type}/insights/{insight}");
-  private static final PathTemplate FOLDER_LOCATION_INSIGHT_TYPE =
+  private static final PathTemplate FOLDER_LOCATION_INSIGHT_TYPE_INSIGHT =
       PathTemplate.createWithoutUrlEncoding(
-          "folders/{folder}/locations/{location}/insightTypes/{insight_type}");
-  private static final PathTemplate ORGANIZATION_LOCATION_INSIGHT_TYPE =
+          "folders/{folder}/locations/{location}/insightTypes/{insight_type}/insights/{insight}");
+  private static final PathTemplate ORGANIZATION_LOCATION_INSIGHT_TYPE_INSIGHT =
       PathTemplate.createWithoutUrlEncoding(
-          "organizations/{organization}/locations/{location}/insightTypes/{insight_type}");
+          "organizations/{organization}/locations/{location}/insightTypes/{insight_type}/insights/{insight}");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -87,26 +87,26 @@ public class InsightName implements ResourceName {
     pathTemplate = BILLING_ACCOUNT_LOCATION_INSIGHT_TYPE_INSIGHT;
   }
 
-  private InsightName(FolderLocationInsightTypeBuilder builder) {
+  private InsightName(FolderLocationInsightTypeInsightBuilder builder) {
     folder = Preconditions.checkNotNull(builder.getFolder());
     location = Preconditions.checkNotNull(builder.getLocation());
     insightType = Preconditions.checkNotNull(builder.getInsightType());
+    insight = Preconditions.checkNotNull(builder.getInsight());
     project = null;
-    insight = null;
     billingAccount = null;
     organization = null;
-    pathTemplate = FOLDER_LOCATION_INSIGHT_TYPE;
+    pathTemplate = FOLDER_LOCATION_INSIGHT_TYPE_INSIGHT;
   }
 
-  private InsightName(OrganizationLocationInsightTypeBuilder builder) {
+  private InsightName(OrganizationLocationInsightTypeInsightBuilder builder) {
     organization = Preconditions.checkNotNull(builder.getOrganization());
     location = Preconditions.checkNotNull(builder.getLocation());
     insightType = Preconditions.checkNotNull(builder.getInsightType());
+    insight = Preconditions.checkNotNull(builder.getInsight());
     project = null;
-    insight = null;
     billingAccount = null;
     folder = null;
-    pathTemplate = ORGANIZATION_LOCATION_INSIGHT_TYPE;
+    pathTemplate = ORGANIZATION_LOCATION_INSIGHT_TYPE_INSIGHT;
   }
 
   public String getProject() {
@@ -153,13 +153,15 @@ public class InsightName implements ResourceName {
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static FolderLocationInsightTypeBuilder newFolderLocationInsightTypeBuilder() {
-    return new FolderLocationInsightTypeBuilder();
+  public static FolderLocationInsightTypeInsightBuilder
+      newFolderLocationInsightTypeInsightBuilder() {
+    return new FolderLocationInsightTypeInsightBuilder();
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static OrganizationLocationInsightTypeBuilder newOrganizationLocationInsightTypeBuilder() {
-    return new OrganizationLocationInsightTypeBuilder();
+  public static OrganizationLocationInsightTypeInsightBuilder
+      newOrganizationLocationInsightTypeInsightBuilder() {
+    return new OrganizationLocationInsightTypeInsightBuilder();
   }
 
   public Builder toBuilder() {
@@ -199,22 +201,24 @@ public class InsightName implements ResourceName {
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static InsightName ofFolderLocationInsightTypeName(
-      String folder, String location, String insightType) {
-    return newFolderLocationInsightTypeBuilder()
+  public static InsightName ofFolderLocationInsightTypeInsightName(
+      String folder, String location, String insightType, String insight) {
+    return newFolderLocationInsightTypeInsightBuilder()
         .setFolder(folder)
         .setLocation(location)
         .setInsightType(insightType)
+        .setInsight(insight)
         .build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static InsightName ofOrganizationLocationInsightTypeName(
-      String organization, String location, String insightType) {
-    return newOrganizationLocationInsightTypeBuilder()
+  public static InsightName ofOrganizationLocationInsightTypeInsightName(
+      String organization, String location, String insightType, String insight) {
+    return newOrganizationLocationInsightTypeInsightBuilder()
         .setOrganization(organization)
         .setLocation(location)
         .setInsightType(insightType)
+        .setInsight(insight)
         .build();
   }
 
@@ -253,23 +257,25 @@ public class InsightName implements ResourceName {
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatFolderLocationInsightTypeName(
-      String folder, String location, String insightType) {
-    return newFolderLocationInsightTypeBuilder()
+  public static String formatFolderLocationInsightTypeInsightName(
+      String folder, String location, String insightType, String insight) {
+    return newFolderLocationInsightTypeInsightBuilder()
         .setFolder(folder)
         .setLocation(location)
         .setInsightType(insightType)
+        .setInsight(insight)
         .build()
         .toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatOrganizationLocationInsightTypeName(
-      String organization, String location, String insightType) {
-    return newOrganizationLocationInsightTypeBuilder()
+  public static String formatOrganizationLocationInsightTypeInsightName(
+      String organization, String location, String insightType, String insight) {
+    return newOrganizationLocationInsightTypeInsightBuilder()
         .setOrganization(organization)
         .setLocation(location)
         .setInsightType(insightType)
+        .setInsight(insight)
         .build()
         .toString();
   }
@@ -293,14 +299,21 @@ public class InsightName implements ResourceName {
           matchMap.get("location"),
           matchMap.get("insight_type"),
           matchMap.get("insight"));
-    } else if (FOLDER_LOCATION_INSIGHT_TYPE.matches(formattedString)) {
-      Map<String, String> matchMap = FOLDER_LOCATION_INSIGHT_TYPE.match(formattedString);
-      return ofFolderLocationInsightTypeName(
-          matchMap.get("folder"), matchMap.get("location"), matchMap.get("insight_type"));
-    } else if (ORGANIZATION_LOCATION_INSIGHT_TYPE.matches(formattedString)) {
-      Map<String, String> matchMap = ORGANIZATION_LOCATION_INSIGHT_TYPE.match(formattedString);
-      return ofOrganizationLocationInsightTypeName(
-          matchMap.get("organization"), matchMap.get("location"), matchMap.get("insight_type"));
+    } else if (FOLDER_LOCATION_INSIGHT_TYPE_INSIGHT.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_LOCATION_INSIGHT_TYPE_INSIGHT.match(formattedString);
+      return ofFolderLocationInsightTypeInsightName(
+          matchMap.get("folder"),
+          matchMap.get("location"),
+          matchMap.get("insight_type"),
+          matchMap.get("insight"));
+    } else if (ORGANIZATION_LOCATION_INSIGHT_TYPE_INSIGHT.matches(formattedString)) {
+      Map<String, String> matchMap =
+          ORGANIZATION_LOCATION_INSIGHT_TYPE_INSIGHT.match(formattedString);
+      return ofOrganizationLocationInsightTypeInsightName(
+          matchMap.get("organization"),
+          matchMap.get("location"),
+          matchMap.get("insight_type"),
+          matchMap.get("insight"));
     }
     throw new ValidationException("InsightName.parse: formattedString not in valid format");
   }
@@ -328,8 +341,8 @@ public class InsightName implements ResourceName {
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_LOCATION_INSIGHT_TYPE_INSIGHT.matches(formattedString)
         || BILLING_ACCOUNT_LOCATION_INSIGHT_TYPE_INSIGHT.matches(formattedString)
-        || FOLDER_LOCATION_INSIGHT_TYPE.matches(formattedString)
-        || ORGANIZATION_LOCATION_INSIGHT_TYPE.matches(formattedString);
+        || FOLDER_LOCATION_INSIGHT_TYPE_INSIGHT.matches(formattedString)
+        || ORGANIZATION_LOCATION_INSIGHT_TYPE_INSIGHT.matches(formattedString);
   }
 
   @Override
@@ -533,14 +546,18 @@ public class InsightName implements ResourceName {
     }
   }
 
-  /** Builder for folders/{folder}/locations/{location}/insightTypes/{insight_type}. */
+  /**
+   * Builder for
+   * folders/{folder}/locations/{location}/insightTypes/{insight_type}/insights/{insight}.
+   */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class FolderLocationInsightTypeBuilder {
+  public static class FolderLocationInsightTypeInsightBuilder {
     private String folder;
     private String location;
     private String insightType;
+    private String insight;
 
-    protected FolderLocationInsightTypeBuilder() {}
+    protected FolderLocationInsightTypeInsightBuilder() {}
 
     public String getFolder() {
       return folder;
@@ -554,18 +571,27 @@ public class InsightName implements ResourceName {
       return insightType;
     }
 
-    public FolderLocationInsightTypeBuilder setFolder(String folder) {
+    public String getInsight() {
+      return insight;
+    }
+
+    public FolderLocationInsightTypeInsightBuilder setFolder(String folder) {
       this.folder = folder;
       return this;
     }
 
-    public FolderLocationInsightTypeBuilder setLocation(String location) {
+    public FolderLocationInsightTypeInsightBuilder setLocation(String location) {
       this.location = location;
       return this;
     }
 
-    public FolderLocationInsightTypeBuilder setInsightType(String insightType) {
+    public FolderLocationInsightTypeInsightBuilder setInsightType(String insightType) {
       this.insightType = insightType;
+      return this;
+    }
+
+    public FolderLocationInsightTypeInsightBuilder setInsight(String insight) {
+      this.insight = insight;
       return this;
     }
 
@@ -574,14 +600,18 @@ public class InsightName implements ResourceName {
     }
   }
 
-  /** Builder for organizations/{organization}/locations/{location}/insightTypes/{insight_type}. */
+  /**
+   * Builder for
+   * organizations/{organization}/locations/{location}/insightTypes/{insight_type}/insights/{insight}.
+   */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class OrganizationLocationInsightTypeBuilder {
+  public static class OrganizationLocationInsightTypeInsightBuilder {
     private String organization;
     private String location;
     private String insightType;
+    private String insight;
 
-    protected OrganizationLocationInsightTypeBuilder() {}
+    protected OrganizationLocationInsightTypeInsightBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -595,18 +625,27 @@ public class InsightName implements ResourceName {
       return insightType;
     }
 
-    public OrganizationLocationInsightTypeBuilder setOrganization(String organization) {
+    public String getInsight() {
+      return insight;
+    }
+
+    public OrganizationLocationInsightTypeInsightBuilder setOrganization(String organization) {
       this.organization = organization;
       return this;
     }
 
-    public OrganizationLocationInsightTypeBuilder setLocation(String location) {
+    public OrganizationLocationInsightTypeInsightBuilder setLocation(String location) {
       this.location = location;
       return this;
     }
 
-    public OrganizationLocationInsightTypeBuilder setInsightType(String insightType) {
+    public OrganizationLocationInsightTypeInsightBuilder setInsightType(String insightType) {
       this.insightType = insightType;
+      return this;
+    }
+
+    public OrganizationLocationInsightTypeInsightBuilder setInsight(String insight) {
+      this.insight = insight;
       return this;
     }
 

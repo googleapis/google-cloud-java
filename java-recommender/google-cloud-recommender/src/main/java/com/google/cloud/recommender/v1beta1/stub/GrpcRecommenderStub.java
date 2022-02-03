@@ -27,8 +27,11 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommender.v1beta1.GetInsightRequest;
+import com.google.cloud.recommender.v1beta1.GetInsightTypeConfigRequest;
 import com.google.cloud.recommender.v1beta1.GetRecommendationRequest;
+import com.google.cloud.recommender.v1beta1.GetRecommenderConfigRequest;
 import com.google.cloud.recommender.v1beta1.Insight;
+import com.google.cloud.recommender.v1beta1.InsightTypeConfig;
 import com.google.cloud.recommender.v1beta1.ListInsightsRequest;
 import com.google.cloud.recommender.v1beta1.ListInsightsResponse;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsRequest;
@@ -38,6 +41,9 @@ import com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest;
 import com.google.cloud.recommender.v1beta1.Recommendation;
+import com.google.cloud.recommender.v1beta1.RecommenderConfig;
+import com.google.cloud.recommender.v1beta1.UpdateInsightTypeConfigRequest;
+import com.google.cloud.recommender.v1beta1.UpdateRecommenderConfigRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -137,6 +143,50 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetRecommenderConfigRequest, RecommenderConfig>
+      getRecommenderConfigMethodDescriptor =
+          MethodDescriptor.<GetRecommenderConfigRequest, RecommenderConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recommender.v1beta1.Recommender/GetRecommenderConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetRecommenderConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RecommenderConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateRecommenderConfigRequest, RecommenderConfig>
+      updateRecommenderConfigMethodDescriptor =
+          MethodDescriptor.<UpdateRecommenderConfigRequest, RecommenderConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recommender.v1beta1.Recommender/UpdateRecommenderConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateRecommenderConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RecommenderConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetInsightTypeConfigRequest, InsightTypeConfig>
+      getInsightTypeConfigMethodDescriptor =
+          MethodDescriptor.<GetInsightTypeConfigRequest, InsightTypeConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recommender.v1beta1.Recommender/GetInsightTypeConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetInsightTypeConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(InsightTypeConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+      updateInsightTypeConfigMethodDescriptor =
+          MethodDescriptor.<UpdateInsightTypeConfigRequest, InsightTypeConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recommender.v1beta1.Recommender/UpdateInsightTypeConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateInsightTypeConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(InsightTypeConfig.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable;
   private final UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse>
       listInsightsPagedCallable;
@@ -153,6 +203,14 @@ public class GrpcRecommenderStub extends RecommenderStub {
       markRecommendationSucceededCallable;
   private final UnaryCallable<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedCallable;
+  private final UnaryCallable<GetRecommenderConfigRequest, RecommenderConfig>
+      getRecommenderConfigCallable;
+  private final UnaryCallable<UpdateRecommenderConfigRequest, RecommenderConfig>
+      updateRecommenderConfigCallable;
+  private final UnaryCallable<GetInsightTypeConfigRequest, InsightTypeConfig>
+      getInsightTypeConfigCallable;
+  private final UnaryCallable<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+      updateInsightTypeConfigCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -280,6 +338,54 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetRecommenderConfigRequest, RecommenderConfig>
+        getRecommenderConfigTransportSettings =
+            GrpcCallSettings.<GetRecommenderConfigRequest, RecommenderConfig>newBuilder()
+                .setMethodDescriptor(getRecommenderConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateRecommenderConfigRequest, RecommenderConfig>
+        updateRecommenderConfigTransportSettings =
+            GrpcCallSettings.<UpdateRecommenderConfigRequest, RecommenderConfig>newBuilder()
+                .setMethodDescriptor(updateRecommenderConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "recommender_config.name",
+                          String.valueOf(request.getRecommenderConfig().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetInsightTypeConfigRequest, InsightTypeConfig>
+        getInsightTypeConfigTransportSettings =
+            GrpcCallSettings.<GetInsightTypeConfigRequest, InsightTypeConfig>newBuilder()
+                .setMethodDescriptor(getInsightTypeConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+        updateInsightTypeConfigTransportSettings =
+            GrpcCallSettings.<UpdateInsightTypeConfigRequest, InsightTypeConfig>newBuilder()
+                .setMethodDescriptor(updateInsightTypeConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "insight_type_config.name",
+                          String.valueOf(request.getInsightTypeConfig().getName()));
+                      return params.build();
+                    })
+                .build();
 
     this.listInsightsCallable =
         callableFactory.createUnaryCallable(
@@ -324,6 +430,26 @@ public class GrpcRecommenderStub extends RecommenderStub {
         callableFactory.createUnaryCallable(
             markRecommendationFailedTransportSettings,
             settings.markRecommendationFailedSettings(),
+            clientContext);
+    this.getRecommenderConfigCallable =
+        callableFactory.createUnaryCallable(
+            getRecommenderConfigTransportSettings,
+            settings.getRecommenderConfigSettings(),
+            clientContext);
+    this.updateRecommenderConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateRecommenderConfigTransportSettings,
+            settings.updateRecommenderConfigSettings(),
+            clientContext);
+    this.getInsightTypeConfigCallable =
+        callableFactory.createUnaryCallable(
+            getInsightTypeConfigTransportSettings,
+            settings.getInsightTypeConfigSettings(),
+            clientContext);
+    this.updateInsightTypeConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateInsightTypeConfigTransportSettings,
+            settings.updateInsightTypeConfigSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -387,6 +513,30 @@ public class GrpcRecommenderStub extends RecommenderStub {
   public UnaryCallable<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedCallable() {
     return markRecommendationFailedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRecommenderConfigRequest, RecommenderConfig>
+      getRecommenderConfigCallable() {
+    return getRecommenderConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRecommenderConfigRequest, RecommenderConfig>
+      updateRecommenderConfigCallable() {
+    return updateRecommenderConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetInsightTypeConfigRequest, InsightTypeConfig>
+      getInsightTypeConfigCallable() {
+    return getInsightTypeConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+      updateInsightTypeConfigCallable() {
+    return updateInsightTypeConfigCallable;
   }
 
   @Override

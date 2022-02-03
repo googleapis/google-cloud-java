@@ -43,8 +43,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     recommenderSubtype_ = "";
     additionalImpact_ = java.util.Collections.emptyList();
+    priority_ = 0;
     etag_ = "";
     associatedInsights_ = java.util.Collections.emptyList();
+    xorGroupId_ = "";
   }
 
   @java.lang.Override
@@ -196,6 +198,20 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
+          case 136:
+            {
+              int rawValue = input.readEnum();
+
+              priority_ = rawValue;
+              break;
+            }
+          case 146:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              xorGroupId_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -234,6 +250,207 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.recommender.v1.Recommendation.class,
             com.google.cloud.recommender.v1.Recommendation.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Recommendation priority levels.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.recommender.v1.Recommendation.Priority}
+   */
+  public enum Priority implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation has unspecified priority.
+     * </pre>
+     *
+     * <code>PRIORITY_UNSPECIFIED = 0;</code>
+     */
+    PRIORITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation has P4 priority (lowest priority).
+     * </pre>
+     *
+     * <code>P4 = 1;</code>
+     */
+    P4(1),
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation has P3 priority (second lowest priority).
+     * </pre>
+     *
+     * <code>P3 = 2;</code>
+     */
+    P3(2),
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation has P2 priority (second highest priority).
+     * </pre>
+     *
+     * <code>P2 = 3;</code>
+     */
+    P2(3),
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation has P1 priority (highest priority).
+     * </pre>
+     *
+     * <code>P1 = 4;</code>
+     */
+    P1(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation has unspecified priority.
+     * </pre>
+     *
+     * <code>PRIORITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int PRIORITY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation has P4 priority (lowest priority).
+     * </pre>
+     *
+     * <code>P4 = 1;</code>
+     */
+    public static final int P4_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation has P3 priority (second lowest priority).
+     * </pre>
+     *
+     * <code>P3 = 2;</code>
+     */
+    public static final int P3_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation has P2 priority (second highest priority).
+     * </pre>
+     *
+     * <code>P2 = 3;</code>
+     */
+    public static final int P2_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation has P1 priority (highest priority).
+     * </pre>
+     *
+     * <code>P1 = 4;</code>
+     */
+    public static final int P1_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Priority valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Priority forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PRIORITY_UNSPECIFIED;
+        case 1:
+          return P4;
+        case 2:
+          return P3;
+        case 3:
+          return P2;
+        case 4:
+          return P1;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Priority> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Priority> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Priority>() {
+          public Priority findValueByNumber(int number) {
+            return Priority.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.recommender.v1.Recommendation.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Priority[] VALUES = values();
+
+    public static Priority valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Priority(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.recommender.v1.Recommendation.Priority)
   }
 
   public interface InsightReferenceOrBuilder
@@ -1251,6 +1468,44 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
     return additionalImpact_.get(index);
   }
 
+  public static final int PRIORITY_FIELD_NUMBER = 17;
+  private int priority_;
+  /**
+   *
+   *
+   * <pre>
+   * Recommendation's priority.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.Recommendation.Priority priority = 17;</code>
+   *
+   * @return The enum numeric value on the wire for priority.
+   */
+  @java.lang.Override
+  public int getPriorityValue() {
+    return priority_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Recommendation's priority.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.Recommendation.Priority priority = 17;</code>
+   *
+   * @return The priority.
+   */
+  @java.lang.Override
+  public com.google.cloud.recommender.v1.Recommendation.Priority getPriority() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.recommender.v1.Recommendation.Priority result =
+        com.google.cloud.recommender.v1.Recommendation.Priority.valueOf(priority_);
+    return result == null
+        ? com.google.cloud.recommender.v1.Recommendation.Priority.UNRECOGNIZED
+        : result;
+  }
+
   public static final int CONTENT_FIELD_NUMBER = 7;
   private com.google.cloud.recommender.v1.RecommendationContent content_;
   /**
@@ -1482,6 +1737,61 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
     return associatedInsights_.get(index);
   }
 
+  public static final int XOR_GROUP_ID_FIELD_NUMBER = 18;
+  private volatile java.lang.Object xorGroupId_;
+  /**
+   *
+   *
+   * <pre>
+   * Corresponds to a mutually exclusive group ID within a recommender.
+   * A non-empty ID indicates that the recommendation belongs to a mutually
+   * exclusive group. This means that only one recommendation within the group
+   * is suggested to be applied.
+   * </pre>
+   *
+   * <code>string xor_group_id = 18;</code>
+   *
+   * @return The xorGroupId.
+   */
+  @java.lang.Override
+  public java.lang.String getXorGroupId() {
+    java.lang.Object ref = xorGroupId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      xorGroupId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Corresponds to a mutually exclusive group ID within a recommender.
+   * A non-empty ID indicates that the recommendation belongs to a mutually
+   * exclusive group. This means that only one recommendation within the group
+   * is suggested to be applied.
+   * </pre>
+   *
+   * <code>string xor_group_id = 18;</code>
+   *
+   * @return The bytes for xorGroupId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getXorGroupIdBytes() {
+    java.lang.Object ref = xorGroupId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      xorGroupId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1526,6 +1836,14 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < associatedInsights_.size(); i++) {
       output.writeMessage(14, associatedInsights_.get(i));
     }
+    if (priority_
+        != com.google.cloud.recommender.v1.Recommendation.Priority.PRIORITY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(17, priority_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(xorGroupId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, xorGroupId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1566,6 +1884,14 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, associatedInsights_.get(i));
     }
+    if (priority_
+        != com.google.cloud.recommender.v1.Recommendation.Priority.PRIORITY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, priority_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(xorGroupId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, xorGroupId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1594,6 +1920,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
       if (!getPrimaryImpact().equals(other.getPrimaryImpact())) return false;
     }
     if (!getAdditionalImpactList().equals(other.getAdditionalImpactList())) return false;
+    if (priority_ != other.priority_) return false;
     if (hasContent() != other.hasContent()) return false;
     if (hasContent()) {
       if (!getContent().equals(other.getContent())) return false;
@@ -1604,6 +1931,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getAssociatedInsightsList().equals(other.getAssociatedInsightsList())) return false;
+    if (!getXorGroupId().equals(other.getXorGroupId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1633,6 +1961,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ADDITIONAL_IMPACT_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalImpactList().hashCode();
     }
+    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + priority_;
     if (hasContent()) {
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
@@ -1647,6 +1977,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ASSOCIATED_INSIGHTS_FIELD_NUMBER;
       hash = (53 * hash) + getAssociatedInsightsList().hashCode();
     }
+    hash = (37 * hash) + XOR_GROUP_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getXorGroupId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1820,6 +2152,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
       } else {
         additionalImpactBuilder_.clear();
       }
+      priority_ = 0;
+
       if (contentBuilder_ == null) {
         content_ = null;
       } else {
@@ -1840,6 +2174,8 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
       } else {
         associatedInsightsBuilder_.clear();
       }
+      xorGroupId_ = "";
+
       return this;
     }
 
@@ -1890,6 +2226,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.additionalImpact_ = additionalImpactBuilder_.build();
       }
+      result.priority_ = priority_;
       if (contentBuilder_ == null) {
         result.content_ = content_;
       } else {
@@ -1910,6 +2247,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.associatedInsights_ = associatedInsightsBuilder_.build();
       }
+      result.xorGroupId_ = xorGroupId_;
       onBuilt();
       return result;
     }
@@ -2004,6 +2342,9 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.priority_ != 0) {
+        setPriorityValue(other.getPriorityValue());
+      }
       if (other.hasContent()) {
         mergeContent(other.getContent());
       }
@@ -2040,6 +2381,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
             associatedInsightsBuilder_.addAllMessages(other.associatedInsights_);
           }
         }
+      }
+      if (!other.getXorGroupId().isEmpty()) {
+        xorGroupId_ = other.xorGroupId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3209,6 +3554,99 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
       return additionalImpactBuilder_;
     }
 
+    private int priority_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation's priority.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.Recommendation.Priority priority = 17;</code>
+     *
+     * @return The enum numeric value on the wire for priority.
+     */
+    @java.lang.Override
+    public int getPriorityValue() {
+      return priority_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation's priority.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.Recommendation.Priority priority = 17;</code>
+     *
+     * @param value The enum numeric value on the wire for priority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriorityValue(int value) {
+
+      priority_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation's priority.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.Recommendation.Priority priority = 17;</code>
+     *
+     * @return The priority.
+     */
+    @java.lang.Override
+    public com.google.cloud.recommender.v1.Recommendation.Priority getPriority() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.recommender.v1.Recommendation.Priority result =
+          com.google.cloud.recommender.v1.Recommendation.Priority.valueOf(priority_);
+      return result == null
+          ? com.google.cloud.recommender.v1.Recommendation.Priority.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation's priority.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.Recommendation.Priority priority = 17;</code>
+     *
+     * @param value The priority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriority(com.google.cloud.recommender.v1.Recommendation.Priority value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      priority_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recommendation's priority.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.Recommendation.Priority priority = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPriority() {
+
+      priority_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.recommender.v1.RecommendationContent content_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.recommender.v1.RecommendationContent,
@@ -4100,6 +4538,127 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
         associatedInsights_ = null;
       }
       return associatedInsightsBuilder_;
+    }
+
+    private java.lang.Object xorGroupId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Corresponds to a mutually exclusive group ID within a recommender.
+     * A non-empty ID indicates that the recommendation belongs to a mutually
+     * exclusive group. This means that only one recommendation within the group
+     * is suggested to be applied.
+     * </pre>
+     *
+     * <code>string xor_group_id = 18;</code>
+     *
+     * @return The xorGroupId.
+     */
+    public java.lang.String getXorGroupId() {
+      java.lang.Object ref = xorGroupId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        xorGroupId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Corresponds to a mutually exclusive group ID within a recommender.
+     * A non-empty ID indicates that the recommendation belongs to a mutually
+     * exclusive group. This means that only one recommendation within the group
+     * is suggested to be applied.
+     * </pre>
+     *
+     * <code>string xor_group_id = 18;</code>
+     *
+     * @return The bytes for xorGroupId.
+     */
+    public com.google.protobuf.ByteString getXorGroupIdBytes() {
+      java.lang.Object ref = xorGroupId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        xorGroupId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Corresponds to a mutually exclusive group ID within a recommender.
+     * A non-empty ID indicates that the recommendation belongs to a mutually
+     * exclusive group. This means that only one recommendation within the group
+     * is suggested to be applied.
+     * </pre>
+     *
+     * <code>string xor_group_id = 18;</code>
+     *
+     * @param value The xorGroupId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setXorGroupId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      xorGroupId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Corresponds to a mutually exclusive group ID within a recommender.
+     * A non-empty ID indicates that the recommendation belongs to a mutually
+     * exclusive group. This means that only one recommendation within the group
+     * is suggested to be applied.
+     * </pre>
+     *
+     * <code>string xor_group_id = 18;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearXorGroupId() {
+
+      xorGroupId_ = getDefaultInstance().getXorGroupId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Corresponds to a mutually exclusive group ID within a recommender.
+     * A non-empty ID indicates that the recommendation belongs to a mutually
+     * exclusive group. This means that only one recommendation within the group
+     * is suggested to be applied.
+     * </pre>
+     *
+     * <code>string xor_group_id = 18;</code>
+     *
+     * @param value The bytes for xorGroupId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setXorGroupIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      xorGroupId_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

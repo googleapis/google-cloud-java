@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommender.v1beta1.stub.RecommenderStub;
 import com.google.cloud.recommender.v1beta1.stub.RecommenderStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -154,8 +155,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
-   * specified insight type.
+   * Lists insights for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified insight type.
    *
    * <p>Sample code:
    *
@@ -172,7 +173,21 @@ public class RecommenderClient implements BackgroundResource {
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
-   *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
    *     INSIGHT_TYPE_ID refers to supported insight types:
    *     https://cloud.google.com/recommender/docs/insights/insight-types.
@@ -188,8 +203,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
-   * specified insight type.
+   * Lists insights for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified insight type.
    *
    * <p>Sample code:
    *
@@ -207,7 +222,21 @@ public class RecommenderClient implements BackgroundResource {
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
-   *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
    *     INSIGHT_TYPE_ID refers to supported insight types:
    *     https://cloud.google.com/recommender/docs/insights/insight-types.
@@ -220,8 +249,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
-   * specified insight type.
+   * Lists insights for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified insight type.
    *
    * <p>Sample code:
    *
@@ -252,8 +281,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
-   * specified insight type.
+   * Lists insights for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified insight type.
    *
    * <p>Sample code:
    *
@@ -284,8 +313,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
-   * specified insight type.
+   * Lists insights for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified insight type.
    *
    * <p>Sample code:
    *
@@ -570,8 +599,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
-   * for the specified recommender.
+   * Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified recommender.
    *
    * <p>Sample code:
    *
@@ -590,12 +619,50 @@ public class RecommenderClient implements BackgroundResource {
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
-   *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`folders/[FOLDER_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
    *     RECOMMENDER_ID refers to supported recommenders:
    *     https://cloud.google.com/recommender/docs/recommenders.
    * @param filter Filter expression to restrict the recommendations returned. Supported filter
-   *     fields: state_info.state Eg: `state_info.state:"DISMISSED" or state_info.state:"FAILED"
+   *     fields:
+   *     <ul>
+   *       <li>`state_info.state`
+   *     </ul>
+   *     <ul>
+   *       <li>`recommenderSubtype`
+   *     </ul>
+   *     <ul>
+   *       <li>`priority`
+   *     </ul>
+   *     <p>Examples:
+   *     <ul>
+   *       <li>`stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   *     </ul>
+   *     <ul>
+   *       <li>`recommenderSubtype = REMOVE_ROLE OR recommenderSubtype = REPLACE_ROLE`
+   *     </ul>
+   *     <ul>
+   *       <li>`priority = P1 OR priority = P2`
+   *     </ul>
+   *     <ul>
+   *       <li>`stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)`
+   *     </ul>
+   *     <p>(These expressions are based on the filter language described at
+   *     https://google.aip.dev/160)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRecommendationsPagedResponse listRecommendations(
@@ -610,8 +677,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
-   * for the specified recommender.
+   * Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified recommender.
    *
    * <p>Sample code:
    *
@@ -631,12 +698,50 @@ public class RecommenderClient implements BackgroundResource {
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
-   *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`folders/[FOLDER_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
    *     RECOMMENDER_ID refers to supported recommenders:
    *     https://cloud.google.com/recommender/docs/recommenders.
    * @param filter Filter expression to restrict the recommendations returned. Supported filter
-   *     fields: state_info.state Eg: `state_info.state:"DISMISSED" or state_info.state:"FAILED"
+   *     fields:
+   *     <ul>
+   *       <li>`state_info.state`
+   *     </ul>
+   *     <ul>
+   *       <li>`recommenderSubtype`
+   *     </ul>
+   *     <ul>
+   *       <li>`priority`
+   *     </ul>
+   *     <p>Examples:
+   *     <ul>
+   *       <li>`stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   *     </ul>
+   *     <ul>
+   *       <li>`recommenderSubtype = REMOVE_ROLE OR recommenderSubtype = REPLACE_ROLE`
+   *     </ul>
+   *     <ul>
+   *       <li>`priority = P1 OR priority = P2`
+   *     </ul>
+   *     <ul>
+   *       <li>`stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)`
+   *     </ul>
+   *     <p>(These expressions are based on the filter language described at
+   *     https://google.aip.dev/160)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRecommendationsPagedResponse listRecommendations(String parent, String filter) {
@@ -647,8 +752,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
-   * for the specified recommender.
+   * Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified recommender.
    *
    * <p>Sample code:
    *
@@ -680,8 +785,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
-   * for the specified recommender.
+   * Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified recommender.
    *
    * <p>Sample code:
    *
@@ -713,8 +818,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
-   * for the specified recommender.
+   * Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified recommender.
    *
    * <p>Sample code:
    *
@@ -1338,6 +1443,426 @@ public class RecommenderClient implements BackgroundResource {
   public final UnaryCallable<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedCallable() {
     return stub.markRecommendationFailedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested Recommender Config. There is only one instance of the config for each
+   * Recommender.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   RecommenderConfigName name =
+   *       RecommenderConfigName.ofProjectLocationRecommenderName(
+   *           "[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+   *   RecommenderConfig response = recommenderClient.getRecommenderConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the Recommendation Config to get.
+   *     <p>Acceptable formats:
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecommenderConfig getRecommenderConfig(RecommenderConfigName name) {
+    GetRecommenderConfigRequest request =
+        GetRecommenderConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getRecommenderConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested Recommender Config. There is only one instance of the config for each
+   * Recommender.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   String name =
+   *       RecommenderConfigName.ofProjectLocationRecommenderName(
+   *               "[PROJECT]", "[LOCATION]", "[RECOMMENDER]")
+   *           .toString();
+   *   RecommenderConfig response = recommenderClient.getRecommenderConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the Recommendation Config to get.
+   *     <p>Acceptable formats:
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecommenderConfig getRecommenderConfig(String name) {
+    GetRecommenderConfigRequest request =
+        GetRecommenderConfigRequest.newBuilder().setName(name).build();
+    return getRecommenderConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested Recommender Config. There is only one instance of the config for each
+   * Recommender.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   GetRecommenderConfigRequest request =
+   *       GetRecommenderConfigRequest.newBuilder()
+   *           .setName(
+   *               RecommenderConfigName.ofProjectLocationRecommenderName(
+   *                       "[PROJECT]", "[LOCATION]", "[RECOMMENDER]")
+   *                   .toString())
+   *           .build();
+   *   RecommenderConfig response = recommenderClient.getRecommenderConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecommenderConfig getRecommenderConfig(GetRecommenderConfigRequest request) {
+    return getRecommenderConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested Recommender Config. There is only one instance of the config for each
+   * Recommender.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   GetRecommenderConfigRequest request =
+   *       GetRecommenderConfigRequest.newBuilder()
+   *           .setName(
+   *               RecommenderConfigName.ofProjectLocationRecommenderName(
+   *                       "[PROJECT]", "[LOCATION]", "[RECOMMENDER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RecommenderConfig> future =
+   *       recommenderClient.getRecommenderConfigCallable().futureCall(request);
+   *   // Do something.
+   *   RecommenderConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRecommenderConfigRequest, RecommenderConfig>
+      getRecommenderConfigCallable() {
+    return stub.getRecommenderConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Recommender Config. This will create a new revision of the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   RecommenderConfig recommenderConfig = RecommenderConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   RecommenderConfig response =
+   *       recommenderClient.updateRecommenderConfig(recommenderConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param recommenderConfig Required. The RecommenderConfig to update.
+   * @param updateMask The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecommenderConfig updateRecommenderConfig(
+      RecommenderConfig recommenderConfig, FieldMask updateMask) {
+    UpdateRecommenderConfigRequest request =
+        UpdateRecommenderConfigRequest.newBuilder()
+            .setRecommenderConfig(recommenderConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateRecommenderConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Recommender Config. This will create a new revision of the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   UpdateRecommenderConfigRequest request =
+   *       UpdateRecommenderConfigRequest.newBuilder()
+   *           .setRecommenderConfig(RecommenderConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   RecommenderConfig response = recommenderClient.updateRecommenderConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecommenderConfig updateRecommenderConfig(UpdateRecommenderConfigRequest request) {
+    return updateRecommenderConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Recommender Config. This will create a new revision of the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   UpdateRecommenderConfigRequest request =
+   *       UpdateRecommenderConfigRequest.newBuilder()
+   *           .setRecommenderConfig(RecommenderConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<RecommenderConfig> future =
+   *       recommenderClient.updateRecommenderConfigCallable().futureCall(request);
+   *   // Do something.
+   *   RecommenderConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRecommenderConfigRequest, RecommenderConfig>
+      updateRecommenderConfigCallable() {
+    return stub.updateRecommenderConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested InsightTypeConfig. There is only one instance of the config for each
+   * InsightType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightTypeConfigName name =
+   *       InsightTypeConfigName.ofProjectLocationInsightTypeName(
+   *           "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+   *   InsightTypeConfig response = recommenderClient.getInsightTypeConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the InsightTypeConfig to get.
+   *     <p>Acceptable formats:
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InsightTypeConfig getInsightTypeConfig(InsightTypeConfigName name) {
+    GetInsightTypeConfigRequest request =
+        GetInsightTypeConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getInsightTypeConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested InsightTypeConfig. There is only one instance of the config for each
+   * InsightType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   String name =
+   *       InsightTypeConfigName.ofProjectLocationInsightTypeName(
+   *               "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]")
+   *           .toString();
+   *   InsightTypeConfig response = recommenderClient.getInsightTypeConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the InsightTypeConfig to get.
+   *     <p>Acceptable formats:
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InsightTypeConfig getInsightTypeConfig(String name) {
+    GetInsightTypeConfigRequest request =
+        GetInsightTypeConfigRequest.newBuilder().setName(name).build();
+    return getInsightTypeConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested InsightTypeConfig. There is only one instance of the config for each
+   * InsightType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   GetInsightTypeConfigRequest request =
+   *       GetInsightTypeConfigRequest.newBuilder()
+   *           .setName(
+   *               InsightTypeConfigName.ofProjectLocationInsightTypeName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   InsightTypeConfig response = recommenderClient.getInsightTypeConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InsightTypeConfig getInsightTypeConfig(GetInsightTypeConfigRequest request) {
+    return getInsightTypeConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested InsightTypeConfig. There is only one instance of the config for each
+   * InsightType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   GetInsightTypeConfigRequest request =
+   *       GetInsightTypeConfigRequest.newBuilder()
+   *           .setName(
+   *               InsightTypeConfigName.ofProjectLocationInsightTypeName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<InsightTypeConfig> future =
+   *       recommenderClient.getInsightTypeConfigCallable().futureCall(request);
+   *   // Do something.
+   *   InsightTypeConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetInsightTypeConfigRequest, InsightTypeConfig>
+      getInsightTypeConfigCallable() {
+    return stub.getInsightTypeConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an InsightTypeConfig change. This will create a new revision of the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightTypeConfig insightTypeConfig = InsightTypeConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   InsightTypeConfig response =
+   *       recommenderClient.updateInsightTypeConfig(insightTypeConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param insightTypeConfig Required. The InsightTypeConfig to update.
+   * @param updateMask The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InsightTypeConfig updateInsightTypeConfig(
+      InsightTypeConfig insightTypeConfig, FieldMask updateMask) {
+    UpdateInsightTypeConfigRequest request =
+        UpdateInsightTypeConfigRequest.newBuilder()
+            .setInsightTypeConfig(insightTypeConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateInsightTypeConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an InsightTypeConfig change. This will create a new revision of the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   UpdateInsightTypeConfigRequest request =
+   *       UpdateInsightTypeConfigRequest.newBuilder()
+   *           .setInsightTypeConfig(InsightTypeConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   InsightTypeConfig response = recommenderClient.updateInsightTypeConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InsightTypeConfig updateInsightTypeConfig(UpdateInsightTypeConfigRequest request) {
+    return updateInsightTypeConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an InsightTypeConfig change. This will create a new revision of the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   UpdateInsightTypeConfigRequest request =
+   *       UpdateInsightTypeConfigRequest.newBuilder()
+   *           .setInsightTypeConfig(InsightTypeConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<InsightTypeConfig> future =
+   *       recommenderClient.updateInsightTypeConfigCallable().futureCall(request);
+   *   // Do something.
+   *   InsightTypeConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+      updateInsightTypeConfigCallable() {
+    return stub.updateInsightTypeConfigCallable();
   }
 
   @Override

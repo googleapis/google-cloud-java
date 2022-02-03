@@ -64,6 +64,10 @@ public final class RecommendationOuterClass {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recommender_v1_CostProjection_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1_SecurityProjection_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1_SecurityProjection_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_recommender_v1_Impact_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recommender_v1_Impact_fieldAccessorTable;
@@ -89,84 +93,93 @@ public final class RecommendationOuterClass {
           + "\031google/api/resource.proto\032\036google/proto"
           + "buf/duration.proto\032\034google/protobuf/stru"
           + "ct.proto\032\037google/protobuf/timestamp.prot"
-          + "o\032\027google/type/money.proto\"\376\007\n\016Recommend"
+          + "o\032\027google/type/money.proto\"\242\t\n\016Recommend"
           + "ation\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t"
           + "\022\033\n\023recommender_subtype\030\014 \001(\t\0225\n\021last_re"
           + "fresh_time\030\004 \001(\0132\032.google.protobuf.Times"
           + "tamp\022;\n\016primary_impact\030\005 \001(\0132#.google.cl"
           + "oud.recommender.v1.Impact\022>\n\021additional_"
           + "impact\030\006 \003(\0132#.google.cloud.recommender."
-          + "v1.Impact\022C\n\007content\030\007 \001(\01322.google.clou"
-          + "d.recommender.v1.RecommendationContent\022H"
-          + "\n\nstate_info\030\n \001(\01324.google.cloud.recomm"
-          + "ender.v1.RecommendationStateInfo\022\014\n\004etag"
-          + "\030\013 \001(\t\022Y\n\023associated_insights\030\016 \003(\0132<.go"
-          + "ogle.cloud.recommender.v1.Recommendation"
-          + ".InsightReference\032#\n\020InsightReference\022\017\n"
-          + "\007insight\030\001 \001(\t:\332\003\352A\326\003\n)recommender.googl"
-          + "eapis.com/Recommendation\022cprojects/{proj"
-          + "ect}/locations/{location}/recommenders/{"
+          + "v1.Impact\022F\n\010priority\030\021 \001(\01624.google.clo"
+          + "ud.recommender.v1.Recommendation.Priorit"
+          + "y\022C\n\007content\030\007 \001(\01322.google.cloud.recomm"
+          + "ender.v1.RecommendationContent\022H\n\nstate_"
+          + "info\030\n \001(\01324.google.cloud.recommender.v1"
+          + ".RecommendationStateInfo\022\014\n\004etag\030\013 \001(\t\022Y"
+          + "\n\023associated_insights\030\016 \003(\0132<.google.clo"
+          + "ud.recommender.v1.Recommendation.Insight"
+          + "Reference\022\024\n\014xor_group_id\030\022 \001(\t\032#\n\020Insig"
+          + "htReference\022\017\n\007insight\030\001 \001(\t\"D\n\010Priority"
+          + "\022\030\n\024PRIORITY_UNSPECIFIED\020\000\022\006\n\002P4\020\001\022\006\n\002P3"
+          + "\020\002\022\006\n\002P2\020\003\022\006\n\002P1\020\004:\332\003\352A\326\003\n)recommender.g"
+          + "oogleapis.com/Recommendation\022cprojects/{"
+          + "project}/locations/{location}/recommende"
+          + "rs/{recommender}/recommendations/{recomm"
+          + "endation}\022rbillingAccounts/{billing_acco"
+          + "unt}/locations/{location}/recommenders/{"
           + "recommender}/recommendations/{recommenda"
-          + "tion}\022rbillingAccounts/{billing_account}"
-          + "/locations/{location}/recommenders/{reco"
-          + "mmender}/recommendations/{recommendation"
-          + "}\022afolders/{folder}/locations/{location}"
-          + "/recommenders/{recommender}/recommendati"
-          + "ons/{recommendation}\022morganizations/{org"
-          + "anization}/locations/{location}/recommen"
-          + "ders/{recommender}/recommendations/{reco"
-          + "mmendation}\"^\n\025RecommendationContent\022E\n\020"
-          + "operation_groups\030\002 \003(\0132+.google.cloud.re"
-          + "commender.v1.OperationGroup\"L\n\016Operation"
-          + "Group\022:\n\noperations\030\001 \003(\0132&.google.cloud"
-          + ".recommender.v1.Operation\"\327\004\n\tOperation\022"
-          + "\016\n\006action\030\001 \001(\t\022\025\n\rresource_type\030\002 \001(\t\022\020"
-          + "\n\010resource\030\003 \001(\t\022\014\n\004path\030\004 \001(\t\022\027\n\017source"
-          + "_resource\030\005 \001(\t\022\023\n\013source_path\030\006 \001(\t\022\'\n\005"
-          + "value\030\007 \001(\0132\026.google.protobuf.ValueH\000\022B\n"
-          + "\rvalue_matcher\030\n \001(\0132).google.cloud.reco"
-          + "mmender.v1.ValueMatcherH\000\022M\n\014path_filter"
-          + "s\030\010 \003(\01327.google.cloud.recommender.v1.Op"
-          + "eration.PathFiltersEntry\022Z\n\023path_value_m"
-          + "atchers\030\013 \003(\0132=.google.cloud.recommender"
-          + ".v1.Operation.PathValueMatchersEntry\032J\n\020"
-          + "PathFiltersEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002"
-          + " \001(\0132\026.google.protobuf.Value:\0028\001\032c\n\026Path"
-          + "ValueMatchersEntry\022\013\n\003key\030\001 \001(\t\0228\n\005value"
-          + "\030\002 \001(\0132).google.cloud.recommender.v1.Val"
-          + "ueMatcher:\0028\001B\014\n\npath_value\":\n\014ValueMatc"
-          + "her\022\031\n\017matches_pattern\030\001 \001(\tH\000B\017\n\rmatch_"
-          + "variant\"_\n\016CostProjection\022 \n\004cost\030\001 \001(\0132"
-          + "\022.google.type.Money\022+\n\010duration\030\002 \001(\0132\031."
-          + "google.protobuf.Duration\"\200\002\n\006Impact\022>\n\010c"
-          + "ategory\030\001 \001(\0162,.google.cloud.recommender"
-          + ".v1.Impact.Category\022F\n\017cost_projection\030d"
-          + " \001(\0132+.google.cloud.recommender.v1.CostP"
-          + "rojectionH\000\"`\n\010Category\022\030\n\024CATEGORY_UNSP"
-          + "ECIFIED\020\000\022\010\n\004COST\020\001\022\014\n\010SECURITY\020\002\022\017\n\013PER"
-          + "FORMANCE\020\003\022\021\n\rMANAGEABILITY\020\004B\014\n\nproject"
-          + "ion\"\336\002\n\027RecommendationStateInfo\022I\n\005state"
-          + "\030\001 \001(\0162:.google.cloud.recommender.v1.Rec"
-          + "ommendationStateInfo.State\022_\n\016state_meta"
-          + "data\030\002 \003(\0132G.google.cloud.recommender.v1"
-          + ".RecommendationStateInfo.StateMetadataEn"
-          + "try\0324\n\022StateMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r"
-          + "\n\005value\030\002 \001(\t:\0028\001\"a\n\005State\022\025\n\021STATE_UNSP"
-          + "ECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\013\n\007CLAIMED\020\006\022\r\n\tSU"
-          + "CCEEDED\020\003\022\n\n\006FAILED\020\004\022\r\n\tDISMISSED\020\005B\343\003\n"
-          + "\037com.google.cloud.recommender.v1P\001ZFgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "recommender/v1;recommender\242\002\004CREC\252\002\033Goog"
-          + "le.Cloud.Recommender.V1\352A\317\002\n&recommender"
-          + ".googleapis.com/Recommender\022Bprojects/{p"
-          + "roject}/locations/{location}/recommender"
-          + "s/{recommender}\022QbillingAccounts/{billin"
-          + "g_account}/locations/{location}/recommen"
-          + "ders/{recommender}\022@folders/{folder}/loc"
-          + "ations/{location}/recommenders/{recommen"
-          + "der}\022Lorganizations/{organization}/locat"
-          + "ions/{location}/recommenders/{recommende"
-          + "r}b\006proto3"
+          + "tion}\022afolders/{folder}/locations/{locat"
+          + "ion}/recommenders/{recommender}/recommen"
+          + "dations/{recommendation}\022morganizations/"
+          + "{organization}/locations/{location}/reco"
+          + "mmenders/{recommender}/recommendations/{"
+          + "recommendation}\"\211\001\n\025RecommendationConten"
+          + "t\022E\n\020operation_groups\030\002 \003(\0132+.google.clo"
+          + "ud.recommender.v1.OperationGroup\022)\n\010over"
+          + "view\030\003 \001(\0132\027.google.protobuf.Struct\"L\n\016O"
+          + "perationGroup\022:\n\noperations\030\001 \003(\0132&.goog"
+          + "le.cloud.recommender.v1.Operation\"\327\004\n\tOp"
+          + "eration\022\016\n\006action\030\001 \001(\t\022\025\n\rresource_type"
+          + "\030\002 \001(\t\022\020\n\010resource\030\003 \001(\t\022\014\n\004path\030\004 \001(\t\022\027"
+          + "\n\017source_resource\030\005 \001(\t\022\023\n\013source_path\030\006"
+          + " \001(\t\022\'\n\005value\030\007 \001(\0132\026.google.protobuf.Va"
+          + "lueH\000\022B\n\rvalue_matcher\030\n \001(\0132).google.cl"
+          + "oud.recommender.v1.ValueMatcherH\000\022M\n\014pat"
+          + "h_filters\030\010 \003(\01327.google.cloud.recommend"
+          + "er.v1.Operation.PathFiltersEntry\022Z\n\023path"
+          + "_value_matchers\030\013 \003(\0132=.google.cloud.rec"
+          + "ommender.v1.Operation.PathValueMatchersE"
+          + "ntry\032J\n\020PathFiltersEntry\022\013\n\003key\030\001 \001(\t\022%\n"
+          + "\005value\030\002 \001(\0132\026.google.protobuf.Value:\0028\001"
+          + "\032c\n\026PathValueMatchersEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "8\n\005value\030\002 \001(\0132).google.cloud.recommende"
+          + "r.v1.ValueMatcher:\0028\001B\014\n\npath_value\":\n\014V"
+          + "alueMatcher\022\031\n\017matches_pattern\030\001 \001(\tH\000B\017"
+          + "\n\rmatch_variant\"_\n\016CostProjection\022 \n\004cos"
+          + "t\030\001 \001(\0132\022.google.type.Money\022+\n\010duration\030"
+          + "\002 \001(\0132\031.google.protobuf.Duration\">\n\022Secu"
+          + "rityProjection\022(\n\007details\030\002 \001(\0132\027.google"
+          + ".protobuf.Struct\"\320\002\n\006Impact\022>\n\010category\030"
+          + "\001 \001(\0162,.google.cloud.recommender.v1.Impa"
+          + "ct.Category\022F\n\017cost_projection\030d \001(\0132+.g"
+          + "oogle.cloud.recommender.v1.CostProjectio"
+          + "nH\000\022N\n\023security_projection\030e \001(\0132/.googl"
+          + "e.cloud.recommender.v1.SecurityProjectio"
+          + "nH\000\"`\n\010Category\022\030\n\024CATEGORY_UNSPECIFIED\020"
+          + "\000\022\010\n\004COST\020\001\022\014\n\010SECURITY\020\002\022\017\n\013PERFORMANCE"
+          + "\020\003\022\021\n\rMANAGEABILITY\020\004B\014\n\nprojection\"\336\002\n\027"
+          + "RecommendationStateInfo\022I\n\005state\030\001 \001(\0162:"
+          + ".google.cloud.recommender.v1.Recommendat"
+          + "ionStateInfo.State\022_\n\016state_metadata\030\002 \003"
+          + "(\0132G.google.cloud.recommender.v1.Recomme"
+          + "ndationStateInfo.StateMetadataEntry\0324\n\022S"
+          + "tateMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\t:\0028\001\"a\n\005State\022\025\n\021STATE_UNSPECIFIED\020"
+          + "\000\022\n\n\006ACTIVE\020\001\022\013\n\007CLAIMED\020\006\022\r\n\tSUCCEEDED\020"
+          + "\003\022\n\n\006FAILED\020\004\022\r\n\tDISMISSED\020\005B\343\003\n\037com.goo"
+          + "gle.cloud.recommender.v1P\001ZFgoogle.golan"
+          + "g.org/genproto/googleapis/cloud/recommen"
+          + "der/v1;recommender\242\002\004CREC\252\002\033Google.Cloud"
+          + ".Recommender.V1\352A\317\002\n&recommender.googlea"
+          + "pis.com/Recommender\022Bprojects/{project}/"
+          + "locations/{location}/recommenders/{recom"
+          + "mender}\022QbillingAccounts/{billing_accoun"
+          + "t}/locations/{location}/recommenders/{re"
+          + "commender}\022@folders/{folder}/locations/{"
+          + "location}/recommenders/{recommender}\022Lor"
+          + "ganizations/{organization}/locations/{lo"
+          + "cation}/recommenders/{recommender}b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -190,10 +203,12 @@ public final class RecommendationOuterClass {
               "LastRefreshTime",
               "PrimaryImpact",
               "AdditionalImpact",
+              "Priority",
               "Content",
               "StateInfo",
               "Etag",
               "AssociatedInsights",
+              "XorGroupId",
             });
     internal_static_google_cloud_recommender_v1_Recommendation_InsightReference_descriptor =
         internal_static_google_cloud_recommender_v1_Recommendation_descriptor
@@ -211,7 +226,7 @@ public final class RecommendationOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1_RecommendationContent_descriptor,
             new java.lang.String[] {
-              "OperationGroups",
+              "OperationGroups", "Overview",
             });
     internal_static_google_cloud_recommender_v1_OperationGroup_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -271,16 +286,24 @@ public final class RecommendationOuterClass {
             new java.lang.String[] {
               "Cost", "Duration",
             });
-    internal_static_google_cloud_recommender_v1_Impact_descriptor =
+    internal_static_google_cloud_recommender_v1_SecurityProjection_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_recommender_v1_SecurityProjection_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1_SecurityProjection_descriptor,
+            new java.lang.String[] {
+              "Details",
+            });
+    internal_static_google_cloud_recommender_v1_Impact_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_recommender_v1_Impact_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1_Impact_descriptor,
             new java.lang.String[] {
-              "Category", "CostProjection", "Projection",
+              "Category", "CostProjection", "SecurityProjection", "Projection",
             });
     internal_static_google_cloud_recommender_v1_RecommendationStateInfo_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_recommender_v1_RecommendationStateInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1_RecommendationStateInfo_descriptor,

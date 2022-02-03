@@ -44,6 +44,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     targetResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     insightSubtype_ = "";
     category_ = 0;
+    severity_ = 0;
     etag_ = "";
     associatedRecommendations_ = java.util.Collections.emptyList();
   }
@@ -196,6 +197,13 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               etag_ = s;
+              break;
+            }
+          case 120:
+            {
+              int rawValue = input.readEnum();
+
+              severity_ = rawValue;
               break;
             }
           default:
@@ -440,6 +448,207 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.recommender.v1beta1.Insight.Category)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Insight severity levels.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.recommender.v1beta1.Insight.Severity}
+   */
+  public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Insight has unspecified severity.
+     * </pre>
+     *
+     * <code>SEVERITY_UNSPECIFIED = 0;</code>
+     */
+    SEVERITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Insight has low severity.
+     * </pre>
+     *
+     * <code>LOW = 1;</code>
+     */
+    LOW(1),
+    /**
+     *
+     *
+     * <pre>
+     * Insight has medium severity.
+     * </pre>
+     *
+     * <code>MEDIUM = 2;</code>
+     */
+    MEDIUM(2),
+    /**
+     *
+     *
+     * <pre>
+     * Insight has high severity.
+     * </pre>
+     *
+     * <code>HIGH = 3;</code>
+     */
+    HIGH(3),
+    /**
+     *
+     *
+     * <pre>
+     * Insight has critical severity.
+     * </pre>
+     *
+     * <code>CRITICAL = 4;</code>
+     */
+    CRITICAL(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Insight has unspecified severity.
+     * </pre>
+     *
+     * <code>SEVERITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Insight has low severity.
+     * </pre>
+     *
+     * <code>LOW = 1;</code>
+     */
+    public static final int LOW_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Insight has medium severity.
+     * </pre>
+     *
+     * <code>MEDIUM = 2;</code>
+     */
+    public static final int MEDIUM_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Insight has high severity.
+     * </pre>
+     *
+     * <code>HIGH = 3;</code>
+     */
+    public static final int HIGH_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Insight has critical severity.
+     * </pre>
+     *
+     * <code>CRITICAL = 4;</code>
+     */
+    public static final int CRITICAL_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Severity valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Severity forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SEVERITY_UNSPECIFIED;
+        case 1:
+          return LOW;
+        case 2:
+          return MEDIUM;
+        case 3:
+          return HIGH;
+        case 4:
+          return CRITICAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Severity> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Severity> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Severity>() {
+          public Severity findValueByNumber(int number) {
+            return Severity.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.recommender.v1beta1.Insight.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final Severity[] VALUES = values();
+
+    public static Severity valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Severity(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.recommender.v1beta1.Insight.Severity)
+  }
+
   public interface RecommendationReferenceOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.recommender.v1beta1.Insight.RecommendationReference)
@@ -450,7 +659,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Recommendation resource name, e.g.
-     * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
+     * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
      * </pre>
      *
      * <code>string recommendation = 1;</code>
@@ -463,7 +672,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Recommendation resource name, e.g.
-     * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
+     * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
      * </pre>
      *
      * <code>string recommendation = 1;</code>
@@ -572,7 +781,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Recommendation resource name, e.g.
-     * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
+     * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
      * </pre>
      *
      * <code>string recommendation = 1;</code>
@@ -596,7 +805,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Recommendation resource name, e.g.
-     * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
+     * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
      * </pre>
      *
      * <code>string recommendation = 1;</code>
@@ -954,7 +1163,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Recommendation resource name, e.g.
-       * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
+       * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
        * </pre>
        *
        * <code>string recommendation = 1;</code>
@@ -977,7 +1186,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Recommendation resource name, e.g.
-       * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
+       * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
        * </pre>
        *
        * <code>string recommendation = 1;</code>
@@ -1000,7 +1209,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Recommendation resource name, e.g.
-       * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
+       * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
        * </pre>
        *
        * <code>string recommendation = 1;</code>
@@ -1022,7 +1231,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Recommendation resource name, e.g.
-       * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
+       * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
        * </pre>
        *
        * <code>string recommendation = 1;</code>
@@ -1040,7 +1249,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Recommendation resource name, e.g.
-       * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
+       * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
        * </pre>
        *
        * <code>string recommendation = 1;</code>
@@ -1561,6 +1770,44 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int SEVERITY_FIELD_NUMBER = 15;
+  private int severity_;
+  /**
+   *
+   *
+   * <pre>
+   * Insight's severity.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.Insight.Severity severity = 15;</code>
+   *
+   * @return The enum numeric value on the wire for severity.
+   */
+  @java.lang.Override
+  public int getSeverityValue() {
+    return severity_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Insight's severity.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.Insight.Severity severity = 15;</code>
+   *
+   * @return The severity.
+   */
+  @java.lang.Override
+  public com.google.cloud.recommender.v1beta1.Insight.Severity getSeverity() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.recommender.v1beta1.Insight.Severity result =
+        com.google.cloud.recommender.v1beta1.Insight.Severity.valueOf(severity_);
+    return result == null
+        ? com.google.cloud.recommender.v1beta1.Insight.Severity.UNRECOGNIZED
+        : result;
+  }
+
   public static final int ETAG_FIELD_NUMBER = 11;
   private volatile java.lang.Object etag_;
   /**
@@ -1744,6 +1991,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, etag_);
     }
+    if (severity_
+        != com.google.cloud.recommender.v1beta1.Insight.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
+      output.writeEnum(15, severity_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1794,6 +2045,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, etag_);
     }
+    if (severity_
+        != com.google.cloud.recommender.v1beta1.Insight.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, severity_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1831,6 +2086,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       if (!getStateInfo().equals(other.getStateInfo())) return false;
     }
     if (category_ != other.category_) return false;
+    if (severity_ != other.severity_) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getAssociatedRecommendationsList().equals(other.getAssociatedRecommendationsList()))
       return false;
@@ -1873,6 +2129,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
     hash = (53 * hash) + category_;
+    hash = (37 * hash) + SEVERITY_FIELD_NUMBER;
+    hash = (53 * hash) + severity_;
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
     if (getAssociatedRecommendationsCount() > 0) {
@@ -2061,6 +2319,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       category_ = 0;
 
+      severity_ = 0;
+
       etag_ = "";
 
       if (associatedRecommendationsBuilder_ == null) {
@@ -2126,6 +2386,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         result.stateInfo_ = stateInfoBuilder_.build();
       }
       result.category_ = category_;
+      result.severity_ = severity_;
       result.etag_ = etag_;
       if (associatedRecommendationsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
@@ -2222,6 +2483,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.category_ != 0) {
         setCategoryValue(other.getCategoryValue());
+      }
+      if (other.severity_ != 0) {
+        setSeverityValue(other.getSeverityValue());
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
@@ -3627,6 +3891,99 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCategory() {
 
       category_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int severity_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Insight's severity.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.Insight.Severity severity = 15;</code>
+     *
+     * @return The enum numeric value on the wire for severity.
+     */
+    @java.lang.Override
+    public int getSeverityValue() {
+      return severity_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Insight's severity.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.Insight.Severity severity = 15;</code>
+     *
+     * @param value The enum numeric value on the wire for severity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSeverityValue(int value) {
+
+      severity_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Insight's severity.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.Insight.Severity severity = 15;</code>
+     *
+     * @return The severity.
+     */
+    @java.lang.Override
+    public com.google.cloud.recommender.v1beta1.Insight.Severity getSeverity() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.recommender.v1beta1.Insight.Severity result =
+          com.google.cloud.recommender.v1beta1.Insight.Severity.valueOf(severity_);
+      return result == null
+          ? com.google.cloud.recommender.v1beta1.Insight.Severity.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Insight's severity.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.Insight.Severity severity = 15;</code>
+     *
+     * @param value The severity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSeverity(com.google.cloud.recommender.v1beta1.Insight.Severity value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      severity_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Insight's severity.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.Insight.Severity severity = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSeverity() {
+
+      severity_ = 0;
       onChanged();
       return this;
     }

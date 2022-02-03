@@ -256,6 +256,31 @@ public interface RecommendationOrBuilder
    *
    *
    * <pre>
+   * Recommendation's priority.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.Recommendation.Priority priority = 17;</code>
+   *
+   * @return The enum numeric value on the wire for priority.
+   */
+  int getPriorityValue();
+  /**
+   *
+   *
+   * <pre>
+   * Recommendation's priority.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.Recommendation.Priority priority = 17;</code>
+   *
+   * @return The priority.
+   */
+  com.google.cloud.recommender.v1beta1.Recommendation.Priority getPriority();
+
+  /**
+   *
+   *
+   * <pre>
    * Content of the recommendation describing recommended changes to resources.
    * </pre>
    *
@@ -414,4 +439,35 @@ public interface RecommendationOrBuilder
    */
   com.google.cloud.recommender.v1beta1.Recommendation.InsightReferenceOrBuilder
       getAssociatedInsightsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Corresponds to a mutually exclusive group ID within a recommender.
+   * A non-empty ID indicates that the recommendation belongs to a mutually
+   * exclusive group. This means that only one recommendation within the group
+   * is suggested to be applied.
+   * </pre>
+   *
+   * <code>string xor_group_id = 18;</code>
+   *
+   * @return The xorGroupId.
+   */
+  java.lang.String getXorGroupId();
+  /**
+   *
+   *
+   * <pre>
+   * Corresponds to a mutually exclusive group ID within a recommender.
+   * A non-empty ID indicates that the recommendation belongs to a mutually
+   * exclusive group. This means that only one recommendation within the group
+   * is suggested to be applied.
+   * </pre>
+   *
+   * <code>string xor_group_id = 18;</code>
+   *
+   * @return The bytes for xorGroupId.
+   */
+  com.google.protobuf.ByteString getXorGroupIdBytes();
 }

@@ -329,6 +329,31 @@ public interface InsightOrBuilder
    *
    *
    * <pre>
+   * Insight's severity.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.Insight.Severity severity = 15;</code>
+   *
+   * @return The enum numeric value on the wire for severity.
+   */
+  int getSeverityValue();
+  /**
+   *
+   *
+   * <pre>
+   * Insight's severity.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.Insight.Severity severity = 15;</code>
+   *
+   * @return The severity.
+   */
+  com.google.cloud.recommender.v1.Insight.Severity getSeverity();
+
+  /**
+   *
+   *
+   * <pre>
    * Fingerprint of the Insight. Provides optimistic locking when updating
    * states.
    * </pre>

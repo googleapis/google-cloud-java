@@ -13,8 +13,14 @@
             "GetInsight": {
               "methods": ["getInsight", "getInsight", "getInsight", "getInsightCallable"]
             },
+            "GetInsightTypeConfig": {
+              "methods": ["getInsightTypeConfig", "getInsightTypeConfig", "getInsightTypeConfig", "getInsightTypeConfigCallable"]
+            },
             "GetRecommendation": {
               "methods": ["getRecommendation", "getRecommendation", "getRecommendation", "getRecommendationCallable"]
+            },
+            "GetRecommenderConfig": {
+              "methods": ["getRecommenderConfig", "getRecommenderConfig", "getRecommenderConfig", "getRecommenderConfigCallable"]
             },
             "ListInsights": {
               "methods": ["listInsights", "listInsights", "listInsights", "listInsightsPagedCallable", "listInsightsCallable"]
@@ -33,6 +39,12 @@
             },
             "MarkRecommendationSucceeded": {
               "methods": ["markRecommendationSucceeded", "markRecommendationSucceeded", "markRecommendationSucceeded", "markRecommendationSucceededCallable"]
+            },
+            "UpdateInsightTypeConfig": {
+              "methods": ["updateInsightTypeConfig", "updateInsightTypeConfig", "updateInsightTypeConfigCallable"]
+            },
+            "UpdateRecommenderConfig": {
+              "methods": ["updateRecommenderConfig", "updateRecommenderConfig", "updateRecommenderConfigCallable"]
             }
           }
         }

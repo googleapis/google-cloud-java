@@ -604,6 +604,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -658,6 +659,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -708,6 +710,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -769,6 +772,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -826,6 +830,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -887,6 +892,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -944,6 +950,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -1005,6 +1012,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 

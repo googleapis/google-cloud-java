@@ -16,4 +16,13 @@
     <className>com/google/cloud/recommender/v1beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/recommender/v1beta1/InsightName*</className>
+    <method>* *LocationInsightType*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/recommender/v1beta1/InsightName*</className>
+  </difference>
 </differences>

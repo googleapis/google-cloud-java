@@ -291,7 +291,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
+   * Type of this operation. Contains one of 'add', 'remove', 'replace', 'move',
    * 'copy', 'test' and custom operations. This field is case-insensitive and
    * always populated.
    * </pre>
@@ -316,7 +316,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
+   * Type of this operation. Contains one of 'add', 'remove', 'replace', 'move',
    * 'copy', 'test' and custom operations. This field is case-insensitive and
    * always populated.
    * </pre>
@@ -962,7 +962,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Similar to path_filters, this contains set of filters to apply if `path`
-   * field referes to array elements. This is meant to support value matching
+   * field refers to array elements. This is meant to support value matching
    * beyond exact match. To perform exact match, use path_filters.
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.
@@ -990,7 +990,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Similar to path_filters, this contains set of filters to apply if `path`
-   * field referes to array elements. This is meant to support value matching
+   * field refers to array elements. This is meant to support value matching
    * beyond exact match. To perform exact match, use path_filters.
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.
@@ -1009,7 +1009,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Similar to path_filters, this contains set of filters to apply if `path`
-   * field referes to array elements. This is meant to support value matching
+   * field refers to array elements. This is meant to support value matching
    * beyond exact match. To perform exact match, use path_filters.
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.
@@ -1033,7 +1033,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Similar to path_filters, this contains set of filters to apply if `path`
-   * field referes to array elements. This is meant to support value matching
+   * field refers to array elements. This is meant to support value matching
    * beyond exact match. To perform exact match, use path_filters.
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.
@@ -1623,7 +1623,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
+     * Type of this operation. Contains one of 'add', 'remove', 'replace', 'move',
      * 'copy', 'test' and custom operations. This field is case-insensitive and
      * always populated.
      * </pre>
@@ -1647,7 +1647,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
+     * Type of this operation. Contains one of 'add', 'remove', 'replace', 'move',
      * 'copy', 'test' and custom operations. This field is case-insensitive and
      * always populated.
      * </pre>
@@ -1671,7 +1671,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
+     * Type of this operation. Contains one of 'add', 'remove', 'replace', 'move',
      * 'copy', 'test' and custom operations. This field is case-insensitive and
      * always populated.
      * </pre>
@@ -1694,7 +1694,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
+     * Type of this operation. Contains one of 'add', 'remove', 'replace', 'move',
      * 'copy', 'test' and custom operations. This field is case-insensitive and
      * always populated.
      * </pre>
@@ -1713,7 +1713,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
+     * Type of this operation. Contains one of 'add', 'remove', 'replace', 'move',
      * 'copy', 'test' and custom operations. This field is case-insensitive and
      * always populated.
      * </pre>
@@ -3139,7 +3139,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Similar to path_filters, this contains set of filters to apply if `path`
-     * field referes to array elements. This is meant to support value matching
+     * field refers to array elements. This is meant to support value matching
      * beyond exact match. To perform exact match, use path_filters.
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
@@ -3167,7 +3167,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Similar to path_filters, this contains set of filters to apply if `path`
-     * field referes to array elements. This is meant to support value matching
+     * field refers to array elements. This is meant to support value matching
      * beyond exact match. To perform exact match, use path_filters.
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
@@ -3186,7 +3186,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Similar to path_filters, this contains set of filters to apply if `path`
-     * field referes to array elements. This is meant to support value matching
+     * field refers to array elements. This is meant to support value matching
      * beyond exact match. To perform exact match, use path_filters.
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
@@ -3210,7 +3210,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Similar to path_filters, this contains set of filters to apply if `path`
-     * field referes to array elements. This is meant to support value matching
+     * field refers to array elements. This is meant to support value matching
      * beyond exact match. To perform exact match, use path_filters.
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
@@ -3242,7 +3242,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Similar to path_filters, this contains set of filters to apply if `path`
-     * field referes to array elements. This is meant to support value matching
+     * field refers to array elements. This is meant to support value matching
      * beyond exact match. To perform exact match, use path_filters.
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
@@ -3269,7 +3269,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Similar to path_filters, this contains set of filters to apply if `path`
-     * field referes to array elements. This is meant to support value matching
+     * field refers to array elements. This is meant to support value matching
      * beyond exact match. To perform exact match, use path_filters.
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.
@@ -3294,7 +3294,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Similar to path_filters, this contains set of filters to apply if `path`
-     * field referes to array elements. This is meant to support value matching
+     * field refers to array elements. This is meant to support value matching
      * beyond exact match. To perform exact match, use path_filters.
      * When both path_filters and path_value_matchers are set, an implicit AND
      * must be performed.

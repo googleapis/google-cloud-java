@@ -85,4 +85,39 @@ public interface RecommendationContentOrBuilder
    */
   com.google.cloud.recommender.v1beta1.OperationGroupOrBuilder getOperationGroupsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Condensed overview information about the recommendation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct overview = 3;</code>
+   *
+   * @return Whether the overview field is set.
+   */
+  boolean hasOverview();
+  /**
+   *
+   *
+   * <pre>
+   * Condensed overview information about the recommendation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct overview = 3;</code>
+   *
+   * @return The overview.
+   */
+  com.google.protobuf.Struct getOverview();
+  /**
+   *
+   *
+   * <pre>
+   * Condensed overview information about the recommendation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct overview = 3;</code>
+   */
+  com.google.protobuf.StructOrBuilder getOverviewOrBuilder();
 }

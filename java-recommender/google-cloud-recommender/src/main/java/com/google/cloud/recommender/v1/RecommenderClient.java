@@ -153,8 +153,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
-   * specified insight type.
+   * Lists insights for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified insight type.
    *
    * <p>Sample code:
    *
@@ -171,10 +171,24 @@ public class RecommenderClient implements BackgroundResource {
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
-   *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
    *     INSIGHT_TYPE_ID refers to supported insight types:
-   *     https://cloud.google.com/recommender/docs/insights/insight-types.)
+   *     https://cloud.google.com/recommender/docs/insights/insight-types.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInsightsPagedResponse listInsights(InsightTypeName parent) {
@@ -187,8 +201,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
-   * specified insight type.
+   * Lists insights for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified insight type.
    *
    * <p>Sample code:
    *
@@ -206,10 +220,24 @@ public class RecommenderClient implements BackgroundResource {
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
-   *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *     </ul>
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
    *     INSIGHT_TYPE_ID refers to supported insight types:
-   *     https://cloud.google.com/recommender/docs/insights/insight-types.)
+   *     https://cloud.google.com/recommender/docs/insights/insight-types.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInsightsPagedResponse listInsights(String parent) {
@@ -219,8 +247,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
-   * specified insight type.
+   * Lists insights for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified insight type.
    *
    * <p>Sample code:
    *
@@ -251,8 +279,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
-   * specified insight type.
+   * Lists insights for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified insight type.
    *
    * <p>Sample code:
    *
@@ -283,8 +311,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
-   * specified insight type.
+   * Lists insights for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified insight type.
    *
    * <p>Sample code:
    *
@@ -569,8 +597,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
-   * for the specified recommender.
+   * Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified recommender.
    *
    * <p>Sample code:
    *
@@ -587,7 +615,21 @@ public class RecommenderClient implements BackgroundResource {
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
-   *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`folders/[FOLDER_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
    *     RECOMMENDER_ID refers to supported recommenders:
    *     https://cloud.google.com/recommender/docs/recommenders.
@@ -603,8 +645,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
-   * for the specified recommender.
+   * Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified recommender.
    *
    * <p>Sample code:
    *
@@ -622,7 +664,21 @@ public class RecommenderClient implements BackgroundResource {
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
-   *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`folders/[FOLDER_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
    *     RECOMMENDER_ID refers to supported recommenders:
    *     https://cloud.google.com/recommender/docs/recommenders.
@@ -636,8 +692,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
-   * for the specified recommender.
+   * Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified recommender.
    *
    * <p>Sample code:
    *
@@ -656,12 +712,50 @@ public class RecommenderClient implements BackgroundResource {
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
-   *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`folders/[FOLDER_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
    *     RECOMMENDER_ID refers to supported recommenders:
    *     https://cloud.google.com/recommender/docs/recommenders.
    * @param filter Filter expression to restrict the recommendations returned. Supported filter
-   *     fields: state_info.state Eg: `state_info.state:"DISMISSED" or state_info.state:"FAILED"
+   *     fields:
+   *     <ul>
+   *       <li>`state_info.state`
+   *     </ul>
+   *     <ul>
+   *       <li>`recommenderSubtype`
+   *     </ul>
+   *     <ul>
+   *       <li>`priority`
+   *     </ul>
+   *     <p>Examples:
+   *     <ul>
+   *       <li>`stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   *     </ul>
+   *     <ul>
+   *       <li>`recommenderSubtype = REMOVE_ROLE OR recommenderSubtype = REPLACE_ROLE`
+   *     </ul>
+   *     <ul>
+   *       <li>`priority = P1 OR priority = P2`
+   *     </ul>
+   *     <ul>
+   *       <li>`stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)`
+   *     </ul>
+   *     <p>(These expressions are based on the filter language described at
+   *     https://google.aip.dev/160)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRecommendationsPagedResponse listRecommendations(
@@ -676,8 +770,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
-   * for the specified recommender.
+   * Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified recommender.
    *
    * <p>Sample code:
    *
@@ -697,12 +791,50 @@ public class RecommenderClient implements BackgroundResource {
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
-   *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`folders/[FOLDER_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *     </ul>
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
    *     RECOMMENDER_ID refers to supported recommenders:
    *     https://cloud.google.com/recommender/docs/recommenders.
    * @param filter Filter expression to restrict the recommendations returned. Supported filter
-   *     fields: state_info.state Eg: `state_info.state:"DISMISSED" or state_info.state:"FAILED"
+   *     fields:
+   *     <ul>
+   *       <li>`state_info.state`
+   *     </ul>
+   *     <ul>
+   *       <li>`recommenderSubtype`
+   *     </ul>
+   *     <ul>
+   *       <li>`priority`
+   *     </ul>
+   *     <p>Examples:
+   *     <ul>
+   *       <li>`stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   *     </ul>
+   *     <ul>
+   *       <li>`recommenderSubtype = REMOVE_ROLE OR recommenderSubtype = REPLACE_ROLE`
+   *     </ul>
+   *     <ul>
+   *       <li>`priority = P1 OR priority = P2`
+   *     </ul>
+   *     <ul>
+   *       <li>`stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)`
+   *     </ul>
+   *     <p>(These expressions are based on the filter language described at
+   *     https://google.aip.dev/160)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRecommendationsPagedResponse listRecommendations(String parent, String filter) {
@@ -713,8 +845,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
-   * for the specified recommender.
+   * Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified recommender.
    *
    * <p>Sample code:
    *
@@ -746,8 +878,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
-   * for the specified recommender.
+   * Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified recommender.
    *
    * <p>Sample code:
    *
@@ -779,8 +911,8 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
-   * for the specified recommender.
+   * Lists recommendations for the specified Cloud Resource. Requires the recommender.&#42;.list IAM
+   * permission for the specified recommender.
    *
    * <p>Sample code:
    *

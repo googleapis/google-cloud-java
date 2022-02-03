@@ -30,6 +30,8 @@ public interface CostProjectionOrBuilder
    * An approximate projection on amount saved or amount incurred. Negative cost
    * units indicate cost savings and positive cost units indicate increase.
    * See google.type.Money documentation for positive/negative units.
+   * A user's permissions may affect whether the cost is computed using list
+   * prices or custom contract prices.
    * </pre>
    *
    * <code>.google.type.Money cost = 1;</code>
@@ -44,6 +46,8 @@ public interface CostProjectionOrBuilder
    * An approximate projection on amount saved or amount incurred. Negative cost
    * units indicate cost savings and positive cost units indicate increase.
    * See google.type.Money documentation for positive/negative units.
+   * A user's permissions may affect whether the cost is computed using list
+   * prices or custom contract prices.
    * </pre>
    *
    * <code>.google.type.Money cost = 1;</code>
@@ -58,6 +62,8 @@ public interface CostProjectionOrBuilder
    * An approximate projection on amount saved or amount incurred. Negative cost
    * units indicate cost savings and positive cost units indicate increase.
    * See google.type.Money documentation for positive/negative units.
+   * A user's permissions may affect whether the cost is computed using list
+   * prices or custom contract prices.
    * </pre>
    *
    * <code>.google.type.Money cost = 1;</code>

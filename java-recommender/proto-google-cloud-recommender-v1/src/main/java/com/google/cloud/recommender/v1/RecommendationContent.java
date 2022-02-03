@@ -83,6 +83,20 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
                       com.google.cloud.recommender.v1.OperationGroup.parser(), extensionRegistry));
               break;
             }
+          case 26:
+            {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (overview_ != null) {
+                subBuilder = overview_.toBuilder();
+              }
+              overview_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(overview_);
+                overview_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -200,6 +214,52 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
     return operationGroups_.get(index);
   }
 
+  public static final int OVERVIEW_FIELD_NUMBER = 3;
+  private com.google.protobuf.Struct overview_;
+  /**
+   *
+   *
+   * <pre>
+   * Condensed overview information about the recommendation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct overview = 3;</code>
+   *
+   * @return Whether the overview field is set.
+   */
+  @java.lang.Override
+  public boolean hasOverview() {
+    return overview_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Condensed overview information about the recommendation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct overview = 3;</code>
+   *
+   * @return The overview.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getOverview() {
+    return overview_ == null ? com.google.protobuf.Struct.getDefaultInstance() : overview_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Condensed overview information about the recommendation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct overview = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getOverviewOrBuilder() {
+    return getOverview();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -217,6 +277,9 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < operationGroups_.size(); i++) {
       output.writeMessage(2, operationGroups_.get(i));
     }
+    if (overview_ != null) {
+      output.writeMessage(3, getOverview());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -228,6 +291,9 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
     size = 0;
     for (int i = 0; i < operationGroups_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, operationGroups_.get(i));
+    }
+    if (overview_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getOverview());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -246,6 +312,10 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
         (com.google.cloud.recommender.v1.RecommendationContent) obj;
 
     if (!getOperationGroupsList().equals(other.getOperationGroupsList())) return false;
+    if (hasOverview() != other.hasOverview()) return false;
+    if (hasOverview()) {
+      if (!getOverview().equals(other.getOverview())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -260,6 +330,10 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
     if (getOperationGroupsCount() > 0) {
       hash = (37 * hash) + OPERATION_GROUPS_FIELD_NUMBER;
       hash = (53 * hash) + getOperationGroupsList().hashCode();
+    }
+    if (hasOverview()) {
+      hash = (37 * hash) + OVERVIEW_FIELD_NUMBER;
+      hash = (53 * hash) + getOverview().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -415,6 +489,12 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
       } else {
         operationGroupsBuilder_.clear();
       }
+      if (overviewBuilder_ == null) {
+        overview_ = null;
+      } else {
+        overview_ = null;
+        overviewBuilder_ = null;
+      }
       return this;
     }
 
@@ -451,6 +531,11 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
         result.operationGroups_ = operationGroups_;
       } else {
         result.operationGroups_ = operationGroupsBuilder_.build();
+      }
+      if (overviewBuilder_ == null) {
+        result.overview_ = overview_;
+      } else {
+        result.overview_ = overviewBuilder_.build();
       }
       onBuilt();
       return result;
@@ -528,6 +613,9 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
             operationGroupsBuilder_.addAllMessages(other.operationGroups_);
           }
         }
+      }
+      if (other.hasOverview()) {
+        mergeOverview(other.getOverview());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -955,6 +1043,185 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
         operationGroups_ = null;
       }
       return operationGroupsBuilder_;
+    }
+
+    private com.google.protobuf.Struct overview_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        overviewBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Condensed overview information about the recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct overview = 3;</code>
+     *
+     * @return Whether the overview field is set.
+     */
+    public boolean hasOverview() {
+      return overviewBuilder_ != null || overview_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Condensed overview information about the recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct overview = 3;</code>
+     *
+     * @return The overview.
+     */
+    public com.google.protobuf.Struct getOverview() {
+      if (overviewBuilder_ == null) {
+        return overview_ == null ? com.google.protobuf.Struct.getDefaultInstance() : overview_;
+      } else {
+        return overviewBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Condensed overview information about the recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct overview = 3;</code>
+     */
+    public Builder setOverview(com.google.protobuf.Struct value) {
+      if (overviewBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        overview_ = value;
+        onChanged();
+      } else {
+        overviewBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Condensed overview information about the recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct overview = 3;</code>
+     */
+    public Builder setOverview(com.google.protobuf.Struct.Builder builderForValue) {
+      if (overviewBuilder_ == null) {
+        overview_ = builderForValue.build();
+        onChanged();
+      } else {
+        overviewBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Condensed overview information about the recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct overview = 3;</code>
+     */
+    public Builder mergeOverview(com.google.protobuf.Struct value) {
+      if (overviewBuilder_ == null) {
+        if (overview_ != null) {
+          overview_ =
+              com.google.protobuf.Struct.newBuilder(overview_).mergeFrom(value).buildPartial();
+        } else {
+          overview_ = value;
+        }
+        onChanged();
+      } else {
+        overviewBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Condensed overview information about the recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct overview = 3;</code>
+     */
+    public Builder clearOverview() {
+      if (overviewBuilder_ == null) {
+        overview_ = null;
+        onChanged();
+      } else {
+        overview_ = null;
+        overviewBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Condensed overview information about the recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct overview = 3;</code>
+     */
+    public com.google.protobuf.Struct.Builder getOverviewBuilder() {
+
+      onChanged();
+      return getOverviewFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Condensed overview information about the recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct overview = 3;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getOverviewOrBuilder() {
+      if (overviewBuilder_ != null) {
+        return overviewBuilder_.getMessageOrBuilder();
+      } else {
+        return overview_ == null ? com.google.protobuf.Struct.getDefaultInstance() : overview_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Condensed overview information about the recommendation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct overview = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        getOverviewFieldBuilder() {
+      if (overviewBuilder_ == null) {
+        overviewBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getOverview(), getParentForChildren(), isClean());
+        overview_ = null;
+      }
+      return overviewBuilder_;
     }
 
     @java.lang.Override

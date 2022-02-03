@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Duration;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
@@ -512,6 +513,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -566,6 +568,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -616,6 +619,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -677,6 +681,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -734,6 +739,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -795,6 +801,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -852,6 +859,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -913,6 +921,7 @@ public class RecommenderClientTest {
             .setStateInfo(RecommendationStateInfo.newBuilder().build())
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
             .build();
     mockRecommender.addResponse(expectedResponse);
 
@@ -947,6 +956,310 @@ public class RecommenderClientTest {
       Map<String, String> stateMetadata = new HashMap<>();
       String etag = "etag3123477";
       client.markRecommendationFailed(name, stateMetadata, etag);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRecommenderConfigTest() throws Exception {
+    RecommenderConfig expectedResponse =
+        RecommenderConfig.newBuilder()
+            .setName(
+                RecommenderConfigName.ofProjectLocationRecommenderName(
+                        "[PROJECT]", "[LOCATION]", "[RECOMMENDER]")
+                    .toString())
+            .setRecommenderGenerationConfig(RecommenderGenerationConfig.newBuilder().build())
+            .setEtag("etag3123477")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRevisionId("revisionId-1507445162")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockRecommender.addResponse(expectedResponse);
+
+    RecommenderConfigName name =
+        RecommenderConfigName.ofProjectLocationRecommenderName(
+            "[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+
+    RecommenderConfig actualResponse = client.getRecommenderConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecommender.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRecommenderConfigRequest actualRequest =
+        ((GetRecommenderConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRecommenderConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecommender.addException(exception);
+
+    try {
+      RecommenderConfigName name =
+          RecommenderConfigName.ofProjectLocationRecommenderName(
+              "[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+      client.getRecommenderConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRecommenderConfigTest2() throws Exception {
+    RecommenderConfig expectedResponse =
+        RecommenderConfig.newBuilder()
+            .setName(
+                RecommenderConfigName.ofProjectLocationRecommenderName(
+                        "[PROJECT]", "[LOCATION]", "[RECOMMENDER]")
+                    .toString())
+            .setRecommenderGenerationConfig(RecommenderGenerationConfig.newBuilder().build())
+            .setEtag("etag3123477")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRevisionId("revisionId-1507445162")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockRecommender.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RecommenderConfig actualResponse = client.getRecommenderConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecommender.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRecommenderConfigRequest actualRequest =
+        ((GetRecommenderConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRecommenderConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecommender.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRecommenderConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateRecommenderConfigTest() throws Exception {
+    RecommenderConfig expectedResponse =
+        RecommenderConfig.newBuilder()
+            .setName(
+                RecommenderConfigName.ofProjectLocationRecommenderName(
+                        "[PROJECT]", "[LOCATION]", "[RECOMMENDER]")
+                    .toString())
+            .setRecommenderGenerationConfig(RecommenderGenerationConfig.newBuilder().build())
+            .setEtag("etag3123477")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRevisionId("revisionId-1507445162")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockRecommender.addResponse(expectedResponse);
+
+    RecommenderConfig recommenderConfig = RecommenderConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    RecommenderConfig actualResponse =
+        client.updateRecommenderConfig(recommenderConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecommender.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateRecommenderConfigRequest actualRequest =
+        ((UpdateRecommenderConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(recommenderConfig, actualRequest.getRecommenderConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateRecommenderConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecommender.addException(exception);
+
+    try {
+      RecommenderConfig recommenderConfig = RecommenderConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateRecommenderConfig(recommenderConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getInsightTypeConfigTest() throws Exception {
+    InsightTypeConfig expectedResponse =
+        InsightTypeConfig.newBuilder()
+            .setName(
+                InsightTypeConfigName.ofProjectLocationInsightTypeName(
+                        "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]")
+                    .toString())
+            .setInsightTypeGenerationConfig(InsightTypeGenerationConfig.newBuilder().build())
+            .setEtag("etag3123477")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRevisionId("revisionId-1507445162")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockRecommender.addResponse(expectedResponse);
+
+    InsightTypeConfigName name =
+        InsightTypeConfigName.ofProjectLocationInsightTypeName(
+            "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+
+    InsightTypeConfig actualResponse = client.getInsightTypeConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecommender.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetInsightTypeConfigRequest actualRequest =
+        ((GetInsightTypeConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getInsightTypeConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecommender.addException(exception);
+
+    try {
+      InsightTypeConfigName name =
+          InsightTypeConfigName.ofProjectLocationInsightTypeName(
+              "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+      client.getInsightTypeConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getInsightTypeConfigTest2() throws Exception {
+    InsightTypeConfig expectedResponse =
+        InsightTypeConfig.newBuilder()
+            .setName(
+                InsightTypeConfigName.ofProjectLocationInsightTypeName(
+                        "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]")
+                    .toString())
+            .setInsightTypeGenerationConfig(InsightTypeGenerationConfig.newBuilder().build())
+            .setEtag("etag3123477")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRevisionId("revisionId-1507445162")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockRecommender.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    InsightTypeConfig actualResponse = client.getInsightTypeConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecommender.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetInsightTypeConfigRequest actualRequest =
+        ((GetInsightTypeConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getInsightTypeConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecommender.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getInsightTypeConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateInsightTypeConfigTest() throws Exception {
+    InsightTypeConfig expectedResponse =
+        InsightTypeConfig.newBuilder()
+            .setName(
+                InsightTypeConfigName.ofProjectLocationInsightTypeName(
+                        "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]")
+                    .toString())
+            .setInsightTypeGenerationConfig(InsightTypeGenerationConfig.newBuilder().build())
+            .setEtag("etag3123477")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRevisionId("revisionId-1507445162")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockRecommender.addResponse(expectedResponse);
+
+    InsightTypeConfig insightTypeConfig = InsightTypeConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    InsightTypeConfig actualResponse =
+        client.updateInsightTypeConfig(insightTypeConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecommender.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateInsightTypeConfigRequest actualRequest =
+        ((UpdateInsightTypeConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(insightTypeConfig, actualRequest.getInsightTypeConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateInsightTypeConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecommender.addException(exception);
+
+    try {
+      InsightTypeConfig insightTypeConfig = InsightTypeConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateInsightTypeConfig(insightTypeConfig, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

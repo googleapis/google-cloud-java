@@ -94,6 +94,25 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
               projectionCase_ = 100;
               break;
             }
+          case 810:
+            {
+              com.google.cloud.recommender.v1.SecurityProjection.Builder subBuilder = null;
+              if (projectionCase_ == 101) {
+                subBuilder =
+                    ((com.google.cloud.recommender.v1.SecurityProjection) projection_).toBuilder();
+              }
+              projection_ =
+                  input.readMessage(
+                      com.google.cloud.recommender.v1.SecurityProjection.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.recommender.v1.SecurityProjection) projection_);
+                projection_ = subBuilder.buildPartial();
+              }
+              projectionCase_ = 101;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -337,6 +356,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     COST_PROJECTION(100),
+    SECURITY_PROJECTION(101),
     PROJECTION_NOT_SET(0);
     private final int value;
 
@@ -357,6 +377,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 100:
           return COST_PROJECTION;
+        case 101:
+          return SECURITY_PROJECTION;
         case 0:
           return PROJECTION_NOT_SET;
         default:
@@ -460,6 +482,58 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.recommender.v1.CostProjection.getDefaultInstance();
   }
 
+  public static final int SECURITY_PROJECTION_FIELD_NUMBER = 101;
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SECURITY
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.SecurityProjection security_projection = 101;</code>
+   *
+   * @return Whether the securityProjection field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecurityProjection() {
+    return projectionCase_ == 101;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SECURITY
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.SecurityProjection security_projection = 101;</code>
+   *
+   * @return The securityProjection.
+   */
+  @java.lang.Override
+  public com.google.cloud.recommender.v1.SecurityProjection getSecurityProjection() {
+    if (projectionCase_ == 101) {
+      return (com.google.cloud.recommender.v1.SecurityProjection) projection_;
+    }
+    return com.google.cloud.recommender.v1.SecurityProjection.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SECURITY
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.SecurityProjection security_projection = 101;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.recommender.v1.SecurityProjectionOrBuilder
+      getSecurityProjectionOrBuilder() {
+    if (projectionCase_ == 101) {
+      return (com.google.cloud.recommender.v1.SecurityProjection) projection_;
+    }
+    return com.google.cloud.recommender.v1.SecurityProjection.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -481,6 +555,9 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     if (projectionCase_ == 100) {
       output.writeMessage(100, (com.google.cloud.recommender.v1.CostProjection) projection_);
     }
+    if (projectionCase_ == 101) {
+      output.writeMessage(101, (com.google.cloud.recommender.v1.SecurityProjection) projection_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -498,6 +575,11 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               100, (com.google.cloud.recommender.v1.CostProjection) projection_);
+    }
+    if (projectionCase_ == 101) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              101, (com.google.cloud.recommender.v1.SecurityProjection) projection_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -520,6 +602,9 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       case 100:
         if (!getCostProjection().equals(other.getCostProjection())) return false;
         break;
+      case 101:
+        if (!getSecurityProjection().equals(other.getSecurityProjection())) return false;
+        break;
       case 0:
       default:
     }
@@ -540,6 +625,10 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       case 100:
         hash = (37 * hash) + COST_PROJECTION_FIELD_NUMBER;
         hash = (53 * hash) + getCostProjection().hashCode();
+        break;
+      case 101:
+        hash = (37 * hash) + SECURITY_PROJECTION_FIELD_NUMBER;
+        hash = (53 * hash) + getSecurityProjection().hashCode();
         break;
       case 0:
       default:
@@ -728,6 +817,13 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
           result.projection_ = costProjectionBuilder_.build();
         }
       }
+      if (projectionCase_ == 101) {
+        if (securityProjectionBuilder_ == null) {
+          result.projection_ = projection_;
+        } else {
+          result.projection_ = securityProjectionBuilder_.build();
+        }
+      }
       result.projectionCase_ = projectionCase_;
       onBuilt();
       return result;
@@ -785,6 +881,11 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         case COST_PROJECTION:
           {
             mergeCostProjection(other.getCostProjection());
+            break;
+          }
+        case SECURITY_PROJECTION:
+          {
+            mergeSecurityProjection(other.getSecurityProjection());
             break;
           }
         case PROJECTION_NOT_SET:
@@ -1133,6 +1234,219 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return costProjectionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.recommender.v1.SecurityProjection,
+            com.google.cloud.recommender.v1.SecurityProjection.Builder,
+            com.google.cloud.recommender.v1.SecurityProjectionOrBuilder>
+        securityProjectionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SECURITY
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.SecurityProjection security_projection = 101;</code>
+     *
+     * @return Whether the securityProjection field is set.
+     */
+    @java.lang.Override
+    public boolean hasSecurityProjection() {
+      return projectionCase_ == 101;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SECURITY
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.SecurityProjection security_projection = 101;</code>
+     *
+     * @return The securityProjection.
+     */
+    @java.lang.Override
+    public com.google.cloud.recommender.v1.SecurityProjection getSecurityProjection() {
+      if (securityProjectionBuilder_ == null) {
+        if (projectionCase_ == 101) {
+          return (com.google.cloud.recommender.v1.SecurityProjection) projection_;
+        }
+        return com.google.cloud.recommender.v1.SecurityProjection.getDefaultInstance();
+      } else {
+        if (projectionCase_ == 101) {
+          return securityProjectionBuilder_.getMessage();
+        }
+        return com.google.cloud.recommender.v1.SecurityProjection.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SECURITY
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.SecurityProjection security_projection = 101;</code>
+     */
+    public Builder setSecurityProjection(com.google.cloud.recommender.v1.SecurityProjection value) {
+      if (securityProjectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        projection_ = value;
+        onChanged();
+      } else {
+        securityProjectionBuilder_.setMessage(value);
+      }
+      projectionCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SECURITY
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.SecurityProjection security_projection = 101;</code>
+     */
+    public Builder setSecurityProjection(
+        com.google.cloud.recommender.v1.SecurityProjection.Builder builderForValue) {
+      if (securityProjectionBuilder_ == null) {
+        projection_ = builderForValue.build();
+        onChanged();
+      } else {
+        securityProjectionBuilder_.setMessage(builderForValue.build());
+      }
+      projectionCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SECURITY
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.SecurityProjection security_projection = 101;</code>
+     */
+    public Builder mergeSecurityProjection(
+        com.google.cloud.recommender.v1.SecurityProjection value) {
+      if (securityProjectionBuilder_ == null) {
+        if (projectionCase_ == 101
+            && projection_
+                != com.google.cloud.recommender.v1.SecurityProjection.getDefaultInstance()) {
+          projection_ =
+              com.google.cloud.recommender.v1.SecurityProjection.newBuilder(
+                      (com.google.cloud.recommender.v1.SecurityProjection) projection_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          projection_ = value;
+        }
+        onChanged();
+      } else {
+        if (projectionCase_ == 101) {
+          securityProjectionBuilder_.mergeFrom(value);
+        }
+        securityProjectionBuilder_.setMessage(value);
+      }
+      projectionCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SECURITY
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.SecurityProjection security_projection = 101;</code>
+     */
+    public Builder clearSecurityProjection() {
+      if (securityProjectionBuilder_ == null) {
+        if (projectionCase_ == 101) {
+          projectionCase_ = 0;
+          projection_ = null;
+          onChanged();
+        }
+      } else {
+        if (projectionCase_ == 101) {
+          projectionCase_ = 0;
+          projection_ = null;
+        }
+        securityProjectionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SECURITY
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.SecurityProjection security_projection = 101;</code>
+     */
+    public com.google.cloud.recommender.v1.SecurityProjection.Builder
+        getSecurityProjectionBuilder() {
+      return getSecurityProjectionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SECURITY
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.SecurityProjection security_projection = 101;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.recommender.v1.SecurityProjectionOrBuilder
+        getSecurityProjectionOrBuilder() {
+      if ((projectionCase_ == 101) && (securityProjectionBuilder_ != null)) {
+        return securityProjectionBuilder_.getMessageOrBuilder();
+      } else {
+        if (projectionCase_ == 101) {
+          return (com.google.cloud.recommender.v1.SecurityProjection) projection_;
+        }
+        return com.google.cloud.recommender.v1.SecurityProjection.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SECURITY
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1.SecurityProjection security_projection = 101;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.recommender.v1.SecurityProjection,
+            com.google.cloud.recommender.v1.SecurityProjection.Builder,
+            com.google.cloud.recommender.v1.SecurityProjectionOrBuilder>
+        getSecurityProjectionFieldBuilder() {
+      if (securityProjectionBuilder_ == null) {
+        if (!(projectionCase_ == 101)) {
+          projection_ = com.google.cloud.recommender.v1.SecurityProjection.getDefaultInstance();
+        }
+        securityProjectionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.recommender.v1.SecurityProjection,
+                com.google.cloud.recommender.v1.SecurityProjection.Builder,
+                com.google.cloud.recommender.v1.SecurityProjectionOrBuilder>(
+                (com.google.cloud.recommender.v1.SecurityProjection) projection_,
+                getParentForChildren(),
+                isClean());
+        projection_ = null;
+      }
+      projectionCase_ = 101;
+      onChanged();
+      ;
+      return securityProjectionBuilder_;
     }
 
     @java.lang.Override
