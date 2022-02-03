@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-video-transcoder/compare/v0.4.3...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#287](https://github.com/googleapis/java-video-transcoder/issues/287)) ([b604755](https://github.com/googleapis/java-video-transcoder/commit/b604755b5f6fd9a5f4acc3b7927f2ad235483864))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-video-transcoder/issues/1339)) ([#291](https://github.com/googleapis/java-video-transcoder/issues/291)) ([d8fb08f](https://github.com/googleapis/java-video-transcoder/commit/d8fb08f22639666ee25d21a154d281717cee3f61))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#293](https://github.com/googleapis/java-video-transcoder/issues/293)) ([dc6ab0c](https://github.com/googleapis/java-video-transcoder/commit/dc6ab0c8124674fd5ddc4ebdad053ccbcef9ecae))
+
 ### [0.4.3](https://www.github.com/googleapis/java-video-transcoder/compare/v0.4.2...v0.4.3) (2022-01-07)
 
 
