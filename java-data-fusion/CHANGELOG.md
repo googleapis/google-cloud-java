@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-data-fusion/compare/v0.3.3...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#113](https://github.com/googleapis/java-data-fusion/issues/113)) ([9c01388](https://github.com/googleapis/java-data-fusion/commit/9c01388e669b249f510839172d90d52319260146))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-data-fusion/issues/1339)) ([#118](https://github.com/googleapis/java-data-fusion/issues/118)) ([6740a78](https://github.com/googleapis/java-data-fusion/commit/6740a7892bd08efba92d34634f9aeff0571e9597))
+* update actions/github-script action to v5 ([#116](https://github.com/googleapis/java-data-fusion/issues/116)) ([ec13479](https://github.com/googleapis/java-data-fusion/commit/ec13479562811fa33090735e1b2e8a11dd7833c9))
+* update actions/setup-java action to v2 ([#117](https://github.com/googleapis/java-data-fusion/issues/117)) ([63aea6b](https://github.com/googleapis/java-data-fusion/commit/63aea6bbb11a2dcac7f839b0927e36ca57dc3742))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#119](https://github.com/googleapis/java-data-fusion/issues/119)) ([3f72067](https://github.com/googleapis/java-data-fusion/commit/3f72067d22da23546f26f5dbfd45880239206eb1))
+
 ### [0.3.3](https://www.github.com/googleapis/java-data-fusion/compare/v0.3.2...v0.3.3) (2022-01-07)
 
 
