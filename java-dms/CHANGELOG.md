@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.1.6](https://github.com/googleapis/java-dms/compare/v2.1.5...v2.1.6) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-dms/issues/1339)) ([#169](https://github.com/googleapis/java-dms/issues/169)) ([c10ff32](https://github.com/googleapis/java-dms/commit/c10ff3211a454cb38ae15fa04aecb40ea6018763))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#172](https://github.com/googleapis/java-dms/issues/172)) ([cc44ad5](https://github.com/googleapis/java-dms/commit/cc44ad5b73289cbb0b14c2e3007b100f46780f76))
+
 ### [2.1.5](https://www.github.com/googleapis/java-dms/compare/v2.1.4...v2.1.5) (2022-01-07)
 
 
