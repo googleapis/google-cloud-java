@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.5.2](https://www.github.com/googleapis/java-domains/compare/v0.5.1...v0.5.2) (2022-01-10)
+
+
+### Bug Fixes
+
+* **java:** run Maven in plain console-friendly mode ([#1301](https://www.github.com/googleapis/java-domains/issues/1301)) ([#155](https://www.github.com/googleapis/java-domains/issues/155)) ([d9592b3](https://www.github.com/googleapis/java-domains/commit/d9592b34a270e75d11b8ee2696a01677530d80b6))
+
 ### [0.5.1](https://www.github.com/googleapis/java-domains/compare/v0.5.0...v0.5.1) (2022-01-07)
 
 
