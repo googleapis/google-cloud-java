@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-artifact-registry/compare/v0.5.0...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#210](https://github.com/googleapis/java-artifact-registry/issues/210)) ([bda9695](https://github.com/googleapis/java-artifact-registry/commit/bda96954c42d27112857bbe6444d21ca63688b97))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-artifact-registry/issues/1339)) ([#217](https://github.com/googleapis/java-artifact-registry/issues/217)) ([f2e471e](https://github.com/googleapis/java-artifact-registry/commit/f2e471e5fd18b903cf3a77d6b6e71611fd2c01d5))
+* update actions/github-script action to v5 ([#216](https://github.com/googleapis/java-artifact-registry/issues/216)) ([b660f40](https://github.com/googleapis/java-artifact-registry/commit/b660f4071ca1f77632cee1323d98cacc153d248d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#218](https://github.com/googleapis/java-artifact-registry/issues/218)) ([d13b401](https://github.com/googleapis/java-artifact-registry/commit/d13b40110a021f075ed3633ea88e053e4cd11f04))
+
 ## [0.5.0](https://www.github.com/googleapis/java-artifact-registry/compare/v0.4.3...v0.5.0) (2022-01-07)
 
 
