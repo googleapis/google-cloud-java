@@ -99,6 +99,7 @@ public class ITSystemTest {
   private static final String GCS_BUCKET_ENV_VAR = "GOOGLE_CLOUD_TESTS_VISION_BUCKET";
   private static final String SAMPLE_BUCKET;
   private static final String SAMPLE_URI;
+  private static final int MAX_RESULTS = 15;
 
   static {
     String GCS_BUCKET;
@@ -465,8 +466,18 @@ public class ITSystemTest {
 
   @Test
   public void detectWebEntitiesGcsTest() throws IOException {
-    List<AnnotateImageResponse> responses =
-        getResponsesList("landmark/pofa.jpg", Type.WEB_DETECTION, true);
+    ImageSource imgSource =
+        ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "landmark/pofa.jpg").build();
+    Image img = Image.newBuilder().setSource(imgSource).build();
+    Feature feat =
+        Feature.newBuilder().setType(Type.WEB_DETECTION).setMaxResults(MAX_RESULTS).build();
+
+    AnnotateImageRequest request =
+        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
+
+    BatchAnnotateImagesResponse response =
+        imageAnnotatorClient.batchAnnotateImages(ImmutableList.of(request));
+    List<AnnotateImageResponse> responses = response.getResponsesList();
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse imgResponse : responses) {
       for (WebDetection.WebEntity entity : imgResponse.getWebDetection().getWebEntitiesList()) {
@@ -480,7 +491,8 @@ public class ITSystemTest {
   public void detectWebEntitiesIncludeGeoResultsTest() throws IOException {
     ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + "city.jpg"));
     Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.WEB_DETECTION).build();
+    Feature feat =
+        Feature.newBuilder().setType(Type.WEB_DETECTION).setMaxResults(MAX_RESULTS).build();
     WebDetectionParams webDetectionParams =
         WebDetectionParams.newBuilder().setIncludeGeoResults(true).build();
     ImageContext imageContext =
@@ -511,7 +523,8 @@ public class ITSystemTest {
     ImageSource imgSource =
         ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "landmark/pofa.jpg").build();
     Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.WEB_DETECTION).build();
+    Feature feat =
+        Feature.newBuilder().setType(Type.WEB_DETECTION).setMaxResults(MAX_RESULTS).build();
     WebDetectionParams webDetectionParams =
         WebDetectionParams.newBuilder().setIncludeGeoResults(true).build();
     ImageContext imageContext =
@@ -526,6 +539,8 @@ public class ITSystemTest {
         imageAnnotatorClient.batchAnnotateImages(ImmutableList.of(request));
     List<AnnotateImageResponse> responses = response.getResponsesList();
     List<String> actual = new ArrayList<>();
+    System.out.println("WebEntitiesGeo SIZE");
+    System.out.println(actual.size());
     for (AnnotateImageResponse imgResponse : responses) {
       for (WebDetection.WebEntity entity : imgResponse.getWebDetection().getWebEntitiesList()) {
         actual.add(entity.getDescription());
