@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.1.6](https://github.com/googleapis/java-dataproc-metastore/compare/v2.1.5...v2.1.6) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-dataproc-metastore/issues/1339)) ([#186](https://github.com/googleapis/java-dataproc-metastore/issues/186)) ([f819981](https://github.com/googleapis/java-dataproc-metastore/commit/f8199817691346fcb290fac3033a0c5f6a5637a1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#188](https://github.com/googleapis/java-dataproc-metastore/issues/188)) ([47ed1cb](https://github.com/googleapis/java-dataproc-metastore/commit/47ed1cbc764b35133aaaa055320d6687672e899f))
+
 ### [2.1.5](https://www.github.com/googleapis/java-dataproc-metastore/compare/v2.1.4...v2.1.5) (2022-01-07)
 
 
