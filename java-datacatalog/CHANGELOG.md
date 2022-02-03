@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.6.3](https://github.com/googleapis/java-datacatalog/compare/v1.6.2...v1.6.3) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-datacatalog/issues/1339)) ([#736](https://github.com/googleapis/java-datacatalog/issues/736)) ([a2fd315](https://github.com/googleapis/java-datacatalog/commit/a2fd315adec8dbe35875bda6394b6464305fdf06))
+* update actions/github-script action to v5 ([#735](https://github.com/googleapis/java-datacatalog/issues/735)) ([ae59136](https://github.com/googleapis/java-datacatalog/commit/ae591360de52292c00ccdd796c1ea3049b3f3e16))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#738](https://github.com/googleapis/java-datacatalog/issues/738)) ([684dcb1](https://github.com/googleapis/java-datacatalog/commit/684dcb137eb3c178fde51e04d716499031554cb0))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.3 ([#729](https://github.com/googleapis/java-datacatalog/issues/729)) ([cfa2852](https://github.com/googleapis/java-datacatalog/commit/cfa2852143043dec0f4e2dcd4c101715be9f265c))
+
 ### [1.6.2](https://www.github.com/googleapis/java-datacatalog/compare/v1.6.1...v1.6.2) (2022-01-07)
 
 
