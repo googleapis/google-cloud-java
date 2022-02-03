@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.1.1](https://github.com/googleapis/java-apigee-connect/compare/v2.1.0...v2.1.1) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-apigee-connect/issues/1339)) ([#117](https://github.com/googleapis/java-apigee-connect/issues/117)) ([794f188](https://github.com/googleapis/java-apigee-connect/commit/794f188e7a62acb61ef2f2588c9a8addb0f7e926))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#120](https://github.com/googleapis/java-apigee-connect/issues/120)) ([d4ab268](https://github.com/googleapis/java-apigee-connect/commit/d4ab2681a047aa0f618f65c66386b16c5ba61eca))
+
 ## [2.1.0](https://www.github.com/googleapis/java-apigee-connect/compare/v2.0.2...v2.1.0) (2022-01-07)
 
 
