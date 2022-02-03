@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.3.4](https://github.com/googleapis/java-life-sciences/compare/v0.3.3...v0.3.4) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-life-sciences/issues/1339)) ([#127](https://github.com/googleapis/java-life-sciences/issues/127)) ([05b6c2e](https://github.com/googleapis/java-life-sciences/commit/05b6c2edbd5686c32206391b6c930484905e108b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#130](https://github.com/googleapis/java-life-sciences/issues/130)) ([3dca253](https://github.com/googleapis/java-life-sciences/commit/3dca2539aabd055d3d705c02a1c813dd7d890db8))
+
 ### [0.3.3](https://www.github.com/googleapis/java-life-sciences/compare/v0.3.2...v0.3.3) (2022-01-07)
 
 
