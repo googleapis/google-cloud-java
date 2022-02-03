@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.0.10](https://github.com/googleapis/java-websecurityscanner/compare/v2.0.9...v2.0.10) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-websecurityscanner/issues/1339)) ([#630](https://github.com/googleapis/java-websecurityscanner/issues/630)) ([582eefe](https://github.com/googleapis/java-websecurityscanner/commit/582eefefd9d8c6742b78599fb8086fa31612b857))
+* update actions/github-script action to v5 ([#629](https://github.com/googleapis/java-websecurityscanner/issues/629)) ([09e163a](https://github.com/googleapis/java-websecurityscanner/commit/09e163af215f1a3c26d8d0a1c14e15f4029643ff))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#632](https://github.com/googleapis/java-websecurityscanner/issues/632)) ([6fcb5db](https://github.com/googleapis/java-websecurityscanner/commit/6fcb5db17b70f4312f2ce1a43bd7ca2b72bc4a2c))
+
 ### [2.0.9](https://www.github.com/googleapis/java-websecurityscanner/compare/v2.0.8...v2.0.9) (2022-01-07)
 
 
