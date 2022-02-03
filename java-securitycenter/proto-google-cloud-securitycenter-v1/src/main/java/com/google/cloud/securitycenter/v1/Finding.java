@@ -286,6 +286,22 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                   .put(externalSystems__.getKey(), externalSystems__.getValue());
               break;
             }
+          case 210:
+            {
+              com.google.cloud.securitycenter.v1.Access.Builder subBuilder = null;
+              if (access_ != null) {
+                subBuilder = access_.toBuilder();
+              }
+              access_ =
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1.Access.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(access_);
+                access_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 226:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -1655,11 +1671,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the event took place, or when an update to the finding
-   * occurred. For example, if the finding represents an open firewall it would
-   * capture the time the detector believes the firewall became open. The
-   * accuracy is determined by the detector. If the finding were to be resolved
-   * afterward, this time would reflect when the finding was resolved. Must not
+   * The time the finding was first detected. If an existing finding is updated,
+   * then this is the time the update occurred.
+   * For example, if the finding represents an open firewall, this property
+   * captures the time the detector believes the firewall became open. The
+   * accuracy is determined by the detector. If the finding is later resolved,
+   * then this time reflects when the finding was resolved. This must not
    * be set to a value greater than the current timestamp.
    * </pre>
    *
@@ -1675,11 +1692,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the event took place, or when an update to the finding
-   * occurred. For example, if the finding represents an open firewall it would
-   * capture the time the detector believes the firewall became open. The
-   * accuracy is determined by the detector. If the finding were to be resolved
-   * afterward, this time would reflect when the finding was resolved. Must not
+   * The time the finding was first detected. If an existing finding is updated,
+   * then this is the time the update occurred.
+   * For example, if the finding represents an open firewall, this property
+   * captures the time the detector believes the firewall became open. The
+   * accuracy is determined by the detector. If the finding is later resolved,
+   * then this time reflects when the finding was resolved. This must not
    * be set to a value greater than the current timestamp.
    * </pre>
    *
@@ -1695,11 +1713,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the event took place, or when an update to the finding
-   * occurred. For example, if the finding represents an open firewall it would
-   * capture the time the detector believes the firewall became open. The
-   * accuracy is determined by the detector. If the finding were to be resolved
-   * afterward, this time would reflect when the finding was resolved. Must not
+   * The time the finding was first detected. If an existing finding is updated,
+   * then this is the time the update occurred.
+   * For example, if the finding represents an open firewall, this property
+   * captures the time the detector believes the firewall became open. The
+   * accuracy is determined by the detector. If the finding is later resolved,
+   * then this time reflects when the finding was resolved. This must not
    * be set to a value greater than the current timestamp.
    * </pre>
    *
@@ -2224,6 +2243,57 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int ACCESS_FIELD_NUMBER = 26;
+  private com.google.cloud.securitycenter.v1.Access access_;
+  /**
+   *
+   *
+   * <pre>
+   * Access details associated to the Finding, such as more information on the
+   * caller, which method was accessed, from where, etc.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
+   *
+   * @return Whether the access field is set.
+   */
+  @java.lang.Override
+  public boolean hasAccess() {
+    return access_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Access details associated to the Finding, such as more information on the
+   * caller, which method was accessed, from where, etc.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
+   *
+   * @return The access.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Access getAccess() {
+    return access_ == null
+        ? com.google.cloud.securitycenter.v1.Access.getDefaultInstance()
+        : access_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Access details associated to the Finding, such as more information on the
+   * caller, which method was accessed, from where, etc.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.AccessOrBuilder getAccessOrBuilder() {
+    return getAccess();
+  }
+
   public static final int MUTE_INITIATOR_FIELD_NUMBER = 28;
   private volatile java.lang.Object muteInitiator_;
   /**
@@ -2346,6 +2416,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetExternalSystems(), ExternalSystemsDefaultEntryHolder.defaultEntry, 22);
+    if (access_ != null) {
+      output.writeMessage(26, getAccess());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(muteInitiator_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 28, muteInitiator_);
     }
@@ -2431,6 +2504,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, externalSystems__);
     }
+    if (access_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getAccess());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(muteInitiator_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, muteInitiator_);
     }
@@ -2486,6 +2562,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (!getMuteUpdateTime().equals(other.getMuteUpdateTime())) return false;
     }
     if (!internalGetExternalSystems().equals(other.internalGetExternalSystems())) return false;
+    if (hasAccess() != other.hasAccess()) return false;
+    if (hasAccess()) {
+      if (!getAccess().equals(other.getAccess())) return false;
+    }
     if (!getMuteInitiator().equals(other.getMuteInitiator())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -2549,6 +2629,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetExternalSystems().getMap().isEmpty()) {
       hash = (37 * hash) + EXTERNAL_SYSTEMS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetExternalSystems().hashCode();
+    }
+    if (hasAccess()) {
+      hash = (37 * hash) + ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAccess().hashCode();
     }
     hash = (37 * hash) + MUTE_INITIATOR_FIELD_NUMBER;
     hash = (53 * hash) + getMuteInitiator().hashCode();
@@ -2784,6 +2868,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         muteUpdateTimeBuilder_ = null;
       }
       internalGetMutableExternalSystems().clear();
+      if (accessBuilder_ == null) {
+        access_ = null;
+      } else {
+        access_ = null;
+        accessBuilder_ = null;
+      }
       muteInitiator_ = "";
 
       return this;
@@ -2858,6 +2948,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       result.externalSystems_ = internalGetExternalSystems();
       result.externalSystems_.makeImmutable();
+      if (accessBuilder_ == null) {
+        result.access_ = access_;
+      } else {
+        result.access_ = accessBuilder_.build();
+      }
       result.muteInitiator_ = muteInitiator_;
       onBuilt();
       return result;
@@ -2964,6 +3059,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         mergeMuteUpdateTime(other.getMuteUpdateTime());
       }
       internalGetMutableExternalSystems().mergeFrom(other.internalGetExternalSystems());
+      if (other.hasAccess()) {
+        mergeAccess(other.getAccess());
+      }
       if (!other.getMuteInitiator().isEmpty()) {
         muteInitiator_ = other.muteInitiator_;
         onChanged();
@@ -4120,11 +4218,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place, or when an update to the finding
-     * occurred. For example, if the finding represents an open firewall it would
-     * capture the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved. Must not
+     * The time the finding was first detected. If an existing finding is updated,
+     * then this is the time the update occurred.
+     * For example, if the finding represents an open firewall, this property
+     * captures the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding is later resolved,
+     * then this time reflects when the finding was resolved. This must not
      * be set to a value greater than the current timestamp.
      * </pre>
      *
@@ -4139,11 +4238,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place, or when an update to the finding
-     * occurred. For example, if the finding represents an open firewall it would
-     * capture the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved. Must not
+     * The time the finding was first detected. If an existing finding is updated,
+     * then this is the time the update occurred.
+     * For example, if the finding represents an open firewall, this property
+     * captures the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding is later resolved,
+     * then this time reflects when the finding was resolved. This must not
      * be set to a value greater than the current timestamp.
      * </pre>
      *
@@ -4162,11 +4262,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place, or when an update to the finding
-     * occurred. For example, if the finding represents an open firewall it would
-     * capture the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved. Must not
+     * The time the finding was first detected. If an existing finding is updated,
+     * then this is the time the update occurred.
+     * For example, if the finding represents an open firewall, this property
+     * captures the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding is later resolved,
+     * then this time reflects when the finding was resolved. This must not
      * be set to a value greater than the current timestamp.
      * </pre>
      *
@@ -4189,11 +4290,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place, or when an update to the finding
-     * occurred. For example, if the finding represents an open firewall it would
-     * capture the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved. Must not
+     * The time the finding was first detected. If an existing finding is updated,
+     * then this is the time the update occurred.
+     * For example, if the finding represents an open firewall, this property
+     * captures the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding is later resolved,
+     * then this time reflects when the finding was resolved. This must not
      * be set to a value greater than the current timestamp.
      * </pre>
      *
@@ -4213,11 +4315,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place, or when an update to the finding
-     * occurred. For example, if the finding represents an open firewall it would
-     * capture the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved. Must not
+     * The time the finding was first detected. If an existing finding is updated,
+     * then this is the time the update occurred.
+     * For example, if the finding represents an open firewall, this property
+     * captures the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding is later resolved,
+     * then this time reflects when the finding was resolved. This must not
      * be set to a value greater than the current timestamp.
      * </pre>
      *
@@ -4242,11 +4345,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place, or when an update to the finding
-     * occurred. For example, if the finding represents an open firewall it would
-     * capture the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved. Must not
+     * The time the finding was first detected. If an existing finding is updated,
+     * then this is the time the update occurred.
+     * For example, if the finding represents an open firewall, this property
+     * captures the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding is later resolved,
+     * then this time reflects when the finding was resolved. This must not
      * be set to a value greater than the current timestamp.
      * </pre>
      *
@@ -4267,11 +4371,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place, or when an update to the finding
-     * occurred. For example, if the finding represents an open firewall it would
-     * capture the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved. Must not
+     * The time the finding was first detected. If an existing finding is updated,
+     * then this is the time the update occurred.
+     * For example, if the finding represents an open firewall, this property
+     * captures the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding is later resolved,
+     * then this time reflects when the finding was resolved. This must not
      * be set to a value greater than the current timestamp.
      * </pre>
      *
@@ -4286,11 +4391,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place, or when an update to the finding
-     * occurred. For example, if the finding represents an open firewall it would
-     * capture the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved. Must not
+     * The time the finding was first detected. If an existing finding is updated,
+     * then this is the time the update occurred.
+     * For example, if the finding represents an open firewall, this property
+     * captures the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding is later resolved,
+     * then this time reflects when the finding was resolved. This must not
      * be set to a value greater than the current timestamp.
      * </pre>
      *
@@ -4307,11 +4413,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place, or when an update to the finding
-     * occurred. For example, if the finding represents an open firewall it would
-     * capture the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved. Must not
+     * The time the finding was first detected. If an existing finding is updated,
+     * then this is the time the update occurred.
+     * For example, if the finding represents an open firewall, this property
+     * captures the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding is later resolved,
+     * then this time reflects when the finding was resolved. This must not
      * be set to a value greater than the current timestamp.
      * </pre>
      *
@@ -5756,6 +5863,200 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> values) {
       internalGetMutableExternalSystems().getMutableMap().putAll(values);
       return this;
+    }
+
+    private com.google.cloud.securitycenter.v1.Access access_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Access,
+            com.google.cloud.securitycenter.v1.Access.Builder,
+            com.google.cloud.securitycenter.v1.AccessOrBuilder>
+        accessBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Access details associated to the Finding, such as more information on the
+     * caller, which method was accessed, from where, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
+     *
+     * @return Whether the access field is set.
+     */
+    public boolean hasAccess() {
+      return accessBuilder_ != null || access_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Access details associated to the Finding, such as more information on the
+     * caller, which method was accessed, from where, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
+     *
+     * @return The access.
+     */
+    public com.google.cloud.securitycenter.v1.Access getAccess() {
+      if (accessBuilder_ == null) {
+        return access_ == null
+            ? com.google.cloud.securitycenter.v1.Access.getDefaultInstance()
+            : access_;
+      } else {
+        return accessBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Access details associated to the Finding, such as more information on the
+     * caller, which method was accessed, from where, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
+     */
+    public Builder setAccess(com.google.cloud.securitycenter.v1.Access value) {
+      if (accessBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        access_ = value;
+        onChanged();
+      } else {
+        accessBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Access details associated to the Finding, such as more information on the
+     * caller, which method was accessed, from where, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
+     */
+    public Builder setAccess(com.google.cloud.securitycenter.v1.Access.Builder builderForValue) {
+      if (accessBuilder_ == null) {
+        access_ = builderForValue.build();
+        onChanged();
+      } else {
+        accessBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Access details associated to the Finding, such as more information on the
+     * caller, which method was accessed, from where, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
+     */
+    public Builder mergeAccess(com.google.cloud.securitycenter.v1.Access value) {
+      if (accessBuilder_ == null) {
+        if (access_ != null) {
+          access_ =
+              com.google.cloud.securitycenter.v1.Access.newBuilder(access_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          access_ = value;
+        }
+        onChanged();
+      } else {
+        accessBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Access details associated to the Finding, such as more information on the
+     * caller, which method was accessed, from where, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
+     */
+    public Builder clearAccess() {
+      if (accessBuilder_ == null) {
+        access_ = null;
+        onChanged();
+      } else {
+        access_ = null;
+        accessBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Access details associated to the Finding, such as more information on the
+     * caller, which method was accessed, from where, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Access.Builder getAccessBuilder() {
+
+      onChanged();
+      return getAccessFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Access details associated to the Finding, such as more information on the
+     * caller, which method was accessed, from where, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
+     */
+    public com.google.cloud.securitycenter.v1.AccessOrBuilder getAccessOrBuilder() {
+      if (accessBuilder_ != null) {
+        return accessBuilder_.getMessageOrBuilder();
+      } else {
+        return access_ == null
+            ? com.google.cloud.securitycenter.v1.Access.getDefaultInstance()
+            : access_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Access details associated to the Finding, such as more information on the
+     * caller, which method was accessed, from where, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Access,
+            com.google.cloud.securitycenter.v1.Access.Builder,
+            com.google.cloud.securitycenter.v1.AccessOrBuilder>
+        getAccessFieldBuilder() {
+      if (accessBuilder_ == null) {
+        accessBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.Access,
+                com.google.cloud.securitycenter.v1.Access.Builder,
+                com.google.cloud.securitycenter.v1.AccessOrBuilder>(
+                getAccess(), getParentForChildren(), isClean());
+        access_ = null;
+      }
+      return accessBuilder_;
     }
 
     private java.lang.Object muteInitiator_ = "";

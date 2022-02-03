@@ -298,6 +298,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -359,6 +360,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2423,6 +2425,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2486,6 +2489,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2547,6 +2551,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2607,6 +2612,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2875,6 +2881,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);

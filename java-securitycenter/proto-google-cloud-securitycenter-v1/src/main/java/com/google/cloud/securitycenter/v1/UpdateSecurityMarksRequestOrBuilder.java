@@ -114,7 +114,8 @@ public interface UpdateSecurityMarksRequestOrBuilder
    * <pre>
    * The time at which the updated SecurityMarks take effect.
    * If not set uses current server time.  Updates will be applied to the
-   * SecurityMarks that are active immediately preceding this time.
+   * SecurityMarks that are active immediately preceding this time. Must be
+   * smaller or equal to the server time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -128,7 +129,8 @@ public interface UpdateSecurityMarksRequestOrBuilder
    * <pre>
    * The time at which the updated SecurityMarks take effect.
    * If not set uses current server time.  Updates will be applied to the
-   * SecurityMarks that are active immediately preceding this time.
+   * SecurityMarks that are active immediately preceding this time. Must be
+   * smaller or equal to the server time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -142,7 +144,8 @@ public interface UpdateSecurityMarksRequestOrBuilder
    * <pre>
    * The time at which the updated SecurityMarks take effect.
    * If not set uses current server time.  Updates will be applied to the
-   * SecurityMarks that are active immediately preceding this time.
+   * SecurityMarks that are active immediately preceding this time. Must be
+   * smaller or equal to the server time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>

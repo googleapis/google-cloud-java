@@ -202,20 +202,20 @@ public final class SecuritycenterService {
     java.lang.String[] descriptorData = {
       "\n;google/cloud/securitycenter/v1/securit"
           + "ycenter_service.proto\022\036google.cloud.secu"
-          + "ritycenter.v1\032Agoogle/cloud/securitycent"
-          + "er/v1/run_asset_discovery_response.proto"
-          + "\032\034google/api/annotations.proto\032\027google/a"
-          + "pi/client.proto\032\037google/api/field_behavi"
-          + "or.proto\032\031google/api/resource.proto\032*goo"
-          + "gle/cloud/securitycenter/v1/asset.proto\032"
-          + "4google/cloud/securitycenter/v1/external"
-          + "_system.proto\032,google/cloud/securitycent"
-          + "er/v1/finding.proto\032+google/cloud/securi"
-          + "tycenter/v1/folder.proto\0320google/cloud/s"
-          + "ecuritycenter/v1/mute_config.proto\0328goog"
-          + "le/cloud/securitycenter/v1/notification_"
-          + "config.proto\032:google/cloud/securitycente"
-          + "r/v1/organization_settings.proto\0323google"
+          + "ritycenter.v1\032\034google/api/annotations.pr"
+          + "oto\032\027google/api/client.proto\032\037google/api"
+          + "/field_behavior.proto\032\031google/api/resour"
+          + "ce.proto\032*google/cloud/securitycenter/v1"
+          + "/asset.proto\0324google/cloud/securitycente"
+          + "r/v1/external_system.proto\032,google/cloud"
+          + "/securitycenter/v1/finding.proto\032+google"
+          + "/cloud/securitycenter/v1/folder.proto\0320g"
+          + "oogle/cloud/securitycenter/v1/mute_confi"
+          + "g.proto\0328google/cloud/securitycenter/v1/"
+          + "notification_config.proto\032:google/cloud/"
+          + "securitycenter/v1/organization_settings."
+          + "proto\032Agoogle/cloud/securitycenter/v1/ru"
+          + "n_asset_discovery_response.proto\0323google"
           + "/cloud/securitycenter/v1/security_marks."
           + "proto\032+google/cloud/securitycenter/v1/so"
           + "urce.proto\032\036google/iam/v1/iam_policy.pro"
@@ -613,14 +613,12 @@ public final class SecuritycenterService {
           + "/v1;securitycenter\252\002\036Google.Cloud.Securi"
           + "tyCenter.V1\312\002\036Google\\Cloud\\SecurityCente"
           + "r\\V1\352\002!Google::Cloud::SecurityCenter::V1"
-          + "P\000b\006proto3"
+          + "P\013b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponseOuterClass
-                  .getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
@@ -632,6 +630,8 @@ public final class SecuritycenterService {
               com.google.cloud.securitycenter.v1.MuteConfigProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.NotificationConfigProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.OrganizationSettingsOuterClass.getDescriptor(),
+              com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponseOuterClass
+                  .getDescriptor(),
               com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor(),
               com.google.cloud.securitycenter.v1.SourceOuterClass.getDescriptor(),
               com.google.iam.v1.IamPolicyProto.getDescriptor(),
@@ -1009,7 +1009,6 @@ public final class SecuritycenterService {
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponseOuterClass.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
@@ -1021,6 +1020,7 @@ public final class SecuritycenterService {
     com.google.cloud.securitycenter.v1.MuteConfigProto.getDescriptor();
     com.google.cloud.securitycenter.v1.NotificationConfigProto.getDescriptor();
     com.google.cloud.securitycenter.v1.OrganizationSettingsOuterClass.getDescriptor();
+    com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponseOuterClass.getDescriptor();
     com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor();
     com.google.cloud.securitycenter.v1.SourceOuterClass.getDescriptor();
     com.google.iam.v1.IamPolicyProto.getDescriptor();
