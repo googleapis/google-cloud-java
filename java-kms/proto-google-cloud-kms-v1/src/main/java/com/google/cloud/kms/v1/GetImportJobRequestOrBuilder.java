@@ -27,7 +27,8 @@ public interface GetImportJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+   * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+   * [ImportJob][google.cloud.kms.v1.ImportJob] to get.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface GetImportJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+   * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+   * [ImportJob][google.cloud.kms.v1.ImportJob] to get.
    * </pre>
    *
    * <code>

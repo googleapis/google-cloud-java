@@ -27,7 +27,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
+   * Output only. The resource name for this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
    * </pre>
    *
@@ -40,7 +41,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
+   * Output only. The resource name for this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
    * </pre>
    *
@@ -54,7 +56,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * The current state of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The current state of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
@@ -66,7 +69,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * The current state of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The current state of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
@@ -79,8 +83,9 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
-   * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+   * describing how crypto operations are performed with this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>
@@ -94,8 +99,9 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
-   * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+   * describing how crypto operations are performed with this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>
@@ -110,8 +116,10 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+   * Output only. The
+   * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * supports.
    * </pre>
    *
    * <code>
@@ -125,8 +133,10 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+   * Output only. The
+   * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * supports.
    * </pre>
    *
    * <code>
@@ -144,7 +154,8 @@ public interface CryptoKeyVersionOrBuilder
    * Output only. Statement that was generated and signed by the HSM at key
    * creation time. Use this statement to verify attributes of the key as stored
    * on the HSM, independently of Google. Only provided for key versions with
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
    * <code>
@@ -161,7 +172,8 @@ public interface CryptoKeyVersionOrBuilder
    * Output only. Statement that was generated and signed by the HSM at key
    * creation time. Use this statement to verify attributes of the key as stored
    * on the HSM, independently of Google. Only provided for key versions with
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
    * <code>
@@ -178,7 +190,8 @@ public interface CryptoKeyVersionOrBuilder
    * Output only. Statement that was generated and signed by the HSM at key
    * creation time. Use this statement to verify attributes of the key as stored
    * on the HSM, independently of Google. Only provided for key versions with
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
    * <code>
@@ -191,7 +204,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -204,7 +218,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -217,7 +232,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -229,7 +245,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
    * generated.
    * </pre>
    *
@@ -244,7 +261,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
    * generated.
    * </pre>
    *
@@ -259,7 +277,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
    * generated.
    * </pre>
    *
@@ -273,8 +292,10 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-   * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+   * scheduled for destruction. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
    * </pre>
    *
@@ -288,8 +309,10 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-   * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+   * scheduled for destruction. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
    * </pre>
    *
@@ -303,8 +326,10 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-   * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+   * scheduled for destruction. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
    * </pre>
    *
@@ -318,7 +343,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    * <pre>
    * Output only. The time this CryptoKeyVersion's key material was
-   * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * destroyed. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
    * </pre>
    *
@@ -334,7 +360,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    * <pre>
    * Output only. The time this CryptoKeyVersion's key material was
-   * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * destroyed. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
    * </pre>
    *
@@ -350,7 +377,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    * <pre>
    * Output only. The time this CryptoKeyVersion's key material was
-   * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * destroyed. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
    * </pre>
    *
@@ -364,9 +392,10 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
-   * imported.
+   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob]
+   * used in the most recent import of this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if
+   * the underlying key material was imported.
    * </pre>
    *
    * <code>string import_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -378,9 +407,10 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
-   * imported.
+   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob]
+   * used in the most recent import of this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if
+   * the underlying key material was imported.
    * </pre>
    *
    * <code>string import_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -393,8 +423,9 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-   * was most recently imported.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * most recently imported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -407,8 +438,9 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-   * was most recently imported.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * most recently imported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -421,8 +453,9 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-   * was most recently imported.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * most recently imported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -434,8 +467,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The root cause of the most recent import failure. Only present if
-   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The root cause of the most recent import failure. Only present
+   * if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
    * </pre>
    *
@@ -448,8 +481,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The root cause of the most recent import failure. Only present if
-   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The root cause of the most recent import failure. Only present
+   * if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
    * </pre>
    *
@@ -464,8 +497,11 @@ public interface CryptoKeyVersionOrBuilder
    *
    * <pre>
    * ExternalProtectionLevelOptions stores a group of additional fields for
-   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+   * are specific to the
+   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+   * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+   * protection levels.
    * </pre>
    *
    * <code>
@@ -480,8 +516,11 @@ public interface CryptoKeyVersionOrBuilder
    *
    * <pre>
    * ExternalProtectionLevelOptions stores a group of additional fields for
-   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+   * are specific to the
+   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+   * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+   * protection levels.
    * </pre>
    *
    * <code>
@@ -496,8 +535,11 @@ public interface CryptoKeyVersionOrBuilder
    *
    * <pre>
    * ExternalProtectionLevelOptions stores a group of additional fields for
-   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+   * are specific to the
+   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+   * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+   * protection levels.
    * </pre>
    *
    * <code>
@@ -511,8 +553,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. Whether or not this key version is eligible for reimport, by being
-   * specified as a target in
+   * Output only. Whether or not this key version is eligible for reimport, by
+   * being specified as a target in
    * [ImportCryptoKeyVersionRequest.crypto_key_version][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.crypto_key_version].
    * </pre>
    *

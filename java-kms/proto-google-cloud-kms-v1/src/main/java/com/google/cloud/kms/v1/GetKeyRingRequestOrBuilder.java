@@ -27,7 +27,8 @@ public interface GetKeyRingRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+   * [KeyRing][google.cloud.kms.v1.KeyRing] to get.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface GetKeyRingRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+   * [KeyRing][google.cloud.kms.v1.KeyRing] to get.
    * </pre>
    *
    * <code>

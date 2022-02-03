@@ -27,7 +27,8 @@ public interface UpdateCryptoKeyPrimaryVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+   * Required. The resource name of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface UpdateCryptoKeyPrimaryVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+   * Required. The resource name of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
    * </pre>
    *
    * <code>
@@ -56,7 +58,8 @@ public interface UpdateCryptoKeyPrimaryVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   * Required. The id of the child
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
    * </pre>
    *
    * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -68,7 +71,8 @@ public interface UpdateCryptoKeyPrimaryVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   * Required. The id of the child
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
    * </pre>
    *
    * <code>string crypto_key_version_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -65,4 +65,46 @@ public interface KeyOperationAttestationOrBuilder
    * @return The content.
    */
   com.google.protobuf.ByteString getContent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The certificate chains needed to validate the attestation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the certChains field is set.
+   */
+  boolean hasCertChains();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The certificate chains needed to validate the attestation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The certChains.
+   */
+  com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains getCertChains();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The certificate chains needed to validate the attestation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChainsOrBuilder
+      getCertChainsOrBuilder();
 }

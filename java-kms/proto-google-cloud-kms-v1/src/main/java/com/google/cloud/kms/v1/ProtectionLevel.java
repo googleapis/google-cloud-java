@@ -22,9 +22,9 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] specifies how cryptographic operations are performed.
- * For more information, see [Protection levels]
- * (https://cloud.google.com/kms/docs/algorithms#protection_levels).
+ * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] specifies how
+ * cryptographic operations are performed. For more information, see [Protection
+ * levels] (https://cloud.google.com/kms/docs/algorithms#protection_levels).
  * </pre>
  *
  * Protobuf enum {@code google.cloud.kms.v1.ProtectionLevel}
@@ -70,6 +70,16 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXTERNAL = 3;</code>
    */
   EXTERNAL(3),
+  /**
+   *
+   *
+   * <pre>
+   * Crypto operations are performed in an EKM-over-VPC backend.
+   * </pre>
+   *
+   * <code>EXTERNAL_VPC = 4;</code>
+   */
+  EXTERNAL_VPC(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -113,6 +123,16 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXTERNAL = 3;</code>
    */
   public static final int EXTERNAL_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Crypto operations are performed in an EKM-over-VPC backend.
+   * </pre>
+   *
+   * <code>EXTERNAL_VPC = 4;</code>
+   */
+  public static final int EXTERNAL_VPC_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -146,6 +166,8 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
         return HSM;
       case 3:
         return EXTERNAL;
+      case 4:
+        return EXTERNAL_VPC;
       default:
         return null;
     }

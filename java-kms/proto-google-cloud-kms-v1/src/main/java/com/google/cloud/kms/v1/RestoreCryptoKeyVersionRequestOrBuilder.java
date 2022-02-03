@@ -27,7 +27,8 @@ public interface RestoreCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+   * Required. The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface RestoreCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+   * Required. The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
    * </pre>
    *
    * <code>

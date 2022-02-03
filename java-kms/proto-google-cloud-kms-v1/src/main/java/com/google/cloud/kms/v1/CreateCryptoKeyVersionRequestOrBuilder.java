@@ -27,8 +27,9 @@ public interface CreateCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with
-   * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
+   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with the
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>
@@ -42,8 +43,9 @@ public interface CreateCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with
-   * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
+   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with the
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>
@@ -58,7 +60,8 @@ public interface CreateCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+   * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * initial field values.
    * </pre>
    *
    * <code>
@@ -72,7 +75,8 @@ public interface CreateCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+   * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * initial field values.
    * </pre>
    *
    * <code>
@@ -86,7 +90,8 @@ public interface CreateCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+   * Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * initial field values.
    * </pre>
    *
    * <code>

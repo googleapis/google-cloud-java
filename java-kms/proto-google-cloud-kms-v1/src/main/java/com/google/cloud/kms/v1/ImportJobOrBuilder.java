@@ -27,7 +27,8 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [ImportJob][google.cloud.kms.v1.ImportJob] in the format
+   * Output only. The resource name for this
+   * [ImportJob][google.cloud.kms.v1.ImportJob] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;importJobs/&#42;`.
    * </pre>
    *
@@ -40,7 +41,8 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [ImportJob][google.cloud.kms.v1.ImportJob] in the format
+   * Output only. The resource name for this
+   * [ImportJob][google.cloud.kms.v1.ImportJob] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;importJobs/&#42;`.
    * </pre>
    *
@@ -54,7 +56,8 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The wrapping method to be used for incoming key material.
+   * Required. Immutable. The wrapping method to be used for incoming key
+   * material.
    * </pre>
    *
    * <code>
@@ -68,7 +71,8 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The wrapping method to be used for incoming key material.
+   * Required. Immutable. The wrapping method to be used for incoming key
+   * material.
    * </pre>
    *
    * <code>
@@ -83,10 +87,12 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The protection level of the [ImportJob][google.cloud.kms.v1.ImportJob]. This must match the
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level] of the
-   * [version_template][google.cloud.kms.v1.CryptoKey.version_template] on the [CryptoKey][google.cloud.kms.v1.CryptoKey] you
-   * attempt to import into.
+   * Required. Immutable. The protection level of the
+   * [ImportJob][google.cloud.kms.v1.ImportJob]. This must match the
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+   * of the [version_template][google.cloud.kms.v1.CryptoKey.version_template]
+   * on the [CryptoKey][google.cloud.kms.v1.CryptoKey] you attempt to import
+   * into.
    * </pre>
    *
    * <code>
@@ -100,10 +106,12 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The protection level of the [ImportJob][google.cloud.kms.v1.ImportJob]. This must match the
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level] of the
-   * [version_template][google.cloud.kms.v1.CryptoKey.version_template] on the [CryptoKey][google.cloud.kms.v1.CryptoKey] you
-   * attempt to import into.
+   * Required. Immutable. The protection level of the
+   * [ImportJob][google.cloud.kms.v1.ImportJob]. This must match the
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+   * of the [version_template][google.cloud.kms.v1.CryptoKey.version_template]
+   * on the [CryptoKey][google.cloud.kms.v1.CryptoKey] you attempt to import
+   * into.
    * </pre>
    *
    * <code>
@@ -118,7 +126,8 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [ImportJob][google.cloud.kms.v1.ImportJob] was created.
+   * Output only. The time at which this
+   * [ImportJob][google.cloud.kms.v1.ImportJob] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -131,7 +140,8 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [ImportJob][google.cloud.kms.v1.ImportJob] was created.
+   * Output only. The time at which this
+   * [ImportJob][google.cloud.kms.v1.ImportJob] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -144,7 +154,8 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [ImportJob][google.cloud.kms.v1.ImportJob] was created.
+   * Output only. The time at which this
+   * [ImportJob][google.cloud.kms.v1.ImportJob] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -156,7 +167,8 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob]'s key material was generated.
+   * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob]'s key
+   * material was generated.
    * </pre>
    *
    * <code>
@@ -170,7 +182,8 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob]'s key material was generated.
+   * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob]'s key
+   * material was generated.
    * </pre>
    *
    * <code>
@@ -184,7 +197,8 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob]'s key material was generated.
+   * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob]'s key
+   * material was generated.
    * </pre>
    *
    * <code>
@@ -197,8 +211,9 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [ImportJob][google.cloud.kms.v1.ImportJob] is scheduled for
-   * expiration and can no longer be used to import key material.
+   * Output only. The time at which this
+   * [ImportJob][google.cloud.kms.v1.ImportJob] is scheduled for expiration and
+   * can no longer be used to import key material.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -211,8 +226,9 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [ImportJob][google.cloud.kms.v1.ImportJob] is scheduled for
-   * expiration and can no longer be used to import key material.
+   * Output only. The time at which this
+   * [ImportJob][google.cloud.kms.v1.ImportJob] is scheduled for expiration and
+   * can no longer be used to import key material.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -225,8 +241,9 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [ImportJob][google.cloud.kms.v1.ImportJob] is scheduled for
-   * expiration and can no longer be used to import key material.
+   * Output only. The time at which this
+   * [ImportJob][google.cloud.kms.v1.ImportJob] is scheduled for expiration and
+   * can no longer be used to import key material.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -238,8 +255,9 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob] expired. Only present if
-   * [state][google.cloud.kms.v1.ImportJob.state] is [EXPIRED][google.cloud.kms.v1.ImportJob.ImportJobState.EXPIRED].
+   * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob]
+   * expired. Only present if [state][google.cloud.kms.v1.ImportJob.state] is
+   * [EXPIRED][google.cloud.kms.v1.ImportJob.ImportJobState.EXPIRED].
    * </pre>
    *
    * <code>
@@ -253,8 +271,9 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob] expired. Only present if
-   * [state][google.cloud.kms.v1.ImportJob.state] is [EXPIRED][google.cloud.kms.v1.ImportJob.ImportJobState.EXPIRED].
+   * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob]
+   * expired. Only present if [state][google.cloud.kms.v1.ImportJob.state] is
+   * [EXPIRED][google.cloud.kms.v1.ImportJob.ImportJobState.EXPIRED].
    * </pre>
    *
    * <code>
@@ -268,8 +287,9 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob] expired. Only present if
-   * [state][google.cloud.kms.v1.ImportJob.state] is [EXPIRED][google.cloud.kms.v1.ImportJob.ImportJobState.EXPIRED].
+   * Output only. The time this [ImportJob][google.cloud.kms.v1.ImportJob]
+   * expired. Only present if [state][google.cloud.kms.v1.ImportJob.state] is
+   * [EXPIRED][google.cloud.kms.v1.ImportJob.ImportJobState.EXPIRED].
    * </pre>
    *
    * <code>
@@ -282,8 +302,8 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The current state of the [ImportJob][google.cloud.kms.v1.ImportJob], indicating if it can
-   * be used.
+   * Output only. The current state of the
+   * [ImportJob][google.cloud.kms.v1.ImportJob], indicating if it can be used.
    * </pre>
    *
    * <code>
@@ -297,8 +317,8 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The current state of the [ImportJob][google.cloud.kms.v1.ImportJob], indicating if it can
-   * be used.
+   * Output only. The current state of the
+   * [ImportJob][google.cloud.kms.v1.ImportJob], indicating if it can be used.
    * </pre>
    *
    * <code>
@@ -363,8 +383,9 @@ public interface ImportJobOrBuilder
    * Output only. Statement that was generated and signed by the key creator
    * (for example, an HSM) at key creation time. Use this statement to verify
    * attributes of the key as stored on the HSM, independently of Google.
-   * Only present if the chosen [ImportMethod][google.cloud.kms.v1.ImportJob.ImportMethod] is one with a protection
-   * level of [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * Only present if the chosen
+   * [ImportMethod][google.cloud.kms.v1.ImportJob.ImportMethod] is one with a
+   * protection level of [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
    * <code>
@@ -381,8 +402,9 @@ public interface ImportJobOrBuilder
    * Output only. Statement that was generated and signed by the key creator
    * (for example, an HSM) at key creation time. Use this statement to verify
    * attributes of the key as stored on the HSM, independently of Google.
-   * Only present if the chosen [ImportMethod][google.cloud.kms.v1.ImportJob.ImportMethod] is one with a protection
-   * level of [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * Only present if the chosen
+   * [ImportMethod][google.cloud.kms.v1.ImportJob.ImportMethod] is one with a
+   * protection level of [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
    * <code>
@@ -399,8 +421,9 @@ public interface ImportJobOrBuilder
    * Output only. Statement that was generated and signed by the key creator
    * (for example, an HSM) at key creation time. Use this statement to verify
    * attributes of the key as stored on the HSM, independently of Google.
-   * Only present if the chosen [ImportMethod][google.cloud.kms.v1.ImportJob.ImportMethod] is one with a protection
-   * level of [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * Only present if the chosen
+   * [ImportMethod][google.cloud.kms.v1.ImportJob.ImportMethod] is one with a
+   * protection level of [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
    * <code>

@@ -22,14 +22,15 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents an individual cryptographic key, and the
- * associated key material.
- * An [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] version can be
- * used for cryptographic operations.
+ * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents an
+ * individual cryptographic key, and the associated key material.
+ * An
+ * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
+ * version can be used for cryptographic operations.
  * For security reasons, the raw cryptographic key material represented by a
- * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] can never be viewed or exported. It can only be used to
- * encrypt, decrypt, or sign data when an authorized user or application invokes
- * Cloud KMS.
+ * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] can never be viewed
+ * or exported. It can only be used to encrypt, decrypt, or sign data when an
+ * authorized user or application invokes Cloud KMS.
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.CryptoKeyVersion}
@@ -275,13 +276,16 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The algorithm of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], indicating what
+   * The algorithm of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], indicating what
    * parameters must be used for each cryptographic operation.
    * The
    * [GOOGLE_SYMMETRIC_ENCRYPTION][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION]
-   * algorithm is usable with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * algorithm is usable with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
-   * Algorithms beginning with "RSA_SIGN_" are usable with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * Algorithms beginning with "RSA_SIGN_" are usable with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN].
    * The fields in the name after "RSA_SIGN_" correspond to the following
    * parameters: padding algorithm, modulus bit length, and digest algorithm.
@@ -294,11 +298,13 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
    * The fields in the name after "RSA_DECRYPT_" correspond to the following
    * parameters: padding algorithm, modulus bit length, and digest algorithm.
-   * Algorithms beginning with "EC_SIGN_" are usable with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * Algorithms beginning with "EC_SIGN_" are usable with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN].
    * The fields in the name after "EC_SIGN_" correspond to the following
    * parameters: elliptic curve, digest algorithm.
-   * Algorithms beginning with "HMAC_" are usable with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * Algorithms beginning with "HMAC_" are usable with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [MAC][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.MAC].
    * The suffix following "HMAC_" corresponds to the hash algorithm being used
    * (eg. SHA256).
@@ -949,7 +955,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The state of a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], indicating if it can be used.
+   * The state of a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion],
+   * indicating if it can be used.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState}
@@ -971,7 +978,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <pre>
      * This version is still being generated. It may not be used, enabled,
      * disabled, or destroyed yet. Cloud KMS will automatically mark this
-     * version [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] as soon as the version is ready.
+     * version
+     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
+     * as soon as the version is ready.
      * </pre>
      *
      * <code>PENDING_GENERATION = 5;</code>
@@ -992,7 +1001,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * This version may not be used, but the key material is still available,
-     * and the version can be placed back into the [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] state.
+     * and the version can be placed back into the
+     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
+     * state.
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -1003,9 +1014,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * This version is destroyed, and the key material is no longer stored.
-     * This version may only become [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] again if this version is
-     * [reimport_eligible][google.cloud.kms.v1.CryptoKeyVersion.reimport_eligible] and the original
-     * key material is reimported with a call to
+     * This version may only become
+     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
+     * again if this version is
+     * [reimport_eligible][google.cloud.kms.v1.CryptoKeyVersion.reimport_eligible]
+     * and the original key material is reimported with a call to
      * [KeyManagementService.ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion].
      * </pre>
      *
@@ -1019,7 +1032,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * This version is scheduled for destruction, and will be destroyed soon.
      * Call
      * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion]
-     * to put it back into the [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED] state.
+     * to put it back into the
+     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED]
+     * state.
      * </pre>
      *
      * <code>DESTROY_SCHEDULED = 4;</code>
@@ -1031,7 +1046,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <pre>
      * This version is still being imported. It may not be used, enabled,
      * disabled, or destroyed yet. Cloud KMS will automatically mark this
-     * version [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] as soon as the version is ready.
+     * version
+     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
+     * as soon as the version is ready.
      * </pre>
      *
      * <code>PENDING_IMPORT = 6;</code>
@@ -1069,7 +1086,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <pre>
      * This version is still being generated. It may not be used, enabled,
      * disabled, or destroyed yet. Cloud KMS will automatically mark this
-     * version [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] as soon as the version is ready.
+     * version
+     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
+     * as soon as the version is ready.
      * </pre>
      *
      * <code>PENDING_GENERATION = 5;</code>
@@ -1090,7 +1109,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * This version may not be used, but the key material is still available,
-     * and the version can be placed back into the [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] state.
+     * and the version can be placed back into the
+     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
+     * state.
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -1101,9 +1122,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * This version is destroyed, and the key material is no longer stored.
-     * This version may only become [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] again if this version is
-     * [reimport_eligible][google.cloud.kms.v1.CryptoKeyVersion.reimport_eligible] and the original
-     * key material is reimported with a call to
+     * This version may only become
+     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
+     * again if this version is
+     * [reimport_eligible][google.cloud.kms.v1.CryptoKeyVersion.reimport_eligible]
+     * and the original key material is reimported with a call to
      * [KeyManagementService.ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion].
      * </pre>
      *
@@ -1117,7 +1140,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * This version is scheduled for destruction, and will be destroyed soon.
      * Call
      * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion]
-     * to put it back into the [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED] state.
+     * to put it back into the
+     * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED]
+     * state.
      * </pre>
      *
      * <code>DESTROY_SCHEDULED = 4;</code>
@@ -1129,7 +1154,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <pre>
      * This version is still being imported. It may not be used, enabled,
      * disabled, or destroyed yet. Cloud KMS will automatically mark this
-     * version [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] as soon as the version is ready.
+     * version
+     * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
+     * as soon as the version is ready.
      * </pre>
      *
      * <code>PENDING_IMPORT = 6;</code>
@@ -1249,9 +1276,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A view for [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]s. Controls the level of detail returned
-   * for [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] in
-   * [KeyManagementService.ListCryptoKeyVersions][google.cloud.kms.v1.KeyManagementService.ListCryptoKeyVersions] and
+   * A view for [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]s.
+   * Controls the level of detail returned for
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] in
+   * [KeyManagementService.ListCryptoKeyVersions][google.cloud.kms.v1.KeyManagementService.ListCryptoKeyVersions]
+   * and
    * [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
    * </pre>
    *
@@ -1262,8 +1291,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Default view for each [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Does not include
-     * the [attestation][google.cloud.kms.v1.CryptoKeyVersion.attestation] field.
+     * Default view for each
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Does not
+     * include the
+     * [attestation][google.cloud.kms.v1.CryptoKeyVersion.attestation] field.
      * </pre>
      *
      * <code>CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED = 0;</code>
@@ -1273,7 +1304,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provides all fields in each [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], including the
+     * Provides all fields in each
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], including the
      * [attestation][google.cloud.kms.v1.CryptoKeyVersion.attestation].
      * </pre>
      *
@@ -1287,8 +1319,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Default view for each [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Does not include
-     * the [attestation][google.cloud.kms.v1.CryptoKeyVersion.attestation] field.
+     * Default view for each
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Does not
+     * include the
+     * [attestation][google.cloud.kms.v1.CryptoKeyVersion.attestation] field.
      * </pre>
      *
      * <code>CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED = 0;</code>
@@ -1298,7 +1332,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provides all fields in each [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], including the
+     * Provides all fields in each
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], including the
      * [attestation][google.cloud.kms.v1.CryptoKeyVersion.attestation].
      * </pre>
      *
@@ -1396,7 +1431,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The resource name for this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
+   * Output only. The resource name for this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
    * </pre>
    *
@@ -1420,7 +1456,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The resource name for this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
+   * Output only. The resource name for this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
    * </pre>
    *
@@ -1447,7 +1484,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The current state of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The current state of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
@@ -1462,7 +1500,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The current state of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The current state of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
@@ -1485,8 +1524,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
-   * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+   * describing how crypto operations are performed with this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>
@@ -1503,8 +1543,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
-   * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+   * describing how crypto operations are performed with this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>
@@ -1527,8 +1568,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+   * Output only. The
+   * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * supports.
    * </pre>
    *
    * <code>
@@ -1545,8 +1588,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+   * Output only. The
+   * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * supports.
    * </pre>
    *
    * <code>
@@ -1574,7 +1619,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * Output only. Statement that was generated and signed by the HSM at key
    * creation time. Use this statement to verify attributes of the key as stored
    * on the HSM, independently of Google. Only provided for key versions with
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
    * <code>
@@ -1594,7 +1640,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * Output only. Statement that was generated and signed by the HSM at key
    * creation time. Use this statement to verify attributes of the key as stored
    * on the HSM, independently of Google. Only provided for key versions with
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
    * <code>
@@ -1616,7 +1663,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * Output only. Statement that was generated and signed by the HSM at key
    * creation time. Use this statement to verify attributes of the key as stored
    * on the HSM, independently of Google. Only provided for key versions with
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
    * <code>
@@ -1634,7 +1682,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1650,7 +1699,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1666,7 +1716,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1683,7 +1734,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
    * generated.
    * </pre>
    *
@@ -1701,7 +1753,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
    * generated.
    * </pre>
    *
@@ -1721,7 +1774,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
    * generated.
    * </pre>
    *
@@ -1740,8 +1794,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-   * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+   * scheduled for destruction. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
    * </pre>
    *
@@ -1758,8 +1814,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-   * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+   * scheduled for destruction. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
    * </pre>
    *
@@ -1776,8 +1834,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-   * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+   * scheduled for destruction. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
    * </pre>
    *
@@ -1796,7 +1856,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The time this CryptoKeyVersion's key material was
-   * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * destroyed. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
    * </pre>
    *
@@ -1815,7 +1876,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The time this CryptoKeyVersion's key material was
-   * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * destroyed. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
    * </pre>
    *
@@ -1836,7 +1898,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The time this CryptoKeyVersion's key material was
-   * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * destroyed. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
    * </pre>
    *
@@ -1855,9 +1918,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
-   * imported.
+   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob]
+   * used in the most recent import of this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if
+   * the underlying key material was imported.
    * </pre>
    *
    * <code>string import_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1880,9 +1944,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
-   * imported.
+   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob]
+   * used in the most recent import of this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if
+   * the underlying key material was imported.
    * </pre>
    *
    * <code>string import_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1908,8 +1973,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-   * was most recently imported.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * most recently imported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1925,8 +1991,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-   * was most recently imported.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * most recently imported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1942,8 +2009,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-   * was most recently imported.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * most recently imported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1960,8 +2028,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The root cause of the most recent import failure. Only present if
-   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The root cause of the most recent import failure. Only present
+   * if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
    * </pre>
    *
@@ -1985,8 +2053,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The root cause of the most recent import failure. Only present if
-   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The root cause of the most recent import failure. Only present
+   * if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
    * </pre>
    *
@@ -2014,8 +2082,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * ExternalProtectionLevelOptions stores a group of additional fields for
-   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+   * are specific to the
+   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+   * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+   * protection levels.
    * </pre>
    *
    * <code>
@@ -2033,8 +2104,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * ExternalProtectionLevelOptions stores a group of additional fields for
-   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+   * are specific to the
+   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+   * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+   * protection levels.
    * </pre>
    *
    * <code>
@@ -2055,8 +2129,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * ExternalProtectionLevelOptions stores a group of additional fields for
-   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+   * are specific to the
+   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+   * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+   * protection levels.
    * </pre>
    *
    * <code>
@@ -2075,8 +2152,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Whether or not this key version is eligible for reimport, by being
-   * specified as a target in
+   * Output only. Whether or not this key version is eligible for reimport, by
+   * being specified as a target in
    * [ImportCryptoKeyVersionRequest.crypto_key_version][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.crypto_key_version].
    * </pre>
    *
@@ -2421,14 +2498,15 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents an individual cryptographic key, and the
-   * associated key material.
-   * An [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] version can be
-   * used for cryptographic operations.
+   * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents an
+   * individual cryptographic key, and the associated key material.
+   * An
+   * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
+   * version can be used for cryptographic operations.
    * For security reasons, the raw cryptographic key material represented by a
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] can never be viewed or exported. It can only be used to
-   * encrypt, decrypt, or sign data when an authorized user or application invokes
-   * Cloud KMS.
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] can never be viewed
+   * or exported. It can only be used to encrypt, decrypt, or sign data when an
+   * authorized user or application invokes Cloud KMS.
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.CryptoKeyVersion}
@@ -2722,7 +2800,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name for this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
+     * Output only. The resource name for this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
      * </pre>
      *
@@ -2745,7 +2824,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name for this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
+     * Output only. The resource name for this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
      * </pre>
      *
@@ -2768,7 +2848,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name for this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
+     * Output only. The resource name for this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
      * </pre>
      *
@@ -2790,7 +2871,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name for this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
+     * Output only. The resource name for this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
      * </pre>
      *
@@ -2808,7 +2890,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name for this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
+     * Output only. The resource name for this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
      * </pre>
      *
@@ -2833,7 +2916,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The current state of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * The current state of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
@@ -2848,7 +2932,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The current state of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * The current state of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
@@ -2866,7 +2951,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The current state of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * The current state of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
@@ -2886,7 +2972,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The current state of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * The current state of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
@@ -2907,7 +2994,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The current state of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * The current state of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
@@ -2926,8 +3014,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
-     * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+     * describing how crypto operations are performed with this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
      * <code>
@@ -2944,8 +3033,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
-     * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+     * describing how crypto operations are performed with this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
      * <code>
@@ -2965,8 +3055,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
-     * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+     * describing how crypto operations are performed with this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
      * <code>
@@ -2986,8 +3077,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
-     * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+     * describing how crypto operations are performed with this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
      * <code>
@@ -3010,8 +3102,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
-     * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+     * describing how crypto operations are performed with this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      *
      * <code>
@@ -3032,8 +3125,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+     * Output only. The
+     * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+     * supports.
      * </pre>
      *
      * <code>
@@ -3050,8 +3145,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+     * Output only. The
+     * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+     * supports.
      * </pre>
      *
      * <code>
@@ -3071,8 +3168,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+     * Output only. The
+     * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+     * supports.
      * </pre>
      *
      * <code>
@@ -3094,8 +3193,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+     * Output only. The
+     * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+     * supports.
      * </pre>
      *
      * <code>
@@ -3119,8 +3220,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+     * Output only. The
+     * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+     * supports.
      * </pre>
      *
      * <code>
@@ -3149,7 +3252,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * Output only. Statement that was generated and signed by the HSM at key
      * creation time. Use this statement to verify attributes of the key as stored
      * on the HSM, independently of Google. Only provided for key versions with
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
      * </pre>
      *
      * <code>
@@ -3168,7 +3272,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * Output only. Statement that was generated and signed by the HSM at key
      * creation time. Use this statement to verify attributes of the key as stored
      * on the HSM, independently of Google. Only provided for key versions with
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
      * </pre>
      *
      * <code>
@@ -3193,7 +3298,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * Output only. Statement that was generated and signed by the HSM at key
      * creation time. Use this statement to verify attributes of the key as stored
      * on the HSM, independently of Google. Only provided for key versions with
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
      * </pre>
      *
      * <code>
@@ -3220,7 +3326,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * Output only. Statement that was generated and signed by the HSM at key
      * creation time. Use this statement to verify attributes of the key as stored
      * on the HSM, independently of Google. Only provided for key versions with
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
      * </pre>
      *
      * <code>
@@ -3245,7 +3352,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * Output only. Statement that was generated and signed by the HSM at key
      * creation time. Use this statement to verify attributes of the key as stored
      * on the HSM, independently of Google. Only provided for key versions with
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
      * </pre>
      *
      * <code>
@@ -3276,7 +3384,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * Output only. Statement that was generated and signed by the HSM at key
      * creation time. Use this statement to verify attributes of the key as stored
      * on the HSM, independently of Google. Only provided for key versions with
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
      * </pre>
      *
      * <code>
@@ -3301,7 +3410,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * Output only. Statement that was generated and signed by the HSM at key
      * creation time. Use this statement to verify attributes of the key as stored
      * on the HSM, independently of Google. Only provided for key versions with
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
      * </pre>
      *
      * <code>
@@ -3320,7 +3430,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * Output only. Statement that was generated and signed by the HSM at key
      * creation time. Use this statement to verify attributes of the key as stored
      * on the HSM, independently of Google. Only provided for key versions with
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
      * </pre>
      *
      * <code>
@@ -3343,7 +3454,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * Output only. Statement that was generated and signed by the HSM at key
      * creation time. Use this statement to verify attributes of the key as stored
      * on the HSM, independently of Google. Only provided for key versions with
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
      * </pre>
      *
      * <code>
@@ -3377,7 +3489,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
      * </pre>
      *
      * <code>
@@ -3393,7 +3506,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
      * </pre>
      *
      * <code>
@@ -3415,7 +3529,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
      * </pre>
      *
      * <code>
@@ -3439,7 +3554,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
      * </pre>
      *
      * <code>
@@ -3460,7 +3576,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
      * </pre>
      *
      * <code>
@@ -3486,7 +3603,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
      * </pre>
      *
      * <code>
@@ -3508,7 +3626,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
      * </pre>
      *
      * <code>
@@ -3524,7 +3643,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
      * </pre>
      *
      * <code>
@@ -3544,7 +3664,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
      * </pre>
      *
      * <code>
@@ -3578,7 +3699,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
      * generated.
      * </pre>
      *
@@ -3595,7 +3717,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
      * generated.
      * </pre>
      *
@@ -3618,7 +3741,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
      * generated.
      * </pre>
      *
@@ -3643,7 +3767,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
      * generated.
      * </pre>
      *
@@ -3665,7 +3790,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
      * generated.
      * </pre>
      *
@@ -3694,7 +3820,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
      * generated.
      * </pre>
      *
@@ -3717,7 +3844,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
      * generated.
      * </pre>
      *
@@ -3734,7 +3862,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
      * generated.
      * </pre>
      *
@@ -3755,7 +3884,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
      * generated.
      * </pre>
      *
@@ -3790,8 +3920,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-     * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+     * scheduled for destruction. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
      * </pre>
      *
@@ -3808,8 +3940,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-     * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+     * scheduled for destruction. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
      * </pre>
      *
@@ -3832,8 +3966,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-     * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+     * scheduled for destruction. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
      * </pre>
      *
@@ -3858,8 +3994,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-     * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+     * scheduled for destruction. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
      * </pre>
      *
@@ -3881,8 +4019,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-     * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+     * scheduled for destruction. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
      * </pre>
      *
@@ -3911,8 +4051,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-     * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+     * scheduled for destruction. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
      * </pre>
      *
@@ -3935,8 +4077,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-     * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+     * scheduled for destruction. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
      * </pre>
      *
@@ -3953,8 +4097,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-     * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+     * scheduled for destruction. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
      * </pre>
      *
@@ -3975,8 +4121,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-     * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The time this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+     * scheduled for destruction. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
      * </pre>
      *
@@ -4012,7 +4160,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time this CryptoKeyVersion's key material was
-     * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * destroyed. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
      * </pre>
      *
@@ -4030,7 +4179,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time this CryptoKeyVersion's key material was
-     * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * destroyed. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
      * </pre>
      *
@@ -4054,7 +4204,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time this CryptoKeyVersion's key material was
-     * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * destroyed. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
      * </pre>
      *
@@ -4080,7 +4231,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time this CryptoKeyVersion's key material was
-     * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * destroyed. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
      * </pre>
      *
@@ -4103,7 +4255,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time this CryptoKeyVersion's key material was
-     * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * destroyed. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
      * </pre>
      *
@@ -4133,7 +4286,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time this CryptoKeyVersion's key material was
-     * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * destroyed. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
      * </pre>
      *
@@ -4157,7 +4311,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time this CryptoKeyVersion's key material was
-     * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * destroyed. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
      * </pre>
      *
@@ -4175,7 +4330,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time this CryptoKeyVersion's key material was
-     * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * destroyed. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
      * </pre>
      *
@@ -4197,7 +4353,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time this CryptoKeyVersion's key material was
-     * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * destroyed. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
      * </pre>
      *
@@ -4227,9 +4384,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
-     * imported.
+     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob]
+     * used in the most recent import of this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if
+     * the underlying key material was imported.
      * </pre>
      *
      * <code>string import_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4251,9 +4409,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
-     * imported.
+     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob]
+     * used in the most recent import of this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if
+     * the underlying key material was imported.
      * </pre>
      *
      * <code>string import_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4275,9 +4434,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
-     * imported.
+     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob]
+     * used in the most recent import of this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if
+     * the underlying key material was imported.
      * </pre>
      *
      * <code>string import_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4298,9 +4458,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
-     * imported.
+     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob]
+     * used in the most recent import of this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if
+     * the underlying key material was imported.
      * </pre>
      *
      * <code>string import_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4317,9 +4478,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
-     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
-     * imported.
+     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob]
+     * used in the most recent import of this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if
+     * the underlying key material was imported.
      * </pre>
      *
      * <code>string import_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4348,8 +4510,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was most recently imported.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * most recently imported.
      * </pre>
      *
      * <code>
@@ -4365,8 +4528,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was most recently imported.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * most recently imported.
      * </pre>
      *
      * <code>
@@ -4388,8 +4552,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was most recently imported.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * most recently imported.
      * </pre>
      *
      * <code>
@@ -4413,8 +4578,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was most recently imported.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * most recently imported.
      * </pre>
      *
      * <code>
@@ -4435,8 +4601,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was most recently imported.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * most recently imported.
      * </pre>
      *
      * <code>
@@ -4462,8 +4629,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was most recently imported.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * most recently imported.
      * </pre>
      *
      * <code>
@@ -4485,8 +4653,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was most recently imported.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * most recently imported.
      * </pre>
      *
      * <code>
@@ -4502,8 +4671,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was most recently imported.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * most recently imported.
      * </pre>
      *
      * <code>
@@ -4523,8 +4693,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was most recently imported.
+     * Output only. The time at which this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+     * most recently imported.
      * </pre>
      *
      * <code>
@@ -4553,8 +4724,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The root cause of the most recent import failure. Only present if
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The root cause of the most recent import failure. Only present
+     * if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
      * </pre>
      *
@@ -4577,8 +4748,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The root cause of the most recent import failure. Only present if
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The root cause of the most recent import failure. Only present
+     * if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
      * </pre>
      *
@@ -4601,8 +4772,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The root cause of the most recent import failure. Only present if
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The root cause of the most recent import failure. Only present
+     * if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
      * </pre>
      *
@@ -4624,8 +4795,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The root cause of the most recent import failure. Only present if
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The root cause of the most recent import failure. Only present
+     * if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
      * </pre>
      *
@@ -4643,8 +4814,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The root cause of the most recent import failure. Only present if
-     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * Output only. The root cause of the most recent import failure. Only present
+     * if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
      * </pre>
      *
@@ -4675,8 +4846,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ExternalProtectionLevelOptions stores a group of additional fields for
-     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+     * are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+     * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+     * protection levels.
      * </pre>
      *
      * <code>
@@ -4694,8 +4868,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ExternalProtectionLevelOptions stores a group of additional fields for
-     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+     * are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+     * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+     * protection levels.
      * </pre>
      *
      * <code>
@@ -4719,8 +4896,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ExternalProtectionLevelOptions stores a group of additional fields for
-     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+     * are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+     * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+     * protection levels.
      * </pre>
      *
      * <code>
@@ -4746,8 +4926,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ExternalProtectionLevelOptions stores a group of additional fields for
-     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+     * are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+     * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+     * protection levels.
      * </pre>
      *
      * <code>
@@ -4770,8 +4953,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ExternalProtectionLevelOptions stores a group of additional fields for
-     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+     * are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+     * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+     * protection levels.
      * </pre>
      *
      * <code>
@@ -4802,8 +4988,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ExternalProtectionLevelOptions stores a group of additional fields for
-     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+     * are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+     * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+     * protection levels.
      * </pre>
      *
      * <code>
@@ -4826,8 +5015,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ExternalProtectionLevelOptions stores a group of additional fields for
-     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+     * are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+     * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+     * protection levels.
      * </pre>
      *
      * <code>
@@ -4845,8 +5037,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ExternalProtectionLevelOptions stores a group of additional fields for
-     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+     * are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+     * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+     * protection levels.
      * </pre>
      *
      * <code>
@@ -4868,8 +5063,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ExternalProtectionLevelOptions stores a group of additional fields for
-     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+     * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+     * are specific to the
+     * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level
+     * and [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]
+     * protection levels.
      * </pre>
      *
      * <code>
@@ -4898,8 +5096,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Whether or not this key version is eligible for reimport, by being
-     * specified as a target in
+     * Output only. Whether or not this key version is eligible for reimport, by
+     * being specified as a target in
      * [ImportCryptoKeyVersionRequest.crypto_key_version][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.crypto_key_version].
      * </pre>
      *
@@ -4915,8 +5113,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Whether or not this key version is eligible for reimport, by being
-     * specified as a target in
+     * Output only. Whether or not this key version is eligible for reimport, by
+     * being specified as a target in
      * [ImportCryptoKeyVersionRequest.crypto_key_version][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.crypto_key_version].
      * </pre>
      *
@@ -4935,8 +5133,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Whether or not this key version is eligible for reimport, by being
-     * specified as a target in
+     * Output only. Whether or not this key version is eligible for reimport, by
+     * being specified as a target in
      * [ImportCryptoKeyVersionRequest.crypto_key_version][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.crypto_key_version].
      * </pre>
      *

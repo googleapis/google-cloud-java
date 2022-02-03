@@ -22,7 +22,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
+ * Request message for
+ * [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.ListKeyRingsRequest}
@@ -147,7 +148,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource name of the location associated with the
-   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+   * `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -173,7 +175,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource name of the location associated with the
-   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+   * `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -201,10 +204,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
-   * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
-   * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
-   * request.  If unspecified, the server will pick an appropriate default.
+   * Optional. Optional limit on the number of
+   * [KeyRings][google.cloud.kms.v1.KeyRing] to include in the response. Further
+   * [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
+   * including the
+   * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token]
+   * in a subsequent request.  If unspecified, the server will pick an
+   * appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -576,7 +582,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
+   * Request message for
+   * [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.ListKeyRingsRequest}
@@ -762,7 +769,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the location associated with the
-     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+     * `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -787,7 +795,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the location associated with the
-     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+     * `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -812,7 +821,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the location associated with the
-     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+     * `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -836,7 +846,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the location associated with the
-     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+     * `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -856,7 +867,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the location associated with the
-     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+     * `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -882,10 +894,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
-     * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
-     * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
-     * request.  If unspecified, the server will pick an appropriate default.
+     * Optional. Optional limit on the number of
+     * [KeyRings][google.cloud.kms.v1.KeyRing] to include in the response. Further
+     * [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
+     * including the
+     * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token]
+     * in a subsequent request.  If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -900,10 +915,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
-     * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
-     * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
-     * request.  If unspecified, the server will pick an appropriate default.
+     * Optional. Optional limit on the number of
+     * [KeyRings][google.cloud.kms.v1.KeyRing] to include in the response. Further
+     * [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
+     * including the
+     * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token]
+     * in a subsequent request.  If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -921,10 +939,13 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
-     * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
-     * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
-     * request.  If unspecified, the server will pick an appropriate default.
+     * Optional. Optional limit on the number of
+     * [KeyRings][google.cloud.kms.v1.KeyRing] to include in the response. Further
+     * [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
+     * including the
+     * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token]
+     * in a subsequent request.  If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

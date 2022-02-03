@@ -27,8 +27,8 @@ public interface GetPublicKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
-   * get.
+   * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface GetPublicKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
-   * get.
+   * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
    * </pre>
    *
    * <code>

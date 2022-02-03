@@ -22,7 +22,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Response message for [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
+ * Response message for
+ * [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.ListImportJobsResponse}
@@ -207,7 +208,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
+   * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -231,7 +233,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
+   * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -257,7 +260,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that matched the query.
+   * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that
+   * matched the query.
    * </pre>
    *
    * <code>int32 total_size = 3;</code>
@@ -452,7 +456,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Response message for [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
+   * Response message for
+   * [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.ListImportJobsResponse}
@@ -1012,7 +1017,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
+     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1035,7 +1041,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
+     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1058,7 +1065,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
+     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1080,7 +1088,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
+     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1098,7 +1107,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
+     * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1122,7 +1132,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that matched the query.
+     * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that
+     * matched the query.
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
@@ -1137,7 +1148,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that matched the query.
+     * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that
+     * matched the query.
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
@@ -1155,7 +1167,8 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that matched the query.
+     * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that
+     * matched the query.
      * </pre>
      *
      * <code>int32 total_size = 3;</code>

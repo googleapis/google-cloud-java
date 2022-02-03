@@ -27,7 +27,8 @@ public interface GetCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface GetCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
    * </pre>
    *
    * <code>

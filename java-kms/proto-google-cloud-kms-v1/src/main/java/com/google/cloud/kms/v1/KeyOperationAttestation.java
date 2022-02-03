@@ -85,6 +85,24 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
               content_ = input.readBytes();
               break;
             }
+          case 50:
+            {
+              com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.Builder subBuilder =
+                  null;
+              if (certChains_ != null) {
+                subBuilder = certChains_.toBuilder();
+              }
+              certChains_ =
+                  input.readMessage(
+                      com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(certChains_);
+                certChains_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -283,6 +301,1457 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     // @@protoc_insertion_point(enum_scope:google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat)
   }
 
+  public interface CertificateChainsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.KeyOperationAttestation.CertificateChains)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Cavium certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string cavium_certs = 1;</code>
+     *
+     * @return A list containing the caviumCerts.
+     */
+    java.util.List<java.lang.String> getCaviumCertsList();
+    /**
+     *
+     *
+     * <pre>
+     * Cavium certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string cavium_certs = 1;</code>
+     *
+     * @return The count of caviumCerts.
+     */
+    int getCaviumCertsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Cavium certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string cavium_certs = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The caviumCerts at the given index.
+     */
+    java.lang.String getCaviumCerts(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Cavium certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string cavium_certs = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the caviumCerts at the given index.
+     */
+    com.google.protobuf.ByteString getCaviumCertsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Google card certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_card_certs = 2;</code>
+     *
+     * @return A list containing the googleCardCerts.
+     */
+    java.util.List<java.lang.String> getGoogleCardCertsList();
+    /**
+     *
+     *
+     * <pre>
+     * Google card certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_card_certs = 2;</code>
+     *
+     * @return The count of googleCardCerts.
+     */
+    int getGoogleCardCertsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Google card certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_card_certs = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The googleCardCerts at the given index.
+     */
+    java.lang.String getGoogleCardCerts(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Google card certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_card_certs = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the googleCardCerts at the given index.
+     */
+    com.google.protobuf.ByteString getGoogleCardCertsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Google partition certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_partition_certs = 3;</code>
+     *
+     * @return A list containing the googlePartitionCerts.
+     */
+    java.util.List<java.lang.String> getGooglePartitionCertsList();
+    /**
+     *
+     *
+     * <pre>
+     * Google partition certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_partition_certs = 3;</code>
+     *
+     * @return The count of googlePartitionCerts.
+     */
+    int getGooglePartitionCertsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Google partition certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_partition_certs = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The googlePartitionCerts at the given index.
+     */
+    java.lang.String getGooglePartitionCerts(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Google partition certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_partition_certs = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the googlePartitionCerts at the given index.
+     */
+    com.google.protobuf.ByteString getGooglePartitionCertsBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Certificate chains needed to verify the attestation.
+   * Certificates in chains are PEM-encoded and are ordered based on
+   * https://tools.ietf.org/html/rfc5246#section-7.4.2.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.kms.v1.KeyOperationAttestation.CertificateChains}
+   */
+  public static final class CertificateChains extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.KeyOperationAttestation.CertificateChains)
+      CertificateChainsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use CertificateChains.newBuilder() to construct.
+    private CertificateChains(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CertificateChains() {
+      caviumCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      googleCardCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      googlePartitionCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CertificateChains();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private CertificateChains(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  caviumCerts_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                caviumCerts_.add(s);
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  googleCardCerts_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                googleCardCerts_.add(s);
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                  googlePartitionCerts_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                googlePartitionCerts_.add(s);
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          caviumCerts_ = caviumCerts_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          googleCardCerts_ = googleCardCerts_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          googlePartitionCerts_ = googlePartitionCerts_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.kms.v1.KmsResourcesProto
+          .internal_static_google_cloud_kms_v1_KeyOperationAttestation_CertificateChains_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.kms.v1.KmsResourcesProto
+          .internal_static_google_cloud_kms_v1_KeyOperationAttestation_CertificateChains_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.class,
+              com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.Builder.class);
+    }
+
+    public static final int CAVIUM_CERTS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList caviumCerts_;
+    /**
+     *
+     *
+     * <pre>
+     * Cavium certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string cavium_certs = 1;</code>
+     *
+     * @return A list containing the caviumCerts.
+     */
+    public com.google.protobuf.ProtocolStringList getCaviumCertsList() {
+      return caviumCerts_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cavium certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string cavium_certs = 1;</code>
+     *
+     * @return The count of caviumCerts.
+     */
+    public int getCaviumCertsCount() {
+      return caviumCerts_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cavium certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string cavium_certs = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The caviumCerts at the given index.
+     */
+    public java.lang.String getCaviumCerts(int index) {
+      return caviumCerts_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cavium certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string cavium_certs = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the caviumCerts at the given index.
+     */
+    public com.google.protobuf.ByteString getCaviumCertsBytes(int index) {
+      return caviumCerts_.getByteString(index);
+    }
+
+    public static final int GOOGLE_CARD_CERTS_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList googleCardCerts_;
+    /**
+     *
+     *
+     * <pre>
+     * Google card certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_card_certs = 2;</code>
+     *
+     * @return A list containing the googleCardCerts.
+     */
+    public com.google.protobuf.ProtocolStringList getGoogleCardCertsList() {
+      return googleCardCerts_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Google card certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_card_certs = 2;</code>
+     *
+     * @return The count of googleCardCerts.
+     */
+    public int getGoogleCardCertsCount() {
+      return googleCardCerts_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Google card certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_card_certs = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The googleCardCerts at the given index.
+     */
+    public java.lang.String getGoogleCardCerts(int index) {
+      return googleCardCerts_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Google card certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_card_certs = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the googleCardCerts at the given index.
+     */
+    public com.google.protobuf.ByteString getGoogleCardCertsBytes(int index) {
+      return googleCardCerts_.getByteString(index);
+    }
+
+    public static final int GOOGLE_PARTITION_CERTS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList googlePartitionCerts_;
+    /**
+     *
+     *
+     * <pre>
+     * Google partition certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_partition_certs = 3;</code>
+     *
+     * @return A list containing the googlePartitionCerts.
+     */
+    public com.google.protobuf.ProtocolStringList getGooglePartitionCertsList() {
+      return googlePartitionCerts_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Google partition certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_partition_certs = 3;</code>
+     *
+     * @return The count of googlePartitionCerts.
+     */
+    public int getGooglePartitionCertsCount() {
+      return googlePartitionCerts_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Google partition certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_partition_certs = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The googlePartitionCerts at the given index.
+     */
+    public java.lang.String getGooglePartitionCerts(int index) {
+      return googlePartitionCerts_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Google partition certificate chain corresponding to the attestation.
+     * </pre>
+     *
+     * <code>repeated string google_partition_certs = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the googlePartitionCerts at the given index.
+     */
+    public com.google.protobuf.ByteString getGooglePartitionCertsBytes(int index) {
+      return googlePartitionCerts_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < caviumCerts_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, caviumCerts_.getRaw(i));
+      }
+      for (int i = 0; i < googleCardCerts_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, googleCardCerts_.getRaw(i));
+      }
+      for (int i = 0; i < googlePartitionCerts_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 3, googlePartitionCerts_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < caviumCerts_.size(); i++) {
+          dataSize += computeStringSizeNoTag(caviumCerts_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCaviumCertsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < googleCardCerts_.size(); i++) {
+          dataSize += computeStringSizeNoTag(googleCardCerts_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getGoogleCardCertsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < googlePartitionCerts_.size(); i++) {
+          dataSize += computeStringSizeNoTag(googlePartitionCerts_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getGooglePartitionCertsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains other =
+          (com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains) obj;
+
+      if (!getCaviumCertsList().equals(other.getCaviumCertsList())) return false;
+      if (!getGoogleCardCertsList().equals(other.getGoogleCardCertsList())) return false;
+      if (!getGooglePartitionCertsList().equals(other.getGooglePartitionCertsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getCaviumCertsCount() > 0) {
+        hash = (37 * hash) + CAVIUM_CERTS_FIELD_NUMBER;
+        hash = (53 * hash) + getCaviumCertsList().hashCode();
+      }
+      if (getGoogleCardCertsCount() > 0) {
+        hash = (37 * hash) + GOOGLE_CARD_CERTS_FIELD_NUMBER;
+        hash = (53 * hash) + getGoogleCardCertsList().hashCode();
+      }
+      if (getGooglePartitionCertsCount() > 0) {
+        hash = (37 * hash) + GOOGLE_PARTITION_CERTS_FIELD_NUMBER;
+        hash = (53 * hash) + getGooglePartitionCertsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Certificate chains needed to verify the attestation.
+     * Certificates in chains are PEM-encoded and are ordered based on
+     * https://tools.ietf.org/html/rfc5246#section-7.4.2.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.kms.v1.KeyOperationAttestation.CertificateChains}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.KeyOperationAttestation.CertificateChains)
+        com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChainsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.kms.v1.KmsResourcesProto
+            .internal_static_google_cloud_kms_v1_KeyOperationAttestation_CertificateChains_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.kms.v1.KmsResourcesProto
+            .internal_static_google_cloud_kms_v1_KeyOperationAttestation_CertificateChains_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.class,
+                com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        caviumCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        googleCardCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        googlePartitionCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.kms.v1.KmsResourcesProto
+            .internal_static_google_cloud_kms_v1_KeyOperationAttestation_CertificateChains_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains
+          getDefaultInstanceForType() {
+        return com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains build() {
+        com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains buildPartial() {
+        com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains result =
+            new com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          caviumCerts_ = caviumCerts_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.caviumCerts_ = caviumCerts_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          googleCardCerts_ = googleCardCerts_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.googleCardCerts_ = googleCardCerts_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          googlePartitionCerts_ = googlePartitionCerts_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.googlePartitionCerts_ = googlePartitionCerts_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains) {
+          return mergeFrom(
+              (com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains other) {
+        if (other
+            == com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains
+                .getDefaultInstance()) return this;
+        if (!other.caviumCerts_.isEmpty()) {
+          if (caviumCerts_.isEmpty()) {
+            caviumCerts_ = other.caviumCerts_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureCaviumCertsIsMutable();
+            caviumCerts_.addAll(other.caviumCerts_);
+          }
+          onChanged();
+        }
+        if (!other.googleCardCerts_.isEmpty()) {
+          if (googleCardCerts_.isEmpty()) {
+            googleCardCerts_ = other.googleCardCerts_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureGoogleCardCertsIsMutable();
+            googleCardCerts_.addAll(other.googleCardCerts_);
+          }
+          onChanged();
+        }
+        if (!other.googlePartitionCerts_.isEmpty()) {
+          if (googlePartitionCerts_.isEmpty()) {
+            googlePartitionCerts_ = other.googlePartitionCerts_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureGooglePartitionCertsIsMutable();
+            googlePartitionCerts_.addAll(other.googlePartitionCerts_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList caviumCerts_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureCaviumCertsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          caviumCerts_ = new com.google.protobuf.LazyStringArrayList(caviumCerts_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cavium certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string cavium_certs = 1;</code>
+       *
+       * @return A list containing the caviumCerts.
+       */
+      public com.google.protobuf.ProtocolStringList getCaviumCertsList() {
+        return caviumCerts_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cavium certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string cavium_certs = 1;</code>
+       *
+       * @return The count of caviumCerts.
+       */
+      public int getCaviumCertsCount() {
+        return caviumCerts_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cavium certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string cavium_certs = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The caviumCerts at the given index.
+       */
+      public java.lang.String getCaviumCerts(int index) {
+        return caviumCerts_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cavium certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string cavium_certs = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the caviumCerts at the given index.
+       */
+      public com.google.protobuf.ByteString getCaviumCertsBytes(int index) {
+        return caviumCerts_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cavium certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string cavium_certs = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The caviumCerts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCaviumCerts(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCaviumCertsIsMutable();
+        caviumCerts_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cavium certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string cavium_certs = 1;</code>
+       *
+       * @param value The caviumCerts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCaviumCerts(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCaviumCertsIsMutable();
+        caviumCerts_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cavium certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string cavium_certs = 1;</code>
+       *
+       * @param values The caviumCerts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCaviumCerts(java.lang.Iterable<java.lang.String> values) {
+        ensureCaviumCertsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, caviumCerts_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cavium certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string cavium_certs = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCaviumCerts() {
+        caviumCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cavium certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string cavium_certs = 1;</code>
+       *
+       * @param value The bytes of the caviumCerts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCaviumCertsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureCaviumCertsIsMutable();
+        caviumCerts_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList googleCardCerts_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureGoogleCardCertsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          googleCardCerts_ = new com.google.protobuf.LazyStringArrayList(googleCardCerts_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google card certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_card_certs = 2;</code>
+       *
+       * @return A list containing the googleCardCerts.
+       */
+      public com.google.protobuf.ProtocolStringList getGoogleCardCertsList() {
+        return googleCardCerts_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google card certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_card_certs = 2;</code>
+       *
+       * @return The count of googleCardCerts.
+       */
+      public int getGoogleCardCertsCount() {
+        return googleCardCerts_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google card certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_card_certs = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The googleCardCerts at the given index.
+       */
+      public java.lang.String getGoogleCardCerts(int index) {
+        return googleCardCerts_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google card certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_card_certs = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the googleCardCerts at the given index.
+       */
+      public com.google.protobuf.ByteString getGoogleCardCertsBytes(int index) {
+        return googleCardCerts_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google card certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_card_certs = 2;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The googleCardCerts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGoogleCardCerts(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGoogleCardCertsIsMutable();
+        googleCardCerts_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google card certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_card_certs = 2;</code>
+       *
+       * @param value The googleCardCerts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addGoogleCardCerts(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGoogleCardCertsIsMutable();
+        googleCardCerts_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google card certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_card_certs = 2;</code>
+       *
+       * @param values The googleCardCerts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllGoogleCardCerts(java.lang.Iterable<java.lang.String> values) {
+        ensureGoogleCardCertsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, googleCardCerts_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google card certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_card_certs = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGoogleCardCerts() {
+        googleCardCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google card certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_card_certs = 2;</code>
+       *
+       * @param value The bytes of the googleCardCerts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addGoogleCardCertsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureGoogleCardCertsIsMutable();
+        googleCardCerts_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList googlePartitionCerts_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureGooglePartitionCertsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          googlePartitionCerts_ =
+              new com.google.protobuf.LazyStringArrayList(googlePartitionCerts_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google partition certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_partition_certs = 3;</code>
+       *
+       * @return A list containing the googlePartitionCerts.
+       */
+      public com.google.protobuf.ProtocolStringList getGooglePartitionCertsList() {
+        return googlePartitionCerts_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google partition certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_partition_certs = 3;</code>
+       *
+       * @return The count of googlePartitionCerts.
+       */
+      public int getGooglePartitionCertsCount() {
+        return googlePartitionCerts_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google partition certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_partition_certs = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The googlePartitionCerts at the given index.
+       */
+      public java.lang.String getGooglePartitionCerts(int index) {
+        return googlePartitionCerts_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google partition certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_partition_certs = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the googlePartitionCerts at the given index.
+       */
+      public com.google.protobuf.ByteString getGooglePartitionCertsBytes(int index) {
+        return googlePartitionCerts_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google partition certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_partition_certs = 3;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The googlePartitionCerts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGooglePartitionCerts(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGooglePartitionCertsIsMutable();
+        googlePartitionCerts_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google partition certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_partition_certs = 3;</code>
+       *
+       * @param value The googlePartitionCerts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addGooglePartitionCerts(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGooglePartitionCertsIsMutable();
+        googlePartitionCerts_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google partition certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_partition_certs = 3;</code>
+       *
+       * @param values The googlePartitionCerts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllGooglePartitionCerts(java.lang.Iterable<java.lang.String> values) {
+        ensureGooglePartitionCertsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, googlePartitionCerts_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google partition certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_partition_certs = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGooglePartitionCerts() {
+        googlePartitionCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google partition certificate chain corresponding to the attestation.
+       * </pre>
+       *
+       * <code>repeated string google_partition_certs = 3;</code>
+       *
+       * @param value The bytes of the googlePartitionCerts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addGooglePartitionCertsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureGooglePartitionCertsIsMutable();
+        googlePartitionCerts_.add(value);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.KeyOperationAttestation.CertificateChains)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.KeyOperationAttestation.CertificateChains)
+    private static final com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains();
+    }
+
+    public static com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CertificateChains> PARSER =
+        new com.google.protobuf.AbstractParser<CertificateChains>() {
+          @java.lang.Override
+          public CertificateChains parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new CertificateChains(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<CertificateChains> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CertificateChains> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int FORMAT_FIELD_NUMBER = 4;
   private int format_;
   /**
@@ -344,6 +1813,61 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     return content_;
   }
 
+  public static final int CERT_CHAINS_FIELD_NUMBER = 6;
+  private com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains certChains_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The certificate chains needed to validate the attestation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the certChains field is set.
+   */
+  @java.lang.Override
+  public boolean hasCertChains() {
+    return certChains_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The certificate chains needed to validate the attestation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The certChains.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains getCertChains() {
+    return certChains_ == null
+        ? com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.getDefaultInstance()
+        : certChains_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The certificate chains needed to validate the attestation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChainsOrBuilder
+      getCertChainsOrBuilder() {
+    return getCertChains();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -367,6 +1891,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     if (!content_.isEmpty()) {
       output.writeBytes(5, content_);
     }
+    if (certChains_ != null) {
+      output.writeMessage(6, getCertChains());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -384,6 +1911,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     }
     if (!content_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(5, content_);
+    }
+    if (certChains_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCertChains());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -403,6 +1933,10 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
 
     if (format_ != other.format_) return false;
     if (!getContent().equals(other.getContent())) return false;
+    if (hasCertChains() != other.hasCertChains()) return false;
+    if (hasCertChains()) {
+      if (!getCertChains().equals(other.getCertChains())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -418,6 +1952,10 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     hash = (53 * hash) + format_;
     hash = (37 * hash) + CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getContent().hashCode();
+    if (hasCertChains()) {
+      hash = (37 * hash) + CERT_CHAINS_FIELD_NUMBER;
+      hash = (53 * hash) + getCertChains().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -569,6 +2107,12 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
 
       content_ = com.google.protobuf.ByteString.EMPTY;
 
+      if (certChainsBuilder_ == null) {
+        certChains_ = null;
+      } else {
+        certChains_ = null;
+        certChainsBuilder_ = null;
+      }
       return this;
     }
 
@@ -598,6 +2142,11 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
           new com.google.cloud.kms.v1.KeyOperationAttestation(this);
       result.format_ = format_;
       result.content_ = content_;
+      if (certChainsBuilder_ == null) {
+        result.certChains_ = certChains_;
+      } else {
+        result.certChains_ = certChainsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -653,6 +2202,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       }
       if (other.getContent() != com.google.protobuf.ByteString.EMPTY) {
         setContent(other.getContent());
+      }
+      if (other.hasCertChains()) {
+        mergeCertChains(other.getCertChains());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -843,6 +2395,215 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       content_ = getDefaultInstance().getContent();
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains certChains_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains,
+            com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.Builder,
+            com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChainsOrBuilder>
+        certChainsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The certificate chains needed to validate the attestation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the certChains field is set.
+     */
+    public boolean hasCertChains() {
+      return certChainsBuilder_ != null || certChains_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The certificate chains needed to validate the attestation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The certChains.
+     */
+    public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains getCertChains() {
+      if (certChainsBuilder_ == null) {
+        return certChains_ == null
+            ? com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.getDefaultInstance()
+            : certChains_;
+      } else {
+        return certChainsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The certificate chains needed to validate the attestation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCertChains(
+        com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains value) {
+      if (certChainsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        certChains_ = value;
+        onChanged();
+      } else {
+        certChainsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The certificate chains needed to validate the attestation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCertChains(
+        com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.Builder builderForValue) {
+      if (certChainsBuilder_ == null) {
+        certChains_ = builderForValue.build();
+        onChanged();
+      } else {
+        certChainsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The certificate chains needed to validate the attestation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCertChains(
+        com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains value) {
+      if (certChainsBuilder_ == null) {
+        if (certChains_ != null) {
+          certChains_ =
+              com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.newBuilder(
+                      certChains_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          certChains_ = value;
+        }
+        onChanged();
+      } else {
+        certChainsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The certificate chains needed to validate the attestation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCertChains() {
+      if (certChainsBuilder_ == null) {
+        certChains_ = null;
+        onChanged();
+      } else {
+        certChains_ = null;
+        certChainsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The certificate chains needed to validate the attestation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.Builder
+        getCertChainsBuilder() {
+
+      onChanged();
+      return getCertChainsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The certificate chains needed to validate the attestation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChainsOrBuilder
+        getCertChainsOrBuilder() {
+      if (certChainsBuilder_ != null) {
+        return certChainsBuilder_.getMessageOrBuilder();
+      } else {
+        return certChains_ == null
+            ? com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.getDefaultInstance()
+            : certChains_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The certificate chains needed to validate the attestation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyOperationAttestation.CertificateChains cert_chains = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains,
+            com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.Builder,
+            com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChainsOrBuilder>
+        getCertChainsFieldBuilder() {
+      if (certChainsBuilder_ == null) {
+        certChainsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains,
+                com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.Builder,
+                com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChainsOrBuilder>(
+                getCertChains(), getParentForChildren(), isClean());
+        certChains_ = null;
+      }
+      return certChainsBuilder_;
     }
 
     @java.lang.Override

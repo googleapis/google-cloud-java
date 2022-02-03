@@ -22,7 +22,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
+ * Request message for
+ * [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.ListImportJobsRequest}
@@ -146,8 +147,8 @@ public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+   * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
    * <code>
@@ -172,8 +173,8 @@ public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+   * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
    * <code>
@@ -201,10 +202,13 @@ public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Optional limit on the number of [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the
-   * response. Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be obtained by
-   * including the [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token] in a subsequent
-   * request. If unspecified, the server will pick an appropriate default.
+   * Optional. Optional limit on the number of
+   * [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the response.
+   * Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be
+   * obtained by including the
+   * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token]
+   * in a subsequent request. If unspecified, the server will pick an
+   * appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -576,7 +580,8 @@ public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
+   * Request message for
+   * [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.ListImportJobsRequest}
@@ -761,8 +766,8 @@ public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>
@@ -786,8 +791,8 @@ public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>
@@ -811,8 +816,8 @@ public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>
@@ -835,8 +840,8 @@ public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>
@@ -855,8 +860,8 @@ public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>
@@ -882,10 +887,13 @@ public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Optional limit on the number of [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the
-     * response. Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be obtained by
-     * including the [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token] in a subsequent
-     * request. If unspecified, the server will pick an appropriate default.
+     * Optional. Optional limit on the number of
+     * [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the response.
+     * Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be
+     * obtained by including the
+     * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token]
+     * in a subsequent request. If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -900,10 +908,13 @@ public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Optional limit on the number of [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the
-     * response. Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be obtained by
-     * including the [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token] in a subsequent
-     * request. If unspecified, the server will pick an appropriate default.
+     * Optional. Optional limit on the number of
+     * [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the response.
+     * Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be
+     * obtained by including the
+     * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token]
+     * in a subsequent request. If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -921,10 +932,13 @@ public final class ListImportJobsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Optional limit on the number of [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the
-     * response. Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be obtained by
-     * including the [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token] in a subsequent
-     * request. If unspecified, the server will pick an appropriate default.
+     * Optional. Optional limit on the number of
+     * [ImportJobs][google.cloud.kms.v1.ImportJob] to include in the response.
+     * Further [ImportJobs][google.cloud.kms.v1.ImportJob] can subsequently be
+     * obtained by including the
+     * [ListImportJobsResponse.next_page_token][google.cloud.kms.v1.ListImportJobsResponse.next_page_token]
+     * in a subsequent request. If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -27,8 +27,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
-   * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing
+   * associated with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
-   * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing
+   * associated with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
    * <code>
@@ -85,7 +85,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field
+   * values.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -98,7 +99,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field
+   * values.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -111,7 +113,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
+   * Required. A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field
+   * values.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -123,9 +126,12 @@ public interface CreateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true, the request will create a [CryptoKey][google.cloud.kms.v1.CryptoKey] without any
-   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]. You must manually call
-   * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
+   * If set to true, the request will create a
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] without any
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]. You must
+   * manually call
+   * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
+   * or
    * [ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion]
    * before you can use this [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * </pre>

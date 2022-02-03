@@ -23,8 +23,11 @@ package com.google.cloud.kms.v1;
  *
  * <pre>
  * ExternalProtectionLevelOptions stores a group of additional fields for
- * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
- * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+ * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+ * are specific to the [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL]
+ * protection level and
+ * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC] protection
+ * levels.
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.ExternalProtectionLevelOptions}
@@ -42,6 +45,7 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
 
   private ExternalProtectionLevelOptions() {
     externalKeyUri_ = "";
+    ekmConnectionKeyPath_ = "";
   }
 
   @java.lang.Override
@@ -78,6 +82,13 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
               java.lang.String s = input.readStringRequireUtf8();
 
               externalKeyUri_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ekmConnectionKeyPath_ = s;
               break;
             }
           default:
@@ -120,7 +131,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The URI for an external resource that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
+   * The URI for an external resource that this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
    * </pre>
    *
    * <code>string external_key_uri = 1;</code>
@@ -143,7 +155,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The URI for an external resource that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
+   * The URI for an external resource that this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
    * </pre>
    *
    * <code>string external_key_uri = 1;</code>
@@ -157,6 +170,61 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       externalKeyUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EKM_CONNECTION_KEY_PATH_FIELD_NUMBER = 2;
+  private volatile java.lang.Object ekmConnectionKeyPath_;
+  /**
+   *
+   *
+   * <pre>
+   * The path to the external key material on the EKM when using
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection] e.g., "v0/my/key". Set
+   * this field instead of external_key_uri when using an
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection].
+   * </pre>
+   *
+   * <code>string ekm_connection_key_path = 2;</code>
+   *
+   * @return The ekmConnectionKeyPath.
+   */
+  @java.lang.Override
+  public java.lang.String getEkmConnectionKeyPath() {
+    java.lang.Object ref = ekmConnectionKeyPath_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ekmConnectionKeyPath_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The path to the external key material on the EKM when using
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection] e.g., "v0/my/key". Set
+   * this field instead of external_key_uri when using an
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection].
+   * </pre>
+   *
+   * <code>string ekm_connection_key_path = 2;</code>
+   *
+   * @return The bytes for ekmConnectionKeyPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEkmConnectionKeyPathBytes() {
+    java.lang.Object ref = ekmConnectionKeyPath_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ekmConnectionKeyPath_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -180,6 +248,9 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalKeyUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, externalKeyUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ekmConnectionKeyPath_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ekmConnectionKeyPath_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -191,6 +262,9 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalKeyUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, externalKeyUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ekmConnectionKeyPath_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ekmConnectionKeyPath_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -209,6 +283,7 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
         (com.google.cloud.kms.v1.ExternalProtectionLevelOptions) obj;
 
     if (!getExternalKeyUri().equals(other.getExternalKeyUri())) return false;
+    if (!getEkmConnectionKeyPath().equals(other.getEkmConnectionKeyPath())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -222,6 +297,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + EXTERNAL_KEY_URI_FIELD_NUMBER;
     hash = (53 * hash) + getExternalKeyUri().hashCode();
+    hash = (37 * hash) + EKM_CONNECTION_KEY_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getEkmConnectionKeyPath().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -328,8 +405,11 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
    *
    * <pre>
    * ExternalProtectionLevelOptions stores a group of additional fields for
-   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that are specific to the
-   * [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL] protection level.
+   * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
+   * are specific to the [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL]
+   * protection level and
+   * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC] protection
+   * levels.
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.ExternalProtectionLevelOptions}
@@ -372,6 +452,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
       super.clear();
       externalKeyUri_ = "";
 
+      ekmConnectionKeyPath_ = "";
+
       return this;
     }
 
@@ -400,6 +482,7 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
       com.google.cloud.kms.v1.ExternalProtectionLevelOptions result =
           new com.google.cloud.kms.v1.ExternalProtectionLevelOptions(this);
       result.externalKeyUri_ = externalKeyUri_;
+      result.ekmConnectionKeyPath_ = ekmConnectionKeyPath_;
       onBuilt();
       return result;
     }
@@ -454,6 +537,10 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
         externalKeyUri_ = other.externalKeyUri_;
         onChanged();
       }
+      if (!other.getEkmConnectionKeyPath().isEmpty()) {
+        ekmConnectionKeyPath_ = other.ekmConnectionKeyPath_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -489,7 +576,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The URI for an external resource that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
+     * The URI for an external resource that this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
      * </pre>
      *
      * <code>string external_key_uri = 1;</code>
@@ -511,7 +599,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The URI for an external resource that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
+     * The URI for an external resource that this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
      * </pre>
      *
      * <code>string external_key_uri = 1;</code>
@@ -533,7 +622,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The URI for an external resource that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
+     * The URI for an external resource that this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
      * </pre>
      *
      * <code>string external_key_uri = 1;</code>
@@ -554,7 +644,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The URI for an external resource that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
+     * The URI for an external resource that this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
      * </pre>
      *
      * <code>string external_key_uri = 1;</code>
@@ -571,7 +662,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The URI for an external resource that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
+     * The URI for an external resource that this
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
      * </pre>
      *
      * <code>string external_key_uri = 1;</code>
@@ -586,6 +678,127 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
 
       externalKeyUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ekmConnectionKeyPath_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The path to the external key material on the EKM when using
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] e.g., "v0/my/key". Set
+     * this field instead of external_key_uri when using an
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection].
+     * </pre>
+     *
+     * <code>string ekm_connection_key_path = 2;</code>
+     *
+     * @return The ekmConnectionKeyPath.
+     */
+    public java.lang.String getEkmConnectionKeyPath() {
+      java.lang.Object ref = ekmConnectionKeyPath_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ekmConnectionKeyPath_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The path to the external key material on the EKM when using
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] e.g., "v0/my/key". Set
+     * this field instead of external_key_uri when using an
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection].
+     * </pre>
+     *
+     * <code>string ekm_connection_key_path = 2;</code>
+     *
+     * @return The bytes for ekmConnectionKeyPath.
+     */
+    public com.google.protobuf.ByteString getEkmConnectionKeyPathBytes() {
+      java.lang.Object ref = ekmConnectionKeyPath_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ekmConnectionKeyPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The path to the external key material on the EKM when using
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] e.g., "v0/my/key". Set
+     * this field instead of external_key_uri when using an
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection].
+     * </pre>
+     *
+     * <code>string ekm_connection_key_path = 2;</code>
+     *
+     * @param value The ekmConnectionKeyPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEkmConnectionKeyPath(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      ekmConnectionKeyPath_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The path to the external key material on the EKM when using
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] e.g., "v0/my/key". Set
+     * this field instead of external_key_uri when using an
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection].
+     * </pre>
+     *
+     * <code>string ekm_connection_key_path = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEkmConnectionKeyPath() {
+
+      ekmConnectionKeyPath_ = getDefaultInstance().getEkmConnectionKeyPath();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The path to the external key material on the EKM when using
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] e.g., "v0/my/key". Set
+     * this field instead of external_key_uri when using an
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection].
+     * </pre>
+     *
+     * <code>string ekm_connection_key_path = 2;</code>
+     *
+     * @param value The bytes for ekmConnectionKeyPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEkmConnectionKeyPathBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      ekmConnectionKeyPath_ = value;
       onChanged();
       return this;
     }

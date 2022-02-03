@@ -22,7 +22,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.UpdateCryptoKey][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKey].
+ * Request message for
+ * [KeyManagementService.UpdateCryptoKey][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKey].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.UpdateCryptoKeyRequest}
@@ -412,7 +413,8 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.UpdateCryptoKey][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKey].
+   * Request message for
+   * [KeyManagementService.UpdateCryptoKey][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKey].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.UpdateCryptoKeyRequest}

@@ -22,7 +22,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.GenerateRandomBytes][google.cloud.kms.v1.KeyManagementService.GenerateRandomBytes].
+ * Request message for
+ * [KeyManagementService.GenerateRandomBytes][google.cloud.kms.v1.KeyManagementService.GenerateRandomBytes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.GenerateRandomBytesRequest}
@@ -200,8 +201,10 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when generating the random data. Defaults to
-   * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when
+   * generating the random data. Currently, only
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] protection level is
+   * supported.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 3;</code>
@@ -216,8 +219,10 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when generating the random data. Defaults to
-   * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when
+   * generating the random data. Currently, only
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] protection level is
+   * supported.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 3;</code>
@@ -415,7 +420,8 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.GenerateRandomBytes][google.cloud.kms.v1.KeyManagementService.GenerateRandomBytes].
+   * Request message for
+   * [KeyManagementService.GenerateRandomBytes][google.cloud.kms.v1.KeyManagementService.GenerateRandomBytes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.GenerateRandomBytesRequest}
@@ -753,8 +759,10 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when generating the random data. Defaults to
-     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when
+     * generating the random data. Currently, only
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] protection level is
+     * supported.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 3;</code>
@@ -769,8 +777,10 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when generating the random data. Defaults to
-     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when
+     * generating the random data. Currently, only
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] protection level is
+     * supported.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 3;</code>
@@ -788,8 +798,10 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when generating the random data. Defaults to
-     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when
+     * generating the random data. Currently, only
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] protection level is
+     * supported.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 3;</code>
@@ -807,8 +819,10 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when generating the random data. Defaults to
-     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when
+     * generating the random data. Currently, only
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] protection level is
+     * supported.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 3;</code>
@@ -829,8 +843,10 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when generating the random data. Defaults to
-     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when
+     * generating the random data. Currently, only
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] protection level is
+     * supported.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 3;</code>

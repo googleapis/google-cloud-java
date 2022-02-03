@@ -27,7 +27,8 @@ public interface UpdateCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+   * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * updated values.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface UpdateCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+   * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * updated values.
    * </pre>
    *
    * <code>
@@ -55,7 +57,8 @@ public interface UpdateCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with updated values.
+   * Required. [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * updated values.
    * </pre>
    *
    * <code>

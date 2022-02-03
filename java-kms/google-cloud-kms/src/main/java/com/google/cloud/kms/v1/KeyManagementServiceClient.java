@@ -2946,6 +2946,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param digest Optional. The digest of the data to sign. The digest must be produced with the
    *     same digest algorithm as specified by the key version's
    *     [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   *     <p>This field may not be supplied if
+   *     [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] is supplied.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AsymmetricSignResponse asymmetricSign(CryptoKeyVersionName name, Digest digest) {
@@ -2983,6 +2985,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param digest Optional. The digest of the data to sign. The digest must be produced with the
    *     same digest algorithm as specified by the key version's
    *     [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   *     <p>This field may not be supplied if
+   *     [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] is supplied.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AsymmetricSignResponse asymmetricSign(String name, Digest digest) {
@@ -3515,8 +3519,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param lengthBytes The length in bytes of the amount of randomness to retrieve. Minimum 8
    *     bytes, maximum 1024 bytes.
    * @param protectionLevel The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when
-   *     generating the random data. Defaults to
-   *     [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+   *     generating the random data. Currently, only [HSM][google.cloud.kms.v1.ProtectionLevel.HSM]
+   *     protection level is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GenerateRandomBytesResponse generateRandomBytes(

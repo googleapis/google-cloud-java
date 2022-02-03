@@ -27,7 +27,8 @@ public interface ExternalProtectionLevelOptionsOrBuilder
    *
    *
    * <pre>
-   * The URI for an external resource that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
+   * The URI for an external resource that this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
    * </pre>
    *
    * <code>string external_key_uri = 1;</code>
@@ -39,7 +40,8 @@ public interface ExternalProtectionLevelOptionsOrBuilder
    *
    *
    * <pre>
-   * The URI for an external resource that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
+   * The URI for an external resource that this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
    * </pre>
    *
    * <code>string external_key_uri = 1;</code>
@@ -47,4 +49,35 @@ public interface ExternalProtectionLevelOptionsOrBuilder
    * @return The bytes for externalKeyUri.
    */
   com.google.protobuf.ByteString getExternalKeyUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The path to the external key material on the EKM when using
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection] e.g., "v0/my/key". Set
+   * this field instead of external_key_uri when using an
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection].
+   * </pre>
+   *
+   * <code>string ekm_connection_key_path = 2;</code>
+   *
+   * @return The ekmConnectionKeyPath.
+   */
+  java.lang.String getEkmConnectionKeyPath();
+  /**
+   *
+   *
+   * <pre>
+   * The path to the external key material on the EKM when using
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection] e.g., "v0/my/key". Set
+   * this field instead of external_key_uri when using an
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection].
+   * </pre>
+   *
+   * <code>string ekm_connection_key_path = 2;</code>
+   *
+   * @return The bytes for ekmConnectionKeyPath.
+   */
+  com.google.protobuf.ByteString getEkmConnectionKeyPathBytes();
 }

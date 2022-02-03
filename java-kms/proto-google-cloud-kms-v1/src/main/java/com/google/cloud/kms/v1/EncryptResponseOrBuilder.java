@@ -27,8 +27,10 @@ public interface EncryptResponseOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
-   * this field to verify that the intended resource was used for encryption.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+   * encryption. Check this field to verify that the intended resource was used
+   * for encryption.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -40,8 +42,10 @@ public interface EncryptResponseOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption. Check
-   * this field to verify that the intended resource was used for encryption.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+   * encryption. Check this field to verify that the intended resource was used
+   * for encryption.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -68,16 +72,18 @@ public interface EncryptResponseOrBuilder
    *
    * <pre>
    * Integrity verification field. A CRC32C checksum of the returned
-   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]. An integrity check of
-   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext] can be performed by computing the CRC32C
-   * checksum of [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext] and comparing your results to
-   * this field. Discard the response in case of non-matching checksum values,
-   * and perform a limited number of retries. A persistent mismatch may indicate
-   * an issue in your computation of the CRC32C checksum.
-   * Note: This field is defined as int64 for reasons of compatibility across
-   * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
+   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext].
+   * An integrity check of
+   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]
+   * can be performed by computing the CRC32C checksum of
+   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]
+   * and comparing your results to this field. Discard the response in case of
+   * non-matching checksum values, and perform a limited number of retries. A
+   * persistent mismatch may indicate an issue in your computation of the CRC32C
+   * checksum. Note: This field is defined as int64 for reasons of compatibility
+   * across different languages. However, it is a non-negative integer, which
+   * will never exceed 2^32-1, and can be safely downconverted to uint32 in
+   * languages that support this type.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -90,16 +96,18 @@ public interface EncryptResponseOrBuilder
    *
    * <pre>
    * Integrity verification field. A CRC32C checksum of the returned
-   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]. An integrity check of
-   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext] can be performed by computing the CRC32C
-   * checksum of [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext] and comparing your results to
-   * this field. Discard the response in case of non-matching checksum values,
-   * and perform a limited number of retries. A persistent mismatch may indicate
-   * an issue in your computation of the CRC32C checksum.
-   * Note: This field is defined as int64 for reasons of compatibility across
-   * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
+   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext].
+   * An integrity check of
+   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]
+   * can be performed by computing the CRC32C checksum of
+   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]
+   * and comparing your results to this field. Discard the response in case of
+   * non-matching checksum values, and perform a limited number of retries. A
+   * persistent mismatch may indicate an issue in your computation of the CRC32C
+   * checksum. Note: This field is defined as int64 for reasons of compatibility
+   * across different languages. However, it is a non-negative integer, which
+   * will never exceed 2^32-1, and can be safely downconverted to uint32 in
+   * languages that support this type.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -112,16 +120,18 @@ public interface EncryptResponseOrBuilder
    *
    * <pre>
    * Integrity verification field. A CRC32C checksum of the returned
-   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]. An integrity check of
-   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext] can be performed by computing the CRC32C
-   * checksum of [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext] and comparing your results to
-   * this field. Discard the response in case of non-matching checksum values,
-   * and perform a limited number of retries. A persistent mismatch may indicate
-   * an issue in your computation of the CRC32C checksum.
-   * Note: This field is defined as int64 for reasons of compatibility across
-   * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
+   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext].
+   * An integrity check of
+   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]
+   * can be performed by computing the CRC32C checksum of
+   * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]
+   * and comparing your results to this field. Discard the response in case of
+   * non-matching checksum values, and perform a limited number of retries. A
+   * persistent mismatch may indicate an issue in your computation of the CRC32C
+   * checksum. Note: This field is defined as int64 for reasons of compatibility
+   * across different languages. However, it is a non-negative integer, which
+   * will never exceed 2^32-1, and can be safely downconverted to uint32 in
+   * languages that support this type.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -133,13 +143,19 @@ public interface EncryptResponseOrBuilder
    *
    * <pre>
    * Integrity verification field. A flag indicating whether
-   * [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c] was received by
-   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
-   * [plaintext][google.cloud.kms.v1.EncryptRequest.plaintext]. A false value of this field
-   * indicates either that [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c] was left unset or
-   * that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've set
-   * [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c] but this field is still false, discard
-   * the response and perform a limited number of retries.
+   * [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c]
+   * was received by
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used
+   * for the integrity verification of the
+   * [plaintext][google.cloud.kms.v1.EncryptRequest.plaintext]. A false value of
+   * this field indicates either that
+   * [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c]
+   * was left unset or that it was not delivered to
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+   * set
+   * [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c]
+   * but this field is still false, discard the response and perform a limited
+   * number of retries.
    * </pre>
    *
    * <code>bool verified_plaintext_crc32c = 5;</code>
@@ -153,14 +169,19 @@ public interface EncryptResponseOrBuilder
    *
    * <pre>
    * Integrity verification field. A flag indicating whether
-   * [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c] was received by
-   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
-   * [AAD][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data]. A false value of this
-   * field indicates either that
-   * [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c] was left unset or
-   * that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've set
-   * [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c] but this field is
-   * still false, discard the response and perform a limited number of retries.
+   * [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c]
+   * was received by
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used
+   * for the integrity verification of the
+   * [AAD][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data]. A
+   * false value of this field indicates either that
+   * [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c]
+   * was left unset or that it was not delivered to
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+   * set
+   * [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c]
+   * but this field is still false, discard the response and perform a limited
+   * number of retries.
    * </pre>
    *
    * <code>bool verified_additional_authenticated_data_crc32c = 6;</code>
@@ -173,7 +194,9 @@ public interface EncryptResponseOrBuilder
    *
    *
    * <pre>
-   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+   * encryption.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
@@ -185,7 +208,9 @@ public interface EncryptResponseOrBuilder
    *
    *
    * <pre>
-   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+   * encryption.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>

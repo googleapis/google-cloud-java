@@ -79,7 +79,8 @@ public interface ListImportJobsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
+   * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -92,7 +93,8 @@ public interface ListImportJobsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token] to retrieve the next page of results.
+   * [ListImportJobsRequest.page_token][google.cloud.kms.v1.ListImportJobsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -105,7 +107,8 @@ public interface ListImportJobsResponseOrBuilder
    *
    *
    * <pre>
-   * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that matched the query.
+   * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that
+   * matched the query.
    * </pre>
    *
    * <code>int32 total_size = 3;</code>

@@ -28,7 +28,8 @@ public interface CreateKeyRingRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the location associated with the
-   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+   * `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface CreateKeyRingRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the location associated with the
-   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+   * `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -85,7 +87,8 @@ public interface CreateKeyRingRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field
+   * values.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -98,7 +101,8 @@ public interface CreateKeyRingRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field
+   * values.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -111,7 +115,8 @@ public interface CreateKeyRingRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field
+   * values.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];

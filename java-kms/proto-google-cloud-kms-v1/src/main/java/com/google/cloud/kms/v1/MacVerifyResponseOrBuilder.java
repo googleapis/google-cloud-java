@@ -27,9 +27,10 @@ public interface MacVerifyResponseOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for verification.
-   * Check this field to verify that the intended resource was used for
-   * verification.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for
+   * verification. Check this field to verify that the intended resource was
+   * used for verification.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,9 +42,10 @@ public interface MacVerifyResponseOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for verification.
-   * Check this field to verify that the intended resource was used for
-   * verification.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for
+   * verification. Check this field to verify that the intended resource was
+   * used for verification.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -57,7 +59,9 @@ public interface MacVerifyResponseOrBuilder
    *
    * <pre>
    * This field indicates whether or not the verification operation for
-   * [MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac] over [MacVerifyRequest.data][google.cloud.kms.v1.MacVerifyRequest.data] was successful.
+   * [MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac] over
+   * [MacVerifyRequest.data][google.cloud.kms.v1.MacVerifyRequest.data] was
+   * successful.
    * </pre>
    *
    * <code>bool success = 2;</code>
@@ -71,13 +75,19 @@ public interface MacVerifyResponseOrBuilder
    *
    * <pre>
    * Integrity verification field. A flag indicating whether
-   * [MacVerifyRequest.data_crc32c][google.cloud.kms.v1.MacVerifyRequest.data_crc32c] was received by
-   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
-   * [data][google.cloud.kms.v1.MacVerifyRequest.data]. A false value of this field
-   * indicates either that [MacVerifyRequest.data_crc32c][google.cloud.kms.v1.MacVerifyRequest.data_crc32c] was left
-   * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
-   * set [MacVerifyRequest.data_crc32c][google.cloud.kms.v1.MacVerifyRequest.data_crc32c] but this field is still false,
-   * discard the response and perform a limited number of retries.
+   * [MacVerifyRequest.data_crc32c][google.cloud.kms.v1.MacVerifyRequest.data_crc32c]
+   * was received by
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used
+   * for the integrity verification of the
+   * [data][google.cloud.kms.v1.MacVerifyRequest.data]. A false value of this
+   * field indicates either that
+   * [MacVerifyRequest.data_crc32c][google.cloud.kms.v1.MacVerifyRequest.data_crc32c]
+   * was left unset or that it was not delivered to
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+   * set
+   * [MacVerifyRequest.data_crc32c][google.cloud.kms.v1.MacVerifyRequest.data_crc32c]
+   * but this field is still false, discard the response and perform a limited
+   * number of retries.
    * </pre>
    *
    * <code>bool verified_data_crc32c = 3;</code>
@@ -91,13 +101,19 @@ public interface MacVerifyResponseOrBuilder
    *
    * <pre>
    * Integrity verification field. A flag indicating whether
-   * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c] was received by
-   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
-   * [data][google.cloud.kms.v1.MacVerifyRequest.mac]. A false value of this field
-   * indicates either that [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c] was left
-   * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
-   * set [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c] but this field is still false,
-   * discard the response and perform a limited number of retries.
+   * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c]
+   * was received by
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used
+   * for the integrity verification of the
+   * [data][google.cloud.kms.v1.MacVerifyRequest.mac]. A false value of this
+   * field indicates either that
+   * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c]
+   * was left unset or that it was not delivered to
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+   * set
+   * [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c]
+   * but this field is still false, discard the response and perform a limited
+   * number of retries.
    * </pre>
    *
    * <code>bool verified_mac_crc32c = 4;</code>
@@ -126,7 +142,9 @@ public interface MacVerifyResponseOrBuilder
    *
    *
    * <pre>
-   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for verification.
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for
+   * verification.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 6;</code>
@@ -138,7 +156,9 @@ public interface MacVerifyResponseOrBuilder
    *
    *
    * <pre>
-   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for verification.
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for
+   * verification.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 6;</code>

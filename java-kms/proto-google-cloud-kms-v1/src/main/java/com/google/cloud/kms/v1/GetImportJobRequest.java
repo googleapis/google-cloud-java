@@ -22,7 +22,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob].
+ * Request message for
+ * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.GetImportJobRequest}
@@ -117,7 +118,8 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+   * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+   * [ImportJob][google.cloud.kms.v1.ImportJob] to get.
    * </pre>
    *
    * <code>
@@ -142,7 +144,8 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+   * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+   * [ImportJob][google.cloud.kms.v1.ImportJob] to get.
    * </pre>
    *
    * <code>
@@ -327,7 +330,8 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob].
+   * Request message for
+   * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.GetImportJobRequest}
@@ -485,7 +489,8 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+     * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+     * [ImportJob][google.cloud.kms.v1.ImportJob] to get.
      * </pre>
      *
      * <code>
@@ -509,7 +514,8 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+     * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+     * [ImportJob][google.cloud.kms.v1.ImportJob] to get.
      * </pre>
      *
      * <code>
@@ -533,7 +539,8 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+     * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+     * [ImportJob][google.cloud.kms.v1.ImportJob] to get.
      * </pre>
      *
      * <code>
@@ -556,7 +563,8 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+     * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+     * [ImportJob][google.cloud.kms.v1.ImportJob] to get.
      * </pre>
      *
      * <code>
@@ -575,7 +583,8 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+     * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+     * [ImportJob][google.cloud.kms.v1.ImportJob] to get.
      * </pre>
      *
      * <code>

@@ -19,6 +19,26 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= EkmServiceClient =======================
+ *
+ * <p>Service Description: Google Cloud Key Management EKM Service
+ *
+ * <p>Manages external cryptographic keys and operations using those keys. Implements a REST model
+ * with the following objects:
+ *
+ * <ul>
+ *   <li>[EkmConnection][google.cloud.kms.v1.EkmConnection]
+ * </ul>
+ *
+ * <p>Sample for EkmServiceClient:
+ *
+ * <pre>{@code
+ * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
+ *   EkmConnectionName name = EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]");
+ *   EkmConnection response = ekmServiceClient.getEkmConnection(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= KeyManagementServiceClient =======================
  *
  * <p>Service Description: Google Cloud Key Management Service

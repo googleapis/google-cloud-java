@@ -27,7 +27,8 @@ public interface AsymmetricDecryptRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+   * Required. The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
    * decryption.
    * </pre>
    *
@@ -42,7 +43,8 @@ public interface AsymmetricDecryptRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+   * Required. The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
    * decryption.
    * </pre>
    *
@@ -58,8 +60,9 @@ public interface AsymmetricDecryptRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The data encrypted with the named [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public
-   * key using OAEP.
+   * Required. The data encrypted with the named
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public key using
+   * OAEP.
    * </pre>
    *
    * <code>bytes ciphertext = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -72,19 +75,25 @@ public interface AsymmetricDecryptRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-   * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-   * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
-   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
-   * fails. If you receive a checksum error, your client should verify that
-   * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-   * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-   * limited number of retries. A persistent mismatch may indicate an issue in
-   * your computation of the CRC32C checksum.
-   * Note: This field is defined as int64 for reasons of compatibility across
-   * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
+   * Optional. An optional CRC32C checksum of the
+   * [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
+   * If specified,
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will
+   * verify the integrity of the received
+   * [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]
+   * using this checksum.
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will
+   * report an error if the checksum verification fails. If you receive a
+   * checksum error, your client should verify that
+   * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext])
+   * is equal to
+   * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c],
+   * and if so, perform a limited number of retries. A persistent mismatch may
+   * indicate an issue in your computation of the CRC32C checksum. Note: This
+   * field is defined as int64 for reasons of compatibility across different
+   * languages. However, it is a non-negative integer, which will never exceed
+   * 2^32-1, and can be safely downconverted to uint32 in languages that support
+   * this type.
    * </pre>
    *
    * <code>
@@ -98,19 +107,25 @@ public interface AsymmetricDecryptRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-   * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-   * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
-   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
-   * fails. If you receive a checksum error, your client should verify that
-   * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-   * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-   * limited number of retries. A persistent mismatch may indicate an issue in
-   * your computation of the CRC32C checksum.
-   * Note: This field is defined as int64 for reasons of compatibility across
-   * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
+   * Optional. An optional CRC32C checksum of the
+   * [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
+   * If specified,
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will
+   * verify the integrity of the received
+   * [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]
+   * using this checksum.
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will
+   * report an error if the checksum verification fails. If you receive a
+   * checksum error, your client should verify that
+   * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext])
+   * is equal to
+   * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c],
+   * and if so, perform a limited number of retries. A persistent mismatch may
+   * indicate an issue in your computation of the CRC32C checksum. Note: This
+   * field is defined as int64 for reasons of compatibility across different
+   * languages. However, it is a non-negative integer, which will never exceed
+   * 2^32-1, and can be safely downconverted to uint32 in languages that support
+   * this type.
    * </pre>
    *
    * <code>
@@ -124,19 +139,25 @@ public interface AsymmetricDecryptRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-   * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-   * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
-   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
-   * fails. If you receive a checksum error, your client should verify that
-   * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-   * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-   * limited number of retries. A persistent mismatch may indicate an issue in
-   * your computation of the CRC32C checksum.
-   * Note: This field is defined as int64 for reasons of compatibility across
-   * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
+   * Optional. An optional CRC32C checksum of the
+   * [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
+   * If specified,
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will
+   * verify the integrity of the received
+   * [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]
+   * using this checksum.
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will
+   * report an error if the checksum verification fails. If you receive a
+   * checksum error, your client should verify that
+   * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext])
+   * is equal to
+   * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c],
+   * and if so, perform a limited number of retries. A persistent mismatch may
+   * indicate an issue in your computation of the CRC32C checksum. Note: This
+   * field is defined as int64 for reasons of compatibility across different
+   * languages. However, it is a non-negative integer, which will never exceed
+   * 2^32-1, and can be safely downconverted to uint32 in languages that support
+   * this type.
    * </pre>
    *
    * <code>

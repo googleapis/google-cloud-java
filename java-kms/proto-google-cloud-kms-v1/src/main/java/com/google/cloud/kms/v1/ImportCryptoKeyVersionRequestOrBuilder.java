@@ -27,7 +27,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to be imported into.
+   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] to be imported into.
    * The create permission is only required on this key when creating a new
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
@@ -43,7 +44,8 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to be imported into.
+   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] to be imported into.
    * The create permission is only required on this key when creating a new
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
@@ -60,19 +62,24 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The optional [name][google.cloud.kms.v1.CryptoKeyVersion.name] of an existing
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to target for an import operation.
-   * If this field is not present, a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] containing the
+   * Optional. The optional [name][google.cloud.kms.v1.CryptoKeyVersion.name] of
+   * an existing [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to
+   * target for an import operation. If this field is not present, a new
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] containing the
    * supplied key material is created.
    * If this field is present, the supplied key material is imported into
-   * the existing [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. To import into an existing
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must be a child of
-   * [ImportCryptoKeyVersionRequest.parent][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.parent], have been previously created via
-   * [ImportCryptoKeyVersion][], and be in
-   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED] or
+   * the existing [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. To
+   * import into an existing
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must be a child of
+   * [ImportCryptoKeyVersionRequest.parent][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.parent],
+   * have been previously created via [ImportCryptoKeyVersion][], and be in
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]
+   * or
    * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED]
    * state. The key material and algorithm must match the previous
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] exactly if the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] has ever contained
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] exactly if the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] has ever contained
    * key material.
    * </pre>
    *
@@ -87,19 +94,24 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The optional [name][google.cloud.kms.v1.CryptoKeyVersion.name] of an existing
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to target for an import operation.
-   * If this field is not present, a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] containing the
+   * Optional. The optional [name][google.cloud.kms.v1.CryptoKeyVersion.name] of
+   * an existing [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to
+   * target for an import operation. If this field is not present, a new
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] containing the
    * supplied key material is created.
    * If this field is present, the supplied key material is imported into
-   * the existing [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. To import into an existing
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must be a child of
-   * [ImportCryptoKeyVersionRequest.parent][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.parent], have been previously created via
-   * [ImportCryptoKeyVersion][], and be in
-   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED] or
+   * the existing [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. To
+   * import into an existing
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must be a child of
+   * [ImportCryptoKeyVersionRequest.parent][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.parent],
+   * have been previously created via [ImportCryptoKeyVersion][], and be in
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]
+   * or
    * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED]
    * state. The key material and algorithm must match the previous
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] exactly if the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] has ever contained
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] exactly if the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] has ever contained
    * key material.
    * </pre>
    *
@@ -115,10 +127,11 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] of
-   * the key being imported. This does not need to match the
-   * [version_template][google.cloud.kms.v1.CryptoKey.version_template] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] this
-   * version imports into.
+   * Required. The
+   * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * of the key being imported. This does not need to match the
+   * [version_template][google.cloud.kms.v1.CryptoKey.version_template] of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] this version imports into.
    * </pre>
    *
    * <code>
@@ -132,10 +145,11 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] of
-   * the key being imported. This does not need to match the
-   * [version_template][google.cloud.kms.v1.CryptoKey.version_template] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] this
-   * version imports into.
+   * Required. The
+   * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * of the key being imported. This does not need to match the
+   * [version_template][google.cloud.kms.v1.CryptoKey.version_template] of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] this version imports into.
    * </pre>
    *
    * <code>
@@ -150,8 +164,9 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] that was used to
-   * wrap this key material.
+   * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+   * [ImportJob][google.cloud.kms.v1.ImportJob] that was used to wrap this key
+   * material.
    * </pre>
    *
    * <code>string import_job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -163,8 +178,9 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the [ImportJob][google.cloud.kms.v1.ImportJob] that was used to
-   * wrap this key material.
+   * Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+   * [ImportJob][google.cloud.kms.v1.ImportJob] that was used to wrap this key
+   * material.
    * </pre>
    *
    * <code>string import_job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -184,8 +200,9 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * This field contains the concatenation of two wrapped keys:
    * &lt;ol&gt;
    *   &lt;li&gt;An ephemeral AES-256 wrapping key wrapped with the
-   *       [public_key][google.cloud.kms.v1.ImportJob.public_key] using RSAES-OAEP with SHA-1,
-   *       MGF1 with SHA-1, and an empty label.
+   *       [public_key][google.cloud.kms.v1.ImportJob.public_key] using
+   *       RSAES-OAEP with SHA-1/SHA-256, MGF1 with SHA-1/SHA-256, and an
+   *       empty label.
    *   &lt;/li&gt;
    *   &lt;li&gt;The key to be imported, wrapped with the ephemeral AES-256 key
    *       using AES-KWP (RFC 5649).
@@ -215,8 +232,9 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * This field contains the concatenation of two wrapped keys:
    * &lt;ol&gt;
    *   &lt;li&gt;An ephemeral AES-256 wrapping key wrapped with the
-   *       [public_key][google.cloud.kms.v1.ImportJob.public_key] using RSAES-OAEP with SHA-1,
-   *       MGF1 with SHA-1, and an empty label.
+   *       [public_key][google.cloud.kms.v1.ImportJob.public_key] using
+   *       RSAES-OAEP with SHA-1/SHA-256, MGF1 with SHA-1/SHA-256, and an
+   *       empty label.
    *   &lt;/li&gt;
    *   &lt;li&gt;The key to be imported, wrapped with the ephemeral AES-256 key
    *       using AES-KWP (RFC 5649).

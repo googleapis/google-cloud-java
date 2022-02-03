@@ -22,7 +22,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.CreateImportJob][google.cloud.kms.v1.KeyManagementService.CreateImportJob].
+ * Request message for
+ * [KeyManagementService.CreateImportJob][google.cloud.kms.v1.KeyManagementService.CreateImportJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.CreateImportJobRequest}
@@ -140,7 +141,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
+   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+   * [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
    * [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
@@ -166,7 +168,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
+   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+   * [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
    * [ImportJobs][google.cloud.kms.v1.ImportJob].
    * </pre>
    *
@@ -246,7 +249,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
+   * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+   * values.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -262,7 +266,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
+   * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+   * values.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -278,7 +283,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
+   * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+   * values.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -475,7 +481,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.CreateImportJob][google.cloud.kms.v1.KeyManagementService.CreateImportJob].
+   * Request message for
+   * [KeyManagementService.CreateImportJob][google.cloud.kms.v1.KeyManagementService.CreateImportJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.CreateImportJobRequest}
@@ -654,7 +661,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
+     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+     * [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
      * [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
@@ -679,7 +687,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
+     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+     * [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
      * [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
@@ -704,7 +713,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
+     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+     * [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
      * [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
@@ -728,7 +738,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
+     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+     * [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
      * [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
@@ -748,7 +759,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
+     * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+     * [KeyRing][google.cloud.kms.v1.KeyRing] associated with the
      * [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      *
@@ -891,7 +903,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
+     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+     * values.
      * </pre>
      *
      * <code>
@@ -907,7 +920,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
+     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+     * values.
      * </pre>
      *
      * <code>
@@ -929,7 +943,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
+     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+     * values.
      * </pre>
      *
      * <code>
@@ -953,7 +968,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
+     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+     * values.
      * </pre>
      *
      * <code>
@@ -974,7 +990,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
+     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+     * values.
      * </pre>
      *
      * <code>
@@ -1002,7 +1019,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
+     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+     * values.
      * </pre>
      *
      * <code>
@@ -1024,7 +1042,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
+     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+     * values.
      * </pre>
      *
      * <code>
@@ -1040,7 +1059,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
+     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+     * values.
      * </pre>
      *
      * <code>
@@ -1060,7 +1080,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field values.
+     * Required. An [ImportJob][google.cloud.kms.v1.ImportJob] with initial field
+     * values.
      * </pre>
      *
      * <code>
