@@ -1,5 +1,16 @@
 # Changelog
 
+### [2.2.3](https://github.com/googleapis/java-speech/compare/v2.2.2...v2.2.3) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-speech/issues/1339)) ([#783](https://github.com/googleapis/java-speech/issues/783)) ([df0a102](https://github.com/googleapis/java-speech/commit/df0a102742fd112eae45b8c3ccefb780569b3ba9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#785](https://github.com/googleapis/java-speech/issues/785)) ([8f7ccac](https://github.com/googleapis/java-speech/commit/8f7ccac12d78d19184e591516ef832945933b789))
+* update dependency com.google.cloud:google-cloud-storage to v2.2.3 ([#770](https://github.com/googleapis/java-speech/issues/770)) ([1edd841](https://github.com/googleapis/java-speech/commit/1edd841f80e8628f633b386d2f3b30035e297ba7))
+* update dependency com.google.cloud:google-cloud-storage to v2.3.0 ([#779](https://github.com/googleapis/java-speech/issues/779)) ([c94bfd5](https://github.com/googleapis/java-speech/commit/c94bfd5ed476c875d7241ef1c7e923be127e7806))
+* update dependency com.google.errorprone:error_prone_annotations to v2.11.0 ([#782](https://github.com/googleapis/java-speech/issues/782)) ([809bb05](https://github.com/googleapis/java-speech/commit/809bb05877e5aa587774e6a0db3ffa8b3c69083a))
+
 ### [2.2.2](https://www.github.com/googleapis/java-speech/compare/v2.2.1...v2.2.2) (2022-01-07)
 
 
