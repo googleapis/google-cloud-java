@@ -1863,9 +1863,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The minimum allowed RSA modulus size, in bits. If this is not set,
-         * or if set to zero, the service-level min RSA modulus size will
-         * continue to apply.
+         * Optional. The minimum allowed RSA modulus size (inclusive), in bits. If this is
+         * not set, or if set to zero, the service-level min RSA modulus size
+         * will continue to apply.
          * </pre>
          *
          * <code>int64 min_modulus_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1878,9 +1878,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The maximum allowed RSA modulus size, in bits. If this is not set,
-         * or if set to zero, the service will not enforce an explicit upper
-         * bound on RSA modulus sizes.
+         * Optional. The maximum allowed RSA modulus size (inclusive), in bits. If this is
+         * not set, or if set to zero, the service will not enforce an explicit
+         * upper bound on RSA modulus sizes.
          * </pre>
          *
          * <code>int64 max_modulus_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1994,9 +1994,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The minimum allowed RSA modulus size, in bits. If this is not set,
-         * or if set to zero, the service-level min RSA modulus size will
-         * continue to apply.
+         * Optional. The minimum allowed RSA modulus size (inclusive), in bits. If this is
+         * not set, or if set to zero, the service-level min RSA modulus size
+         * will continue to apply.
          * </pre>
          *
          * <code>int64 min_modulus_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2014,9 +2014,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The maximum allowed RSA modulus size, in bits. If this is not set,
-         * or if set to zero, the service will not enforce an explicit upper
-         * bound on RSA modulus sizes.
+         * Optional. The maximum allowed RSA modulus size (inclusive), in bits. If this is
+         * not set, or if set to zero, the service will not enforce an explicit
+         * upper bound on RSA modulus sizes.
          * </pre>
          *
          * <code>int64 max_modulus_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2428,9 +2428,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. The minimum allowed RSA modulus size, in bits. If this is not set,
-           * or if set to zero, the service-level min RSA modulus size will
-           * continue to apply.
+           * Optional. The minimum allowed RSA modulus size (inclusive), in bits. If this is
+           * not set, or if set to zero, the service-level min RSA modulus size
+           * will continue to apply.
            * </pre>
            *
            * <code>int64 min_modulus_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2445,9 +2445,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. The minimum allowed RSA modulus size, in bits. If this is not set,
-           * or if set to zero, the service-level min RSA modulus size will
-           * continue to apply.
+           * Optional. The minimum allowed RSA modulus size (inclusive), in bits. If this is
+           * not set, or if set to zero, the service-level min RSA modulus size
+           * will continue to apply.
            * </pre>
            *
            * <code>int64 min_modulus_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2465,9 +2465,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. The minimum allowed RSA modulus size, in bits. If this is not set,
-           * or if set to zero, the service-level min RSA modulus size will
-           * continue to apply.
+           * Optional. The minimum allowed RSA modulus size (inclusive), in bits. If this is
+           * not set, or if set to zero, the service-level min RSA modulus size
+           * will continue to apply.
            * </pre>
            *
            * <code>int64 min_modulus_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2486,9 +2486,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. The maximum allowed RSA modulus size, in bits. If this is not set,
-           * or if set to zero, the service will not enforce an explicit upper
-           * bound on RSA modulus sizes.
+           * Optional. The maximum allowed RSA modulus size (inclusive), in bits. If this is
+           * not set, or if set to zero, the service will not enforce an explicit
+           * upper bound on RSA modulus sizes.
            * </pre>
            *
            * <code>int64 max_modulus_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2503,9 +2503,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. The maximum allowed RSA modulus size, in bits. If this is not set,
-           * or if set to zero, the service will not enforce an explicit upper
-           * bound on RSA modulus sizes.
+           * Optional. The maximum allowed RSA modulus size (inclusive), in bits. If this is
+           * not set, or if set to zero, the service will not enforce an explicit
+           * upper bound on RSA modulus sizes.
            * </pre>
            *
            * <code>int64 max_modulus_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2523,9 +2523,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. The maximum allowed RSA modulus size, in bits. If this is not set,
-           * or if set to zero, the service will not enforce an explicit upper
-           * bound on RSA modulus sizes.
+           * Optional. The maximum allowed RSA modulus size (inclusive), in bits. If this is
+           * not set, or if set to zero, the service will not enforce an explicit
+           * upper bound on RSA modulus sizes.
            * </pre>
            *
            * <code>int64 max_modulus_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

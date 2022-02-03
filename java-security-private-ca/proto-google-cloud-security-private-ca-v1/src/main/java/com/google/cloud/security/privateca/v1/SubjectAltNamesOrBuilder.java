@@ -232,6 +232,8 @@ public interface SubjectAltNamesOrBuilder
    *
    * <pre>
    * Contains additional subject alternative name values.
+   * For each custom_san, the `value` field must contain an ASN.1 encoded
+   * UTF8String.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.X509Extension custom_sans = 5;</code>
@@ -242,6 +244,8 @@ public interface SubjectAltNamesOrBuilder
    *
    * <pre>
    * Contains additional subject alternative name values.
+   * For each custom_san, the `value` field must contain an ASN.1 encoded
+   * UTF8String.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.X509Extension custom_sans = 5;</code>
@@ -252,6 +256,8 @@ public interface SubjectAltNamesOrBuilder
    *
    * <pre>
    * Contains additional subject alternative name values.
+   * For each custom_san, the `value` field must contain an ASN.1 encoded
+   * UTF8String.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.X509Extension custom_sans = 5;</code>
@@ -262,6 +268,8 @@ public interface SubjectAltNamesOrBuilder
    *
    * <pre>
    * Contains additional subject alternative name values.
+   * For each custom_san, the `value` field must contain an ASN.1 encoded
+   * UTF8String.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.X509Extension custom_sans = 5;</code>
@@ -273,6 +281,8 @@ public interface SubjectAltNamesOrBuilder
    *
    * <pre>
    * Contains additional subject alternative name values.
+   * For each custom_san, the `value` field must contain an ASN.1 encoded
+   * UTF8String.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.X509Extension custom_sans = 5;</code>

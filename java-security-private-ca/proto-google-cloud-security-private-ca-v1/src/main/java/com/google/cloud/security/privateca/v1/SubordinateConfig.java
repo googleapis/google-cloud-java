@@ -1013,10 +1013,9 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the same project that
-   * was used to create a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field
-   * is used for information and usability purposes only. The resource name
-   * is in the format
+   * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
+   * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
+   * and usability purposes only. The resource name is in the format
    * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
@@ -1033,10 +1032,9 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the same project that
-   * was used to create a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field
-   * is used for information and usability purposes only. The resource name
-   * is in the format
+   * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
+   * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
+   * and usability purposes only. The resource name is in the format
    * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
@@ -1066,10 +1064,9 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the same project that
-   * was used to create a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field
-   * is used for information and usability purposes only. The resource name
-   * is in the format
+   * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
+   * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
+   * and usability purposes only. The resource name is in the format
    * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
@@ -1557,10 +1554,9 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the same project that
-     * was used to create a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field
-     * is used for information and usability purposes only. The resource name
-     * is in the format
+     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
+     * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
+     * and usability purposes only. The resource name is in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
@@ -1578,10 +1574,9 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the same project that
-     * was used to create a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field
-     * is used for information and usability purposes only. The resource name
-     * is in the format
+     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
+     * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
+     * and usability purposes only. The resource name is in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
@@ -1612,10 +1607,9 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the same project that
-     * was used to create a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field
-     * is used for information and usability purposes only. The resource name
-     * is in the format
+     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
+     * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
+     * and usability purposes only. The resource name is in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
@@ -1646,10 +1640,9 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the same project that
-     * was used to create a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field
-     * is used for information and usability purposes only. The resource name
-     * is in the format
+     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
+     * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
+     * and usability purposes only. The resource name is in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
@@ -1673,10 +1666,9 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the same project that
-     * was used to create a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field
-     * is used for information and usability purposes only. The resource name
-     * is in the format
+     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
+     * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
+     * and usability purposes only. The resource name is in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
@@ -1698,10 +1690,9 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the same project that
-     * was used to create a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field
-     * is used for information and usability purposes only. The resource name
-     * is in the format
+     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
+     * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
+     * and usability purposes only. The resource name is in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *

@@ -772,7 +772,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
    * values. For RSA signing algorithms, the PSS algorithms should be preferred,
    * use PKCS1 algorithms if required for compatibility. For further
-   * recommandations, see
+   * recommendations, see
    * https://cloud.google.com/kms/docs/algorithms#algorithm_recommendations.
    * </pre>
    *
@@ -3410,12 +3410,14 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The desired lifetime of the CA certificate. Used to create the
+   * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
    * "not_before_time" and "not_after_time" fields inside an X.509
    * certificate.
    * </pre>
    *
-   * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return Whether the lifetime field is set.
    */
@@ -3427,12 +3429,14 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The desired lifetime of the CA certificate. Used to create the
+   * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
    * "not_before_time" and "not_after_time" fields inside an X.509
    * certificate.
    * </pre>
    *
-   * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The lifetime.
    */
@@ -3444,12 +3448,14 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The desired lifetime of the CA certificate. Used to create the
+   * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
    * "not_before_time" and "not_after_time" fields inside an X.509
    * certificate.
    * </pre>
    *
-   * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getLifetimeOrBuilder() {
@@ -5457,12 +5463,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The desired lifetime of the CA certificate. Used to create the
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
      * "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
-     * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the lifetime field is set.
@@ -5474,12 +5481,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The desired lifetime of the CA certificate. Used to create the
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
      * "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
-     * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The lifetime.
@@ -5495,12 +5503,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The desired lifetime of the CA certificate. Used to create the
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
      * "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
-     * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setLifetime(com.google.protobuf.Duration value) {
@@ -5520,12 +5529,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The desired lifetime of the CA certificate. Used to create the
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
      * "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
-     * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setLifetime(com.google.protobuf.Duration.Builder builderForValue) {
@@ -5542,12 +5552,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The desired lifetime of the CA certificate. Used to create the
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
      * "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
-     * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder mergeLifetime(com.google.protobuf.Duration value) {
@@ -5569,12 +5580,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The desired lifetime of the CA certificate. Used to create the
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
      * "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
-     * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearLifetime() {
@@ -5592,12 +5604,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The desired lifetime of the CA certificate. Used to create the
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
      * "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
-     * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.protobuf.Duration.Builder getLifetimeBuilder() {
@@ -5609,12 +5622,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The desired lifetime of the CA certificate. Used to create the
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
      * "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
-     * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.protobuf.DurationOrBuilder getLifetimeOrBuilder() {
@@ -5628,12 +5642,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The desired lifetime of the CA certificate. Used to create the
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
      * "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
-     * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
