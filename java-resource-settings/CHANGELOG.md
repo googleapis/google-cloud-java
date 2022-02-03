@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.1.6](https://github.com/googleapis/java-resource-settings/compare/v1.1.5...v1.1.6) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-resource-settings/issues/1339)) ([#120](https://github.com/googleapis/java-resource-settings/issues/120)) ([96c3e62](https://github.com/googleapis/java-resource-settings/commit/96c3e62bf2bbc5cad35e2859d9313b023982ef91))
+* update actions/github-script action to v5 ([#118](https://github.com/googleapis/java-resource-settings/issues/118)) ([9c43232](https://github.com/googleapis/java-resource-settings/commit/9c432322418230c3cfd4fe46f454c483ce48a8a4))
+* update actions/setup-java action to v2 ([#119](https://github.com/googleapis/java-resource-settings/issues/119)) ([5cd4069](https://github.com/googleapis/java-resource-settings/commit/5cd40697d001f1dccd9c62a35c66eec6626c12c7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#122](https://github.com/googleapis/java-resource-settings/issues/122)) ([6e98e91](https://github.com/googleapis/java-resource-settings/commit/6e98e91c621707f6ccead03f1b6987ba332deabf))
+
 ### [1.1.5](https://www.github.com/googleapis/java-resource-settings/compare/v1.1.4...v1.1.5) (2022-01-07)
 
 
