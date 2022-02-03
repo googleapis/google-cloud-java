@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-securitycenter/compare/v2.3.2...v2.4.0) (2022-02-03)
+
+
+### Features
+
+* Release the access field in the v1 finding proto, which represents an access event tied to the finding ([#744](https://github.com/googleapis/java-securitycenter/issues/744)) ([94f600d](https://github.com/googleapis/java-securitycenter/commit/94f600dd9b5adf1990c6ba8789e391700a7ca4ad))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-securitycenter/issues/1339)) ([#742](https://github.com/googleapis/java-securitycenter/issues/742)) ([7361505](https://github.com/googleapis/java-securitycenter/commit/7361505b7fd4021daf33a7472458c17c97ed6c2e))
+* update actions/github-script action to v5 ([#741](https://github.com/googleapis/java-securitycenter/issues/741)) ([3138f0c](https://github.com/googleapis/java-securitycenter/commit/3138f0c8f0369782decaed49164588862c855908))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.115.1 ([#730](https://github.com/googleapis/java-securitycenter/issues/730)) ([2a0b4cd](https://github.com/googleapis/java-securitycenter/commit/2a0b4cda8fd1c489cd983db02e3452623e8c7e3c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#743](https://github.com/googleapis/java-securitycenter/issues/743)) ([b2c717e](https://github.com/googleapis/java-securitycenter/commit/b2c717e843f795ca7fd2b910ba55c5e74eb33b0e))
+
+
+### Documentation
+
+* added more clarification around what event_time means on a v1 finding ([94f600d](https://github.com/googleapis/java-securitycenter/commit/94f600dd9b5adf1990c6ba8789e391700a7ca4ad))
+
 ### [2.3.2](https://www.github.com/googleapis/java-securitycenter/compare/v2.3.1...v2.3.2) (2022-01-07)
 
 
