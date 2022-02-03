@@ -38,9 +38,6 @@ public class SubscribeSyncWithLeaseExample {
     String subscriptionId = "your-subscription-id";
     Integer numOfMessages = 10;
 
-    projectId = "tz-playground-bigdata";
-    subscriptionId = "uno";
-
     subscribeSyncWithLeaseExample(projectId, subscriptionId, numOfMessages);
   }
 
@@ -68,8 +65,14 @@ public class SubscribeSyncWithLeaseExample {
       // Use pullCallable().futureCall to asynchronously perform this operation.
       PullResponse pullResponse = subscriber.pullCallable().call(pullRequest);
 
-      List<String> ackIds = new ArrayList<>();
+      // Stop the program if the pull response is empty to avoid acknowledging
+      // an empty list of ack IDs.
+      if (pullResponse.getReceivedMessagesList().isEmpty()) {
+        System.out.println("No message was pulled. Exiting.");
+        return;
+      }
 
+      List<String> ackIds = new ArrayList<>();
       for (ReceivedMessage message : pullResponse.getReceivedMessagesList()) {
         ackIds.add(message.getAckId());
 
