@@ -17,7 +17,15 @@ package com.google.cloud.networksecurity.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * Network Security API provides resources to configure authentication and
+ * authorization policies. Refer to per API resource documentation for more
+ * information.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/networksecurity/v1beta1/network_security.proto")
@@ -817,7 +825,15 @@ public final class NetworkSecurityGrpc {
     return NetworkSecurityFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Network Security API provides resources to configure authentication and
+   * authorization policies. Refer to per API resource documentation for more
+   * information.
+   * </pre>
+   */
   public abstract static class NetworkSecurityImplBase implements io.grpc.BindableService {
 
     /**
@@ -1145,7 +1161,15 @@ public final class NetworkSecurityGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Network Security API provides resources to configure authentication and
+   * authorization policies. Refer to per API resource documentation for more
+   * information.
+   * </pre>
+   */
   public static final class NetworkSecurityStub
       extends io.grpc.stub.AbstractAsyncStub<NetworkSecurityStub> {
     private NetworkSecurityStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1407,7 +1431,15 @@ public final class NetworkSecurityGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Network Security API provides resources to configure authentication and
+   * authorization policies. Refer to per API resource documentation for more
+   * information.
+   * </pre>
+   */
   public static final class NetworkSecurityBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<NetworkSecurityBlockingStub> {
     private NetworkSecurityBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1619,7 +1651,15 @@ public final class NetworkSecurityGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Network Security API provides resources to configure authentication and
+   * authorization policies. Refer to per API resource documentation for more
+   * information.
+   * </pre>
+   */
   public static final class NetworkSecurityFutureStub
       extends io.grpc.stub.AbstractFutureStub<NetworkSecurityFutureStub> {
     private NetworkSecurityFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {

@@ -18,8 +18,8 @@
 
 package com.google.cloud.networksecurity.v1beta1;
 
-public final class AuthorizationPolicyOuterClass {
-  private AuthorizationPolicyOuterClass() {}
+public final class AuthorizationPolicyProto {
+  private AuthorizationPolicyProto() {}
 
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
@@ -144,14 +144,14 @@ public final class AuthorizationPolicyOuterClass {
           + "ecurity.v1beta1.AuthorizationPolicyB\003\340A\002"
           + "\"l\n DeleteAuthorizationPolicyRequest\022H\n\004"
           + "name\030\001 \001(\tB:\340A\002\372A4\n2networksecurity.goog"
-          + "leapis.com/AuthorizationPolicyB\371\001\n(com.g"
-          + "oogle.cloud.networksecurity.v1beta1P\001ZSg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/networksecurity/v1beta1;networksecuri"
-          + "ty\252\002$Google.Cloud.NetworkSecurity.V1Beta"
-          + "1\312\002$Google\\Cloud\\NetworkSecurity\\V1beta1"
-          + "\352\002\'Google::Cloud::NetworkSecurity::V1bet"
-          + "a1b\006proto3"
+          + "leapis.com/AuthorizationPolicyB\223\002\n(com.g"
+          + "oogle.cloud.networksecurity.v1beta1B\030Aut"
+          + "horizationPolicyProtoP\001ZSgoogle.golang.o"
+          + "rg/genproto/googleapis/cloud/networksecu"
+          + "rity/v1beta1;networksecurity\252\002$Google.Cl"
+          + "oud.NetworkSecurity.V1Beta1\312\002$Google\\Clo"
+          + "ud\\NetworkSecurity\\V1beta1\352\002\'Google::Clo"
+          + "ud::NetworkSecurity::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

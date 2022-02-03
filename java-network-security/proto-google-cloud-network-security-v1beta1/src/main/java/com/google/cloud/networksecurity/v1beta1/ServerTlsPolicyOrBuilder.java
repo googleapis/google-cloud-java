@@ -54,10 +54,10 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Free-text description of the resource.
+   * Free-text description of the resource.
    * </pre>
    *
-   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 2;</code>
    *
    * @return The description.
    */
@@ -66,10 +66,10 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Free-text description of the resource.
+   * Free-text description of the resource.
    * </pre>
    *
-   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 2;</code>
    *
    * @return The bytes for description.
    */
@@ -155,20 +155,20 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the resource.
+   * Set of label tags associated with the resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the resource.
+   * Set of label tags associated with the resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -178,30 +178,30 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the resource.
+   * Set of label tags associated with the resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the resource.
+   * Set of label tags associated with the resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the resource.
+   * Set of label tags associated with the resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -209,14 +209,15 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Determines if server allows plaintext connections. If set to true, server
+   * Determines if server allows plaintext connections. If set to true, server
    * allows plain text connections. By default, it is set to false. This setting
-   * is not exclusive of other encryption modes. For example, if allow_open and
-   * mtls_policy are set, server allows both plain text and mTLS connections.
-   * See documentation of other encryption modes to confirm compatibility.
+   * is not exclusive of other encryption modes. For example, if `allow_open`
+   * and `mtls_policy` are set, server allows both plain text and mTLS
+   * connections. See documentation of other encryption modes to confirm
+   * compatibility.
    * </pre>
    *
-   * <code>bool allow_open = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool allow_open = 6;</code>
    *
    * @return The allowOpen.
    */
@@ -226,14 +227,12 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision server identity (public and private keys).
-   * Cannot be combined with allow_open as a permissive mode that allows both
+   * Defines a mechanism to provision server identity (public and private keys).
+   * Cannot be combined with `allow_open` as a permissive mode that allows both
    * plain text and TLS is not supported.
    * </pre>
    *
-   * <code>
-   * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;</code>
    *
    * @return Whether the serverCertificate field is set.
    */
@@ -242,14 +241,12 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision server identity (public and private keys).
-   * Cannot be combined with allow_open as a permissive mode that allows both
+   * Defines a mechanism to provision server identity (public and private keys).
+   * Cannot be combined with `allow_open` as a permissive mode that allows both
    * plain text and TLS is not supported.
    * </pre>
    *
-   * <code>
-   * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;</code>
    *
    * @return The serverCertificate.
    */
@@ -258,14 +255,12 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision server identity (public and private keys).
-   * Cannot be combined with allow_open as a permissive mode that allows both
+   * Defines a mechanism to provision server identity (public and private keys).
+   * Cannot be combined with `allow_open` as a permissive mode that allows both
    * plain text and TLS is not supported.
    * </pre>
    *
-   * <code>
-   * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;</code>
    */
   com.google.cloud.networksecurity.v1beta1.CertificateProviderOrBuilder
       getServerCertificateOrBuilder();
@@ -274,16 +269,14 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision peer validation certificates for peer to
+   * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
    * certificate will not be requested. The connection is treated as TLS and not
-   * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-   * and mTLS connections.
+   * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+   * text and mTLS connections.
    * </pre>
    *
-   * <code>
-   * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;</code>
    *
    * @return Whether the mtlsPolicy field is set.
    */
@@ -292,16 +285,14 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision peer validation certificates for peer to
+   * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
    * certificate will not be requested. The connection is treated as TLS and not
-   * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-   * and mTLS connections.
+   * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+   * text and mTLS connections.
    * </pre>
    *
-   * <code>
-   * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;</code>
    *
    * @return The mtlsPolicy.
    */
@@ -310,16 +301,14 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision peer validation certificates for peer to
+   * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
    * certificate will not be requested. The connection is treated as TLS and not
-   * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-   * and mTLS connections.
+   * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+   * text and mTLS connections.
    * </pre>
    *
-   * <code>
-   * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;</code>
    */
   com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicyOrBuilder
       getMtlsPolicyOrBuilder();

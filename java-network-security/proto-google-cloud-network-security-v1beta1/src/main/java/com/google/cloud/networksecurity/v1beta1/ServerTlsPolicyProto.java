@@ -18,8 +18,8 @@
 
 package com.google.cloud.networksecurity.v1beta1;
 
-public final class ServerTlsPolicyOuterClass {
-  private ServerTlsPolicyOuterClass() {}
+public final class ServerTlsPolicyProto {
+  private ServerTlsPolicyProto() {}
 
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
@@ -79,54 +79,54 @@ public final class ServerTlsPolicyOuterClass {
           + "\032.google/cloud/networksecurity/v1beta1/t"
           + "ls.proto\032 google/protobuf/field_mask.pro"
           + "to\032\037google/protobuf/timestamp.proto\032\034goo"
-          + "gle/api/annotations.proto\"\354\005\n\017ServerTlsP"
-          + "olicy\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\030\n\013description\030"
-          + "\002 \001(\tB\003\340A\001\0224\n\013create_time\030\003 \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\0224\n\013update_time\030"
-          + "\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022V"
-          + "\n\006labels\030\005 \003(\0132A.google.cloud.networksec"
-          + "urity.v1beta1.ServerTlsPolicy.LabelsEntr"
-          + "yB\003\340A\001\022\027\n\nallow_open\030\006 \001(\010B\003\340A\001\022Z\n\022serve"
-          + "r_certificate\030\007 \001(\01329.google.cloud.netwo"
-          + "rksecurity.v1beta1.CertificateProviderB\003"
-          + "\340A\001\022Z\n\013mtls_policy\030\010 \001(\0132@.google.cloud."
-          + "networksecurity.v1beta1.ServerTlsPolicy."
-          + "MTLSPolicyB\003\340A\001\032c\n\nMTLSPolicy\022U\n\024client_"
-          + "validation_ca\030\001 \003(\01322.google.cloud.netwo"
-          + "rksecurity.v1beta1.ValidationCAB\003\340A\002\032-\n\013"
-          + "LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
-          + "\0028\001:\202\001\352A\177\n.networksecurity.googleapis.co"
-          + "m/ServerTlsPolicy\022Mprojects/{project}/lo"
-          + "cations/{location}/serverTlsPolicies/{se"
-          + "rver_tls_policy}\"\200\001\n\034ListServerTlsPolici"
-          + "esRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locat"
-          + "ions.googleapis.com/Location\022\021\n\tpage_siz"
-          + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\214\001\n\035ListServ"
-          + "erTlsPoliciesResponse\022R\n\023server_tls_poli"
-          + "cies\030\001 \003(\01325.google.cloud.networksecurit"
-          + "y.v1beta1.ServerTlsPolicy\022\027\n\017next_page_t"
-          + "oken\030\002 \001(\t\"a\n\031GetServerTlsPolicyRequest\022"
-          + "D\n\004name\030\001 \001(\tB6\340A\002\372A0\n.networksecurity.g"
-          + "oogleapis.com/ServerTlsPolicy\"\340\001\n\034Create"
-          + "ServerTlsPolicyRequest\022F\n\006parent\030\001 \001(\tB6"
-          + "\340A\002\372A0\n.networksecurity.googleapis.com/S"
-          + "erverTlsPolicy\022!\n\024server_tls_policy_id\030\002"
-          + " \001(\tB\003\340A\002\022U\n\021server_tls_policy\030\003 \001(\01325.g"
-          + "oogle.cloud.networksecurity.v1beta1.Serv"
-          + "erTlsPolicyB\003\340A\002\"\253\001\n\034UpdateServerTlsPoli"
-          + "cyRequest\0224\n\013update_mask\030\001 \001(\0132\032.google."
-          + "protobuf.FieldMaskB\003\340A\001\022U\n\021server_tls_po"
-          + "licy\030\002 \001(\01325.google.cloud.networksecurit"
-          + "y.v1beta1.ServerTlsPolicyB\003\340A\002\"d\n\034Delete"
-          + "ServerTlsPolicyRequest\022D\n\004name\030\001 \001(\tB6\340A"
-          + "\002\372A0\n.networksecurity.googleapis.com/Ser"
-          + "verTlsPolicyB\371\001\n(com.google.cloud.networ"
-          + "ksecurity.v1beta1P\001ZSgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/networksecurity"
-          + "/v1beta1;networksecurity\252\002$Google.Cloud."
-          + "NetworkSecurity.V1Beta1\312\002$Google\\Cloud\\N"
-          + "etworkSecurity\\V1beta1\352\002\'Google::Cloud::"
-          + "NetworkSecurity::V1beta1b\006proto3"
+          + "gle/api/annotations.proto\"\316\005\n\017ServerTlsP"
+          + "olicy\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\023\n\013description\030"
+          + "\002 \001(\t\0224\n\013create_time\030\003 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\003\340A\003\0224\n\013update_time\030\004 \001(\013"
+          + "2\032.google.protobuf.TimestampB\003\340A\003\022Q\n\006lab"
+          + "els\030\005 \003(\0132A.google.cloud.networksecurity"
+          + ".v1beta1.ServerTlsPolicy.LabelsEntry\022\022\n\n"
+          + "allow_open\030\006 \001(\010\022U\n\022server_certificate\030\007"
+          + " \001(\01329.google.cloud.networksecurity.v1be"
+          + "ta1.CertificateProvider\022U\n\013mtls_policy\030\010"
+          + " \001(\0132@.google.cloud.networksecurity.v1be"
+          + "ta1.ServerTlsPolicy.MTLSPolicy\032^\n\nMTLSPo"
+          + "licy\022P\n\024client_validation_ca\030\001 \003(\01322.goo"
+          + "gle.cloud.networksecurity.v1beta1.Valida"
+          + "tionCA\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
+          + "lue\030\002 \001(\t:\0028\001:\202\001\352A\177\n.networksecurity.goo"
+          + "gleapis.com/ServerTlsPolicy\022Mprojects/{p"
+          + "roject}/locations/{location}/serverTlsPo"
+          + "licies/{server_tls_policy}\"\200\001\n\034ListServe"
+          + "rTlsPoliciesRequest\0229\n\006parent\030\001 \001(\tB)\340A\002"
+          + "\372A#\n!locations.googleapis.com/Location\022\021"
+          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\214\001"
+          + "\n\035ListServerTlsPoliciesResponse\022R\n\023serve"
+          + "r_tls_policies\030\001 \003(\01325.google.cloud.netw"
+          + "orksecurity.v1beta1.ServerTlsPolicy\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\"a\n\031GetServerTlsPoli"
+          + "cyRequest\022D\n\004name\030\001 \001(\tB6\340A\002\372A0\n.network"
+          + "security.googleapis.com/ServerTlsPolicy\""
+          + "\340\001\n\034CreateServerTlsPolicyRequest\022F\n\006pare"
+          + "nt\030\001 \001(\tB6\340A\002\372A0\n.networksecurity.google"
+          + "apis.com/ServerTlsPolicy\022!\n\024server_tls_p"
+          + "olicy_id\030\002 \001(\tB\003\340A\002\022U\n\021server_tls_policy"
+          + "\030\003 \001(\01325.google.cloud.networksecurity.v1"
+          + "beta1.ServerTlsPolicyB\003\340A\002\"\253\001\n\034UpdateSer"
+          + "verTlsPolicyRequest\0224\n\013update_mask\030\001 \001(\013"
+          + "2\032.google.protobuf.FieldMaskB\003\340A\001\022U\n\021ser"
+          + "ver_tls_policy\030\002 \001(\01325.google.cloud.netw"
+          + "orksecurity.v1beta1.ServerTlsPolicyB\003\340A\002"
+          + "\"d\n\034DeleteServerTlsPolicyRequest\022D\n\004name"
+          + "\030\001 \001(\tB6\340A\002\372A0\n.networksecurity.googleap"
+          + "is.com/ServerTlsPolicyB\217\002\n(com.google.cl"
+          + "oud.networksecurity.v1beta1B\024ServerTlsPo"
+          + "licyProtoP\001ZSgoogle.golang.org/genproto/"
+          + "googleapis/cloud/networksecurity/v1beta1"
+          + ";networksecurity\252\002$Google.Cloud.NetworkS"
+          + "ecurity.V1Beta1\312\002$Google\\Cloud\\NetworkSe"
+          + "curity\\V1beta1\352\002\'Google::Cloud::NetworkS"
+          + "ecurity::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -134,7 +134,7 @@ public final class ServerTlsPolicyOuterClass {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.cloud.networksecurity.v1beta1.Tls.getDescriptor(),
+              com.google.cloud.networksecurity.v1beta1.TlsProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
@@ -231,7 +231,7 @@ public final class ServerTlsPolicyOuterClass {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.cloud.networksecurity.v1beta1.Tls.getDescriptor();
+    com.google.cloud.networksecurity.v1beta1.TlsProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

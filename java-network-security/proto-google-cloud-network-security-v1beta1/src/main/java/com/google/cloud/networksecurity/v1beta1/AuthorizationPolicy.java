@@ -178,7 +178,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+    return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
         .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_descriptor;
   }
 
@@ -196,7 +196,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+    return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
         .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.class,
@@ -238,6 +238,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Deny access.
+     * Deny rules should be avoided unless they are used to provide a default
+     * "deny all" fallback.
      * </pre>
      *
      * <code>DENY = 2;</code>
@@ -271,6 +273,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Deny access.
+     * Deny rules should be avoided unless they are used to provide a default
+     * "deny all" fallback.
      * </pre>
      *
      * <code>DENY = 2;</code>
@@ -648,14 +652,14 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.class,
@@ -674,7 +678,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * Optional. List of peer identities to match for authorization. At least one
        * principal should match. Each peer can be an exact match, or a prefix
        * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*".
+       * *&#47;service-account") or a presence match "*". Authorization based on the
+       * principal name without certificate validation (configured by
+       * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
        * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -689,7 +695,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * Optional. List of peer identities to match for authorization. At least one
        * principal should match. Each peer can be an exact match, or a prefix
        * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*".
+       * *&#47;service-account") or a presence match "*". Authorization based on the
+       * principal name without certificate validation (configured by
+       * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
        * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -704,7 +712,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * Optional. List of peer identities to match for authorization. At least one
        * principal should match. Each peer can be an exact match, or a prefix
        * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*".
+       * *&#47;service-account") or a presence match "*". Authorization based on the
+       * principal name without certificate validation (configured by
+       * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
        * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -720,7 +730,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * Optional. List of peer identities to match for authorization. At least one
        * principal should match. Each peer can be an exact match, or a prefix
        * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*".
+       * *&#47;service-account") or a presence match "*". Authorization based on the
+       * principal name without certificate validation (configured by
+       * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
        * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -736,7 +748,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * <pre>
        * Optional. List of CIDR ranges to match based on source IP address. At least one
        * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported.
+       * "1.2.3.0/24") are supported. Authorization based on source IP alone
+       * should be avoided. The IP addresses of any load balancers or proxies
+       * should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -750,7 +764,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * <pre>
        * Optional. List of CIDR ranges to match based on source IP address. At least one
        * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported.
+       * "1.2.3.0/24") are supported. Authorization based on source IP alone
+       * should be avoided. The IP addresses of any load balancers or proxies
+       * should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -764,7 +780,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * <pre>
        * Optional. List of CIDR ranges to match based on source IP address. At least one
        * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported.
+       * "1.2.3.0/24") are supported. Authorization based on source IP alone
+       * should be avoided. The IP addresses of any load balancers or proxies
+       * should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -779,7 +797,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * <pre>
        * Optional. List of CIDR ranges to match based on source IP address. At least one
        * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported.
+       * "1.2.3.0/24") are supported. Authorization based on source IP alone
+       * should be avoided. The IP addresses of any load balancers or proxies
+       * should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -890,14 +910,14 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
             .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Source_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
             .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Source_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Source.class,
@@ -914,7 +934,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * Optional. List of peer identities to match for authorization. At least one
        * principal should match. Each peer can be an exact match, or a prefix
        * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*".
+       * *&#47;service-account") or a presence match "*". Authorization based on the
+       * principal name without certificate validation (configured by
+       * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
        * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -931,7 +953,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * Optional. List of peer identities to match for authorization. At least one
        * principal should match. Each peer can be an exact match, or a prefix
        * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*".
+       * *&#47;service-account") or a presence match "*". Authorization based on the
+       * principal name without certificate validation (configured by
+       * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
        * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -948,7 +972,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * Optional. List of peer identities to match for authorization. At least one
        * principal should match. Each peer can be an exact match, or a prefix
        * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*".
+       * *&#47;service-account") or a presence match "*". Authorization based on the
+       * principal name without certificate validation (configured by
+       * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
        * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -966,7 +992,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * Optional. List of peer identities to match for authorization. At least one
        * principal should match. Each peer can be an exact match, or a prefix
        * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*".
+       * *&#47;service-account") or a presence match "*". Authorization based on the
+       * principal name without certificate validation (configured by
+       * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
        * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -986,7 +1014,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * <pre>
        * Optional. List of CIDR ranges to match based on source IP address. At least one
        * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported.
+       * "1.2.3.0/24") are supported. Authorization based on source IP alone
+       * should be avoided. The IP addresses of any load balancers or proxies
+       * should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1002,7 +1032,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * <pre>
        * Optional. List of CIDR ranges to match based on source IP address. At least one
        * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported.
+       * "1.2.3.0/24") are supported. Authorization based on source IP alone
+       * should be avoided. The IP addresses of any load balancers or proxies
+       * should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1018,7 +1050,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * <pre>
        * Optional. List of CIDR ranges to match based on source IP address. At least one
        * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported.
+       * "1.2.3.0/24") are supported. Authorization based on source IP alone
+       * should be avoided. The IP addresses of any load balancers or proxies
+       * should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1035,7 +1069,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * <pre>
        * Optional. List of CIDR ranges to match based on source IP address. At least one
        * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported.
+       * "1.2.3.0/24") are supported. Authorization based on source IP alone
+       * should be avoided. The IP addresses of any load balancers or proxies
+       * should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1255,14 +1291,14 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           // @@protoc_insertion_point(builder_implements:google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Source)
           com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.SourceOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
               .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Source_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
               .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Source_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Source.class,
@@ -1297,7 +1333,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
               .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Source_descriptor;
         }
 
@@ -1460,7 +1496,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * Optional. List of peer identities to match for authorization. At least one
          * principal should match. Each peer can be an exact match, or a prefix
          * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*".
+         * *&#47;service-account") or a presence match "*". Authorization based on the
+         * principal name without certificate validation (configured by
+         * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
          * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1477,7 +1515,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * Optional. List of peer identities to match for authorization. At least one
          * principal should match. Each peer can be an exact match, or a prefix
          * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*".
+         * *&#47;service-account") or a presence match "*". Authorization based on the
+         * principal name without certificate validation (configured by
+         * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
          * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1494,7 +1534,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * Optional. List of peer identities to match for authorization. At least one
          * principal should match. Each peer can be an exact match, or a prefix
          * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*".
+         * *&#47;service-account") or a presence match "*". Authorization based on the
+         * principal name without certificate validation (configured by
+         * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
          * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1512,7 +1554,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * Optional. List of peer identities to match for authorization. At least one
          * principal should match. Each peer can be an exact match, or a prefix
          * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*".
+         * *&#47;service-account") or a presence match "*". Authorization based on the
+         * principal name without certificate validation (configured by
+         * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
          * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1530,7 +1574,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * Optional. List of peer identities to match for authorization. At least one
          * principal should match. Each peer can be an exact match, or a prefix
          * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*".
+         * *&#47;service-account") or a presence match "*". Authorization based on the
+         * principal name without certificate validation (configured by
+         * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
          * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1555,7 +1601,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * Optional. List of peer identities to match for authorization. At least one
          * principal should match. Each peer can be an exact match, or a prefix
          * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*".
+         * *&#47;service-account") or a presence match "*". Authorization based on the
+         * principal name without certificate validation (configured by
+         * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
          * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1579,7 +1627,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * Optional. List of peer identities to match for authorization. At least one
          * principal should match. Each peer can be an exact match, or a prefix
          * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*".
+         * *&#47;service-account") or a presence match "*". Authorization based on the
+         * principal name without certificate validation (configured by
+         * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
          * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1600,7 +1650,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * Optional. List of peer identities to match for authorization. At least one
          * principal should match. Each peer can be an exact match, or a prefix
          * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*".
+         * *&#47;service-account") or a presence match "*". Authorization based on the
+         * principal name without certificate validation (configured by
+         * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
          * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1620,7 +1672,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * Optional. List of peer identities to match for authorization. At least one
          * principal should match. Each peer can be an exact match, or a prefix
          * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*".
+         * *&#47;service-account") or a presence match "*". Authorization based on the
+         * principal name without certificate validation (configured by
+         * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
          * <code>repeated string principals = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1654,7 +1708,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * <pre>
          * Optional. List of CIDR ranges to match based on source IP address. At least one
          * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported.
+         * "1.2.3.0/24") are supported. Authorization based on source IP alone
+         * should be avoided. The IP addresses of any load balancers or proxies
+         * should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1670,7 +1726,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * <pre>
          * Optional. List of CIDR ranges to match based on source IP address. At least one
          * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported.
+         * "1.2.3.0/24") are supported. Authorization based on source IP alone
+         * should be avoided. The IP addresses of any load balancers or proxies
+         * should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1686,7 +1744,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * <pre>
          * Optional. List of CIDR ranges to match based on source IP address. At least one
          * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported.
+         * "1.2.3.0/24") are supported. Authorization based on source IP alone
+         * should be avoided. The IP addresses of any load balancers or proxies
+         * should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1703,7 +1763,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * <pre>
          * Optional. List of CIDR ranges to match based on source IP address. At least one
          * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported.
+         * "1.2.3.0/24") are supported. Authorization based on source IP alone
+         * should be avoided. The IP addresses of any load balancers or proxies
+         * should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1720,7 +1782,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * <pre>
          * Optional. List of CIDR ranges to match based on source IP address. At least one
          * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported.
+         * "1.2.3.0/24") are supported. Authorization based on source IP alone
+         * should be avoided. The IP addresses of any load balancers or proxies
+         * should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1744,7 +1808,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * <pre>
          * Optional. List of CIDR ranges to match based on source IP address. At least one
          * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported.
+         * "1.2.3.0/24") are supported. Authorization based on source IP alone
+         * should be avoided. The IP addresses of any load balancers or proxies
+         * should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1767,7 +1833,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * <pre>
          * Optional. List of CIDR ranges to match based on source IP address. At least one
          * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported.
+         * "1.2.3.0/24") are supported. Authorization based on source IP alone
+         * should be avoided. The IP addresses of any load balancers or proxies
+         * should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1787,7 +1855,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * <pre>
          * Optional. List of CIDR ranges to match based on source IP address. At least one
          * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported.
+         * "1.2.3.0/24") are supported. Authorization based on source IP alone
+         * should be avoided. The IP addresses of any load balancers or proxies
+         * should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1806,7 +1876,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * <pre>
          * Optional. List of CIDR ranges to match based on source IP address. At least one
          * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported.
+         * "1.2.3.0/24") are supported. Authorization based on source IP alone
+         * should be avoided. The IP addresses of any load balancers or proxies
+         * should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1890,7 +1962,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against HOST header in
+       * Required. List of host names to match. Matched against the ":authority" header in
        * http requests. At least one host should match. Each host can be an
        * exact match, or a prefix match (example "mydomain.*") or a suffix
        * match (example // *.myorg.com") or a presence(any) match "*".
@@ -1905,7 +1977,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against HOST header in
+       * Required. List of host names to match. Matched against the ":authority" header in
        * http requests. At least one host should match. Each host can be an
        * exact match, or a prefix match (example "mydomain.*") or a suffix
        * match (example // *.myorg.com") or a presence(any) match "*".
@@ -1920,7 +1992,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against HOST header in
+       * Required. List of host names to match. Matched against the ":authority" header in
        * http requests. At least one host should match. Each host can be an
        * exact match, or a prefix match (example "mydomain.*") or a suffix
        * match (example // *.myorg.com") or a presence(any) match "*".
@@ -1936,7 +2008,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against HOST header in
+       * Required. List of host names to match. Matched against the ":authority" header in
        * http requests. At least one host should match. Each host can be an
        * exact match, or a prefix match (example "mydomain.*") or a suffix
        * match (example // *.myorg.com") or a presence(any) match "*".
@@ -2046,9 +2118,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Match against key:value pair in http header. Provides a
-       * flexible match based on HTTP headers, for potentially
-       * advanced use cases. At least one header should match.
+       * Optional. Match against key:value pair in http header. Provides a flexible match
+       * based on HTTP headers, for potentially advanced use cases. At least one
+       * header should match. Avoid using header matches to make authorization
+       * decisions unless there is a strong guarantee that requests arrive
+       * through a trusted client or proxy.
        * </pre>
        *
        * <code>
@@ -2062,9 +2136,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Match against key:value pair in http header. Provides a
-       * flexible match based on HTTP headers, for potentially
-       * advanced use cases. At least one header should match.
+       * Optional. Match against key:value pair in http header. Provides a flexible match
+       * based on HTTP headers, for potentially advanced use cases. At least one
+       * header should match. Avoid using header matches to make authorization
+       * decisions unless there is a strong guarantee that requests arrive
+       * through a trusted client or proxy.
        * </pre>
        *
        * <code>
@@ -2079,9 +2155,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Match against key:value pair in http header. Provides a
-       * flexible match based on HTTP headers, for potentially
-       * advanced use cases. At least one header should match.
+       * Optional. Match against key:value pair in http header. Provides a flexible match
+       * based on HTTP headers, for potentially advanced use cases. At least one
+       * header should match. Avoid using header matches to make authorization
+       * decisions unless there is a strong guarantee that requests arrive
+       * through a trusted client or proxy.
        * </pre>
        *
        * <code>
@@ -2241,14 +2319,14 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
             .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Destination_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
             .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Destination_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Destination.class,
@@ -2439,14 +2517,14 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
               .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Destination_HttpHeaderMatch_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
               .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Destination_HttpHeaderMatch_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Destination
@@ -2874,14 +2952,14 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Destination
                 .HttpHeaderMatchOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+            return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
                 .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Destination_HttpHeaderMatch_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+            return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
                 .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Destination_HttpHeaderMatch_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Destination
@@ -2917,7 +2995,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+            return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
                 .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Destination_HttpHeaderMatch_descriptor;
           }
 
@@ -3440,7 +3518,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against HOST header in
+       * Required. List of host names to match. Matched against the ":authority" header in
        * http requests. At least one host should match. Each host can be an
        * exact match, or a prefix match (example "mydomain.*") or a suffix
        * match (example // *.myorg.com") or a presence(any) match "*".
@@ -3457,7 +3535,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against HOST header in
+       * Required. List of host names to match. Matched against the ":authority" header in
        * http requests. At least one host should match. Each host can be an
        * exact match, or a prefix match (example "mydomain.*") or a suffix
        * match (example // *.myorg.com") or a presence(any) match "*".
@@ -3474,7 +3552,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against HOST header in
+       * Required. List of host names to match. Matched against the ":authority" header in
        * http requests. At least one host should match. Each host can be an
        * exact match, or a prefix match (example "mydomain.*") or a suffix
        * match (example // *.myorg.com") or a presence(any) match "*".
@@ -3492,7 +3570,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against HOST header in
+       * Required. List of host names to match. Matched against the ":authority" header in
        * http requests. At least one host should match. Each host can be an
        * exact match, or a prefix match (example "mydomain.*") or a suffix
        * match (example // *.myorg.com") or a presence(any) match "*".
@@ -3629,9 +3707,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Match against key:value pair in http header. Provides a
-       * flexible match based on HTTP headers, for potentially
-       * advanced use cases. At least one header should match.
+       * Optional. Match against key:value pair in http header. Provides a flexible match
+       * based on HTTP headers, for potentially advanced use cases. At least one
+       * header should match. Avoid using header matches to make authorization
+       * decisions unless there is a strong guarantee that requests arrive
+       * through a trusted client or proxy.
        * </pre>
        *
        * <code>
@@ -3648,9 +3728,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Match against key:value pair in http header. Provides a
-       * flexible match based on HTTP headers, for potentially
-       * advanced use cases. At least one header should match.
+       * Optional. Match against key:value pair in http header. Provides a flexible match
+       * based on HTTP headers, for potentially advanced use cases. At least one
+       * header should match. Avoid using header matches to make authorization
+       * decisions unless there is a strong guarantee that requests arrive
+       * through a trusted client or proxy.
        * </pre>
        *
        * <code>
@@ -3672,9 +3754,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Match against key:value pair in http header. Provides a
-       * flexible match based on HTTP headers, for potentially
-       * advanced use cases. At least one header should match.
+       * Optional. Match against key:value pair in http header. Provides a flexible match
+       * based on HTTP headers, for potentially advanced use cases. At least one
+       * header should match. Avoid using header matches to make authorization
+       * decisions unless there is a strong guarantee that requests arrive
+       * through a trusted client or proxy.
        * </pre>
        *
        * <code>
@@ -3938,14 +4022,14 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           // @@protoc_insertion_point(builder_implements:google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Destination)
           com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.DestinationOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
               .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Destination_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
               .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Destination_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Destination
@@ -3989,7 +4073,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+          return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
               .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Destination_descriptor;
         }
 
@@ -4176,7 +4260,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against HOST header in
+         * Required. List of host names to match. Matched against the ":authority" header in
          * http requests. At least one host should match. Each host can be an
          * exact match, or a prefix match (example "mydomain.*") or a suffix
          * match (example // *.myorg.com") or a presence(any) match "*".
@@ -4193,7 +4277,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against HOST header in
+         * Required. List of host names to match. Matched against the ":authority" header in
          * http requests. At least one host should match. Each host can be an
          * exact match, or a prefix match (example "mydomain.*") or a suffix
          * match (example // *.myorg.com") or a presence(any) match "*".
@@ -4210,7 +4294,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against HOST header in
+         * Required. List of host names to match. Matched against the ":authority" header in
          * http requests. At least one host should match. Each host can be an
          * exact match, or a prefix match (example "mydomain.*") or a suffix
          * match (example // *.myorg.com") or a presence(any) match "*".
@@ -4228,7 +4312,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against HOST header in
+         * Required. List of host names to match. Matched against the ":authority" header in
          * http requests. At least one host should match. Each host can be an
          * exact match, or a prefix match (example "mydomain.*") or a suffix
          * match (example // *.myorg.com") or a presence(any) match "*".
@@ -4246,7 +4330,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against HOST header in
+         * Required. List of host names to match. Matched against the ":authority" header in
          * http requests. At least one host should match. Each host can be an
          * exact match, or a prefix match (example "mydomain.*") or a suffix
          * match (example // *.myorg.com") or a presence(any) match "*".
@@ -4271,7 +4355,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against HOST header in
+         * Required. List of host names to match. Matched against the ":authority" header in
          * http requests. At least one host should match. Each host can be an
          * exact match, or a prefix match (example "mydomain.*") or a suffix
          * match (example // *.myorg.com") or a presence(any) match "*".
@@ -4295,7 +4379,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against HOST header in
+         * Required. List of host names to match. Matched against the ":authority" header in
          * http requests. At least one host should match. Each host can be an
          * exact match, or a prefix match (example "mydomain.*") or a suffix
          * match (example // *.myorg.com") or a presence(any) match "*".
@@ -4316,7 +4400,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against HOST header in
+         * Required. List of host names to match. Matched against the ":authority" header in
          * http requests. At least one host should match. Each host can be an
          * exact match, or a prefix match (example "mydomain.*") or a suffix
          * match (example // *.myorg.com") or a presence(any) match "*".
@@ -4336,7 +4420,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against HOST header in
+         * Required. List of host names to match. Matched against the ":authority" header in
          * http requests. At least one host should match. Each host can be an
          * exact match, or a prefix match (example "mydomain.*") or a suffix
          * match (example // *.myorg.com") or a presence(any) match "*".
@@ -4676,9 +4760,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a
-         * flexible match based on HTTP headers, for potentially
-         * advanced use cases. At least one header should match.
+         * Optional. Match against key:value pair in http header. Provides a flexible match
+         * based on HTTP headers, for potentially advanced use cases. At least one
+         * header should match. Avoid using header matches to make authorization
+         * decisions unless there is a strong guarantee that requests arrive
+         * through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4694,9 +4780,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a
-         * flexible match based on HTTP headers, for potentially
-         * advanced use cases. At least one header should match.
+         * Optional. Match against key:value pair in http header. Provides a flexible match
+         * based on HTTP headers, for potentially advanced use cases. At least one
+         * header should match. Avoid using header matches to make authorization
+         * decisions unless there is a strong guarantee that requests arrive
+         * through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4721,9 +4809,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a
-         * flexible match based on HTTP headers, for potentially
-         * advanced use cases. At least one header should match.
+         * Optional. Match against key:value pair in http header. Provides a flexible match
+         * based on HTTP headers, for potentially advanced use cases. At least one
+         * header should match. Avoid using header matches to make authorization
+         * decisions unless there is a strong guarantee that requests arrive
+         * through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4750,9 +4840,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a
-         * flexible match based on HTTP headers, for potentially
-         * advanced use cases. At least one header should match.
+         * Optional. Match against key:value pair in http header. Provides a flexible match
+         * based on HTTP headers, for potentially advanced use cases. At least one
+         * header should match. Avoid using header matches to make authorization
+         * decisions unless there is a strong guarantee that requests arrive
+         * through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4776,9 +4868,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a
-         * flexible match based on HTTP headers, for potentially
-         * advanced use cases. At least one header should match.
+         * Optional. Match against key:value pair in http header. Provides a flexible match
+         * based on HTTP headers, for potentially advanced use cases. At least one
+         * header should match. Avoid using header matches to make authorization
+         * decisions unless there is a strong guarantee that requests arrive
+         * through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4810,9 +4904,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a
-         * flexible match based on HTTP headers, for potentially
-         * advanced use cases. At least one header should match.
+         * Optional. Match against key:value pair in http header. Provides a flexible match
+         * based on HTTP headers, for potentially advanced use cases. At least one
+         * header should match. Avoid using header matches to make authorization
+         * decisions unless there is a strong guarantee that requests arrive
+         * through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4834,9 +4930,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a
-         * flexible match based on HTTP headers, for potentially
-         * advanced use cases. At least one header should match.
+         * Optional. Match against key:value pair in http header. Provides a flexible match
+         * based on HTTP headers, for potentially advanced use cases. At least one
+         * header should match. Avoid using header matches to make authorization
+         * decisions unless there is a strong guarantee that requests arrive
+         * through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4854,9 +4952,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a
-         * flexible match based on HTTP headers, for potentially
-         * advanced use cases. At least one header should match.
+         * Optional. Match against key:value pair in http header. Provides a flexible match
+         * based on HTTP headers, for potentially advanced use cases. At least one
+         * header should match. Avoid using header matches to make authorization
+         * decisions unless there is a strong guarantee that requests arrive
+         * through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4879,9 +4979,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a
-         * flexible match based on HTTP headers, for potentially
-         * advanced use cases. At least one header should match.
+         * Optional. Match against key:value pair in http header. Provides a flexible match
+         * based on HTTP headers, for potentially advanced use cases. At least one
+         * header should match. Avoid using header matches to make authorization
+         * decisions unless there is a strong guarantee that requests arrive
+         * through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -5366,14 +5468,14 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         // @@protoc_insertion_point(builder_implements:google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule)
         com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.RuleOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
             .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
             .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.class,
@@ -5418,7 +5520,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+        return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
             .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_descriptor;
       }
 
@@ -6832,7 +6934,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   private static final class LabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
         com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
-            com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+            com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
                 .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_LabelsEntry_descriptor,
             com.google.protobuf.WireFormat.FieldType.STRING,
             "",
@@ -7321,7 +7423,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(builder_implements:google.cloud.networksecurity.v1beta1.AuthorizationPolicy)
       com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_descriptor;
     }
 
@@ -7348,7 +7450,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.class,
@@ -7404,7 +7506,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_descriptor;
     }
 

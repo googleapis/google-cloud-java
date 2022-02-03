@@ -18,8 +18,8 @@
 
 package com.google.cloud.networksecurity.v1beta1;
 
-public final class ClientTlsPolicyOuterClass {
-  private ClientTlsPolicyOuterClass() {}
+public final class ClientTlsPolicyProto {
+  private ClientTlsPolicyProto() {}
 
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
@@ -113,13 +113,14 @@ public final class ClientTlsPolicyOuterClass {
           + "security.v1beta1.ClientTlsPolicyB\003\340A\002\"d\n"
           + "\034DeleteClientTlsPolicyRequest\022D\n\004name\030\001 "
           + "\001(\tB6\340A\002\372A0\n.networksecurity.googleapis."
-          + "com/ClientTlsPolicyB\371\001\n(com.google.cloud"
-          + ".networksecurity.v1beta1P\001ZSgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/networks"
-          + "ecurity/v1beta1;networksecurity\252\002$Google"
-          + ".Cloud.NetworkSecurity.V1Beta1\312\002$Google\\"
-          + "Cloud\\NetworkSecurity\\V1beta1\352\002\'Google::"
-          + "Cloud::NetworkSecurity::V1beta1b\006proto3"
+          + "com/ClientTlsPolicyB\217\002\n(com.google.cloud"
+          + ".networksecurity.v1beta1B\024ClientTlsPolic"
+          + "yProtoP\001ZSgoogle.golang.org/genproto/goo"
+          + "gleapis/cloud/networksecurity/v1beta1;ne"
+          + "tworksecurity\252\002$Google.Cloud.NetworkSecu"
+          + "rity.V1Beta1\312\002$Google\\Cloud\\NetworkSecur"
+          + "ity\\V1beta1\352\002\'Google::Cloud::NetworkSecu"
+          + "rity::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -127,7 +128,7 @@ public final class ClientTlsPolicyOuterClass {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.cloud.networksecurity.v1beta1.Tls.getDescriptor(),
+              com.google.cloud.networksecurity.v1beta1.TlsProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
@@ -214,7 +215,7 @@ public final class ClientTlsPolicyOuterClass {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.cloud.networksecurity.v1beta1.Tls.getDescriptor();
+    com.google.cloud.networksecurity.v1beta1.TlsProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

@@ -16,4 +16,24 @@
     <className>com/google/cloud/networksecurity/v1beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/networksecurity/v1beta1/AuthorizationPolicyOuterClass</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/networksecurity/v1beta1/ClientTlsPolicyOuterClass</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/networksecurity/v1beta1/Common</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/networksecurity/v1beta1/ServerTlsPolicyOuterClass</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/networksecurity/v1beta1/Tls</className>
+  </difference>
 </differences>

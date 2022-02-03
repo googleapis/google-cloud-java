@@ -122,14 +122,14 @@ public final class CreateClientTlsPolicyRequest extends com.google.protobuf.Gene
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyOuterClass
+    return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyProto
         .internal_static_google_cloud_networksecurity_v1beta1_CreateClientTlsPolicyRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyOuterClass
+    return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyProto
         .internal_static_google_cloud_networksecurity_v1beta1_CreateClientTlsPolicyRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.networksecurity.v1beta1.CreateClientTlsPolicyRequest.class,
@@ -497,14 +497,14 @@ public final class CreateClientTlsPolicyRequest extends com.google.protobuf.Gene
       // @@protoc_insertion_point(builder_implements:google.cloud.networksecurity.v1beta1.CreateClientTlsPolicyRequest)
       com.google.cloud.networksecurity.v1beta1.CreateClientTlsPolicyRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_CreateClientTlsPolicyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_CreateClientTlsPolicyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.networksecurity.v1beta1.CreateClientTlsPolicyRequest.class,
@@ -544,7 +544,7 @@ public final class CreateClientTlsPolicyRequest extends com.google.protobuf.Gene
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_CreateClientTlsPolicyRequest_descriptor;
     }
 

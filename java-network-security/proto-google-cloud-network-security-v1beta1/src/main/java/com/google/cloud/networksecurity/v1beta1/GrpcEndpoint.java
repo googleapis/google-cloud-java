@@ -97,14 +97,14 @@ public final class GrpcEndpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.networksecurity.v1beta1.Tls
+    return com.google.cloud.networksecurity.v1beta1.TlsProto
         .internal_static_google_cloud_networksecurity_v1beta1_GrpcEndpoint_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.networksecurity.v1beta1.Tls
+    return com.google.cloud.networksecurity.v1beta1.TlsProto
         .internal_static_google_cloud_networksecurity_v1beta1_GrpcEndpoint_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.networksecurity.v1beta1.GrpcEndpoint.class,
@@ -336,14 +336,14 @@ public final class GrpcEndpoint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(builder_implements:google.cloud.networksecurity.v1beta1.GrpcEndpoint)
       com.google.cloud.networksecurity.v1beta1.GrpcEndpointOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.networksecurity.v1beta1.Tls
+      return com.google.cloud.networksecurity.v1beta1.TlsProto
           .internal_static_google_cloud_networksecurity_v1beta1_GrpcEndpoint_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.networksecurity.v1beta1.Tls
+      return com.google.cloud.networksecurity.v1beta1.TlsProto
           .internal_static_google_cloud_networksecurity_v1beta1_GrpcEndpoint_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.networksecurity.v1beta1.GrpcEndpoint.class,
@@ -374,7 +374,7 @@ public final class GrpcEndpoint extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.networksecurity.v1beta1.Tls
+      return com.google.cloud.networksecurity.v1beta1.TlsProto
           .internal_static_google_cloud_networksecurity_v1beta1_GrpcEndpoint_descriptor;
     }
 

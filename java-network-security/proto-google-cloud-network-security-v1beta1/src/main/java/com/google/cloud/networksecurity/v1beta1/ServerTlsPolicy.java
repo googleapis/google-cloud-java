@@ -192,7 +192,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyOuterClass
+    return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyProto
         .internal_static_google_cloud_networksecurity_v1beta1_ServerTlsPolicy_descriptor;
   }
 
@@ -210,7 +210,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyOuterClass
+    return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyProto
         .internal_static_google_cloud_networksecurity_v1beta1_ServerTlsPolicy_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.class,
@@ -226,12 +226,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+     * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
      * </code>
      */
     java.util.List<com.google.cloud.networksecurity.v1beta1.ValidationCA>
@@ -240,12 +239,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+     * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
      * </code>
      */
     com.google.cloud.networksecurity.v1beta1.ValidationCA getClientValidationCa(int index);
@@ -253,12 +251,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+     * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
      * </code>
      */
     int getClientValidationCaCount();
@@ -266,12 +263,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+     * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
      * </code>
      */
     java.util.List<? extends com.google.cloud.networksecurity.v1beta1.ValidationCAOrBuilder>
@@ -280,12 +276,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+     * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
      * </code>
      */
     com.google.cloud.networksecurity.v1beta1.ValidationCAOrBuilder getClientValidationCaOrBuilder(
@@ -381,14 +376,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_ServerTlsPolicy_MTLSPolicy_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_ServerTlsPolicy_MTLSPolicy_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy.class,
@@ -402,12 +397,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+     * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
      * </code>
      */
     @java.lang.Override
@@ -419,12 +413,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+     * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
      * </code>
      */
     @java.lang.Override
@@ -436,12 +429,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+     * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
      * </code>
      */
     @java.lang.Override
@@ -452,12 +444,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+     * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
      * </code>
      */
     @java.lang.Override
@@ -468,12 +459,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+     * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
      * </code>
      */
     @java.lang.Override
@@ -662,14 +652,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
         // @@protoc_insertion_point(builder_implements:google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy)
         com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyOuterClass
+        return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyProto
             .internal_static_google_cloud_networksecurity_v1beta1_ServerTlsPolicy_MTLSPolicy_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyOuterClass
+        return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyProto
             .internal_static_google_cloud_networksecurity_v1beta1_ServerTlsPolicy_MTLSPolicy_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy.class,
@@ -707,7 +697,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyOuterClass
+        return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyProto
             .internal_static_google_cloud_networksecurity_v1beta1_ServerTlsPolicy_MTLSPolicy_descriptor;
       }
 
@@ -878,12 +868,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public java.util.List<com.google.cloud.networksecurity.v1beta1.ValidationCA>
@@ -898,12 +887,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public int getClientValidationCaCount() {
@@ -917,12 +905,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public com.google.cloud.networksecurity.v1beta1.ValidationCA getClientValidationCa(
@@ -937,12 +924,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public Builder setClientValidationCa(
@@ -963,12 +949,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public Builder setClientValidationCa(
@@ -987,12 +972,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public Builder addClientValidationCa(
@@ -1013,12 +997,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public Builder addClientValidationCa(
@@ -1039,12 +1022,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public Builder addClientValidationCa(
@@ -1062,12 +1044,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public Builder addClientValidationCa(
@@ -1086,12 +1067,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public Builder addAllClientValidationCa(
@@ -1110,12 +1090,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public Builder clearClientValidationCa() {
@@ -1132,12 +1111,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public Builder removeClientValidationCa(int index) {
@@ -1154,12 +1132,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public com.google.cloud.networksecurity.v1beta1.ValidationCA.Builder
@@ -1170,12 +1147,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public com.google.cloud.networksecurity.v1beta1.ValidationCAOrBuilder
@@ -1190,12 +1166,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public java.util.List<
@@ -1211,12 +1186,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public com.google.cloud.networksecurity.v1beta1.ValidationCA.Builder
@@ -1228,12 +1202,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public com.google.cloud.networksecurity.v1beta1.ValidationCA.Builder
@@ -1246,12 +1219,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. Defines the mechanism to obtain the Certificate Authority certificate to
+       * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
        *
-       * <code>
-       * repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1 [(.google.api.field_behavior) = REQUIRED];
+       * <code>repeated .google.cloud.networksecurity.v1beta1.ValidationCA client_validation_ca = 1;
        * </code>
        */
       public java.util.List<com.google.cloud.networksecurity.v1beta1.ValidationCA.Builder>
@@ -1391,10 +1363,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Free-text description of the resource.
+   * Free-text description of the resource.
    * </pre>
    *
-   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 2;</code>
    *
    * @return The description.
    */
@@ -1414,10 +1386,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Free-text description of the resource.
+   * Free-text description of the resource.
    * </pre>
    *
-   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 2;</code>
    *
    * @return The bytes for description.
    */
@@ -1537,7 +1509,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
   private static final class LabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
         com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
-            com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyOuterClass
+            com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyProto
                 .internal_static_google_cloud_networksecurity_v1beta1_ServerTlsPolicy_LabelsEntry_descriptor,
             com.google.protobuf.WireFormat.FieldType.STRING,
             "",
@@ -1561,10 +1533,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the resource.
+   * Set of label tags associated with the resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -1583,10 +1555,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the resource.
+   * Set of label tags associated with the resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -1596,10 +1568,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the resource.
+   * Set of label tags associated with the resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
@@ -1613,10 +1585,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the resource.
+   * Set of label tags associated with the resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1636,14 +1608,15 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Determines if server allows plaintext connections. If set to true, server
+   * Determines if server allows plaintext connections. If set to true, server
    * allows plain text connections. By default, it is set to false. This setting
-   * is not exclusive of other encryption modes. For example, if allow_open and
-   * mtls_policy are set, server allows both plain text and mTLS connections.
-   * See documentation of other encryption modes to confirm compatibility.
+   * is not exclusive of other encryption modes. For example, if `allow_open`
+   * and `mtls_policy` are set, server allows both plain text and mTLS
+   * connections. See documentation of other encryption modes to confirm
+   * compatibility.
    * </pre>
    *
-   * <code>bool allow_open = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool allow_open = 6;</code>
    *
    * @return The allowOpen.
    */
@@ -1658,14 +1631,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision server identity (public and private keys).
-   * Cannot be combined with allow_open as a permissive mode that allows both
+   * Defines a mechanism to provision server identity (public and private keys).
+   * Cannot be combined with `allow_open` as a permissive mode that allows both
    * plain text and TLS is not supported.
    * </pre>
    *
-   * <code>
-   * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;</code>
    *
    * @return Whether the serverCertificate field is set.
    */
@@ -1677,14 +1648,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision server identity (public and private keys).
-   * Cannot be combined with allow_open as a permissive mode that allows both
+   * Defines a mechanism to provision server identity (public and private keys).
+   * Cannot be combined with `allow_open` as a permissive mode that allows both
    * plain text and TLS is not supported.
    * </pre>
    *
-   * <code>
-   * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;</code>
    *
    * @return The serverCertificate.
    */
@@ -1698,14 +1667,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision server identity (public and private keys).
-   * Cannot be combined with allow_open as a permissive mode that allows both
+   * Defines a mechanism to provision server identity (public and private keys).
+   * Cannot be combined with `allow_open` as a permissive mode that allows both
    * plain text and TLS is not supported.
    * </pre>
    *
-   * <code>
-   * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;</code>
    */
   @java.lang.Override
   public com.google.cloud.networksecurity.v1beta1.CertificateProviderOrBuilder
@@ -1719,16 +1686,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision peer validation certificates for peer to
+   * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
    * certificate will not be requested. The connection is treated as TLS and not
-   * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-   * and mTLS connections.
+   * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+   * text and mTLS connections.
    * </pre>
    *
-   * <code>
-   * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;</code>
    *
    * @return Whether the mtlsPolicy field is set.
    */
@@ -1740,16 +1705,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision peer validation certificates for peer to
+   * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
    * certificate will not be requested. The connection is treated as TLS and not
-   * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-   * and mTLS connections.
+   * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+   * text and mTLS connections.
    * </pre>
    *
-   * <code>
-   * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;</code>
    *
    * @return The mtlsPolicy.
    */
@@ -1763,16 +1726,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision peer validation certificates for peer to
+   * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
    * certificate will not be requested. The connection is treated as TLS and not
-   * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-   * and mTLS connections.
+   * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+   * text and mTLS connections.
    * </pre>
    *
-   * <code>
-   * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;</code>
    */
   @java.lang.Override
   public com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicyOrBuilder
@@ -2047,7 +2008,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(builder_implements:google.cloud.networksecurity.v1beta1.ServerTlsPolicy)
       com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_ServerTlsPolicy_descriptor;
     }
 
@@ -2074,7 +2035,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_ServerTlsPolicy_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.class,
@@ -2134,7 +2095,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_ServerTlsPolicy_descriptor;
     }
 
@@ -2404,10 +2365,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Free-text description of the resource.
+     * Free-text description of the resource.
      * </pre>
      *
-     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 2;</code>
      *
      * @return The description.
      */
@@ -2426,10 +2387,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Free-text description of the resource.
+     * Free-text description of the resource.
      * </pre>
      *
-     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 2;</code>
      *
      * @return The bytes for description.
      */
@@ -2448,10 +2409,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Free-text description of the resource.
+     * Free-text description of the resource.
      * </pre>
      *
-     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 2;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2469,10 +2430,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Free-text description of the resource.
+     * Free-text description of the resource.
      * </pre>
      *
-     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 2;</code>
      *
      * @return This builder for chaining.
      */
@@ -2486,10 +2447,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Free-text description of the resource.
+     * Free-text description of the resource.
      * </pre>
      *
-     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 2;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2936,10 +2897,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the resource.
+     * Set of label tags associated with the resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -2958,10 +2919,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the resource.
+     * Set of label tags associated with the resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -2971,10 +2932,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the resource.
+     * Set of label tags associated with the resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrDefault(
@@ -2989,10 +2950,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the resource.
+     * Set of label tags associated with the resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -3014,10 +2975,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the resource.
+     * Set of label tags associated with the resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -3035,10 +2996,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the resource.
+     * Set of label tags associated with the resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3054,10 +3015,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the resource.
+     * Set of label tags associated with the resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -3069,14 +3030,15 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Determines if server allows plaintext connections. If set to true, server
+     * Determines if server allows plaintext connections. If set to true, server
      * allows plain text connections. By default, it is set to false. This setting
-     * is not exclusive of other encryption modes. For example, if allow_open and
-     * mtls_policy are set, server allows both plain text and mTLS connections.
-     * See documentation of other encryption modes to confirm compatibility.
+     * is not exclusive of other encryption modes. For example, if `allow_open`
+     * and `mtls_policy` are set, server allows both plain text and mTLS
+     * connections. See documentation of other encryption modes to confirm
+     * compatibility.
      * </pre>
      *
-     * <code>bool allow_open = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool allow_open = 6;</code>
      *
      * @return The allowOpen.
      */
@@ -3088,14 +3050,15 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Determines if server allows plaintext connections. If set to true, server
+     * Determines if server allows plaintext connections. If set to true, server
      * allows plain text connections. By default, it is set to false. This setting
-     * is not exclusive of other encryption modes. For example, if allow_open and
-     * mtls_policy are set, server allows both plain text and mTLS connections.
-     * See documentation of other encryption modes to confirm compatibility.
+     * is not exclusive of other encryption modes. For example, if `allow_open`
+     * and `mtls_policy` are set, server allows both plain text and mTLS
+     * connections. See documentation of other encryption modes to confirm
+     * compatibility.
      * </pre>
      *
-     * <code>bool allow_open = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool allow_open = 6;</code>
      *
      * @param value The allowOpen to set.
      * @return This builder for chaining.
@@ -3110,14 +3073,15 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Determines if server allows plaintext connections. If set to true, server
+     * Determines if server allows plaintext connections. If set to true, server
      * allows plain text connections. By default, it is set to false. This setting
-     * is not exclusive of other encryption modes. For example, if allow_open and
-     * mtls_policy are set, server allows both plain text and mTLS connections.
-     * See documentation of other encryption modes to confirm compatibility.
+     * is not exclusive of other encryption modes. For example, if `allow_open`
+     * and `mtls_policy` are set, server allows both plain text and mTLS
+     * connections. See documentation of other encryption modes to confirm
+     * compatibility.
      * </pre>
      *
-     * <code>bool allow_open = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool allow_open = 6;</code>
      *
      * @return This builder for chaining.
      */
@@ -3138,13 +3102,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision server identity (public and private keys).
-     * Cannot be combined with allow_open as a permissive mode that allows both
+     * Defines a mechanism to provision server identity (public and private keys).
+     * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;
      * </code>
      *
      * @return Whether the serverCertificate field is set.
@@ -3156,13 +3119,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision server identity (public and private keys).
-     * Cannot be combined with allow_open as a permissive mode that allows both
+     * Defines a mechanism to provision server identity (public and private keys).
+     * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;
      * </code>
      *
      * @return The serverCertificate.
@@ -3180,13 +3142,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision server identity (public and private keys).
-     * Cannot be combined with allow_open as a permissive mode that allows both
+     * Defines a mechanism to provision server identity (public and private keys).
+     * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;
      * </code>
      */
     public Builder setServerCertificate(
@@ -3207,13 +3168,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision server identity (public and private keys).
-     * Cannot be combined with allow_open as a permissive mode that allows both
+     * Defines a mechanism to provision server identity (public and private keys).
+     * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;
      * </code>
      */
     public Builder setServerCertificate(
@@ -3231,13 +3191,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision server identity (public and private keys).
-     * Cannot be combined with allow_open as a permissive mode that allows both
+     * Defines a mechanism to provision server identity (public and private keys).
+     * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;
      * </code>
      */
     public Builder mergeServerCertificate(
@@ -3263,13 +3222,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision server identity (public and private keys).
-     * Cannot be combined with allow_open as a permissive mode that allows both
+     * Defines a mechanism to provision server identity (public and private keys).
+     * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;
      * </code>
      */
     public Builder clearServerCertificate() {
@@ -3287,13 +3245,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision server identity (public and private keys).
-     * Cannot be combined with allow_open as a permissive mode that allows both
+     * Defines a mechanism to provision server identity (public and private keys).
+     * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;
      * </code>
      */
     public com.google.cloud.networksecurity.v1beta1.CertificateProvider.Builder
@@ -3306,13 +3263,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision server identity (public and private keys).
-     * Cannot be combined with allow_open as a permissive mode that allows both
+     * Defines a mechanism to provision server identity (public and private keys).
+     * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;
      * </code>
      */
     public com.google.cloud.networksecurity.v1beta1.CertificateProviderOrBuilder
@@ -3329,13 +3285,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision server identity (public and private keys).
-     * Cannot be combined with allow_open as a permissive mode that allows both
+     * Defines a mechanism to provision server identity (public and private keys).
+     * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.CertificateProvider server_certificate = 7;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3365,15 +3320,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision peer validation certificates for peer to
+     * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
-     * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-     * and mTLS connections.
+     * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+     * text and mTLS connections.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;
      * </code>
      *
      * @return Whether the mtlsPolicy field is set.
@@ -3385,15 +3339,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision peer validation certificates for peer to
+     * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
-     * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-     * and mTLS connections.
+     * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+     * text and mTLS connections.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;
      * </code>
      *
      * @return The mtlsPolicy.
@@ -3412,15 +3365,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision peer validation certificates for peer to
+     * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
-     * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-     * and mTLS connections.
+     * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+     * text and mTLS connections.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;
      * </code>
      */
     public Builder setMtlsPolicy(
@@ -3441,15 +3393,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision peer validation certificates for peer to
+     * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
-     * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-     * and mTLS connections.
+     * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+     * text and mTLS connections.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;
      * </code>
      */
     public Builder setMtlsPolicy(
@@ -3468,15 +3419,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision peer validation certificates for peer to
+     * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
-     * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-     * and mTLS connections.
+     * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+     * text and mTLS connections.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;
      * </code>
      */
     public Builder mergeMtlsPolicy(
@@ -3502,15 +3452,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision peer validation certificates for peer to
+     * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
-     * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-     * and mTLS connections.
+     * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+     * text and mTLS connections.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;
      * </code>
      */
     public Builder clearMtlsPolicy() {
@@ -3528,15 +3477,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision peer validation certificates for peer to
+     * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
-     * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-     * and mTLS connections.
+     * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+     * text and mTLS connections.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;
      * </code>
      */
     public com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy.Builder
@@ -3549,15 +3497,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision peer validation certificates for peer to
+     * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
-     * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-     * and mTLS connections.
+     * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+     * text and mTLS connections.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;
      * </code>
      */
     public com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicyOrBuilder
@@ -3575,15 +3522,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Defines a mechanism to provision peer validation certificates for peer to
+     * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
-     * mTLS. If allow_open and mtls_policy are set, server allows both plain text
-     * and mTLS connections.
+     * mTLS. If `allow_open` and `mtls_policy` are set, server allows both plain
+     * text and mTLS connections.
      * </pre>
      *
-     * <code>
-     * .google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy mtls_policy = 8;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

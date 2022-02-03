@@ -195,7 +195,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyOuterClass
+    return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyProto
         .internal_static_google_cloud_networksecurity_v1beta1_ClientTlsPolicy_descriptor;
   }
 
@@ -213,7 +213,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyOuterClass
+    return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyProto
         .internal_static_google_cloud_networksecurity_v1beta1_ClientTlsPolicy_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.networksecurity.v1beta1.ClientTlsPolicy.class,
@@ -423,7 +423,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   private static final class LabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
         com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
-            com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyOuterClass
+            com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyProto
                 .internal_static_google_cloud_networksecurity_v1beta1_ClientTlsPolicy_LabelsEntry_descriptor,
             com.google.protobuf.WireFormat.FieldType.STRING,
             "",
@@ -981,7 +981,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(builder_implements:google.cloud.networksecurity.v1beta1.ClientTlsPolicy)
       com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_ClientTlsPolicy_descriptor;
     }
 
@@ -1008,7 +1008,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_ClientTlsPolicy_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.networksecurity.v1beta1.ClientTlsPolicy.class,
@@ -1070,7 +1070,7 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_ClientTlsPolicy_descriptor;
     }
 

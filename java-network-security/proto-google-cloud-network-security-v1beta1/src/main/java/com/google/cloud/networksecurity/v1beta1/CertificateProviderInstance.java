@@ -100,14 +100,14 @@ public final class CertificateProviderInstance extends com.google.protobuf.Gener
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.networksecurity.v1beta1.Tls
+    return com.google.cloud.networksecurity.v1beta1.TlsProto
         .internal_static_google_cloud_networksecurity_v1beta1_CertificateProviderInstance_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.networksecurity.v1beta1.Tls
+    return com.google.cloud.networksecurity.v1beta1.TlsProto
         .internal_static_google_cloud_networksecurity_v1beta1_CertificateProviderInstance_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.networksecurity.v1beta1.CertificateProviderInstance.class,
@@ -345,14 +345,14 @@ public final class CertificateProviderInstance extends com.google.protobuf.Gener
       // @@protoc_insertion_point(builder_implements:google.cloud.networksecurity.v1beta1.CertificateProviderInstance)
       com.google.cloud.networksecurity.v1beta1.CertificateProviderInstanceOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.networksecurity.v1beta1.Tls
+      return com.google.cloud.networksecurity.v1beta1.TlsProto
           .internal_static_google_cloud_networksecurity_v1beta1_CertificateProviderInstance_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.networksecurity.v1beta1.Tls
+      return com.google.cloud.networksecurity.v1beta1.TlsProto
           .internal_static_google_cloud_networksecurity_v1beta1_CertificateProviderInstance_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.networksecurity.v1beta1.CertificateProviderInstance.class,
@@ -384,7 +384,7 @@ public final class CertificateProviderInstance extends com.google.protobuf.Gener
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.networksecurity.v1beta1.Tls
+      return com.google.cloud.networksecurity.v1beta1.TlsProto
           .internal_static_google_cloud_networksecurity_v1beta1_CertificateProviderInstance_descriptor;
     }
 

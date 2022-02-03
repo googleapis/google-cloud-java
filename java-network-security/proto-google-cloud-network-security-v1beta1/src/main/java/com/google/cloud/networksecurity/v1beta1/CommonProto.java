@@ -18,8 +18,8 @@
 
 package com.google.cloud.networksecurity.v1beta1;
 
-public final class Common {
-  private Common() {}
+public final class CommonProto {
+  private CommonProto() {}
 
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
@@ -51,13 +51,13 @@ public final class Common {
           + "et\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016stat"
           + "us_message\030\005 \001(\tB\003\340A\003\022#\n\026requested_cance"
           + "llation\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB"
-          + "\003\340A\003B\371\001\n(com.google.cloud.networksecurit"
-          + "y.v1beta1P\001ZSgoogle.golang.org/genproto/"
-          + "googleapis/cloud/networksecurity/v1beta1"
-          + ";networksecurity\252\002$Google.Cloud.NetworkS"
-          + "ecurity.V1Beta1\312\002$Google\\Cloud\\NetworkSe"
-          + "curity\\V1beta1\352\002\'Google::Cloud::NetworkS"
-          + "ecurity::V1beta1b\006proto3"
+          + "\003\340A\003B\206\002\n(com.google.cloud.networksecurit"
+          + "y.v1beta1B\013CommonProtoP\001ZSgoogle.golang."
+          + "org/genproto/googleapis/cloud/networksec"
+          + "urity/v1beta1;networksecurity\252\002$Google.C"
+          + "loud.NetworkSecurity.V1Beta1\312\002$Google\\Cl"
+          + "oud\\NetworkSecurity\\V1beta1\352\002\'Google::Cl"
+          + "oud::NetworkSecurity::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

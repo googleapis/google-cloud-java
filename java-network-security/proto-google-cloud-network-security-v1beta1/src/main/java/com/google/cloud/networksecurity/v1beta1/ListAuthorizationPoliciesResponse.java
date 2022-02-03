@@ -117,14 +117,14 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+    return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
         .internal_static_google_cloud_networksecurity_v1beta1_ListAuthorizationPoliciesResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+    return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
         .internal_static_google_cloud_networksecurity_v1beta1_ListAuthorizationPoliciesResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.networksecurity.v1beta1.ListAuthorizationPoliciesResponse.class,
@@ -463,14 +463,14 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
       // @@protoc_insertion_point(builder_implements:google.cloud.networksecurity.v1beta1.ListAuthorizationPoliciesResponse)
       com.google.cloud.networksecurity.v1beta1.ListAuthorizationPoliciesResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_ListAuthorizationPoliciesResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_ListAuthorizationPoliciesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.networksecurity.v1beta1.ListAuthorizationPoliciesResponse.class,
@@ -511,7 +511,7 @@ public final class ListAuthorizationPoliciesResponse extends com.google.protobuf
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyOuterClass
+      return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_ListAuthorizationPoliciesResponse_descriptor;
     }
 

@@ -41,8 +41,11 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * This class provides the ability to make remote calls to the backing service through method calls
- * that map to API methods. Sample code to get started:
+ * Service Description: Network Security API provides resources to configure authentication and
+ * authorization policies. Refer to per API resource documentation for more information.
+ *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
  * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
