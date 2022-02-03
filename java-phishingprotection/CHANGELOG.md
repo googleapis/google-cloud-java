@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.32.6](https://github.com/googleapis/java-phishingprotection/compare/v0.32.5...v0.32.6) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-phishingprotection/issues/1339)) ([#612](https://github.com/googleapis/java-phishingprotection/issues/612)) ([1651146](https://github.com/googleapis/java-phishingprotection/commit/1651146cdd1492b3d3e3613508334b1829a616ac))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#614](https://github.com/googleapis/java-phishingprotection/issues/614)) ([4d5db27](https://github.com/googleapis/java-phishingprotection/commit/4d5db2799fbda215dfce2f58606c33371678c1cd))
+
 ### [0.32.5](https://www.github.com/googleapis/java-phishingprotection/compare/v0.32.4...v0.32.5) (2022-01-07)
 
 
