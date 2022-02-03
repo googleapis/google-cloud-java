@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-recommender/compare/v2.1.5...v2.2.0) (2022-02-03)
+
+
+### Features
+
+* Recommendation Priority / Insight Severity ([#709](https://github.com/googleapis/java-recommender/issues/709)) ([5758d5d](https://github.com/googleapis/java-recommender/commit/5758d5de29033ec29c2c473c78badab0199fb820))
+* feat: Recommendation xor_group_id
+* feat: Recommendation security projection
+* feat: Configurable recommenders
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-recommender/issues/1339)) ([#707](https://github.com/googleapis/java-recommender/issues/707)) ([3811363](https://github.com/googleapis/java-recommender/commit/3811363aaf85345eb5516790f3606ae4f4000650))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#710](https://github.com/googleapis/java-recommender/issues/710)) ([a122813](https://github.com/googleapis/java-recommender/commit/a1228130edea9d61014efae9b088d4b1e8eabe2b))
+
 ### [2.1.5](https://www.github.com/googleapis/java-recommender/compare/v2.1.4...v2.1.5) (2022-01-07)
 
 
