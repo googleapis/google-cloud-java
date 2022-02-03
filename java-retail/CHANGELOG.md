@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.0.8](https://github.com/googleapis/java-retail/compare/v2.0.7...v2.0.8) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-retail/issues/1339)) ([#272](https://github.com/googleapis/java-retail/issues/272)) ([14ba816](https://github.com/googleapis/java-retail/commit/14ba816df244116263397c8da9b2a18b4c7f43d3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#275](https://github.com/googleapis/java-retail/issues/275)) ([51a2492](https://github.com/googleapis/java-retail/commit/51a2492e4b862af408999ff5473984299e0b68a1))
+
 ### [2.0.7](https://www.github.com/googleapis/java-retail/compare/v2.0.6...v2.0.7) (2022-01-07)
 
 
