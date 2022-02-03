@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-eventarc/compare/v1.1.5...v1.2.0) (2022-02-03)
+
+
+### Features
+
+* Add Channel and ChannelConnection resources ([#136](https://github.com/googleapis/java-eventarc/issues/136)) ([05c1a75](https://github.com/googleapis/java-eventarc/commit/05c1a75b07a636d208ef254fbd5dab6f6c951183))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-eventarc/issues/1339)) ([#131](https://github.com/googleapis/java-eventarc/issues/131)) ([1b26318](https://github.com/googleapis/java-eventarc/commit/1b263181ad9851924a2cac65f63d9ef09a99fadd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#134](https://github.com/googleapis/java-eventarc/issues/134)) ([5249f2c](https://github.com/googleapis/java-eventarc/commit/5249f2c9d92cbf485511e851b7923b335ab1cdff))
+
 ### [1.1.5](https://www.github.com/googleapis/java-eventarc/compare/v1.1.4...v1.1.5) (2022-01-07)
 
 
