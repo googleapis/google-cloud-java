@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://github.com/googleapis/java-dataflow/compare/v0.3.3...v0.4.0) (2022-02-03)
+
+
+### Features
+
+* new parameters in FlexTemplateRuntimeEnvironment fix: added google.api.http annotations to RPCs ([#122](https://github.com/googleapis/java-dataflow/issues/122)) ([cdd4a8a](https://github.com/googleapis/java-dataflow/commit/cdd4a8ab32813ea81cf08c7216e7e9ab89fc1b07))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-dataflow/issues/1339)) ([#117](https://github.com/googleapis/java-dataflow/issues/117)) ([9d22aab](https://github.com/googleapis/java-dataflow/commit/9d22aabd9b4285502d8fb916b103733ade4dcb4a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#120](https://github.com/googleapis/java-dataflow/issues/120)) ([011e75f](https://github.com/googleapis/java-dataflow/commit/011e75f067dc2b86fc2b3eb3725acf7d4e7376f2))
+
 ### [0.3.3](https://www.github.com/googleapis/java-dataflow/compare/v0.3.2...v0.3.3) (2022-01-07)
 
 
