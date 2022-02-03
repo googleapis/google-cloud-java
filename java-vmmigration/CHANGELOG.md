@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-vmmigration/compare/v0.1.1...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#31](https://github.com/googleapis/java-vmmigration/issues/31)) ([71f92fb](https://github.com/googleapis/java-vmmigration/commit/71f92fbc759c97a7aea3d5ef9ba8cf85d0ff38ea))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-vmmigration/issues/1339)) ([#34](https://github.com/googleapis/java-vmmigration/issues/34)) ([777b3ef](https://github.com/googleapis/java-vmmigration/commit/777b3efc4dd1ba88cba7d355af4dc11aa545332a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#37](https://github.com/googleapis/java-vmmigration/issues/37)) ([85b5b61](https://github.com/googleapis/java-vmmigration/commit/85b5b6121b0e4123c9b3f065b27d8eb56f2cfbfa))
+
 ### [0.1.1](https://www.github.com/googleapis/java-vmmigration/compare/v0.1.0...v0.1.1) (2022-01-07)
 
 
