@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.0.15](https://github.com/googleapis/java-video-intelligence/compare/v2.0.14...v2.0.15) (2022-02-03)
+
+
+### Documentation
+
+* Added retry to DetectIT sample test ([#785](https://github.com/googleapis/java-video-intelligence/issues/785)) ([a1fabaf](https://github.com/googleapis/java-video-intelligence/commit/a1fabaf3ba70f26e6bd13f1e95c646eb82093dcc))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-video-intelligence/issues/1339)) ([#791](https://github.com/googleapis/java-video-intelligence/issues/791)) ([4fb0e16](https://github.com/googleapis/java-video-intelligence/commit/4fb0e168131f2fe3df7ec05c9464afe10ff3cd1f))
+* update dependency com.google.cloud:google-cloud-core to v2.4.0 ([#793](https://github.com/googleapis/java-video-intelligence/issues/793)) ([483cd50](https://github.com/googleapis/java-video-intelligence/commit/483cd50c696ede5b507a8d59cf3301452ade30f9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#794](https://github.com/googleapis/java-video-intelligence/issues/794)) ([5706615](https://github.com/googleapis/java-video-intelligence/commit/570661582ef703e00575593b299a9b99830f2598))
+* update dependency com.google.cloud:google-cloud-storage to v2.3.0 ([#778](https://github.com/googleapis/java-video-intelligence/issues/778)) ([d5cd5d0](https://github.com/googleapis/java-video-intelligence/commit/d5cd5d00c5713e8da457d72dc36e2be17e0ca360))
+
 ### [2.0.14](https://www.github.com/googleapis/java-video-intelligence/compare/v2.0.13...v2.0.14) (2022-01-07)
 
 
