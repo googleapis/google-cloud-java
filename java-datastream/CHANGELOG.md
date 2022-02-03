@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://github.com/googleapis/java-datastream/compare/v0.3.1...v0.4.0) (2022-02-03)
+
+
+### Features
+
+* Adding public Datastream client based on v1 API version: https://cloud.google.com/datastream/docs ([#114](https://github.com/googleapis/java-datastream/issues/114)) ([e278c10](https://github.com/googleapis/java-datastream/commit/e278c10cca7d6e37a7dd06ccd1ce4a90efe443b3))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-datastream/issues/1339)) ([#109](https://github.com/googleapis/java-datastream/issues/109)) ([2aaf4ae](https://github.com/googleapis/java-datastream/commit/2aaf4ae893523637ecfc5aa11333d2c6cd2f4603))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#112](https://github.com/googleapis/java-datastream/issues/112)) ([fe6ebbc](https://github.com/googleapis/java-datastream/commit/fe6ebbc28f291563740f9f490c666582877c89ed))
+
 ### [0.3.1](https://www.github.com/googleapis/java-datastream/compare/v0.3.0...v0.3.1) (2022-01-07)
 
 
