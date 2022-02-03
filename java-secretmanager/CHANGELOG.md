@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.1.0](https://github.com/googleapis/java-secretmanager/compare/v2.0.7...v2.1.0) (2022-02-03)
+
+
+### Features
+
+* Checksums in Secret Manager ([#687](https://github.com/googleapis/java-secretmanager/issues/687)) ([4e5ee16](https://github.com/googleapis/java-secretmanager/commit/4e5ee1621fbfeffb3b9da1cdd360684f812a63b9))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-secretmanager/issues/1339)) ([#683](https://github.com/googleapis/java-secretmanager/issues/683)) ([f009d46](https://github.com/googleapis/java-secretmanager/commit/f009d46b8d53e9f5b8981711a53212ea8774ced2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#686](https://github.com/googleapis/java-secretmanager/issues/686)) ([161430c](https://github.com/googleapis/java-secretmanager/commit/161430c57627c08ad8f70db55894d19e09726913))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.3 ([#675](https://github.com/googleapis/java-secretmanager/issues/675)) ([1431f9c](https://github.com/googleapis/java-secretmanager/commit/1431f9cd2d3a8a413677c5a9ea2caa187c7b57d1))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.4 ([#685](https://github.com/googleapis/java-secretmanager/issues/685)) ([180e572](https://github.com/googleapis/java-secretmanager/commit/180e572a1ad9be4453aca12f3ab92d92f720144f))
+
 ### [2.0.7](https://www.github.com/googleapis/java-secretmanager/compare/v2.0.6...v2.0.7) (2022-01-07)
 
 
