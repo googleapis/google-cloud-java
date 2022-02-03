@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.1.6](https://github.com/googleapis/java-essential-contacts/compare/v2.1.5...v2.1.6) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-essential-contacts/issues/1339)) ([#164](https://github.com/googleapis/java-essential-contacts/issues/164)) ([3ed3aa6](https://github.com/googleapis/java-essential-contacts/commit/3ed3aa6cff620e5423fa9f5cbb20911a38b1bb55))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#167](https://github.com/googleapis/java-essential-contacts/issues/167)) ([ea84fb5](https://github.com/googleapis/java-essential-contacts/commit/ea84fb554b5a548de3e9c7466ec5d416f13c7efc))
+
 ### [2.1.5](https://www.github.com/googleapis/java-essential-contacts/compare/v2.1.4...v2.1.5) (2022-01-07)
 
 
