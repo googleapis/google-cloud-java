@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.1.6](https://github.com/googleapis/java-game-servers/compare/v2.1.5...v2.1.6) (2022-02-02)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-game-servers/issues/1339)) ([#605](https://github.com/googleapis/java-game-servers/issues/605)) ([69942ea](https://github.com/googleapis/java-game-servers/commit/69942ea8b3e277c49538a16c787d35dd3f16587c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#607](https://github.com/googleapis/java-game-servers/issues/607)) ([5b51195](https://github.com/googleapis/java-game-servers/commit/5b51195c849613ed556c288ffd3ca6a14507beaa))
+
 ### [2.1.5](https://www.github.com/googleapis/java-game-servers/compare/v2.1.4...v2.1.5) (2022-01-07)
 
 
