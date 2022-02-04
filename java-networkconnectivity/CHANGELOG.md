@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-networkconnectivity/compare/v0.5.0...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#200](https://github.com/googleapis/java-networkconnectivity/issues/200)) ([b40fe4e](https://github.com/googleapis/java-networkconnectivity/commit/b40fe4e86ce0d84bbd69491a6f62a573aef68412))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-networkconnectivity/issues/1339)) ([#202](https://github.com/googleapis/java-networkconnectivity/issues/202)) ([00f2cf0](https://github.com/googleapis/java-networkconnectivity/commit/00f2cf021d4832c8d12899e00b2c5d9c51e540f6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#204](https://github.com/googleapis/java-networkconnectivity/issues/204)) ([259641b](https://github.com/googleapis/java-networkconnectivity/commit/259641ba428d9f325cb7c19a9720c323029ed8df))
+
 ## [0.5.0](https://www.github.com/googleapis/java-networkconnectivity/compare/v0.4.0...v0.5.0) (2022-01-07)
 
 
