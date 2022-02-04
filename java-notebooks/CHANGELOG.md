@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-notebooks/compare/v0.6.2...v1.0.0) (2022-02-03)
+
+
+### Features
+
+* promote to GA ([#311](https://github.com/googleapis/java-notebooks/issues/311)) ([b711d42](https://github.com/googleapis/java-notebooks/commit/b711d422b4f49e91e984400f400e721c8304ddcd))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-notebooks/issues/1339)) ([#314](https://github.com/googleapis/java-notebooks/issues/314)) ([b50f1d5](https://github.com/googleapis/java-notebooks/commit/b50f1d5086d34c839d0d248ddd4c572cc4a96093))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#316](https://github.com/googleapis/java-notebooks/issues/316)) ([6698ede](https://github.com/googleapis/java-notebooks/commit/6698edef85f9a5c7cc043557741f62a0298cb1ea))
+
 ### [0.6.2](https://www.github.com/googleapis/java-notebooks/compare/v0.6.1...v0.6.2) (2022-01-07)
 
 
