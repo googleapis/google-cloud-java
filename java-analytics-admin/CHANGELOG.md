@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.8.0](https://github.com/googleapis/java-analytics-admin/compare/v0.7.0...v0.8.0) (2022-02-03)
+
+
+### Features
+
+* add the `AcknowledgeUserDataCollection` operation which acknowledges the terms of user data collection for the specified property ([#323](https://github.com/googleapis/java-analytics-admin/issues/323)) ([e9fd55a](https://github.com/googleapis/java-analytics-admin/commit/e9fd55aef92171c6f6a0a16eb29be085d5a64bd6))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-analytics-admin/issues/1339)) ([#343](https://github.com/googleapis/java-analytics-admin/issues/343)) ([3ddd19d](https://github.com/googleapis/java-analytics-admin/commit/3ddd19d29d0e5183843180bb404d0ed614dbc407))
+* update actions/github-script action to v5 ([#342](https://github.com/googleapis/java-analytics-admin/issues/342)) ([b9d9204](https://github.com/googleapis/java-analytics-admin/commit/b9d9204dc70eeaa3a9f0f32ff18bcc470bcffa22))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#344](https://github.com/googleapis/java-analytics-admin/issues/344)) ([3b4f2d3](https://github.com/googleapis/java-analytics-admin/commit/3b4f2d3b5467d4bcebcdeee8163268862044efdb))
+
 ## [0.7.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.6.2...v0.7.0) (2022-01-07)
 
 
