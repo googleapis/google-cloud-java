@@ -108,8 +108,8 @@ public class LicensesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String license = "license166757441";
+    String project = "project-6911";
+    String license = "license-3417";
 
     Operation actualResponse = client.deleteAsync(project, license).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -137,8 +137,8 @@ public class LicensesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String license = "license166757441";
+      String project = "project-6911";
+      String license = "license-3417";
       client.deleteAsync(project, license).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -162,8 +162,8 @@ public class LicensesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String license = "license166757441";
+    String project = "project-6911";
+    String license = "license-3417";
 
     License actualResponse = client.get(project, license);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -191,8 +191,8 @@ public class LicensesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String license = "license166757441";
+      String project = "project-6911";
+      String license = "license-3417";
       client.get(project, license);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -213,8 +213,8 @@ public class LicensesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
 
     Policy actualResponse = client.getIamPolicy(project, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -242,8 +242,8 @@ public class LicensesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       client.getIamPolicy(project, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -282,7 +282,7 @@ public class LicensesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     License licenseResource = License.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, licenseResource).get();
@@ -311,7 +311,7 @@ public class LicensesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       License licenseResource = License.newBuilder().build();
       client.insertAsync(project, licenseResource).get();
       Assert.fail("No exception raised");
@@ -329,7 +329,7 @@ public class LicensesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -361,7 +361,7 @@ public class LicensesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -382,8 +382,8 @@ public class LicensesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
     GlobalSetPolicyRequest globalSetPolicyRequestResource =
         GlobalSetPolicyRequest.newBuilder().build();
 
@@ -413,8 +413,8 @@ public class LicensesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       GlobalSetPolicyRequest globalSetPolicyRequestResource =
           GlobalSetPolicyRequest.newBuilder().build();
       client.setIamPolicy(project, resource, globalSetPolicyRequestResource);
@@ -430,8 +430,8 @@ public class LicensesClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -462,8 +462,8 @@ public class LicensesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, resource, testPermissionsRequestResource);

@@ -71,6 +71,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
           ApiMethodDescriptor.<AddSignedUrlKeyBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/AddSignedUrlKey")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddSignedUrlKeyBackendBucketRequest>newBuilder()
                       .setPath(
@@ -124,6 +125,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
           ApiMethodDescriptor.<DeleteBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteBackendBucketRequest>newBuilder()
                       .setPath(
@@ -173,6 +175,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
           ApiMethodDescriptor.<DeleteSignedUrlKeyBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/DeleteSignedUrlKey")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSignedUrlKeyBackendBucketRequest>newBuilder()
                       .setPath(
@@ -223,6 +226,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
           ApiMethodDescriptor.<GetBackendBucketRequest, BackendBucket>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetBackendBucketRequest>newBuilder()
                       .setPath(
@@ -257,6 +261,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
           ApiMethodDescriptor.<InsertBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertBackendBucketRequest>newBuilder()
                       .setPath(
@@ -308,6 +313,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
           ApiMethodDescriptor.<ListBackendBucketsRequest, BackendBucketList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListBackendBucketsRequest>newBuilder()
                       .setPath(
@@ -359,6 +365,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
           ApiMethodDescriptor.<PatchBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchBackendBucketRequest>newBuilder()
                       .setPath(
@@ -412,6 +419,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
           ApiMethodDescriptor.<UpdateBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/Update")
               .setHttpMethod(HttpMethods.PUT)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateBackendBucketRequest>newBuilder()
                       .setPath(

@@ -87,7 +87,7 @@ public class DiskTypesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -121,7 +121,7 @@ public class DiskTypesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -147,9 +147,9 @@ public class DiskTypesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String diskType = "diskType279771767";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String diskType = "diskType-227";
 
     DiskType actualResponse = client.get(project, zone, diskType);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -177,9 +177,9 @@ public class DiskTypesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String diskType = "diskType279771767";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String diskType = "diskType-227";
       client.get(project, zone, diskType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -197,8 +197,8 @@ public class DiskTypesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     ListPagedResponse pagedListResponse = client.list(project, zone);
 
@@ -230,8 +230,8 @@ public class DiskTypesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.list(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

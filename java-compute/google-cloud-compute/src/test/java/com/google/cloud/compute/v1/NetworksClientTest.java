@@ -109,8 +109,8 @@ public class NetworksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String network = "network1843485230";
+    String project = "project-6911";
+    String network = "network-7324";
     NetworksAddPeeringRequest networksAddPeeringRequestResource =
         NetworksAddPeeringRequest.newBuilder().build();
 
@@ -141,8 +141,8 @@ public class NetworksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String network = "network1843485230";
+      String project = "project-6911";
+      String network = "network-7324";
       NetworksAddPeeringRequest networksAddPeeringRequestResource =
           NetworksAddPeeringRequest.newBuilder().build();
       client.addPeeringAsync(project, network, networksAddPeeringRequestResource).get();
@@ -182,8 +182,8 @@ public class NetworksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String network = "network1843485230";
+    String project = "project-6911";
+    String network = "network-7324";
 
     Operation actualResponse = client.deleteAsync(project, network).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -211,8 +211,8 @@ public class NetworksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String network = "network1843485230";
+      String project = "project-6911";
+      String network = "network-7324";
       client.deleteAsync(project, network).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -239,8 +239,8 @@ public class NetworksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String network = "network1843485230";
+    String project = "project-6911";
+    String network = "network-7324";
 
     Network actualResponse = client.get(project, network);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -268,8 +268,8 @@ public class NetworksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String network = "network1843485230";
+      String project = "project-6911";
+      String network = "network-7324";
       client.get(project, network);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -287,8 +287,8 @@ public class NetworksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String network = "network1843485230";
+    String project = "project-6911";
+    String network = "network-7324";
 
     NetworksGetEffectiveFirewallsResponse actualResponse =
         client.getEffectiveFirewalls(project, network);
@@ -317,8 +317,8 @@ public class NetworksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String network = "network1843485230";
+      String project = "project-6911";
+      String network = "network-7324";
       client.getEffectiveFirewalls(project, network);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -357,7 +357,7 @@ public class NetworksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     Network networkResource = Network.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, networkResource).get();
@@ -386,7 +386,7 @@ public class NetworksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       Network networkResource = Network.newBuilder().build();
       client.insertAsync(project, networkResource).get();
       Assert.fail("No exception raised");
@@ -404,7 +404,7 @@ public class NetworksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -436,7 +436,7 @@ public class NetworksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -454,8 +454,8 @@ public class NetworksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String network = "network1843485230";
+    String project = "project-6911";
+    String network = "network-7324";
 
     ListPeeringRoutesPagedResponse pagedListResponse = client.listPeeringRoutes(project, network);
 
@@ -487,8 +487,8 @@ public class NetworksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String network = "network1843485230";
+      String project = "project-6911";
+      String network = "network-7324";
       client.listPeeringRoutes(project, network);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -527,8 +527,8 @@ public class NetworksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String network = "network1843485230";
+    String project = "project-6911";
+    String network = "network-7324";
     Network networkResource = Network.newBuilder().build();
 
     Operation actualResponse = client.patchAsync(project, network, networkResource).get();
@@ -557,8 +557,8 @@ public class NetworksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String network = "network1843485230";
+      String project = "project-6911";
+      String network = "network-7324";
       Network networkResource = Network.newBuilder().build();
       client.patchAsync(project, network, networkResource).get();
       Assert.fail("No exception raised");
@@ -597,8 +597,8 @@ public class NetworksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String network = "network1843485230";
+    String project = "project-6911";
+    String network = "network-7324";
     NetworksRemovePeeringRequest networksRemovePeeringRequestResource =
         NetworksRemovePeeringRequest.newBuilder().build();
 
@@ -629,8 +629,8 @@ public class NetworksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String network = "network1843485230";
+      String project = "project-6911";
+      String network = "network-7324";
       NetworksRemovePeeringRequest networksRemovePeeringRequestResource =
           NetworksRemovePeeringRequest.newBuilder().build();
       client.removePeeringAsync(project, network, networksRemovePeeringRequestResource).get();
@@ -670,8 +670,8 @@ public class NetworksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String network = "network1843485230";
+    String project = "project-6911";
+    String network = "network-7324";
 
     Operation actualResponse = client.switchToCustomModeAsync(project, network).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -699,8 +699,8 @@ public class NetworksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String network = "network1843485230";
+      String project = "project-6911";
+      String network = "network-7324";
       client.switchToCustomModeAsync(project, network).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -738,8 +738,8 @@ public class NetworksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String network = "network1843485230";
+    String project = "project-6911";
+    String network = "network-7324";
     NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource =
         NetworksUpdatePeeringRequest.newBuilder().build();
 
@@ -770,8 +770,8 @@ public class NetworksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String network = "network1843485230";
+      String project = "project-6911";
+      String network = "network-7324";
       NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource =
           NetworksUpdatePeeringRequest.newBuilder().build();
       client.updatePeeringAsync(project, network, networksUpdatePeeringRequestResource).get();

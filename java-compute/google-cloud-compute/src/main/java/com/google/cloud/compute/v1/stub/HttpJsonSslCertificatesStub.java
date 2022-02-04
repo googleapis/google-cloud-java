@@ -72,6 +72,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
               .<AggregatedListSslCertificatesRequest, SslCertificateAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslCertificates/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListSslCertificatesRequest>newBuilder()
                       .setPath(
@@ -127,6 +128,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
           ApiMethodDescriptor.<DeleteSslCertificateRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslCertificates/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSslCertificateRequest>newBuilder()
                       .setPath(
@@ -176,6 +178,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
           ApiMethodDescriptor.<GetSslCertificateRequest, SslCertificate>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslCertificates/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetSslCertificateRequest>newBuilder()
                       .setPath(
@@ -210,6 +213,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
           ApiMethodDescriptor.<InsertSslCertificateRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslCertificates/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertSslCertificateRequest>newBuilder()
                       .setPath(
@@ -262,6 +266,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
           ApiMethodDescriptor.<ListSslCertificatesRequest, SslCertificateList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslCertificates/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSslCertificatesRequest>newBuilder()
                       .setPath(

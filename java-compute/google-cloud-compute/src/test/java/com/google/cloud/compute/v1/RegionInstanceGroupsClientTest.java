@@ -99,9 +99,9 @@ public class RegionInstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroup = "instanceGroup-1404696854";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroup = "instanceGroup-9472";
 
     InstanceGroup actualResponse = client.get(project, region, instanceGroup);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -129,9 +129,9 @@ public class RegionInstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroup = "instanceGroup-1404696854";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroup = "instanceGroup-9472";
       client.get(project, region, instanceGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -149,8 +149,8 @@ public class RegionInstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -182,8 +182,8 @@ public class RegionInstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -201,9 +201,9 @@ public class RegionInstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroup = "instanceGroup-1404696854";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroup = "instanceGroup-9472";
     RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource =
         RegionInstanceGroupsListInstancesRequest.newBuilder().build();
 
@@ -239,9 +239,9 @@ public class RegionInstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroup = "instanceGroup-1404696854";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroup = "instanceGroup-9472";
       RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource =
           RegionInstanceGroupsListInstancesRequest.newBuilder().build();
       client.listInstances(
@@ -283,9 +283,9 @@ public class RegionInstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroup = "instanceGroup-1404696854";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroup = "instanceGroup-9472";
     RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource =
         RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build();
 
@@ -319,9 +319,9 @@ public class RegionInstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroup = "instanceGroup-1404696854";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroup = "instanceGroup-9472";
       RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource =
           RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build();
       client

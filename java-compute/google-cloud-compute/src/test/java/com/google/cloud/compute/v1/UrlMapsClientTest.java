@@ -90,7 +90,7 @@ public class UrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -124,7 +124,7 @@ public class UrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -163,8 +163,8 @@ public class UrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String urlMap = "urlMap-836780691";
+    String project = "project-6911";
+    String urlMap = "urlMap-7603";
 
     Operation actualResponse = client.deleteAsync(project, urlMap).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -192,8 +192,8 @@ public class UrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String urlMap = "urlMap-836780691";
+      String project = "project-6911";
+      String urlMap = "urlMap-7603";
       client.deleteAsync(project, urlMap).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -222,8 +222,8 @@ public class UrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String urlMap = "urlMap-836780691";
+    String project = "project-6911";
+    String urlMap = "urlMap-7603";
 
     UrlMap actualResponse = client.get(project, urlMap);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -251,8 +251,8 @@ public class UrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String urlMap = "urlMap-836780691";
+      String project = "project-6911";
+      String urlMap = "urlMap-7603";
       client.get(project, urlMap);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -291,7 +291,7 @@ public class UrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, urlMapResource).get();
@@ -320,7 +320,7 @@ public class UrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
       client.insertAsync(project, urlMapResource).get();
       Assert.fail("No exception raised");
@@ -359,8 +359,8 @@ public class UrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String urlMap = "urlMap-836780691";
+    String project = "project-6911";
+    String urlMap = "urlMap-7603";
     CacheInvalidationRule cacheInvalidationRuleResource =
         CacheInvalidationRule.newBuilder().build();
 
@@ -391,8 +391,8 @@ public class UrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String urlMap = "urlMap-836780691";
+      String project = "project-6911";
+      String urlMap = "urlMap-7603";
       CacheInvalidationRule cacheInvalidationRuleResource =
           CacheInvalidationRule.newBuilder().build();
       client.invalidateCacheAsync(project, urlMap, cacheInvalidationRuleResource).get();
@@ -411,7 +411,7 @@ public class UrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -443,7 +443,7 @@ public class UrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -482,8 +482,8 @@ public class UrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String urlMap = "urlMap-836780691";
+    String project = "project-6911";
+    String urlMap = "urlMap-7603";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
     Operation actualResponse = client.patchAsync(project, urlMap, urlMapResource).get();
@@ -512,8 +512,8 @@ public class UrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String urlMap = "urlMap-836780691";
+      String project = "project-6911";
+      String urlMap = "urlMap-7603";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
       client.patchAsync(project, urlMap, urlMapResource).get();
       Assert.fail("No exception raised");
@@ -552,8 +552,8 @@ public class UrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String urlMap = "urlMap-836780691";
+    String project = "project-6911";
+    String urlMap = "urlMap-7603";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
     Operation actualResponse = client.updateAsync(project, urlMap, urlMapResource).get();
@@ -582,8 +582,8 @@ public class UrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String urlMap = "urlMap-836780691";
+      String project = "project-6911";
+      String urlMap = "urlMap-7603";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
       client.updateAsync(project, urlMap, urlMapResource).get();
       Assert.fail("No exception raised");
@@ -599,8 +599,8 @@ public class UrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String urlMap = "urlMap-836780691";
+    String project = "project-6911";
+    String urlMap = "urlMap-7603";
     UrlMapsValidateRequest urlMapsValidateRequestResource =
         UrlMapsValidateRequest.newBuilder().build();
 
@@ -631,8 +631,8 @@ public class UrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String urlMap = "urlMap-836780691";
+      String project = "project-6911";
+      String urlMap = "urlMap-7603";
       UrlMapsValidateRequest urlMapsValidateRequestResource =
           UrlMapsValidateRequest.newBuilder().build();
       client.validate(project, urlMap, urlMapsValidateRequestResource);

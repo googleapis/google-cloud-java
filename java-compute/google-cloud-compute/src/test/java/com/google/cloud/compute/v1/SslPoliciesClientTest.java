@@ -109,8 +109,8 @@ public class SslPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String sslPolicy = "sslPolicy618174046";
+    String project = "project-6911";
+    String sslPolicy = "sslPolicy-6284";
 
     Operation actualResponse = client.deleteAsync(project, sslPolicy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -138,8 +138,8 @@ public class SslPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String sslPolicy = "sslPolicy618174046";
+      String project = "project-6911";
+      String sslPolicy = "sslPolicy-6284";
       client.deleteAsync(project, sslPolicy).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -165,8 +165,8 @@ public class SslPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String sslPolicy = "sslPolicy618174046";
+    String project = "project-6911";
+    String sslPolicy = "sslPolicy-6284";
 
     SslPolicy actualResponse = client.get(project, sslPolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -194,8 +194,8 @@ public class SslPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String sslPolicy = "sslPolicy618174046";
+      String project = "project-6911";
+      String sslPolicy = "sslPolicy-6284";
       client.get(project, sslPolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -234,7 +234,7 @@ public class SslPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, sslPolicyResource).get();
@@ -263,7 +263,7 @@ public class SslPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
       client.insertAsync(project, sslPolicyResource).get();
       Assert.fail("No exception raised");
@@ -281,7 +281,7 @@ public class SslPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -313,7 +313,7 @@ public class SslPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -329,7 +329,7 @@ public class SslPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     SslPoliciesListAvailableFeaturesResponse actualResponse = client.listAvailableFeatures(project);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -357,7 +357,7 @@ public class SslPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.listAvailableFeatures(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -396,8 +396,8 @@ public class SslPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String sslPolicy = "sslPolicy618174046";
+    String project = "project-6911";
+    String sslPolicy = "sslPolicy-6284";
     SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
 
     Operation actualResponse = client.patchAsync(project, sslPolicy, sslPolicyResource).get();
@@ -426,8 +426,8 @@ public class SslPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String sslPolicy = "sslPolicy618174046";
+      String project = "project-6911";
+      String sslPolicy = "sslPolicy-6284";
       SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
       client.patchAsync(project, sslPolicy, sslPolicyResource).get();
       Assert.fail("No exception raised");

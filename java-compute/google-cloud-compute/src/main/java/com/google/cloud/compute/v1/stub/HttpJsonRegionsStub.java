@@ -59,6 +59,7 @@ public class HttpJsonRegionsStub extends RegionsStub {
       ApiMethodDescriptor.<GetRegionRequest, Region>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Regions/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetRegionRequest>newBuilder()
                   .setPath(
@@ -91,6 +92,7 @@ public class HttpJsonRegionsStub extends RegionsStub {
       ApiMethodDescriptor.<ListRegionsRequest, RegionList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Regions/List")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListRegionsRequest>newBuilder()
                   .setPath(

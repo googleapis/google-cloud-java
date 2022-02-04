@@ -70,6 +70,7 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOrganizationOperations/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<DeleteGlobalOrganizationOperationRequest>newBuilder()
@@ -107,6 +108,7 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
           ApiMethodDescriptor.<GetGlobalOrganizationOperationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOrganizationOperations/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetGlobalOrganizationOperationRequest>newBuilder()
                       .setPath(
@@ -161,6 +163,7 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
           ApiMethodDescriptor.<ListGlobalOrganizationOperationsRequest, OperationList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOrganizationOperations/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListGlobalOrganizationOperationsRequest>newBuilder()
                       .setPath(

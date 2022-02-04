@@ -77,6 +77,7 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
               .<AggregatedListVpnGatewaysRequest, VpnGatewayAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnGateways/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListVpnGatewaysRequest>newBuilder()
                       .setPath(
@@ -132,6 +133,7 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
           ApiMethodDescriptor.<DeleteVpnGatewayRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnGateways/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteVpnGatewayRequest>newBuilder()
                       .setPath(
@@ -181,6 +183,7 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
       ApiMethodDescriptor.<GetVpnGatewayRequest, VpnGateway>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.VpnGateways/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetVpnGatewayRequest>newBuilder()
                   .setPath(
@@ -215,6 +218,7 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
           ApiMethodDescriptor.<GetStatusVpnGatewayRequest, VpnGatewaysGetStatusResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnGateways/GetStatus")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetStatusVpnGatewayRequest>newBuilder()
                       .setPath(
@@ -249,6 +253,7 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
           ApiMethodDescriptor.<InsertVpnGatewayRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnGateways/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertVpnGatewayRequest>newBuilder()
                       .setPath(
@@ -301,6 +306,7 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
           ApiMethodDescriptor.<ListVpnGatewaysRequest, VpnGatewayList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnGateways/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListVpnGatewaysRequest>newBuilder()
                       .setPath(
@@ -353,6 +359,7 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
           ApiMethodDescriptor.<SetLabelsVpnGatewayRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnGateways/SetLabels")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsVpnGatewayRequest>newBuilder()
                       .setPath(
@@ -410,6 +417,7 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
               .<TestIamPermissionsVpnGatewayRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnGateways/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsVpnGatewayRequest>newBuilder()
                       .setPath(

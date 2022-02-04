@@ -93,8 +93,8 @@ public class ZonesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     Zone actualResponse = client.get(project, zone);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -122,8 +122,8 @@ public class ZonesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.get(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -141,7 +141,7 @@ public class ZonesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -173,7 +173,7 @@ public class ZonesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

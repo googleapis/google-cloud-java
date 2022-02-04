@@ -69,6 +69,7 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
           ApiMethodDescriptor.<DeleteRegionAutoscalerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionAutoscalerRequest>newBuilder()
                       .setPath(
@@ -119,6 +120,7 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
           ApiMethodDescriptor.<GetRegionAutoscalerRequest, Autoscaler>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionAutoscalerRequest>newBuilder()
                       .setPath(
@@ -153,6 +155,7 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
           ApiMethodDescriptor.<InsertRegionAutoscalerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionAutoscalerRequest>newBuilder()
                       .setPath(
@@ -205,6 +208,7 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
           ApiMethodDescriptor.<ListRegionAutoscalersRequest, RegionAutoscalerList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionAutoscalersRequest>newBuilder()
                       .setPath(
@@ -257,6 +261,7 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
           ApiMethodDescriptor.<PatchRegionAutoscalerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRegionAutoscalerRequest>newBuilder()
                       .setPath(
@@ -313,6 +318,7 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
           ApiMethodDescriptor.<UpdateRegionAutoscalerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionAutoscalers/Update")
               .setHttpMethod(HttpMethods.PUT)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateRegionAutoscalerRequest>newBuilder()
                       .setPath(

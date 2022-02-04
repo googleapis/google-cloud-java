@@ -77,6 +77,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
           ApiMethodDescriptor.<AddPeeringNetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Networks/AddPeering")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddPeeringNetworkRequest>newBuilder()
                       .setPath(
@@ -129,6 +130,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
       ApiMethodDescriptor.<DeleteNetworkRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Networks/Delete")
           .setHttpMethod(HttpMethods.DELETE)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteNetworkRequest>newBuilder()
                   .setPath(
@@ -176,6 +178,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
       ApiMethodDescriptor.<GetNetworkRequest, Network>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Networks/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetNetworkRequest>newBuilder()
                   .setPath(
@@ -212,6 +215,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Networks/GetEffectiveFirewalls")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetEffectiveFirewallsNetworkRequest>newBuilder()
                       .setPath(
@@ -245,6 +249,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
       ApiMethodDescriptor.<InsertNetworkRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Networks/Insert")
           .setHttpMethod(HttpMethods.POST)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertNetworkRequest>newBuilder()
                   .setPath(
@@ -294,6 +299,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
       ApiMethodDescriptor.<ListNetworksRequest, NetworkList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Networks/List")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListNetworksRequest>newBuilder()
                   .setPath(
@@ -344,6 +350,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
               .<ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Networks/ListPeeringRoutes")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListPeeringRoutesNetworksRequest>newBuilder()
                       .setPath(
@@ -405,6 +412,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
       ApiMethodDescriptor.<PatchNetworkRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Networks/Patch")
           .setHttpMethod(HttpMethods.PATCH)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchNetworkRequest>newBuilder()
                   .setPath(
@@ -456,6 +464,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
           ApiMethodDescriptor.<RemovePeeringNetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Networks/RemovePeering")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemovePeeringNetworkRequest>newBuilder()
                       .setPath(
@@ -509,6 +518,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
           ApiMethodDescriptor.<SwitchToCustomModeNetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Networks/SwitchToCustomMode")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SwitchToCustomModeNetworkRequest>newBuilder()
                       .setPath(
@@ -557,6 +567,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
           ApiMethodDescriptor.<UpdatePeeringNetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Networks/UpdatePeering")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdatePeeringNetworkRequest>newBuilder()
                       .setPath(

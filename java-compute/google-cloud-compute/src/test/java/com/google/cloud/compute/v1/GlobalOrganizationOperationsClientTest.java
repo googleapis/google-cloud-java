@@ -83,7 +83,7 @@ public class GlobalOrganizationOperationsClientTest {
         DeleteGlobalOrganizationOperationResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    String operation = "operation1662702951";
+    String operation = "operation-3971";
 
     DeleteGlobalOrganizationOperationResponse actualResponse = client.delete(operation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -111,7 +111,7 @@ public class GlobalOrganizationOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String operation = "operation1662702951";
+      String operation = "operation-3971";
       client.delete(operation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -150,7 +150,7 @@ public class GlobalOrganizationOperationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String operation = "operation1662702951";
+    String operation = "operation-3971";
 
     Operation actualResponse = client.get(operation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -178,7 +178,7 @@ public class GlobalOrganizationOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String operation = "operation1662702951";
+      String operation = "operation-3971";
       client.get(operation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

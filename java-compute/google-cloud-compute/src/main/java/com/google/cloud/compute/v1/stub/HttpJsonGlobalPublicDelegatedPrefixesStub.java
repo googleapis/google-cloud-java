@@ -68,6 +68,7 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
           ApiMethodDescriptor.<DeleteGlobalPublicDelegatedPrefixeRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<DeleteGlobalPublicDelegatedPrefixeRequest>newBuilder()
@@ -122,6 +123,7 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
               .<GetGlobalPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetGlobalPublicDelegatedPrefixeRequest>newBuilder()
                       .setPath(
@@ -158,6 +160,7 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
           ApiMethodDescriptor.<InsertGlobalPublicDelegatedPrefixeRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<InsertGlobalPublicDelegatedPrefixeRequest>newBuilder()
@@ -213,6 +216,7 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
               .<ListGlobalPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<ListGlobalPublicDelegatedPrefixesRequest>newBuilder()
@@ -265,6 +269,7 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
           ApiMethodDescriptor.<PatchGlobalPublicDelegatedPrefixeRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalPublicDelegatedPrefixes/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<PatchGlobalPublicDelegatedPrefixeRequest>newBuilder()

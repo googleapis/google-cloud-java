@@ -89,7 +89,7 @@ public class MachineTypesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -123,7 +123,7 @@ public class MachineTypesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -154,9 +154,9 @@ public class MachineTypesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String machineType = "machineType-218117087";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String machineType = "machineType-4937";
 
     MachineType actualResponse = client.get(project, zone, machineType);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -184,9 +184,9 @@ public class MachineTypesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String machineType = "machineType-218117087";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String machineType = "machineType-4937";
       client.get(project, zone, machineType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -204,8 +204,8 @@ public class MachineTypesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     ListPagedResponse pagedListResponse = client.list(project, zone);
 
@@ -237,8 +237,8 @@ public class MachineTypesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.list(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

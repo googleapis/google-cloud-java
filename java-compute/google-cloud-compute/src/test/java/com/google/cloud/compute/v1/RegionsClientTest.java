@@ -93,8 +93,8 @@ public class RegionsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     Region actualResponse = client.get(project, region);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -122,8 +122,8 @@ public class RegionsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.get(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -141,7 +141,7 @@ public class RegionsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -173,7 +173,7 @@ public class RegionsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

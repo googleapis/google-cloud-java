@@ -92,7 +92,7 @@ public class ForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -126,7 +126,7 @@ public class ForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -165,9 +165,9 @@ public class ForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String forwardingRule = "forwardingRule-1429104743";
+    String project = "project-6911";
+    String region = "region-9622";
+    String forwardingRule = "forwardingRule-4031";
 
     Operation actualResponse = client.deleteAsync(project, region, forwardingRule).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -195,9 +195,9 @@ public class ForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String forwardingRule = "forwardingRule-1429104743";
+      String project = "project-6911";
+      String region = "region-9622";
+      String forwardingRule = "forwardingRule-4031";
       client.deleteAsync(project, region, forwardingRule).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -242,9 +242,9 @@ public class ForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String forwardingRule = "forwardingRule-1429104743";
+    String project = "project-6911";
+    String region = "region-9622";
+    String forwardingRule = "forwardingRule-4031";
 
     ForwardingRule actualResponse = client.get(project, region, forwardingRule);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -272,9 +272,9 @@ public class ForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String forwardingRule = "forwardingRule-1429104743";
+      String project = "project-6911";
+      String region = "region-9622";
+      String forwardingRule = "forwardingRule-4031";
       client.get(project, region, forwardingRule);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -313,8 +313,8 @@ public class ForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, forwardingRuleResource).get();
@@ -343,8 +343,8 @@ public class ForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
       client.insertAsync(project, region, forwardingRuleResource).get();
       Assert.fail("No exception raised");
@@ -362,8 +362,8 @@ public class ForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -395,8 +395,8 @@ public class ForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -435,9 +435,9 @@ public class ForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String forwardingRule = "forwardingRule-1429104743";
+    String project = "project-6911";
+    String region = "region-9622";
+    String forwardingRule = "forwardingRule-4031";
     ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
 
     Operation actualResponse =
@@ -467,9 +467,9 @@ public class ForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String forwardingRule = "forwardingRule-1429104743";
+      String project = "project-6911";
+      String region = "region-9622";
+      String forwardingRule = "forwardingRule-4031";
       ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
       client.patchAsync(project, region, forwardingRule, forwardingRuleResource).get();
       Assert.fail("No exception raised");
@@ -508,9 +508,9 @@ public class ForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
     RegionSetLabelsRequest regionSetLabelsRequestResource =
         RegionSetLabelsRequest.newBuilder().build();
 
@@ -541,9 +541,9 @@ public class ForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       RegionSetLabelsRequest regionSetLabelsRequestResource =
           RegionSetLabelsRequest.newBuilder().build();
       client.setLabelsAsync(project, region, resource, regionSetLabelsRequestResource).get();
@@ -583,9 +583,9 @@ public class ForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String forwardingRule = "forwardingRule-1429104743";
+    String project = "project-6911";
+    String region = "region-9622";
+    String forwardingRule = "forwardingRule-4031";
     TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
     Operation actualResponse =
@@ -615,9 +615,9 @@ public class ForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String forwardingRule = "forwardingRule-1429104743";
+      String project = "project-6911";
+      String region = "region-9622";
+      String forwardingRule = "forwardingRule-4031";
       TargetReference targetReferenceResource = TargetReference.newBuilder().build();
       client.setTargetAsync(project, region, forwardingRule, targetReferenceResource).get();
       Assert.fail("No exception raised");

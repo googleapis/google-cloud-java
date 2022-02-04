@@ -75,6 +75,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
               .setFullMethodName(
                   "google.cloud.compute.v1.GlobalNetworkEndpointGroups/AttachNetworkEndpoints")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest>newBuilder()
@@ -134,6 +135,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
           ApiMethodDescriptor.<DeleteGlobalNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalNetworkEndpointGroups/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteGlobalNetworkEndpointGroupRequest>newBuilder()
                       .setPath(
@@ -186,6 +188,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
               .setFullMethodName(
                   "google.cloud.compute.v1.GlobalNetworkEndpointGroups/DetachNetworkEndpoints")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest>newBuilder()
@@ -247,6 +250,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
               .<GetGlobalNetworkEndpointGroupRequest, NetworkEndpointGroup>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalNetworkEndpointGroups/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetGlobalNetworkEndpointGroupRequest>newBuilder()
                       .setPath(
@@ -281,6 +285,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
           ApiMethodDescriptor.<InsertGlobalNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalNetworkEndpointGroups/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertGlobalNetworkEndpointGroupRequest>newBuilder()
                       .setPath(
@@ -335,6 +340,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
               .<ListGlobalNetworkEndpointGroupsRequest, NetworkEndpointGroupList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalNetworkEndpointGroups/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListGlobalNetworkEndpointGroupsRequest>newBuilder()
                       .setPath(
@@ -392,6 +398,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
               .setFullMethodName(
                   "google.cloud.compute.v1.GlobalNetworkEndpointGroups/ListNetworkEndpoints")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest>newBuilder()

@@ -109,9 +109,9 @@ public class RegionSslCertificatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String sslCertificate = "sslCertificate-1304941589";
+    String project = "project-6911";
+    String region = "region-9622";
+    String sslCertificate = "sslCertificate-3553";
 
     Operation actualResponse = client.deleteAsync(project, region, sslCertificate).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -139,9 +139,9 @@ public class RegionSslCertificatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String sslCertificate = "sslCertificate-1304941589";
+      String project = "project-6911";
+      String region = "region-9622";
+      String sslCertificate = "sslCertificate-3553";
       client.deleteAsync(project, region, sslCertificate).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -169,9 +169,9 @@ public class RegionSslCertificatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String sslCertificate = "sslCertificate-1304941589";
+    String project = "project-6911";
+    String region = "region-9622";
+    String sslCertificate = "sslCertificate-3553";
 
     SslCertificate actualResponse = client.get(project, region, sslCertificate);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -199,9 +199,9 @@ public class RegionSslCertificatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String sslCertificate = "sslCertificate-1304941589";
+      String project = "project-6911";
+      String region = "region-9622";
+      String sslCertificate = "sslCertificate-3553";
       client.get(project, region, sslCertificate);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -240,8 +240,8 @@ public class RegionSslCertificatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, sslCertificateResource).get();
@@ -270,8 +270,8 @@ public class RegionSslCertificatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
       client.insertAsync(project, region, sslCertificateResource).get();
       Assert.fail("No exception raised");
@@ -289,8 +289,8 @@ public class RegionSslCertificatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -322,8 +322,8 @@ public class RegionSslCertificatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

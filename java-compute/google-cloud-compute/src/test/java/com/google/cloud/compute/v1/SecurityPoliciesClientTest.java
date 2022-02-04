@@ -109,8 +109,8 @@ public class SecurityPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String securityPolicy = "securityPolicy-788621166";
+    String project = "project-6911";
+    String securityPolicy = "securityPolicy-7672";
     SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
 
     Operation actualResponse =
@@ -140,8 +140,8 @@ public class SecurityPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String securityPolicy = "securityPolicy-788621166";
+      String project = "project-6911";
+      String securityPolicy = "securityPolicy-7672";
       SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
       client.addRuleAsync(project, securityPolicy, securityPolicyRuleResource).get();
       Assert.fail("No exception raised");
@@ -180,8 +180,8 @@ public class SecurityPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String securityPolicy = "securityPolicy-788621166";
+    String project = "project-6911";
+    String securityPolicy = "securityPolicy-7672";
 
     Operation actualResponse = client.deleteAsync(project, securityPolicy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -209,8 +209,8 @@ public class SecurityPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String securityPolicy = "securityPolicy-788621166";
+      String project = "project-6911";
+      String securityPolicy = "securityPolicy-7672";
       client.deleteAsync(project, securityPolicy).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -235,8 +235,8 @@ public class SecurityPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String securityPolicy = "securityPolicy-788621166";
+    String project = "project-6911";
+    String securityPolicy = "securityPolicy-7672";
 
     SecurityPolicy actualResponse = client.get(project, securityPolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -264,8 +264,8 @@ public class SecurityPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String securityPolicy = "securityPolicy-788621166";
+      String project = "project-6911";
+      String securityPolicy = "securityPolicy-7672";
       client.get(project, securityPolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -286,8 +286,8 @@ public class SecurityPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String securityPolicy = "securityPolicy-788621166";
+    String project = "project-6911";
+    String securityPolicy = "securityPolicy-7672";
 
     SecurityPolicyRule actualResponse = client.getRule(project, securityPolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -315,8 +315,8 @@ public class SecurityPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String securityPolicy = "securityPolicy-788621166";
+      String project = "project-6911";
+      String securityPolicy = "securityPolicy-7672";
       client.getRule(project, securityPolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -355,7 +355,7 @@ public class SecurityPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, securityPolicyResource).get();
@@ -384,7 +384,7 @@ public class SecurityPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
       client.insertAsync(project, securityPolicyResource).get();
       Assert.fail("No exception raised");
@@ -402,7 +402,7 @@ public class SecurityPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -434,7 +434,7 @@ public class SecurityPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -450,7 +450,7 @@ public class SecurityPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     SecurityPoliciesListPreconfiguredExpressionSetsResponse actualResponse =
         client.listPreconfiguredExpressionSets(project);
@@ -479,7 +479,7 @@ public class SecurityPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.listPreconfiguredExpressionSets(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -518,8 +518,8 @@ public class SecurityPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String securityPolicy = "securityPolicy-788621166";
+    String project = "project-6911";
+    String securityPolicy = "securityPolicy-7672";
     SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
 
     Operation actualResponse =
@@ -549,8 +549,8 @@ public class SecurityPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String securityPolicy = "securityPolicy-788621166";
+      String project = "project-6911";
+      String securityPolicy = "securityPolicy-7672";
       SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
       client.patchAsync(project, securityPolicy, securityPolicyResource).get();
       Assert.fail("No exception raised");
@@ -589,8 +589,8 @@ public class SecurityPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String securityPolicy = "securityPolicy-788621166";
+    String project = "project-6911";
+    String securityPolicy = "securityPolicy-7672";
     SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
 
     Operation actualResponse =
@@ -620,8 +620,8 @@ public class SecurityPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String securityPolicy = "securityPolicy-788621166";
+      String project = "project-6911";
+      String securityPolicy = "securityPolicy-7672";
       SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
       client.patchRuleAsync(project, securityPolicy, securityPolicyRuleResource).get();
       Assert.fail("No exception raised");
@@ -660,8 +660,8 @@ public class SecurityPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String securityPolicy = "securityPolicy-788621166";
+    String project = "project-6911";
+    String securityPolicy = "securityPolicy-7672";
 
     Operation actualResponse = client.removeRuleAsync(project, securityPolicy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -689,8 +689,8 @@ public class SecurityPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String securityPolicy = "securityPolicy-788621166";
+      String project = "project-6911";
+      String securityPolicy = "securityPolicy-7672";
       client.removeRuleAsync(project, securityPolicy).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {

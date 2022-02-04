@@ -92,7 +92,7 @@ public class NodeTemplatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -126,7 +126,7 @@ public class NodeTemplatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -165,9 +165,9 @@ public class NodeTemplatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String nodeTemplate = "nodeTemplate2118368412";
+    String project = "project-6911";
+    String region = "region-9622";
+    String nodeTemplate = "nodeTemplate-1374";
 
     Operation actualResponse = client.deleteAsync(project, region, nodeTemplate).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -195,9 +195,9 @@ public class NodeTemplatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String nodeTemplate = "nodeTemplate2118368412";
+      String project = "project-6911";
+      String region = "region-9622";
+      String nodeTemplate = "nodeTemplate-1374";
       client.deleteAsync(project, region, nodeTemplate).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -227,9 +227,9 @@ public class NodeTemplatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String nodeTemplate = "nodeTemplate2118368412";
+    String project = "project-6911";
+    String region = "region-9622";
+    String nodeTemplate = "nodeTemplate-1374";
 
     NodeTemplate actualResponse = client.get(project, region, nodeTemplate);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -257,9 +257,9 @@ public class NodeTemplatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String nodeTemplate = "nodeTemplate2118368412";
+      String project = "project-6911";
+      String region = "region-9622";
+      String nodeTemplate = "nodeTemplate-1374";
       client.get(project, region, nodeTemplate);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -280,9 +280,9 @@ public class NodeTemplatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
 
     Policy actualResponse = client.getIamPolicy(project, region, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -310,9 +310,9 @@ public class NodeTemplatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       client.getIamPolicy(project, region, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -351,8 +351,8 @@ public class NodeTemplatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     NodeTemplate nodeTemplateResource = NodeTemplate.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, nodeTemplateResource).get();
@@ -381,8 +381,8 @@ public class NodeTemplatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       NodeTemplate nodeTemplateResource = NodeTemplate.newBuilder().build();
       client.insertAsync(project, region, nodeTemplateResource).get();
       Assert.fail("No exception raised");
@@ -400,8 +400,8 @@ public class NodeTemplatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -433,8 +433,8 @@ public class NodeTemplatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -455,9 +455,9 @@ public class NodeTemplatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
     RegionSetPolicyRequest regionSetPolicyRequestResource =
         RegionSetPolicyRequest.newBuilder().build();
 
@@ -488,9 +488,9 @@ public class NodeTemplatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       RegionSetPolicyRequest regionSetPolicyRequestResource =
           RegionSetPolicyRequest.newBuilder().build();
       client.setIamPolicy(project, region, resource, regionSetPolicyRequestResource);
@@ -506,9 +506,9 @@ public class NodeTemplatesClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -539,9 +539,9 @@ public class NodeTemplatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, region, resource, testPermissionsRequestResource);

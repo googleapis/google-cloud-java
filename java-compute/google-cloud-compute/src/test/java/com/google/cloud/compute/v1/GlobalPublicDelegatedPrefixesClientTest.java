@@ -109,8 +109,8 @@ public class GlobalPublicDelegatedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+    String project = "project-6911";
+    String publicDelegatedPrefix = "publicDelegatedPrefix-7730";
 
     Operation actualResponse = client.deleteAsync(project, publicDelegatedPrefix).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -138,8 +138,8 @@ public class GlobalPublicDelegatedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+      String project = "project-6911";
+      String publicDelegatedPrefix = "publicDelegatedPrefix-7730";
       client.deleteAsync(project, publicDelegatedPrefix).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -167,8 +167,8 @@ public class GlobalPublicDelegatedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+    String project = "project-6911";
+    String publicDelegatedPrefix = "publicDelegatedPrefix-7730";
 
     PublicDelegatedPrefix actualResponse = client.get(project, publicDelegatedPrefix);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -196,8 +196,8 @@ public class GlobalPublicDelegatedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+      String project = "project-6911";
+      String publicDelegatedPrefix = "publicDelegatedPrefix-7730";
       client.get(project, publicDelegatedPrefix);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -236,7 +236,7 @@ public class GlobalPublicDelegatedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     PublicDelegatedPrefix publicDelegatedPrefixResource =
         PublicDelegatedPrefix.newBuilder().build();
 
@@ -266,7 +266,7 @@ public class GlobalPublicDelegatedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       PublicDelegatedPrefix publicDelegatedPrefixResource =
           PublicDelegatedPrefix.newBuilder().build();
       client.insertAsync(project, publicDelegatedPrefixResource).get();
@@ -285,7 +285,7 @@ public class GlobalPublicDelegatedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -317,7 +317,7 @@ public class GlobalPublicDelegatedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -356,8 +356,8 @@ public class GlobalPublicDelegatedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+    String project = "project-6911";
+    String publicDelegatedPrefix = "publicDelegatedPrefix-7730";
     PublicDelegatedPrefix publicDelegatedPrefixResource =
         PublicDelegatedPrefix.newBuilder().build();
 
@@ -388,8 +388,8 @@ public class GlobalPublicDelegatedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+      String project = "project-6911";
+      String publicDelegatedPrefix = "publicDelegatedPrefix-7730";
       PublicDelegatedPrefix publicDelegatedPrefixResource =
           PublicDelegatedPrefix.newBuilder().build();
       client.patchAsync(project, publicDelegatedPrefix, publicDelegatedPrefixResource).get();

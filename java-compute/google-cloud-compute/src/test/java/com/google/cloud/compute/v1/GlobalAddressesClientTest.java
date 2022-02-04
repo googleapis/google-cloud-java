@@ -109,8 +109,8 @@ public class GlobalAddressesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String address = "address-1147692044";
+    String project = "project-6911";
+    String address = "address-4954";
 
     Operation actualResponse = client.deleteAsync(project, address).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -138,8 +138,8 @@ public class GlobalAddressesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String address = "address-1147692044";
+      String project = "project-6911";
+      String address = "address-4954";
       client.deleteAsync(project, address).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -170,8 +170,8 @@ public class GlobalAddressesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String address = "address-1147692044";
+    String project = "project-6911";
+    String address = "address-4954";
 
     Address actualResponse = client.get(project, address);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -199,8 +199,8 @@ public class GlobalAddressesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String address = "address-1147692044";
+      String project = "project-6911";
+      String address = "address-4954";
       client.get(project, address);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -239,7 +239,7 @@ public class GlobalAddressesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     Address addressResource = Address.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, addressResource).get();
@@ -268,7 +268,7 @@ public class GlobalAddressesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       Address addressResource = Address.newBuilder().build();
       client.insertAsync(project, addressResource).get();
       Assert.fail("No exception raised");
@@ -286,7 +286,7 @@ public class GlobalAddressesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -318,7 +318,7 @@ public class GlobalAddressesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

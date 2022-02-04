@@ -67,6 +67,7 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
           ApiMethodDescriptor.<DeleteRegionSslCertificateRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionSslCertificates/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionSslCertificateRequest>newBuilder()
                       .setPath(
@@ -118,6 +119,7 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
           ApiMethodDescriptor.<GetRegionSslCertificateRequest, SslCertificate>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionSslCertificates/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionSslCertificateRequest>newBuilder()
                       .setPath(
@@ -153,6 +155,7 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
           ApiMethodDescriptor.<InsertRegionSslCertificateRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionSslCertificates/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionSslCertificateRequest>newBuilder()
                       .setPath(
@@ -207,6 +210,7 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
           ApiMethodDescriptor.<ListRegionSslCertificatesRequest, SslCertificateList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionSslCertificates/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionSslCertificatesRequest>newBuilder()
                       .setPath(

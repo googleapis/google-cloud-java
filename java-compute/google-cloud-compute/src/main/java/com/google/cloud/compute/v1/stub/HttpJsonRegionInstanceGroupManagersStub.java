@@ -91,6 +91,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionInstanceGroupManagers/AbandonInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<AbandonInstancesRegionInstanceGroupManagerRequest>newBuilder()
@@ -153,6 +154,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionInstanceGroupManagers/ApplyUpdatesToInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest>newBuilder()
@@ -214,6 +216,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionInstanceGroupManagers/CreateInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<CreateInstancesRegionInstanceGroupManagerRequest>newBuilder()
@@ -273,6 +276,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
           ApiMethodDescriptor.<DeleteRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
@@ -327,6 +331,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionInstanceGroupManagers/DeleteInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<DeleteInstancesRegionInstanceGroupManagerRequest>newBuilder()
@@ -389,6 +394,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionInstanceGroupManagers/DeletePerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<DeletePerInstanceConfigsRegionInstanceGroupManagerRequest>newBuilder()
@@ -449,6 +455,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .<GetRegionInstanceGroupManagerRequest, InstanceGroupManager>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
@@ -484,6 +491,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
           ApiMethodDescriptor.<InsertRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
@@ -540,6 +548,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .<ListRegionInstanceGroupManagersRequest, RegionInstanceGroupManagerList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionInstanceGroupManagersRequest>newBuilder()
                       .setPath(
@@ -597,6 +606,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/ListErrors")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<ListErrorsRegionInstanceGroupManagersRequest>newBuilder()
@@ -660,6 +670,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionInstanceGroupManagers/ListManagedInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<ListManagedInstancesRegionInstanceGroupManagersRequest>newBuilder()
@@ -725,6 +736,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionInstanceGroupManagers/ListPerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<ListPerInstanceConfigsRegionInstanceGroupManagersRequest>newBuilder()
@@ -784,6 +796,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
           ApiMethodDescriptor.<PatchRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
@@ -843,6 +856,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionInstanceGroupManagers/PatchPerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<PatchPerInstanceConfigsRegionInstanceGroupManagerRequest>newBuilder()
@@ -907,6 +921,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionInstanceGroupManagers/RecreateInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<RecreateInstancesRegionInstanceGroupManagerRequest>newBuilder()
@@ -966,6 +981,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
           ApiMethodDescriptor.<ResizeRegionInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroupManagers/Resize")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ResizeRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
@@ -1021,6 +1037,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionInstanceGroupManagers/SetInstanceTemplate")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<SetInstanceTemplateRegionInstanceGroupManagerRequest>newBuilder()
@@ -1085,6 +1102,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionInstanceGroupManagers/SetTargetPools")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<SetTargetPoolsRegionInstanceGroupManagerRequest>newBuilder()
@@ -1146,6 +1164,7 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionInstanceGroupManagers/UpdatePerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest>newBuilder()

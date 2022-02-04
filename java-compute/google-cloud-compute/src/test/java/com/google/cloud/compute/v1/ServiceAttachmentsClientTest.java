@@ -92,7 +92,7 @@ public class ServiceAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -126,7 +126,7 @@ public class ServiceAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -165,9 +165,9 @@ public class ServiceAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String serviceAttachment = "serviceAttachment-398467656";
+    String project = "project-6911";
+    String region = "region-9622";
+    String serviceAttachment = "serviceAttachment-4594";
 
     Operation actualResponse = client.deleteAsync(project, region, serviceAttachment).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -195,9 +195,9 @@ public class ServiceAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String serviceAttachment = "serviceAttachment-398467656";
+      String project = "project-6911";
+      String region = "region-9622";
+      String serviceAttachment = "serviceAttachment-4594";
       client.deleteAsync(project, region, serviceAttachment).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -228,9 +228,9 @@ public class ServiceAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String serviceAttachment = "serviceAttachment-398467656";
+    String project = "project-6911";
+    String region = "region-9622";
+    String serviceAttachment = "serviceAttachment-4594";
 
     ServiceAttachment actualResponse = client.get(project, region, serviceAttachment);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -258,9 +258,9 @@ public class ServiceAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String serviceAttachment = "serviceAttachment-398467656";
+      String project = "project-6911";
+      String region = "region-9622";
+      String serviceAttachment = "serviceAttachment-4594";
       client.get(project, region, serviceAttachment);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -281,9 +281,9 @@ public class ServiceAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
 
     Policy actualResponse = client.getIamPolicy(project, region, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -311,9 +311,9 @@ public class ServiceAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       client.getIamPolicy(project, region, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -352,8 +352,8 @@ public class ServiceAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     ServiceAttachment serviceAttachmentResource = ServiceAttachment.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, serviceAttachmentResource).get();
@@ -382,8 +382,8 @@ public class ServiceAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       ServiceAttachment serviceAttachmentResource = ServiceAttachment.newBuilder().build();
       client.insertAsync(project, region, serviceAttachmentResource).get();
       Assert.fail("No exception raised");
@@ -401,8 +401,8 @@ public class ServiceAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -434,8 +434,8 @@ public class ServiceAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -474,9 +474,9 @@ public class ServiceAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String serviceAttachment = "serviceAttachment-398467656";
+    String project = "project-6911";
+    String region = "region-9622";
+    String serviceAttachment = "serviceAttachment-4594";
     ServiceAttachment serviceAttachmentResource = ServiceAttachment.newBuilder().build();
 
     Operation actualResponse =
@@ -506,9 +506,9 @@ public class ServiceAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String serviceAttachment = "serviceAttachment-398467656";
+      String project = "project-6911";
+      String region = "region-9622";
+      String serviceAttachment = "serviceAttachment-4594";
       ServiceAttachment serviceAttachmentResource = ServiceAttachment.newBuilder().build();
       client.patchAsync(project, region, serviceAttachment, serviceAttachmentResource).get();
       Assert.fail("No exception raised");
@@ -529,9 +529,9 @@ public class ServiceAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
     RegionSetPolicyRequest regionSetPolicyRequestResource =
         RegionSetPolicyRequest.newBuilder().build();
 
@@ -562,9 +562,9 @@ public class ServiceAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       RegionSetPolicyRequest regionSetPolicyRequestResource =
           RegionSetPolicyRequest.newBuilder().build();
       client.setIamPolicy(project, region, resource, regionSetPolicyRequestResource);
@@ -580,9 +580,9 @@ public class ServiceAttachmentsClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -613,9 +613,9 @@ public class ServiceAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, region, resource, testPermissionsRequestResource);

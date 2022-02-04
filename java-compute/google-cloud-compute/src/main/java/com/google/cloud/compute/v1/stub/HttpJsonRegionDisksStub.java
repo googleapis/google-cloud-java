@@ -77,6 +77,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
           ApiMethodDescriptor.<AddResourcePoliciesRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/AddResourcePolicies")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddResourcePoliciesRegionDiskRequest>newBuilder()
                       .setPath(
@@ -132,6 +133,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
           ApiMethodDescriptor.<CreateSnapshotRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/CreateSnapshot")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<CreateSnapshotRegionDiskRequest>newBuilder()
                       .setPath(
@@ -185,6 +187,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
           ApiMethodDescriptor.<DeleteRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionDiskRequest>newBuilder()
                       .setPath(
@@ -234,6 +237,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       ApiMethodDescriptor.<GetRegionDiskRequest, Disk>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.RegionDisks/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetRegionDiskRequest>newBuilder()
                   .setPath(
@@ -268,6 +272,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
           ApiMethodDescriptor.<GetIamPolicyRegionDiskRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyRegionDiskRequest>newBuilder()
                       .setPath(
@@ -308,6 +313,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
           ApiMethodDescriptor.<InsertRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionDiskRequest>newBuilder()
                       .setPath(
@@ -363,6 +369,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       ApiMethodDescriptor.<ListRegionDisksRequest, DiskList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.RegionDisks/List")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListRegionDisksRequest>newBuilder()
                   .setPath(
@@ -412,6 +419,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
           ApiMethodDescriptor.<RemoveResourcePoliciesRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/RemoveResourcePolicies")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveResourcePoliciesRegionDiskRequest>newBuilder()
                       .setPath(
@@ -468,6 +476,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
           ApiMethodDescriptor.<ResizeRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/Resize")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ResizeRegionDiskRequest>newBuilder()
                       .setPath(
@@ -523,6 +532,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
           ApiMethodDescriptor.<SetIamPolicyRegionDiskRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyRegionDiskRequest>newBuilder()
                       .setPath(
@@ -562,6 +572,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
           ApiMethodDescriptor.<SetLabelsRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/SetLabels")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsRegionDiskRequest>newBuilder()
                       .setPath(
@@ -619,6 +630,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
               .<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsRegionDiskRequest>newBuilder()
                       .setPath(

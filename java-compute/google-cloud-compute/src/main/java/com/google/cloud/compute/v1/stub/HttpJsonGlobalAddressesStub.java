@@ -67,6 +67,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
           ApiMethodDescriptor.<DeleteGlobalAddressRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalAddresses/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteGlobalAddressRequest>newBuilder()
                       .setPath(
@@ -114,6 +115,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
       ApiMethodDescriptor.<GetGlobalAddressRequest, Address>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.GlobalAddresses/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetGlobalAddressRequest>newBuilder()
                   .setPath(
@@ -147,6 +149,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
           ApiMethodDescriptor.<InsertGlobalAddressRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalAddresses/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertGlobalAddressRequest>newBuilder()
                       .setPath(
@@ -197,6 +200,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
           ApiMethodDescriptor.<ListGlobalAddressesRequest, AddressList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalAddresses/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListGlobalAddressesRequest>newBuilder()
                       .setPath(

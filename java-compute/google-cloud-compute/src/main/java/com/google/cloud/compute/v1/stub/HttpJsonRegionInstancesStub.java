@@ -60,6 +60,7 @@ public class HttpJsonRegionInstancesStub extends RegionInstancesStub {
           ApiMethodDescriptor.<BulkInsertRegionInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstances/BulkInsert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<BulkInsertRegionInstanceRequest>newBuilder()
                       .setPath(

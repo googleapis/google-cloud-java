@@ -110,9 +110,9 @@ public class RegionBackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String region = "region-9622";
+    String backendService = "backendService-8873";
 
     Operation actualResponse = client.deleteAsync(project, region, backendService).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -140,9 +140,9 @@ public class RegionBackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String region = "region-9622";
+      String backendService = "backendService-8873";
       client.deleteAsync(project, region, backendService).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -190,9 +190,9 @@ public class RegionBackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String region = "region-9622";
+    String backendService = "backendService-8873";
 
     BackendService actualResponse = client.get(project, region, backendService);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -220,9 +220,9 @@ public class RegionBackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String region = "region-9622";
+      String backendService = "backendService-8873";
       client.get(project, region, backendService);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -240,9 +240,9 @@ public class RegionBackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String region = "region-9622";
+    String backendService = "backendService-8873";
     ResourceGroupReference resourceGroupReferenceResource =
         ResourceGroupReference.newBuilder().build();
 
@@ -273,9 +273,9 @@ public class RegionBackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String region = "region-9622";
+      String backendService = "backendService-8873";
       ResourceGroupReference resourceGroupReferenceResource =
           ResourceGroupReference.newBuilder().build();
       client.getHealth(project, region, backendService, resourceGroupReferenceResource);
@@ -316,8 +316,8 @@ public class RegionBackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, backendServiceResource).get();
@@ -346,8 +346,8 @@ public class RegionBackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       BackendService backendServiceResource = BackendService.newBuilder().build();
       client.insertAsync(project, region, backendServiceResource).get();
       Assert.fail("No exception raised");
@@ -365,8 +365,8 @@ public class RegionBackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -398,8 +398,8 @@ public class RegionBackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -438,9 +438,9 @@ public class RegionBackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String region = "region-9622";
+    String backendService = "backendService-8873";
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse =
@@ -470,9 +470,9 @@ public class RegionBackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String region = "region-9622";
+      String backendService = "backendService-8873";
       BackendService backendServiceResource = BackendService.newBuilder().build();
       client.patchAsync(project, region, backendService, backendServiceResource).get();
       Assert.fail("No exception raised");
@@ -511,9 +511,9 @@ public class RegionBackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String region = "region-9622";
+    String backendService = "backendService-8873";
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse =
@@ -543,9 +543,9 @@ public class RegionBackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String region = "region-9622";
+      String backendService = "backendService-8873";
       BackendService backendServiceResource = BackendService.newBuilder().build();
       client.updateAsync(project, region, backendService, backendServiceResource).get();
       Assert.fail("No exception raised");

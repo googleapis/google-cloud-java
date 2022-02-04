@@ -57,6 +57,7 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
       ApiMethodDescriptor.<GetLicenseCodeRequest, LicenseCode>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.LicenseCodes/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetLicenseCodeRequest>newBuilder()
                   .setPath(
@@ -92,6 +93,7 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
               .<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.LicenseCodes/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsLicenseCodeRequest>newBuilder()
                       .setPath(

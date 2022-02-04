@@ -56,6 +56,7 @@ public class HttpJsonImageFamilyViewsStub extends ImageFamilyViewsStub {
           ApiMethodDescriptor.<GetImageFamilyViewRequest, ImageFamilyView>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ImageFamilyViews/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetImageFamilyViewRequest>newBuilder()
                       .setPath(

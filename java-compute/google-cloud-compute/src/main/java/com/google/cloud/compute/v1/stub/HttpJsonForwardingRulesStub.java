@@ -75,6 +75,7 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
               .<AggregatedListForwardingRulesRequest, ForwardingRuleAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ForwardingRules/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListForwardingRulesRequest>newBuilder()
                       .setPath(
@@ -130,6 +131,7 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
           ApiMethodDescriptor.<DeleteForwardingRuleRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ForwardingRules/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteForwardingRuleRequest>newBuilder()
                       .setPath(
@@ -181,6 +183,7 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
           ApiMethodDescriptor.<GetForwardingRuleRequest, ForwardingRule>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ForwardingRules/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetForwardingRuleRequest>newBuilder()
                       .setPath(
@@ -216,6 +219,7 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
           ApiMethodDescriptor.<InsertForwardingRuleRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ForwardingRules/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertForwardingRuleRequest>newBuilder()
                       .setPath(
@@ -270,6 +274,7 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
           ApiMethodDescriptor.<ListForwardingRulesRequest, ForwardingRuleList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ForwardingRules/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListForwardingRulesRequest>newBuilder()
                       .setPath(
@@ -322,6 +327,7 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
           ApiMethodDescriptor.<PatchForwardingRuleRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ForwardingRules/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchForwardingRuleRequest>newBuilder()
                       .setPath(
@@ -378,6 +384,7 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
           ApiMethodDescriptor.<SetLabelsForwardingRuleRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ForwardingRules/SetLabels")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsForwardingRuleRequest>newBuilder()
                       .setPath(
@@ -433,6 +440,7 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
           ApiMethodDescriptor.<SetTargetForwardingRuleRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ForwardingRules/SetTarget")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetTargetForwardingRuleRequest>newBuilder()
                       .setPath(

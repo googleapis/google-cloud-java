@@ -93,9 +93,9 @@ public class RegionDiskTypesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String diskType = "diskType279771767";
+    String project = "project-6911";
+    String region = "region-9622";
+    String diskType = "diskType-227";
 
     DiskType actualResponse = client.get(project, region, diskType);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -123,9 +123,9 @@ public class RegionDiskTypesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String diskType = "diskType279771767";
+      String project = "project-6911";
+      String region = "region-9622";
+      String diskType = "diskType-227";
       client.get(project, region, diskType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -143,8 +143,8 @@ public class RegionDiskTypesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -176,8 +176,8 @@ public class RegionDiskTypesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

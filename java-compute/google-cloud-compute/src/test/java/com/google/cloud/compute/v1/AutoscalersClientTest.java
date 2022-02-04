@@ -92,7 +92,7 @@ public class AutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -126,7 +126,7 @@ public class AutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -165,9 +165,9 @@ public class AutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String autoscaler = "autoscaler517258967";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String autoscaler = "autoscaler-1165";
 
     Operation actualResponse = client.deleteAsync(project, zone, autoscaler).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -195,9 +195,9 @@ public class AutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String autoscaler = "autoscaler517258967";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String autoscaler = "autoscaler-1165";
       client.deleteAsync(project, zone, autoscaler).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -225,9 +225,9 @@ public class AutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String autoscaler = "autoscaler517258967";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String autoscaler = "autoscaler-1165";
 
     Autoscaler actualResponse = client.get(project, zone, autoscaler);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -255,9 +255,9 @@ public class AutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String autoscaler = "autoscaler517258967";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String autoscaler = "autoscaler-1165";
       client.get(project, zone, autoscaler);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -296,8 +296,8 @@ public class AutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, zone, autoscalerResource).get();
@@ -326,8 +326,8 @@ public class AutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
       client.insertAsync(project, zone, autoscalerResource).get();
       Assert.fail("No exception raised");
@@ -345,8 +345,8 @@ public class AutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     ListPagedResponse pagedListResponse = client.list(project, zone);
 
@@ -378,8 +378,8 @@ public class AutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.list(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -418,8 +418,8 @@ public class AutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
     Operation actualResponse = client.patchAsync(project, zone, autoscalerResource).get();
@@ -448,8 +448,8 @@ public class AutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
       client.patchAsync(project, zone, autoscalerResource).get();
       Assert.fail("No exception raised");
@@ -488,8 +488,8 @@ public class AutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
     Operation actualResponse = client.updateAsync(project, zone, autoscalerResource).get();
@@ -518,8 +518,8 @@ public class AutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
       client.updateAsync(project, zone, autoscalerResource).get();
       Assert.fail("No exception raised");

@@ -112,9 +112,9 @@ public class NodeGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String nodeGroup = "nodeGroup443599261";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String nodeGroup = "nodeGroup-5245";
     NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource =
         NodeGroupsAddNodesRequest.newBuilder().build();
 
@@ -145,9 +145,9 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String nodeGroup = "nodeGroup443599261";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String nodeGroup = "nodeGroup-5245";
       NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource =
           NodeGroupsAddNodesRequest.newBuilder().build();
       client.addNodesAsync(project, zone, nodeGroup, nodeGroupsAddNodesRequestResource).get();
@@ -166,7 +166,7 @@ public class NodeGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -200,7 +200,7 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -239,9 +239,9 @@ public class NodeGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String nodeGroup = "nodeGroup443599261";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String nodeGroup = "nodeGroup-5245";
 
     Operation actualResponse = client.deleteAsync(project, zone, nodeGroup).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -269,9 +269,9 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String nodeGroup = "nodeGroup443599261";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String nodeGroup = "nodeGroup-5245";
       client.deleteAsync(project, zone, nodeGroup).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -309,9 +309,9 @@ public class NodeGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String nodeGroup = "nodeGroup443599261";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String nodeGroup = "nodeGroup-5245";
     NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource =
         NodeGroupsDeleteNodesRequest.newBuilder().build();
 
@@ -344,9 +344,9 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String nodeGroup = "nodeGroup443599261";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String nodeGroup = "nodeGroup-5245";
       NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource =
           NodeGroupsDeleteNodesRequest.newBuilder().build();
       client.deleteNodesAsync(project, zone, nodeGroup, nodeGroupsDeleteNodesRequestResource).get();
@@ -377,9 +377,9 @@ public class NodeGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String nodeGroup = "nodeGroup443599261";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String nodeGroup = "nodeGroup-5245";
 
     NodeGroup actualResponse = client.get(project, zone, nodeGroup);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -407,9 +407,9 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String nodeGroup = "nodeGroup443599261";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String nodeGroup = "nodeGroup-5245";
       client.get(project, zone, nodeGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -430,9 +430,9 @@ public class NodeGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
 
     Policy actualResponse = client.getIamPolicy(project, zone, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -460,9 +460,9 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       client.getIamPolicy(project, zone, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -501,8 +501,8 @@ public class NodeGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
     int initialNodeCount = 1682564205;
     NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
 
@@ -533,8 +533,8 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       int initialNodeCount = 1682564205;
       NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
       client.insertAsync(project, zone, initialNodeCount, nodeGroupResource).get();
@@ -553,8 +553,8 @@ public class NodeGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     ListPagedResponse pagedListResponse = client.list(project, zone);
 
@@ -586,8 +586,8 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.list(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -605,9 +605,9 @@ public class NodeGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String nodeGroup = "nodeGroup443599261";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String nodeGroup = "nodeGroup-5245";
 
     ListNodesPagedResponse pagedListResponse = client.listNodes(project, zone, nodeGroup);
 
@@ -639,9 +639,9 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String nodeGroup = "nodeGroup443599261";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String nodeGroup = "nodeGroup-5245";
       client.listNodes(project, zone, nodeGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -680,9 +680,9 @@ public class NodeGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String nodeGroup = "nodeGroup443599261";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String nodeGroup = "nodeGroup-5245";
     NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
 
     Operation actualResponse = client.patchAsync(project, zone, nodeGroup, nodeGroupResource).get();
@@ -711,9 +711,9 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String nodeGroup = "nodeGroup443599261";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String nodeGroup = "nodeGroup-5245";
       NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
       client.patchAsync(project, zone, nodeGroup, nodeGroupResource).get();
       Assert.fail("No exception raised");
@@ -734,9 +734,9 @@ public class NodeGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
     ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
 
     Policy actualResponse =
@@ -766,9 +766,9 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
       client.setIamPolicy(project, zone, resource, zoneSetPolicyRequestResource);
       Assert.fail("No exception raised");
@@ -808,9 +808,9 @@ public class NodeGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String nodeGroup = "nodeGroup443599261";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String nodeGroup = "nodeGroup-5245";
     NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource =
         NodeGroupsSetNodeTemplateRequest.newBuilder().build();
 
@@ -844,9 +844,9 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String nodeGroup = "nodeGroup443599261";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String nodeGroup = "nodeGroup-5245";
       NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource =
           NodeGroupsSetNodeTemplateRequest.newBuilder().build();
       client
@@ -863,9 +863,9 @@ public class NodeGroupsClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -896,9 +896,9 @@ public class NodeGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, zone, resource, testPermissionsRequestResource);

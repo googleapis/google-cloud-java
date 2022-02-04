@@ -70,6 +70,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
           ApiMethodDescriptor.<DeleteSslPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslPolicies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSslPolicyRequest>newBuilder()
                       .setPath(
@@ -117,6 +118,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
       ApiMethodDescriptor.<GetSslPolicyRequest, SslPolicy>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.SslPolicies/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetSslPolicyRequest>newBuilder()
                   .setPath(
@@ -150,6 +152,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
           ApiMethodDescriptor.<InsertSslPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslPolicies/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertSslPolicyRequest>newBuilder()
                       .setPath(
@@ -200,6 +203,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
           ApiMethodDescriptor.<ListSslPoliciesRequest, SslPoliciesList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslPolicies/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSslPoliciesRequest>newBuilder()
                       .setPath(
@@ -254,6 +258,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslPolicies/ListAvailableFeatures")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListAvailableFeaturesSslPoliciesRequest>newBuilder()
                       .setPath(
@@ -305,6 +310,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
       ApiMethodDescriptor.<PatchSslPolicyRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.SslPolicies/Patch")
           .setHttpMethod(HttpMethods.PATCH)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchSslPolicyRequest>newBuilder()
                   .setPath(

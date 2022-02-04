@@ -91,7 +91,7 @@ public class HealthChecksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -125,7 +125,7 @@ public class HealthChecksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -164,8 +164,8 @@ public class HealthChecksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String healthCheck = "healthCheck-1938093044";
+    String project = "project-6911";
+    String healthCheck = "healthCheck-7822";
 
     Operation actualResponse = client.deleteAsync(project, healthCheck).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -193,8 +193,8 @@ public class HealthChecksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String healthCheck = "healthCheck-1938093044";
+      String project = "project-6911";
+      String healthCheck = "healthCheck-7822";
       client.deleteAsync(project, healthCheck).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -227,8 +227,8 @@ public class HealthChecksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String healthCheck = "healthCheck-1938093044";
+    String project = "project-6911";
+    String healthCheck = "healthCheck-7822";
 
     HealthCheck actualResponse = client.get(project, healthCheck);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -256,8 +256,8 @@ public class HealthChecksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String healthCheck = "healthCheck-1938093044";
+      String project = "project-6911";
+      String healthCheck = "healthCheck-7822";
       client.get(project, healthCheck);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -296,7 +296,7 @@ public class HealthChecksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, healthCheckResource).get();
@@ -325,7 +325,7 @@ public class HealthChecksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
       client.insertAsync(project, healthCheckResource).get();
       Assert.fail("No exception raised");
@@ -343,7 +343,7 @@ public class HealthChecksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -375,7 +375,7 @@ public class HealthChecksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -414,8 +414,8 @@ public class HealthChecksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String healthCheck = "healthCheck-1938093044";
+    String project = "project-6911";
+    String healthCheck = "healthCheck-7822";
     HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
 
     Operation actualResponse = client.patchAsync(project, healthCheck, healthCheckResource).get();
@@ -444,8 +444,8 @@ public class HealthChecksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String healthCheck = "healthCheck-1938093044";
+      String project = "project-6911";
+      String healthCheck = "healthCheck-7822";
       HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
       client.patchAsync(project, healthCheck, healthCheckResource).get();
       Assert.fail("No exception raised");
@@ -484,8 +484,8 @@ public class HealthChecksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String healthCheck = "healthCheck-1938093044";
+    String project = "project-6911";
+    String healthCheck = "healthCheck-7822";
     HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
 
     Operation actualResponse = client.updateAsync(project, healthCheck, healthCheckResource).get();
@@ -514,8 +514,8 @@ public class HealthChecksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String healthCheck = "healthCheck-1938093044";
+      String project = "project-6911";
+      String healthCheck = "healthCheck-7822";
       HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
       client.updateAsync(project, healthCheck, healthCheckResource).get();
       Assert.fail("No exception raised");

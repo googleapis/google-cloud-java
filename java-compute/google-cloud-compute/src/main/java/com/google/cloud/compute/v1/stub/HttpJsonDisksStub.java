@@ -80,6 +80,7 @@ public class HttpJsonDisksStub extends DisksStub {
           ApiMethodDescriptor.<AddResourcePoliciesDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Disks/AddResourcePolicies")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddResourcePoliciesDiskRequest>newBuilder()
                       .setPath(
@@ -135,6 +136,7 @@ public class HttpJsonDisksStub extends DisksStub {
           ApiMethodDescriptor.<AggregatedListDisksRequest, DiskAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Disks/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListDisksRequest>newBuilder()
                       .setPath(
@@ -190,6 +192,7 @@ public class HttpJsonDisksStub extends DisksStub {
           ApiMethodDescriptor.<CreateSnapshotDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Disks/CreateSnapshot")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<CreateSnapshotDiskRequest>newBuilder()
                       .setPath(
@@ -246,6 +249,7 @@ public class HttpJsonDisksStub extends DisksStub {
       ApiMethodDescriptor.<DeleteDiskRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Disks/Delete")
           .setHttpMethod(HttpMethods.DELETE)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteDiskRequest>newBuilder()
                   .setPath(
@@ -295,6 +299,7 @@ public class HttpJsonDisksStub extends DisksStub {
       ApiMethodDescriptor.<GetDiskRequest, Disk>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Disks/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetDiskRequest>newBuilder()
                   .setPath(
@@ -329,6 +334,7 @@ public class HttpJsonDisksStub extends DisksStub {
           ApiMethodDescriptor.<GetIamPolicyDiskRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Disks/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyDiskRequest>newBuilder()
                       .setPath(
@@ -368,6 +374,7 @@ public class HttpJsonDisksStub extends DisksStub {
       ApiMethodDescriptor.<InsertDiskRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Disks/Insert")
           .setHttpMethod(HttpMethods.POST)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertDiskRequest>newBuilder()
                   .setPath(
@@ -422,6 +429,7 @@ public class HttpJsonDisksStub extends DisksStub {
       ApiMethodDescriptor.<ListDisksRequest, DiskList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Disks/List")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListDisksRequest>newBuilder()
                   .setPath(
@@ -471,6 +479,7 @@ public class HttpJsonDisksStub extends DisksStub {
           ApiMethodDescriptor.<RemoveResourcePoliciesDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Disks/RemoveResourcePolicies")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveResourcePoliciesDiskRequest>newBuilder()
                       .setPath(
@@ -525,6 +534,7 @@ public class HttpJsonDisksStub extends DisksStub {
       ApiMethodDescriptor.<ResizeDiskRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Disks/Resize")
           .setHttpMethod(HttpMethods.POST)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ResizeDiskRequest>newBuilder()
                   .setPath(
@@ -580,6 +590,7 @@ public class HttpJsonDisksStub extends DisksStub {
           ApiMethodDescriptor.<SetIamPolicyDiskRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Disks/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyDiskRequest>newBuilder()
                       .setPath(
@@ -619,6 +630,7 @@ public class HttpJsonDisksStub extends DisksStub {
           ApiMethodDescriptor.<SetLabelsDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Disks/SetLabels")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsDiskRequest>newBuilder()
                       .setPath(
@@ -674,6 +686,7 @@ public class HttpJsonDisksStub extends DisksStub {
           ApiMethodDescriptor.<TestIamPermissionsDiskRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Disks/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsDiskRequest>newBuilder()
                       .setPath(

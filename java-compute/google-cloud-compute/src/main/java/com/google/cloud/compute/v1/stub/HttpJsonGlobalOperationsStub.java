@@ -73,6 +73,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
               .<AggregatedListGlobalOperationsRequest, OperationAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOperations/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListGlobalOperationsRequest>newBuilder()
                       .setPath(
@@ -130,6 +131,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
               .<DeleteGlobalOperationRequest, DeleteGlobalOperationResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOperations/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteGlobalOperationRequest>newBuilder()
                       .setPath(
@@ -163,6 +165,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
           ApiMethodDescriptor.<GetGlobalOperationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOperations/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetGlobalOperationRequest>newBuilder()
                       .setPath(
@@ -215,6 +218,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
           ApiMethodDescriptor.<ListGlobalOperationsRequest, OperationList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOperations/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListGlobalOperationsRequest>newBuilder()
                       .setPath(
@@ -266,6 +270,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
           ApiMethodDescriptor.<WaitGlobalOperationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOperations/Wait")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<WaitGlobalOperationRequest>newBuilder()
                       .setPath(

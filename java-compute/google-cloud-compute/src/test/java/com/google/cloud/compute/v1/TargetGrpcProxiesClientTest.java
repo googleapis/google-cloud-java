@@ -109,8 +109,8 @@ public class TargetGrpcProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetGrpcProxy = "targetGrpcProxy1045500511";
+    String project = "project-6911";
+    String targetGrpcProxy = "targetGrpcProxy-2485";
 
     Operation actualResponse = client.deleteAsync(project, targetGrpcProxy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -138,8 +138,8 @@ public class TargetGrpcProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetGrpcProxy = "targetGrpcProxy1045500511";
+      String project = "project-6911";
+      String targetGrpcProxy = "targetGrpcProxy-2485";
       client.deleteAsync(project, targetGrpcProxy).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -163,8 +163,8 @@ public class TargetGrpcProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetGrpcProxy = "targetGrpcProxy1045500511";
+    String project = "project-6911";
+    String targetGrpcProxy = "targetGrpcProxy-2485";
 
     TargetGrpcProxy actualResponse = client.get(project, targetGrpcProxy);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -192,8 +192,8 @@ public class TargetGrpcProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetGrpcProxy = "targetGrpcProxy1045500511";
+      String project = "project-6911";
+      String targetGrpcProxy = "targetGrpcProxy-2485";
       client.get(project, targetGrpcProxy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -232,7 +232,7 @@ public class TargetGrpcProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, targetGrpcProxyResource).get();
@@ -261,7 +261,7 @@ public class TargetGrpcProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
       client.insertAsync(project, targetGrpcProxyResource).get();
       Assert.fail("No exception raised");
@@ -279,7 +279,7 @@ public class TargetGrpcProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -311,7 +311,7 @@ public class TargetGrpcProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -350,8 +350,8 @@ public class TargetGrpcProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetGrpcProxy = "targetGrpcProxy1045500511";
+    String project = "project-6911";
+    String targetGrpcProxy = "targetGrpcProxy-2485";
     TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
 
     Operation actualResponse =
@@ -381,8 +381,8 @@ public class TargetGrpcProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetGrpcProxy = "targetGrpcProxy1045500511";
+      String project = "project-6911";
+      String targetGrpcProxy = "targetGrpcProxy-2485";
       TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
       client.patchAsync(project, targetGrpcProxy, targetGrpcProxyResource).get();
       Assert.fail("No exception raised");

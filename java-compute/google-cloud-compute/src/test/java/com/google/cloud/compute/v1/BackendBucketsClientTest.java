@@ -109,8 +109,8 @@ public class BackendBucketsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendBucket = "backendBucket713751966";
+    String project = "project-6911";
+    String backendBucket = "backendBucket-4508";
     SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
 
     Operation actualResponse =
@@ -140,8 +140,8 @@ public class BackendBucketsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendBucket = "backendBucket713751966";
+      String project = "project-6911";
+      String backendBucket = "backendBucket-4508";
       SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
       client.addSignedUrlKeyAsync(project, backendBucket, signedUrlKeyResource).get();
       Assert.fail("No exception raised");
@@ -180,8 +180,8 @@ public class BackendBucketsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendBucket = "backendBucket713751966";
+    String project = "project-6911";
+    String backendBucket = "backendBucket-4508";
 
     Operation actualResponse = client.deleteAsync(project, backendBucket).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -209,8 +209,8 @@ public class BackendBucketsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendBucket = "backendBucket713751966";
+      String project = "project-6911";
+      String backendBucket = "backendBucket-4508";
       client.deleteAsync(project, backendBucket).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -248,8 +248,8 @@ public class BackendBucketsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendBucket = "backendBucket713751966";
+    String project = "project-6911";
+    String backendBucket = "backendBucket-4508";
     String keyName = "keyName-815643254";
 
     Operation actualResponse =
@@ -279,8 +279,8 @@ public class BackendBucketsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendBucket = "backendBucket713751966";
+      String project = "project-6911";
+      String backendBucket = "backendBucket-4508";
       String keyName = "keyName-815643254";
       client.deleteSignedUrlKeyAsync(project, backendBucket, keyName).get();
       Assert.fail("No exception raised");
@@ -305,8 +305,8 @@ public class BackendBucketsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendBucket = "backendBucket713751966";
+    String project = "project-6911";
+    String backendBucket = "backendBucket-4508";
 
     BackendBucket actualResponse = client.get(project, backendBucket);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -334,8 +334,8 @@ public class BackendBucketsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendBucket = "backendBucket713751966";
+      String project = "project-6911";
+      String backendBucket = "backendBucket-4508";
       client.get(project, backendBucket);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -374,7 +374,7 @@ public class BackendBucketsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, backendBucketResource).get();
@@ -403,7 +403,7 @@ public class BackendBucketsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
       client.insertAsync(project, backendBucketResource).get();
       Assert.fail("No exception raised");
@@ -421,7 +421,7 @@ public class BackendBucketsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -453,7 +453,7 @@ public class BackendBucketsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -492,8 +492,8 @@ public class BackendBucketsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendBucket = "backendBucket713751966";
+    String project = "project-6911";
+    String backendBucket = "backendBucket-4508";
     BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
     Operation actualResponse =
@@ -523,8 +523,8 @@ public class BackendBucketsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendBucket = "backendBucket713751966";
+      String project = "project-6911";
+      String backendBucket = "backendBucket-4508";
       BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
       client.patchAsync(project, backendBucket, backendBucketResource).get();
       Assert.fail("No exception raised");
@@ -563,8 +563,8 @@ public class BackendBucketsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendBucket = "backendBucket713751966";
+    String project = "project-6911";
+    String backendBucket = "backendBucket-4508";
     BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
     Operation actualResponse =
@@ -594,8 +594,8 @@ public class BackendBucketsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendBucket = "backendBucket713751966";
+      String project = "project-6911";
+      String backendBucket = "backendBucket-4508";
       BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
       client.updateAsync(project, backendBucket, backendBucketResource).get();
       Assert.fail("No exception raised");

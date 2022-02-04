@@ -111,8 +111,8 @@ public class GlobalNetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String networkEndpointGroup = "networkEndpointGroup-2120389028";
+    String project = "project-6911";
+    String networkEndpointGroup = "networkEndpointGroup-386";
     GlobalNetworkEndpointGroupsAttachEndpointsRequest
         globalNetworkEndpointGroupsAttachEndpointsRequestResource =
             GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
@@ -149,8 +149,8 @@ public class GlobalNetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String networkEndpointGroup = "networkEndpointGroup-2120389028";
+      String project = "project-6911";
+      String networkEndpointGroup = "networkEndpointGroup-386";
       GlobalNetworkEndpointGroupsAttachEndpointsRequest
           globalNetworkEndpointGroupsAttachEndpointsRequestResource =
               GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
@@ -196,8 +196,8 @@ public class GlobalNetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String networkEndpointGroup = "networkEndpointGroup-2120389028";
+    String project = "project-6911";
+    String networkEndpointGroup = "networkEndpointGroup-386";
 
     Operation actualResponse = client.deleteAsync(project, networkEndpointGroup).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -225,8 +225,8 @@ public class GlobalNetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String networkEndpointGroup = "networkEndpointGroup-2120389028";
+      String project = "project-6911";
+      String networkEndpointGroup = "networkEndpointGroup-386";
       client.deleteAsync(project, networkEndpointGroup).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -264,8 +264,8 @@ public class GlobalNetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String networkEndpointGroup = "networkEndpointGroup-2120389028";
+    String project = "project-6911";
+    String networkEndpointGroup = "networkEndpointGroup-386";
     GlobalNetworkEndpointGroupsDetachEndpointsRequest
         globalNetworkEndpointGroupsDetachEndpointsRequestResource =
             GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
@@ -302,8 +302,8 @@ public class GlobalNetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String networkEndpointGroup = "networkEndpointGroup-2120389028";
+      String project = "project-6911";
+      String networkEndpointGroup = "networkEndpointGroup-386";
       GlobalNetworkEndpointGroupsDetachEndpointsRequest
           globalNetworkEndpointGroupsDetachEndpointsRequestResource =
               GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
@@ -342,8 +342,8 @@ public class GlobalNetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String networkEndpointGroup = "networkEndpointGroup-2120389028";
+    String project = "project-6911";
+    String networkEndpointGroup = "networkEndpointGroup-386";
 
     NetworkEndpointGroup actualResponse = client.get(project, networkEndpointGroup);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -371,8 +371,8 @@ public class GlobalNetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String networkEndpointGroup = "networkEndpointGroup-2120389028";
+      String project = "project-6911";
+      String networkEndpointGroup = "networkEndpointGroup-386";
       client.get(project, networkEndpointGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -411,7 +411,7 @@ public class GlobalNetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, networkEndpointGroupResource).get();
@@ -440,7 +440,7 @@ public class GlobalNetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
       client.insertAsync(project, networkEndpointGroupResource).get();
       Assert.fail("No exception raised");
@@ -458,7 +458,7 @@ public class GlobalNetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -490,7 +490,7 @@ public class GlobalNetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -509,8 +509,8 @@ public class GlobalNetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String networkEndpointGroup = "networkEndpointGroup-2120389028";
+    String project = "project-6911";
+    String networkEndpointGroup = "networkEndpointGroup-386";
 
     ListNetworkEndpointsPagedResponse pagedListResponse =
         client.listNetworkEndpoints(project, networkEndpointGroup);
@@ -544,8 +544,8 @@ public class GlobalNetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String networkEndpointGroup = "networkEndpointGroup-2120389028";
+      String project = "project-6911";
+      String networkEndpointGroup = "networkEndpointGroup-386";
       client.listNetworkEndpoints(project, networkEndpointGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

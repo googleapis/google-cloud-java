@@ -109,9 +109,9 @@ public class RegionUrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String urlMap = "urlMap-836780691";
+    String project = "project-6911";
+    String region = "region-9622";
+    String urlMap = "urlMap-7603";
 
     Operation actualResponse = client.deleteAsync(project, region, urlMap).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -139,9 +139,9 @@ public class RegionUrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String urlMap = "urlMap-836780691";
+      String project = "project-6911";
+      String region = "region-9622";
+      String urlMap = "urlMap-7603";
       client.deleteAsync(project, region, urlMap).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -170,9 +170,9 @@ public class RegionUrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String urlMap = "urlMap-836780691";
+    String project = "project-6911";
+    String region = "region-9622";
+    String urlMap = "urlMap-7603";
 
     UrlMap actualResponse = client.get(project, region, urlMap);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -200,9 +200,9 @@ public class RegionUrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String urlMap = "urlMap-836780691";
+      String project = "project-6911";
+      String region = "region-9622";
+      String urlMap = "urlMap-7603";
       client.get(project, region, urlMap);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -241,8 +241,8 @@ public class RegionUrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, urlMapResource).get();
@@ -271,8 +271,8 @@ public class RegionUrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
       client.insertAsync(project, region, urlMapResource).get();
       Assert.fail("No exception raised");
@@ -290,8 +290,8 @@ public class RegionUrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -323,8 +323,8 @@ public class RegionUrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -363,9 +363,9 @@ public class RegionUrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String urlMap = "urlMap-836780691";
+    String project = "project-6911";
+    String region = "region-9622";
+    String urlMap = "urlMap-7603";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
     Operation actualResponse = client.patchAsync(project, region, urlMap, urlMapResource).get();
@@ -394,9 +394,9 @@ public class RegionUrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String urlMap = "urlMap-836780691";
+      String project = "project-6911";
+      String region = "region-9622";
+      String urlMap = "urlMap-7603";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
       client.patchAsync(project, region, urlMap, urlMapResource).get();
       Assert.fail("No exception raised");
@@ -435,9 +435,9 @@ public class RegionUrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String urlMap = "urlMap-836780691";
+    String project = "project-6911";
+    String region = "region-9622";
+    String urlMap = "urlMap-7603";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
     Operation actualResponse = client.updateAsync(project, region, urlMap, urlMapResource).get();
@@ -466,9 +466,9 @@ public class RegionUrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String urlMap = "urlMap-836780691";
+      String project = "project-6911";
+      String region = "region-9622";
+      String urlMap = "urlMap-7603";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
       client.updateAsync(project, region, urlMap, urlMapResource).get();
       Assert.fail("No exception raised");
@@ -484,9 +484,9 @@ public class RegionUrlMapsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String urlMap = "urlMap-836780691";
+    String project = "project-6911";
+    String region = "region-9622";
+    String urlMap = "urlMap-7603";
     RegionUrlMapsValidateRequest regionUrlMapsValidateRequestResource =
         RegionUrlMapsValidateRequest.newBuilder().build();
 
@@ -517,9 +517,9 @@ public class RegionUrlMapsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String urlMap = "urlMap-836780691";
+      String project = "project-6911";
+      String region = "region-9622";
+      String urlMap = "urlMap-7603";
       RegionUrlMapsValidateRequest regionUrlMapsValidateRequestResource =
           RegionUrlMapsValidateRequest.newBuilder().build();
       client.validate(project, region, urlMap, regionUrlMapsValidateRequestResource);

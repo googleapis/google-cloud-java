@@ -91,6 +91,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
           ApiMethodDescriptor.<AbandonInstancesInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/AbandonInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<AbandonInstancesInstanceGroupManagerRequest>newBuilder()
@@ -152,6 +153,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<AggregatedListInstanceGroupManagersRequest>newBuilder()
@@ -211,6 +213,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setFullMethodName(
                   "google.cloud.compute.v1.InstanceGroupManagers/ApplyUpdatesToInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<ApplyUpdatesToInstancesInstanceGroupManagerRequest>newBuilder()
@@ -267,6 +270,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
           ApiMethodDescriptor.<CreateInstancesInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/CreateInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<CreateInstancesInstanceGroupManagerRequest>newBuilder()
@@ -325,6 +329,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
           ApiMethodDescriptor.<DeleteInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteInstanceGroupManagerRequest>newBuilder()
                       .setPath(
@@ -376,6 +381,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
           ApiMethodDescriptor.<DeleteInstancesInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/DeleteInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<DeleteInstancesInstanceGroupManagerRequest>newBuilder()
@@ -437,6 +443,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setFullMethodName(
                   "google.cloud.compute.v1.InstanceGroupManagers/DeletePerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<DeletePerInstanceConfigsInstanceGroupManagerRequest>newBuilder()
@@ -493,6 +500,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
           ApiMethodDescriptor.<GetInstanceGroupManagerRequest, InstanceGroupManager>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetInstanceGroupManagerRequest>newBuilder()
                       .setPath(
@@ -528,6 +536,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
           ApiMethodDescriptor.<InsertInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertInstanceGroupManagerRequest>newBuilder()
                       .setPath(
@@ -584,6 +593,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .<ListInstanceGroupManagersRequest, InstanceGroupManagerList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInstanceGroupManagersRequest>newBuilder()
                       .setPath(
@@ -639,6 +649,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/ListErrors")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListErrorsInstanceGroupManagersRequest>newBuilder()
                       .setPath(
@@ -700,6 +711,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setFullMethodName(
                   "google.cloud.compute.v1.InstanceGroupManagers/ListManagedInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<ListManagedInstancesInstanceGroupManagersRequest>newBuilder()
@@ -763,6 +775,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setFullMethodName(
                   "google.cloud.compute.v1.InstanceGroupManagers/ListPerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<ListPerInstanceConfigsInstanceGroupManagersRequest>newBuilder()
@@ -820,6 +833,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
           ApiMethodDescriptor.<PatchInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchInstanceGroupManagerRequest>newBuilder()
                       .setPath(
@@ -879,6 +893,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setFullMethodName(
                   "google.cloud.compute.v1.InstanceGroupManagers/PatchPerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<PatchPerInstanceConfigsInstanceGroupManagerRequest>newBuilder()
@@ -938,6 +953,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
           ApiMethodDescriptor.<RecreateInstancesInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/RecreateInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<RecreateInstancesInstanceGroupManagerRequest>newBuilder()
@@ -996,6 +1012,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
           ApiMethodDescriptor.<ResizeInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/Resize")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ResizeInstanceGroupManagerRequest>newBuilder()
                       .setPath(
@@ -1051,6 +1068,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setFullMethodName(
                   "google.cloud.compute.v1.InstanceGroupManagers/SetInstanceTemplate")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<SetInstanceTemplateInstanceGroupManagerRequest>newBuilder()
@@ -1109,6 +1127,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
           ApiMethodDescriptor.<SetTargetPoolsInstanceGroupManagerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroupManagers/SetTargetPools")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<SetTargetPoolsInstanceGroupManagerRequest>newBuilder()
@@ -1170,6 +1189,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setFullMethodName(
                   "google.cloud.compute.v1.InstanceGroupManagers/UpdatePerInstanceConfigs")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<UpdatePerInstanceConfigsInstanceGroupManagerRequest>newBuilder()

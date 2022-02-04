@@ -109,8 +109,8 @@ public class SnapshotsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String snapshot = "snapshot284874180";
+    String project = "project-6911";
+    String snapshot = "snapshot-5030";
 
     Operation actualResponse = client.deleteAsync(project, snapshot).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -138,8 +138,8 @@ public class SnapshotsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String snapshot = "snapshot284874180";
+      String project = "project-6911";
+      String snapshot = "snapshot-5030";
       client.deleteAsync(project, snapshot).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -177,8 +177,8 @@ public class SnapshotsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String snapshot = "snapshot284874180";
+    String project = "project-6911";
+    String snapshot = "snapshot-5030";
 
     Snapshot actualResponse = client.get(project, snapshot);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -206,8 +206,8 @@ public class SnapshotsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String snapshot = "snapshot284874180";
+      String project = "project-6911";
+      String snapshot = "snapshot-5030";
       client.get(project, snapshot);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -228,8 +228,8 @@ public class SnapshotsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
 
     Policy actualResponse = client.getIamPolicy(project, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -257,8 +257,8 @@ public class SnapshotsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       client.getIamPolicy(project, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -276,7 +276,7 @@ public class SnapshotsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -308,7 +308,7 @@ public class SnapshotsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -329,8 +329,8 @@ public class SnapshotsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
     GlobalSetPolicyRequest globalSetPolicyRequestResource =
         GlobalSetPolicyRequest.newBuilder().build();
 
@@ -360,8 +360,8 @@ public class SnapshotsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       GlobalSetPolicyRequest globalSetPolicyRequestResource =
           GlobalSetPolicyRequest.newBuilder().build();
       client.setIamPolicy(project, resource, globalSetPolicyRequestResource);
@@ -402,8 +402,8 @@ public class SnapshotsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
     GlobalSetLabelsRequest globalSetLabelsRequestResource =
         GlobalSetLabelsRequest.newBuilder().build();
 
@@ -434,8 +434,8 @@ public class SnapshotsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       GlobalSetLabelsRequest globalSetLabelsRequestResource =
           GlobalSetLabelsRequest.newBuilder().build();
       client.setLabelsAsync(project, resource, globalSetLabelsRequestResource).get();
@@ -450,8 +450,8 @@ public class SnapshotsClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -482,8 +482,8 @@ public class SnapshotsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, resource, testPermissionsRequestResource);

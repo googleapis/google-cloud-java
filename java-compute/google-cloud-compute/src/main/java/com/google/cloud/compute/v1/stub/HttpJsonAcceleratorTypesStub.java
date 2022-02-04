@@ -65,6 +65,7 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
               .<AggregatedListAcceleratorTypesRequest, AcceleratorTypeAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.AcceleratorTypes/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListAcceleratorTypesRequest>newBuilder()
                       .setPath(
@@ -120,6 +121,7 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
           ApiMethodDescriptor.<GetAcceleratorTypeRequest, AcceleratorType>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.AcceleratorTypes/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetAcceleratorTypeRequest>newBuilder()
                       .setPath(
@@ -155,6 +157,7 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
           ApiMethodDescriptor.<ListAcceleratorTypesRequest, AcceleratorTypeList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.AcceleratorTypes/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListAcceleratorTypesRequest>newBuilder()
                       .setPath(

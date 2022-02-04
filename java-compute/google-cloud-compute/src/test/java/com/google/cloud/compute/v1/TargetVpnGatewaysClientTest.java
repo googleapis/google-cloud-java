@@ -91,7 +91,7 @@ public class TargetVpnGatewaysClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -125,7 +125,7 @@ public class TargetVpnGatewaysClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -164,9 +164,9 @@ public class TargetVpnGatewaysClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetVpnGateway = "targetVpnGateway935274273";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetVpnGateway = "targetVpnGateway-8567";
 
     Operation actualResponse = client.deleteAsync(project, region, targetVpnGateway).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -194,9 +194,9 @@ public class TargetVpnGatewaysClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetVpnGateway = "targetVpnGateway935274273";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetVpnGateway = "targetVpnGateway-8567";
       client.deleteAsync(project, region, targetVpnGateway).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -221,9 +221,9 @@ public class TargetVpnGatewaysClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetVpnGateway = "targetVpnGateway935274273";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetVpnGateway = "targetVpnGateway-8567";
 
     TargetVpnGateway actualResponse = client.get(project, region, targetVpnGateway);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -251,9 +251,9 @@ public class TargetVpnGatewaysClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetVpnGateway = "targetVpnGateway935274273";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetVpnGateway = "targetVpnGateway-8567";
       client.get(project, region, targetVpnGateway);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -292,8 +292,8 @@ public class TargetVpnGatewaysClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, targetVpnGatewayResource).get();
@@ -322,8 +322,8 @@ public class TargetVpnGatewaysClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
       client.insertAsync(project, region, targetVpnGatewayResource).get();
       Assert.fail("No exception raised");
@@ -341,8 +341,8 @@ public class TargetVpnGatewaysClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -374,8 +374,8 @@ public class TargetVpnGatewaysClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

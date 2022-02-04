@@ -109,8 +109,8 @@ public class ImagesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String image = "image100313435";
+    String project = "project-6911";
+    String image = "image-769";
 
     Operation actualResponse = client.deleteAsync(project, image).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -138,8 +138,8 @@ public class ImagesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String image = "image100313435";
+      String project = "project-6911";
+      String image = "image-769";
       client.deleteAsync(project, image).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -177,8 +177,8 @@ public class ImagesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String image = "image100313435";
+    String project = "project-6911";
+    String image = "image-769";
     DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
 
     Operation actualResponse =
@@ -208,8 +208,8 @@ public class ImagesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String image = "image100313435";
+      String project = "project-6911";
+      String image = "image-769";
       DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
       client.deprecateAsync(project, image, deprecationStatusResource).get();
       Assert.fail("No exception raised");
@@ -255,8 +255,8 @@ public class ImagesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String image = "image100313435";
+    String project = "project-6911";
+    String image = "image-769";
 
     Image actualResponse = client.get(project, image);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -284,8 +284,8 @@ public class ImagesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String image = "image100313435";
+      String project = "project-6911";
+      String image = "image-769";
       client.get(project, image);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -331,8 +331,8 @@ public class ImagesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String family = "family-1281860764";
+    String project = "project-6911";
+    String family = "family-7978";
 
     Image actualResponse = client.getFromFamily(project, family);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -360,8 +360,8 @@ public class ImagesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String family = "family-1281860764";
+      String project = "project-6911";
+      String family = "family-7978";
       client.getFromFamily(project, family);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -382,8 +382,8 @@ public class ImagesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
 
     Policy actualResponse = client.getIamPolicy(project, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -411,8 +411,8 @@ public class ImagesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       client.getIamPolicy(project, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -451,7 +451,7 @@ public class ImagesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     Image imageResource = Image.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, imageResource).get();
@@ -480,7 +480,7 @@ public class ImagesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       Image imageResource = Image.newBuilder().build();
       client.insertAsync(project, imageResource).get();
       Assert.fail("No exception raised");
@@ -498,7 +498,7 @@ public class ImagesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -530,7 +530,7 @@ public class ImagesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -569,8 +569,8 @@ public class ImagesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String image = "image100313435";
+    String project = "project-6911";
+    String image = "image-769";
     Image imageResource = Image.newBuilder().build();
 
     Operation actualResponse = client.patchAsync(project, image, imageResource).get();
@@ -599,8 +599,8 @@ public class ImagesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String image = "image100313435";
+      String project = "project-6911";
+      String image = "image-769";
       Image imageResource = Image.newBuilder().build();
       client.patchAsync(project, image, imageResource).get();
       Assert.fail("No exception raised");
@@ -621,8 +621,8 @@ public class ImagesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
     GlobalSetPolicyRequest globalSetPolicyRequestResource =
         GlobalSetPolicyRequest.newBuilder().build();
 
@@ -652,8 +652,8 @@ public class ImagesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       GlobalSetPolicyRequest globalSetPolicyRequestResource =
           GlobalSetPolicyRequest.newBuilder().build();
       client.setIamPolicy(project, resource, globalSetPolicyRequestResource);
@@ -694,8 +694,8 @@ public class ImagesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
     GlobalSetLabelsRequest globalSetLabelsRequestResource =
         GlobalSetLabelsRequest.newBuilder().build();
 
@@ -726,8 +726,8 @@ public class ImagesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       GlobalSetLabelsRequest globalSetLabelsRequestResource =
           GlobalSetLabelsRequest.newBuilder().build();
       client.setLabelsAsync(project, resource, globalSetLabelsRequestResource).get();
@@ -742,8 +742,8 @@ public class ImagesClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -774,8 +774,8 @@ public class ImagesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, resource, testPermissionsRequestResource);

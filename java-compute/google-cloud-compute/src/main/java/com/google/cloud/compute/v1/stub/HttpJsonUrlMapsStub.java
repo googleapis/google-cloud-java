@@ -75,6 +75,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
           ApiMethodDescriptor.<AggregatedListUrlMapsRequest, UrlMapsAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.UrlMaps/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListUrlMapsRequest>newBuilder()
                       .setPath(
@@ -129,6 +130,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
       ApiMethodDescriptor.<DeleteUrlMapRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/Delete")
           .setHttpMethod(HttpMethods.DELETE)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteUrlMapRequest>newBuilder()
                   .setPath(
@@ -176,6 +178,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
       ApiMethodDescriptor.<GetUrlMapRequest, UrlMap>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetUrlMapRequest>newBuilder()
                   .setPath(
@@ -208,6 +211,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
       ApiMethodDescriptor.<InsertUrlMapRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/Insert")
           .setHttpMethod(HttpMethods.POST)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertUrlMapRequest>newBuilder()
                   .setPath(
@@ -258,6 +262,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
           ApiMethodDescriptor.<InvalidateCacheUrlMapRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.UrlMaps/InvalidateCache")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InvalidateCacheUrlMapRequest>newBuilder()
                       .setPath(
@@ -310,6 +315,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
       ApiMethodDescriptor.<ListUrlMapsRequest, UrlMapList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/List")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListUrlMapsRequest>newBuilder()
                   .setPath(
@@ -357,6 +363,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
       ApiMethodDescriptor.<PatchUrlMapRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/Patch")
           .setHttpMethod(HttpMethods.PATCH)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchUrlMapRequest>newBuilder()
                   .setPath(
@@ -407,6 +414,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
       ApiMethodDescriptor.<UpdateUrlMapRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/Update")
           .setHttpMethod(HttpMethods.PUT)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<UpdateUrlMapRequest>newBuilder()
                   .setPath(
@@ -458,6 +466,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
           ApiMethodDescriptor.<ValidateUrlMapRequest, UrlMapsValidateResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.UrlMaps/Validate")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ValidateUrlMapRequest>newBuilder()
                       .setPath(

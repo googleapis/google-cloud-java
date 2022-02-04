@@ -109,9 +109,9 @@ public class RegionHealthCheckServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String healthCheckService = "healthCheckService-917902071";
+    String project = "project-6911";
+    String region = "region-9622";
+    String healthCheckService = "healthCheckService-6913";
 
     Operation actualResponse = client.deleteAsync(project, region, healthCheckService).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -139,9 +139,9 @@ public class RegionHealthCheckServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String healthCheckService = "healthCheckService-917902071";
+      String project = "project-6911";
+      String region = "region-9622";
+      String healthCheckService = "healthCheckService-6913";
       client.deleteAsync(project, region, healthCheckService).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -167,9 +167,9 @@ public class RegionHealthCheckServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String healthCheckService = "healthCheckService-917902071";
+    String project = "project-6911";
+    String region = "region-9622";
+    String healthCheckService = "healthCheckService-6913";
 
     HealthCheckService actualResponse = client.get(project, region, healthCheckService);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -197,9 +197,9 @@ public class RegionHealthCheckServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String healthCheckService = "healthCheckService-917902071";
+      String project = "project-6911";
+      String region = "region-9622";
+      String healthCheckService = "healthCheckService-6913";
       client.get(project, region, healthCheckService);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -238,8 +238,8 @@ public class RegionHealthCheckServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     HealthCheckService healthCheckServiceResource = HealthCheckService.newBuilder().build();
 
     Operation actualResponse =
@@ -269,8 +269,8 @@ public class RegionHealthCheckServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       HealthCheckService healthCheckServiceResource = HealthCheckService.newBuilder().build();
       client.insertAsync(project, region, healthCheckServiceResource).get();
       Assert.fail("No exception raised");
@@ -288,8 +288,8 @@ public class RegionHealthCheckServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -321,8 +321,8 @@ public class RegionHealthCheckServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -361,9 +361,9 @@ public class RegionHealthCheckServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String healthCheckService = "healthCheckService-917902071";
+    String project = "project-6911";
+    String region = "region-9622";
+    String healthCheckService = "healthCheckService-6913";
     HealthCheckService healthCheckServiceResource = HealthCheckService.newBuilder().build();
 
     Operation actualResponse =
@@ -393,9 +393,9 @@ public class RegionHealthCheckServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String healthCheckService = "healthCheckService-917902071";
+      String project = "project-6911";
+      String region = "region-9622";
+      String healthCheckService = "healthCheckService-6913";
       HealthCheckService healthCheckServiceResource = HealthCheckService.newBuilder().build();
       client.patchAsync(project, region, healthCheckService, healthCheckServiceResource).get();
       Assert.fail("No exception raised");

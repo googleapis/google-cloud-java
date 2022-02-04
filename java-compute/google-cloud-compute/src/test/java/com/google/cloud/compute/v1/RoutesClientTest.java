@@ -108,8 +108,8 @@ public class RoutesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String route = "route108704329";
+    String project = "project-6911";
+    String route = "route-3055";
 
     Operation actualResponse = client.deleteAsync(project, route).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -137,8 +137,8 @@ public class RoutesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String route = "route108704329";
+      String project = "project-6911";
+      String route = "route-3055";
       client.deleteAsync(project, route).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -172,8 +172,8 @@ public class RoutesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String route = "route108704329";
+    String project = "project-6911";
+    String route = "route-3055";
 
     Route actualResponse = client.get(project, route);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -201,8 +201,8 @@ public class RoutesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String route = "route108704329";
+      String project = "project-6911";
+      String route = "route-3055";
       client.get(project, route);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -241,7 +241,7 @@ public class RoutesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     Route routeResource = Route.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, routeResource).get();
@@ -270,7 +270,7 @@ public class RoutesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       Route routeResource = Route.newBuilder().build();
       client.insertAsync(project, routeResource).get();
       Assert.fail("No exception raised");
@@ -288,7 +288,7 @@ public class RoutesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -320,7 +320,7 @@ public class RoutesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

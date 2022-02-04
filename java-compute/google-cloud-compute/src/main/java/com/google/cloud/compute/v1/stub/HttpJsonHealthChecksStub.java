@@ -74,6 +74,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
               .<AggregatedListHealthChecksRequest, HealthChecksAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.HealthChecks/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListHealthChecksRequest>newBuilder()
                       .setPath(
@@ -129,6 +130,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
           ApiMethodDescriptor.<DeleteHealthCheckRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.HealthChecks/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteHealthCheckRequest>newBuilder()
                       .setPath(
@@ -177,6 +179,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
       ApiMethodDescriptor.<GetHealthCheckRequest, HealthCheck>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.HealthChecks/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetHealthCheckRequest>newBuilder()
                   .setPath(
@@ -210,6 +213,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
           ApiMethodDescriptor.<InsertHealthCheckRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.HealthChecks/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertHealthCheckRequest>newBuilder()
                       .setPath(
@@ -260,6 +264,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
           ApiMethodDescriptor.<ListHealthChecksRequest, HealthCheckList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.HealthChecks/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListHealthChecksRequest>newBuilder()
                       .setPath(
@@ -311,6 +316,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
           ApiMethodDescriptor.<PatchHealthCheckRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.HealthChecks/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchHealthCheckRequest>newBuilder()
                       .setPath(
@@ -363,6 +369,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
           ApiMethodDescriptor.<UpdateHealthCheckRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.HealthChecks/Update")
               .setHttpMethod(HttpMethods.PUT)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateHealthCheckRequest>newBuilder()
                       .setPath(

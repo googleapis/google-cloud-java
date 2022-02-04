@@ -67,6 +67,7 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
           ApiMethodDescriptor.<DeleteRegionNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkEndpointGroups/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionNetworkEndpointGroupRequest>newBuilder()
                       .setPath(
@@ -120,6 +121,7 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
               .<GetRegionNetworkEndpointGroupRequest, NetworkEndpointGroup>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkEndpointGroups/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionNetworkEndpointGroupRequest>newBuilder()
                       .setPath(
@@ -155,6 +157,7 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
           ApiMethodDescriptor.<InsertRegionNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkEndpointGroups/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionNetworkEndpointGroupRequest>newBuilder()
                       .setPath(
@@ -211,6 +214,7 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
               .<ListRegionNetworkEndpointGroupsRequest, NetworkEndpointGroupList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkEndpointGroups/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionNetworkEndpointGroupsRequest>newBuilder()
                       .setPath(

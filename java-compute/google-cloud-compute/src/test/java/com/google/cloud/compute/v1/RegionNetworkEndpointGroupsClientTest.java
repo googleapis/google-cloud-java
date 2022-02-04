@@ -110,9 +110,9 @@ public class RegionNetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String networkEndpointGroup = "networkEndpointGroup-2120389028";
+    String project = "project-6911";
+    String region = "region-9622";
+    String networkEndpointGroup = "networkEndpointGroup-386";
 
     Operation actualResponse = client.deleteAsync(project, region, networkEndpointGroup).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -140,9 +140,9 @@ public class RegionNetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String networkEndpointGroup = "networkEndpointGroup-2120389028";
+      String project = "project-6911";
+      String region = "region-9622";
+      String networkEndpointGroup = "networkEndpointGroup-386";
       client.deleteAsync(project, region, networkEndpointGroup).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -173,9 +173,9 @@ public class RegionNetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String networkEndpointGroup = "networkEndpointGroup-2120389028";
+    String project = "project-6911";
+    String region = "region-9622";
+    String networkEndpointGroup = "networkEndpointGroup-386";
 
     NetworkEndpointGroup actualResponse = client.get(project, region, networkEndpointGroup);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -203,9 +203,9 @@ public class RegionNetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String networkEndpointGroup = "networkEndpointGroup-2120389028";
+      String project = "project-6911";
+      String region = "region-9622";
+      String networkEndpointGroup = "networkEndpointGroup-386";
       client.get(project, region, networkEndpointGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -244,8 +244,8 @@ public class RegionNetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
 
     Operation actualResponse =
@@ -275,8 +275,8 @@ public class RegionNetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
       client.insertAsync(project, region, networkEndpointGroupResource).get();
       Assert.fail("No exception raised");
@@ -294,8 +294,8 @@ public class RegionNetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -327,8 +327,8 @@ public class RegionNetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

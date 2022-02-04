@@ -71,6 +71,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
               .<AggregatedListRegionCommitmentsRequest, CommitmentAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionCommitments/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListRegionCommitmentsRequest>newBuilder()
                       .setPath(
@@ -126,6 +127,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
           ApiMethodDescriptor.<GetRegionCommitmentRequest, Commitment>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionCommitments/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionCommitmentRequest>newBuilder()
                       .setPath(
@@ -160,6 +162,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
           ApiMethodDescriptor.<InsertRegionCommitmentRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionCommitments/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionCommitmentRequest>newBuilder()
                       .setPath(
@@ -212,6 +215,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
           ApiMethodDescriptor.<ListRegionCommitmentsRequest, CommitmentList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionCommitments/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionCommitmentsRequest>newBuilder()
                       .setPath(

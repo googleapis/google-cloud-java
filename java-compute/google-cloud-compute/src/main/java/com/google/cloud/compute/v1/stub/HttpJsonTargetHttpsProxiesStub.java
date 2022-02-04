@@ -77,6 +77,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
               .<AggregatedListTargetHttpsProxiesRequest, TargetHttpsProxyAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListTargetHttpsProxiesRequest>newBuilder()
                       .setPath(
@@ -132,6 +133,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
           ApiMethodDescriptor.<DeleteTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetHttpsProxyRequest>newBuilder()
                       .setPath(
@@ -181,6 +183,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
           ApiMethodDescriptor.<GetTargetHttpsProxyRequest, TargetHttpsProxy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetTargetHttpsProxyRequest>newBuilder()
                       .setPath(
@@ -215,6 +218,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
           ApiMethodDescriptor.<InsertTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetHttpsProxyRequest>newBuilder()
                       .setPath(
@@ -267,6 +271,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
           ApiMethodDescriptor.<ListTargetHttpsProxiesRequest, TargetHttpsProxyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetHttpsProxiesRequest>newBuilder()
                       .setPath(
@@ -318,6 +323,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
           ApiMethodDescriptor.<PatchTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchTargetHttpsProxyRequest>newBuilder()
                       .setPath(
@@ -372,6 +378,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
           ApiMethodDescriptor.<SetQuicOverrideTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetQuicOverride")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetQuicOverrideTargetHttpsProxyRequest>newBuilder()
                       .setPath(
@@ -427,6 +434,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
           ApiMethodDescriptor.<SetSslCertificatesTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetSslCertificates")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<SetSslCertificatesTargetHttpsProxyRequest>newBuilder()
@@ -483,6 +491,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
           ApiMethodDescriptor.<SetSslPolicyTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetSslPolicy")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetSslPolicyTargetHttpsProxyRequest>newBuilder()
                       .setPath(
@@ -537,6 +546,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
           ApiMethodDescriptor.<SetUrlMapTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetUrlMap")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetUrlMapTargetHttpsProxyRequest>newBuilder()
                       .setPath(

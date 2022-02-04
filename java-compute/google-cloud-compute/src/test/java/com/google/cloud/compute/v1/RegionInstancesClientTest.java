@@ -104,8 +104,8 @@ public class RegionInstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     BulkInsertInstanceResource bulkInsertInstanceResourceResource =
         BulkInsertInstanceResource.newBuilder().build();
 
@@ -136,8 +136,8 @@ public class RegionInstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       BulkInsertInstanceResource bulkInsertInstanceResourceResource =
           BulkInsertInstanceResource.newBuilder().build();
       client.bulkInsertAsync(project, region, bulkInsertInstanceResourceResource).get();

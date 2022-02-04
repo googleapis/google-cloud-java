@@ -108,8 +108,8 @@ public class FirewallsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String firewall = "firewall-562725632";
+    String project = "project-6911";
+    String firewall = "firewall-5366";
 
     Operation actualResponse = client.deleteAsync(project, firewall).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -137,8 +137,8 @@ public class FirewallsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String firewall = "firewall-562725632";
+      String project = "project-6911";
+      String firewall = "firewall-5366";
       client.deleteAsync(project, firewall).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -171,8 +171,8 @@ public class FirewallsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String firewall = "firewall-562725632";
+    String project = "project-6911";
+    String firewall = "firewall-5366";
 
     Firewall actualResponse = client.get(project, firewall);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -200,8 +200,8 @@ public class FirewallsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String firewall = "firewall-562725632";
+      String project = "project-6911";
+      String firewall = "firewall-5366";
       client.get(project, firewall);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -240,7 +240,7 @@ public class FirewallsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     Firewall firewallResource = Firewall.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, firewallResource).get();
@@ -269,7 +269,7 @@ public class FirewallsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       Firewall firewallResource = Firewall.newBuilder().build();
       client.insertAsync(project, firewallResource).get();
       Assert.fail("No exception raised");
@@ -287,7 +287,7 @@ public class FirewallsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -319,7 +319,7 @@ public class FirewallsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -358,8 +358,8 @@ public class FirewallsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String firewall = "firewall-562725632";
+    String project = "project-6911";
+    String firewall = "firewall-5366";
     Firewall firewallResource = Firewall.newBuilder().build();
 
     Operation actualResponse = client.patchAsync(project, firewall, firewallResource).get();
@@ -388,8 +388,8 @@ public class FirewallsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String firewall = "firewall-562725632";
+      String project = "project-6911";
+      String firewall = "firewall-5366";
       Firewall firewallResource = Firewall.newBuilder().build();
       client.patchAsync(project, firewall, firewallResource).get();
       Assert.fail("No exception raised");
@@ -428,8 +428,8 @@ public class FirewallsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String firewall = "firewall-562725632";
+    String project = "project-6911";
+    String firewall = "firewall-5366";
     Firewall firewallResource = Firewall.newBuilder().build();
 
     Operation actualResponse = client.updateAsync(project, firewall, firewallResource).get();
@@ -458,8 +458,8 @@ public class FirewallsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String firewall = "firewall-562725632";
+      String project = "project-6911";
+      String firewall = "firewall-5366";
       Firewall firewallResource = Firewall.newBuilder().build();
       client.updateAsync(project, firewall, firewallResource).get();
       Assert.fail("No exception raised");

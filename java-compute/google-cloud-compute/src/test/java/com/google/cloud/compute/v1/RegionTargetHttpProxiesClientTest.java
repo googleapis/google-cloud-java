@@ -109,9 +109,9 @@ public class RegionTargetHttpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetHttpProxy = "targetHttpProxy-1944074187";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetHttpProxy = "targetHttpProxy-7611";
 
     Operation actualResponse = client.deleteAsync(project, region, targetHttpProxy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -139,9 +139,9 @@ public class RegionTargetHttpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetHttpProxy = "targetHttpProxy-1944074187";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetHttpProxy = "targetHttpProxy-7611";
       client.deleteAsync(project, region, targetHttpProxy).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -165,9 +165,9 @@ public class RegionTargetHttpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetHttpProxy = "targetHttpProxy-1944074187";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetHttpProxy = "targetHttpProxy-7611";
 
     TargetHttpProxy actualResponse = client.get(project, region, targetHttpProxy);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -195,9 +195,9 @@ public class RegionTargetHttpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetHttpProxy = "targetHttpProxy-1944074187";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetHttpProxy = "targetHttpProxy-7611";
       client.get(project, region, targetHttpProxy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -236,8 +236,8 @@ public class RegionTargetHttpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, targetHttpProxyResource).get();
@@ -266,8 +266,8 @@ public class RegionTargetHttpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
       client.insertAsync(project, region, targetHttpProxyResource).get();
       Assert.fail("No exception raised");
@@ -285,8 +285,8 @@ public class RegionTargetHttpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -318,8 +318,8 @@ public class RegionTargetHttpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -358,9 +358,9 @@ public class RegionTargetHttpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetHttpProxy = "targetHttpProxy-1944074187";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetHttpProxy = "targetHttpProxy-7611";
     UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
 
     Operation actualResponse =
@@ -390,9 +390,9 @@ public class RegionTargetHttpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetHttpProxy = "targetHttpProxy-1944074187";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetHttpProxy = "targetHttpProxy-7611";
       UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
       client.setUrlMapAsync(project, region, targetHttpProxy, urlMapReferenceResource).get();
       Assert.fail("No exception raised");

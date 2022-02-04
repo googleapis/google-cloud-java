@@ -71,6 +71,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
           ApiMethodDescriptor.<DeleteTargetSslProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetSslProxyRequest>newBuilder()
                       .setPath(
@@ -120,6 +121,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
           ApiMethodDescriptor.<GetTargetSslProxyRequest, TargetSslProxy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetTargetSslProxyRequest>newBuilder()
                       .setPath(
@@ -154,6 +156,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
           ApiMethodDescriptor.<InsertTargetSslProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetSslProxyRequest>newBuilder()
                       .setPath(
@@ -206,6 +209,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
           ApiMethodDescriptor.<ListTargetSslProxiesRequest, TargetSslProxyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetSslProxiesRequest>newBuilder()
                       .setPath(
@@ -257,6 +261,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
           ApiMethodDescriptor.<SetBackendServiceTargetSslProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/SetBackendService")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetBackendServiceTargetSslProxyRequest>newBuilder()
                       .setPath(
@@ -312,6 +317,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
           ApiMethodDescriptor.<SetProxyHeaderTargetSslProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/SetProxyHeader")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetProxyHeaderTargetSslProxyRequest>newBuilder()
                       .setPath(
@@ -366,6 +372,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
           ApiMethodDescriptor.<SetSslCertificatesTargetSslProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/SetSslCertificates")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetSslCertificatesTargetSslProxyRequest>newBuilder()
                       .setPath(
@@ -421,6 +428,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
           ApiMethodDescriptor.<SetSslPolicyTargetSslProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetSslProxies/SetSslPolicy")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetSslPolicyTargetSslProxyRequest>newBuilder()
                       .setPath(

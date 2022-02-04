@@ -77,9 +77,9 @@ public class ImageFamilyViewsClientTest {
         ImageFamilyView.newBuilder().setImage(Image.newBuilder().build()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String family = "family-1281860764";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String family = "family-7978";
 
     ImageFamilyView actualResponse = client.get(project, zone, family);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -107,9 +107,9 @@ public class ImageFamilyViewsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String family = "family-1281860764";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String family = "family-7978";
       client.get(project, zone, family);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

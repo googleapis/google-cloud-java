@@ -91,7 +91,7 @@ public class RoutersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -125,7 +125,7 @@ public class RoutersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -164,9 +164,9 @@ public class RoutersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String router = "router-925132983";
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
 
     Operation actualResponse = client.deleteAsync(project, region, router).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -194,9 +194,9 @@ public class RoutersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String router = "router-925132983";
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
       client.deleteAsync(project, region, router).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -223,9 +223,9 @@ public class RoutersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String router = "router-925132983";
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
 
     Router actualResponse = client.get(project, region, router);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -253,9 +253,9 @@ public class RoutersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String router = "router-925132983";
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
       client.get(project, region, router);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -273,9 +273,9 @@ public class RoutersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String router = "router-925132983";
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
 
     GetNatMappingInfoPagedResponse pagedListResponse =
         client.getNatMappingInfo(project, region, router);
@@ -308,9 +308,9 @@ public class RoutersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String router = "router-925132983";
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
       client.getNatMappingInfo(project, region, router);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -327,9 +327,9 @@ public class RoutersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String router = "router-925132983";
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
 
     RouterStatusResponse actualResponse = client.getRouterStatus(project, region, router);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -357,9 +357,9 @@ public class RoutersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String router = "router-925132983";
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
       client.getRouterStatus(project, region, router);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -398,8 +398,8 @@ public class RoutersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     Router routerResource = Router.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, routerResource).get();
@@ -428,8 +428,8 @@ public class RoutersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       Router routerResource = Router.newBuilder().build();
       client.insertAsync(project, region, routerResource).get();
       Assert.fail("No exception raised");
@@ -447,8 +447,8 @@ public class RoutersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -480,8 +480,8 @@ public class RoutersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -520,9 +520,9 @@ public class RoutersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String router = "router-925132983";
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
     Router routerResource = Router.newBuilder().build();
 
     Operation actualResponse = client.patchAsync(project, region, router, routerResource).get();
@@ -551,9 +551,9 @@ public class RoutersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String router = "router-925132983";
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
       Router routerResource = Router.newBuilder().build();
       client.patchAsync(project, region, router, routerResource).get();
       Assert.fail("No exception raised");
@@ -567,9 +567,9 @@ public class RoutersClientTest {
         RoutersPreviewResponse.newBuilder().setResource(Router.newBuilder().build()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String router = "router-925132983";
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
     Router routerResource = Router.newBuilder().build();
 
     RoutersPreviewResponse actualResponse = client.preview(project, region, router, routerResource);
@@ -598,9 +598,9 @@ public class RoutersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String router = "router-925132983";
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
       Router routerResource = Router.newBuilder().build();
       client.preview(project, region, router, routerResource);
       Assert.fail("No exception raised");
@@ -640,9 +640,9 @@ public class RoutersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String router = "router-925132983";
+    String project = "project-6911";
+    String region = "region-9622";
+    String router = "router-8641";
     Router routerResource = Router.newBuilder().build();
 
     Operation actualResponse = client.updateAsync(project, region, router, routerResource).get();
@@ -671,9 +671,9 @@ public class RoutersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String router = "router-925132983";
+      String project = "project-6911";
+      String region = "region-9622";
+      String router = "router-8641";
       Router routerResource = Router.newBuilder().build();
       client.updateAsync(project, region, router, routerResource).get();
       Assert.fail("No exception raised");

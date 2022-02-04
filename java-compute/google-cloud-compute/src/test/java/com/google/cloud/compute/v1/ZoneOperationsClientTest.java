@@ -82,9 +82,9 @@ public class ZoneOperationsClientTest {
     DeleteZoneOperationResponse expectedResponse = DeleteZoneOperationResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String operation = "operation1662702951";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String operation = "operation-3971";
 
     DeleteZoneOperationResponse actualResponse = client.delete(project, zone, operation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -112,9 +112,9 @@ public class ZoneOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String operation = "operation1662702951";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String operation = "operation-3971";
       client.delete(project, zone, operation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -153,9 +153,9 @@ public class ZoneOperationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String operation = "operation1662702951";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String operation = "operation-3971";
 
     Operation actualResponse = client.get(project, zone, operation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -183,9 +183,9 @@ public class ZoneOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String operation = "operation1662702951";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String operation = "operation-3971";
       client.get(project, zone, operation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -203,8 +203,8 @@ public class ZoneOperationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     ListPagedResponse pagedListResponse = client.list(project, zone);
 
@@ -236,8 +236,8 @@ public class ZoneOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.list(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -276,9 +276,9 @@ public class ZoneOperationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String operation = "operation1662702951";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String operation = "operation-3971";
 
     Operation actualResponse = client.wait(project, zone, operation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -306,9 +306,9 @@ public class ZoneOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String operation = "operation1662702951";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String operation = "operation-3971";
       client.wait(project, zone, operation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

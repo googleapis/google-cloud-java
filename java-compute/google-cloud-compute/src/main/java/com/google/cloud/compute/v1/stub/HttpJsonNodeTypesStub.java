@@ -63,6 +63,7 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
           ApiMethodDescriptor.<AggregatedListNodeTypesRequest, NodeTypeAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTypes/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListNodeTypesRequest>newBuilder()
                       .setPath(
@@ -117,6 +118,7 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
       ApiMethodDescriptor.<GetNodeTypeRequest, NodeType>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.NodeTypes/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetNodeTypeRequest>newBuilder()
                   .setPath(
@@ -151,6 +153,7 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
           ApiMethodDescriptor.<ListNodeTypesRequest, NodeTypeList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTypes/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListNodeTypesRequest>newBuilder()
                       .setPath(

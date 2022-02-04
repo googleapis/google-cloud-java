@@ -69,6 +69,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
           ApiMethodDescriptor.<DeleteFirewallRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Firewalls/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteFirewallRequest>newBuilder()
                       .setPath(
@@ -116,6 +117,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
       ApiMethodDescriptor.<GetFirewallRequest, Firewall>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Firewalls/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetFirewallRequest>newBuilder()
                   .setPath(
@@ -149,6 +151,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
           ApiMethodDescriptor.<InsertFirewallRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Firewalls/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertFirewallRequest>newBuilder()
                       .setPath(
@@ -199,6 +202,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
           ApiMethodDescriptor.<ListFirewallsRequest, FirewallList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Firewalls/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListFirewallsRequest>newBuilder()
                       .setPath(
@@ -249,6 +253,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
       ApiMethodDescriptor.<PatchFirewallRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Firewalls/Patch")
           .setHttpMethod(HttpMethods.PATCH)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchFirewallRequest>newBuilder()
                   .setPath(
@@ -300,6 +305,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
           ApiMethodDescriptor.<UpdateFirewallRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Firewalls/Update")
               .setHttpMethod(HttpMethods.PUT)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateFirewallRequest>newBuilder()
                       .setPath(

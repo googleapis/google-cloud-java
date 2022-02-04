@@ -72,6 +72,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
           ApiMethodDescriptor.<DeleteSnapshotRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Snapshots/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSnapshotRequest>newBuilder()
                       .setPath(
@@ -119,6 +120,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
       ApiMethodDescriptor.<GetSnapshotRequest, Snapshot>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Snapshots/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetSnapshotRequest>newBuilder()
                   .setPath(
@@ -152,6 +154,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
           ApiMethodDescriptor.<GetIamPolicySnapshotRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Snapshots/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicySnapshotRequest>newBuilder()
                       .setPath(
@@ -191,6 +194,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
           ApiMethodDescriptor.<ListSnapshotsRequest, SnapshotList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Snapshots/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSnapshotsRequest>newBuilder()
                       .setPath(
@@ -242,6 +246,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
           ApiMethodDescriptor.<SetIamPolicySnapshotRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Snapshots/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicySnapshotRequest>newBuilder()
                       .setPath(
@@ -280,6 +285,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
           ApiMethodDescriptor.<SetLabelsSnapshotRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Snapshots/SetLabels")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsSnapshotRequest>newBuilder()
                       .setPath(
@@ -332,6 +338,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
               .<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Snapshots/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsSnapshotRequest>newBuilder()
                       .setPath(

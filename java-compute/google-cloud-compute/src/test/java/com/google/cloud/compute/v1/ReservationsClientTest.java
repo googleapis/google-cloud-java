@@ -91,7 +91,7 @@ public class ReservationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -125,7 +125,7 @@ public class ReservationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -164,9 +164,9 @@ public class ReservationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String reservation = "reservation-1563081780";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String reservation = "reservation-4882";
 
     Operation actualResponse = client.deleteAsync(project, zone, reservation).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -194,9 +194,9 @@ public class ReservationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String reservation = "reservation-1563081780";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String reservation = "reservation-4882";
       client.deleteAsync(project, zone, reservation).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -222,9 +222,9 @@ public class ReservationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String reservation = "reservation-1563081780";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String reservation = "reservation-4882";
 
     Reservation actualResponse = client.get(project, zone, reservation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -252,9 +252,9 @@ public class ReservationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String reservation = "reservation-1563081780";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String reservation = "reservation-4882";
       client.get(project, zone, reservation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -275,9 +275,9 @@ public class ReservationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
 
     Policy actualResponse = client.getIamPolicy(project, zone, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -305,9 +305,9 @@ public class ReservationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       client.getIamPolicy(project, zone, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -346,8 +346,8 @@ public class ReservationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
     Reservation reservationResource = Reservation.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, zone, reservationResource).get();
@@ -376,8 +376,8 @@ public class ReservationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       Reservation reservationResource = Reservation.newBuilder().build();
       client.insertAsync(project, zone, reservationResource).get();
       Assert.fail("No exception raised");
@@ -395,8 +395,8 @@ public class ReservationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     ListPagedResponse pagedListResponse = client.list(project, zone);
 
@@ -428,8 +428,8 @@ public class ReservationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.list(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -468,9 +468,9 @@ public class ReservationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String reservation = "reservation-1563081780";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String reservation = "reservation-4882";
     ReservationsResizeRequest reservationsResizeRequestResource =
         ReservationsResizeRequest.newBuilder().build();
 
@@ -501,9 +501,9 @@ public class ReservationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String reservation = "reservation-1563081780";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String reservation = "reservation-4882";
       ReservationsResizeRequest reservationsResizeRequestResource =
           ReservationsResizeRequest.newBuilder().build();
       client.resizeAsync(project, zone, reservation, reservationsResizeRequestResource).get();
@@ -525,9 +525,9 @@ public class ReservationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
     ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
 
     Policy actualResponse =
@@ -557,9 +557,9 @@ public class ReservationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
       client.setIamPolicy(project, zone, resource, zoneSetPolicyRequestResource);
       Assert.fail("No exception raised");
@@ -574,9 +574,9 @@ public class ReservationsClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -607,9 +607,9 @@ public class ReservationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, zone, resource, testPermissionsRequestResource);

@@ -65,6 +65,7 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
               .<AggregatedListMachineTypesRequest, MachineTypeAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.MachineTypes/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListMachineTypesRequest>newBuilder()
                       .setPath(
@@ -119,6 +120,7 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
       ApiMethodDescriptor.<GetMachineTypeRequest, MachineType>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.MachineTypes/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetMachineTypeRequest>newBuilder()
                   .setPath(
@@ -153,6 +155,7 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
           ApiMethodDescriptor.<ListMachineTypesRequest, MachineTypeList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.MachineTypes/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListMachineTypesRequest>newBuilder()
                       .setPath(

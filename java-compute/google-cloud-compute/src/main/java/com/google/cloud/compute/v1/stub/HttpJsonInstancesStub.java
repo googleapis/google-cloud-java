@@ -118,6 +118,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<AddAccessConfigInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/AddAccessConfig")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddAccessConfigInstanceRequest>newBuilder()
                       .setPath(
@@ -174,6 +175,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<AddResourcePoliciesInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/AddResourcePolicies")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddResourcePoliciesInstanceRequest>newBuilder()
                       .setPath(
@@ -229,6 +231,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<AggregatedListInstancesRequest, InstanceAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListInstancesRequest>newBuilder()
                       .setPath(
@@ -284,6 +287,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<AttachDiskInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/AttachDisk")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AttachDiskInstanceRequest>newBuilder()
                       .setPath(
@@ -342,6 +346,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<BulkInsertInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/BulkInsert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<BulkInsertInstanceRequest>newBuilder()
                       .setPath(
@@ -396,6 +401,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<DeleteInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteInstanceRequest>newBuilder()
                       .setPath(
@@ -446,6 +452,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<DeleteAccessConfigInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/DeleteAccessConfig")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteAccessConfigInstanceRequest>newBuilder()
                       .setPath(
@@ -500,6 +507,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<DetachDiskInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/DetachDisk")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DetachDiskInstanceRequest>newBuilder()
                       .setPath(
@@ -550,6 +558,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
       ApiMethodDescriptor.<GetInstanceRequest, Instance>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Instances/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetInstanceRequest>newBuilder()
                   .setPath(
@@ -587,6 +596,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/GetEffectiveFirewalls")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetEffectiveFirewallsInstanceRequest>newBuilder()
                       .setPath(
@@ -624,6 +634,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<GetGuestAttributesInstanceRequest, GuestAttributes>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/GetGuestAttributes")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetGuestAttributesInstanceRequest>newBuilder()
                       .setPath(
@@ -665,6 +676,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<GetIamPolicyInstanceRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyInstanceRequest>newBuilder()
                       .setPath(
@@ -705,6 +717,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<GetScreenshotInstanceRequest, Screenshot>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/GetScreenshot")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetScreenshotInstanceRequest>newBuilder()
                       .setPath(
@@ -739,6 +752,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<GetSerialPortOutputInstanceRequest, SerialPortOutput>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/GetSerialPortOutput")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetSerialPortOutputInstanceRequest>newBuilder()
                       .setPath(
@@ -781,6 +795,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .<GetShieldedInstanceIdentityInstanceRequest, ShieldedInstanceIdentity>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/GetShieldedInstanceIdentity")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<GetShieldedInstanceIdentityInstanceRequest>newBuilder()
@@ -816,6 +831,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<InsertInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertInstanceRequest>newBuilder()
                       .setPath(
@@ -874,6 +890,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<ListInstancesRequest, InstanceList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInstancesRequest>newBuilder()
                       .setPath(
@@ -926,6 +943,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<ListReferrersInstancesRequest, InstanceListReferrers>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/ListReferrers")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListReferrersInstancesRequest>newBuilder()
                       .setPath(
@@ -979,6 +997,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<RemoveResourcePoliciesInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/RemoveResourcePolicies")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveResourcePoliciesInstanceRequest>newBuilder()
                       .setPath(
@@ -1033,6 +1052,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
       ApiMethodDescriptor.<ResetInstanceRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Instances/Reset")
           .setHttpMethod(HttpMethods.POST)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ResetInstanceRequest>newBuilder()
                   .setPath(
@@ -1086,6 +1106,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SendDiagnosticInterrupt")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SendDiagnosticInterruptInstanceRequest>newBuilder()
                       .setPath(
@@ -1121,6 +1142,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<SetDeletionProtectionInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SetDeletionProtection")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetDeletionProtectionInstanceRequest>newBuilder()
                       .setPath(
@@ -1175,6 +1197,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<SetDiskAutoDeleteInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SetDiskAutoDelete")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetDiskAutoDeleteInstanceRequest>newBuilder()
                       .setPath(
@@ -1227,6 +1250,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<SetIamPolicyInstanceRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyInstanceRequest>newBuilder()
                       .setPath(
@@ -1266,6 +1290,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<SetLabelsInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SetLabels")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsInstanceRequest>newBuilder()
                       .setPath(
@@ -1321,6 +1346,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<SetMachineResourcesInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SetMachineResources")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetMachineResourcesInstanceRequest>newBuilder()
                       .setPath(
@@ -1376,6 +1402,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<SetMachineTypeInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SetMachineType")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetMachineTypeInstanceRequest>newBuilder()
                       .setPath(
@@ -1431,6 +1458,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<SetMetadataInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SetMetadata")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetMetadataInstanceRequest>newBuilder()
                       .setPath(
@@ -1484,6 +1512,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<SetMinCpuPlatformInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SetMinCpuPlatform")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetMinCpuPlatformInstanceRequest>newBuilder()
                       .setPath(
@@ -1539,6 +1568,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<SetSchedulingInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SetScheduling")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetSchedulingInstanceRequest>newBuilder()
                       .setPath(
@@ -1592,6 +1622,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<SetServiceAccountInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SetServiceAccount")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetServiceAccountInstanceRequest>newBuilder()
                       .setPath(
@@ -1650,6 +1681,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setFullMethodName(
                   "google.cloud.compute.v1.Instances/SetShieldedInstanceIntegrityPolicy")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<SetShieldedInstanceIntegrityPolicyInstanceRequest>newBuilder()
@@ -1707,6 +1739,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<SetTagsInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SetTags")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetTagsInstanceRequest>newBuilder()
                       .setPath(
@@ -1760,6 +1793,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<SimulateMaintenanceEventInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/SimulateMaintenanceEvent")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SimulateMaintenanceEventInstanceRequest>newBuilder()
                       .setPath(
@@ -1806,6 +1840,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
       ApiMethodDescriptor.<StartInstanceRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Instances/Start")
           .setHttpMethod(HttpMethods.POST)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<StartInstanceRequest>newBuilder()
                   .setPath(
@@ -1856,6 +1891,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<StartWithEncryptionKeyInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/StartWithEncryptionKey")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<StartWithEncryptionKeyInstanceRequest>newBuilder()
                       .setPath(
@@ -1910,6 +1946,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
       ApiMethodDescriptor.<StopInstanceRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Instances/Stop")
           .setHttpMethod(HttpMethods.POST)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<StopInstanceRequest>newBuilder()
                   .setPath(
@@ -1962,6 +1999,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .<TestIamPermissionsInstanceRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsInstanceRequest>newBuilder()
                       .setPath(
@@ -2001,6 +2039,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<UpdateInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/Update")
               .setHttpMethod(HttpMethods.PUT)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateInstanceRequest>newBuilder()
                       .setPath(
@@ -2064,6 +2103,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<UpdateAccessConfigInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/UpdateAccessConfig")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateAccessConfigInstanceRequest>newBuilder()
                       .setPath(
@@ -2120,6 +2160,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<UpdateDisplayDeviceInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/UpdateDisplayDevice")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateDisplayDeviceInstanceRequest>newBuilder()
                       .setPath(
@@ -2174,6 +2215,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<UpdateNetworkInterfaceInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/UpdateNetworkInterface")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateNetworkInterfaceInstanceRequest>newBuilder()
                       .setPath(
@@ -2231,6 +2273,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           ApiMethodDescriptor.<UpdateShieldedInstanceConfigInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Instances/UpdateShieldedInstanceConfig")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<UpdateShieldedInstanceConfigInstanceRequest>newBuilder()

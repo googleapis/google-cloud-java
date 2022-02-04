@@ -109,8 +109,8 @@ public class TargetTcpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetTcpProxy = "targetTcpProxy-337144898";
+    String project = "project-6911";
+    String targetTcpProxy = "targetTcpProxy-7204";
 
     Operation actualResponse = client.deleteAsync(project, targetTcpProxy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -138,8 +138,8 @@ public class TargetTcpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetTcpProxy = "targetTcpProxy-337144898";
+      String project = "project-6911";
+      String targetTcpProxy = "targetTcpProxy-7204";
       client.deleteAsync(project, targetTcpProxy).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -162,8 +162,8 @@ public class TargetTcpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetTcpProxy = "targetTcpProxy-337144898";
+    String project = "project-6911";
+    String targetTcpProxy = "targetTcpProxy-7204";
 
     TargetTcpProxy actualResponse = client.get(project, targetTcpProxy);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -191,8 +191,8 @@ public class TargetTcpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetTcpProxy = "targetTcpProxy-337144898";
+      String project = "project-6911";
+      String targetTcpProxy = "targetTcpProxy-7204";
       client.get(project, targetTcpProxy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -231,7 +231,7 @@ public class TargetTcpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     TargetTcpProxy targetTcpProxyResource = TargetTcpProxy.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, targetTcpProxyResource).get();
@@ -260,7 +260,7 @@ public class TargetTcpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       TargetTcpProxy targetTcpProxyResource = TargetTcpProxy.newBuilder().build();
       client.insertAsync(project, targetTcpProxyResource).get();
       Assert.fail("No exception raised");
@@ -278,7 +278,7 @@ public class TargetTcpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -310,7 +310,7 @@ public class TargetTcpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -349,8 +349,8 @@ public class TargetTcpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetTcpProxy = "targetTcpProxy-337144898";
+    String project = "project-6911";
+    String targetTcpProxy = "targetTcpProxy-7204";
     TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource =
         TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
 
@@ -384,8 +384,8 @@ public class TargetTcpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetTcpProxy = "targetTcpProxy-337144898";
+      String project = "project-6911";
+      String targetTcpProxy = "targetTcpProxy-7204";
       TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource =
           TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
       client
@@ -428,8 +428,8 @@ public class TargetTcpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetTcpProxy = "targetTcpProxy-337144898";
+    String project = "project-6911";
+    String targetTcpProxy = "targetTcpProxy-7204";
     TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource =
         TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
 
@@ -463,8 +463,8 @@ public class TargetTcpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetTcpProxy = "targetTcpProxy-337144898";
+      String project = "project-6911";
+      String targetTcpProxy = "targetTcpProxy-7204";
       TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource =
           TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
       client

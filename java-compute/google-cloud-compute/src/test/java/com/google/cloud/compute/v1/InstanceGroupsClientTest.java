@@ -113,9 +113,9 @@ public class InstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instanceGroup = "instanceGroup-1404696854";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instanceGroup = "instanceGroup-9472";
     InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource =
         InstanceGroupsAddInstancesRequest.newBuilder().build();
 
@@ -149,9 +149,9 @@ public class InstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instanceGroup = "instanceGroup-1404696854";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instanceGroup = "instanceGroup-9472";
       InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource =
           InstanceGroupsAddInstancesRequest.newBuilder().build();
       client
@@ -173,7 +173,7 @@ public class InstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -207,7 +207,7 @@ public class InstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -246,9 +246,9 @@ public class InstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instanceGroup = "instanceGroup-1404696854";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instanceGroup = "instanceGroup-9472";
 
     Operation actualResponse = client.deleteAsync(project, zone, instanceGroup).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -276,9 +276,9 @@ public class InstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instanceGroup = "instanceGroup-1404696854";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instanceGroup = "instanceGroup-9472";
       client.deleteAsync(project, zone, instanceGroup).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -305,9 +305,9 @@ public class InstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instanceGroup = "instanceGroup-1404696854";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instanceGroup = "instanceGroup-9472";
 
     InstanceGroup actualResponse = client.get(project, zone, instanceGroup);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -335,9 +335,9 @@ public class InstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instanceGroup = "instanceGroup-1404696854";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instanceGroup = "instanceGroup-9472";
       client.get(project, zone, instanceGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -376,8 +376,8 @@ public class InstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
     InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, zone, instanceGroupResource).get();
@@ -406,8 +406,8 @@ public class InstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
       client.insertAsync(project, zone, instanceGroupResource).get();
       Assert.fail("No exception raised");
@@ -425,8 +425,8 @@ public class InstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     ListPagedResponse pagedListResponse = client.list(project, zone);
 
@@ -458,8 +458,8 @@ public class InstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.list(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -477,9 +477,9 @@ public class InstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instanceGroup = "instanceGroup-1404696854";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instanceGroup = "instanceGroup-9472";
     InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource =
         InstanceGroupsListInstancesRequest.newBuilder().build();
 
@@ -515,9 +515,9 @@ public class InstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instanceGroup = "instanceGroup-1404696854";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instanceGroup = "instanceGroup-9472";
       InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource =
           InstanceGroupsListInstancesRequest.newBuilder().build();
       client.listInstances(
@@ -559,9 +559,9 @@ public class InstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instanceGroup = "instanceGroup-1404696854";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instanceGroup = "instanceGroup-9472";
     InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource =
         InstanceGroupsRemoveInstancesRequest.newBuilder().build();
 
@@ -595,9 +595,9 @@ public class InstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instanceGroup = "instanceGroup-1404696854";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instanceGroup = "instanceGroup-9472";
       InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource =
           InstanceGroupsRemoveInstancesRequest.newBuilder().build();
       client
@@ -640,9 +640,9 @@ public class InstanceGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instanceGroup = "instanceGroup-1404696854";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instanceGroup = "instanceGroup-9472";
     InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource =
         InstanceGroupsSetNamedPortsRequest.newBuilder().build();
 
@@ -676,9 +676,9 @@ public class InstanceGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instanceGroup = "instanceGroup-1404696854";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instanceGroup = "instanceGroup-9472";
       InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource =
           InstanceGroupsSetNamedPortsRequest.newBuilder().build();
       client

@@ -91,7 +91,7 @@ public class TargetHttpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -125,7 +125,7 @@ public class TargetHttpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -164,8 +164,8 @@ public class TargetHttpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetHttpProxy = "targetHttpProxy-1944074187";
+    String project = "project-6911";
+    String targetHttpProxy = "targetHttpProxy-7611";
 
     Operation actualResponse = client.deleteAsync(project, targetHttpProxy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -193,8 +193,8 @@ public class TargetHttpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetHttpProxy = "targetHttpProxy-1944074187";
+      String project = "project-6911";
+      String targetHttpProxy = "targetHttpProxy-7611";
       client.deleteAsync(project, targetHttpProxy).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -218,8 +218,8 @@ public class TargetHttpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetHttpProxy = "targetHttpProxy-1944074187";
+    String project = "project-6911";
+    String targetHttpProxy = "targetHttpProxy-7611";
 
     TargetHttpProxy actualResponse = client.get(project, targetHttpProxy);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -247,8 +247,8 @@ public class TargetHttpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetHttpProxy = "targetHttpProxy-1944074187";
+      String project = "project-6911";
+      String targetHttpProxy = "targetHttpProxy-7611";
       client.get(project, targetHttpProxy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -287,7 +287,7 @@ public class TargetHttpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, targetHttpProxyResource).get();
@@ -316,7 +316,7 @@ public class TargetHttpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
       client.insertAsync(project, targetHttpProxyResource).get();
       Assert.fail("No exception raised");
@@ -334,7 +334,7 @@ public class TargetHttpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -366,7 +366,7 @@ public class TargetHttpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -405,8 +405,8 @@ public class TargetHttpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetHttpProxy = "targetHttpProxy-1944074187";
+    String project = "project-6911";
+    String targetHttpProxy = "targetHttpProxy-7611";
     TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
 
     Operation actualResponse =
@@ -436,8 +436,8 @@ public class TargetHttpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetHttpProxy = "targetHttpProxy-1944074187";
+      String project = "project-6911";
+      String targetHttpProxy = "targetHttpProxy-7611";
       TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
       client.patchAsync(project, targetHttpProxy, targetHttpProxyResource).get();
       Assert.fail("No exception raised");
@@ -476,8 +476,8 @@ public class TargetHttpProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetHttpProxy = "targetHttpProxy-1944074187";
+    String project = "project-6911";
+    String targetHttpProxy = "targetHttpProxy-7611";
     UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
 
     Operation actualResponse =
@@ -507,8 +507,8 @@ public class TargetHttpProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetHttpProxy = "targetHttpProxy-1944074187";
+      String project = "project-6911";
+      String targetHttpProxy = "targetHttpProxy-7611";
       UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
       client.setUrlMapAsync(project, targetHttpProxy, urlMapReferenceResource).get();
       Assert.fail("No exception raised");

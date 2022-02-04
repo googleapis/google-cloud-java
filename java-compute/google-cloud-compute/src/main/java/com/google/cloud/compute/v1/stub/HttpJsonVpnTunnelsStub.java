@@ -70,6 +70,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
           ApiMethodDescriptor.<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnTunnels/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListVpnTunnelsRequest>newBuilder()
                       .setPath(
@@ -125,6 +126,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
           ApiMethodDescriptor.<DeleteVpnTunnelRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnTunnels/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteVpnTunnelRequest>newBuilder()
                       .setPath(
@@ -174,6 +176,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
       ApiMethodDescriptor.<GetVpnTunnelRequest, VpnTunnel>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.VpnTunnels/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetVpnTunnelRequest>newBuilder()
                   .setPath(
@@ -208,6 +211,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
           ApiMethodDescriptor.<InsertVpnTunnelRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnTunnels/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertVpnTunnelRequest>newBuilder()
                       .setPath(
@@ -260,6 +264,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
           ApiMethodDescriptor.<ListVpnTunnelsRequest, VpnTunnelList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnTunnels/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListVpnTunnelsRequest>newBuilder()
                       .setPath(

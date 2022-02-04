@@ -71,6 +71,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
           ApiMethodDescriptor.<DeleteRegionUrlMapRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionUrlMapRequest>newBuilder()
                       .setPath(
@@ -120,6 +121,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
       ApiMethodDescriptor.<GetRegionUrlMapRequest, UrlMap>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetRegionUrlMapRequest>newBuilder()
                   .setPath(
@@ -154,6 +156,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
           ApiMethodDescriptor.<InsertRegionUrlMapRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionUrlMapRequest>newBuilder()
                       .setPath(
@@ -206,6 +209,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
           ApiMethodDescriptor.<ListRegionUrlMapsRequest, UrlMapList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionUrlMapsRequest>newBuilder()
                       .setPath(
@@ -258,6 +262,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
           ApiMethodDescriptor.<PatchRegionUrlMapRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRegionUrlMapRequest>newBuilder()
                       .setPath(
@@ -311,6 +316,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
           ApiMethodDescriptor.<UpdateRegionUrlMapRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/Update")
               .setHttpMethod(HttpMethods.PUT)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateRegionUrlMapRequest>newBuilder()
                       .setPath(
@@ -364,6 +370,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
           ApiMethodDescriptor.<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionUrlMaps/Validate")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ValidateRegionUrlMapRequest>newBuilder()
                       .setPath(

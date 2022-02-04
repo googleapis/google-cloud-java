@@ -109,7 +109,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     Operation actualResponse = client.disableXpnHostAsync(project).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -137,7 +137,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.disableXpnHostAsync(project).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -175,7 +175,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource =
         ProjectsDisableXpnResourceRequest.newBuilder().build();
 
@@ -206,7 +206,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource =
           ProjectsDisableXpnResourceRequest.newBuilder().build();
       client.disableXpnResourceAsync(project, projectsDisableXpnResourceRequestResource).get();
@@ -246,7 +246,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     Operation actualResponse = client.enableXpnHostAsync(project).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -274,7 +274,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.enableXpnHostAsync(project).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -312,7 +312,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource =
         ProjectsEnableXpnResourceRequest.newBuilder().build();
 
@@ -343,7 +343,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource =
           ProjectsEnableXpnResourceRequest.newBuilder().build();
       client.enableXpnResourceAsync(project, projectsEnableXpnResourceRequestResource).get();
@@ -372,7 +372,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     Project actualResponse = client.get(project);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -400,7 +400,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.get(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -428,7 +428,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     Project actualResponse = client.getXpnHost(project);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -456,7 +456,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.getXpnHost(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -474,7 +474,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     GetXpnResourcesPagedResponse pagedListResponse = client.getXpnResources(project);
 
@@ -506,7 +506,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.getXpnResources(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -524,7 +524,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource =
         ProjectsListXpnHostsRequest.newBuilder().build();
 
@@ -559,7 +559,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource =
           ProjectsListXpnHostsRequest.newBuilder().build();
       client.listXpnHosts(project, projectsListXpnHostsRequestResource);
@@ -600,7 +600,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
 
     Operation actualResponse = client.moveDiskAsync(project, diskMoveRequestResource).get();
@@ -629,7 +629,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
       client.moveDiskAsync(project, diskMoveRequestResource).get();
       Assert.fail("No exception raised");
@@ -668,7 +668,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
 
     Operation actualResponse = client.moveInstanceAsync(project, instanceMoveRequestResource).get();
@@ -697,7 +697,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
       client.moveInstanceAsync(project, instanceMoveRequestResource).get();
       Assert.fail("No exception raised");
@@ -736,7 +736,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     Metadata metadataResource = Metadata.newBuilder().build();
 
     Operation actualResponse =
@@ -766,7 +766,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       Metadata metadataResource = Metadata.newBuilder().build();
       client.setCommonInstanceMetadataAsync(project, metadataResource).get();
       Assert.fail("No exception raised");
@@ -805,7 +805,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource =
         ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
 
@@ -838,7 +838,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource =
           ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
       client
@@ -880,7 +880,7 @@ public class ProjectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
 
     Operation actualResponse =
@@ -910,7 +910,7 @@ public class ProjectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
       client.setUsageExportBucketAsync(project, usageExportLocationResource).get();
       Assert.fail("No exception raised");

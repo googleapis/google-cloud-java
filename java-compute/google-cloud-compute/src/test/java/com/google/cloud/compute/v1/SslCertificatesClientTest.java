@@ -91,7 +91,7 @@ public class SslCertificatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -125,7 +125,7 @@ public class SslCertificatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -164,8 +164,8 @@ public class SslCertificatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String sslCertificate = "sslCertificate-1304941589";
+    String project = "project-6911";
+    String sslCertificate = "sslCertificate-3553";
 
     Operation actualResponse = client.deleteAsync(project, sslCertificate).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -193,8 +193,8 @@ public class SslCertificatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String sslCertificate = "sslCertificate-1304941589";
+      String project = "project-6911";
+      String sslCertificate = "sslCertificate-3553";
       client.deleteAsync(project, sslCertificate).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -222,8 +222,8 @@ public class SslCertificatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String sslCertificate = "sslCertificate-1304941589";
+    String project = "project-6911";
+    String sslCertificate = "sslCertificate-3553";
 
     SslCertificate actualResponse = client.get(project, sslCertificate);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -251,8 +251,8 @@ public class SslCertificatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String sslCertificate = "sslCertificate-1304941589";
+      String project = "project-6911";
+      String sslCertificate = "sslCertificate-3553";
       client.get(project, sslCertificate);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -291,7 +291,7 @@ public class SslCertificatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, sslCertificateResource).get();
@@ -320,7 +320,7 @@ public class SslCertificatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
       client.insertAsync(project, sslCertificateResource).get();
       Assert.fail("No exception raised");
@@ -338,7 +338,7 @@ public class SslCertificatesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -370,7 +370,7 @@ public class SslCertificatesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

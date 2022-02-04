@@ -99,8 +99,8 @@ public class InterconnectLocationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String interconnectLocation = "interconnectLocation220117603";
+    String project = "project-6911";
+    String interconnectLocation = "interconnectLocation-8857";
 
     InterconnectLocation actualResponse = client.get(project, interconnectLocation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -128,8 +128,8 @@ public class InterconnectLocationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String interconnectLocation = "interconnectLocation220117603";
+      String project = "project-6911";
+      String interconnectLocation = "interconnectLocation-8857";
       client.get(project, interconnectLocation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -147,7 +147,7 @@ public class InterconnectLocationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -179,7 +179,7 @@ public class InterconnectLocationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

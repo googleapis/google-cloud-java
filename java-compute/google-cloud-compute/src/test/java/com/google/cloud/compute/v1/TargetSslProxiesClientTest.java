@@ -109,8 +109,8 @@ public class TargetSslProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetSslProxy = "targetSslProxy-879314829";
+    String project = "project-6911";
+    String targetSslProxy = "targetSslProxy-5881";
 
     Operation actualResponse = client.deleteAsync(project, targetSslProxy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -138,8 +138,8 @@ public class TargetSslProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetSslProxy = "targetSslProxy-879314829";
+      String project = "project-6911";
+      String targetSslProxy = "targetSslProxy-5881";
       client.deleteAsync(project, targetSslProxy).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -163,8 +163,8 @@ public class TargetSslProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetSslProxy = "targetSslProxy-879314829";
+    String project = "project-6911";
+    String targetSslProxy = "targetSslProxy-5881";
 
     TargetSslProxy actualResponse = client.get(project, targetSslProxy);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -192,8 +192,8 @@ public class TargetSslProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetSslProxy = "targetSslProxy-879314829";
+      String project = "project-6911";
+      String targetSslProxy = "targetSslProxy-5881";
       client.get(project, targetSslProxy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -232,7 +232,7 @@ public class TargetSslProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     TargetSslProxy targetSslProxyResource = TargetSslProxy.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, targetSslProxyResource).get();
@@ -261,7 +261,7 @@ public class TargetSslProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       TargetSslProxy targetSslProxyResource = TargetSslProxy.newBuilder().build();
       client.insertAsync(project, targetSslProxyResource).get();
       Assert.fail("No exception raised");
@@ -279,7 +279,7 @@ public class TargetSslProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -311,7 +311,7 @@ public class TargetSslProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -350,8 +350,8 @@ public class TargetSslProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetSslProxy = "targetSslProxy-879314829";
+    String project = "project-6911";
+    String targetSslProxy = "targetSslProxy-5881";
     TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource =
         TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
 
@@ -385,8 +385,8 @@ public class TargetSslProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetSslProxy = "targetSslProxy-879314829";
+      String project = "project-6911";
+      String targetSslProxy = "targetSslProxy-5881";
       TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource =
           TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
       client
@@ -429,8 +429,8 @@ public class TargetSslProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetSslProxy = "targetSslProxy-879314829";
+    String project = "project-6911";
+    String targetSslProxy = "targetSslProxy-5881";
     TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource =
         TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
 
@@ -464,8 +464,8 @@ public class TargetSslProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetSslProxy = "targetSslProxy-879314829";
+      String project = "project-6911";
+      String targetSslProxy = "targetSslProxy-5881";
       TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource =
           TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
       client
@@ -508,8 +508,8 @@ public class TargetSslProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetSslProxy = "targetSslProxy-879314829";
+    String project = "project-6911";
+    String targetSslProxy = "targetSslProxy-5881";
     TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource =
         TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
 
@@ -543,8 +543,8 @@ public class TargetSslProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetSslProxy = "targetSslProxy-879314829";
+      String project = "project-6911";
+      String targetSslProxy = "targetSslProxy-5881";
       TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource =
           TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
       client
@@ -587,8 +587,8 @@ public class TargetSslProxiesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String targetSslProxy = "targetSslProxy-879314829";
+    String project = "project-6911";
+    String targetSslProxy = "targetSslProxy-5881";
     SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
 
     Operation actualResponse =
@@ -618,8 +618,8 @@ public class TargetSslProxiesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String targetSslProxy = "targetSslProxy-879314829";
+      String project = "project-6911";
+      String targetSslProxy = "targetSslProxy-5881";
       SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
       client.setSslPolicyAsync(project, targetSslProxy, sslPolicyReferenceResource).get();
       Assert.fail("No exception raised");

@@ -92,7 +92,7 @@ public class PublicDelegatedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -126,7 +126,7 @@ public class PublicDelegatedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -165,9 +165,9 @@ public class PublicDelegatedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+    String project = "project-6911";
+    String region = "region-9622";
+    String publicDelegatedPrefix = "publicDelegatedPrefix-7730";
 
     Operation actualResponse = client.deleteAsync(project, region, publicDelegatedPrefix).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -195,9 +195,9 @@ public class PublicDelegatedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+      String project = "project-6911";
+      String region = "region-9622";
+      String publicDelegatedPrefix = "publicDelegatedPrefix-7730";
       client.deleteAsync(project, region, publicDelegatedPrefix).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -225,9 +225,9 @@ public class PublicDelegatedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+    String project = "project-6911";
+    String region = "region-9622";
+    String publicDelegatedPrefix = "publicDelegatedPrefix-7730";
 
     PublicDelegatedPrefix actualResponse = client.get(project, region, publicDelegatedPrefix);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -255,9 +255,9 @@ public class PublicDelegatedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+      String project = "project-6911";
+      String region = "region-9622";
+      String publicDelegatedPrefix = "publicDelegatedPrefix-7730";
       client.get(project, region, publicDelegatedPrefix);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -296,8 +296,8 @@ public class PublicDelegatedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     PublicDelegatedPrefix publicDelegatedPrefixResource =
         PublicDelegatedPrefix.newBuilder().build();
 
@@ -328,8 +328,8 @@ public class PublicDelegatedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       PublicDelegatedPrefix publicDelegatedPrefixResource =
           PublicDelegatedPrefix.newBuilder().build();
       client.insertAsync(project, region, publicDelegatedPrefixResource).get();
@@ -348,8 +348,8 @@ public class PublicDelegatedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -381,8 +381,8 @@ public class PublicDelegatedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -421,9 +421,9 @@ public class PublicDelegatedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+    String project = "project-6911";
+    String region = "region-9622";
+    String publicDelegatedPrefix = "publicDelegatedPrefix-7730";
     PublicDelegatedPrefix publicDelegatedPrefixResource =
         PublicDelegatedPrefix.newBuilder().build();
 
@@ -456,9 +456,9 @@ public class PublicDelegatedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+      String project = "project-6911";
+      String region = "region-9622";
+      String publicDelegatedPrefix = "publicDelegatedPrefix-7730";
       PublicDelegatedPrefix publicDelegatedPrefixResource =
           PublicDelegatedPrefix.newBuilder().build();
       client

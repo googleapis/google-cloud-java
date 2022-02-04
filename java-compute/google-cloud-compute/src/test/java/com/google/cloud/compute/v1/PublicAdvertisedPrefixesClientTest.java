@@ -109,8 +109,8 @@ public class PublicAdvertisedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
+    String project = "project-6911";
+    String publicAdvertisedPrefix = "publicAdvertisedPrefix-3678";
 
     Operation actualResponse = client.deleteAsync(project, publicAdvertisedPrefix).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -138,8 +138,8 @@ public class PublicAdvertisedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
+      String project = "project-6911";
+      String publicAdvertisedPrefix = "publicAdvertisedPrefix-3678";
       client.deleteAsync(project, publicAdvertisedPrefix).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -166,8 +166,8 @@ public class PublicAdvertisedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
+    String project = "project-6911";
+    String publicAdvertisedPrefix = "publicAdvertisedPrefix-3678";
 
     PublicAdvertisedPrefix actualResponse = client.get(project, publicAdvertisedPrefix);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -195,8 +195,8 @@ public class PublicAdvertisedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
+      String project = "project-6911";
+      String publicAdvertisedPrefix = "publicAdvertisedPrefix-3678";
       client.get(project, publicAdvertisedPrefix);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -235,7 +235,7 @@ public class PublicAdvertisedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     PublicAdvertisedPrefix publicAdvertisedPrefixResource =
         PublicAdvertisedPrefix.newBuilder().build();
 
@@ -265,7 +265,7 @@ public class PublicAdvertisedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       PublicAdvertisedPrefix publicAdvertisedPrefixResource =
           PublicAdvertisedPrefix.newBuilder().build();
       client.insertAsync(project, publicAdvertisedPrefixResource).get();
@@ -284,7 +284,7 @@ public class PublicAdvertisedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -316,7 +316,7 @@ public class PublicAdvertisedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -355,8 +355,8 @@ public class PublicAdvertisedPrefixesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
+    String project = "project-6911";
+    String publicAdvertisedPrefix = "publicAdvertisedPrefix-3678";
     PublicAdvertisedPrefix publicAdvertisedPrefixResource =
         PublicAdvertisedPrefix.newBuilder().build();
 
@@ -387,8 +387,8 @@ public class PublicAdvertisedPrefixesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
+      String project = "project-6911";
+      String publicAdvertisedPrefix = "publicAdvertisedPrefix-3678";
       PublicAdvertisedPrefix publicAdvertisedPrefixResource =
           PublicAdvertisedPrefix.newBuilder().build();
       client.patchAsync(project, publicAdvertisedPrefix, publicAdvertisedPrefixResource).get();

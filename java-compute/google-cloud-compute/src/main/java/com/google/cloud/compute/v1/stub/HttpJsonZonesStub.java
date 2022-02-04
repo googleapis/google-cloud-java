@@ -59,6 +59,7 @@ public class HttpJsonZonesStub extends ZonesStub {
       ApiMethodDescriptor.<GetZoneRequest, Zone>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Zones/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetZoneRequest>newBuilder()
                   .setPath(
@@ -91,6 +92,7 @@ public class HttpJsonZonesStub extends ZonesStub {
       ApiMethodDescriptor.<ListZonesRequest, ZoneList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Zones/List")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListZonesRequest>newBuilder()
                   .setPath(

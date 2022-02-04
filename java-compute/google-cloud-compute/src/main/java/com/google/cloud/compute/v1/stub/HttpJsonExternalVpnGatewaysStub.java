@@ -70,6 +70,7 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
           ApiMethodDescriptor.<DeleteExternalVpnGatewayRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteExternalVpnGatewayRequest>newBuilder()
                       .setPath(
@@ -119,6 +120,7 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
           ApiMethodDescriptor.<GetExternalVpnGatewayRequest, ExternalVpnGateway>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetExternalVpnGatewayRequest>newBuilder()
                       .setPath(
@@ -153,6 +155,7 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
           ApiMethodDescriptor.<InsertExternalVpnGatewayRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertExternalVpnGatewayRequest>newBuilder()
                       .setPath(
@@ -205,6 +208,7 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
           ApiMethodDescriptor.<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListExternalVpnGatewaysRequest>newBuilder()
                       .setPath(
@@ -256,6 +260,7 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
           ApiMethodDescriptor.<SetLabelsExternalVpnGatewayRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways/SetLabels")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsExternalVpnGatewayRequest>newBuilder()
                       .setPath(
@@ -308,6 +313,7 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
               .<TestIamPermissionsExternalVpnGatewayRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ExternalVpnGateways/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<TestIamPermissionsExternalVpnGatewayRequest>newBuilder()

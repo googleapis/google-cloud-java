@@ -86,6 +86,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<AddAssociationFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/AddAssociation")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddAssociationFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -144,6 +145,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<AddRuleFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/AddRule")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddRuleFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -196,6 +198,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<CloneRulesFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/CloneRules")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<CloneRulesFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -249,6 +252,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<DeleteFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -296,6 +300,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<GetFirewallPolicyRequest, FirewallPolicy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -331,6 +336,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .<GetAssociationFirewallPolicyRequest, FirewallPolicyAssociation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/GetAssociation")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetAssociationFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -367,6 +373,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<GetIamPolicyFirewallPolicyRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -405,6 +412,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<GetRuleFirewallPolicyRequest, FirewallPolicyRule>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/GetRule")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRuleFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -441,6 +449,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<InsertFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -493,6 +502,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<ListFirewallPoliciesRequest, FirewallPolicyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListFirewallPoliciesRequest>newBuilder()
                       .setPath(
@@ -549,6 +559,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/ListAssociations")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListAssociationsFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -585,6 +596,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<MoveFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/Move")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<MoveFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -634,6 +646,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<PatchFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -686,6 +699,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<PatchRuleFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/PatchRule")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRuleFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -741,6 +755,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<RemoveAssociationFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/RemoveAssociation")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveAssociationFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -791,6 +806,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<RemoveRuleFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/RemoveRule")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveRuleFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -841,6 +857,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
           ApiMethodDescriptor.<SetIamPolicyFirewallPolicyRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyFirewallPolicyRequest>newBuilder()
                       .setPath(
@@ -880,6 +897,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .<TestIamPermissionsFirewallPolicyRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.FirewallPolicies/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsFirewallPolicyRequest>newBuilder()
                       .setPath(

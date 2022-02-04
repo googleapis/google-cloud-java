@@ -110,9 +110,9 @@ public class RegionAutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String autoscaler = "autoscaler517258967";
+    String project = "project-6911";
+    String region = "region-9622";
+    String autoscaler = "autoscaler-1165";
 
     Operation actualResponse = client.deleteAsync(project, region, autoscaler).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -140,9 +140,9 @@ public class RegionAutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String autoscaler = "autoscaler517258967";
+      String project = "project-6911";
+      String region = "region-9622";
+      String autoscaler = "autoscaler-1165";
       client.deleteAsync(project, region, autoscaler).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -170,9 +170,9 @@ public class RegionAutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String autoscaler = "autoscaler517258967";
+    String project = "project-6911";
+    String region = "region-9622";
+    String autoscaler = "autoscaler-1165";
 
     Autoscaler actualResponse = client.get(project, region, autoscaler);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -200,9 +200,9 @@ public class RegionAutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String autoscaler = "autoscaler517258967";
+      String project = "project-6911";
+      String region = "region-9622";
+      String autoscaler = "autoscaler-1165";
       client.get(project, region, autoscaler);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -241,8 +241,8 @@ public class RegionAutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, autoscalerResource).get();
@@ -271,8 +271,8 @@ public class RegionAutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
       client.insertAsync(project, region, autoscalerResource).get();
       Assert.fail("No exception raised");
@@ -290,8 +290,8 @@ public class RegionAutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -323,8 +323,8 @@ public class RegionAutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -363,8 +363,8 @@ public class RegionAutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
     Operation actualResponse = client.patchAsync(project, region, autoscalerResource).get();
@@ -393,8 +393,8 @@ public class RegionAutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
       client.patchAsync(project, region, autoscalerResource).get();
       Assert.fail("No exception raised");
@@ -433,8 +433,8 @@ public class RegionAutoscalersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
     Operation actualResponse = client.updateAsync(project, region, autoscalerResource).get();
@@ -463,8 +463,8 @@ public class RegionAutoscalersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
       client.updateAsync(project, region, autoscalerResource).get();
       Assert.fail("No exception raised");

@@ -94,7 +94,7 @@ public class NetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -128,7 +128,7 @@ public class NetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -167,9 +167,9 @@ public class NetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String networkEndpointGroup = "networkEndpointGroup-2120389028";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String networkEndpointGroup = "networkEndpointGroup-386";
     NetworkEndpointGroupsAttachEndpointsRequest
         networkEndpointGroupsAttachEndpointsRequestResource =
             NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
@@ -207,9 +207,9 @@ public class NetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String networkEndpointGroup = "networkEndpointGroup-2120389028";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String networkEndpointGroup = "networkEndpointGroup-386";
       NetworkEndpointGroupsAttachEndpointsRequest
           networkEndpointGroupsAttachEndpointsRequestResource =
               NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
@@ -256,9 +256,9 @@ public class NetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String networkEndpointGroup = "networkEndpointGroup-2120389028";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String networkEndpointGroup = "networkEndpointGroup-386";
 
     Operation actualResponse = client.deleteAsync(project, zone, networkEndpointGroup).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -286,9 +286,9 @@ public class NetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String networkEndpointGroup = "networkEndpointGroup-2120389028";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String networkEndpointGroup = "networkEndpointGroup-386";
       client.deleteAsync(project, zone, networkEndpointGroup).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -326,9 +326,9 @@ public class NetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String networkEndpointGroup = "networkEndpointGroup-2120389028";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String networkEndpointGroup = "networkEndpointGroup-386";
     NetworkEndpointGroupsDetachEndpointsRequest
         networkEndpointGroupsDetachEndpointsRequestResource =
             NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
@@ -366,9 +366,9 @@ public class NetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String networkEndpointGroup = "networkEndpointGroup-2120389028";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String networkEndpointGroup = "networkEndpointGroup-386";
       NetworkEndpointGroupsDetachEndpointsRequest
           networkEndpointGroupsDetachEndpointsRequestResource =
               NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
@@ -408,9 +408,9 @@ public class NetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String networkEndpointGroup = "networkEndpointGroup-2120389028";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String networkEndpointGroup = "networkEndpointGroup-386";
 
     NetworkEndpointGroup actualResponse = client.get(project, zone, networkEndpointGroup);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -438,9 +438,9 @@ public class NetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String networkEndpointGroup = "networkEndpointGroup-2120389028";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String networkEndpointGroup = "networkEndpointGroup-386";
       client.get(project, zone, networkEndpointGroup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -479,8 +479,8 @@ public class NetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
     NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
 
     Operation actualResponse =
@@ -510,8 +510,8 @@ public class NetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
       client.insertAsync(project, zone, networkEndpointGroupResource).get();
       Assert.fail("No exception raised");
@@ -529,8 +529,8 @@ public class NetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     ListPagedResponse pagedListResponse = client.list(project, zone);
 
@@ -562,8 +562,8 @@ public class NetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.list(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -582,9 +582,9 @@ public class NetworkEndpointGroupsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String networkEndpointGroup = "networkEndpointGroup-2120389028";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String networkEndpointGroup = "networkEndpointGroup-386";
     NetworkEndpointGroupsListEndpointsRequest networkEndpointGroupsListEndpointsRequestResource =
         NetworkEndpointGroupsListEndpointsRequest.newBuilder().build();
 
@@ -621,9 +621,9 @@ public class NetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String networkEndpointGroup = "networkEndpointGroup-2120389028";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String networkEndpointGroup = "networkEndpointGroup-386";
       NetworkEndpointGroupsListEndpointsRequest networkEndpointGroupsListEndpointsRequestResource =
           NetworkEndpointGroupsListEndpointsRequest.newBuilder().build();
       client.listNetworkEndpoints(
@@ -640,9 +640,9 @@ public class NetworkEndpointGroupsClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -673,9 +673,9 @@ public class NetworkEndpointGroupsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, zone, resource, testPermissionsRequestResource);

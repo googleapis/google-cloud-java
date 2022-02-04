@@ -112,9 +112,9 @@ public class DisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String disk = "disk3083677";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String disk = "disk-4029";
     DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource =
         DisksAddResourcePoliciesRequest.newBuilder().build();
 
@@ -147,9 +147,9 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String disk = "disk3083677";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String disk = "disk-4029";
       DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource =
           DisksAddResourcePoliciesRequest.newBuilder().build();
       client
@@ -170,7 +170,7 @@ public class DisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -204,7 +204,7 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -243,9 +243,9 @@ public class DisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String disk = "disk3083677";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String disk = "disk-4029";
     Snapshot snapshotResource = Snapshot.newBuilder().build();
 
     Operation actualResponse =
@@ -275,9 +275,9 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String disk = "disk3083677";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String disk = "disk-4029";
       Snapshot snapshotResource = Snapshot.newBuilder().build();
       client.createSnapshotAsync(project, zone, disk, snapshotResource).get();
       Assert.fail("No exception raised");
@@ -316,9 +316,9 @@ public class DisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String disk = "disk3083677";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String disk = "disk-4029";
 
     Operation actualResponse = client.deleteAsync(project, zone, disk).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -346,9 +346,9 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String disk = "disk3083677";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String disk = "disk-4029";
       client.deleteAsync(project, zone, disk).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -398,9 +398,9 @@ public class DisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String disk = "disk3083677";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String disk = "disk-4029";
 
     Disk actualResponse = client.get(project, zone, disk);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -428,9 +428,9 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String disk = "disk3083677";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String disk = "disk-4029";
       client.get(project, zone, disk);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -451,9 +451,9 @@ public class DisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
 
     Policy actualResponse = client.getIamPolicy(project, zone, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -481,9 +481,9 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       client.getIamPolicy(project, zone, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -522,8 +522,8 @@ public class DisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
     Disk diskResource = Disk.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, zone, diskResource).get();
@@ -552,8 +552,8 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       Disk diskResource = Disk.newBuilder().build();
       client.insertAsync(project, zone, diskResource).get();
       Assert.fail("No exception raised");
@@ -571,8 +571,8 @@ public class DisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     ListPagedResponse pagedListResponse = client.list(project, zone);
 
@@ -604,8 +604,8 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.list(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -644,9 +644,9 @@ public class DisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String disk = "disk3083677";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String disk = "disk-4029";
     DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource =
         DisksRemoveResourcePoliciesRequest.newBuilder().build();
 
@@ -680,9 +680,9 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String disk = "disk3083677";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String disk = "disk-4029";
       DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource =
           DisksRemoveResourcePoliciesRequest.newBuilder().build();
       client
@@ -725,9 +725,9 @@ public class DisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String disk = "disk3083677";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String disk = "disk-4029";
     DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
 
     Operation actualResponse =
@@ -757,9 +757,9 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String disk = "disk3083677";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String disk = "disk-4029";
       DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
       client.resizeAsync(project, zone, disk, disksResizeRequestResource).get();
       Assert.fail("No exception raised");
@@ -780,9 +780,9 @@ public class DisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
     ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
 
     Policy actualResponse =
@@ -812,9 +812,9 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
       client.setIamPolicy(project, zone, resource, zoneSetPolicyRequestResource);
       Assert.fail("No exception raised");
@@ -854,9 +854,9 @@ public class DisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
     ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
 
     Operation actualResponse =
@@ -886,9 +886,9 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
       client.setLabelsAsync(project, zone, resource, zoneSetLabelsRequestResource).get();
       Assert.fail("No exception raised");
@@ -902,9 +902,9 @@ public class DisksClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -935,9 +935,9 @@ public class DisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, zone, resource, testPermissionsRequestResource);

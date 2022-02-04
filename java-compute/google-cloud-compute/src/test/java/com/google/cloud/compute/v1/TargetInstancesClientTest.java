@@ -91,7 +91,7 @@ public class TargetInstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -125,7 +125,7 @@ public class TargetInstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -164,9 +164,9 @@ public class TargetInstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String targetInstance = "targetInstance-1036957370";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String targetInstance = "targetInstance-7356";
 
     Operation actualResponse = client.deleteAsync(project, zone, targetInstance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -194,9 +194,9 @@ public class TargetInstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String targetInstance = "targetInstance-1036957370";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String targetInstance = "targetInstance-7356";
       client.deleteAsync(project, zone, targetInstance).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -220,9 +220,9 @@ public class TargetInstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String targetInstance = "targetInstance-1036957370";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String targetInstance = "targetInstance-7356";
 
     TargetInstance actualResponse = client.get(project, zone, targetInstance);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -250,9 +250,9 @@ public class TargetInstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String targetInstance = "targetInstance-1036957370";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String targetInstance = "targetInstance-7356";
       client.get(project, zone, targetInstance);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -291,8 +291,8 @@ public class TargetInstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
     TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, zone, targetInstanceResource).get();
@@ -321,8 +321,8 @@ public class TargetInstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
       client.insertAsync(project, zone, targetInstanceResource).get();
       Assert.fail("No exception raised");
@@ -340,8 +340,8 @@ public class TargetInstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     ListPagedResponse pagedListResponse = client.list(project, zone);
 
@@ -373,8 +373,8 @@ public class TargetInstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.list(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

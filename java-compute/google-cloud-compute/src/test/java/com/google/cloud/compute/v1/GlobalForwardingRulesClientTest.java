@@ -110,8 +110,8 @@ public class GlobalForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String forwardingRule = "forwardingRule-1429104743";
+    String project = "project-6911";
+    String forwardingRule = "forwardingRule-4031";
 
     Operation actualResponse = client.deleteAsync(project, forwardingRule).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -139,8 +139,8 @@ public class GlobalForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String forwardingRule = "forwardingRule-1429104743";
+      String project = "project-6911";
+      String forwardingRule = "forwardingRule-4031";
       client.deleteAsync(project, forwardingRule).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -185,8 +185,8 @@ public class GlobalForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String forwardingRule = "forwardingRule-1429104743";
+    String project = "project-6911";
+    String forwardingRule = "forwardingRule-4031";
 
     ForwardingRule actualResponse = client.get(project, forwardingRule);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -214,8 +214,8 @@ public class GlobalForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String forwardingRule = "forwardingRule-1429104743";
+      String project = "project-6911";
+      String forwardingRule = "forwardingRule-4031";
       client.get(project, forwardingRule);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -254,7 +254,7 @@ public class GlobalForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, forwardingRuleResource).get();
@@ -283,7 +283,7 @@ public class GlobalForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
       client.insertAsync(project, forwardingRuleResource).get();
       Assert.fail("No exception raised");
@@ -301,7 +301,7 @@ public class GlobalForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -333,7 +333,7 @@ public class GlobalForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -372,8 +372,8 @@ public class GlobalForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String forwardingRule = "forwardingRule-1429104743";
+    String project = "project-6911";
+    String forwardingRule = "forwardingRule-4031";
     ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
 
     Operation actualResponse =
@@ -403,8 +403,8 @@ public class GlobalForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String forwardingRule = "forwardingRule-1429104743";
+      String project = "project-6911";
+      String forwardingRule = "forwardingRule-4031";
       ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
       client.patchAsync(project, forwardingRule, forwardingRuleResource).get();
       Assert.fail("No exception raised");
@@ -443,8 +443,8 @@ public class GlobalForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
     GlobalSetLabelsRequest globalSetLabelsRequestResource =
         GlobalSetLabelsRequest.newBuilder().build();
 
@@ -475,8 +475,8 @@ public class GlobalForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       GlobalSetLabelsRequest globalSetLabelsRequestResource =
           GlobalSetLabelsRequest.newBuilder().build();
       client.setLabelsAsync(project, resource, globalSetLabelsRequestResource).get();
@@ -516,8 +516,8 @@ public class GlobalForwardingRulesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String forwardingRule = "forwardingRule-1429104743";
+    String project = "project-6911";
+    String forwardingRule = "forwardingRule-4031";
     TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
     Operation actualResponse =
@@ -547,8 +547,8 @@ public class GlobalForwardingRulesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String forwardingRule = "forwardingRule-1429104743";
+      String project = "project-6911";
+      String forwardingRule = "forwardingRule-4031";
       TargetReference targetReferenceResource = TargetReference.newBuilder().build();
       client.setTargetAsync(project, forwardingRule, targetReferenceResource).get();
       Assert.fail("No exception raised");

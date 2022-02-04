@@ -90,7 +90,7 @@ public class AddressesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -124,7 +124,7 @@ public class AddressesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -163,9 +163,9 @@ public class AddressesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String address = "address-1147692044";
+    String project = "project-6911";
+    String region = "region-9622";
+    String address = "address-4954";
 
     Operation actualResponse = client.deleteAsync(project, region, address).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -193,9 +193,9 @@ public class AddressesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String address = "address-1147692044";
+      String project = "project-6911";
+      String region = "region-9622";
+      String address = "address-4954";
       client.deleteAsync(project, region, address).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -226,9 +226,9 @@ public class AddressesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String address = "address-1147692044";
+    String project = "project-6911";
+    String region = "region-9622";
+    String address = "address-4954";
 
     Address actualResponse = client.get(project, region, address);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -256,9 +256,9 @@ public class AddressesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String address = "address-1147692044";
+      String project = "project-6911";
+      String region = "region-9622";
+      String address = "address-4954";
       client.get(project, region, address);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -297,8 +297,8 @@ public class AddressesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     Address addressResource = Address.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, addressResource).get();
@@ -327,8 +327,8 @@ public class AddressesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       Address addressResource = Address.newBuilder().build();
       client.insertAsync(project, region, addressResource).get();
       Assert.fail("No exception raised");
@@ -346,8 +346,8 @@ public class AddressesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -379,8 +379,8 @@ public class AddressesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

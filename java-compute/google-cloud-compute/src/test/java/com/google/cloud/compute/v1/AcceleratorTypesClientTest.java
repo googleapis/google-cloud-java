@@ -88,7 +88,7 @@ public class AcceleratorTypesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -122,7 +122,7 @@ public class AcceleratorTypesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -146,9 +146,9 @@ public class AcceleratorTypesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String acceleratorType = "acceleratorType-82462651";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String acceleratorType = "acceleratorType-5157";
 
     AcceleratorType actualResponse = client.get(project, zone, acceleratorType);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -176,9 +176,9 @@ public class AcceleratorTypesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String acceleratorType = "acceleratorType-82462651";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String acceleratorType = "acceleratorType-5157";
       client.get(project, zone, acceleratorType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -196,8 +196,8 @@ public class AcceleratorTypesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     ListPagedResponse pagedListResponse = client.list(project, zone);
 
@@ -229,8 +229,8 @@ public class AcceleratorTypesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.list(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

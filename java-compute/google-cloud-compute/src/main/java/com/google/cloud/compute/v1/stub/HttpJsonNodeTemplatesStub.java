@@ -77,6 +77,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
               .<AggregatedListNodeTemplatesRequest, NodeTemplateAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListNodeTemplatesRequest>newBuilder()
                       .setPath(
@@ -132,6 +133,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
           ApiMethodDescriptor.<DeleteNodeTemplateRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteNodeTemplateRequest>newBuilder()
                       .setPath(
@@ -183,6 +185,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
           ApiMethodDescriptor.<GetNodeTemplateRequest, NodeTemplate>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetNodeTemplateRequest>newBuilder()
                       .setPath(
@@ -218,6 +221,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
           ApiMethodDescriptor.<GetIamPolicyNodeTemplateRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyNodeTemplateRequest>newBuilder()
                       .setPath(
@@ -258,6 +262,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
           ApiMethodDescriptor.<InsertNodeTemplateRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertNodeTemplateRequest>newBuilder()
                       .setPath(
@@ -311,6 +316,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
           ApiMethodDescriptor.<ListNodeTemplatesRequest, NodeTemplateList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListNodeTemplatesRequest>newBuilder()
                       .setPath(
@@ -363,6 +369,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
           ApiMethodDescriptor.<SetIamPolicyNodeTemplateRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyNodeTemplateRequest>newBuilder()
                       .setPath(
@@ -404,6 +411,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
               .<TestIamPermissionsNodeTemplateRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsNodeTemplateRequest>newBuilder()
                       .setPath(

@@ -70,6 +70,7 @@ public class HttpJsonAddressesStub extends AddressesStub {
           ApiMethodDescriptor.<AggregatedListAddressesRequest, AddressAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Addresses/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListAddressesRequest>newBuilder()
                       .setPath(
@@ -124,6 +125,7 @@ public class HttpJsonAddressesStub extends AddressesStub {
       ApiMethodDescriptor.<DeleteAddressRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Addresses/Delete")
           .setHttpMethod(HttpMethods.DELETE)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteAddressRequest>newBuilder()
                   .setPath(
@@ -173,6 +175,7 @@ public class HttpJsonAddressesStub extends AddressesStub {
       ApiMethodDescriptor.<GetAddressRequest, Address>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Addresses/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetAddressRequest>newBuilder()
                   .setPath(
@@ -206,6 +209,7 @@ public class HttpJsonAddressesStub extends AddressesStub {
       ApiMethodDescriptor.<InsertAddressRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Addresses/Insert")
           .setHttpMethod(HttpMethods.POST)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertAddressRequest>newBuilder()
                   .setPath(
@@ -257,6 +261,7 @@ public class HttpJsonAddressesStub extends AddressesStub {
       ApiMethodDescriptor.<ListAddressesRequest, AddressList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Addresses/List")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListAddressesRequest>newBuilder()
                   .setPath(

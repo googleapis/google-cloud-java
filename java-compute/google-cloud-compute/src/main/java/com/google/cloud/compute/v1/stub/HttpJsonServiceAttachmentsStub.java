@@ -79,6 +79,7 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ServiceAttachments/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListServiceAttachmentsRequest>newBuilder()
                       .setPath(
@@ -134,6 +135,7 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
           ApiMethodDescriptor.<DeleteServiceAttachmentRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ServiceAttachments/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteServiceAttachmentRequest>newBuilder()
                       .setPath(
@@ -185,6 +187,7 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
           ApiMethodDescriptor.<GetServiceAttachmentRequest, ServiceAttachment>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ServiceAttachments/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetServiceAttachmentRequest>newBuilder()
                       .setPath(
@@ -220,6 +223,7 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
           ApiMethodDescriptor.<GetIamPolicyServiceAttachmentRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ServiceAttachments/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyServiceAttachmentRequest>newBuilder()
                       .setPath(
@@ -260,6 +264,7 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
           ApiMethodDescriptor.<InsertServiceAttachmentRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ServiceAttachments/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertServiceAttachmentRequest>newBuilder()
                       .setPath(
@@ -314,6 +319,7 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
           ApiMethodDescriptor.<ListServiceAttachmentsRequest, ServiceAttachmentList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ServiceAttachments/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListServiceAttachmentsRequest>newBuilder()
                       .setPath(
@@ -366,6 +372,7 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
           ApiMethodDescriptor.<PatchServiceAttachmentRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ServiceAttachments/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchServiceAttachmentRequest>newBuilder()
                       .setPath(
@@ -422,6 +429,7 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
           ApiMethodDescriptor.<SetIamPolicyServiceAttachmentRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ServiceAttachments/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyServiceAttachmentRequest>newBuilder()
                       .setPath(
@@ -463,6 +471,7 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
               .<TestIamPermissionsServiceAttachmentRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ServiceAttachments/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<TestIamPermissionsServiceAttachmentRequest>newBuilder()

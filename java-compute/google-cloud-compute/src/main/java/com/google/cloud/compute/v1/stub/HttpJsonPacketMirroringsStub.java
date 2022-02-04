@@ -75,6 +75,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
               .<AggregatedListPacketMirroringsRequest, PacketMirroringAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListPacketMirroringsRequest>newBuilder()
                       .setPath(
@@ -130,6 +131,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
           ApiMethodDescriptor.<DeletePacketMirroringRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeletePacketMirroringRequest>newBuilder()
                       .setPath(
@@ -181,6 +183,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
           ApiMethodDescriptor.<GetPacketMirroringRequest, PacketMirroring>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetPacketMirroringRequest>newBuilder()
                       .setPath(
@@ -216,6 +219,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
           ApiMethodDescriptor.<InsertPacketMirroringRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertPacketMirroringRequest>newBuilder()
                       .setPath(
@@ -270,6 +274,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
           ApiMethodDescriptor.<ListPacketMirroringsRequest, PacketMirroringList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListPacketMirroringsRequest>newBuilder()
                       .setPath(
@@ -322,6 +327,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
           ApiMethodDescriptor.<PatchPacketMirroringRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchPacketMirroringRequest>newBuilder()
                       .setPath(
@@ -380,6 +386,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
               .<TestIamPermissionsPacketMirroringRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<TestIamPermissionsPacketMirroringRequest>newBuilder()

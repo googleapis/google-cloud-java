@@ -74,6 +74,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
               .<AggregatedListAutoscalersRequest, AutoscalerAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Autoscalers/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListAutoscalersRequest>newBuilder()
                       .setPath(
@@ -129,6 +130,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
           ApiMethodDescriptor.<DeleteAutoscalerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Autoscalers/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteAutoscalerRequest>newBuilder()
                       .setPath(
@@ -178,6 +180,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
       ApiMethodDescriptor.<GetAutoscalerRequest, Autoscaler>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Autoscalers/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetAutoscalerRequest>newBuilder()
                   .setPath(
@@ -212,6 +215,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
           ApiMethodDescriptor.<InsertAutoscalerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Autoscalers/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertAutoscalerRequest>newBuilder()
                       .setPath(
@@ -264,6 +268,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
           ApiMethodDescriptor.<ListAutoscalersRequest, AutoscalerList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Autoscalers/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListAutoscalersRequest>newBuilder()
                       .setPath(
@@ -316,6 +321,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
           ApiMethodDescriptor.<PatchAutoscalerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Autoscalers/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchAutoscalerRequest>newBuilder()
                       .setPath(
@@ -372,6 +378,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
           ApiMethodDescriptor.<UpdateAutoscalerRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Autoscalers/Update")
               .setHttpMethod(HttpMethods.PUT)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateAutoscalerRequest>newBuilder()
                       .setPath(

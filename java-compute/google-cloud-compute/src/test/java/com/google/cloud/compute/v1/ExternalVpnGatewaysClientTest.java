@@ -110,8 +110,8 @@ public class ExternalVpnGatewaysClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String externalVpnGateway = "externalVpnGateway-1140582181";
+    String project = "project-6911";
+    String externalVpnGateway = "externalVpnGateway-9201";
 
     Operation actualResponse = client.deleteAsync(project, externalVpnGateway).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -139,8 +139,8 @@ public class ExternalVpnGatewaysClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String externalVpnGateway = "externalVpnGateway-1140582181";
+      String project = "project-6911";
+      String externalVpnGateway = "externalVpnGateway-9201";
       client.deleteAsync(project, externalVpnGateway).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -164,8 +164,8 @@ public class ExternalVpnGatewaysClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String externalVpnGateway = "externalVpnGateway-1140582181";
+    String project = "project-6911";
+    String externalVpnGateway = "externalVpnGateway-9201";
 
     ExternalVpnGateway actualResponse = client.get(project, externalVpnGateway);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -193,8 +193,8 @@ public class ExternalVpnGatewaysClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String externalVpnGateway = "externalVpnGateway-1140582181";
+      String project = "project-6911";
+      String externalVpnGateway = "externalVpnGateway-9201";
       client.get(project, externalVpnGateway);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -233,7 +233,7 @@ public class ExternalVpnGatewaysClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     ExternalVpnGateway externalVpnGatewayResource = ExternalVpnGateway.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, externalVpnGatewayResource).get();
@@ -262,7 +262,7 @@ public class ExternalVpnGatewaysClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       ExternalVpnGateway externalVpnGatewayResource = ExternalVpnGateway.newBuilder().build();
       client.insertAsync(project, externalVpnGatewayResource).get();
       Assert.fail("No exception raised");
@@ -280,7 +280,7 @@ public class ExternalVpnGatewaysClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -312,7 +312,7 @@ public class ExternalVpnGatewaysClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -351,8 +351,8 @@ public class ExternalVpnGatewaysClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
     GlobalSetLabelsRequest globalSetLabelsRequestResource =
         GlobalSetLabelsRequest.newBuilder().build();
 
@@ -383,8 +383,8 @@ public class ExternalVpnGatewaysClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       GlobalSetLabelsRequest globalSetLabelsRequestResource =
           GlobalSetLabelsRequest.newBuilder().build();
       client.setLabelsAsync(project, resource, globalSetLabelsRequestResource).get();
@@ -399,8 +399,8 @@ public class ExternalVpnGatewaysClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -431,8 +431,8 @@ public class ExternalVpnGatewaysClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, resource, testPermissionsRequestResource);

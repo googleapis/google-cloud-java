@@ -91,7 +91,7 @@ public class RegionCommitmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -125,7 +125,7 @@ public class RegionCommitmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -157,9 +157,9 @@ public class RegionCommitmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String commitment = "commitment1019005717";
+    String project = "project-6911";
+    String region = "region-9622";
+    String commitment = "commitment-6197";
 
     Commitment actualResponse = client.get(project, region, commitment);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -187,9 +187,9 @@ public class RegionCommitmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String commitment = "commitment1019005717";
+      String project = "project-6911";
+      String region = "region-9622";
+      String commitment = "commitment-6197";
       client.get(project, region, commitment);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -228,8 +228,8 @@ public class RegionCommitmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     Commitment commitmentResource = Commitment.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, commitmentResource).get();
@@ -258,8 +258,8 @@ public class RegionCommitmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       Commitment commitmentResource = Commitment.newBuilder().build();
       client.insertAsync(project, region, commitmentResource).get();
       Assert.fail("No exception raised");
@@ -277,8 +277,8 @@ public class RegionCommitmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -310,8 +310,8 @@ public class RegionCommitmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

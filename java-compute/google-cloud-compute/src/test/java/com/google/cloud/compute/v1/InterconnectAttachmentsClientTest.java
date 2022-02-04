@@ -92,7 +92,7 @@ public class InterconnectAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -126,7 +126,7 @@ public class InterconnectAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -165,9 +165,9 @@ public class InterconnectAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String interconnectAttachment = "interconnectAttachment1869250641";
+    String project = "project-6911";
+    String region = "region-9622";
+    String interconnectAttachment = "interconnectAttachment-5065";
 
     Operation actualResponse = client.deleteAsync(project, region, interconnectAttachment).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -195,9 +195,9 @@ public class InterconnectAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String interconnectAttachment = "interconnectAttachment1869250641";
+      String project = "project-6911";
+      String region = "region-9622";
+      String interconnectAttachment = "interconnectAttachment-5065";
       client.deleteAsync(project, region, interconnectAttachment).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -240,9 +240,9 @@ public class InterconnectAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String interconnectAttachment = "interconnectAttachment1869250641";
+    String project = "project-6911";
+    String region = "region-9622";
+    String interconnectAttachment = "interconnectAttachment-5065";
 
     InterconnectAttachment actualResponse = client.get(project, region, interconnectAttachment);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -270,9 +270,9 @@ public class InterconnectAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String interconnectAttachment = "interconnectAttachment1869250641";
+      String project = "project-6911";
+      String region = "region-9622";
+      String interconnectAttachment = "interconnectAttachment-5065";
       client.get(project, region, interconnectAttachment);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -311,8 +311,8 @@ public class InterconnectAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     InterconnectAttachment interconnectAttachmentResource =
         InterconnectAttachment.newBuilder().build();
 
@@ -343,8 +343,8 @@ public class InterconnectAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       InterconnectAttachment interconnectAttachmentResource =
           InterconnectAttachment.newBuilder().build();
       client.insertAsync(project, region, interconnectAttachmentResource).get();
@@ -363,8 +363,8 @@ public class InterconnectAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -396,8 +396,8 @@ public class InterconnectAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -436,9 +436,9 @@ public class InterconnectAttachmentsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String interconnectAttachment = "interconnectAttachment1869250641";
+    String project = "project-6911";
+    String region = "region-9622";
+    String interconnectAttachment = "interconnectAttachment-5065";
     InterconnectAttachment interconnectAttachmentResource =
         InterconnectAttachment.newBuilder().build();
 
@@ -471,9 +471,9 @@ public class InterconnectAttachmentsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String interconnectAttachment = "interconnectAttachment1869250641";
+      String project = "project-6911";
+      String region = "region-9622";
+      String interconnectAttachment = "interconnectAttachment-5065";
       InterconnectAttachment interconnectAttachmentResource =
           InterconnectAttachment.newBuilder().build();
       client

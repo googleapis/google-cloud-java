@@ -78,6 +78,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
               .<AggregatedListReservationsRequest, ReservationAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListReservationsRequest>newBuilder()
                       .setPath(
@@ -133,6 +134,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
           ApiMethodDescriptor.<DeleteReservationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteReservationRequest>newBuilder()
                       .setPath(
@@ -183,6 +185,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
       ApiMethodDescriptor.<GetReservationRequest, Reservation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Reservations/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetReservationRequest>newBuilder()
                   .setPath(
@@ -217,6 +220,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
           ApiMethodDescriptor.<GetIamPolicyReservationRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyReservationRequest>newBuilder()
                       .setPath(
@@ -257,6 +261,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
           ApiMethodDescriptor.<InsertReservationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertReservationRequest>newBuilder()
                       .setPath(
@@ -309,6 +314,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
           ApiMethodDescriptor.<ListReservationsRequest, ReservationList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListReservationsRequest>newBuilder()
                       .setPath(
@@ -361,6 +367,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
           ApiMethodDescriptor.<ResizeReservationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/Resize")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ResizeReservationRequest>newBuilder()
                       .setPath(
@@ -417,6 +424,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
           ApiMethodDescriptor.<SetIamPolicyReservationRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyReservationRequest>newBuilder()
                       .setPath(
@@ -458,6 +466,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
               .<TestIamPermissionsReservationRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsReservationRequest>newBuilder()
                       .setPath(

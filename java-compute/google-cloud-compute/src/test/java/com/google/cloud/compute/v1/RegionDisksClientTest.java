@@ -110,9 +110,9 @@ public class RegionDisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String disk = "disk3083677";
+    String project = "project-6911";
+    String region = "region-9622";
+    String disk = "disk-4029";
     RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource =
         RegionDisksAddResourcePoliciesRequest.newBuilder().build();
 
@@ -146,9 +146,9 @@ public class RegionDisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String disk = "disk3083677";
+      String project = "project-6911";
+      String region = "region-9622";
+      String disk = "disk-4029";
       RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource =
           RegionDisksAddResourcePoliciesRequest.newBuilder().build();
       client
@@ -191,9 +191,9 @@ public class RegionDisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String disk = "disk3083677";
+    String project = "project-6911";
+    String region = "region-9622";
+    String disk = "disk-4029";
     Snapshot snapshotResource = Snapshot.newBuilder().build();
 
     Operation actualResponse =
@@ -223,9 +223,9 @@ public class RegionDisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String disk = "disk3083677";
+      String project = "project-6911";
+      String region = "region-9622";
+      String disk = "disk-4029";
       Snapshot snapshotResource = Snapshot.newBuilder().build();
       client.createSnapshotAsync(project, region, disk, snapshotResource).get();
       Assert.fail("No exception raised");
@@ -264,9 +264,9 @@ public class RegionDisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String disk = "disk3083677";
+    String project = "project-6911";
+    String region = "region-9622";
+    String disk = "disk-4029";
 
     Operation actualResponse = client.deleteAsync(project, region, disk).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -294,9 +294,9 @@ public class RegionDisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String disk = "disk3083677";
+      String project = "project-6911";
+      String region = "region-9622";
+      String disk = "disk-4029";
       client.deleteAsync(project, region, disk).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -346,9 +346,9 @@ public class RegionDisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String disk = "disk3083677";
+    String project = "project-6911";
+    String region = "region-9622";
+    String disk = "disk-4029";
 
     Disk actualResponse = client.get(project, region, disk);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -376,9 +376,9 @@ public class RegionDisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String disk = "disk3083677";
+      String project = "project-6911";
+      String region = "region-9622";
+      String disk = "disk-4029";
       client.get(project, region, disk);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -399,9 +399,9 @@ public class RegionDisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
 
     Policy actualResponse = client.getIamPolicy(project, region, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -429,9 +429,9 @@ public class RegionDisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       client.getIamPolicy(project, region, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -470,8 +470,8 @@ public class RegionDisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     Disk diskResource = Disk.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, diskResource).get();
@@ -500,8 +500,8 @@ public class RegionDisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       Disk diskResource = Disk.newBuilder().build();
       client.insertAsync(project, region, diskResource).get();
       Assert.fail("No exception raised");
@@ -519,8 +519,8 @@ public class RegionDisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -552,8 +552,8 @@ public class RegionDisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -592,9 +592,9 @@ public class RegionDisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String disk = "disk3083677";
+    String project = "project-6911";
+    String region = "region-9622";
+    String disk = "disk-4029";
     RegionDisksRemoveResourcePoliciesRequest regionDisksRemoveResourcePoliciesRequestResource =
         RegionDisksRemoveResourcePoliciesRequest.newBuilder().build();
 
@@ -628,9 +628,9 @@ public class RegionDisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String disk = "disk3083677";
+      String project = "project-6911";
+      String region = "region-9622";
+      String disk = "disk-4029";
       RegionDisksRemoveResourcePoliciesRequest regionDisksRemoveResourcePoliciesRequestResource =
           RegionDisksRemoveResourcePoliciesRequest.newBuilder().build();
       client
@@ -673,9 +673,9 @@ public class RegionDisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String disk = "disk3083677";
+    String project = "project-6911";
+    String region = "region-9622";
+    String disk = "disk-4029";
     RegionDisksResizeRequest regionDisksResizeRequestResource =
         RegionDisksResizeRequest.newBuilder().build();
 
@@ -706,9 +706,9 @@ public class RegionDisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String disk = "disk3083677";
+      String project = "project-6911";
+      String region = "region-9622";
+      String disk = "disk-4029";
       RegionDisksResizeRequest regionDisksResizeRequestResource =
           RegionDisksResizeRequest.newBuilder().build();
       client.resizeAsync(project, region, disk, regionDisksResizeRequestResource).get();
@@ -730,9 +730,9 @@ public class RegionDisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
     RegionSetPolicyRequest regionSetPolicyRequestResource =
         RegionSetPolicyRequest.newBuilder().build();
 
@@ -763,9 +763,9 @@ public class RegionDisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       RegionSetPolicyRequest regionSetPolicyRequestResource =
           RegionSetPolicyRequest.newBuilder().build();
       client.setIamPolicy(project, region, resource, regionSetPolicyRequestResource);
@@ -806,9 +806,9 @@ public class RegionDisksClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
     RegionSetLabelsRequest regionSetLabelsRequestResource =
         RegionSetLabelsRequest.newBuilder().build();
 
@@ -839,9 +839,9 @@ public class RegionDisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       RegionSetLabelsRequest regionSetLabelsRequestResource =
           RegionSetLabelsRequest.newBuilder().build();
       client.setLabelsAsync(project, region, resource, regionSetLabelsRequestResource).get();
@@ -856,9 +856,9 @@ public class RegionDisksClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -889,9 +889,9 @@ public class RegionDisksClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, region, resource, testPermissionsRequestResource);

@@ -67,6 +67,7 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
           ApiMethodDescriptor.<DeleteRegionNotificationEndpointRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNotificationEndpoints/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionNotificationEndpointRequest>newBuilder()
                       .setPath(
@@ -120,6 +121,7 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
               .<GetRegionNotificationEndpointRequest, NotificationEndpoint>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNotificationEndpoints/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionNotificationEndpointRequest>newBuilder()
                       .setPath(
@@ -155,6 +157,7 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
           ApiMethodDescriptor.<InsertRegionNotificationEndpointRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNotificationEndpoints/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionNotificationEndpointRequest>newBuilder()
                       .setPath(
@@ -211,6 +214,7 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
               .<ListRegionNotificationEndpointsRequest, NotificationEndpointList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNotificationEndpoints/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionNotificationEndpointsRequest>newBuilder()
                       .setPath(

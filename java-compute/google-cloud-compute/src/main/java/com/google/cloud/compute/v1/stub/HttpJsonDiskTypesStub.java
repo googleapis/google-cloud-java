@@ -63,6 +63,7 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
           ApiMethodDescriptor.<AggregatedListDiskTypesRequest, DiskTypeAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.DiskTypes/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListDiskTypesRequest>newBuilder()
                       .setPath(
@@ -117,6 +118,7 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
       ApiMethodDescriptor.<GetDiskTypeRequest, DiskType>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.DiskTypes/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetDiskTypeRequest>newBuilder()
                   .setPath(
@@ -151,6 +153,7 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
           ApiMethodDescriptor.<ListDiskTypesRequest, DiskTypeList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.DiskTypes/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListDiskTypesRequest>newBuilder()
                       .setPath(

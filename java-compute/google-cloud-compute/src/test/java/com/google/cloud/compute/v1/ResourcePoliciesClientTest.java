@@ -91,7 +91,7 @@ public class ResourcePoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -125,7 +125,7 @@ public class ResourcePoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -164,9 +164,9 @@ public class ResourcePoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resourcePolicy = "resourcePolicy-130903328";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resourcePolicy = "resourcePolicy-4170";
 
     Operation actualResponse = client.deleteAsync(project, region, resourcePolicy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -194,9 +194,9 @@ public class ResourcePoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resourcePolicy = "resourcePolicy-130903328";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resourcePolicy = "resourcePolicy-4170";
       client.deleteAsync(project, region, resourcePolicy).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -222,9 +222,9 @@ public class ResourcePoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resourcePolicy = "resourcePolicy-130903328";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resourcePolicy = "resourcePolicy-4170";
 
     ResourcePolicy actualResponse = client.get(project, region, resourcePolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -252,9 +252,9 @@ public class ResourcePoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resourcePolicy = "resourcePolicy-130903328";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resourcePolicy = "resourcePolicy-4170";
       client.get(project, region, resourcePolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -275,9 +275,9 @@ public class ResourcePoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
 
     Policy actualResponse = client.getIamPolicy(project, region, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -305,9 +305,9 @@ public class ResourcePoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       client.getIamPolicy(project, region, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -346,8 +346,8 @@ public class ResourcePoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     ResourcePolicy resourcePolicyResource = ResourcePolicy.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, resourcePolicyResource).get();
@@ -376,8 +376,8 @@ public class ResourcePoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       ResourcePolicy resourcePolicyResource = ResourcePolicy.newBuilder().build();
       client.insertAsync(project, region, resourcePolicyResource).get();
       Assert.fail("No exception raised");
@@ -395,8 +395,8 @@ public class ResourcePoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -428,8 +428,8 @@ public class ResourcePoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -450,9 +450,9 @@ public class ResourcePoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
     RegionSetPolicyRequest regionSetPolicyRequestResource =
         RegionSetPolicyRequest.newBuilder().build();
 
@@ -483,9 +483,9 @@ public class ResourcePoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       RegionSetPolicyRequest regionSetPolicyRequestResource =
           RegionSetPolicyRequest.newBuilder().build();
       client.setIamPolicy(project, region, resource, regionSetPolicyRequestResource);
@@ -501,9 +501,9 @@ public class ResourcePoliciesClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String region = "region-9622";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -534,9 +534,9 @@ public class ResourcePoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String region = "region-9622";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, region, resource, testPermissionsRequestResource);

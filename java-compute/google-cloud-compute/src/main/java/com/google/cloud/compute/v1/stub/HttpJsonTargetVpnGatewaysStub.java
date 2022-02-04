@@ -72,6 +72,7 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
               .<AggregatedListTargetVpnGatewaysRequest, TargetVpnGatewayAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListTargetVpnGatewaysRequest>newBuilder()
                       .setPath(
@@ -127,6 +128,7 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
           ApiMethodDescriptor.<DeleteTargetVpnGatewayRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetVpnGatewayRequest>newBuilder()
                       .setPath(
@@ -178,6 +180,7 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
           ApiMethodDescriptor.<GetTargetVpnGatewayRequest, TargetVpnGateway>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetTargetVpnGatewayRequest>newBuilder()
                       .setPath(
@@ -213,6 +216,7 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
           ApiMethodDescriptor.<InsertTargetVpnGatewayRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetVpnGatewayRequest>newBuilder()
                       .setPath(
@@ -267,6 +271,7 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
           ApiMethodDescriptor.<ListTargetVpnGatewaysRequest, TargetVpnGatewayList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetVpnGatewaysRequest>newBuilder()
                       .setPath(

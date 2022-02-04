@@ -59,6 +59,7 @@ public class HttpJsonRegionDiskTypesStub extends RegionDiskTypesStub {
       ApiMethodDescriptor.<GetRegionDiskTypeRequest, DiskType>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.RegionDiskTypes/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetRegionDiskTypeRequest>newBuilder()
                   .setPath(
@@ -93,6 +94,7 @@ public class HttpJsonRegionDiskTypesStub extends RegionDiskTypesStub {
           ApiMethodDescriptor.<ListRegionDiskTypesRequest, RegionDiskTypeList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDiskTypes/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionDiskTypesRequest>newBuilder()
                       .setPath(

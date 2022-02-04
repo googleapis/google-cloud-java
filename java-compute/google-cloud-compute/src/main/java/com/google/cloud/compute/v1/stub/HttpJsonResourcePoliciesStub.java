@@ -77,6 +77,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
               .<AggregatedListResourcePoliciesRequest, ResourcePolicyAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListResourcePoliciesRequest>newBuilder()
                       .setPath(
@@ -132,6 +133,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
           ApiMethodDescriptor.<DeleteResourcePolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteResourcePolicyRequest>newBuilder()
                       .setPath(
@@ -183,6 +185,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
           ApiMethodDescriptor.<GetResourcePolicyRequest, ResourcePolicy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetResourcePolicyRequest>newBuilder()
                       .setPath(
@@ -218,6 +221,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
           ApiMethodDescriptor.<GetIamPolicyResourcePolicyRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyResourcePolicyRequest>newBuilder()
                       .setPath(
@@ -258,6 +262,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
           ApiMethodDescriptor.<InsertResourcePolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertResourcePolicyRequest>newBuilder()
                       .setPath(
@@ -312,6 +317,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
           ApiMethodDescriptor.<ListResourcePoliciesRequest, ResourcePolicyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListResourcePoliciesRequest>newBuilder()
                       .setPath(
@@ -364,6 +370,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
           ApiMethodDescriptor.<SetIamPolicyResourcePolicyRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyResourcePolicyRequest>newBuilder()
                       .setPath(
@@ -405,6 +412,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
               .<TestIamPermissionsResourcePolicyRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsResourcePolicyRequest>newBuilder()
                       .setPath(

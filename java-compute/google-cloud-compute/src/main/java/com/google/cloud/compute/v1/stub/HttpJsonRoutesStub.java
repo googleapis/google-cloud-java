@@ -66,6 +66,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
       ApiMethodDescriptor.<DeleteRouteRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routes/Delete")
           .setHttpMethod(HttpMethods.DELETE)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteRouteRequest>newBuilder()
                   .setPath(
@@ -113,6 +114,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
       ApiMethodDescriptor.<GetRouteRequest, Route>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routes/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetRouteRequest>newBuilder()
                   .setPath(
@@ -145,6 +147,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
       ApiMethodDescriptor.<InsertRouteRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routes/Insert")
           .setHttpMethod(HttpMethods.POST)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertRouteRequest>newBuilder()
                   .setPath(
@@ -194,6 +197,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
       ApiMethodDescriptor.<ListRoutesRequest, RouteList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routes/List")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListRoutesRequest>newBuilder()
                   .setPath(

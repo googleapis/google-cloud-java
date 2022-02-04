@@ -112,9 +112,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
     RegionInstanceGroupManagersAbandonInstancesRequest
         regionInstanceGroupManagersAbandonInstancesRequestResource =
             RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
@@ -152,9 +152,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       RegionInstanceGroupManagersAbandonInstancesRequest
           regionInstanceGroupManagersAbandonInstancesRequestResource =
               RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
@@ -201,9 +201,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
     RegionInstanceGroupManagersApplyUpdatesRequest
         regionInstanceGroupManagersApplyUpdatesRequestResource =
             RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
@@ -241,9 +241,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       RegionInstanceGroupManagersApplyUpdatesRequest
           regionInstanceGroupManagersApplyUpdatesRequestResource =
               RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
@@ -290,9 +290,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
     RegionInstanceGroupManagersCreateInstancesRequest
         regionInstanceGroupManagersCreateInstancesRequestResource =
             RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
@@ -330,9 +330,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       RegionInstanceGroupManagersCreateInstancesRequest
           regionInstanceGroupManagersCreateInstancesRequestResource =
               RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
@@ -379,9 +379,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
 
     Operation actualResponse = client.deleteAsync(project, region, instanceGroupManager).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -409,9 +409,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       client.deleteAsync(project, region, instanceGroupManager).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -449,9 +449,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
     RegionInstanceGroupManagersDeleteInstancesRequest
         regionInstanceGroupManagersDeleteInstancesRequestResource =
             RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
@@ -489,9 +489,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       RegionInstanceGroupManagersDeleteInstancesRequest
           regionInstanceGroupManagersDeleteInstancesRequestResource =
               RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
@@ -538,9 +538,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
     RegionInstanceGroupManagerDeleteInstanceConfigReq
         regionInstanceGroupManagerDeleteInstanceConfigReqResource =
             RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build();
@@ -578,9 +578,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       RegionInstanceGroupManagerDeleteInstanceConfigReq
           regionInstanceGroupManagerDeleteInstanceConfigReqResource =
               RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build();
@@ -625,9 +625,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
 
     InstanceGroupManager actualResponse = client.get(project, region, instanceGroupManager);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -655,9 +655,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       client.get(project, region, instanceGroupManager);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -696,8 +696,8 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
 
     Operation actualResponse =
@@ -727,8 +727,8 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
       client.insertAsync(project, region, instanceGroupManagerResource).get();
       Assert.fail("No exception raised");
@@ -746,8 +746,8 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -779,8 +779,8 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -798,9 +798,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
 
     ListErrorsPagedResponse pagedListResponse =
         client.listErrors(project, region, instanceGroupManager);
@@ -833,9 +833,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       client.listErrors(project, region, instanceGroupManager);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -853,9 +853,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
 
     ListManagedInstancesPagedResponse pagedListResponse =
         client.listManagedInstances(project, region, instanceGroupManager);
@@ -888,9 +888,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       client.listManagedInstances(project, region, instanceGroupManager);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -908,9 +908,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
 
     ListPerInstanceConfigsPagedResponse pagedListResponse =
         client.listPerInstanceConfigs(project, region, instanceGroupManager);
@@ -943,9 +943,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       client.listPerInstanceConfigs(project, region, instanceGroupManager);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -984,9 +984,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
     InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
 
     Operation actualResponse =
@@ -1018,9 +1018,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
       client.patchAsync(project, region, instanceGroupManager, instanceGroupManagerResource).get();
       Assert.fail("No exception raised");
@@ -1059,9 +1059,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
     RegionInstanceGroupManagerPatchInstanceConfigReq
         regionInstanceGroupManagerPatchInstanceConfigReqResource =
             RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build();
@@ -1099,9 +1099,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       RegionInstanceGroupManagerPatchInstanceConfigReq
           regionInstanceGroupManagerPatchInstanceConfigReqResource =
               RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build();
@@ -1148,9 +1148,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
     RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource =
         RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
 
@@ -1187,9 +1187,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       RegionInstanceGroupManagersRecreateRequest
           regionInstanceGroupManagersRecreateRequestResource =
               RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
@@ -1236,9 +1236,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
     int size = 3530753;
 
     Operation actualResponse =
@@ -1268,9 +1268,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       int size = 3530753;
       client.resizeAsync(project, region, instanceGroupManager, size).get();
       Assert.fail("No exception raised");
@@ -1309,9 +1309,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
     RegionInstanceGroupManagersSetTemplateRequest
         regionInstanceGroupManagersSetTemplateRequestResource =
             RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
@@ -1349,9 +1349,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       RegionInstanceGroupManagersSetTemplateRequest
           regionInstanceGroupManagersSetTemplateRequestResource =
               RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
@@ -1398,9 +1398,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
     RegionInstanceGroupManagersSetTargetPoolsRequest
         regionInstanceGroupManagersSetTargetPoolsRequestResource =
             RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
@@ -1438,9 +1438,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       RegionInstanceGroupManagersSetTargetPoolsRequest
           regionInstanceGroupManagersSetTargetPoolsRequestResource =
               RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
@@ -1487,9 +1487,9 @@ public class RegionInstanceGroupManagersClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String instanceGroupManager = "instanceGroupManager-388242077";
+    String project = "project-6911";
+    String region = "region-9622";
+    String instanceGroupManager = "instanceGroupManager-7543";
     RegionInstanceGroupManagerUpdateInstanceConfigReq
         regionInstanceGroupManagerUpdateInstanceConfigReqResource =
             RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build();
@@ -1527,9 +1527,9 @@ public class RegionInstanceGroupManagersClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String instanceGroupManager = "instanceGroupManager-388242077";
+      String project = "project-6911";
+      String region = "region-9622";
+      String instanceGroupManager = "instanceGroupManager-7543";
       RegionInstanceGroupManagerUpdateInstanceConfigReq
           regionInstanceGroupManagerUpdateInstanceConfigReqResource =
               RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build();

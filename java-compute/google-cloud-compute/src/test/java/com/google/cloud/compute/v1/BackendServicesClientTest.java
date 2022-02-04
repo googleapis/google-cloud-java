@@ -113,8 +113,8 @@ public class BackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String backendService = "backendService-8873";
     SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
 
     Operation actualResponse =
@@ -144,8 +144,8 @@ public class BackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String backendService = "backendService-8873";
       SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
       client.addSignedUrlKeyAsync(project, backendService, signedUrlKeyResource).get();
       Assert.fail("No exception raised");
@@ -163,7 +163,7 @@ public class BackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -197,7 +197,7 @@ public class BackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -236,8 +236,8 @@ public class BackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String backendService = "backendService-8873";
 
     Operation actualResponse = client.deleteAsync(project, backendService).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -265,8 +265,8 @@ public class BackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String backendService = "backendService-8873";
       client.deleteAsync(project, backendService).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -304,8 +304,8 @@ public class BackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String backendService = "backendService-8873";
     String keyName = "keyName-815643254";
 
     Operation actualResponse =
@@ -335,8 +335,8 @@ public class BackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String backendService = "backendService-8873";
       String keyName = "keyName-815643254";
       client.deleteSignedUrlKeyAsync(project, backendService, keyName).get();
       Assert.fail("No exception raised");
@@ -385,8 +385,8 @@ public class BackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String backendService = "backendService-8873";
 
     BackendService actualResponse = client.get(project, backendService);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -414,8 +414,8 @@ public class BackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String backendService = "backendService-8873";
       client.get(project, backendService);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -433,8 +433,8 @@ public class BackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String backendService = "backendService-8873";
     ResourceGroupReference resourceGroupReferenceResource =
         ResourceGroupReference.newBuilder().build();
 
@@ -465,8 +465,8 @@ public class BackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String backendService = "backendService-8873";
       ResourceGroupReference resourceGroupReferenceResource =
           ResourceGroupReference.newBuilder().build();
       client.getHealth(project, backendService, resourceGroupReferenceResource);
@@ -507,7 +507,7 @@ public class BackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, backendServiceResource).get();
@@ -536,7 +536,7 @@ public class BackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       BackendService backendServiceResource = BackendService.newBuilder().build();
       client.insertAsync(project, backendServiceResource).get();
       Assert.fail("No exception raised");
@@ -554,7 +554,7 @@ public class BackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -586,7 +586,7 @@ public class BackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -625,8 +625,8 @@ public class BackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String backendService = "backendService-8873";
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse =
@@ -656,8 +656,8 @@ public class BackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String backendService = "backendService-8873";
       BackendService backendServiceResource = BackendService.newBuilder().build();
       client.patchAsync(project, backendService, backendServiceResource).get();
       Assert.fail("No exception raised");
@@ -696,8 +696,8 @@ public class BackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String backendService = "backendService-8873";
     SecurityPolicyReference securityPolicyReferenceResource =
         SecurityPolicyReference.newBuilder().build();
 
@@ -730,8 +730,8 @@ public class BackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String backendService = "backendService-8873";
       SecurityPolicyReference securityPolicyReferenceResource =
           SecurityPolicyReference.newBuilder().build();
       client.setSecurityPolicyAsync(project, backendService, securityPolicyReferenceResource).get();
@@ -771,8 +771,8 @@ public class BackendServicesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String backendService = "backendService-1884714623";
+    String project = "project-6911";
+    String backendService = "backendService-8873";
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse =
@@ -802,8 +802,8 @@ public class BackendServicesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String backendService = "backendService-1884714623";
+      String project = "project-6911";
+      String backendService = "backendService-8873";
       BackendService backendServiceResource = BackendService.newBuilder().build();
       client.updateAsync(project, backendService, backendServiceResource).get();
       Assert.fail("No exception raised");

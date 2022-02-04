@@ -109,8 +109,8 @@ public class InterconnectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String interconnect = "interconnect-849140594";
+    String project = "project-6911";
+    String interconnect = "interconnect-4596";
 
     Operation actualResponse = client.deleteAsync(project, interconnect).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -138,8 +138,8 @@ public class InterconnectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String interconnect = "interconnect-849140594";
+      String project = "project-6911";
+      String interconnect = "interconnect-4596";
       client.deleteAsync(project, interconnect).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -176,8 +176,8 @@ public class InterconnectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String interconnect = "interconnect-849140594";
+    String project = "project-6911";
+    String interconnect = "interconnect-4596";
 
     Interconnect actualResponse = client.get(project, interconnect);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -205,8 +205,8 @@ public class InterconnectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String interconnect = "interconnect-849140594";
+      String project = "project-6911";
+      String interconnect = "interconnect-4596";
       client.get(project, interconnect);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -222,8 +222,8 @@ public class InterconnectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String interconnect = "interconnect-849140594";
+    String project = "project-6911";
+    String interconnect = "interconnect-4596";
 
     InterconnectsGetDiagnosticsResponse actualResponse =
         client.getDiagnostics(project, interconnect);
@@ -252,8 +252,8 @@ public class InterconnectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String interconnect = "interconnect-849140594";
+      String project = "project-6911";
+      String interconnect = "interconnect-4596";
       client.getDiagnostics(project, interconnect);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -292,7 +292,7 @@ public class InterconnectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
     Interconnect interconnectResource = Interconnect.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, interconnectResource).get();
@@ -321,7 +321,7 @@ public class InterconnectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       Interconnect interconnectResource = Interconnect.newBuilder().build();
       client.insertAsync(project, interconnectResource).get();
       Assert.fail("No exception raised");
@@ -339,7 +339,7 @@ public class InterconnectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -371,7 +371,7 @@ public class InterconnectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -410,8 +410,8 @@ public class InterconnectsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String interconnect = "interconnect-849140594";
+    String project = "project-6911";
+    String interconnect = "interconnect-4596";
     Interconnect interconnectResource = Interconnect.newBuilder().build();
 
     Operation actualResponse = client.patchAsync(project, interconnect, interconnectResource).get();
@@ -440,8 +440,8 @@ public class InterconnectsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String interconnect = "interconnect-849140594";
+      String project = "project-6911";
+      String interconnect = "interconnect-4596";
       Interconnect interconnectResource = Interconnect.newBuilder().build();
       client.patchAsync(project, interconnect, interconnectResource).get();
       Assert.fail("No exception raised");

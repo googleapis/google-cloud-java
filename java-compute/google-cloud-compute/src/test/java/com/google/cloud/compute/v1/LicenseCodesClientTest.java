@@ -88,8 +88,8 @@ public class LicenseCodesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String licenseCode = "licenseCode-641557042";
+    String project = "project-6911";
+    String licenseCode = "licenseCode-8220";
 
     LicenseCode actualResponse = client.get(project, licenseCode);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -117,8 +117,8 @@ public class LicenseCodesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String licenseCode = "licenseCode-641557042";
+      String project = "project-6911";
+      String licenseCode = "licenseCode-8220";
       client.get(project, licenseCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -132,8 +132,8 @@ public class LicenseCodesClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -164,8 +164,8 @@ public class LicenseCodesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, resource, testPermissionsRequestResource);

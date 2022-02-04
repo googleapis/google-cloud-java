@@ -113,9 +113,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     String networkInterface = "networkInterface-341981525";
     AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
 
@@ -148,9 +148,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       String networkInterface = "networkInterface-341981525";
       AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
       client
@@ -192,9 +192,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource =
         InstancesAddResourcePoliciesRequest.newBuilder().build();
 
@@ -228,9 +228,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource =
           InstancesAddResourcePoliciesRequest.newBuilder().build();
       client
@@ -252,7 +252,7 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -286,7 +286,7 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -325,9 +325,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
 
     Operation actualResponse =
@@ -357,9 +357,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
       client.attachDiskAsync(project, zone, instance, attachedDiskResource).get();
       Assert.fail("No exception raised");
@@ -398,8 +398,8 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
     BulkInsertInstanceResource bulkInsertInstanceResourceResource =
         BulkInsertInstanceResource.newBuilder().build();
 
@@ -430,8 +430,8 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       BulkInsertInstanceResource bulkInsertInstanceResourceResource =
           BulkInsertInstanceResource.newBuilder().build();
       client.bulkInsertAsync(project, zone, bulkInsertInstanceResourceResource).get();
@@ -471,9 +471,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
 
     Operation actualResponse = client.deleteAsync(project, zone, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -501,9 +501,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       client.deleteAsync(project, zone, instance).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -541,9 +541,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     String accessConfig = "accessConfig1549765062";
     String networkInterface = "networkInterface-341981525";
 
@@ -576,9 +576,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       String accessConfig = "accessConfig1549765062";
       String networkInterface = "networkInterface-341981525";
       client.deleteAccessConfigAsync(project, zone, instance, accessConfig, networkInterface).get();
@@ -618,9 +618,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     String deviceName = "deviceName780988929";
 
     Operation actualResponse = client.detachDiskAsync(project, zone, instance, deviceName).get();
@@ -649,9 +649,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       String deviceName = "deviceName780988929";
       client.detachDiskAsync(project, zone, instance, deviceName).get();
       Assert.fail("No exception raised");
@@ -705,9 +705,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
 
     Instance actualResponse = client.get(project, zone, instance);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -735,9 +735,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       client.get(project, zone, instance);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -755,9 +755,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     String networkInterface = "networkInterface-341981525";
 
     InstancesGetEffectiveFirewallsResponse actualResponse =
@@ -787,9 +787,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       String networkInterface = "networkInterface-341981525";
       client.getEffectiveFirewalls(project, zone, instance, networkInterface);
       Assert.fail("No exception raised");
@@ -811,9 +811,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
 
     GuestAttributes actualResponse = client.getGuestAttributes(project, zone, instance);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -841,9 +841,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       client.getGuestAttributes(project, zone, instance);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -864,9 +864,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
 
     Policy actualResponse = client.getIamPolicy(project, zone, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -894,9 +894,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       client.getIamPolicy(project, zone, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -910,9 +910,9 @@ public class InstancesClientTest {
         Screenshot.newBuilder().setContents("contents-567321830").setKind("kind3292052").build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
 
     Screenshot actualResponse = client.getScreenshot(project, zone, instance);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -940,9 +940,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       client.getScreenshot(project, zone, instance);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -962,9 +962,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
 
     SerialPortOutput actualResponse = client.getSerialPortOutput(project, zone, instance);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -992,9 +992,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       client.getSerialPortOutput(project, zone, instance);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1012,9 +1012,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
 
     ShieldedInstanceIdentity actualResponse =
         client.getShieldedInstanceIdentity(project, zone, instance);
@@ -1043,9 +1043,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       client.getShieldedInstanceIdentity(project, zone, instance);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1084,8 +1084,8 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
     Instance instanceResource = Instance.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, zone, instanceResource).get();
@@ -1114,8 +1114,8 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       Instance instanceResource = Instance.newBuilder().build();
       client.insertAsync(project, zone, instanceResource).get();
       Assert.fail("No exception raised");
@@ -1133,8 +1133,8 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
+    String project = "project-6911";
+    String zone = "zone-5246";
 
     ListPagedResponse pagedListResponse = client.list(project, zone);
 
@@ -1166,8 +1166,8 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
+      String project = "project-6911";
+      String zone = "zone-5246";
       client.list(project, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1185,9 +1185,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
 
     ListReferrersPagedResponse pagedListResponse = client.listReferrers(project, zone, instance);
 
@@ -1219,9 +1219,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       client.listReferrers(project, zone, instance);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1260,9 +1260,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource =
         InstancesRemoveResourcePoliciesRequest.newBuilder().build();
 
@@ -1296,9 +1296,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource =
           InstancesRemoveResourcePoliciesRequest.newBuilder().build();
       client
@@ -1341,9 +1341,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
 
     Operation actualResponse = client.resetAsync(project, zone, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1371,9 +1371,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       client.resetAsync(project, zone, instance).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -1386,9 +1386,9 @@ public class InstancesClientTest {
         SendDiagnosticInterruptInstanceResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
 
     SendDiagnosticInterruptInstanceResponse actualResponse =
         client.sendDiagnosticInterrupt(project, zone, instance);
@@ -1417,9 +1417,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       client.sendDiagnosticInterrupt(project, zone, instance);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1458,9 +1458,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
 
     Operation actualResponse = client.setDeletionProtectionAsync(project, zone, resource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1488,9 +1488,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       client.setDeletionProtectionAsync(project, zone, resource).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -1528,9 +1528,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     boolean autoDelete = true;
     String deviceName = "deviceName780988929";
 
@@ -1561,9 +1561,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       boolean autoDelete = true;
       String deviceName = "deviceName780988929";
       client.setDiskAutoDeleteAsync(project, zone, instance, autoDelete, deviceName).get();
@@ -1585,9 +1585,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
     ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
 
     Policy actualResponse =
@@ -1617,9 +1617,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
       client.setIamPolicy(project, zone, resource, zoneSetPolicyRequestResource);
       Assert.fail("No exception raised");
@@ -1659,9 +1659,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     InstancesSetLabelsRequest instancesSetLabelsRequestResource =
         InstancesSetLabelsRequest.newBuilder().build();
 
@@ -1692,9 +1692,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       InstancesSetLabelsRequest instancesSetLabelsRequestResource =
           InstancesSetLabelsRequest.newBuilder().build();
       client.setLabelsAsync(project, zone, instance, instancesSetLabelsRequestResource).get();
@@ -1734,9 +1734,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource =
         InstancesSetMachineResourcesRequest.newBuilder().build();
 
@@ -1770,9 +1770,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource =
           InstancesSetMachineResourcesRequest.newBuilder().build();
       client
@@ -1815,9 +1815,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource =
         InstancesSetMachineTypeRequest.newBuilder().build();
 
@@ -1850,9 +1850,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource =
           InstancesSetMachineTypeRequest.newBuilder().build();
       client
@@ -1894,9 +1894,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     Metadata metadataResource = Metadata.newBuilder().build();
 
     Operation actualResponse =
@@ -1926,9 +1926,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       Metadata metadataResource = Metadata.newBuilder().build();
       client.setMetadataAsync(project, zone, instance, metadataResource).get();
       Assert.fail("No exception raised");
@@ -1967,9 +1967,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource =
         InstancesSetMinCpuPlatformRequest.newBuilder().build();
 
@@ -2003,9 +2003,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource =
           InstancesSetMinCpuPlatformRequest.newBuilder().build();
       client
@@ -2048,9 +2048,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     Scheduling schedulingResource = Scheduling.newBuilder().build();
 
     Operation actualResponse =
@@ -2080,9 +2080,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       Scheduling schedulingResource = Scheduling.newBuilder().build();
       client.setSchedulingAsync(project, zone, instance, schedulingResource).get();
       Assert.fail("No exception raised");
@@ -2121,9 +2121,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource =
         InstancesSetServiceAccountRequest.newBuilder().build();
 
@@ -2157,9 +2157,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource =
           InstancesSetServiceAccountRequest.newBuilder().build();
       client
@@ -2202,9 +2202,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource =
         ShieldedInstanceIntegrityPolicy.newBuilder().build();
 
@@ -2238,9 +2238,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource =
           ShieldedInstanceIntegrityPolicy.newBuilder().build();
       client
@@ -2283,9 +2283,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     Tags tagsResource = Tags.newBuilder().build();
 
     Operation actualResponse = client.setTagsAsync(project, zone, instance, tagsResource).get();
@@ -2314,9 +2314,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       Tags tagsResource = Tags.newBuilder().build();
       client.setTagsAsync(project, zone, instance, tagsResource).get();
       Assert.fail("No exception raised");
@@ -2355,9 +2355,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
 
     Operation actualResponse = client.simulateMaintenanceEventAsync(project, zone, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -2385,9 +2385,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       client.simulateMaintenanceEventAsync(project, zone, instance).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -2425,9 +2425,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
 
     Operation actualResponse = client.startAsync(project, zone, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -2455,9 +2455,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       client.startAsync(project, zone, instance).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -2495,9 +2495,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource =
         InstancesStartWithEncryptionKeyRequest.newBuilder().build();
 
@@ -2531,9 +2531,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource =
           InstancesStartWithEncryptionKeyRequest.newBuilder().build();
       client
@@ -2576,9 +2576,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
 
     Operation actualResponse = client.stopAsync(project, zone, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -2606,9 +2606,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       client.stopAsync(project, zone, instance).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -2621,9 +2621,9 @@ public class InstancesClientTest {
         TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String resource = "resource-341064690";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
 
@@ -2654,9 +2654,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String resource = "resource-341064690";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();
       client.testIamPermissions(project, zone, resource, testPermissionsRequestResource);
@@ -2697,9 +2697,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     Instance instanceResource = Instance.newBuilder().build();
 
     Operation actualResponse = client.updateAsync(project, zone, instance, instanceResource).get();
@@ -2728,9 +2728,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       Instance instanceResource = Instance.newBuilder().build();
       client.updateAsync(project, zone, instance, instanceResource).get();
       Assert.fail("No exception raised");
@@ -2769,9 +2769,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     String networkInterface = "networkInterface-341981525";
     AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
 
@@ -2805,9 +2805,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       String networkInterface = "networkInterface-341981525";
       AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
       client
@@ -2849,9 +2849,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
 
     Operation actualResponse =
@@ -2881,9 +2881,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
       client.updateDisplayDeviceAsync(project, zone, instance, displayDeviceResource).get();
       Assert.fail("No exception raised");
@@ -2922,9 +2922,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     String networkInterface = "networkInterface-341981525";
     NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
 
@@ -2958,9 +2958,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       String networkInterface = "networkInterface-341981525";
       NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
       client
@@ -3003,9 +3003,9 @@ public class InstancesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String zone = "zone3744684";
-    String instance = "instance555127957";
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
     ShieldedInstanceConfig shieldedInstanceConfigResource =
         ShieldedInstanceConfig.newBuilder().build();
 
@@ -3039,9 +3039,9 @@ public class InstancesClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String zone = "zone3744684";
-      String instance = "instance555127957";
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
       ShieldedInstanceConfig shieldedInstanceConfigResource =
           ShieldedInstanceConfig.newBuilder().build();
       client

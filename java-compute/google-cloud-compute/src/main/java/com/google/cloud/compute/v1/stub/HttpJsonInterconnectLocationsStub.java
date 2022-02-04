@@ -60,6 +60,7 @@ public class HttpJsonInterconnectLocationsStub extends InterconnectLocationsStub
           ApiMethodDescriptor.<GetInterconnectLocationRequest, InterconnectLocation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InterconnectLocations/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetInterconnectLocationRequest>newBuilder()
                       .setPath(
@@ -96,6 +97,7 @@ public class HttpJsonInterconnectLocationsStub extends InterconnectLocationsStub
               .<ListInterconnectLocationsRequest, InterconnectLocationList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InterconnectLocations/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInterconnectLocationsRequest>newBuilder()
                       .setPath(

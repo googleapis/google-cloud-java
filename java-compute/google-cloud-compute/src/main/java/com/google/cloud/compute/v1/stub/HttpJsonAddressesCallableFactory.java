@@ -26,6 +26,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.Operation;
@@ -88,5 +90,15 @@ public class HttpJsonAddressesCallableFactory
             httpJsonCallSettings.getMethodDescriptor().getOperationSnapshotFactory());
     return HttpJsonCallableFactory.createOperationCallable(
         callSettings, clientContext, operationsStub.longRunningClient(), initialCallable);
+  }
+
+  @Override
+  public <RequestT, ResponseT>
+      ServerStreamingCallable<RequestT, ResponseT> createServerStreamingCallable(
+          HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
+          ServerStreamingCallSettings<RequestT, ResponseT> callSettings,
+          ClientContext clientContext) {
+    return HttpJsonCallableFactory.createServerStreamingCallable(
+        httpJsonCallSettings, callSettings, clientContext);
   }
 }

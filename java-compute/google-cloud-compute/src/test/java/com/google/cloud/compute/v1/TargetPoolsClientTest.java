@@ -112,9 +112,9 @@ public class TargetPoolsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetPool = "targetPool486493517";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetPool = "targetPool-115";
     TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource =
         TargetPoolsAddHealthCheckRequest.newBuilder().build();
 
@@ -148,9 +148,9 @@ public class TargetPoolsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetPool = "targetPool486493517";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetPool = "targetPool-115";
       TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource =
           TargetPoolsAddHealthCheckRequest.newBuilder().build();
       client
@@ -193,9 +193,9 @@ public class TargetPoolsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetPool = "targetPool486493517";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetPool = "targetPool-115";
     TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource =
         TargetPoolsAddInstanceRequest.newBuilder().build();
 
@@ -228,9 +228,9 @@ public class TargetPoolsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetPool = "targetPool486493517";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetPool = "targetPool-115";
       TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource =
           TargetPoolsAddInstanceRequest.newBuilder().build();
       client
@@ -251,7 +251,7 @@ public class TargetPoolsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -285,7 +285,7 @@ public class TargetPoolsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -324,9 +324,9 @@ public class TargetPoolsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetPool = "targetPool486493517";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetPool = "targetPool-115";
 
     Operation actualResponse = client.deleteAsync(project, region, targetPool).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -354,9 +354,9 @@ public class TargetPoolsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetPool = "targetPool486493517";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetPool = "targetPool-115";
       client.deleteAsync(project, region, targetPool).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -382,9 +382,9 @@ public class TargetPoolsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetPool = "targetPool486493517";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetPool = "targetPool-115";
 
     TargetPool actualResponse = client.get(project, region, targetPool);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -412,9 +412,9 @@ public class TargetPoolsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetPool = "targetPool486493517";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetPool = "targetPool-115";
       client.get(project, region, targetPool);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -431,9 +431,9 @@ public class TargetPoolsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetPool = "targetPool486493517";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetPool = "targetPool-115";
     InstanceReference instanceReferenceResource = InstanceReference.newBuilder().build();
 
     TargetPoolInstanceHealth actualResponse =
@@ -463,9 +463,9 @@ public class TargetPoolsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetPool = "targetPool486493517";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetPool = "targetPool-115";
       InstanceReference instanceReferenceResource = InstanceReference.newBuilder().build();
       client.getHealth(project, region, targetPool, instanceReferenceResource);
       Assert.fail("No exception raised");
@@ -505,8 +505,8 @@ public class TargetPoolsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     TargetPool targetPoolResource = TargetPool.newBuilder().build();
 
     Operation actualResponse = client.insertAsync(project, region, targetPoolResource).get();
@@ -535,8 +535,8 @@ public class TargetPoolsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       TargetPool targetPoolResource = TargetPool.newBuilder().build();
       client.insertAsync(project, region, targetPoolResource).get();
       Assert.fail("No exception raised");
@@ -554,8 +554,8 @@ public class TargetPoolsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -587,8 +587,8 @@ public class TargetPoolsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -627,9 +627,9 @@ public class TargetPoolsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetPool = "targetPool486493517";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetPool = "targetPool-115";
     TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource =
         TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
 
@@ -663,9 +663,9 @@ public class TargetPoolsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetPool = "targetPool486493517";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetPool = "targetPool-115";
       TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource =
           TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
       client
@@ -708,9 +708,9 @@ public class TargetPoolsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetPool = "targetPool486493517";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetPool = "targetPool-115";
     TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource =
         TargetPoolsRemoveInstanceRequest.newBuilder().build();
 
@@ -744,9 +744,9 @@ public class TargetPoolsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetPool = "targetPool486493517";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetPool = "targetPool-115";
       TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource =
           TargetPoolsRemoveInstanceRequest.newBuilder().build();
       client
@@ -789,9 +789,9 @@ public class TargetPoolsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String targetPool = "targetPool486493517";
+    String project = "project-6911";
+    String region = "region-9622";
+    String targetPool = "targetPool-115";
     TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
     Operation actualResponse =
@@ -821,9 +821,9 @@ public class TargetPoolsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String targetPool = "targetPool486493517";
+      String project = "project-6911";
+      String region = "region-9622";
+      String targetPool = "targetPool-115";
       TargetReference targetReferenceResource = TargetReference.newBuilder().build();
       client.setBackupAsync(project, region, targetPool, targetReferenceResource).get();
       Assert.fail("No exception raised");

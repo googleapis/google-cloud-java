@@ -68,6 +68,7 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
           ApiMethodDescriptor.<DeleteRegionHealthCheckServiceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionHealthCheckServices/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionHealthCheckServiceRequest>newBuilder()
                       .setPath(
@@ -119,6 +120,7 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
           ApiMethodDescriptor.<GetRegionHealthCheckServiceRequest, HealthCheckService>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionHealthCheckServices/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionHealthCheckServiceRequest>newBuilder()
                       .setPath(
@@ -154,6 +156,7 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
           ApiMethodDescriptor.<InsertRegionHealthCheckServiceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionHealthCheckServices/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionHealthCheckServiceRequest>newBuilder()
                       .setPath(
@@ -210,6 +213,7 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
               .<ListRegionHealthCheckServicesRequest, HealthCheckServicesList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionHealthCheckServices/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionHealthCheckServicesRequest>newBuilder()
                       .setPath(
@@ -262,6 +266,7 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
           ApiMethodDescriptor.<PatchRegionHealthCheckServiceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionHealthCheckServices/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRegionHealthCheckServiceRequest>newBuilder()
                       .setPath(

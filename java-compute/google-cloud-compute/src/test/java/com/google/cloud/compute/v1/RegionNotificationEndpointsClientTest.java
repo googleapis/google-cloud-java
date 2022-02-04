@@ -109,9 +109,9 @@ public class RegionNotificationEndpointsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String notificationEndpoint = "notificationEndpoint-354029664";
+    String project = "project-6911";
+    String region = "region-9622";
+    String notificationEndpoint = "notificationEndpoint-2346";
 
     Operation actualResponse = client.deleteAsync(project, region, notificationEndpoint).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -139,9 +139,9 @@ public class RegionNotificationEndpointsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String notificationEndpoint = "notificationEndpoint-354029664";
+      String project = "project-6911";
+      String region = "region-9622";
+      String notificationEndpoint = "notificationEndpoint-2346";
       client.deleteAsync(project, region, notificationEndpoint).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -163,9 +163,9 @@ public class RegionNotificationEndpointsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String notificationEndpoint = "notificationEndpoint-354029664";
+    String project = "project-6911";
+    String region = "region-9622";
+    String notificationEndpoint = "notificationEndpoint-2346";
 
     NotificationEndpoint actualResponse = client.get(project, region, notificationEndpoint);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -193,9 +193,9 @@ public class RegionNotificationEndpointsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String notificationEndpoint = "notificationEndpoint-354029664";
+      String project = "project-6911";
+      String region = "region-9622";
+      String notificationEndpoint = "notificationEndpoint-2346";
       client.get(project, region, notificationEndpoint);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -234,8 +234,8 @@ public class RegionNotificationEndpointsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
     NotificationEndpoint notificationEndpointResource = NotificationEndpoint.newBuilder().build();
 
     Operation actualResponse =
@@ -265,8 +265,8 @@ public class RegionNotificationEndpointsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       NotificationEndpoint notificationEndpointResource = NotificationEndpoint.newBuilder().build();
       client.insertAsync(project, region, notificationEndpointResource).get();
       Assert.fail("No exception raised");
@@ -284,8 +284,8 @@ public class RegionNotificationEndpointsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
+    String project = "project-6911";
+    String region = "region-9622";
 
     ListPagedResponse pagedListResponse = client.list(project, region);
 
@@ -317,8 +317,8 @@ public class RegionNotificationEndpointsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
+      String project = "project-6911";
+      String region = "region-9622";
       client.list(project, region);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

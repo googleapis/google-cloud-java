@@ -90,7 +90,7 @@ public class GlobalOperationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
 
@@ -124,7 +124,7 @@ public class GlobalOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.aggregatedList(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -138,8 +138,8 @@ public class GlobalOperationsClientTest {
         DeleteGlobalOperationResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String operation = "operation1662702951";
+    String project = "project-6911";
+    String operation = "operation-3971";
 
     DeleteGlobalOperationResponse actualResponse = client.delete(project, operation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -167,8 +167,8 @@ public class GlobalOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String operation = "operation1662702951";
+      String project = "project-6911";
+      String operation = "operation-3971";
       client.delete(project, operation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -207,8 +207,8 @@ public class GlobalOperationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String operation = "operation1662702951";
+    String project = "project-6911";
+    String operation = "operation-3971";
 
     Operation actualResponse = client.get(project, operation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -236,8 +236,8 @@ public class GlobalOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String operation = "operation1662702951";
+      String project = "project-6911";
+      String operation = "operation-3971";
       client.get(project, operation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -255,7 +255,7 @@ public class GlobalOperationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "project-6911";
 
     ListPagedResponse pagedListResponse = client.list(project);
 
@@ -287,7 +287,7 @@ public class GlobalOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "project-6911";
       client.list(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -326,8 +326,8 @@ public class GlobalOperationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String operation = "operation1662702951";
+    String project = "project-6911";
+    String operation = "operation-3971";
 
     Operation actualResponse = client.wait(project, operation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -355,8 +355,8 @@ public class GlobalOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String operation = "operation1662702951";
+      String project = "project-6911";
+      String operation = "operation-3971";
       client.wait(project, operation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

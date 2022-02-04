@@ -70,6 +70,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
               .<DeleteRegionOperationRequest, DeleteRegionOperationResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionOperations/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionOperationRequest>newBuilder()
                       .setPath(
@@ -104,6 +105,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
           ApiMethodDescriptor.<GetRegionOperationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionOperations/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionOperationRequest>newBuilder()
                       .setPath(
@@ -158,6 +160,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
           ApiMethodDescriptor.<ListRegionOperationsRequest, OperationList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionOperations/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionOperationsRequest>newBuilder()
                       .setPath(
@@ -210,6 +213,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
           ApiMethodDescriptor.<WaitRegionOperationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionOperations/Wait")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<WaitRegionOperationRequest>newBuilder()
                       .setPath(

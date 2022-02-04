@@ -83,6 +83,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .<AggregatedListSubnetworksRequest, SubnetworkAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/AggregatedList")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListSubnetworksRequest>newBuilder()
                       .setPath(
@@ -138,6 +139,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
           ApiMethodDescriptor.<DeleteSubnetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSubnetworkRequest>newBuilder()
                       .setPath(
@@ -188,6 +190,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
           ApiMethodDescriptor.<ExpandIpCidrRangeSubnetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/ExpandIpCidrRange")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ExpandIpCidrRangeSubnetworkRequest>newBuilder()
                       .setPath(
@@ -242,6 +245,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
       ApiMethodDescriptor.<GetSubnetworkRequest, Subnetwork>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Subnetworks/Get")
           .setHttpMethod(HttpMethods.GET)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetSubnetworkRequest>newBuilder()
                   .setPath(
@@ -276,6 +280,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
           ApiMethodDescriptor.<GetIamPolicySubnetworkRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/GetIamPolicy")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicySubnetworkRequest>newBuilder()
                       .setPath(
@@ -316,6 +321,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
           ApiMethodDescriptor.<InsertSubnetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertSubnetworkRequest>newBuilder()
                       .setPath(
@@ -368,6 +374,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
           ApiMethodDescriptor.<ListSubnetworksRequest, SubnetworkList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSubnetworksRequest>newBuilder()
                       .setPath(
@@ -422,6 +429,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/ListUsable")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListUsableSubnetworksRequest>newBuilder()
                       .setPath(
@@ -473,6 +481,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
           ApiMethodDescriptor.<PatchSubnetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchSubnetworkRequest>newBuilder()
                       .setPath(
@@ -530,6 +539,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
           ApiMethodDescriptor.<SetIamPolicySubnetworkRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/SetIamPolicy")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicySubnetworkRequest>newBuilder()
                       .setPath(
@@ -569,6 +579,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
           ApiMethodDescriptor.<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/SetPrivateIpGoogleAccess")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<SetPrivateIpGoogleAccessSubnetworkRequest>newBuilder()
@@ -628,6 +639,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/TestIamPermissions")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsSubnetworkRequest>newBuilder()
                       .setPath(

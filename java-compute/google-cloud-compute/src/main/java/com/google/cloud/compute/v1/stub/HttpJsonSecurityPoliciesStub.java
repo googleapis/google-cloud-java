@@ -75,6 +75,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
           ApiMethodDescriptor.<AddRuleSecurityPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/AddRule")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddRuleSecurityPolicyRequest>newBuilder()
                       .setPath(
@@ -126,6 +127,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
           ApiMethodDescriptor.<DeleteSecurityPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/Delete")
               .setHttpMethod(HttpMethods.DELETE)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSecurityPolicyRequest>newBuilder()
                       .setPath(
@@ -175,6 +177,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
           ApiMethodDescriptor.<GetSecurityPolicyRequest, SecurityPolicy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetSecurityPolicyRequest>newBuilder()
                       .setPath(
@@ -209,6 +212,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
           ApiMethodDescriptor.<GetRuleSecurityPolicyRequest, SecurityPolicyRule>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/GetRule")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRuleSecurityPolicyRequest>newBuilder()
                       .setPath(
@@ -246,6 +250,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
           ApiMethodDescriptor.<InsertSecurityPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/Insert")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertSecurityPolicyRequest>newBuilder()
                       .setPath(
@@ -298,6 +303,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
           ApiMethodDescriptor.<ListSecurityPoliciesRequest, SecurityPolicyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSecurityPoliciesRequest>newBuilder()
                       .setPath(
@@ -355,6 +361,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
               .setFullMethodName(
                   "google.cloud.compute.v1.SecurityPolicies/ListPreconfiguredExpressionSets")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<ListPreconfiguredExpressionSetsSecurityPoliciesRequest>newBuilder()
@@ -412,6 +419,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
           ApiMethodDescriptor.<PatchSecurityPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/Patch")
               .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchSecurityPolicyRequest>newBuilder()
                       .setPath(
@@ -466,6 +474,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
           ApiMethodDescriptor.<PatchRuleSecurityPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/PatchRule")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRuleSecurityPolicyRequest>newBuilder()
                       .setPath(
@@ -520,6 +529,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
           ApiMethodDescriptor.<RemoveRuleSecurityPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/RemoveRule")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveRuleSecurityPolicyRequest>newBuilder()
                       .setPath(

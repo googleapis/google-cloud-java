@@ -69,6 +69,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
           ApiMethodDescriptor.<GetRegionInstanceGroupRequest, InstanceGroup>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/Get")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionInstanceGroupRequest>newBuilder()
                       .setPath(
@@ -104,6 +105,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
           ApiMethodDescriptor.<ListRegionInstanceGroupsRequest, RegionInstanceGroupList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/List")
               .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionInstanceGroupsRequest>newBuilder()
                       .setPath(
@@ -159,6 +161,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/ListInstances")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
                       .<ListInstancesRegionInstanceGroupsRequest>newBuilder()
@@ -220,6 +223,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
           ApiMethodDescriptor.<SetNamedPortsRegionInstanceGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/SetNamedPorts")
               .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetNamedPortsRegionInstanceGroupRequest>newBuilder()
                       .setPath(
