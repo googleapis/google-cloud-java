@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.1.6](https://github.com/googleapis/java-filestore/compare/v1.1.5...v1.1.6) (2022-02-03)
+
+
+### Bug Fixes
+
+* update the pattern for "file.googleapis.com/Snapshot" resource for the Filestore V1Beta1 ([#123](https://github.com/googleapis/java-filestore/issues/123)) ([bc3ec94](https://github.com/googleapis/java-filestore/commit/bc3ec949c2c0709a285aa8d40a113042abbe5b24))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-filestore/issues/1339)) ([#127](https://github.com/googleapis/java-filestore/issues/127)) ([867974d](https://github.com/googleapis/java-filestore/commit/867974d67e26e129ad1bdff7f99fe5c91d02c71e))
+* update actions/github-script action to v5 ([#125](https://github.com/googleapis/java-filestore/issues/125)) ([64c6df6](https://github.com/googleapis/java-filestore/commit/64c6df69b5641eb74a81360a00d181c46417f236))
+* update actions/setup-java action to v2 ([#126](https://github.com/googleapis/java-filestore/issues/126)) ([1f7d5a2](https://github.com/googleapis/java-filestore/commit/1f7d5a2de2d822efdf463c6ab757c572aec35ff9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#129](https://github.com/googleapis/java-filestore/issues/129)) ([b37551a](https://github.com/googleapis/java-filestore/commit/b37551aca46742b7decd2fd3f45214796684164f))
+
 ### [1.1.5](https://www.github.com/googleapis/java-filestore/compare/v1.1.4...v1.1.5) (2022-01-07)
 
 
