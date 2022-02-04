@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.3.2](https://github.com/googleapis/java-os-config/compare/v2.3.1...v2.3.2) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-os-config/issues/1339)) ([#426](https://github.com/googleapis/java-os-config/issues/426)) ([ceed186](https://github.com/googleapis/java-os-config/commit/ceed186e88841834ef39beb3ded178aa867fdbba))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#428](https://github.com/googleapis/java-os-config/issues/428)) ([9d9ce4c](https://github.com/googleapis/java-os-config/commit/9d9ce4c5e8ccb72cc70cd4f7d522a3af0dacd277))
+
 ### [2.3.1](https://www.github.com/googleapis/java-os-config/compare/v2.3.0...v2.3.1) (2022-01-07)
 
 
