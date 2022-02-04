@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.2.2](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.2.1...v2.2.2) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-monitoring-dashboards/issues/1339)) ([#540](https://github.com/googleapis/java-monitoring-dashboards/issues/540)) ([b29be44](https://github.com/googleapis/java-monitoring-dashboards/commit/b29be4433749ab10d2cff0cdc6bfc42fb2ff1524))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#542](https://github.com/googleapis/java-monitoring-dashboards/issues/542)) ([ffc030a](https://github.com/googleapis/java-monitoring-dashboards/commit/ffc030ad81ce9c26c264ee41595ca873e28135fe))
+
 ### [2.2.1](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v2.2.0...v2.2.1) (2022-01-07)
 
 
