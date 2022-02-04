@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.1.6](https://github.com/googleapis/java-memcache/compare/v2.1.5...v2.1.6) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-memcache/issues/1339)) ([#572](https://github.com/googleapis/java-memcache/issues/572)) ([1da1ec2](https://github.com/googleapis/java-memcache/commit/1da1ec23d618080fe55b71afe44df285e84750b0))
+* update actions/github-script action to v5 ([#571](https://github.com/googleapis/java-memcache/issues/571)) ([ad14aaa](https://github.com/googleapis/java-memcache/commit/ad14aaa80b028dd7c642a74df2a39234ac06172e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#573](https://github.com/googleapis/java-memcache/issues/573)) ([73ee3f1](https://github.com/googleapis/java-memcache/commit/73ee3f1a71c3ee08be4fc3c492a29dc7e49f1f76))
+
 ### [2.1.5](https://www.github.com/googleapis/java-memcache/compare/v2.1.4...v2.1.5) (2022-01-07)
 
 
