@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 package com.google.cloud.examples.storage.buckets;
+
 // [START storage_set_client_endpoint]
+
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
@@ -26,6 +28,7 @@ public class SetClientEndpoint {
 
     // The endpoint you wish to target
     // String endpoint = "https://storage.googleapis.com"
+
     Storage storage =
         StorageOptions.newBuilder().setProjectId(projectId).setHost(endpoint).build().getService();
 
