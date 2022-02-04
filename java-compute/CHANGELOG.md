@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.7.1](https://github.com/googleapis/java-compute/compare/v1.7.0...v1.7.1) (2022-02-04)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-compute/issues/1339)) ([#625](https://github.com/googleapis/java-compute/issues/625)) ([d8f5f3d](https://github.com/googleapis/java-compute/commit/d8f5f3d7aea4f5b6d786058b895b7b010a37f043))
+* update actions/github-script action to v5 ([#624](https://github.com/googleapis/java-compute/issues/624)) ([39ca3be](https://github.com/googleapis/java-compute/commit/39ca3be0e4a5e9a5a951da0188b294cb437990bc))
+* update dependency com.google.api.grpc:proto-google-cloud-compute-v1 to v1.7.0 ([#617](https://github.com/googleapis/java-compute/issues/617)) ([b44e0b1](https://github.com/googleapis/java-compute/commit/b44e0b12667abd07dcaac9a39f7925d57cea1b96))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#626](https://github.com/googleapis/java-compute/issues/626)) ([660ca0f](https://github.com/googleapis/java-compute/commit/660ca0fa1966c939d359a3e17b32bb8e95b39cbd))
+
 ## [1.7.0](https://github.com/googleapis/java-compute/compare/v1.6.1...v1.7.0) (2022-01-11)
 
 
