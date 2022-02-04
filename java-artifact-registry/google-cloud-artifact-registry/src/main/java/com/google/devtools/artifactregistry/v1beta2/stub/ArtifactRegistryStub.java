@@ -35,9 +35,16 @@ import com.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest;
 import com.google.devtools.artifactregistry.v1beta2.File;
 import com.google.devtools.artifactregistry.v1beta2.GetFileRequest;
 import com.google.devtools.artifactregistry.v1beta2.GetPackageRequest;
+import com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1beta2.GetRepositoryRequest;
 import com.google.devtools.artifactregistry.v1beta2.GetTagRequest;
 import com.google.devtools.artifactregistry.v1beta2.GetVersionRequest;
+import com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsMetadata;
+import com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest;
+import com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsResponse;
+import com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsMetadata;
+import com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest;
+import com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsResponse;
 import com.google.devtools.artifactregistry.v1beta2.ListFilesRequest;
 import com.google.devtools.artifactregistry.v1beta2.ListFilesResponse;
 import com.google.devtools.artifactregistry.v1beta2.ListPackagesRequest;
@@ -50,8 +57,10 @@ import com.google.devtools.artifactregistry.v1beta2.ListVersionsRequest;
 import com.google.devtools.artifactregistry.v1beta2.ListVersionsResponse;
 import com.google.devtools.artifactregistry.v1beta2.OperationMetadata;
 import com.google.devtools.artifactregistry.v1beta2.Package;
+import com.google.devtools.artifactregistry.v1beta2.ProjectSettings;
 import com.google.devtools.artifactregistry.v1beta2.Repository;
 import com.google.devtools.artifactregistry.v1beta2.Tag;
+import com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1beta2.UpdateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1beta2.UpdateTagRequest;
 import com.google.devtools.artifactregistry.v1beta2.Version;
@@ -77,6 +86,28 @@ public abstract class ArtifactRegistryStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
+
+  public OperationCallable<
+          ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
+      importAptArtifactsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: importAptArtifactsOperationCallable()");
+  }
+
+  public UnaryCallable<ImportAptArtifactsRequest, Operation> importAptArtifactsCallable() {
+    throw new UnsupportedOperationException("Not implemented: importAptArtifactsCallable()");
+  }
+
+  public OperationCallable<
+          ImportYumArtifactsRequest, ImportYumArtifactsResponse, ImportYumArtifactsMetadata>
+      importYumArtifactsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: importYumArtifactsOperationCallable()");
+  }
+
+  public UnaryCallable<ImportYumArtifactsRequest, Operation> importYumArtifactsCallable() {
+    throw new UnsupportedOperationException("Not implemented: importYumArtifactsCallable()");
   }
 
   public UnaryCallable<ListRepositoriesRequest, ListRepositoriesPagedResponse>
@@ -204,6 +235,15 @@ public abstract class ArtifactRegistryStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<GetProjectSettingsRequest, ProjectSettings> getProjectSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getProjectSettingsCallable()");
+  }
+
+  public UnaryCallable<UpdateProjectSettingsRequest, ProjectSettings>
+      updateProjectSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateProjectSettingsCallable()");
   }
 
   @Override

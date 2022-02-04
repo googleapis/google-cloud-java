@@ -28,7 +28,8 @@ public interface FileOrBuilder
    *
    * <pre>
    * The name of the file, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1/files/a/b/c.txt".
+   * "projects/p1/locations/us-central1/repositories/repo1/files/a%2Fb%2Fc.txt".
+   * If the file ID part contains slashes, they are escaped.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,7 +42,8 @@ public interface FileOrBuilder
    *
    * <pre>
    * The name of the file, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1/files/a/b/c.txt".
+   * "projects/p1/locations/us-central1/repositories/repo1/files/a%2Fb%2Fc.txt".
+   * If the file ID part contains slashes, they are escaped.
    * </pre>
    *
    * <code>string name = 1;</code>

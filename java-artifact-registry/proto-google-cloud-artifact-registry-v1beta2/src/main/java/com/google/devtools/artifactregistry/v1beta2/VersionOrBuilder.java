@@ -29,6 +29,8 @@ public interface VersionOrBuilder
    * <pre>
    * The name of the version, for example:
    * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+   * If the package or version ID parts contain slashes, the slashes are
+   * escaped.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -42,6 +44,8 @@ public interface VersionOrBuilder
    * <pre>
    * The name of the version, for example:
    * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+   * If the package or version ID parts contain slashes, the slashes are
+   * escaped.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -201,4 +205,48 @@ public interface VersionOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.Tag related_tags = 7;</code>
    */
   com.google.devtools.artifactregistry.v1beta2.TagOrBuilder getRelatedTagsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Repository-specific Metadata stored against this version.
+   * The fields returned are defined by the underlying repository-specific
+   * resource. Currently, the only resource in use is
+   * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Repository-specific Metadata stored against this version.
+   * The fields returned are defined by the underlying repository-specific
+   * resource. Currently, the only resource in use is
+   * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The metadata.
+   */
+  com.google.protobuf.Struct getMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Repository-specific Metadata stored against this version.
+   * The fields returned are defined by the underlying repository-specific
+   * resource. Currently, the only resource in use is
+   * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
 }

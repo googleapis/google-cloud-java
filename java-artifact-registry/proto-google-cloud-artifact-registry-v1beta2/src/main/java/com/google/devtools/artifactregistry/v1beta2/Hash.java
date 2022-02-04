@@ -147,6 +147,16 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * <code>SHA256 = 1;</code>
      */
     SHA256(1),
+    /**
+     *
+     *
+     * <pre>
+     * MD5 hash.
+     * </pre>
+     *
+     * <code>MD5 = 2;</code>
+     */
+    MD5(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -170,6 +180,16 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * <code>SHA256 = 1;</code>
      */
     public static final int SHA256_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * MD5 hash.
+     * </pre>
+     *
+     * <code>MD5 = 2;</code>
+     */
+    public static final int MD5_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -199,6 +219,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
           return HASH_TYPE_UNSPECIFIED;
         case 1:
           return SHA256;
+        case 2:
+          return MD5;
         default:
           return null;
       }

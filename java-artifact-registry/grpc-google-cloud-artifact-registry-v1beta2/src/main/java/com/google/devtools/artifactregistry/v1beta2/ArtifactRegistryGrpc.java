@@ -46,6 +46,100 @@ public final class ArtifactRegistryGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest,
+          com.google.longrunning.Operation>
+      getImportAptArtifactsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportAptArtifacts",
+      requestType = com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest,
+          com.google.longrunning.Operation>
+      getImportAptArtifactsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest,
+            com.google.longrunning.Operation>
+        getImportAptArtifactsMethod;
+    if ((getImportAptArtifactsMethod = ArtifactRegistryGrpc.getImportAptArtifactsMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getImportAptArtifactsMethod = ArtifactRegistryGrpc.getImportAptArtifactsMethod)
+            == null) {
+          ArtifactRegistryGrpc.getImportAptArtifactsMethod =
+              getImportAptArtifactsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportAptArtifacts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("ImportAptArtifacts"))
+                      .build();
+        }
+      }
+    }
+    return getImportAptArtifactsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest,
+          com.google.longrunning.Operation>
+      getImportYumArtifactsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportYumArtifacts",
+      requestType = com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest,
+          com.google.longrunning.Operation>
+      getImportYumArtifactsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest,
+            com.google.longrunning.Operation>
+        getImportYumArtifactsMethod;
+    if ((getImportYumArtifactsMethod = ArtifactRegistryGrpc.getImportYumArtifactsMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getImportYumArtifactsMethod = ArtifactRegistryGrpc.getImportYumArtifactsMethod)
+            == null) {
+          ArtifactRegistryGrpc.getImportYumArtifactsMethod =
+              getImportYumArtifactsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportYumArtifacts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("ImportYumArtifacts"))
+                      .build();
+        }
+      }
+    }
+    return getImportYumArtifactsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.devtools.artifactregistry.v1beta2.ListRepositoriesRequest,
           com.google.devtools.artifactregistry.v1beta2.ListRepositoriesResponse>
       getListRepositoriesMethod;
@@ -1003,6 +1097,104 @@ public final class ArtifactRegistryGrpc {
     return getTestIamPermissionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest,
+          com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+      getGetProjectSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProjectSettings",
+      requestType = com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1beta2.ProjectSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest,
+          com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+      getGetProjectSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest,
+            com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+        getGetProjectSettingsMethod;
+    if ((getGetProjectSettingsMethod = ArtifactRegistryGrpc.getGetProjectSettingsMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getGetProjectSettingsMethod = ArtifactRegistryGrpc.getGetProjectSettingsMethod)
+            == null) {
+          ArtifactRegistryGrpc.getGetProjectSettingsMethod =
+              getGetProjectSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest,
+                          com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProjectSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1beta2.ProjectSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("GetProjectSettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetProjectSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest,
+          com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+      getUpdateProjectSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateProjectSettings",
+      requestType = com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1beta2.ProjectSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest,
+          com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+      getUpdateProjectSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest,
+            com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+        getUpdateProjectSettingsMethod;
+    if ((getUpdateProjectSettingsMethod = ArtifactRegistryGrpc.getUpdateProjectSettingsMethod)
+        == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getUpdateProjectSettingsMethod = ArtifactRegistryGrpc.getUpdateProjectSettingsMethod)
+            == null) {
+          ArtifactRegistryGrpc.getUpdateProjectSettingsMethod =
+              getUpdateProjectSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest,
+                          com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateProjectSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1beta2
+                                  .UpdateProjectSettingsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1beta2.ProjectSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("UpdateProjectSettings"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateProjectSettingsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ArtifactRegistryStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ArtifactRegistryStub> factory =
@@ -1061,6 +1253,40 @@ public final class ArtifactRegistryGrpc {
    * </pre>
    */
   public abstract static class ArtifactRegistryImplBase implements io.grpc.BindableService {
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Apt artifacts. The returned Operation will complete once the
+     * resources are imported. Package, Version, and File resources are created
+     * based on the imported artifacts. Imported artifacts that conflict with
+     * existing resources are ignored.
+     * </pre>
+     */
+    public void importAptArtifacts(
+        com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportAptArtifactsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Yum (RPM) artifacts. The returned Operation will complete once the
+     * resources are imported. Package, Version, and File resources are created
+     * based on the imported artifacts. Imported artifacts that conflict with
+     * existing resources are ignored.
+     * </pre>
+     */
+    public void importYumArtifacts(
+        com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportYumArtifactsMethod(), responseObserver);
+    }
 
     /**
      *
@@ -1369,9 +1595,51 @@ public final class ArtifactRegistryGrpc {
           getTestIamPermissionsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the Settings for the Project.
+     * </pre>
+     */
+    public void getProjectSettings(
+        com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetProjectSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Settings for the Project.
+     * </pre>
+     */
+    public void updateProjectSettings(
+        com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateProjectSettingsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+              getImportAptArtifactsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest,
+                      com.google.longrunning.Operation>(this, METHODID_IMPORT_APT_ARTIFACTS)))
+          .addMethod(
+              getImportYumArtifactsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest,
+                      com.google.longrunning.Operation>(this, METHODID_IMPORT_YUM_ARTIFACTS)))
           .addMethod(
               getListRepositoriesMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1508,6 +1776,20 @@ public final class ArtifactRegistryGrpc {
                       com.google.iam.v1.TestIamPermissionsRequest,
                       com.google.iam.v1.TestIamPermissionsResponse>(
                       this, METHODID_TEST_IAM_PERMISSIONS)))
+          .addMethod(
+              getGetProjectSettingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest,
+                      com.google.devtools.artifactregistry.v1beta2.ProjectSettings>(
+                      this, METHODID_GET_PROJECT_SETTINGS)))
+          .addMethod(
+              getUpdateProjectSettingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest,
+                      com.google.devtools.artifactregistry.v1beta2.ProjectSettings>(
+                      this, METHODID_UPDATE_PROJECT_SETTINGS)))
           .build();
     }
   }
@@ -1537,6 +1819,44 @@ public final class ArtifactRegistryGrpc {
     @java.lang.Override
     protected ArtifactRegistryStub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new ArtifactRegistryStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Apt artifacts. The returned Operation will complete once the
+     * resources are imported. Package, Version, and File resources are created
+     * based on the imported artifacts. Imported artifacts that conflict with
+     * existing resources are ignored.
+     * </pre>
+     */
+    public void importAptArtifacts(
+        com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportAptArtifactsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Yum (RPM) artifacts. The returned Operation will complete once the
+     * resources are imported. Package, Version, and File resources are created
+     * based on the imported artifacts. Imported artifacts that conflict with
+     * existing resources are ignored.
+     * </pre>
+     */
+    public void importYumArtifacts(
+        com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportYumArtifactsMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -1878,6 +2198,40 @@ public final class ArtifactRegistryGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the Settings for the Project.
+     * </pre>
+     */
+    public void getProjectSettings(
+        com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetProjectSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Settings for the Project.
+     * </pre>
+     */
+    public void updateProjectSettings(
+        com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateProjectSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1906,6 +2260,38 @@ public final class ArtifactRegistryGrpc {
     protected ArtifactRegistryBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new ArtifactRegistryBlockingStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Apt artifacts. The returned Operation will complete once the
+     * resources are imported. Package, Version, and File resources are created
+     * based on the imported artifacts. Imported artifacts that conflict with
+     * existing resources are ignored.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importAptArtifacts(
+        com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportAptArtifactsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Yum (RPM) artifacts. The returned Operation will complete once the
+     * resources are imported. Package, Version, and File resources are created
+     * based on the imported artifacts. Imported artifacts that conflict with
+     * existing resources are ignored.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importYumArtifacts(
+        com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportYumArtifactsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2183,6 +2569,32 @@ public final class ArtifactRegistryGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the Settings for the Project.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.ProjectSettings getProjectSettings(
+        com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProjectSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Settings for the Project.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.ProjectSettings updateProjectSettings(
+        com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProjectSettingsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2211,6 +2623,40 @@ public final class ArtifactRegistryGrpc {
     protected ArtifactRegistryFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new ArtifactRegistryFutureStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Apt artifacts. The returned Operation will complete once the
+     * resources are imported. Package, Version, and File resources are created
+     * based on the imported artifacts. Imported artifacts that conflict with
+     * existing resources are ignored.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importAptArtifacts(
+            com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportAptArtifactsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Yum (RPM) artifacts. The returned Operation will complete once the
+     * resources are imported. Package, Version, and File resources are created
+     * based on the imported artifacts. Imported artifacts that conflict with
+     * existing resources are ignored.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importYumArtifacts(
+            com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportYumArtifactsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2508,29 +2954,63 @@ public final class ArtifactRegistryGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the Settings for the Project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+        getProjectSettings(
+            com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetProjectSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Settings for the Project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1beta2.ProjectSettings>
+        updateProjectSettings(
+            com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateProjectSettingsMethod(), getCallOptions()), request);
+    }
   }
 
-  private static final int METHODID_LIST_REPOSITORIES = 0;
-  private static final int METHODID_GET_REPOSITORY = 1;
-  private static final int METHODID_CREATE_REPOSITORY = 2;
-  private static final int METHODID_UPDATE_REPOSITORY = 3;
-  private static final int METHODID_DELETE_REPOSITORY = 4;
-  private static final int METHODID_LIST_PACKAGES = 5;
-  private static final int METHODID_GET_PACKAGE = 6;
-  private static final int METHODID_DELETE_PACKAGE = 7;
-  private static final int METHODID_LIST_VERSIONS = 8;
-  private static final int METHODID_GET_VERSION = 9;
-  private static final int METHODID_DELETE_VERSION = 10;
-  private static final int METHODID_LIST_FILES = 11;
-  private static final int METHODID_GET_FILE = 12;
-  private static final int METHODID_LIST_TAGS = 13;
-  private static final int METHODID_GET_TAG = 14;
-  private static final int METHODID_CREATE_TAG = 15;
-  private static final int METHODID_UPDATE_TAG = 16;
-  private static final int METHODID_DELETE_TAG = 17;
-  private static final int METHODID_SET_IAM_POLICY = 18;
-  private static final int METHODID_GET_IAM_POLICY = 19;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 20;
+  private static final int METHODID_IMPORT_APT_ARTIFACTS = 0;
+  private static final int METHODID_IMPORT_YUM_ARTIFACTS = 1;
+  private static final int METHODID_LIST_REPOSITORIES = 2;
+  private static final int METHODID_GET_REPOSITORY = 3;
+  private static final int METHODID_CREATE_REPOSITORY = 4;
+  private static final int METHODID_UPDATE_REPOSITORY = 5;
+  private static final int METHODID_DELETE_REPOSITORY = 6;
+  private static final int METHODID_LIST_PACKAGES = 7;
+  private static final int METHODID_GET_PACKAGE = 8;
+  private static final int METHODID_DELETE_PACKAGE = 9;
+  private static final int METHODID_LIST_VERSIONS = 10;
+  private static final int METHODID_GET_VERSION = 11;
+  private static final int METHODID_DELETE_VERSION = 12;
+  private static final int METHODID_LIST_FILES = 13;
+  private static final int METHODID_GET_FILE = 14;
+  private static final int METHODID_LIST_TAGS = 15;
+  private static final int METHODID_GET_TAG = 16;
+  private static final int METHODID_CREATE_TAG = 17;
+  private static final int METHODID_UPDATE_TAG = 18;
+  private static final int METHODID_DELETE_TAG = 19;
+  private static final int METHODID_SET_IAM_POLICY = 20;
+  private static final int METHODID_GET_IAM_POLICY = 21;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 22;
+  private static final int METHODID_GET_PROJECT_SETTINGS = 23;
+  private static final int METHODID_UPDATE_PROJECT_SETTINGS = 24;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2549,6 +3029,16 @@ public final class ArtifactRegistryGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_IMPORT_APT_ARTIFACTS:
+          serviceImpl.importAptArtifacts(
+              (com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_IMPORT_YUM_ARTIFACTS:
+          serviceImpl.importYumArtifacts(
+              (com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_LIST_REPOSITORIES:
           serviceImpl.listRepositories(
               (com.google.devtools.artifactregistry.v1beta2.ListRepositoriesRequest) request,
@@ -2673,6 +3163,20 @@ public final class ArtifactRegistryGrpc {
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
                   responseObserver);
           break;
+        case METHODID_GET_PROJECT_SETTINGS:
+          serviceImpl.getProjectSettings(
+              (com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.devtools.artifactregistry.v1beta2.ProjectSettings>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_PROJECT_SETTINGS:
+          serviceImpl.updateProjectSettings(
+              (com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.devtools.artifactregistry.v1beta2.ProjectSettings>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2737,6 +3241,8 @@ public final class ArtifactRegistryGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ArtifactRegistryFileDescriptorSupplier())
+                      .addMethod(getImportAptArtifactsMethod())
+                      .addMethod(getImportYumArtifactsMethod())
                       .addMethod(getListRepositoriesMethod())
                       .addMethod(getGetRepositoryMethod())
                       .addMethod(getCreateRepositoryMethod())
@@ -2758,6 +3264,8 @@ public final class ArtifactRegistryGrpc {
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getGetProjectSettingsMethod())
+                      .addMethod(getUpdateProjectSettingsMethod())
                       .build();
         }
       }

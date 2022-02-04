@@ -27,6 +27,51 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
+   * Maven repository config contains repository level configuration
+   * for the repositories of maven type.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1beta2.Repository.MavenRepositoryConfig maven_config = 9;
+   * </code>
+   *
+   * @return Whether the mavenConfig field is set.
+   */
+  boolean hasMavenConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Maven repository config contains repository level configuration
+   * for the repositories of maven type.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1beta2.Repository.MavenRepositoryConfig maven_config = 9;
+   * </code>
+   *
+   * @return The mavenConfig.
+   */
+  com.google.devtools.artifactregistry.v1beta2.Repository.MavenRepositoryConfig getMavenConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Maven repository config contains repository level configuration
+   * for the repositories of maven type.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1beta2.Repository.MavenRepositoryConfig maven_config = 9;
+   * </code>
+   */
+  com.google.devtools.artifactregistry.v1beta2.Repository.MavenRepositoryConfigOrBuilder
+      getMavenConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the repository, for example:
    * "projects/p1/locations/us-central1/repositories/repo1".
    * </pre>
@@ -274,4 +319,7 @@ public interface RepositoryOrBuilder
    * @return The bytes for kmsKeyName.
    */
   com.google.protobuf.ByteString getKmsKeyNameBytes();
+
+  public com.google.devtools.artifactregistry.v1beta2.Repository.FormatConfigCase
+      getFormatConfigCase();
 }

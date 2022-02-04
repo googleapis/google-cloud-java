@@ -27,10 +27,12 @@ public interface ListRepositoriesRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the parent resource whose repositories will be listed.
+   * Required. The name of the parent resource whose repositories will be listed.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -39,10 +41,12 @@ public interface ListRepositoriesRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the parent resource whose repositories will be listed.
+   * Required. The name of the parent resource whose repositories will be listed.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -52,8 +56,7 @@ public interface ListRepositoriesRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of repositories to return.
-   * Maximum page size is 10,000.
+   * The maximum number of repositories to return. Maximum page size is 1,000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>

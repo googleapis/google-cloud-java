@@ -83,6 +83,30 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySettings> {
 
+  /** Returns the object with the settings used for calls to importAptArtifacts. */
+  public UnaryCallSettings<ImportAptArtifactsRequest, Operation> importAptArtifactsSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).importAptArtifactsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importAptArtifacts. */
+  public OperationCallSettings<
+          ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
+      importAptArtifactsOperationSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).importAptArtifactsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importYumArtifacts. */
+  public UnaryCallSettings<ImportYumArtifactsRequest, Operation> importYumArtifactsSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).importYumArtifactsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importYumArtifacts. */
+  public OperationCallSettings<
+          ImportYumArtifactsRequest, ImportYumArtifactsResponse, ImportYumArtifactsMetadata>
+      importYumArtifactsOperationSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).importYumArtifactsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listRepositories. */
   public PagedCallSettings<
           ListRepositoriesRequest, ListRepositoriesResponse, ListRepositoriesPagedResponse>
@@ -219,6 +243,18 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     return ((ArtifactRegistryStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to getProjectSettings. */
+  public UnaryCallSettings<GetProjectSettingsRequest, ProjectSettings>
+      getProjectSettingsSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).getProjectSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateProjectSettings. */
+  public UnaryCallSettings<UpdateProjectSettingsRequest, ProjectSettings>
+      updateProjectSettingsSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).updateProjectSettingsSettings();
+  }
+
   public static final ArtifactRegistrySettings create(ArtifactRegistryStubSettings stub)
       throws IOException {
     return new ArtifactRegistrySettings.Builder(stub.toBuilder()).build();
@@ -314,6 +350,32 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to importAptArtifacts. */
+    public UnaryCallSettings.Builder<ImportAptArtifactsRequest, Operation>
+        importAptArtifactsSettings() {
+      return getStubSettingsBuilder().importAptArtifactsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importAptArtifacts. */
+    public OperationCallSettings.Builder<
+            ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
+        importAptArtifactsOperationSettings() {
+      return getStubSettingsBuilder().importAptArtifactsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importYumArtifacts. */
+    public UnaryCallSettings.Builder<ImportYumArtifactsRequest, Operation>
+        importYumArtifactsSettings() {
+      return getStubSettingsBuilder().importYumArtifactsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importYumArtifacts. */
+    public OperationCallSettings.Builder<
+            ImportYumArtifactsRequest, ImportYumArtifactsResponse, ImportYumArtifactsMetadata>
+        importYumArtifactsOperationSettings() {
+      return getStubSettingsBuilder().importYumArtifactsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listRepositories. */
@@ -455,6 +517,18 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getProjectSettings. */
+    public UnaryCallSettings.Builder<GetProjectSettingsRequest, ProjectSettings>
+        getProjectSettingsSettings() {
+      return getStubSettingsBuilder().getProjectSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateProjectSettings. */
+    public UnaryCallSettings.Builder<UpdateProjectSettingsRequest, ProjectSettings>
+        updateProjectSettingsSettings() {
+      return getStubSettingsBuilder().updateProjectSettingsSettings();
     }
 
     @Override

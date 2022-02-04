@@ -87,8 +87,7 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of tags to return.
-   * Maximum page size is 10,000.
+   * The maximum number of tags to return. Maximum page size is 10,000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>

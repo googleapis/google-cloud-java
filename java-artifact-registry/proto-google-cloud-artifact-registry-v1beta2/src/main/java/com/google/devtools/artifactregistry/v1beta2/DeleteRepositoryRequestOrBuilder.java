@@ -27,10 +27,12 @@ public interface DeleteRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the repository to delete.
+   * Required. The name of the repository to delete.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -39,10 +41,12 @@ public interface DeleteRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the repository to delete.
+   * Required. The name of the repository to delete.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

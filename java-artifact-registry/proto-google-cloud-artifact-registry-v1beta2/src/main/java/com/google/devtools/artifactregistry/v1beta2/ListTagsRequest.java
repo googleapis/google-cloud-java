@@ -246,8 +246,7 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The maximum number of tags to return.
-   * Maximum page size is 10,000.
+   * The maximum number of tags to return. Maximum page size is 10,000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -918,8 +917,7 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of tags to return.
-     * Maximum page size is 10,000.
+     * The maximum number of tags to return. Maximum page size is 10,000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -934,8 +932,7 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of tags to return.
-     * Maximum page size is 10,000.
+     * The maximum number of tags to return. Maximum page size is 10,000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -953,8 +950,7 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of tags to return.
-     * Maximum page size is 10,000.
+     * The maximum number of tags to return. Maximum page size is 10,000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

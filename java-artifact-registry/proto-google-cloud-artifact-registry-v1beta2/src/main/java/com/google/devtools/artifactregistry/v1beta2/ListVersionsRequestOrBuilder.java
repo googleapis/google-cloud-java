@@ -52,8 +52,7 @@ public interface ListVersionsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of versions to return.
-   * Maximum page size is 10,000.
+   * The maximum number of versions to return. Maximum page size is 1,000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -111,4 +110,29 @@ public interface ListVersionsRequestOrBuilder
    * @return The view.
    */
   com.google.devtools.artifactregistry.v1beta2.VersionView getView();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field to order the results by.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field to order the results by.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

@@ -11,7 +11,7 @@
           "libraryClient": "ArtifactRegistryClient",
           "rpcs": {
             "CreateRepository": {
-              "methods": ["createRepositoryAsync", "createRepositoryAsync", "createRepositoryOperationCallable", "createRepositoryCallable"]
+              "methods": ["createRepositoryAsync", "createRepositoryAsync", "createRepositoryAsync", "createRepositoryOperationCallable", "createRepositoryCallable"]
             },
             "CreateTag": {
               "methods": ["createTag", "createTag", "createTagCallable"]
@@ -20,7 +20,7 @@
               "methods": ["deletePackageAsync", "deletePackageAsync", "deletePackageOperationCallable", "deletePackageCallable"]
             },
             "DeleteRepository": {
-              "methods": ["deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryOperationCallable", "deleteRepositoryCallable"]
+              "methods": ["deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryOperationCallable", "deleteRepositoryCallable"]
             },
             "DeleteTag": {
               "methods": ["deleteTag", "deleteTag", "deleteTagCallable"]
@@ -37,14 +37,23 @@
             "GetPackage": {
               "methods": ["getPackage", "getPackage", "getPackageCallable"]
             },
+            "GetProjectSettings": {
+              "methods": ["getProjectSettings", "getProjectSettings", "getProjectSettings", "getProjectSettingsCallable"]
+            },
             "GetRepository": {
-              "methods": ["getRepository", "getRepository", "getRepositoryCallable"]
+              "methods": ["getRepository", "getRepository", "getRepository", "getRepositoryCallable"]
             },
             "GetTag": {
               "methods": ["getTag", "getTag", "getTagCallable"]
             },
             "GetVersion": {
               "methods": ["getVersion", "getVersion", "getVersionCallable"]
+            },
+            "ImportAptArtifacts": {
+              "methods": ["importAptArtifactsAsync", "importAptArtifactsOperationCallable", "importAptArtifactsCallable"]
+            },
+            "ImportYumArtifacts": {
+              "methods": ["importYumArtifactsAsync", "importYumArtifactsOperationCallable", "importYumArtifactsCallable"]
             },
             "ListFiles": {
               "methods": ["listFiles", "listFiles", "listFilesPagedCallable", "listFilesCallable"]
@@ -53,7 +62,7 @@
               "methods": ["listPackages", "listPackages", "listPackagesPagedCallable", "listPackagesCallable"]
             },
             "ListRepositories": {
-              "methods": ["listRepositories", "listRepositories", "listRepositoriesPagedCallable", "listRepositoriesCallable"]
+              "methods": ["listRepositories", "listRepositories", "listRepositories", "listRepositoriesPagedCallable", "listRepositoriesCallable"]
             },
             "ListTags": {
               "methods": ["listTags", "listTags", "listTagsPagedCallable", "listTagsCallable"]
@@ -66,6 +75,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateProjectSettings": {
+              "methods": ["updateProjectSettings", "updateProjectSettings", "updateProjectSettingsCallable"]
             },
             "UpdateRepository": {
               "methods": ["updateRepository", "updateRepository", "updateRepositoryCallable"]

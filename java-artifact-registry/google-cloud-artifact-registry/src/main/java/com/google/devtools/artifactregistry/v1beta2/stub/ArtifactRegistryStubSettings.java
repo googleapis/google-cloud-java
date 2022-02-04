@@ -61,9 +61,16 @@ import com.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest;
 import com.google.devtools.artifactregistry.v1beta2.File;
 import com.google.devtools.artifactregistry.v1beta2.GetFileRequest;
 import com.google.devtools.artifactregistry.v1beta2.GetPackageRequest;
+import com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1beta2.GetRepositoryRequest;
 import com.google.devtools.artifactregistry.v1beta2.GetTagRequest;
 import com.google.devtools.artifactregistry.v1beta2.GetVersionRequest;
+import com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsMetadata;
+import com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest;
+import com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsResponse;
+import com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsMetadata;
+import com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest;
+import com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsResponse;
 import com.google.devtools.artifactregistry.v1beta2.ListFilesRequest;
 import com.google.devtools.artifactregistry.v1beta2.ListFilesResponse;
 import com.google.devtools.artifactregistry.v1beta2.ListPackagesRequest;
@@ -76,8 +83,10 @@ import com.google.devtools.artifactregistry.v1beta2.ListVersionsRequest;
 import com.google.devtools.artifactregistry.v1beta2.ListVersionsResponse;
 import com.google.devtools.artifactregistry.v1beta2.OperationMetadata;
 import com.google.devtools.artifactregistry.v1beta2.Package;
+import com.google.devtools.artifactregistry.v1beta2.ProjectSettings;
 import com.google.devtools.artifactregistry.v1beta2.Repository;
 import com.google.devtools.artifactregistry.v1beta2.Tag;
+import com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1beta2.UpdateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1beta2.UpdateTagRequest;
 import com.google.devtools.artifactregistry.v1beta2.Version;
@@ -136,6 +145,14 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           .add("https://www.googleapis.com/auth/cloud-platform.read-only")
           .build();
 
+  private final UnaryCallSettings<ImportAptArtifactsRequest, Operation> importAptArtifactsSettings;
+  private final OperationCallSettings<
+          ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
+      importAptArtifactsOperationSettings;
+  private final UnaryCallSettings<ImportYumArtifactsRequest, Operation> importYumArtifactsSettings;
+  private final OperationCallSettings<
+          ImportYumArtifactsRequest, ImportYumArtifactsResponse, ImportYumArtifactsMetadata>
+      importYumArtifactsOperationSettings;
   private final PagedCallSettings<
           ListRepositoriesRequest, ListRepositoriesResponse, ListRepositoriesPagedResponse>
       listRepositoriesSettings;
@@ -174,6 +191,10 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<GetProjectSettingsRequest, ProjectSettings>
+      getProjectSettingsSettings;
+  private final UnaryCallSettings<UpdateProjectSettingsRequest, ProjectSettings>
+      updateProjectSettingsSettings;
 
   private static final PagedListDescriptor<
           ListRepositoriesRequest, ListRepositoriesResponse, Repository>
@@ -444,6 +465,30 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
             }
           };
 
+  /** Returns the object with the settings used for calls to importAptArtifacts. */
+  public UnaryCallSettings<ImportAptArtifactsRequest, Operation> importAptArtifactsSettings() {
+    return importAptArtifactsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importAptArtifacts. */
+  public OperationCallSettings<
+          ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
+      importAptArtifactsOperationSettings() {
+    return importAptArtifactsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importYumArtifacts. */
+  public UnaryCallSettings<ImportYumArtifactsRequest, Operation> importYumArtifactsSettings() {
+    return importYumArtifactsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importYumArtifacts. */
+  public OperationCallSettings<
+          ImportYumArtifactsRequest, ImportYumArtifactsResponse, ImportYumArtifactsMetadata>
+      importYumArtifactsOperationSettings() {
+    return importYumArtifactsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listRepositories. */
   public PagedCallSettings<
           ListRepositoriesRequest, ListRepositoriesResponse, ListRepositoriesPagedResponse>
@@ -580,6 +625,18 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getProjectSettings. */
+  public UnaryCallSettings<GetProjectSettingsRequest, ProjectSettings>
+      getProjectSettingsSettings() {
+    return getProjectSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateProjectSettings. */
+  public UnaryCallSettings<UpdateProjectSettingsRequest, ProjectSettings>
+      updateProjectSettingsSettings() {
+    return updateProjectSettingsSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ArtifactRegistryStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -656,6 +713,12 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
   protected ArtifactRegistryStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    importAptArtifactsSettings = settingsBuilder.importAptArtifactsSettings().build();
+    importAptArtifactsOperationSettings =
+        settingsBuilder.importAptArtifactsOperationSettings().build();
+    importYumArtifactsSettings = settingsBuilder.importYumArtifactsSettings().build();
+    importYumArtifactsOperationSettings =
+        settingsBuilder.importYumArtifactsOperationSettings().build();
     listRepositoriesSettings = settingsBuilder.listRepositoriesSettings().build();
     getRepositorySettings = settingsBuilder.getRepositorySettings().build();
     createRepositorySettings = settingsBuilder.createRepositorySettings().build();
@@ -681,11 +744,23 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    getProjectSettingsSettings = settingsBuilder.getProjectSettingsSettings().build();
+    updateProjectSettingsSettings = settingsBuilder.updateProjectSettingsSettings().build();
   }
 
   /** Builder for ArtifactRegistryStubSettings. */
   public static class Builder extends StubSettings.Builder<ArtifactRegistryStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<ImportAptArtifactsRequest, Operation>
+        importAptArtifactsSettings;
+    private final OperationCallSettings.Builder<
+            ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
+        importAptArtifactsOperationSettings;
+    private final UnaryCallSettings.Builder<ImportYumArtifactsRequest, Operation>
+        importYumArtifactsSettings;
+    private final OperationCallSettings.Builder<
+            ImportYumArtifactsRequest, ImportYumArtifactsResponse, ImportYumArtifactsMetadata>
+        importYumArtifactsOperationSettings;
     private final PagedCallSettings.Builder<
             ListRepositoriesRequest, ListRepositoriesResponse, ListRepositoriesPagedResponse>
         listRepositoriesSettings;
@@ -730,18 +805,22 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<GetProjectSettingsRequest, ProjectSettings>
+        getProjectSettingsSettings;
+    private final UnaryCallSettings.Builder<UpdateProjectSettingsRequest, ProjectSettings>
+        updateProjectSettingsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -750,6 +829,8 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -769,8 +850,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
       definitions.put("no_retry_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -781,6 +860,10 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      importAptArtifactsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importAptArtifactsOperationSettings = OperationCallSettings.newBuilder();
+      importYumArtifactsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importYumArtifactsOperationSettings = OperationCallSettings.newBuilder();
       listRepositoriesSettings = PagedCallSettings.newBuilder(LIST_REPOSITORIES_PAGE_STR_FACT);
       getRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -806,9 +889,13 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getProjectSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateProjectSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              importAptArtifactsSettings,
+              importYumArtifactsSettings,
               listRepositoriesSettings,
               getRepositorySettings,
               createRepositorySettings,
@@ -829,13 +916,21 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               deleteTagSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              getProjectSettingsSettings,
+              updateProjectSettingsSettings);
       initDefaults(this);
     }
 
     protected Builder(ArtifactRegistryStubSettings settings) {
       super(settings);
 
+      importAptArtifactsSettings = settings.importAptArtifactsSettings.toBuilder();
+      importAptArtifactsOperationSettings =
+          settings.importAptArtifactsOperationSettings.toBuilder();
+      importYumArtifactsSettings = settings.importYumArtifactsSettings.toBuilder();
+      importYumArtifactsOperationSettings =
+          settings.importYumArtifactsOperationSettings.toBuilder();
       listRepositoriesSettings = settings.listRepositoriesSettings.toBuilder();
       getRepositorySettings = settings.getRepositorySettings.toBuilder();
       createRepositorySettings = settings.createRepositorySettings.toBuilder();
@@ -861,9 +956,13 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      getProjectSettingsSettings = settings.getProjectSettingsSettings.toBuilder();
+      updateProjectSettingsSettings = settings.updateProjectSettingsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              importAptArtifactsSettings,
+              importYumArtifactsSettings,
               listRepositoriesSettings,
               getRepositorySettings,
               createRepositorySettings,
@@ -884,7 +983,9 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               deleteTagSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              getProjectSettingsSettings,
+              updateProjectSettingsSettings);
     }
 
     private static Builder createDefault() {
@@ -901,6 +1002,16 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .importAptArtifactsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .importYumArtifactsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       builder
           .listRepositoriesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
@@ -1005,6 +1116,68 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getProjectSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateProjectSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .importAptArtifactsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ImportAptArtifactsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ImportAptArtifactsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ImportAptArtifactsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importYumArtifactsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ImportYumArtifactsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ImportYumArtifactsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ImportYumArtifactsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       builder
           .createRepositoryOperationSettings()
@@ -1118,6 +1291,36 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to importAptArtifacts. */
+    public UnaryCallSettings.Builder<ImportAptArtifactsRequest, Operation>
+        importAptArtifactsSettings() {
+      return importAptArtifactsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importAptArtifacts. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
+        importAptArtifactsOperationSettings() {
+      return importAptArtifactsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importYumArtifacts. */
+    public UnaryCallSettings.Builder<ImportYumArtifactsRequest, Operation>
+        importYumArtifactsSettings() {
+      return importYumArtifactsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importYumArtifacts. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportYumArtifactsRequest, ImportYumArtifactsResponse, ImportYumArtifactsMetadata>
+        importYumArtifactsOperationSettings() {
+      return importYumArtifactsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listRepositories. */
@@ -1267,6 +1470,18 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getProjectSettings. */
+    public UnaryCallSettings.Builder<GetProjectSettingsRequest, ProjectSettings>
+        getProjectSettingsSettings() {
+      return getProjectSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateProjectSettings. */
+    public UnaryCallSettings.Builder<UpdateProjectSettingsRequest, ProjectSettings>
+        updateProjectSettingsSettings() {
+      return updateProjectSettingsSettings;
     }
 
     @Override

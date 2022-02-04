@@ -66,6 +66,48 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   }
 
   @Override
+  public void importAptArtifacts(
+      ImportAptArtifactsRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportAptArtifacts, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void importYumArtifacts(
+      ImportYumArtifactsRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportYumArtifacts, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listRepositories(
       ListRepositoriesRequest request, StreamObserver<ListRepositoriesResponse> responseObserver) {
     Object response = responses.poll();
@@ -493,6 +535,48 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getProjectSettings(
+      GetProjectSettingsRequest request, StreamObserver<ProjectSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ProjectSettings) {
+      requests.add(request);
+      responseObserver.onNext(((ProjectSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProjectSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ProjectSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateProjectSettings(
+      UpdateProjectSettingsRequest request, StreamObserver<ProjectSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ProjectSettings) {
+      requests.add(request);
+      responseObserver.onNext(((ProjectSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateProjectSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ProjectSettings.class.getName(),
                   Exception.class.getName())));
     }
   }

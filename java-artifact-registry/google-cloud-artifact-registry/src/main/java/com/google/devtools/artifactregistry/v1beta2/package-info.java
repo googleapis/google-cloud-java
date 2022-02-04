@@ -38,7 +38,7 @@
  *
  * <pre>{@code
  * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
- *   String name = "name3373707";
+ *   RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
  *   Repository response = artifactRegistryClient.getRepository(name);
  * }
  * }</pre>

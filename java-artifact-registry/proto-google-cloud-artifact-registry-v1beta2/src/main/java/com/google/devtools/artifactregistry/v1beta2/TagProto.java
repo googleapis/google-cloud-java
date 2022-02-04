@@ -66,36 +66,41 @@ public final class TagProto {
     java.lang.String[] descriptorData = {
       "\n2google/devtools/artifactregistry/v1bet"
           + "a2/tag.proto\022(google.devtools.artifactre"
-          + "gistry.v1beta2\032 google/protobuf/field_ma"
-          + "sk.proto\032\034google/api/annotations.proto\"$"
-          + "\n\003Tag\022\014\n\004name\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\"X\n\017"
-          + "ListTagsRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filte"
-          + "r\030\004 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token"
-          + "\030\003 \001(\t\"h\n\020ListTagsResponse\022;\n\004tags\030\001 \003(\013"
-          + "2-.google.devtools.artifactregistry.v1be"
-          + "ta2.Tag\022\027\n\017next_page_token\030\002 \001(\t\"\035\n\rGetT"
-          + "agRequest\022\014\n\004name\030\001 \001(\t\"n\n\020CreateTagRequ"
-          + "est\022\016\n\006parent\030\001 \001(\t\022\016\n\006tag_id\030\002 \001(\t\022:\n\003t"
-          + "ag\030\003 \001(\0132-.google.devtools.artifactregis"
-          + "try.v1beta2.Tag\"\177\n\020UpdateTagRequest\022:\n\003t"
-          + "ag\030\001 \001(\0132-.google.devtools.artifactregis"
-          + "try.v1beta2.Tag\022/\n\013update_mask\030\002 \001(\0132\032.g"
-          + "oogle.protobuf.FieldMask\" \n\020DeleteTagReq"
-          + "uest\022\014\n\004name\030\001 \001(\tB\217\002\n,com.google.devtoo"
-          + "ls.artifactregistry.v1beta2B\010TagProtoP\001Z"
-          + "Xgoogle.golang.org/genproto/googleapis/d"
-          + "evtools/artifactregistry/v1beta2;artifac"
-          + "tregistry\252\002%Google.Cloud.ArtifactRegistr"
-          + "y.V1Beta2\312\002%Google\\Cloud\\ArtifactRegistr"
-          + "y\\V1beta2\352\002(Google::Cloud::ArtifactRegis"
-          + "try::V1beta2b\006proto3"
+          + "gistry.v1beta2\032\034google/api/annotations.p"
+          + "roto\032\031google/api/resource.proto\032 google/"
+          + "protobuf/field_mask.proto\"\261\001\n\003Tag\022\014\n\004nam"
+          + "e\030\001 \001(\t\022\017\n\007version\030\002 \001(\t:\212\001\352A\206\001\n#artifac"
+          + "tregistry.googleapis.com/Tag\022_projects/{"
+          + "project}/locations/{location}/repositori"
+          + "es/{repository}/packages/{package}/tags/"
+          + "{tag}\"X\n\017ListTagsRequest\022\016\n\006parent\030\001 \001(\t"
+          + "\022\016\n\006filter\030\004 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\np"
+          + "age_token\030\003 \001(\t\"h\n\020ListTagsResponse\022;\n\004t"
+          + "ags\030\001 \003(\0132-.google.devtools.artifactregi"
+          + "stry.v1beta2.Tag\022\027\n\017next_page_token\030\002 \001("
+          + "\t\"\035\n\rGetTagRequest\022\014\n\004name\030\001 \001(\t\"n\n\020Crea"
+          + "teTagRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006tag_id\030\002"
+          + " \001(\t\022:\n\003tag\030\003 \001(\0132-.google.devtools.arti"
+          + "factregistry.v1beta2.Tag\"\177\n\020UpdateTagReq"
+          + "uest\022:\n\003tag\030\001 \001(\0132-.google.devtools.arti"
+          + "factregistry.v1beta2.Tag\022/\n\013update_mask\030"
+          + "\002 \001(\0132\032.google.protobuf.FieldMask\" \n\020Del"
+          + "eteTagRequest\022\014\n\004name\030\001 \001(\tB\217\002\n,com.goog"
+          + "le.devtools.artifactregistry.v1beta2B\010Ta"
+          + "gProtoP\001ZXgoogle.golang.org/genproto/goo"
+          + "gleapis/devtools/artifactregistry/v1beta"
+          + "2;artifactregistry\252\002%Google.Cloud.Artifa"
+          + "ctRegistry.V1Beta2\312\002%Google\\Cloud\\Artifa"
+          + "ctRegistry\\V1beta2\352\002(Google::Cloud::Arti"
+          + "factRegistry::V1beta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_devtools_artifactregistry_v1beta2_Tag_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -153,8 +158,14 @@ public final class TagProto {
             new java.lang.String[] {
               "Name",
             });
-    com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

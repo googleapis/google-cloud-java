@@ -40,9 +40,16 @@ import com.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest;
 import com.google.devtools.artifactregistry.v1beta2.File;
 import com.google.devtools.artifactregistry.v1beta2.GetFileRequest;
 import com.google.devtools.artifactregistry.v1beta2.GetPackageRequest;
+import com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1beta2.GetRepositoryRequest;
 import com.google.devtools.artifactregistry.v1beta2.GetTagRequest;
 import com.google.devtools.artifactregistry.v1beta2.GetVersionRequest;
+import com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsMetadata;
+import com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest;
+import com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsResponse;
+import com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsMetadata;
+import com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest;
+import com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsResponse;
 import com.google.devtools.artifactregistry.v1beta2.ListFilesRequest;
 import com.google.devtools.artifactregistry.v1beta2.ListFilesResponse;
 import com.google.devtools.artifactregistry.v1beta2.ListPackagesRequest;
@@ -55,8 +62,10 @@ import com.google.devtools.artifactregistry.v1beta2.ListVersionsRequest;
 import com.google.devtools.artifactregistry.v1beta2.ListVersionsResponse;
 import com.google.devtools.artifactregistry.v1beta2.OperationMetadata;
 import com.google.devtools.artifactregistry.v1beta2.Package;
+import com.google.devtools.artifactregistry.v1beta2.ProjectSettings;
 import com.google.devtools.artifactregistry.v1beta2.Repository;
 import com.google.devtools.artifactregistry.v1beta2.Tag;
+import com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1beta2.UpdateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1beta2.UpdateTagRequest;
 import com.google.devtools.artifactregistry.v1beta2.Version;
@@ -83,6 +92,28 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
+  private static final MethodDescriptor<ImportAptArtifactsRequest, Operation>
+      importAptArtifactsMethodDescriptor =
+          MethodDescriptor.<ImportAptArtifactsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1beta2.ArtifactRegistry/ImportAptArtifacts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportAptArtifactsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ImportYumArtifactsRequest, Operation>
+      importYumArtifactsMethodDescriptor =
+          MethodDescriptor.<ImportYumArtifactsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1beta2.ArtifactRegistry/ImportYumArtifacts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportYumArtifactsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListRepositoriesRequest, ListRepositoriesResponse>
       listRepositoriesMethodDescriptor =
           MethodDescriptor.<ListRepositoriesRequest, ListRepositoriesResponse>newBuilder()
@@ -289,6 +320,36 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetProjectSettingsRequest, ProjectSettings>
+      getProjectSettingsMethodDescriptor =
+          MethodDescriptor.<GetProjectSettingsRequest, ProjectSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1beta2.ArtifactRegistry/GetProjectSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetProjectSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ProjectSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateProjectSettingsRequest, ProjectSettings>
+      updateProjectSettingsMethodDescriptor =
+          MethodDescriptor.<UpdateProjectSettingsRequest, ProjectSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1beta2.ArtifactRegistry/UpdateProjectSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateProjectSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ProjectSettings.getDefaultInstance()))
+              .build();
+
+  private final UnaryCallable<ImportAptArtifactsRequest, Operation> importAptArtifactsCallable;
+  private final OperationCallable<
+          ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
+      importAptArtifactsOperationCallable;
+  private final UnaryCallable<ImportYumArtifactsRequest, Operation> importYumArtifactsCallable;
+  private final OperationCallable<
+          ImportYumArtifactsRequest, ImportYumArtifactsResponse, ImportYumArtifactsMetadata>
+      importYumArtifactsOperationCallable;
   private final UnaryCallable<ListRepositoriesRequest, ListRepositoriesResponse>
       listRepositoriesCallable;
   private final UnaryCallable<ListRepositoriesRequest, ListRepositoriesPagedResponse>
@@ -328,6 +389,10 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<GetProjectSettingsRequest, ProjectSettings>
+      getProjectSettingsCallable;
+  private final UnaryCallable<UpdateProjectSettingsRequest, ProjectSettings>
+      updateProjectSettingsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -373,6 +438,26 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<ImportAptArtifactsRequest, Operation> importAptArtifactsTransportSettings =
+        GrpcCallSettings.<ImportAptArtifactsRequest, Operation>newBuilder()
+            .setMethodDescriptor(importAptArtifactsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ImportYumArtifactsRequest, Operation> importYumArtifactsTransportSettings =
+        GrpcCallSettings.<ImportYumArtifactsRequest, Operation>newBuilder()
+            .setMethodDescriptor(importYumArtifactsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ListRepositoriesRequest, ListRepositoriesResponse>
         listRepositoriesTransportSettings =
             GrpcCallSettings.<ListRepositoriesRequest, ListRepositoriesResponse>newBuilder()
@@ -585,7 +670,53 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetProjectSettingsRequest, ProjectSettings>
+        getProjectSettingsTransportSettings =
+            GrpcCallSettings.<GetProjectSettingsRequest, ProjectSettings>newBuilder()
+                .setMethodDescriptor(getProjectSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateProjectSettingsRequest, ProjectSettings>
+        updateProjectSettingsTransportSettings =
+            GrpcCallSettings.<UpdateProjectSettingsRequest, ProjectSettings>newBuilder()
+                .setMethodDescriptor(updateProjectSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "project_settings.name",
+                          String.valueOf(request.getProjectSettings().getName()));
+                      return params.build();
+                    })
+                .build();
 
+    this.importAptArtifactsCallable =
+        callableFactory.createUnaryCallable(
+            importAptArtifactsTransportSettings,
+            settings.importAptArtifactsSettings(),
+            clientContext);
+    this.importAptArtifactsOperationCallable =
+        callableFactory.createOperationCallable(
+            importAptArtifactsTransportSettings,
+            settings.importAptArtifactsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.importYumArtifactsCallable =
+        callableFactory.createUnaryCallable(
+            importYumArtifactsTransportSettings,
+            settings.importYumArtifactsSettings(),
+            clientContext);
+    this.importYumArtifactsOperationCallable =
+        callableFactory.createOperationCallable(
+            importYumArtifactsTransportSettings,
+            settings.importYumArtifactsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listRepositoriesCallable =
         callableFactory.createUnaryCallable(
             listRepositoriesTransportSettings, settings.listRepositoriesSettings(), clientContext);
@@ -690,6 +821,16 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.getProjectSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getProjectSettingsTransportSettings,
+            settings.getProjectSettingsSettings(),
+            clientContext);
+    this.updateProjectSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateProjectSettingsTransportSettings,
+            settings.updateProjectSettingsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -697,6 +838,30 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<ImportAptArtifactsRequest, Operation> importAptArtifactsCallable() {
+    return importAptArtifactsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
+      importAptArtifactsOperationCallable() {
+    return importAptArtifactsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportYumArtifactsRequest, Operation> importYumArtifactsCallable() {
+    return importYumArtifactsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ImportYumArtifactsRequest, ImportYumArtifactsResponse, ImportYumArtifactsMetadata>
+      importYumArtifactsOperationCallable() {
+    return importYumArtifactsOperationCallable;
   }
 
   @Override
@@ -854,6 +1019,17 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetProjectSettingsRequest, ProjectSettings> getProjectSettingsCallable() {
+    return getProjectSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateProjectSettingsRequest, ProjectSettings>
+      updateProjectSettingsCallable() {
+    return updateProjectSettingsCallable;
   }
 
   @Override

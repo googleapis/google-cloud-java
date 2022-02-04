@@ -132,6 +132,20 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
+          case 66:
+            {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -177,6 +191,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The name of the version, for example:
    * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+   * If the package or version ID parts contain slashes, the slashes are
+   * escaped.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -201,6 +217,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The name of the version, for example:
    * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+   * If the package or version ID parts contain slashes, the slashes are
+   * escaped.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -436,6 +454,61 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     return relatedTags_.get(index);
   }
 
+  public static final int METADATA_FIELD_NUMBER = 8;
+  private com.google.protobuf.Struct metadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Repository-specific Metadata stored against this version.
+   * The fields returned are defined by the underlying repository-specific
+   * resource. Currently, the only resource in use is
+   * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Repository-specific Metadata stored against this version.
+   * The fields returned are defined by the underlying repository-specific
+   * resource. Currently, the only resource in use is
+   * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The metadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getMetadata() {
+    return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Repository-specific Metadata stored against this version.
+   * The fields returned are defined by the underlying repository-specific
+   * resource. Currently, the only resource in use is
+   * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -465,6 +538,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < relatedTags_.size(); i++) {
       output.writeMessage(7, relatedTags_.get(i));
     }
+    if (metadata_ != null) {
+      output.writeMessage(8, getMetadata());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -488,6 +564,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < relatedTags_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, relatedTags_.get(i));
+    }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getMetadata());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -516,6 +595,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getRelatedTagsList().equals(other.getRelatedTagsList())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata().equals(other.getMetadata())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -542,6 +625,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (getRelatedTagsCount() > 0) {
       hash = (37 * hash) + RELATED_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getRelatedTagsList().hashCode();
+    }
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -714,6 +801,12 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       } else {
         relatedTagsBuilder_.clear();
       }
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -762,6 +855,11 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         result.relatedTags_ = relatedTags_;
       } else {
         result.relatedTags_ = relatedTagsBuilder_.build();
+      }
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
+      } else {
+        result.metadata_ = metadataBuilder_.build();
       }
       onBuilt();
       return result;
@@ -854,6 +952,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -893,6 +994,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the version, for example:
      * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+     * If the package or version ID parts contain slashes, the slashes are
+     * escaped.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -916,6 +1019,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the version, for example:
      * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+     * If the package or version ID parts contain slashes, the slashes are
+     * escaped.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -939,6 +1044,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the version, for example:
      * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+     * If the package or version ID parts contain slashes, the slashes are
+     * escaped.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -961,6 +1068,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the version, for example:
      * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+     * If the package or version ID parts contain slashes, the slashes are
+     * escaped.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -979,6 +1088,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the version, for example:
      * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+     * If the package or version ID parts contain slashes, the slashes are
+     * escaped.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1841,6 +1952,221 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         relatedTags_ = null;
       }
       return relatedTagsBuilder_;
+    }
+
+    private com.google.protobuf.Struct metadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        metadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Repository-specific Metadata stored against this version.
+     * The fields returned are defined by the underlying repository-specific
+     * resource. Currently, the only resource in use is
+     * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Repository-specific Metadata stored against this version.
+     * The fields returned are defined by the underlying repository-specific
+     * resource. Currently, the only resource in use is
+     * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The metadata.
+     */
+    public com.google.protobuf.Struct getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Repository-specific Metadata stored against this version.
+     * The fields returned are defined by the underlying repository-specific
+     * resource. Currently, the only resource in use is
+     * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMetadata(com.google.protobuf.Struct value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Repository-specific Metadata stored against this version.
+     * The fields returned are defined by the underlying repository-specific
+     * resource. Currently, the only resource in use is
+     * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMetadata(com.google.protobuf.Struct.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Repository-specific Metadata stored against this version.
+     * The fields returned are defined by the underlying repository-specific
+     * resource. Currently, the only resource in use is
+     * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMetadata(com.google.protobuf.Struct value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+              com.google.protobuf.Struct.newBuilder(metadata_).mergeFrom(value).buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Repository-specific Metadata stored against this version.
+     * The fields returned are defined by the underlying repository-specific
+     * resource. Currently, the only resource in use is
+     * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+        onChanged();
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Repository-specific Metadata stored against this version.
+     * The fields returned are defined by the underlying repository-specific
+     * resource. Currently, the only resource in use is
+     * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Struct.Builder getMetadataBuilder() {
+
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Repository-specific Metadata stored against this version.
+     * The fields returned are defined by the underlying repository-specific
+     * resource. Currently, the only resource in use is
+     * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Repository-specific Metadata stored against this version.
+     * The fields returned are defined by the underlying repository-specific
+     * resource. Currently, the only resource in use is
+     * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
     }
 
     @java.lang.Override
