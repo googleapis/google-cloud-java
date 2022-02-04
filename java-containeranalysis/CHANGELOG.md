@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.2.7](https://github.com/googleapis/java-containeranalysis/compare/v2.2.6...v2.2.7) (2022-02-04)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-containeranalysis/issues/1339)) ([#808](https://github.com/googleapis/java-containeranalysis/issues/808)) ([bfc5555](https://github.com/googleapis/java-containeranalysis/commit/bfc5555aad1810a41be08b5dd407bbd0997efbe5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#810](https://github.com/googleapis/java-containeranalysis/issues/810)) ([77ed8c9](https://github.com/googleapis/java-containeranalysis/commit/77ed8c93f7b4c7c808a03080f8c80ee4f15db017))
+* update dependency io.grafeas:grafeas to v2.2.0 ([#792](https://github.com/googleapis/java-containeranalysis/issues/792)) ([838837a](https://github.com/googleapis/java-containeranalysis/commit/838837a36d8d2a0e98e81c76b6527529580c5447))
+
 ### [2.2.6](https://www.github.com/googleapis/java-containeranalysis/compare/v2.2.5...v2.2.6) (2022-01-07)
 
 
