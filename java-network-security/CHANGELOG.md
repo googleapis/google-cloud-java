@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.4.0](https://github.com/googleapis/java-network-security/compare/v0.3.1...v0.4.0) (2022-02-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* updating metadata messages for all long running operations (#94)
+
+### Bug Fixes
+
+* updating metadata messages for all long running operations ([#94](https://github.com/googleapis/java-network-security/issues/94)) ([ce84426](https://github.com/googleapis/java-network-security/commit/ce8442639ab2a99cd2aca6b6a337e1f5255e6cb2))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-network-security/issues/1339)) ([#109](https://github.com/googleapis/java-network-security/issues/109)) ([1f509c8](https://github.com/googleapis/java-network-security/commit/1f509c8d326961f02e7d8ad3d56ea3361dd55515))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#112](https://github.com/googleapis/java-network-security/issues/112)) ([afc5aff](https://github.com/googleapis/java-network-security/commit/afc5affc6cec06290cd24ce4ceff8df0ba999319))
+
 ### [0.3.1](https://www.github.com/googleapis/java-network-security/compare/v0.3.0...v0.3.1) (2022-01-07)
 
 
