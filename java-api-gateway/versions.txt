@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-api-gateway:2.1.7:2.1.7
-grpc-google-cloud-api-gateway-v1:2.1.7:2.1.7
-proto-google-cloud-api-gateway-v1:2.1.7:2.1.7
+google-cloud-api-gateway:2.1.7:2.1.8-SNAPSHOT
+grpc-google-cloud-api-gateway-v1:2.1.7:2.1.8-SNAPSHOT
+proto-google-cloud-api-gateway-v1:2.1.7:2.1.8-SNAPSHOT
