@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-datastore.git",
-        "sha": "ea973af5ab5296a08f75f322706e0f9cd58fcba6"
+        "sha": "1810bae27175ea5db1fa8ea78a36fc717461f496"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "466412a75d636d69bcf8a42d9a5f956e73ac421d"
+        "sha": "010e6b0541130bef2cfe453380a31bea959278c5"
       }
     }
   ],
@@ -61,6 +61,7 @@
     ".kokoro/dependencies.sh",
     ".kokoro/nightly/common.cfg",
     ".kokoro/nightly/integration.cfg",
+    ".kokoro/nightly/java11-integration.cfg",
     ".kokoro/nightly/java11.cfg",
     ".kokoro/nightly/java7.cfg",
     ".kokoro/nightly/java8-osx.cfg",
