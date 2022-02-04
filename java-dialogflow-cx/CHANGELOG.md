@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.11.1](https://github.com/googleapis/java-dialogflow-cx/compare/v0.11.0...v0.11.1) (2022-02-03)
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-dialogflow-cx/issues/1339)) ([#404](https://github.com/googleapis/java-dialogflow-cx/issues/404)) ([e771445](https://github.com/googleapis/java-dialogflow-cx/commit/e7714453239ea5c1f81ce8ca221076ad967ede5f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#407](https://github.com/googleapis/java-dialogflow-cx/issues/407)) ([a5bcbe9](https://github.com/googleapis/java-dialogflow-cx/commit/a5bcbe979a23a28131d14ba611e4e9637b615ed1))
+
 ## [0.11.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.10.1...v0.11.0) (2022-01-07)
 
 
