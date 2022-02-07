@@ -1,15 +1,20 @@
 package com.google.cloud.examples.storage.objects;
 
+// [START storage_stream_file_download]
+
 import com.google.cloud.ReadChannel;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
+import com.google.common.io.ByteStreams;
 import java.io.IOException;
-import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class StreamObjectDownload {
+
   public static void streamObjectDownload(
       String projectId, String bucketName, String objectName, String targetFile)
       throws IOException {
@@ -26,15 +31,10 @@ public class StreamObjectDownload {
     // String targetFile = "path/to/your/file";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    ByteArrayOutputStream output = new ByteArrayOutputStream();
     try (ReadChannel reader = storage.reader(BlobId.of(bucketName, objectName))) {
-      ByteBuffer buffer = ByteBuffer.allocate(64 * 1024);
-      while (reader.read(buffer) > 0) {
-        buffer.flip();
-        output.write(buffer.array(), 0, buffer.limit());
-        buffer.clear();
-      }
-      output.writeTo(new FileOutputStream(targetFile));
+      Path targetFilePath = Paths.get(targetFile);
+      FileChannel targetFileChannel = FileChannel.open(targetFilePath, StandardOpenOption.WRITE);
+      ByteStreams.copy(reader, targetFileChannel);
 
       System.out.println(
           "Downloaded object "
@@ -47,3 +47,4 @@ public class StreamObjectDownload {
     }
   }
 }
+// [END storage_stream_file_download]

@@ -1,5 +1,7 @@
 package com.google.cloud.examples.storage.objects;
 
+// [START storage_stream_file_upload]
+
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
@@ -10,6 +12,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 
 public class StreamObjectUpload {
+
   public static void streamObjectUpload(
       String projectId, String bucketName, String objectName, String contents) throws IOException {
     // The ID of your GCP project
@@ -35,3 +38,5 @@ public class StreamObjectUpload {
     }
   }
 }
+
+// [END storage_stream_file_upload]
