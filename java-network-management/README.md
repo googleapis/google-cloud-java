@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-network-management</artifactId>
-  <version>1.1.5</version>
+  <version>1.1.6</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-network-management:1.1.5'
+implementation 'com.google.cloud:google-cloud-network-management:1.1.6'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-network-management" % "1.1.5"
+libraryDependencies += "com.google.cloud" % "google-cloud-network-management" % "1.1.6"
 ```
 
 ## Authentication
