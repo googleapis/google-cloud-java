@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-securitycenter-settings</artifactId>
-  <version>0.5.8</version>
+  <version>0.5.9</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-securitycenter-settings:0.5.8'
+implementation 'com.google.cloud:google-cloud-securitycenter-settings:0.5.9'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter-settings" % "0.5.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter-settings" % "0.5.9"
 ```
 
 ## Authentication
