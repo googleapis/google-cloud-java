@@ -14,7 +14,7 @@
   </parent>
 
   <properties>
-    <jetty.maven.plugin>9.4.44.v20210927</jetty.maven.plugin>
+    <jetty.maven.plugin>9.4.45.v20220203</jetty.maven.plugin>
     <java.source.version>1.8</java.source.version>
   </properties>
 
