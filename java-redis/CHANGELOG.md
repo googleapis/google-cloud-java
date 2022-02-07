@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-redis/compare/v2.1.1...v2.2.0) (2022-02-07)
+
+
+### Features
+
+* Add automated RDB (AKA persistence) ([#588](https://github.com/googleapis/java-redis/issues/588)) ([7ee7e33](https://github.com/googleapis/java-redis/commit/7ee7e33bf66d7112d3db87fb502a7706eb7b04c0))
+
+
+### Bug Fixes
+
+* [Cloud Memorystore for Redis] Add missing fields for TLS and Maintenance Window features ([#583](https://github.com/googleapis/java-redis/issues/583)) ([6ac4ac8](https://github.com/googleapis/java-redis/commit/6ac4ac893c19876a407affab72800c5ba96db000))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-redis/issues/1339)) ([#586](https://github.com/googleapis/java-redis/issues/586)) ([3022154](https://github.com/googleapis/java-redis/commit/3022154f1196ae2a449ef6d06b45d745d9b55328))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#589](https://github.com/googleapis/java-redis/issues/589)) ([cfbfeeb](https://github.com/googleapis/java-redis/commit/cfbfeebfee12efdc927cd1f0cf293aa89d4c66fd))
+
 ### [2.1.1](https://www.github.com/googleapis/java-redis/compare/v2.1.0...v2.1.1) (2022-01-07)
 
 
