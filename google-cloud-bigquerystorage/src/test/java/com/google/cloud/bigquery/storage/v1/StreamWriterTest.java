@@ -489,10 +489,8 @@ public class StreamWriterTest {
     testBigQueryWrite.setResponseSleep(Duration.ofSeconds(1));
     testBigQueryWrite.addResponse(createAppendResponse(0));
 
-    long appendStartTimeMs = System.currentTimeMillis();
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
-    long appendElapsedMs = System.currentTimeMillis() - appendStartTimeMs;
-    assertTrue(appendElapsedMs >= 1000);
+    assertTrue(writer.getInflightWaitSeconds() >= 1);
     assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
     writer.close();
   }

@@ -34,6 +34,7 @@ import java.io.IOException;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -158,6 +159,11 @@ public class StreamWriter implements AutoCloseable {
    * A separate thread to handle actual communication with server.
    */
   private Thread appendThread;
+
+  /*
+   * The inflight wait time for the previous sent request.
+   */
+  private final AtomicLong inflightWaitSec = new AtomicLong(0);
 
   /** The maximum size of one request. Defined by the API. */
   public static long getApiMaxRequestBytes() {
@@ -316,6 +322,7 @@ public class StreamWriter implements AutoCloseable {
 
   @GuardedBy("lock")
   private void maybeWaitForInflightQuota() {
+    long start_time = System.currentTimeMillis();
     while (this.inflightRequests >= this.maxInflightRequests
         || this.inflightBytes >= this.maxInflightBytes) {
       try {
@@ -332,6 +339,19 @@ public class StreamWriter implements AutoCloseable {
                 .withDescription("Interrupted while waiting for quota."));
       }
     }
+    inflightWaitSec.set((System.currentTimeMillis() - start_time) / 1000);
+  }
+
+  /**
+   * Returns the wait of a request in Client side before sending to the Server. Request could wait
+   * in Client because it reached the client side inflight request limit (adjustable when
+   * constructing the StreamWriter). The value is the wait time for the last sent request. A
+   * constant high wait value indicates a need for more throughput, you can create a new Stream for
+   * to increase the throughput in exclusive stream case, or create a new Writer in the default
+   * stream case.
+   */
+  public long getInflightWaitSeconds() {
+    return inflightWaitSec.longValue();
   }
 
   /** Close the stream writer. Shut down all resources. */
