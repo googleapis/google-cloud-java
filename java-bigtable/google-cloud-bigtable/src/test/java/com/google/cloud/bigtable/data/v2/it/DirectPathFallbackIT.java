@@ -29,7 +29,6 @@ import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.ManagedChannelBuilder;
-import io.grpc.alts.ComputeEngineChannelBuilder;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.shaded.io.netty.channel.ChannelDuplexHandler;
 import io.grpc.netty.shaded.io.netty.channel.ChannelFactory;
@@ -40,7 +39,6 @@ import io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoopGroup;
 import io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel;
 import io.grpc.netty.shaded.io.netty.util.ReferenceCountUtil;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
@@ -189,25 +187,12 @@ public class DirectPathFallbackIT {
   /**
    * This is a giant hack to enable testing DirectPath CFE fallback.
    *
-   * <p>It unwraps the {@link ComputeEngineChannelBuilder} to inject a NettyChannelHandler to signal
-   * IPv6 packet loss.
+   * <p>Injects a NettyChannelHandler to signal IPv6 packet loss.
    */
   private void injectNettyChannelHandler(ManagedChannelBuilder<?> channelBuilder) {
-    try {
-      // Extract the delegate NettyChannelBuilder using reflection
-      Field delegateField = ComputeEngineChannelBuilder.class.getDeclaredField("delegate");
-      delegateField.setAccessible(true);
-
-      ComputeEngineChannelBuilder gceChannelBuilder =
-          ((ComputeEngineChannelBuilder) channelBuilder);
-      Object delegateChannelBuilder = delegateField.get(gceChannelBuilder);
-
-      NettyChannelBuilder nettyChannelBuilder = (NettyChannelBuilder) delegateChannelBuilder;
-      nettyChannelBuilder.channelFactory(channelFactory);
-      nettyChannelBuilder.eventLoopGroup(eventLoopGroup);
-    } catch (NoSuchFieldException | IllegalAccessException e) {
-      throw new RuntimeException("Failed to inject the netty ChannelHandler", e);
-    }
+    NettyChannelBuilder nettyChannelBuilder = (NettyChannelBuilder) channelBuilder;
+    nettyChannelBuilder.channelFactory(channelFactory);
+    nettyChannelBuilder.eventLoopGroup(eventLoopGroup);
   }
 
   /** @see com.google.cloud.bigtable.data.v2.it.DirectPathFallbackIT.MyChannelHandler */
