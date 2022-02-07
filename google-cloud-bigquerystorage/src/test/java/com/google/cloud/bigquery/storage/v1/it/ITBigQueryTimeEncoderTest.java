@@ -84,6 +84,14 @@ public class ITBigQueryTimeEncoderTest {
                         com.google.cloud.bigquery.Field.newBuilder(
                                 "test_datetime_micros", StandardSQLTypeName.DATETIME)
                             .setMode(Mode.REPEATED)
+                            .build(),
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "test_date_repeated", StandardSQLTypeName.DATE)
+                            .setMode(Mode.REPEATED)
+                            .build(),
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "test_date", StandardSQLTypeName.DATE)
+                            .setMode(Mode.NULLABLE)
                             .build())))
             .build();
     bigquery.create(tableInfo);
@@ -122,11 +130,25 @@ public class ITBigQueryTimeEncoderTest {
             .setMode(TableFieldSchema.Mode.REPEATED)
             .setName("test_datetime_micros")
             .build();
+    TableFieldSchema TEST_DATE_REPEATED =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.DATE)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .setName("test_date_repeated")
+            .build();
+    TableFieldSchema TEST_DATE =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.DATE)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_date")
+            .build();
     TableSchema tableSchema =
         TableSchema.newBuilder()
             .addFields(0, TEST_STRING)
             .addFields(1, TEST_TIME)
             .addFields(2, TEST_DATETIME)
+            .addFields(3, TEST_DATE_REPEATED)
+            .addFields(4, TEST_DATE)
             .build();
     try (JsonStreamWriter jsonStreamWriter =
         JsonStreamWriter.newBuilder(parent.toString(), tableSchema).build()) {
@@ -157,6 +179,8 @@ public class ITBigQueryTimeEncoderTest {
                 CivilTimeEncoder.encodePacked64DatetimeMicros(
                     LocalDateTime.of(2050, 1, 2, 3, 4, 5, 6_000)),
               }));
+      row.put("test_date_repeated", new JSONArray(new int[] {0, 300, 14238}));
+      row.put("test_date", 300);
       JSONArray jsonArr = new JSONArray(new JSONObject[] {row});
       ApiFuture<AppendRowsResponse> response = jsonStreamWriter.append(jsonArr, -1);
       Assert.assertFalse(response.get().getAppendResult().hasOffset());
@@ -179,6 +203,13 @@ public class ITBigQueryTimeEncoderTest {
           "1995-05-19T10:30:45", currentRow.get(2).getRepeatedValue().get(1).getStringValue());
       assertEquals(
           "2000-01-01T00:00:00", currentRow.get(2).getRepeatedValue().get(2).getStringValue());
+
+      assertEquals("1970-01-01", currentRow.get(3).getRepeatedValue().get(0).getStringValue());
+      assertEquals("1970-10-28", currentRow.get(3).getRepeatedValue().get(1).getStringValue());
+      assertEquals("2008-12-25", currentRow.get(3).getRepeatedValue().get(2).getStringValue());
+
+      assertEquals("1970-10-28", currentRow.get(4).getStringValue());
+
       assertEquals(
           "2026-03-11T05:45:12.009000",
           currentRow.get(2).getRepeatedValue().get(3).getStringValue());
