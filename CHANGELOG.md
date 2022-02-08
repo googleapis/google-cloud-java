@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.9.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.8.4...v2.9.0) (2022-02-08)
+
+
+### Features
+
+* add a indicator of how much time a request is waiting for inflight limit ([#1514](https://github.com/googleapis/java-bigquerystorage/issues/1514)) ([54874be](https://github.com/googleapis/java-bigquerystorage/commit/54874be945c2b88be6be03ae654277445c17741d))
+* temp workaround for omg/48020 ([#1521](https://github.com/googleapis/java-bigquerystorage/issues/1521)) ([ff28f65](https://github.com/googleapis/java-bigquerystorage/commit/ff28f65328fbd433117a314cdff7510a28160591))
+
+
+### Bug Fixes
+
+* add a DATE type e2e test ([#1511](https://github.com/googleapis/java-bigquerystorage/issues/1511)) ([5eaf38e](https://github.com/googleapis/java-bigquerystorage/commit/5eaf38ee7fb9f84c454e0e9da5fe9092ff4c456a))
+
+
+### Documentation
+
+* **tutorials:** Add IT to JsonWriteDefaultStream tutorial ([#1522](https://github.com/googleapis/java-bigquerystorage/issues/1522)) ([9fd7aca](https://github.com/googleapis/java-bigquerystorage/commit/9fd7aca8b6032a2c02d0ea91dd063c9ac9e151aa))
+
 ### [2.8.4](https://github.com/googleapis/java-bigquerystorage/compare/v2.8.3...v2.8.4) (2022-02-03)
 
 
