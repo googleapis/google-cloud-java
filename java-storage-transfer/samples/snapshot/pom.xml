@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage-transfer</artifactId>
-      <version>0.2.3</version>
+      <version>1.0.0</version>
     </dependency>
   <!-- {x-version-update-end} -->
 
