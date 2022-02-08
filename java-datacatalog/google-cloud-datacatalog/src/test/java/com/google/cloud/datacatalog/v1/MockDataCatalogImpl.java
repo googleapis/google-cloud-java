@@ -312,6 +312,48 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
   }
 
   @Override
+  public void modifyEntryOverview(
+      ModifyEntryOverviewRequest request, StreamObserver<EntryOverview> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EntryOverview) {
+      requests.add(request);
+      responseObserver.onNext(((EntryOverview) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ModifyEntryOverview, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EntryOverview.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void modifyEntryContacts(
+      ModifyEntryContactsRequest request, StreamObserver<Contacts> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Contacts) {
+      requests.add(request);
+      responseObserver.onNext(((Contacts) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ModifyEntryContacts, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Contacts.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createTagTemplate(
       CreateTagTemplateRequest request, StreamObserver<TagTemplate> responseObserver) {
     Object response = responses.poll();
@@ -577,6 +619,48 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
                   "Unrecognized response type %s for method ListTags, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListTagsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void starEntry(
+      StarEntryRequest request, StreamObserver<StarEntryResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof StarEntryResponse) {
+      requests.add(request);
+      responseObserver.onNext(((StarEntryResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StarEntry, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  StarEntryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void unstarEntry(
+      UnstarEntryRequest request, StreamObserver<UnstarEntryResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UnstarEntryResponse) {
+      requests.add(request);
+      responseObserver.onNext(((UnstarEntryResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UnstarEntry, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UnstarEntryResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

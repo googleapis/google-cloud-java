@@ -190,7 +190,7 @@ public class DataCatalogClient implements BackgroundResource {
    *     error.
    * @param query Optional. The query string with a minimum of 3 characters and specific syntax. For
    *     more information, see [Data Catalog search
-   *     syntax](/data-catalog/docs/how-to/search-reference).
+   *     syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
    *     <p>An empty query string returns all data assets (in the specified scope) that you have
    *     access to.
    *     <p>A query string can be a simple `xyz` or qualified by predicates:
@@ -430,7 +430,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   String parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String entryGroupId = "entryGroupId1228924712";
    *   EntryGroup entryGroup = EntryGroup.newBuilder().build();
    *   EntryGroup response = dataCatalogClient.createEntryGroup(parent, entryGroupId, entryGroup);
@@ -493,7 +493,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   CreateEntryGroupRequest request =
    *       CreateEntryGroupRequest.newBuilder()
-   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEntryGroupId("entryGroupId1228924712")
    *           .setEntryGroup(EntryGroup.newBuilder().build())
    *           .build();
@@ -543,7 +543,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   CreateEntryGroupRequest request =
    *       CreateEntryGroupRequest.newBuilder()
-   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEntryGroupId("entryGroupId1228924712")
    *           .setEntryGroup(EntryGroup.newBuilder().build())
    *           .build();
@@ -1766,6 +1766,123 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Modifies entry overview, part of the business context of an
+   * [Entry][google.cloud.datacatalog.v1.Entry].
+   *
+   * <p>To call this method, you must have the `datacatalog.entries.updateOverview` IAM permission
+   * on the corresponding project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ModifyEntryOverviewRequest request =
+   *       ModifyEntryOverviewRequest.newBuilder()
+   *           .setName(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .setEntryOverview(EntryOverview.newBuilder().build())
+   *           .build();
+   *   EntryOverview response = dataCatalogClient.modifyEntryOverview(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryOverview modifyEntryOverview(ModifyEntryOverviewRequest request) {
+    return modifyEntryOverviewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies entry overview, part of the business context of an
+   * [Entry][google.cloud.datacatalog.v1.Entry].
+   *
+   * <p>To call this method, you must have the `datacatalog.entries.updateOverview` IAM permission
+   * on the corresponding project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ModifyEntryOverviewRequest request =
+   *       ModifyEntryOverviewRequest.newBuilder()
+   *           .setName(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .setEntryOverview(EntryOverview.newBuilder().build())
+   *           .build();
+   *   ApiFuture<EntryOverview> future =
+   *       dataCatalogClient.modifyEntryOverviewCallable().futureCall(request);
+   *   // Do something.
+   *   EntryOverview response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ModifyEntryOverviewRequest, EntryOverview>
+      modifyEntryOverviewCallable() {
+    return stub.modifyEntryOverviewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies contacts, part of the business context of an
+   * [Entry][google.cloud.datacatalog.v1.Entry].
+   *
+   * <p>To call this method, you must have the `datacatalog.entries.updateContacts` IAM permission
+   * on the corresponding project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ModifyEntryContactsRequest request =
+   *       ModifyEntryContactsRequest.newBuilder()
+   *           .setName(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .setContacts(Contacts.newBuilder().build())
+   *           .build();
+   *   Contacts response = dataCatalogClient.modifyEntryContacts(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Contacts modifyEntryContacts(ModifyEntryContactsRequest request) {
+    return modifyEntryContactsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies contacts, part of the business context of an
+   * [Entry][google.cloud.datacatalog.v1.Entry].
+   *
+   * <p>To call this method, you must have the `datacatalog.entries.updateContacts` IAM permission
+   * on the corresponding project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ModifyEntryContactsRequest request =
+   *       ModifyEntryContactsRequest.newBuilder()
+   *           .setName(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .setContacts(Contacts.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Contacts> future =
+   *       dataCatalogClient.modifyEntryContactsCallable().futureCall(request);
+   *   // Do something.
+   *   Contacts response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ModifyEntryContactsRequest, Contacts> modifyEntryContactsCallable() {
+    return stub.modifyEntryContactsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a tag template.
    *
    * <p>You must enable the Data Catalog API in the project identified by the `parent` parameter.
@@ -1815,7 +1932,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   String parent = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String tagTemplateId = "tagTemplateId-1438776721";
    *   TagTemplate tagTemplate = TagTemplate.newBuilder().build();
    *   TagTemplate response =
@@ -1856,7 +1973,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   CreateTagTemplateRequest request =
    *       CreateTagTemplateRequest.newBuilder()
-   *           .setParent(TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTagTemplateId("tagTemplateId-1438776721")
    *           .setTagTemplate(TagTemplate.newBuilder().build())
    *           .build();
@@ -1885,7 +2002,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   CreateTagTemplateRequest request =
    *       CreateTagTemplateRequest.newBuilder()
-   *           .setParent(TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTagTemplateId("tagTemplateId-1438776721")
    *           .setTagTemplate(TagTemplate.newBuilder().build())
    *           .build();
@@ -2044,9 +2161,8 @@ public class DataCatalogClient implements BackgroundResource {
    *     `display_name` and `is_publicly_readable` can be overwritten.
    *     <p>If this parameter is absent or empty, all modifiable fields are overwritten. If such
    *     fields are non-required and omitted in the request body, their values are emptied.
-   *     <p>Note: Updating the ``is_publicly_readable`` field may require up to 12 hours to take
-   *     effect in search results. Additionally, it also requires the ``tagTemplates.getIamPolicy``
-   *     and ``tagTemplates.setIamPolicy`` permissions.
+   *     <p>Note: Updating the `is_publicly_readable` field may require up to 12 hours to take
+   *     effect in search results.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TagTemplate updateTagTemplate(TagTemplate tagTemplate, FieldMask updateMask) {
@@ -3037,9 +3153,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <ul>
    *   <li>An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-   *       ``projects.locations.entryGroups.entries.tags.create``.
+   *       `projects.locations.entryGroups.entries.tags.create`.
    *   <li>Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method name is
-   *       ``projects.locations.entryGroups.tags.create``.
+   *       `projects.locations.entryGroups.tags.create`.
    * </ul>
    *
    * <p>Note: The project identified by the `parent` parameter for the [tag]
@@ -3081,9 +3197,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <ul>
    *   <li>An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-   *       ``projects.locations.entryGroups.entries.tags.create``.
+   *       `projects.locations.entryGroups.entries.tags.create`.
    *   <li>Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method name is
-   *       ``projects.locations.entryGroups.tags.create``.
+   *       `projects.locations.entryGroups.tags.create`.
    * </ul>
    *
    * <p>Note: The project identified by the `parent` parameter for the [tag]
@@ -3122,9 +3238,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <ul>
    *   <li>An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-   *       ``projects.locations.entryGroups.entries.tags.create``.
+   *       `projects.locations.entryGroups.entries.tags.create`.
    *   <li>Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method name is
-   *       ``projects.locations.entryGroups.tags.create``.
+   *       `projects.locations.entryGroups.tags.create`.
    * </ul>
    *
    * <p>Note: The project identified by the `parent` parameter for the [tag]
@@ -3161,9 +3277,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <ul>
    *   <li>An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-   *       ``projects.locations.entryGroups.entries.tags.create``.
+   *       `projects.locations.entryGroups.entries.tags.create`.
    *   <li>Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method name is
-   *       ``projects.locations.entryGroups.tags.create``.
+   *       `projects.locations.entryGroups.tags.create`.
    * </ul>
    *
    * <p>Note: The project identified by the `parent` parameter for the [tag]
@@ -3318,8 +3434,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   String name =
-   *       TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]").toString();
+   *   String name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString();
    *   dataCatalogClient.deleteTag(name);
    * }
    * }</pre>
@@ -3343,8 +3458,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   DeleteTagRequest request =
    *       DeleteTagRequest.newBuilder()
    *           .setName(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .build();
    *   dataCatalogClient.deleteTag(request);
    * }
@@ -3368,8 +3482,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   DeleteTagRequest request =
    *       DeleteTagRequest.newBuilder()
    *           .setName(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .build();
    *   ApiFuture<Empty> future = dataCatalogClient.deleteTagCallable().futureCall(request);
    *   // Do something.
@@ -3383,7 +3496,8 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
+   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry]. The
+   * [columns][google.cloud.datacatalog.v1.Tag.column] in the response are lowercased.
    *
    * <p>Sample code:
    *
@@ -3410,14 +3524,15 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
+   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry]. The
+   * [columns][google.cloud.datacatalog.v1.Tag.column] in the response are lowercased.
    *
    * <p>Sample code:
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   String parent =
-   *       TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]").toString();
+   *       EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString();
    *   for (Tag element : dataCatalogClient.listTags(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -3437,7 +3552,8 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
+   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry]. The
+   * [columns][google.cloud.datacatalog.v1.Tag.column] in the response are lowercased.
    *
    * <p>Sample code:
    *
@@ -3446,8 +3562,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   ListTagsRequest request =
    *       ListTagsRequest.newBuilder()
    *           .setParent(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3466,7 +3581,8 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
+   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry]. The
+   * [columns][google.cloud.datacatalog.v1.Tag.column] in the response are lowercased.
    *
    * <p>Sample code:
    *
@@ -3475,8 +3591,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   ListTagsRequest request =
    *       ListTagsRequest.newBuilder()
    *           .setParent(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3494,7 +3609,8 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
+   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry]. The
+   * [columns][google.cloud.datacatalog.v1.Tag.column] in the response are lowercased.
    *
    * <p>Sample code:
    *
@@ -3503,8 +3619,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   ListTagsRequest request =
    *       ListTagsRequest.newBuilder()
    *           .setParent(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3525,6 +3640,196 @@ public class DataCatalogClient implements BackgroundResource {
    */
   public final UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable() {
     return stub.listTagsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by the current user. Starring
+   * information is private to each user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   StarEntryResponse response = dataCatalogClient.starEntry(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the entry to mark as starred.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StarEntryResponse starEntry(EntryName name) {
+    StarEntryRequest request =
+        StarEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return starEntry(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by the current user. Starring
+   * information is private to each user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   String name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString();
+   *   StarEntryResponse response = dataCatalogClient.starEntry(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the entry to mark as starred.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StarEntryResponse starEntry(String name) {
+    StarEntryRequest request = StarEntryRequest.newBuilder().setName(name).build();
+    return starEntry(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by the current user. Starring
+   * information is private to each user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   StarEntryRequest request =
+   *       StarEntryRequest.newBuilder()
+   *           .setName(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .build();
+   *   StarEntryResponse response = dataCatalogClient.starEntry(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StarEntryResponse starEntry(StarEntryRequest request) {
+    return starEntryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by the current user. Starring
+   * information is private to each user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   StarEntryRequest request =
+   *       StarEntryRequest.newBuilder()
+   *           .setName(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .build();
+   *   ApiFuture<StarEntryResponse> future =
+   *       dataCatalogClient.starEntryCallable().futureCall(request);
+   *   // Do something.
+   *   StarEntryResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StarEntryRequest, StarEntryResponse> starEntryCallable() {
+    return stub.starEntryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as NOT starred by the current user.
+   * Starring information is private to each user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   UnstarEntryResponse response = dataCatalogClient.unstarEntry(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the entry to mark as &#42;&#42;not&#42;&#42; starred.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UnstarEntryResponse unstarEntry(EntryName name) {
+    UnstarEntryRequest request =
+        UnstarEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return unstarEntry(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as NOT starred by the current user.
+   * Starring information is private to each user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   String name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString();
+   *   UnstarEntryResponse response = dataCatalogClient.unstarEntry(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the entry to mark as &#42;&#42;not&#42;&#42; starred.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UnstarEntryResponse unstarEntry(String name) {
+    UnstarEntryRequest request = UnstarEntryRequest.newBuilder().setName(name).build();
+    return unstarEntry(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as NOT starred by the current user.
+   * Starring information is private to each user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   UnstarEntryRequest request =
+   *       UnstarEntryRequest.newBuilder()
+   *           .setName(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .build();
+   *   UnstarEntryResponse response = dataCatalogClient.unstarEntry(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UnstarEntryResponse unstarEntry(UnstarEntryRequest request) {
+    return unstarEntryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as NOT starred by the current user.
+   * Starring information is private to each user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   UnstarEntryRequest request =
+   *       UnstarEntryRequest.newBuilder()
+   *           .setName(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .build();
+   *   ApiFuture<UnstarEntryResponse> future =
+   *       dataCatalogClient.unstarEntryCallable().futureCall(request);
+   *   // Do something.
+   *   UnstarEntryResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UnstarEntryRequest, UnstarEntryResponse> unstarEntryCallable() {
+    return stub.unstarEntryCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -75,11 +75,11 @@ public final class PolicyTagManagerSerializationProto {
       "\n?google/cloud/datacatalog/v1/policytagm"
           + "anagerserialization.proto\022\033google.cloud."
           + "datacatalog.v1\032\034google/api/annotations.p"
-          + "roto\032\037google/api/field_behavior.proto\032\031g"
-          + "oogle/api/resource.proto\0322google/cloud/d"
-          + "atacatalog/v1/policytagmanager.proto\032\032go"
-          + "ogle/iam/v1/policy.proto\032\027google/api/cli"
-          + "ent.proto\"\335\001\n\022SerializedTaxonomy\022\031\n\014disp"
+          + "roto\032\027google/api/client.proto\032\037google/ap"
+          + "i/field_behavior.proto\032\031google/api/resou"
+          + "rce.proto\0322google/cloud/datacatalog/v1/p"
+          + "olicytagmanager.proto\032\032google/iam/v1/pol"
+          + "icy.proto\"\335\001\n\022SerializedTaxonomy\022\031\n\014disp"
           + "lay_name\030\001 \001(\tB\003\340A\002\022\023\n\013description\030\002 \001(\t"
           + "\022E\n\013policy_tags\030\003 \003(\01320.google.cloud.dat"
           + "acatalog.v1.SerializedPolicyTag\022P\n\026activ"
@@ -143,11 +143,11 @@ public final class PolicyTagManagerSerializationProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.datacatalog.v1.PolicyTagManagerProto.getDescriptor(),
               com.google.iam.v1.PolicyProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_datacatalog_v1_SerializedTaxonomy_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -231,11 +231,11 @@ public final class PolicyTagManagerSerializationProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.datacatalog.v1.PolicyTagManagerProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

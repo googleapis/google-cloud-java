@@ -64,6 +64,12 @@
             "LookupEntry": {
               "methods": ["lookupEntry", "lookupEntryCallable"]
             },
+            "ModifyEntryContacts": {
+              "methods": ["modifyEntryContacts", "modifyEntryContactsCallable"]
+            },
+            "ModifyEntryOverview": {
+              "methods": ["modifyEntryOverview", "modifyEntryOverviewCallable"]
+            },
             "RenameTagTemplateField": {
               "methods": ["renameTagTemplateField", "renameTagTemplateField", "renameTagTemplateField", "renameTagTemplateFieldCallable"]
             },
@@ -76,8 +82,14 @@
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
+            "StarEntry": {
+              "methods": ["starEntry", "starEntry", "starEntry", "starEntryCallable"]
+            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UnstarEntry": {
+              "methods": ["unstarEntry", "unstarEntry", "unstarEntry", "unstarEntryCallable"]
             },
             "UpdateEntry": {
               "methods": ["updateEntry", "updateEntry", "updateEntry", "updateEntryCallable"]

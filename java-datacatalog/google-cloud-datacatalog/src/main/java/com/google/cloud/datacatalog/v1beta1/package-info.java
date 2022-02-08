@@ -60,7 +60,7 @@
  *     PolicyTagManagerSerializationClient.create()) {
  *   ImportTaxonomiesRequest request =
  *       ImportTaxonomiesRequest.newBuilder()
- *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+ *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
  *           .build();
  *   ImportTaxonomiesResponse response =
  *       policyTagManagerSerializationClient.importTaxonomies(request);

@@ -23,6 +23,7 @@ import static com.google.cloud.datacatalog.v1.DataCatalogClient.SearchCatalogPag
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.datacatalog.v1.Contacts;
 import com.google.cloud.datacatalog.v1.CreateEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.CreateEntryRequest;
 import com.google.cloud.datacatalog.v1.CreateTagRequest;
@@ -35,6 +36,7 @@ import com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest;
 import com.google.cloud.datacatalog.v1.Entry;
 import com.google.cloud.datacatalog.v1.EntryGroup;
+import com.google.cloud.datacatalog.v1.EntryOverview;
 import com.google.cloud.datacatalog.v1.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.GetEntryRequest;
 import com.google.cloud.datacatalog.v1.GetTagTemplateRequest;
@@ -45,13 +47,19 @@ import com.google.cloud.datacatalog.v1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1.LookupEntryRequest;
+import com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest;
+import com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogResponse;
+import com.google.cloud.datacatalog.v1.StarEntryRequest;
+import com.google.cloud.datacatalog.v1.StarEntryResponse;
 import com.google.cloud.datacatalog.v1.Tag;
 import com.google.cloud.datacatalog.v1.TagTemplate;
 import com.google.cloud.datacatalog.v1.TagTemplateField;
+import com.google.cloud.datacatalog.v1.UnstarEntryRequest;
+import com.google.cloud.datacatalog.v1.UnstarEntryResponse;
 import com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.UpdateEntryRequest;
 import com.google.cloud.datacatalog.v1.UpdateTagRequest;
@@ -136,6 +144,14 @@ public abstract class DataCatalogStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listEntriesCallable()");
   }
 
+  public UnaryCallable<ModifyEntryOverviewRequest, EntryOverview> modifyEntryOverviewCallable() {
+    throw new UnsupportedOperationException("Not implemented: modifyEntryOverviewCallable()");
+  }
+
+  public UnaryCallable<ModifyEntryContactsRequest, Contacts> modifyEntryContactsCallable() {
+    throw new UnsupportedOperationException("Not implemented: modifyEntryContactsCallable()");
+  }
+
   public UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable() {
     throw new UnsupportedOperationException("Not implemented: createTagTemplateCallable()");
   }
@@ -195,6 +211,14 @@ public abstract class DataCatalogStub implements BackgroundResource {
 
   public UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable() {
     throw new UnsupportedOperationException("Not implemented: listTagsCallable()");
+  }
+
+  public UnaryCallable<StarEntryRequest, StarEntryResponse> starEntryCallable() {
+    throw new UnsupportedOperationException("Not implemented: starEntryCallable()");
+  }
+
+  public UnaryCallable<UnstarEntryRequest, UnstarEntryResponse> unstarEntryCallable() {
+    throw new UnsupportedOperationException("Not implemented: unstarEntryCallable()");
   }
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {

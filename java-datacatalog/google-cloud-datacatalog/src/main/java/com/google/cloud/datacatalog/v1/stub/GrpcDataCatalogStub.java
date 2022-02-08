@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.datacatalog.v1.Contacts;
 import com.google.cloud.datacatalog.v1.CreateEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.CreateEntryRequest;
 import com.google.cloud.datacatalog.v1.CreateTagRequest;
@@ -39,6 +40,7 @@ import com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest;
 import com.google.cloud.datacatalog.v1.Entry;
 import com.google.cloud.datacatalog.v1.EntryGroup;
+import com.google.cloud.datacatalog.v1.EntryOverview;
 import com.google.cloud.datacatalog.v1.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.GetEntryRequest;
 import com.google.cloud.datacatalog.v1.GetTagTemplateRequest;
@@ -49,13 +51,19 @@ import com.google.cloud.datacatalog.v1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1.LookupEntryRequest;
+import com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest;
+import com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogResponse;
+import com.google.cloud.datacatalog.v1.StarEntryRequest;
+import com.google.cloud.datacatalog.v1.StarEntryResponse;
 import com.google.cloud.datacatalog.v1.Tag;
 import com.google.cloud.datacatalog.v1.TagTemplate;
 import com.google.cloud.datacatalog.v1.TagTemplateField;
+import com.google.cloud.datacatalog.v1.UnstarEntryRequest;
+import com.google.cloud.datacatalog.v1.UnstarEntryResponse;
 import com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.UpdateEntryRequest;
 import com.google.cloud.datacatalog.v1.UpdateTagRequest;
@@ -195,6 +203,26 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(ListEntriesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ModifyEntryOverviewRequest, EntryOverview>
+      modifyEntryOverviewMethodDescriptor =
+          MethodDescriptor.<ModifyEntryOverviewRequest, EntryOverview>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/ModifyEntryOverview")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ModifyEntryOverviewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryOverview.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ModifyEntryContactsRequest, Contacts>
+      modifyEntryContactsMethodDescriptor =
+          MethodDescriptor.<ModifyEntryContactsRequest, Contacts>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/ModifyEntryContacts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ModifyEntryContactsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Contacts.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateTagTemplateRequest, TagTemplate>
       createTagTemplateMethodDescriptor =
           MethodDescriptor.<CreateTagTemplateRequest, TagTemplate>newBuilder()
@@ -320,6 +348,25 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ListTagsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<StarEntryRequest, StarEntryResponse>
+      starEntryMethodDescriptor =
+          MethodDescriptor.<StarEntryRequest, StarEntryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/StarEntry")
+              .setRequestMarshaller(ProtoUtils.marshaller(StarEntryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(StarEntryResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UnstarEntryRequest, UnstarEntryResponse>
+      unstarEntryMethodDescriptor =
+          MethodDescriptor.<UnstarEntryRequest, UnstarEntryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/UnstarEntry")
+              .setRequestMarshaller(ProtoUtils.marshaller(UnstarEntryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UnstarEntryResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -366,6 +413,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   private final UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable;
   private final UnaryCallable<ListEntriesRequest, ListEntriesPagedResponse>
       listEntriesPagedCallable;
+  private final UnaryCallable<ModifyEntryOverviewRequest, EntryOverview>
+      modifyEntryOverviewCallable;
+  private final UnaryCallable<ModifyEntryContactsRequest, Contacts> modifyEntryContactsCallable;
   private final UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable;
   private final UnaryCallable<GetTagTemplateRequest, TagTemplate> getTagTemplateCallable;
   private final UnaryCallable<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateCallable;
@@ -384,6 +434,8 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   private final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable;
   private final UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable;
   private final UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable;
+  private final UnaryCallable<StarEntryRequest, StarEntryResponse> starEntryCallable;
+  private final UnaryCallable<UnstarEntryRequest, UnstarEntryResponse> unstarEntryCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -540,6 +592,27 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ModifyEntryOverviewRequest, EntryOverview>
+        modifyEntryOverviewTransportSettings =
+            GrpcCallSettings.<ModifyEntryOverviewRequest, EntryOverview>newBuilder()
+                .setMethodDescriptor(modifyEntryOverviewMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ModifyEntryContactsRequest, Contacts> modifyEntryContactsTransportSettings =
+        GrpcCallSettings.<ModifyEntryContactsRequest, Contacts>newBuilder()
+            .setMethodDescriptor(modifyEntryContactsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateTransportSettings =
         GrpcCallSettings.<CreateTagTemplateRequest, TagTemplate>newBuilder()
             .setMethodDescriptor(createTagTemplateMethodDescriptor)
@@ -675,6 +748,26 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<StarEntryRequest, StarEntryResponse> starEntryTransportSettings =
+        GrpcCallSettings.<StarEntryRequest, StarEntryResponse>newBuilder()
+            .setMethodDescriptor(starEntryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UnstarEntryRequest, UnstarEntryResponse> unstarEntryTransportSettings =
+        GrpcCallSettings.<UnstarEntryRequest, UnstarEntryResponse>newBuilder()
+            .setMethodDescriptor(unstarEntryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
@@ -752,6 +845,16 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     this.listEntriesPagedCallable =
         callableFactory.createPagedCallable(
             listEntriesTransportSettings, settings.listEntriesSettings(), clientContext);
+    this.modifyEntryOverviewCallable =
+        callableFactory.createUnaryCallable(
+            modifyEntryOverviewTransportSettings,
+            settings.modifyEntryOverviewSettings(),
+            clientContext);
+    this.modifyEntryContactsCallable =
+        callableFactory.createUnaryCallable(
+            modifyEntryContactsTransportSettings,
+            settings.modifyEntryContactsSettings(),
+            clientContext);
     this.createTagTemplateCallable =
         callableFactory.createUnaryCallable(
             createTagTemplateTransportSettings,
@@ -810,6 +913,12 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     this.listTagsPagedCallable =
         callableFactory.createPagedCallable(
             listTagsTransportSettings, settings.listTagsSettings(), clientContext);
+    this.starEntryCallable =
+        callableFactory.createUnaryCallable(
+            starEntryTransportSettings, settings.starEntrySettings(), clientContext);
+    this.unstarEntryCallable =
+        callableFactory.createUnaryCallable(
+            unstarEntryTransportSettings, settings.unstarEntrySettings(), clientContext);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -908,6 +1017,16 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   }
 
   @Override
+  public UnaryCallable<ModifyEntryOverviewRequest, EntryOverview> modifyEntryOverviewCallable() {
+    return modifyEntryOverviewCallable;
+  }
+
+  @Override
+  public UnaryCallable<ModifyEntryContactsRequest, Contacts> modifyEntryContactsCallable() {
+    return modifyEntryContactsCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable() {
     return createTagTemplateCallable;
   }
@@ -979,6 +1098,16 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   @Override
   public UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable() {
     return listTagsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<StarEntryRequest, StarEntryResponse> starEntryCallable() {
+    return starEntryCallable;
+  }
+
+  @Override
+  public UnaryCallable<UnstarEntryRequest, UnstarEntryResponse> unstarEntryCallable() {
+    return unstarEntryCallable;
   }
 
   @Override

@@ -28,6 +28,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/datacatalog/v1/datacatalog.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class DataCatalogGrpc {
 
   private DataCatalogGrpc() {}
@@ -564,6 +565,100 @@ public final class DataCatalogGrpc {
       }
     }
     return getListEntriesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest,
+          com.google.cloud.datacatalog.v1.EntryOverview>
+      getModifyEntryOverviewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ModifyEntryOverview",
+      requestType = com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest.class,
+      responseType = com.google.cloud.datacatalog.v1.EntryOverview.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest,
+          com.google.cloud.datacatalog.v1.EntryOverview>
+      getModifyEntryOverviewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest,
+            com.google.cloud.datacatalog.v1.EntryOverview>
+        getModifyEntryOverviewMethod;
+    if ((getModifyEntryOverviewMethod = DataCatalogGrpc.getModifyEntryOverviewMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getModifyEntryOverviewMethod = DataCatalogGrpc.getModifyEntryOverviewMethod) == null) {
+          DataCatalogGrpc.getModifyEntryOverviewMethod =
+              getModifyEntryOverviewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest,
+                          com.google.cloud.datacatalog.v1.EntryOverview>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ModifyEntryOverview"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.EntryOverview.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataCatalogMethodDescriptorSupplier("ModifyEntryOverview"))
+                      .build();
+        }
+      }
+    }
+    return getModifyEntryOverviewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest,
+          com.google.cloud.datacatalog.v1.Contacts>
+      getModifyEntryContactsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ModifyEntryContacts",
+      requestType = com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest.class,
+      responseType = com.google.cloud.datacatalog.v1.Contacts.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest,
+          com.google.cloud.datacatalog.v1.Contacts>
+      getModifyEntryContactsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest,
+            com.google.cloud.datacatalog.v1.Contacts>
+        getModifyEntryContactsMethod;
+    if ((getModifyEntryContactsMethod = DataCatalogGrpc.getModifyEntryContactsMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getModifyEntryContactsMethod = DataCatalogGrpc.getModifyEntryContactsMethod) == null) {
+          DataCatalogGrpc.getModifyEntryContactsMethod =
+              getModifyEntryContactsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest,
+                          com.google.cloud.datacatalog.v1.Contacts>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ModifyEntryContacts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.Contacts.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataCatalogMethodDescriptorSupplier("ModifyEntryContacts"))
+                      .build();
+        }
+      }
+    }
+    return getModifyEntryContactsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1168,6 +1263,98 @@ public final class DataCatalogGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.StarEntryRequest,
+          com.google.cloud.datacatalog.v1.StarEntryResponse>
+      getStarEntryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StarEntry",
+      requestType = com.google.cloud.datacatalog.v1.StarEntryRequest.class,
+      responseType = com.google.cloud.datacatalog.v1.StarEntryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.StarEntryRequest,
+          com.google.cloud.datacatalog.v1.StarEntryResponse>
+      getStarEntryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.v1.StarEntryRequest,
+            com.google.cloud.datacatalog.v1.StarEntryResponse>
+        getStarEntryMethod;
+    if ((getStarEntryMethod = DataCatalogGrpc.getStarEntryMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getStarEntryMethod = DataCatalogGrpc.getStarEntryMethod) == null) {
+          DataCatalogGrpc.getStarEntryMethod =
+              getStarEntryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.v1.StarEntryRequest,
+                          com.google.cloud.datacatalog.v1.StarEntryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StarEntry"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.StarEntryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.StarEntryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new DataCatalogMethodDescriptorSupplier("StarEntry"))
+                      .build();
+        }
+      }
+    }
+    return getStarEntryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.UnstarEntryRequest,
+          com.google.cloud.datacatalog.v1.UnstarEntryResponse>
+      getUnstarEntryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UnstarEntry",
+      requestType = com.google.cloud.datacatalog.v1.UnstarEntryRequest.class,
+      responseType = com.google.cloud.datacatalog.v1.UnstarEntryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.UnstarEntryRequest,
+          com.google.cloud.datacatalog.v1.UnstarEntryResponse>
+      getUnstarEntryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.v1.UnstarEntryRequest,
+            com.google.cloud.datacatalog.v1.UnstarEntryResponse>
+        getUnstarEntryMethod;
+    if ((getUnstarEntryMethod = DataCatalogGrpc.getUnstarEntryMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getUnstarEntryMethod = DataCatalogGrpc.getUnstarEntryMethod) == null) {
+          DataCatalogGrpc.getUnstarEntryMethod =
+              getUnstarEntryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.v1.UnstarEntryRequest,
+                          com.google.cloud.datacatalog.v1.UnstarEntryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UnstarEntry"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.UnstarEntryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.UnstarEntryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new DataCatalogMethodDescriptorSupplier("UnstarEntry"))
+                      .build();
+        }
+      }
+    }
+    return getUnstarEntryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
       getSetIamPolicyMethod;
 
@@ -1570,6 +1757,41 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * Modifies entry overview, part of the business context of an
+     * [Entry][google.cloud.datacatalog.v1.Entry].
+     * To call this method, you must have the `datacatalog.entries.updateOverview`
+     * IAM permission on the corresponding project.
+     * </pre>
+     */
+    public void modifyEntryOverview(
+        com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.EntryOverview>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getModifyEntryOverviewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies contacts, part of the business context of an
+     * [Entry][google.cloud.datacatalog.v1.Entry].
+     * To call this method, you must have the `datacatalog.entries.updateContacts`
+     * IAM permission on the corresponding project.
+     * </pre>
+     */
+    public void modifyEntryContacts(
+        com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Contacts> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getModifyEntryContactsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a tag template.
      * You must enable the Data Catalog API in the project identified by the
      * `parent` parameter.
@@ -1731,9 +1953,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag and assigns it to:
      * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-     *   ``projects.locations.entryGroups.entries.tags.create``.
+     *   `projects.locations.entryGroups.entries.tags.create`.
      * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
-     *   name is ``projects.locations.entryGroups.tags.create``.
+     *   name is `projects.locations.entryGroups.tags.create`.
      * Note: The project identified by the `parent` parameter for the [tag]
      * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
      * and the [tag template]
@@ -1778,6 +2000,8 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
+     * The [columns][google.cloud.datacatalog.v1.Tag.column] in the response are
+     * lowercased.
      * </pre>
      */
     public void listTags(
@@ -1785,6 +2009,37 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ListTagsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTagsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by
+     * the current user. Starring information is private to each user.
+     * </pre>
+     */
+    public void starEntry(
+        com.google.cloud.datacatalog.v1.StarEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.StarEntryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStarEntryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as NOT starred by
+     * the current user. Starring information is private to each user.
+     * </pre>
+     */
+    public void unstarEntry(
+        com.google.cloud.datacatalog.v1.UnstarEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.UnstarEntryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUnstarEntryMethod(), responseObserver);
     }
 
     /**
@@ -1943,6 +2198,20 @@ public final class DataCatalogGrpc {
                       com.google.cloud.datacatalog.v1.ListEntriesResponse>(
                       this, METHODID_LIST_ENTRIES)))
           .addMethod(
+              getModifyEntryOverviewMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest,
+                      com.google.cloud.datacatalog.v1.EntryOverview>(
+                      this, METHODID_MODIFY_ENTRY_OVERVIEW)))
+          .addMethod(
+              getModifyEntryContactsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest,
+                      com.google.cloud.datacatalog.v1.Contacts>(
+                      this, METHODID_MODIFY_ENTRY_CONTACTS)))
+          .addMethod(
               getCreateTagTemplateMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -2027,6 +2296,20 @@ public final class DataCatalogGrpc {
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1.ListTagsRequest,
                       com.google.cloud.datacatalog.v1.ListTagsResponse>(this, METHODID_LIST_TAGS)))
+          .addMethod(
+              getStarEntryMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.datacatalog.v1.StarEntryRequest,
+                      com.google.cloud.datacatalog.v1.StarEntryResponse>(
+                      this, METHODID_STAR_ENTRY)))
+          .addMethod(
+              getUnstarEntryMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.datacatalog.v1.UnstarEntryRequest,
+                      com.google.cloud.datacatalog.v1.UnstarEntryResponse>(
+                      this, METHODID_UNSTAR_ENTRY)))
           .addMethod(
               getSetIamPolicyMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2326,6 +2609,45 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * Modifies entry overview, part of the business context of an
+     * [Entry][google.cloud.datacatalog.v1.Entry].
+     * To call this method, you must have the `datacatalog.entries.updateOverview`
+     * IAM permission on the corresponding project.
+     * </pre>
+     */
+    public void modifyEntryOverview(
+        com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.EntryOverview>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getModifyEntryOverviewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies contacts, part of the business context of an
+     * [Entry][google.cloud.datacatalog.v1.Entry].
+     * To call this method, you must have the `datacatalog.entries.updateContacts`
+     * IAM permission on the corresponding project.
+     * </pre>
+     */
+    public void modifyEntryContacts(
+        com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Contacts> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getModifyEntryContactsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a tag template.
      * You must enable the Data Catalog API in the project identified by the
      * `parent` parameter.
@@ -2505,9 +2827,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag and assigns it to:
      * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-     *   ``projects.locations.entryGroups.entries.tags.create``.
+     *   `projects.locations.entryGroups.entries.tags.create`.
      * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
-     *   name is ``projects.locations.entryGroups.tags.create``.
+     *   name is `projects.locations.entryGroups.tags.create`.
      * Note: The project identified by the `parent` parameter for the [tag]
      * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
      * and the [tag template]
@@ -2555,6 +2877,8 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
+     * The [columns][google.cloud.datacatalog.v1.Tag.column] in the response are
+     * lowercased.
      * </pre>
      */
     public void listTags(
@@ -2563,6 +2887,40 @@ public final class DataCatalogGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTagsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by
+     * the current user. Starring information is private to each user.
+     * </pre>
+     */
+    public void starEntry(
+        com.google.cloud.datacatalog.v1.StarEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.StarEntryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStarEntryMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as NOT starred by
+     * the current user. Starring information is private to each user.
+     * </pre>
+     */
+    public void unstarEntry(
+        com.google.cloud.datacatalog.v1.UnstarEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.UnstarEntryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUnstarEntryMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -2887,6 +3245,38 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * Modifies entry overview, part of the business context of an
+     * [Entry][google.cloud.datacatalog.v1.Entry].
+     * To call this method, you must have the `datacatalog.entries.updateOverview`
+     * IAM permission on the corresponding project.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1.EntryOverview modifyEntryOverview(
+        com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModifyEntryOverviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies contacts, part of the business context of an
+     * [Entry][google.cloud.datacatalog.v1.Entry].
+     * To call this method, you must have the `datacatalog.entries.updateContacts`
+     * IAM permission on the corresponding project.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1.Contacts modifyEntryContacts(
+        com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModifyEntryContactsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a tag template.
      * You must enable the Data Catalog API in the project identified by the
      * `parent` parameter.
@@ -3035,9 +3425,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag and assigns it to:
      * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-     *   ``projects.locations.entryGroups.entries.tags.create``.
+     *   `projects.locations.entryGroups.entries.tags.create`.
      * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
-     *   name is ``projects.locations.entryGroups.tags.create``.
+     *   name is `projects.locations.entryGroups.tags.create`.
      * Note: The project identified by the `parent` parameter for the [tag]
      * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
      * and the [tag template]
@@ -3082,12 +3472,42 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
+     * The [columns][google.cloud.datacatalog.v1.Tag.column] in the response are
+     * lowercased.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.ListTagsResponse listTags(
         com.google.cloud.datacatalog.v1.ListTagsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTagsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by
+     * the current user. Starring information is private to each user.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1.StarEntryResponse starEntry(
+        com.google.cloud.datacatalog.v1.StarEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStarEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as NOT starred by
+     * the current user. Starring information is private to each user.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1.UnstarEntryResponse unstarEntry(
+        com.google.cloud.datacatalog.v1.UnstarEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUnstarEntryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3406,6 +3826,40 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * Modifies entry overview, part of the business context of an
+     * [Entry][google.cloud.datacatalog.v1.Entry].
+     * To call this method, you must have the `datacatalog.entries.updateOverview`
+     * IAM permission on the corresponding project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.datacatalog.v1.EntryOverview>
+        modifyEntryOverview(com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getModifyEntryOverviewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies contacts, part of the business context of an
+     * [Entry][google.cloud.datacatalog.v1.Entry].
+     * To call this method, you must have the `datacatalog.entries.updateContacts`
+     * IAM permission on the corresponding project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.datacatalog.v1.Contacts>
+        modifyEntryContacts(com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getModifyEntryContactsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a tag template.
      * You must enable the Data Catalog API in the project identified by the
      * `parent` parameter.
@@ -3567,9 +4021,9 @@ public final class DataCatalogGrpc {
      * <pre>
      * Creates a tag and assigns it to:
      * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-     *   ``projects.locations.entryGroups.entries.tags.create``.
+     *   `projects.locations.entryGroups.entries.tags.create`.
      * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
-     *   name is ``projects.locations.entryGroups.tags.create``.
+     *   name is `projects.locations.entryGroups.tags.create`.
      * Note: The project identified by the `parent` parameter for the [tag]
      * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
      * and the [tag template]
@@ -3614,6 +4068,8 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
+     * The [columns][google.cloud.datacatalog.v1.Tag.column] in the response are
+     * lowercased.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3621,6 +4077,36 @@ public final class DataCatalogGrpc {
         listTags(com.google.cloud.datacatalog.v1.ListTagsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTagsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by
+     * the current user. Starring information is private to each user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.datacatalog.v1.StarEntryResponse>
+        starEntry(com.google.cloud.datacatalog.v1.StarEntryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStarEntryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as NOT starred by
+     * the current user. Starring information is private to each user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.datacatalog.v1.UnstarEntryResponse>
+        unstarEntry(com.google.cloud.datacatalog.v1.UnstarEntryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUnstarEntryMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3708,22 +4194,26 @@ public final class DataCatalogGrpc {
   private static final int METHODID_GET_ENTRY = 9;
   private static final int METHODID_LOOKUP_ENTRY = 10;
   private static final int METHODID_LIST_ENTRIES = 11;
-  private static final int METHODID_CREATE_TAG_TEMPLATE = 12;
-  private static final int METHODID_GET_TAG_TEMPLATE = 13;
-  private static final int METHODID_UPDATE_TAG_TEMPLATE = 14;
-  private static final int METHODID_DELETE_TAG_TEMPLATE = 15;
-  private static final int METHODID_CREATE_TAG_TEMPLATE_FIELD = 16;
-  private static final int METHODID_UPDATE_TAG_TEMPLATE_FIELD = 17;
-  private static final int METHODID_RENAME_TAG_TEMPLATE_FIELD = 18;
-  private static final int METHODID_RENAME_TAG_TEMPLATE_FIELD_ENUM_VALUE = 19;
-  private static final int METHODID_DELETE_TAG_TEMPLATE_FIELD = 20;
-  private static final int METHODID_CREATE_TAG = 21;
-  private static final int METHODID_UPDATE_TAG = 22;
-  private static final int METHODID_DELETE_TAG = 23;
-  private static final int METHODID_LIST_TAGS = 24;
-  private static final int METHODID_SET_IAM_POLICY = 25;
-  private static final int METHODID_GET_IAM_POLICY = 26;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 27;
+  private static final int METHODID_MODIFY_ENTRY_OVERVIEW = 12;
+  private static final int METHODID_MODIFY_ENTRY_CONTACTS = 13;
+  private static final int METHODID_CREATE_TAG_TEMPLATE = 14;
+  private static final int METHODID_GET_TAG_TEMPLATE = 15;
+  private static final int METHODID_UPDATE_TAG_TEMPLATE = 16;
+  private static final int METHODID_DELETE_TAG_TEMPLATE = 17;
+  private static final int METHODID_CREATE_TAG_TEMPLATE_FIELD = 18;
+  private static final int METHODID_UPDATE_TAG_TEMPLATE_FIELD = 19;
+  private static final int METHODID_RENAME_TAG_TEMPLATE_FIELD = 20;
+  private static final int METHODID_RENAME_TAG_TEMPLATE_FIELD_ENUM_VALUE = 21;
+  private static final int METHODID_DELETE_TAG_TEMPLATE_FIELD = 22;
+  private static final int METHODID_CREATE_TAG = 23;
+  private static final int METHODID_UPDATE_TAG = 24;
+  private static final int METHODID_DELETE_TAG = 25;
+  private static final int METHODID_LIST_TAGS = 26;
+  private static final int METHODID_STAR_ENTRY = 27;
+  private static final int METHODID_UNSTAR_ENTRY = 28;
+  private static final int METHODID_SET_IAM_POLICY = 29;
+  private static final int METHODID_GET_IAM_POLICY = 30;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 31;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3812,6 +4302,18 @@ public final class DataCatalogGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ListEntriesResponse>)
                   responseObserver);
           break;
+        case METHODID_MODIFY_ENTRY_OVERVIEW:
+          serviceImpl.modifyEntryOverview(
+              (com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.EntryOverview>)
+                  responseObserver);
+          break;
+        case METHODID_MODIFY_ENTRY_CONTACTS:
+          serviceImpl.modifyEntryContacts(
+              (com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Contacts>)
+                  responseObserver);
+          break;
         case METHODID_CREATE_TAG_TEMPLATE:
           serviceImpl.createTagTemplate(
               (com.google.cloud.datacatalog.v1.CreateTagTemplateRequest) request,
@@ -3883,6 +4385,18 @@ public final class DataCatalogGrpc {
           serviceImpl.listTags(
               (com.google.cloud.datacatalog.v1.ListTagsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ListTagsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_STAR_ENTRY:
+          serviceImpl.starEntry(
+              (com.google.cloud.datacatalog.v1.StarEntryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.StarEntryResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UNSTAR_ENTRY:
+          serviceImpl.unstarEntry(
+              (com.google.cloud.datacatalog.v1.UnstarEntryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.UnstarEntryResponse>)
                   responseObserver);
           break;
         case METHODID_SET_IAM_POLICY:
@@ -3977,6 +4491,8 @@ public final class DataCatalogGrpc {
                       .addMethod(getGetEntryMethod())
                       .addMethod(getLookupEntryMethod())
                       .addMethod(getListEntriesMethod())
+                      .addMethod(getModifyEntryOverviewMethod())
+                      .addMethod(getModifyEntryContactsMethod())
                       .addMethod(getCreateTagTemplateMethod())
                       .addMethod(getGetTagTemplateMethod())
                       .addMethod(getUpdateTagTemplateMethod())
@@ -3990,6 +4506,8 @@ public final class DataCatalogGrpc {
                       .addMethod(getUpdateTagMethod())
                       .addMethod(getDeleteTagMethod())
                       .addMethod(getListTagsMethod())
+                      .addMethod(getStarEntryMethod())
+                      .addMethod(getUnstarEntryMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())

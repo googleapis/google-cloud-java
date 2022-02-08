@@ -675,6 +675,41 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
+   * Business Context of the entry. Not supported for BigQuery datasets.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+   *
+   * @return Whether the businessContext field is set.
+   */
+  boolean hasBusinessContext();
+  /**
+   *
+   *
+   * <pre>
+   * Business Context of the entry. Not supported for BigQuery datasets.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+   *
+   * @return The businessContext.
+   */
+  com.google.cloud.datacatalog.v1.BusinessContext getBusinessContext();
+  /**
+   *
+   *
+   * <pre>
+   * Business Context of the entry. Not supported for BigQuery datasets.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+   */
+  com.google.cloud.datacatalog.v1.BusinessContextOrBuilder getBusinessContextOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Schema of the entry. An entry might not have any schema attached to it.
    * </pre>
    *
@@ -903,6 +938,47 @@ public interface EntryOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1.DataSourceOrBuilder getDataSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information related to the entry. Private to the current user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the personalDetails field is set.
+   */
+  boolean hasPersonalDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information related to the entry. Private to the current user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The personalDetails.
+   */
+  com.google.cloud.datacatalog.v1.PersonalDetails getPersonalDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information related to the entry. Private to the current user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.datacatalog.v1.PersonalDetailsOrBuilder getPersonalDetailsOrBuilder();
 
   public com.google.cloud.datacatalog.v1.Entry.EntryTypeCase getEntryTypeCase();
 

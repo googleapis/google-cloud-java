@@ -380,21 +380,31 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If `true`, include [public tag
-     * templates][google.cloud.datacatalog.v1.TagTemplate.is_publicly_readable]
-     * in the search results. By default, they are included only if you have
-     * explicit permissions on them to view them. For example, if you are the
-     * owner.
-     * Other scope fields, for example, ``include_org_ids``,
-     * still restrict the returned public tag templates and at least one of
-     * them is required.
+     * Optional. If `true`, search only among starred entries.
+     * By default, all results are returned, starred or not.
      * </pre>
      *
-     * <code>bool include_public_tag_templates = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>bool starred_only = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The starredOnly.
+     */
+    boolean getStarredOnly();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is deprecated. The search mechanism for public and private tag
+     * templates is the same.
+     * </pre>
+     *
+     * <code>
+     * bool include_public_tag_templates = 19 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The includePublicTagTemplates.
      */
+    @java.lang.Deprecated
     boolean getIncludePublicTagTemplates();
   }
   /**
@@ -485,6 +495,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
                   mutable_bitField0_ |= 0x00000004;
                 }
                 restrictedLocations_.add(s);
+                break;
+              }
+            case 144:
+              {
+                starredOnly_ = input.readBool();
                 break;
               }
             case 152:
@@ -791,28 +806,43 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       return restrictedLocations_.getByteString(index);
     }
 
+    public static final int STARRED_ONLY_FIELD_NUMBER = 18;
+    private boolean starredOnly_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, search only among starred entries.
+     * By default, all results are returned, starred or not.
+     * </pre>
+     *
+     * <code>bool starred_only = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The starredOnly.
+     */
+    @java.lang.Override
+    public boolean getStarredOnly() {
+      return starredOnly_;
+    }
+
     public static final int INCLUDE_PUBLIC_TAG_TEMPLATES_FIELD_NUMBER = 19;
     private boolean includePublicTagTemplates_;
     /**
      *
      *
      * <pre>
-     * Optional. If `true`, include [public tag
-     * templates][google.cloud.datacatalog.v1.TagTemplate.is_publicly_readable]
-     * in the search results. By default, they are included only if you have
-     * explicit permissions on them to view them. For example, if you are the
-     * owner.
-     * Other scope fields, for example, ``include_org_ids``,
-     * still restrict the returned public tag templates and at least one of
-     * them is required.
+     * Optional. This field is deprecated. The search mechanism for public and private tag
+     * templates is the same.
      * </pre>
      *
-     * <code>bool include_public_tag_templates = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * bool include_public_tag_templates = 19 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The includePublicTagTemplates.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getIncludePublicTagTemplates() {
       return includePublicTagTemplates_;
     }
@@ -843,6 +873,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       for (int i = 0; i < restrictedLocations_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(
             output, 16, restrictedLocations_.getRaw(i));
+      }
+      if (starredOnly_ != false) {
+        output.writeBool(18, starredOnly_);
       }
       if (includePublicTagTemplates_ != false) {
         output.writeBool(19, includePublicTagTemplates_);
@@ -883,6 +916,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         size += dataSize;
         size += 2 * getRestrictedLocationsList().size();
       }
+      if (starredOnly_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, starredOnly_);
+      }
       if (includePublicTagTemplates_ != false) {
         size +=
             com.google.protobuf.CodedOutputStream.computeBoolSize(19, includePublicTagTemplates_);
@@ -907,6 +943,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       if (!getIncludeProjectIdsList().equals(other.getIncludeProjectIdsList())) return false;
       if (getIncludeGcpPublicDatasets() != other.getIncludeGcpPublicDatasets()) return false;
       if (!getRestrictedLocationsList().equals(other.getRestrictedLocationsList())) return false;
+      if (getStarredOnly() != other.getStarredOnly()) return false;
       if (getIncludePublicTagTemplates() != other.getIncludePublicTagTemplates()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -933,6 +970,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         hash = (37 * hash) + RESTRICTED_LOCATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getRestrictedLocationsList().hashCode();
       }
+      hash = (37 * hash) + STARRED_ONLY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStarredOnly());
       hash = (37 * hash) + INCLUDE_PUBLIC_TAG_TEMPLATES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludePublicTagTemplates());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1091,6 +1130,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
 
         restrictedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
+        starredOnly_ = false;
+
         includePublicTagTemplates_ = false;
 
         return this;
@@ -1138,6 +1179,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.restrictedLocations_ = restrictedLocations_;
+        result.starredOnly_ = starredOnly_;
         result.includePublicTagTemplates_ = includePublicTagTemplates_;
         onBuilt();
         return result;
@@ -1224,6 +1266,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
             restrictedLocations_.addAll(other.restrictedLocations_);
           }
           onChanged();
+        }
+        if (other.getStarredOnly() != false) {
+          setStarredOnly(other.getStarredOnly());
         }
         if (other.getIncludePublicTagTemplates() != false) {
           setIncludePublicTagTemplates(other.getIncludePublicTagTemplates());
@@ -1942,27 +1987,78 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         return this;
       }
 
+      private boolean starredOnly_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If `true`, search only among starred entries.
+       * By default, all results are returned, starred or not.
+       * </pre>
+       *
+       * <code>bool starred_only = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The starredOnly.
+       */
+      @java.lang.Override
+      public boolean getStarredOnly() {
+        return starredOnly_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If `true`, search only among starred entries.
+       * By default, all results are returned, starred or not.
+       * </pre>
+       *
+       * <code>bool starred_only = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The starredOnly to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStarredOnly(boolean value) {
+
+        starredOnly_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If `true`, search only among starred entries.
+       * By default, all results are returned, starred or not.
+       * </pre>
+       *
+       * <code>bool starred_only = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStarredOnly() {
+
+        starredOnly_ = false;
+        onChanged();
+        return this;
+      }
+
       private boolean includePublicTagTemplates_;
       /**
        *
        *
        * <pre>
-       * Optional. If `true`, include [public tag
-       * templates][google.cloud.datacatalog.v1.TagTemplate.is_publicly_readable]
-       * in the search results. By default, they are included only if you have
-       * explicit permissions on them to view them. For example, if you are the
-       * owner.
-       * Other scope fields, for example, ``include_org_ids``,
-       * still restrict the returned public tag templates and at least one of
-       * them is required.
+       * Optional. This field is deprecated. The search mechanism for public and private tag
+       * templates is the same.
        * </pre>
        *
-       * <code>bool include_public_tag_templates = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * <code>
+       * bool include_public_tag_templates = 19 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The includePublicTagTemplates.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean getIncludePublicTagTemplates() {
         return includePublicTagTemplates_;
       }
@@ -1970,22 +2066,18 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. If `true`, include [public tag
-       * templates][google.cloud.datacatalog.v1.TagTemplate.is_publicly_readable]
-       * in the search results. By default, they are included only if you have
-       * explicit permissions on them to view them. For example, if you are the
-       * owner.
-       * Other scope fields, for example, ``include_org_ids``,
-       * still restrict the returned public tag templates and at least one of
-       * them is required.
+       * Optional. This field is deprecated. The search mechanism for public and private tag
+       * templates is the same.
        * </pre>
        *
-       * <code>bool include_public_tag_templates = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * <code>
+       * bool include_public_tag_templates = 19 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param value The includePublicTagTemplates to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setIncludePublicTagTemplates(boolean value) {
 
         includePublicTagTemplates_ = value;
@@ -1996,21 +2088,17 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. If `true`, include [public tag
-       * templates][google.cloud.datacatalog.v1.TagTemplate.is_publicly_readable]
-       * in the search results. By default, they are included only if you have
-       * explicit permissions on them to view them. For example, if you are the
-       * owner.
-       * Other scope fields, for example, ``include_org_ids``,
-       * still restrict the returned public tag templates and at least one of
-       * them is required.
+       * Optional. This field is deprecated. The search mechanism for public and private tag
+       * templates is the same.
        * </pre>
        *
-       * <code>bool include_public_tag_templates = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * <code>
+       * bool include_public_tag_templates = 19 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearIncludePublicTagTemplates() {
 
         includePublicTagTemplates_ = false;
@@ -2142,7 +2230,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. The query string with a minimum of 3 characters and specific syntax.
    * For more information, see
-   * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+   * [Data Catalog search
+   * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
    * An empty query string returns all data assets (in the specified scope)
    * that you have access to.
    * A query string can be a simple `xyz` or qualified by predicates:
@@ -2173,7 +2262,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. The query string with a minimum of 3 characters and specific syntax.
    * For more information, see
-   * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+   * [Data Catalog search
+   * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
    * An empty query string returns all data assets (in the specified scope)
    * that you have access to.
    * A query string can be a simple `xyz` or qualified by predicates:
@@ -2289,6 +2379,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * Currently supported case-sensitive values are:
    * * `relevance` that can only be descending
    * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+   * * `default` that can only be descending
    * If this parameter is omitted, it defaults to the descending `relevance`.
    * </pre>
    *
@@ -2316,6 +2407,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * Currently supported case-sensitive values are:
    * * `relevance` that can only be descending
    * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+   * * `default` that can only be descending
    * If this parameter is omitted, it defaults to the descending `relevance`.
    * </pre>
    *
@@ -2968,7 +3060,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The query string with a minimum of 3 characters and specific syntax.
      * For more information, see
-     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * [Data Catalog search
+     * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
      * A query string can be a simple `xyz` or qualified by predicates:
@@ -2998,7 +3091,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The query string with a minimum of 3 characters and specific syntax.
      * For more information, see
-     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * [Data Catalog search
+     * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
      * A query string can be a simple `xyz` or qualified by predicates:
@@ -3028,7 +3122,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The query string with a minimum of 3 characters and specific syntax.
      * For more information, see
-     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * [Data Catalog search
+     * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
      * A query string can be a simple `xyz` or qualified by predicates:
@@ -3057,7 +3152,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The query string with a minimum of 3 characters and specific syntax.
      * For more information, see
-     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * [Data Catalog search
+     * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
      * A query string can be a simple `xyz` or qualified by predicates:
@@ -3082,7 +3178,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The query string with a minimum of 3 characters and specific syntax.
      * For more information, see
-     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * [Data Catalog search
+     * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
      * A query string can be a simple `xyz` or qualified by predicates:
@@ -3308,6 +3405,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Currently supported case-sensitive values are:
      * * `relevance` that can only be descending
      * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+     * * `default` that can only be descending
      * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
@@ -3334,6 +3432,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Currently supported case-sensitive values are:
      * * `relevance` that can only be descending
      * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+     * * `default` that can only be descending
      * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
@@ -3360,6 +3459,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Currently supported case-sensitive values are:
      * * `relevance` that can only be descending
      * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+     * * `default` that can only be descending
      * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
@@ -3385,6 +3485,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Currently supported case-sensitive values are:
      * * `relevance` that can only be descending
      * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+     * * `default` that can only be descending
      * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
@@ -3406,6 +3507,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Currently supported case-sensitive values are:
      * * `relevance` that can only be descending
      * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+     * * `default` that can only be descending
      * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *

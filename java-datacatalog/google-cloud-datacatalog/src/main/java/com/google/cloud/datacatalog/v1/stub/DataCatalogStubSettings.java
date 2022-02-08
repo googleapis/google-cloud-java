@@ -43,6 +43,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.datacatalog.v1.Contacts;
 import com.google.cloud.datacatalog.v1.CreateEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.CreateEntryRequest;
 import com.google.cloud.datacatalog.v1.CreateTagRequest;
@@ -55,6 +56,7 @@ import com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest;
 import com.google.cloud.datacatalog.v1.Entry;
 import com.google.cloud.datacatalog.v1.EntryGroup;
+import com.google.cloud.datacatalog.v1.EntryOverview;
 import com.google.cloud.datacatalog.v1.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.GetEntryRequest;
 import com.google.cloud.datacatalog.v1.GetTagTemplateRequest;
@@ -65,14 +67,20 @@ import com.google.cloud.datacatalog.v1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1.LookupEntryRequest;
+import com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest;
+import com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogResponse;
 import com.google.cloud.datacatalog.v1.SearchCatalogResult;
+import com.google.cloud.datacatalog.v1.StarEntryRequest;
+import com.google.cloud.datacatalog.v1.StarEntryResponse;
 import com.google.cloud.datacatalog.v1.Tag;
 import com.google.cloud.datacatalog.v1.TagTemplate;
 import com.google.cloud.datacatalog.v1.TagTemplateField;
+import com.google.cloud.datacatalog.v1.UnstarEntryRequest;
+import com.google.cloud.datacatalog.v1.UnstarEntryResponse;
 import com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.UpdateEntryRequest;
 import com.google.cloud.datacatalog.v1.UpdateTagRequest;
@@ -148,6 +156,9 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
   private final UnaryCallSettings<LookupEntryRequest, Entry> lookupEntrySettings;
   private final PagedCallSettings<ListEntriesRequest, ListEntriesResponse, ListEntriesPagedResponse>
       listEntriesSettings;
+  private final UnaryCallSettings<ModifyEntryOverviewRequest, EntryOverview>
+      modifyEntryOverviewSettings;
+  private final UnaryCallSettings<ModifyEntryContactsRequest, Contacts> modifyEntryContactsSettings;
   private final UnaryCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateSettings;
   private final UnaryCallSettings<GetTagTemplateRequest, TagTemplate> getTagTemplateSettings;
   private final UnaryCallSettings<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateSettings;
@@ -167,6 +178,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
   private final UnaryCallSettings<DeleteTagRequest, Empty> deleteTagSettings;
   private final PagedCallSettings<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
       listTagsSettings;
+  private final UnaryCallSettings<StarEntryRequest, StarEntryResponse> starEntrySettings;
+  private final UnaryCallSettings<UnstarEntryRequest, UnstarEntryResponse> unstarEntrySettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -453,6 +466,17 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     return listEntriesSettings;
   }
 
+  /** Returns the object with the settings used for calls to modifyEntryOverview. */
+  public UnaryCallSettings<ModifyEntryOverviewRequest, EntryOverview>
+      modifyEntryOverviewSettings() {
+    return modifyEntryOverviewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to modifyEntryContacts. */
+  public UnaryCallSettings<ModifyEntryContactsRequest, Contacts> modifyEntryContactsSettings() {
+    return modifyEntryContactsSettings;
+  }
+
   /** Returns the object with the settings used for calls to createTagTemplate. */
   public UnaryCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateSettings() {
     return createTagTemplateSettings;
@@ -521,6 +545,16 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
   public PagedCallSettings<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
       listTagsSettings() {
     return listTagsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to starEntry. */
+  public UnaryCallSettings<StarEntryRequest, StarEntryResponse> starEntrySettings() {
+    return starEntrySettings;
+  }
+
+  /** Returns the object with the settings used for calls to unstarEntry. */
+  public UnaryCallSettings<UnstarEntryRequest, UnstarEntryResponse> unstarEntrySettings() {
+    return unstarEntrySettings;
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -627,6 +661,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     getEntrySettings = settingsBuilder.getEntrySettings().build();
     lookupEntrySettings = settingsBuilder.lookupEntrySettings().build();
     listEntriesSettings = settingsBuilder.listEntriesSettings().build();
+    modifyEntryOverviewSettings = settingsBuilder.modifyEntryOverviewSettings().build();
+    modifyEntryContactsSettings = settingsBuilder.modifyEntryContactsSettings().build();
     createTagTemplateSettings = settingsBuilder.createTagTemplateSettings().build();
     getTagTemplateSettings = settingsBuilder.getTagTemplateSettings().build();
     updateTagTemplateSettings = settingsBuilder.updateTagTemplateSettings().build();
@@ -641,6 +677,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     updateTagSettings = settingsBuilder.updateTagSettings().build();
     deleteTagSettings = settingsBuilder.deleteTagSettings().build();
     listTagsSettings = settingsBuilder.listTagsSettings().build();
+    starEntrySettings = settingsBuilder.starEntrySettings().build();
+    unstarEntrySettings = settingsBuilder.unstarEntrySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
@@ -670,6 +708,10 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     private final PagedCallSettings.Builder<
             ListEntriesRequest, ListEntriesResponse, ListEntriesPagedResponse>
         listEntriesSettings;
+    private final UnaryCallSettings.Builder<ModifyEntryOverviewRequest, EntryOverview>
+        modifyEntryOverviewSettings;
+    private final UnaryCallSettings.Builder<ModifyEntryContactsRequest, Contacts>
+        modifyEntryContactsSettings;
     private final UnaryCallSettings.Builder<CreateTagTemplateRequest, TagTemplate>
         createTagTemplateSettings;
     private final UnaryCallSettings.Builder<GetTagTemplateRequest, TagTemplate>
@@ -695,6 +737,9 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     private final PagedCallSettings.Builder<
             ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
         listTagsSettings;
+    private final UnaryCallSettings.Builder<StarEntryRequest, StarEntryResponse> starEntrySettings;
+    private final UnaryCallSettings.Builder<UnstarEntryRequest, UnstarEntryResponse>
+        unstarEntrySettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -759,6 +804,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       getEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       lookupEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listEntriesSettings = PagedCallSettings.newBuilder(LIST_ENTRIES_PAGE_STR_FACT);
+      modifyEntryOverviewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      modifyEntryContactsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTagTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getTagTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateTagTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -772,6 +819,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       updateTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTagsSettings = PagedCallSettings.newBuilder(LIST_TAGS_PAGE_STR_FACT);
+      starEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      unstarEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -790,6 +839,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               getEntrySettings,
               lookupEntrySettings,
               listEntriesSettings,
+              modifyEntryOverviewSettings,
+              modifyEntryContactsSettings,
               createTagTemplateSettings,
               getTagTemplateSettings,
               updateTagTemplateSettings,
@@ -803,6 +854,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               updateTagSettings,
               deleteTagSettings,
               listTagsSettings,
+              starEntrySettings,
+              unstarEntrySettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
@@ -824,6 +877,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       getEntrySettings = settings.getEntrySettings.toBuilder();
       lookupEntrySettings = settings.lookupEntrySettings.toBuilder();
       listEntriesSettings = settings.listEntriesSettings.toBuilder();
+      modifyEntryOverviewSettings = settings.modifyEntryOverviewSettings.toBuilder();
+      modifyEntryContactsSettings = settings.modifyEntryContactsSettings.toBuilder();
       createTagTemplateSettings = settings.createTagTemplateSettings.toBuilder();
       getTagTemplateSettings = settings.getTagTemplateSettings.toBuilder();
       updateTagTemplateSettings = settings.updateTagTemplateSettings.toBuilder();
@@ -838,6 +893,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       updateTagSettings = settings.updateTagSettings.toBuilder();
       deleteTagSettings = settings.deleteTagSettings.toBuilder();
       listTagsSettings = settings.listTagsSettings.toBuilder();
+      starEntrySettings = settings.starEntrySettings.toBuilder();
+      unstarEntrySettings = settings.unstarEntrySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
@@ -856,6 +913,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               getEntrySettings,
               lookupEntrySettings,
               listEntriesSettings,
+              modifyEntryOverviewSettings,
+              modifyEntryContactsSettings,
               createTagTemplateSettings,
               getTagTemplateSettings,
               updateTagTemplateSettings,
@@ -869,6 +928,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               updateTagSettings,
               deleteTagSettings,
               listTagsSettings,
+              starEntrySettings,
+              unstarEntrySettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
@@ -949,6 +1010,16 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
+          .modifyEntryOverviewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .modifyEntryContactsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .createTagTemplateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
@@ -1012,6 +1083,16 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
           .listTagsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+
+      builder
+          .starEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .unstarEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
           .setIamPolicySettings()
@@ -1114,6 +1195,18 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       return listEntriesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to modifyEntryOverview. */
+    public UnaryCallSettings.Builder<ModifyEntryOverviewRequest, EntryOverview>
+        modifyEntryOverviewSettings() {
+      return modifyEntryOverviewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to modifyEntryContacts. */
+    public UnaryCallSettings.Builder<ModifyEntryContactsRequest, Contacts>
+        modifyEntryContactsSettings() {
+      return modifyEntryContactsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createTagTemplate. */
     public UnaryCallSettings.Builder<CreateTagTemplateRequest, TagTemplate>
         createTagTemplateSettings() {
@@ -1185,6 +1278,17 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     public PagedCallSettings.Builder<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
         listTagsSettings() {
       return listTagsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to starEntry. */
+    public UnaryCallSettings.Builder<StarEntryRequest, StarEntryResponse> starEntrySettings() {
+      return starEntrySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to unstarEntry. */
+    public UnaryCallSettings.Builder<UnstarEntryRequest, UnstarEntryResponse>
+        unstarEntrySettings() {
+      return unstarEntrySettings;
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

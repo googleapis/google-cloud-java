@@ -199,10 +199,8 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
-   * Note: Updating the ``is_publicly_readable`` field may require up to 12
-   * hours to take effect in search results. Additionally, it also requires
-   * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
-   * permissions.
+   * Note: Updating the `is_publicly_readable` field may require up to 12
+   * hours to take effect in search results.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -222,10 +220,8 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
-   * Note: Updating the ``is_publicly_readable`` field may require up to 12
-   * hours to take effect in search results. Additionally, it also requires
-   * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
-   * permissions.
+   * Note: Updating the `is_publicly_readable` field may require up to 12
+   * hours to take effect in search results.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -245,10 +241,8 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
-   * Note: Updating the ``is_publicly_readable`` field may require up to 12
-   * hours to take effect in search results. Additionally, it also requires
-   * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
-   * permissions.
+   * Note: Updating the `is_publicly_readable` field may require up to 12
+   * hours to take effect in search results.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -837,10 +831,8 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * Note: Updating the ``is_publicly_readable`` field may require up to 12
-     * hours to take effect in search results. Additionally, it also requires
-     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
-     * permissions.
+     * Note: Updating the `is_publicly_readable` field may require up to 12
+     * hours to take effect in search results.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -859,10 +851,8 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * Note: Updating the ``is_publicly_readable`` field may require up to 12
-     * hours to take effect in search results. Additionally, it also requires
-     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
-     * permissions.
+     * Note: Updating the `is_publicly_readable` field may require up to 12
+     * hours to take effect in search results.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -887,10 +877,8 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * Note: Updating the ``is_publicly_readable`` field may require up to 12
-     * hours to take effect in search results. Additionally, it also requires
-     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
-     * permissions.
+     * Note: Updating the `is_publicly_readable` field may require up to 12
+     * hours to take effect in search results.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -917,10 +905,8 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * Note: Updating the ``is_publicly_readable`` field may require up to 12
-     * hours to take effect in search results. Additionally, it also requires
-     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
-     * permissions.
+     * Note: Updating the `is_publicly_readable` field may require up to 12
+     * hours to take effect in search results.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -944,10 +930,8 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * Note: Updating the ``is_publicly_readable`` field may require up to 12
-     * hours to take effect in search results. Additionally, it also requires
-     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
-     * permissions.
+     * Note: Updating the `is_publicly_readable` field may require up to 12
+     * hours to take effect in search results.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -976,10 +960,8 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * Note: Updating the ``is_publicly_readable`` field may require up to 12
-     * hours to take effect in search results. Additionally, it also requires
-     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
-     * permissions.
+     * Note: Updating the `is_publicly_readable` field may require up to 12
+     * hours to take effect in search results.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1004,10 +986,8 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * Note: Updating the ``is_publicly_readable`` field may require up to 12
-     * hours to take effect in search results. Additionally, it also requires
-     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
-     * permissions.
+     * Note: Updating the `is_publicly_readable` field may require up to 12
+     * hours to take effect in search results.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1026,10 +1006,8 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * Note: Updating the ``is_publicly_readable`` field may require up to 12
-     * hours to take effect in search results. Additionally, it also requires
-     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
-     * permissions.
+     * Note: Updating the `is_publicly_readable` field may require up to 12
+     * hours to take effect in search results.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1052,10 +1030,8 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * Note: Updating the ``is_publicly_readable`` field may require up to 12
-     * hours to take effect in search results. Additionally, it also requires
-     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
-     * permissions.
+     * Note: Updating the `is_publicly_readable` field may require up to 12
+     * hours to take effect in search results.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

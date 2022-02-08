@@ -239,7 +239,7 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
    *     PolicyTagManagerSerializationClient.create()) {
    *   ImportTaxonomiesRequest request =
    *       ImportTaxonomiesRequest.newBuilder()
-   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .build();
    *   ImportTaxonomiesResponse response =
    *       policyTagManagerSerializationClient.importTaxonomies(request);
@@ -271,7 +271,7 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
    *     PolicyTagManagerSerializationClient.create()) {
    *   ImportTaxonomiesRequest request =
    *       ImportTaxonomiesRequest.newBuilder()
-   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .build();
    *   ApiFuture<ImportTaxonomiesResponse> future =
    *       policyTagManagerSerializationClient.importTaxonomiesCallable().futureCall(request);
@@ -300,7 +300,7 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
    *     PolicyTagManagerSerializationClient.create()) {
    *   ExportTaxonomiesRequest request =
    *       ExportTaxonomiesRequest.newBuilder()
-   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllTaxonomies(new ArrayList<String>())
    *           .build();
    *   ExportTaxonomiesResponse response =
@@ -330,7 +330,7 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
    *     PolicyTagManagerSerializationClient.create()) {
    *   ExportTaxonomiesRequest request =
    *       ExportTaxonomiesRequest.newBuilder()
-   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllTaxonomies(new ArrayList<String>())
    *           .build();
    *   ApiFuture<ExportTaxonomiesResponse> future =

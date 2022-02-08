@@ -289,6 +289,22 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
               specCase_ = 24;
               break;
             }
+          case 210:
+            {
+              com.google.cloud.datacatalog.v1.PersonalDetails.Builder subBuilder = null;
+              if (personalDetails_ != null) {
+                subBuilder = personalDetails_.toBuilder();
+              }
+              personalDetails_ =
+                  input.readMessage(
+                      com.google.cloud.datacatalog.v1.PersonalDetails.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(personalDetails_);
+                personalDetails_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 218:
             {
               com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.Builder subBuilder = null;
@@ -329,6 +345,22 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               fullyQualifiedName_ = s;
+              break;
+            }
+          case 298:
+            {
+              com.google.cloud.datacatalog.v1.BusinessContext.Builder subBuilder = null;
+              if (businessContext_ != null) {
+                subBuilder = businessContext_.toBuilder();
+              }
+              businessContext_ =
+                  input.readMessage(
+                      com.google.cloud.datacatalog.v1.BusinessContext.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(businessContext_);
+                businessContext_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -1536,6 +1568,54 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int BUSINESS_CONTEXT_FIELD_NUMBER = 37;
+  private com.google.cloud.datacatalog.v1.BusinessContext businessContext_;
+  /**
+   *
+   *
+   * <pre>
+   * Business Context of the entry. Not supported for BigQuery datasets.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+   *
+   * @return Whether the businessContext field is set.
+   */
+  @java.lang.Override
+  public boolean hasBusinessContext() {
+    return businessContext_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Business Context of the entry. Not supported for BigQuery datasets.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+   *
+   * @return The businessContext.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.BusinessContext getBusinessContext() {
+    return businessContext_ == null
+        ? com.google.cloud.datacatalog.v1.BusinessContext.getDefaultInstance()
+        : businessContext_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Business Context of the entry. Not supported for BigQuery datasets.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.BusinessContextOrBuilder getBusinessContextOrBuilder() {
+    return getBusinessContext();
+  }
+
   public static final int SCHEMA_FIELD_NUMBER = 5;
   private com.google.cloud.datacatalog.v1.Schema schema_;
   /**
@@ -1861,6 +1941,60 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     return getDataSource();
   }
 
+  public static final int PERSONAL_DETAILS_FIELD_NUMBER = 26;
+  private com.google.cloud.datacatalog.v1.PersonalDetails personalDetails_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information related to the entry. Private to the current user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the personalDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasPersonalDetails() {
+    return personalDetails_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information related to the entry. Private to the current user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The personalDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.PersonalDetails getPersonalDetails() {
+    return personalDetails_ == null
+        ? com.google.cloud.datacatalog.v1.PersonalDetails.getDefaultInstance()
+        : personalDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information related to the entry. Private to the current user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.PersonalDetailsOrBuilder getPersonalDetailsOrBuilder() {
+    return getPersonalDetails();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1925,6 +2059,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (specCase_ == 24) {
       output.writeMessage(24, (com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_);
     }
+    if (personalDetails_ != null) {
+      output.writeMessage(26, getPersonalDetails());
+    }
     if (specCase_ == 27) {
       output.writeMessage(27, (com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_);
     }
@@ -1933,6 +2070,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullyQualifiedName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, fullyQualifiedName_);
+    }
+    if (businessContext_ != null) {
+      output.writeMessage(37, getBusinessContext());
     }
     unknownFields.writeTo(output);
   }
@@ -2013,6 +2153,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               24, (com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_);
     }
+    if (personalDetails_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getPersonalDetails());
+    }
     if (specCase_ == 27) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2025,6 +2168,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullyQualifiedName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, fullyQualifiedName_);
+    }
+    if (businessContext_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(37, getBusinessContext());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2046,6 +2192,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (!getFullyQualifiedName().equals(other.getFullyQualifiedName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (hasBusinessContext() != other.hasBusinessContext()) return false;
+    if (hasBusinessContext()) {
+      if (!getBusinessContext().equals(other.getBusinessContext())) return false;
+    }
     if (hasSchema() != other.hasSchema()) return false;
     if (hasSchema()) {
       if (!getSchema().equals(other.getSchema())) return false;
@@ -2062,6 +2212,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (hasDataSource() != other.hasDataSource()) return false;
     if (hasDataSource()) {
       if (!getDataSource().equals(other.getDataSource())) return false;
+    }
+    if (hasPersonalDetails() != other.hasPersonalDetails()) return false;
+    if (hasPersonalDetails()) {
+      if (!getPersonalDetails().equals(other.getPersonalDetails())) return false;
     }
     if (!getEntryTypeCase().equals(other.getEntryTypeCase())) return false;
     switch (entryTypeCase_) {
@@ -2135,6 +2289,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (hasBusinessContext()) {
+      hash = (37 * hash) + BUSINESS_CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getBusinessContext().hashCode();
+    }
     if (hasSchema()) {
       hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
       hash = (53 * hash) + getSchema().hashCode();
@@ -2154,6 +2312,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (hasDataSource()) {
       hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getDataSource().hashCode();
+    }
+    if (hasPersonalDetails()) {
+      hash = (37 * hash) + PERSONAL_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getPersonalDetails().hashCode();
     }
     switch (entryTypeCase_) {
       case 2:
@@ -2393,6 +2555,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
 
       description_ = "";
 
+      if (businessContextBuilder_ == null) {
+        businessContext_ = null;
+      } else {
+        businessContext_ = null;
+        businessContextBuilder_ = null;
+      }
       if (schemaBuilder_ == null) {
         schema_ = null;
       } else {
@@ -2417,6 +2585,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         dataSource_ = null;
         dataSourceBuilder_ = null;
+      }
+      if (personalDetailsBuilder_ == null) {
+        personalDetails_ = null;
+      } else {
+        personalDetails_ = null;
+        personalDetailsBuilder_ = null;
       }
       entryTypeCase_ = 0;
       entryType_ = null;
@@ -2513,6 +2687,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       result.displayName_ = displayName_;
       result.description_ = description_;
+      if (businessContextBuilder_ == null) {
+        result.businessContext_ = businessContext_;
+      } else {
+        result.businessContext_ = businessContextBuilder_.build();
+      }
       if (schemaBuilder_ == null) {
         result.schema_ = schema_;
       } else {
@@ -2534,6 +2713,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         result.dataSource_ = dataSource_;
       } else {
         result.dataSource_ = dataSourceBuilder_.build();
+      }
+      if (personalDetailsBuilder_ == null) {
+        result.personalDetails_ = personalDetails_;
+      } else {
+        result.personalDetails_ = personalDetailsBuilder_.build();
       }
       result.entryTypeCase_ = entryTypeCase_;
       result.systemCase_ = systemCase_;
@@ -2608,6 +2792,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         description_ = other.description_;
         onChanged();
       }
+      if (other.hasBusinessContext()) {
+        mergeBusinessContext(other.getBusinessContext());
+      }
       if (other.hasSchema()) {
         mergeSchema(other.getSchema());
       }
@@ -2620,6 +2807,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasDataSource()) {
         mergeDataSource(other.getDataSource());
+      }
+      if (other.hasPersonalDetails()) {
+        mergePersonalDetails(other.getPersonalDetails());
       }
       switch (other.getEntryTypeCase()) {
         case TYPE:
@@ -5470,6 +5660,192 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.datacatalog.v1.BusinessContext businessContext_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.BusinessContext,
+            com.google.cloud.datacatalog.v1.BusinessContext.Builder,
+            com.google.cloud.datacatalog.v1.BusinessContextOrBuilder>
+        businessContextBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Business Context of the entry. Not supported for BigQuery datasets.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+     *
+     * @return Whether the businessContext field is set.
+     */
+    public boolean hasBusinessContext() {
+      return businessContextBuilder_ != null || businessContext_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Business Context of the entry. Not supported for BigQuery datasets.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+     *
+     * @return The businessContext.
+     */
+    public com.google.cloud.datacatalog.v1.BusinessContext getBusinessContext() {
+      if (businessContextBuilder_ == null) {
+        return businessContext_ == null
+            ? com.google.cloud.datacatalog.v1.BusinessContext.getDefaultInstance()
+            : businessContext_;
+      } else {
+        return businessContextBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Business Context of the entry. Not supported for BigQuery datasets.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+     */
+    public Builder setBusinessContext(com.google.cloud.datacatalog.v1.BusinessContext value) {
+      if (businessContextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        businessContext_ = value;
+        onChanged();
+      } else {
+        businessContextBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Business Context of the entry. Not supported for BigQuery datasets.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+     */
+    public Builder setBusinessContext(
+        com.google.cloud.datacatalog.v1.BusinessContext.Builder builderForValue) {
+      if (businessContextBuilder_ == null) {
+        businessContext_ = builderForValue.build();
+        onChanged();
+      } else {
+        businessContextBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Business Context of the entry. Not supported for BigQuery datasets.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+     */
+    public Builder mergeBusinessContext(com.google.cloud.datacatalog.v1.BusinessContext value) {
+      if (businessContextBuilder_ == null) {
+        if (businessContext_ != null) {
+          businessContext_ =
+              com.google.cloud.datacatalog.v1.BusinessContext.newBuilder(businessContext_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          businessContext_ = value;
+        }
+        onChanged();
+      } else {
+        businessContextBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Business Context of the entry. Not supported for BigQuery datasets.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+     */
+    public Builder clearBusinessContext() {
+      if (businessContextBuilder_ == null) {
+        businessContext_ = null;
+        onChanged();
+      } else {
+        businessContext_ = null;
+        businessContextBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Business Context of the entry. Not supported for BigQuery datasets.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+     */
+    public com.google.cloud.datacatalog.v1.BusinessContext.Builder getBusinessContextBuilder() {
+
+      onChanged();
+      return getBusinessContextFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Business Context of the entry. Not supported for BigQuery datasets.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+     */
+    public com.google.cloud.datacatalog.v1.BusinessContextOrBuilder getBusinessContextOrBuilder() {
+      if (businessContextBuilder_ != null) {
+        return businessContextBuilder_.getMessageOrBuilder();
+      } else {
+        return businessContext_ == null
+            ? com.google.cloud.datacatalog.v1.BusinessContext.getDefaultInstance()
+            : businessContext_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Business Context of the entry. Not supported for BigQuery datasets.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.BusinessContext,
+            com.google.cloud.datacatalog.v1.BusinessContext.Builder,
+            com.google.cloud.datacatalog.v1.BusinessContextOrBuilder>
+        getBusinessContextFieldBuilder() {
+      if (businessContextBuilder_ == null) {
+        businessContextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1.BusinessContext,
+                com.google.cloud.datacatalog.v1.BusinessContext.Builder,
+                com.google.cloud.datacatalog.v1.BusinessContextOrBuilder>(
+                getBusinessContext(), getParentForChildren(), isClean());
+        businessContext_ = null;
+      }
+      return businessContextBuilder_;
+    }
+
     private com.google.cloud.datacatalog.v1.Schema schema_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.v1.Schema,
@@ -6465,6 +6841,210 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         dataSource_ = null;
       }
       return dataSourceBuilder_;
+    }
+
+    private com.google.cloud.datacatalog.v1.PersonalDetails personalDetails_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.PersonalDetails,
+            com.google.cloud.datacatalog.v1.PersonalDetails.Builder,
+            com.google.cloud.datacatalog.v1.PersonalDetailsOrBuilder>
+        personalDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information related to the entry. Private to the current user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the personalDetails field is set.
+     */
+    public boolean hasPersonalDetails() {
+      return personalDetailsBuilder_ != null || personalDetails_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information related to the entry. Private to the current user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The personalDetails.
+     */
+    public com.google.cloud.datacatalog.v1.PersonalDetails getPersonalDetails() {
+      if (personalDetailsBuilder_ == null) {
+        return personalDetails_ == null
+            ? com.google.cloud.datacatalog.v1.PersonalDetails.getDefaultInstance()
+            : personalDetails_;
+      } else {
+        return personalDetailsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information related to the entry. Private to the current user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPersonalDetails(com.google.cloud.datacatalog.v1.PersonalDetails value) {
+      if (personalDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        personalDetails_ = value;
+        onChanged();
+      } else {
+        personalDetailsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information related to the entry. Private to the current user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPersonalDetails(
+        com.google.cloud.datacatalog.v1.PersonalDetails.Builder builderForValue) {
+      if (personalDetailsBuilder_ == null) {
+        personalDetails_ = builderForValue.build();
+        onChanged();
+      } else {
+        personalDetailsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information related to the entry. Private to the current user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePersonalDetails(com.google.cloud.datacatalog.v1.PersonalDetails value) {
+      if (personalDetailsBuilder_ == null) {
+        if (personalDetails_ != null) {
+          personalDetails_ =
+              com.google.cloud.datacatalog.v1.PersonalDetails.newBuilder(personalDetails_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          personalDetails_ = value;
+        }
+        onChanged();
+      } else {
+        personalDetailsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information related to the entry. Private to the current user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPersonalDetails() {
+      if (personalDetailsBuilder_ == null) {
+        personalDetails_ = null;
+        onChanged();
+      } else {
+        personalDetails_ = null;
+        personalDetailsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information related to the entry. Private to the current user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.v1.PersonalDetails.Builder getPersonalDetailsBuilder() {
+
+      onChanged();
+      return getPersonalDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information related to the entry. Private to the current user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.v1.PersonalDetailsOrBuilder getPersonalDetailsOrBuilder() {
+      if (personalDetailsBuilder_ != null) {
+        return personalDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return personalDetails_ == null
+            ? com.google.cloud.datacatalog.v1.PersonalDetails.getDefaultInstance()
+            : personalDetails_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information related to the entry. Private to the current user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.PersonalDetails personal_details = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.PersonalDetails,
+            com.google.cloud.datacatalog.v1.PersonalDetails.Builder,
+            com.google.cloud.datacatalog.v1.PersonalDetailsOrBuilder>
+        getPersonalDetailsFieldBuilder() {
+      if (personalDetailsBuilder_ == null) {
+        personalDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1.PersonalDetails,
+                com.google.cloud.datacatalog.v1.PersonalDetails.Builder,
+                com.google.cloud.datacatalog.v1.PersonalDetailsOrBuilder>(
+                getPersonalDetails(), getParentForChildren(), isClean());
+        personalDetails_ = null;
+      }
+      return personalDetailsBuilder_;
     }
 
     @java.lang.Override

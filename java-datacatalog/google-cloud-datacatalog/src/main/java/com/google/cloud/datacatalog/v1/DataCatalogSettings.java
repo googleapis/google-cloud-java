@@ -141,6 +141,17 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
     return ((DataCatalogStubSettings) getStubSettings()).listEntriesSettings();
   }
 
+  /** Returns the object with the settings used for calls to modifyEntryOverview. */
+  public UnaryCallSettings<ModifyEntryOverviewRequest, EntryOverview>
+      modifyEntryOverviewSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).modifyEntryOverviewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to modifyEntryContacts. */
+  public UnaryCallSettings<ModifyEntryContactsRequest, Contacts> modifyEntryContactsSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).modifyEntryContactsSettings();
+  }
+
   /** Returns the object with the settings used for calls to createTagTemplate. */
   public UnaryCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateSettings() {
     return ((DataCatalogStubSettings) getStubSettings()).createTagTemplateSettings();
@@ -209,6 +220,16 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
   public PagedCallSettings<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
       listTagsSettings() {
     return ((DataCatalogStubSettings) getStubSettings()).listTagsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to starEntry. */
+  public UnaryCallSettings<StarEntryRequest, StarEntryResponse> starEntrySettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).starEntrySettings();
+  }
+
+  /** Returns the object with the settings used for calls to unstarEntry. */
+  public UnaryCallSettings<UnstarEntryRequest, UnstarEntryResponse> unstarEntrySettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).unstarEntrySettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -391,6 +412,18 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
       return getStubSettingsBuilder().listEntriesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to modifyEntryOverview. */
+    public UnaryCallSettings.Builder<ModifyEntryOverviewRequest, EntryOverview>
+        modifyEntryOverviewSettings() {
+      return getStubSettingsBuilder().modifyEntryOverviewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to modifyEntryContacts. */
+    public UnaryCallSettings.Builder<ModifyEntryContactsRequest, Contacts>
+        modifyEntryContactsSettings() {
+      return getStubSettingsBuilder().modifyEntryContactsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createTagTemplate. */
     public UnaryCallSettings.Builder<CreateTagTemplateRequest, TagTemplate>
         createTagTemplateSettings() {
@@ -462,6 +495,17 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
     public PagedCallSettings.Builder<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
         listTagsSettings() {
       return getStubSettingsBuilder().listTagsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to starEntry. */
+    public UnaryCallSettings.Builder<StarEntryRequest, StarEntryResponse> starEntrySettings() {
+      return getStubSettingsBuilder().starEntrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to unstarEntry. */
+    public UnaryCallSettings.Builder<UnstarEntryRequest, UnstarEntryResponse>
+        unstarEntrySettings() {
+      return getStubSettingsBuilder().unstarEntrySettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

@@ -654,11 +654,13 @@ public class DataCatalogClientTest {
             .setFullyQualifiedName("fullyQualifiedName288467357")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setBusinessContext(BusinessContext.newBuilder().build())
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
             .setUsageSignal(UsageSignal.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
+            .setPersonalDetails(PersonalDetails.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -707,11 +709,13 @@ public class DataCatalogClientTest {
             .setFullyQualifiedName("fullyQualifiedName288467357")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setBusinessContext(BusinessContext.newBuilder().build())
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
             .setUsageSignal(UsageSignal.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
+            .setPersonalDetails(PersonalDetails.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -760,11 +764,13 @@ public class DataCatalogClientTest {
             .setFullyQualifiedName("fullyQualifiedName288467357")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setBusinessContext(BusinessContext.newBuilder().build())
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
             .setUsageSignal(UsageSignal.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
+            .setPersonalDetails(PersonalDetails.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -807,11 +813,13 @@ public class DataCatalogClientTest {
             .setFullyQualifiedName("fullyQualifiedName288467357")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setBusinessContext(BusinessContext.newBuilder().build())
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
             .setUsageSignal(UsageSignal.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
+            .setPersonalDetails(PersonalDetails.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -925,11 +933,13 @@ public class DataCatalogClientTest {
             .setFullyQualifiedName("fullyQualifiedName288467357")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setBusinessContext(BusinessContext.newBuilder().build())
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
             .setUsageSignal(UsageSignal.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
+            .setPersonalDetails(PersonalDetails.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -972,11 +982,13 @@ public class DataCatalogClientTest {
             .setFullyQualifiedName("fullyQualifiedName288467357")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setBusinessContext(BusinessContext.newBuilder().build())
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
             .setUsageSignal(UsageSignal.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
+            .setPersonalDetails(PersonalDetails.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -1019,11 +1031,13 @@ public class DataCatalogClientTest {
             .setFullyQualifiedName("fullyQualifiedName288467357")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setBusinessContext(BusinessContext.newBuilder().build())
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
             .setUsageSignal(UsageSignal.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDataSource(DataSource.newBuilder().build())
+            .setPersonalDetails(PersonalDetails.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -1141,6 +1155,98 @@ public class DataCatalogClientTest {
     try {
       String parent = "parent-995424086";
       client.listEntries(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void modifyEntryOverviewTest() throws Exception {
+    EntryOverview expectedResponse =
+        EntryOverview.newBuilder().setOverview("overview530115961").build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    ModifyEntryOverviewRequest request =
+        ModifyEntryOverviewRequest.newBuilder()
+            .setName(EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+            .setEntryOverview(EntryOverview.newBuilder().build())
+            .build();
+
+    EntryOverview actualResponse = client.modifyEntryOverview(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ModifyEntryOverviewRequest actualRequest = ((ModifyEntryOverviewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getEntryOverview(), actualRequest.getEntryOverview());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void modifyEntryOverviewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      ModifyEntryOverviewRequest request =
+          ModifyEntryOverviewRequest.newBuilder()
+              .setName(
+                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+              .setEntryOverview(EntryOverview.newBuilder().build())
+              .build();
+      client.modifyEntryOverview(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void modifyEntryContactsTest() throws Exception {
+    Contacts expectedResponse =
+        Contacts.newBuilder().addAllPeople(new ArrayList<Contacts.Person>()).build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    ModifyEntryContactsRequest request =
+        ModifyEntryContactsRequest.newBuilder()
+            .setName(EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+            .setContacts(Contacts.newBuilder().build())
+            .build();
+
+    Contacts actualResponse = client.modifyEntryContacts(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ModifyEntryContactsRequest actualRequest = ((ModifyEntryContactsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getContacts(), actualRequest.getContacts());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void modifyEntryContactsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      ModifyEntryContactsRequest request =
+          ModifyEntryContactsRequest.newBuilder()
+              .setName(
+                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+              .setContacts(Contacts.newBuilder().build())
+              .build();
+      client.modifyEntryContacts(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -2424,6 +2530,146 @@ public class DataCatalogClientTest {
   }
 
   @Test
+  public void starEntryTest() throws Exception {
+    StarEntryResponse expectedResponse = StarEntryResponse.newBuilder().build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+
+    StarEntryResponse actualResponse = client.starEntry(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StarEntryRequest actualRequest = ((StarEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void starEntryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+      client.starEntry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void starEntryTest2() throws Exception {
+    StarEntryResponse expectedResponse = StarEntryResponse.newBuilder().build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    StarEntryResponse actualResponse = client.starEntry(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StarEntryRequest actualRequest = ((StarEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void starEntryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.starEntry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void unstarEntryTest() throws Exception {
+    UnstarEntryResponse expectedResponse = UnstarEntryResponse.newBuilder().build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+
+    UnstarEntryResponse actualResponse = client.unstarEntry(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UnstarEntryRequest actualRequest = ((UnstarEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void unstarEntryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+      client.unstarEntry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void unstarEntryTest2() throws Exception {
+    UnstarEntryResponse expectedResponse = UnstarEntryResponse.newBuilder().build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    UnstarEntryResponse actualResponse = client.unstarEntry(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UnstarEntryRequest actualRequest = ((UnstarEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void unstarEntryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.unstarEntry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void setIamPolicyTest() throws Exception {
     Policy expectedResponse =
         Policy.newBuilder()
@@ -2433,7 +2679,7 @@ public class DataCatalogClientTest {
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
-    ResourceName resource = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+    ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -2457,7 +2703,7 @@ public class DataCatalogClientTest {
     mockDataCatalog.addException(exception);
 
     try {
-      ResourceName resource = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+      ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -2519,7 +2765,7 @@ public class DataCatalogClientTest {
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
-    ResourceName resource = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+    ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -2541,7 +2787,7 @@ public class DataCatalogClientTest {
     mockDataCatalog.addException(exception);
 
     try {
-      ResourceName resource = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+      ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2597,7 +2843,8 @@ public class DataCatalogClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+            .setResource(
+                EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -2624,7 +2871,8 @@ public class DataCatalogClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+              .setResource(
+                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

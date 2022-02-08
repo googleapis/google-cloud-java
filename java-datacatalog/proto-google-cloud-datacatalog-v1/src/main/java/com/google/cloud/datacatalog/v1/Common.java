@@ -27,6 +27,11 @@ public final class Common {
     registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_v1_PersonalDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_v1_PersonalDetails_fieldAccessorTable;
+
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
@@ -37,21 +42,31 @@ public final class Common {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/datacatalog/v1/common.pro"
           + "to\022\033google.cloud.datacatalog.v1\032\037google/"
-          + "protobuf/timestamp.proto*m\n\020IntegratedSy"
-          + "stem\022!\n\035INTEGRATED_SYSTEM_UNSPECIFIED\020\000\022"
-          + "\014\n\010BIGQUERY\020\001\022\020\n\014CLOUD_PUBSUB\020\002\022\026\n\022DATAP"
-          + "ROC_METASTORE\020\003B\313\001\n\037com.google.cloud.dat"
-          + "acatalog.v1P\001ZFgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/datacatalog/v1;dataca"
-          + "talog\370\001\001\252\002\033Google.Cloud.DataCatalog.V1\312\002"
-          + "\033Google\\Cloud\\DataCatalog\\V1\352\002\036Google::C"
-          + "loud::DataCatalog::V1b\006proto3"
+          + "protobuf/timestamp.proto\"Q\n\017PersonalDeta"
+          + "ils\022\017\n\007starred\030\001 \001(\010\022-\n\tstar_time\030\002 \001(\0132"
+          + "\032.google.protobuf.Timestamp*m\n\020Integrate"
+          + "dSystem\022!\n\035INTEGRATED_SYSTEM_UNSPECIFIED"
+          + "\020\000\022\014\n\010BIGQUERY\020\001\022\020\n\014CLOUD_PUBSUB\020\002\022\026\n\022DA"
+          + "TAPROC_METASTORE\020\003B\313\001\n\037com.google.cloud."
+          + "datacatalog.v1P\001ZFgoogle.golang.org/genp"
+          + "roto/googleapis/cloud/datacatalog/v1;dat"
+          + "acatalog\370\001\001\252\002\033Google.Cloud.DataCatalog.V"
+          + "1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Google"
+          + "::Cloud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.TimestampProto.getDescriptor(),
+            });
+    internal_static_google_cloud_datacatalog_v1_PersonalDetails_descriptor =
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_datacatalog_v1_PersonalDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_v1_PersonalDetails_descriptor,
+            new java.lang.String[] {
+              "Starred", "StarTime",
             });
     com.google.protobuf.TimestampProto.getDescriptor();
   }
