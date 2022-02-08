@@ -29,11 +29,13 @@ public class StreamObjectDownload {
 
     // The path to the file to download the object to
     // String targetFile = "path/to/your/file";
+    Path targetFilePath = Paths.get(targetFile);
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    try (ReadChannel reader = storage.reader(BlobId.of(bucketName, objectName))) {
-      Path targetFilePath = Paths.get(targetFile);
-      FileChannel targetFileChannel = FileChannel.open(targetFilePath, StandardOpenOption.WRITE);
+    try (ReadChannel reader = storage.reader(BlobId.of(bucketName, objectName));
+        FileChannel targetFileChannel =
+            FileChannel.open(targetFilePath, StandardOpenOption.WRITE)) {
+
       ByteStreams.copy(reader, targetFileChannel);
 
       System.out.println(
