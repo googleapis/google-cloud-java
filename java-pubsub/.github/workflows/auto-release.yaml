@@ -37,7 +37,7 @@ jobs:
           }
 
           // only approve PRs with pom.xml and versions.txt changes
-          const filesPromise = github.pulls.listFiles.endpoint({
+          const filesPromise = github.rest.pulls.listFiles.endpoint({
             owner: context.repo.owner,
             repo: context.repo.repo,
             pull_number: context.payload.pull_request.number,
@@ -69,7 +69,7 @@ jobs:
             return;
           }
 
-          const promise = github.pulls.list.endpoint({
+          const promise = github.rest.pulls.list.endpoint({
             owner: context.repo.owner,
             repo: context.repo.repo,
             state: 'open'
@@ -86,7 +86,7 @@ jobs:
           }
 
           // approve release PR
-          await github.pulls.createReview({
+          await github.rest.pulls.createReview({
             owner: context.repo.owner,
             repo: context.repo.repo,
             body: 'Rubber stamped release!',
@@ -95,7 +95,7 @@ jobs:
           });
 
           // attach kokoro:force-run and automerge labels
-          await github.issues.addLabels({
+          await github.rest.issues.addLabels({
             owner: context.repo.owner,
             repo: context.repo.repo,
             issue_number: context.payload.pull_request.number,
