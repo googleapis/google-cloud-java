@@ -49,6 +49,7 @@ import com.google.cloud.examples.storage.buckets.RemoveBucketIamMember;
 import com.google.cloud.examples.storage.buckets.RemoveBucketLabel;
 import com.google.cloud.examples.storage.buckets.SetAsyncTurboRpo;
 import com.google.cloud.examples.storage.buckets.SetBucketWebsiteInfo;
+import com.google.cloud.examples.storage.buckets.SetClientEndpoint;
 import com.google.cloud.examples.storage.buckets.SetDefaultRpo;
 import com.google.cloud.examples.storage.buckets.SetPublicAccessPreventionEnforced;
 import com.google.cloud.examples.storage.buckets.SetPublicAccessPreventionInherited;
@@ -469,6 +470,17 @@ public class ITBucketSnippets {
     Bucket bucket = storage.get(BUCKET);
     assertEquals("index.html", bucket.getIndexPage());
     assertEquals("404.html", bucket.getNotFoundPage());
+  }
+
+  @Test
+  public void testSetClientEndpoint() {
+    PrintStream standardOut = System.out;
+    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(snippetOutputCapture));
+    SetClientEndpoint.setClientEndpoint(PROJECT_ID, "https://storage.googleapis.com");
+    String snippetOutput = snippetOutputCapture.toString();
+    System.setOut(standardOut);
+    assertTrue(snippetOutput.contains("https://storage.googleapis.com"));
   }
 
   @Test
