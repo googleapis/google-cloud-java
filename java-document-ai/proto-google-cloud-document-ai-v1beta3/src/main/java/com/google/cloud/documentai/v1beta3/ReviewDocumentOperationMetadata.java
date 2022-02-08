@@ -41,6 +41,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
   private ReviewDocumentOperationMetadata() {
     state_ = 0;
     stateMessage_ = "";
+    questionId_ = "";
   }
 
   @java.lang.Override
@@ -131,6 +132,13 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
                 commonMetadata_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              questionId_ = s;
               break;
             }
           default:
@@ -622,6 +630,55 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     return getCommonMetadata();
   }
 
+  public static final int QUESTION_ID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object questionId_;
+  /**
+   *
+   *
+   * <pre>
+   * The question ID.
+   * </pre>
+   *
+   * <code>string question_id = 6;</code>
+   *
+   * @return The questionId.
+   */
+  @java.lang.Override
+  public java.lang.String getQuestionId() {
+    java.lang.Object ref = questionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      questionId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The question ID.
+   * </pre>
+   *
+   * <code>string question_id = 6;</code>
+   *
+   * @return The bytes for questionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getQuestionIdBytes() {
+    java.lang.Object ref = questionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      questionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -654,6 +711,9 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     if (commonMetadata_ != null) {
       output.writeMessage(5, getCommonMetadata());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(questionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, questionId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -680,6 +740,9 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     }
     if (commonMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCommonMetadata());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(questionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, questionId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -711,6 +774,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     if (hasCommonMetadata()) {
       if (!getCommonMetadata().equals(other.getCommonMetadata())) return false;
     }
+    if (!getQuestionId().equals(other.getQuestionId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -738,6 +802,8 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       hash = (37 * hash) + COMMON_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getCommonMetadata().hashCode();
     }
+    hash = (37 * hash) + QUESTION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getQuestionId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -908,6 +974,8 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
         commonMetadata_ = null;
         commonMetadataBuilder_ = null;
       }
+      questionId_ = "";
+
       return this;
     }
 
@@ -954,6 +1022,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       } else {
         result.commonMetadata_ = commonMetadataBuilder_.build();
       }
+      result.questionId_ = questionId_;
       onBuilt();
       return result;
     }
@@ -1022,6 +1091,10 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       }
       if (other.hasCommonMetadata()) {
         mergeCommonMetadata(other.getCommonMetadata());
+      }
+      if (!other.getQuestionId().isEmpty()) {
+        questionId_ = other.questionId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1819,6 +1892,112 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
         commonMetadata_ = null;
       }
       return commonMetadataBuilder_;
+    }
+
+    private java.lang.Object questionId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The question ID.
+     * </pre>
+     *
+     * <code>string question_id = 6;</code>
+     *
+     * @return The questionId.
+     */
+    public java.lang.String getQuestionId() {
+      java.lang.Object ref = questionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        questionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The question ID.
+     * </pre>
+     *
+     * <code>string question_id = 6;</code>
+     *
+     * @return The bytes for questionId.
+     */
+    public com.google.protobuf.ByteString getQuestionIdBytes() {
+      java.lang.Object ref = questionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        questionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The question ID.
+     * </pre>
+     *
+     * <code>string question_id = 6;</code>
+     *
+     * @param value The questionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuestionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      questionId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The question ID.
+     * </pre>
+     *
+     * <code>string question_id = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQuestionId() {
+
+      questionId_ = getDefaultInstance().getQuestionId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The question ID.
+     * </pre>
+     *
+     * <code>string question_id = 6;</code>
+     *
+     * @param value The bytes for questionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuestionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      questionId_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
