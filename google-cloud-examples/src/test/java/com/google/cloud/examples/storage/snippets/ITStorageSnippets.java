@@ -25,6 +25,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.examples.storage.objects.StreamObjectDownload;
+import com.google.cloud.examples.storage.objects.StreamObjectUpload;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
@@ -484,5 +486,15 @@ public class ITStorageSnippets {
     client.execute(request);
 
     assertEquals("hello world", new String(storage.get(BUCKET, "my-object").getContent()));
+  }
+
+  @Test
+  public void testStreamUploadDownload() throws Exception {
+    StreamObjectUpload.streamObjectUpload(PROJECT_ID, BUCKET, "streamBlob", "hello world");
+    File file = File.createTempFile("stream", "test");
+    StreamObjectDownload.streamObjectDownload(
+        PROJECT_ID, BUCKET, "streamBlob", file.getAbsolutePath());
+    assertArrayEquals(Files.readAllBytes(file.toPath()), "hello world".getBytes());
+    file.delete();
   }
 }
