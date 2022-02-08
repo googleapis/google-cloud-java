@@ -1,0 +1,41 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+name: version-check
+jobs:
+  upper-bound-check:
+    name: Upper-bound check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: stCarolas/setup-maven@v4
+        with:
+          maven-version: 3.8.1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - run: java -version
+      - name: Install the BOM to local Maven repository
+        run: .kokoro/build.sh
+      - name: Check the BOM content satisfies the upper-bound-check test case
+        run: mvn -B -V -ntp verify -Dcheckstyle.skip
+        working-directory: upper-bound-check
+  grpc-convergence-check:
+    name: gRPC dependency convergence check
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: stCarolas/setup-maven@v4
+      with:
+        maven-version: 3.8.1
+    - uses: actions/setup-java@v1
+      with:
+        java-version: 8
+    - run: java -version
+    - name: Install the BOM to local Maven repository
+      run: .kokoro/build.sh
+    - name: Check the BOM content satisfies the dependency-convergence-check test
+      run: mvn -B -V -ntp verify -Dcheckstyle.skip
+      working-directory: dependency-convergence-check
