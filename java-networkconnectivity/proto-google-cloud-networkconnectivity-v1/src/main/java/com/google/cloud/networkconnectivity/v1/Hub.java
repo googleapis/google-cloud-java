@@ -23,8 +23,10 @@ package com.google.cloud.networkconnectivity.v1;
  *
  * <pre>
  * A hub is a collection of spokes. A single hub can contain spokes from
- * multiple regions. However, all of a hub's spokes must be associated with
- * resources that reside in the same VPC network.
+ * multiple regions. However, if any of a hub's spokes use the data transfer
+ * feature, the resources associated with those spokes must all reside in the
+ * same VPC network. Spokes that do not use data transfer can be associated
+ * with any VPC network in your project.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.Hub}
@@ -614,9 +616,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-   * VLAN attachments, and router appliance instances referenced by this hub's
-   * spokes must belong to this VPC network.
+   * The VPC networks associated with this hub's spokes.
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -631,9 +631,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-   * VLAN attachments, and router appliance instances referenced by this hub's
-   * spokes must belong to this VPC network.
+   * The VPC networks associated with this hub's spokes.
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -649,9 +647,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-   * VLAN attachments, and router appliance instances referenced by this hub's
-   * spokes must belong to this VPC network.
+   * The VPC networks associated with this hub's spokes.
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -666,9 +662,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-   * VLAN attachments, and router appliance instances referenced by this hub's
-   * spokes must belong to this VPC network.
+   * The VPC networks associated with this hub's spokes.
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -683,9 +677,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-   * VLAN attachments, and router appliance instances referenced by this hub's
-   * spokes must belong to this VPC network.
+   * The VPC networks associated with this hub's spokes.
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -945,8 +937,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A hub is a collection of spokes. A single hub can contain spokes from
-   * multiple regions. However, all of a hub's spokes must be associated with
-   * resources that reside in the same VPC network.
+   * multiple regions. However, if any of a hub's spokes use the data transfer
+   * feature, the resources associated with those spokes must all reside in the
+   * same VPC network. Spokes that do not use data transfer can be associated
+   * with any VPC network in your project.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.Hub}
@@ -2252,9 +2246,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2272,9 +2264,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2292,9 +2282,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2312,9 +2300,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2339,9 +2325,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2363,9 +2347,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2389,9 +2371,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2416,9 +2396,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2440,9 +2418,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2464,9 +2440,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2488,9 +2462,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2511,9 +2483,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2534,9 +2504,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2551,9 +2519,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2572,9 +2538,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2593,9 +2557,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2610,9 +2572,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2629,9 +2589,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
-     * VLAN attachments, and router appliance instances referenced by this hub's
-     * spokes must belong to this VPC network.
+     * The VPC networks associated with this hub's spokes.
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>

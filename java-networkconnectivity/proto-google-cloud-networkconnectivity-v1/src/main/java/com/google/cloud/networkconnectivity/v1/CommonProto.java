@@ -42,9 +42,9 @@ public final class CommonProto {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/networkconnectivity/v1/co"
           + "mmon.proto\022#google.cloud.networkconnecti"
-          + "vity.v1\032\037google/api/field_behavior.proto"
-          + "\032\037google/protobuf/timestamp.proto\032\034googl"
-          + "e/api/annotations.proto\"\200\002\n\021OperationMet"
+          + "vity.v1\032\034google/api/annotations.proto\032\037g"
+          + "oogle/api/field_behavior.proto\032\037google/p"
+          + "rotobuf/timestamp.proto\"\200\002\n\021OperationMet"
           + "adata\0224\n\013create_time\030\001 \001(\0132\032.google.prot"
           + "obuf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032."
           + "google.protobuf.TimestampB\003\340A\003\022\023\n\006target"
@@ -63,9 +63,9 @@ public final class CommonProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_networkconnectivity_v1_OperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -86,9 +86,9 @@ public final class CommonProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

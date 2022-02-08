@@ -22,8 +22,8 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * RoutingVPC contains information about the VPC network that is associated with
- * a hub's spokes.
+ * RoutingVPC contains information about the VPC networks that are associated
+ * with a hub's spokes.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.RoutingVPC}
@@ -76,6 +76,11 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               uri_ = s;
+              break;
+            }
+          case 16:
+            {
+              requiredForNewSiteToSiteDataTransferSpokes_ = input.readBool();
               break;
             }
           default:
@@ -161,6 +166,30 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int REQUIRED_FOR_NEW_SITE_TO_SITE_DATA_TRANSFER_SPOKES_FIELD_NUMBER = 2;
+  private boolean requiredForNewSiteToSiteDataTransferSpokes_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If true, indicates that this VPC network is currently associated with
+   * spokes that use the data transfer feature (spokes where the
+   * site_to_site_data_transfer field is set to true). If you create new spokes
+   * that use data transfer, they must be associated with this VPC network. At
+   * most, one VPC network will have this field set to true.
+   * </pre>
+   *
+   * <code>
+   * bool required_for_new_site_to_site_data_transfer_spokes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The requiredForNewSiteToSiteDataTransferSpokes.
+   */
+  @java.lang.Override
+  public boolean getRequiredForNewSiteToSiteDataTransferSpokes() {
+    return requiredForNewSiteToSiteDataTransferSpokes_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -178,6 +207,9 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
     }
+    if (requiredForNewSiteToSiteDataTransferSpokes_ != false) {
+      output.writeBool(2, requiredForNewSiteToSiteDataTransferSpokes_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -189,6 +221,11 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+    }
+    if (requiredForNewSiteToSiteDataTransferSpokes_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              2, requiredForNewSiteToSiteDataTransferSpokes_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -207,6 +244,8 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.networkconnectivity.v1.RoutingVPC) obj;
 
     if (!getUri().equals(other.getUri())) return false;
+    if (getRequiredForNewSiteToSiteDataTransferSpokes()
+        != other.getRequiredForNewSiteToSiteDataTransferSpokes()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -220,6 +259,11 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + URI_FIELD_NUMBER;
     hash = (53 * hash) + getUri().hashCode();
+    hash = (37 * hash) + REQUIRED_FOR_NEW_SITE_TO_SITE_DATA_TRANSFER_SPOKES_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(
+                getRequiredForNewSiteToSiteDataTransferSpokes());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,8 +368,8 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * RoutingVPC contains information about the VPC network that is associated with
-   * a hub's spokes.
+   * RoutingVPC contains information about the VPC networks that are associated
+   * with a hub's spokes.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.RoutingVPC}
@@ -368,6 +412,8 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       uri_ = "";
 
+      requiredForNewSiteToSiteDataTransferSpokes_ = false;
+
       return this;
     }
 
@@ -396,6 +442,8 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.networkconnectivity.v1.RoutingVPC result =
           new com.google.cloud.networkconnectivity.v1.RoutingVPC(this);
       result.uri_ = uri_;
+      result.requiredForNewSiteToSiteDataTransferSpokes_ =
+          requiredForNewSiteToSiteDataTransferSpokes_;
       onBuilt();
       return result;
     }
@@ -449,6 +497,10 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
         onChanged();
+      }
+      if (other.getRequiredForNewSiteToSiteDataTransferSpokes() != false) {
+        setRequiredForNewSiteToSiteDataTransferSpokes(
+            other.getRequiredForNewSiteToSiteDataTransferSpokes());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -582,6 +634,76 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       uri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean requiredForNewSiteToSiteDataTransferSpokes_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If true, indicates that this VPC network is currently associated with
+     * spokes that use the data transfer feature (spokes where the
+     * site_to_site_data_transfer field is set to true). If you create new spokes
+     * that use data transfer, they must be associated with this VPC network. At
+     * most, one VPC network will have this field set to true.
+     * </pre>
+     *
+     * <code>
+     * bool required_for_new_site_to_site_data_transfer_spokes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The requiredForNewSiteToSiteDataTransferSpokes.
+     */
+    @java.lang.Override
+    public boolean getRequiredForNewSiteToSiteDataTransferSpokes() {
+      return requiredForNewSiteToSiteDataTransferSpokes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If true, indicates that this VPC network is currently associated with
+     * spokes that use the data transfer feature (spokes where the
+     * site_to_site_data_transfer field is set to true). If you create new spokes
+     * that use data transfer, they must be associated with this VPC network. At
+     * most, one VPC network will have this field set to true.
+     * </pre>
+     *
+     * <code>
+     * bool required_for_new_site_to_site_data_transfer_spokes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The requiredForNewSiteToSiteDataTransferSpokes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequiredForNewSiteToSiteDataTransferSpokes(boolean value) {
+
+      requiredForNewSiteToSiteDataTransferSpokes_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If true, indicates that this VPC network is currently associated with
+     * spokes that use the data transfer feature (spokes where the
+     * site_to_site_data_transfer field is set to true). If you create new spokes
+     * that use data transfer, they must be associated with this VPC network. At
+     * most, one VPC network will have this field set to true.
+     * </pre>
+     *
+     * <code>
+     * bool required_for_new_site_to_site_data_transfer_spokes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequiredForNewSiteToSiteDataTransferSpokes() {
+
+      requiredForNewSiteToSiteDataTransferSpokes_ = false;
       onChanged();
       return this;
     }

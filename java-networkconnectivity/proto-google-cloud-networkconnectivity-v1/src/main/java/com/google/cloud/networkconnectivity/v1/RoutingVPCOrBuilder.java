@@ -47,4 +47,23 @@ public interface RoutingVPCOrBuilder
    * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If true, indicates that this VPC network is currently associated with
+   * spokes that use the data transfer feature (spokes where the
+   * site_to_site_data_transfer field is set to true). If you create new spokes
+   * that use data transfer, they must be associated with this VPC network. At
+   * most, one VPC network will have this field set to true.
+   * </pre>
+   *
+   * <code>
+   * bool required_for_new_site_to_site_data_transfer_spokes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The requiredForNewSiteToSiteDataTransferSpokes.
+   */
+  boolean getRequiredForNewSiteToSiteDataTransferSpokes();
 }
