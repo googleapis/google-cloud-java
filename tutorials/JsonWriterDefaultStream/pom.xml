@@ -41,6 +41,19 @@
       <artifactId>arrow-memory-netty</artifactId>
       <version>6.0.1</version>
     </dependency>
+    <!-- Test Dependencies -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <version>1.1.3</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -57,7 +70,6 @@
             </goals>
             <configuration>
               <sources>
-                <source>.</source>
                 <source>../../samples/snippets/src/main/java/com/example/bigquerystorage</source>
               </sources>
             </configuration>

@@ -253,6 +253,7 @@
       <id>include-samples</id>
       <modules>
         <module>samples</module>
+        <module>tutorials</module>
       </modules>
     </profile>
   </profiles>

@@ -67,7 +67,7 @@ public class JsonWriterDefaultStream {
                 .build(),
             Field.of("author", StandardSQLTypeName.STRING),
             Field.of("committer", StandardSQLTypeName.STRING),
-            Field.of("ts", StandardSQLTypeName.DATETIME),
+            Field.of("commit_date", StandardSQLTypeName.DATETIME),
             Field.of("subject", StandardSQLTypeName.STRING),
             Field.of("message", StandardSQLTypeName.STRING),
             Field.of("repo_name", StandardSQLTypeName.STRING));
@@ -114,6 +114,12 @@ public class JsonWriterDefaultStream {
         } // batch
         ApiFuture<AppendRowsResponse> future = writer.append(jsonArr);
         AppendRowsResponse response = future.get();
+        if (response.hasUpdatedSchema()) {
+          // The destination table schema has changed. The client library automatically
+          // reestablishes a connection to the backend using the new schema, so we can continue
+          // to send data without interruption.
+          System.out.println("Table schema changed.");
+        }
       }
       System.out.println("Appended records successfully.");
     } catch (ExecutionException e) {

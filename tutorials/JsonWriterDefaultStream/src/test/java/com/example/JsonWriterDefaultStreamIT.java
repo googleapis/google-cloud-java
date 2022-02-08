@@ -16,7 +16,65 @@
 
 package com.example.bigquerystorage;
 
+import static com.google.common.truth.Truth.assertThat;
+
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
+import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.DatasetId;
+import com.google.cloud.bigquery.DatasetInfo;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.util.UUID;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
 @RunWith(JUnit4.class)
 public class JsonWriterDefaultStreamIT {
-  // TODO(mwasson): ADD Integration Test
+
+  private static final String GOOGLE_CLOUD_PROJECT = System.getenv("GOOGLE_CLOUD_PROJECT");
+
+  private ByteArrayOutputStream bout;
+  private PrintStream out;
+  private BigQuery bigquery;
+  private String datasetName;
+
+  @BeforeClass
+  public static void beforeClass() {}
+
+  @Before
+  public void setUp() {
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    System.setOut(out);
+
+    bigquery = BigQueryOptions.getDefaultInstance().getService();
+
+    // Create a new dataset for each test.
+    datasetName = "JAVA_WRITER_DEFAULT_STREAM_TEST" + UUID.randomUUID().toString().substring(0, 8);
+    bigquery.create(DatasetInfo.newBuilder(datasetName).build());
+  }
+
+  @Test
+  public void testJsonWriterDefaultStream() throws Exception {
+    Path dataFilePath = FileSystems.getDefault().getPath("src/test/resources", "TestData.json");
+
+    System.out.println(dataFilePath.toString());
+    String[] args = {GOOGLE_CLOUD_PROJECT, datasetName, "github", dataFilePath.toString()};
+    JsonWriterDefaultStream.main(args);
+    assertThat(bout.toString()).contains("Appended records successfully.");
+  }
+
+  @After
+  public void tearDown() {
+    bigquery.delete(
+        DatasetId.of(GOOGLE_CLOUD_PROJECT, datasetName), DatasetDeleteOption.deleteContents());
+    System.setOut(null);
+  }
 }
