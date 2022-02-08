@@ -104,6 +104,24 @@ public abstract class OsConfigServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deletePatchDeploymentCallable()");
   }
 
+  public UnaryCallable<
+          PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      updatePatchDeploymentCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePatchDeploymentCallable()");
+  }
+
+  public UnaryCallable<
+          PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      pausePatchDeploymentCallable() {
+    throw new UnsupportedOperationException("Not implemented: pausePatchDeploymentCallable()");
+  }
+
+  public UnaryCallable<
+          PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      resumePatchDeploymentCallable() {
+    throw new UnsupportedOperationException("Not implemented: resumePatchDeploymentCallable()");
+  }
+
   @Override
   public abstract void close();
 }

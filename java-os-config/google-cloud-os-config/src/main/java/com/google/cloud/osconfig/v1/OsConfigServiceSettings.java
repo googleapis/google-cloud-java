@@ -136,6 +136,27 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
     return ((OsConfigServiceStubSettings) getStubSettings()).deletePatchDeploymentSettings();
   }
 
+  /** Returns the object with the settings used for calls to updatePatchDeployment. */
+  public UnaryCallSettings<
+          PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      updatePatchDeploymentSettings() {
+    return ((OsConfigServiceStubSettings) getStubSettings()).updatePatchDeploymentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to pausePatchDeployment. */
+  public UnaryCallSettings<
+          PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      pausePatchDeploymentSettings() {
+    return ((OsConfigServiceStubSettings) getStubSettings()).pausePatchDeploymentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resumePatchDeployment. */
+  public UnaryCallSettings<
+          PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      resumePatchDeploymentSettings() {
+    return ((OsConfigServiceStubSettings) getStubSettings()).resumePatchDeploymentSettings();
+  }
+
   public static final OsConfigServiceSettings create(OsConfigServiceStubSettings stub)
       throws IOException {
     return new OsConfigServiceSettings.Builder(stub.toBuilder()).build();
@@ -296,6 +317,27 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
     public UnaryCallSettings.Builder<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentSettings() {
       return getStubSettingsBuilder().deletePatchDeploymentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePatchDeployment. */
+    public UnaryCallSettings.Builder<
+            PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        updatePatchDeploymentSettings() {
+      return getStubSettingsBuilder().updatePatchDeploymentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to pausePatchDeployment. */
+    public UnaryCallSettings.Builder<
+            PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        pausePatchDeploymentSettings() {
+      return getStubSettingsBuilder().pausePatchDeploymentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resumePatchDeployment. */
+    public UnaryCallSettings.Builder<
+            PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        resumePatchDeploymentSettings() {
+      return getStubSettingsBuilder().resumePatchDeploymentSettings();
     }
 
     @Override

@@ -16382,6 +16382,19 @@ public final class PatchJobs {
      * <code>.google.cloud.osconfig.v1.ExecStep post_step = 9;</code>
      */
     com.google.cloud.osconfig.v1.PatchJobs.ExecStepOrBuilder getPostStepOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Allows the patch job to run on Managed instance groups (MIGs).
+     * </pre>
+     *
+     * <code>bool mig_instances_allowed = 10;</code>
+     *
+     * @return The migInstancesAllowed.
+     */
+    boolean getMigInstancesAllowed();
   }
   /**
    *
@@ -16561,6 +16574,11 @@ public final class PatchJobs {
                   postStep_ = subBuilder.buildPartial();
                 }
 
+                break;
+              }
+            case 80:
+              {
+                migInstancesAllowed_ = input.readBool();
                 break;
               }
             default:
@@ -17171,6 +17189,24 @@ public final class PatchJobs {
       return getPostStep();
     }
 
+    public static final int MIG_INSTANCES_ALLOWED_FIELD_NUMBER = 10;
+    private boolean migInstancesAllowed_;
+    /**
+     *
+     *
+     * <pre>
+     * Allows the patch job to run on Managed instance groups (MIGs).
+     * </pre>
+     *
+     * <code>bool mig_instances_allowed = 10;</code>
+     *
+     * @return The migInstancesAllowed.
+     */
+    @java.lang.Override
+    public boolean getMigInstancesAllowed() {
+      return migInstancesAllowed_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -17212,6 +17248,9 @@ public final class PatchJobs {
       if (postStep_ != null) {
         output.writeMessage(9, getPostStep());
       }
+      if (migInstancesAllowed_ != false) {
+        output.writeBool(10, migInstancesAllowed_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -17247,6 +17286,9 @@ public final class PatchJobs {
       }
       if (postStep_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getPostStep());
+      }
+      if (migInstancesAllowed_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, migInstancesAllowed_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17293,6 +17335,7 @@ public final class PatchJobs {
       if (hasPostStep()) {
         if (!getPostStep().equals(other.getPostStep())) return false;
       }
+      if (getMigInstancesAllowed() != other.getMigInstancesAllowed()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17334,6 +17377,8 @@ public final class PatchJobs {
         hash = (37 * hash) + POST_STEP_FIELD_NUMBER;
         hash = (53 * hash) + getPostStep().hashCode();
       }
+      hash = (37 * hash) + MIG_INSTANCES_ALLOWED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMigInstancesAllowed());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -17526,6 +17571,8 @@ public final class PatchJobs {
           postStep_ = null;
           postStepBuilder_ = null;
         }
+        migInstancesAllowed_ = false;
+
         return this;
       }
 
@@ -17589,6 +17636,7 @@ public final class PatchJobs {
         } else {
           result.postStep_ = postStepBuilder_.build();
         }
+        result.migInstancesAllowed_ = migInstancesAllowed_;
         onBuilt();
         return result;
       }
@@ -17664,6 +17712,9 @@ public final class PatchJobs {
         }
         if (other.hasPostStep()) {
           mergePostStep(other.getPostStep());
+        }
+        if (other.getMigInstancesAllowed() != false) {
+          setMigInstancesAllowed(other.getMigInstancesAllowed());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -19130,6 +19181,58 @@ public final class PatchJobs {
           postStep_ = null;
         }
         return postStepBuilder_;
+      }
+
+      private boolean migInstancesAllowed_;
+      /**
+       *
+       *
+       * <pre>
+       * Allows the patch job to run on Managed instance groups (MIGs).
+       * </pre>
+       *
+       * <code>bool mig_instances_allowed = 10;</code>
+       *
+       * @return The migInstancesAllowed.
+       */
+      @java.lang.Override
+      public boolean getMigInstancesAllowed() {
+        return migInstancesAllowed_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Allows the patch job to run on Managed instance groups (MIGs).
+       * </pre>
+       *
+       * <code>bool mig_instances_allowed = 10;</code>
+       *
+       * @param value The migInstancesAllowed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMigInstancesAllowed(boolean value) {
+
+        migInstancesAllowed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Allows the patch job to run on Managed instance groups (MIGs).
+       * </pre>
+       *
+       * <code>bool mig_instances_allowed = 10;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMigInstancesAllowed() {
+
+        migInstancesAllowed_ = false;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -36804,7 +36907,7 @@ public final class PatchJobs {
           + "G\020\003\022\r\n\tSUCCEEDED\020\004\022\031\n\025COMPLETED_WITH_ERR"
           + "ORS\020\005\022\014\n\010CANCELED\020\006\022\r\n\tTIMED_OUT\020\007:O\352AL\n"
           + " osconfig.googleapis.com/PatchJob\022(proje"
-          + "cts/{project}/patchJobs/{patch_job}\"\267\004\n\013"
+          + "cts/{project}/patchJobs/{patch_job}\"\326\004\n\013"
           + "PatchConfig\022I\n\rreboot_config\030\001 \001(\01622.goo"
           + "gle.cloud.osconfig.v1.PatchConfig.Reboot"
           + "Config\0222\n\003apt\030\003 \001(\0132%.google.cloud.oscon"
@@ -36817,71 +36920,71 @@ public final class PatchJobs {
           + "pdateSettings\0224\n\010pre_step\030\010 \001(\0132\".google"
           + ".cloud.osconfig.v1.ExecStep\0225\n\tpost_step"
           + "\030\t \001(\0132\".google.cloud.osconfig.v1.ExecSt"
-          + "ep\"Q\n\014RebootConfig\022\035\n\031REBOOT_CONFIG_UNSP"
-          + "ECIFIED\020\000\022\013\n\007DEFAULT\020\001\022\n\n\006ALWAYS\020\002\022\t\n\005NE"
-          + "VER\020\003\"\316\002\n\010Instance\"\301\002\n\nPatchState\022\033\n\027PAT"
-          + "CH_STATE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\014\n\010I"
-          + "NACTIVE\020\002\022\014\n\010NOTIFIED\020\003\022\013\n\007STARTED\020\004\022\027\n\023"
-          + "DOWNLOADING_PATCHES\020\005\022\024\n\020APPLYING_PATCHE"
-          + "S\020\006\022\r\n\tREBOOTING\020\007\022\r\n\tSUCCEEDED\020\010\022\035\n\031SUC"
-          + "CEEDED_REBOOT_REQUIRED\020\t\022\n\n\006FAILED\020\n\022\t\n\005"
-          + "ACKED\020\013\022\r\n\tTIMED_OUT\020\014\022\032\n\026RUNNING_PRE_PA"
-          + "TCH_STEP\020\r\022\033\n\027RUNNING_POST_PATCH_STEP\020\016\022"
-          + "\025\n\021NO_AGENT_DETECTED\020\017\"O\n\025CancelPatchJob"
-          + "Request\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n osconfig."
-          + "googleapis.com/PatchJob\"\252\001\n\013AptSettings\022"
-          + "8\n\004type\030\001 \001(\0162*.google.cloud.osconfig.v1"
-          + ".AptSettings.Type\022\020\n\010excludes\030\002 \003(\t\022\032\n\022e"
-          + "xclusive_packages\030\003 \003(\t\"3\n\004Type\022\024\n\020TYPE_"
-          + "UNSPECIFIED\020\000\022\010\n\004DIST\020\001\022\013\n\007UPGRADE\020\002\"^\n\013"
-          + "YumSettings\022\020\n\010security\030\001 \001(\010\022\017\n\007minimal"
-          + "\030\002 \001(\010\022\020\n\010excludes\030\003 \003(\t\022\032\n\022exclusive_pa"
-          + "ckages\030\004 \003(\t\"\r\n\013GooSettings\"\221\001\n\016ZypperSe"
-          + "ttings\022\025\n\rwith_optional\030\001 \001(\010\022\023\n\013with_up"
-          + "date\030\002 \001(\010\022\022\n\ncategories\030\003 \003(\t\022\022\n\nseveri"
-          + "ties\030\004 \003(\t\022\020\n\010excludes\030\005 \003(\t\022\031\n\021exclusiv"
-          + "e_patches\030\006 \003(\t\"\325\002\n\025WindowsUpdateSetting"
-          + "s\022W\n\017classifications\030\001 \003(\0162>.google.clou"
-          + "d.osconfig.v1.WindowsUpdateSettings.Clas"
-          + "sification\022\020\n\010excludes\030\002 \003(\t\022\031\n\021exclusiv"
-          + "e_patches\030\003 \003(\t\"\265\001\n\016Classification\022\036\n\032CL"
-          + "ASSIFICATION_UNSPECIFIED\020\000\022\014\n\010CRITICAL\020\001"
-          + "\022\014\n\010SECURITY\020\002\022\016\n\nDEFINITION\020\003\022\n\n\006DRIVER"
-          + "\020\004\022\020\n\014FEATURE_PACK\020\005\022\020\n\014SERVICE_PACK\020\006\022\010"
-          + "\n\004TOOL\020\007\022\021\n\rUPDATE_ROLLUP\020\010\022\n\n\006UPDATE\020\t\""
-          + "\240\001\n\010ExecStep\022H\n\026linux_exec_step_config\030\001"
-          + " \001(\0132(.google.cloud.osconfig.v1.ExecStep"
-          + "Config\022J\n\030windows_exec_step_config\030\002 \001(\013"
-          + "2(.google.cloud.osconfig.v1.ExecStepConf"
-          + "ig\"\240\002\n\016ExecStepConfig\022\024\n\nlocal_path\030\001 \001("
-          + "\tH\000\0229\n\ngcs_object\030\002 \001(\0132#.google.cloud.o"
-          + "sconfig.v1.GcsObjectH\000\022\035\n\025allowed_succes"
-          + "s_codes\030\003 \003(\005\022I\n\013interpreter\030\004 \001(\01624.goo"
-          + "gle.cloud.osconfig.v1.ExecStepConfig.Int"
-          + "erpreter\"E\n\013Interpreter\022\033\n\027INTERPRETER_U"
-          + "NSPECIFIED\020\000\022\t\n\005SHELL\020\001\022\016\n\nPOWERSHELL\020\002B"
-          + "\014\n\nexecutable\"U\n\tGcsObject\022\023\n\006bucket\030\001 \001"
-          + "(\tB\003\340A\002\022\023\n\006object\030\002 \001(\tB\003\340A\002\022\036\n\021generati"
-          + "on_number\030\003 \001(\003B\003\340A\002\"\310\002\n\023PatchInstanceFi"
-          + "lter\022\013\n\003all\030\001 \001(\010\022N\n\014group_labels\030\002 \003(\0132"
-          + "8.google.cloud.osconfig.v1.PatchInstance"
-          + "Filter.GroupLabel\022\r\n\005zones\030\003 \003(\t\022\021\n\tinst"
-          + "ances\030\004 \003(\t\022\036\n\026instance_name_prefixes\030\005 "
-          + "\003(\t\032\221\001\n\nGroupLabel\022T\n\006labels\030\001 \003(\0132D.goo"
-          + "gle.cloud.osconfig.v1.PatchInstanceFilte"
-          + "r.GroupLabel.LabelsEntry\032-\n\013LabelsEntry\022"
-          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\324\001\n\014Patc"
-          + "hRollout\0229\n\004mode\030\001 \001(\0162+.google.cloud.os"
-          + "config.v1.PatchRollout.Mode\022C\n\021disruptio"
-          + "n_budget\030\002 \001(\0132(.google.cloud.osconfig.v"
-          + "1.FixedOrPercent\"D\n\004Mode\022\024\n\020MODE_UNSPECI"
-          + "FIED\020\000\022\020\n\014ZONE_BY_ZONE\020\001\022\024\n\020CONCURRENT_Z"
-          + "ONES\020\002B\277\001\n\034com.google.cloud.osconfig.v1B"
-          + "\tPatchJobsZ@google.golang.org/genproto/g"
-          + "oogleapis/cloud/osconfig/v1;osconfig\252\002\030G"
-          + "oogle.Cloud.OsConfig.V1\312\002\030Google\\Cloud\\O"
-          + "sConfig\\V1\352\002\033Google::Cloud::OsConfig::V1"
-          + "b\006proto3"
+          + "ep\022\035\n\025mig_instances_allowed\030\n \001(\010\"Q\n\014Reb"
+          + "ootConfig\022\035\n\031REBOOT_CONFIG_UNSPECIFIED\020\000"
+          + "\022\013\n\007DEFAULT\020\001\022\n\n\006ALWAYS\020\002\022\t\n\005NEVER\020\003\"\316\002\n"
+          + "\010Instance\"\301\002\n\nPatchState\022\033\n\027PATCH_STATE_"
+          + "UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\014\n\010INACTIVE\020\002"
+          + "\022\014\n\010NOTIFIED\020\003\022\013\n\007STARTED\020\004\022\027\n\023DOWNLOADI"
+          + "NG_PATCHES\020\005\022\024\n\020APPLYING_PATCHES\020\006\022\r\n\tRE"
+          + "BOOTING\020\007\022\r\n\tSUCCEEDED\020\010\022\035\n\031SUCCEEDED_RE"
+          + "BOOT_REQUIRED\020\t\022\n\n\006FAILED\020\n\022\t\n\005ACKED\020\013\022\r"
+          + "\n\tTIMED_OUT\020\014\022\032\n\026RUNNING_PRE_PATCH_STEP\020"
+          + "\r\022\033\n\027RUNNING_POST_PATCH_STEP\020\016\022\025\n\021NO_AGE"
+          + "NT_DETECTED\020\017\"O\n\025CancelPatchJobRequest\0226"
+          + "\n\004name\030\001 \001(\tB(\340A\002\372A\"\n osconfig.googleapi"
+          + "s.com/PatchJob\"\252\001\n\013AptSettings\0228\n\004type\030\001"
+          + " \001(\0162*.google.cloud.osconfig.v1.AptSetti"
+          + "ngs.Type\022\020\n\010excludes\030\002 \003(\t\022\032\n\022exclusive_"
+          + "packages\030\003 \003(\t\"3\n\004Type\022\024\n\020TYPE_UNSPECIFI"
+          + "ED\020\000\022\010\n\004DIST\020\001\022\013\n\007UPGRADE\020\002\"^\n\013YumSettin"
+          + "gs\022\020\n\010security\030\001 \001(\010\022\017\n\007minimal\030\002 \001(\010\022\020\n"
+          + "\010excludes\030\003 \003(\t\022\032\n\022exclusive_packages\030\004 "
+          + "\003(\t\"\r\n\013GooSettings\"\221\001\n\016ZypperSettings\022\025\n"
+          + "\rwith_optional\030\001 \001(\010\022\023\n\013with_update\030\002 \001("
+          + "\010\022\022\n\ncategories\030\003 \003(\t\022\022\n\nseverities\030\004 \003("
+          + "\t\022\020\n\010excludes\030\005 \003(\t\022\031\n\021exclusive_patches"
+          + "\030\006 \003(\t\"\325\002\n\025WindowsUpdateSettings\022W\n\017clas"
+          + "sifications\030\001 \003(\0162>.google.cloud.osconfi"
+          + "g.v1.WindowsUpdateSettings.Classificatio"
+          + "n\022\020\n\010excludes\030\002 \003(\t\022\031\n\021exclusive_patches"
+          + "\030\003 \003(\t\"\265\001\n\016Classification\022\036\n\032CLASSIFICAT"
+          + "ION_UNSPECIFIED\020\000\022\014\n\010CRITICAL\020\001\022\014\n\010SECUR"
+          + "ITY\020\002\022\016\n\nDEFINITION\020\003\022\n\n\006DRIVER\020\004\022\020\n\014FEA"
+          + "TURE_PACK\020\005\022\020\n\014SERVICE_PACK\020\006\022\010\n\004TOOL\020\007\022"
+          + "\021\n\rUPDATE_ROLLUP\020\010\022\n\n\006UPDATE\020\t\"\240\001\n\010ExecS"
+          + "tep\022H\n\026linux_exec_step_config\030\001 \001(\0132(.go"
+          + "ogle.cloud.osconfig.v1.ExecStepConfig\022J\n"
+          + "\030windows_exec_step_config\030\002 \001(\0132(.google"
+          + ".cloud.osconfig.v1.ExecStepConfig\"\240\002\n\016Ex"
+          + "ecStepConfig\022\024\n\nlocal_path\030\001 \001(\tH\000\0229\n\ngc"
+          + "s_object\030\002 \001(\0132#.google.cloud.osconfig.v"
+          + "1.GcsObjectH\000\022\035\n\025allowed_success_codes\030\003"
+          + " \003(\005\022I\n\013interpreter\030\004 \001(\01624.google.cloud"
+          + ".osconfig.v1.ExecStepConfig.Interpreter\""
+          + "E\n\013Interpreter\022\033\n\027INTERPRETER_UNSPECIFIE"
+          + "D\020\000\022\t\n\005SHELL\020\001\022\016\n\nPOWERSHELL\020\002B\014\n\nexecut"
+          + "able\"U\n\tGcsObject\022\023\n\006bucket\030\001 \001(\tB\003\340A\002\022\023"
+          + "\n\006object\030\002 \001(\tB\003\340A\002\022\036\n\021generation_number"
+          + "\030\003 \001(\003B\003\340A\002\"\310\002\n\023PatchInstanceFilter\022\013\n\003a"
+          + "ll\030\001 \001(\010\022N\n\014group_labels\030\002 \003(\01328.google."
+          + "cloud.osconfig.v1.PatchInstanceFilter.Gr"
+          + "oupLabel\022\r\n\005zones\030\003 \003(\t\022\021\n\tinstances\030\004 \003"
+          + "(\t\022\036\n\026instance_name_prefixes\030\005 \003(\t\032\221\001\n\nG"
+          + "roupLabel\022T\n\006labels\030\001 \003(\0132D.google.cloud"
+          + ".osconfig.v1.PatchInstanceFilter.GroupLa"
+          + "bel.LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\324\001\n\014PatchRollout\022"
+          + "9\n\004mode\030\001 \001(\0162+.google.cloud.osconfig.v1"
+          + ".PatchRollout.Mode\022C\n\021disruption_budget\030"
+          + "\002 \001(\0132(.google.cloud.osconfig.v1.FixedOr"
+          + "Percent\"D\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\020\n"
+          + "\014ZONE_BY_ZONE\020\001\022\024\n\020CONCURRENT_ZONES\020\002B\277\001"
+          + "\n\034com.google.cloud.osconfig.v1B\tPatchJob"
+          + "sZ@google.golang.org/genproto/googleapis"
+          + "/cloud/osconfig/v1;osconfig\252\002\030Google.Clo"
+          + "ud.OsConfig.V1\312\002\030Google\\Cloud\\OsConfig\\V"
+          + "1\352\002\033Google::Cloud::OsConfig::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -37006,7 +37109,15 @@ public final class PatchJobs {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_osconfig_v1_PatchConfig_descriptor,
             new java.lang.String[] {
-              "RebootConfig", "Apt", "Yum", "Goo", "Zypper", "WindowsUpdate", "PreStep", "PostStep",
+              "RebootConfig",
+              "Apt",
+              "Yum",
+              "Goo",
+              "Zypper",
+              "WindowsUpdate",
+              "PreStep",
+              "PostStep",
+              "MigInstancesAllowed",
             });
     internal_static_google_cloud_osconfig_v1_Instance_descriptor =
         getDescriptor().getMessageTypes().get(9);

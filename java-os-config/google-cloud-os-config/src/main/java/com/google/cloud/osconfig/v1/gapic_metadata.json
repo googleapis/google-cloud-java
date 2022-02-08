@@ -36,6 +36,15 @@
             },
             "ListPatchJobs": {
               "methods": ["listPatchJobs", "listPatchJobs", "listPatchJobs", "listPatchJobsPagedCallable", "listPatchJobsCallable"]
+            },
+            "PausePatchDeployment": {
+              "methods": ["pausePatchDeployment", "pausePatchDeployment", "pausePatchDeployment", "pausePatchDeploymentCallable"]
+            },
+            "ResumePatchDeployment": {
+              "methods": ["resumePatchDeployment", "resumePatchDeployment", "resumePatchDeployment", "resumePatchDeploymentCallable"]
+            },
+            "UpdatePatchDeployment": {
+              "methods": ["updatePatchDeployment", "updatePatchDeployment", "updatePatchDeploymentCallable"]
             }
           }
         }

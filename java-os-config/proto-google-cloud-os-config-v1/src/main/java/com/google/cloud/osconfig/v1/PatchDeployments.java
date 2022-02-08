@@ -474,6 +474,35 @@ public final class PatchDeployments {
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchRolloutOrBuilder getRolloutOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Current state of the patch deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchDeployment.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    int getStateValue();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Current state of the patch deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchDeployment.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.State getState();
+
     public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.ScheduleCase
         getScheduleCase();
   }
@@ -503,6 +532,7 @@ public final class PatchDeployments {
     private PatchDeployment() {
       name_ = "";
       description_ = "";
+      state_ = 0;
     }
 
     @java.lang.Override
@@ -702,6 +732,13 @@ public final class PatchDeployments {
 
                 break;
               }
+            case 96:
+              {
+                int rawValue = input.readEnum();
+
+                state_ = rawValue;
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -734,6 +771,167 @@ public final class PatchDeployments {
           .ensureFieldAccessorsInitialized(
               com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.class,
               com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents state of patch peployment.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.osconfig.v1.PatchDeployment.State}
+     */
+    public enum State implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * The default value. This value is used if the state is omitted.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      STATE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Active value means that patch deployment generates Patch Jobs.
+       * </pre>
+       *
+       * <code>ACTIVE = 1;</code>
+       */
+      ACTIVE(1),
+      /**
+       *
+       *
+       * <pre>
+       * Paused value means that patch deployment does not generate
+       * Patch jobs. Requires user action to move in and out from this state.
+       * </pre>
+       *
+       * <code>PAUSED = 2;</code>
+       */
+      PAUSED(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * The default value. This value is used if the state is omitted.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      public static final int STATE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Active value means that patch deployment generates Patch Jobs.
+       * </pre>
+       *
+       * <code>ACTIVE = 1;</code>
+       */
+      public static final int ACTIVE_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Paused value means that patch deployment does not generate
+       * Patch jobs. Requires user action to move in and out from this state.
+       * </pre>
+       *
+       * <code>PAUSED = 2;</code>
+       */
+      public static final int PAUSED_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static State valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static State forNumber(int value) {
+        switch (value) {
+          case 0:
+            return STATE_UNSPECIFIED;
+          case 1:
+            return ACTIVE;
+          case 2:
+            return PAUSED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<State>() {
+            public State findValueByNumber(int number) {
+              return State.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final State[] VALUES = values();
+
+      public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private State(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.osconfig.v1.PatchDeployment.State)
     }
 
     private int scheduleCase_ = 0;
@@ -1390,6 +1588,48 @@ public final class PatchDeployments {
       return getRollout();
     }
 
+    public static final int STATE_FIELD_NUMBER = 12;
+    private int state_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Current state of the patch deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchDeployment.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Current state of the patch deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchDeployment.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.State getState() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.State result =
+          com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.State.valueOf(state_);
+      return result == null
+          ? com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.State.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1439,6 +1679,11 @@ public final class PatchDeployments {
       if (rollout_ != null) {
         output.writeMessage(11, getRollout());
       }
+      if (state_
+          != com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.State.STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(12, state_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1484,6 +1729,11 @@ public final class PatchDeployments {
       }
       if (rollout_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getRollout());
+      }
+      if (state_
+          != com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.State.STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, state_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1531,6 +1781,7 @@ public final class PatchDeployments {
       if (hasRollout()) {
         if (!getRollout().equals(other.getRollout())) return false;
       }
+      if (state_ != other.state_) return false;
       if (!getScheduleCase().equals(other.getScheduleCase())) return false;
       switch (scheduleCase_) {
         case 6:
@@ -1585,6 +1836,8 @@ public final class PatchDeployments {
         hash = (37 * hash) + ROLLOUT_FIELD_NUMBER;
         hash = (53 * hash) + getRollout().hashCode();
       }
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
       switch (scheduleCase_) {
         case 6:
           hash = (37 * hash) + ONE_TIME_SCHEDULE_FIELD_NUMBER;
@@ -1795,6 +2048,8 @@ public final class PatchDeployments {
           rollout_ = null;
           rolloutBuilder_ = null;
         }
+        state_ = 0;
+
         scheduleCase_ = 0;
         schedule_ = null;
         return this;
@@ -1876,6 +2131,7 @@ public final class PatchDeployments {
         } else {
           result.rollout_ = rolloutBuilder_.build();
         }
+        result.state_ = state_;
         result.scheduleCase_ = scheduleCase_;
         onBuilt();
         return result;
@@ -1959,6 +2215,9 @@ public final class PatchDeployments {
         }
         if (other.hasRollout()) {
           mergeRollout(other.getRollout());
+        }
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
         }
         switch (other.getScheduleCase()) {
           case ONE_TIME_SCHEDULE:
@@ -4185,6 +4444,110 @@ public final class PatchDeployments {
         return rolloutBuilder_;
       }
 
+      private int state_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Current state of the patch deployment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for state.
+       */
+      @java.lang.Override
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Current state of the patch deployment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStateValue(int value) {
+
+        state_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Current state of the patch deployment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.State getState() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.State result =
+            com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.State.valueOf(state_);
+        return result == null
+            ? com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.State.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Current state of the patch deployment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setState(
+          com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.State value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Current state of the patch deployment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearState() {
+
+        state_ = 0;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5643,8 +6006,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Indicates that the frequency should be expressed in terms of
-       * weeks.
+       * Indicates that the frequency of recurrence should be expressed in terms
+       * of weeks.
        * </pre>
        *
        * <code>WEEKLY = 1;</code>
@@ -5654,8 +6017,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Indicates that the frequency should be expressed in terms of
-       * months.
+       * Indicates that the frequency of recurrence should be expressed in terms
+       * of months.
        * </pre>
        *
        * <code>MONTHLY = 2;</code>
@@ -5665,8 +6028,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Indicates that the frequency should be expressed in terms of
-       * days.
+       * Indicates that the frequency of recurrence should be expressed in terms
+       * of days.
        * </pre>
        *
        * <code>DAILY = 3;</code>
@@ -5689,8 +6052,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Indicates that the frequency should be expressed in terms of
-       * weeks.
+       * Indicates that the frequency of recurrence should be expressed in terms
+       * of weeks.
        * </pre>
        *
        * <code>WEEKLY = 1;</code>
@@ -5700,8 +6063,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Indicates that the frequency should be expressed in terms of
-       * months.
+       * Indicates that the frequency of recurrence should be expressed in terms
+       * of months.
        * </pre>
        *
        * <code>MONTHLY = 2;</code>
@@ -5711,8 +6074,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Indicates that the frequency should be expressed in terms of
-       * days.
+       * Indicates that the frequency of recurrence should be expressed in terms
+       * of days.
        * </pre>
        *
        * <code>DAILY = 3;</code>
@@ -10511,6 +10874,25 @@ public final class PatchDeployments {
      * @return The dayOfWeek.
      */
     com.google.type.DayOfWeek getDayOfWeek();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the number of days before or after the given week day
+     * of month that the patch deployment is scheduled for. For example if
+     * `week_ordinal` and `day_of_week` values point to the second day of the
+     * month and this `day_offset` value is set to `3`, the patch deployment takes
+     * place three days after the second Tuesday of the month. If this value is
+     * negative, for example -5, the patches are deployed five days before before
+     * the second Tuesday of the month. Allowed values are in range [-30, 30].
+     * </pre>
+     *
+     * <code>int32 day_offset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dayOffset.
+     */
+    int getDayOffset();
   }
   /**
    *
@@ -10574,6 +10956,11 @@ public final class PatchDeployments {
                 int rawValue = input.readEnum();
 
                 dayOfWeek_ = rawValue;
+                break;
+              }
+            case 24:
+              {
+                dayOffset_ = input.readInt32();
                 break;
               }
             default:
@@ -10666,6 +11053,30 @@ public final class PatchDeployments {
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
 
+    public static final int DAY_OFFSET_FIELD_NUMBER = 3;
+    private int dayOffset_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the number of days before or after the given week day
+     * of month that the patch deployment is scheduled for. For example if
+     * `week_ordinal` and `day_of_week` values point to the second day of the
+     * month and this `day_offset` value is set to `3`, the patch deployment takes
+     * place three days after the second Tuesday of the month. If this value is
+     * negative, for example -5, the patches are deployed five days before before
+     * the second Tuesday of the month. Allowed values are in range [-30, 30].
+     * </pre>
+     *
+     * <code>int32 day_offset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dayOffset.
+     */
+    @java.lang.Override
+    public int getDayOffset() {
+      return dayOffset_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -10686,6 +11097,9 @@ public final class PatchDeployments {
       if (dayOfWeek_ != com.google.type.DayOfWeek.DAY_OF_WEEK_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, dayOfWeek_);
       }
+      if (dayOffset_ != 0) {
+        output.writeInt32(3, dayOffset_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -10700,6 +11114,9 @@ public final class PatchDeployments {
       }
       if (dayOfWeek_ != com.google.type.DayOfWeek.DAY_OF_WEEK_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, dayOfWeek_);
+      }
+      if (dayOffset_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, dayOffset_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10719,6 +11136,7 @@ public final class PatchDeployments {
 
       if (getWeekOrdinal() != other.getWeekOrdinal()) return false;
       if (dayOfWeek_ != other.dayOfWeek_) return false;
+      if (getDayOffset() != other.getDayOffset()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10734,6 +11152,8 @@ public final class PatchDeployments {
       hash = (53 * hash) + getWeekOrdinal();
       hash = (37 * hash) + DAY_OF_WEEK_FIELD_NUMBER;
       hash = (53 * hash) + dayOfWeek_;
+      hash = (37 * hash) + DAY_OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + getDayOffset();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10886,6 +11306,8 @@ public final class PatchDeployments {
 
         dayOfWeek_ = 0;
 
+        dayOffset_ = 0;
+
         return this;
       }
 
@@ -10916,6 +11338,7 @@ public final class PatchDeployments {
             new com.google.cloud.osconfig.v1.PatchDeployments.WeekDayOfMonth(this);
         result.weekOrdinal_ = weekOrdinal_;
         result.dayOfWeek_ = dayOfWeek_;
+        result.dayOffset_ = dayOffset_;
         onBuilt();
         return result;
       }
@@ -10974,6 +11397,9 @@ public final class PatchDeployments {
         }
         if (other.dayOfWeek_ != 0) {
           setDayOfWeekValue(other.getDayOfWeekValue());
+        }
+        if (other.getDayOffset() != 0) {
+          setDayOffset(other.getDayOffset());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11152,6 +11578,76 @@ public final class PatchDeployments {
       public Builder clearDayOfWeek() {
 
         dayOfWeek_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int dayOffset_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents the number of days before or after the given week day
+       * of month that the patch deployment is scheduled for. For example if
+       * `week_ordinal` and `day_of_week` values point to the second day of the
+       * month and this `day_offset` value is set to `3`, the patch deployment takes
+       * place three days after the second Tuesday of the month. If this value is
+       * negative, for example -5, the patches are deployed five days before before
+       * the second Tuesday of the month. Allowed values are in range [-30, 30].
+       * </pre>
+       *
+       * <code>int32 day_offset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The dayOffset.
+       */
+      @java.lang.Override
+      public int getDayOffset() {
+        return dayOffset_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents the number of days before or after the given week day
+       * of month that the patch deployment is scheduled for. For example if
+       * `week_ordinal` and `day_of_week` values point to the second day of the
+       * month and this `day_offset` value is set to `3`, the patch deployment takes
+       * place three days after the second Tuesday of the month. If this value is
+       * negative, for example -5, the patches are deployed five days before before
+       * the second Tuesday of the month. Allowed values are in range [-30, 30].
+       * </pre>
+       *
+       * <code>int32 day_offset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The dayOffset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDayOffset(int value) {
+
+        dayOffset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents the number of days before or after the given week day
+       * of month that the patch deployment is scheduled for. For example if
+       * `week_ordinal` and `day_of_week` values point to the second day of the
+       * month and this `day_offset` value is set to `3`, the patch deployment takes
+       * place three days after the second Tuesday of the month. If this value is
+       * negative, for example -5, the patches are deployed five days before before
+       * the second Tuesday of the month. Allowed values are in range [-30, 30].
+       * </pre>
+       *
+       * <code>int32 day_offset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDayOffset() {
+
+        dayOffset_ = 0;
         onChanged();
         return this;
       }
@@ -16224,6 +16720,2582 @@ public final class PatchDeployments {
     }
   }
 
+  public interface UpdatePatchDeploymentRequestOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1.UpdatePatchDeploymentRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The patch deployment to Update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the patchDeployment field is set.
+     */
+    boolean hasPatchDeployment();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The patch deployment to Update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The patchDeployment.
+     */
+    com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment getPatchDeployment();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The patch deployment to Update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.osconfig.v1.PatchDeployments.PatchDeploymentOrBuilder
+        getPatchDeploymentOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask that controls which fields of the patch deployment
+     * should be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    boolean hasUpdateMask();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask that controls which fields of the patch deployment
+     * should be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The updateMask.
+     */
+    com.google.protobuf.FieldMask getUpdateMask();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask that controls which fields of the patch deployment
+     * should be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A request message for updating a patch deployment.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.osconfig.v1.UpdatePatchDeploymentRequest}
+   */
+  public static final class UpdatePatchDeploymentRequest
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.UpdatePatchDeploymentRequest)
+      UpdatePatchDeploymentRequestOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use UpdatePatchDeploymentRequest.newBuilder() to construct.
+    private UpdatePatchDeploymentRequest(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private UpdatePatchDeploymentRequest() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new UpdatePatchDeploymentRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private UpdatePatchDeploymentRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.Builder subBuilder =
+                    null;
+                if (patchDeployment_ != null) {
+                  subBuilder = patchDeployment_.toBuilder();
+                }
+                patchDeployment_ =
+                    input.readMessage(
+                        com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(patchDeployment_);
+                  patchDeployment_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 18:
+              {
+                com.google.protobuf.FieldMask.Builder subBuilder = null;
+                if (updateMask_ != null) {
+                  subBuilder = updateMask_.toBuilder();
+                }
+                updateMask_ =
+                    input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(updateMask_);
+                  updateMask_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.osconfig.v1.PatchDeployments
+          .internal_static_google_cloud_osconfig_v1_UpdatePatchDeploymentRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.osconfig.v1.PatchDeployments
+          .internal_static_google_cloud_osconfig_v1_UpdatePatchDeploymentRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest.class,
+              com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest.Builder
+                  .class);
+    }
+
+    public static final int PATCH_DEPLOYMENT_FIELD_NUMBER = 1;
+    private com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment patchDeployment_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The patch deployment to Update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the patchDeployment field is set.
+     */
+    @java.lang.Override
+    public boolean hasPatchDeployment() {
+      return patchDeployment_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The patch deployment to Update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The patchDeployment.
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment getPatchDeployment() {
+      return patchDeployment_ == null
+          ? com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.getDefaultInstance()
+          : patchDeployment_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The patch deployment to Update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeploymentOrBuilder
+        getPatchDeploymentOrBuilder() {
+      return getPatchDeployment();
+    }
+
+    public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+    private com.google.protobuf.FieldMask updateMask_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask that controls which fields of the patch deployment
+     * should be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateMask() {
+      return updateMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask that controls which fields of the patch deployment
+     * should be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The updateMask.
+     */
+    @java.lang.Override
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask that controls which fields of the patch deployment
+     * should be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      return getUpdateMask();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (patchDeployment_ != null) {
+        output.writeMessage(1, getPatchDeployment());
+      }
+      if (updateMask_ != null) {
+        output.writeMessage(2, getUpdateMask());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (patchDeployment_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getPatchDeployment());
+      }
+      if (updateMask_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest other =
+          (com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest) obj;
+
+      if (hasPatchDeployment() != other.hasPatchDeployment()) return false;
+      if (hasPatchDeployment()) {
+        if (!getPatchDeployment().equals(other.getPatchDeployment())) return false;
+      }
+      if (hasUpdateMask() != other.hasUpdateMask()) return false;
+      if (hasUpdateMask()) {
+        if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPatchDeployment()) {
+        hash = (37 * hash) + PATCH_DEPLOYMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getPatchDeployment().hashCode();
+      }
+      if (hasUpdateMask()) {
+        hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateMask().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A request message for updating a patch deployment.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.osconfig.v1.UpdatePatchDeploymentRequest}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1.UpdatePatchDeploymentRequest)
+        com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.osconfig.v1.PatchDeployments
+            .internal_static_google_cloud_osconfig_v1_UpdatePatchDeploymentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.osconfig.v1.PatchDeployments
+            .internal_static_google_cloud_osconfig_v1_UpdatePatchDeploymentRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest.class,
+                com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (patchDeploymentBuilder_ == null) {
+          patchDeployment_ = null;
+        } else {
+          patchDeployment_ = null;
+          patchDeploymentBuilder_ = null;
+        }
+        if (updateMaskBuilder_ == null) {
+          updateMask_ = null;
+        } else {
+          updateMask_ = null;
+          updateMaskBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.osconfig.v1.PatchDeployments
+            .internal_static_google_cloud_osconfig_v1_UpdatePatchDeploymentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+          getDefaultInstanceForType() {
+        return com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest build() {
+        com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+          buildPartial() {
+        com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest result =
+            new com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest(this);
+        if (patchDeploymentBuilder_ == null) {
+          result.patchDeployment_ = patchDeployment_;
+        } else {
+          result.patchDeployment_ = patchDeploymentBuilder_.build();
+        }
+        if (updateMaskBuilder_ == null) {
+          result.updateMask_ = updateMask_;
+        } else {
+          result.updateMask_ = updateMaskBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest) {
+          return mergeFrom(
+              (com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest other) {
+        if (other
+            == com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+                .getDefaultInstance()) return this;
+        if (other.hasPatchDeployment()) {
+          mergePatchDeployment(other.getPatchDeployment());
+        }
+        if (other.hasUpdateMask()) {
+          mergeUpdateMask(other.getUpdateMask());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment patchDeployment_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment,
+              com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.Builder,
+              com.google.cloud.osconfig.v1.PatchDeployments.PatchDeploymentOrBuilder>
+          patchDeploymentBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The patch deployment to Update.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the patchDeployment field is set.
+       */
+      public boolean hasPatchDeployment() {
+        return patchDeploymentBuilder_ != null || patchDeployment_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The patch deployment to Update.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The patchDeployment.
+       */
+      public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment getPatchDeployment() {
+        if (patchDeploymentBuilder_ == null) {
+          return patchDeployment_ == null
+              ? com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.getDefaultInstance()
+              : patchDeployment_;
+        } else {
+          return patchDeploymentBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The patch deployment to Update.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setPatchDeployment(
+          com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment value) {
+        if (patchDeploymentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          patchDeployment_ = value;
+          onChanged();
+        } else {
+          patchDeploymentBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The patch deployment to Update.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setPatchDeployment(
+          com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.Builder builderForValue) {
+        if (patchDeploymentBuilder_ == null) {
+          patchDeployment_ = builderForValue.build();
+          onChanged();
+        } else {
+          patchDeploymentBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The patch deployment to Update.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergePatchDeployment(
+          com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment value) {
+        if (patchDeploymentBuilder_ == null) {
+          if (patchDeployment_ != null) {
+            patchDeployment_ =
+                com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.newBuilder(
+                        patchDeployment_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            patchDeployment_ = value;
+          }
+          onChanged();
+        } else {
+          patchDeploymentBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The patch deployment to Update.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearPatchDeployment() {
+        if (patchDeploymentBuilder_ == null) {
+          patchDeployment_ = null;
+          onChanged();
+        } else {
+          patchDeployment_ = null;
+          patchDeploymentBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The patch deployment to Update.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.Builder
+          getPatchDeploymentBuilder() {
+
+        onChanged();
+        return getPatchDeploymentFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The patch deployment to Update.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeploymentOrBuilder
+          getPatchDeploymentOrBuilder() {
+        if (patchDeploymentBuilder_ != null) {
+          return patchDeploymentBuilder_.getMessageOrBuilder();
+        } else {
+          return patchDeployment_ == null
+              ? com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.getDefaultInstance()
+              : patchDeployment_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The patch deployment to Update.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment,
+              com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.Builder,
+              com.google.cloud.osconfig.v1.PatchDeployments.PatchDeploymentOrBuilder>
+          getPatchDeploymentFieldBuilder() {
+        if (patchDeploymentBuilder_ == null) {
+          patchDeploymentBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment,
+                  com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.Builder,
+                  com.google.cloud.osconfig.v1.PatchDeployments.PatchDeploymentOrBuilder>(
+                  getPatchDeployment(), getParentForChildren(), isClean());
+          patchDeployment_ = null;
+        }
+        return patchDeploymentBuilder_;
+      }
+
+      private com.google.protobuf.FieldMask updateMask_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.FieldMask,
+              com.google.protobuf.FieldMask.Builder,
+              com.google.protobuf.FieldMaskOrBuilder>
+          updateMaskBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Field mask that controls which fields of the patch deployment
+       * should be updated.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the updateMask field is set.
+       */
+      public boolean hasUpdateMask() {
+        return updateMaskBuilder_ != null || updateMask_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Field mask that controls which fields of the patch deployment
+       * should be updated.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The updateMask.
+       */
+      public com.google.protobuf.FieldMask getUpdateMask() {
+        if (updateMaskBuilder_ == null) {
+          return updateMask_ == null
+              ? com.google.protobuf.FieldMask.getDefaultInstance()
+              : updateMask_;
+        } else {
+          return updateMaskBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Field mask that controls which fields of the patch deployment
+       * should be updated.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+        if (updateMaskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateMask_ = value;
+          onChanged();
+        } else {
+          updateMaskBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Field mask that controls which fields of the patch deployment
+       * should be updated.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+        if (updateMaskBuilder_ == null) {
+          updateMask_ = builderForValue.build();
+          onChanged();
+        } else {
+          updateMaskBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Field mask that controls which fields of the patch deployment
+       * should be updated.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+        if (updateMaskBuilder_ == null) {
+          if (updateMask_ != null) {
+            updateMask_ =
+                com.google.protobuf.FieldMask.newBuilder(updateMask_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            updateMask_ = value;
+          }
+          onChanged();
+        } else {
+          updateMaskBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Field mask that controls which fields of the patch deployment
+       * should be updated.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearUpdateMask() {
+        if (updateMaskBuilder_ == null) {
+          updateMask_ = null;
+          onChanged();
+        } else {
+          updateMask_ = null;
+          updateMaskBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Field mask that controls which fields of the patch deployment
+       * should be updated.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+
+        onChanged();
+        return getUpdateMaskFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Field mask that controls which fields of the patch deployment
+       * should be updated.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+        if (updateMaskBuilder_ != null) {
+          return updateMaskBuilder_.getMessageOrBuilder();
+        } else {
+          return updateMask_ == null
+              ? com.google.protobuf.FieldMask.getDefaultInstance()
+              : updateMask_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Field mask that controls which fields of the patch deployment
+       * should be updated.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.FieldMask,
+              com.google.protobuf.FieldMask.Builder,
+              com.google.protobuf.FieldMaskOrBuilder>
+          getUpdateMaskFieldBuilder() {
+        if (updateMaskBuilder_ == null) {
+          updateMaskBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.FieldMask,
+                  com.google.protobuf.FieldMask.Builder,
+                  com.google.protobuf.FieldMaskOrBuilder>(
+                  getUpdateMask(), getParentForChildren(), isClean());
+          updateMask_ = null;
+        }
+        return updateMaskBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.osconfig.v1.UpdatePatchDeploymentRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.osconfig.v1.UpdatePatchDeploymentRequest)
+    private static final com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest();
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdatePatchDeploymentRequest> PARSER =
+        new com.google.protobuf.AbstractParser<UpdatePatchDeploymentRequest>() {
+          @java.lang.Override
+          public UpdatePatchDeploymentRequest parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new UpdatePatchDeploymentRequest(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<UpdatePatchDeploymentRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdatePatchDeploymentRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1.PatchDeployments.UpdatePatchDeploymentRequest
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface PausePatchDeploymentRequestOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1.PausePatchDeploymentRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the patch deployment in the form
+     * `projects/&#42;&#47;patchDeployments/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the patch deployment in the form
+     * `projects/&#42;&#47;patchDeployments/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A request message for pausing a patch deployment.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.osconfig.v1.PausePatchDeploymentRequest}
+   */
+  public static final class PausePatchDeploymentRequest
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.PausePatchDeploymentRequest)
+      PausePatchDeploymentRequestOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PausePatchDeploymentRequest.newBuilder() to construct.
+    private PausePatchDeploymentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PausePatchDeploymentRequest() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PausePatchDeploymentRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private PausePatchDeploymentRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.osconfig.v1.PatchDeployments
+          .internal_static_google_cloud_osconfig_v1_PausePatchDeploymentRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.osconfig.v1.PatchDeployments
+          .internal_static_google_cloud_osconfig_v1_PausePatchDeploymentRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest.class,
+              com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest.Builder
+                  .class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the patch deployment in the form
+     * `projects/&#42;&#47;patchDeployments/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the patch deployment in the form
+     * `projects/&#42;&#47;patchDeployments/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest other =
+          (com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A request message for pausing a patch deployment.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.osconfig.v1.PausePatchDeploymentRequest}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1.PausePatchDeploymentRequest)
+        com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.osconfig.v1.PatchDeployments
+            .internal_static_google_cloud_osconfig_v1_PausePatchDeploymentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.osconfig.v1.PatchDeployments
+            .internal_static_google_cloud_osconfig_v1_PausePatchDeploymentRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest.class,
+                com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.osconfig.v1.PatchDeployments
+            .internal_static_google_cloud_osconfig_v1_PausePatchDeploymentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+          getDefaultInstanceForType() {
+        return com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest build() {
+        com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+          buildPartial() {
+        com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest result =
+            new com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest(this);
+        result.name_ = name_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest) {
+          return mergeFrom(
+              (com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest other) {
+        if (other
+            == com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+                .getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource name of the patch deployment in the form
+       * `projects/&#42;&#47;patchDeployments/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource name of the patch deployment in the form
+       * `projects/&#42;&#47;patchDeployments/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource name of the patch deployment in the form
+       * `projects/&#42;&#47;patchDeployments/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource name of the patch deployment in the form
+       * `projects/&#42;&#47;patchDeployments/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource name of the patch deployment in the form
+       * `projects/&#42;&#47;patchDeployments/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.osconfig.v1.PausePatchDeploymentRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.osconfig.v1.PausePatchDeploymentRequest)
+    private static final com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest();
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PausePatchDeploymentRequest> PARSER =
+        new com.google.protobuf.AbstractParser<PausePatchDeploymentRequest>() {
+          @java.lang.Override
+          public PausePatchDeploymentRequest parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PausePatchDeploymentRequest(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<PausePatchDeploymentRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PausePatchDeploymentRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1.PatchDeployments.PausePatchDeploymentRequest
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ResumePatchDeploymentRequestOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1.ResumePatchDeploymentRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the patch deployment in the form
+     * `projects/&#42;&#47;patchDeployments/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the patch deployment in the form
+     * `projects/&#42;&#47;patchDeployments/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A request message for resuming a patch deployment.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.osconfig.v1.ResumePatchDeploymentRequest}
+   */
+  public static final class ResumePatchDeploymentRequest
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.ResumePatchDeploymentRequest)
+      ResumePatchDeploymentRequestOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ResumePatchDeploymentRequest.newBuilder() to construct.
+    private ResumePatchDeploymentRequest(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ResumePatchDeploymentRequest() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ResumePatchDeploymentRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ResumePatchDeploymentRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.osconfig.v1.PatchDeployments
+          .internal_static_google_cloud_osconfig_v1_ResumePatchDeploymentRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.osconfig.v1.PatchDeployments
+          .internal_static_google_cloud_osconfig_v1_ResumePatchDeploymentRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest.class,
+              com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest.Builder
+                  .class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the patch deployment in the form
+     * `projects/&#42;&#47;patchDeployments/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the patch deployment in the form
+     * `projects/&#42;&#47;patchDeployments/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest other =
+          (com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A request message for resuming a patch deployment.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.osconfig.v1.ResumePatchDeploymentRequest}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1.ResumePatchDeploymentRequest)
+        com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.osconfig.v1.PatchDeployments
+            .internal_static_google_cloud_osconfig_v1_ResumePatchDeploymentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.osconfig.v1.PatchDeployments
+            .internal_static_google_cloud_osconfig_v1_ResumePatchDeploymentRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest.class,
+                com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.osconfig.v1.PatchDeployments
+            .internal_static_google_cloud_osconfig_v1_ResumePatchDeploymentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+          getDefaultInstanceForType() {
+        return com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest build() {
+        com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+          buildPartial() {
+        com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest result =
+            new com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest(this);
+        result.name_ = name_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest) {
+          return mergeFrom(
+              (com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest other) {
+        if (other
+            == com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+                .getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource name of the patch deployment in the form
+       * `projects/&#42;&#47;patchDeployments/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource name of the patch deployment in the form
+       * `projects/&#42;&#47;patchDeployments/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource name of the patch deployment in the form
+       * `projects/&#42;&#47;patchDeployments/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource name of the patch deployment in the form
+       * `projects/&#42;&#47;patchDeployments/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource name of the patch deployment in the form
+       * `projects/&#42;&#47;patchDeployments/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.osconfig.v1.ResumePatchDeploymentRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.osconfig.v1.ResumePatchDeploymentRequest)
+    private static final com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest();
+    }
+
+    public static com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResumePatchDeploymentRequest> PARSER =
+        new com.google.protobuf.AbstractParser<ResumePatchDeploymentRequest>() {
+          @java.lang.Override
+          public ResumePatchDeploymentRequest parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ResumePatchDeploymentRequest(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ResumePatchDeploymentRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResumePatchDeploymentRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1.PatchDeployments.ResumePatchDeploymentRequest
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_osconfig_v1_PatchDeployment_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -16268,6 +19340,18 @@ public final class PatchDeployments {
       internal_static_google_cloud_osconfig_v1_DeletePatchDeploymentRequest_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_osconfig_v1_DeletePatchDeploymentRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_osconfig_v1_UpdatePatchDeploymentRequest_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_v1_UpdatePatchDeploymentRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_osconfig_v1_PausePatchDeploymentRequest_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_v1_PausePatchDeploymentRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_osconfig_v1_ResumePatchDeploymentRequest_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_v1_ResumePatchDeploymentRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -16282,76 +19366,90 @@ public final class PatchDeployments {
           + "ogle/api/field_behavior.proto\032\031google/ap"
           + "i/resource.proto\032)google/cloud/osconfig/"
           + "v1/patch_jobs.proto\032\036google/protobuf/dur"
-          + "ation.proto\032\037google/protobuf/timestamp.p"
-          + "roto\032\032google/type/datetime.proto\032\033google"
-          + "/type/dayofweek.proto\032\033google/type/timeo"
-          + "fday.proto\"\357\005\n\017PatchDeployment\022\014\n\004name\030\001"
-          + " \001(\t\022\030\n\013description\030\002 \001(\tB\003\340A\001\022K\n\017instan"
-          + "ce_filter\030\003 \001(\0132-.google.cloud.osconfig."
-          + "v1.PatchInstanceFilterB\003\340A\002\022@\n\014patch_con"
-          + "fig\030\004 \001(\0132%.google.cloud.osconfig.v1.Pat"
-          + "chConfigB\003\340A\001\0220\n\010duration\030\005 \001(\0132\031.google"
-          + ".protobuf.DurationB\003\340A\001\022K\n\021one_time_sche"
-          + "dule\030\006 \001(\0132).google.cloud.osconfig.v1.On"
-          + "eTimeScheduleB\003\340A\002H\000\022N\n\022recurring_schedu"
-          + "le\030\007 \001(\0132+.google.cloud.osconfig.v1.Recu"
-          + "rringScheduleB\003\340A\002H\000\0224\n\013create_time\030\010 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013up"
-          + "date_time\030\t \001(\0132\032.google.protobuf.Timest"
-          + "ampB\003\340A\003\022:\n\021last_execute_time\030\n \001(\0132\032.go"
-          + "ogle.protobuf.TimestampB\003\340A\003\022<\n\007rollout\030"
-          + "\013 \001(\0132&.google.cloud.osconfig.v1.PatchRo"
-          + "lloutB\003\340A\001:d\352Aa\n\'osconfig.googleapis.com"
-          + "/PatchDeployment\0226projects/{project}/pat"
-          + "chDeployments/{patch_deployment}B\n\n\010sche"
-          + "dule\"H\n\017OneTimeSchedule\0225\n\014execute_time\030"
-          + "\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\"\206"
-          + "\005\n\021RecurringSchedule\022-\n\ttime_zone\030\001 \001(\0132"
-          + "\025.google.type.TimeZoneB\003\340A\002\0223\n\nstart_tim"
-          + "e\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\001"
-          + "\0221\n\010end_time\030\003 \001(\0132\032.google.protobuf.Tim"
-          + "estampB\003\340A\001\0220\n\013time_of_day\030\004 \001(\0132\026.googl"
-          + "e.type.TimeOfDayB\003\340A\002\022M\n\tfrequency\030\005 \001(\016"
-          + "25.google.cloud.osconfig.v1.RecurringSch"
-          + "edule.FrequencyB\003\340A\002\022?\n\006weekly\030\006 \001(\0132(.g"
-          + "oogle.cloud.osconfig.v1.WeeklyScheduleB\003"
-          + "\340A\002H\000\022A\n\007monthly\030\007 \001(\0132).google.cloud.os"
-          + "config.v1.MonthlyScheduleB\003\340A\002H\000\022:\n\021last"
-          + "_execute_time\030\t \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\003\340A\003\022:\n\021next_execute_time\030\n \001(\0132"
-          + "\032.google.protobuf.TimestampB\003\340A\003\"J\n\tFreq"
-          + "uency\022\031\n\025FREQUENCY_UNSPECIFIED\020\000\022\n\n\006WEEK"
-          + "LY\020\001\022\013\n\007MONTHLY\020\002\022\t\n\005DAILY\020\003B\021\n\017schedule"
-          + "_config\"B\n\016WeeklySchedule\0220\n\013day_of_week"
-          + "\030\001 \001(\0162\026.google.type.DayOfWeekB\003\340A\002\"\207\001\n\017"
-          + "MonthlySchedule\022J\n\021week_day_of_month\030\001 \001"
-          + "(\0132(.google.cloud.osconfig.v1.WeekDayOfM"
-          + "onthB\003\340A\002H\000\022\030\n\tmonth_day\030\002 \001(\005B\003\340A\002H\000B\016\n"
-          + "\014day_of_month\"]\n\016WeekDayOfMonth\022\031\n\014week_"
-          + "ordinal\030\001 \001(\005B\003\340A\002\0220\n\013day_of_week\030\002 \001(\0162"
-          + "\026.google.type.DayOfWeekB\003\340A\002\"\317\001\n\034CreateP"
-          + "atchDeploymentRequest\022C\n\006parent\030\001 \001(\tB3\340"
-          + "A\002\372A-\n+cloudresourcemanager.googleapis.c"
-          + "om/Project\022 \n\023patch_deployment_id\030\002 \001(\tB"
-          + "\003\340A\002\022H\n\020patch_deployment\030\003 \001(\0132).google."
-          + "cloud.osconfig.v1.PatchDeploymentB\003\340A\002\"Z"
-          + "\n\031GetPatchDeploymentRequest\022=\n\004name\030\001 \001("
-          + "\tB/\340A\002\372A)\n\'osconfig.googleapis.com/Patch"
-          + "Deployment\"\223\001\n\033ListPatchDeploymentsReque"
-          + "st\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\n+cloudresourc"
-          + "emanager.googleapis.com/Project\022\026\n\tpage_"
-          + "size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001"
-          + "\"}\n\034ListPatchDeploymentsResponse\022D\n\021patc"
-          + "h_deployments\030\001 \003(\0132).google.cloud.oscon"
-          + "fig.v1.PatchDeployment\022\027\n\017next_page_toke"
-          + "n\030\002 \001(\t\"]\n\034DeletePatchDeploymentRequest\022"
-          + "=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'osconfig.googleap"
-          + "is.com/PatchDeploymentB\306\001\n\034com.google.cl"
-          + "oud.osconfig.v1B\020PatchDeploymentsZ@googl"
-          + "e.golang.org/genproto/googleapis/cloud/o"
-          + "sconfig/v1;osconfig\252\002\030Google.Cloud.OsCon"
-          + "fig.V1\312\002\030Google\\Cloud\\OsConfig\\V1\352\002\033Goog"
-          + "le::Cloud::OsConfig::V1b\006proto3"
+          + "ation.proto\032 google/protobuf/field_mask."
+          + "proto\032\037google/protobuf/timestamp.proto\032\032"
+          + "google/type/datetime.proto\032\033google/type/"
+          + "dayofweek.proto\032\033google/type/timeofday.p"
+          + "roto\"\354\006\n\017PatchDeployment\022\014\n\004name\030\001 \001(\t\022\030"
+          + "\n\013description\030\002 \001(\tB\003\340A\001\022K\n\017instance_fil"
+          + "ter\030\003 \001(\0132-.google.cloud.osconfig.v1.Pat"
+          + "chInstanceFilterB\003\340A\002\022@\n\014patch_config\030\004 "
+          + "\001(\0132%.google.cloud.osconfig.v1.PatchConf"
+          + "igB\003\340A\001\0220\n\010duration\030\005 \001(\0132\031.google.proto"
+          + "buf.DurationB\003\340A\001\022K\n\021one_time_schedule\030\006"
+          + " \001(\0132).google.cloud.osconfig.v1.OneTimeS"
+          + "cheduleB\003\340A\002H\000\022N\n\022recurring_schedule\030\007 \001"
+          + "(\0132+.google.cloud.osconfig.v1.RecurringS"
+          + "cheduleB\003\340A\002H\000\0224\n\013create_time\030\010 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
+          + "ime\030\t \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\022:\n\021last_execute_time\030\n \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\003\022<\n\007rollout\030\013 \001(\0132"
+          + "&.google.cloud.osconfig.v1.PatchRolloutB"
+          + "\003\340A\001\022C\n\005state\030\014 \001(\0162/.google.cloud.oscon"
+          + "fig.v1.PatchDeployment.StateB\003\340A\003\"6\n\005Sta"
+          + "te\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\n\n"
+          + "\006PAUSED\020\002:d\352Aa\n\'osconfig.googleapis.com/"
+          + "PatchDeployment\0226projects/{project}/patc"
+          + "hDeployments/{patch_deployment}B\n\n\010sched"
+          + "ule\"H\n\017OneTimeSchedule\0225\n\014execute_time\030\001"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\002\"\206\005"
+          + "\n\021RecurringSchedule\022-\n\ttime_zone\030\001 \001(\0132\025"
+          + ".google.type.TimeZoneB\003\340A\002\0223\n\nstart_time"
+          + "\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\022"
+          + "1\n\010end_time\030\003 \001(\0132\032.google.protobuf.Time"
+          + "stampB\003\340A\001\0220\n\013time_of_day\030\004 \001(\0132\026.google"
+          + ".type.TimeOfDayB\003\340A\002\022M\n\tfrequency\030\005 \001(\0162"
+          + "5.google.cloud.osconfig.v1.RecurringSche"
+          + "dule.FrequencyB\003\340A\002\022?\n\006weekly\030\006 \001(\0132(.go"
+          + "ogle.cloud.osconfig.v1.WeeklyScheduleB\003\340"
+          + "A\002H\000\022A\n\007monthly\030\007 \001(\0132).google.cloud.osc"
+          + "onfig.v1.MonthlyScheduleB\003\340A\002H\000\022:\n\021last_"
+          + "execute_time\030\t \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\003\022:\n\021next_execute_time\030\n \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\"J\n\tFrequ"
+          + "ency\022\031\n\025FREQUENCY_UNSPECIFIED\020\000\022\n\n\006WEEKL"
+          + "Y\020\001\022\013\n\007MONTHLY\020\002\022\t\n\005DAILY\020\003B\021\n\017schedule_"
+          + "config\"B\n\016WeeklySchedule\0220\n\013day_of_week\030"
+          + "\001 \001(\0162\026.google.type.DayOfWeekB\003\340A\002\"\207\001\n\017M"
+          + "onthlySchedule\022J\n\021week_day_of_month\030\001 \001("
+          + "\0132(.google.cloud.osconfig.v1.WeekDayOfMo"
+          + "nthB\003\340A\002H\000\022\030\n\tmonth_day\030\002 \001(\005B\003\340A\002H\000B\016\n\014"
+          + "day_of_month\"v\n\016WeekDayOfMonth\022\031\n\014week_o"
+          + "rdinal\030\001 \001(\005B\003\340A\002\0220\n\013day_of_week\030\002 \001(\0162\026"
+          + ".google.type.DayOfWeekB\003\340A\002\022\027\n\nday_offse"
+          + "t\030\003 \001(\005B\003\340A\001\"\317\001\n\034CreatePatchDeploymentRe"
+          + "quest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\n+cloudreso"
+          + "urcemanager.googleapis.com/Project\022 \n\023pa"
+          + "tch_deployment_id\030\002 \001(\tB\003\340A\002\022H\n\020patch_de"
+          + "ployment\030\003 \001(\0132).google.cloud.osconfig.v"
+          + "1.PatchDeploymentB\003\340A\002\"Z\n\031GetPatchDeploy"
+          + "mentRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'oscon"
+          + "fig.googleapis.com/PatchDeployment\"\223\001\n\033L"
+          + "istPatchDeploymentsRequest\022C\n\006parent\030\001 \001"
+          + "(\tB3\340A\002\372A-\n+cloudresourcemanager.googlea"
+          + "pis.com/Project\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022"
+          + "\027\n\npage_token\030\003 \001(\tB\003\340A\001\"}\n\034ListPatchDep"
+          + "loymentsResponse\022D\n\021patch_deployments\030\001 "
+          + "\003(\0132).google.cloud.osconfig.v1.PatchDepl"
+          + "oyment\022\027\n\017next_page_token\030\002 \001(\t\"]\n\034Delet"
+          + "ePatchDeploymentRequest\022=\n\004name\030\001 \001(\tB/\340"
+          + "A\002\372A)\n\'osconfig.googleapis.com/PatchDepl"
+          + "oyment\"\236\001\n\034UpdatePatchDeploymentRequest\022"
+          + "H\n\020patch_deployment\030\001 \001(\0132).google.cloud"
+          + ".osconfig.v1.PatchDeploymentB\003\340A\002\0224\n\013upd"
+          + "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
+          + "skB\003\340A\001\"\\\n\033PausePatchDeploymentRequest\022="
+          + "\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'osconfig.googleapi"
+          + "s.com/PatchDeployment\"]\n\034ResumePatchDepl"
+          + "oymentRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'osc"
+          + "onfig.googleapis.com/PatchDeploymentB\306\001\n"
+          + "\034com.google.cloud.osconfig.v1B\020PatchDepl"
+          + "oymentsZ@google.golang.org/genproto/goog"
+          + "leapis/cloud/osconfig/v1;osconfig\252\002\030Goog"
+          + "le.Cloud.OsConfig.V1\312\002\030Google\\Cloud\\OsCo"
+          + "nfig\\V1\352\002\033Google::Cloud::OsConfig::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -16361,6 +19459,7 @@ public final class PatchDeployments {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.osconfig.v1.PatchJobs.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.DateTimeProto.getDescriptor(),
               com.google.type.DayOfWeekProto.getDescriptor(),
@@ -16383,6 +19482,7 @@ public final class PatchDeployments {
               "UpdateTime",
               "LastExecuteTime",
               "Rollout",
+              "State",
               "Schedule",
             });
     internal_static_google_cloud_osconfig_v1_OneTimeSchedule_descriptor =
@@ -16432,7 +19532,7 @@ public final class PatchDeployments {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_osconfig_v1_WeekDayOfMonth_descriptor,
             new java.lang.String[] {
-              "WeekOrdinal", "DayOfWeek",
+              "WeekOrdinal", "DayOfWeek", "DayOffset",
             });
     internal_static_google_cloud_osconfig_v1_CreatePatchDeploymentRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -16474,6 +19574,30 @@ public final class PatchDeployments {
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_osconfig_v1_UpdatePatchDeploymentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_osconfig_v1_UpdatePatchDeploymentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_osconfig_v1_UpdatePatchDeploymentRequest_descriptor,
+            new java.lang.String[] {
+              "PatchDeployment", "UpdateMask",
+            });
+    internal_static_google_cloud_osconfig_v1_PausePatchDeploymentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_osconfig_v1_PausePatchDeploymentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_osconfig_v1_PausePatchDeploymentRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_osconfig_v1_ResumePatchDeploymentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_osconfig_v1_ResumePatchDeploymentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_osconfig_v1_ResumePatchDeploymentRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -16485,6 +19609,7 @@ public final class PatchDeployments {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.osconfig.v1.PatchJobs.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.DateTimeProto.getDescriptor();
     com.google.type.DayOfWeekProto.getDescriptor();

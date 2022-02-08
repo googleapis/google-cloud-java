@@ -121,6 +121,15 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
       listPatchDeploymentsSettings;
   private final UnaryCallSettings<PatchDeployments.DeletePatchDeploymentRequest, Empty>
       deletePatchDeploymentSettings;
+  private final UnaryCallSettings<
+          PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      updatePatchDeploymentSettings;
+  private final UnaryCallSettings<
+          PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      pausePatchDeploymentSettings;
+  private final UnaryCallSettings<
+          PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      resumePatchDeploymentSettings;
 
   private static final PagedListDescriptor<
           PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse, PatchJobs.PatchJob>
@@ -417,6 +426,27 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     return deletePatchDeploymentSettings;
   }
 
+  /** Returns the object with the settings used for calls to updatePatchDeployment. */
+  public UnaryCallSettings<
+          PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      updatePatchDeploymentSettings() {
+    return updatePatchDeploymentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to pausePatchDeployment. */
+  public UnaryCallSettings<
+          PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      pausePatchDeploymentSettings() {
+    return pausePatchDeploymentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resumePatchDeployment. */
+  public UnaryCallSettings<
+          PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      resumePatchDeploymentSettings() {
+    return resumePatchDeploymentSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public OsConfigServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -503,6 +533,9 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     getPatchDeploymentSettings = settingsBuilder.getPatchDeploymentSettings().build();
     listPatchDeploymentsSettings = settingsBuilder.listPatchDeploymentsSettings().build();
     deletePatchDeploymentSettings = settingsBuilder.deletePatchDeploymentSettings().build();
+    updatePatchDeploymentSettings = settingsBuilder.updatePatchDeploymentSettings().build();
+    pausePatchDeploymentSettings = settingsBuilder.pausePatchDeploymentSettings().build();
+    resumePatchDeploymentSettings = settingsBuilder.resumePatchDeploymentSettings().build();
   }
 
   /** Builder for OsConfigServiceStubSettings. */
@@ -537,6 +570,15 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
         listPatchDeploymentsSettings;
     private final UnaryCallSettings.Builder<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentSettings;
+    private final UnaryCallSettings.Builder<
+            PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        updatePatchDeploymentSettings;
+    private final UnaryCallSettings.Builder<
+            PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        pausePatchDeploymentSettings;
+    private final UnaryCallSettings.Builder<
+            PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        resumePatchDeploymentSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -586,6 +628,9 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
       listPatchDeploymentsSettings =
           PagedCallSettings.newBuilder(LIST_PATCH_DEPLOYMENTS_PAGE_STR_FACT);
       deletePatchDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updatePatchDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      pausePatchDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resumePatchDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -597,7 +642,10 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
               createPatchDeploymentSettings,
               getPatchDeploymentSettings,
               listPatchDeploymentsSettings,
-              deletePatchDeploymentSettings);
+              deletePatchDeploymentSettings,
+              updatePatchDeploymentSettings,
+              pausePatchDeploymentSettings,
+              resumePatchDeploymentSettings);
       initDefaults(this);
     }
 
@@ -614,6 +662,9 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
       getPatchDeploymentSettings = settings.getPatchDeploymentSettings.toBuilder();
       listPatchDeploymentsSettings = settings.listPatchDeploymentsSettings.toBuilder();
       deletePatchDeploymentSettings = settings.deletePatchDeploymentSettings.toBuilder();
+      updatePatchDeploymentSettings = settings.updatePatchDeploymentSettings.toBuilder();
+      pausePatchDeploymentSettings = settings.pausePatchDeploymentSettings.toBuilder();
+      resumePatchDeploymentSettings = settings.resumePatchDeploymentSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -625,7 +676,10 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
               createPatchDeploymentSettings,
               getPatchDeploymentSettings,
               listPatchDeploymentsSettings,
-              deletePatchDeploymentSettings);
+              deletePatchDeploymentSettings,
+              updatePatchDeploymentSettings,
+              pausePatchDeploymentSettings,
+              resumePatchDeploymentSettings);
     }
 
     private static Builder createDefault() {
@@ -684,6 +738,21 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
 
       builder
           .deletePatchDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updatePatchDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .pausePatchDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .resumePatchDeploymentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -768,6 +837,27 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     public UnaryCallSettings.Builder<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentSettings() {
       return deletePatchDeploymentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePatchDeployment. */
+    public UnaryCallSettings.Builder<
+            PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        updatePatchDeploymentSettings() {
+      return updatePatchDeploymentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to pausePatchDeployment. */
+    public UnaryCallSettings.Builder<
+            PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        pausePatchDeploymentSettings() {
+      return pausePatchDeploymentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resumePatchDeployment. */
+    public UnaryCallSettings.Builder<
+            PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        resumePatchDeploymentSettings() {
+      return resumePatchDeploymentSettings;
     }
 
     @Override
