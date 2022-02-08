@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.5.3](https://github.com/googleapis/java-bigtable/compare/v2.5.2...v2.5.3) (2022-02-08)
+
+
+### Bug Fixes
+
+* integration tests ([#1161](https://github.com/googleapis/java-bigtable/issues/1161)) ([8b00b5f](https://github.com/googleapis/java-bigtable/commit/8b00b5fb5b4e3a1ada514b0bdc60fd744833bd01))
+
 ### [2.5.2](https://github.com/googleapis/java-bigtable/compare/v2.5.1...v2.5.2) (2022-01-31)
 
 
