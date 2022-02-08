@@ -412,6 +412,58 @@ public class ITBigQueryWriteManualClientTest {
     }
   }
 
+  // This test runs about 1 min.
+  @Test
+  public void testJsonStreamWriterWithMessagesOver10M()
+      throws IOException, InterruptedException, ExecutionException,
+          Descriptors.DescriptorValidationException {
+    String tableName = "TableLarge";
+    TableId tableId = TableId.of(DATASET, tableName);
+    Field col1 = Field.newBuilder("col1", StandardSQLTypeName.STRING).build();
+    Schema schema = Schema.of(col1);
+    TableInfo tableInfo = TableInfo.newBuilder(tableId, StandardTableDefinition.of(schema)).build();
+    bigquery.create(tableInfo);
+    TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+
+    WriteStream writeStream =
+        client.createWriteStream(
+            CreateWriteStreamRequest.newBuilder()
+                .setParent(parent.toString())
+                .setWriteStream(
+                    WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
+                .build());
+    int totalRequest = 10;
+    int rowBatch = 40000;
+    ArrayList<ApiFuture<AppendRowsResponse>> allResponses =
+        new ArrayList<ApiFuture<AppendRowsResponse>>(totalRequest);
+    // Sends a total of 30MB over the wire.
+    try (JsonStreamWriter jsonStreamWriter =
+        JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema())
+            .setReconnectAfter10M(true)
+            .build()) {
+      for (int k = 0; k < totalRequest; k++) {
+        JSONObject row = new JSONObject();
+        row.put("col1", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        JSONArray jsonArr = new JSONArray();
+        // 3MB batch.
+        for (int j = 0; j < rowBatch; j++) {
+          jsonArr.put(row);
+        }
+        LOG.info("Appending: " + k + "/" + totalRequest);
+        allResponses.add(jsonStreamWriter.append(jsonArr, k * rowBatch));
+      }
+    }
+    LOG.info("Waiting for all responses to come back");
+    for (int i = 0; i < totalRequest; i++) {
+      try {
+        Assert.assertEquals(
+            allResponses.get(i).get().getAppendResult().getOffset().getValue(), i * rowBatch);
+      } catch (ExecutionException ex) {
+        Assert.fail("Unexpected error " + ex);
+      }
+    }
+  }
+
   @Test
   public void testJsonStreamWriterSchemaUpdate()
       throws DescriptorValidationException, IOException, InterruptedException, ExecutionException {

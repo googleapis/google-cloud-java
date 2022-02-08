@@ -53,6 +53,10 @@ public class JsonStreamWriter implements AutoCloseable {
   private Descriptor descriptor;
   private TableSchema tableSchema;
   private boolean ignoreUnknownFields = false;
+  private boolean reconnectAfter10M = false;
+  private long totalMessageSize = 0;
+  private long absTotal = 0;
+  private ProtoSchema protoSchema;
 
   /**
    * Constructs the JsonStreamWriter
@@ -71,7 +75,9 @@ public class JsonStreamWriter implements AutoCloseable {
     } else {
       streamWriterBuilder = StreamWriter.newBuilder(builder.streamName, builder.client);
     }
-    streamWriterBuilder.setWriterSchema(ProtoSchemaConverter.convert(this.descriptor));
+    this.protoSchema = ProtoSchemaConverter.convert(this.descriptor);
+    this.totalMessageSize = protoSchema.getSerializedSize();
+    streamWriterBuilder.setWriterSchema(protoSchema);
     setStreamWriterSettings(
         builder.channelProvider,
         builder.credentialsProvider,
@@ -82,6 +88,7 @@ public class JsonStreamWriter implements AutoCloseable {
     this.streamName = builder.streamName;
     this.tableSchema = builder.tableSchema;
     this.ignoreUnknownFields = builder.ignoreUnknownFields;
+    this.reconnectAfter10M = builder.reconnectAfter10M;
   }
 
   /**
@@ -122,11 +129,10 @@ public class JsonStreamWriter implements AutoCloseable {
         this.tableSchema = updatedSchema;
         this.descriptor =
             BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(updatedSchema);
+        this.protoSchema = ProtoSchemaConverter.convert(this.descriptor);
+        this.totalMessageSize = protoSchema.getSerializedSize();
         // Create a new underlying StreamWriter with the updated TableSchema and Descriptor
-        this.streamWriter =
-            streamWriterBuilder
-                .setWriterSchema(ProtoSchemaConverter.convert(this.descriptor))
-                .build();
+        this.streamWriter = streamWriterBuilder.setWriterSchema(this.protoSchema).build();
       }
     }
 
@@ -134,15 +140,35 @@ public class JsonStreamWriter implements AutoCloseable {
     // Any error in convertJsonToProtoMessage will throw an
     // IllegalArgumentException/IllegalStateException/NullPointerException and will halt processing
     // of JSON data.
+    long currentRequestSize = 0;
     for (int i = 0; i < jsonArr.length(); i++) {
       JSONObject json = jsonArr.getJSONObject(i);
       Message protoMessage =
           JsonToProtoMessage.convertJsonToProtoMessage(
               this.descriptor, this.tableSchema, json, ignoreUnknownFields);
       rowsBuilder.addSerializedRows(protoMessage.toByteString());
+      currentRequestSize += protoMessage.getSerializedSize();
     }
     // Need to make sure refreshAppendAndSetDescriptor finish first before this can run
     synchronized (this) {
+      this.totalMessageSize += currentRequestSize;
+      this.absTotal += currentRequestSize;
+      // Reconnect on every 9.5MB.
+      if (this.totalMessageSize > 9500000 && this.reconnectAfter10M) {
+        streamWriter.close();
+        // Create a new underlying StreamWriter aka establish a new connection.
+        this.streamWriter = streamWriterBuilder.setWriterSchema(protoSchema).build();
+        this.totalMessageSize = this.protoSchema.getSerializedSize() + currentRequestSize;
+        this.absTotal += currentRequestSize;
+        // Allow first request to pass.
+      }
+      LOG.fine(
+          "Sending a total of:"
+              + this.totalMessageSize
+              + " "
+              + currentRequestSize
+              + " "
+              + this.absTotal);
       final ApiFuture<AppendRowsResponse> appendResponseFuture =
           this.streamWriter.append(rowsBuilder.build(), offset);
       return appendResponseFuture;
@@ -264,6 +290,7 @@ public class JsonStreamWriter implements AutoCloseable {
     private boolean createDefaultStream = false;
     private String traceId;
     private boolean ignoreUnknownFields = false;
+    private boolean reconnectAfter10M = false;
 
     private static String streamPatternString =
         "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/streams/[^/]+";
@@ -374,6 +401,19 @@ public class JsonStreamWriter implements AutoCloseable {
      */
     public Builder setIgnoreUnknownFields(boolean ignoreUnknownFields) {
       this.ignoreUnknownFields = ignoreUnknownFields;
+      return this;
+    }
+
+    /**
+     * Setter for a reconnectAfter10M, temporaily workaround for omg/48020. Fix for the omg is
+     * supposed to roll out by 2/11/2022 Friday. If you set this to True, your write will be slower
+     * (0.75MB/s per connection), but your writes will not be stuck as a sympton of omg/48020.
+     *
+     * @param reconnectAfter10M
+     * @return Builder
+     */
+    public Builder setReconnectAfter10M(boolean reconnectAfter10M) {
+      this.reconnectAfter10M = reconnectAfter10M;
       return this;
     }
 
