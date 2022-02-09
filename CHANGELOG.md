@@ -1,6 +1,14 @@
 # Changelog
 
 
+### [0.122.12](https://github.com/googleapis/java-logging-logback/compare/v0.122.11...v0.122.12) (2022-02-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-logging to v3.6.2 ([#674](https://github.com/googleapis/java-logging-logback/issues/674)) ([c0db36f](https://github.com/googleapis/java-logging-logback/commit/c0db36f0ae9c4754880229d4ac5e9e52d0e95086))
+* update dependency org.slf4j:slf4j-api to v1.7.36 ([#681](https://github.com/googleapis/java-logging-logback/issues/681)) ([bd4c4da](https://github.com/googleapis/java-logging-logback/commit/bd4c4da1a260f5261a6b3daa522aa9fea0e6deb3))
+
 ### [0.122.11](https://github.com/googleapis/java-logging-logback/compare/v0.122.10...v0.122.11) (2022-02-03)
 
 
