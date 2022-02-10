@@ -47,7 +47,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-speech</artifactId>
-  <version>2.2.3</version>
+  <version>2.2.4</version>
 </dependency>
 
 ```
@@ -62,13 +62,13 @@ implementation 'com.google.cloud:google-cloud-speech'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-speech:2.2.3'
+implementation 'com.google.cloud:google-cloud-speech:2.2.4'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "2.2.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "2.2.4"
 ```
 
 ## Authentication
