@@ -157,7 +157,7 @@
     <google.iam.version>1.2.3</google.iam.version>
     <google.auth.version>1.4.0</google.auth.version>
     <google.api.version>1.33.2</google.api.version>
-    <google.http.version>1.41.2</google.http.version>
+    <google.http.version>1.41.3</google.http.version>
     <graalvm.version>22.0.0.2</graalvm.version>
     <grpc.version>1.44.0</grpc.version>
     <protobuf.version>3.19.4</protobuf.version>
