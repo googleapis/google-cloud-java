@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.5.3](https://github.com/googleapis/java-core/compare/v2.5.2...v2.5.3) (2022-02-10)
+
+
+### Dependencies
+
+* update dependency com.google.api:gax-bom to v2.12.2 ([#719](https://github.com/googleapis/java-core/issues/719)) ([4de90d0](https://github.com/googleapis/java-core/commit/4de90d05c152c21a1ebb98f6cbff0f9b9c39e5d2))
+* update dependency com.google.http-client:google-http-client-bom to v1.41.3 ([#720](https://github.com/googleapis/java-core/issues/720)) ([d2a5b4f](https://github.com/googleapis/java-core/commit/d2a5b4ffa598f232b84655a7ac146bfa2e1f24c9))
+
 ### [2.5.2](https://github.com/googleapis/java-core/compare/v2.5.1...v2.5.2) (2022-02-09)
 
 
