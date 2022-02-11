@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.7](https://github.com/googleapis/java-essential-contacts/compare/v2.1.6...v2.1.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#177](https://github.com/googleapis/java-essential-contacts/issues/177)) ([f1bb4b2](https://github.com/googleapis/java-essential-contacts/commit/f1bb4b277f4474d647087538eeffa7fb554aeb2a))
+
 ### [2.1.6](https://github.com/googleapis/java-essential-contacts/compare/v2.1.5...v2.1.6) (2022-02-03)
 
 
