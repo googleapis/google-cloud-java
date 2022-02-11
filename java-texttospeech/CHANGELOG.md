@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.3](https://github.com/googleapis/java-texttospeech/compare/v2.1.2...v2.1.3) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#646](https://github.com/googleapis/java-texttospeech/issues/646)) ([c532c59](https://github.com/googleapis/java-texttospeech/commit/c532c59019550e5d912c2f5551dfaa9f71467bd4))
+
 ### [2.1.2](https://github.com/googleapis/java-texttospeech/compare/v2.1.1...v2.1.2) (2022-02-03)
 
 
