@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.7](https://github.com/googleapis/java-dms/compare/v2.1.6...v2.1.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#182](https://github.com/googleapis/java-dms/issues/182)) ([2e0d5a8](https://github.com/googleapis/java-dms/commit/2e0d5a8ceb9a494ab2c5a67849a2e98215939e27))
+
 ### [2.1.6](https://github.com/googleapis/java-dms/compare/v2.1.5...v2.1.6) (2022-02-03)
 
 
