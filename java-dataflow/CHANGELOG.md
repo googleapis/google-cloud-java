@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.4.1](https://github.com/googleapis/java-dataflow/compare/v0.4.0...v0.4.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#131](https://github.com/googleapis/java-dataflow/issues/131)) ([aaf8550](https://github.com/googleapis/java-dataflow/commit/aaf85507353bd3e5b75541bbc0144e81b0047b38))
+
 ## [0.4.0](https://github.com/googleapis/java-dataflow/compare/v0.3.3...v0.4.0) (2022-02-03)
 
 
