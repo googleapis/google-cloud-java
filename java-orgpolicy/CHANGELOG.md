@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.10](https://github.com/googleapis/java-orgpolicy/compare/v2.0.9...v2.0.10) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#317](https://github.com/googleapis/java-orgpolicy/issues/317)) ([6286ead](https://github.com/googleapis/java-orgpolicy/commit/6286ead9199cad2a1f6e0d114ef818757655aa3d))
+
 ### [2.0.9](https://github.com/googleapis/java-orgpolicy/compare/v2.0.8...v2.0.9) (2022-02-03)
 
 
