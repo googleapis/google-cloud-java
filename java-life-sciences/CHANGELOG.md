@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.5](https://github.com/googleapis/java-life-sciences/compare/v0.3.4...v0.3.5) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#140](https://github.com/googleapis/java-life-sciences/issues/140)) ([7f173c5](https://github.com/googleapis/java-life-sciences/commit/7f173c5483a9361a6a8c8ef6a2bf19553a8db3a4))
+
 ### [0.3.4](https://github.com/googleapis/java-life-sciences/compare/v0.3.3...v0.3.4) (2022-02-03)
 
 
