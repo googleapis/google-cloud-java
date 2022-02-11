@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.7](https://github.com/googleapis/java-workflows/compare/v2.1.6...v2.1.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#415](https://github.com/googleapis/java-workflows/issues/415)) ([0b8a2c0](https://github.com/googleapis/java-workflows/commit/0b8a2c036739c6f8154699adb133e0574f10e495))
+
 ### [2.1.6](https://github.com/googleapis/java-workflows/compare/v2.1.5...v2.1.6) (2022-02-03)
 
 
