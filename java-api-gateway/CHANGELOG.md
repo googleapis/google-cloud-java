@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.8](https://github.com/googleapis/java-api-gateway/compare/v2.1.7...v2.1.8) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#211](https://github.com/googleapis/java-api-gateway/issues/211)) ([bef9340](https://github.com/googleapis/java-api-gateway/commit/bef934036ea1162fdf7e80bd9fa21e8bdbdceb99))
+
 ### [2.1.7](https://github.com/googleapis/java-api-gateway/compare/v2.1.6...v2.1.7) (2022-02-03)
 
 
