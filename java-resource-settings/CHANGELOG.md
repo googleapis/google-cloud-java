@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.7](https://github.com/googleapis/java-resource-settings/compare/v1.1.6...v1.1.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#131](https://github.com/googleapis/java-resource-settings/issues/131)) ([f28c0b4](https://github.com/googleapis/java-resource-settings/commit/f28c0b434e65ad4a2612a2cbb3528e618a5bdcd7))
+
 ### [1.1.6](https://github.com/googleapis/java-resource-settings/compare/v1.1.5...v1.1.6) (2022-02-03)
 
 
