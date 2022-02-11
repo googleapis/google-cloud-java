@@ -61,6 +61,7 @@ public class ITSystemTest {
   @BeforeClass
   public static void beforeClass() throws Exception {
     client = ClusterManagerClient.create();
+    Util.cleanUpExistingInstanceCluster(PROJECT_ID, ZONE, client);
 
     /** create node pool* */
     NodePool nodePool =
