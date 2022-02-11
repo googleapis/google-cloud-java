@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.5.10](https://github.com/googleapis/java-securitycenter-settings/compare/v0.5.9...v0.5.10) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#463](https://github.com/googleapis/java-securitycenter-settings/issues/463)) ([9572009](https://github.com/googleapis/java-securitycenter-settings/commit/9572009fcfb818e588df161e73d0a63d50b71feb))
+
 ### [0.5.9](https://github.com/googleapis/java-securitycenter-settings/compare/v0.5.8...v0.5.9) (2022-02-03)
 
 
