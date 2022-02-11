@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.9](https://github.com/googleapis/java-shell/compare/v2.1.8...v2.1.9) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#167](https://github.com/googleapis/java-shell/issues/167)) ([a77c8ff](https://github.com/googleapis/java-shell/commit/a77c8ffdeb43288b674be30d23dd302a0b2b8401))
+
 ### [2.1.8](https://github.com/googleapis/java-shell/compare/v2.1.7...v2.1.8) (2022-02-03)
 
 
