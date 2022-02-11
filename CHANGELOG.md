@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.6.3](https://github.com/googleapis/java-logging/compare/v3.6.2...v3.6.3) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#865](https://github.com/googleapis/java-logging/issues/865)) ([2d05dc8](https://github.com/googleapis/java-logging/commit/2d05dc81b3b56ae6b5205c26719bfd3985c5b9d7))
+
 ### [3.6.2](https://github.com/googleapis/java-logging/compare/v3.6.1...v3.6.2) (2022-02-03)
 
 
