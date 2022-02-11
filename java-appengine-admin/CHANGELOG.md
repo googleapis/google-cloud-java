@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.6](https://github.com/googleapis/java-appengine-admin/compare/v2.1.5...v2.1.6) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#193](https://github.com/googleapis/java-appengine-admin/issues/193)) ([9a16037](https://github.com/googleapis/java-appengine-admin/commit/9a1603720634fb26d99fab0f74619eebdad3cbed))
+
 ### [2.1.5](https://github.com/googleapis/java-appengine-admin/compare/v2.1.4...v2.1.5) (2022-02-03)
 
 
