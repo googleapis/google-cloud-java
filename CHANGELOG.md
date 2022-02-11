@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.9.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.9.0...v2.9.1) (2022-02-11)
+
+
+### Bug Fixes
+
+* rollback the reconnect after 10MB behavior after the fix for omg… ([#1530](https://github.com/googleapis/java-bigquerystorage/issues/1530)) ([737bd0e](https://github.com/googleapis/java-bigquerystorage/commit/737bd0e2c21332fd1c0c82a12e31ce5749a078fd))
+
+
+### Dependencies
+
+* update arrow.version to v7 (major) ([#1526](https://github.com/googleapis/java-bigquerystorage/issues/1526)) ([b6a4479](https://github.com/googleapis/java-bigquerystorage/commit/b6a4479e023c6c05bccd3451e929105a1f7b8b9d))
+* update dependency org.apache.arrow:arrow-memory-netty to v7 ([#1527](https://github.com/googleapis/java-bigquerystorage/issues/1527)) ([06e927f](https://github.com/googleapis/java-bigquerystorage/commit/06e927f071271c12d7c1904b2d2c3f7f9e8338c7))
+* update dependency org.apache.arrow:arrow-vector to v7 ([#1528](https://github.com/googleapis/java-bigquerystorage/issues/1528)) ([70297cc](https://github.com/googleapis/java-bigquerystorage/commit/70297ccd4828fc08bdf3b021af103aa01975ccb3))
+
 ## [2.9.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.8.4...v2.9.0) (2022-02-08)
 
 
