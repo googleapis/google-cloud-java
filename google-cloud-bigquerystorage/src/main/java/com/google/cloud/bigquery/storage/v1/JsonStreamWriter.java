@@ -405,15 +405,16 @@ public class JsonStreamWriter implements AutoCloseable {
     }
 
     /**
-     * Setter for a reconnectAfter10M, temporaily workaround for omg/48020. Fix for the omg is
-     * supposed to roll out by 2/11/2022 Friday. If you set this to True, your write will be slower
-     * (0.75MB/s per connection), but your writes will not be stuck as a sympton of omg/48020.
+     * @Deprecated Setter for a reconnectAfter10M, temporaily workaround for omg/48020. Fix for the
+     * omg is supposed to roll out by 2/11/2022 Friday. If you set this to True, your write will be
+     * slower (0.75MB/s per connection), but your writes will not be stuck as a sympton of
+     * omg/48020.
      *
      * @param reconnectAfter10M
      * @return Builder
      */
     public Builder setReconnectAfter10M(boolean reconnectAfter10M) {
-      this.reconnectAfter10M = reconnectAfter10M;
+      this.reconnectAfter10M = false;
       return this;
     }
 
