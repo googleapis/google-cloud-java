@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.4.1](https://github.com/googleapis/java-datastream/compare/v0.4.0...v0.4.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#123](https://github.com/googleapis/java-datastream/issues/123)) ([4ffdde5](https://github.com/googleapis/java-datastream/commit/4ffdde5e1d391109239b5cff9b31d432afc976ea))
+
 ## [0.4.0](https://github.com/googleapis/java-datastream/compare/v0.3.1...v0.4.0) (2022-02-03)
 
 
