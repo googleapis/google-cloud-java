@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.10](https://github.com/googleapis/java-webrisk/compare/v2.0.9...v2.0.10) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#615](https://github.com/googleapis/java-webrisk/issues/615)) ([010a2da](https://github.com/googleapis/java-webrisk/commit/010a2da567100964afb9ac8049c13c60513b07fe))
+
 ### [2.0.9](https://github.com/googleapis/java-webrisk/compare/v2.0.8...v2.0.9) (2022-02-03)
 
 
