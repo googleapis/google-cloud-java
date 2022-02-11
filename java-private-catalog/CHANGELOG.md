@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.5](https://github.com/googleapis/java-private-catalog/compare/v0.2.4...v0.2.5) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#139](https://github.com/googleapis/java-private-catalog/issues/139)) ([f3cfba2](https://github.com/googleapis/java-private-catalog/commit/f3cfba2f3353f3a0e9167e15d7119fe608ca26d9))
+
 ### [0.2.4](https://github.com/googleapis/java-private-catalog/compare/v0.2.3...v0.2.4) (2022-02-03)
 
 
