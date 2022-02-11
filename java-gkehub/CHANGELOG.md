@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/googleapis/java-gkehub/compare/v1.0.0...v1.0.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#196](https://github.com/googleapis/java-gkehub/issues/196)) ([c8a1525](https://github.com/googleapis/java-gkehub/commit/c8a152518d1c1fde5eae874d799d0a9f86db6c37))
+
 ## [1.0.0](https://github.com/googleapis/java-gkehub/compare/v0.5.4...v1.0.0) (2022-02-03)
 
 
