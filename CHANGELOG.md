@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.9.0](https://github.com/googleapis/java-bigquery/compare/v2.8.0...v2.9.0) (2022-02-11)
+
+
+### Features
+
+* add Interval type support ([#1844](https://github.com/googleapis/java-bigquery/issues/1844)) ([fd3751a](https://github.com/googleapis/java-bigquery/commit/fd3751a44be8f6401ea4b13684f862177ee9e976))
+
+
+### Documentation
+
+* **sample:** Add sample for native image support in Bigquery ([#1829](https://github.com/googleapis/java-bigquery/issues/1829)) ([7bb6c79](https://github.com/googleapis/java-bigquery/commit/7bb6c79e4839f183dda021ddf81a3961efd752d6))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#1847](https://github.com/googleapis/java-bigquery/issues/1847)) ([7ffe963](https://github.com/googleapis/java-bigquery/commit/7ffe963043ae8b243f1e351a5fffd992f3fcbbb5))
+* update dependency com.google.cloud:google-cloud-bigtable to v2.5.3 ([#1840](https://github.com/googleapis/java-bigquery/issues/1840)) ([88fc05f](https://github.com/googleapis/java-bigquery/commit/88fc05f3233e4e3a9cdfa73eff9856e4fd6fb1c7))
+* update dependency com.google.cloud:google-cloud-storage to v2.4.0 ([#1828](https://github.com/googleapis/java-bigquery/issues/1828)) ([d628fff](https://github.com/googleapis/java-bigquery/commit/d628fff9b899e13c75aaf26d42bfc553c48a3c4e))
+* update dependency com.google.cloud:google-cloud-storage to v2.4.1 ([#1839](https://github.com/googleapis/java-bigquery/issues/1839)) ([e8ebd5c](https://github.com/googleapis/java-bigquery/commit/e8ebd5c2ed29f26aa004e1bdf59ab2e7afb2963c))
+* update dependency com.google.cloud:native-image-support to v0.12.0 ([#1832](https://github.com/googleapis/java-bigquery/issues/1832)) ([1d27b30](https://github.com/googleapis/java-bigquery/commit/1d27b309e2fa6cdc99fc08234390a065d7ca1098))
+* update dependency com.google.cloud:native-image-support to v0.12.1 ([#1841](https://github.com/googleapis/java-bigquery/issues/1841)) ([15918a1](https://github.com/googleapis/java-bigquery/commit/15918a1fa006734ee265ccc569facb8958a1d0bb))
+* update dependency com.google.cloud:native-image-support to v0.12.2 ([#1843](https://github.com/googleapis/java-bigquery/issues/1843)) ([56e6acf](https://github.com/googleapis/java-bigquery/commit/56e6acf4def66c4c298fa7bb6b38025db9faee68))
+* update dependency com.google.cloud:native-image-support to v0.12.3 ([#1845](https://github.com/googleapis/java-bigquery/issues/1845)) ([b64b441](https://github.com/googleapis/java-bigquery/commit/b64b441bf4d0e79434e556f1fdb9ec0083d5baec))
+* update dependency com.google.oauth-client:google-oauth-client-java6 to v1.33.1 ([#1835](https://github.com/googleapis/java-bigquery/issues/1835)) ([7680714](https://github.com/googleapis/java-bigquery/commit/7680714f4a2d0da798ec3ea613701251cba859ff))
+* update dependency com.google.oauth-client:google-oauth-client-jetty to v1.33.1 ([#1836](https://github.com/googleapis/java-bigquery/issues/1836)) ([950f3cd](https://github.com/googleapis/java-bigquery/commit/950f3cdb3be2571f0519848aa167e67949e06f1e))
+
 ## [2.8.0](https://github.com/googleapis/java-bigquery/compare/v2.7.1...v2.8.0) (2022-02-02)
 
 
