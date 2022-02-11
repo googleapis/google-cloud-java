@@ -1,6 +1,13 @@
 # Changelog
 
 
+### [0.122.13](https://github.com/googleapis/java-logging-logback/compare/v0.122.12...v0.122.13) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#686](https://github.com/googleapis/java-logging-logback/issues/686)) ([82a0f26](https://github.com/googleapis/java-logging-logback/commit/82a0f264d054827c9816ddb4400e952d3e95776e))
+
 ### [0.122.12](https://github.com/googleapis/java-logging-logback/compare/v0.122.11...v0.122.12) (2022-02-09)
 
 
