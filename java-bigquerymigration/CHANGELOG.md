@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.1](https://github.com/googleapis/java-bigquerymigration/compare/v0.2.0...v0.2.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#79](https://github.com/googleapis/java-bigquerymigration/issues/79)) ([ed5438a](https://github.com/googleapis/java-bigquerymigration/commit/ed5438ac9fce82c8646ae1b2d3dcfac6f59287a1))
+
 ## [0.2.0](https://github.com/googleapis/java-bigquerymigration/compare/v0.1.4...v0.2.0) (2022-01-31)
 
 
