@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.32.7](https://github.com/googleapis/java-phishingprotection/compare/v0.32.6...v0.32.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#625](https://github.com/googleapis/java-phishingprotection/issues/625)) ([fdb9ef4](https://github.com/googleapis/java-phishingprotection/commit/fdb9ef4b92e7c65687b6c04047128d08f35e1a27))
+
 ### [0.32.6](https://github.com/googleapis/java-phishingprotection/compare/v0.32.5...v0.32.6) (2022-02-03)
 
 
