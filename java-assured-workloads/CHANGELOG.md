@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/googleapis/java-assured-workloads/compare/v1.0.0...v1.0.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#399](https://github.com/googleapis/java-assured-workloads/issues/399)) ([3c5c44f](https://github.com/googleapis/java-assured-workloads/commit/3c5c44f1d89154c32983f9f61673cbbd4ae449b7))
+
 ## [1.0.0](https://github.com/googleapis/java-assured-workloads/compare/v0.8.0...v1.0.0) (2022-02-03)
 
 
