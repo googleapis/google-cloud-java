@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/googleapis/java-data-fusion/compare/v1.0.0...v1.0.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#128](https://github.com/googleapis/java-data-fusion/issues/128)) ([766d76b](https://github.com/googleapis/java-data-fusion/commit/766d76b81a9be7748a57eab58dd21754ae41015d))
+
 ## [1.0.0](https://github.com/googleapis/java-data-fusion/compare/v0.3.3...v1.0.0) (2022-02-03)
 
 
