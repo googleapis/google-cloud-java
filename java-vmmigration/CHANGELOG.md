@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/googleapis/java-vmmigration/compare/v1.0.0...v1.0.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#46](https://github.com/googleapis/java-vmmigration/issues/46)) ([391752f](https://github.com/googleapis/java-vmmigration/commit/391752fa356b6b24712202d576c7050275138e41))
+
 ## [1.0.0](https://github.com/googleapis/java-vmmigration/compare/v0.1.1...v1.0.0) (2022-02-03)
 
 
