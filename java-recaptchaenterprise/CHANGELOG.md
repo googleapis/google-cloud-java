@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.4.2](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.4.1...v2.4.2) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#707](https://github.com/googleapis/java-recaptchaenterprise/issues/707)) ([c6ed0bd](https://github.com/googleapis/java-recaptchaenterprise/commit/c6ed0bdd2f915ec1fef00ea51fd2568fc80f3b64))
+
 ### [2.4.1](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.4.0...v2.4.1) (2022-02-03)
 
 
