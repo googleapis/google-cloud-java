@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.1](https://github.com/googleapis/java-eventarc/compare/v1.2.0...v1.2.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#145](https://github.com/googleapis/java-eventarc/issues/145)) ([77daa42](https://github.com/googleapis/java-eventarc/commit/77daa421d3f19bf628ec06cd53677e7cd2e83f25))
+
 ## [1.2.0](https://github.com/googleapis/java-eventarc/compare/v1.1.5...v1.2.0) (2022-02-03)
 
 
