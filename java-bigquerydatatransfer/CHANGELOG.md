@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.5](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.1.4...v2.1.5) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#1235](https://github.com/googleapis/java-bigquerydatatransfer/issues/1235)) ([bad981f](https://github.com/googleapis/java-bigquerydatatransfer/commit/bad981f881c3e641d3cd841f3bd0216f84328cc4))
+
 ### [2.1.4](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.1.3...v2.1.4) (2022-02-11)
 
 
