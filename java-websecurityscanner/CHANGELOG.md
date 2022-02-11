@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.11](https://github.com/googleapis/java-websecurityscanner/compare/v2.0.10...v2.0.11) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#642](https://github.com/googleapis/java-websecurityscanner/issues/642)) ([e459ce8](https://github.com/googleapis/java-websecurityscanner/commit/e459ce856f48ae87bc2301af225e46bdaddc8682))
+
 ### [2.0.10](https://github.com/googleapis/java-websecurityscanner/compare/v2.0.9...v2.0.10) (2022-02-03)
 
 
