@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.7](https://github.com/googleapis/java-service-control/compare/v1.1.6...v1.1.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#133](https://github.com/googleapis/java-service-control/issues/133)) ([e1aac5a](https://github.com/googleapis/java-service-control/commit/e1aac5aacca9fe529db884a539aa046395ba3386))
+
 ### [1.1.6](https://github.com/googleapis/java-service-control/compare/v1.1.5...v1.1.6) (2022-02-03)
 
 
