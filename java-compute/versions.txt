@@ -1,5 +1,5 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-compute:1.7.1:1.7.2-SNAPSHOT
-proto-google-cloud-compute-v1:1.7.1:1.7.2-SNAPSHOT
+google-cloud-compute:1.7.2:1.7.2
+proto-google-cloud-compute-v1:1.7.2:1.7.2

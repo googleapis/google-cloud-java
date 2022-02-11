@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.7.2](https://github.com/googleapis/java-compute/compare/v1.7.1...v1.7.2) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#643](https://github.com/googleapis/java-compute/issues/643)) ([82ed9e7](https://github.com/googleapis/java-compute/commit/82ed9e75a1bc15404c2cd8d5d9bcfc360364a57d))
+
 ### [1.7.1](https://github.com/googleapis/java-compute/compare/v1.7.0...v1.7.1) (2022-02-04)
 
 
