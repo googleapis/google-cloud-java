@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.3](https://github.com/googleapis/java-tpu/compare/v2.2.2...v2.2.3) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#155](https://github.com/googleapis/java-tpu/issues/155)) ([3120d4d](https://github.com/googleapis/java-tpu/commit/3120d4d373bd4f432fb9b8448abce2c9b479cbcd))
+
 ### [2.2.2](https://github.com/googleapis/java-tpu/compare/v2.2.1...v2.2.2) (2022-02-03)
 
 
