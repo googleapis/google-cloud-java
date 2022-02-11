@@ -659,7 +659,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Recommendation resource name, e.g.
-     * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
+     * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
      * </pre>
      *
      * <code>string recommendation = 1;</code>
@@ -672,7 +672,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Recommendation resource name, e.g.
-     * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
+     * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
      * </pre>
      *
      * <code>string recommendation = 1;</code>
@@ -781,7 +781,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Recommendation resource name, e.g.
-     * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
+     * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
      * </pre>
      *
      * <code>string recommendation = 1;</code>
@@ -805,7 +805,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Recommendation resource name, e.g.
-     * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
+     * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
      * </pre>
      *
      * <code>string recommendation = 1;</code>
@@ -1163,7 +1163,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Recommendation resource name, e.g.
-       * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
+       * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
        * </pre>
        *
        * <code>string recommendation = 1;</code>
@@ -1186,7 +1186,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Recommendation resource name, e.g.
-       * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
+       * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
        * </pre>
        *
        * <code>string recommendation = 1;</code>
@@ -1209,7 +1209,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Recommendation resource name, e.g.
-       * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
+       * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
        * </pre>
        *
        * <code>string recommendation = 1;</code>
@@ -1231,7 +1231,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Recommendation resource name, e.g.
-       * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
+       * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
        * </pre>
        *
        * <code>string recommendation = 1;</code>
@@ -1249,7 +1249,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Recommendation resource name, e.g.
-       * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]`
+       * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
        * </pre>
        *
        * <code>string recommendation = 1;</code>

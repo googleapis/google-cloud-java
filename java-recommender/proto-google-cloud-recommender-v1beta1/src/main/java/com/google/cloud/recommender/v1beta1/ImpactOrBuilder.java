@@ -118,5 +118,47 @@ public interface ImpactOrBuilder
    */
   com.google.cloud.recommender.v1beta1.SecurityProjectionOrBuilder getSecurityProjectionOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SUSTAINABILITY
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+   * </code>
+   *
+   * @return Whether the sustainabilityProjection field is set.
+   */
+  boolean hasSustainabilityProjection();
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SUSTAINABILITY
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+   * </code>
+   *
+   * @return The sustainabilityProjection.
+   */
+  com.google.cloud.recommender.v1beta1.SustainabilityProjection getSustainabilityProjection();
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SUSTAINABILITY
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+   * </code>
+   */
+  com.google.cloud.recommender.v1beta1.SustainabilityProjectionOrBuilder
+      getSustainabilityProjectionOrBuilder();
+
   public com.google.cloud.recommender.v1beta1.Impact.ProjectionCase getProjectionCase();
 }

@@ -116,6 +116,27 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
               projectionCase_ = 101;
               break;
             }
+          case 818:
+            {
+              com.google.cloud.recommender.v1beta1.SustainabilityProjection.Builder subBuilder =
+                  null;
+              if (projectionCase_ == 102) {
+                subBuilder =
+                    ((com.google.cloud.recommender.v1beta1.SustainabilityProjection) projection_)
+                        .toBuilder();
+              }
+              projection_ =
+                  input.readMessage(
+                      com.google.cloud.recommender.v1beta1.SustainabilityProjection.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.recommender.v1beta1.SustainabilityProjection) projection_);
+                projection_ = subBuilder.buildPartial();
+              }
+              projectionCase_ = 102;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -382,6 +403,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     COST_PROJECTION(100),
     SECURITY_PROJECTION(101),
+    SUSTAINABILITY_PROJECTION(102),
     PROJECTION_NOT_SET(0);
     private final int value;
 
@@ -404,6 +426,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
           return COST_PROJECTION;
         case 101:
           return SECURITY_PROJECTION;
+        case 102:
+          return SUSTAINABILITY_PROJECTION;
         case 0:
           return PROJECTION_NOT_SET;
         default:
@@ -561,6 +585,65 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.recommender.v1beta1.SecurityProjection.getDefaultInstance();
   }
 
+  public static final int SUSTAINABILITY_PROJECTION_FIELD_NUMBER = 102;
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SUSTAINABILITY
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+   * </code>
+   *
+   * @return Whether the sustainabilityProjection field is set.
+   */
+  @java.lang.Override
+  public boolean hasSustainabilityProjection() {
+    return projectionCase_ == 102;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SUSTAINABILITY
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+   * </code>
+   *
+   * @return The sustainabilityProjection.
+   */
+  @java.lang.Override
+  public com.google.cloud.recommender.v1beta1.SustainabilityProjection
+      getSustainabilityProjection() {
+    if (projectionCase_ == 102) {
+      return (com.google.cloud.recommender.v1beta1.SustainabilityProjection) projection_;
+    }
+    return com.google.cloud.recommender.v1beta1.SustainabilityProjection.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SUSTAINABILITY
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.recommender.v1beta1.SustainabilityProjectionOrBuilder
+      getSustainabilityProjectionOrBuilder() {
+    if (projectionCase_ == 102) {
+      return (com.google.cloud.recommender.v1beta1.SustainabilityProjection) projection_;
+    }
+    return com.google.cloud.recommender.v1beta1.SustainabilityProjection.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -586,6 +669,10 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           101, (com.google.cloud.recommender.v1beta1.SecurityProjection) projection_);
     }
+    if (projectionCase_ == 102) {
+      output.writeMessage(
+          102, (com.google.cloud.recommender.v1beta1.SustainabilityProjection) projection_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -608,6 +695,11 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               101, (com.google.cloud.recommender.v1beta1.SecurityProjection) projection_);
+    }
+    if (projectionCase_ == 102) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              102, (com.google.cloud.recommender.v1beta1.SustainabilityProjection) projection_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -634,6 +726,10 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       case 101:
         if (!getSecurityProjection().equals(other.getSecurityProjection())) return false;
         break;
+      case 102:
+        if (!getSustainabilityProjection().equals(other.getSustainabilityProjection()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -658,6 +754,10 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       case 101:
         hash = (37 * hash) + SECURITY_PROJECTION_FIELD_NUMBER;
         hash = (53 * hash) + getSecurityProjection().hashCode();
+        break;
+      case 102:
+        hash = (37 * hash) + SUSTAINABILITY_PROJECTION_FIELD_NUMBER;
+        hash = (53 * hash) + getSustainabilityProjection().hashCode();
         break;
       case 0:
       default:
@@ -853,6 +953,13 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
           result.projection_ = securityProjectionBuilder_.build();
         }
       }
+      if (projectionCase_ == 102) {
+        if (sustainabilityProjectionBuilder_ == null) {
+          result.projection_ = projection_;
+        } else {
+          result.projection_ = sustainabilityProjectionBuilder_.build();
+        }
+      }
       result.projectionCase_ = projectionCase_;
       onBuilt();
       return result;
@@ -915,6 +1022,11 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         case SECURITY_PROJECTION:
           {
             mergeSecurityProjection(other.getSecurityProjection());
+            break;
+          }
+        case SUSTAINABILITY_PROJECTION:
+          {
+            mergeSustainabilityProjection(other.getSustainabilityProjection());
             break;
           }
         case PROJECTION_NOT_SET:
@@ -1482,6 +1594,241 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return securityProjectionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.recommender.v1beta1.SustainabilityProjection,
+            com.google.cloud.recommender.v1beta1.SustainabilityProjection.Builder,
+            com.google.cloud.recommender.v1beta1.SustainabilityProjectionOrBuilder>
+        sustainabilityProjectionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SUSTAINABILITY
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+     * </code>
+     *
+     * @return Whether the sustainabilityProjection field is set.
+     */
+    @java.lang.Override
+    public boolean hasSustainabilityProjection() {
+      return projectionCase_ == 102;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SUSTAINABILITY
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+     * </code>
+     *
+     * @return The sustainabilityProjection.
+     */
+    @java.lang.Override
+    public com.google.cloud.recommender.v1beta1.SustainabilityProjection
+        getSustainabilityProjection() {
+      if (sustainabilityProjectionBuilder_ == null) {
+        if (projectionCase_ == 102) {
+          return (com.google.cloud.recommender.v1beta1.SustainabilityProjection) projection_;
+        }
+        return com.google.cloud.recommender.v1beta1.SustainabilityProjection.getDefaultInstance();
+      } else {
+        if (projectionCase_ == 102) {
+          return sustainabilityProjectionBuilder_.getMessage();
+        }
+        return com.google.cloud.recommender.v1beta1.SustainabilityProjection.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SUSTAINABILITY
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+     * </code>
+     */
+    public Builder setSustainabilityProjection(
+        com.google.cloud.recommender.v1beta1.SustainabilityProjection value) {
+      if (sustainabilityProjectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        projection_ = value;
+        onChanged();
+      } else {
+        sustainabilityProjectionBuilder_.setMessage(value);
+      }
+      projectionCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SUSTAINABILITY
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+     * </code>
+     */
+    public Builder setSustainabilityProjection(
+        com.google.cloud.recommender.v1beta1.SustainabilityProjection.Builder builderForValue) {
+      if (sustainabilityProjectionBuilder_ == null) {
+        projection_ = builderForValue.build();
+        onChanged();
+      } else {
+        sustainabilityProjectionBuilder_.setMessage(builderForValue.build());
+      }
+      projectionCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SUSTAINABILITY
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+     * </code>
+     */
+    public Builder mergeSustainabilityProjection(
+        com.google.cloud.recommender.v1beta1.SustainabilityProjection value) {
+      if (sustainabilityProjectionBuilder_ == null) {
+        if (projectionCase_ == 102
+            && projection_
+                != com.google.cloud.recommender.v1beta1.SustainabilityProjection
+                    .getDefaultInstance()) {
+          projection_ =
+              com.google.cloud.recommender.v1beta1.SustainabilityProjection.newBuilder(
+                      (com.google.cloud.recommender.v1beta1.SustainabilityProjection) projection_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          projection_ = value;
+        }
+        onChanged();
+      } else {
+        if (projectionCase_ == 102) {
+          sustainabilityProjectionBuilder_.mergeFrom(value);
+        }
+        sustainabilityProjectionBuilder_.setMessage(value);
+      }
+      projectionCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SUSTAINABILITY
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+     * </code>
+     */
+    public Builder clearSustainabilityProjection() {
+      if (sustainabilityProjectionBuilder_ == null) {
+        if (projectionCase_ == 102) {
+          projectionCase_ = 0;
+          projection_ = null;
+          onChanged();
+        }
+      } else {
+        if (projectionCase_ == 102) {
+          projectionCase_ = 0;
+          projection_ = null;
+        }
+        sustainabilityProjectionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SUSTAINABILITY
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+     * </code>
+     */
+    public com.google.cloud.recommender.v1beta1.SustainabilityProjection.Builder
+        getSustainabilityProjectionBuilder() {
+      return getSustainabilityProjectionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SUSTAINABILITY
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.recommender.v1beta1.SustainabilityProjectionOrBuilder
+        getSustainabilityProjectionOrBuilder() {
+      if ((projectionCase_ == 102) && (sustainabilityProjectionBuilder_ != null)) {
+        return sustainabilityProjectionBuilder_.getMessageOrBuilder();
+      } else {
+        if (projectionCase_ == 102) {
+          return (com.google.cloud.recommender.v1beta1.SustainabilityProjection) projection_;
+        }
+        return com.google.cloud.recommender.v1beta1.SustainabilityProjection.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use with CategoryType.SUSTAINABILITY
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recommender.v1beta1.SustainabilityProjection sustainability_projection = 102;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.recommender.v1beta1.SustainabilityProjection,
+            com.google.cloud.recommender.v1beta1.SustainabilityProjection.Builder,
+            com.google.cloud.recommender.v1beta1.SustainabilityProjectionOrBuilder>
+        getSustainabilityProjectionFieldBuilder() {
+      if (sustainabilityProjectionBuilder_ == null) {
+        if (!(projectionCase_ == 102)) {
+          projection_ =
+              com.google.cloud.recommender.v1beta1.SustainabilityProjection.getDefaultInstance();
+        }
+        sustainabilityProjectionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.recommender.v1beta1.SustainabilityProjection,
+                com.google.cloud.recommender.v1beta1.SustainabilityProjection.Builder,
+                com.google.cloud.recommender.v1beta1.SustainabilityProjectionOrBuilder>(
+                (com.google.cloud.recommender.v1beta1.SustainabilityProjection) projection_,
+                getParentForChildren(),
+                isClean());
+        projection_ = null;
+      }
+      projectionCase_ = 102;
+      onChanged();
+      ;
+      return sustainabilityProjectionBuilder_;
     }
 
     @java.lang.Override

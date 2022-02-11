@@ -203,7 +203,7 @@ public interface RecommenderConfigOrBuilder
    * separated by a slash (/).
    * Prefix must be a DNS subdomain.
    * Name must be 63 characters or less, begin and end with alphanumerics,
-   * with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between.
+   * with dashes (-), underscores (_), dots (.), and alphanumerics between.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -220,7 +220,7 @@ public interface RecommenderConfigOrBuilder
    * separated by a slash (/).
    * Prefix must be a DNS subdomain.
    * Name must be 63 characters or less, begin and end with alphanumerics,
-   * with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between.
+   * with dashes (-), underscores (_), dots (.), and alphanumerics between.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -240,7 +240,7 @@ public interface RecommenderConfigOrBuilder
    * separated by a slash (/).
    * Prefix must be a DNS subdomain.
    * Name must be 63 characters or less, begin and end with alphanumerics,
-   * with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between.
+   * with dashes (-), underscores (_), dots (.), and alphanumerics between.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -257,7 +257,7 @@ public interface RecommenderConfigOrBuilder
    * separated by a slash (/).
    * Prefix must be a DNS subdomain.
    * Name must be 63 characters or less, begin and end with alphanumerics,
-   * with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between.
+   * with dashes (-), underscores (_), dots (.), and alphanumerics between.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -274,7 +274,7 @@ public interface RecommenderConfigOrBuilder
    * separated by a slash (/).
    * Prefix must be a DNS subdomain.
    * Name must be 63 characters or less, begin and end with alphanumerics,
-   * with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between.
+   * with dashes (-), underscores (_), dots (.), and alphanumerics between.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 6;</code>
