@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.0.17](https://github.com/googleapis/java-video-intelligence/compare/v2.0.16...v2.0.17) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#814](https://github.com/googleapis/java-video-intelligence/issues/814)) ([0333b18](https://github.com/googleapis/java-video-intelligence/commit/0333b1851c0b3a4b18c4867937c8dba7616936b4))
+* update dependency com.google.cloud:google-cloud-core to v2.5.3 ([#812](https://github.com/googleapis/java-video-intelligence/issues/812)) ([c2a6870](https://github.com/googleapis/java-video-intelligence/commit/c2a6870713df426f6b9eae4ef051ff675992bec2))
+
 ### [2.0.16](https://github.com/googleapis/java-video-intelligence/compare/v2.0.15...v2.0.16) (2022-02-10)
 
 
