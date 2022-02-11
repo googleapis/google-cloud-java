@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.3.3](https://github.com/googleapis/java-container/compare/v2.3.2...v2.3.3) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#680](https://github.com/googleapis/java-container/issues/680)) ([c6b62b0](https://github.com/googleapis/java-container/commit/c6b62b0b17717ab7af2b50701a6c3b53fdc480d7))
+
 ### [2.3.2](https://github.com/googleapis/java-container/compare/v2.3.1...v2.3.2) (2022-02-01)
 
 
