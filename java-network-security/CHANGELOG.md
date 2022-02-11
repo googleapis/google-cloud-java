@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.4.1](https://github.com/googleapis/java-network-security/compare/v0.4.0...v0.4.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#122](https://github.com/googleapis/java-network-security/issues/122)) ([f05c23a](https://github.com/googleapis/java-network-security/commit/f05c23ae72e4a77677ae563e3c6d337fd374f6dc))
+
 ## [0.4.0](https://github.com/googleapis/java-network-security/compare/v0.3.1...v0.4.0) (2022-02-03)
 
 
