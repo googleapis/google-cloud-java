@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/googleapis/java-deploy/compare/v1.0.0...v1.0.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#78](https://github.com/googleapis/java-deploy/issues/78)) ([1e13801](https://github.com/googleapis/java-deploy/commit/1e13801be86c6eec6cd5b742578556154028105e))
+
 ## [1.0.0](https://github.com/googleapis/java-deploy/compare/v0.1.4...v1.0.0) (2022-02-03)
 
 
