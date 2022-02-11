@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.10](https://github.com/googleapis/java-os-login/compare/v2.0.9...v2.0.10) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#633](https://github.com/googleapis/java-os-login/issues/633)) ([f1a1841](https://github.com/googleapis/java-os-login/commit/f1a18418b5167acbed5314d80791f6d31fc2d891))
+
 ### [2.0.9](https://github.com/googleapis/java-os-login/compare/v2.0.8...v2.0.9) (2022-02-03)
 
 
