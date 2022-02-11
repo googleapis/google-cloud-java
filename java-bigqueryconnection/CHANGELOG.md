@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.10](https://github.com/googleapis/java-bigqueryconnection/compare/v2.1.9...v2.1.10) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#632](https://github.com/googleapis/java-bigqueryconnection/issues/632)) ([18248f7](https://github.com/googleapis/java-bigqueryconnection/commit/18248f79f0fcc6126642e98239d6383bad0dc4fa))
+
 ### [2.1.9](https://github.com/googleapis/java-bigqueryconnection/compare/v2.1.8...v2.1.9) (2022-02-03)
 
 
