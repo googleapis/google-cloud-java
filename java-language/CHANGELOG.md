@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.7](https://github.com/googleapis/java-language/compare/v2.1.6...v2.1.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#800](https://github.com/googleapis/java-language/issues/800)) ([62ed30a](https://github.com/googleapis/java-language/commit/62ed30ac0d53c2da8df57333e5fccd515556e5da))
+
 ### [2.1.6](https://github.com/googleapis/java-language/compare/v2.1.5...v2.1.6) (2022-02-03)
 
 
