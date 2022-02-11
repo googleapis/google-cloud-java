@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.115.5](https://github.com/googleapis/java-pubsub/compare/v1.115.4...v1.115.5) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#1010](https://github.com/googleapis/java-pubsub/issues/1010)) ([04ee4c9](https://github.com/googleapis/java-pubsub/commit/04ee4c98bd2c09bbb58bc73c501386c2e7fc927d))
+* update dependency com.google.cloud:google-cloud-core to v2.5.3 ([#1008](https://github.com/googleapis/java-pubsub/issues/1008)) ([0eacfb0](https://github.com/googleapis/java-pubsub/commit/0eacfb0b54f82cf05aa3d100a59d11c5fe0c40ae))
+
 ### [1.115.4](https://github.com/googleapis/java-pubsub/compare/v1.115.3...v1.115.4) (2022-02-10)
 
 
