@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.5.3](https://github.com/googleapis/java-domains/compare/v0.5.2...v0.5.3) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#186](https://github.com/googleapis/java-domains/issues/186)) ([c082346](https://github.com/googleapis/java-domains/commit/c082346c8716427a777ee74ea79317792e5c587a))
+
 ### [0.5.2](https://www.github.com/googleapis/java-domains/compare/v0.5.1...v0.5.2) (2022-01-10)
 
 
