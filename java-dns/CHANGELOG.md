@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.6](https://github.com/googleapis/java-dns/compare/v2.0.5...v2.0.6) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#607](https://github.com/googleapis/java-dns/issues/607)) ([07a5e5f](https://github.com/googleapis/java-dns/commit/07a5e5fffa7c7653fc6ee656afe6afaca0745f4e))
+
 ### [2.0.5](https://github.com/googleapis/java-dns/compare/v2.0.4...v2.0.5) (2022-02-03)
 
 
