@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.2](https://github.com/googleapis/java-apigee-connect/compare/v2.1.1...v2.1.2) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#130](https://github.com/googleapis/java-apigee-connect/issues/130)) ([5ad2f1e](https://github.com/googleapis/java-apigee-connect/commit/5ad2f1e68831bef62e132f2c79316e6b3edce0a8))
+
 ### [2.1.1](https://github.com/googleapis/java-apigee-connect/compare/v2.1.0...v2.1.1) (2022-02-03)
 
 
