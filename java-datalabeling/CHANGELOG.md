@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.122.7](https://github.com/googleapis/java-datalabeling/compare/v0.122.6...v0.122.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#688](https://github.com/googleapis/java-datalabeling/issues/688)) ([4dd0cda](https://github.com/googleapis/java-datalabeling/commit/4dd0cda319e92bf22f74c18fa580f17adf442f0d))
+
 ### [0.122.6](https://github.com/googleapis/java-datalabeling/compare/v0.122.5...v0.122.6) (2022-02-03)
 
 
