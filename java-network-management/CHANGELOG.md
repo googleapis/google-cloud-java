@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.7](https://github.com/googleapis/java-network-management/compare/v1.1.6...v1.1.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#128](https://github.com/googleapis/java-network-management/issues/128)) ([8f9909d](https://github.com/googleapis/java-network-management/commit/8f9909d41f7aeee95239140b4fdf8ef19e844ac0))
+
 ### [1.1.6](https://github.com/googleapis/java-network-management/compare/v1.1.5...v1.1.6) (2022-02-03)
 
 
