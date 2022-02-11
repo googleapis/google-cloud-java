@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.7](https://github.com/googleapis/java-vpcaccess/compare/v2.1.6...v2.1.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#151](https://github.com/googleapis/java-vpcaccess/issues/151)) ([9f4fb24](https://github.com/googleapis/java-vpcaccess/commit/9f4fb24c6df998c71c5129c2300a4948e7c04be1))
+
 ### [2.1.6](https://github.com/googleapis/java-vpcaccess/compare/v2.1.5...v2.1.6) (2022-02-03)
 
 
