@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/googleapis/java-binary-authorization/compare/v1.0.0...v1.0.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#163](https://github.com/googleapis/java-binary-authorization/issues/163)) ([ea8ee5c](https://github.com/googleapis/java-binary-authorization/commit/ea8ee5c3c26a1c2558c2d7d2d414a60686e39c8a))
+
 ## [1.0.0](https://github.com/googleapis/java-binary-authorization/compare/v0.4.1...v1.0.0) (2022-02-03)
 
 
