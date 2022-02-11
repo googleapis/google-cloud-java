@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.3](https://github.com/googleapis/java-trace/compare/v2.1.2...v2.1.3) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#720](https://github.com/googleapis/java-trace/issues/720)) ([fc6058d](https://github.com/googleapis/java-trace/commit/fc6058ddda10bab296255259a38cb09b85515e8b))
+
 ### [2.1.2](https://github.com/googleapis/java-trace/compare/v2.1.1...v2.1.2) (2022-02-03)
 
 
