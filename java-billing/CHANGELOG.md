@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.7](https://github.com/googleapis/java-billing/compare/v2.1.6...v2.1.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#607](https://github.com/googleapis/java-billing/issues/607)) ([453a73b](https://github.com/googleapis/java-billing/commit/453a73b09e4a78ce4d76bc12337d643afb40f8ff))
+
 ### [2.1.6](https://github.com/googleapis/java-billing/compare/v2.1.5...v2.1.6) (2022-02-03)
 
 
