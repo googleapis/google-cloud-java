@@ -22,13 +22,24 @@ package com.google.cloud.billing.budgets.v1beta1;
  *
  *
  * <pre>
- * ThresholdRule contains a definition of a threshold which triggers
- * an alert (a notification of a threshold being crossed) to be sent when
- * spend goes above the specified amount.
- * Alerts are automatically e-mailed to users with the Billing Account
- * Administrator role or the Billing Account User role.
- * The thresholds here have no effect on notifications sent to anything
- * configured under `Budget.all_updates_rule`.
+ * ThresholdRule contains the definition of a threshold. Threshold rules define
+ * the triggering events used to generate a budget notification email. When a
+ * threshold is crossed (spend exceeds the specified percentages of the
+ * budget), budget alert emails are sent to the email recipients you specify
+ * in the
+ * [NotificationsRule](#notificationsrule).
+ * Threshold rules also affect the fields included in the
+ * [JSON data
+ * object](https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format)
+ * sent to a Pub/Sub topic.
+ * Threshold rules are _required_ if using email notifications.
+ * Threshold rules are _optional_ if only setting a
+ * [`pubsubTopic` NotificationsRule](#NotificationsRule),
+ * unless you want your JSON data object to include data about the thresholds
+ * you set.
+ * For more information, see
+ * [set budget threshold rules and
+ * actions](https://cloud.google.com/billing/docs/how-to/budgets#budget-actions).
  * </pre>
  *
  * Protobuf type {@code google.cloud.billing.budgets.v1beta1.ThresholdRule}
@@ -159,8 +170,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * Use forecasted spend for the period as the basis for comparison against
      * the threshold.
      * FORECASTED_SPEND can only be set when the budget's time period is a
-     * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].
-     * It cannot be set in combination with
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].  It cannot be set in combination with
      * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
      * </pre>
      *
@@ -197,8 +207,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * Use forecasted spend for the period as the basis for comparison against
      * the threshold.
      * FORECASTED_SPEND can only be set when the budget's time period is a
-     * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].
-     * It cannot be set in combination with
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].  It cannot be set in combination with
      * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
      * </pre>
      *
@@ -536,13 +545,24 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * ThresholdRule contains a definition of a threshold which triggers
-   * an alert (a notification of a threshold being crossed) to be sent when
-   * spend goes above the specified amount.
-   * Alerts are automatically e-mailed to users with the Billing Account
-   * Administrator role or the Billing Account User role.
-   * The thresholds here have no effect on notifications sent to anything
-   * configured under `Budget.all_updates_rule`.
+   * ThresholdRule contains the definition of a threshold. Threshold rules define
+   * the triggering events used to generate a budget notification email. When a
+   * threshold is crossed (spend exceeds the specified percentages of the
+   * budget), budget alert emails are sent to the email recipients you specify
+   * in the
+   * [NotificationsRule](#notificationsrule).
+   * Threshold rules also affect the fields included in the
+   * [JSON data
+   * object](https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format)
+   * sent to a Pub/Sub topic.
+   * Threshold rules are _required_ if using email notifications.
+   * Threshold rules are _optional_ if only setting a
+   * [`pubsubTopic` NotificationsRule](#NotificationsRule),
+   * unless you want your JSON data object to include data about the thresholds
+   * you set.
+   * For more information, see
+   * [set budget threshold rules and
+   * actions](https://cloud.google.com/billing/docs/how-to/budgets#budget-actions).
    * </pre>
    *
    * Protobuf type {@code google.cloud.billing.budgets.v1beta1.ThresholdRule}

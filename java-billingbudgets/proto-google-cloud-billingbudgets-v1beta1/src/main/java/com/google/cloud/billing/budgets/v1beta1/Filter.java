@@ -531,15 +531,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If
-   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-   * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-   * subtracted from gross cost to determine the spend for threshold
-   * calculations. See [a list of acceptable credit type
+   * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+   * a list of credit types to be subtracted from gross cost to determine the
+   * spend for threshold calculations. See
+   * [a list of acceptable credit type
    * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-   * If
-   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+   * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+   * this field must be empty.
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -553,15 +551,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If
-   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-   * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-   * subtracted from gross cost to determine the spend for threshold
-   * calculations. See [a list of acceptable credit type
+   * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+   * a list of credit types to be subtracted from gross cost to determine the
+   * spend for threshold calculations. See
+   * [a list of acceptable credit type
    * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-   * If
-   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+   * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+   * this field must be empty.
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -575,15 +571,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If
-   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-   * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-   * subtracted from gross cost to determine the spend for threshold
-   * calculations. See [a list of acceptable credit type
+   * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+   * a list of credit types to be subtracted from gross cost to determine the
+   * spend for threshold calculations. See
+   * [a list of acceptable credit type
    * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-   * If
-   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+   * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+   * this field must be empty.
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -598,15 +592,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If
-   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-   * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-   * subtracted from gross cost to determine the spend for threshold
-   * calculations. See [a list of acceptable credit type
+   * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+   * a list of credit types to be subtracted from gross cost to determine the
+   * spend for threshold calculations. See
+   * [a list of acceptable credit type
    * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-   * If
-   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+   * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+   * this field must be empty.
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -749,9 +741,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-   * specifying that usage from only this set of subaccounts should be included
-   * in the budget. If a subaccount is set to the name of the parent account,
+   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+   * that usage from only this set of subaccounts should be included in the
+   * budget. If a subaccount is set to the name of the parent account,
    * usage from the parent account will be included. If omitted, the
    * report will include usage from the parent account and all
    * subaccounts, if they exist.
@@ -768,9 +760,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-   * specifying that usage from only this set of subaccounts should be included
-   * in the budget. If a subaccount is set to the name of the parent account,
+   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+   * that usage from only this set of subaccounts should be included in the
+   * budget. If a subaccount is set to the name of the parent account,
    * usage from the parent account will be included. If omitted, the
    * report will include usage from the parent account and all
    * subaccounts, if they exist.
@@ -787,9 +779,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-   * specifying that usage from only this set of subaccounts should be included
-   * in the budget. If a subaccount is set to the name of the parent account,
+   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+   * that usage from only this set of subaccounts should be included in the
+   * budget. If a subaccount is set to the name of the parent account,
    * usage from the parent account will be included. If omitted, the
    * report will include usage from the parent account and all
    * subaccounts, if they exist.
@@ -807,9 +799,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-   * specifying that usage from only this set of subaccounts should be included
-   * in the budget. If a subaccount is set to the name of the parent account,
+   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+   * that usage from only this set of subaccounts should be included in the
+   * budget. If a subaccount is set to the name of the parent account,
    * usage from the parent account will be included. If omitted, the
    * report will include usage from the parent account and all
    * subaccounts, if they exist.
@@ -856,10 +848,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A single label and value pair specifying that usage from only
-   * this set of labeled resources should be included in the budget. Currently,
-   * multiple entries or multiple values per entry are not allowed. If omitted,
-   * the report will include all labeled and unlabeled usage.
+   * Optional. A single label and value pair specifying that usage from only this set of
+   * labeled resources should be included in the budget. If omitted, the
+   * report will include all labeled and unlabeled usage.
+   * An object containing a single `"key": value` pair. Example: `{ "name":
+   * "wrench" }`.
+   *  _Currently, multiple entries or multiple values per entry are not
+   *  allowed._
    * </pre>
    *
    * <code>
@@ -883,10 +878,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A single label and value pair specifying that usage from only
-   * this set of labeled resources should be included in the budget. Currently,
-   * multiple entries or multiple values per entry are not allowed. If omitted,
-   * the report will include all labeled and unlabeled usage.
+   * Optional. A single label and value pair specifying that usage from only this set of
+   * labeled resources should be included in the budget. If omitted, the
+   * report will include all labeled and unlabeled usage.
+   * An object containing a single `"key": value` pair. Example: `{ "name":
+   * "wrench" }`.
+   *  _Currently, multiple entries or multiple values per entry are not
+   *  allowed._
    * </pre>
    *
    * <code>
@@ -901,10 +899,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A single label and value pair specifying that usage from only
-   * this set of labeled resources should be included in the budget. Currently,
-   * multiple entries or multiple values per entry are not allowed. If omitted,
-   * the report will include all labeled and unlabeled usage.
+   * Optional. A single label and value pair specifying that usage from only this set of
+   * labeled resources should be included in the budget. If omitted, the
+   * report will include all labeled and unlabeled usage.
+   * An object containing a single `"key": value` pair. Example: `{ "name":
+   * "wrench" }`.
+   *  _Currently, multiple entries or multiple values per entry are not
+   *  allowed._
    * </pre>
    *
    * <code>
@@ -925,10 +926,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A single label and value pair specifying that usage from only
-   * this set of labeled resources should be included in the budget. Currently,
-   * multiple entries or multiple values per entry are not allowed. If omitted,
-   * the report will include all labeled and unlabeled usage.
+   * Optional. A single label and value pair specifying that usage from only this set of
+   * labeled resources should be included in the budget. If omitted, the
+   * report will include all labeled and unlabeled usage.
+   * An object containing a single `"key": value` pair. Example: `{ "name":
+   * "wrench" }`.
+   *  _Currently, multiple entries or multiple values per entry are not
+   *  allowed._
    * </pre>
    *
    * <code>
@@ -1030,8 +1034,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specifies to track usage from any start date (required) to any
-   * end date (optional). This time period is static, it does not recur.
+   * Optional. Specifies to track usage from any start date (required) to any end date
+   * (optional). This time period is static, it does not recur.
    * </pre>
    *
    * <code>
@@ -1048,8 +1052,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specifies to track usage from any start date (required) to any
-   * end date (optional). This time period is static, it does not recur.
+   * Optional. Specifies to track usage from any start date (required) to any end date
+   * (optional). This time period is static, it does not recur.
    * </pre>
    *
    * <code>
@@ -1069,8 +1073,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specifies to track usage from any start date (required) to any
-   * end date (optional). This time period is static, it does not recur.
+   * Optional. Specifies to track usage from any start date (required) to any end date
+   * (optional). This time period is static, it does not recur.
    * </pre>
    *
    * <code>
@@ -1882,15 +1886,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-     * subtracted from gross cost to determine the spend for threshold
-     * calculations. See [a list of acceptable credit type
+     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+     * a list of credit types to be subtracted from gross cost to determine the
+     * spend for threshold calculations. See
+     * [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+     * this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1904,15 +1906,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-     * subtracted from gross cost to determine the spend for threshold
-     * calculations. See [a list of acceptable credit type
+     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+     * a list of credit types to be subtracted from gross cost to determine the
+     * spend for threshold calculations. See
+     * [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+     * this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1926,15 +1926,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-     * subtracted from gross cost to determine the spend for threshold
-     * calculations. See [a list of acceptable credit type
+     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+     * a list of credit types to be subtracted from gross cost to determine the
+     * spend for threshold calculations. See
+     * [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+     * this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1949,15 +1947,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-     * subtracted from gross cost to determine the spend for threshold
-     * calculations. See [a list of acceptable credit type
+     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+     * a list of credit types to be subtracted from gross cost to determine the
+     * spend for threshold calculations. See
+     * [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+     * this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1972,15 +1968,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-     * subtracted from gross cost to determine the spend for threshold
-     * calculations. See [a list of acceptable credit type
+     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+     * a list of credit types to be subtracted from gross cost to determine the
+     * spend for threshold calculations. See
+     * [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+     * this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2002,15 +1996,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-     * subtracted from gross cost to determine the spend for threshold
-     * calculations. See [a list of acceptable credit type
+     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+     * a list of credit types to be subtracted from gross cost to determine the
+     * spend for threshold calculations. See
+     * [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+     * this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2031,15 +2023,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-     * subtracted from gross cost to determine the spend for threshold
-     * calculations. See [a list of acceptable credit type
+     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+     * a list of credit types to be subtracted from gross cost to determine the
+     * spend for threshold calculations. See
+     * [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+     * this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2057,15 +2047,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-     * subtracted from gross cost to determine the spend for threshold
-     * calculations. See [a list of acceptable credit type
+     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+     * a list of credit types to be subtracted from gross cost to determine the
+     * spend for threshold calculations. See
+     * [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+     * this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2082,15 +2070,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
-     * subtracted from gross cost to determine the spend for threshold
-     * calculations. See [a list of acceptable credit type
+     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
+     * a list of credit types to be subtracted from gross cost to determine the
+     * spend for threshold calculations. See
+     * [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If
-     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
-     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
+     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
+     * this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2441,9 +2427,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-     * specifying that usage from only this set of subaccounts should be included
-     * in the budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2460,9 +2446,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-     * specifying that usage from only this set of subaccounts should be included
-     * in the budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2479,9 +2465,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-     * specifying that usage from only this set of subaccounts should be included
-     * in the budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2499,9 +2485,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-     * specifying that usage from only this set of subaccounts should be included
-     * in the budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2519,9 +2505,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-     * specifying that usage from only this set of subaccounts should be included
-     * in the budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2546,9 +2532,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-     * specifying that usage from only this set of subaccounts should be included
-     * in the budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2572,9 +2558,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-     * specifying that usage from only this set of subaccounts should be included
-     * in the budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2595,9 +2581,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-     * specifying that usage from only this set of subaccounts should be included
-     * in the budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2617,9 +2603,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
-     * specifying that usage from only this set of subaccounts should be included
-     * in the budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2671,10 +2657,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only
-     * this set of labeled resources should be included in the budget. Currently,
-     * multiple entries or multiple values per entry are not allowed. If omitted,
-     * the report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. If omitted, the
+     * report will include all labeled and unlabeled usage.
+     * An object containing a single `"key": value` pair. Example: `{ "name":
+     * "wrench" }`.
+     *  _Currently, multiple entries or multiple values per entry are not
+     *  allowed._
      * </pre>
      *
      * <code>
@@ -2698,10 +2687,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only
-     * this set of labeled resources should be included in the budget. Currently,
-     * multiple entries or multiple values per entry are not allowed. If omitted,
-     * the report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. If omitted, the
+     * report will include all labeled and unlabeled usage.
+     * An object containing a single `"key": value` pair. Example: `{ "name":
+     * "wrench" }`.
+     *  _Currently, multiple entries or multiple values per entry are not
+     *  allowed._
      * </pre>
      *
      * <code>
@@ -2716,10 +2708,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only
-     * this set of labeled resources should be included in the budget. Currently,
-     * multiple entries or multiple values per entry are not allowed. If omitted,
-     * the report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. If omitted, the
+     * report will include all labeled and unlabeled usage.
+     * An object containing a single `"key": value` pair. Example: `{ "name":
+     * "wrench" }`.
+     *  _Currently, multiple entries or multiple values per entry are not
+     *  allowed._
      * </pre>
      *
      * <code>
@@ -2740,10 +2735,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only
-     * this set of labeled resources should be included in the budget. Currently,
-     * multiple entries or multiple values per entry are not allowed. If omitted,
-     * the report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. If omitted, the
+     * report will include all labeled and unlabeled usage.
+     * An object containing a single `"key": value` pair. Example: `{ "name":
+     * "wrench" }`.
+     *  _Currently, multiple entries or multiple values per entry are not
+     *  allowed._
      * </pre>
      *
      * <code>
@@ -2771,10 +2769,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only
-     * this set of labeled resources should be included in the budget. Currently,
-     * multiple entries or multiple values per entry are not allowed. If omitted,
-     * the report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. If omitted, the
+     * report will include all labeled and unlabeled usage.
+     * An object containing a single `"key": value` pair. Example: `{ "name":
+     * "wrench" }`.
+     *  _Currently, multiple entries or multiple values per entry are not
+     *  allowed._
      * </pre>
      *
      * <code>
@@ -2797,10 +2798,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only
-     * this set of labeled resources should be included in the budget. Currently,
-     * multiple entries or multiple values per entry are not allowed. If omitted,
-     * the report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. If omitted, the
+     * report will include all labeled and unlabeled usage.
+     * An object containing a single `"key": value` pair. Example: `{ "name":
+     * "wrench" }`.
+     *  _Currently, multiple entries or multiple values per entry are not
+     *  allowed._
      * </pre>
      *
      * <code>
@@ -2821,10 +2825,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only
-     * this set of labeled resources should be included in the budget. Currently,
-     * multiple entries or multiple values per entry are not allowed. If omitted,
-     * the report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. If omitted, the
+     * report will include all labeled and unlabeled usage.
+     * An object containing a single `"key": value` pair. Example: `{ "name":
+     * "wrench" }`.
+     *  _Currently, multiple entries or multiple values per entry are not
+     *  allowed._
      * </pre>
      *
      * <code>
@@ -3005,8 +3012,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any
-     * end date (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any end date
+     * (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3023,8 +3030,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any
-     * end date (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any end date
+     * (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3051,8 +3058,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any
-     * end date (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any end date
+     * (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3076,8 +3083,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any
-     * end date (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any end date
+     * (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3099,8 +3106,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any
-     * end date (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any end date
+     * (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3134,8 +3141,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any
-     * end date (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any end date
+     * (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3162,8 +3169,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any
-     * end date (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any end date
+     * (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3177,8 +3184,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any
-     * end date (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any end date
+     * (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3201,8 +3208,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any
-     * end date (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any end date
+     * (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>

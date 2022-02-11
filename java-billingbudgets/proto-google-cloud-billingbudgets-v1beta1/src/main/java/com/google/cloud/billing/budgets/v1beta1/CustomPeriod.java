@@ -182,9 +182,9 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The end date of the time period. Budgets with elapsed end date
-   * won't be processed. If unset, specifies to track all usage incurred since
-   * the start_date.
+   * Optional. The end date of the time period. Budgets with elapsed end date won't be
+   * processed. If unset, specifies to track all usage
+   * incurred since the start_date.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -199,9 +199,9 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The end date of the time period. Budgets with elapsed end date
-   * won't be processed. If unset, specifies to track all usage incurred since
-   * the start_date.
+   * Optional. The end date of the time period. Budgets with elapsed end date won't be
+   * processed. If unset, specifies to track all usage
+   * incurred since the start_date.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -216,9 +216,9 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The end date of the time period. Budgets with elapsed end date
-   * won't be processed. If unset, specifies to track all usage incurred since
-   * the start_date.
+   * Optional. The end date of the time period. Budgets with elapsed end date won't be
+   * processed. If unset, specifies to track all usage
+   * incurred since the start_date.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -767,9 +767,9 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end date of the time period. Budgets with elapsed end date
-     * won't be processed. If unset, specifies to track all usage incurred since
-     * the start_date.
+     * Optional. The end date of the time period. Budgets with elapsed end date won't be
+     * processed. If unset, specifies to track all usage
+     * incurred since the start_date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -783,9 +783,9 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end date of the time period. Budgets with elapsed end date
-     * won't be processed. If unset, specifies to track all usage incurred since
-     * the start_date.
+     * Optional. The end date of the time period. Budgets with elapsed end date won't be
+     * processed. If unset, specifies to track all usage
+     * incurred since the start_date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -803,9 +803,9 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end date of the time period. Budgets with elapsed end date
-     * won't be processed. If unset, specifies to track all usage incurred since
-     * the start_date.
+     * Optional. The end date of the time period. Budgets with elapsed end date won't be
+     * processed. If unset, specifies to track all usage
+     * incurred since the start_date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -827,9 +827,9 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end date of the time period. Budgets with elapsed end date
-     * won't be processed. If unset, specifies to track all usage incurred since
-     * the start_date.
+     * Optional. The end date of the time period. Budgets with elapsed end date won't be
+     * processed. If unset, specifies to track all usage
+     * incurred since the start_date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -848,9 +848,9 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end date of the time period. Budgets with elapsed end date
-     * won't be processed. If unset, specifies to track all usage incurred since
-     * the start_date.
+     * Optional. The end date of the time period. Budgets with elapsed end date won't be
+     * processed. If unset, specifies to track all usage
+     * incurred since the start_date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -873,9 +873,9 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end date of the time period. Budgets with elapsed end date
-     * won't be processed. If unset, specifies to track all usage incurred since
-     * the start_date.
+     * Optional. The end date of the time period. Budgets with elapsed end date won't be
+     * processed. If unset, specifies to track all usage
+     * incurred since the start_date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -895,9 +895,9 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end date of the time period. Budgets with elapsed end date
-     * won't be processed. If unset, specifies to track all usage incurred since
-     * the start_date.
+     * Optional. The end date of the time period. Budgets with elapsed end date won't be
+     * processed. If unset, specifies to track all usage
+     * incurred since the start_date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -911,9 +911,9 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end date of the time period. Budgets with elapsed end date
-     * won't be processed. If unset, specifies to track all usage incurred since
-     * the start_date.
+     * Optional. The end date of the time period. Budgets with elapsed end date won't be
+     * processed. If unset, specifies to track all usage
+     * incurred since the start_date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -929,9 +929,9 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end date of the time period. Budgets with elapsed end date
-     * won't be processed. If unset, specifies to track all usage incurred since
-     * the start_date.
+     * Optional. The end date of the time period. Budgets with elapsed end date won't be
+     * processed. If unset, specifies to track all usage
+     * incurred since the start_date.
      * </pre>
      *
      * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

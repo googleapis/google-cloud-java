@@ -318,7 +318,7 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Creates a new budget. See
-     * &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and limits&lt;/a&gt;
+     * [Quotas and limits](https://cloud.google.com/billing/quotas)
      * for more information on the limits of the number of budgets you can create.
      * </pre>
      */
@@ -463,7 +463,7 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Creates a new budget. See
-     * &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and limits&lt;/a&gt;
+     * [Quotas and limits](https://cloud.google.com/billing/quotas)
      * for more information on the limits of the number of budgets you can create.
      * </pre>
      */
@@ -579,7 +579,7 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Creates a new budget. See
-     * &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and limits&lt;/a&gt;
+     * [Quotas and limits](https://cloud.google.com/billing/quotas)
      * for more information on the limits of the number of budgets you can create.
      * </pre>
      */
@@ -678,7 +678,7 @@ public final class BudgetServiceGrpc {
      *
      * <pre>
      * Creates a new budget. See
-     * &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and limits&lt;/a&gt;
+     * [Quotas and limits](https://cloud.google.com/billing/quotas)
      * for more information on the limits of the number of budgets you can create.
      * </pre>
      */

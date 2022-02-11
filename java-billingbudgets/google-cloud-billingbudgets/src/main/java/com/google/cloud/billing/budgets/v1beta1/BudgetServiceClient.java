@@ -155,8 +155,8 @@ public class BudgetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new budget. See &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and
-   * limits&lt;/a&gt; for more information on the limits of the number of budgets you can create.
+   * Creates a new budget. See [Quotas and limits](https://cloud.google.com/billing/quotas) for more
+   * information on the limits of the number of budgets you can create.
    *
    * <p>Sample code:
    *
@@ -180,8 +180,8 @@ public class BudgetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new budget. See &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and
-   * limits&lt;/a&gt; for more information on the limits of the number of budgets you can create.
+   * Creates a new budget. See [Quotas and limits](https://cloud.google.com/billing/quotas) for more
+   * information on the limits of the number of budgets you can create.
    *
    * <p>Sample code:
    *
