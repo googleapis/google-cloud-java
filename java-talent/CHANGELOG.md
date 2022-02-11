@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.6](https://github.com/googleapis/java-talent/compare/v2.2.5...v2.2.6) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#729](https://github.com/googleapis/java-talent/issues/729)) ([cedbfcc](https://github.com/googleapis/java-talent/commit/cedbfcc60ce090c18c64b6ded868922b16699dc8))
+
 ### [2.2.5](https://github.com/googleapis/java-talent/compare/v2.2.4...v2.2.5) (2022-02-03)
 
 
