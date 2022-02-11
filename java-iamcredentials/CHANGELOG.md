@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.10](https://github.com/googleapis/java-iamcredentials/compare/v2.0.9...v2.0.10) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#628](https://github.com/googleapis/java-iamcredentials/issues/628)) ([b5a5295](https://github.com/googleapis/java-iamcredentials/commit/b5a5295d39ca1fca7be1c0a18d56f9845a7cf278))
+
 ### [2.0.9](https://github.com/googleapis/java-iamcredentials/compare/v2.0.8...v2.0.9) (2022-02-03)
 
 
