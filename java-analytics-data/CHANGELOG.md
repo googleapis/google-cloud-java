@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.11.2](https://github.com/googleapis/java-analytics-data/compare/v0.11.1...v0.11.2) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#412](https://github.com/googleapis/java-analytics-data/issues/412)) ([831d07f](https://github.com/googleapis/java-analytics-data/commit/831d07fbe3dff2d7d2519a7c13e977d08dbedcaf))
+
 ### [0.11.1](https://github.com/googleapis/java-analytics-data/compare/v0.11.0...v0.11.1) (2022-02-08)
 
 
