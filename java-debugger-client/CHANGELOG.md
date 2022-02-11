@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.7](https://github.com/googleapis/java-debugger-client/compare/v1.1.6...v1.1.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#143](https://github.com/googleapis/java-debugger-client/issues/143)) ([066cbef](https://github.com/googleapis/java-debugger-client/commit/066cbef5cba474ced9c214b02d83ca77ab96b046))
+
 ### [1.1.6](https://github.com/googleapis/java-debugger-client/compare/v1.1.5...v1.1.6) (2022-02-03)
 
 
