@@ -57,6 +57,8 @@ public enum StandardSQLTypeName {
   DATETIME,
   /** Represents a set of geographic points, represented as a Well Known Text (WKT) string. */
   GEOGRAPHY,
-  /** Represents JSON data */
-  JSON
+  /** Represents JSON data. */
+  JSON,
+  /** Represents duration or amount of time. */
+  INTERVAL
 }

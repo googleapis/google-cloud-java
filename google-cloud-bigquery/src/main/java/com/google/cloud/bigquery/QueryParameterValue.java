@@ -43,6 +43,7 @@ import org.threeten.bp.ZoneOffset;
 import org.threeten.bp.format.DateTimeFormatter;
 import org.threeten.bp.format.DateTimeFormatterBuilder;
 import org.threeten.bp.format.DateTimeParseException;
+import org.threeten.extra.PeriodDuration;
 
 /**
  * A value for a QueryParameter along with its type.
@@ -63,6 +64,7 @@ import org.threeten.bp.format.DateTimeParseException;
  *   <li>BigDecimal: StandardSQLTypeName.NUMERIC
  *   <li>BigNumeric: StandardSQLTypeName.BIGNUMERIC
  *   <li>JSON: StandardSQLTypeName.JSON
+ *   <li>INTERVAL: StandardSQLTypeName.INTERVAL
  * </ul>
  *
  * <p>No other types are supported through that entry point. The other types can be created by
@@ -308,10 +310,24 @@ public abstract class QueryParameterValue implements Serializable {
 
   /**
    * Creates a {@code QueryParameterValue} object with a type of DATETIME. Must be in the format
-   * "yyyy-MM-dd HH:mm:ss.SSSSSS", e.g. ""2014-08-19 12:41:35.220000".
+   * "yyyy-MM-dd HH:mm:ss.SSSSSS", e.g. "2014-08-19 12:41:35.220000".
    */
   public static QueryParameterValue dateTime(String value) {
     return of(value, StandardSQLTypeName.DATETIME);
+  }
+
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of INTERVAL. Must be in the canonical
+   * format "[sign]Y-M [sign]D [sign]H:M:S[.F]", e.g. "123-7 -19 0:24:12.000006" or ISO 8601
+   * duration format, e.g. "P123Y7M-19DT0H24M12.000006S"
+   */
+  public static QueryParameterValue interval(String value) {
+    return of(value, StandardSQLTypeName.INTERVAL);
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of INTERVAL. */
+  public static QueryParameterValue interval(PeriodDuration value) {
+    return of(value, StandardSQLTypeName.INTERVAL);
   }
 
   /**
@@ -408,6 +424,8 @@ public abstract class QueryParameterValue implements Serializable {
         return value.toString();
       case JSON:
         if (value instanceof String || value instanceof JsonObject) return value.toString();
+      case INTERVAL:
+        if (value instanceof String || value instanceof PeriodDuration) return value.toString();
         break;
       case STRUCT:
         throw new IllegalArgumentException("Cannot convert STRUCT to String value");

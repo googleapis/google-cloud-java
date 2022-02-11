@@ -27,6 +27,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gson.JsonObject;
 import java.math.BigDecimal;
 import java.text.ParseException;
+import java.time.Period;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -38,6 +39,7 @@ import org.threeten.bp.ZoneOffset;
 import org.threeten.bp.format.DateTimeFormatter;
 import org.threeten.bp.format.DateTimeFormatterBuilder;
 import org.threeten.bp.jdk8.Jdk8Methods;
+import org.threeten.extra.PeriodDuration;
 
 public class QueryParameterValueTest {
 
@@ -210,6 +212,24 @@ public class QueryParameterValueTest {
     assertThat(value1.getArrayType()).isNull();
     assertThat(value.getArrayValues()).isNull();
     assertThat(value1.getArrayType()).isNull();
+  }
+
+  @Test
+  public void testInterval() {
+    QueryParameterValue value = QueryParameterValue.interval("123-7 -19 0:24:12.000006");
+    QueryParameterValue value1 = QueryParameterValue.interval("P123Y7M-19DT0H24M12.000006S");
+    QueryParameterValue value2 =
+        QueryParameterValue.interval(
+            PeriodDuration.of(Period.of(1, 2, 25), java.time.Duration.ofHours(8)));
+    assertThat(value.getValue()).isEqualTo("123-7 -19 0:24:12.000006");
+    assertThat(value1.getValue()).isEqualTo("P123Y7M-19DT0H24M12.000006S");
+    assertThat(value2.getValue()).isEqualTo("P1Y2M25DT8H");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.INTERVAL);
+    assertThat(value1.getType()).isEqualTo(StandardSQLTypeName.INTERVAL);
+    assertThat(value2.getType()).isEqualTo(StandardSQLTypeName.INTERVAL);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value1.getArrayType()).isNull();
+    assertThat(value2.getArrayType()).isNull();
   }
 
   @Test

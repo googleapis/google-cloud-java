@@ -96,6 +96,9 @@ public final class LegacySQLTypeName extends StringEnumValue {
   /** Represents JSON data */
   public static final LegacySQLTypeName JSON =
       type.createAndRegister("JSON").setStandardType(StandardSQLTypeName.JSON);
+  /** Represents duration or amount of time. */
+  public static final LegacySQLTypeName INTERVAL =
+      type.createAndRegister("INTERVAL").setStandardType(StandardSQLTypeName.INTERVAL);
 
   private static Map<StandardSQLTypeName, LegacySQLTypeName> standardToLegacyMap = new HashMap<>();
 
