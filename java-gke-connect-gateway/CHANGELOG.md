@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.5](https://github.com/googleapis/java-gke-connect-gateway/compare/v0.3.4...v0.3.5) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#134](https://github.com/googleapis/java-gke-connect-gateway/issues/134)) ([b388c1d](https://github.com/googleapis/java-gke-connect-gateway/commit/b388c1dddeadbb48176d95e14174327325330a6a))
+
 ### [0.3.4](https://github.com/googleapis/java-gke-connect-gateway/compare/v0.3.3...v0.3.4) (2022-02-03)
 
 
