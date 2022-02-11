@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.4](https://github.com/googleapis/java-servicedirectory/compare/v2.2.3...v2.2.4) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#623](https://github.com/googleapis/java-servicedirectory/issues/623)) ([773ab8e](https://github.com/googleapis/java-servicedirectory/commit/773ab8ec7a5193874c1021553803258ceed4ca8e))
+
 ### [2.2.3](https://github.com/googleapis/java-servicedirectory/compare/v2.2.2...v2.2.3) (2022-02-03)
 
 
