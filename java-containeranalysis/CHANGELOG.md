@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.8](https://github.com/googleapis/java-containeranalysis/compare/v2.2.7...v2.2.8) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#820](https://github.com/googleapis/java-containeranalysis/issues/820)) ([b3bf14e](https://github.com/googleapis/java-containeranalysis/commit/b3bf14eb13f2d7a3397f4a851229e99a14227466))
+
 ### [2.2.7](https://github.com/googleapis/java-containeranalysis/compare/v2.2.6...v2.2.7) (2022-02-04)
 
 
