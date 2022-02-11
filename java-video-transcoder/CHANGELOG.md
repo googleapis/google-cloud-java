@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/googleapis/java-video-transcoder/compare/v1.0.0...v1.0.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#303](https://github.com/googleapis/java-video-transcoder/issues/303)) ([4a01f5b](https://github.com/googleapis/java-video-transcoder/commit/4a01f5b3781031bc1567c96efd84822512ecf4ef))
+
 ## [1.0.0](https://github.com/googleapis/java-video-transcoder/compare/v0.4.3...v1.0.0) (2022-02-03)
 
 
