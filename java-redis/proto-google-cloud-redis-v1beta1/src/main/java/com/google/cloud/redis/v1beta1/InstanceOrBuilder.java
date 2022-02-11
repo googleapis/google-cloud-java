@@ -287,6 +287,39 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Optional. Additional IP range for node placement. Required when enabling read
+   * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+   * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+   * must be the name of an allocated address range associated with the private
+   * service access connection, or "auto".
+   * </pre>
+   *
+   * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The secondaryIpRange.
+   */
+  java.lang.String getSecondaryIpRange();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional IP range for node placement. Required when enabling read
+   * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+   * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+   * must be the name of an allocated address range associated with the private
+   * service access connection, or "auto".
+   * </pre>
+   *
+   * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for secondaryIpRange.
+   */
+  com.google.protobuf.ByteString getSecondaryIpRangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Hostname or IP address of the exposed Redis endpoint used by
    *  clients to connect to the service.
    * </pre>
@@ -1031,8 +1064,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Read replica mode. Can only be specified when trying to create the
-   * instance.
+   * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
    * </pre>
    *
    * <code>
@@ -1046,8 +1078,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Read replica mode. Can only be specified when trying to create the
-   * instance.
+   * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
    * </pre>
    *
    * <code>

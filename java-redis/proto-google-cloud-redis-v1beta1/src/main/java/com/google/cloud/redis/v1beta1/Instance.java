@@ -22,7 +22,7 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * A Google Cloud Redis instance.
+ * A Memorystore for Redis instance.
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.Instance}
@@ -44,6 +44,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     alternativeLocationId_ = "";
     redisVersion_ = "";
     reservedIpRange_ = "";
+    secondaryIpRange_ = "";
     host_ = "";
     currentLocationId_ = "";
     state_ = 0;
@@ -295,6 +296,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 maintenanceSchedule_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 242:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              secondaryIpRange_ = s;
               break;
             }
           case 248:
@@ -1785,6 +1793,63 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SECONDARY_IP_RANGE_FIELD_NUMBER = 30;
+  private volatile java.lang.Object secondaryIpRange_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional IP range for node placement. Required when enabling read
+   * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+   * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+   * must be the name of an allocated address range associated with the private
+   * service access connection, or "auto".
+   * </pre>
+   *
+   * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The secondaryIpRange.
+   */
+  @java.lang.Override
+  public java.lang.String getSecondaryIpRange() {
+    java.lang.Object ref = secondaryIpRange_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      secondaryIpRange_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional IP range for node placement. Required when enabling read
+   * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+   * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+   * must be the name of an allocated address range associated with the private
+   * service access connection, or "auto".
+   * </pre>
+   *
+   * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for secondaryIpRange.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSecondaryIpRangeBytes() {
+    java.lang.Object ref = secondaryIpRange_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      secondaryIpRange_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int HOST_FIELD_NUMBER = 10;
   private volatile java.lang.Object host_;
   /**
@@ -2859,8 +2924,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Read replica mode. Can only be specified when trying to create the
-   * instance.
+   * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
    * </pre>
    *
    * <code>
@@ -2877,8 +2941,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Read replica mode. Can only be specified when trying to create the
-   * instance.
+   * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
    * </pre>
    *
    * <code>
@@ -3040,6 +3103,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (maintenanceSchedule_ != null) {
       output.writeMessage(28, getMaintenanceSchedule());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secondaryIpRange_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 30, secondaryIpRange_);
+    }
     if (replicaCount_ != 0) {
       output.writeInt32(31, replicaCount_);
     }
@@ -3161,6 +3227,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(28, getMaintenanceSchedule());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secondaryIpRange_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, secondaryIpRange_);
+    }
     if (replicaCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(31, replicaCount_);
     }
@@ -3203,6 +3272,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getAlternativeLocationId().equals(other.getAlternativeLocationId())) return false;
     if (!getRedisVersion().equals(other.getRedisVersion())) return false;
     if (!getReservedIpRange().equals(other.getReservedIpRange())) return false;
+    if (!getSecondaryIpRange().equals(other.getSecondaryIpRange())) return false;
     if (!getHost().equals(other.getHost())) return false;
     if (getPort() != other.getPort()) return false;
     if (!getCurrentLocationId().equals(other.getCurrentLocationId())) return false;
@@ -3265,6 +3335,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getRedisVersion().hashCode();
     hash = (37 * hash) + RESERVED_IP_RANGE_FIELD_NUMBER;
     hash = (53 * hash) + getReservedIpRange().hashCode();
+    hash = (37 * hash) + SECONDARY_IP_RANGE_FIELD_NUMBER;
+    hash = (53 * hash) + getSecondaryIpRange().hashCode();
     hash = (37 * hash) + HOST_FIELD_NUMBER;
     hash = (53 * hash) + getHost().hashCode();
     hash = (37 * hash) + PORT_FIELD_NUMBER;
@@ -3429,7 +3501,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Google Cloud Redis instance.
+   * A Memorystore for Redis instance.
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.Instance}
@@ -3509,6 +3581,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       redisVersion_ = "";
 
       reservedIpRange_ = "";
+
+      secondaryIpRange_ = "";
 
       host_ = "";
 
@@ -3615,6 +3689,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       result.alternativeLocationId_ = alternativeLocationId_;
       result.redisVersion_ = redisVersion_;
       result.reservedIpRange_ = reservedIpRange_;
+      result.secondaryIpRange_ = secondaryIpRange_;
       result.host_ = host_;
       result.port_ = port_;
       result.currentLocationId_ = currentLocationId_;
@@ -3743,6 +3818,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getReservedIpRange().isEmpty()) {
         reservedIpRange_ = other.reservedIpRange_;
+        onChanged();
+      }
+      if (!other.getSecondaryIpRange().isEmpty()) {
+        secondaryIpRange_ = other.secondaryIpRange_;
         onChanged();
       }
       if (!other.getHost().isEmpty()) {
@@ -4826,6 +4905,132 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       reservedIpRange_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object secondaryIpRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional IP range for node placement. Required when enabling read
+     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+     * must be the name of an allocated address range associated with the private
+     * service access connection, or "auto".
+     * </pre>
+     *
+     * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The secondaryIpRange.
+     */
+    public java.lang.String getSecondaryIpRange() {
+      java.lang.Object ref = secondaryIpRange_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secondaryIpRange_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional IP range for node placement. Required when enabling read
+     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+     * must be the name of an allocated address range associated with the private
+     * service access connection, or "auto".
+     * </pre>
+     *
+     * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for secondaryIpRange.
+     */
+    public com.google.protobuf.ByteString getSecondaryIpRangeBytes() {
+      java.lang.Object ref = secondaryIpRange_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        secondaryIpRange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional IP range for node placement. Required when enabling read
+     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+     * must be the name of an allocated address range associated with the private
+     * service access connection, or "auto".
+     * </pre>
+     *
+     * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The secondaryIpRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecondaryIpRange(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      secondaryIpRange_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional IP range for node placement. Required when enabling read
+     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+     * must be the name of an allocated address range associated with the private
+     * service access connection, or "auto".
+     * </pre>
+     *
+     * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecondaryIpRange() {
+
+      secondaryIpRange_ = getDefaultInstance().getSecondaryIpRange();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional IP range for node placement. Required when enabling read
+     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+     * must be the name of an allocated address range associated with the private
+     * service access connection, or "auto".
+     * </pre>
+     *
+     * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for secondaryIpRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecondaryIpRangeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      secondaryIpRange_ = value;
       onChanged();
       return this;
     }
@@ -7917,8 +8122,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replica mode. Can only be specified when trying to create the
-     * instance.
+     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -7935,8 +8139,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replica mode. Can only be specified when trying to create the
-     * instance.
+     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -7956,8 +8159,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replica mode. Can only be specified when trying to create the
-     * instance.
+     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -7979,8 +8181,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replica mode. Can only be specified when trying to create the
-     * instance.
+     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -8004,8 +8205,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replica mode. Can only be specified when trying to create the
-     * instance.
+     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
