@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.3](https://github.com/googleapis/java-resourcemanager/compare/v1.2.2...v1.2.3) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#716](https://github.com/googleapis/java-resourcemanager/issues/716)) ([f80170f](https://github.com/googleapis/java-resourcemanager/commit/f80170fc0e3c0894619c61edb56ec60b008a1972))
+
 ### [1.2.2](https://github.com/googleapis/java-resourcemanager/compare/v1.2.1...v1.2.2) (2022-02-03)
 
 
