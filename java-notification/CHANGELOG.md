@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.122.19](https://github.com/googleapis/java-notification/compare/v0.122.18...v0.122.19) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#523](https://github.com/googleapis/java-notification/issues/523)) ([0806364](https://github.com/googleapis/java-notification/commit/080636492d5adddeff784e9c710a8a3e167009a5))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.115.4 ([#521](https://github.com/googleapis/java-notification/issues/521)) ([033eeae](https://github.com/googleapis/java-notification/commit/033eeaed58cd3632a2687fc9828050a6cea09997))
+
 ### [0.122.18](https://github.com/googleapis/java-notification/compare/v0.122.17...v0.122.18) (2022-02-09)
 
 
