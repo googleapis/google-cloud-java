@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.7](https://github.com/googleapis/java-service-management/compare/v2.1.6...v2.1.7) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#200](https://github.com/googleapis/java-service-management/issues/200)) ([4895784](https://github.com/googleapis/java-service-management/commit/48957840409beb78d14202742ea074f0d9bf5986))
+
 ### [2.1.6](https://github.com/googleapis/java-service-management/compare/v2.1.5...v2.1.6) (2022-02-03)
 
 
