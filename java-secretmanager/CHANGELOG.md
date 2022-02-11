@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.1](https://github.com/googleapis/java-secretmanager/compare/v2.1.0...v2.1.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#699](https://github.com/googleapis/java-secretmanager/issues/699)) ([60c04dd](https://github.com/googleapis/java-secretmanager/commit/60c04dd9dfc4bc345cfb6f19b868aa5787e21682))
+
 ## [2.1.0](https://github.com/googleapis/java-secretmanager/compare/v2.0.7...v2.1.0) (2022-02-03)
 
 
