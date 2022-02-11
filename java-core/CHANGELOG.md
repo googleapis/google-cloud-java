@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.5.4](https://github.com/googleapis/java-core/compare/v2.5.3...v2.5.4) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#724](https://github.com/googleapis/java-core/issues/724)) ([b8673d3](https://github.com/googleapis/java-core/commit/b8673d3b3ae08cbfed135cd7ff9d891c04e90611))
+
 ### [2.5.3](https://github.com/googleapis/java-core/compare/v2.5.2...v2.5.3) (2022-02-10)
 
 
