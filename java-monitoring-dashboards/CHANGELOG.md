@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.3](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.2.2...v2.2.3) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#553](https://github.com/googleapis/java-monitoring-dashboards/issues/553)) ([2de30b4](https://github.com/googleapis/java-monitoring-dashboards/commit/2de30b4e09584bd8afc0527e9d724679ea904d97))
+
 ### [2.2.2](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.2.1...v2.2.2) (2022-02-03)
 
 
