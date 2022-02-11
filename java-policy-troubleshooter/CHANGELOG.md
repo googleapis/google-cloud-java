@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/googleapis/java-policy-troubleshooter/compare/v1.0.0...v1.0.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#180](https://github.com/googleapis/java-policy-troubleshooter/issues/180)) ([4984f00](https://github.com/googleapis/java-policy-troubleshooter/commit/4984f00dbd7a9baf3cf3a76126b8e514917ee1e4))
+
 ## [1.0.0](https://github.com/googleapis/java-policy-troubleshooter/compare/v0.4.4...v1.0.0) (2022-02-03)
 
 
