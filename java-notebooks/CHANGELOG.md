@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/googleapis/java-notebooks/compare/v1.0.0...v1.0.1) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#325](https://github.com/googleapis/java-notebooks/issues/325)) ([6c04e47](https://github.com/googleapis/java-notebooks/commit/6c04e4747538dd44088aff7100b4f3067d3a43ca))
+
 ## [1.0.0](https://github.com/googleapis/java-notebooks/compare/v0.6.2...v1.0.0) (2022-02-03)
 
 
