@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.StandardTableDefinition;
@@ -68,8 +69,12 @@ public class JsonWriterDefaultStream {
             Field.of("author", StandardSQLTypeName.STRING),
             Field.of("committer", StandardSQLTypeName.STRING),
             Field.of("commit_date", StandardSQLTypeName.DATETIME),
-            Field.of("subject", StandardSQLTypeName.STRING),
-            Field.of("message", StandardSQLTypeName.STRING),
+            Field.of(
+                "commit_msg",
+                StandardSQLTypeName.STRUCT,
+                FieldList.of(
+                    Field.of("subject", StandardSQLTypeName.STRING),
+                    Field.of("message", StandardSQLTypeName.STRING))),
             Field.of("repo_name", StandardSQLTypeName.STRING));
 
     // Create a table that uses this schema.
