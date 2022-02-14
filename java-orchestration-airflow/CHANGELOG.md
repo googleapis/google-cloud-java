@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.3](https://github.com/googleapis/java-orchestration-airflow/compare/v1.1.2...v1.1.3) (2022-02-14)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#145](https://github.com/googleapis/java-orchestration-airflow/issues/145)) ([bde5ef8](https://github.com/googleapis/java-orchestration-airflow/commit/bde5ef85457e66ddb302022193d265c784dfbbd9))
+
 ### [1.1.2](https://github.com/googleapis/java-orchestration-airflow/compare/v1.1.1...v1.1.2) (2022-02-03)
 
 
