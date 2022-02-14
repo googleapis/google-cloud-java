@@ -75,13 +75,13 @@ implementation 'com.google.cloud:google-cloud-automl'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-automl:2.1.15'
+implementation 'com.google.cloud:google-cloud-automl:2.1.16'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "2.1.15"
+libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "2.1.16"
 ```
 
 ## Authentication
