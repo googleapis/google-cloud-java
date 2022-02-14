@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/googleapis/java-ids/compare/v1.0.0...v1.0.1) (2022-02-14)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#55](https://github.com/googleapis/java-ids/issues/55)) ([1d0200b](https://github.com/googleapis/java-ids/commit/1d0200b32a75657166392f701f09a2894ad5634e))
+
 ## [1.0.0](https://github.com/googleapis/java-ids/compare/v0.1.2...v1.0.0) (2022-02-03)
 
 
