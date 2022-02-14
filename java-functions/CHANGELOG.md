@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.3.3](https://github.com/googleapis/java-functions/compare/v2.3.2...v2.3.3) (2022-02-14)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#377](https://github.com/googleapis/java-functions/issues/377)) ([eeee95b](https://github.com/googleapis/java-functions/commit/eeee95b96dcdd2b75c5f1e1e5fe2a2441569d57b))
+
 ### [2.3.2](https://github.com/googleapis/java-functions/compare/v2.3.1...v2.3.2) (2022-02-03)
 
 
