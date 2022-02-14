@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage-transfer</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-storage-transfer:1.0.0'
+implementation 'com.google.cloud:google-cloud-storage-transfer:1.0.1'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage-transfer" % "1.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage-transfer" % "1.0.1"
 ```
 
 ## Authentication
