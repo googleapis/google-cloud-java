@@ -138,6 +138,19 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
     return ((BackendBucketsStubSettings) getStubSettings()).patchOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setEdgeSecurityPolicy. */
+  public UnaryCallSettings<SetEdgeSecurityPolicyBackendBucketRequest, Operation>
+      setEdgeSecurityPolicySettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).setEdgeSecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setEdgeSecurityPolicy. */
+  public OperationCallSettings<SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
+      setEdgeSecurityPolicyOperationSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings())
+        .setEdgeSecurityPolicyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateBackendBucketRequest, Operation> updateSettings() {
     return ((BackendBucketsStubSettings) getStubSettings()).updateSettings();
@@ -315,6 +328,19 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
     public OperationCallSettings.Builder<PatchBackendBucketRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setEdgeSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetEdgeSecurityPolicyBackendBucketRequest, Operation>
+        setEdgeSecurityPolicySettings() {
+      return getStubSettingsBuilder().setEdgeSecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setEdgeSecurityPolicy. */
+    public OperationCallSettings.Builder<
+            SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
+        setEdgeSecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().setEdgeSecurityPolicyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to update. */

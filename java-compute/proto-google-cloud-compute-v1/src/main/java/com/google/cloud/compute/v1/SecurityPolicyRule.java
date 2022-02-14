@@ -76,14 +76,32 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               kind_ = s;
+              break;
+            }
+          case 540354522:
+            {
+              com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.Builder subBuilder =
+                  null;
+              if (((bitField0_ & 0x00000080) != 0)) {
+                subBuilder = rateLimitOptions_.toBuilder();
+              }
+              rateLimitOptions_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rateLimitOptions_);
+                rateLimitOptions_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000080;
               break;
             }
           case 829345322:
             {
               com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) != 0)) {
+              if (((bitField0_ & 0x00000010) != 0)) {
                 subBuilder = match_.toBuilder();
               }
               match_ =
@@ -94,7 +112,25 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
                 subBuilder.mergeFrom(match_);
                 match_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
+              break;
+            }
+          case 1306282458:
+            {
+              com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder subBuilder =
+                  null;
+              if (((bitField0_ & 0x00000100) != 0)) {
+                subBuilder = redirectOptions_.toBuilder();
+              }
+              redirectOptions_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(redirectOptions_);
+                redirectOptions_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000100;
               break;
             }
           case 1501295026:
@@ -106,8 +142,26 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             }
           case 1749491264:
             {
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               preview_ = input.readBool();
+              break;
+            }
+          case -1670348478:
+            {
+              com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.Builder subBuilder =
+                  null;
+              if (((bitField0_ & 0x00000004) != 0)) {
+                subBuilder = headerAction_.toBuilder();
+              }
+              headerAction_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(headerAction_);
+                headerAction_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
               break;
             }
           case -911466526:
@@ -119,7 +173,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             }
           case -733754080:
             {
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               priority_ = input.readInt32();
               break;
             }
@@ -164,7 +218,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+   * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
    * </pre>
    *
    * <code>optional string action = 187661878;</code>
@@ -179,7 +233,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+   * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
    * </pre>
    *
    * <code>optional string action = 187661878;</code>
@@ -202,7 +256,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+   * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
    * </pre>
    *
    * <code>optional string action = 187661878;</code>
@@ -286,6 +340,63 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int HEADER_ACTION_FIELD_NUMBER = 328077352;
+  private com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction headerAction_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional, additional actions that are performed on headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+   * </code>
+   *
+   * @return Whether the headerAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasHeaderAction() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional, additional actions that are performed on headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+   * </code>
+   *
+   * @return The headerAction.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction getHeaderAction() {
+    return headerAction_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.getDefaultInstance()
+        : headerAction_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional, additional actions that are performed on headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionOrBuilder
+      getHeaderActionOrBuilder() {
+    return headerAction_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.getDefaultInstance()
+        : headerAction_;
+  }
+
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
   /**
@@ -301,7 +412,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -365,7 +476,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasMatch() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -415,7 +526,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasPreview() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -448,7 +559,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasPriority() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -466,6 +577,120 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     return priority_;
   }
 
+  public static final int RATE_LIMIT_OPTIONS_FIELD_NUMBER = 67544315;
+  private com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rateLimitOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+   * </code>
+   *
+   * @return Whether the rateLimitOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasRateLimitOptions() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+   * </code>
+   *
+   * @return The rateLimitOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions getRateLimitOptions() {
+    return rateLimitOptions_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.getDefaultInstance()
+        : rateLimitOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsOrBuilder
+      getRateLimitOptionsOrBuilder() {
+    return rateLimitOptions_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.getDefaultInstance()
+        : rateLimitOptions_;
+  }
+
+  public static final int REDIRECT_OPTIONS_FIELD_NUMBER = 163285307;
+  private com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirectOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters defining the redirect action. Cannot be specified for any other actions.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+   * </code>
+   *
+   * @return Whether the redirectOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasRedirectOptions() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters defining the redirect action. Cannot be specified for any other actions.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+   * </code>
+   *
+   * @return The redirectOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions getRedirectOptions() {
+    return redirectOptions_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.getDefaultInstance()
+        : redirectOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters defining the redirect action. Cannot be specified for any other actions.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptionsOrBuilder
+      getRedirectOptionsOrBuilder() {
+    return redirectOptions_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.getDefaultInstance()
+        : redirectOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -480,22 +705,31 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(67544315, getRateLimitOptions());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(103668165, getMatch());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(163285307, getRedirectOptions());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 187661878, action_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeBool(218686408, preview_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(328077352, getHeaderAction());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeInt32(445151652, priority_);
     }
     unknownFields.writeTo(output);
@@ -507,22 +741,34 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(67544315, getRateLimitOptions());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(103668165, getMatch());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(163285307, getRedirectOptions());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187661878, action_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(218686408, preview_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(328077352, getHeaderAction());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(445151652, priority_);
     }
     size += unknownFields.getSerializedSize();
@@ -549,6 +795,10 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (hasDescription()) {
       if (!getDescription().equals(other.getDescription())) return false;
     }
+    if (hasHeaderAction() != other.hasHeaderAction()) return false;
+    if (hasHeaderAction()) {
+      if (!getHeaderAction().equals(other.getHeaderAction())) return false;
+    }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
       if (!getKind().equals(other.getKind())) return false;
@@ -564,6 +814,14 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (hasPriority() != other.hasPriority()) return false;
     if (hasPriority()) {
       if (getPriority() != other.getPriority()) return false;
+    }
+    if (hasRateLimitOptions() != other.hasRateLimitOptions()) return false;
+    if (hasRateLimitOptions()) {
+      if (!getRateLimitOptions().equals(other.getRateLimitOptions())) return false;
+    }
+    if (hasRedirectOptions() != other.hasRedirectOptions()) return false;
+    if (hasRedirectOptions()) {
+      if (!getRedirectOptions().equals(other.getRedirectOptions())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -584,6 +842,10 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
     }
+    if (hasHeaderAction()) {
+      hash = (37 * hash) + HEADER_ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + getHeaderAction().hashCode();
+    }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
       hash = (53 * hash) + getKind().hashCode();
@@ -599,6 +861,14 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (hasPriority()) {
       hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
       hash = (53 * hash) + getPriority();
+    }
+    if (hasRateLimitOptions()) {
+      hash = (37 * hash) + RATE_LIMIT_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRateLimitOptions().hashCode();
+    }
+    if (hasRedirectOptions()) {
+      hash = (37 * hash) + REDIRECT_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRedirectOptions().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -740,7 +1010,10 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getHeaderActionFieldBuilder();
         getMatchFieldBuilder();
+        getRateLimitOptionsFieldBuilder();
+        getRedirectOptionsFieldBuilder();
       }
     }
 
@@ -751,18 +1024,36 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      kind_ = "";
+      if (headerActionBuilder_ == null) {
+        headerAction_ = null;
+      } else {
+        headerActionBuilder_.clear();
+      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      kind_ = "";
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (matchBuilder_ == null) {
         match_ = null;
       } else {
         matchBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
-      preview_ = false;
       bitField0_ = (bitField0_ & ~0x00000010);
-      priority_ = 0;
+      preview_ = false;
       bitField0_ = (bitField0_ & ~0x00000020);
+      priority_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      if (rateLimitOptionsBuilder_ == null) {
+        rateLimitOptions_ = null;
+      } else {
+        rateLimitOptionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000080);
+      if (redirectOptionsBuilder_ == null) {
+        redirectOptions_ = null;
+      } else {
+        redirectOptionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -801,24 +1092,48 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       result.description_ = description_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (headerActionBuilder_ == null) {
+          result.headerAction_ = headerAction_;
+        } else {
+          result.headerAction_ = headerActionBuilder_.build();
+        }
         to_bitField0_ |= 0x00000004;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
+      result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         if (matchBuilder_ == null) {
           result.match_ = match_;
         } else {
           result.match_ = matchBuilder_.build();
         }
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.preview_ = preview_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.priority_ = priority_;
+        result.preview_ = preview_;
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.priority_ = priority_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        if (rateLimitOptionsBuilder_ == null) {
+          result.rateLimitOptions_ = rateLimitOptions_;
+        } else {
+          result.rateLimitOptions_ = rateLimitOptionsBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        if (redirectOptionsBuilder_ == null) {
+          result.redirectOptions_ = redirectOptions_;
+        } else {
+          result.redirectOptions_ = redirectOptionsBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -880,8 +1195,11 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         description_ = other.description_;
         onChanged();
       }
+      if (other.hasHeaderAction()) {
+        mergeHeaderAction(other.getHeaderAction());
+      }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         kind_ = other.kind_;
         onChanged();
       }
@@ -893,6 +1211,12 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasPriority()) {
         setPriority(other.getPriority());
+      }
+      if (other.hasRateLimitOptions()) {
+        mergeRateLimitOptions(other.getRateLimitOptions());
+      }
+      if (other.hasRedirectOptions()) {
+        mergeRedirectOptions(other.getRedirectOptions());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -930,7 +1254,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
      * </pre>
      *
      * <code>optional string action = 187661878;</code>
@@ -944,7 +1268,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
      * </pre>
      *
      * <code>optional string action = 187661878;</code>
@@ -966,7 +1290,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
      * </pre>
      *
      * <code>optional string action = 187661878;</code>
@@ -988,7 +1312,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
      * </pre>
      *
      * <code>optional string action = 187661878;</code>
@@ -1009,7 +1333,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
      * </pre>
      *
      * <code>optional string action = 187661878;</code>
@@ -1026,7 +1350,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
      * </pre>
      *
      * <code>optional string action = 187661878;</code>
@@ -1165,6 +1489,218 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction headerAction_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction,
+            com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionOrBuilder>
+        headerActionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional, additional actions that are performed on headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+     * </code>
+     *
+     * @return Whether the headerAction field is set.
+     */
+    public boolean hasHeaderAction() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional, additional actions that are performed on headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+     * </code>
+     *
+     * @return The headerAction.
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction getHeaderAction() {
+      if (headerActionBuilder_ == null) {
+        return headerAction_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.getDefaultInstance()
+            : headerAction_;
+      } else {
+        return headerActionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional, additional actions that are performed on headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+     * </code>
+     */
+    public Builder setHeaderAction(
+        com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction value) {
+      if (headerActionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        headerAction_ = value;
+        onChanged();
+      } else {
+        headerActionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional, additional actions that are performed on headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+     * </code>
+     */
+    public Builder setHeaderAction(
+        com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.Builder builderForValue) {
+      if (headerActionBuilder_ == null) {
+        headerAction_ = builderForValue.build();
+        onChanged();
+      } else {
+        headerActionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional, additional actions that are performed on headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+     * </code>
+     */
+    public Builder mergeHeaderAction(
+        com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction value) {
+      if (headerActionBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && headerAction_ != null
+            && headerAction_
+                != com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction
+                    .getDefaultInstance()) {
+          headerAction_ =
+              com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.newBuilder(
+                      headerAction_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          headerAction_ = value;
+        }
+        onChanged();
+      } else {
+        headerActionBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional, additional actions that are performed on headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+     * </code>
+     */
+    public Builder clearHeaderAction() {
+      if (headerActionBuilder_ == null) {
+        headerAction_ = null;
+        onChanged();
+      } else {
+        headerActionBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional, additional actions that are performed on headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.Builder
+        getHeaderActionBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getHeaderActionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional, additional actions that are performed on headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionOrBuilder
+        getHeaderActionOrBuilder() {
+      if (headerActionBuilder_ != null) {
+        return headerActionBuilder_.getMessageOrBuilder();
+      } else {
+        return headerAction_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.getDefaultInstance()
+            : headerAction_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional, additional actions that are performed on headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction,
+            com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionOrBuilder>
+        getHeaderActionFieldBuilder() {
+      if (headerActionBuilder_ == null) {
+        headerActionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction,
+                com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.Builder,
+                com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionOrBuilder>(
+                getHeaderAction(), getParentForChildren(), isClean());
+        headerAction_ = null;
+      }
+      return headerActionBuilder_;
+    }
+
     private java.lang.Object kind_ = "";
     /**
      *
@@ -1178,7 +1714,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1240,7 +1776,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       kind_ = value;
       onChanged();
       return this;
@@ -1257,7 +1793,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1279,7 +1815,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       kind_ = value;
       onChanged();
       return this;
@@ -1303,7 +1839,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return Whether the match field is set.
      */
     public boolean hasMatch() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1344,7 +1880,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         matchBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1364,7 +1900,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         matchBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1378,7 +1914,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeMatch(com.google.cloud.compute.v1.SecurityPolicyRuleMatcher value) {
       if (matchBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && match_ != null
             && match_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.getDefaultInstance()) {
@@ -1393,7 +1929,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         matchBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1412,7 +1948,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         matchBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
     /**
@@ -1425,7 +1961,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher match = 103668165;</code>
      */
     public com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.Builder getMatchBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getMatchFieldBuilder().getBuilder();
     }
@@ -1487,7 +2023,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasPreview() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1517,7 +2053,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setPreview(boolean value) {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       preview_ = value;
       onChanged();
       return this;
@@ -1534,7 +2070,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPreview() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       preview_ = false;
       onChanged();
       return this;
@@ -1554,7 +2090,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasPriority() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1584,7 +2120,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       priority_ = value;
       onChanged();
       return this;
@@ -1601,10 +2137,434 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       priority_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rateLimitOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions,
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsOrBuilder>
+        rateLimitOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+     * </code>
+     *
+     * @return Whether the rateLimitOptions field is set.
+     */
+    public boolean hasRateLimitOptions() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+     * </code>
+     *
+     * @return The rateLimitOptions.
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions getRateLimitOptions() {
+      if (rateLimitOptionsBuilder_ == null) {
+        return rateLimitOptions_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.getDefaultInstance()
+            : rateLimitOptions_;
+      } else {
+        return rateLimitOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+     * </code>
+     */
+    public Builder setRateLimitOptions(
+        com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions value) {
+      if (rateLimitOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rateLimitOptions_ = value;
+        onChanged();
+      } else {
+        rateLimitOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+     * </code>
+     */
+    public Builder setRateLimitOptions(
+        com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.Builder builderForValue) {
+      if (rateLimitOptionsBuilder_ == null) {
+        rateLimitOptions_ = builderForValue.build();
+        onChanged();
+      } else {
+        rateLimitOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+     * </code>
+     */
+    public Builder mergeRateLimitOptions(
+        com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions value) {
+      if (rateLimitOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && rateLimitOptions_ != null
+            && rateLimitOptions_
+                != com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions
+                    .getDefaultInstance()) {
+          rateLimitOptions_ =
+              com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.newBuilder(
+                      rateLimitOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          rateLimitOptions_ = value;
+        }
+        onChanged();
+      } else {
+        rateLimitOptionsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+     * </code>
+     */
+    public Builder clearRateLimitOptions() {
+      if (rateLimitOptionsBuilder_ == null) {
+        rateLimitOptions_ = null;
+        onChanged();
+      } else {
+        rateLimitOptionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000080);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.Builder
+        getRateLimitOptionsBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getRateLimitOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsOrBuilder
+        getRateLimitOptionsOrBuilder() {
+      if (rateLimitOptionsBuilder_ != null) {
+        return rateLimitOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return rateLimitOptions_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.getDefaultInstance()
+            : rateLimitOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions,
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsOrBuilder>
+        getRateLimitOptionsFieldBuilder() {
+      if (rateLimitOptionsBuilder_ == null) {
+        rateLimitOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions,
+                com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.Builder,
+                com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsOrBuilder>(
+                getRateLimitOptions(), getParentForChildren(), isClean());
+        rateLimitOptions_ = null;
+      }
+      return rateLimitOptionsBuilder_;
+    }
+
+    private com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirectOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions,
+            com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptionsOrBuilder>
+        redirectOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters defining the redirect action. Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+     * </code>
+     *
+     * @return Whether the redirectOptions field is set.
+     */
+    public boolean hasRedirectOptions() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters defining the redirect action. Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+     * </code>
+     *
+     * @return The redirectOptions.
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions getRedirectOptions() {
+      if (redirectOptionsBuilder_ == null) {
+        return redirectOptions_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.getDefaultInstance()
+            : redirectOptions_;
+      } else {
+        return redirectOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters defining the redirect action. Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+     * </code>
+     */
+    public Builder setRedirectOptions(
+        com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions value) {
+      if (redirectOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        redirectOptions_ = value;
+        onChanged();
+      } else {
+        redirectOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters defining the redirect action. Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+     * </code>
+     */
+    public Builder setRedirectOptions(
+        com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder builderForValue) {
+      if (redirectOptionsBuilder_ == null) {
+        redirectOptions_ = builderForValue.build();
+        onChanged();
+      } else {
+        redirectOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters defining the redirect action. Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+     * </code>
+     */
+    public Builder mergeRedirectOptions(
+        com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions value) {
+      if (redirectOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && redirectOptions_ != null
+            && redirectOptions_
+                != com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions
+                    .getDefaultInstance()) {
+          redirectOptions_ =
+              com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.newBuilder(
+                      redirectOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          redirectOptions_ = value;
+        }
+        onChanged();
+      } else {
+        redirectOptionsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters defining the redirect action. Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+     * </code>
+     */
+    public Builder clearRedirectOptions() {
+      if (redirectOptionsBuilder_ == null) {
+        redirectOptions_ = null;
+        onChanged();
+      } else {
+        redirectOptionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters defining the redirect action. Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder
+        getRedirectOptionsBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getRedirectOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters defining the redirect action. Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptionsOrBuilder
+        getRedirectOptionsOrBuilder() {
+      if (redirectOptionsBuilder_ != null) {
+        return redirectOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return redirectOptions_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.getDefaultInstance()
+            : redirectOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters defining the redirect action. Cannot be specified for any other actions.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions,
+            com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptionsOrBuilder>
+        getRedirectOptionsFieldBuilder() {
+      if (redirectOptionsBuilder_ == null) {
+        redirectOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions,
+                com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder,
+                com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptionsOrBuilder>(
+                getRedirectOptions(), getParentForChildren(), isClean());
+        redirectOptions_ = null;
+      }
+      return redirectOptionsBuilder_;
     }
 
     @java.lang.Override

@@ -137,6 +137,17 @@ public class ReservationsSettings extends ClientSettings<ReservationsSettings> {
     return ((ReservationsStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to update. */
+  public UnaryCallSettings<UpdateReservationRequest, Operation> updateSettings() {
+    return ((ReservationsStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateReservationRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((ReservationsStubSettings) getStubSettings()).updateOperationSettings();
+  }
+
   public static final ReservationsSettings create(ReservationsStubSettings stub)
       throws IOException {
     return new ReservationsSettings.Builder(stub.toBuilder()).build();
@@ -304,6 +315,17 @@ public class ReservationsSettings extends ClientSettings<ReservationsSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsReservationRequest, TestPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public UnaryCallSettings.Builder<UpdateReservationRequest, Operation> updateSettings() {
+      return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateReservationRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     @Override

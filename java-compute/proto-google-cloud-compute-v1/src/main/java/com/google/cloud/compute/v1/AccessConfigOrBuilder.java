@@ -27,7 +27,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
    * </pre>
    *
    * <code>optional string external_ipv6 = 532703707;</code>
@@ -39,7 +39,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
    * </pre>
    *
    * <code>optional string external_ipv6 = 532703707;</code>
@@ -51,7 +51,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
    * </pre>
    *
    * <code>optional string external_ipv6 = 532703707;</code>
@@ -64,7 +64,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The prefix length of the external IPv6 range.
+   * The prefix length of the external IPv6 range.
    * </pre>
    *
    * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -76,7 +76,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The prefix length of the external IPv6 range.
+   * The prefix length of the external IPv6 range.
    * </pre>
    *
    * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -240,7 +240,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
    * </pre>
    *
    * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -252,7 +252,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
    * </pre>
    *
    * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -264,7 +264,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
    * </pre>
    *
    * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -277,7 +277,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
+   * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name. This field is not used in ipv6AccessConfig. A default PTR record will be created if the VM has external IPv6 range associated.
    * </pre>
    *
    * <code>optional bool set_public_ptr = 523870229;</code>
@@ -289,7 +289,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
+   * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name. This field is not used in ipv6AccessConfig. A default PTR record will be created if the VM has external IPv6 range associated.
    * </pre>
    *
    * <code>optional bool set_public_ptr = 523870229;</code>

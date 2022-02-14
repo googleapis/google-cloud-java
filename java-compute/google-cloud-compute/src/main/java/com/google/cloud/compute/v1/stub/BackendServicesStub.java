@@ -36,6 +36,7 @@ import com.google.cloud.compute.v1.InsertBackendServiceRequest;
 import com.google.cloud.compute.v1.ListBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendServiceRequest;
+import com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.UpdateBackendServiceRequest;
 import javax.annotation.Generated;
@@ -121,6 +122,17 @@ public abstract class BackendServicesStub implements BackgroundResource {
 
   public UnaryCallable<PatchBackendServiceRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
+      setEdgeSecurityPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setEdgeSecurityPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<SetEdgeSecurityPolicyBackendServiceRequest, Operation>
+      setEdgeSecurityPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setEdgeSecurityPolicyCallable()");
   }
 
   public OperationCallable<SetSecurityPolicyBackendServiceRequest, Operation, Operation>

@@ -931,6 +931,30 @@ public interface InstanceOrBuilder
   com.google.cloud.compute.v1.NetworkInterfaceOrBuilder getNetworkInterfacesOrBuilder(int index);
 
   /**
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+   * </code>
+   *
+   * @return Whether the networkPerformanceConfig field is set.
+   */
+  boolean hasNetworkPerformanceConfig();
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+   * </code>
+   *
+   * @return The networkPerformanceConfig.
+   */
+  com.google.cloud.compute.v1.NetworkPerformanceConfig getNetworkPerformanceConfig();
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+   * </code>
+   */
+  com.google.cloud.compute.v1.NetworkPerformanceConfigOrBuilder
+      getNetworkPerformanceConfigOrBuilder();
+
+  /**
    *
    *
    * <pre>
@@ -1254,6 +1278,85 @@ public interface InstanceOrBuilder
    */
   com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicyOrBuilder
       getShieldedInstanceIntegrityPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Source machine image
+   * </pre>
+   *
+   * <code>optional string source_machine_image = 21769791;</code>
+   *
+   * @return Whether the sourceMachineImage field is set.
+   */
+  boolean hasSourceMachineImage();
+  /**
+   *
+   *
+   * <pre>
+   * Source machine image
+   * </pre>
+   *
+   * <code>optional string source_machine_image = 21769791;</code>
+   *
+   * @return The sourceMachineImage.
+   */
+  java.lang.String getSourceMachineImage();
+  /**
+   *
+   *
+   * <pre>
+   * Source machine image
+   * </pre>
+   *
+   * <code>optional string source_machine_image = 21769791;</code>
+   *
+   * @return The bytes for sourceMachineImage.
+   */
+  com.google.protobuf.ByteString getSourceMachineImageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Source machine image encryption key when creating an instance from a machine image.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_machine_image_encryption_key = 192839075;
+   * </code>
+   *
+   * @return Whether the sourceMachineImageEncryptionKey field is set.
+   */
+  boolean hasSourceMachineImageEncryptionKey();
+  /**
+   *
+   *
+   * <pre>
+   * Source machine image encryption key when creating an instance from a machine image.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_machine_image_encryption_key = 192839075;
+   * </code>
+   *
+   * @return The sourceMachineImageEncryptionKey.
+   */
+  com.google.cloud.compute.v1.CustomerEncryptionKey getSourceMachineImageEncryptionKey();
+  /**
+   *
+   *
+   * <pre>
+   * Source machine image encryption key when creating an instance from a machine image.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_machine_image_encryption_key = 192839075;
+   * </code>
+   */
+  com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
+      getSourceMachineImageEncryptionKeyOrBuilder();
 
   /**
    *

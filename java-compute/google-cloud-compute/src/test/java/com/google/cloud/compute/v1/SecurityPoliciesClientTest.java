@@ -230,8 +230,10 @@ public class SecurityPoliciesClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")
+            .setRecaptchaOptionsConfig(SecurityPolicyRecaptchaOptionsConfig.newBuilder().build())
             .addAllRules(new ArrayList<SecurityPolicyRule>())
             .setSelfLink("selfLink1191800166")
+            .setType("type3575610")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -279,10 +281,13 @@ public class SecurityPoliciesClientTest {
         SecurityPolicyRule.newBuilder()
             .setAction("action-1422950858")
             .setDescription("description-1724546052")
+            .setHeaderAction(SecurityPolicyRuleHttpHeaderAction.newBuilder().build())
             .setKind("kind3292052")
             .setMatch(SecurityPolicyRuleMatcher.newBuilder().build())
             .setPreview(true)
             .setPriority(-1165461084)
+            .setRateLimitOptions(SecurityPolicyRuleRateLimitOptions.newBuilder().build())
+            .setRedirectOptions(SecurityPolicyRuleRedirectOptions.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

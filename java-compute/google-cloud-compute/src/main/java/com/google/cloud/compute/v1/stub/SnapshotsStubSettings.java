@@ -47,6 +47,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteSnapshotRequest;
 import com.google.cloud.compute.v1.GetIamPolicySnapshotRequest;
 import com.google.cloud.compute.v1.GetSnapshotRequest;
+import com.google.cloud.compute.v1.InsertSnapshotRequest;
 import com.google.cloud.compute.v1.ListSnapshotsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Policy;
@@ -110,6 +111,9 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
       deleteOperationSettings;
   private final UnaryCallSettings<GetSnapshotRequest, Snapshot> getSettings;
   private final UnaryCallSettings<GetIamPolicySnapshotRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<InsertSnapshotRequest, Operation> insertSettings;
+  private final OperationCallSettings<InsertSnapshotRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<ListSnapshotsRequest, SnapshotList, ListPagedResponse>
       listSettings;
   private final UnaryCallSettings<SetIamPolicySnapshotRequest, Policy> setIamPolicySettings;
@@ -190,6 +194,17 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
   /** Returns the object with the settings used for calls to getIamPolicy. */
   public UnaryCallSettings<GetIamPolicySnapshotRequest, Policy> getIamPolicySettings() {
     return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public UnaryCallSettings<InsertSnapshotRequest, Operation> insertSettings() {
+    return insertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertSnapshotRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -299,6 +314,8 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
@@ -315,6 +332,9 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
     private final UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSettings;
     private final UnaryCallSettings.Builder<GetIamPolicySnapshotRequest, Policy>
         getIamPolicySettings;
+    private final UnaryCallSettings.Builder<InsertSnapshotRequest, Operation> insertSettings;
+    private final OperationCallSettings.Builder<InsertSnapshotRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<ListSnapshotsRequest, SnapshotList, ListPagedResponse>
         listSettings;
     private final UnaryCallSettings.Builder<SetIamPolicySnapshotRequest, Policy>
@@ -379,6 +399,8 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -390,6 +412,7 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
               deleteSettings,
               getSettings,
               getIamPolicySettings,
+              insertSettings,
               listSettings,
               setIamPolicySettings,
               setLabelsSettings,
@@ -404,6 +427,8 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
@@ -415,6 +440,7 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
               deleteSettings,
               getSettings,
               getIamPolicySettings,
+              insertSettings,
               listSettings,
               setIamPolicySettings,
               setLabelsSettings,
@@ -451,6 +477,11 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .insertSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .listSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -475,6 +506,30 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -557,6 +612,19 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
     /** Returns the builder for the settings used for calls to getIamPolicy. */
     public UnaryCallSettings.Builder<GetIamPolicySnapshotRequest, Policy> getIamPolicySettings() {
       return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public UnaryCallSettings.Builder<InsertSnapshotRequest, Operation> insertSettings() {
+      return insertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<InsertSnapshotRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to list. */

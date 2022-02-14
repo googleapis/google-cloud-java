@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * In contrast to a single BackendService in HttpRouteAction to which all matching traffic is directed to, WeightedBackendService allows traffic to be split across multiple BackendServices. The volume of traffic for each BackendService is proportional to the weight specified in each WeightedBackendService
+ * In contrast to a single BackendService in HttpRouteAction to which all matching traffic is directed to, WeightedBackendService allows traffic to be split across multiple backend services. The volume of traffic for each backend service is proportional to the weight specified in each WeightedBackendService
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.WeightedBackendService}
@@ -141,7 +141,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
+   * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the load balancer applies any relevant headerActions specified as part of this backendServiceWeight.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -156,7 +156,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
+   * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the load balancer applies any relevant headerActions specified as part of this backendServiceWeight.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -179,7 +179,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
+   * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the load balancer applies any relevant headerActions specified as part of this backendServiceWeight.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -205,7 +205,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. headerAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -220,7 +220,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. headerAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -237,7 +237,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. headerAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -255,7 +255,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Specifies the fraction of traffic sent to backendService, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backendService, subsequent requests will be sent to the same backendService as determined by the BackendService's session affinity policy. The value must be between 0 and 1000
+   * Specifies the fraction of traffic sent to a backend service, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backend service, subsequent requests are sent to the same backend service as determined by the backend service's session affinity policy. The value must be from 0 to 1000.
    * </pre>
    *
    * <code>optional uint32 weight = 282149496;</code>
@@ -270,7 +270,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Specifies the fraction of traffic sent to backendService, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backendService, subsequent requests will be sent to the same backendService as determined by the BackendService's session affinity policy. The value must be between 0 and 1000
+   * Specifies the fraction of traffic sent to a backend service, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backend service, subsequent requests are sent to the same backend service as determined by the backend service's session affinity policy. The value must be from 0 to 1000.
    * </pre>
    *
    * <code>optional uint32 weight = 282149496;</code>
@@ -479,7 +479,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * In contrast to a single BackendService in HttpRouteAction to which all matching traffic is directed to, WeightedBackendService allows traffic to be split across multiple BackendServices. The volume of traffic for each BackendService is proportional to the weight specified in each WeightedBackendService
+   * In contrast to a single BackendService in HttpRouteAction to which all matching traffic is directed to, WeightedBackendService allows traffic to be split across multiple backend services. The volume of traffic for each backend service is proportional to the weight specified in each WeightedBackendService
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.WeightedBackendService}
@@ -676,7 +676,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
+     * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the load balancer applies any relevant headerActions specified as part of this backendServiceWeight.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -690,7 +690,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
+     * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the load balancer applies any relevant headerActions specified as part of this backendServiceWeight.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -712,7 +712,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
+     * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the load balancer applies any relevant headerActions specified as part of this backendServiceWeight.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -734,7 +734,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
+     * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the load balancer applies any relevant headerActions specified as part of this backendServiceWeight.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -755,7 +755,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
+     * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the load balancer applies any relevant headerActions specified as part of this backendServiceWeight.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -772,7 +772,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
+     * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the load balancer applies any relevant headerActions specified as part of this backendServiceWeight.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -801,7 +801,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. headerAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -815,7 +815,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. headerAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -835,7 +835,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. headerAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -857,7 +857,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. headerAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -877,7 +877,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. headerAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -905,7 +905,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. headerAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -924,7 +924,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. headerAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -938,7 +938,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. headerAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -956,7 +956,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. headerAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -983,7 +983,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the fraction of traffic sent to backendService, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backendService, subsequent requests will be sent to the same backendService as determined by the BackendService's session affinity policy. The value must be between 0 and 1000
+     * Specifies the fraction of traffic sent to a backend service, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backend service, subsequent requests are sent to the same backend service as determined by the backend service's session affinity policy. The value must be from 0 to 1000.
      * </pre>
      *
      * <code>optional uint32 weight = 282149496;</code>
@@ -998,7 +998,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the fraction of traffic sent to backendService, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backendService, subsequent requests will be sent to the same backendService as determined by the BackendService's session affinity policy. The value must be between 0 and 1000
+     * Specifies the fraction of traffic sent to a backend service, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backend service, subsequent requests are sent to the same backend service as determined by the backend service's session affinity policy. The value must be from 0 to 1000.
      * </pre>
      *
      * <code>optional uint32 weight = 282149496;</code>
@@ -1013,7 +1013,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the fraction of traffic sent to backendService, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backendService, subsequent requests will be sent to the same backendService as determined by the BackendService's session affinity policy. The value must be between 0 and 1000
+     * Specifies the fraction of traffic sent to a backend service, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backend service, subsequent requests are sent to the same backend service as determined by the backend service's session affinity policy. The value must be from 0 to 1000.
      * </pre>
      *
      * <code>optional uint32 weight = 282149496;</code>
@@ -1031,7 +1031,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the fraction of traffic sent to backendService, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backendService, subsequent requests will be sent to the same backendService as determined by the BackendService's session affinity policy. The value must be between 0 and 1000
+     * Specifies the fraction of traffic sent to a backend service, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backend service, subsequent requests are sent to the same backend service as determined by the backend service's session affinity policy. The value must be from 0 to 1000.
      * </pre>
      *
      * <code>optional uint32 weight = 282149496;</code>

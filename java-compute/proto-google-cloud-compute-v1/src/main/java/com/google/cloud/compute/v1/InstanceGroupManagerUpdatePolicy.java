@@ -40,6 +40,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
   private InstanceGroupManagerUpdatePolicy() {
     instanceRedistributionType_ = "";
     minimalAction_ = "";
+    mostDisruptiveAllowedAction_ = "";
     replacementMethod_ = "";
     type_ = "";
   }
@@ -77,8 +78,15 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
           case 28604882:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               type_ = s;
+              break;
+            }
+          case 528824426:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              mostDisruptiveAllowedAction_ = s;
               break;
             }
           case -2130430814:
@@ -130,7 +138,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
           case -247513742:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               replacementMethod_ = s;
               break;
             }
@@ -397,6 +405,70 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     }
   }
 
+  public static final int MOST_DISRUPTIVE_ALLOWED_ACTION_FIELD_NUMBER = 66103053;
+  private volatile java.lang.Object mostDisruptiveAllowedAction_;
+  /**
+   *
+   *
+   * <pre>
+   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * </pre>
+   *
+   * <code>optional string most_disruptive_allowed_action = 66103053;</code>
+   *
+   * @return Whether the mostDisruptiveAllowedAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasMostDisruptiveAllowedAction() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * </pre>
+   *
+   * <code>optional string most_disruptive_allowed_action = 66103053;</code>
+   *
+   * @return The mostDisruptiveAllowedAction.
+   */
+  @java.lang.Override
+  public java.lang.String getMostDisruptiveAllowedAction() {
+    java.lang.Object ref = mostDisruptiveAllowedAction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      mostDisruptiveAllowedAction_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * </pre>
+   *
+   * <code>optional string most_disruptive_allowed_action = 66103053;</code>
+   *
+   * @return The bytes for mostDisruptiveAllowedAction.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMostDisruptiveAllowedActionBytes() {
+    java.lang.Object ref = mostDisruptiveAllowedAction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      mostDisruptiveAllowedAction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int REPLACEMENT_METHOD_FIELD_NUMBER = 505931694;
   private volatile java.lang.Object replacementMethod_;
   /**
@@ -412,7 +484,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    */
   @java.lang.Override
   public boolean hasReplacementMethod() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -476,7 +548,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -539,8 +611,12 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 66103053, mostDisruptiveAllowedAction_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 270567060, minimalAction_);
@@ -555,7 +631,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(404940277, getMaxUnavailable());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 505931694, replacementMethod_);
     }
     unknownFields.writeTo(output);
@@ -567,8 +643,13 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              66103053, mostDisruptiveAllowedAction_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(270567060, minimalAction_);
@@ -585,7 +666,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(404940277, getMaxUnavailable());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(505931694, replacementMethod_);
     }
@@ -622,6 +703,11 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     if (hasMinimalAction()) {
       if (!getMinimalAction().equals(other.getMinimalAction())) return false;
     }
+    if (hasMostDisruptiveAllowedAction() != other.hasMostDisruptiveAllowedAction()) return false;
+    if (hasMostDisruptiveAllowedAction()) {
+      if (!getMostDisruptiveAllowedAction().equals(other.getMostDisruptiveAllowedAction()))
+        return false;
+    }
     if (hasReplacementMethod() != other.hasReplacementMethod()) return false;
     if (hasReplacementMethod()) {
       if (!getReplacementMethod().equals(other.getReplacementMethod())) return false;
@@ -656,6 +742,10 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     if (hasMinimalAction()) {
       hash = (37 * hash) + MINIMAL_ACTION_FIELD_NUMBER;
       hash = (53 * hash) + getMinimalAction().hashCode();
+    }
+    if (hasMostDisruptiveAllowedAction()) {
+      hash = (37 * hash) + MOST_DISRUPTIVE_ALLOWED_ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + getMostDisruptiveAllowedAction().hashCode();
     }
     if (hasReplacementMethod()) {
       hash = (37 * hash) + REPLACEMENT_METHOD_FIELD_NUMBER;
@@ -829,10 +919,12 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       bitField0_ = (bitField0_ & ~0x00000004);
       minimalAction_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      replacementMethod_ = "";
+      mostDisruptiveAllowedAction_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
-      type_ = "";
+      replacementMethod_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
+      type_ = "";
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -890,9 +982,13 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       if (((from_bitField0_ & 0x00000010) != 0)) {
         to_bitField0_ |= 0x00000010;
       }
-      result.replacementMethod_ = replacementMethod_;
+      result.mostDisruptiveAllowedAction_ = mostDisruptiveAllowedAction_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         to_bitField0_ |= 0x00000020;
+      }
+      result.replacementMethod_ = replacementMethod_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
       }
       result.type_ = type_;
       result.bitField0_ = to_bitField0_;
@@ -963,13 +1059,18 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         minimalAction_ = other.minimalAction_;
         onChanged();
       }
-      if (other.hasReplacementMethod()) {
+      if (other.hasMostDisruptiveAllowedAction()) {
         bitField0_ |= 0x00000010;
+        mostDisruptiveAllowedAction_ = other.mostDisruptiveAllowedAction_;
+        onChanged();
+      }
+      if (other.hasReplacementMethod()) {
+        bitField0_ |= 0x00000020;
         replacementMethod_ = other.replacementMethod_;
         onChanged();
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         type_ = other.type_;
         onChanged();
       }
@@ -1618,6 +1719,126 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       return this;
     }
 
+    private java.lang.Object mostDisruptiveAllowedAction_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * </pre>
+     *
+     * <code>optional string most_disruptive_allowed_action = 66103053;</code>
+     *
+     * @return Whether the mostDisruptiveAllowedAction field is set.
+     */
+    public boolean hasMostDisruptiveAllowedAction() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * </pre>
+     *
+     * <code>optional string most_disruptive_allowed_action = 66103053;</code>
+     *
+     * @return The mostDisruptiveAllowedAction.
+     */
+    public java.lang.String getMostDisruptiveAllowedAction() {
+      java.lang.Object ref = mostDisruptiveAllowedAction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mostDisruptiveAllowedAction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * </pre>
+     *
+     * <code>optional string most_disruptive_allowed_action = 66103053;</code>
+     *
+     * @return The bytes for mostDisruptiveAllowedAction.
+     */
+    public com.google.protobuf.ByteString getMostDisruptiveAllowedActionBytes() {
+      java.lang.Object ref = mostDisruptiveAllowedAction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mostDisruptiveAllowedAction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * </pre>
+     *
+     * <code>optional string most_disruptive_allowed_action = 66103053;</code>
+     *
+     * @param value The mostDisruptiveAllowedAction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMostDisruptiveAllowedAction(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      mostDisruptiveAllowedAction_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * </pre>
+     *
+     * <code>optional string most_disruptive_allowed_action = 66103053;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMostDisruptiveAllowedAction() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      mostDisruptiveAllowedAction_ = getDefaultInstance().getMostDisruptiveAllowedAction();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * </pre>
+     *
+     * <code>optional string most_disruptive_allowed_action = 66103053;</code>
+     *
+     * @param value The bytes for mostDisruptiveAllowedAction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMostDisruptiveAllowedActionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      mostDisruptiveAllowedAction_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object replacementMethod_ = "";
     /**
      *
@@ -1631,7 +1852,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * @return Whether the replacementMethod field is set.
      */
     public boolean hasReplacementMethod() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1693,7 +1914,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       replacementMethod_ = value;
       onChanged();
       return this;
@@ -1710,7 +1931,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearReplacementMethod() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       replacementMethod_ = getDefaultInstance().getReplacementMethod();
       onChanged();
       return this;
@@ -1732,7 +1953,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       replacementMethod_ = value;
       onChanged();
       return this;
@@ -1751,7 +1972,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1813,7 +2034,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       type_ = value;
       onChanged();
       return this;
@@ -1830,7 +2051,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       type_ = getDefaultInstance().getType();
       onChanged();
       return this;
@@ -1852,7 +2073,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       type_ = value;
       onChanged();
       return this;

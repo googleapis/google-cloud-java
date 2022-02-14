@@ -218,6 +218,7 @@ public class VpnGatewaysClientTest {
             .setNetwork("network1843485230")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setStackType("stackType1727939042")
             .addAllVpnInterfaces(new ArrayList<VpnGatewayVpnGatewayInterface>())
             .build();
     mockService.addResponse(expectedResponse);

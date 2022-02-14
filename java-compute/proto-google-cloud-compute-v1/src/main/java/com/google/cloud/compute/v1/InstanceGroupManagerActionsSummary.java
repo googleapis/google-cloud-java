@@ -75,6 +75,24 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
               none_ = input.readInt32();
               break;
             }
+          case 232911152:
+            {
+              bitField0_ |= 0x00000800;
+              suspending_ = input.readInt32();
+              break;
+            }
+          case 840287136:
+            {
+              bitField0_ |= 0x00000400;
+              stopping_ = input.readInt32();
+              break;
+            }
+          case 1608805712:
+            {
+              bitField0_ |= 0x00000100;
+              resuming_ = input.readInt32();
+              break;
+            }
           case 1678472648:
             {
               bitField0_ |= 0x00000002;
@@ -85,6 +103,12 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
             {
               bitField0_ |= 0x00000040;
               refreshing_ = input.readInt32();
+              break;
+            }
+          case 1944519168:
+            {
+              bitField0_ |= 0x00000200;
+              starting_ = input.readInt32();
               break;
             }
           case -2032198336:
@@ -119,7 +143,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
             }
           case -682064312:
             {
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00001000;
               verifying_ = input.readInt32();
               break;
             }
@@ -422,6 +446,138 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     return restarting_;
   }
 
+  public static final int RESUMING_FIELD_NUMBER = 201100714;
+  private int resuming_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+   * </pre>
+   *
+   * <code>optional int32 resuming = 201100714;</code>
+   *
+   * @return Whether the resuming field is set.
+   */
+  @java.lang.Override
+  public boolean hasResuming() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+   * </pre>
+   *
+   * <code>optional int32 resuming = 201100714;</code>
+   *
+   * @return The resuming.
+   */
+  @java.lang.Override
+  public int getResuming() {
+    return resuming_;
+  }
+
+  public static final int STARTING_FIELD_NUMBER = 243064896;
+  private int starting_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+   * </pre>
+   *
+   * <code>optional int32 starting = 243064896;</code>
+   *
+   * @return Whether the starting field is set.
+   */
+  @java.lang.Override
+  public boolean hasStarting() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+   * </pre>
+   *
+   * <code>optional int32 starting = 243064896;</code>
+   *
+   * @return The starting.
+   */
+  @java.lang.Override
+  public int getStarting() {
+    return starting_;
+  }
+
+  public static final int STOPPING_FIELD_NUMBER = 105035892;
+  private int stopping_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+   * </pre>
+   *
+   * <code>optional int32 stopping = 105035892;</code>
+   *
+   * @return Whether the stopping field is set.
+   */
+  @java.lang.Override
+  public boolean hasStopping() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+   * </pre>
+   *
+   * <code>optional int32 stopping = 105035892;</code>
+   *
+   * @return The stopping.
+   */
+  @java.lang.Override
+  public int getStopping() {
+    return stopping_;
+  }
+
+  public static final int SUSPENDING_FIELD_NUMBER = 29113894;
+  private int suspending_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+   * </pre>
+   *
+   * <code>optional int32 suspending = 29113894;</code>
+   *
+   * @return Whether the suspending field is set.
+   */
+  @java.lang.Override
+  public boolean hasSuspending() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+   * </pre>
+   *
+   * <code>optional int32 suspending = 29113894;</code>
+   *
+   * @return The suspending.
+   */
+  @java.lang.Override
+  public int getSuspending() {
+    return suspending_;
+  }
+
   public static final int VERIFYING_FIELD_NUMBER = 451612873;
   private int verifying_;
   /**
@@ -437,7 +593,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasVerifying() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -472,11 +628,23 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt32(3387192, none_);
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeInt32(29113894, suspending_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeInt32(105035892, stopping_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeInt32(201100714, resuming_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(209809081, creating_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeInt32(215044903, refreshing_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeInt32(243064896, starting_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(282846120, deleting_);
@@ -493,7 +661,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(440023373, abandoning_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeInt32(451612873, verifying_);
     }
     unknownFields.writeTo(output);
@@ -508,11 +676,23 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3387192, none_);
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(29113894, suspending_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(105035892, stopping_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(201100714, resuming_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(209809081, creating_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(215044903, refreshing_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(243064896, starting_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(282846120, deleting_);
@@ -531,7 +711,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(440023373, abandoning_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(451612873, verifying_);
     }
     size += unknownFields.getSerializedSize();
@@ -582,6 +762,22 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     if (hasRestarting()) {
       if (getRestarting() != other.getRestarting()) return false;
     }
+    if (hasResuming() != other.hasResuming()) return false;
+    if (hasResuming()) {
+      if (getResuming() != other.getResuming()) return false;
+    }
+    if (hasStarting() != other.hasStarting()) return false;
+    if (hasStarting()) {
+      if (getStarting() != other.getStarting()) return false;
+    }
+    if (hasStopping() != other.hasStopping()) return false;
+    if (hasStopping()) {
+      if (getStopping() != other.getStopping()) return false;
+    }
+    if (hasSuspending() != other.hasSuspending()) return false;
+    if (hasSuspending()) {
+      if (getSuspending() != other.getSuspending()) return false;
+    }
     if (hasVerifying() != other.hasVerifying()) return false;
     if (hasVerifying()) {
       if (getVerifying() != other.getVerifying()) return false;
@@ -628,6 +824,22 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     if (hasRestarting()) {
       hash = (37 * hash) + RESTARTING_FIELD_NUMBER;
       hash = (53 * hash) + getRestarting();
+    }
+    if (hasResuming()) {
+      hash = (37 * hash) + RESUMING_FIELD_NUMBER;
+      hash = (53 * hash) + getResuming();
+    }
+    if (hasStarting()) {
+      hash = (37 * hash) + STARTING_FIELD_NUMBER;
+      hash = (53 * hash) + getStarting();
+    }
+    if (hasStopping()) {
+      hash = (37 * hash) + STOPPING_FIELD_NUMBER;
+      hash = (53 * hash) + getStopping();
+    }
+    if (hasSuspending()) {
+      hash = (37 * hash) + SUSPENDING_FIELD_NUMBER;
+      hash = (53 * hash) + getSuspending();
     }
     if (hasVerifying()) {
       hash = (37 * hash) + VERIFYING_FIELD_NUMBER;
@@ -794,8 +1006,16 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       bitField0_ = (bitField0_ & ~0x00000040);
       restarting_ = 0;
       bitField0_ = (bitField0_ & ~0x00000080);
-      verifying_ = 0;
+      resuming_ = 0;
       bitField0_ = (bitField0_ & ~0x00000100);
+      starting_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      stopping_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      suspending_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      verifying_ = 0;
+      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
 
@@ -859,8 +1079,24 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.verifying_ = verifying_;
+        result.resuming_ = resuming_;
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.starting_ = starting_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.stopping_ = stopping_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.suspending_ = suspending_;
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.verifying_ = verifying_;
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -937,6 +1173,18 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       }
       if (other.hasRestarting()) {
         setRestarting(other.getRestarting());
+      }
+      if (other.hasResuming()) {
+        setResuming(other.getResuming());
+      }
+      if (other.hasStarting()) {
+        setStarting(other.getStarting());
+      }
+      if (other.hasStopping()) {
+        setStopping(other.getStopping());
+      }
+      if (other.hasSuspending()) {
+        setSuspending(other.getSuspending());
       }
       if (other.hasVerifying()) {
         setVerifying(other.getVerifying());
@@ -1510,6 +1758,274 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       return this;
     }
 
+    private int resuming_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+     * </pre>
+     *
+     * <code>optional int32 resuming = 201100714;</code>
+     *
+     * @return Whether the resuming field is set.
+     */
+    @java.lang.Override
+    public boolean hasResuming() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+     * </pre>
+     *
+     * <code>optional int32 resuming = 201100714;</code>
+     *
+     * @return The resuming.
+     */
+    @java.lang.Override
+    public int getResuming() {
+      return resuming_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+     * </pre>
+     *
+     * <code>optional int32 resuming = 201100714;</code>
+     *
+     * @param value The resuming to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResuming(int value) {
+      bitField0_ |= 0x00000100;
+      resuming_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+     * </pre>
+     *
+     * <code>optional int32 resuming = 201100714;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResuming() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      resuming_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int starting_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+     * </pre>
+     *
+     * <code>optional int32 starting = 243064896;</code>
+     *
+     * @return Whether the starting field is set.
+     */
+    @java.lang.Override
+    public boolean hasStarting() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+     * </pre>
+     *
+     * <code>optional int32 starting = 243064896;</code>
+     *
+     * @return The starting.
+     */
+    @java.lang.Override
+    public int getStarting() {
+      return starting_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+     * </pre>
+     *
+     * <code>optional int32 starting = 243064896;</code>
+     *
+     * @param value The starting to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStarting(int value) {
+      bitField0_ |= 0x00000200;
+      starting_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+     * </pre>
+     *
+     * <code>optional int32 starting = 243064896;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStarting() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      starting_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int stopping_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+     * </pre>
+     *
+     * <code>optional int32 stopping = 105035892;</code>
+     *
+     * @return Whether the stopping field is set.
+     */
+    @java.lang.Override
+    public boolean hasStopping() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+     * </pre>
+     *
+     * <code>optional int32 stopping = 105035892;</code>
+     *
+     * @return The stopping.
+     */
+    @java.lang.Override
+    public int getStopping() {
+      return stopping_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+     * </pre>
+     *
+     * <code>optional int32 stopping = 105035892;</code>
+     *
+     * @param value The stopping to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStopping(int value) {
+      bitField0_ |= 0x00000400;
+      stopping_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+     * </pre>
+     *
+     * <code>optional int32 stopping = 105035892;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStopping() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      stopping_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int suspending_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+     * </pre>
+     *
+     * <code>optional int32 suspending = 29113894;</code>
+     *
+     * @return Whether the suspending field is set.
+     */
+    @java.lang.Override
+    public boolean hasSuspending() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+     * </pre>
+     *
+     * <code>optional int32 suspending = 29113894;</code>
+     *
+     * @return The suspending.
+     */
+    @java.lang.Override
+    public int getSuspending() {
+      return suspending_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+     * </pre>
+     *
+     * <code>optional int32 suspending = 29113894;</code>
+     *
+     * @param value The suspending to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuspending(int value) {
+      bitField0_ |= 0x00000800;
+      suspending_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+     * </pre>
+     *
+     * <code>optional int32 suspending = 29113894;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSuspending() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      suspending_ = 0;
+      onChanged();
+      return this;
+    }
+
     private int verifying_;
     /**
      *
@@ -1524,7 +2040,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      */
     @java.lang.Override
     public boolean hasVerifying() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -1554,7 +2070,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setVerifying(int value) {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00001000;
       verifying_ = value;
       onChanged();
       return this;
@@ -1571,7 +2087,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearVerifying() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00001000);
       verifying_ = 0;
       onChanged();
       return this;

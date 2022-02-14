@@ -402,6 +402,46 @@ public interface VpnGatewayOrBuilder
    *
    *
    * <pre>
+   * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return Whether the stackType field is set.
+   */
+  boolean hasStackType();
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return The stackType.
+   */
+  java.lang.String getStackType();
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return The bytes for stackType.
+   */
+  com.google.protobuf.ByteString getStackTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The list of VPN interfaces associated with this VPN gateway.
    * </pre>
    *

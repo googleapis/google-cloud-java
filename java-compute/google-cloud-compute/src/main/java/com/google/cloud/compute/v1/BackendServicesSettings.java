@@ -154,6 +154,19 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
     return ((BackendServicesStubSettings) getStubSettings()).patchOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setEdgeSecurityPolicy. */
+  public UnaryCallSettings<SetEdgeSecurityPolicyBackendServiceRequest, Operation>
+      setEdgeSecurityPolicySettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).setEdgeSecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setEdgeSecurityPolicy. */
+  public OperationCallSettings<SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
+      setEdgeSecurityPolicyOperationSettings() {
+    return ((BackendServicesStubSettings) getStubSettings())
+        .setEdgeSecurityPolicyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setSecurityPolicy. */
   public UnaryCallSettings<SetSecurityPolicyBackendServiceRequest, Operation>
       setSecurityPolicySettings() {
@@ -358,6 +371,19 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
     public OperationCallSettings.Builder<PatchBackendServiceRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setEdgeSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetEdgeSecurityPolicyBackendServiceRequest, Operation>
+        setEdgeSecurityPolicySettings() {
+      return getStubSettingsBuilder().setEdgeSecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setEdgeSecurityPolicy. */
+    public OperationCallSettings.Builder<
+            SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
+        setEdgeSecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().setEdgeSecurityPolicyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setSecurityPolicy. */

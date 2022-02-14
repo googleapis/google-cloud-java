@@ -38,6 +38,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private CacheKeyPolicy() {
+    includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    includeNamedCookies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -72,14 +74,34 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
+          case 19916850:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                includeHttpHeaders_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              includeHttpHeaders_.add(s);
+              break;
+            }
           case 419651970:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 queryStringWhitelist_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000040;
               }
               queryStringWhitelist_.add(s);
+              break;
+            }
+          case 698532242:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                includeNamedCookies_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              includeNamedCookies_.add(s);
               break;
             }
           case -1866907016:
@@ -91,9 +113,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
           case -1455249358:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 queryStringBlacklist_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000020;
               }
               queryStringBlacklist_.add(s);
               break;
@@ -124,10 +146,16 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        includeHttpHeaders_ = includeHttpHeaders_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         queryStringWhitelist_ = queryStringWhitelist_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        includeNamedCookies_ = includeNamedCookies_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         queryStringBlacklist_ = queryStringBlacklist_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -182,6 +210,128 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getIncludeHost() {
     return includeHost_;
+  }
+
+  public static final int INCLUDE_HTTP_HEADERS_FIELD_NUMBER = 2489606;
+  private com.google.protobuf.LazyStringList includeHttpHeaders_;
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP request headers (by name) to be used in the cache key.
+   * </pre>
+   *
+   * <code>repeated string include_http_headers = 2489606;</code>
+   *
+   * @return A list containing the includeHttpHeaders.
+   */
+  public com.google.protobuf.ProtocolStringList getIncludeHttpHeadersList() {
+    return includeHttpHeaders_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP request headers (by name) to be used in the cache key.
+   * </pre>
+   *
+   * <code>repeated string include_http_headers = 2489606;</code>
+   *
+   * @return The count of includeHttpHeaders.
+   */
+  public int getIncludeHttpHeadersCount() {
+    return includeHttpHeaders_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP request headers (by name) to be used in the cache key.
+   * </pre>
+   *
+   * <code>repeated string include_http_headers = 2489606;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeHttpHeaders at the given index.
+   */
+  public java.lang.String getIncludeHttpHeaders(int index) {
+    return includeHttpHeaders_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP request headers (by name) to be used in the cache key.
+   * </pre>
+   *
+   * <code>repeated string include_http_headers = 2489606;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeHttpHeaders at the given index.
+   */
+  public com.google.protobuf.ByteString getIncludeHttpHeadersBytes(int index) {
+    return includeHttpHeaders_.getByteString(index);
+  }
+
+  public static final int INCLUDE_NAMED_COOKIES_FIELD_NUMBER = 87316530;
+  private com.google.protobuf.LazyStringList includeNamedCookies_;
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+   * </pre>
+   *
+   * <code>repeated string include_named_cookies = 87316530;</code>
+   *
+   * @return A list containing the includeNamedCookies.
+   */
+  public com.google.protobuf.ProtocolStringList getIncludeNamedCookiesList() {
+    return includeNamedCookies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+   * </pre>
+   *
+   * <code>repeated string include_named_cookies = 87316530;</code>
+   *
+   * @return The count of includeNamedCookies.
+   */
+  public int getIncludeNamedCookiesCount() {
+    return includeNamedCookies_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+   * </pre>
+   *
+   * <code>repeated string include_named_cookies = 87316530;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeNamedCookies at the given index.
+   */
+  public java.lang.String getIncludeNamedCookies(int index) {
+    return includeNamedCookies_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+   * </pre>
+   *
+   * <code>repeated string include_named_cookies = 87316530;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeNamedCookies at the given index.
+   */
+  public com.google.protobuf.ByteString getIncludeNamedCookiesBytes(int index) {
+    return includeNamedCookies_.getByteString(index);
   }
 
   public static final int INCLUDE_PROTOCOL_FIELD_NUMBER = 303507535;
@@ -386,9 +536,17 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < includeHttpHeaders_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 2489606, includeHttpHeaders_.getRaw(i));
+    }
     for (int i = 0; i < queryStringWhitelist_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 52456496, queryStringWhitelist_.getRaw(i));
+    }
+    for (int i = 0; i < includeNamedCookies_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 87316530, includeNamedCookies_.getRaw(i));
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(303507535, includeProtocol_);
@@ -414,11 +572,27 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     {
       int dataSize = 0;
+      for (int i = 0; i < includeHttpHeaders_.size(); i++) {
+        dataSize += computeStringSizeNoTag(includeHttpHeaders_.getRaw(i));
+      }
+      size += dataSize;
+      size += 4 * getIncludeHttpHeadersList().size();
+    }
+    {
+      int dataSize = 0;
       for (int i = 0; i < queryStringWhitelist_.size(); i++) {
         dataSize += computeStringSizeNoTag(queryStringWhitelist_.getRaw(i));
       }
       size += dataSize;
       size += 5 * getQueryStringWhitelistList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < includeNamedCookies_.size(); i++) {
+        dataSize += computeStringSizeNoTag(includeNamedCookies_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getIncludeNamedCookiesList().size();
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(303507535, includeProtocol_);
@@ -457,6 +631,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasIncludeHost()) {
       if (getIncludeHost() != other.getIncludeHost()) return false;
     }
+    if (!getIncludeHttpHeadersList().equals(other.getIncludeHttpHeadersList())) return false;
+    if (!getIncludeNamedCookiesList().equals(other.getIncludeNamedCookiesList())) return false;
     if (hasIncludeProtocol() != other.hasIncludeProtocol()) return false;
     if (hasIncludeProtocol()) {
       if (getIncludeProtocol() != other.getIncludeProtocol()) return false;
@@ -481,6 +657,14 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasIncludeHost()) {
       hash = (37 * hash) + INCLUDE_HOST_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeHost());
+    }
+    if (getIncludeHttpHeadersCount() > 0) {
+      hash = (37 * hash) + INCLUDE_HTTP_HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + getIncludeHttpHeadersList().hashCode();
+    }
+    if (getIncludeNamedCookiesCount() > 0) {
+      hash = (37 * hash) + INCLUDE_NAMED_COOKIES_FIELD_NUMBER;
+      hash = (53 * hash) + getIncludeNamedCookiesList().hashCode();
     }
     if (hasIncludeProtocol()) {
       hash = (37 * hash) + INCLUDE_PROTOCOL_FIELD_NUMBER;
@@ -645,14 +829,18 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       includeHost_ = false;
       bitField0_ = (bitField0_ & ~0x00000001);
-      includeProtocol_ = false;
+      includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
-      includeQueryString_ = false;
+      includeNamedCookies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
-      queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includeProtocol_ = false;
       bitField0_ = (bitField0_ & ~0x00000008);
-      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includeQueryString_ = false;
       bitField0_ = (bitField0_ & ~0x00000010);
+      queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -686,22 +874,32 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
         result.includeHost_ = includeHost_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        includeHttpHeaders_ = includeHttpHeaders_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.includeHttpHeaders_ = includeHttpHeaders_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        includeNamedCookies_ = includeNamedCookies_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.includeNamedCookies_ = includeNamedCookies_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.includeProtocol_ = includeProtocol_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.includeQueryString_ = includeQueryString_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         queryStringBlacklist_ = queryStringBlacklist_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.queryStringBlacklist_ = queryStringBlacklist_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         queryStringWhitelist_ = queryStringWhitelist_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.queryStringWhitelist_ = queryStringWhitelist_;
       result.bitField0_ = to_bitField0_;
@@ -757,6 +955,26 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       if (other.hasIncludeHost()) {
         setIncludeHost(other.getIncludeHost());
       }
+      if (!other.includeHttpHeaders_.isEmpty()) {
+        if (includeHttpHeaders_.isEmpty()) {
+          includeHttpHeaders_ = other.includeHttpHeaders_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureIncludeHttpHeadersIsMutable();
+          includeHttpHeaders_.addAll(other.includeHttpHeaders_);
+        }
+        onChanged();
+      }
+      if (!other.includeNamedCookies_.isEmpty()) {
+        if (includeNamedCookies_.isEmpty()) {
+          includeNamedCookies_ = other.includeNamedCookies_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureIncludeNamedCookiesIsMutable();
+          includeNamedCookies_.addAll(other.includeNamedCookies_);
+        }
+        onChanged();
+      }
       if (other.hasIncludeProtocol()) {
         setIncludeProtocol(other.getIncludeProtocol());
       }
@@ -766,7 +984,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.queryStringBlacklist_.isEmpty()) {
         if (queryStringBlacklist_.isEmpty()) {
           queryStringBlacklist_ = other.queryStringBlacklist_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureQueryStringBlacklistIsMutable();
           queryStringBlacklist_.addAll(other.queryStringBlacklist_);
@@ -776,7 +994,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.queryStringWhitelist_.isEmpty()) {
         if (queryStringWhitelist_.isEmpty()) {
           queryStringWhitelist_ = other.queryStringWhitelist_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureQueryStringWhitelistIsMutable();
           queryStringWhitelist_.addAll(other.queryStringWhitelist_);
@@ -881,6 +1099,342 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringList includeHttpHeaders_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureIncludeHttpHeadersIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        includeHttpHeaders_ = new com.google.protobuf.LazyStringArrayList(includeHttpHeaders_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP request headers (by name) to be used in the cache key.
+     * </pre>
+     *
+     * <code>repeated string include_http_headers = 2489606;</code>
+     *
+     * @return A list containing the includeHttpHeaders.
+     */
+    public com.google.protobuf.ProtocolStringList getIncludeHttpHeadersList() {
+      return includeHttpHeaders_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP request headers (by name) to be used in the cache key.
+     * </pre>
+     *
+     * <code>repeated string include_http_headers = 2489606;</code>
+     *
+     * @return The count of includeHttpHeaders.
+     */
+    public int getIncludeHttpHeadersCount() {
+      return includeHttpHeaders_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP request headers (by name) to be used in the cache key.
+     * </pre>
+     *
+     * <code>repeated string include_http_headers = 2489606;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The includeHttpHeaders at the given index.
+     */
+    public java.lang.String getIncludeHttpHeaders(int index) {
+      return includeHttpHeaders_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP request headers (by name) to be used in the cache key.
+     * </pre>
+     *
+     * <code>repeated string include_http_headers = 2489606;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includeHttpHeaders at the given index.
+     */
+    public com.google.protobuf.ByteString getIncludeHttpHeadersBytes(int index) {
+      return includeHttpHeaders_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP request headers (by name) to be used in the cache key.
+     * </pre>
+     *
+     * <code>repeated string include_http_headers = 2489606;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The includeHttpHeaders to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeHttpHeaders(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncludeHttpHeadersIsMutable();
+      includeHttpHeaders_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP request headers (by name) to be used in the cache key.
+     * </pre>
+     *
+     * <code>repeated string include_http_headers = 2489606;</code>
+     *
+     * @param value The includeHttpHeaders to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncludeHttpHeaders(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncludeHttpHeadersIsMutable();
+      includeHttpHeaders_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP request headers (by name) to be used in the cache key.
+     * </pre>
+     *
+     * <code>repeated string include_http_headers = 2489606;</code>
+     *
+     * @param values The includeHttpHeaders to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIncludeHttpHeaders(java.lang.Iterable<java.lang.String> values) {
+      ensureIncludeHttpHeadersIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeHttpHeaders_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP request headers (by name) to be used in the cache key.
+     * </pre>
+     *
+     * <code>repeated string include_http_headers = 2489606;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeHttpHeaders() {
+      includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP request headers (by name) to be used in the cache key.
+     * </pre>
+     *
+     * <code>repeated string include_http_headers = 2489606;</code>
+     *
+     * @param value The bytes of the includeHttpHeaders to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncludeHttpHeadersBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureIncludeHttpHeadersIsMutable();
+      includeHttpHeaders_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList includeNamedCookies_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureIncludeNamedCookiesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        includeNamedCookies_ = new com.google.protobuf.LazyStringArrayList(includeNamedCookies_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+     * </pre>
+     *
+     * <code>repeated string include_named_cookies = 87316530;</code>
+     *
+     * @return A list containing the includeNamedCookies.
+     */
+    public com.google.protobuf.ProtocolStringList getIncludeNamedCookiesList() {
+      return includeNamedCookies_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+     * </pre>
+     *
+     * <code>repeated string include_named_cookies = 87316530;</code>
+     *
+     * @return The count of includeNamedCookies.
+     */
+    public int getIncludeNamedCookiesCount() {
+      return includeNamedCookies_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+     * </pre>
+     *
+     * <code>repeated string include_named_cookies = 87316530;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The includeNamedCookies at the given index.
+     */
+    public java.lang.String getIncludeNamedCookies(int index) {
+      return includeNamedCookies_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+     * </pre>
+     *
+     * <code>repeated string include_named_cookies = 87316530;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includeNamedCookies at the given index.
+     */
+    public com.google.protobuf.ByteString getIncludeNamedCookiesBytes(int index) {
+      return includeNamedCookies_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+     * </pre>
+     *
+     * <code>repeated string include_named_cookies = 87316530;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The includeNamedCookies to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeNamedCookies(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncludeNamedCookiesIsMutable();
+      includeNamedCookies_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+     * </pre>
+     *
+     * <code>repeated string include_named_cookies = 87316530;</code>
+     *
+     * @param value The includeNamedCookies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncludeNamedCookies(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncludeNamedCookiesIsMutable();
+      includeNamedCookies_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+     * </pre>
+     *
+     * <code>repeated string include_named_cookies = 87316530;</code>
+     *
+     * @param values The includeNamedCookies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIncludeNamedCookies(java.lang.Iterable<java.lang.String> values) {
+      ensureIncludeNamedCookiesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeNamedCookies_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+     * </pre>
+     *
+     * <code>repeated string include_named_cookies = 87316530;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeNamedCookies() {
+      includeNamedCookies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+     * </pre>
+     *
+     * <code>repeated string include_named_cookies = 87316530;</code>
+     *
+     * @param value The bytes of the includeNamedCookies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncludeNamedCookiesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureIncludeNamedCookiesIsMutable();
+      includeNamedCookies_.add(value);
+      onChanged();
+      return this;
+    }
+
     private boolean includeProtocol_;
     /**
      *
@@ -895,7 +1449,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasIncludeProtocol() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -925,7 +1479,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIncludeProtocol(boolean value) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       includeProtocol_ = value;
       onChanged();
       return this;
@@ -942,7 +1496,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIncludeProtocol() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       includeProtocol_ = false;
       onChanged();
       return this;
@@ -962,7 +1516,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasIncludeQueryString() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -992,7 +1546,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIncludeQueryString(boolean value) {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       includeQueryString_ = value;
       onChanged();
       return this;
@@ -1009,7 +1563,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIncludeQueryString() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       includeQueryString_ = false;
       onChanged();
       return this;
@@ -1019,9 +1573,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureQueryStringBlacklistIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         queryStringBlacklist_ = new com.google.protobuf.LazyStringArrayList(queryStringBlacklist_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -1156,7 +1710,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearQueryStringBlacklist() {
       queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1187,9 +1741,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureQueryStringWhitelistIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         queryStringWhitelist_ = new com.google.protobuf.LazyStringArrayList(queryStringWhitelist_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -1324,7 +1878,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearQueryStringWhitelist() {
       queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }

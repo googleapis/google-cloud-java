@@ -52,6 +52,31 @@ public interface AdvancedMachineFeaturesOrBuilder
    *
    *
    * <pre>
+   * Whether to enable UEFI networking for instance creation.
+   * </pre>
+   *
+   * <code>optional bool enable_uefi_networking = 334485668;</code>
+   *
+   * @return Whether the enableUefiNetworking field is set.
+   */
+  boolean hasEnableUefiNetworking();
+  /**
+   *
+   *
+   * <pre>
+   * Whether to enable UEFI networking for instance creation.
+   * </pre>
+   *
+   * <code>optional bool enable_uefi_networking = 334485668;</code>
+   *
+   * @return The enableUefiNetworking.
+   */
+  boolean getEnableUefiNetworking();
+
+  /**
+   *
+   *
+   * <pre>
    * The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
    * </pre>
    *

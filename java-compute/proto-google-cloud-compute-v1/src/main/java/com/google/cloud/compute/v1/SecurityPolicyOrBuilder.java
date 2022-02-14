@@ -282,6 +282,30 @@ public interface SecurityPolicyOrBuilder
   com.google.protobuf.ByteString getNameBytes();
 
   /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+   * </code>
+   *
+   * @return Whether the recaptchaOptionsConfig field is set.
+   */
+  boolean hasRecaptchaOptionsConfig();
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+   * </code>
+   *
+   * @return The recaptchaOptionsConfig.
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig getRecaptchaOptionsConfig();
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfigOrBuilder
+      getRecaptchaOptionsConfigOrBuilder();
+
+  /**
    *
    *
    * <pre>
@@ -369,4 +393,44 @@ public interface SecurityPolicyOrBuilder
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
+  /**
+   *
+   *
+   * <pre>
+   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return The type.
+   */
+  java.lang.String getType();
+  /**
+   *
+   *
+   * <pre>
+   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString getTypeBytes();
 }

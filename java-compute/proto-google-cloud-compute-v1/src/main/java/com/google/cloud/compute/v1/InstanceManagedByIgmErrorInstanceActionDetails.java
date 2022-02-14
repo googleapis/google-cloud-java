@@ -244,6 +244,46 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
+     * The managed instance group is resuming this instance.
+     * </pre>
+     *
+     * <code>RESUMING = 446856618;</code>
+     */
+    RESUMING(446856618),
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is starting this instance.
+     * </pre>
+     *
+     * <code>STARTING = 488820800;</code>
+     */
+    STARTING(488820800),
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is stopping this instance.
+     * </pre>
+     *
+     * <code>STOPPING = 350791796;</code>
+     */
+    STOPPING(350791796),
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is suspending this instance.
+     * </pre>
+     *
+     * <code>SUSPENDING = 514206246;</code>
+     */
+    SUSPENDING(514206246),
+    /**
+     *
+     *
+     * <pre>
      * The managed instance group is verifying this already created instance. Verification happens every time the instance is (re)created or restarted and consists of: 1. Waiting until health check specified as part of this managed instance group's autohealing policy reports HEALTHY. Note: Applies only if autohealing policy has a health check specified 2. Waiting for addition verification steps performed as post-instance creation (subject to future extensions).
      * </pre>
      *
@@ -347,6 +387,46 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
+     * The managed instance group is resuming this instance.
+     * </pre>
+     *
+     * <code>RESUMING = 446856618;</code>
+     */
+    public static final int RESUMING_VALUE = 446856618;
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is starting this instance.
+     * </pre>
+     *
+     * <code>STARTING = 488820800;</code>
+     */
+    public static final int STARTING_VALUE = 488820800;
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is stopping this instance.
+     * </pre>
+     *
+     * <code>STOPPING = 350791796;</code>
+     */
+    public static final int STOPPING_VALUE = 350791796;
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is suspending this instance.
+     * </pre>
+     *
+     * <code>SUSPENDING = 514206246;</code>
+     */
+    public static final int SUSPENDING_VALUE = 514206246;
+    /**
+     *
+     *
+     * <pre>
      * The managed instance group is verifying this already created instance. Verification happens every time the instance is (re)created or restarted and consists of: 1. Waiting until health check specified as part of this managed instance group's autohealing policy reports HEALTHY. Note: Applies only if autohealing policy has a health check specified 2. Waiting for addition verification steps performed as post-instance creation (subject to future extensions).
      * </pre>
      *
@@ -396,6 +476,14 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
           return REFRESHING;
         case 320534387:
           return RESTARTING;
+        case 446856618:
+          return RESUMING;
+        case 488820800:
+          return STARTING;
+        case 350791796:
+          return STOPPING;
+        case 514206246:
+          return SUSPENDING;
         case 16982185:
           return VERIFYING;
         default:

@@ -224,6 +224,43 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The resource URL for the edge security policy associated with this backend bucket.
+   * </pre>
+   *
+   * <code>optional string edge_security_policy = 41036943;</code>
+   *
+   * @return Whether the edgeSecurityPolicy field is set.
+   */
+  boolean hasEdgeSecurityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource URL for the edge security policy associated with this backend bucket.
+   * </pre>
+   *
+   * <code>optional string edge_security_policy = 41036943;</code>
+   *
+   * @return The edgeSecurityPolicy.
+   */
+  java.lang.String getEdgeSecurityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource URL for the edge security policy associated with this backend bucket.
+   * </pre>
+   *
+   * <code>optional string edge_security_policy = 41036943;</code>
+   *
+   * @return The bytes for edgeSecurityPolicy.
+   */
+  com.google.protobuf.ByteString getEdgeSecurityPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * If true, enable Cloud CDN for this BackendBucket.
    * </pre>
    *

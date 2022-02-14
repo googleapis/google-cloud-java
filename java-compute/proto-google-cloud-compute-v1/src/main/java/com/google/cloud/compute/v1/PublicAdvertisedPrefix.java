@@ -213,7 +213,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The status of the public advertised prefix.
+   * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PublicAdvertisedPrefix.Status}
@@ -229,19 +229,75 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>INITIAL = 518841124;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * RPKI validation is complete.
+     * </pre>
+     *
+     * <code>INITIAL = 518841124;</code>
+     */
     INITIAL(518841124),
-    /** <code>PREFIX_CONFIGURATION_COMPLETE = 480889551;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The prefix is fully configured.
+     * </pre>
+     *
+     * <code>PREFIX_CONFIGURATION_COMPLETE = 480889551;</code>
+     */
     PREFIX_CONFIGURATION_COMPLETE(480889551),
-    /** <code>PREFIX_CONFIGURATION_IN_PROGRESS = 378550961;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The prefix is being configured.
+     * </pre>
+     *
+     * <code>PREFIX_CONFIGURATION_IN_PROGRESS = 378550961;</code>
+     */
     PREFIX_CONFIGURATION_IN_PROGRESS(378550961),
-    /** <code>PREFIX_REMOVAL_IN_PROGRESS = 284375783;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The prefix is being removed.
+     * </pre>
+     *
+     * <code>PREFIX_REMOVAL_IN_PROGRESS = 284375783;</code>
+     */
     PREFIX_REMOVAL_IN_PROGRESS(284375783),
-    /** <code>PTR_CONFIGURED = 513497167;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * User has configured the PTR.
+     * </pre>
+     *
+     * <code>PTR_CONFIGURED = 513497167;</code>
+     */
     PTR_CONFIGURED(513497167),
-    /** <code>REVERSE_DNS_LOOKUP_FAILED = 295755183;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reverse DNS lookup failed.
+     * </pre>
+     *
+     * <code>REVERSE_DNS_LOOKUP_FAILED = 295755183;</code>
+     */
     REVERSE_DNS_LOOKUP_FAILED(295755183),
-    /** <code>VALIDATED = 66197998;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reverse DNS lookup is successful.
+     * </pre>
+     *
+     * <code>VALIDATED = 66197998;</code>
+     */
     VALIDATED(66197998),
     UNRECOGNIZED(-1),
     ;
@@ -256,19 +312,75 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>INITIAL = 518841124;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * RPKI validation is complete.
+     * </pre>
+     *
+     * <code>INITIAL = 518841124;</code>
+     */
     public static final int INITIAL_VALUE = 518841124;
-    /** <code>PREFIX_CONFIGURATION_COMPLETE = 480889551;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The prefix is fully configured.
+     * </pre>
+     *
+     * <code>PREFIX_CONFIGURATION_COMPLETE = 480889551;</code>
+     */
     public static final int PREFIX_CONFIGURATION_COMPLETE_VALUE = 480889551;
-    /** <code>PREFIX_CONFIGURATION_IN_PROGRESS = 378550961;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The prefix is being configured.
+     * </pre>
+     *
+     * <code>PREFIX_CONFIGURATION_IN_PROGRESS = 378550961;</code>
+     */
     public static final int PREFIX_CONFIGURATION_IN_PROGRESS_VALUE = 378550961;
-    /** <code>PREFIX_REMOVAL_IN_PROGRESS = 284375783;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The prefix is being removed.
+     * </pre>
+     *
+     * <code>PREFIX_REMOVAL_IN_PROGRESS = 284375783;</code>
+     */
     public static final int PREFIX_REMOVAL_IN_PROGRESS_VALUE = 284375783;
-    /** <code>PTR_CONFIGURED = 513497167;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * User has configured the PTR.
+     * </pre>
+     *
+     * <code>PTR_CONFIGURED = 513497167;</code>
+     */
     public static final int PTR_CONFIGURED_VALUE = 513497167;
-    /** <code>REVERSE_DNS_LOOKUP_FAILED = 295755183;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reverse DNS lookup failed.
+     * </pre>
+     *
+     * <code>REVERSE_DNS_LOOKUP_FAILED = 295755183;</code>
+     */
     public static final int REVERSE_DNS_LOOKUP_FAILED_VALUE = 295755183;
-    /** <code>VALIDATED = 66197998;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reverse DNS lookup is successful.
+     * </pre>
+     *
+     * <code>VALIDATED = 66197998;</code>
+     */
     public static final int VALIDATED_VALUE = 66197998;
 
     public final int getNumber() {
@@ -1067,7 +1179,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The status of the public advertised prefix.
+   * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1083,7 +1195,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The status of the public advertised prefix.
+   * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1107,7 +1219,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The status of the public advertised prefix.
+   * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -3336,7 +3448,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The status of the public advertised prefix.
+     * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3351,7 +3463,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The status of the public advertised prefix.
+     * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3374,7 +3486,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The status of the public advertised prefix.
+     * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3397,7 +3509,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The status of the public advertised prefix.
+     * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3419,7 +3531,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The status of the public advertised prefix.
+     * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3437,7 +3549,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The status of the public advertised prefix.
+     * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
      * Check the Status enum for the list of possible values.
      * </pre>
      *

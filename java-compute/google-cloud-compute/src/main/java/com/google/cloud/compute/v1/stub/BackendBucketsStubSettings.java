@@ -54,6 +54,7 @@ import com.google.cloud.compute.v1.InsertBackendBucketRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendBucketRequest;
+import com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendBucketRequest;
 import com.google.cloud.compute.v1.UpdateBackendBucketRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -125,6 +126,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
   private final UnaryCallSettings<PatchBackendBucketRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchBackendBucketRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<SetEdgeSecurityPolicyBackendBucketRequest, Operation>
+      setEdgeSecurityPolicySettings;
+  private final OperationCallSettings<
+          SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
+      setEdgeSecurityPolicyOperationSettings;
   private final UnaryCallSettings<UpdateBackendBucketRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateBackendBucketRequest, Operation, Operation>
       updateOperationSettings;
@@ -253,6 +259,18 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setEdgeSecurityPolicy. */
+  public UnaryCallSettings<SetEdgeSecurityPolicyBackendBucketRequest, Operation>
+      setEdgeSecurityPolicySettings() {
+    return setEdgeSecurityPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setEdgeSecurityPolicy. */
+  public OperationCallSettings<SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
+      setEdgeSecurityPolicyOperationSettings() {
+    return setEdgeSecurityPolicyOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateBackendBucketRequest, Operation> updateSettings() {
     return updateSettings;
@@ -354,6 +372,9 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    setEdgeSecurityPolicySettings = settingsBuilder.setEdgeSecurityPolicySettings().build();
+    setEdgeSecurityPolicyOperationSettings =
+        settingsBuilder.setEdgeSecurityPolicyOperationSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
@@ -384,6 +405,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     private final UnaryCallSettings.Builder<PatchBackendBucketRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchBackendBucketRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<SetEdgeSecurityPolicyBackendBucketRequest, Operation>
+        setEdgeSecurityPolicySettings;
+    private final OperationCallSettings.Builder<
+            SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
+        setEdgeSecurityPolicyOperationSettings;
     private final UnaryCallSettings.Builder<UpdateBackendBucketRequest, Operation> updateSettings;
     private final OperationCallSettings.Builder<UpdateBackendBucketRequest, Operation, Operation>
         updateOperationSettings;
@@ -449,6 +475,8 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      setEdgeSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setEdgeSecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
 
@@ -461,6 +489,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
               insertSettings,
               listSettings,
               patchSettings,
+              setEdgeSecurityPolicySettings,
               updateSettings);
       initDefaults(this);
     }
@@ -481,6 +510,9 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      setEdgeSecurityPolicySettings = settings.setEdgeSecurityPolicySettings.toBuilder();
+      setEdgeSecurityPolicyOperationSettings =
+          settings.setEdgeSecurityPolicyOperationSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
@@ -493,6 +525,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
               insertSettings,
               listSettings,
               patchSettings,
+              setEdgeSecurityPolicySettings,
               updateSettings);
     }
 
@@ -542,6 +575,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setEdgeSecurityPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -653,6 +691,31 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<PatchBackendBucketRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setEdgeSecurityPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetEdgeSecurityPolicyBackendBucketRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -792,6 +855,21 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     public OperationCallSettings.Builder<PatchBackendBucketRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setEdgeSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetEdgeSecurityPolicyBackendBucketRequest, Operation>
+        setEdgeSecurityPolicySettings() {
+      return setEdgeSecurityPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setEdgeSecurityPolicy. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
+        setEdgeSecurityPolicyOperationSettings() {
+      return setEdgeSecurityPolicyOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to update. */

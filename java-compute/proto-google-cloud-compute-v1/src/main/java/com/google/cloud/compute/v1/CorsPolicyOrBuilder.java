@@ -27,7 +27,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header. Default is false.
+   * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This field translates to the Access-Control-Allow-Credentials header. Default is false.
    * </pre>
    *
    * <code>optional bool allow_credentials = 481263366;</code>
@@ -39,7 +39,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header. Default is false.
+   * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This field translates to the Access-Control-Allow-Credentials header. Default is false.
    * </pre>
    *
    * <code>optional bool allow_credentials = 481263366;</code>
@@ -154,7 +154,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -166,7 +166,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -178,7 +178,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -191,7 +191,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -205,7 +205,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the list of origins that is allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origins = 194914071;</code>
@@ -217,7 +217,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the list of origins that is allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origins = 194914071;</code>
@@ -229,7 +229,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the list of origins that is allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origins = 194914071;</code>
@@ -242,7 +242,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the list of origins that is allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origins = 194914071;</code>
@@ -256,7 +256,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
+   * If true, the setting specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
    * </pre>
    *
    * <code>optional bool disabled = 270940796;</code>
@@ -268,7 +268,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
+   * If true, the setting specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
    * </pre>
    *
    * <code>optional bool disabled = 270940796;</code>
@@ -332,7 +332,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
+   * Specifies how long results of a preflight request can be cached in seconds. This field translates to the Access-Control-Max-Age header.
    * </pre>
    *
    * <code>optional int32 max_age = 307559332;</code>
@@ -344,7 +344,7 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
+   * Specifies how long results of a preflight request can be cached in seconds. This field translates to the Access-Control-Max-Age header.
    * </pre>
    *
    * <code>optional int32 max_age = 307559332;</code>

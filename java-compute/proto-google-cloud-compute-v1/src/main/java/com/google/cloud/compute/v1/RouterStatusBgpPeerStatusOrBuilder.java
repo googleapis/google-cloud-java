@@ -76,6 +76,21 @@ public interface RouterStatusBgpPeerStatusOrBuilder
   com.google.cloud.compute.v1.RouteOrBuilder getAdvertisedRoutesOrBuilder(int index);
 
   /**
+   * <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code>
+   *
+   * @return Whether the bfdStatus field is set.
+   */
+  boolean hasBfdStatus();
+  /**
+   * <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code>
+   *
+   * @return The bfdStatus.
+   */
+  com.google.cloud.compute.v1.BfdStatus getBfdStatus();
+  /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
+  com.google.cloud.compute.v1.BfdStatusOrBuilder getBfdStatusOrBuilder();
+
+  /**
    *
    *
    * <pre>

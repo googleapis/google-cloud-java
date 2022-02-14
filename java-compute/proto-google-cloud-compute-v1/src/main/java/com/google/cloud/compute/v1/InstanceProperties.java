@@ -81,7 +81,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
           case 28418250:
             {
               com.google.cloud.compute.v1.Tags.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000800) != 0)) {
+              if (((bitField0_ & 0x00001000) != 0)) {
                 subBuilder = tags_.toBuilder();
               }
               tags_ =
@@ -90,13 +90,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 subBuilder.mergeFrom(tags_);
                 tags_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00001000;
               break;
             }
           case 102903210:
             {
               com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000400) != 0)) {
+              if (((bitField0_ & 0x00000800) != 0)) {
                 subBuilder = shieldedInstanceConfig_.toBuilder();
               }
               shieldedInstanceConfig_ =
@@ -107,15 +107,15 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 subBuilder.mergeFrom(shieldedInstanceConfig_);
                 shieldedInstanceConfig_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000800;
               break;
             }
           case 177763082:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
                 resourcePolicies_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00002000;
+                mutable_bitField0_ |= 0x00008000;
               }
               resourcePolicies_.add(s);
               break;
@@ -123,7 +123,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
           case 386216050:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               privateIpv6GoogleAccess_ = s;
               break;
             }
@@ -169,7 +169,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
           case 1262805466:
             {
               com.google.cloud.compute.v1.ReservationAffinity.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000100) != 0)) {
+              if (((bitField0_ & 0x00000200) != 0)) {
                 subBuilder = reservationAffinity_.toBuilder();
               }
               reservationAffinity_ =
@@ -179,7 +179,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 subBuilder.mergeFrom(reservationAffinity_);
                 reservationAffinity_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               break;
             }
           case 1821688210:
@@ -198,20 +198,38 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
             }
           case -2074668670:
             {
-              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00020000) != 0)) {
                 serviceAccounts_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.ServiceAccount>();
-                mutable_bitField0_ |= 0x00008000;
+                mutable_bitField0_ |= 0x00020000;
               }
               serviceAccounts_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.ServiceAccount.parser(), extensionRegistry));
               break;
             }
+          case -1273597982:
+            {
+              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
+                resourceManagerTags_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00004000;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                  resourceManagerTags__ =
+                      input.readMessage(
+                          ResourceManagerTagsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              resourceManagerTags_
+                  .getMutableMap()
+                  .put(resourceManagerTags__.getKey(), resourceManagerTags__.getValue());
+              break;
+            }
           case -1201460062:
             {
               com.google.cloud.compute.v1.Scheduling.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000200) != 0)) {
+              if (((bitField0_ & 0x00000400) != 0)) {
                 subBuilder = scheduling_.toBuilder();
               }
               scheduling_ =
@@ -221,7 +239,24 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 subBuilder.mergeFrom(scheduling_);
                 scheduling_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
+              break;
+            }
+          case -1108320494:
+            {
+              com.google.cloud.compute.v1.NetworkPerformanceConfig.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000080) != 0)) {
+                subBuilder = networkPerformanceConfig_.toBuilder();
+              }
+              networkPerformanceConfig_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.NetworkPerformanceConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(networkPerformanceConfig_);
+                networkPerformanceConfig_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000080;
               break;
             }
           case -1017799278:
@@ -310,7 +345,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00002000) != 0)) {
+      if (((mutable_bitField0_ & 0x00008000) != 0)) {
         resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000400) != 0)) {
@@ -319,7 +354,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       if (((mutable_bitField0_ & 0x00000010) != 0)) {
         disks_ = java.util.Collections.unmodifiableList(disks_);
       }
-      if (((mutable_bitField0_ & 0x00008000) != 0)) {
+      if (((mutable_bitField0_ & 0x00020000) != 0)) {
         serviceAccounts_ = java.util.Collections.unmodifiableList(serviceAccounts_);
       }
       if (((mutable_bitField0_ & 0x00000020) != 0)) {
@@ -341,6 +376,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     switch (number) {
       case 500195327:
         return internalGetLabels();
+      case 377671164:
+        return internalGetResourceManagerTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -360,7 +397,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess}
@@ -545,7 +582,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Controls for advanced machine-related behavior features.
+   * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -562,7 +599,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Controls for advanced machine-related behavior features.
+   * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -581,7 +618,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Controls for advanced machine-related behavior features.
+   * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -635,7 +672,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the Confidential Instance options.
+   * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -652,7 +689,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the Confidential Instance options.
+   * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -671,7 +708,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the Confidential Instance options.
+   * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -1240,13 +1277,70 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     return networkInterfaces_.get(index);
   }
 
+  public static final int NETWORK_PERFORMANCE_CONFIG_FIELD_NUMBER = 398330850;
+  private com.google.cloud.compute.v1.NetworkPerformanceConfig networkPerformanceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Note that for MachineImage, this is not supported yet.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+   * </code>
+   *
+   * @return Whether the networkPerformanceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkPerformanceConfig() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Note that for MachineImage, this is not supported yet.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+   * </code>
+   *
+   * @return The networkPerformanceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.NetworkPerformanceConfig getNetworkPerformanceConfig() {
+    return networkPerformanceConfig_ == null
+        ? com.google.cloud.compute.v1.NetworkPerformanceConfig.getDefaultInstance()
+        : networkPerformanceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Note that for MachineImage, this is not supported yet.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.NetworkPerformanceConfigOrBuilder
+      getNetworkPerformanceConfigOrBuilder() {
+    return networkPerformanceConfig_ == null
+        ? com.google.cloud.compute.v1.NetworkPerformanceConfig.getDefaultInstance()
+        : networkPerformanceConfig_;
+  }
+
   public static final int PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER = 48277006;
   private volatile java.lang.Object privateIpv6GoogleAccess_;
   /**
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -1256,13 +1350,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasPrivateIpv6GoogleAccess() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -1286,7 +1380,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -1313,7 +1407,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the reservations that instances can consume from.
+   * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -1323,13 +1417,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasReservationAffinity() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Specifies the reservations that instances can consume from.
+   * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -1347,7 +1441,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the reservations that instances can consume from.
+   * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -1361,13 +1455,116 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         : reservationAffinity_;
   }
 
+  public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 377671164;
+
+  private static final class ResourceManagerTagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.compute.v1.Compute
+                .internal_static_google_cloud_compute_v1_InstanceProperties_ResourceManagerTagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceManagerTags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetResourceManagerTags() {
+    if (resourceManagerTags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+    }
+    return resourceManagerTags_;
+  }
+
+  public int getResourceManagerTagsCount() {
+    return internalGetResourceManagerTags().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  @java.lang.Override
+  public boolean containsResourceManagerTags(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetResourceManagerTags().getMap().containsKey(key);
+  }
+  /** Use {@link #getResourceManagerTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags() {
+    return getResourceManagerTagsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap() {
+    return internalGetResourceManagerTags().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getResourceManagerTagsOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetResourceManagerTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getResourceManagerTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetResourceManagerTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int RESOURCE_POLICIES_FIELD_NUMBER = 22220385;
   private com.google.protobuf.LazyStringList resourcePolicies_;
   /**
    *
    *
    * <pre>
-   * Resource policies (names, not ULRs) applied to instances created from these properties.
+   * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -1381,7 +1578,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource policies (names, not ULRs) applied to instances created from these properties.
+   * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -1395,7 +1592,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource policies (names, not ULRs) applied to instances created from these properties.
+   * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -1410,7 +1607,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource policies (names, not ULRs) applied to instances created from these properties.
+   * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -1437,7 +1634,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasScheduling() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1545,6 +1742,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 12862901;
   private com.google.cloud.compute.v1.ShieldedInstanceConfig shieldedInstanceConfig_;
   /**
+   *
+   *
+   * <pre>
+   * Note that for MachineImage, this is not supported yet.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
@@ -1553,9 +1756,15 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasShieldedInstanceConfig() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
+   *
+   *
+   * <pre>
+   * Note that for MachineImage, this is not supported yet.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
@@ -1569,6 +1778,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         : shieldedInstanceConfig_;
   }
   /**
+   *
+   *
+   * <pre>
+   * Note that for MachineImage, this is not supported yet.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
@@ -1596,7 +1811,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasTags() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1641,17 +1856,17 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeMessage(3552281, getTags());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(12862901, getShieldedInstanceConfig());
     }
     for (int i = 0; i < resourcePolicies_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 22220385, resourcePolicies_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 48277006, privateIpv6GoogleAccess_);
     }
@@ -1664,7 +1879,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < disks_.size(); i++) {
       output.writeMessage(95594102, disks_.get(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(157850683, getReservationAffinity());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
@@ -1676,8 +1891,16 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < serviceAccounts_.size(); i++) {
       output.writeMessage(277537328, serviceAccounts_.get(i));
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetResourceManagerTags(),
+        ResourceManagerTagsDefaultEntryHolder.defaultEntry,
+        377671164);
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(386688404, getScheduling());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(398330850, getNetworkPerformanceConfig());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(409646002, getAdvancedMachineFeatures());
@@ -1705,10 +1928,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3552281, getTags());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12862901, getShieldedInstanceConfig());
@@ -1721,7 +1944,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       size += dataSize;
       size += 4 * getResourcePoliciesList().size();
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               48277006, privateIpv6GoogleAccess_);
@@ -1737,7 +1960,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < disks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(95594102, disks_.get(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               157850683, getReservationAffinity());
@@ -1753,8 +1976,25 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               277537328, serviceAccounts_.get(i));
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetResourceManagerTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceManagerTags__ =
+          ResourceManagerTagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              377671164, resourceManagerTags__);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(386688404, getScheduling());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              398330850, getNetworkPerformanceConfig());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
@@ -1836,6 +2076,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
     }
     if (!getNetworkInterfacesList().equals(other.getNetworkInterfacesList())) return false;
+    if (hasNetworkPerformanceConfig() != other.hasNetworkPerformanceConfig()) return false;
+    if (hasNetworkPerformanceConfig()) {
+      if (!getNetworkPerformanceConfig().equals(other.getNetworkPerformanceConfig())) return false;
+    }
     if (hasPrivateIpv6GoogleAccess() != other.hasPrivateIpv6GoogleAccess()) return false;
     if (hasPrivateIpv6GoogleAccess()) {
       if (!getPrivateIpv6GoogleAccess().equals(other.getPrivateIpv6GoogleAccess())) return false;
@@ -1844,6 +2088,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     if (hasReservationAffinity()) {
       if (!getReservationAffinity().equals(other.getReservationAffinity())) return false;
     }
+    if (!internalGetResourceManagerTags().equals(other.internalGetResourceManagerTags()))
+      return false;
     if (!getResourcePoliciesList().equals(other.getResourcePoliciesList())) return false;
     if (hasScheduling() != other.hasScheduling()) return false;
     if (hasScheduling()) {
@@ -1913,6 +2159,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + NETWORK_INTERFACES_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkInterfacesList().hashCode();
     }
+    if (hasNetworkPerformanceConfig()) {
+      hash = (37 * hash) + NETWORK_PERFORMANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkPerformanceConfig().hashCode();
+    }
     if (hasPrivateIpv6GoogleAccess()) {
       hash = (37 * hash) + PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateIpv6GoogleAccess().hashCode();
@@ -1920,6 +2170,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     if (hasReservationAffinity()) {
       hash = (37 * hash) + RESERVATION_AFFINITY_FIELD_NUMBER;
       hash = (53 * hash) + getReservationAffinity().hashCode();
+    }
+    if (!internalGetResourceManagerTags().getMap().isEmpty()) {
+      hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetResourceManagerTags().hashCode();
     }
     if (getResourcePoliciesCount() > 0) {
       hash = (37 * hash) + RESOURCE_POLICIES_FIELD_NUMBER;
@@ -2063,6 +2317,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       switch (number) {
         case 500195327:
           return internalGetLabels();
+        case 377671164:
+          return internalGetResourceManagerTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2073,6 +2329,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       switch (number) {
         case 500195327:
           return internalGetMutableLabels();
+        case 377671164:
+          return internalGetMutableResourceManagerTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2106,6 +2364,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         getGuestAcceleratorsFieldBuilder();
         getMetadataFieldBuilder();
         getNetworkInterfacesFieldBuilder();
+        getNetworkPerformanceConfigFieldBuilder();
         getReservationAffinityFieldBuilder();
         getSchedulingFieldBuilder();
         getServiceAccountsFieldBuilder();
@@ -2162,25 +2421,32 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         networkInterfacesBuilder_.clear();
       }
-      privateIpv6GoogleAccess_ = "";
+      if (networkPerformanceConfigBuilder_ == null) {
+        networkPerformanceConfig_ = null;
+      } else {
+        networkPerformanceConfigBuilder_.clear();
+      }
       bitField0_ = (bitField0_ & ~0x00000800);
+      privateIpv6GoogleAccess_ = "";
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (reservationAffinityBuilder_ == null) {
         reservationAffinity_ = null;
       } else {
         reservationAffinityBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
-      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00002000);
+      internalGetMutableResourceManagerTags().clear();
+      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00008000);
       if (schedulingBuilder_ == null) {
         scheduling_ = null;
       } else {
         schedulingBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       if (serviceAccountsBuilder_ == null) {
         serviceAccounts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00020000);
       } else {
         serviceAccountsBuilder_.clear();
       }
@@ -2189,13 +2455,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         shieldedInstanceConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       if (tagsBuilder_ == null) {
         tags_ = null;
       } else {
         tagsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       return this;
     }
 
@@ -2295,54 +2561,64 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         result.networkInterfaces_ = networkInterfacesBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        if (networkPerformanceConfigBuilder_ == null) {
+          result.networkPerformanceConfig_ = networkPerformanceConfig_;
+        } else {
+          result.networkPerformanceConfig_ = networkPerformanceConfigBuilder_.build();
+        }
         to_bitField0_ |= 0x00000080;
       }
-      result.privateIpv6GoogleAccess_ = privateIpv6GoogleAccess_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
+      result.privateIpv6GoogleAccess_ = privateIpv6GoogleAccess_;
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         if (reservationAffinityBuilder_ == null) {
           result.reservationAffinity_ = reservationAffinity_;
         } else {
           result.reservationAffinity_ = reservationAffinityBuilder_.build();
         }
-        to_bitField0_ |= 0x00000100;
+        to_bitField0_ |= 0x00000200;
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      result.resourceManagerTags_ = internalGetResourceManagerTags();
+      result.resourceManagerTags_.makeImmutable();
+      if (((bitField0_ & 0x00008000) != 0)) {
         resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00008000);
       }
       result.resourcePolicies_ = resourcePolicies_;
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         if (schedulingBuilder_ == null) {
           result.scheduling_ = scheduling_;
         } else {
           result.scheduling_ = schedulingBuilder_.build();
         }
-        to_bitField0_ |= 0x00000200;
+        to_bitField0_ |= 0x00000400;
       }
       if (serviceAccountsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           serviceAccounts_ = java.util.Collections.unmodifiableList(serviceAccounts_);
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.serviceAccounts_ = serviceAccounts_;
       } else {
         result.serviceAccounts_ = serviceAccountsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         if (shieldedInstanceConfigBuilder_ == null) {
           result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
         } else {
           result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
         }
-        to_bitField0_ |= 0x00000400;
+        to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         if (tagsBuilder_ == null) {
           result.tags_ = tags_;
         } else {
           result.tags_ = tagsBuilder_.build();
         }
-        to_bitField0_ |= 0x00000800;
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -2503,18 +2779,22 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
           }
         }
       }
+      if (other.hasNetworkPerformanceConfig()) {
+        mergeNetworkPerformanceConfig(other.getNetworkPerformanceConfig());
+      }
       if (other.hasPrivateIpv6GoogleAccess()) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         privateIpv6GoogleAccess_ = other.privateIpv6GoogleAccess_;
         onChanged();
       }
       if (other.hasReservationAffinity()) {
         mergeReservationAffinity(other.getReservationAffinity());
       }
+      internalGetMutableResourceManagerTags().mergeFrom(other.internalGetResourceManagerTags());
       if (!other.resourcePolicies_.isEmpty()) {
         if (resourcePolicies_.isEmpty()) {
           resourcePolicies_ = other.resourcePolicies_;
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         } else {
           ensureResourcePoliciesIsMutable();
           resourcePolicies_.addAll(other.resourcePolicies_);
@@ -2528,7 +2808,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         if (!other.serviceAccounts_.isEmpty()) {
           if (serviceAccounts_.isEmpty()) {
             serviceAccounts_ = other.serviceAccounts_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensureServiceAccountsIsMutable();
             serviceAccounts_.addAll(other.serviceAccounts_);
@@ -2541,7 +2821,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
             serviceAccountsBuilder_.dispose();
             serviceAccountsBuilder_ = null;
             serviceAccounts_ = other.serviceAccounts_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00020000);
             serviceAccountsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServiceAccountsFieldBuilder()
@@ -2598,7 +2878,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features.
+     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2614,7 +2894,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features.
+     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2636,7 +2916,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features.
+     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2661,7 +2941,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features.
+     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2683,7 +2963,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features.
+     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2716,7 +2996,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features.
+     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2737,7 +3017,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features.
+     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2754,7 +3034,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features.
+     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2775,7 +3055,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features.
+     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2876,7 +3156,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options.
+     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2892,7 +3172,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options.
+     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2914,7 +3194,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options.
+     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2939,7 +3219,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options.
+     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2961,7 +3241,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options.
+     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -2994,7 +3274,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options.
+     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3015,7 +3295,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options.
+     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3032,7 +3312,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options.
+     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3053,7 +3333,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options.
+     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -4885,12 +5165,223 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       return networkInterfacesBuilder_;
     }
 
+    private com.google.cloud.compute.v1.NetworkPerformanceConfig networkPerformanceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.NetworkPerformanceConfig,
+            com.google.cloud.compute.v1.NetworkPerformanceConfig.Builder,
+            com.google.cloud.compute.v1.NetworkPerformanceConfigOrBuilder>
+        networkPerformanceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+     * </code>
+     *
+     * @return Whether the networkPerformanceConfig field is set.
+     */
+    public boolean hasNetworkPerformanceConfig() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+     * </code>
+     *
+     * @return The networkPerformanceConfig.
+     */
+    public com.google.cloud.compute.v1.NetworkPerformanceConfig getNetworkPerformanceConfig() {
+      if (networkPerformanceConfigBuilder_ == null) {
+        return networkPerformanceConfig_ == null
+            ? com.google.cloud.compute.v1.NetworkPerformanceConfig.getDefaultInstance()
+            : networkPerformanceConfig_;
+      } else {
+        return networkPerformanceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+     * </code>
+     */
+    public Builder setNetworkPerformanceConfig(
+        com.google.cloud.compute.v1.NetworkPerformanceConfig value) {
+      if (networkPerformanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkPerformanceConfig_ = value;
+        onChanged();
+      } else {
+        networkPerformanceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+     * </code>
+     */
+    public Builder setNetworkPerformanceConfig(
+        com.google.cloud.compute.v1.NetworkPerformanceConfig.Builder builderForValue) {
+      if (networkPerformanceConfigBuilder_ == null) {
+        networkPerformanceConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        networkPerformanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+     * </code>
+     */
+    public Builder mergeNetworkPerformanceConfig(
+        com.google.cloud.compute.v1.NetworkPerformanceConfig value) {
+      if (networkPerformanceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && networkPerformanceConfig_ != null
+            && networkPerformanceConfig_
+                != com.google.cloud.compute.v1.NetworkPerformanceConfig.getDefaultInstance()) {
+          networkPerformanceConfig_ =
+              com.google.cloud.compute.v1.NetworkPerformanceConfig.newBuilder(
+                      networkPerformanceConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          networkPerformanceConfig_ = value;
+        }
+        onChanged();
+      } else {
+        networkPerformanceConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000800;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+     * </code>
+     */
+    public Builder clearNetworkPerformanceConfig() {
+      if (networkPerformanceConfigBuilder_ == null) {
+        networkPerformanceConfig_ = null;
+        onChanged();
+      } else {
+        networkPerformanceConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000800);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.NetworkPerformanceConfig.Builder
+        getNetworkPerformanceConfigBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getNetworkPerformanceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.NetworkPerformanceConfigOrBuilder
+        getNetworkPerformanceConfigOrBuilder() {
+      if (networkPerformanceConfigBuilder_ != null) {
+        return networkPerformanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return networkPerformanceConfig_ == null
+            ? com.google.cloud.compute.v1.NetworkPerformanceConfig.getDefaultInstance()
+            : networkPerformanceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.NetworkPerformanceConfig,
+            com.google.cloud.compute.v1.NetworkPerformanceConfig.Builder,
+            com.google.cloud.compute.v1.NetworkPerformanceConfigOrBuilder>
+        getNetworkPerformanceConfigFieldBuilder() {
+      if (networkPerformanceConfigBuilder_ == null) {
+        networkPerformanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.NetworkPerformanceConfig,
+                com.google.cloud.compute.v1.NetworkPerformanceConfig.Builder,
+                com.google.cloud.compute.v1.NetworkPerformanceConfigOrBuilder>(
+                getNetworkPerformanceConfig(), getParentForChildren(), isClean());
+        networkPerformanceConfig_ = null;
+      }
+      return networkPerformanceConfigBuilder_;
+    }
+
     private java.lang.Object privateIpv6GoogleAccess_ = "";
     /**
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -4899,13 +5390,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return Whether the privateIpv6GoogleAccess field is set.
      */
     public boolean hasPrivateIpv6GoogleAccess() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -4928,7 +5419,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -4951,7 +5442,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -4964,7 +5455,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       privateIpv6GoogleAccess_ = value;
       onChanged();
       return this;
@@ -4973,7 +5464,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -4982,7 +5473,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPrivateIpv6GoogleAccess() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       privateIpv6GoogleAccess_ = getDefaultInstance().getPrivateIpv6GoogleAccess();
       onChanged();
       return this;
@@ -4991,7 +5482,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -5005,7 +5496,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       privateIpv6GoogleAccess_ = value;
       onChanged();
       return this;
@@ -5021,7 +5512,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from.
+     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -5030,13 +5521,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return Whether the reservationAffinity field is set.
      */
     public boolean hasReservationAffinity() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from.
+     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -5057,7 +5548,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from.
+     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -5073,14 +5564,14 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         reservationAffinityBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from.
+     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -5094,14 +5585,14 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         reservationAffinityBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from.
+     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -5109,7 +5600,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeReservationAffinity(com.google.cloud.compute.v1.ReservationAffinity value) {
       if (reservationAffinityBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && reservationAffinity_ != null
             && reservationAffinity_
                 != com.google.cloud.compute.v1.ReservationAffinity.getDefaultInstance()) {
@@ -5124,14 +5615,14 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         reservationAffinityBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from.
+     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -5144,21 +5635,21 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         reservationAffinityBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from.
+     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
      * </code>
      */
     public com.google.cloud.compute.v1.ReservationAffinity.Builder getReservationAffinityBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getReservationAffinityFieldBuilder().getBuilder();
     }
@@ -5166,7 +5657,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from.
+     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -5186,7 +5677,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from.
+     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -5209,20 +5700,184 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       return reservationAffinityBuilder_;
     }
 
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceManagerTags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetResourceManagerTags() {
+      if (resourceManagerTags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+      }
+      return resourceManagerTags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableResourceManagerTags() {
+      onChanged();
+      ;
+      if (resourceManagerTags_ == null) {
+        resourceManagerTags_ =
+            com.google.protobuf.MapField.newMapField(
+                ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!resourceManagerTags_.isMutable()) {
+        resourceManagerTags_ = resourceManagerTags_.copy();
+      }
+      return resourceManagerTags_;
+    }
+
+    public int getResourceManagerTagsCount() {
+      return internalGetResourceManagerTags().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    @java.lang.Override
+    public boolean containsResourceManagerTags(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetResourceManagerTags().getMap().containsKey(key);
+    }
+    /** Use {@link #getResourceManagerTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags() {
+      return getResourceManagerTagsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap() {
+      return internalGetResourceManagerTags().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getResourceManagerTagsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetResourceManagerTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getResourceManagerTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetResourceManagerTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearResourceManagerTags() {
+      internalGetMutableResourceManagerTags().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    public Builder removeResourceManagerTags(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableResourceManagerTags().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableResourceManagerTags() {
+      return internalGetMutableResourceManagerTags().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    public Builder putResourceManagerTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableResourceManagerTags().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    public Builder putAllResourceManagerTags(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableResourceManagerTags().getMutableMap().putAll(values);
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList resourcePolicies_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureResourcePoliciesIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         resourcePolicies_ = new com.google.protobuf.LazyStringArrayList(resourcePolicies_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
       }
     }
     /**
      *
      *
      * <pre>
-     * Resource policies (names, not ULRs) applied to instances created from these properties.
+     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -5236,7 +5891,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not ULRs) applied to instances created from these properties.
+     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -5250,7 +5905,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not ULRs) applied to instances created from these properties.
+     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -5265,7 +5920,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not ULRs) applied to instances created from these properties.
+     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -5280,7 +5935,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not ULRs) applied to instances created from these properties.
+     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -5302,7 +5957,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not ULRs) applied to instances created from these properties.
+     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -5323,7 +5978,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not ULRs) applied to instances created from these properties.
+     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -5341,7 +5996,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not ULRs) applied to instances created from these properties.
+     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -5350,7 +6005,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearResourcePolicies() {
       resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5358,7 +6013,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not ULRs) applied to instances created from these properties.
+     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -5395,7 +6050,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -5436,7 +6091,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         schedulingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       return this;
     }
     /**
@@ -5455,7 +6110,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         schedulingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       return this;
     }
     /**
@@ -5469,7 +6124,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeScheduling(com.google.cloud.compute.v1.Scheduling value) {
       if (schedulingBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && scheduling_ != null
             && scheduling_ != com.google.cloud.compute.v1.Scheduling.getDefaultInstance()) {
           scheduling_ =
@@ -5483,7 +6138,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         schedulingBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       return this;
     }
     /**
@@ -5502,7 +6157,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         schedulingBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
     /**
@@ -5515,7 +6170,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public com.google.cloud.compute.v1.Scheduling.Builder getSchedulingBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
@@ -5567,10 +6222,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureServiceAccountsIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         serviceAccounts_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.ServiceAccount>(serviceAccounts_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -5786,7 +6441,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     public Builder clearServiceAccounts() {
       if (serviceAccountsBuilder_ == null) {
         serviceAccounts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         serviceAccountsBuilder_.clear();
@@ -5910,7 +6565,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.ServiceAccount.Builder,
                 com.google.cloud.compute.v1.ServiceAccountOrBuilder>(
                 serviceAccounts_,
-                ((bitField0_ & 0x00008000) != 0),
+                ((bitField0_ & 0x00020000) != 0),
                 getParentForChildren(),
                 isClean());
         serviceAccounts_ = null;
@@ -5925,6 +6580,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.ShieldedInstanceConfigOrBuilder>
         shieldedInstanceConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
@@ -5932,9 +6593,15 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return Whether the shieldedInstanceConfig field is set.
      */
     public boolean hasShieldedInstanceConfig() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
@@ -5951,6 +6618,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
@@ -5966,10 +6639,16 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         shieldedInstanceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
@@ -5982,10 +6661,16 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
@@ -5993,7 +6678,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     public Builder mergeShieldedInstanceConfig(
         com.google.cloud.compute.v1.ShieldedInstanceConfig value) {
       if (shieldedInstanceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && shieldedInstanceConfig_ != null
             && shieldedInstanceConfig_
                 != com.google.cloud.compute.v1.ShieldedInstanceConfig.getDefaultInstance()) {
@@ -6008,10 +6693,16 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         shieldedInstanceConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
@@ -6023,21 +6714,33 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         shieldedInstanceConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder
         getShieldedInstanceConfigBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getShieldedInstanceConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
@@ -6053,6 +6756,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Note that for MachineImage, this is not supported yet.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
@@ -6092,7 +6801,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return Whether the tags field is set.
      */
     public boolean hasTags() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -6131,7 +6840,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         tagsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       return this;
     }
     /**
@@ -6150,7 +6859,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         tagsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       return this;
     }
     /**
@@ -6164,7 +6873,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeTags(com.google.cloud.compute.v1.Tags value) {
       if (tagsBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && tags_ != null
             && tags_ != com.google.cloud.compute.v1.Tags.getDefaultInstance()) {
           tags_ =
@@ -6176,7 +6885,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         tagsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       return this;
     }
     /**
@@ -6195,7 +6904,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         tagsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       return this;
     }
     /**
@@ -6208,7 +6917,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     public com.google.cloud.compute.v1.Tags.Builder getTagsBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getTagsFieldBuilder().getBuilder();
     }

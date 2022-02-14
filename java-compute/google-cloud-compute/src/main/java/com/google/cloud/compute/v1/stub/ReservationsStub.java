@@ -37,6 +37,7 @@ import com.google.cloud.compute.v1.ResizeReservationRequest;
 import com.google.cloud.compute.v1.SetIamPolicyReservationRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsReservationRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateReservationRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -108,6 +109,15 @@ public abstract class ReservationsStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsReservationRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public OperationCallable<UpdateReservationRequest, Operation, Operation>
+      updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateReservationRequest, Operation> updateCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCallable()");
   }
 
   @Override

@@ -27,7 +27,7 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Preference for a given location: ALLOW or DENY.
+   * Preference for a given location.
    * Check the Preference enum for the list of possible values.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Preference for a given location: ALLOW or DENY.
+   * Preference for a given location.
    * Check the Preference enum for the list of possible values.
    * </pre>
    *
@@ -53,7 +53,7 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Preference for a given location: ALLOW or DENY.
+   * Preference for a given location.
    * Check the Preference enum for the list of possible values.
    * </pre>
    *

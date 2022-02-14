@@ -412,6 +412,123 @@ public class SnapshotsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a snapshot in the specified project using the data included in the request. For regular
+   * snapshot creation, consider using this method instead of disks.createSnapshot, as this method
+   * supports more features, such as creating snapshots in a project different from the source disk
+   * project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
+   *   String project = "project-309310695";
+   *   Snapshot snapshotResource = Snapshot.newBuilder().build();
+   *   Operation response = snapshotsClient.insertAsync(project, snapshotResource).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param snapshotResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, Snapshot snapshotResource) {
+    InsertSnapshotRequest request =
+        InsertSnapshotRequest.newBuilder()
+            .setProject(project)
+            .setSnapshotResource(snapshotResource)
+            .build();
+    return insertAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a snapshot in the specified project using the data included in the request. For regular
+   * snapshot creation, consider using this method instead of disks.createSnapshot, as this method
+   * supports more features, such as creating snapshots in a project different from the source disk
+   * project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
+   *   InsertSnapshotRequest request =
+   *       InsertSnapshotRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSnapshotResource(Snapshot.newBuilder().build())
+   *           .build();
+   *   Operation response = snapshotsClient.insertAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(InsertSnapshotRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a snapshot in the specified project using the data included in the request. For regular
+   * snapshot creation, consider using this method instead of disks.createSnapshot, as this method
+   * supports more features, such as creating snapshots in a project different from the source disk
+   * project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
+   *   InsertSnapshotRequest request =
+   *       InsertSnapshotRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSnapshotResource(Snapshot.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       snapshotsClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertSnapshotRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a snapshot in the specified project using the data included in the request. For regular
+   * snapshot creation, consider using this method instead of disks.createSnapshot, as this method
+   * supports more features, such as creating snapshots in a project different from the source disk
+   * project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
+   *   InsertSnapshotRequest request =
+   *       InsertSnapshotRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSnapshotResource(Snapshot.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = snapshotsClient.insertCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<InsertSnapshotRequest, Operation> insertCallable() {
+    return stub.insertCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Retrieves the list of Snapshot resources contained within the specified project.
    *
    * <p>Sample code:

@@ -76,6 +76,7 @@ import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
+import com.google.cloud.compute.v1.ResumeInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
 import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceRequest;
 import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceResponse;
@@ -97,6 +98,7 @@ import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceRequest;
 import com.google.cloud.compute.v1.StartInstanceRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceRequest;
 import com.google.cloud.compute.v1.StopInstanceRequest;
+import com.google.cloud.compute.v1.SuspendInstanceRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsInstanceRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceRequest;
@@ -210,6 +212,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   private final UnaryCallSettings<ResetInstanceRequest, Operation> resetSettings;
   private final OperationCallSettings<ResetInstanceRequest, Operation, Operation>
       resetOperationSettings;
+  private final UnaryCallSettings<ResumeInstanceRequest, Operation> resumeSettings;
+  private final OperationCallSettings<ResumeInstanceRequest, Operation, Operation>
+      resumeOperationSettings;
   private final UnaryCallSettings<
           SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
       sendDiagnosticInterruptSettings;
@@ -268,6 +273,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   private final UnaryCallSettings<StopInstanceRequest, Operation> stopSettings;
   private final OperationCallSettings<StopInstanceRequest, Operation, Operation>
       stopOperationSettings;
+  private final UnaryCallSettings<SuspendInstanceRequest, Operation> suspendSettings;
+  private final OperationCallSettings<SuspendInstanceRequest, Operation, Operation>
+      suspendOperationSettings;
   private final UnaryCallSettings<TestIamPermissionsInstanceRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateInstanceRequest, Operation> updateSettings;
@@ -645,6 +653,17 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return resetOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to resume. */
+  public UnaryCallSettings<ResumeInstanceRequest, Operation> resumeSettings() {
+    return resumeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resume. */
+  public OperationCallSettings<ResumeInstanceRequest, Operation, Operation>
+      resumeOperationSettings() {
+    return resumeOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to sendDiagnosticInterrupt. */
   public UnaryCallSettings<
           SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
@@ -830,6 +849,17 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return stopOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to suspend. */
+  public UnaryCallSettings<SuspendInstanceRequest, Operation> suspendSettings() {
+    return suspendSettings;
+  }
+
+  /** Returns the object with the settings used for calls to suspend. */
+  public OperationCallSettings<SuspendInstanceRequest, Operation, Operation>
+      suspendOperationSettings() {
+    return suspendOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to testIamPermissions. */
   public UnaryCallSettings<TestIamPermissionsInstanceRequest, TestPermissionsResponse>
       testIamPermissionsSettings() {
@@ -1005,6 +1035,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
         settingsBuilder.removeResourcePoliciesOperationSettings().build();
     resetSettings = settingsBuilder.resetSettings().build();
     resetOperationSettings = settingsBuilder.resetOperationSettings().build();
+    resumeSettings = settingsBuilder.resumeSettings().build();
+    resumeOperationSettings = settingsBuilder.resumeOperationSettings().build();
     sendDiagnosticInterruptSettings = settingsBuilder.sendDiagnosticInterruptSettings().build();
     setDeletionProtectionSettings = settingsBuilder.setDeletionProtectionSettings().build();
     setDeletionProtectionOperationSettings =
@@ -1046,6 +1078,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
         settingsBuilder.startWithEncryptionKeyOperationSettings().build();
     stopSettings = settingsBuilder.stopSettings().build();
     stopOperationSettings = settingsBuilder.stopOperationSettings().build();
+    suspendSettings = settingsBuilder.suspendSettings().build();
+    suspendOperationSettings = settingsBuilder.suspendOperationSettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
@@ -1131,6 +1165,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final UnaryCallSettings.Builder<ResetInstanceRequest, Operation> resetSettings;
     private final OperationCallSettings.Builder<ResetInstanceRequest, Operation, Operation>
         resetOperationSettings;
+    private final UnaryCallSettings.Builder<ResumeInstanceRequest, Operation> resumeSettings;
+    private final OperationCallSettings.Builder<ResumeInstanceRequest, Operation, Operation>
+        resumeOperationSettings;
     private final UnaryCallSettings.Builder<
             SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
         sendDiagnosticInterruptSettings;
@@ -1201,6 +1238,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final UnaryCallSettings.Builder<StopInstanceRequest, Operation> stopSettings;
     private final OperationCallSettings.Builder<StopInstanceRequest, Operation, Operation>
         stopOperationSettings;
+    private final UnaryCallSettings.Builder<SuspendInstanceRequest, Operation> suspendSettings;
+    private final OperationCallSettings.Builder<SuspendInstanceRequest, Operation, Operation>
+        suspendOperationSettings;
     private final UnaryCallSettings.Builder<
             TestIamPermissionsInstanceRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
@@ -1307,6 +1347,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       removeResourcePoliciesOperationSettings = OperationCallSettings.newBuilder();
       resetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resetOperationSettings = OperationCallSettings.newBuilder();
+      resumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resumeOperationSettings = OperationCallSettings.newBuilder();
       sendDiagnosticInterruptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setDeletionProtectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setDeletionProtectionOperationSettings = OperationCallSettings.newBuilder();
@@ -1339,6 +1381,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       startWithEncryptionKeyOperationSettings = OperationCallSettings.newBuilder();
       stopSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       stopOperationSettings = OperationCallSettings.newBuilder();
+      suspendSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      suspendOperationSettings = OperationCallSettings.newBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
@@ -1373,6 +1417,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               listReferrersSettings,
               removeResourcePoliciesSettings,
               resetSettings,
+              resumeSettings,
               sendDiagnosticInterruptSettings,
               setDeletionProtectionSettings,
               setDiskAutoDeleteSettings,
@@ -1390,6 +1435,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               startSettings,
               startWithEncryptionKeySettings,
               stopSettings,
+              suspendSettings,
               testIamPermissionsSettings,
               updateSettings,
               updateAccessConfigSettings,
@@ -1436,6 +1482,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           settings.removeResourcePoliciesOperationSettings.toBuilder();
       resetSettings = settings.resetSettings.toBuilder();
       resetOperationSettings = settings.resetOperationSettings.toBuilder();
+      resumeSettings = settings.resumeSettings.toBuilder();
+      resumeOperationSettings = settings.resumeOperationSettings.toBuilder();
       sendDiagnosticInterruptSettings = settings.sendDiagnosticInterruptSettings.toBuilder();
       setDeletionProtectionSettings = settings.setDeletionProtectionSettings.toBuilder();
       setDeletionProtectionOperationSettings =
@@ -1474,6 +1522,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           settings.startWithEncryptionKeyOperationSettings.toBuilder();
       stopSettings = settings.stopSettings.toBuilder();
       stopOperationSettings = settings.stopOperationSettings.toBuilder();
+      suspendSettings = settings.suspendSettings.toBuilder();
+      suspendOperationSettings = settings.suspendOperationSettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
@@ -1513,6 +1563,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               listReferrersSettings,
               removeResourcePoliciesSettings,
               resetSettings,
+              resumeSettings,
               sendDiagnosticInterruptSettings,
               setDeletionProtectionSettings,
               setDiskAutoDeleteSettings,
@@ -1530,6 +1581,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               startSettings,
               startWithEncryptionKeySettings,
               stopSettings,
+              suspendSettings,
               testIamPermissionsSettings,
               updateSettings,
               updateAccessConfigSettings,
@@ -1653,6 +1705,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .resumeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .sendDiagnosticInterruptSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1734,6 +1791,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       builder
           .stopSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .suspendSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1991,6 +2053,30 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ResetInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .resumeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ResumeInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -2379,6 +2465,30 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
                       .build()));
 
       builder
+          .suspendOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SuspendInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
           .updateOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -2717,6 +2827,19 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return resetOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to resume. */
+    public UnaryCallSettings.Builder<ResumeInstanceRequest, Operation> resumeSettings() {
+      return resumeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resume. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ResumeInstanceRequest, Operation, Operation>
+        resumeOperationSettings() {
+      return resumeOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to sendDiagnosticInterrupt. */
     public UnaryCallSettings.Builder<
             SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
@@ -2939,6 +3062,19 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     public OperationCallSettings.Builder<StopInstanceRequest, Operation, Operation>
         stopOperationSettings() {
       return stopOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to suspend. */
+    public UnaryCallSettings.Builder<SuspendInstanceRequest, Operation> suspendSettings() {
+      return suspendSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to suspend. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SuspendInstanceRequest, Operation, Operation>
+        suspendOperationSettings() {
+      return suspendOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

@@ -285,6 +285,31 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
+   * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+   * </pre>
+   *
+   * <code>optional bool enable_ipv6 = 181467939;</code>
+   *
+   * @return Whether the enableIpv6 field is set.
+   */
+  boolean hasEnableIpv6();
+  /**
+   *
+   *
+   * <pre>
+   * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+   * </pre>
+   *
+   * <code>optional bool enable_ipv6 = 181467939;</code>
+   *
+   * @return The enableIpv6.
+   */
+  boolean getEnableIpv6();
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the interface the BGP peer is associated with.
    * </pre>
    *
@@ -354,6 +379,43 @@ public interface RouterBgpPeerOrBuilder
    * @return The bytes for ipAddress.
    */
   com.google.protobuf.ByteString getIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the interface inside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string ipv6_nexthop_address = 27968211;</code>
+   *
+   * @return Whether the ipv6NexthopAddress field is set.
+   */
+  boolean hasIpv6NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the interface inside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string ipv6_nexthop_address = 27968211;</code>
+   *
+   * @return The ipv6NexthopAddress.
+   */
+  java.lang.String getIpv6NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the interface inside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string ipv6_nexthop_address = 27968211;</code>
+   *
+   * @return The bytes for ipv6NexthopAddress.
+   */
+  com.google.protobuf.ByteString getIpv6NexthopAddressBytes();
 
   /**
    *
@@ -493,6 +555,43 @@ public interface RouterBgpPeerOrBuilder
    * @return The bytes for peerIpAddress.
    */
   com.google.protobuf.ByteString getPeerIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the BGP interface outside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string peer_ipv6_nexthop_address = 491486608;</code>
+   *
+   * @return Whether the peerIpv6NexthopAddress field is set.
+   */
+  boolean hasPeerIpv6NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the BGP interface outside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string peer_ipv6_nexthop_address = 491486608;</code>
+   *
+   * @return The peerIpv6NexthopAddress.
+   */
+  java.lang.String getPeerIpv6NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the BGP interface outside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string peer_ipv6_nexthop_address = 491486608;</code>
+   *
+   * @return The bytes for peerIpv6NexthopAddress.
+   */
+  com.google.protobuf.ByteString getPeerIpv6NexthopAddressBytes();
 
   /**
    *

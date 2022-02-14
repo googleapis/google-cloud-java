@@ -27,6 +27,31 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
+   * Specifies whether to enable automatic renewal for the commitment. The default value is false if not specified. The field can be updated until the day of the commitment expiration at 12:00am PST. If the field is set to true, the commitment will be automatically renewed for either one or three years according to the terms of the existing commitment.
+   * </pre>
+   *
+   * <code>optional bool auto_renew = 495520765;</code>
+   *
+   * @return Whether the autoRenew field is set.
+   */
+  boolean hasAutoRenew();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether to enable automatic renewal for the commitment. The default value is false if not specified. The field can be updated until the day of the commitment expiration at 12:00am PST. If the field is set to true, the commitment will be automatically renewed for either one or three years according to the terms of the existing commitment.
+   * </pre>
+   *
+   * <code>optional bool auto_renew = 495520765;</code>
+   *
+   * @return The autoRenew.
+   */
+  boolean getAutoRenew();
+
+  /**
+   *
+   *
+   * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
    * Check the Category enum for the list of possible values.
    * </pre>

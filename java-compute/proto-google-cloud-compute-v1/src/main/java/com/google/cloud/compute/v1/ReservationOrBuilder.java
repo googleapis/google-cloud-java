@@ -299,6 +299,41 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   * Share-settings for shared-reservation
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+   *
+   * @return Whether the shareSettings field is set.
+   */
+  boolean hasShareSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Share-settings for shared-reservation
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+   *
+   * @return The shareSettings.
+   */
+  com.google.cloud.compute.v1.ShareSettings getShareSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Share-settings for shared-reservation
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+   */
+  com.google.cloud.compute.v1.ShareSettingsOrBuilder getShareSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Reservation for instances with specific machine shapes.
    * </pre>
    *

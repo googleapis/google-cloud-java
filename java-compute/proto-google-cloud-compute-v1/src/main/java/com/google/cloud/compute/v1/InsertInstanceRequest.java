@@ -41,6 +41,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     project_ = "";
     requestId_ = "";
     sourceInstanceTemplate_ = "";
+    sourceMachineImage_ = "";
     zone_ = "";
   }
 
@@ -79,6 +80,13 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
               java.lang.String s = input.readStringRequireUtf8();
 
               zone_ = s;
+              break;
+            }
+          case 174158330:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              sourceMachineImage_ = s;
               break;
             }
           case 296879706:
@@ -388,6 +396,70 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int SOURCE_MACHINE_IMAGE_FIELD_NUMBER = 21769791;
+  private volatile java.lang.Object sourceMachineImage_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the machine image to use to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to a machine image: - https://www.googleapis.com/compute/v1/projects/project/global/global /machineImages/machineImage - projects/project/global/global/machineImages/machineImage - global/machineImages/machineImage
+   * </pre>
+   *
+   * <code>optional string source_machine_image = 21769791;</code>
+   *
+   * @return Whether the sourceMachineImage field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceMachineImage() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the machine image to use to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to a machine image: - https://www.googleapis.com/compute/v1/projects/project/global/global /machineImages/machineImage - projects/project/global/global/machineImages/machineImage - global/machineImages/machineImage
+   * </pre>
+   *
+   * <code>optional string source_machine_image = 21769791;</code>
+   *
+   * @return The sourceMachineImage.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceMachineImage() {
+    java.lang.Object ref = sourceMachineImage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceMachineImage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the machine image to use to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to a machine image: - https://www.googleapis.com/compute/v1/projects/project/global/global /machineImages/machineImage - projects/project/global/global/machineImages/machineImage - global/machineImages/machineImage
+   * </pre>
+   *
+   * <code>optional string source_machine_image = 21769791;</code>
+   *
+   * @return The bytes for sourceMachineImage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceMachineImageBytes() {
+    java.lang.Object ref = sourceMachineImage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceMachineImage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ZONE_FIELD_NUMBER = 3744684;
   private volatile java.lang.Object zone_;
   /**
@@ -458,6 +530,9 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21769791, sourceMachineImage_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
@@ -482,6 +557,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(21769791, sourceMachineImage_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
@@ -528,6 +607,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (hasSourceInstanceTemplate()) {
       if (!getSourceInstanceTemplate().equals(other.getSourceInstanceTemplate())) return false;
     }
+    if (hasSourceMachineImage() != other.hasSourceMachineImage()) return false;
+    if (hasSourceMachineImage()) {
+      if (!getSourceMachineImage().equals(other.getSourceMachineImage())) return false;
+    }
     if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -553,6 +636,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (hasSourceInstanceTemplate()) {
       hash = (37 * hash) + SOURCE_INSTANCE_TEMPLATE_FIELD_NUMBER;
       hash = (53 * hash) + getSourceInstanceTemplate().hashCode();
+    }
+    if (hasSourceMachineImage()) {
+      hash = (37 * hash) + SOURCE_MACHINE_IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceMachineImage().hashCode();
     }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
@@ -713,6 +800,8 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       bitField0_ = (bitField0_ & ~0x00000001);
       sourceInstanceTemplate_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
+      sourceMachineImage_ = "";
+      bitField0_ = (bitField0_ & ~0x00000004);
       zone_ = "";
 
       return this;
@@ -758,6 +847,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         to_bitField0_ |= 0x00000002;
       }
       result.sourceInstanceTemplate_ = sourceInstanceTemplate_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
+      result.sourceMachineImage_ = sourceMachineImage_;
       result.zone_ = zone_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -825,6 +918,11 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       if (other.hasSourceInstanceTemplate()) {
         bitField0_ |= 0x00000002;
         sourceInstanceTemplate_ = other.sourceInstanceTemplate_;
+        onChanged();
+      }
+      if (other.hasSourceMachineImage()) {
+        bitField0_ |= 0x00000004;
+        sourceMachineImage_ = other.sourceMachineImage_;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
@@ -1419,6 +1517,126 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       bitField0_ |= 0x00000002;
       sourceInstanceTemplate_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceMachineImage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the machine image to use to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to a machine image: - https://www.googleapis.com/compute/v1/projects/project/global/global /machineImages/machineImage - projects/project/global/global/machineImages/machineImage - global/machineImages/machineImage
+     * </pre>
+     *
+     * <code>optional string source_machine_image = 21769791;</code>
+     *
+     * @return Whether the sourceMachineImage field is set.
+     */
+    public boolean hasSourceMachineImage() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the machine image to use to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to a machine image: - https://www.googleapis.com/compute/v1/projects/project/global/global /machineImages/machineImage - projects/project/global/global/machineImages/machineImage - global/machineImages/machineImage
+     * </pre>
+     *
+     * <code>optional string source_machine_image = 21769791;</code>
+     *
+     * @return The sourceMachineImage.
+     */
+    public java.lang.String getSourceMachineImage() {
+      java.lang.Object ref = sourceMachineImage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceMachineImage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the machine image to use to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to a machine image: - https://www.googleapis.com/compute/v1/projects/project/global/global /machineImages/machineImage - projects/project/global/global/machineImages/machineImage - global/machineImages/machineImage
+     * </pre>
+     *
+     * <code>optional string source_machine_image = 21769791;</code>
+     *
+     * @return The bytes for sourceMachineImage.
+     */
+    public com.google.protobuf.ByteString getSourceMachineImageBytes() {
+      java.lang.Object ref = sourceMachineImage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceMachineImage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the machine image to use to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to a machine image: - https://www.googleapis.com/compute/v1/projects/project/global/global /machineImages/machineImage - projects/project/global/global/machineImages/machineImage - global/machineImages/machineImage
+     * </pre>
+     *
+     * <code>optional string source_machine_image = 21769791;</code>
+     *
+     * @param value The sourceMachineImage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceMachineImage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      sourceMachineImage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the machine image to use to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to a machine image: - https://www.googleapis.com/compute/v1/projects/project/global/global /machineImages/machineImage - projects/project/global/global/machineImages/machineImage - global/machineImages/machineImage
+     * </pre>
+     *
+     * <code>optional string source_machine_image = 21769791;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceMachineImage() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      sourceMachineImage_ = getDefaultInstance().getSourceMachineImage();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the machine image to use to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to a machine image: - https://www.googleapis.com/compute/v1/projects/project/global/global /machineImages/machineImage - projects/project/global/global/machineImages/machineImage - global/machineImages/machineImage
+     * </pre>
+     *
+     * <code>optional string source_machine_image = 21769791;</code>
+     *
+     * @param value The bytes for sourceMachineImage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceMachineImageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      sourceMachineImage_ = value;
       onChanged();
       return this;
     }

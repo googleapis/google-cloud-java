@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * MetadataFilter label name value pairs that are expected to match corresponding labels presented as metadata to the loadbalancer.
+ * MetadataFilter label name value pairs that are expected to match corresponding labels presented as metadata to the load balancer.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.MetadataFilterLabelMatch}
@@ -431,7 +431,7 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * MetadataFilter label name value pairs that are expected to match corresponding labels presented as metadata to the loadbalancer.
+   * MetadataFilter label name value pairs that are expected to match corresponding labels presented as metadata to the load balancer.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.MetadataFilterLabelMatch}

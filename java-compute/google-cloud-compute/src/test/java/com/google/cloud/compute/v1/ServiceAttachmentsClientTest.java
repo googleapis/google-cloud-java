@@ -214,6 +214,7 @@ public class ServiceAttachmentsClientTest {
             .addAllConsumerRejectLists(new ArrayList<String>())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
+            .addAllDomainNames(new ArrayList<String>())
             .setEnableProxyProtocol(true)
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)

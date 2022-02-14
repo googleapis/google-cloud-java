@@ -103,6 +103,9 @@
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
+            "SetEdgeSecurityPolicy": {
+              "methods": ["setEdgeSecurityPolicyAsync", "setEdgeSecurityPolicyAsync", "setEdgeSecurityPolicyOperationCallable", "setEdgeSecurityPolicyCallable"]
+            },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
@@ -141,6 +144,9 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "SetEdgeSecurityPolicy": {
+              "methods": ["setEdgeSecurityPolicyAsync", "setEdgeSecurityPolicyAsync", "setEdgeSecurityPolicyOperationCallable", "setEdgeSecurityPolicyCallable"]
             },
             "SetSecurityPolicy": {
               "methods": ["setSecurityPolicyAsync", "setSecurityPolicyAsync", "setSecurityPolicyOperationCallable", "setSecurityPolicyCallable"]
@@ -799,6 +805,9 @@
             "Reset": {
               "methods": ["resetAsync", "resetAsync", "resetOperationCallable", "resetCallable"]
             },
+            "Resume": {
+              "methods": ["resumeAsync", "resumeAsync", "resumeOperationCallable", "resumeCallable"]
+            },
             "SendDiagnosticInterrupt": {
               "methods": ["sendDiagnosticInterrupt", "sendDiagnosticInterrupt", "sendDiagnosticInterruptCallable"]
             },
@@ -849,6 +858,9 @@
             },
             "Stop": {
               "methods": ["stopAsync", "stopAsync", "stopOperationCallable", "stopCallable"]
+            },
+            "Suspend": {
+              "methods": ["suspendAsync", "suspendAsync", "suspendOperationCallable", "suspendCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -960,6 +972,36 @@
       "clients": {
         "grpc": {
           "libraryClient": "LicensesClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "MachineImages": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MachineImagesClient",
           "rpcs": {
             "Delete": {
               "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
@@ -1383,6 +1425,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -1809,6 +1854,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -1995,6 +2043,9 @@
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]

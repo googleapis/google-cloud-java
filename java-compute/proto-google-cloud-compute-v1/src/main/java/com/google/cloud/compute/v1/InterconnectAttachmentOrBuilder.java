@@ -92,6 +92,57 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
+   * Up to 16 candidate prefixes that control the allocation of cloudRouterIpv6Address and customerRouterIpv6Address for this attachment. Each prefix must be in the Global Unique Address (GUA) space. It is highly recommended that it be in a range owned by the requestor. A GUA in a range owned by Google will cause the request to fail. Google will select an available prefix from the supplied candidates or fail the request. If not supplied, a /125 from a Google-owned GUA block will be selected.
+   * </pre>
+   *
+   * <code>repeated string candidate_ipv6_subnets = 70682522;</code>
+   *
+   * @return A list containing the candidateIpv6Subnets.
+   */
+  java.util.List<java.lang.String> getCandidateIpv6SubnetsList();
+  /**
+   *
+   *
+   * <pre>
+   * Up to 16 candidate prefixes that control the allocation of cloudRouterIpv6Address and customerRouterIpv6Address for this attachment. Each prefix must be in the Global Unique Address (GUA) space. It is highly recommended that it be in a range owned by the requestor. A GUA in a range owned by Google will cause the request to fail. Google will select an available prefix from the supplied candidates or fail the request. If not supplied, a /125 from a Google-owned GUA block will be selected.
+   * </pre>
+   *
+   * <code>repeated string candidate_ipv6_subnets = 70682522;</code>
+   *
+   * @return The count of candidateIpv6Subnets.
+   */
+  int getCandidateIpv6SubnetsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Up to 16 candidate prefixes that control the allocation of cloudRouterIpv6Address and customerRouterIpv6Address for this attachment. Each prefix must be in the Global Unique Address (GUA) space. It is highly recommended that it be in a range owned by the requestor. A GUA in a range owned by Google will cause the request to fail. Google will select an available prefix from the supplied candidates or fail the request. If not supplied, a /125 from a Google-owned GUA block will be selected.
+   * </pre>
+   *
+   * <code>repeated string candidate_ipv6_subnets = 70682522;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The candidateIpv6Subnets at the given index.
+   */
+  java.lang.String getCandidateIpv6Subnets(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Up to 16 candidate prefixes that control the allocation of cloudRouterIpv6Address and customerRouterIpv6Address for this attachment. Each prefix must be in the Global Unique Address (GUA) space. It is highly recommended that it be in a range owned by the requestor. A GUA in a range owned by Google will cause the request to fail. Google will select an available prefix from the supplied candidates or fail the request. If not supplied, a /125 from a Google-owned GUA block will be selected.
+   * </pre>
+   *
+   * <code>repeated string candidate_ipv6_subnets = 70682522;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the candidateIpv6Subnets at the given index.
+   */
+  com.google.protobuf.ByteString getCandidateIpv6SubnetsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Up to 16 candidate prefixes that can be used to restrict the allocation of cloudRouterIpAddress and customerRouterIpAddress for this attachment. All prefixes must be within link-local address space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc). Google will attempt to select an unused /29 from the supplied candidate prefix(es). The request will fail if all possible /29s are in use on Google's edge. If not supplied, Google will randomly select an unused /29 from all of link-local space.
    * </pre>
    *
@@ -180,6 +231,80 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
+   * [Output Only] IPv6 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>optional string cloud_router_ipv6_address = 451922376;</code>
+   *
+   * @return Whether the cloudRouterIpv6Address field is set.
+   */
+  boolean hasCloudRouterIpv6Address();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IPv6 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>optional string cloud_router_ipv6_address = 451922376;</code>
+   *
+   * @return The cloudRouterIpv6Address.
+   */
+  java.lang.String getCloudRouterIpv6Address();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IPv6 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>optional string cloud_router_ipv6_address = 451922376;</code>
+   *
+   * @return The bytes for cloudRouterIpv6Address.
+   */
+  com.google.protobuf.ByteString getCloudRouterIpv6AddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If supplied, the interface id (index within the subnet) to be used for the cloud router address. The id must be in the range of 1 to 6. If a subnet mask is supplied, it must be /125, and the subnet should either be 0 or match the selected subnet.
+   * </pre>
+   *
+   * <code>optional string cloud_router_ipv6_interface_id = 521282701;</code>
+   *
+   * @return Whether the cloudRouterIpv6InterfaceId field is set.
+   */
+  boolean hasCloudRouterIpv6InterfaceId();
+  /**
+   *
+   *
+   * <pre>
+   * If supplied, the interface id (index within the subnet) to be used for the cloud router address. The id must be in the range of 1 to 6. If a subnet mask is supplied, it must be /125, and the subnet should either be 0 or match the selected subnet.
+   * </pre>
+   *
+   * <code>optional string cloud_router_ipv6_interface_id = 521282701;</code>
+   *
+   * @return The cloudRouterIpv6InterfaceId.
+   */
+  java.lang.String getCloudRouterIpv6InterfaceId();
+  /**
+   *
+   *
+   * <pre>
+   * If supplied, the interface id (index within the subnet) to be used for the cloud router address. The id must be in the range of 1 to 6. If a subnet mask is supplied, it must be /125, and the subnet should either be 0 or match the selected subnet.
+   * </pre>
+   *
+   * <code>optional string cloud_router_ipv6_interface_id = 521282701;</code>
+   *
+   * @return The bytes for cloudRouterIpv6InterfaceId.
+   */
+  com.google.protobuf.ByteString getCloudRouterIpv6InterfaceIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
@@ -254,7 +379,81 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Dataplane version for this InterconnectAttachment.
+   * [Output Only] IPv6 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>optional string customer_router_ipv6_address = 290127089;</code>
+   *
+   * @return Whether the customerRouterIpv6Address field is set.
+   */
+  boolean hasCustomerRouterIpv6Address();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IPv6 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>optional string customer_router_ipv6_address = 290127089;</code>
+   *
+   * @return The customerRouterIpv6Address.
+   */
+  java.lang.String getCustomerRouterIpv6Address();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IPv6 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>optional string customer_router_ipv6_address = 290127089;</code>
+   *
+   * @return The bytes for customerRouterIpv6Address.
+   */
+  com.google.protobuf.ByteString getCustomerRouterIpv6AddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If supplied, the interface id (index within the subnet) to be used for the customer router address. The id must be in the range of 1 to 6. If a subnet mask is supplied, it must be /125, and the subnet should either be 0 or match the selected subnet.
+   * </pre>
+   *
+   * <code>optional string customer_router_ipv6_interface_id = 380994308;</code>
+   *
+   * @return Whether the customerRouterIpv6InterfaceId field is set.
+   */
+  boolean hasCustomerRouterIpv6InterfaceId();
+  /**
+   *
+   *
+   * <pre>
+   * If supplied, the interface id (index within the subnet) to be used for the customer router address. The id must be in the range of 1 to 6. If a subnet mask is supplied, it must be /125, and the subnet should either be 0 or match the selected subnet.
+   * </pre>
+   *
+   * <code>optional string customer_router_ipv6_interface_id = 380994308;</code>
+   *
+   * @return The customerRouterIpv6InterfaceId.
+   */
+  java.lang.String getCustomerRouterIpv6InterfaceId();
+  /**
+   *
+   *
+   * <pre>
+   * If supplied, the interface id (index within the subnet) to be used for the customer router address. The id must be in the range of 1 to 6. If a subnet mask is supplied, it must be /125, and the subnet should either be 0 or match the selected subnet.
+   * </pre>
+   *
+   * <code>optional string customer_router_ipv6_interface_id = 380994308;</code>
+   *
+   * @return The bytes for customerRouterIpv6InterfaceId.
+   */
+  com.google.protobuf.ByteString getCustomerRouterIpv6InterfaceIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output only for types PARTNER and DEDICATED. Not present for PARTNER_PROVIDER.] Dataplane version for this InterconnectAttachment. This field is only present for Dataplane version 2 and higher. Absence of this field in the API output indicates that the Dataplane is version 1.
    * </pre>
    *
    * <code>optional int32 dataplane_version = 34920075;</code>
@@ -266,7 +465,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Dataplane version for this InterconnectAttachment.
+   * [Output only for types PARTNER and DEDICATED. Not present for PARTNER_PROVIDER.] Dataplane version for this InterconnectAttachment. This field is only present for Dataplane version 2 and higher. Absence of this field in the API output indicates that the Dataplane is version 1.
    * </pre>
    *
    * <code>optional int32 dataplane_version = 34920075;</code>
@@ -962,6 +1161,46 @@ public interface InterconnectAttachmentOrBuilder
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this interconnect attachment to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at interconnect attachments creation and update interconnect attachment operations.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return Whether the stackType field is set.
+   */
+  boolean hasStackType();
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this interconnect attachment to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at interconnect attachments creation and update interconnect attachment operations.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return The stackType.
+   */
+  java.lang.String getStackType();
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this interconnect attachment to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at interconnect attachments creation and update interconnect attachment operations.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return The bytes for stackType.
+   */
+  com.google.protobuf.ByteString getStackTypeBytes();
 
   /**
    *

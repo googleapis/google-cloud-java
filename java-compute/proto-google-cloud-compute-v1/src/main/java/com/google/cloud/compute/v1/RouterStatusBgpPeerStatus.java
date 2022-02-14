@@ -82,48 +82,48 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               name_ = s;
               break;
             }
           case 837888322:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               uptimeSeconds_ = s;
               break;
             }
           case 878060682:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               state_ = s;
               break;
             }
           case 1083660280:
             {
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               numLearnedRoutes_ = input.readUInt32();
               break;
             }
           case 1450082194:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               status_ = s;
               break;
             }
           case 1661886154:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               peerIpAddress_ = s;
               break;
             }
           case 1883037506:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               uptime_ = s;
               break;
             }
@@ -140,21 +140,37 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
           case -1476591670:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               linkedVpnTunnel_ = s;
+              break;
+            }
+          case -1129913462:
+            {
+              com.google.cloud.compute.v1.BfdStatus.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) != 0)) {
+                subBuilder = bfdStatus_.toBuilder();
+              }
+              bfdStatus_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.BfdStatus.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(bfdStatus_);
+                bfdStatus_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
               break;
             }
           case -1044789534:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
               ipAddress_ = s;
               break;
             }
           case -548463382:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               routerApplianceInstance_ = s;
               break;
             }
@@ -398,6 +414,36 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     return advertisedRoutes_.get(index);
   }
 
+  public static final int BFD_STATUS_FIELD_NUMBER = 395631729;
+  private com.google.cloud.compute.v1.BfdStatus bfdStatus_;
+  /**
+   * <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code>
+   *
+   * @return Whether the bfdStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasBfdStatus() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code>
+   *
+   * @return The bfdStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BfdStatus getBfdStatus() {
+    return bfdStatus_ == null
+        ? com.google.cloud.compute.v1.BfdStatus.getDefaultInstance()
+        : bfdStatus_;
+  }
+  /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BfdStatusOrBuilder getBfdStatusOrBuilder() {
+    return bfdStatus_ == null
+        ? com.google.cloud.compute.v1.BfdStatus.getDefaultInstance()
+        : bfdStatus_;
+  }
+
   public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
   private volatile java.lang.Object ipAddress_;
   /**
@@ -413,7 +459,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasIpAddress() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -477,7 +523,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasLinkedVpnTunnel() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -541,7 +587,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -605,7 +651,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasNumLearnedRoutes() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -638,7 +684,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasPeerIpAddress() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -702,7 +748,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasRouterApplianceInstance() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -766,7 +812,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -831,7 +877,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -897,7 +943,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasUptime() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -961,7 +1007,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasUptimeSeconds() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1024,37 +1070,40 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 104736040, uptimeSeconds_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeUInt32(135457535, numLearnedRoutes_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 207735769, peerIpAddress_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 235379688, uptime_);
     }
     for (int i = 0; i < advertisedRoutes_.size(); i++) {
       output.writeMessage(333393068, advertisedRoutes_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 352296953, linkedVpnTunnel_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(395631729, getBfdStatus());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 468312989, routerApplianceInstance_);
     }
@@ -1067,25 +1116,25 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(104736040, uptimeSeconds_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(135457535, numLearnedRoutes_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207735769, peerIpAddress_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(235379688, uptime_);
     }
     for (int i = 0; i < advertisedRoutes_.size(); i++) {
@@ -1093,13 +1142,16 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               333393068, advertisedRoutes_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(352296953, linkedVpnTunnel_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(395631729, getBfdStatus());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               468312989, routerApplianceInstance_);
@@ -1121,6 +1173,10 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         (com.google.cloud.compute.v1.RouterStatusBgpPeerStatus) obj;
 
     if (!getAdvertisedRoutesList().equals(other.getAdvertisedRoutesList())) return false;
+    if (hasBfdStatus() != other.hasBfdStatus()) return false;
+    if (hasBfdStatus()) {
+      if (!getBfdStatus().equals(other.getBfdStatus())) return false;
+    }
     if (hasIpAddress() != other.hasIpAddress()) return false;
     if (hasIpAddress()) {
       if (!getIpAddress().equals(other.getIpAddress())) return false;
@@ -1175,6 +1231,10 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     if (getAdvertisedRoutesCount() > 0) {
       hash = (37 * hash) + ADVERTISED_ROUTES_FIELD_NUMBER;
       hash = (53 * hash) + getAdvertisedRoutesList().hashCode();
+    }
+    if (hasBfdStatus()) {
+      hash = (37 * hash) + BFD_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getBfdStatus().hashCode();
     }
     if (hasIpAddress()) {
       hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
@@ -1357,6 +1417,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAdvertisedRoutesFieldBuilder();
+        getBfdStatusFieldBuilder();
       }
     }
 
@@ -1369,26 +1430,32 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       } else {
         advertisedRoutesBuilder_.clear();
       }
-      ipAddress_ = "";
+      if (bfdStatusBuilder_ == null) {
+        bfdStatus_ = null;
+      } else {
+        bfdStatusBuilder_.clear();
+      }
       bitField0_ = (bitField0_ & ~0x00000002);
-      linkedVpnTunnel_ = "";
+      ipAddress_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      name_ = "";
+      linkedVpnTunnel_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      numLearnedRoutes_ = 0;
+      name_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
-      peerIpAddress_ = "";
+      numLearnedRoutes_ = 0;
       bitField0_ = (bitField0_ & ~0x00000020);
-      routerApplianceInstance_ = "";
+      peerIpAddress_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
-      state_ = "";
+      routerApplianceInstance_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      status_ = "";
+      state_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      uptime_ = "";
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
-      uptimeSeconds_ = "";
+      uptime_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
+      uptimeSeconds_ = "";
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1428,43 +1495,51 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         result.advertisedRoutes_ = advertisedRoutesBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (bfdStatusBuilder_ == null) {
+          result.bfdStatus_ = bfdStatus_;
+        } else {
+          result.bfdStatus_ = bfdStatusBuilder_.build();
+        }
         to_bitField0_ |= 0x00000001;
       }
-      result.ipAddress_ = ipAddress_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
-      result.linkedVpnTunnel_ = linkedVpnTunnel_;
+      result.ipAddress_ = ipAddress_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         to_bitField0_ |= 0x00000004;
       }
-      result.name_ = name_;
+      result.linkedVpnTunnel_ = linkedVpnTunnel_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.numLearnedRoutes_ = numLearnedRoutes_;
         to_bitField0_ |= 0x00000008;
       }
+      result.name_ = name_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.numLearnedRoutes_ = numLearnedRoutes_;
         to_bitField0_ |= 0x00000010;
       }
-      result.peerIpAddress_ = peerIpAddress_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
         to_bitField0_ |= 0x00000020;
       }
-      result.routerApplianceInstance_ = routerApplianceInstance_;
+      result.peerIpAddress_ = peerIpAddress_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         to_bitField0_ |= 0x00000040;
       }
-      result.state_ = state_;
+      result.routerApplianceInstance_ = routerApplianceInstance_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         to_bitField0_ |= 0x00000080;
       }
-      result.status_ = status_;
+      result.state_ = state_;
       if (((from_bitField0_ & 0x00000200) != 0)) {
         to_bitField0_ |= 0x00000100;
       }
-      result.uptime_ = uptime_;
+      result.status_ = status_;
       if (((from_bitField0_ & 0x00000400) != 0)) {
         to_bitField0_ |= 0x00000200;
+      }
+      result.uptime_ = uptime_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000400;
       }
       result.uptimeSeconds_ = uptimeSeconds_;
       result.bitField0_ = to_bitField0_;
@@ -1545,18 +1620,21 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
           }
         }
       }
+      if (other.hasBfdStatus()) {
+        mergeBfdStatus(other.getBfdStatus());
+      }
       if (other.hasIpAddress()) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         ipAddress_ = other.ipAddress_;
         onChanged();
       }
       if (other.hasLinkedVpnTunnel()) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         linkedVpnTunnel_ = other.linkedVpnTunnel_;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         name_ = other.name_;
         onChanged();
       }
@@ -1564,32 +1642,32 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         setNumLearnedRoutes(other.getNumLearnedRoutes());
       }
       if (other.hasPeerIpAddress()) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         peerIpAddress_ = other.peerIpAddress_;
         onChanged();
       }
       if (other.hasRouterApplianceInstance()) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         routerApplianceInstance_ = other.routerApplianceInstance_;
         onChanged();
       }
       if (other.hasState()) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         state_ = other.state_;
         onChanged();
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         status_ = other.status_;
         onChanged();
       }
       if (other.hasUptime()) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         uptime_ = other.uptime_;
         onChanged();
       }
       if (other.hasUptimeSeconds()) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         uptimeSeconds_ = other.uptimeSeconds_;
         onChanged();
       }
@@ -1978,6 +2056,124 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       return advertisedRoutesBuilder_;
     }
 
+    private com.google.cloud.compute.v1.BfdStatus bfdStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.BfdStatus,
+            com.google.cloud.compute.v1.BfdStatus.Builder,
+            com.google.cloud.compute.v1.BfdStatusOrBuilder>
+        bfdStatusBuilder_;
+    /**
+     * <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code>
+     *
+     * @return Whether the bfdStatus field is set.
+     */
+    public boolean hasBfdStatus() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code>
+     *
+     * @return The bfdStatus.
+     */
+    public com.google.cloud.compute.v1.BfdStatus getBfdStatus() {
+      if (bfdStatusBuilder_ == null) {
+        return bfdStatus_ == null
+            ? com.google.cloud.compute.v1.BfdStatus.getDefaultInstance()
+            : bfdStatus_;
+      } else {
+        return bfdStatusBuilder_.getMessage();
+      }
+    }
+    /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
+    public Builder setBfdStatus(com.google.cloud.compute.v1.BfdStatus value) {
+      if (bfdStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bfdStatus_ = value;
+        onChanged();
+      } else {
+        bfdStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
+    public Builder setBfdStatus(com.google.cloud.compute.v1.BfdStatus.Builder builderForValue) {
+      if (bfdStatusBuilder_ == null) {
+        bfdStatus_ = builderForValue.build();
+        onChanged();
+      } else {
+        bfdStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
+    public Builder mergeBfdStatus(com.google.cloud.compute.v1.BfdStatus value) {
+      if (bfdStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && bfdStatus_ != null
+            && bfdStatus_ != com.google.cloud.compute.v1.BfdStatus.getDefaultInstance()) {
+          bfdStatus_ =
+              com.google.cloud.compute.v1.BfdStatus.newBuilder(bfdStatus_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          bfdStatus_ = value;
+        }
+        onChanged();
+      } else {
+        bfdStatusBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
+    public Builder clearBfdStatus() {
+      if (bfdStatusBuilder_ == null) {
+        bfdStatus_ = null;
+        onChanged();
+      } else {
+        bfdStatusBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
+      return this;
+    }
+    /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
+    public com.google.cloud.compute.v1.BfdStatus.Builder getBfdStatusBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getBfdStatusFieldBuilder().getBuilder();
+    }
+    /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
+    public com.google.cloud.compute.v1.BfdStatusOrBuilder getBfdStatusOrBuilder() {
+      if (bfdStatusBuilder_ != null) {
+        return bfdStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return bfdStatus_ == null
+            ? com.google.cloud.compute.v1.BfdStatus.getDefaultInstance()
+            : bfdStatus_;
+      }
+    }
+    /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.BfdStatus,
+            com.google.cloud.compute.v1.BfdStatus.Builder,
+            com.google.cloud.compute.v1.BfdStatusOrBuilder>
+        getBfdStatusFieldBuilder() {
+      if (bfdStatusBuilder_ == null) {
+        bfdStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.BfdStatus,
+                com.google.cloud.compute.v1.BfdStatus.Builder,
+                com.google.cloud.compute.v1.BfdStatusOrBuilder>(
+                getBfdStatus(), getParentForChildren(), isClean());
+        bfdStatus_ = null;
+      }
+      return bfdStatusBuilder_;
+    }
+
     private java.lang.Object ipAddress_ = "";
     /**
      *
@@ -1991,7 +2187,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return Whether the ipAddress field is set.
      */
     public boolean hasIpAddress() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2053,7 +2249,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       ipAddress_ = value;
       onChanged();
       return this;
@@ -2070,7 +2266,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       ipAddress_ = getDefaultInstance().getIpAddress();
       onChanged();
       return this;
@@ -2092,7 +2288,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       ipAddress_ = value;
       onChanged();
       return this;
@@ -2111,7 +2307,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return Whether the linkedVpnTunnel field is set.
      */
     public boolean hasLinkedVpnTunnel() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2173,7 +2369,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       linkedVpnTunnel_ = value;
       onChanged();
       return this;
@@ -2190,7 +2386,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearLinkedVpnTunnel() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       linkedVpnTunnel_ = getDefaultInstance().getLinkedVpnTunnel();
       onChanged();
       return this;
@@ -2212,7 +2408,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       linkedVpnTunnel_ = value;
       onChanged();
       return this;
@@ -2231,7 +2427,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2293,7 +2489,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       name_ = value;
       onChanged();
       return this;
@@ -2310,7 +2506,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2332,7 +2528,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       name_ = value;
       onChanged();
       return this;
@@ -2352,7 +2548,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasNumLearnedRoutes() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2382,7 +2578,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setNumLearnedRoutes(int value) {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       numLearnedRoutes_ = value;
       onChanged();
       return this;
@@ -2399,7 +2595,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearNumLearnedRoutes() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       numLearnedRoutes_ = 0;
       onChanged();
       return this;
@@ -2418,7 +2614,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return Whether the peerIpAddress field is set.
      */
     public boolean hasPeerIpAddress() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2480,7 +2676,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       peerIpAddress_ = value;
       onChanged();
       return this;
@@ -2497,7 +2693,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearPeerIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       peerIpAddress_ = getDefaultInstance().getPeerIpAddress();
       onChanged();
       return this;
@@ -2519,7 +2715,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       peerIpAddress_ = value;
       onChanged();
       return this;
@@ -2538,7 +2734,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return Whether the routerApplianceInstance field is set.
      */
     public boolean hasRouterApplianceInstance() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2600,7 +2796,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       routerApplianceInstance_ = value;
       onChanged();
       return this;
@@ -2617,7 +2813,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRouterApplianceInstance() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       routerApplianceInstance_ = getDefaultInstance().getRouterApplianceInstance();
       onChanged();
       return this;
@@ -2639,7 +2835,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       routerApplianceInstance_ = value;
       onChanged();
       return this;
@@ -2658,7 +2854,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2720,7 +2916,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       state_ = value;
       onChanged();
       return this;
@@ -2737,7 +2933,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       state_ = getDefaultInstance().getState();
       onChanged();
       return this;
@@ -2759,7 +2955,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       state_ = value;
       onChanged();
       return this;
@@ -2779,7 +2975,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2844,7 +3040,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       status_ = value;
       onChanged();
       return this;
@@ -2862,7 +3058,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
@@ -2885,7 +3081,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       status_ = value;
       onChanged();
       return this;
@@ -2904,7 +3100,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return Whether the uptime field is set.
      */
     public boolean hasUptime() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2966,7 +3162,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       uptime_ = value;
       onChanged();
       return this;
@@ -2983,7 +3179,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearUptime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       uptime_ = getDefaultInstance().getUptime();
       onChanged();
       return this;
@@ -3005,7 +3201,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       uptime_ = value;
       onChanged();
       return this;
@@ -3024,7 +3220,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return Whether the uptimeSeconds field is set.
      */
     public boolean hasUptimeSeconds() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3086,7 +3282,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       uptimeSeconds_ = value;
       onChanged();
       return this;
@@ -3103,7 +3299,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearUptimeSeconds() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       uptimeSeconds_ = getDefaultInstance().getUptimeSeconds();
       onChanged();
       return this;
@@ -3125,7 +3321,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       uptimeSeconds_ = value;
       onChanged();
       return this;

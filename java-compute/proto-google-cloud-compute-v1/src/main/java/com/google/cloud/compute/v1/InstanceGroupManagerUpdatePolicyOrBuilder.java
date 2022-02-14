@@ -171,6 +171,43 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
+   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * </pre>
+   *
+   * <code>optional string most_disruptive_allowed_action = 66103053;</code>
+   *
+   * @return Whether the mostDisruptiveAllowedAction field is set.
+   */
+  boolean hasMostDisruptiveAllowedAction();
+  /**
+   *
+   *
+   * <pre>
+   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * </pre>
+   *
+   * <code>optional string most_disruptive_allowed_action = 66103053;</code>
+   *
+   * @return The mostDisruptiveAllowedAction.
+   */
+  java.lang.String getMostDisruptiveAllowedAction();
+  /**
+   *
+   *
+   * <pre>
+   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * </pre>
+   *
+   * <code>optional string most_disruptive_allowed_action = 66103053;</code>
+   *
+   * @return The bytes for mostDisruptiveAllowedAction.
+   */
+  com.google.protobuf.ByteString getMostDisruptiveAllowedActionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * What action should be used to replace instances. See minimal_action.REPLACE
    * </pre>
    *

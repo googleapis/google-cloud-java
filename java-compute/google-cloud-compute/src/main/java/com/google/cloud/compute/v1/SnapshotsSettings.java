@@ -90,6 +90,17 @@ public class SnapshotsSettings extends ClientSettings<SnapshotsSettings> {
     return ((SnapshotsStubSettings) getStubSettings()).getIamPolicySettings();
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public UnaryCallSettings<InsertSnapshotRequest, Operation> insertSettings() {
+    return ((SnapshotsStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertSnapshotRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((SnapshotsStubSettings) getStubSettings()).insertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListSnapshotsRequest, SnapshotList, ListPagedResponse> listSettings() {
     return ((SnapshotsStubSettings) getStubSettings()).listSettings();
@@ -233,6 +244,17 @@ public class SnapshotsSettings extends ClientSettings<SnapshotsSettings> {
     /** Returns the builder for the settings used for calls to getIamPolicy. */
     public UnaryCallSettings.Builder<GetIamPolicySnapshotRequest, Policy> getIamPolicySettings() {
       return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public UnaryCallSettings.Builder<InsertSnapshotRequest, Operation> insertSettings() {
+      return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertSnapshotRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */

@@ -698,6 +698,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
      */
     PRIVATE_SERVICE_CONNECT(48134724),
+    /**
+     *
+     *
+     * <pre>
+     * Subnetwork used for Regional Internal/External HTTP(S) Load Balancing.
+     * </pre>
+     *
+     * <code>REGIONAL_MANAGED_PROXY = 153049966;</code>
+     */
+    REGIONAL_MANAGED_PROXY(153049966),
     UNRECOGNIZED(-1),
     ;
 
@@ -751,6 +761,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
      */
     public static final int PRIVATE_SERVICE_CONNECT_VALUE = 48134724;
+    /**
+     *
+     *
+     * <pre>
+     * Subnetwork used for Regional Internal/External HTTP(S) Load Balancing.
+     * </pre>
+     *
+     * <code>REGIONAL_MANAGED_PROXY = 153049966;</code>
+     */
+    public static final int REGIONAL_MANAGED_PROXY_VALUE = 153049966;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -786,6 +806,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
           return PRIVATE_RFC_1918;
         case 48134724:
           return PRIVATE_SERVICE_CONNECT;
+        case 153049966:
+          return REGIONAL_MANAGED_PROXY;
         default:
           return null;
       }
@@ -1451,7 +1473,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
    * </pre>
    *
    * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -1466,7 +1488,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
    * </pre>
    *
    * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -1840,7 +1862,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -1855,7 +1877,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -1878,7 +1900,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -3880,7 +3902,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      * </pre>
      *
      * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -3895,7 +3917,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      * </pre>
      *
      * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -3910,7 +3932,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      * </pre>
      *
      * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -3928,7 +3950,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      * </pre>
      *
      * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -4620,7 +4642,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
      * </pre>
      *
      * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -4634,7 +4656,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
      * </pre>
      *
      * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -4656,7 +4678,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
      * </pre>
      *
      * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -4678,7 +4700,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
      * </pre>
      *
      * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -4699,7 +4721,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
      * </pre>
      *
      * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -4716,7 +4738,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+     * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
      * </pre>
      *
      * <code>optional string ipv6_cidr_range = 273141258;</code>

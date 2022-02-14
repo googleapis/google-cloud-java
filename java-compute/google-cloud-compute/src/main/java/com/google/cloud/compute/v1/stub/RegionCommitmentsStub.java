@@ -30,6 +30,7 @@ import com.google.cloud.compute.v1.GetRegionCommitmentRequest;
 import com.google.cloud.compute.v1.InsertRegionCommitmentRequest;
 import com.google.cloud.compute.v1.ListRegionCommitmentsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.UpdateRegionCommitmentRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -70,6 +71,15 @@ public abstract class RegionCommitmentsStub implements BackgroundResource {
 
   public UnaryCallable<ListRegionCommitmentsRequest, CommitmentList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<UpdateRegionCommitmentRequest, Operation, Operation>
+      updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateRegionCommitmentRequest, Operation> updateCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCallable()");
   }
 
   @Override

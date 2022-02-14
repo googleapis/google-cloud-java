@@ -44,6 +44,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     consumerRejectLists_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     creationTimestamp_ = "";
     description_ = "";
+    domainNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     fingerprint_ = "";
     kind_ = "";
     name_ = "";
@@ -109,6 +110,16 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000080;
               name_ = s;
+              break;
+            }
+          case 51601514:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                domainNames_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              domainNames_.add(s);
               break;
             }
           case 244202930:
@@ -179,9 +190,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
           case -1296679742:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 natSubnets_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00001000;
               }
               natSubnets_.add(s);
               break;
@@ -244,13 +255,16 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        domainNames_ = domainNames_.getUnmodifiableView();
+      }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         connectedEndpoints_ = java.util.Collections.unmodifiableList(connectedEndpoints_);
       }
       if (((mutable_bitField0_ & 0x00000008) != 0)) {
         consumerRejectLists_ = consumerRejectLists_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         natSubnets_ = natSubnets_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
@@ -833,6 +847,67 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int DOMAIN_NAMES_FIELD_NUMBER = 6450189;
+  private com.google.protobuf.LazyStringList domainNames_;
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+   * </pre>
+   *
+   * <code>repeated string domain_names = 6450189;</code>
+   *
+   * @return A list containing the domainNames.
+   */
+  public com.google.protobuf.ProtocolStringList getDomainNamesList() {
+    return domainNames_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+   * </pre>
+   *
+   * <code>repeated string domain_names = 6450189;</code>
+   *
+   * @return The count of domainNames.
+   */
+  public int getDomainNamesCount() {
+    return domainNames_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+   * </pre>
+   *
+   * <code>repeated string domain_names = 6450189;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The domainNames at the given index.
+   */
+  public java.lang.String getDomainNames(int index) {
+    return domainNames_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+   * </pre>
+   *
+   * <code>repeated string domain_names = 6450189;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the domainNames at the given index.
+   */
+  public com.google.protobuf.ByteString getDomainNamesBytes(int index) {
+    return domainNames_.getByteString(index);
   }
 
   public static final int ENABLE_PROXY_PROTOCOL_FIELD_NUMBER = 363791237;
@@ -1486,6 +1561,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    for (int i = 0; i < domainNames_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6450189, domainNames_.getRaw(i));
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
@@ -1547,6 +1625,14 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < domainNames_.size(); i++) {
+        dataSize += computeStringSizeNoTag(domainNames_.getRaw(i));
+      }
+      size += dataSize;
+      size += 4 * getDomainNamesList().size();
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
@@ -1640,6 +1726,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (hasDescription()) {
       if (!getDescription().equals(other.getDescription())) return false;
     }
+    if (!getDomainNamesList().equals(other.getDomainNamesList())) return false;
     if (hasEnableProxyProtocol() != other.hasEnableProxyProtocol()) return false;
     if (hasEnableProxyProtocol()) {
       if (getEnableProxyProtocol() != other.getEnableProxyProtocol()) return false;
@@ -1715,6 +1802,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (hasDescription()) {
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (getDomainNamesCount() > 0) {
+      hash = (37 * hash) + DOMAIN_NAMES_FIELD_NUMBER;
+      hash = (53 * hash) + getDomainNamesList().hashCode();
     }
     if (hasEnableProxyProtocol()) {
       hash = (37 * hash) + ENABLE_PROXY_PROTOCOL_FIELD_NUMBER;
@@ -1929,32 +2020,34 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       bitField0_ = (bitField0_ & ~0x00000010);
       description_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
-      enableProxyProtocol_ = false;
+      domainNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000040);
-      fingerprint_ = "";
+      enableProxyProtocol_ = false;
       bitField0_ = (bitField0_ & ~0x00000080);
-      id_ = 0L;
+      fingerprint_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      kind_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000200);
-      name_ = "";
+      kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
-      natSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      name_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
-      producerForwardingRule_ = "";
+      natSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00001000);
+      producerForwardingRule_ = "";
+      bitField0_ = (bitField0_ & ~0x00002000);
       if (pscServiceAttachmentIdBuilder_ == null) {
         pscServiceAttachmentId_ = null;
       } else {
         pscServiceAttachmentIdBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
-      region_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
-      selfLink_ = "";
+      region_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
-      targetService_ = "";
+      selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00010000);
+      targetService_ = "";
+      bitField0_ = (bitField0_ & ~0x00020000);
       return this;
     }
 
@@ -2019,36 +2112,41 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000004;
       }
       result.description_ = description_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
+        domainNames_ = domainNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.domainNames_ = domainNames_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.enableProxyProtocol_ = enableProxyProtocol_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         to_bitField0_ |= 0x00000010;
       }
       result.fingerprint_ = fingerprint_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.id_ = id_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         to_bitField0_ |= 0x00000040;
       }
       result.kind_ = kind_;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         to_bitField0_ |= 0x00000080;
       }
       result.name_ = name_;
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         natSubnets_ = natSubnets_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
       }
       result.natSubnets_ = natSubnets_;
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         to_bitField0_ |= 0x00000100;
       }
       result.producerForwardingRule_ = producerForwardingRule_;
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         if (pscServiceAttachmentIdBuilder_ == null) {
           result.pscServiceAttachmentId_ = pscServiceAttachmentId_;
         } else {
@@ -2056,15 +2154,15 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         }
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         to_bitField0_ |= 0x00000400;
       }
       result.region_ = region_;
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         to_bitField0_ |= 0x00000800;
       }
       result.selfLink_ = selfLink_;
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         to_bitField0_ |= 0x00001000;
       }
       result.targetService_ = targetService_;
@@ -2197,11 +2295,21 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         description_ = other.description_;
         onChanged();
       }
+      if (!other.domainNames_.isEmpty()) {
+        if (domainNames_.isEmpty()) {
+          domainNames_ = other.domainNames_;
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          ensureDomainNamesIsMutable();
+          domainNames_.addAll(other.domainNames_);
+        }
+        onChanged();
+      }
       if (other.hasEnableProxyProtocol()) {
         setEnableProxyProtocol(other.getEnableProxyProtocol());
       }
       if (other.hasFingerprint()) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         fingerprint_ = other.fingerprint_;
         onChanged();
       }
@@ -2209,19 +2317,19 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         kind_ = other.kind_;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         name_ = other.name_;
         onChanged();
       }
       if (!other.natSubnets_.isEmpty()) {
         if (natSubnets_.isEmpty()) {
           natSubnets_ = other.natSubnets_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         } else {
           ensureNatSubnetsIsMutable();
           natSubnets_.addAll(other.natSubnets_);
@@ -2229,7 +2337,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         onChanged();
       }
       if (other.hasProducerForwardingRule()) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         producerForwardingRule_ = other.producerForwardingRule_;
         onChanged();
       }
@@ -2237,17 +2345,17 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         mergePscServiceAttachmentId(other.getPscServiceAttachmentId());
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         region_ = other.region_;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (other.hasTargetService()) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         targetService_ = other.targetService_;
         onChanged();
       }
@@ -3634,6 +3742,174 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private com.google.protobuf.LazyStringList domainNames_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureDomainNamesIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        domainNames_ = new com.google.protobuf.LazyStringArrayList(domainNames_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * </pre>
+     *
+     * <code>repeated string domain_names = 6450189;</code>
+     *
+     * @return A list containing the domainNames.
+     */
+    public com.google.protobuf.ProtocolStringList getDomainNamesList() {
+      return domainNames_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * </pre>
+     *
+     * <code>repeated string domain_names = 6450189;</code>
+     *
+     * @return The count of domainNames.
+     */
+    public int getDomainNamesCount() {
+      return domainNames_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * </pre>
+     *
+     * <code>repeated string domain_names = 6450189;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The domainNames at the given index.
+     */
+    public java.lang.String getDomainNames(int index) {
+      return domainNames_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * </pre>
+     *
+     * <code>repeated string domain_names = 6450189;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the domainNames at the given index.
+     */
+    public com.google.protobuf.ByteString getDomainNamesBytes(int index) {
+      return domainNames_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * </pre>
+     *
+     * <code>repeated string domain_names = 6450189;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The domainNames to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDomainNames(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDomainNamesIsMutable();
+      domainNames_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * </pre>
+     *
+     * <code>repeated string domain_names = 6450189;</code>
+     *
+     * @param value The domainNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDomainNames(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDomainNamesIsMutable();
+      domainNames_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * </pre>
+     *
+     * <code>repeated string domain_names = 6450189;</code>
+     *
+     * @param values The domainNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDomainNames(java.lang.Iterable<java.lang.String> values) {
+      ensureDomainNamesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, domainNames_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * </pre>
+     *
+     * <code>repeated string domain_names = 6450189;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDomainNames() {
+      domainNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * </pre>
+     *
+     * <code>repeated string domain_names = 6450189;</code>
+     *
+     * @param value The bytes of the domainNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDomainNamesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDomainNamesIsMutable();
+      domainNames_.add(value);
+      onChanged();
+      return this;
+    }
+
     private boolean enableProxyProtocol_;
     /**
      *
@@ -3648,7 +3924,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasEnableProxyProtocol() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3678,7 +3954,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setEnableProxyProtocol(boolean value) {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       enableProxyProtocol_ = value;
       onChanged();
       return this;
@@ -3695,7 +3971,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnableProxyProtocol() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       enableProxyProtocol_ = false;
       onChanged();
       return this;
@@ -3714,7 +3990,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3776,7 +4052,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -3793,7 +4069,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       fingerprint_ = getDefaultInstance().getFingerprint();
       onChanged();
       return this;
@@ -3815,7 +4091,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -3835,7 +4111,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3865,7 +4141,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       id_ = value;
       onChanged();
       return this;
@@ -3882,7 +4158,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       id_ = 0L;
       onChanged();
       return this;
@@ -3901,7 +4177,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3963,7 +4239,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       kind_ = value;
       onChanged();
       return this;
@@ -3980,7 +4256,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -4002,7 +4278,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       kind_ = value;
       onChanged();
       return this;
@@ -4021,7 +4297,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4083,7 +4359,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       name_ = value;
       onChanged();
       return this;
@@ -4100,7 +4376,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -4122,7 +4398,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       name_ = value;
       onChanged();
       return this;
@@ -4132,9 +4408,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNatSubnetsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         natSubnets_ = new com.google.protobuf.LazyStringArrayList(natSubnets_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
     /**
@@ -4269,7 +4545,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearNatSubnets() {
       natSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4309,7 +4585,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the producerForwardingRule field is set.
      */
     public boolean hasProducerForwardingRule() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4371,7 +4647,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       producerForwardingRule_ = value;
       onChanged();
       return this;
@@ -4388,7 +4664,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearProducerForwardingRule() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       producerForwardingRule_ = getDefaultInstance().getProducerForwardingRule();
       onChanged();
       return this;
@@ -4410,7 +4686,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       producerForwardingRule_ = value;
       onChanged();
       return this;
@@ -4434,7 +4710,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the pscServiceAttachmentId field is set.
      */
     public boolean hasPscServiceAttachmentId() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4475,7 +4751,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         pscServiceAttachmentIdBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -4495,7 +4771,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         pscServiceAttachmentIdBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -4509,7 +4785,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergePscServiceAttachmentId(com.google.cloud.compute.v1.Uint128 value) {
       if (pscServiceAttachmentIdBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && pscServiceAttachmentId_ != null
             && pscServiceAttachmentId_
                 != com.google.cloud.compute.v1.Uint128.getDefaultInstance()) {
@@ -4524,7 +4800,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         pscServiceAttachmentIdBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -4543,7 +4819,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         pscServiceAttachmentIdBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       return this;
     }
     /**
@@ -4556,7 +4832,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
      */
     public com.google.cloud.compute.v1.Uint128.Builder getPscServiceAttachmentIdBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getPscServiceAttachmentIdFieldBuilder().getBuilder();
     }
@@ -4617,7 +4893,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4679,7 +4955,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       region_ = value;
       onChanged();
       return this;
@@ -4696,7 +4972,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -4718,7 +4994,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       region_ = value;
       onChanged();
       return this;
@@ -4737,7 +5013,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4799,7 +5075,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4816,7 +5092,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -4838,7 +5114,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4857,7 +5133,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the targetService field is set.
      */
     public boolean hasTargetService() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4919,7 +5195,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       targetService_ = value;
       onChanged();
       return this;
@@ -4936,7 +5212,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearTargetService() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       targetService_ = getDefaultInstance().getTargetService();
       onChanged();
       return this;
@@ -4958,7 +5234,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       targetService_ = value;
       onChanged();
       return this;

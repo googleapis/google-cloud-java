@@ -193,7 +193,6 @@ public interface ManagedInstanceOrBuilder
    *
    * <pre>
    * [Output Only] The status of the instance. This field is empty when the instance does not exist.
-   * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
    * <code>optional string instance_status = 174577372;</code>
@@ -206,7 +205,6 @@ public interface ManagedInstanceOrBuilder
    *
    * <pre>
    * [Output Only] The status of the instance. This field is empty when the instance does not exist.
-   * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
    * <code>optional string instance_status = 174577372;</code>
@@ -219,7 +217,6 @@ public interface ManagedInstanceOrBuilder
    *
    * <pre>
    * [Output Only] The status of the instance. This field is empty when the instance does not exist.
-   * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
    * <code>optional string instance_status = 174577372;</code>

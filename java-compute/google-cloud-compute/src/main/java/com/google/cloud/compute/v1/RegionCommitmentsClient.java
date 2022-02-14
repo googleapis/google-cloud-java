@@ -603,6 +603,141 @@ public class RegionCommitmentsClient implements BackgroundResource {
     return stub.listCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified commitment with the data included in the request. Update is performed
+   * only on selected fields included as part of update-mask. Only the following fields can be
+   * modified: auto_renew.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String commitment = "commitment1019005717";
+   *   Commitment commitmentResource = Commitment.newBuilder().build();
+   *   Operation response =
+   *       regionCommitmentsClient
+   *           .updateAsync(project, region, commitment, commitmentResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param commitment Name of the commitment for which auto renew is being updated.
+   * @param commitmentResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateAsync(
+      String project, String region, String commitment, Commitment commitmentResource) {
+    UpdateRegionCommitmentRequest request =
+        UpdateRegionCommitmentRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setCommitment(commitment)
+            .setCommitmentResource(commitmentResource)
+            .build();
+    return updateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified commitment with the data included in the request. Update is performed
+   * only on selected fields included as part of update-mask. Only the following fields can be
+   * modified: auto_renew.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
+   *   UpdateRegionCommitmentRequest request =
+   *       UpdateRegionCommitmentRequest.newBuilder()
+   *           .setCommitment("commitment1019005717")
+   *           .setCommitmentResource(Commitment.newBuilder().build())
+   *           .setPaths("paths106438894")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUpdateMask("updateMask-296147115")
+   *           .build();
+   *   Operation response = regionCommitmentsClient.updateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateAsync(
+      UpdateRegionCommitmentRequest request) {
+    return updateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified commitment with the data included in the request. Update is performed
+   * only on selected fields included as part of update-mask. Only the following fields can be
+   * modified: auto_renew.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
+   *   UpdateRegionCommitmentRequest request =
+   *       UpdateRegionCommitmentRequest.newBuilder()
+   *           .setCommitment("commitment1019005717")
+   *           .setCommitmentResource(Commitment.newBuilder().build())
+   *           .setPaths("paths106438894")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUpdateMask("updateMask-296147115")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionCommitmentsClient.updateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateRegionCommitmentRequest, Operation, Operation>
+      updateOperationCallable() {
+    return stub.updateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified commitment with the data included in the request. Update is performed
+   * only on selected fields included as part of update-mask. Only the following fields can be
+   * modified: auto_renew.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
+   *   UpdateRegionCommitmentRequest request =
+   *       UpdateRegionCommitmentRequest.newBuilder()
+   *           .setCommitment("commitment1019005717")
+   *           .setCommitmentResource(Commitment.newBuilder().build())
+   *           .setPaths("paths106438894")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUpdateMask("updateMask-296147115")
+   *           .build();
+   *   ApiFuture<Operation> future = regionCommitmentsClient.updateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRegionCommitmentRequest, Operation> updateCallable() {
+    return stub.updateCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

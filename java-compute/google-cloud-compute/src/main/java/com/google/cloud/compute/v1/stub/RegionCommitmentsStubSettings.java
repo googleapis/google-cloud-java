@@ -54,6 +54,7 @@ import com.google.cloud.compute.v1.GetRegionCommitmentRequest;
 import com.google.cloud.compute.v1.InsertRegionCommitmentRequest;
 import com.google.cloud.compute.v1.ListRegionCommitmentsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.UpdateRegionCommitmentRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -118,6 +119,9 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
       insertOperationSettings;
   private final PagedCallSettings<ListRegionCommitmentsRequest, CommitmentList, ListPagedResponse>
       listSettings;
+  private final UnaryCallSettings<UpdateRegionCommitmentRequest, Operation> updateSettings;
+  private final OperationCallSettings<UpdateRegionCommitmentRequest, Operation, Operation>
+      updateOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListRegionCommitmentsRequest,
@@ -282,6 +286,17 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
     return listSettings;
   }
 
+  /** Returns the object with the settings used for calls to update. */
+  public UnaryCallSettings<UpdateRegionCommitmentRequest, Operation> updateSettings() {
+    return updateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateRegionCommitmentRequest, Operation, Operation>
+      updateOperationSettings() {
+    return updateOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionCommitmentsStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -364,6 +379,8 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    updateSettings = settingsBuilder.updateSettings().build();
+    updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
 
   /** Builder for RegionCommitmentsStubSettings. */
@@ -382,6 +399,10 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
     private final PagedCallSettings.Builder<
             ListRegionCommitmentsRequest, CommitmentList, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<UpdateRegionCommitmentRequest, Operation>
+        updateSettings;
+    private final OperationCallSettings.Builder<UpdateRegionCommitmentRequest, Operation, Operation>
+        updateOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -437,10 +458,12 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              aggregatedListSettings, getSettings, insertSettings, listSettings);
+              aggregatedListSettings, getSettings, insertSettings, listSettings, updateSettings);
       initDefaults(this);
     }
 
@@ -452,10 +475,12 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      updateSettings = settings.updateSettings.toBuilder();
+      updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              aggregatedListSettings, getSettings, insertSettings, listSettings);
+              aggregatedListSettings, getSettings, insertSettings, listSettings, updateSettings);
     }
 
     private static Builder createDefault() {
@@ -493,10 +518,39 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .updateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .insertOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertRegionCommitmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateRegionCommitmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -566,6 +620,19 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
             ListRegionCommitmentsRequest, CommitmentList, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public UnaryCallSettings.Builder<UpdateRegionCommitmentRequest, Operation> updateSettings() {
+      return updateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateRegionCommitmentRequest, Operation, Operation>
+        updateOperationSettings() {
+      return updateOperationSettings;
     }
 
     @Override

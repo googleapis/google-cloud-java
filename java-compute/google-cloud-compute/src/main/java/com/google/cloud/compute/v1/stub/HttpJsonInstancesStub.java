@@ -64,6 +64,7 @@ import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
+import com.google.cloud.compute.v1.ResumeInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
 import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceRequest;
 import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceResponse;
@@ -85,6 +86,7 @@ import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceRequest;
 import com.google.cloud.compute.v1.StartInstanceRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceRequest;
 import com.google.cloud.compute.v1.StopInstanceRequest;
+import com.google.cloud.compute.v1.SuspendInstanceRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsInstanceRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceRequest;
@@ -858,6 +860,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                                   "sourceInstanceTemplate",
                                   request.getSourceInstanceTemplate());
                             }
+                            if (request.hasSourceMachineImage()) {
+                              serializer.putQueryParam(
+                                  fields, "sourceMachineImage", request.getSourceMachineImage());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -1097,6 +1103,57 @@ public class HttpJsonInstancesStub extends InstancesStub {
                     .build();
               })
           .build();
+
+  private static final ApiMethodDescriptor<ResumeInstanceRequest, Operation>
+      resumeMethodDescriptor =
+          ApiMethodDescriptor.<ResumeInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/Resume")
+              .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ResumeInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/resume",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ResumeInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ResumeInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ResumeInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
 
   private static final ApiMethodDescriptor<
           SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
@@ -1992,6 +2049,57 @@ public class HttpJsonInstancesStub extends InstancesStub {
               })
           .build();
 
+  private static final ApiMethodDescriptor<SuspendInstanceRequest, Operation>
+      suspendMethodDescriptor =
+          ApiMethodDescriptor.<SuspendInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/Suspend")
+              .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SuspendInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/suspend",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SuspendInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SuspendInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SuspendInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<
           TestIamPermissionsInstanceRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
@@ -2380,6 +2488,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
   private final UnaryCallable<ResetInstanceRequest, Operation> resetCallable;
   private final OperationCallable<ResetInstanceRequest, Operation, Operation>
       resetOperationCallable;
+  private final UnaryCallable<ResumeInstanceRequest, Operation> resumeCallable;
+  private final OperationCallable<ResumeInstanceRequest, Operation, Operation>
+      resumeOperationCallable;
   private final UnaryCallable<
           SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
       sendDiagnosticInterruptCallable;
@@ -2437,6 +2548,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
       startWithEncryptionKeyOperationCallable;
   private final UnaryCallable<StopInstanceRequest, Operation> stopCallable;
   private final OperationCallable<StopInstanceRequest, Operation, Operation> stopOperationCallable;
+  private final UnaryCallable<SuspendInstanceRequest, Operation> suspendCallable;
+  private final OperationCallable<SuspendInstanceRequest, Operation, Operation>
+      suspendOperationCallable;
   private final UnaryCallable<TestIamPermissionsInstanceRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
   private final UnaryCallable<UpdateInstanceRequest, Operation> updateCallable;
@@ -2616,6 +2730,11 @@ public class HttpJsonInstancesStub extends InstancesStub {
             .setMethodDescriptor(resetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<ResumeInstanceRequest, Operation> resumeTransportSettings =
+        HttpJsonCallSettings.<ResumeInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(resumeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<
             SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
         sendDiagnosticInterruptTransportSettings =
@@ -2712,6 +2831,11 @@ public class HttpJsonInstancesStub extends InstancesStub {
     HttpJsonCallSettings<StopInstanceRequest, Operation> stopTransportSettings =
         HttpJsonCallSettings.<StopInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(stopMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<SuspendInstanceRequest, Operation> suspendTransportSettings =
+        HttpJsonCallSettings.<SuspendInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(suspendMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<TestIamPermissionsInstanceRequest, TestPermissionsResponse>
@@ -2895,6 +3019,15 @@ public class HttpJsonInstancesStub extends InstancesStub {
             settings.resetOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.resumeCallable =
+        callableFactory.createUnaryCallable(
+            resumeTransportSettings, settings.resumeSettings(), clientContext);
+    this.resumeOperationCallable =
+        callableFactory.createOperationCallable(
+            resumeTransportSettings,
+            settings.resumeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.sendDiagnosticInterruptCallable =
         callableFactory.createUnaryCallable(
             sendDiagnosticInterruptTransportSettings,
@@ -3054,6 +3187,15 @@ public class HttpJsonInstancesStub extends InstancesStub {
             settings.stopOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.suspendCallable =
+        callableFactory.createUnaryCallable(
+            suspendTransportSettings, settings.suspendSettings(), clientContext);
+    this.suspendOperationCallable =
+        callableFactory.createOperationCallable(
+            suspendTransportSettings,
+            settings.suspendOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -3140,6 +3282,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
     methodDescriptors.add(listReferrersMethodDescriptor);
     methodDescriptors.add(removeResourcePoliciesMethodDescriptor);
     methodDescriptors.add(resetMethodDescriptor);
+    methodDescriptors.add(resumeMethodDescriptor);
     methodDescriptors.add(sendDiagnosticInterruptMethodDescriptor);
     methodDescriptors.add(setDeletionProtectionMethodDescriptor);
     methodDescriptors.add(setDiskAutoDeleteMethodDescriptor);
@@ -3157,6 +3300,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
     methodDescriptors.add(startMethodDescriptor);
     methodDescriptors.add(startWithEncryptionKeyMethodDescriptor);
     methodDescriptors.add(stopMethodDescriptor);
+    methodDescriptors.add(suspendMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     methodDescriptors.add(updateAccessConfigMethodDescriptor);
@@ -3349,6 +3493,16 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public UnaryCallable<ResumeInstanceRequest, Operation> resumeCallable() {
+    return resumeCallable;
+  }
+
+  @Override
+  public OperationCallable<ResumeInstanceRequest, Operation, Operation> resumeOperationCallable() {
+    return resumeOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<
           SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
       sendDiagnosticInterruptCallable() {
@@ -3526,6 +3680,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
   @Override
   public OperationCallable<StopInstanceRequest, Operation, Operation> stopOperationCallable() {
     return stopOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SuspendInstanceRequest, Operation> suspendCallable() {
+    return suspendCallable;
+  }
+
+  @Override
+  public OperationCallable<SuspendInstanceRequest, Operation, Operation>
+      suspendOperationCallable() {
+    return suspendOperationCallable;
   }
 
   @Override

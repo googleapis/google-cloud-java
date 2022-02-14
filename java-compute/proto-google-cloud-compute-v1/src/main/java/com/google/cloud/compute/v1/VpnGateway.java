@@ -46,6 +46,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     network_ = "";
     region_ = "";
     selfLink_ = "";
+    stackType_ = "";
     vpnInterfaces_ = java.util.Collections.emptyList();
   }
 
@@ -108,11 +109,11 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
             }
           case 734737450:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 vpnInterfaces_ =
                     new java.util.ArrayList<
                         com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000800;
               }
               vpnInterfaces_.add(
                   input.readMessage(
@@ -146,6 +147,13 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               description_ = s;
+              break;
+            }
+          case -887696246:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000200;
+              stackType_ = s;
               break;
             }
           case -645248918:
@@ -182,7 +190,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         vpnInterfaces_ = java.util.Collections.unmodifiableList(vpnInterfaces_);
       }
       this.unknownFields = unknownFields.build();
@@ -214,6 +222,163 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.VpnGateway.class,
             com.google.cloud.compute.v1.VpnGateway.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.VpnGateway.StackType}
+   */
+  public enum StackType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_STACK_TYPE = 0;</code>
+     */
+    UNDEFINED_STACK_TYPE(0),
+    /**
+     *
+     *
+     * <pre>
+     * Enable VPN gateway with both IPv4 and IPv6 protocols.
+     * </pre>
+     *
+     * <code>IPV4_IPV6 = 22197249;</code>
+     */
+    IPV4_IPV6(22197249),
+    /**
+     *
+     *
+     * <pre>
+     * Enable VPN gateway with only IPv4 protocol.
+     * </pre>
+     *
+     * <code>IPV4_ONLY = 22373798;</code>
+     */
+    IPV4_ONLY(22373798),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_STACK_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_STACK_TYPE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Enable VPN gateway with both IPv4 and IPv6 protocols.
+     * </pre>
+     *
+     * <code>IPV4_IPV6 = 22197249;</code>
+     */
+    public static final int IPV4_IPV6_VALUE = 22197249;
+    /**
+     *
+     *
+     * <pre>
+     * Enable VPN gateway with only IPv4 protocol.
+     * </pre>
+     *
+     * <code>IPV4_ONLY = 22373798;</code>
+     */
+    public static final int IPV4_ONLY_VALUE = 22373798;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static StackType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static StackType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_STACK_TYPE;
+        case 22197249:
+          return IPV4_IPV6;
+        case 22373798:
+          return IPV4_ONLY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<StackType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<StackType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<StackType>() {
+          public StackType findValueByNumber(int number) {
+            return StackType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.VpnGateway.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final StackType[] VALUES = values();
+
+    public static StackType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private StackType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.VpnGateway.StackType)
   }
 
   private int bitField0_;
@@ -860,6 +1025,73 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int STACK_TYPE_FIELD_NUMBER = 425908881;
+  private volatile java.lang.Object stackType_;
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return Whether the stackType field is set.
+   */
+  @java.lang.Override
+  public boolean hasStackType() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return The stackType.
+   */
+  @java.lang.Override
+  public java.lang.String getStackType() {
+    java.lang.Object ref = stackType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      stackType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return The bytes for stackType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStackTypeBytes() {
+    java.lang.Object ref = stackType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      stackType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int VPN_INTERFACES_FIELD_NUMBER = 91842181;
   private java.util.List<com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface> vpnInterfaces_;
   /**
@@ -983,6 +1215,9 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 425908881, stackType_);
+    }
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
@@ -1026,6 +1261,9 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425908881, stackType_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
@@ -1092,6 +1330,10 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
     }
+    if (hasStackType() != other.hasStackType()) return false;
+    if (hasStackType()) {
+      if (!getStackType().equals(other.getStackType())) return false;
+    }
     if (!getVpnInterfacesList().equals(other.getVpnInterfacesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1143,6 +1385,10 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasStackType()) {
+      hash = (37 * hash) + STACK_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getStackType().hashCode();
     }
     if (getVpnInterfacesCount() > 0) {
       hash = (37 * hash) + VPN_INTERFACES_FIELD_NUMBER;
@@ -1334,9 +1580,11 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000100);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
+      stackType_ = "";
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (vpnInterfacesBuilder_ == null) {
         vpnInterfaces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         vpnInterfacesBuilder_.clear();
       }
@@ -1407,10 +1655,14 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000100;
       }
       result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000200;
+      }
+      result.stackType_ = stackType_;
       if (vpnInterfacesBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           vpnInterfaces_ = java.util.Collections.unmodifiableList(vpnInterfaces_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.vpnInterfaces_ = vpnInterfaces_;
       } else {
@@ -1510,11 +1762,16 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         selfLink_ = other.selfLink_;
         onChanged();
       }
+      if (other.hasStackType()) {
+        bitField0_ |= 0x00000400;
+        stackType_ = other.stackType_;
+        onChanged();
+      }
       if (vpnInterfacesBuilder_ == null) {
         if (!other.vpnInterfaces_.isEmpty()) {
           if (vpnInterfaces_.isEmpty()) {
             vpnInterfaces_ = other.vpnInterfaces_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureVpnInterfacesIsMutable();
             vpnInterfaces_.addAll(other.vpnInterfaces_);
@@ -1527,7 +1784,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
             vpnInterfacesBuilder_.dispose();
             vpnInterfacesBuilder_ = null;
             vpnInterfaces_ = other.vpnInterfaces_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             vpnInterfacesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVpnInterfacesFieldBuilder()
@@ -2752,15 +3009,141 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object stackType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+     * Check the StackType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string stack_type = 425908881;</code>
+     *
+     * @return Whether the stackType field is set.
+     */
+    public boolean hasStackType() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+     * Check the StackType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string stack_type = 425908881;</code>
+     *
+     * @return The stackType.
+     */
+    public java.lang.String getStackType() {
+      java.lang.Object ref = stackType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stackType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+     * Check the StackType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string stack_type = 425908881;</code>
+     *
+     * @return The bytes for stackType.
+     */
+    public com.google.protobuf.ByteString getStackTypeBytes() {
+      java.lang.Object ref = stackType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        stackType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+     * Check the StackType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string stack_type = 425908881;</code>
+     *
+     * @param value The stackType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStackType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      stackType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+     * Check the StackType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string stack_type = 425908881;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStackType() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      stackType_ = getDefaultInstance().getStackType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The stack type for this VPN gateway to identify the IP protocols that are enabled. If not specified, IPV4_ONLY will be used.
+     * Check the StackType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string stack_type = 425908881;</code>
+     *
+     * @param value The bytes for stackType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStackTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000400;
+      stackType_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface>
         vpnInterfaces_ = java.util.Collections.emptyList();
 
     private void ensureVpnInterfacesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         vpnInterfaces_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface>(
                 vpnInterfaces_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -3005,7 +3388,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVpnInterfaces() {
       if (vpnInterfacesBuilder_ == null) {
         vpnInterfaces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         vpnInterfacesBuilder_.clear();
@@ -3150,7 +3533,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface.Builder,
                 com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterfaceOrBuilder>(
                 vpnInterfaces_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         vpnInterfaces_ = null;

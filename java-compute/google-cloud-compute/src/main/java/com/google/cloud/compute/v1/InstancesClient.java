@@ -1793,6 +1793,7 @@ public class InstancesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setSourceInstanceTemplate("sourceInstanceTemplate949712490")
+   *           .setSourceMachineImage("sourceMachineImage1261073679")
    *           .setZone("zone3744684")
    *           .build();
    *   Operation response = instancesClient.insertAsync(request).get();
@@ -1822,6 +1823,7 @@ public class InstancesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setSourceInstanceTemplate("sourceInstanceTemplate949712490")
+   *           .setSourceMachineImage("sourceMachineImage1261073679")
    *           .setZone("zone3744684")
    *           .build();
    *   OperationFuture<Operation, Operation> future =
@@ -1850,6 +1852,7 @@ public class InstancesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setSourceInstanceTemplate("sourceInstanceTemplate949712490")
+   *           .setSourceMachineImage("sourceMachineImage1261073679")
    *           .setZone("zone3744684")
    *           .build();
    *   ApiFuture<Operation> future = instancesClient.insertCallable().futureCall(request);
@@ -2378,6 +2381,117 @@ public class InstancesClient implements BackgroundResource {
    */
   public final UnaryCallable<ResetInstanceRequest, Operation> resetCallable() {
     return stub.resetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes an instance that was suspended using the instances().suspend method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   Operation response = instancesClient.resumeAsync(project, zone, instance).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param instance Name of the instance resource to resume.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> resumeAsync(
+      String project, String zone, String instance) {
+    ResumeInstanceRequest request =
+        ResumeInstanceRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstance(instance)
+            .build();
+    return resumeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes an instance that was suspended using the instances().suspend method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   ResumeInstanceRequest request =
+   *       ResumeInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instancesClient.resumeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> resumeAsync(ResumeInstanceRequest request) {
+    return resumeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes an instance that was suspended using the instances().suspend method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   ResumeInstanceRequest request =
+   *       ResumeInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.resumeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ResumeInstanceRequest, Operation, Operation>
+      resumeOperationCallable() {
+    return stub.resumeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes an instance that was suspended using the instances().suspend method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   ResumeInstanceRequest request =
+   *       ResumeInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.resumeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ResumeInstanceRequest, Operation> resumeCallable() {
+    return stub.resumeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3452,7 +3566,8 @@ public class InstancesClient implements BackgroundResource {
   /**
    * Sets an instance's scheduling options. You can only call this method on a stopped instance,
    * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
-   * information on the possible instance states.
+   * information on the possible instance states. For more information about setting scheduling
+   * options for a VM, see Set VM availability policies.
    *
    * <p>Sample code:
    *
@@ -3489,7 +3604,8 @@ public class InstancesClient implements BackgroundResource {
   /**
    * Sets an instance's scheduling options. You can only call this method on a stopped instance,
    * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
-   * information on the possible instance states.
+   * information on the possible instance states. For more information about setting scheduling
+   * options for a VM, see Set VM availability policies.
    *
    * <p>Sample code:
    *
@@ -3521,7 +3637,8 @@ public class InstancesClient implements BackgroundResource {
   /**
    * Sets an instance's scheduling options. You can only call this method on a stopped instance,
    * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
-   * information on the possible instance states.
+   * information on the possible instance states. For more information about setting scheduling
+   * options for a VM, see Set VM availability policies.
    *
    * <p>Sample code:
    *
@@ -3551,7 +3668,8 @@ public class InstancesClient implements BackgroundResource {
   /**
    * Sets an instance's scheduling options. You can only call this method on a stopped instance,
    * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
-   * information on the possible instance states.
+   * information on the possible instance states. For more information about setting scheduling
+   * options for a VM, see Set VM availability policies.
    *
    * <p>Sample code:
    *
@@ -3969,7 +4087,8 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Simulates a maintenance event on the instance.
+   * Simulates a host maintenance event on a VM. For more information, see Simulate a host
+   * maintenance event.
    *
    * <p>Sample code:
    *
@@ -4001,7 +4120,8 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Simulates a maintenance event on the instance.
+   * Simulates a host maintenance event on a VM. For more information, see Simulate a host
+   * maintenance event.
    *
    * <p>Sample code:
    *
@@ -4029,7 +4149,8 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Simulates a maintenance event on the instance.
+   * Simulates a host maintenance event on a VM. For more information, see Simulate a host
+   * maintenance event.
    *
    * <p>Sample code:
    *
@@ -4055,7 +4176,8 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Simulates a maintenance event on the instance.
+   * Simulates a host maintenance event on a VM. For more information, see Simulate a host
+   * maintenance event.
    *
    * <p>Sample code:
    *
@@ -4451,6 +4573,137 @@ public class InstancesClient implements BackgroundResource {
    */
   public final UnaryCallable<StopInstanceRequest, Operation> stopCallable() {
     return stub.stopCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This method suspends a running instance, saving its state to persistent storage, and allows you
+   * to resume the instance at a later time. Suspended instances have no compute costs (cores or
+   * RAM), and incur only storage charges for the saved VM memory and localSSD data. Any charged
+   * resources the virtual machine was using, such as persistent disks and static IP addresses, will
+   * continue to be charged while the instance is suspended. For more information, see Suspending
+   * and resuming an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   Operation response = instancesClient.suspendAsync(project, zone, instance).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param instance Name of the instance resource to suspend.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> suspendAsync(
+      String project, String zone, String instance) {
+    SuspendInstanceRequest request =
+        SuspendInstanceRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstance(instance)
+            .build();
+    return suspendAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This method suspends a running instance, saving its state to persistent storage, and allows you
+   * to resume the instance at a later time. Suspended instances have no compute costs (cores or
+   * RAM), and incur only storage charges for the saved VM memory and localSSD data. Any charged
+   * resources the virtual machine was using, such as persistent disks and static IP addresses, will
+   * continue to be charged while the instance is suspended. For more information, see Suspending
+   * and resuming an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SuspendInstanceRequest request =
+   *       SuspendInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instancesClient.suspendAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> suspendAsync(SuspendInstanceRequest request) {
+    return suspendOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This method suspends a running instance, saving its state to persistent storage, and allows you
+   * to resume the instance at a later time. Suspended instances have no compute costs (cores or
+   * RAM), and incur only storage charges for the saved VM memory and localSSD data. Any charged
+   * resources the virtual machine was using, such as persistent disks and static IP addresses, will
+   * continue to be charged while the instance is suspended. For more information, see Suspending
+   * and resuming an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SuspendInstanceRequest request =
+   *       SuspendInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.suspendOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SuspendInstanceRequest, Operation, Operation>
+      suspendOperationCallable() {
+    return stub.suspendOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This method suspends a running instance, saving its state to persistent storage, and allows you
+   * to resume the instance at a later time. Suspended instances have no compute costs (cores or
+   * RAM), and incur only storage charges for the saved VM memory and localSSD data. Any charged
+   * resources the virtual machine was using, such as persistent disks and static IP addresses, will
+   * continue to be charged while the instance is suspended. For more information, see Suspending
+   * and resuming an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SuspendInstanceRequest request =
+   *       SuspendInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.suspendCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SuspendInstanceRequest, Operation> suspendCallable() {
+    return stub.suspendCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -322,6 +322,57 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
+   * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+   * </pre>
+   *
+   * <code>repeated string domain_names = 6450189;</code>
+   *
+   * @return A list containing the domainNames.
+   */
+  java.util.List<java.lang.String> getDomainNamesList();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+   * </pre>
+   *
+   * <code>repeated string domain_names = 6450189;</code>
+   *
+   * @return The count of domainNames.
+   */
+  int getDomainNamesCount();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+   * </pre>
+   *
+   * <code>repeated string domain_names = 6450189;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The domainNames at the given index.
+   */
+  java.lang.String getDomainNames(int index);
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+   * </pre>
+   *
+   * <code>repeated string domain_names = 6450189;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the domainNames at the given index.
+   */
+  com.google.protobuf.ByteString getDomainNamesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * If true, enable the proxy protocol which is for supplying client TCP/IP address data in TCP connections that traverse proxies on their way to destination servers.
    * </pre>
    *

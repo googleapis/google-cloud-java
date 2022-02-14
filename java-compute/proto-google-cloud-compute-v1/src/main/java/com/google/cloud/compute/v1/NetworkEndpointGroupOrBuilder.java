@@ -474,6 +474,43 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
+   * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+   * </pre>
+   *
+   * <code>optional string psc_target_service = 269132134;</code>
+   *
+   * @return Whether the pscTargetService field is set.
+   */
+  boolean hasPscTargetService();
+  /**
+   *
+   *
+   * <pre>
+   * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+   * </pre>
+   *
+   * <code>optional string psc_target_service = 269132134;</code>
+   *
+   * @return The pscTargetService.
+   */
+  java.lang.String getPscTargetService();
+  /**
+   *
+   *
+   * <pre>
+   * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+   * </pre>
+   *
+   * <code>optional string psc_target_service = 269132134;</code>
+   *
+   * @return The bytes for pscTargetService.
+   */
+  com.google.protobuf.ByteString getPscTargetServiceBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The URL of the region where the network endpoint group is located.
    * </pre>
    *

@@ -27,7 +27,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Controls for advanced machine-related behavior features.
+   * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Controls for advanced machine-related behavior features.
+   * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -55,7 +55,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Controls for advanced machine-related behavior features.
+   * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -94,7 +94,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Specifies the Confidential Instance options.
+   * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -108,7 +108,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Specifies the Confidential Instance options.
+   * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -122,7 +122,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Specifies the Confidential Instance options.
+   * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -497,7 +497,49 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Note that for MachineImage, this is not supported yet.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+   * </code>
+   *
+   * @return Whether the networkPerformanceConfig field is set.
+   */
+  boolean hasNetworkPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Note that for MachineImage, this is not supported yet.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+   * </code>
+   *
+   * @return The networkPerformanceConfig.
+   */
+  com.google.cloud.compute.v1.NetworkPerformanceConfig getNetworkPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Note that for MachineImage, this is not supported yet.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
+   * </code>
+   */
+  com.google.cloud.compute.v1.NetworkPerformanceConfigOrBuilder
+      getNetworkPerformanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -510,7 +552,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -523,7 +565,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -537,7 +579,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Specifies the reservations that instances can consume from.
+   * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -550,7 +592,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Specifies the reservations that instances can consume from.
+   * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -563,7 +605,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Specifies the reservations that instances can consume from.
+   * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -575,7 +617,62 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Resource policies (names, not ULRs) applied to instances created from these properties.
+   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  int getResourceManagerTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  boolean containsResourceManagerTags(java.lang.String key);
+  /** Use {@link #getResourceManagerTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  java.lang.String getResourceManagerTagsOrDefault(
+      java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  java.lang.String getResourceManagerTagsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -587,7 +684,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Resource policies (names, not ULRs) applied to instances created from these properties.
+   * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -599,7 +696,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Resource policies (names, not ULRs) applied to instances created from these properties.
+   * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -612,7 +709,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Resource policies (names, not ULRs) applied to instances created from these properties.
+   * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -710,6 +807,12 @@ public interface InstancePropertiesOrBuilder
   com.google.cloud.compute.v1.ServiceAccountOrBuilder getServiceAccountsOrBuilder(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Note that for MachineImage, this is not supported yet.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
@@ -718,6 +821,12 @@ public interface InstancePropertiesOrBuilder
    */
   boolean hasShieldedInstanceConfig();
   /**
+   *
+   *
+   * <pre>
+   * Note that for MachineImage, this is not supported yet.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
@@ -726,6 +835,12 @@ public interface InstancePropertiesOrBuilder
    */
   com.google.cloud.compute.v1.ShieldedInstanceConfig getShieldedInstanceConfig();
   /**
+   *
+   *
+   * <pre>
+   * Note that for MachineImage, this is not supported yet.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>

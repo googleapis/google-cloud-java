@@ -75,6 +75,31 @@ public interface RouterNatOrBuilder
   com.google.protobuf.ByteString getDrainNatIpsBytes(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Enable Dynamic Port Allocation. If not specified, it is disabled by default. If set to true, - Dynamic Port Allocation will be enabled on this NAT config. - enableEndpointIndependentMapping cannot be set to true. - If minPorts is set, minPortsPerVm must be set to a power of two greater than or equal to 32. If minPortsPerVm is not set, a minimum of 32 ports will be allocated to a VM from this NAT config.
+   * </pre>
+   *
+   * <code>optional bool enable_dynamic_port_allocation = 532106402;</code>
+   *
+   * @return Whether the enableDynamicPortAllocation field is set.
+   */
+  boolean hasEnableDynamicPortAllocation();
+  /**
+   *
+   *
+   * <pre>
+   * Enable Dynamic Port Allocation. If not specified, it is disabled by default. If set to true, - Dynamic Port Allocation will be enabled on this NAT config. - enableEndpointIndependentMapping cannot be set to true. - If minPorts is set, minPortsPerVm must be set to a power of two greater than or equal to 32. If minPortsPerVm is not set, a minimum of 32 ports will be allocated to a VM from this NAT config.
+   * </pre>
+   *
+   * <code>optional bool enable_dynamic_port_allocation = 532106402;</code>
+   *
+   * @return The enableDynamicPortAllocation.
+   */
+  boolean getEnableDynamicPortAllocation();
+
+  /**
    * <code>optional bool enable_endpoint_independent_mapping = 259441819;</code>
    *
    * @return Whether the enableEndpointIndependentMapping field is set.
@@ -146,6 +171,31 @@ public interface RouterNatOrBuilder
    * <code>optional .google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
    */
   com.google.cloud.compute.v1.RouterNatLogConfigOrBuilder getLogConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of ports allocated to a VM from this NAT config when Dynamic Port Allocation is enabled. If Dynamic Port Allocation is not enabled, this field has no effect. If Dynamic Port Allocation is enabled, and this field is set, it must be set to a power of two greater than minPortsPerVm, or 64 if minPortsPerVm is not set. If Dynamic Port Allocation is enabled and this field is not set, a maximum of 65536 ports will be allocated to a VM from this NAT config.
+   * </pre>
+   *
+   * <code>optional int32 max_ports_per_vm = 250062049;</code>
+   *
+   * @return Whether the maxPortsPerVm field is set.
+   */
+  boolean hasMaxPortsPerVm();
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of ports allocated to a VM from this NAT config when Dynamic Port Allocation is enabled. If Dynamic Port Allocation is not enabled, this field has no effect. If Dynamic Port Allocation is enabled, and this field is set, it must be set to a power of two greater than minPortsPerVm, or 64 if minPortsPerVm is not set. If Dynamic Port Allocation is enabled and this field is not set, a maximum of 65536 ports will be allocated to a VM from this NAT config.
+   * </pre>
+   *
+   * <code>optional int32 max_ports_per_vm = 250062049;</code>
+   *
+   * @return The maxPortsPerVm.
+   */
+  int getMaxPortsPerVm();
 
   /**
    *

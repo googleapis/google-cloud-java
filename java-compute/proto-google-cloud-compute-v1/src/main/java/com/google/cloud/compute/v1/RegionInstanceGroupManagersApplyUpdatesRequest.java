@@ -150,7 +150,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
    *
    *
    * <pre>
-   * Flag to update all instances instead of specified list of “instances”. If the flag is set to true then the instances may not be specified in the request.
+   * Flag to update all instances instead of specified list of ���instances���. If the flag is set to true then the instances may not be specified in the request.
    * </pre>
    *
    * <code>optional bool all_instances = 403676512;</code>
@@ -165,7 +165,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
    *
    *
    * <pre>
-   * Flag to update all instances instead of specified list of “instances”. If the flag is set to true then the instances may not be specified in the request.
+   * Flag to update all instances instead of specified list of ���instances���. If the flag is set to true then the instances may not be specified in the request.
    * </pre>
    *
    * <code>optional bool all_instances = 403676512;</code>
@@ -808,7 +808,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * Flag to update all instances instead of specified list of “instances”. If the flag is set to true then the instances may not be specified in the request.
+     * Flag to update all instances instead of specified list of ���instances���. If the flag is set to true then the instances may not be specified in the request.
      * </pre>
      *
      * <code>optional bool all_instances = 403676512;</code>
@@ -823,7 +823,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * Flag to update all instances instead of specified list of “instances”. If the flag is set to true then the instances may not be specified in the request.
+     * Flag to update all instances instead of specified list of ���instances���. If the flag is set to true then the instances may not be specified in the request.
      * </pre>
      *
      * <code>optional bool all_instances = 403676512;</code>
@@ -838,7 +838,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * Flag to update all instances instead of specified list of “instances”. If the flag is set to true then the instances may not be specified in the request.
+     * Flag to update all instances instead of specified list of ���instances���. If the flag is set to true then the instances may not be specified in the request.
      * </pre>
      *
      * <code>optional bool all_instances = 403676512;</code>
@@ -856,7 +856,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * Flag to update all instances instead of specified list of “instances”. If the flag is set to true then the instances may not be specified in the request.
+     * Flag to update all instances instead of specified list of ���instances���. If the flag is set to true then the instances may not be specified in the request.
      * </pre>
      *
      * <code>optional bool all_instances = 403676512;</code>

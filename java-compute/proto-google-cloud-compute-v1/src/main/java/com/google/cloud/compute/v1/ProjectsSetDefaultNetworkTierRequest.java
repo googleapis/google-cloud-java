@@ -137,6 +137,16 @@ public final class ProjectsSetDefaultNetworkTierRequest
      *
      *
      * <pre>
+     * Public internet quality with fixed bandwidth.
+     * </pre>
+     *
+     * <code>FIXED_STANDARD = 310464328;</code>
+     */
+    FIXED_STANDARD(310464328),
+    /**
+     *
+     *
+     * <pre>
      * High quality, Google-grade network tier, support for all networking products.
      * </pre>
      *
@@ -153,6 +163,16 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * <code>STANDARD = 484642493;</code>
      */
     STANDARD(484642493),
+    /**
+     *
+     *
+     * <pre>
+     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is expired or not configured.
+     * </pre>
+     *
+     * <code>STANDARD_OVERRIDES_FIXED_STANDARD = 465847234;</code>
+     */
+    STANDARD_OVERRIDES_FIXED_STANDARD(465847234),
     UNRECOGNIZED(-1),
     ;
 
@@ -166,6 +186,16 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality with fixed bandwidth.
+     * </pre>
+     *
+     * <code>FIXED_STANDARD = 310464328;</code>
+     */
+    public static final int FIXED_STANDARD_VALUE = 310464328;
     /**
      *
      *
@@ -186,6 +216,16 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * <code>STANDARD = 484642493;</code>
      */
     public static final int STANDARD_VALUE = 484642493;
+    /**
+     *
+     *
+     * <pre>
+     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is expired or not configured.
+     * </pre>
+     *
+     * <code>STANDARD_OVERRIDES_FIXED_STANDARD = 465847234;</code>
+     */
+    public static final int STANDARD_OVERRIDES_FIXED_STANDARD_VALUE = 465847234;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -213,10 +253,14 @@ public final class ProjectsSetDefaultNetworkTierRequest
       switch (value) {
         case 0:
           return UNDEFINED_NETWORK_TIER;
+        case 310464328:
+          return FIXED_STANDARD;
         case 399530551:
           return PREMIUM;
         case 484642493:
           return STANDARD;
+        case 465847234:
+          return STANDARD_OVERRIDES_FIXED_STANDARD;
         default:
           return null;
       }

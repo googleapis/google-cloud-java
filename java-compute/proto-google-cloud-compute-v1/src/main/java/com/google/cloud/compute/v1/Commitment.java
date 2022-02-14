@@ -87,72 +87,72 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
             break;
           case 26840:
             {
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               id_ = input.readUInt64();
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               name_ = s;
               break;
             }
           case 27547978:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               plan_ = s;
               break;
             }
           case 28604882:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00008000;
               type_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               creationTimestamp_ = s;
               break;
             }
           case 404088818:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
               category_ = s;
               break;
             }
           case 669166538:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00001000;
               startTimestamp_ = s;
               break;
             }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               region_ = s;
               break;
             }
           case 1315303722:
             {
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 resources_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.ResourceCommitment>();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00001000;
               }
               resources_.add(
                   input.readMessage(
@@ -162,22 +162,22 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           case 1450082194:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00002000;
               status_ = s;
               break;
             }
           case -1915542062:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00004000;
               statusMessage_ = s;
               break;
             }
           case -1097223878:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 reservations_ = new java.util.ArrayList<com.google.cloud.compute.v1.Reservation>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000800;
               }
               reservations_.add(
                   input.readMessage(
@@ -187,14 +187,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               description_ = s;
               break;
             }
           case -791326110:
             {
               com.google.cloud.compute.v1.LicenseResourceCommitment.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000040) != 0)) {
+              if (((bitField0_ & 0x00000080) != 0)) {
                 subBuilder = licenseResource_.toBuilder();
               }
               licenseResource_ =
@@ -205,21 +205,27 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(licenseResource_);
                 licenseResource_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               break;
             }
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000800;
               selfLink_ = s;
               break;
             }
           case -550193774:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               endTimestamp_ = s;
+              break;
+            }
+          case -330801176:
+            {
+              bitField0_ |= 0x00000001;
+              autoRenew_ = input.readBool();
               break;
             }
           default:
@@ -236,10 +242,10 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         resources_ = java.util.Collections.unmodifiableList(resources_);
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         reservations_ = java.util.Collections.unmodifiableList(reservations_);
       }
       this.unknownFields = unknownFields.build();
@@ -685,6 +691,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     ACCELERATOR_OPTIMIZED(280848403),
     /** <code>COMPUTE_OPTIMIZED = 158349023;</code> */
     COMPUTE_OPTIMIZED(158349023),
+    /** <code>COMPUTE_OPTIMIZED_C2D = 383246453;</code> */
+    COMPUTE_OPTIMIZED_C2D(383246453),
     /** <code>GENERAL_PURPOSE = 299793543;</code> */
     GENERAL_PURPOSE(299793543),
     /** <code>GENERAL_PURPOSE_E2 = 301911877;</code> */
@@ -693,6 +701,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     GENERAL_PURPOSE_N2(301912156),
     /** <code>GENERAL_PURPOSE_N2D = 232471400;</code> */
     GENERAL_PURPOSE_N2D(232471400),
+    /** <code>GENERAL_PURPOSE_T2D = 232477166;</code> */
+    GENERAL_PURPOSE_T2D(232477166),
     /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
     MEMORY_OPTIMIZED(281753417),
     /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
@@ -714,6 +724,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int ACCELERATOR_OPTIMIZED_VALUE = 280848403;
     /** <code>COMPUTE_OPTIMIZED = 158349023;</code> */
     public static final int COMPUTE_OPTIMIZED_VALUE = 158349023;
+    /** <code>COMPUTE_OPTIMIZED_C2D = 383246453;</code> */
+    public static final int COMPUTE_OPTIMIZED_C2D_VALUE = 383246453;
     /** <code>GENERAL_PURPOSE = 299793543;</code> */
     public static final int GENERAL_PURPOSE_VALUE = 299793543;
     /** <code>GENERAL_PURPOSE_E2 = 301911877;</code> */
@@ -722,6 +734,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int GENERAL_PURPOSE_N2_VALUE = 301912156;
     /** <code>GENERAL_PURPOSE_N2D = 232471400;</code> */
     public static final int GENERAL_PURPOSE_N2D_VALUE = 232471400;
+    /** <code>GENERAL_PURPOSE_T2D = 232477166;</code> */
+    public static final int GENERAL_PURPOSE_T2D_VALUE = 232477166;
     /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
     public static final int MEMORY_OPTIMIZED_VALUE = 281753417;
     /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
@@ -757,6 +771,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return ACCELERATOR_OPTIMIZED;
         case 158349023:
           return COMPUTE_OPTIMIZED;
+        case 383246453:
+          return COMPUTE_OPTIMIZED_C2D;
         case 299793543:
           return GENERAL_PURPOSE;
         case 301911877:
@@ -765,6 +781,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return GENERAL_PURPOSE_N2;
         case 232471400:
           return GENERAL_PURPOSE_N2D;
+        case 232477166:
+          return GENERAL_PURPOSE_T2D;
         case 281753417:
           return MEMORY_OPTIMIZED;
         case 437714322:
@@ -823,6 +841,39 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  public static final int AUTO_RENEW_FIELD_NUMBER = 495520765;
+  private boolean autoRenew_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether to enable automatic renewal for the commitment. The default value is false if not specified. The field can be updated until the day of the commitment expiration at 12:00am PST. If the field is set to true, the commitment will be automatically renewed for either one or three years according to the terms of the existing commitment.
+   * </pre>
+   *
+   * <code>optional bool auto_renew = 495520765;</code>
+   *
+   * @return Whether the autoRenew field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoRenew() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether to enable automatic renewal for the commitment. The default value is false if not specified. The field can be updated until the day of the commitment expiration at 12:00am PST. If the field is set to true, the commitment will be automatically renewed for either one or three years according to the terms of the existing commitment.
+   * </pre>
+   *
+   * <code>optional bool auto_renew = 495520765;</code>
+   *
+   * @return The autoRenew.
+   */
+  @java.lang.Override
+  public boolean getAutoRenew() {
+    return autoRenew_;
+  }
+
   public static final int CATEGORY_FIELD_NUMBER = 50511102;
   private volatile java.lang.Object category_;
   /**
@@ -839,7 +890,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCategory() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -905,7 +956,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCreationTimestamp() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -969,7 +1020,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -1033,7 +1084,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEndTimestamp() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -1097,7 +1148,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -1130,7 +1181,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -1195,7 +1246,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLicenseResource() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1248,7 +1299,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1313,7 +1364,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPlan() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -1379,7 +1430,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1581,7 +1632,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1645,7 +1696,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStartTimestamp() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1710,7 +1761,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1776,7 +1827,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatusMessage() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1841,7 +1892,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -1906,56 +1957,59 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3443497, plan_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 50511102, category_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 83645817, startTimestamp_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     for (int i = 0; i < resources_.size(); i++) {
       output.writeMessage(164412965, resources_.get(i));
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 297428154, statusMessage_);
     }
     for (int i = 0; i < reservations_.size(); i++) {
       output.writeMessage(399717927, reservations_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(437955148, getLicenseResource());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 468096690, endTimestamp_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(495520765, autoRenew_);
     }
     unknownFields.writeTo(output);
   }
@@ -1966,60 +2020,63 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3443497, plan_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(50511102, category_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(83645817, startTimestamp_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     for (int i = 0; i < resources_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(164412965, resources_.get(i));
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(297428154, statusMessage_);
     }
     for (int i = 0; i < reservations_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(399717927, reservations_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(437955148, getLicenseResource());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(468096690, endTimestamp_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(495520765, autoRenew_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2036,6 +2093,10 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Commitment other = (com.google.cloud.compute.v1.Commitment) obj;
 
+    if (hasAutoRenew() != other.hasAutoRenew()) return false;
+    if (hasAutoRenew()) {
+      if (getAutoRenew() != other.getAutoRenew()) return false;
+    }
     if (hasCategory() != other.hasCategory()) return false;
     if (hasCategory()) {
       if (!getCategory().equals(other.getCategory())) return false;
@@ -2109,6 +2170,10 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAutoRenew()) {
+      hash = (37 * hash) + AUTO_RENEW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoRenew());
+    }
     if (hasCategory()) {
       hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
       hash = (53 * hash) + getCategory().hashCode();
@@ -2326,52 +2391,54 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      category_ = "";
+      autoRenew_ = false;
       bitField0_ = (bitField0_ & ~0x00000001);
-      creationTimestamp_ = "";
+      category_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      description_ = "";
+      creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      endTimestamp_ = "";
+      description_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      id_ = 0L;
+      endTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
-      kind_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000020);
+      kind_ = "";
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (licenseResourceBuilder_ == null) {
         licenseResource_ = null;
       } else {
         licenseResourceBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
-      name_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      plan_ = "";
+      name_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      region_ = "";
+      plan_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
+      region_ = "";
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (reservationsBuilder_ == null) {
         reservations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         reservationsBuilder_.clear();
       }
       if (resourcesBuilder_ == null) {
         resources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
       } else {
         resourcesBuilder_.clear();
       }
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
-      startTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
-      status_ = "";
+      startTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
-      statusMessage_ = "";
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
-      type_ = "";
+      statusMessage_ = "";
       bitField0_ = (bitField0_ & ~0x00010000);
+      type_ = "";
+      bitField0_ = (bitField0_ & ~0x00020000);
       return this;
     }
 
@@ -2402,85 +2469,89 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.autoRenew_ = autoRenew_;
         to_bitField0_ |= 0x00000001;
       }
-      result.category_ = category_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
-      result.creationTimestamp_ = creationTimestamp_;
+      result.category_ = category_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         to_bitField0_ |= 0x00000004;
       }
-      result.description_ = description_;
+      result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         to_bitField0_ |= 0x00000008;
       }
-      result.endTimestamp_ = endTimestamp_;
+      result.description_ = description_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.id_ = id_;
         to_bitField0_ |= 0x00000010;
       }
+      result.endTimestamp_ = endTimestamp_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000020;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
+      result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         if (licenseResourceBuilder_ == null) {
           result.licenseResource_ = licenseResource_;
         } else {
           result.licenseResource_ = licenseResourceBuilder_.build();
         }
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
         to_bitField0_ |= 0x00000080;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         to_bitField0_ |= 0x00000100;
       }
-      result.plan_ = plan_;
+      result.name_ = name_;
       if (((from_bitField0_ & 0x00000200) != 0)) {
         to_bitField0_ |= 0x00000200;
       }
+      result.plan_ = plan_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
       result.region_ = region_;
       if (reservationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           reservations_ = java.util.Collections.unmodifiableList(reservations_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.reservations_ = reservations_;
       } else {
         result.reservations_ = reservationsBuilder_.build();
       }
       if (resourcesBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           resources_ = java.util.Collections.unmodifiableList(resources_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.resources_ = resources_;
       } else {
         result.resources_ = resourcesBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        to_bitField0_ |= 0x00000400;
-      }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
         to_bitField0_ |= 0x00000800;
       }
-      result.startTimestamp_ = startTimestamp_;
+      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
         to_bitField0_ |= 0x00001000;
       }
-      result.status_ = status_;
+      result.startTimestamp_ = startTimestamp_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
         to_bitField0_ |= 0x00002000;
       }
-      result.statusMessage_ = statusMessage_;
+      result.status_ = status_;
       if (((from_bitField0_ & 0x00010000) != 0)) {
         to_bitField0_ |= 0x00004000;
+      }
+      result.statusMessage_ = statusMessage_;
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        to_bitField0_ |= 0x00008000;
       }
       result.type_ = type_;
       result.bitField0_ = to_bitField0_;
@@ -2533,23 +2604,26 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Commitment other) {
       if (other == com.google.cloud.compute.v1.Commitment.getDefaultInstance()) return this;
+      if (other.hasAutoRenew()) {
+        setAutoRenew(other.getAutoRenew());
+      }
       if (other.hasCategory()) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         category_ = other.category_;
         onChanged();
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         description_ = other.description_;
         onChanged();
       }
       if (other.hasEndTimestamp()) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         endTimestamp_ = other.endTimestamp_;
         onChanged();
       }
@@ -2557,7 +2631,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         kind_ = other.kind_;
         onChanged();
       }
@@ -2565,17 +2639,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         mergeLicenseResource(other.getLicenseResource());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         name_ = other.name_;
         onChanged();
       }
       if (other.hasPlan()) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         plan_ = other.plan_;
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         region_ = other.region_;
         onChanged();
       }
@@ -2583,7 +2657,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         if (!other.reservations_.isEmpty()) {
           if (reservations_.isEmpty()) {
             reservations_ = other.reservations_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureReservationsIsMutable();
             reservations_.addAll(other.reservations_);
@@ -2596,7 +2670,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
             reservationsBuilder_.dispose();
             reservationsBuilder_ = null;
             reservations_ = other.reservations_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             reservationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getReservationsFieldBuilder()
@@ -2610,7 +2684,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         if (!other.resources_.isEmpty()) {
           if (resources_.isEmpty()) {
             resources_ = other.resources_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureResourcesIsMutable();
             resources_.addAll(other.resources_);
@@ -2623,7 +2697,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
             resourcesBuilder_.dispose();
             resourcesBuilder_ = null;
             resources_ = other.resources_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             resourcesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResourcesFieldBuilder()
@@ -2634,27 +2708,27 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (other.hasStartTimestamp()) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         startTimestamp_ = other.startTimestamp_;
         onChanged();
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         status_ = other.status_;
         onChanged();
       }
       if (other.hasStatusMessage()) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         statusMessage_ = other.statusMessage_;
         onChanged();
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         type_ = other.type_;
         onChanged();
       }
@@ -2689,6 +2763,73 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private boolean autoRenew_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether to enable automatic renewal for the commitment. The default value is false if not specified. The field can be updated until the day of the commitment expiration at 12:00am PST. If the field is set to true, the commitment will be automatically renewed for either one or three years according to the terms of the existing commitment.
+     * </pre>
+     *
+     * <code>optional bool auto_renew = 495520765;</code>
+     *
+     * @return Whether the autoRenew field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoRenew() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether to enable automatic renewal for the commitment. The default value is false if not specified. The field can be updated until the day of the commitment expiration at 12:00am PST. If the field is set to true, the commitment will be automatically renewed for either one or three years according to the terms of the existing commitment.
+     * </pre>
+     *
+     * <code>optional bool auto_renew = 495520765;</code>
+     *
+     * @return The autoRenew.
+     */
+    @java.lang.Override
+    public boolean getAutoRenew() {
+      return autoRenew_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether to enable automatic renewal for the commitment. The default value is false if not specified. The field can be updated until the day of the commitment expiration at 12:00am PST. If the field is set to true, the commitment will be automatically renewed for either one or three years according to the terms of the existing commitment.
+     * </pre>
+     *
+     * <code>optional bool auto_renew = 495520765;</code>
+     *
+     * @param value The autoRenew to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoRenew(boolean value) {
+      bitField0_ |= 0x00000001;
+      autoRenew_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether to enable automatic renewal for the commitment. The default value is false if not specified. The field can be updated until the day of the commitment expiration at 12:00am PST. If the field is set to true, the commitment will be automatically renewed for either one or three years according to the terms of the existing commitment.
+     * </pre>
+     *
+     * <code>optional bool auto_renew = 495520765;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoRenew() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      autoRenew_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object category_ = "";
     /**
      *
@@ -2703,7 +2844,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the category field is set.
      */
     public boolean hasCategory() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2768,7 +2909,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       category_ = value;
       onChanged();
       return this;
@@ -2786,7 +2927,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCategory() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       category_ = getDefaultInstance().getCategory();
       onChanged();
       return this;
@@ -2809,7 +2950,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       category_ = value;
       onChanged();
       return this;
@@ -2828,7 +2969,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2890,7 +3031,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -2907,7 +3048,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -2929,7 +3070,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -2948,7 +3089,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3010,7 +3151,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -3027,7 +3168,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -3049,7 +3190,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -3068,7 +3209,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTimestamp field is set.
      */
     public boolean hasEndTimestamp() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3130,7 +3271,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       endTimestamp_ = value;
       onChanged();
       return this;
@@ -3147,7 +3288,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEndTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       endTimestamp_ = getDefaultInstance().getEndTimestamp();
       onChanged();
       return this;
@@ -3169,7 +3310,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       endTimestamp_ = value;
       onChanged();
       return this;
@@ -3189,7 +3330,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3219,7 +3360,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       id_ = value;
       onChanged();
       return this;
@@ -3236,7 +3377,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       id_ = 0L;
       onChanged();
       return this;
@@ -3255,7 +3396,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3317,7 +3458,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       kind_ = value;
       onChanged();
       return this;
@@ -3334,7 +3475,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -3356,7 +3497,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       kind_ = value;
       onChanged();
       return this;
@@ -3382,7 +3523,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the licenseResource field is set.
      */
     public boolean hasLicenseResource() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3427,7 +3568,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       } else {
         licenseResourceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -3449,7 +3590,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       } else {
         licenseResourceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -3466,7 +3607,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeLicenseResource(
         com.google.cloud.compute.v1.LicenseResourceCommitment value) {
       if (licenseResourceBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && licenseResource_ != null
             && licenseResource_
                 != com.google.cloud.compute.v1.LicenseResourceCommitment.getDefaultInstance()) {
@@ -3481,7 +3622,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       } else {
         licenseResourceBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -3502,7 +3643,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       } else {
         licenseResourceBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
     /**
@@ -3518,7 +3659,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.LicenseResourceCommitment.Builder
         getLicenseResourceBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getLicenseResourceFieldBuilder().getBuilder();
     }
@@ -3584,7 +3725,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3646,7 +3787,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -3663,7 +3804,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -3685,7 +3826,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -3705,7 +3846,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the plan field is set.
      */
     public boolean hasPlan() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3770,7 +3911,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       plan_ = value;
       onChanged();
       return this;
@@ -3788,7 +3929,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPlan() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       plan_ = getDefaultInstance().getPlan();
       onChanged();
       return this;
@@ -3811,7 +3952,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       plan_ = value;
       onChanged();
       return this;
@@ -3830,7 +3971,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3892,7 +4033,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       region_ = value;
       onChanged();
       return this;
@@ -3909,7 +4050,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -3931,7 +4072,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       region_ = value;
       onChanged();
       return this;
@@ -3941,10 +4082,10 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureReservationsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         reservations_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.Reservation>(reservations_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -4160,7 +4301,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public Builder clearReservations() {
       if (reservationsBuilder_ == null) {
         reservations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         reservationsBuilder_.clear();
@@ -4282,7 +4423,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.Reservation,
                 com.google.cloud.compute.v1.Reservation.Builder,
                 com.google.cloud.compute.v1.ReservationOrBuilder>(
-                reservations_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                reservations_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         reservations_ = null;
       }
       return reservationsBuilder_;
@@ -4292,10 +4433,10 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         resources_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.ResourceCommitment>(resources_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -4511,7 +4652,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public Builder clearResources() {
       if (resourcesBuilder_ == null) {
         resources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         resourcesBuilder_.clear();
@@ -4634,7 +4775,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.ResourceCommitment,
                 com.google.cloud.compute.v1.ResourceCommitment.Builder,
                 com.google.cloud.compute.v1.ResourceCommitmentOrBuilder>(
-                resources_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
+                resources_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         resources_ = null;
       }
       return resourcesBuilder_;
@@ -4653,7 +4794,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4715,7 +4856,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4732,7 +4873,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -4754,7 +4895,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4773,7 +4914,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTimestamp field is set.
      */
     public boolean hasStartTimestamp() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4835,7 +4976,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       startTimestamp_ = value;
       onChanged();
       return this;
@@ -4852,7 +4993,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStartTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       startTimestamp_ = getDefaultInstance().getStartTimestamp();
       onChanged();
       return this;
@@ -4874,7 +5015,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       startTimestamp_ = value;
       onChanged();
       return this;
@@ -4894,7 +5035,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4959,7 +5100,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       status_ = value;
       onChanged();
       return this;
@@ -4977,7 +5118,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
@@ -5000,7 +5141,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       status_ = value;
       onChanged();
       return this;
@@ -5019,7 +5160,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the statusMessage field is set.
      */
     public boolean hasStatusMessage() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -5081,7 +5222,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       statusMessage_ = value;
       onChanged();
       return this;
@@ -5098,7 +5239,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatusMessage() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       statusMessage_ = getDefaultInstance().getStatusMessage();
       onChanged();
       return this;
@@ -5120,7 +5261,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       statusMessage_ = value;
       onChanged();
       return this;
@@ -5140,7 +5281,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -5205,7 +5346,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       type_ = value;
       onChanged();
       return this;
@@ -5223,7 +5364,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       type_ = getDefaultInstance().getType();
       onChanged();
       return this;
@@ -5246,7 +5387,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       type_ = value;
       onChanged();
       return this;

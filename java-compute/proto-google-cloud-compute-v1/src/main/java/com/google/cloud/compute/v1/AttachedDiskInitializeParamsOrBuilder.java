@@ -217,6 +217,57 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
+   * A list of publicly visible licenses. Reserved for Google's use.
+   * </pre>
+   *
+   * <code>repeated string licenses = 337642578;</code>
+   *
+   * @return A list containing the licenses.
+   */
+  java.util.List<java.lang.String> getLicensesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of publicly visible licenses. Reserved for Google's use.
+   * </pre>
+   *
+   * <code>repeated string licenses = 337642578;</code>
+   *
+   * @return The count of licenses.
+   */
+  int getLicensesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of publicly visible licenses. Reserved for Google's use.
+   * </pre>
+   *
+   * <code>repeated string licenses = 337642578;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The licenses at the given index.
+   */
+  java.lang.String getLicenses(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of publicly visible licenses. Reserved for Google's use.
+   * </pre>
+   *
+   * <code>repeated string licenses = 337642578;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the licenses at the given index.
+   */
+  com.google.protobuf.ByteString getLicensesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
    * Check the OnUpdateAction enum for the list of possible values.
    * </pre>

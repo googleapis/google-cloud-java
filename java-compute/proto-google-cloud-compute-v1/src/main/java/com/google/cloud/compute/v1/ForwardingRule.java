@@ -402,6 +402,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     ESP(68962),
     /** <code>ICMP = 2241597;</code> */
     ICMP(2241597),
+    /** <code>L3_DEFAULT = 48151369;</code> */
+    L3_DEFAULT(48151369),
     /** <code>SCTP = 2539724;</code> */
     SCTP(2539724),
     /** <code>TCP = 82881;</code> */
@@ -427,6 +429,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     public static final int ESP_VALUE = 68962;
     /** <code>ICMP = 2241597;</code> */
     public static final int ICMP_VALUE = 2241597;
+    /** <code>L3_DEFAULT = 48151369;</code> */
+    public static final int L3_DEFAULT_VALUE = 48151369;
     /** <code>SCTP = 2539724;</code> */
     public static final int SCTP_VALUE = 2539724;
     /** <code>TCP = 82881;</code> */
@@ -466,6 +470,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           return ESP;
         case 2241597:
           return ICMP;
+        case 48151369:
+          return L3_DEFAULT;
         case 2539724:
           return SCTP;
         case 82881:
@@ -678,6 +684,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_LOAD_BALANCING_SCHEME(0),
     /** <code>EXTERNAL = 35607499;</code> */
     EXTERNAL(35607499),
+    /** <code>EXTERNAL_MANAGED = 512006923;</code> */
+    EXTERNAL_MANAGED(512006923),
     /** <code>INTERNAL = 279295677;</code> */
     INTERNAL(279295677),
     /** <code>INTERNAL_MANAGED = 37350397;</code> */
@@ -701,6 +709,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_LOAD_BALANCING_SCHEME_VALUE = 0;
     /** <code>EXTERNAL = 35607499;</code> */
     public static final int EXTERNAL_VALUE = 35607499;
+    /** <code>EXTERNAL_MANAGED = 512006923;</code> */
+    public static final int EXTERNAL_MANAGED_VALUE = 512006923;
     /** <code>INTERNAL = 279295677;</code> */
     public static final int INTERNAL_VALUE = 279295677;
     /** <code>INTERNAL_MANAGED = 37350397;</code> */
@@ -738,6 +748,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_LOAD_BALANCING_SCHEME;
         case 35607499:
           return EXTERNAL;
+        case 512006923:
+          return EXTERNAL_MANAGED;
         case 279295677:
           return INTERNAL;
         case 37350397:
@@ -826,6 +838,16 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Public internet quality with fixed bandwidth.
+     * </pre>
+     *
+     * <code>FIXED_STANDARD = 310464328;</code>
+     */
+    FIXED_STANDARD(310464328),
+    /**
+     *
+     *
+     * <pre>
      * High quality, Google-grade network tier, support for all networking products.
      * </pre>
      *
@@ -842,6 +864,16 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * <code>STANDARD = 484642493;</code>
      */
     STANDARD(484642493),
+    /**
+     *
+     *
+     * <pre>
+     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is expired or not configured.
+     * </pre>
+     *
+     * <code>STANDARD_OVERRIDES_FIXED_STANDARD = 465847234;</code>
+     */
+    STANDARD_OVERRIDES_FIXED_STANDARD(465847234),
     UNRECOGNIZED(-1),
     ;
 
@@ -855,6 +887,16 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality with fixed bandwidth.
+     * </pre>
+     *
+     * <code>FIXED_STANDARD = 310464328;</code>
+     */
+    public static final int FIXED_STANDARD_VALUE = 310464328;
     /**
      *
      *
@@ -875,6 +917,16 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * <code>STANDARD = 484642493;</code>
      */
     public static final int STANDARD_VALUE = 484642493;
+    /**
+     *
+     *
+     * <pre>
+     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is expired or not configured.
+     * </pre>
+     *
+     * <code>STANDARD_OVERRIDES_FIXED_STANDARD = 465847234;</code>
+     */
+    public static final int STANDARD_OVERRIDES_FIXED_STANDARD_VALUE = 465847234;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -902,10 +954,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_NETWORK_TIER;
+        case 310464328:
+          return FIXED_STANDARD;
         case 399530551:
           return PREMIUM;
         case 484642493:
           return STANDARD;
+        case 465847234:
+          return STANDARD_OVERRIDES_FIXED_STANDARD;
         default:
           return null;
       }
@@ -2673,7 +2729,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+   * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
    * </pre>
    *
    * <code>
@@ -2689,7 +2745,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+   * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
    * </pre>
    *
    * <code>
@@ -2706,7 +2762,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+   * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
    * </pre>
    *
    * <code>
@@ -2721,7 +2777,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+   * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
    * </pre>
    *
    * <code>
@@ -2737,7 +2793,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+   * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
    * </pre>
    *
    * <code>
@@ -7236,7 +7292,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7255,7 +7311,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7273,7 +7329,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7292,7 +7348,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7317,7 +7373,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7341,7 +7397,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7366,7 +7422,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7391,7 +7447,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7414,7 +7470,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7438,7 +7494,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7463,7 +7519,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7484,7 +7540,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7505,7 +7561,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7520,7 +7576,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7539,7 +7595,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7560,7 +7616,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7578,7 +7634,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>
@@ -7597,7 +7653,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. It is only supported for internal load balancing.
+     * Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
      * </pre>
      *
      * <code>

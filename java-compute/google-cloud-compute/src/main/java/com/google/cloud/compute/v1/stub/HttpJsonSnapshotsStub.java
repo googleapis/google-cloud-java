@@ -36,6 +36,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteSnapshotRequest;
 import com.google.cloud.compute.v1.GetIamPolicySnapshotRequest;
 import com.google.cloud.compute.v1.GetSnapshotRequest;
+import com.google.cloud.compute.v1.InsertSnapshotRequest;
 import com.google.cloud.compute.v1.ListSnapshotsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
@@ -187,6 +188,57 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                       .setDefaultInstance(Policy.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<InsertSnapshotRequest, Operation>
+      insertMethodDescriptor =
+          ApiMethodDescriptor.<InsertSnapshotRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Snapshots/Insert")
+              .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<InsertSnapshotRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/snapshots",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("snapshotResource", request.getSnapshotResource()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (InsertSnapshotRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListSnapshotsRequest, SnapshotList>
@@ -377,6 +429,9 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
       deleteOperationCallable;
   private final UnaryCallable<GetSnapshotRequest, Snapshot> getCallable;
   private final UnaryCallable<GetIamPolicySnapshotRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<InsertSnapshotRequest, Operation> insertCallable;
+  private final OperationCallable<InsertSnapshotRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListSnapshotsRequest, SnapshotList> listCallable;
   private final UnaryCallable<ListSnapshotsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<SetIamPolicySnapshotRequest, Policy> setIamPolicyCallable;
@@ -444,6 +499,11 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<InsertSnapshotRequest, Operation> insertTransportSettings =
+        HttpJsonCallSettings.<InsertSnapshotRequest, Operation>newBuilder()
+            .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<ListSnapshotsRequest, SnapshotList> listTransportSettings =
         HttpJsonCallSettings.<ListSnapshotsRequest, SnapshotList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
@@ -482,6 +542,15 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.insertCallable =
+        callableFactory.createUnaryCallable(
+            insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -516,6 +585,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(setLabelsMethodDescriptor);
@@ -541,6 +611,16 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
   @Override
   public UnaryCallable<GetIamPolicySnapshotRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<InsertSnapshotRequest, Operation> insertCallable() {
+    return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertSnapshotRequest, Operation, Operation> insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteSnapshotRequest;
 import com.google.cloud.compute.v1.GetIamPolicySnapshotRequest;
 import com.google.cloud.compute.v1.GetSnapshotRequest;
+import com.google.cloud.compute.v1.InsertSnapshotRequest;
 import com.google.cloud.compute.v1.ListSnapshotsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Policy;
@@ -58,6 +59,14 @@ public abstract class SnapshotsStub implements BackgroundResource {
 
   public UnaryCallable<GetIamPolicySnapshotRequest, Policy> getIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public OperationCallable<InsertSnapshotRequest, Operation, Operation> insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
+  }
+
+  public UnaryCallable<InsertSnapshotRequest, Operation> insertCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertCallable()");
   }
 
   public UnaryCallable<ListSnapshotsRequest, ListPagedResponse> listPagedCallable() {

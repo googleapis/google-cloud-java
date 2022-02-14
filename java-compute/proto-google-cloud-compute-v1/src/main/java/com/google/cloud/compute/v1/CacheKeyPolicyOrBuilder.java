@@ -52,6 +52,108 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
+   * Allows HTTP request headers (by name) to be used in the cache key.
+   * </pre>
+   *
+   * <code>repeated string include_http_headers = 2489606;</code>
+   *
+   * @return A list containing the includeHttpHeaders.
+   */
+  java.util.List<java.lang.String> getIncludeHttpHeadersList();
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP request headers (by name) to be used in the cache key.
+   * </pre>
+   *
+   * <code>repeated string include_http_headers = 2489606;</code>
+   *
+   * @return The count of includeHttpHeaders.
+   */
+  int getIncludeHttpHeadersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP request headers (by name) to be used in the cache key.
+   * </pre>
+   *
+   * <code>repeated string include_http_headers = 2489606;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeHttpHeaders at the given index.
+   */
+  java.lang.String getIncludeHttpHeaders(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP request headers (by name) to be used in the cache key.
+   * </pre>
+   *
+   * <code>repeated string include_http_headers = 2489606;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeHttpHeaders at the given index.
+   */
+  com.google.protobuf.ByteString getIncludeHttpHeadersBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+   * </pre>
+   *
+   * <code>repeated string include_named_cookies = 87316530;</code>
+   *
+   * @return A list containing the includeNamedCookies.
+   */
+  java.util.List<java.lang.String> getIncludeNamedCookiesList();
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+   * </pre>
+   *
+   * <code>repeated string include_named_cookies = 87316530;</code>
+   *
+   * @return The count of includeNamedCookies.
+   */
+  int getIncludeNamedCookiesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+   * </pre>
+   *
+   * <code>repeated string include_named_cookies = 87316530;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeNamedCookies at the given index.
+   */
+  java.lang.String getIncludeNamedCookies(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+   * </pre>
+   *
+   * <code>repeated string include_named_cookies = 87316530;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeNamedCookies at the given index.
+   */
+  com.google.protobuf.ByteString getIncludeNamedCookiesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * If true, http and https requests will be cached separately.
    * </pre>
    *

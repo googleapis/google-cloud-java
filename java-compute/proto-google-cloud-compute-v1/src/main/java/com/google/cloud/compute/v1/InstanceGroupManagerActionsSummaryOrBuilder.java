@@ -227,6 +227,106 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+   * </pre>
+   *
+   * <code>optional int32 resuming = 201100714;</code>
+   *
+   * @return Whether the resuming field is set.
+   */
+  boolean hasResuming();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+   * </pre>
+   *
+   * <code>optional int32 resuming = 201100714;</code>
+   *
+   * @return The resuming.
+   */
+  int getResuming();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+   * </pre>
+   *
+   * <code>optional int32 starting = 243064896;</code>
+   *
+   * @return Whether the starting field is set.
+   */
+  boolean hasStarting();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+   * </pre>
+   *
+   * <code>optional int32 starting = 243064896;</code>
+   *
+   * @return The starting.
+   */
+  int getStarting();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+   * </pre>
+   *
+   * <code>optional int32 stopping = 105035892;</code>
+   *
+   * @return Whether the stopping field is set.
+   */
+  boolean hasStopping();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+   * </pre>
+   *
+   * <code>optional int32 stopping = 105035892;</code>
+   *
+   * @return The stopping.
+   */
+  int getStopping();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+   * </pre>
+   *
+   * <code>optional int32 suspending = 29113894;</code>
+   *
+   * @return Whether the suspending field is set.
+   */
+  boolean hasSuspending();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+   * </pre>
+   *
+   * <code>optional int32 suspending = 29113894;</code>
+   *
+   * @return The suspending.
+   */
+  int getSuspending();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
    * </pre>
    *

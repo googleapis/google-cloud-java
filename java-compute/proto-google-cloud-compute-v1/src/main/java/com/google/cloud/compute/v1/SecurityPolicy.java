@@ -45,6 +45,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     rules_ = java.util.Collections.emptyList();
     selfLink_ = "";
+    type_ = "";
   }
 
   @java.lang.Override
@@ -97,6 +98,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
               name_ = s;
               break;
             }
+          case 28604882:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000400;
+              type_ = s;
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -106,9 +114,9 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             }
           case 870991802:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
                 rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.SecurityPolicyRule>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000200;
               }
               rules_.add(
                   input.readMessage(
@@ -168,8 +176,26 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               selfLink_ = s;
+              break;
+            }
+          case -142912806:
+            {
+              com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.Builder subBuilder =
+                  null;
+              if (((bitField0_ & 0x00000100) != 0)) {
+                subBuilder = recaptchaOptionsConfig_.toBuilder();
+              }
+              recaptchaOptionsConfig_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(recaptchaOptionsConfig_);
+                recaptchaOptionsConfig_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000100;
               break;
             }
           default:
@@ -186,7 +212,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
         rules_ = java.util.Collections.unmodifiableList(rules_);
       }
       this.unknownFields = unknownFields.build();
@@ -207,6 +233,131 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.SecurityPolicy.class,
             com.google.cloud.compute.v1.SecurityPolicy.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.SecurityPolicy.Type}
+   */
+  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TYPE = 0;</code>
+     */
+    UNDEFINED_TYPE(0),
+    /** <code>CLOUD_ARMOR = 260640373;</code> */
+    CLOUD_ARMOR(260640373),
+    /** <code>CLOUD_ARMOR_EDGE = 250728775;</code> */
+    CLOUD_ARMOR_EDGE(250728775),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_TYPE_VALUE = 0;
+    /** <code>CLOUD_ARMOR = 260640373;</code> */
+    public static final int CLOUD_ARMOR_VALUE = 260640373;
+    /** <code>CLOUD_ARMOR_EDGE = 250728775;</code> */
+    public static final int CLOUD_ARMOR_EDGE_VALUE = 250728775;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_TYPE;
+        case 260640373:
+          return CLOUD_ARMOR;
+        case 250728775:
+          return CLOUD_ARMOR_EDGE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+          public Type findValueByNumber(int number) {
+            return Type.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.SecurityPolicy.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.SecurityPolicy.Type)
   }
 
   private int bitField0_;
@@ -644,6 +795,46 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RECAPTCHA_OPTIONS_CONFIG_FIELD_NUMBER = 519006811;
+  private com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptchaOptionsConfig_;
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+   * </code>
+   *
+   * @return Whether the recaptchaOptionsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRecaptchaOptionsConfig() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+   * </code>
+   *
+   * @return The recaptchaOptionsConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig
+      getRecaptchaOptionsConfig() {
+    return recaptchaOptionsConfig_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.getDefaultInstance()
+        : recaptchaOptionsConfig_;
+  }
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfigOrBuilder
+      getRecaptchaOptionsConfigOrBuilder() {
+    return recaptchaOptionsConfig_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.getDefaultInstance()
+        : recaptchaOptionsConfig_;
+  }
+
   public static final int RULES_FIELD_NUMBER = 108873975;
   private java.util.List<com.google.cloud.compute.v1.SecurityPolicyRule> rules_;
   /**
@@ -728,7 +919,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -777,6 +968,73 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int TYPE_FIELD_NUMBER = 3575610;
+  private volatile java.lang.Object type_;
+  /**
+   *
+   *
+   * <pre>
+   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return The bytes for type.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -800,6 +1058,9 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
@@ -818,8 +1079,11 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(449276352, getAdvancedOptionsConfig());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(519006811, getRecaptchaOptionsConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -838,6 +1102,9 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
@@ -862,8 +1129,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               449276352, getAdvancedOptionsConfig());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              519006811, getRecaptchaOptionsConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -913,10 +1185,18 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
     }
+    if (hasRecaptchaOptionsConfig() != other.hasRecaptchaOptionsConfig()) return false;
+    if (hasRecaptchaOptionsConfig()) {
+      if (!getRecaptchaOptionsConfig().equals(other.getRecaptchaOptionsConfig())) return false;
+    }
     if (!getRulesList().equals(other.getRulesList())) return false;
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (!getType().equals(other.getType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -961,6 +1241,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
     }
+    if (hasRecaptchaOptionsConfig()) {
+      hash = (37 * hash) + RECAPTCHA_OPTIONS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRecaptchaOptionsConfig().hashCode();
+    }
     if (getRulesCount() > 0) {
       hash = (37 * hash) + RULES_FIELD_NUMBER;
       hash = (53 * hash) + getRulesList().hashCode();
@@ -968,6 +1252,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1111,6 +1399,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAdaptiveProtectionConfigFieldBuilder();
         getAdvancedOptionsConfigFieldBuilder();
+        getRecaptchaOptionsConfigFieldBuilder();
         getRulesFieldBuilder();
       }
     }
@@ -1142,14 +1431,22 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000040);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
+      if (recaptchaOptionsConfigBuilder_ == null) {
+        recaptchaOptionsConfig_ = null;
+      } else {
+        recaptchaOptionsConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
       } else {
         rulesBuilder_.clear();
       }
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
+      type_ = "";
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1219,19 +1516,31 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000080;
       }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        if (recaptchaOptionsConfigBuilder_ == null) {
+          result.recaptchaOptionsConfig_ = recaptchaOptionsConfig_;
+        } else {
+          result.recaptchaOptionsConfig_ = recaptchaOptionsConfigBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000100;
+      }
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        to_bitField0_ |= 0x00000100;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000200;
       }
       result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
+      result.type_ = type_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1316,11 +1625,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         name_ = other.name_;
         onChanged();
       }
+      if (other.hasRecaptchaOptionsConfig()) {
+        mergeRecaptchaOptionsConfig(other.getRecaptchaOptionsConfig());
+      }
       if (rulesBuilder_ == null) {
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -1333,7 +1645,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -1344,8 +1656,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         selfLink_ = other.selfLink_;
+        onChanged();
+      }
+      if (other.hasType()) {
+        bitField0_ |= 0x00000800;
+        type_ = other.type_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2368,13 +2685,173 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig
+        recaptchaOptionsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig,
+            com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfigOrBuilder>
+        recaptchaOptionsConfigBuilder_;
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+     * </code>
+     *
+     * @return Whether the recaptchaOptionsConfig field is set.
+     */
+    public boolean hasRecaptchaOptionsConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+     * </code>
+     *
+     * @return The recaptchaOptionsConfig.
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig
+        getRecaptchaOptionsConfig() {
+      if (recaptchaOptionsConfigBuilder_ == null) {
+        return recaptchaOptionsConfig_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.getDefaultInstance()
+            : recaptchaOptionsConfig_;
+      } else {
+        return recaptchaOptionsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+     * </code>
+     */
+    public Builder setRecaptchaOptionsConfig(
+        com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig value) {
+      if (recaptchaOptionsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        recaptchaOptionsConfig_ = value;
+        onChanged();
+      } else {
+        recaptchaOptionsConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+     * </code>
+     */
+    public Builder setRecaptchaOptionsConfig(
+        com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.Builder builderForValue) {
+      if (recaptchaOptionsConfigBuilder_ == null) {
+        recaptchaOptionsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        recaptchaOptionsConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+     * </code>
+     */
+    public Builder mergeRecaptchaOptionsConfig(
+        com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig value) {
+      if (recaptchaOptionsConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && recaptchaOptionsConfig_ != null
+            && recaptchaOptionsConfig_
+                != com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig
+                    .getDefaultInstance()) {
+          recaptchaOptionsConfig_ =
+              com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.newBuilder(
+                      recaptchaOptionsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          recaptchaOptionsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        recaptchaOptionsConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+     * </code>
+     */
+    public Builder clearRecaptchaOptionsConfig() {
+      if (recaptchaOptionsConfigBuilder_ == null) {
+        recaptchaOptionsConfig_ = null;
+        onChanged();
+      } else {
+        recaptchaOptionsConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.Builder
+        getRecaptchaOptionsConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getRecaptchaOptionsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfigOrBuilder
+        getRecaptchaOptionsConfigOrBuilder() {
+      if (recaptchaOptionsConfigBuilder_ != null) {
+        return recaptchaOptionsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return recaptchaOptionsConfig_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.getDefaultInstance()
+            : recaptchaOptionsConfig_;
+      }
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig,
+            com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfigOrBuilder>
+        getRecaptchaOptionsConfigFieldBuilder() {
+      if (recaptchaOptionsConfigBuilder_ == null) {
+        recaptchaOptionsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig,
+                com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.Builder,
+                com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfigOrBuilder>(
+                getRecaptchaOptionsConfig(), getParentForChildren(), isClean());
+        recaptchaOptionsConfig_ = null;
+      }
+      return recaptchaOptionsConfigBuilder_;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.SecurityPolicyRule> rules_ =
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.SecurityPolicyRule>(rules_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -2590,7 +3067,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -2712,7 +3189,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SecurityPolicyRule,
                 com.google.cloud.compute.v1.SecurityPolicyRule.Builder,
                 com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -2731,7 +3208,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2793,7 +3270,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2810,7 +3287,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2832,8 +3309,134 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       selfLink_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object type_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @return Whether the type field is set.
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @return The type.
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000800;
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      type_ = getDefaultInstance().getType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000800;
+      type_ = value;
       onChanged();
       return this;
     }

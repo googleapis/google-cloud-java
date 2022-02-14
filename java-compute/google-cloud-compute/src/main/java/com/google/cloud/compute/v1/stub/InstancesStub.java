@@ -51,6 +51,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
+import com.google.cloud.compute.v1.ResumeInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
 import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceRequest;
 import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceResponse;
@@ -72,6 +73,7 @@ import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceRequest;
 import com.google.cloud.compute.v1.StartInstanceRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceRequest;
 import com.google.cloud.compute.v1.StopInstanceRequest;
+import com.google.cloud.compute.v1.SuspendInstanceRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsInstanceRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceRequest;
@@ -243,6 +245,14 @@ public abstract class InstancesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: resetCallable()");
   }
 
+  public OperationCallable<ResumeInstanceRequest, Operation, Operation> resumeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: resumeOperationCallable()");
+  }
+
+  public UnaryCallable<ResumeInstanceRequest, Operation> resumeCallable() {
+    throw new UnsupportedOperationException("Not implemented: resumeCallable()");
+  }
+
   public UnaryCallable<
           SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
       sendDiagnosticInterruptCallable() {
@@ -398,6 +408,15 @@ public abstract class InstancesStub implements BackgroundResource {
 
   public UnaryCallable<StopInstanceRequest, Operation> stopCallable() {
     throw new UnsupportedOperationException("Not implemented: stopCallable()");
+  }
+
+  public OperationCallable<SuspendInstanceRequest, Operation, Operation>
+      suspendOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: suspendOperationCallable()");
+  }
+
+  public UnaryCallable<SuspendInstanceRequest, Operation> suspendCallable() {
+    throw new UnsupportedOperationException("Not implemented: suspendCallable()");
   }
 
   public UnaryCallable<TestIamPermissionsInstanceRequest, TestPermissionsResponse>

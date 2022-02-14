@@ -75,9 +75,15 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
               enableNestedVirtualization_ = input.readBool();
               break;
             }
-          case -1474073928:
+          case -1619081952:
             {
               bitField0_ |= 0x00000002;
+              enableUefiNetworking_ = input.readBool();
+              break;
+            }
+          case -1474073928:
+            {
+              bitField0_ |= 0x00000004;
               threadsPerCore_ = input.readInt32();
               break;
             }
@@ -149,6 +155,39 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     return enableNestedVirtualization_;
   }
 
+  public static final int ENABLE_UEFI_NETWORKING_FIELD_NUMBER = 334485668;
+  private boolean enableUefiNetworking_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to enable UEFI networking for instance creation.
+   * </pre>
+   *
+   * <code>optional bool enable_uefi_networking = 334485668;</code>
+   *
+   * @return Whether the enableUefiNetworking field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableUefiNetworking() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether to enable UEFI networking for instance creation.
+   * </pre>
+   *
+   * <code>optional bool enable_uefi_networking = 334485668;</code>
+   *
+   * @return The enableUefiNetworking.
+   */
+  @java.lang.Override
+  public boolean getEnableUefiNetworking() {
+    return enableUefiNetworking_;
+  }
+
   public static final int THREADS_PER_CORE_FIELD_NUMBER = 352611671;
   private int threadsPerCore_;
   /**
@@ -164,7 +203,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasThreadsPerCore() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -200,6 +239,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       output.writeBool(16639365, enableNestedVirtualization_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(334485668, enableUefiNetworking_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt32(352611671, threadsPerCore_);
     }
     unknownFields.writeTo(output);
@@ -217,6 +259,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
               16639365, enableNestedVirtualization_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(334485668, enableUefiNetworking_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(352611671, threadsPerCore_);
     }
     size += unknownFields.getSerializedSize();
@@ -239,6 +285,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     if (hasEnableNestedVirtualization()) {
       if (getEnableNestedVirtualization() != other.getEnableNestedVirtualization()) return false;
     }
+    if (hasEnableUefiNetworking() != other.hasEnableUefiNetworking()) return false;
+    if (hasEnableUefiNetworking()) {
+      if (getEnableUefiNetworking() != other.getEnableUefiNetworking()) return false;
+    }
     if (hasThreadsPerCore() != other.hasThreadsPerCore()) return false;
     if (hasThreadsPerCore()) {
       if (getThreadsPerCore() != other.getThreadsPerCore()) return false;
@@ -258,6 +308,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       hash = (37 * hash) + ENABLE_NESTED_VIRTUALIZATION_FIELD_NUMBER;
       hash =
           (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableNestedVirtualization());
+    }
+    if (hasEnableUefiNetworking()) {
+      hash = (37 * hash) + ENABLE_UEFI_NETWORKING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableUefiNetworking());
     }
     if (hasThreadsPerCore()) {
       hash = (37 * hash) + THREADS_PER_CORE_FIELD_NUMBER;
@@ -410,8 +464,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       super.clear();
       enableNestedVirtualization_ = false;
       bitField0_ = (bitField0_ & ~0x00000001);
-      threadsPerCore_ = 0;
+      enableUefiNetworking_ = false;
       bitField0_ = (bitField0_ & ~0x00000002);
+      threadsPerCore_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -446,8 +502,12 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.threadsPerCore_ = threadsPerCore_;
+        result.enableUefiNetworking_ = enableUefiNetworking_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.threadsPerCore_ = threadsPerCore_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -502,6 +562,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
         return this;
       if (other.hasEnableNestedVirtualization()) {
         setEnableNestedVirtualization(other.getEnableNestedVirtualization());
+      }
+      if (other.hasEnableUefiNetworking()) {
+        setEnableUefiNetworking(other.getEnableUefiNetworking());
       }
       if (other.hasThreadsPerCore()) {
         setThreadsPerCore(other.getThreadsPerCore());
@@ -605,6 +668,73 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       return this;
     }
 
+    private boolean enableUefiNetworking_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to enable UEFI networking for instance creation.
+     * </pre>
+     *
+     * <code>optional bool enable_uefi_networking = 334485668;</code>
+     *
+     * @return Whether the enableUefiNetworking field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableUefiNetworking() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to enable UEFI networking for instance creation.
+     * </pre>
+     *
+     * <code>optional bool enable_uefi_networking = 334485668;</code>
+     *
+     * @return The enableUefiNetworking.
+     */
+    @java.lang.Override
+    public boolean getEnableUefiNetworking() {
+      return enableUefiNetworking_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to enable UEFI networking for instance creation.
+     * </pre>
+     *
+     * <code>optional bool enable_uefi_networking = 334485668;</code>
+     *
+     * @param value The enableUefiNetworking to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableUefiNetworking(boolean value) {
+      bitField0_ |= 0x00000002;
+      enableUefiNetworking_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to enable UEFI networking for instance creation.
+     * </pre>
+     *
+     * <code>optional bool enable_uefi_networking = 334485668;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableUefiNetworking() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      enableUefiNetworking_ = false;
+      onChanged();
+      return this;
+    }
+
     private int threadsPerCore_;
     /**
      *
@@ -619,7 +749,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public boolean hasThreadsPerCore() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -649,7 +779,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setThreadsPerCore(int value) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       threadsPerCore_ = value;
       onChanged();
       return this;
@@ -666,7 +796,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearThreadsPerCore() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       threadsPerCore_ = 0;
       onChanged();
       return this;

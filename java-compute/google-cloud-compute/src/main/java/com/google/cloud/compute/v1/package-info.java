@@ -447,6 +447,20 @@
  * }
  * }</pre>
  *
+ * <p>======================= MachineImagesClient =======================
+ *
+ * <p>Service Description: The MachineImages API.
+ *
+ * <p>Sample for MachineImagesClient:
+ *
+ * <pre>{@code
+ * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
+ *   String project = "project-309310695";
+ *   String machineImage = "machineImage1817774420";
+ *   MachineImage response = machineImagesClient.get(project, machineImage);
+ * }
+ * }</pre>
+ *
  * <p>======================= MachineTypesClient =======================
  *
  * <p>Service Description: The MachineTypes API.

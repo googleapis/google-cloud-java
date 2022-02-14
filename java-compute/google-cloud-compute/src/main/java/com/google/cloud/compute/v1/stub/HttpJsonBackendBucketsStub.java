@@ -44,6 +44,7 @@ import com.google.cloud.compute.v1.ListBackendBucketsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchBackendBucketRequest;
+import com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendBucketRequest;
 import com.google.cloud.compute.v1.UpdateBackendBucketRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -414,6 +415,62 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<SetEdgeSecurityPolicyBackendBucketRequest, Operation>
+      setEdgeSecurityPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetEdgeSecurityPolicyBackendBucketRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.BackendBuckets/SetEdgeSecurityPolicy")
+              .setHttpMethod(HttpMethods.POST)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<SetEdgeSecurityPolicyBackendBucketRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/backendBuckets/{backendBucket}/setEdgeSecurityPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetEdgeSecurityPolicyBackendBucketRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backendBucket", request.getBackendBucket());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetEdgeSecurityPolicyBackendBucketRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "securityPolicyReferenceResource",
+                                      request.getSecurityPolicyReferenceResource()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetEdgeSecurityPolicyBackendBucketRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<UpdateBackendBucketRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateBackendBucketRequest, Operation>newBuilder()
@@ -488,6 +545,10 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   private final UnaryCallable<PatchBackendBucketRequest, Operation> patchCallable;
   private final OperationCallable<PatchBackendBucketRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<SetEdgeSecurityPolicyBackendBucketRequest, Operation>
+      setEdgeSecurityPolicyCallable;
+  private final OperationCallable<SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
+      setEdgeSecurityPolicyOperationCallable;
   private final UnaryCallable<UpdateBackendBucketRequest, Operation> updateCallable;
   private final OperationCallable<UpdateBackendBucketRequest, Operation, Operation>
       updateOperationCallable;
@@ -574,6 +635,12 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<SetEdgeSecurityPolicyBackendBucketRequest, Operation>
+        setEdgeSecurityPolicyTransportSettings =
+            HttpJsonCallSettings.<SetEdgeSecurityPolicyBackendBucketRequest, Operation>newBuilder()
+                .setMethodDescriptor(setEdgeSecurityPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<UpdateBackendBucketRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateBackendBucketRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
@@ -636,6 +703,17 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setEdgeSecurityPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setEdgeSecurityPolicyTransportSettings,
+            settings.setEdgeSecurityPolicySettings(),
+            clientContext);
+    this.setEdgeSecurityPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            setEdgeSecurityPolicyTransportSettings,
+            settings.setEdgeSecurityPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -660,6 +738,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(setEdgeSecurityPolicyMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
@@ -733,6 +812,18 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   public OperationCallable<PatchBackendBucketRequest, Operation, Operation>
       patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetEdgeSecurityPolicyBackendBucketRequest, Operation>
+      setEdgeSecurityPolicyCallable() {
+    return setEdgeSecurityPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
+      setEdgeSecurityPolicyOperationCallable() {
+    return setEdgeSecurityPolicyOperationCallable;
   }
 
   @Override

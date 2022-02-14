@@ -43,6 +43,7 @@ import com.google.cloud.compute.v1.InsertRegionCommitmentRequest;
 import com.google.cloud.compute.v1.ListRegionCommitmentsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.UpdateRegionCommitmentRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -263,6 +264,67 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateRegionCommitmentRequest, Operation>
+      updateMethodDescriptor =
+          ApiMethodDescriptor.<UpdateRegionCommitmentRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionCommitments/Update")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateRegionCommitmentRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/commitments/{commitment}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRegionCommitmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "commitment", request.getCommitment());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRegionCommitmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasPaths()) {
+                              serializer.putQueryParam(fields, "paths", request.getPaths());
+                            }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            if (request.hasUpdateMask()) {
+                              serializer.putQueryParam(
+                                  fields, "updateMask", request.getUpdateMask());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("commitmentResource", request.getCommitmentResource()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateRegionCommitmentRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<AggregatedListRegionCommitmentsRequest, CommitmentAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListRegionCommitmentsRequest, AggregatedListPagedResponse>
@@ -273,6 +335,9 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
       insertOperationCallable;
   private final UnaryCallable<ListRegionCommitmentsRequest, CommitmentList> listCallable;
   private final UnaryCallable<ListRegionCommitmentsRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<UpdateRegionCommitmentRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateRegionCommitmentRequest, Operation, Operation>
+      updateOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -341,6 +406,11 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<UpdateRegionCommitmentRequest, Operation> updateTransportSettings =
+        HttpJsonCallSettings.<UpdateRegionCommitmentRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
@@ -366,6 +436,15 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.updateCallable =
+        callableFactory.createUnaryCallable(
+            updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -378,6 +457,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -417,6 +497,17 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
   @Override
   public UnaryCallable<ListRegionCommitmentsRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRegionCommitmentRequest, Operation> updateCallable() {
+    return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateRegionCommitmentRequest, Operation, Operation>
+      updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

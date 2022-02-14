@@ -102,6 +102,17 @@ public class RegionCommitmentsSettings extends ClientSettings<RegionCommitmentsS
     return ((RegionCommitmentsStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to update. */
+  public UnaryCallSettings<UpdateRegionCommitmentRequest, Operation> updateSettings() {
+    return ((RegionCommitmentsStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateRegionCommitmentRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((RegionCommitmentsStubSettings) getStubSettings()).updateOperationSettings();
+  }
+
   public static final RegionCommitmentsSettings create(RegionCommitmentsStubSettings stub)
       throws IOException {
     return new RegionCommitmentsSettings.Builder(stub.toBuilder()).build();
@@ -230,6 +241,17 @@ public class RegionCommitmentsSettings extends ClientSettings<RegionCommitmentsS
             ListRegionCommitmentsRequest, CommitmentList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public UnaryCallSettings.Builder<UpdateRegionCommitmentRequest, Operation> updateSettings() {
+      return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateRegionCommitmentRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     @Override

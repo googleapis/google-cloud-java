@@ -171,6 +171,43 @@ public interface InsertInstanceRequestOrBuilder
    *
    *
    * <pre>
+   * Specifies the machine image to use to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to a machine image: - https://www.googleapis.com/compute/v1/projects/project/global/global /machineImages/machineImage - projects/project/global/global/machineImages/machineImage - global/machineImages/machineImage
+   * </pre>
+   *
+   * <code>optional string source_machine_image = 21769791;</code>
+   *
+   * @return Whether the sourceMachineImage field is set.
+   */
+  boolean hasSourceMachineImage();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the machine image to use to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to a machine image: - https://www.googleapis.com/compute/v1/projects/project/global/global /machineImages/machineImage - projects/project/global/global/machineImages/machineImage - global/machineImages/machineImage
+   * </pre>
+   *
+   * <code>optional string source_machine_image = 21769791;</code>
+   *
+   * @return The sourceMachineImage.
+   */
+  java.lang.String getSourceMachineImage();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the machine image to use to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to a machine image: - https://www.googleapis.com/compute/v1/projects/project/global/global /machineImages/machineImage - projects/project/global/global/machineImages/machineImage - global/machineImages/machineImage
+   * </pre>
+   *
+   * <code>optional string source_machine_image = 21769791;</code>
+   *
+   * @return The bytes for sourceMachineImage.
+   */
+  com.google.protobuf.ByteString getSourceMachineImageBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the zone for this request.
    * </pre>
    *

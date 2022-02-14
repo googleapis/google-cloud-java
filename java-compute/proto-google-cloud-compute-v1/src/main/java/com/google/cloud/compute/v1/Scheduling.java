@@ -38,9 +38,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Scheduling() {
+    instanceTerminationAction_ = "";
     locationHint_ = "";
     nodeAffinities_ = java.util.Collections.emptyList();
     onHostMaintenance_ = "";
+    provisioningModel_ = "";
   }
 
   @java.lang.Override
@@ -73,29 +75,43 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
+          case 3955386:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              provisioningModel_ = s;
+              break;
+            }
           case 516934370:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               onHostMaintenance_ = s;
+              break;
+            }
+          case 859045338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              instanceTerminationAction_ = s;
               break;
             }
           case -1757113896:
             {
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               minNodeCpus_ = input.readInt32();
               break;
             }
           case -1701341944:
             {
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               preemptible_ = input.readBool();
               break;
             }
           case -1490811254:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               locationHint_ = s;
               break;
             }
@@ -107,10 +123,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             }
           case -600567526:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 nodeAffinities_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.SchedulingNodeAffinity>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000010;
               }
               nodeAffinities_.add(
                   input.readMessage(
@@ -132,7 +148,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         nodeAffinities_ = java.util.Collections.unmodifiableList(nodeAffinities_);
       }
       this.unknownFields = unknownFields.build();
@@ -159,7 +175,189 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Specifies the termination action for the instance.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Scheduling.InstanceTerminationAction}
+   */
+  public enum InstanceTerminationAction implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_INSTANCE_TERMINATION_ACTION = 0;</code>
+     */
+    UNDEFINED_INSTANCE_TERMINATION_ACTION(0),
+    /**
+     *
+     *
+     * <pre>
+     * Delete the VM.
+     * </pre>
+     *
+     * <code>DELETE = 402225579;</code>
+     */
+    DELETE(402225579),
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>INSTANCE_TERMINATION_ACTION_UNSPECIFIED = 92954803;</code>
+     */
+    INSTANCE_TERMINATION_ACTION_UNSPECIFIED(92954803),
+    /**
+     *
+     *
+     * <pre>
+     * Stop the VM without storing in-memory content. default action.
+     * </pre>
+     *
+     * <code>STOP = 2555906;</code>
+     */
+    STOP(2555906),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_INSTANCE_TERMINATION_ACTION = 0;</code>
+     */
+    public static final int UNDEFINED_INSTANCE_TERMINATION_ACTION_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Delete the VM.
+     * </pre>
+     *
+     * <code>DELETE = 402225579;</code>
+     */
+    public static final int DELETE_VALUE = 402225579;
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>INSTANCE_TERMINATION_ACTION_UNSPECIFIED = 92954803;</code>
+     */
+    public static final int INSTANCE_TERMINATION_ACTION_UNSPECIFIED_VALUE = 92954803;
+    /**
+     *
+     *
+     * <pre>
+     * Stop the VM without storing in-memory content. default action.
+     * </pre>
+     *
+     * <code>STOP = 2555906;</code>
+     */
+    public static final int STOP_VALUE = 2555906;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static InstanceTerminationAction valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static InstanceTerminationAction forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_INSTANCE_TERMINATION_ACTION;
+        case 402225579:
+          return DELETE;
+        case 92954803:
+          return INSTANCE_TERMINATION_ACTION_UNSPECIFIED;
+        case 2555906:
+          return STOP;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<InstanceTerminationAction>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<InstanceTerminationAction>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<InstanceTerminationAction>() {
+              public InstanceTerminationAction findValueByNumber(int number) {
+                return InstanceTerminationAction.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Scheduling.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final InstanceTerminationAction[] VALUES = values();
+
+    public static InstanceTerminationAction valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private InstanceTerminationAction(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Scheduling.InstanceTerminationAction)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Scheduling.OnHostMaintenance}
@@ -290,7 +488,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Scheduling.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.Scheduling.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final OnHostMaintenance[] VALUES = values();
@@ -313,6 +511,166 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Scheduling.OnHostMaintenance)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the provisioning model of the instance.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Scheduling.ProvisioningModel}
+   */
+  public enum ProvisioningModel implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PROVISIONING_MODEL = 0;</code>
+     */
+    UNDEFINED_PROVISIONING_MODEL(0),
+    /**
+     *
+     *
+     * <pre>
+     * Heavily discounted, no guaranteed runtime.
+     * </pre>
+     *
+     * <code>SPOT = 2552066;</code>
+     */
+    SPOT(2552066),
+    /**
+     *
+     *
+     * <pre>
+     * Standard provisioning with user controlled runtime, no discounts.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
+    STANDARD(484642493),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PROVISIONING_MODEL = 0;</code>
+     */
+    public static final int UNDEFINED_PROVISIONING_MODEL_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Heavily discounted, no guaranteed runtime.
+     * </pre>
+     *
+     * <code>SPOT = 2552066;</code>
+     */
+    public static final int SPOT_VALUE = 2552066;
+    /**
+     *
+     *
+     * <pre>
+     * Standard provisioning with user controlled runtime, no discounts.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
+    public static final int STANDARD_VALUE = 484642493;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ProvisioningModel valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ProvisioningModel forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_PROVISIONING_MODEL;
+        case 2552066:
+          return SPOT;
+        case 484642493:
+          return STANDARD;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ProvisioningModel>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ProvisioningModel>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ProvisioningModel>() {
+              public ProvisioningModel findValueByNumber(int number) {
+                return ProvisioningModel.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Scheduling.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final ProvisioningModel[] VALUES = values();
+
+    public static ProvisioningModel valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ProvisioningModel(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Scheduling.ProvisioningModel)
   }
 
   private int bitField0_;
@@ -349,6 +707,73 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     return automaticRestart_;
   }
 
+  public static final int INSTANCE_TERMINATION_ACTION_FIELD_NUMBER = 107380667;
+  private volatile java.lang.Object instanceTerminationAction_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the termination action for the instance.
+   * Check the InstanceTerminationAction enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string instance_termination_action = 107380667;</code>
+   *
+   * @return Whether the instanceTerminationAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceTerminationAction() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the termination action for the instance.
+   * Check the InstanceTerminationAction enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string instance_termination_action = 107380667;</code>
+   *
+   * @return The instanceTerminationAction.
+   */
+  @java.lang.Override
+  public java.lang.String getInstanceTerminationAction() {
+    java.lang.Object ref = instanceTerminationAction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      instanceTerminationAction_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the termination action for the instance.
+   * Check the InstanceTerminationAction enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string instance_termination_action = 107380667;</code>
+   *
+   * @return The bytes for instanceTerminationAction.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInstanceTerminationActionBytes() {
+    java.lang.Object ref = instanceTerminationAction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      instanceTerminationAction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int LOCATION_HINT_FIELD_NUMBER = 350519505;
   private volatile java.lang.Object locationHint_;
   /**
@@ -364,7 +789,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLocationHint() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -428,7 +853,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMinNodeCpus() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -528,7 +953,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
    * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
@@ -538,13 +963,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasOnHostMaintenance() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
    * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
@@ -568,7 +993,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
    * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
@@ -604,7 +1029,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPreemptible() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -622,6 +1047,73 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     return preemptible_;
   }
 
+  public static final int PROVISIONING_MODEL_FIELD_NUMBER = 494423;
+  private volatile java.lang.Object provisioningModel_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the provisioning model of the instance.
+   * Check the ProvisioningModel enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string provisioning_model = 494423;</code>
+   *
+   * @return Whether the provisioningModel field is set.
+   */
+  @java.lang.Override
+  public boolean hasProvisioningModel() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the provisioning model of the instance.
+   * Check the ProvisioningModel enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string provisioning_model = 494423;</code>
+   *
+   * @return The provisioningModel.
+   */
+  @java.lang.Override
+  public java.lang.String getProvisioningModel() {
+    java.lang.Object ref = provisioningModel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      provisioningModel_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the provisioning model of the instance.
+   * Check the ProvisioningModel enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string provisioning_model = 494423;</code>
+   *
+   * @return The bytes for provisioningModel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getProvisioningModelBytes() {
+    java.lang.Object ref = provisioningModel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      provisioningModel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -636,16 +1128,23 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 64616796, onHostMaintenance_);
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeInt32(317231675, minNodeCpus_);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 494423, provisioningModel_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeBool(324203169, preemptible_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 64616796, onHostMaintenance_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 107380667, instanceTerminationAction_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt32(317231675, minNodeCpus_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeBool(324203169, preemptible_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 350519505, locationHint_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -663,17 +1162,25 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(494423, provisioningModel_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(64616796, onHostMaintenance_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              107380667, instanceTerminationAction_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(317231675, minNodeCpus_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(324203169, preemptible_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(350519505, locationHint_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -703,6 +1210,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasAutomaticRestart()) {
       if (getAutomaticRestart() != other.getAutomaticRestart()) return false;
     }
+    if (hasInstanceTerminationAction() != other.hasInstanceTerminationAction()) return false;
+    if (hasInstanceTerminationAction()) {
+      if (!getInstanceTerminationAction().equals(other.getInstanceTerminationAction()))
+        return false;
+    }
     if (hasLocationHint() != other.hasLocationHint()) return false;
     if (hasLocationHint()) {
       if (!getLocationHint().equals(other.getLocationHint())) return false;
@@ -720,6 +1232,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasPreemptible()) {
       if (getPreemptible() != other.getPreemptible()) return false;
     }
+    if (hasProvisioningModel() != other.hasProvisioningModel()) return false;
+    if (hasProvisioningModel()) {
+      if (!getProvisioningModel().equals(other.getProvisioningModel())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -734,6 +1250,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasAutomaticRestart()) {
       hash = (37 * hash) + AUTOMATIC_RESTART_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutomaticRestart());
+    }
+    if (hasInstanceTerminationAction()) {
+      hash = (37 * hash) + INSTANCE_TERMINATION_ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceTerminationAction().hashCode();
     }
     if (hasLocationHint()) {
       hash = (37 * hash) + LOCATION_HINT_FIELD_NUMBER;
@@ -754,6 +1274,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasPreemptible()) {
       hash = (37 * hash) + PREEMPTIBLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreemptible());
+    }
+    if (hasProvisioningModel()) {
+      hash = (37 * hash) + PROVISIONING_MODEL_FIELD_NUMBER;
+      hash = (53 * hash) + getProvisioningModel().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -904,20 +1428,24 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       automaticRestart_ = false;
       bitField0_ = (bitField0_ & ~0x00000001);
-      locationHint_ = "";
+      instanceTerminationAction_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      minNodeCpus_ = 0;
+      locationHint_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
+      minNodeCpus_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (nodeAffinitiesBuilder_ == null) {
         nodeAffinities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         nodeAffinitiesBuilder_.clear();
       }
       onHostMaintenance_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
-      preemptible_ = false;
       bitField0_ = (bitField0_ & ~0x00000020);
+      preemptible_ = false;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      provisioningModel_ = "";
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -954,28 +1482,36 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
-      result.locationHint_ = locationHint_;
+      result.instanceTerminationAction_ = instanceTerminationAction_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.minNodeCpus_ = minNodeCpus_;
         to_bitField0_ |= 0x00000004;
       }
+      result.locationHint_ = locationHint_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.minNodeCpus_ = minNodeCpus_;
+        to_bitField0_ |= 0x00000008;
+      }
       if (nodeAffinitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           nodeAffinities_ = java.util.Collections.unmodifiableList(nodeAffinities_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.nodeAffinities_ = nodeAffinities_;
       } else {
         result.nodeAffinities_ = nodeAffinitiesBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
-      result.onHostMaintenance_ = onHostMaintenance_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.preemptible_ = preemptible_;
         to_bitField0_ |= 0x00000010;
       }
+      result.onHostMaintenance_ = onHostMaintenance_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.preemptible_ = preemptible_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
+      result.provisioningModel_ = provisioningModel_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1029,8 +1565,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAutomaticRestart()) {
         setAutomaticRestart(other.getAutomaticRestart());
       }
-      if (other.hasLocationHint()) {
+      if (other.hasInstanceTerminationAction()) {
         bitField0_ |= 0x00000002;
+        instanceTerminationAction_ = other.instanceTerminationAction_;
+        onChanged();
+      }
+      if (other.hasLocationHint()) {
+        bitField0_ |= 0x00000004;
         locationHint_ = other.locationHint_;
         onChanged();
       }
@@ -1041,7 +1582,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         if (!other.nodeAffinities_.isEmpty()) {
           if (nodeAffinities_.isEmpty()) {
             nodeAffinities_ = other.nodeAffinities_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureNodeAffinitiesIsMutable();
             nodeAffinities_.addAll(other.nodeAffinities_);
@@ -1054,7 +1595,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             nodeAffinitiesBuilder_.dispose();
             nodeAffinitiesBuilder_ = null;
             nodeAffinities_ = other.nodeAffinities_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             nodeAffinitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNodeAffinitiesFieldBuilder()
@@ -1065,12 +1606,17 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasOnHostMaintenance()) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onHostMaintenance_ = other.onHostMaintenance_;
         onChanged();
       }
       if (other.hasPreemptible()) {
         setPreemptible(other.getPreemptible());
+      }
+      if (other.hasProvisioningModel()) {
+        bitField0_ |= 0x00000080;
+        provisioningModel_ = other.provisioningModel_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1170,6 +1716,132 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object instanceTerminationAction_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the termination action for the instance.
+     * Check the InstanceTerminationAction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string instance_termination_action = 107380667;</code>
+     *
+     * @return Whether the instanceTerminationAction field is set.
+     */
+    public boolean hasInstanceTerminationAction() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the termination action for the instance.
+     * Check the InstanceTerminationAction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string instance_termination_action = 107380667;</code>
+     *
+     * @return The instanceTerminationAction.
+     */
+    public java.lang.String getInstanceTerminationAction() {
+      java.lang.Object ref = instanceTerminationAction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceTerminationAction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the termination action for the instance.
+     * Check the InstanceTerminationAction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string instance_termination_action = 107380667;</code>
+     *
+     * @return The bytes for instanceTerminationAction.
+     */
+    public com.google.protobuf.ByteString getInstanceTerminationActionBytes() {
+      java.lang.Object ref = instanceTerminationAction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        instanceTerminationAction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the termination action for the instance.
+     * Check the InstanceTerminationAction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string instance_termination_action = 107380667;</code>
+     *
+     * @param value The instanceTerminationAction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstanceTerminationAction(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      instanceTerminationAction_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the termination action for the instance.
+     * Check the InstanceTerminationAction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string instance_termination_action = 107380667;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInstanceTerminationAction() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      instanceTerminationAction_ = getDefaultInstance().getInstanceTerminationAction();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the termination action for the instance.
+     * Check the InstanceTerminationAction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string instance_termination_action = 107380667;</code>
+     *
+     * @param value The bytes for instanceTerminationAction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstanceTerminationActionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      instanceTerminationAction_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object locationHint_ = "";
     /**
      *
@@ -1183,7 +1855,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the locationHint field is set.
      */
     public boolean hasLocationHint() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1245,7 +1917,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       locationHint_ = value;
       onChanged();
       return this;
@@ -1262,7 +1934,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocationHint() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       locationHint_ = getDefaultInstance().getLocationHint();
       onChanged();
       return this;
@@ -1284,7 +1956,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       locationHint_ = value;
       onChanged();
       return this;
@@ -1304,7 +1976,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMinNodeCpus() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1334,7 +2006,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMinNodeCpus(int value) {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       minNodeCpus_ = value;
       onChanged();
       return this;
@@ -1351,7 +2023,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinNodeCpus() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       minNodeCpus_ = 0;
       onChanged();
       return this;
@@ -1361,11 +2033,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNodeAffinitiesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         nodeAffinities_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.SchedulingNodeAffinity>(
                 nodeAffinities_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1595,7 +2267,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNodeAffinities() {
       if (nodeAffinitiesBuilder_ == null) {
         nodeAffinities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         nodeAffinitiesBuilder_.clear();
@@ -1729,7 +2401,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SchedulingNodeAffinity.Builder,
                 com.google.cloud.compute.v1.SchedulingNodeAffinityOrBuilder>(
                 nodeAffinities_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         nodeAffinities_ = null;
@@ -1742,7 +2414,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -1751,13 +2423,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the onHostMaintenance field is set.
      */
     public boolean hasOnHostMaintenance() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -1780,7 +2452,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -1803,7 +2475,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -1816,7 +2488,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onHostMaintenance_ = value;
       onChanged();
       return this;
@@ -1825,7 +2497,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -1834,7 +2506,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOnHostMaintenance() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onHostMaintenance_ = getDefaultInstance().getOnHostMaintenance();
       onChanged();
       return this;
@@ -1843,7 +2515,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -1857,7 +2529,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onHostMaintenance_ = value;
       onChanged();
       return this;
@@ -1877,7 +2549,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPreemptible() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1907,7 +2579,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPreemptible(boolean value) {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       preemptible_ = value;
       onChanged();
       return this;
@@ -1924,8 +2596,134 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPreemptible() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       preemptible_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object provisioningModel_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the provisioning model of the instance.
+     * Check the ProvisioningModel enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string provisioning_model = 494423;</code>
+     *
+     * @return Whether the provisioningModel field is set.
+     */
+    public boolean hasProvisioningModel() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the provisioning model of the instance.
+     * Check the ProvisioningModel enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string provisioning_model = 494423;</code>
+     *
+     * @return The provisioningModel.
+     */
+    public java.lang.String getProvisioningModel() {
+      java.lang.Object ref = provisioningModel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        provisioningModel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the provisioning model of the instance.
+     * Check the ProvisioningModel enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string provisioning_model = 494423;</code>
+     *
+     * @return The bytes for provisioningModel.
+     */
+    public com.google.protobuf.ByteString getProvisioningModelBytes() {
+      java.lang.Object ref = provisioningModel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        provisioningModel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the provisioning model of the instance.
+     * Check the ProvisioningModel enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string provisioning_model = 494423;</code>
+     *
+     * @param value The provisioningModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvisioningModel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      provisioningModel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the provisioning model of the instance.
+     * Check the ProvisioningModel enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string provisioning_model = 494423;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProvisioningModel() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      provisioningModel_ = getDefaultInstance().getProvisioningModel();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the provisioning model of the instance.
+     * Check the ProvisioningModel enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string provisioning_model = 494423;</code>
+     *
+     * @param value The bytes for provisioningModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvisioningModelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000080;
+      provisioningModel_ = value;
       onChanged();
       return this;
     }

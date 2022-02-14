@@ -1143,6 +1143,127 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Sets the edge security policy for the specified backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String backendService = "backendService-1884714623";
+   *   SecurityPolicyReference securityPolicyReferenceResource =
+   *       SecurityPolicyReference.newBuilder().build();
+   *   Operation response =
+   *       backendServicesClient
+   *           .setEdgeSecurityPolicyAsync(project, backendService, securityPolicyReferenceResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param backendService Name of the BackendService resource to which the edge security policy
+   *     should be set. The name should conform to RFC1035.
+   * @param securityPolicyReferenceResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setEdgeSecurityPolicyAsync(
+      String project,
+      String backendService,
+      SecurityPolicyReference securityPolicyReferenceResource) {
+    SetEdgeSecurityPolicyBackendServiceRequest request =
+        SetEdgeSecurityPolicyBackendServiceRequest.newBuilder()
+            .setProject(project)
+            .setBackendService(backendService)
+            .setSecurityPolicyReferenceResource(securityPolicyReferenceResource)
+            .build();
+    return setEdgeSecurityPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the edge security policy for the specified backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   SetEdgeSecurityPolicyBackendServiceRequest request =
+   *       SetEdgeSecurityPolicyBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicyReferenceResource(SecurityPolicyReference.newBuilder().build())
+   *           .build();
+   *   Operation response = backendServicesClient.setEdgeSecurityPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setEdgeSecurityPolicyAsync(
+      SetEdgeSecurityPolicyBackendServiceRequest request) {
+    return setEdgeSecurityPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the edge security policy for the specified backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   SetEdgeSecurityPolicyBackendServiceRequest request =
+   *       SetEdgeSecurityPolicyBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicyReferenceResource(SecurityPolicyReference.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       backendServicesClient.setEdgeSecurityPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
+      setEdgeSecurityPolicyOperationCallable() {
+    return stub.setEdgeSecurityPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the edge security policy for the specified backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   SetEdgeSecurityPolicyBackendServiceRequest request =
+   *       SetEdgeSecurityPolicyBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicyReferenceResource(SecurityPolicyReference.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backendServicesClient.setEdgeSecurityPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetEdgeSecurityPolicyBackendServiceRequest, Operation>
+      setEdgeSecurityPolicyCallable() {
+    return stub.setEdgeSecurityPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Sets the Google Cloud Armor security policy for the specified backend service. For more
    * information, see Google Cloud Armor Overview
    *

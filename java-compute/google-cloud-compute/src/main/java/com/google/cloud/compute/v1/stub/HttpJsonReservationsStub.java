@@ -50,6 +50,7 @@ import com.google.cloud.compute.v1.ResizeReservationRequest;
 import com.google.cloud.compute.v1.SetIamPolicyReservationRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsReservationRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateReservationRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -501,6 +502,68 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateReservationRequest, Operation>
+      updateMethodDescriptor =
+          ApiMethodDescriptor.<UpdateReservationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Reservations/Update")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateReservationRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/reservations/{reservation}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateReservationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "reservation", request.getReservation());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateReservationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasPaths()) {
+                              serializer.putQueryParam(fields, "paths", request.getPaths());
+                            }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            if (request.hasUpdateMask()) {
+                              serializer.putQueryParam(
+                                  fields, "updateMask", request.getUpdateMask());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("reservationResource", request.getReservationResource()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateReservationRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<AggregatedListReservationsRequest, ReservationAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListReservationsRequest, AggregatedListPagedResponse>
@@ -521,6 +584,9 @@ public class HttpJsonReservationsStub extends ReservationsStub {
   private final UnaryCallable<SetIamPolicyReservationRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsReservationRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<UpdateReservationRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateReservationRequest, Operation, Operation>
+      updateOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
@@ -615,6 +681,11 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<UpdateReservationRequest, Operation> updateTransportSettings =
+        HttpJsonCallSettings.<UpdateReservationRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
@@ -669,6 +740,15 @@ public class HttpJsonReservationsStub extends ReservationsStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.updateCallable =
+        callableFactory.createUnaryCallable(
+            updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -686,6 +766,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
     methodDescriptors.add(resizeMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -763,6 +844,17 @@ public class HttpJsonReservationsStub extends ReservationsStub {
   public UnaryCallable<TestIamPermissionsReservationRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateReservationRequest, Operation> updateCallable() {
+    return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateReservationRequest, Operation, Operation>
+      updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

@@ -27,7 +27,7 @@ public interface SecurityPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+   * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
    * </pre>
    *
    * <code>optional string action = 187661878;</code>
@@ -39,7 +39,7 @@ public interface SecurityPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+   * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
    * </pre>
    *
    * <code>optional string action = 187661878;</code>
@@ -51,7 +51,7 @@ public interface SecurityPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+   * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
    * </pre>
    *
    * <code>optional string action = 187661878;</code>
@@ -96,6 +96,48 @@ public interface SecurityPolicyRuleOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional, additional actions that are performed on headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+   * </code>
+   *
+   * @return Whether the headerAction field is set.
+   */
+  boolean hasHeaderAction();
+  /**
+   *
+   *
+   * <pre>
+   * Optional, additional actions that are performed on headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+   * </code>
+   *
+   * @return The headerAction.
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction getHeaderAction();
+  /**
+   *
+   *
+   * <pre>
+   * Optional, additional actions that are performed on headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction header_action = 328077352;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionOrBuilder
+      getHeaderActionOrBuilder();
 
   /**
    *
@@ -218,4 +260,88 @@ public interface SecurityPolicyRuleOrBuilder
    * @return The priority.
    */
   int getPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+   * </code>
+   *
+   * @return Whether the rateLimitOptions field is set.
+   */
+  boolean hasRateLimitOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+   * </code>
+   *
+   * @return The rateLimitOptions.
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions getRateLimitOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rate_limit_options = 67544315;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsOrBuilder
+      getRateLimitOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters defining the redirect action. Cannot be specified for any other actions.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+   * </code>
+   *
+   * @return Whether the redirectOptions field is set.
+   */
+  boolean hasRedirectOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters defining the redirect action. Cannot be specified for any other actions.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+   * </code>
+   *
+   * @return The redirectOptions.
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions getRedirectOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters defining the redirect action. Cannot be specified for any other actions.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirect_options = 163285307;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptionsOrBuilder
+      getRedirectOptionsOrBuilder();
 }

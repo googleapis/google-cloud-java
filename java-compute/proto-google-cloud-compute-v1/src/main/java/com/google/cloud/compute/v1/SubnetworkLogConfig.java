@@ -511,7 +511,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
+   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -526,7 +526,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
+   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -608,7 +608,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
+   * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5 unless otherwise specified by the org policy, which means half of all collected logs are reported.
    * </pre>
    *
    * <code>optional float flow_sampling = 530150360;</code>
@@ -623,7 +623,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
+   * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5 unless otherwise specified by the org policy, which means half of all collected logs are reported.
    * </pre>
    *
    * <code>optional float flow_sampling = 530150360;</code>
@@ -1357,7 +1357,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -1372,7 +1372,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -1387,7 +1387,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -1405,7 +1405,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -1544,7 +1544,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
+     * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5 unless otherwise specified by the org policy, which means half of all collected logs are reported.
      * </pre>
      *
      * <code>optional float flow_sampling = 530150360;</code>
@@ -1559,7 +1559,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
+     * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5 unless otherwise specified by the org policy, which means half of all collected logs are reported.
      * </pre>
      *
      * <code>optional float flow_sampling = 530150360;</code>
@@ -1574,7 +1574,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
+     * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5 unless otherwise specified by the org policy, which means half of all collected logs are reported.
      * </pre>
      *
      * <code>optional float flow_sampling = 530150360;</code>
@@ -1592,7 +1592,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
+     * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5 unless otherwise specified by the org policy, which means half of all collected logs are reported.
      * </pre>
      *
      * <code>optional float flow_sampling = 530150360;</code>

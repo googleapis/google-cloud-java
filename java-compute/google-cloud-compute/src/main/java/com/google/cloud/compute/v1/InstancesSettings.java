@@ -243,6 +243,17 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).resetOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to resume. */
+  public UnaryCallSettings<ResumeInstanceRequest, Operation> resumeSettings() {
+    return ((InstancesStubSettings) getStubSettings()).resumeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resume. */
+  public OperationCallSettings<ResumeInstanceRequest, Operation, Operation>
+      resumeOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).resumeOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to sendDiagnosticInterrupt. */
   public UnaryCallSettings<
           SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
@@ -427,6 +438,17 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
   /** Returns the object with the settings used for calls to stop. */
   public OperationCallSettings<StopInstanceRequest, Operation, Operation> stopOperationSettings() {
     return ((InstancesStubSettings) getStubSettings()).stopOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to suspend. */
+  public UnaryCallSettings<SuspendInstanceRequest, Operation> suspendSettings() {
+    return ((InstancesStubSettings) getStubSettings()).suspendSettings();
+  }
+
+  /** Returns the object with the settings used for calls to suspend. */
+  public OperationCallSettings<SuspendInstanceRequest, Operation, Operation>
+      suspendOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).suspendOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -769,6 +791,17 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().resetOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to resume. */
+    public UnaryCallSettings.Builder<ResumeInstanceRequest, Operation> resumeSettings() {
+      return getStubSettingsBuilder().resumeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resume. */
+    public OperationCallSettings.Builder<ResumeInstanceRequest, Operation, Operation>
+        resumeOperationSettings() {
+      return getStubSettingsBuilder().resumeOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to sendDiagnosticInterrupt. */
     public UnaryCallSettings.Builder<
             SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
@@ -961,6 +994,17 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     public OperationCallSettings.Builder<StopInstanceRequest, Operation, Operation>
         stopOperationSettings() {
       return getStubSettingsBuilder().stopOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to suspend. */
+    public UnaryCallSettings.Builder<SuspendInstanceRequest, Operation> suspendSettings() {
+      return getStubSettingsBuilder().suspendSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to suspend. */
+    public OperationCallSettings.Builder<SuspendInstanceRequest, Operation, Operation>
+        suspendOperationSettings() {
+      return getStubSettingsBuilder().suspendOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

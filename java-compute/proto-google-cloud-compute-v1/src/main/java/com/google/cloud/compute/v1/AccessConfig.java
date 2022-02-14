@@ -196,6 +196,16 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Public internet quality with fixed bandwidth.
+     * </pre>
+     *
+     * <code>FIXED_STANDARD = 310464328;</code>
+     */
+    FIXED_STANDARD(310464328),
+    /**
+     *
+     *
+     * <pre>
      * High quality, Google-grade network tier, support for all networking products.
      * </pre>
      *
@@ -212,6 +222,16 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>STANDARD = 484642493;</code>
      */
     STANDARD(484642493),
+    /**
+     *
+     *
+     * <pre>
+     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is expired or not configured.
+     * </pre>
+     *
+     * <code>STANDARD_OVERRIDES_FIXED_STANDARD = 465847234;</code>
+     */
+    STANDARD_OVERRIDES_FIXED_STANDARD(465847234),
     UNRECOGNIZED(-1),
     ;
 
@@ -225,6 +245,16 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality with fixed bandwidth.
+     * </pre>
+     *
+     * <code>FIXED_STANDARD = 310464328;</code>
+     */
+    public static final int FIXED_STANDARD_VALUE = 310464328;
     /**
      *
      *
@@ -245,6 +275,16 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>STANDARD = 484642493;</code>
      */
     public static final int STANDARD_VALUE = 484642493;
+    /**
+     *
+     *
+     * <pre>
+     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is expired or not configured.
+     * </pre>
+     *
+     * <code>STANDARD_OVERRIDES_FIXED_STANDARD = 465847234;</code>
+     */
+    public static final int STANDARD_OVERRIDES_FIXED_STANDARD_VALUE = 465847234;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -272,10 +312,14 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_NETWORK_TIER;
+        case 310464328:
+          return FIXED_STANDARD;
         case 399530551:
           return PREMIUM;
         case 484642493:
           return STANDARD;
+        case 465847234:
+          return STANDARD_OVERRIDES_FIXED_STANDARD;
         default:
           return null;
       }
@@ -461,7 +505,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
    * </pre>
    *
    * <code>optional string external_ipv6 = 532703707;</code>
@@ -476,7 +520,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
    * </pre>
    *
    * <code>optional string external_ipv6 = 532703707;</code>
@@ -499,7 +543,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
    * </pre>
    *
    * <code>optional string external_ipv6 = 532703707;</code>
@@ -525,7 +569,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The prefix length of the external IPv6 range.
+   * The prefix length of the external IPv6 range.
    * </pre>
    *
    * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -540,7 +584,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The prefix length of the external IPv6 range.
+   * The prefix length of the external IPv6 range.
    * </pre>
    *
    * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -817,7 +861,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
    * </pre>
    *
    * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -832,7 +876,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
    * </pre>
    *
    * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -855,7 +899,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
    * </pre>
    *
    * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -881,7 +925,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
+   * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name. This field is not used in ipv6AccessConfig. A default PTR record will be created if the VM has external IPv6 range associated.
    * </pre>
    *
    * <code>optional bool set_public_ptr = 523870229;</code>
@@ -896,7 +940,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
+   * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name. This field is not used in ipv6AccessConfig. A default PTR record will be created if the VM has external IPv6 range associated.
    * </pre>
    *
    * <code>optional bool set_public_ptr = 523870229;</code>
@@ -1508,7 +1552,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1522,7 +1566,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1544,7 +1588,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1566,7 +1610,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1587,7 +1631,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1604,7 +1648,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1628,7 +1672,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The prefix length of the external IPv6 range.
+     * The prefix length of the external IPv6 range.
      * </pre>
      *
      * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -1643,7 +1687,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The prefix length of the external IPv6 range.
+     * The prefix length of the external IPv6 range.
      * </pre>
      *
      * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -1658,7 +1702,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The prefix length of the external IPv6 range.
+     * The prefix length of the external IPv6 range.
      * </pre>
      *
      * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -1676,7 +1720,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The prefix length of the external IPv6 range.
+     * The prefix length of the external IPv6 range.
      * </pre>
      *
      * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
@@ -2181,7 +2225,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
      * </pre>
      *
      * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -2195,7 +2239,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
      * </pre>
      *
      * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -2217,7 +2261,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
      * </pre>
      *
      * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -2239,7 +2283,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
      * </pre>
      *
      * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -2260,7 +2304,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
      * </pre>
      *
      * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -2277,7 +2321,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
      * </pre>
      *
      * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -2301,7 +2345,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
+     * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name. This field is not used in ipv6AccessConfig. A default PTR record will be created if the VM has external IPv6 range associated.
      * </pre>
      *
      * <code>optional bool set_public_ptr = 523870229;</code>
@@ -2316,7 +2360,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
+     * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name. This field is not used in ipv6AccessConfig. A default PTR record will be created if the VM has external IPv6 range associated.
      * </pre>
      *
      * <code>optional bool set_public_ptr = 523870229;</code>
@@ -2331,7 +2375,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
+     * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name. This field is not used in ipv6AccessConfig. A default PTR record will be created if the VM has external IPv6 range associated.
      * </pre>
      *
      * <code>optional bool set_public_ptr = 523870229;</code>
@@ -2349,7 +2393,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
+     * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name. This field is not used in ipv6AccessConfig. A default PTR record will be created if the VM has external IPv6 range associated.
      * </pre>
      *
      * <code>optional bool set_public_ptr = 523870229;</code>

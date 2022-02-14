@@ -44,6 +44,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     name_ = "";
     network_ = "";
     networkEndpointType_ = "";
+    pscTargetService_ = "";
     region_ = "";
     selfLink_ = "";
     subnetwork_ = "";
@@ -102,14 +103,14 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             }
           case 28246024:
             {
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00004000;
               size_ = input.readInt32();
               break;
             }
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00008000;
+              bitField0_ |= 0x00010000;
               zone_ = s;
               break;
             }
@@ -162,7 +163,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00001000;
               region_ = s;
               break;
             }
@@ -173,10 +174,17 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
               network_ = s;
               break;
             }
+          case -2141910222:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000800;
+              pscTargetService_ = s;
+              break;
+            }
           case -1832345742:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00008000;
               subnetwork_ = s;
               break;
             }
@@ -213,7 +221,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00002000;
               selfLink_ = s;
               break;
             }
@@ -354,6 +362,16 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * The network endpoint is either public Google APIs or services exposed by other GCP Project with a Service Attachment. The connection is set up by private service connect
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
+     */
+    PRIVATE_SERVICE_CONNECT(48134724),
+    /**
+     *
+     *
+     * <pre>
      * The network endpoint is handled by specified serverless infrastructure.
      * </pre>
      *
@@ -427,6 +445,16 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * The network endpoint is either public Google APIs or services exposed by other GCP Project with a Service Attachment. The connection is set up by private service connect
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
+     */
+    public static final int PRIVATE_SERVICE_CONNECT_VALUE = 48134724;
+    /**
+     *
+     *
+     * <pre>
      * The network endpoint is handled by specified serverless infrastructure.
      * </pre>
      *
@@ -470,6 +498,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
           return INTERNET_IP_PORT;
         case 336447968:
           return NON_GCP_PRIVATE_IP_PORT;
+        case 48134724:
+          return PRIVATE_SERVICE_CONNECT;
         case 270492508:
           return SERVERLESS;
         default:
@@ -1246,6 +1276,70 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int PSC_TARGET_SERVICE_FIELD_NUMBER = 269132134;
+  private volatile java.lang.Object pscTargetService_;
+  /**
+   *
+   *
+   * <pre>
+   * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+   * </pre>
+   *
+   * <code>optional string psc_target_service = 269132134;</code>
+   *
+   * @return Whether the pscTargetService field is set.
+   */
+  @java.lang.Override
+  public boolean hasPscTargetService() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+   * </pre>
+   *
+   * <code>optional string psc_target_service = 269132134;</code>
+   *
+   * @return The pscTargetService.
+   */
+  @java.lang.Override
+  public java.lang.String getPscTargetService() {
+    java.lang.Object ref = pscTargetService_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pscTargetService_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+   * </pre>
+   *
+   * <code>optional string psc_target_service = 269132134;</code>
+   *
+   * @return The bytes for pscTargetService.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPscTargetServiceBytes() {
+    java.lang.Object ref = pscTargetService_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pscTargetService_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int REGION_FIELD_NUMBER = 138946292;
   private volatile java.lang.Object region_;
   /**
@@ -1261,7 +1355,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1325,7 +1419,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1389,7 +1483,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasSize() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1422,7 +1516,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasSubnetwork() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -1486,7 +1580,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -1558,10 +1652,10 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeInt32(3530753, size_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1575,13 +1669,16 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 118301523, networkEndpointType_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 269132134, pscTargetService_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1593,7 +1690,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt32(423377855, defaultPort_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1617,10 +1714,10 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3530753, size_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1644,13 +1741,17 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(118301523, networkEndpointType_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(269132134, pscTargetService_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1662,7 +1763,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(423377855, defaultPort_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1729,6 +1830,10 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     if (hasNetworkEndpointType() != other.hasNetworkEndpointType()) return false;
     if (hasNetworkEndpointType()) {
       if (!getNetworkEndpointType().equals(other.getNetworkEndpointType())) return false;
+    }
+    if (hasPscTargetService() != other.hasPscTargetService()) return false;
+    if (hasPscTargetService()) {
+      if (!getPscTargetService().equals(other.getPscTargetService())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -1808,6 +1913,10 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     if (hasNetworkEndpointType()) {
       hash = (37 * hash) + NETWORK_ENDPOINT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkEndpointType().hashCode();
+    }
+    if (hasPscTargetService()) {
+      hash = (37 * hash) + PSC_TARGET_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getPscTargetService().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -2033,16 +2142,18 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       bitField0_ = (bitField0_ & ~0x00000400);
       networkEndpointType_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
-      region_ = "";
+      pscTargetService_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
-      selfLink_ = "";
+      region_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
-      size_ = 0;
+      selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
-      subnetwork_ = "";
+      size_ = 0;
       bitField0_ = (bitField0_ & ~0x00008000);
-      zone_ = "";
+      subnetwork_ = "";
       bitField0_ = (bitField0_ & ~0x00010000);
+      zone_ = "";
+      bitField0_ = (bitField0_ & ~0x00020000);
       return this;
     }
 
@@ -2133,21 +2244,25 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00001000) != 0)) {
         to_bitField0_ |= 0x00000800;
       }
-      result.region_ = region_;
+      result.pscTargetService_ = pscTargetService_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
         to_bitField0_ |= 0x00001000;
       }
-      result.selfLink_ = selfLink_;
+      result.region_ = region_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.size_ = size_;
         to_bitField0_ |= 0x00002000;
       }
+      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.size_ = size_;
         to_bitField0_ |= 0x00004000;
       }
-      result.subnetwork_ = subnetwork_;
       if (((from_bitField0_ & 0x00010000) != 0)) {
         to_bitField0_ |= 0x00008000;
+      }
+      result.subnetwork_ = subnetwork_;
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        to_bitField0_ |= 0x00010000;
       }
       result.zone_ = zone_;
       result.bitField0_ = to_bitField0_;
@@ -2247,13 +2362,18 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         networkEndpointType_ = other.networkEndpointType_;
         onChanged();
       }
-      if (other.hasRegion()) {
+      if (other.hasPscTargetService()) {
         bitField0_ |= 0x00001000;
+        pscTargetService_ = other.pscTargetService_;
+        onChanged();
+      }
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00002000;
         region_ = other.region_;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -2261,12 +2381,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         setSize(other.getSize());
       }
       if (other.hasSubnetwork()) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         subnetwork_ = other.subnetwork_;
         onChanged();
       }
       if (other.hasZone()) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         zone_ = other.zone_;
         onChanged();
       }
@@ -3929,6 +4049,126 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private java.lang.Object pscTargetService_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+     * </pre>
+     *
+     * <code>optional string psc_target_service = 269132134;</code>
+     *
+     * @return Whether the pscTargetService field is set.
+     */
+    public boolean hasPscTargetService() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+     * </pre>
+     *
+     * <code>optional string psc_target_service = 269132134;</code>
+     *
+     * @return The pscTargetService.
+     */
+    public java.lang.String getPscTargetService() {
+      java.lang.Object ref = pscTargetService_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pscTargetService_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+     * </pre>
+     *
+     * <code>optional string psc_target_service = 269132134;</code>
+     *
+     * @return The bytes for pscTargetService.
+     */
+    public com.google.protobuf.ByteString getPscTargetServiceBytes() {
+      java.lang.Object ref = pscTargetService_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pscTargetService_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+     * </pre>
+     *
+     * <code>optional string psc_target_service = 269132134;</code>
+     *
+     * @param value The pscTargetService to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscTargetService(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00001000;
+      pscTargetService_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+     * </pre>
+     *
+     * <code>optional string psc_target_service = 269132134;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPscTargetService() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      pscTargetService_ = getDefaultInstance().getPscTargetService();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+     * </pre>
+     *
+     * <code>optional string psc_target_service = 269132134;</code>
+     *
+     * @param value The bytes for pscTargetService to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscTargetServiceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00001000;
+      pscTargetService_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object region_ = "";
     /**
      *
@@ -3942,7 +4182,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4004,7 +4244,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       region_ = value;
       onChanged();
       return this;
@@ -4021,7 +4261,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -4043,7 +4283,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       region_ = value;
       onChanged();
       return this;
@@ -4062,7 +4302,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4124,7 +4364,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4141,7 +4381,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -4163,7 +4403,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4183,7 +4423,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public boolean hasSize() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4213,7 +4453,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setSize(int value) {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       size_ = value;
       onChanged();
       return this;
@@ -4230,7 +4470,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSize() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       size_ = 0;
       onChanged();
       return this;
@@ -4249,7 +4489,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4311,7 +4551,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       subnetwork_ = value;
       onChanged();
       return this;
@@ -4328,7 +4568,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       subnetwork_ = getDefaultInstance().getSubnetwork();
       onChanged();
       return this;
@@ -4350,7 +4590,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       subnetwork_ = value;
       onChanged();
       return this;
@@ -4369,7 +4609,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4431,7 +4671,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       zone_ = value;
       onChanged();
       return this;
@@ -4448,7 +4688,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
@@ -4470,7 +4710,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       zone_ = value;
       onChanged();
       return this;

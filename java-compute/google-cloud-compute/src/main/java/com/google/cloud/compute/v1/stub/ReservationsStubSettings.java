@@ -61,6 +61,7 @@ import com.google.cloud.compute.v1.ResizeReservationRequest;
 import com.google.cloud.compute.v1.SetIamPolicyReservationRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsReservationRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateReservationRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -132,6 +133,9 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
   private final UnaryCallSettings<SetIamPolicyReservationRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsReservationRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<UpdateReservationRequest, Operation> updateSettings;
+  private final OperationCallSettings<UpdateReservationRequest, Operation, Operation>
+      updateOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListReservationsRequest,
@@ -328,6 +332,17 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to update. */
+  public UnaryCallSettings<UpdateReservationRequest, Operation> updateSettings() {
+    return updateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateReservationRequest, Operation, Operation>
+      updateOperationSettings() {
+    return updateOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ReservationsStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -417,6 +432,8 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     resizeOperationSettings = settingsBuilder.resizeOperationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    updateSettings = settingsBuilder.updateSettings().build();
+    updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
 
   /** Builder for ReservationsStubSettings. */
@@ -447,6 +464,9 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     private final UnaryCallSettings.Builder<
             TestIamPermissionsReservationRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<UpdateReservationRequest, Operation> updateSettings;
+    private final OperationCallSettings.Builder<UpdateReservationRequest, Operation, Operation>
+        updateOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -509,6 +529,8 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
       resizeOperationSettings = OperationCallSettings.newBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -520,7 +542,8 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
               listSettings,
               resizeSettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              updateSettings);
       initDefaults(this);
     }
 
@@ -539,6 +562,8 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
       resizeOperationSettings = settings.resizeOperationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      updateSettings = settings.updateSettings.toBuilder();
+      updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -550,7 +575,8 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
               listSettings,
               resizeSettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              updateSettings);
     }
 
     private static Builder createDefault() {
@@ -613,6 +639,11 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -665,6 +696,30 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ResizeReservationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateReservationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -777,6 +832,19 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     public UnaryCallSettings.Builder<TestIamPermissionsReservationRequest, TestPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public UnaryCallSettings.Builder<UpdateReservationRequest, Operation> updateSettings() {
+      return updateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateReservationRequest, Operation, Operation>
+        updateOperationSettings() {
+      return updateOperationSettings;
     }
 
     @Override

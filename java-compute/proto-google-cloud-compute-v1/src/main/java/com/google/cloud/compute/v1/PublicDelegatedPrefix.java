@@ -221,7 +221,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The status of the public delegated prefix.
+   * [Output Only] The status of the public delegated prefix, which can be one of following values: - `INITIALIZING` The public delegated prefix is being initialized and addresses cannot be created yet. - `READY_TO_ANNOUNCE` The public delegated prefix is a live migration prefix and is active. - `ANNOUNCED` The public delegated prefix is active. - `DELETING` The public delegated prefix is being deprovsioned.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PublicDelegatedPrefix.Status}
@@ -237,13 +237,45 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>ANNOUNCED = 365103355;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The public delegated prefix is active.
+     * </pre>
+     *
+     * <code>ANNOUNCED = 365103355;</code>
+     */
     ANNOUNCED(365103355),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The public delegated prefix is being deprovsioned.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
-    /** <code>INITIALIZING = 306588749;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The public delegated prefix is being initialized and addresses cannot be created yet.
+     * </pre>
+     *
+     * <code>INITIALIZING = 306588749;</code>
+     */
     INITIALIZING(306588749),
-    /** <code>READY_TO_ANNOUNCE = 64641265;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The public delegated prefix is currently withdrawn but ready to be announced.
+     * </pre>
+     *
+     * <code>READY_TO_ANNOUNCE = 64641265;</code>
+     */
     READY_TO_ANNOUNCE(64641265),
     UNRECOGNIZED(-1),
     ;
@@ -258,13 +290,45 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>ANNOUNCED = 365103355;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The public delegated prefix is active.
+     * </pre>
+     *
+     * <code>ANNOUNCED = 365103355;</code>
+     */
     public static final int ANNOUNCED_VALUE = 365103355;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The public delegated prefix is being deprovsioned.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
-    /** <code>INITIALIZING = 306588749;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The public delegated prefix is being initialized and addresses cannot be created yet.
+     * </pre>
+     *
+     * <code>INITIALIZING = 306588749;</code>
+     */
     public static final int INITIALIZING_VALUE = 306588749;
-    /** <code>READY_TO_ANNOUNCE = 64641265;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The public delegated prefix is currently withdrawn but ready to be announced.
+     * </pre>
+     *
+     * <code>READY_TO_ANNOUNCE = 64641265;</code>
+     */
     public static final int READY_TO_ANNOUNCE_VALUE = 64641265;
 
     public final int getNumber() {
@@ -1090,7 +1154,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The status of the public delegated prefix.
+   * [Output Only] The status of the public delegated prefix, which can be one of following values: - `INITIALIZING` The public delegated prefix is being initialized and addresses cannot be created yet. - `READY_TO_ANNOUNCE` The public delegated prefix is a live migration prefix and is active. - `ANNOUNCED` The public delegated prefix is active. - `DELETING` The public delegated prefix is being deprovsioned.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1106,7 +1170,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The status of the public delegated prefix.
+   * [Output Only] The status of the public delegated prefix, which can be one of following values: - `INITIALIZING` The public delegated prefix is being initialized and addresses cannot be created yet. - `READY_TO_ANNOUNCE` The public delegated prefix is a live migration prefix and is active. - `ANNOUNCED` The public delegated prefix is active. - `DELETING` The public delegated prefix is being deprovsioned.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1130,7 +1194,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The status of the public delegated prefix.
+   * [Output Only] The status of the public delegated prefix, which can be one of following values: - `INITIALIZING` The public delegated prefix is being initialized and addresses cannot be created yet. - `READY_TO_ANNOUNCE` The public delegated prefix is a live migration prefix and is active. - `ANNOUNCED` The public delegated prefix is active. - `DELETING` The public delegated prefix is being deprovsioned.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -3452,7 +3516,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The status of the public delegated prefix.
+     * [Output Only] The status of the public delegated prefix, which can be one of following values: - `INITIALIZING` The public delegated prefix is being initialized and addresses cannot be created yet. - `READY_TO_ANNOUNCE` The public delegated prefix is a live migration prefix and is active. - `ANNOUNCED` The public delegated prefix is active. - `DELETING` The public delegated prefix is being deprovsioned.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3467,7 +3531,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The status of the public delegated prefix.
+     * [Output Only] The status of the public delegated prefix, which can be one of following values: - `INITIALIZING` The public delegated prefix is being initialized and addresses cannot be created yet. - `READY_TO_ANNOUNCE` The public delegated prefix is a live migration prefix and is active. - `ANNOUNCED` The public delegated prefix is active. - `DELETING` The public delegated prefix is being deprovsioned.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3490,7 +3554,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The status of the public delegated prefix.
+     * [Output Only] The status of the public delegated prefix, which can be one of following values: - `INITIALIZING` The public delegated prefix is being initialized and addresses cannot be created yet. - `READY_TO_ANNOUNCE` The public delegated prefix is a live migration prefix and is active. - `ANNOUNCED` The public delegated prefix is active. - `DELETING` The public delegated prefix is being deprovsioned.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3513,7 +3577,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The status of the public delegated prefix.
+     * [Output Only] The status of the public delegated prefix, which can be one of following values: - `INITIALIZING` The public delegated prefix is being initialized and addresses cannot be created yet. - `READY_TO_ANNOUNCE` The public delegated prefix is a live migration prefix and is active. - `ANNOUNCED` The public delegated prefix is active. - `DELETING` The public delegated prefix is being deprovsioned.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3535,7 +3599,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The status of the public delegated prefix.
+     * [Output Only] The status of the public delegated prefix, which can be one of following values: - `INITIALIZING` The public delegated prefix is being initialized and addresses cannot be created yet. - `READY_TO_ANNOUNCE` The public delegated prefix is a live migration prefix and is active. - `ANNOUNCED` The public delegated prefix is active. - `DELETING` The public delegated prefix is being deprovsioned.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3553,7 +3617,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The status of the public delegated prefix.
+     * [Output Only] The status of the public delegated prefix, which can be one of following values: - `INITIALIZING` The public delegated prefix is being initialized and addresses cannot be created yet. - `READY_TO_ANNOUNCE` The public delegated prefix is a live migration prefix and is active. - `ANNOUNCED` The public delegated prefix is active. - `DELETING` The public delegated prefix is being deprovsioned.
      * Check the Status enum for the list of possible values.
      * </pre>
      *

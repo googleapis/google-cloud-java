@@ -1103,6 +1103,130 @@ public class ReservationsClient implements BackgroundResource {
     return stub.testIamPermissionsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update share settings of the reservation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String reservation = "reservation-1563081780";
+   *   Reservation reservationResource = Reservation.newBuilder().build();
+   *   Operation response =
+   *       reservationsClient.updateAsync(project, zone, reservation, reservationResource).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone Name of the zone for this request.
+   * @param reservation Name of the reservation to update.
+   * @param reservationResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateAsync(
+      String project, String zone, String reservation, Reservation reservationResource) {
+    UpdateReservationRequest request =
+        UpdateReservationRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setReservation(reservation)
+            .setReservationResource(reservationResource)
+            .build();
+    return updateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update share settings of the reservation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
+   *   UpdateReservationRequest request =
+   *       UpdateReservationRequest.newBuilder()
+   *           .setPaths("paths106438894")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservation("reservation-1563081780")
+   *           .setReservationResource(Reservation.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = reservationsClient.updateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateAsync(UpdateReservationRequest request) {
+    return updateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update share settings of the reservation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
+   *   UpdateReservationRequest request =
+   *       UpdateReservationRequest.newBuilder()
+   *           .setPaths("paths106438894")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservation("reservation-1563081780")
+   *           .setReservationResource(Reservation.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       reservationsClient.updateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateReservationRequest, Operation, Operation>
+      updateOperationCallable() {
+    return stub.updateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update share settings of the reservation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
+   *   UpdateReservationRequest request =
+   *       UpdateReservationRequest.newBuilder()
+   *           .setPaths("paths106438894")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservation("reservation-1563081780")
+   *           .setReservationResource(Reservation.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = reservationsClient.updateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateReservationRequest, Operation> updateCallable() {
+    return stub.updateCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

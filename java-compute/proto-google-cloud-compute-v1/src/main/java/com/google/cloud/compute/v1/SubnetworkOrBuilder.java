@@ -101,7 +101,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
    * </pre>
    *
    * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -113,7 +113,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
    * </pre>
    *
    * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -339,7 +339,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -351,7 +351,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -363,7 +363,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
+   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>

@@ -77,7 +77,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether to export the custom routes to peer network.
+   * Whether to export the custom routes to peer network. The default value is false.
    * </pre>
    *
    * <code>optional bool export_custom_routes = 60281485;</code>
@@ -89,7 +89,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether to export the custom routes to peer network.
+   * Whether to export the custom routes to peer network. The default value is false.
    * </pre>
    *
    * <code>optional bool export_custom_routes = 60281485;</code>
@@ -127,7 +127,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether to import the custom routes from peer network.
+   * Whether to import the custom routes from peer network. The default value is false.
    * </pre>
    *
    * <code>optional bool import_custom_routes = 197982398;</code>
@@ -139,7 +139,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether to import the custom routes from peer network.
+   * Whether to import the custom routes from peer network. The default value is false.
    * </pre>
    *
    * <code>optional bool import_custom_routes = 197982398;</code>

@@ -52,6 +52,46 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
+   * Specifies the termination action for the instance.
+   * Check the InstanceTerminationAction enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string instance_termination_action = 107380667;</code>
+   *
+   * @return Whether the instanceTerminationAction field is set.
+   */
+  boolean hasInstanceTerminationAction();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the termination action for the instance.
+   * Check the InstanceTerminationAction enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string instance_termination_action = 107380667;</code>
+   *
+   * @return The instanceTerminationAction.
+   */
+  java.lang.String getInstanceTerminationAction();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the termination action for the instance.
+   * Check the InstanceTerminationAction enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string instance_termination_action = 107380667;</code>
+   *
+   * @return The bytes for instanceTerminationAction.
+   */
+  com.google.protobuf.ByteString getInstanceTerminationActionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
@@ -171,7 +211,7 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
    * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
@@ -184,7 +224,7 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
    * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
@@ -197,7 +237,7 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
    * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
@@ -231,4 +271,44 @@ public interface SchedulingOrBuilder
    * @return The preemptible.
    */
   boolean getPreemptible();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the provisioning model of the instance.
+   * Check the ProvisioningModel enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string provisioning_model = 494423;</code>
+   *
+   * @return Whether the provisioningModel field is set.
+   */
+  boolean hasProvisioningModel();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the provisioning model of the instance.
+   * Check the ProvisioningModel enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string provisioning_model = 494423;</code>
+   *
+   * @return The provisioningModel.
+   */
+  java.lang.String getProvisioningModel();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the provisioning model of the instance.
+   * Check the ProvisioningModel enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string provisioning_model = 494423;</code>
+   *
+   * @return The bytes for provisioningModel.
+   */
+  com.google.protobuf.ByteString getProvisioningModelBytes();
 }
