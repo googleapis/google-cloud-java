@@ -1,3 +1,18 @@
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# Github action job to test core java library features on
+# downstream client libraries before they are released.
 on:
   pull_request:
 name: auto-release
@@ -16,13 +31,13 @@ jobs:
             return;
           }
 
-          // only approve PRs like "chore: release <release version>"
-          if ( !context.payload.pull_request.title.startsWith("chore: release") ) {
+          // only approve PRs like "chore(main): release <release version>"
+          if (  !context.payload.pull_request.title.startsWith("chore(main): release") ) {
             return;
           }
 
           // only approve PRs with pom.xml and versions.txt changes
-          const filesPromise = github.pulls.listFiles.endpoint({
+          const filesPromise = github.rest.pulls.listFiles.endpoint({
             owner: context.repo.owner,
             repo: context.repo.repo,
             pull_number: context.payload.pull_request.number,
@@ -54,7 +69,7 @@ jobs:
             return;
           }
 
-          const promise = github.pulls.list.endpoint({
+          const promise = github.rest.pulls.list.endpoint({
             owner: context.repo.owner,
             repo: context.repo.repo,
             state: 'open'
@@ -71,7 +86,7 @@ jobs:
           }
 
           // approve release PR
-          await github.pulls.createReview({
+          await github.rest.pulls.createReview({
             owner: context.repo.owner,
             repo: context.repo.repo,
             body: 'Rubber stamped release!',
@@ -80,7 +95,7 @@ jobs:
           });
 
           // attach kokoro:force-run and automerge labels
-          await github.issues.addLabels({
+          await github.rest.issues.addLabels({
             owner: context.repo.owner,
             repo: context.repo.repo,
             issue_number: context.payload.pull_request.number,

@@ -111,12 +111,12 @@ custom_content: |
 
   This library has tools to help write tests for code that uses the Datastore.
 
-  See [TESTING.md](https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-datastore) to read more about testing.
+  See [TESTING.md](https://github.com/googleapis/google-cloud-java/blob/main/TESTING.md#testing-code-that-uses-datastore) to read more about testing.
 
   Example Applications
   --------------------
-  - [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
+  - [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/main/bookshelf) - An App Engine app that manages a virtual bookshelf.
     - This app uses `google-cloud` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
-  - [`Flexible Environment/Datastore example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/datastore) - A simple app that uses Cloud Datastore to list the last 10 IP addresses that visited your site.
-  - [`SparkDemo`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/flexible/sparkjava) - An example of using `google-cloud-datastore` from within the SparkJava and App Engine Flexible Environment frameworks.
-    - Read about how it works on the example's [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/sparkjava#how-does-it-work).
+  - [`Flexible Environment/Datastore example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/main/flexible/datastore) - A simple app that uses Cloud Datastore to list the last 10 IP addresses that visited your site.
+  - [`SparkDemo`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/main/flexible/sparkjava) - An example of using `google-cloud-datastore` from within the SparkJava and App Engine Flexible Environment frameworks.
+    - Read about how it works on the example's [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/main/flexible/sparkjava#how-does-it-work).

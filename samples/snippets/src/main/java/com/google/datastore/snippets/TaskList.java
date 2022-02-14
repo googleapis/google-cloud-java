@@ -54,11 +54,14 @@ public class TaskList {
    */
   Key addTask(String description) {
     Key key = datastore.allocateId(keyFactory.newKey());
-    Entity task = Entity.newBuilder(key)
-        .set("description", StringValue.newBuilder(description).setExcludeFromIndexes(true).build())
-        .set("created", Timestamp.now())
-        .set("done", false)
-        .build();
+    Entity task =
+        Entity.newBuilder(key)
+            .set(
+                "description",
+                StringValue.newBuilder(description).setExcludeFromIndexes(true).build())
+            .set("created", Timestamp.now())
+            .set("done", false)
+            .build();
     datastore.put(task);
     return key;
   }
@@ -128,8 +131,12 @@ public class TaskList {
         strings.add(
             String.format("%d : %s (done)", task.getKey().getId(), task.getString("description")));
       } else {
-        strings.add(String.format("%d : %s (created %s)", task.getKey().getId(),
-            task.getString("description"), task.getTimestamp("created")));
+        strings.add(
+            String.format(
+                "%d : %s (created %s)",
+                task.getKey().getId(),
+                task.getString("description"),
+                task.getTimestamp("created")));
       }
     }
     return strings;
@@ -198,8 +205,8 @@ public class TaskList {
   /**
    * Exercises the methods defined in this class.
    *
-   * <p>Assumes that you are authenticated using the Google Cloud SDK (using
-   * {@code gcloud auth application-default login}).
+   * <p>Assumes that you are authenticated using the Google Cloud SDK (using {@code gcloud auth
+   * application-default login}).
    */
   public static void main(String[] args) throws Exception {
     TaskList taskList = new TaskList();

@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datastore-parent</artifactId>
-    <version>2.2.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore-parent:current} -->
+    <version>2.2.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
   </parent>
   <dependencies>
     <dependency>

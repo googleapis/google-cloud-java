@@ -19,7 +19,7 @@
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
  * shows how to create a Datastore entity. For the complete source code see <a
- * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/CreateEntity.java">
+ * href="https://github.com/googleapis/google-cloud-java/tree/main/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/CreateEntity.java">
  * CreateEntity.java</a>.
  *
  * <pre>{@code
@@ -36,7 +36,7 @@
  *
  * <p>This second example shows how to get and update a Datastore entity if it exists. For the
  * complete source code see <a
- * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java">
+ * href="https://github.com/googleapis/google-cloud-java/main/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java">
  * UpdateEntity.java</a>.
  *
  * <pre>{@code

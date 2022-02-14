@@ -34,7 +34,7 @@
  * }</pre>
  *
  * @see <a
- *     href="https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-datastore">
+ *     href="https://github.com/googleapis/google-cloud-java/main/master/TESTING.md#testing-code-that-uses-datastore">
  *     Google Cloud Java tools for testing</a>
  */
 package com.google.cloud.datastore.testing;

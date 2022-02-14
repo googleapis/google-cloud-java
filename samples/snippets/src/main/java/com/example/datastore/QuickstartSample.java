@@ -36,20 +36,17 @@ public class QuickstartSample {
     Key taskKey = datastore.newKeyFactory().setKind(kind).newKey(name);
 
     // Prepares the new entity
-    Entity task = Entity.newBuilder(taskKey)
-        .set("description", "Buy milk")
-        .build();
+    Entity task = Entity.newBuilder(taskKey).set("description", "Buy milk").build();
 
     // Saves the entity
     datastore.put(task);
 
     System.out.printf("Saved %s: %s%n", task.getKey().getName(), task.getString("description"));
 
-    //Retrieve entity
+    // Retrieve entity
     Entity retrieved = datastore.get(taskKey);
 
     System.out.printf("Retrieved %s: %s%n", taskKey.getName(), retrieved.getString("description"));
-
   }
 }
 // [END datastore_quickstart]

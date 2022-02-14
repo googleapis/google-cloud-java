@@ -3,7 +3,5 @@
 
 google-cloud-datastore:2.2.4:2.2.5-SNAPSHOT
 google-cloud-datastore-bom:2.2.4:2.2.5-SNAPSHOT
-google-cloud-datastore-parent:2.2.4:2.2.5-SNAPSHOT
 proto-google-cloud-datastore-v1:0.93.4:0.93.5-SNAPSHOT
 datastore-v1-proto-client:2.2.4:2.2.5-SNAPSHOT
-
