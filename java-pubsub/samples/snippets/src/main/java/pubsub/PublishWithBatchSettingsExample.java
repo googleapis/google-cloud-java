@@ -49,8 +49,8 @@ public class PublishWithBatchSettingsExample {
 
     try {
       // Batch settings control how the publisher batches messages
-      long requestBytesThreshold = 5000L; // default : 1 byte
-      long messageCountBatchSize = 100L; // default : 1 message
+      long requestBytesThreshold = 5000L; // default : 1000 bytes
+      long messageCountBatchSize = 100L; // default : 100 message
 
       Duration publishDelayThreshold = Duration.ofMillis(100); // default : 1 ms
 
