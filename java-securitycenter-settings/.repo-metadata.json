@@ -1,5 +1,5 @@
 {
-    "api_shortname": "securitycenter-settings",
+    "api_shortname": "securitycenter",
     "name_pretty": "Security Command Center Settings API",
     "product_documentation": "https://cloud.google.com/security-command-center/",
     "api_description": "is the canonical security and data risk database for Google Cloud. Security Command Center enables you to understand your security and data attack surface by providing asset inventory, discovery, search, and management.",
