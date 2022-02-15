@@ -1,5 +1,5 @@
 {
-    "api_shortname": "analytics-data",
+    "api_shortname": "analyticsdata",
     "name_pretty": "Analytics Data",
     "product_documentation": "https://developers.google.com/analytics/trusted-testing/analytics-data",
     "api_description": "provides programmatic methods to access report data in Google Analytics App+Web properties.",
