@@ -58,7 +58,7 @@ public class ValueTest {
           .put(ValueType.RAW_VALUE, new Object[] {RawValue.class, RAW_VALUE.get()})
           .put(ValueType.LAT_LNG, new Object[] {LatLngValue.class, LAT_LNG_VALUE.get()})
           .put(ValueType.STRING, new Object[] {StringValue.class, STRING_VALUE.get()})
-          .build();
+          .buildOrThrow();
 
   private ImmutableMap<ValueType, Value<?>> typeToValue;
 
@@ -110,7 +110,7 @@ public class ValueTest {
         assertTrue("Could not find an of method for " + valueClass, found);
       }
     }
-    typeToValue = builder.build();
+    typeToValue = builder.buildOrThrow();
   }
 
   @Test

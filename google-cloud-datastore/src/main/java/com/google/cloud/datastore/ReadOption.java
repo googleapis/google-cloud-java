@@ -62,6 +62,6 @@ public abstract class ReadOption implements Serializable {
     for (ReadOption option : options) {
       builder.put(option.getClass(), option);
     }
-    return builder.build();
+    return builder.buildOrThrow();
   }
 }

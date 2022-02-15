@@ -449,7 +449,7 @@ public final class GqlQuery<V> extends Query<V> {
     for (Map.Entry<String, Binding> binding : namedBindings.entrySet()) {
       builder.put(binding.getKey(), binding.getValue().getCursorOrValue());
     }
-    return builder.build();
+    return builder.buildOrThrow();
   }
 
   /** Returns an immutable list of positional bindings (using original order). */

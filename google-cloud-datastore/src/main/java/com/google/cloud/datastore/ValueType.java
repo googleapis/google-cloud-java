@@ -76,7 +76,7 @@ public enum ValueType {
         builder.put(fieldId, valueType);
       }
     }
-    DESCRIPTOR_TO_TYPE_MAP = builder.build();
+    DESCRIPTOR_TO_TYPE_MAP = builder.buildOrThrow();
   }
 
   <V, P extends Value<V>, B extends ValueBuilder<V, P, B>> ValueType(
