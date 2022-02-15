@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.6](https://github.com/googleapis/java-accesscontextmanager/compare/v1.2.5...v1.2.6) (2022-02-15)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#307](https://github.com/googleapis/java-accesscontextmanager/issues/307)) ([06cba61](https://github.com/googleapis/java-accesscontextmanager/commit/06cba613c7a45c26653ef4e711d001289b778cf5))
+
 ### [1.2.5](https://github.com/googleapis/java-accesscontextmanager/compare/v1.2.4...v1.2.5) (2022-02-03)
 
 
