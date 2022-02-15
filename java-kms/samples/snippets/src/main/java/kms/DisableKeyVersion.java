@@ -61,7 +61,7 @@ public class DisableKeyVersion {
       // Create a field mask of updated values.
       FieldMask fieldMask = FieldMaskUtil.fromString("state");
 
-      // Destroy the key version.
+      // Disable the key version.
       CryptoKeyVersion response = client.updateCryptoKeyVersion(keyVersion, fieldMask);
       System.out.printf("Disabled key version: %s%n", response.getName());
     }
