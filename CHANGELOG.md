@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.6.4](https://github.com/googleapis/java-logging/compare/v3.6.3...v3.6.4) (2022-02-15)
+
+
+### Dependencies
+
+* update dependency com.google.code.gson:gson to v2.9.0 ([#868](https://github.com/googleapis/java-logging/issues/868)) ([f3d6f3f](https://github.com/googleapis/java-logging/commit/f3d6f3f0d29d1b56f8c8fd191b4b946bc31f6e10))
+
 ### [3.6.3](https://github.com/googleapis/java-logging/compare/v3.6.2...v3.6.3) (2022-02-11)
 
 
