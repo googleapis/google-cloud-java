@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.3](https://github.com/googleapis/java-iam-admin/compare/v1.1.2...v1.1.3) (2022-02-15)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#87](https://github.com/googleapis/java-iam-admin/issues/87)) ([d487827](https://github.com/googleapis/java-iam-admin/commit/d487827f8c18f561510d10682b8b39ed7dd6bdd5))
+
 ### [1.1.2](https://github.com/googleapis/java-iam-admin/compare/v1.1.1...v1.1.2) (2022-02-03)
 
 
