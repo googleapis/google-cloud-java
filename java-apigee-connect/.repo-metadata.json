@@ -1,5 +1,5 @@
 {
-  "api_shortname": "apigee-connect",
+  "api_shortname": "apigeeconnect",
   "name_pretty": "Apigee Connect",
   "product_documentation": "https://cloud.google.com/apigee/docs/hybrid/v1.3/apigee-connect/",
   "api_description": "allows the Apigee hybrid management plane to connect securely to the MART service in the runtime plane without requiring you to expose the MART endpoint on the internet.",
