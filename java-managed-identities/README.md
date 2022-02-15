@@ -19,8 +19,9 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-managed-identities</artifactId>
-  <version>1.0.1</version>
+  <version>0.3.7</version>
 </dependency>
+
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
