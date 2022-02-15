@@ -48,7 +48,7 @@ package com.google.bigtable.v2;
  * * Chains and interleaves are described in more detail in the
  * RowFilter.Chain and RowFilter.Interleave documentation.
  * The total serialized size of a RowFilter message must not
- * exceed 4096 bytes, and RowFilters may not be nested within each other
+ * exceed 20480 bytes, and RowFilters may not be nested within each other
  * (in Chains or Interleaves) to a depth of more than 20.
  * </pre>
  *
@@ -6014,7 +6014,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    * * Chains and interleaves are described in more detail in the
    * RowFilter.Chain and RowFilter.Interleave documentation.
    * The total serialized size of a RowFilter message must not
-   * exceed 4096 bytes, and RowFilters may not be nested within each other
+   * exceed 20480 bytes, and RowFilters may not be nested within each other
    * (in Chains or Interleaves) to a depth of more than 20.
    * </pre>
    *

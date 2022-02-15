@@ -267,7 +267,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The row keys and/or ranges to read. If not specified, reads from all rows.
+   * The row keys and/or ranges to read sequentially. If not specified, reads
+   * from all rows.
    * </pre>
    *
    * <code>.google.bigtable.v2.RowSet rows = 2;</code>
@@ -282,7 +283,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The row keys and/or ranges to read. If not specified, reads from all rows.
+   * The row keys and/or ranges to read sequentially. If not specified, reads
+   * from all rows.
    * </pre>
    *
    * <code>.google.bigtable.v2.RowSet rows = 2;</code>
@@ -297,7 +299,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The row keys and/or ranges to read. If not specified, reads from all rows.
+   * The row keys and/or ranges to read sequentially. If not specified, reads
+   * from all rows.
    * </pre>
    *
    * <code>.google.bigtable.v2.RowSet rows = 2;</code>
@@ -362,7 +365,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The read will terminate after committing to N rows' worth of results. The
+   * The read will stop after committing to N rows' worth of results. The
    * default (zero) is to return all results.
    * </pre>
    *
@@ -1024,7 +1027,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The row keys and/or ranges to read. If not specified, reads from all rows.
+     * The row keys and/or ranges to read sequentially. If not specified, reads
+     * from all rows.
      * </pre>
      *
      * <code>.google.bigtable.v2.RowSet rows = 2;</code>
@@ -1038,7 +1042,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The row keys and/or ranges to read. If not specified, reads from all rows.
+     * The row keys and/or ranges to read sequentially. If not specified, reads
+     * from all rows.
      * </pre>
      *
      * <code>.google.bigtable.v2.RowSet rows = 2;</code>
@@ -1056,7 +1061,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The row keys and/or ranges to read. If not specified, reads from all rows.
+     * The row keys and/or ranges to read sequentially. If not specified, reads
+     * from all rows.
      * </pre>
      *
      * <code>.google.bigtable.v2.RowSet rows = 2;</code>
@@ -1078,7 +1084,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The row keys and/or ranges to read. If not specified, reads from all rows.
+     * The row keys and/or ranges to read sequentially. If not specified, reads
+     * from all rows.
      * </pre>
      *
      * <code>.google.bigtable.v2.RowSet rows = 2;</code>
@@ -1097,7 +1104,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The row keys and/or ranges to read. If not specified, reads from all rows.
+     * The row keys and/or ranges to read sequentially. If not specified, reads
+     * from all rows.
      * </pre>
      *
      * <code>.google.bigtable.v2.RowSet rows = 2;</code>
@@ -1120,7 +1128,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The row keys and/or ranges to read. If not specified, reads from all rows.
+     * The row keys and/or ranges to read sequentially. If not specified, reads
+     * from all rows.
      * </pre>
      *
      * <code>.google.bigtable.v2.RowSet rows = 2;</code>
@@ -1140,7 +1149,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The row keys and/or ranges to read. If not specified, reads from all rows.
+     * The row keys and/or ranges to read sequentially. If not specified, reads
+     * from all rows.
      * </pre>
      *
      * <code>.google.bigtable.v2.RowSet rows = 2;</code>
@@ -1154,7 +1164,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The row keys and/or ranges to read. If not specified, reads from all rows.
+     * The row keys and/or ranges to read sequentially. If not specified, reads
+     * from all rows.
      * </pre>
      *
      * <code>.google.bigtable.v2.RowSet rows = 2;</code>
@@ -1170,7 +1181,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The row keys and/or ranges to read. If not specified, reads from all rows.
+     * The row keys and/or ranges to read sequentially. If not specified, reads
+     * from all rows.
      * </pre>
      *
      * <code>.google.bigtable.v2.RowSet rows = 2;</code>
@@ -1385,7 +1397,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The read will terminate after committing to N rows' worth of results. The
+     * The read will stop after committing to N rows' worth of results. The
      * default (zero) is to return all results.
      * </pre>
      *
@@ -1401,7 +1413,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The read will terminate after committing to N rows' worth of results. The
+     * The read will stop after committing to N rows' worth of results. The
      * default (zero) is to return all results.
      * </pre>
      *
@@ -1420,7 +1432,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The read will terminate after committing to N rows' worth of results. The
+     * The read will stop after committing to N rows' worth of results. The
      * default (zero) is to return all results.
      * </pre>
      *

@@ -22,8 +22,10 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.CheckAndMutateRowResponse;
 import com.google.bigtable.v2.MutateRowRequest;
@@ -36,7 +38,6 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -123,6 +124,31 @@ public class GrpcBigtableStub extends BigtableStub {
   private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
+  private static final PathTemplate READ_ROWS_0_PATH_TEMPLATE =
+      PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
+  private static final PathTemplate READ_ROWS_1_PATH_TEMPLATE =
+      PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate SAMPLE_ROW_KEYS_0_PATH_TEMPLATE =
+      PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
+  private static final PathTemplate SAMPLE_ROW_KEYS_1_PATH_TEMPLATE =
+      PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate MUTATE_ROW_0_PATH_TEMPLATE =
+      PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
+  private static final PathTemplate MUTATE_ROW_1_PATH_TEMPLATE =
+      PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate MUTATE_ROWS_0_PATH_TEMPLATE =
+      PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
+  private static final PathTemplate MUTATE_ROWS_1_PATH_TEMPLATE =
+      PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate CHECK_AND_MUTATE_ROW_0_PATH_TEMPLATE =
+      PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
+  private static final PathTemplate CHECK_AND_MUTATE_ROW_1_PATH_TEMPLATE =
+      PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate READ_MODIFY_WRITE_ROW_0_PATH_TEMPLATE =
+      PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
+  private static final PathTemplate READ_MODIFY_WRITE_ROW_1_PATH_TEMPLATE =
+      PathTemplate.create("{app_profile_id=**}");
+
   public static final GrpcBigtableStub create(BigtableStubSettings settings) throws IOException {
     return new GrpcBigtableStub(settings, ClientContext.create(settings));
   }
@@ -163,9 +189,11 @@ public class GrpcBigtableStub extends BigtableStub {
             .setMethodDescriptor(readRowsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("table_name", String.valueOf(request.getTableName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getTableName(), "table_name", READ_ROWS_0_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAppProfileId(), "app_profile_id", READ_ROWS_1_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SampleRowKeysRequest, SampleRowKeysResponse> sampleRowKeysTransportSettings =
@@ -173,9 +201,12 @@ public class GrpcBigtableStub extends BigtableStub {
             .setMethodDescriptor(sampleRowKeysMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("table_name", String.valueOf(request.getTableName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      request.getTableName(), "table_name", SAMPLE_ROW_KEYS_0_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAppProfileId(), "app_profile_id", SAMPLE_ROW_KEYS_1_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<MutateRowRequest, MutateRowResponse> mutateRowTransportSettings =
@@ -183,9 +214,11 @@ public class GrpcBigtableStub extends BigtableStub {
             .setMethodDescriptor(mutateRowMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("table_name", String.valueOf(request.getTableName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getTableName(), "table_name", MUTATE_ROW_0_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAppProfileId(), "app_profile_id", MUTATE_ROW_1_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<MutateRowsRequest, MutateRowsResponse> mutateRowsTransportSettings =
@@ -193,9 +226,11 @@ public class GrpcBigtableStub extends BigtableStub {
             .setMethodDescriptor(mutateRowsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("table_name", String.valueOf(request.getTableName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getTableName(), "table_name", MUTATE_ROWS_0_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAppProfileId(), "app_profile_id", MUTATE_ROWS_1_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
@@ -204,9 +239,16 @@ public class GrpcBigtableStub extends BigtableStub {
                 .setMethodDescriptor(checkAndMutateRowMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("table_name", String.valueOf(request.getTableName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          request.getTableName(),
+                          "table_name",
+                          CHECK_AND_MUTATE_ROW_0_PATH_TEMPLATE);
+                      builder.add(
+                          request.getAppProfileId(),
+                          "app_profile_id",
+                          CHECK_AND_MUTATE_ROW_1_PATH_TEMPLATE);
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
@@ -215,9 +257,16 @@ public class GrpcBigtableStub extends BigtableStub {
                 .setMethodDescriptor(readModifyWriteRowMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("table_name", String.valueOf(request.getTableName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          request.getTableName(),
+                          "table_name",
+                          READ_MODIFY_WRITE_ROW_0_PATH_TEMPLATE);
+                      builder.add(
+                          request.getAppProfileId(),
+                          "app_profile_id",
+                          READ_MODIFY_WRITE_ROW_1_PATH_TEMPLATE);
+                      return builder.build();
                     })
                 .build();
 
