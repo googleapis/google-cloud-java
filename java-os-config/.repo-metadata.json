@@ -1,5 +1,5 @@
 {
-    "api_shortname": "os-config",
+    "api_shortname": "osconfig",
     "name_pretty": "OS Config API",
     "product_documentation": "https://cloud.google.com/compute/docs/os-patch-management",
     "api_description": "provides OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.",
