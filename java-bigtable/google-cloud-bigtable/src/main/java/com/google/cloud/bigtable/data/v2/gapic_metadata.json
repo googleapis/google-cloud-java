@@ -19,6 +19,9 @@
             "MutateRows": {
               "methods": ["mutateRowsCallable"]
             },
+            "PingAndWarm": {
+              "methods": ["pingAndWarm", "pingAndWarm", "pingAndWarm", "pingAndWarm", "pingAndWarm", "pingAndWarmCallable"]
+            },
             "ReadModifyWriteRow": {
               "methods": ["readModifyWriteRow", "readModifyWriteRow", "readModifyWriteRow", "readModifyWriteRow", "readModifyWriteRow", "readModifyWriteRowCallable"]
             },

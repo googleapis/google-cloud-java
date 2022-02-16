@@ -26,6 +26,8 @@ import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
+import com.google.bigtable.v2.PingAndWarmRequest;
+import com.google.bigtable.v2.PingAndWarmResponse;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
@@ -60,6 +62,10 @@ public abstract class BigtableStub implements BackgroundResource {
   public UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
       checkAndMutateRowCallable() {
     throw new UnsupportedOperationException("Not implemented: checkAndMutateRowCallable()");
+  }
+
+  public UnaryCallable<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmCallable() {
+    throw new UnsupportedOperationException("Not implemented: pingAndWarmCallable()");
   }
 
   public UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>

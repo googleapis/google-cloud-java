@@ -39,6 +39,8 @@ import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
+import com.google.bigtable.v2.PingAndWarmRequest;
+import com.google.bigtable.v2.PingAndWarmResponse;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
@@ -78,6 +80,7 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       mutateRowsSettings;
   private final UnaryCallSettings<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
       checkAndMutateRowSettings;
+  private final UnaryCallSettings<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmSettings;
   private final UnaryCallSettings<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowSettings;
 
@@ -106,6 +109,11 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
   public UnaryCallSettings<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
       checkAndMutateRowSettings() {
     return checkAndMutateRowSettings;
+  }
+
+  /** Returns the object with the settings used for calls to pingAndWarm. */
+  public UnaryCallSettings<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmSettings() {
+    return pingAndWarmSettings;
   }
 
   /** Returns the object with the settings used for calls to readModifyWriteRow. */
@@ -194,6 +202,7 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
     mutateRowSettings = settingsBuilder.mutateRowSettings().build();
     mutateRowsSettings = settingsBuilder.mutateRowsSettings().build();
     checkAndMutateRowSettings = settingsBuilder.checkAndMutateRowSettings().build();
+    pingAndWarmSettings = settingsBuilder.pingAndWarmSettings().build();
     readModifyWriteRowSettings = settingsBuilder.readModifyWriteRowSettings().build();
   }
 
@@ -209,6 +218,8 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
         mutateRowsSettings;
     private final UnaryCallSettings.Builder<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
         checkAndMutateRowSettings;
+    private final UnaryCallSettings.Builder<PingAndWarmRequest, PingAndWarmResponse>
+        pingAndWarmSettings;
     private final UnaryCallSettings.Builder<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
         readModifyWriteRowSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -218,18 +229,19 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "retry_policy_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_4_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
       definitions.put(
-          "retry_policy_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "retry_policy_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -240,26 +252,20 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(10L))
-              .setRetryDelayMultiplier(2.0)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(43200000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(43200000L))
               .setTotalTimeout(Duration.ofMillis(43200000L))
               .build();
-      definitions.put("retry_policy_3_params", settings);
+      definitions.put("no_retry_3_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(10L))
-              .setRetryDelayMultiplier(2.0)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
+      definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(10L))
@@ -273,26 +279,22 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       definitions.put("retry_policy_4_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(10L))
-              .setRetryDelayMultiplier(2.0)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
+      definitions.put("no_retry_2_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(10L))
-              .setRetryDelayMultiplier(2.0)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(20000L))
               .setTotalTimeout(Duration.ofMillis(20000L))
               .build();
-      definitions.put("retry_policy_0_params", settings);
+      definitions.put("no_retry_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -308,11 +310,15 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       mutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       mutateRowsSettings = ServerStreamingCallSettings.newBuilder();
       checkAndMutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      pingAndWarmSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       readModifyWriteRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              mutateRowSettings, checkAndMutateRowSettings, readModifyWriteRowSettings);
+              mutateRowSettings,
+              checkAndMutateRowSettings,
+              pingAndWarmSettings,
+              readModifyWriteRowSettings);
       initDefaults(this);
     }
 
@@ -324,11 +330,15 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       mutateRowSettings = settings.mutateRowSettings.toBuilder();
       mutateRowsSettings = settings.mutateRowsSettings.toBuilder();
       checkAndMutateRowSettings = settings.checkAndMutateRowSettings.toBuilder();
+      pingAndWarmSettings = settings.pingAndWarmSettings.toBuilder();
       readModifyWriteRowSettings = settings.readModifyWriteRowSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              mutateRowSettings, checkAndMutateRowSettings, readModifyWriteRowSettings);
+              mutateRowSettings,
+              checkAndMutateRowSettings,
+              pingAndWarmSettings,
+              readModifyWriteRowSettings);
     }
 
     private static Builder createDefault() {
@@ -347,13 +357,13 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
     private static Builder initDefaults(Builder builder) {
       builder
           .readRowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
 
       builder
           .sampleRowKeysSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .mutateRowSettings()
@@ -362,18 +372,23 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
 
       builder
           .mutateRowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .checkAndMutateRowSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .pingAndWarmSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .readModifyWriteRowSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       return builder;
     }
@@ -420,6 +435,12 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
     public UnaryCallSettings.Builder<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
         checkAndMutateRowSettings() {
       return checkAndMutateRowSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to pingAndWarm. */
+    public UnaryCallSettings.Builder<PingAndWarmRequest, PingAndWarmResponse>
+        pingAndWarmSettings() {
+      return pingAndWarmSettings;
     }
 
     /** Returns the builder for the settings used for calls to readModifyWriteRow. */

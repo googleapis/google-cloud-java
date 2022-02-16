@@ -32,6 +32,8 @@ import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
+import com.google.bigtable.v2.PingAndWarmRequest;
+import com.google.bigtable.v2.PingAndWarmResponse;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
@@ -99,6 +101,16 @@ public class GrpcBigtableStub extends BigtableStub {
                   ProtoUtils.marshaller(CheckAndMutateRowResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<PingAndWarmRequest, PingAndWarmResponse>
+      pingAndWarmMethodDescriptor =
+          MethodDescriptor.<PingAndWarmRequest, PingAndWarmResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.v2.Bigtable/PingAndWarm")
+              .setRequestMarshaller(ProtoUtils.marshaller(PingAndWarmRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PingAndWarmResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowMethodDescriptor =
           MethodDescriptor.<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>newBuilder()
@@ -117,6 +129,7 @@ public class GrpcBigtableStub extends BigtableStub {
   private final ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> mutateRowsCallable;
   private final UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
       checkAndMutateRowCallable;
+  private final UnaryCallable<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmCallable;
   private final UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowCallable;
 
@@ -143,6 +156,10 @@ public class GrpcBigtableStub extends BigtableStub {
   private static final PathTemplate CHECK_AND_MUTATE_ROW_0_PATH_TEMPLATE =
       PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
   private static final PathTemplate CHECK_AND_MUTATE_ROW_1_PATH_TEMPLATE =
+      PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate PING_AND_WARM_0_PATH_TEMPLATE =
+      PathTemplate.create("{name=projects/*/instances/*}");
+  private static final PathTemplate PING_AND_WARM_1_PATH_TEMPLATE =
       PathTemplate.create("{app_profile_id=**}");
   private static final PathTemplate READ_MODIFY_WRITE_ROW_0_PATH_TEMPLATE =
       PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
@@ -251,6 +268,18 @@ public class GrpcBigtableStub extends BigtableStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmTransportSettings =
+        GrpcCallSettings.<PingAndWarmRequest, PingAndWarmResponse>newBuilder()
+            .setMethodDescriptor(pingAndWarmMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "name", PING_AND_WARM_0_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAppProfileId(), "app_profile_id", PING_AND_WARM_1_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
         readModifyWriteRowTransportSettings =
             GrpcCallSettings.<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>newBuilder()
@@ -287,6 +316,9 @@ public class GrpcBigtableStub extends BigtableStub {
             checkAndMutateRowTransportSettings,
             settings.checkAndMutateRowSettings(),
             clientContext);
+    this.pingAndWarmCallable =
+        callableFactory.createUnaryCallable(
+            pingAndWarmTransportSettings, settings.pingAndWarmSettings(), clientContext);
     this.readModifyWriteRowCallable =
         callableFactory.createUnaryCallable(
             readModifyWriteRowTransportSettings,
@@ -326,6 +358,11 @@ public class GrpcBigtableStub extends BigtableStub {
   public UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
       checkAndMutateRowCallable() {
     return checkAndMutateRowCallable;
+  }
+
+  @Override
+  public UnaryCallable<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmCallable() {
+    return pingAndWarmCallable;
   }
 
   @Override

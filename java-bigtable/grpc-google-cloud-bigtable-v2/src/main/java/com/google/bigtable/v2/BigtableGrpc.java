@@ -247,6 +247,47 @@ public final class BigtableGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.v2.PingAndWarmRequest, com.google.bigtable.v2.PingAndWarmResponse>
+      getPingAndWarmMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PingAndWarm",
+      requestType = com.google.bigtable.v2.PingAndWarmRequest.class,
+      responseType = com.google.bigtable.v2.PingAndWarmResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.v2.PingAndWarmRequest, com.google.bigtable.v2.PingAndWarmResponse>
+      getPingAndWarmMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.v2.PingAndWarmRequest, com.google.bigtable.v2.PingAndWarmResponse>
+        getPingAndWarmMethod;
+    if ((getPingAndWarmMethod = BigtableGrpc.getPingAndWarmMethod) == null) {
+      synchronized (BigtableGrpc.class) {
+        if ((getPingAndWarmMethod = BigtableGrpc.getPingAndWarmMethod) == null) {
+          BigtableGrpc.getPingAndWarmMethod =
+              getPingAndWarmMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.v2.PingAndWarmRequest,
+                          com.google.bigtable.v2.PingAndWarmResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PingAndWarm"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.v2.PingAndWarmRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.v2.PingAndWarmResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new BigtableMethodDescriptorSupplier("PingAndWarm"))
+                      .build();
+        }
+      }
+    }
+    return getPingAndWarmMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.bigtable.v2.ReadModifyWriteRowRequest,
           com.google.bigtable.v2.ReadModifyWriteRowResponse>
       getReadModifyWriteRowMethod;
@@ -425,6 +466,21 @@ public final class BigtableGrpc {
      *
      *
      * <pre>
+     * Warm up associated instance metadata for this connection.
+     * This call is not required but may be useful for connection keep-alive.
+     * </pre>
+     */
+    public void pingAndWarm(
+        com.google.bigtable.v2.PingAndWarmRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.v2.PingAndWarmResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPingAndWarmMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Modifies a row atomically on the server. The method reads the latest
      * existing timestamp and value from the specified columns and writes a new
      * entry based on pre-defined read/modify/write rules. The new value for the
@@ -475,6 +531,12 @@ public final class BigtableGrpc {
                       com.google.bigtable.v2.CheckAndMutateRowRequest,
                       com.google.bigtable.v2.CheckAndMutateRowResponse>(
                       this, METHODID_CHECK_AND_MUTATE_ROW)))
+          .addMethod(
+              getPingAndWarmMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.bigtable.v2.PingAndWarmRequest,
+                      com.google.bigtable.v2.PingAndWarmResponse>(this, METHODID_PING_AND_WARM)))
           .addMethod(
               getReadModifyWriteRowMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -585,6 +647,23 @@ public final class BigtableGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCheckAndMutateRowMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warm up associated instance metadata for this connection.
+     * This call is not required but may be useful for connection keep-alive.
+     * </pre>
+     */
+    public void pingAndWarm(
+        com.google.bigtable.v2.PingAndWarmRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.v2.PingAndWarmResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPingAndWarmMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -708,6 +787,20 @@ public final class BigtableGrpc {
      *
      *
      * <pre>
+     * Warm up associated instance metadata for this connection.
+     * This call is not required but may be useful for connection keep-alive.
+     * </pre>
+     */
+    public com.google.bigtable.v2.PingAndWarmResponse pingAndWarm(
+        com.google.bigtable.v2.PingAndWarmRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPingAndWarmMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Modifies a row atomically on the server. The method reads the latest
      * existing timestamp and value from the specified columns and writes a new
      * entry based on pre-defined read/modify/write rules. The new value for the
@@ -773,6 +866,21 @@ public final class BigtableGrpc {
      *
      *
      * <pre>
+     * Warm up associated instance metadata for this connection.
+     * This call is not required but may be useful for connection keep-alive.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.v2.PingAndWarmResponse>
+        pingAndWarm(com.google.bigtable.v2.PingAndWarmRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPingAndWarmMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Modifies a row atomically on the server. The method reads the latest
      * existing timestamp and value from the specified columns and writes a new
      * entry based on pre-defined read/modify/write rules. The new value for the
@@ -793,7 +901,8 @@ public final class BigtableGrpc {
   private static final int METHODID_MUTATE_ROW = 2;
   private static final int METHODID_MUTATE_ROWS = 3;
   private static final int METHODID_CHECK_AND_MUTATE_ROW = 4;
-  private static final int METHODID_READ_MODIFY_WRITE_ROW = 5;
+  private static final int METHODID_PING_AND_WARM = 5;
+  private static final int METHODID_READ_MODIFY_WRITE_ROW = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -840,6 +949,12 @@ public final class BigtableGrpc {
           serviceImpl.checkAndMutateRow(
               (com.google.bigtable.v2.CheckAndMutateRowRequest) request,
               (io.grpc.stub.StreamObserver<com.google.bigtable.v2.CheckAndMutateRowResponse>)
+                  responseObserver);
+          break;
+        case METHODID_PING_AND_WARM:
+          serviceImpl.pingAndWarm(
+              (com.google.bigtable.v2.PingAndWarmRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.v2.PingAndWarmResponse>)
                   responseObserver);
           break;
         case METHODID_READ_MODIFY_WRITE_ROW:
@@ -915,6 +1030,7 @@ public final class BigtableGrpc {
                       .addMethod(getMutateRowMethod())
                       .addMethod(getMutateRowsMethod())
                       .addMethod(getCheckAndMutateRowMethod())
+                      .addMethod(getPingAndWarmMethod())
                       .addMethod(getReadModifyWriteRowMethod())
                       .build();
         }
