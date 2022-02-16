@@ -159,7 +159,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Styles for the [Document.text][google.cloud.documentai.v1beta3.Document.text].
+   * Placeholder.  Styles for the
+   * [Document.text][google.cloud.documentai.v1beta3.Document.text].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Style text_styles = 5;</code>
@@ -169,7 +170,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Styles for the [Document.text][google.cloud.documentai.v1beta3.Document.text].
+   * Placeholder.  Styles for the
+   * [Document.text][google.cloud.documentai.v1beta3.Document.text].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Style text_styles = 5;</code>
@@ -179,7 +181,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Styles for the [Document.text][google.cloud.documentai.v1beta3.Document.text].
+   * Placeholder.  Styles for the
+   * [Document.text][google.cloud.documentai.v1beta3.Document.text].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Style text_styles = 5;</code>
@@ -189,7 +192,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Styles for the [Document.text][google.cloud.documentai.v1beta3.Document.text].
+   * Placeholder.  Styles for the
+   * [Document.text][google.cloud.documentai.v1beta3.Document.text].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Style text_styles = 5;</code>
@@ -200,7 +204,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Styles for the [Document.text][google.cloud.documentai.v1beta3.Document.text].
+   * Placeholder.  Styles for the
+   * [Document.text][google.cloud.documentai.v1beta3.Document.text].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Style text_styles = 5;</code>
@@ -211,7 +216,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Visual page layout for the [Document][google.cloud.documentai.v1beta3.Document].
+   * Visual page layout for the
+   * [Document][google.cloud.documentai.v1beta3.Document].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Page pages = 6;</code>
@@ -221,7 +227,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Visual page layout for the [Document][google.cloud.documentai.v1beta3.Document].
+   * Visual page layout for the
+   * [Document][google.cloud.documentai.v1beta3.Document].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Page pages = 6;</code>
@@ -231,7 +238,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Visual page layout for the [Document][google.cloud.documentai.v1beta3.Document].
+   * Visual page layout for the
+   * [Document][google.cloud.documentai.v1beta3.Document].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Page pages = 6;</code>
@@ -241,7 +249,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Visual page layout for the [Document][google.cloud.documentai.v1beta3.Document].
+   * Visual page layout for the
+   * [Document][google.cloud.documentai.v1beta3.Document].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Page pages = 6;</code>
@@ -252,7 +261,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Visual page layout for the [Document][google.cloud.documentai.v1beta3.Document].
+   * Visual page layout for the
+   * [Document][google.cloud.documentai.v1beta3.Document].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Page pages = 6;</code>
@@ -263,8 +273,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * A list of entities detected on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-   * entities in this list may cross shard boundaries.
+   * A list of entities detected on
+   * [Document.text][google.cloud.documentai.v1beta3.Document.text]. For
+   * document shards, entities in this list may cross shard boundaries.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Entity entities = 7;</code>
@@ -274,8 +285,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * A list of entities detected on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-   * entities in this list may cross shard boundaries.
+   * A list of entities detected on
+   * [Document.text][google.cloud.documentai.v1beta3.Document.text]. For
+   * document shards, entities in this list may cross shard boundaries.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Entity entities = 7;</code>
@@ -285,8 +297,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * A list of entities detected on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-   * entities in this list may cross shard boundaries.
+   * A list of entities detected on
+   * [Document.text][google.cloud.documentai.v1beta3.Document.text]. For
+   * document shards, entities in this list may cross shard boundaries.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Entity entities = 7;</code>
@@ -296,8 +309,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * A list of entities detected on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-   * entities in this list may cross shard boundaries.
+   * A list of entities detected on
+   * [Document.text][google.cloud.documentai.v1beta3.Document.text]. For
+   * document shards, entities in this list may cross shard boundaries.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Entity entities = 7;</code>
@@ -308,8 +322,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * A list of entities detected on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-   * entities in this list may cross shard boundaries.
+   * A list of entities detected on
+   * [Document.text][google.cloud.documentai.v1beta3.Document.text]. For
+   * document shards, entities in this list may cross shard boundaries.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Entity entities = 7;</code>
@@ -320,7 +335,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Relationship among [Document.entities][google.cloud.documentai.v1beta3.Document.entities].
+   * Placeholder.  Relationship among
+   * [Document.entities][google.cloud.documentai.v1beta3.Document.entities].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.EntityRelation entity_relations = 8;
@@ -332,7 +348,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Relationship among [Document.entities][google.cloud.documentai.v1beta3.Document.entities].
+   * Placeholder.  Relationship among
+   * [Document.entities][google.cloud.documentai.v1beta3.Document.entities].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.EntityRelation entity_relations = 8;
@@ -343,7 +360,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Relationship among [Document.entities][google.cloud.documentai.v1beta3.Document.entities].
+   * Placeholder.  Relationship among
+   * [Document.entities][google.cloud.documentai.v1beta3.Document.entities].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.EntityRelation entity_relations = 8;
@@ -354,7 +372,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Relationship among [Document.entities][google.cloud.documentai.v1beta3.Document.entities].
+   * Placeholder.  Relationship among
+   * [Document.entities][google.cloud.documentai.v1beta3.Document.entities].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.EntityRelation entity_relations = 8;
@@ -366,7 +385,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Relationship among [Document.entities][google.cloud.documentai.v1beta3.Document.entities].
+   * Placeholder.  Relationship among
+   * [Document.entities][google.cloud.documentai.v1beta3.Document.entities].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.EntityRelation entity_relations = 8;
@@ -379,9 +399,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * A list of text corrections made to [Document.text].  This is usually
-   * used for annotating corrections to OCR mistakes.  Text changes for a given
-   * revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text].  This is
+   * usually used for annotating corrections to OCR mistakes.  Text changes for
+   * a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -391,9 +411,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * A list of text corrections made to [Document.text].  This is usually
-   * used for annotating corrections to OCR mistakes.  Text changes for a given
-   * revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text].  This is
+   * usually used for annotating corrections to OCR mistakes.  Text changes for
+   * a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -403,9 +423,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * A list of text corrections made to [Document.text].  This is usually
-   * used for annotating corrections to OCR mistakes.  Text changes for a given
-   * revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text].  This is
+   * usually used for annotating corrections to OCR mistakes.  Text changes for
+   * a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -415,9 +435,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * A list of text corrections made to [Document.text].  This is usually
-   * used for annotating corrections to OCR mistakes.  Text changes for a given
-   * revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text].  This is
+   * usually used for annotating corrections to OCR mistakes.  Text changes for
+   * a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -428,9 +448,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * A list of text corrections made to [Document.text].  This is usually
-   * used for annotating corrections to OCR mistakes.  Text changes for a given
-   * revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text].  This is
+   * usually used for annotating corrections to OCR mistakes.  Text changes for
+   * a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -515,7 +535,7 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Revision history of this document.
+   * Placeholder. Revision history of this document.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Revision revisions = 13;</code>
@@ -525,7 +545,7 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Revision history of this document.
+   * Placeholder. Revision history of this document.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Revision revisions = 13;</code>
@@ -535,7 +555,7 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Revision history of this document.
+   * Placeholder. Revision history of this document.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Revision revisions = 13;</code>
@@ -545,7 +565,7 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Revision history of this document.
+   * Placeholder. Revision history of this document.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Revision revisions = 13;</code>
@@ -556,7 +576,7 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Revision history of this document.
+   * Placeholder. Revision history of this document.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Revision revisions = 13;</code>

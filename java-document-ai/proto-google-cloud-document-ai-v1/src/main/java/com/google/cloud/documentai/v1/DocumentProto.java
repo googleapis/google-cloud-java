@@ -84,6 +84,10 @@ public final class DocumentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_Document_Page_Token_DetectedBreak_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_Document_Page_Symbol_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_Document_Page_Symbol_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_documentai_v1_Document_Page_VisualElement_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_Document_Page_VisualElement_fieldAccessorTable;
@@ -165,15 +169,15 @@ public final class DocumentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/documentai/v1/document.pr"
-          + "oto\022\032google.cloud.documentai.v1\032\037google/"
-          + "api/field_behavior.proto\032)google/cloud/d"
-          + "ocumentai/v1/geometry.proto\032\037google/prot"
-          + "obuf/timestamp.proto\032\027google/rpc/status."
-          + "proto\032\027google/type/color.proto\032\026google/t"
-          + "ype/date.proto\032\032google/type/datetime.pro"
-          + "to\032\027google/type/money.proto\032 google/type"
-          + "/postal_address.proto\032\034google/api/annota"
-          + "tions.proto\"\3079\n\010Document\022\022\n\003uri\030\001 \001(\tB\003\340"
+          + "oto\022\032google.cloud.documentai.v1\032\034google/"
+          + "api/annotations.proto\032\037google/api/field_"
+          + "behavior.proto\032)google/cloud/documentai/"
+          + "v1/geometry.proto\032\037google/protobuf/times"
+          + "tamp.proto\032\027google/rpc/status.proto\032\027goo"
+          + "gle/type/color.proto\032\026google/type/date.p"
+          + "roto\032\032google/type/datetime.proto\032\027google"
+          + "/type/money.proto\032 google/type/postal_ad"
+          + "dress.proto\"\257;\n\010Document\022\022\n\003uri\030\001 \001(\tB\003\340"
           + "A\001H\000\022\026\n\007content\030\002 \001(\014B\003\340A\001H\000\022\021\n\tmime_typ"
           + "e\030\003 \001(\t\022\021\n\004text\030\004 \001(\tB\003\340A\001\022?\n\013text_style"
           + "s\030\005 \003(\0132*.google.cloud.documentai.v1.Doc"
@@ -198,7 +202,7 @@ public final class DocumentProto {
           + "yle\030\005 \001(\t\022\027\n\017text_decoration\030\006 \001(\t\022F\n\tfo"
           + "nt_size\030\007 \001(\01323.google.cloud.documentai."
           + "v1.Document.Style.FontSize\032&\n\010FontSize\022\014"
-          + "\n\004size\030\001 \001(\002\022\014\n\004unit\030\002 \001(\t\032\210\037\n\004Page\022\023\n\013p"
+          + "\n\004size\030\001 \001(\002\022\014\n\004unit\030\002 \001(\t\032\360 \n\004Page\022\023\n\013p"
           + "age_number\030\001 \001(\005\022>\n\005image\030\r \001(\0132/.google"
           + ".cloud.documentai.v1.Document.Page.Image"
           + "\022D\n\ntransforms\030\016 \003(\01320.google.cloud.docu"
@@ -220,155 +224,161 @@ public final class DocumentProto {
           + "ment\022?\n\006tables\030\n \003(\0132/.google.cloud.docu"
           + "mentai.v1.Document.Page.Table\022H\n\013form_fi"
           + "elds\030\013 \003(\01323.google.cloud.documentai.v1."
-          + "Document.Page.FormField\022C\n\nprovenance\030\020 "
-          + "\001(\0132/.google.cloud.documentai.v1.Documen"
-          + "t.Provenance\0328\n\tDimension\022\r\n\005width\030\001 \001(\002"
-          + "\022\016\n\006height\030\002 \001(\002\022\014\n\004unit\030\003 \001(\t\032J\n\005Image\022"
-          + "\017\n\007content\030\001 \001(\014\022\021\n\tmime_type\030\002 \001(\t\022\r\n\005w"
-          + "idth\030\003 \001(\005\022\016\n\006height\030\004 \001(\005\032@\n\006Matrix\022\014\n\004"
-          + "rows\030\001 \001(\005\022\014\n\004cols\030\002 \001(\005\022\014\n\004type\030\003 \001(\005\022\014"
-          + "\n\004data\030\004 \001(\014\032\335\002\n\006Layout\022D\n\013text_anchor\030\001"
-          + " \001(\0132/.google.cloud.documentai.v1.Docume"
-          + "nt.TextAnchor\022\022\n\nconfidence\030\002 \001(\002\022?\n\rbou"
-          + "nding_poly\030\003 \001(\0132(.google.cloud.document"
-          + "ai.v1.BoundingPoly\022Q\n\013orientation\030\004 \001(\0162"
-          + "<.google.cloud.documentai.v1.Document.Pa"
-          + "ge.Layout.Orientation\"e\n\013Orientation\022\033\n\027"
-          + "ORIENTATION_UNSPECIFIED\020\000\022\013\n\007PAGE_UP\020\001\022\016"
-          + "\n\nPAGE_RIGHT\020\002\022\r\n\tPAGE_DOWN\020\003\022\r\n\tPAGE_LE"
-          + "FT\020\004\032\346\001\n\005Block\022@\n\006layout\030\001 \001(\01320.google."
-          + "cloud.documentai.v1.Document.Page.Layout"
-          + "\022V\n\022detected_languages\030\002 \003(\0132:.google.cl"
-          + "oud.documentai.v1.Document.Page.Detected"
-          + "Language\022C\n\nprovenance\030\003 \001(\0132/.google.cl"
-          + "oud.documentai.v1.Document.Provenance\032\352\001"
-          + "\n\tParagraph\022@\n\006layout\030\001 \001(\01320.google.clo"
-          + "ud.documentai.v1.Document.Page.Layout\022V\n"
-          + "\022detected_languages\030\002 \003(\0132:.google.cloud"
-          + ".documentai.v1.Document.Page.DetectedLan"
-          + "guage\022C\n\nprovenance\030\003 \001(\0132/.google.cloud"
-          + ".documentai.v1.Document.Provenance\032\345\001\n\004L"
-          + "ine\022@\n\006layout\030\001 \001(\01320.google.cloud.docum"
-          + "entai.v1.Document.Page.Layout\022V\n\022detecte"
-          + "d_languages\030\002 \003(\0132:.google.cloud.documen"
-          + "tai.v1.Document.Page.DetectedLanguage\022C\n"
-          + "\nprovenance\030\003 \001(\0132/.google.cloud.documen"
-          + "tai.v1.Document.Provenance\032\346\003\n\005Token\022@\n\006"
-          + "layout\030\001 \001(\01320.google.cloud.documentai.v"
-          + "1.Document.Page.Layout\022U\n\016detected_break"
-          + "\030\002 \001(\0132=.google.cloud.documentai.v1.Docu"
-          + "ment.Page.Token.DetectedBreak\022V\n\022detecte"
-          + "d_languages\030\003 \003(\0132:.google.cloud.documen"
-          + "tai.v1.Document.Page.DetectedLanguage\022C\n"
-          + "\nprovenance\030\004 \001(\0132/.google.cloud.documen"
-          + "tai.v1.Document.Provenance\032\246\001\n\rDetectedB"
-          + "reak\022P\n\004type\030\001 \001(\0162B.google.cloud.docume"
-          + "ntai.v1.Document.Page.Token.DetectedBrea"
-          + "k.Type\"C\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\t\n\005"
-          + "SPACE\020\001\022\016\n\nWIDE_SPACE\020\002\022\n\n\006HYPHEN\020\003\032\267\001\n\r"
-          + "VisualElement\022@\n\006layout\030\001 \001(\01320.google.c"
-          + "loud.documentai.v1.Document.Page.Layout\022"
-          + "\014\n\004type\030\002 \001(\t\022V\n\022detected_languages\030\003 \003("
-          + "\0132:.google.cloud.documentai.v1.Document."
-          + "Page.DetectedLanguage\032\337\004\n\005Table\022@\n\006layou"
-          + "t\030\001 \001(\01320.google.cloud.documentai.v1.Doc"
-          + "ument.Page.Layout\022M\n\013header_rows\030\002 \003(\01328"
-          + ".google.cloud.documentai.v1.Document.Pag"
-          + "e.Table.TableRow\022K\n\tbody_rows\030\003 \003(\01328.go"
-          + "ogle.cloud.documentai.v1.Document.Page.T"
-          + "able.TableRow\022V\n\022detected_languages\030\004 \003("
-          + "\0132:.google.cloud.documentai.v1.Document."
-          + "Page.DetectedLanguage\032T\n\010TableRow\022H\n\005cel"
-          + "ls\030\001 \003(\01329.google.cloud.documentai.v1.Do"
-          + "cument.Page.Table.TableCell\032\311\001\n\tTableCel"
-          + "l\022@\n\006layout\030\001 \001(\01320.google.cloud.documen"
-          + "tai.v1.Document.Page.Layout\022\020\n\010row_span\030"
-          + "\002 \001(\005\022\020\n\010col_span\030\003 \001(\005\022V\n\022detected_lang"
-          + "uages\030\004 \003(\0132:.google.cloud.documentai.v1"
-          + ".Document.Page.DetectedLanguage\032\254\003\n\tForm"
-          + "Field\022D\n\nfield_name\030\001 \001(\01320.google.cloud"
-          + ".documentai.v1.Document.Page.Layout\022E\n\013f"
-          + "ield_value\030\002 \001(\01320.google.cloud.document"
-          + "ai.v1.Document.Page.Layout\022[\n\027name_detec"
-          + "ted_languages\030\003 \003(\0132:.google.cloud.docum"
-          + "entai.v1.Document.Page.DetectedLanguage\022"
-          + "\\\n\030value_detected_languages\030\004 \003(\0132:.goog"
-          + "le.cloud.documentai.v1.Document.Page.Det"
-          + "ectedLanguage\022\022\n\nvalue_type\030\005 \001(\t\022C\n\npro"
-          + "venance\030\010 \001(\0132/.google.cloud.documentai."
-          + "v1.Document.Provenance\032=\n\020DetectedLangua"
-          + "ge\022\025\n\rlanguage_code\030\001 \001(\t\022\022\n\nconfidence\030"
-          + "\002 \001(\002\032\233\006\n\006Entity\022I\n\013text_anchor\030\001 \001(\0132/."
-          + "google.cloud.documentai.v1.Document.Text"
-          + "AnchorB\003\340A\001\022\014\n\004type\030\002 \001(\t\022\031\n\014mention_tex"
-          + "t\030\003 \001(\tB\003\340A\001\022\027\n\nmention_id\030\004 \001(\tB\003\340A\001\022\027\n"
-          + "\nconfidence\030\005 \001(\002B\003\340A\001\022I\n\013page_anchor\030\006 "
-          + "\001(\0132/.google.cloud.documentai.v1.Documen"
-          + "t.PageAnchorB\003\340A\001\022\017\n\002id\030\007 \001(\tB\003\340A\001\022Z\n\020no"
-          + "rmalized_value\030\t \001(\0132;.google.cloud.docu"
-          + "mentai.v1.Document.Entity.NormalizedValu"
-          + "eB\003\340A\001\022D\n\nproperties\030\n \003(\0132+.google.clou"
-          + "d.documentai.v1.Document.EntityB\003\340A\001\022H\n\n"
-          + "provenance\030\013 \001(\0132/.google.cloud.document"
-          + "ai.v1.Document.ProvenanceB\003\340A\001\022\025\n\010redact"
-          + "ed\030\014 \001(\010B\003\340A\001\032\213\002\n\017NormalizedValue\022)\n\013mon"
-          + "ey_value\030\002 \001(\0132\022.google.type.MoneyH\000\022\'\n\n"
-          + "date_value\030\003 \001(\0132\021.google.type.DateH\000\022/\n"
-          + "\016datetime_value\030\004 \001(\0132\025.google.type.Date"
-          + "TimeH\000\0223\n\raddress_value\030\005 \001(\0132\032.google.t"
-          + "ype.PostalAddressH\000\022\027\n\rboolean_value\030\006 \001"
-          + "(\010H\000\022\021\n\004text\030\001 \001(\tB\003\340A\002B\022\n\020structured_va"
-          + "lue\032I\n\016EntityRelation\022\022\n\nsubject_id\030\001 \001("
-          + "\t\022\021\n\tobject_id\030\002 \001(\t\022\020\n\010relation\030\003 \001(\t\032\250"
-          + "\001\n\nTextAnchor\022R\n\rtext_segments\030\001 \003(\0132;.g"
-          + "oogle.cloud.documentai.v1.Document.TextA"
-          + "nchor.TextSegment\022\017\n\007content\030\002 \001(\t\0325\n\013Te"
-          + "xtSegment\022\023\n\013start_index\030\001 \001(\003\022\021\n\tend_in"
-          + "dex\030\002 \001(\003\032\330\003\n\nPageAnchor\022J\n\tpage_refs\030\001 "
-          + "\003(\01327.google.cloud.documentai.v1.Documen"
-          + "t.PageAnchor.PageRef\032\375\002\n\007PageRef\022\021\n\004page"
-          + "\030\001 \001(\003B\003\340A\002\022\\\n\013layout_type\030\002 \001(\0162B.googl"
-          + "e.cloud.documentai.v1.Document.PageAncho"
-          + "r.PageRef.LayoutTypeB\003\340A\001\022\030\n\tlayout_id\030\003"
-          + " \001(\tB\005\030\001\340A\001\022D\n\rbounding_poly\030\004 \001(\0132(.goo"
-          + "gle.cloud.documentai.v1.BoundingPolyB\003\340A"
-          + "\001\022\027\n\nconfidence\030\005 \001(\002B\003\340A\001\"\207\001\n\nLayoutTyp"
-          + "e\022\033\n\027LAYOUT_TYPE_UNSPECIFIED\020\000\022\t\n\005BLOCK\020"
-          + "\001\022\r\n\tPARAGRAPH\020\002\022\010\n\004LINE\020\003\022\t\n\005TOKEN\020\004\022\022\n"
-          + "\016VISUAL_ELEMENT\020\005\022\t\n\005TABLE\020\006\022\016\n\nFORM_FIE"
-          + "LD\020\007\032\214\003\n\nProvenance\022\020\n\010revision\030\001 \001(\005\022\016\n"
-          + "\002id\030\002 \001(\005B\002\030\001\022G\n\007parents\030\003 \003(\01326.google."
-          + "cloud.documentai.v1.Document.Provenance."
-          + "Parent\022K\n\004type\030\004 \001(\0162=.google.cloud.docu"
-          + "mentai.v1.Document.Provenance.OperationT"
-          + "ype\0329\n\006Parent\022\020\n\010revision\030\001 \001(\005\022\r\n\005index"
-          + "\030\003 \001(\005\022\016\n\002id\030\002 \001(\005B\002\030\001\"\212\001\n\rOperationType"
-          + "\022\036\n\032OPERATION_TYPE_UNSPECIFIED\020\000\022\007\n\003ADD\020"
-          + "\001\022\n\n\006REMOVE\020\002\022\013\n\007REPLACE\020\003\022\022\n\016EVAL_REQUE"
-          + "STED\020\004\022\021\n\rEVAL_APPROVED\020\005\022\020\n\014EVAL_SKIPPE"
-          + "D\020\006\032\215\002\n\010Revision\022\017\n\005agent\030\004 \001(\tH\000\022\023\n\tpro"
-          + "cessor\030\005 \001(\tH\000\022\n\n\002id\030\001 \001(\t\022\016\n\006parent\030\002 \003"
-          + "(\005\022/\n\013create_time\030\003 \001(\0132\032.google.protobu"
-          + "f.Timestamp\022O\n\014human_review\030\006 \001(\01329.goog"
-          + "le.cloud.documentai.v1.Document.Revision"
-          + ".HumanReview\0323\n\013HumanReview\022\r\n\005state\030\001 \001"
-          + "(\t\022\025\n\rstate_message\030\002 \001(\tB\010\n\006source\032\255\001\n\n"
-          + "TextChange\022D\n\013text_anchor\030\001 \001(\0132/.google"
+          + "Document.Page.FormField\022A\n\007symbols\030\014 \003(\013"
+          + "20.google.cloud.documentai.v1.Document.P"
+          + "age.Symbol\022C\n\nprovenance\030\020 \001(\0132/.google."
+          + "cloud.documentai.v1.Document.Provenance\032"
+          + "8\n\tDimension\022\r\n\005width\030\001 \001(\002\022\016\n\006height\030\002 "
+          + "\001(\002\022\014\n\004unit\030\003 \001(\t\032J\n\005Image\022\017\n\007content\030\001 "
+          + "\001(\014\022\021\n\tmime_type\030\002 \001(\t\022\r\n\005width\030\003 \001(\005\022\016\n"
+          + "\006height\030\004 \001(\005\032@\n\006Matrix\022\014\n\004rows\030\001 \001(\005\022\014\n"
+          + "\004cols\030\002 \001(\005\022\014\n\004type\030\003 \001(\005\022\014\n\004data\030\004 \001(\014\032"
+          + "\335\002\n\006Layout\022D\n\013text_anchor\030\001 \001(\0132/.google"
           + ".cloud.documentai.v1.Document.TextAnchor"
-          + "\022\024\n\014changed_text\030\002 \001(\t\022C\n\nprovenance\030\003 \003"
-          + "(\0132/.google.cloud.documentai.v1.Document"
-          + ".ProvenanceB\010\n\006sourceB\321\001\n\036com.google.clo"
-          + "ud.documentai.v1B\rDocumentProtoP\001ZDgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/d"
-          + "ocumentai/v1;documentai\252\002\032Google.Cloud.D"
-          + "ocumentAI.V1\312\002\032Google\\Cloud\\DocumentAI\\V"
-          + "1\352\002\035Google::Cloud::DocumentAI::V1b\006proto"
-          + "3"
+          + "\022\022\n\nconfidence\030\002 \001(\002\022?\n\rbounding_poly\030\003 "
+          + "\001(\0132(.google.cloud.documentai.v1.Boundin"
+          + "gPoly\022Q\n\013orientation\030\004 \001(\0162<.google.clou"
+          + "d.documentai.v1.Document.Page.Layout.Ori"
+          + "entation\"e\n\013Orientation\022\033\n\027ORIENTATION_U"
+          + "NSPECIFIED\020\000\022\013\n\007PAGE_UP\020\001\022\016\n\nPAGE_RIGHT\020"
+          + "\002\022\r\n\tPAGE_DOWN\020\003\022\r\n\tPAGE_LEFT\020\004\032\346\001\n\005Bloc"
+          + "k\022@\n\006layout\030\001 \001(\01320.google.cloud.documen"
+          + "tai.v1.Document.Page.Layout\022V\n\022detected_"
+          + "languages\030\002 \003(\0132:.google.cloud.documenta"
+          + "i.v1.Document.Page.DetectedLanguage\022C\n\np"
+          + "rovenance\030\003 \001(\0132/.google.cloud.documenta"
+          + "i.v1.Document.Provenance\032\352\001\n\tParagraph\022@"
+          + "\n\006layout\030\001 \001(\01320.google.cloud.documentai"
+          + ".v1.Document.Page.Layout\022V\n\022detected_lan"
+          + "guages\030\002 \003(\0132:.google.cloud.documentai.v"
+          + "1.Document.Page.DetectedLanguage\022C\n\nprov"
+          + "enance\030\003 \001(\0132/.google.cloud.documentai.v"
+          + "1.Document.Provenance\032\345\001\n\004Line\022@\n\006layout"
+          + "\030\001 \001(\01320.google.cloud.documentai.v1.Docu"
+          + "ment.Page.Layout\022V\n\022detected_languages\030\002"
+          + " \003(\0132:.google.cloud.documentai.v1.Docume"
+          + "nt.Page.DetectedLanguage\022C\n\nprovenance\030\003"
+          + " \001(\0132/.google.cloud.documentai.v1.Docume"
+          + "nt.Provenance\032\346\003\n\005Token\022@\n\006layout\030\001 \001(\0132"
+          + "0.google.cloud.documentai.v1.Document.Pa"
+          + "ge.Layout\022U\n\016detected_break\030\002 \001(\0132=.goog"
+          + "le.cloud.documentai.v1.Document.Page.Tok"
+          + "en.DetectedBreak\022V\n\022detected_languages\030\003"
+          + " \003(\0132:.google.cloud.documentai.v1.Docume"
+          + "nt.Page.DetectedLanguage\022C\n\nprovenance\030\004"
+          + " \001(\0132/.google.cloud.documentai.v1.Docume"
+          + "nt.Provenance\032\246\001\n\rDetectedBreak\022P\n\004type\030"
+          + "\001 \001(\0162B.google.cloud.documentai.v1.Docum"
+          + "ent.Page.Token.DetectedBreak.Type\"C\n\004Typ"
+          + "e\022\024\n\020TYPE_UNSPECIFIED\020\000\022\t\n\005SPACE\020\001\022\016\n\nWI"
+          + "DE_SPACE\020\002\022\n\n\006HYPHEN\020\003\032\242\001\n\006Symbol\022@\n\006lay"
+          + "out\030\001 \001(\01320.google.cloud.documentai.v1.D"
+          + "ocument.Page.Layout\022V\n\022detected_language"
+          + "s\030\002 \003(\0132:.google.cloud.documentai.v1.Doc"
+          + "ument.Page.DetectedLanguage\032\267\001\n\rVisualEl"
+          + "ement\022@\n\006layout\030\001 \001(\01320.google.cloud.doc"
+          + "umentai.v1.Document.Page.Layout\022\014\n\004type\030"
+          + "\002 \001(\t\022V\n\022detected_languages\030\003 \003(\0132:.goog"
+          + "le.cloud.documentai.v1.Document.Page.Det"
+          + "ectedLanguage\032\337\004\n\005Table\022@\n\006layout\030\001 \001(\0132"
+          + "0.google.cloud.documentai.v1.Document.Pa"
+          + "ge.Layout\022M\n\013header_rows\030\002 \003(\01328.google."
+          + "cloud.documentai.v1.Document.Page.Table."
+          + "TableRow\022K\n\tbody_rows\030\003 \003(\01328.google.clo"
+          + "ud.documentai.v1.Document.Page.Table.Tab"
+          + "leRow\022V\n\022detected_languages\030\004 \003(\0132:.goog"
+          + "le.cloud.documentai.v1.Document.Page.Det"
+          + "ectedLanguage\032T\n\010TableRow\022H\n\005cells\030\001 \003(\013"
+          + "29.google.cloud.documentai.v1.Document.P"
+          + "age.Table.TableCell\032\311\001\n\tTableCell\022@\n\006lay"
+          + "out\030\001 \001(\01320.google.cloud.documentai.v1.D"
+          + "ocument.Page.Layout\022\020\n\010row_span\030\002 \001(\005\022\020\n"
+          + "\010col_span\030\003 \001(\005\022V\n\022detected_languages\030\004 "
+          + "\003(\0132:.google.cloud.documentai.v1.Documen"
+          + "t.Page.DetectedLanguage\032\254\003\n\tFormField\022D\n"
+          + "\nfield_name\030\001 \001(\01320.google.cloud.documen"
+          + "tai.v1.Document.Page.Layout\022E\n\013field_val"
+          + "ue\030\002 \001(\01320.google.cloud.documentai.v1.Do"
+          + "cument.Page.Layout\022[\n\027name_detected_lang"
+          + "uages\030\003 \003(\0132:.google.cloud.documentai.v1"
+          + ".Document.Page.DetectedLanguage\022\\\n\030value"
+          + "_detected_languages\030\004 \003(\0132:.google.cloud"
+          + ".documentai.v1.Document.Page.DetectedLan"
+          + "guage\022\022\n\nvalue_type\030\005 \001(\t\022C\n\nprovenance\030"
+          + "\010 \001(\0132/.google.cloud.documentai.v1.Docum"
+          + "ent.Provenance\032=\n\020DetectedLanguage\022\025\n\rla"
+          + "nguage_code\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\032\233\006"
+          + "\n\006Entity\022I\n\013text_anchor\030\001 \001(\0132/.google.c"
+          + "loud.documentai.v1.Document.TextAnchorB\003"
+          + "\340A\001\022\014\n\004type\030\002 \001(\t\022\031\n\014mention_text\030\003 \001(\tB"
+          + "\003\340A\001\022\027\n\nmention_id\030\004 \001(\tB\003\340A\001\022\027\n\nconfide"
+          + "nce\030\005 \001(\002B\003\340A\001\022I\n\013page_anchor\030\006 \001(\0132/.go"
+          + "ogle.cloud.documentai.v1.Document.PageAn"
+          + "chorB\003\340A\001\022\017\n\002id\030\007 \001(\tB\003\340A\001\022Z\n\020normalized"
+          + "_value\030\t \001(\0132;.google.cloud.documentai.v"
+          + "1.Document.Entity.NormalizedValueB\003\340A\001\022D"
+          + "\n\nproperties\030\n \003(\0132+.google.cloud.docume"
+          + "ntai.v1.Document.EntityB\003\340A\001\022H\n\nprovenan"
+          + "ce\030\013 \001(\0132/.google.cloud.documentai.v1.Do"
+          + "cument.ProvenanceB\003\340A\001\022\025\n\010redacted\030\014 \001(\010"
+          + "B\003\340A\001\032\213\002\n\017NormalizedValue\022)\n\013money_value"
+          + "\030\002 \001(\0132\022.google.type.MoneyH\000\022\'\n\ndate_val"
+          + "ue\030\003 \001(\0132\021.google.type.DateH\000\022/\n\016datetim"
+          + "e_value\030\004 \001(\0132\025.google.type.DateTimeH\000\0223"
+          + "\n\raddress_value\030\005 \001(\0132\032.google.type.Post"
+          + "alAddressH\000\022\027\n\rboolean_value\030\006 \001(\010H\000\022\021\n\004"
+          + "text\030\001 \001(\tB\003\340A\001B\022\n\020structured_value\032I\n\016E"
+          + "ntityRelation\022\022\n\nsubject_id\030\001 \001(\t\022\021\n\tobj"
+          + "ect_id\030\002 \001(\t\022\020\n\010relation\030\003 \001(\t\032\250\001\n\nTextA"
+          + "nchor\022R\n\rtext_segments\030\001 \003(\0132;.google.cl"
+          + "oud.documentai.v1.Document.TextAnchor.Te"
+          + "xtSegment\022\017\n\007content\030\002 \001(\t\0325\n\013TextSegmen"
+          + "t\022\023\n\013start_index\030\001 \001(\003\022\021\n\tend_index\030\002 \001("
+          + "\003\032\330\003\n\nPageAnchor\022J\n\tpage_refs\030\001 \003(\01327.go"
+          + "ogle.cloud.documentai.v1.Document.PageAn"
+          + "chor.PageRef\032\375\002\n\007PageRef\022\021\n\004page\030\001 \001(\003B\003"
+          + "\340A\002\022\\\n\013layout_type\030\002 \001(\0162B.google.cloud."
+          + "documentai.v1.Document.PageAnchor.PageRe"
+          + "f.LayoutTypeB\003\340A\001\022\030\n\tlayout_id\030\003 \001(\tB\005\030\001"
+          + "\340A\001\022D\n\rbounding_poly\030\004 \001(\0132(.google.clou"
+          + "d.documentai.v1.BoundingPolyB\003\340A\001\022\027\n\ncon"
+          + "fidence\030\005 \001(\002B\003\340A\001\"\207\001\n\nLayoutType\022\033\n\027LAY"
+          + "OUT_TYPE_UNSPECIFIED\020\000\022\t\n\005BLOCK\020\001\022\r\n\tPAR"
+          + "AGRAPH\020\002\022\010\n\004LINE\020\003\022\t\n\005TOKEN\020\004\022\022\n\016VISUAL_"
+          + "ELEMENT\020\005\022\t\n\005TABLE\020\006\022\016\n\nFORM_FIELD\020\007\032\214\003\n"
+          + "\nProvenance\022\020\n\010revision\030\001 \001(\005\022\016\n\002id\030\002 \001("
+          + "\005B\002\030\001\022G\n\007parents\030\003 \003(\01326.google.cloud.do"
+          + "cumentai.v1.Document.Provenance.Parent\022K"
+          + "\n\004type\030\004 \001(\0162=.google.cloud.documentai.v"
+          + "1.Document.Provenance.OperationType\0329\n\006P"
+          + "arent\022\020\n\010revision\030\001 \001(\005\022\r\n\005index\030\003 \001(\005\022\016"
+          + "\n\002id\030\002 \001(\005B\002\030\001\"\212\001\n\rOperationType\022\036\n\032OPER"
+          + "ATION_TYPE_UNSPECIFIED\020\000\022\007\n\003ADD\020\001\022\n\n\006REM"
+          + "OVE\020\002\022\013\n\007REPLACE\020\003\022\022\n\016EVAL_REQUESTED\020\004\022\021"
+          + "\n\rEVAL_APPROVED\020\005\022\020\n\014EVAL_SKIPPED\020\006\032\215\002\n\010"
+          + "Revision\022\017\n\005agent\030\004 \001(\tH\000\022\023\n\tprocessor\030\005"
+          + " \001(\tH\000\022\n\n\002id\030\001 \001(\t\022\016\n\006parent\030\002 \003(\005\022/\n\013cr"
+          + "eate_time\030\003 \001(\0132\032.google.protobuf.Timest"
+          + "amp\022O\n\014human_review\030\006 \001(\01329.google.cloud"
+          + ".documentai.v1.Document.Revision.HumanRe"
+          + "view\0323\n\013HumanReview\022\r\n\005state\030\001 \001(\t\022\025\n\rst"
+          + "ate_message\030\002 \001(\tB\010\n\006source\032\255\001\n\nTextChan"
+          + "ge\022D\n\013text_anchor\030\001 \001(\0132/.google.cloud.d"
+          + "ocumentai.v1.Document.TextAnchor\022\024\n\014chan"
+          + "ged_text\030\002 \001(\t\022C\n\nprovenance\030\003 \003(\0132/.goo"
+          + "gle.cloud.documentai.v1.Document.Provena"
+          + "nceB\010\n\006sourceB\321\001\n\036com.google.cloud.docum"
+          + "entai.v1B\rDocumentProtoP\001ZDgoogle.golang"
+          + ".org/genproto/googleapis/cloud/documenta"
+          + "i/v1;documentai\252\002\032Google.Cloud.DocumentA"
+          + "I.V1\312\002\032Google\\Cloud\\DocumentAI\\V1\352\002\035Goog"
+          + "le::Cloud::DocumentAI::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.documentai.v1.GeometryProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -378,7 +388,6 @@ public final class DocumentProto {
               com.google.type.DateTimeProto.getDescriptor(),
               com.google.type.MoneyProto.getDescriptor(),
               com.google.type.PostalAddressProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_documentai_v1_Document_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -451,6 +460,7 @@ public final class DocumentProto {
               "VisualElements",
               "Tables",
               "FormFields",
+              "Symbols",
               "Provenance",
             });
     internal_static_google_cloud_documentai_v1_Document_Page_Dimension_descriptor =
@@ -527,8 +537,16 @@ public final class DocumentProto {
             new java.lang.String[] {
               "Type",
             });
-    internal_static_google_cloud_documentai_v1_Document_Page_VisualElement_descriptor =
+    internal_static_google_cloud_documentai_v1_Document_Page_Symbol_descriptor =
         internal_static_google_cloud_documentai_v1_Document_Page_descriptor.getNestedTypes().get(8);
+    internal_static_google_cloud_documentai_v1_Document_Page_Symbol_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_Document_Page_Symbol_descriptor,
+            new java.lang.String[] {
+              "Layout", "DetectedLanguages",
+            });
+    internal_static_google_cloud_documentai_v1_Document_Page_VisualElement_descriptor =
+        internal_static_google_cloud_documentai_v1_Document_Page_descriptor.getNestedTypes().get(9);
     internal_static_google_cloud_documentai_v1_Document_Page_VisualElement_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_Document_Page_VisualElement_descriptor,
@@ -536,7 +554,9 @@ public final class DocumentProto {
               "Layout", "Type", "DetectedLanguages",
             });
     internal_static_google_cloud_documentai_v1_Document_Page_Table_descriptor =
-        internal_static_google_cloud_documentai_v1_Document_Page_descriptor.getNestedTypes().get(9);
+        internal_static_google_cloud_documentai_v1_Document_Page_descriptor
+            .getNestedTypes()
+            .get(10);
     internal_static_google_cloud_documentai_v1_Document_Page_Table_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_Document_Page_Table_descriptor,
@@ -566,7 +586,7 @@ public final class DocumentProto {
     internal_static_google_cloud_documentai_v1_Document_Page_FormField_descriptor =
         internal_static_google_cloud_documentai_v1_Document_Page_descriptor
             .getNestedTypes()
-            .get(10);
+            .get(11);
     internal_static_google_cloud_documentai_v1_Document_Page_FormField_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_Document_Page_FormField_descriptor,
@@ -581,7 +601,7 @@ public final class DocumentProto {
     internal_static_google_cloud_documentai_v1_Document_Page_DetectedLanguage_descriptor =
         internal_static_google_cloud_documentai_v1_Document_Page_descriptor
             .getNestedTypes()
-            .get(11);
+            .get(12);
     internal_static_google_cloud_documentai_v1_Document_Page_DetectedLanguage_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_Document_Page_DetectedLanguage_descriptor,
@@ -715,6 +735,7 @@ public final class DocumentProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.documentai.v1.GeometryProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
@@ -724,7 +745,6 @@ public final class DocumentProto {
     com.google.type.DateTimeProto.getDescriptor();
     com.google.type.MoneyProto.getDescriptor();
     com.google.type.PostalAddressProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
