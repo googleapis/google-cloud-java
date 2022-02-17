@@ -42,23 +42,21 @@ public final class LocationProto {
     java.lang.String[] descriptorData = {
       "\n\"google/appengine/v1/location.proto\022\023go"
           + "ogle.appengine.v1\032\037google/api/field_beha"
-          + "vior.proto\032\034google/api/annotations.proto"
-          + "\"\205\001\n\020LocationMetadata\022&\n\036standard_enviro"
-          + "nment_available\030\002 \001(\010\022&\n\036flexible_enviro"
-          + "nment_available\030\004 \001(\010\022!\n\024search_api_avai"
-          + "lable\030\006 \001(\010B\003\340A\003B\277\001\n\027com.google.appengin"
-          + "e.v1B\rLocationProtoP\001Z<google.golang.org"
-          + "/genproto/googleapis/appengine/v1;appeng"
-          + "ine\252\002\031Google.Cloud.AppEngine.V1\312\002\031Google"
-          + "\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::App"
-          + "Engine::V1b\006proto3"
+          + "vior.proto\"\205\001\n\020LocationMetadata\022&\n\036stand"
+          + "ard_environment_available\030\002 \001(\010\022&\n\036flexi"
+          + "ble_environment_available\030\004 \001(\010\022!\n\024searc"
+          + "h_api_available\030\006 \001(\010B\003\340A\003B\277\001\n\027com.googl"
+          + "e.appengine.v1B\rLocationProtoP\001Z<google."
+          + "golang.org/genproto/googleapis/appengine"
+          + "/v1;appengine\252\002\031Google.Cloud.AppEngine.V"
+          + "1\312\002\031Google\\Cloud\\AppEngine\\V1\352\002\034Google::"
+          + "Cloud::AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_appengine_v1_LocationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -74,7 +72,6 @@ public final class LocationProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

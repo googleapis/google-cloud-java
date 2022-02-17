@@ -62,34 +62,32 @@ public final class DeployProto {
     java.lang.String[] descriptorData = {
       "\n google/appengine/v1/deploy.proto\022\023goog"
           + "le.appengine.v1\032\036google/protobuf/duratio"
-          + "n.proto\032\034google/api/annotations.proto\"\273\002"
-          + "\n\nDeployment\0229\n\005files\030\001 \003(\0132*.google.app"
-          + "engine.v1.Deployment.FilesEntry\0225\n\tconta"
-          + "iner\030\002 \001(\0132\".google.appengine.v1.Contain"
-          + "erInfo\022)\n\003zip\030\003 \001(\0132\034.google.appengine.v"
-          + "1.ZipInfo\022C\n\023cloud_build_options\030\006 \001(\0132&"
-          + ".google.appengine.v1.CloudBuildOptions\032K"
-          + "\n\nFilesEntry\022\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\013"
-          + "2\035.google.appengine.v1.FileInfo:\0028\001\"C\n\010F"
-          + "ileInfo\022\022\n\nsource_url\030\001 \001(\t\022\020\n\010sha1_sum\030"
-          + "\002 \001(\t\022\021\n\tmime_type\030\003 \001(\t\"\036\n\rContainerInf"
-          + "o\022\r\n\005image\030\001 \001(\t\"b\n\021CloudBuildOptions\022\025\n"
-          + "\rapp_yaml_path\030\001 \001(\t\0226\n\023cloud_build_time"
-          + "out\030\002 \001(\0132\031.google.protobuf.Duration\"2\n\007"
-          + "ZipInfo\022\022\n\nsource_url\030\003 \001(\t\022\023\n\013files_cou"
-          + "nt\030\004 \001(\005B\275\001\n\027com.google.appengine.v1B\013De"
-          + "ployProtoP\001Z<google.golang.org/genproto/"
-          + "googleapis/appengine/v1;appengine\252\002\031Goog"
-          + "le.Cloud.AppEngine.V1\312\002\031Google\\Cloud\\App"
-          + "Engine\\V1\352\002\034Google::Cloud::AppEngine::V1"
-          + "b\006proto3"
+          + "n.proto\"\273\002\n\nDeployment\0229\n\005files\030\001 \003(\0132*."
+          + "google.appengine.v1.Deployment.FilesEntr"
+          + "y\0225\n\tcontainer\030\002 \001(\0132\".google.appengine."
+          + "v1.ContainerInfo\022)\n\003zip\030\003 \001(\0132\034.google.a"
+          + "ppengine.v1.ZipInfo\022C\n\023cloud_build_optio"
+          + "ns\030\006 \001(\0132&.google.appengine.v1.CloudBuil"
+          + "dOptions\032K\n\nFilesEntry\022\013\n\003key\030\001 \001(\t\022,\n\005v"
+          + "alue\030\002 \001(\0132\035.google.appengine.v1.FileInf"
+          + "o:\0028\001\"C\n\010FileInfo\022\022\n\nsource_url\030\001 \001(\t\022\020\n"
+          + "\010sha1_sum\030\002 \001(\t\022\021\n\tmime_type\030\003 \001(\t\"\036\n\rCo"
+          + "ntainerInfo\022\r\n\005image\030\001 \001(\t\"b\n\021CloudBuild"
+          + "Options\022\025\n\rapp_yaml_path\030\001 \001(\t\0226\n\023cloud_"
+          + "build_timeout\030\002 \001(\0132\031.google.protobuf.Du"
+          + "ration\"2\n\007ZipInfo\022\022\n\nsource_url\030\003 \001(\t\022\023\n"
+          + "\013files_count\030\004 \001(\005B\275\001\n\027com.google.appeng"
+          + "ine.v1B\013DeployProtoP\001Z<google.golang.org"
+          + "/genproto/googleapis/appengine/v1;appeng"
+          + "ine\252\002\031Google.Cloud.AppEngine.V1\312\002\031Google"
+          + "\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::App"
+          + "Engine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.DurationProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_appengine_v1_Deployment_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -140,7 +138,6 @@ public final class DeployProto {
               "SourceUrl", "FilesCount",
             });
     com.google.protobuf.DurationProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

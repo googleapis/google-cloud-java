@@ -36,21 +36,16 @@ public final class DeployedFilesProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/appengine/v1/deployed_files.pro"
-          + "to\022\023google.appengine.v1\032\034google/api/anno"
-          + "tations.protoB\304\001\n\027com.google.appengine.v"
-          + "1B\022DeployedFilesProtoP\001Z<google.golang.o"
-          + "rg/genproto/googleapis/appengine/v1;appe"
-          + "ngine\252\002\031Google.Cloud.AppEngine.V1\312\002\031Goog"
-          + "le\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::A"
-          + "ppEngine::V1b\006proto3"
+          + "to\022\023google.appengine.v1B\304\001\n\027com.google.a"
+          + "ppengine.v1B\022DeployedFilesProtoP\001Z<googl"
+          + "e.golang.org/genproto/googleapis/appengi"
+          + "ne/v1;appengine\252\002\031Google.Cloud.AppEngine"
+          + ".V1\312\002\031Google\\Cloud\\AppEngine\\V1\352\002\034Google"
+          + "::Cloud::AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
-    com.google.api.AnnotationsProto.getDescriptor();
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
   }
 
   // @@protoc_insertion_point(outer_class_scope)

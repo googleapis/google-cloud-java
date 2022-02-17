@@ -41,28 +41,24 @@ public final class NetworkSettingsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n*google/appengine/v1/network_settings.p"
-          + "roto\022\023google.appengine.v1\032\034google/api/an"
-          + "notations.proto\"\252\002\n\017NetworkSettings\022[\n\027i"
-          + "ngress_traffic_allowed\030\001 \001(\0162:.google.ap"
-          + "pengine.v1.NetworkSettings.IngressTraffi"
-          + "cAllowed\"\271\001\n\025IngressTrafficAllowed\022\'\n#IN"
-          + "GRESS_TRAFFIC_ALLOWED_UNSPECIFIED\020\000\022\037\n\033I"
-          + "NGRESS_TRAFFIC_ALLOWED_ALL\020\001\022)\n%INGRESS_"
-          + "TRAFFIC_ALLOWED_INTERNAL_ONLY\020\002\022+\n\'INGRE"
-          + "SS_TRAFFIC_ALLOWED_INTERNAL_AND_LB\020\003B\306\001\n"
-          + "\027com.google.appengine.v1B\024NetworkSetting"
-          + "sProtoP\001Z<google.golang.org/genproto/goo"
-          + "gleapis/appengine/v1;appengine\252\002\031Google."
-          + "Cloud.AppEngine.V1\312\002\031Google\\Cloud\\AppEng"
-          + "ine\\V1\352\002\034Google::Cloud::AppEngine::V1b\006p"
-          + "roto3"
+          + "roto\022\023google.appengine.v1\"\252\002\n\017NetworkSet"
+          + "tings\022[\n\027ingress_traffic_allowed\030\001 \001(\0162:"
+          + ".google.appengine.v1.NetworkSettings.Ing"
+          + "ressTrafficAllowed\"\271\001\n\025IngressTrafficAll"
+          + "owed\022\'\n#INGRESS_TRAFFIC_ALLOWED_UNSPECIF"
+          + "IED\020\000\022\037\n\033INGRESS_TRAFFIC_ALLOWED_ALL\020\001\022)"
+          + "\n%INGRESS_TRAFFIC_ALLOWED_INTERNAL_ONLY\020"
+          + "\002\022+\n\'INGRESS_TRAFFIC_ALLOWED_INTERNAL_AN"
+          + "D_LB\020\003B\306\001\n\027com.google.appengine.v1B\024Netw"
+          + "orkSettingsProtoP\001Z<google.golang.org/ge"
+          + "nproto/googleapis/appengine/v1;appengine"
+          + "\252\002\031Google.Cloud.AppEngine.V1\312\002\031Google\\Cl"
+          + "oud\\AppEngine\\V1\352\002\034Google::Cloud::AppEng"
+          + "ine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_appengine_v1_NetworkSettings_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_appengine_v1_NetworkSettings_fieldAccessorTable =
@@ -71,7 +67,6 @@ public final class NetworkSettingsProto {
             new java.lang.String[] {
               "IngressTrafficAllowed",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

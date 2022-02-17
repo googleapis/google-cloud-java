@@ -41,21 +41,17 @@ public final class DomainProto {
   static {
     java.lang.String[] descriptorData = {
       "\n google/appengine/v1/domain.proto\022\023goog"
-          + "le.appengine.v1\032\034google/api/annotations."
-          + "proto\",\n\020AuthorizedDomain\022\014\n\004name\030\001 \001(\t\022"
-          + "\n\n\002id\030\002 \001(\tB\275\001\n\027com.google.appengine.v1B"
-          + "\013DomainProtoP\001Z<google.golang.org/genpro"
-          + "to/googleapis/appengine/v1;appengine\252\002\031G"
-          + "oogle.Cloud.AppEngine.V1\312\002\031Google\\Cloud\\"
-          + "AppEngine\\V1\352\002\034Google::Cloud::AppEngine:"
-          + ":V1b\006proto3"
+          + "le.appengine.v1\",\n\020AuthorizedDomain\022\014\n\004n"
+          + "ame\030\001 \001(\t\022\n\n\002id\030\002 \001(\tB\275\001\n\027com.google.app"
+          + "engine.v1B\013DomainProtoP\001Z<google.golang."
+          + "org/genproto/googleapis/appengine/v1;app"
+          + "engine\252\002\031Google.Cloud.AppEngine.V1\312\002\031Goo"
+          + "gle\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::"
+          + "AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_appengine_v1_AuthorizedDomain_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_appengine_v1_AuthorizedDomain_fieldAccessorTable =
@@ -64,7 +60,6 @@ public final class DomainProto {
             new java.lang.String[] {
               "Name", "Id",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

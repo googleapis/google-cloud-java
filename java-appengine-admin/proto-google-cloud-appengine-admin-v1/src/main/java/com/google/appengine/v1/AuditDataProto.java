@@ -50,28 +50,26 @@ public final class AuditDataProto {
     java.lang.String[] descriptorData = {
       "\n$google/appengine/v1/audit_data.proto\022\023"
           + "google.appengine.v1\032#google/appengine/v1"
-          + "/appengine.proto\032\034google/api/annotations"
-          + ".proto\"\235\001\n\tAuditData\022B\n\016update_service\030\001"
-          + " \001(\0132(.google.appengine.v1.UpdateService"
-          + "MethodH\000\022B\n\016create_version\030\002 \001(\0132(.googl"
-          + "e.appengine.v1.CreateVersionMethodH\000B\010\n\006"
-          + "method\"Q\n\023UpdateServiceMethod\022:\n\007request"
-          + "\030\001 \001(\0132).google.appengine.v1.UpdateServi"
-          + "ceRequest\"Q\n\023CreateVersionMethod\022:\n\007requ"
-          + "est\030\001 \001(\0132).google.appengine.v1.CreateVe"
-          + "rsionRequestB\300\001\n\027com.google.appengine.v1"
-          + "B\016AuditDataProtoP\001Z<google.golang.org/ge"
-          + "nproto/googleapis/appengine/v1;appengine"
-          + "\252\002\031Google.Cloud.AppEngine.V1\312\002\031Google\\Cl"
-          + "oud\\AppEngine\\V1\352\002\034Google::Cloud::AppEng"
-          + "ine::V1b\006proto3"
+          + "/appengine.proto\"\235\001\n\tAuditData\022B\n\016update"
+          + "_service\030\001 \001(\0132(.google.appengine.v1.Upd"
+          + "ateServiceMethodH\000\022B\n\016create_version\030\002 \001"
+          + "(\0132(.google.appengine.v1.CreateVersionMe"
+          + "thodH\000B\010\n\006method\"Q\n\023UpdateServiceMethod\022"
+          + ":\n\007request\030\001 \001(\0132).google.appengine.v1.U"
+          + "pdateServiceRequest\"Q\n\023CreateVersionMeth"
+          + "od\022:\n\007request\030\001 \001(\0132).google.appengine.v"
+          + "1.CreateVersionRequestB\300\001\n\027com.google.ap"
+          + "pengine.v1B\016AuditDataProtoP\001Z<google.gol"
+          + "ang.org/genproto/googleapis/appengine/v1"
+          + ";appengine\252\002\031Google.Cloud.AppEngine.V1\312\002"
+          + "\031Google\\Cloud\\AppEngine\\V1\352\002\034Google::Clo"
+          + "ud::AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.appengine.v1.AppengineProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_appengine_v1_AuditData_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -98,7 +96,6 @@ public final class AuditDataProto {
               "Request",
             });
     com.google.appengine.v1.AppengineProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

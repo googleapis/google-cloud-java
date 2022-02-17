@@ -50,39 +50,37 @@ public final class CertificateProto {
     java.lang.String[] descriptorData = {
       "\n%google/appengine/v1/certificate.proto\022"
           + "\023google.appengine.v1\032\037google/protobuf/ti"
-          + "mestamp.proto\032\034google/api/annotations.pr"
-          + "oto\"\333\002\n\025AuthorizedCertificate\022\014\n\004name\030\001 "
-          + "\001(\t\022\n\n\002id\030\002 \001(\t\022\024\n\014display_name\030\003 \001(\t\022\024\n"
-          + "\014domain_names\030\004 \003(\t\022/\n\013expire_time\030\005 \001(\013"
-          + "2\032.google.protobuf.Timestamp\022E\n\024certific"
-          + "ate_raw_data\030\006 \001(\0132\'.google.appengine.v1"
-          + ".CertificateRawData\022D\n\023managed_certifica"
-          + "te\030\007 \001(\0132\'.google.appengine.v1.ManagedCe"
-          + "rtificate\022\037\n\027visible_domain_mappings\030\010 \003"
-          + "(\t\022\035\n\025domain_mappings_count\030\t \001(\005\"E\n\022Cer"
-          + "tificateRawData\022\032\n\022public_certificate\030\001 "
-          + "\001(\t\022\023\n\013private_key\030\002 \001(\t\"\202\001\n\022ManagedCert"
-          + "ificate\0225\n\021last_renewal_time\030\001 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp\0225\n\006status\030\002 \001(\0162%"
-          + ".google.appengine.v1.ManagementStatus*\306\001"
-          + "\n\020ManagementStatus\022!\n\035MANAGEMENT_STATUS_"
-          + "UNSPECIFIED\020\000\022\006\n\002OK\020\001\022\013\n\007PENDING\020\002\022\037\n\033FA"
-          + "ILED_RETRYING_NOT_VISIBLE\020\004\022\024\n\020FAILED_PE"
-          + "RMANENT\020\006\022!\n\035FAILED_RETRYING_CAA_FORBIDD"
-          + "EN\020\007\022 \n\034FAILED_RETRYING_CAA_CHECKING\020\010B\302"
-          + "\001\n\027com.google.appengine.v1B\020CertificateP"
-          + "rotoP\001Z<google.golang.org/genproto/googl"
-          + "eapis/appengine/v1;appengine\252\002\031Google.Cl"
-          + "oud.AppEngine.V1\312\002\031Google\\Cloud\\AppEngin"
-          + "e\\V1\352\002\034Google::Cloud::AppEngine::V1b\006pro"
-          + "to3"
+          + "mestamp.proto\"\333\002\n\025AuthorizedCertificate\022"
+          + "\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\024\n\014display_nam"
+          + "e\030\003 \001(\t\022\024\n\014domain_names\030\004 \003(\t\022/\n\013expire_"
+          + "time\030\005 \001(\0132\032.google.protobuf.Timestamp\022E"
+          + "\n\024certificate_raw_data\030\006 \001(\0132\'.google.ap"
+          + "pengine.v1.CertificateRawData\022D\n\023managed"
+          + "_certificate\030\007 \001(\0132\'.google.appengine.v1"
+          + ".ManagedCertificate\022\037\n\027visible_domain_ma"
+          + "ppings\030\010 \003(\t\022\035\n\025domain_mappings_count\030\t "
+          + "\001(\005\"E\n\022CertificateRawData\022\032\n\022public_cert"
+          + "ificate\030\001 \001(\t\022\023\n\013private_key\030\002 \001(\t\"\202\001\n\022M"
+          + "anagedCertificate\0225\n\021last_renewal_time\030\001"
+          + " \001(\0132\032.google.protobuf.Timestamp\0225\n\006stat"
+          + "us\030\002 \001(\0162%.google.appengine.v1.Managemen"
+          + "tStatus*\306\001\n\020ManagementStatus\022!\n\035MANAGEME"
+          + "NT_STATUS_UNSPECIFIED\020\000\022\006\n\002OK\020\001\022\013\n\007PENDI"
+          + "NG\020\002\022\037\n\033FAILED_RETRYING_NOT_VISIBLE\020\004\022\024\n"
+          + "\020FAILED_PERMANENT\020\006\022!\n\035FAILED_RETRYING_C"
+          + "AA_FORBIDDEN\020\007\022 \n\034FAILED_RETRYING_CAA_CH"
+          + "ECKING\020\010B\302\001\n\027com.google.appengine.v1B\020Ce"
+          + "rtificateProtoP\001Z<google.golang.org/genp"
+          + "roto/googleapis/appengine/v1;appengine\252\002"
+          + "\031Google.Cloud.AppEngine.V1\312\002\031Google\\Clou"
+          + "d\\AppEngine\\V1\352\002\034Google::Cloud::AppEngin"
+          + "e::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_appengine_v1_AuthorizedCertificate_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -117,7 +115,6 @@ public final class CertificateProto {
               "LastRenewalTime", "Status",
             });
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

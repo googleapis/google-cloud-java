@@ -54,47 +54,45 @@ public final class ApplicationProto {
     java.lang.String[] descriptorData = {
       "\n%google/appengine/v1/application.proto\022"
           + "\023google.appengine.v1\032\036google/protobuf/du"
-          + "ration.proto\032\034google/api/annotations.pro"
-          + "to\"\360\007\n\013Application\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002"
-          + " \001(\t\022<\n\016dispatch_rules\030\003 \003(\0132$.google.ap"
-          + "pengine.v1.UrlDispatchRule\022\023\n\013auth_domai"
-          + "n\030\006 \001(\t\022\023\n\013location_id\030\007 \001(\t\022\023\n\013code_buc"
-          + "ket\030\010 \001(\t\022<\n\031default_cookie_expiration\030\t"
-          + " \001(\0132\031.google.protobuf.Duration\022F\n\016servi"
-          + "ng_status\030\n \001(\0162..google.appengine.v1.Ap"
-          + "plication.ServingStatus\022\030\n\020default_hostn"
-          + "ame\030\013 \001(\t\022\026\n\016default_bucket\030\014 \001(\t\022@\n\003iap"
-          + "\030\016 \001(\01323.google.appengine.v1.Application"
-          + ".IdentityAwareProxy\022\022\n\ngcr_domain\030\020 \001(\t\022"
-          + "D\n\rdatabase_type\030\021 \001(\0162-.google.appengin"
-          + "e.v1.Application.DatabaseType\022J\n\020feature"
-          + "_settings\030\022 \001(\01320.google.appengine.v1.Ap"
-          + "plication.FeatureSettings\032\202\001\n\022IdentityAw"
-          + "areProxy\022\017\n\007enabled\030\001 \001(\010\022\030\n\020oauth2_clie"
-          + "nt_id\030\002 \001(\t\022\034\n\024oauth2_client_secret\030\003 \001("
-          + "\t\022#\n\033oauth2_client_secret_sha256\030\004 \001(\t\032R"
-          + "\n\017FeatureSettings\022\033\n\023split_health_checks"
-          + "\030\001 \001(\010\022\"\n\032use_container_optimized_os\030\002 \001"
-          + "(\010\"U\n\rServingStatus\022\017\n\013UNSPECIFIED\020\000\022\013\n\007"
-          + "SERVING\020\001\022\021\n\rUSER_DISABLED\020\002\022\023\n\017SYSTEM_D"
-          + "ISABLED\020\003\"z\n\014DatabaseType\022\035\n\031DATABASE_TY"
-          + "PE_UNSPECIFIED\020\000\022\023\n\017CLOUD_DATASTORE\020\001\022\023\n"
-          + "\017CLOUD_FIRESTORE\020\002\022!\n\035CLOUD_DATASTORE_CO"
-          + "MPATIBILITY\020\003\"@\n\017UrlDispatchRule\022\016\n\006doma"
-          + "in\030\001 \001(\t\022\014\n\004path\030\002 \001(\t\022\017\n\007service\030\003 \001(\tB"
-          + "\302\001\n\027com.google.appengine.v1B\020Application"
-          + "ProtoP\001Z<google.golang.org/genproto/goog"
-          + "leapis/appengine/v1;appengine\252\002\031Google.C"
-          + "loud.AppEngine.V1\312\002\031Google\\Cloud\\AppEngi"
-          + "ne\\V1\352\002\034Google::Cloud::AppEngine::V1b\006pr"
-          + "oto3"
+          + "ration.proto\"\360\007\n\013Application\022\014\n\004name\030\001 \001"
+          + "(\t\022\n\n\002id\030\002 \001(\t\022<\n\016dispatch_rules\030\003 \003(\0132$"
+          + ".google.appengine.v1.UrlDispatchRule\022\023\n\013"
+          + "auth_domain\030\006 \001(\t\022\023\n\013location_id\030\007 \001(\t\022\023"
+          + "\n\013code_bucket\030\010 \001(\t\022<\n\031default_cookie_ex"
+          + "piration\030\t \001(\0132\031.google.protobuf.Duratio"
+          + "n\022F\n\016serving_status\030\n \001(\0162..google.appen"
+          + "gine.v1.Application.ServingStatus\022\030\n\020def"
+          + "ault_hostname\030\013 \001(\t\022\026\n\016default_bucket\030\014 "
+          + "\001(\t\022@\n\003iap\030\016 \001(\01323.google.appengine.v1.A"
+          + "pplication.IdentityAwareProxy\022\022\n\ngcr_dom"
+          + "ain\030\020 \001(\t\022D\n\rdatabase_type\030\021 \001(\0162-.googl"
+          + "e.appengine.v1.Application.DatabaseType\022"
+          + "J\n\020feature_settings\030\022 \001(\01320.google.appen"
+          + "gine.v1.Application.FeatureSettings\032\202\001\n\022"
+          + "IdentityAwareProxy\022\017\n\007enabled\030\001 \001(\010\022\030\n\020o"
+          + "auth2_client_id\030\002 \001(\t\022\034\n\024oauth2_client_s"
+          + "ecret\030\003 \001(\t\022#\n\033oauth2_client_secret_sha2"
+          + "56\030\004 \001(\t\032R\n\017FeatureSettings\022\033\n\023split_hea"
+          + "lth_checks\030\001 \001(\010\022\"\n\032use_container_optimi"
+          + "zed_os\030\002 \001(\010\"U\n\rServingStatus\022\017\n\013UNSPECI"
+          + "FIED\020\000\022\013\n\007SERVING\020\001\022\021\n\rUSER_DISABLED\020\002\022\023"
+          + "\n\017SYSTEM_DISABLED\020\003\"z\n\014DatabaseType\022\035\n\031D"
+          + "ATABASE_TYPE_UNSPECIFIED\020\000\022\023\n\017CLOUD_DATA"
+          + "STORE\020\001\022\023\n\017CLOUD_FIRESTORE\020\002\022!\n\035CLOUD_DA"
+          + "TASTORE_COMPATIBILITY\020\003\"@\n\017UrlDispatchRu"
+          + "le\022\016\n\006domain\030\001 \001(\t\022\014\n\004path\030\002 \001(\t\022\017\n\007serv"
+          + "ice\030\003 \001(\tB\302\001\n\027com.google.appengine.v1B\020A"
+          + "pplicationProtoP\001Z<google.golang.org/gen"
+          + "proto/googleapis/appengine/v1;appengine\252"
+          + "\002\031Google.Cloud.AppEngine.V1\312\002\031Google\\Clo"
+          + "ud\\AppEngine\\V1\352\002\034Google::Cloud::AppEngi"
+          + "ne::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.DurationProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_appengine_v1_Application_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -142,7 +140,6 @@ public final class ApplicationProto {
               "Domain", "Path", "Service",
             });
     com.google.protobuf.DurationProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

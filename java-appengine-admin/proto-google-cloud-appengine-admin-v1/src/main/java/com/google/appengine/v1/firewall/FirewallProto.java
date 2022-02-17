@@ -41,25 +41,21 @@ public final class FirewallProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\"google/appengine/v1/firewall.proto\022\023go"
-          + "ogle.appengine.v1\032\034google/api/annotation"
-          + "s.proto\"\274\001\n\014FirewallRule\022\020\n\010priority\030\001 \001"
-          + "(\005\0228\n\006action\030\002 \001(\0162(.google.appengine.v1"
-          + ".FirewallRule.Action\022\024\n\014source_range\030\003 \001"
-          + "(\t\022\023\n\013description\030\004 \001(\t\"5\n\006Action\022\026\n\022UNS"
-          + "PECIFIED_ACTION\020\000\022\t\n\005ALLOW\020\001\022\010\n\004DENY\020\002B\310"
-          + "\001\n com.google.appengine.v1.firewallB\rFir"
-          + "ewallProtoP\001Z<google.golang.org/genproto"
-          + "/googleapis/appengine/v1;appengine\252\002\031Goo"
-          + "gle.Cloud.AppEngine.V1\312\002\031Google\\Cloud\\Ap"
-          + "pEngine\\V1\352\002\034Google::Cloud::AppEngine::V"
-          + "1b\006proto3"
+          + "ogle.appengine.v1\"\274\001\n\014FirewallRule\022\020\n\010pr"
+          + "iority\030\001 \001(\005\0228\n\006action\030\002 \001(\0162(.google.ap"
+          + "pengine.v1.FirewallRule.Action\022\024\n\014source"
+          + "_range\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\"5\n\006Act"
+          + "ion\022\026\n\022UNSPECIFIED_ACTION\020\000\022\t\n\005ALLOW\020\001\022\010"
+          + "\n\004DENY\020\002B\310\001\n com.google.appengine.v1.fir"
+          + "ewallB\rFirewallProtoP\001Z<google.golang.or"
+          + "g/genproto/googleapis/appengine/v1;appen"
+          + "gine\252\002\031Google.Cloud.AppEngine.V1\312\002\031Googl"
+          + "e\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::Ap"
+          + "pEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_appengine_v1_FirewallRule_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_appengine_v1_FirewallRule_fieldAccessorTable =
@@ -68,7 +64,6 @@ public final class FirewallProto {
             new java.lang.String[] {
               "Priority", "Action", "SourceRange", "Description",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

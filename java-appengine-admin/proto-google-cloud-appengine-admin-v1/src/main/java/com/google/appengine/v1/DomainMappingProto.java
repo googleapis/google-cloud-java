@@ -49,35 +49,31 @@ public final class DomainMappingProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/appengine/v1/domain_mapping.pro"
-          + "to\022\023google.appengine.v1\032\034google/api/anno"
-          + "tations.proto\"\240\001\n\rDomainMapping\022\014\n\004name\030"
-          + "\001 \001(\t\022\n\n\002id\030\002 \001(\t\0226\n\014ssl_settings\030\003 \001(\0132"
-          + " .google.appengine.v1.SslSettings\022=\n\020res"
-          + "ource_records\030\004 \003(\0132#.google.appengine.v"
-          + "1.ResourceRecord\"\363\001\n\013SslSettings\022\026\n\016cert"
-          + "ificate_id\030\001 \001(\t\022O\n\023ssl_management_type\030"
-          + "\003 \001(\01622.google.appengine.v1.SslSettings."
-          + "SslManagementType\022&\n\036pending_managed_cer"
-          + "tificate_id\030\004 \001(\t\"S\n\021SslManagementType\022#"
-          + "\n\037SSL_MANAGEMENT_TYPE_UNSPECIFIED\020\000\022\r\n\tA"
-          + "UTOMATIC\020\001\022\n\n\006MANUAL\020\002\"\263\001\n\016ResourceRecor"
-          + "d\022\014\n\004name\030\001 \001(\t\022\016\n\006rrdata\030\002 \001(\t\022<\n\004type\030"
-          + "\003 \001(\0162..google.appengine.v1.ResourceReco"
-          + "rd.RecordType\"E\n\nRecordType\022\033\n\027RECORD_TY"
-          + "PE_UNSPECIFIED\020\000\022\005\n\001A\020\001\022\010\n\004AAAA\020\002\022\t\n\005CNA"
-          + "ME\020\003B\304\001\n\027com.google.appengine.v1B\022Domain"
-          + "MappingProtoP\001Z<google.golang.org/genpro"
-          + "to/googleapis/appengine/v1;appengine\252\002\031G"
-          + "oogle.Cloud.AppEngine.V1\312\002\031Google\\Cloud\\"
-          + "AppEngine\\V1\352\002\034Google::Cloud::AppEngine:"
-          + ":V1b\006proto3"
+          + "to\022\023google.appengine.v1\"\240\001\n\rDomainMappin"
+          + "g\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\0226\n\014ssl_setti"
+          + "ngs\030\003 \001(\0132 .google.appengine.v1.SslSetti"
+          + "ngs\022=\n\020resource_records\030\004 \003(\0132#.google.a"
+          + "ppengine.v1.ResourceRecord\"\363\001\n\013SslSettin"
+          + "gs\022\026\n\016certificate_id\030\001 \001(\t\022O\n\023ssl_manage"
+          + "ment_type\030\003 \001(\01622.google.appengine.v1.Ss"
+          + "lSettings.SslManagementType\022&\n\036pending_m"
+          + "anaged_certificate_id\030\004 \001(\t\"S\n\021SslManage"
+          + "mentType\022#\n\037SSL_MANAGEMENT_TYPE_UNSPECIF"
+          + "IED\020\000\022\r\n\tAUTOMATIC\020\001\022\n\n\006MANUAL\020\002\"\263\001\n\016Res"
+          + "ourceRecord\022\014\n\004name\030\001 \001(\t\022\016\n\006rrdata\030\002 \001("
+          + "\t\022<\n\004type\030\003 \001(\0162..google.appengine.v1.Re"
+          + "sourceRecord.RecordType\"E\n\nRecordType\022\033\n"
+          + "\027RECORD_TYPE_UNSPECIFIED\020\000\022\005\n\001A\020\001\022\010\n\004AAA"
+          + "A\020\002\022\t\n\005CNAME\020\003B\304\001\n\027com.google.appengine."
+          + "v1B\022DomainMappingProtoP\001Z<google.golang."
+          + "org/genproto/googleapis/appengine/v1;app"
+          + "engine\252\002\031Google.Cloud.AppEngine.V1\312\002\031Goo"
+          + "gle\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::"
+          + "AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_appengine_v1_DomainMapping_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_appengine_v1_DomainMapping_fieldAccessorTable =
@@ -102,7 +98,6 @@ public final class DomainMappingProto {
             new java.lang.String[] {
               "Name", "Rrdata", "Type",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
