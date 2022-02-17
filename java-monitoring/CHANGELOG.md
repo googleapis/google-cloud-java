@@ -1,5 +1,13 @@
 # Changelog
 
+### [3.2.3](https://github.com/googleapis/java-monitoring/compare/v3.2.2...v3.2.3) (2022-02-17)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#795](https://github.com/googleapis/java-monitoring/issues/795)) ([e3d3e3d](https://github.com/googleapis/java-monitoring/commit/e3d3e3d2f45c0c8665bb8ec5aa1cd79c7697087e))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.4 ([#784](https://github.com/googleapis/java-monitoring/issues/784)) ([7d45889](https://github.com/googleapis/java-monitoring/commit/7d45889b559e5888b4c0f210aea67c442ac5ec36))
+
 ### [3.2.2](https://github.com/googleapis/java-monitoring/compare/v3.2.1...v3.2.2) (2022-02-03)
 
 
