@@ -277,22 +277,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case 170:
-            {
-              com.google.cloud.dataproc.v1.GkeClusterConfig.Builder subBuilder = null;
-              if (gkeClusterConfig_ != null) {
-                subBuilder = gkeClusterConfig_.toBuilder();
-              }
-              gkeClusterConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.GkeClusterConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(gkeClusterConfig_);
-                gkeClusterConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1219,69 +1203,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     return getMetastoreConfig();
   }
 
-  public static final int GKE_CLUSTER_CONFIG_FIELD_NUMBER = 21;
-  private com.google.cloud.dataproc.v1.GkeClusterConfig gkeClusterConfig_;
-  /**
-   *
-   *
-   * <pre>
-   * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
-   * Kubernetes. Setting this is considered mutually exclusive with Compute
-   * Engine-based options such as `gce_cluster_config`, `master_config`,
-   * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return Whether the gkeClusterConfig field is set.
-   */
-  @java.lang.Override
-  public boolean hasGkeClusterConfig() {
-    return gkeClusterConfig_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
-   * Kubernetes. Setting this is considered mutually exclusive with Compute
-   * Engine-based options such as `gce_cluster_config`, `master_config`,
-   * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The gkeClusterConfig.
-   */
-  @java.lang.Override
-  public com.google.cloud.dataproc.v1.GkeClusterConfig getGkeClusterConfig() {
-    return gkeClusterConfig_ == null
-        ? com.google.cloud.dataproc.v1.GkeClusterConfig.getDefaultInstance()
-        : gkeClusterConfig_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
-   * Kubernetes. Setting this is considered mutually exclusive with Compute
-   * Engine-based options such as `gce_cluster_config`, `master_config`,
-   * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.dataproc.v1.GkeClusterConfigOrBuilder getGkeClusterConfigOrBuilder() {
-    return getGkeClusterConfig();
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1338,9 +1259,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (metastoreConfig_ != null) {
       output.writeMessage(20, getMetastoreConfig());
     }
-    if (gkeClusterConfig_ != null) {
-      output.writeMessage(21, getGkeClusterConfig());
-    }
     unknownFields.writeTo(output);
   }
 
@@ -1394,9 +1312,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (metastoreConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getMetastoreConfig());
-    }
-    if (gkeClusterConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getGkeClusterConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1461,10 +1376,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasMetastoreConfig()) {
       if (!getMetastoreConfig().equals(other.getMetastoreConfig())) return false;
     }
-    if (hasGkeClusterConfig() != other.hasGkeClusterConfig()) return false;
-    if (hasGkeClusterConfig()) {
-      if (!getGkeClusterConfig().equals(other.getGkeClusterConfig())) return false;
-    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1527,10 +1438,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasMetastoreConfig()) {
       hash = (37 * hash) + METASTORE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getMetastoreConfig().hashCode();
-    }
-    if (hasGkeClusterConfig()) {
-      hash = (37 * hash) + GKE_CLUSTER_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getGkeClusterConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1755,12 +1662,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         metastoreConfig_ = null;
         metastoreConfigBuilder_ = null;
       }
-      if (gkeClusterConfigBuilder_ == null) {
-        gkeClusterConfig_ = null;
-      } else {
-        gkeClusterConfig_ = null;
-        gkeClusterConfigBuilder_ = null;
-      }
       return this;
     }
 
@@ -1854,11 +1755,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         result.metastoreConfig_ = metastoreConfig_;
       } else {
         result.metastoreConfig_ = metastoreConfigBuilder_.build();
-      }
-      if (gkeClusterConfigBuilder_ == null) {
-        result.gkeClusterConfig_ = gkeClusterConfig_;
-      } else {
-        result.gkeClusterConfig_ = gkeClusterConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1976,9 +1872,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasMetastoreConfig()) {
         mergeMetastoreConfig(other.getMetastoreConfig());
-      }
-      if (other.hasGkeClusterConfig()) {
-        mergeGkeClusterConfig(other.getGkeClusterConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5224,237 +5117,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         metastoreConfig_ = null;
       }
       return metastoreConfigBuilder_;
-    }
-
-    private com.google.cloud.dataproc.v1.GkeClusterConfig gkeClusterConfig_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1.GkeClusterConfig,
-            com.google.cloud.dataproc.v1.GkeClusterConfig.Builder,
-            com.google.cloud.dataproc.v1.GkeClusterConfigOrBuilder>
-        gkeClusterConfigBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
-     * Kubernetes. Setting this is considered mutually exclusive with Compute
-     * Engine-based options such as `gce_cluster_config`, `master_config`,
-     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return Whether the gkeClusterConfig field is set.
-     */
-    public boolean hasGkeClusterConfig() {
-      return gkeClusterConfigBuilder_ != null || gkeClusterConfig_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
-     * Kubernetes. Setting this is considered mutually exclusive with Compute
-     * Engine-based options such as `gce_cluster_config`, `master_config`,
-     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The gkeClusterConfig.
-     */
-    public com.google.cloud.dataproc.v1.GkeClusterConfig getGkeClusterConfig() {
-      if (gkeClusterConfigBuilder_ == null) {
-        return gkeClusterConfig_ == null
-            ? com.google.cloud.dataproc.v1.GkeClusterConfig.getDefaultInstance()
-            : gkeClusterConfig_;
-      } else {
-        return gkeClusterConfigBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
-     * Kubernetes. Setting this is considered mutually exclusive with Compute
-     * Engine-based options such as `gce_cluster_config`, `master_config`,
-     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setGkeClusterConfig(com.google.cloud.dataproc.v1.GkeClusterConfig value) {
-      if (gkeClusterConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        gkeClusterConfig_ = value;
-        onChanged();
-      } else {
-        gkeClusterConfigBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
-     * Kubernetes. Setting this is considered mutually exclusive with Compute
-     * Engine-based options such as `gce_cluster_config`, `master_config`,
-     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setGkeClusterConfig(
-        com.google.cloud.dataproc.v1.GkeClusterConfig.Builder builderForValue) {
-      if (gkeClusterConfigBuilder_ == null) {
-        gkeClusterConfig_ = builderForValue.build();
-        onChanged();
-      } else {
-        gkeClusterConfigBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
-     * Kubernetes. Setting this is considered mutually exclusive with Compute
-     * Engine-based options such as `gce_cluster_config`, `master_config`,
-     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder mergeGkeClusterConfig(com.google.cloud.dataproc.v1.GkeClusterConfig value) {
-      if (gkeClusterConfigBuilder_ == null) {
-        if (gkeClusterConfig_ != null) {
-          gkeClusterConfig_ =
-              com.google.cloud.dataproc.v1.GkeClusterConfig.newBuilder(gkeClusterConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          gkeClusterConfig_ = value;
-        }
-        onChanged();
-      } else {
-        gkeClusterConfigBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
-     * Kubernetes. Setting this is considered mutually exclusive with Compute
-     * Engine-based options such as `gce_cluster_config`, `master_config`,
-     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder clearGkeClusterConfig() {
-      if (gkeClusterConfigBuilder_ == null) {
-        gkeClusterConfig_ = null;
-        onChanged();
-      } else {
-        gkeClusterConfig_ = null;
-        gkeClusterConfigBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
-     * Kubernetes. Setting this is considered mutually exclusive with Compute
-     * Engine-based options such as `gce_cluster_config`, `master_config`,
-     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.dataproc.v1.GkeClusterConfig.Builder getGkeClusterConfigBuilder() {
-
-      onChanged();
-      return getGkeClusterConfigFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
-     * Kubernetes. Setting this is considered mutually exclusive with Compute
-     * Engine-based options such as `gce_cluster_config`, `master_config`,
-     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.dataproc.v1.GkeClusterConfigOrBuilder getGkeClusterConfigOrBuilder() {
-      if (gkeClusterConfigBuilder_ != null) {
-        return gkeClusterConfigBuilder_.getMessageOrBuilder();
-      } else {
-        return gkeClusterConfig_ == null
-            ? com.google.cloud.dataproc.v1.GkeClusterConfig.getDefaultInstance()
-            : gkeClusterConfig_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
-     * Kubernetes. Setting this is considered mutually exclusive with Compute
-     * Engine-based options such as `gce_cluster_config`, `master_config`,
-     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1.GkeClusterConfig,
-            com.google.cloud.dataproc.v1.GkeClusterConfig.Builder,
-            com.google.cloud.dataproc.v1.GkeClusterConfigOrBuilder>
-        getGkeClusterConfigFieldBuilder() {
-      if (gkeClusterConfigBuilder_ == null) {
-        gkeClusterConfigBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.dataproc.v1.GkeClusterConfig,
-                com.google.cloud.dataproc.v1.GkeClusterConfig.Builder,
-                com.google.cloud.dataproc.v1.GkeClusterConfigOrBuilder>(
-                getGkeClusterConfig(), getParentForChildren(), isClean());
-        gkeClusterConfig_ = null;
-      }
-      return gkeClusterConfigBuilder_;
     }
 
     @java.lang.Override

@@ -126,6 +126,65 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+   * does not directly control the underlying compute resources, for example,
+   * when creating a [Dataproc-on-GKE
+   * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+   * Note that Dataproc may set default values, and values may change when
+   * clusters are updated. Exactly one of config or virtualClusterConfig must be
+   * specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the virtualClusterConfig field is set.
+   */
+  boolean hasVirtualClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+   * does not directly control the underlying compute resources, for example,
+   * when creating a [Dataproc-on-GKE
+   * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+   * Note that Dataproc may set default values, and values may change when
+   * clusters are updated. Exactly one of config or virtualClusterConfig must be
+   * specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The virtualClusterConfig.
+   */
+  com.google.cloud.dataproc.v1.VirtualClusterConfig getVirtualClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+   * does not directly control the underlying compute resources, for example,
+   * when creating a [Dataproc-on-GKE
+   * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+   * Note that Dataproc may set default values, and values may change when
+   * clusters are updated. Exactly one of config or virtualClusterConfig must be
+   * specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.VirtualClusterConfigOrBuilder getVirtualClusterConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The labels to associate with this cluster.
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).

@@ -169,6 +169,23 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 82:
+            {
+              com.google.cloud.dataproc.v1.VirtualClusterConfig.Builder subBuilder = null;
+              if (virtualClusterConfig_ != null) {
+                subBuilder = virtualClusterConfig_.toBuilder();
+              }
+              virtualClusterConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.VirtualClusterConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(virtualClusterConfig_);
+                virtualClusterConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -375,6 +392,79 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
+  }
+
+  public static final int VIRTUAL_CLUSTER_CONFIG_FIELD_NUMBER = 10;
+  private com.google.cloud.dataproc.v1.VirtualClusterConfig virtualClusterConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+   * does not directly control the underlying compute resources, for example,
+   * when creating a [Dataproc-on-GKE
+   * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+   * Note that Dataproc may set default values, and values may change when
+   * clusters are updated. Exactly one of config or virtualClusterConfig must be
+   * specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the virtualClusterConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasVirtualClusterConfig() {
+    return virtualClusterConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+   * does not directly control the underlying compute resources, for example,
+   * when creating a [Dataproc-on-GKE
+   * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+   * Note that Dataproc may set default values, and values may change when
+   * clusters are updated. Exactly one of config or virtualClusterConfig must be
+   * specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The virtualClusterConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.VirtualClusterConfig getVirtualClusterConfig() {
+    return virtualClusterConfig_ == null
+        ? com.google.cloud.dataproc.v1.VirtualClusterConfig.getDefaultInstance()
+        : virtualClusterConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+   * does not directly control the underlying compute resources, for example,
+   * when creating a [Dataproc-on-GKE
+   * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+   * Note that Dataproc may set default values, and values may change when
+   * clusters are updated. Exactly one of config or virtualClusterConfig must be
+   * specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.VirtualClusterConfigOrBuilder
+      getVirtualClusterConfigOrBuilder() {
+    return getVirtualClusterConfig();
   }
 
   public static final int LABELS_FIELD_NUMBER = 8;
@@ -780,6 +870,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (metrics_ != null) {
       output.writeMessage(9, getMetrics());
     }
+    if (virtualClusterConfig_ != null) {
+      output.writeMessage(10, getVirtualClusterConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -820,6 +913,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (metrics_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getMetrics());
     }
+    if (virtualClusterConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(10, getVirtualClusterConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -840,6 +937,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasConfig() != other.hasConfig()) return false;
     if (hasConfig()) {
       if (!getConfig().equals(other.getConfig())) return false;
+    }
+    if (hasVirtualClusterConfig() != other.hasVirtualClusterConfig()) return false;
+    if (hasVirtualClusterConfig()) {
+      if (!getVirtualClusterConfig().equals(other.getVirtualClusterConfig())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (hasStatus() != other.hasStatus()) return false;
@@ -870,6 +971,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasConfig()) {
       hash = (37 * hash) + CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getConfig().hashCode();
+    }
+    if (hasVirtualClusterConfig()) {
+      hash = (37 * hash) + VIRTUAL_CLUSTER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getVirtualClusterConfig().hashCode();
     }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
@@ -1066,6 +1171,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         config_ = null;
         configBuilder_ = null;
       }
+      if (virtualClusterConfigBuilder_ == null) {
+        virtualClusterConfig_ = null;
+      } else {
+        virtualClusterConfig_ = null;
+        virtualClusterConfigBuilder_ = null;
+      }
       internalGetMutableLabels().clear();
       if (statusBuilder_ == null) {
         status_ = null;
@@ -1120,6 +1231,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         result.config_ = config_;
       } else {
         result.config_ = configBuilder_.build();
+      }
+      if (virtualClusterConfigBuilder_ == null) {
+        result.virtualClusterConfig_ = virtualClusterConfig_;
+      } else {
+        result.virtualClusterConfig_ = virtualClusterConfigBuilder_.build();
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
@@ -1202,6 +1318,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasConfig()) {
         mergeConfig(other.getConfig());
+      }
+      if (other.hasVirtualClusterConfig()) {
+        mergeVirtualClusterConfig(other.getVirtualClusterConfig());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasStatus()) {
@@ -1708,6 +1827,268 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         config_ = null;
       }
       return configBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.VirtualClusterConfig virtualClusterConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.VirtualClusterConfig,
+            com.google.cloud.dataproc.v1.VirtualClusterConfig.Builder,
+            com.google.cloud.dataproc.v1.VirtualClusterConfigOrBuilder>
+        virtualClusterConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+     * does not directly control the underlying compute resources, for example,
+     * when creating a [Dataproc-on-GKE
+     * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+     * Note that Dataproc may set default values, and values may change when
+     * clusters are updated. Exactly one of config or virtualClusterConfig must be
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the virtualClusterConfig field is set.
+     */
+    public boolean hasVirtualClusterConfig() {
+      return virtualClusterConfigBuilder_ != null || virtualClusterConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+     * does not directly control the underlying compute resources, for example,
+     * when creating a [Dataproc-on-GKE
+     * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+     * Note that Dataproc may set default values, and values may change when
+     * clusters are updated. Exactly one of config or virtualClusterConfig must be
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The virtualClusterConfig.
+     */
+    public com.google.cloud.dataproc.v1.VirtualClusterConfig getVirtualClusterConfig() {
+      if (virtualClusterConfigBuilder_ == null) {
+        return virtualClusterConfig_ == null
+            ? com.google.cloud.dataproc.v1.VirtualClusterConfig.getDefaultInstance()
+            : virtualClusterConfig_;
+      } else {
+        return virtualClusterConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+     * does not directly control the underlying compute resources, for example,
+     * when creating a [Dataproc-on-GKE
+     * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+     * Note that Dataproc may set default values, and values may change when
+     * clusters are updated. Exactly one of config or virtualClusterConfig must be
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVirtualClusterConfig(
+        com.google.cloud.dataproc.v1.VirtualClusterConfig value) {
+      if (virtualClusterConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        virtualClusterConfig_ = value;
+        onChanged();
+      } else {
+        virtualClusterConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+     * does not directly control the underlying compute resources, for example,
+     * when creating a [Dataproc-on-GKE
+     * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+     * Note that Dataproc may set default values, and values may change when
+     * clusters are updated. Exactly one of config or virtualClusterConfig must be
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVirtualClusterConfig(
+        com.google.cloud.dataproc.v1.VirtualClusterConfig.Builder builderForValue) {
+      if (virtualClusterConfigBuilder_ == null) {
+        virtualClusterConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        virtualClusterConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+     * does not directly control the underlying compute resources, for example,
+     * when creating a [Dataproc-on-GKE
+     * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+     * Note that Dataproc may set default values, and values may change when
+     * clusters are updated. Exactly one of config or virtualClusterConfig must be
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeVirtualClusterConfig(
+        com.google.cloud.dataproc.v1.VirtualClusterConfig value) {
+      if (virtualClusterConfigBuilder_ == null) {
+        if (virtualClusterConfig_ != null) {
+          virtualClusterConfig_ =
+              com.google.cloud.dataproc.v1.VirtualClusterConfig.newBuilder(virtualClusterConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          virtualClusterConfig_ = value;
+        }
+        onChanged();
+      } else {
+        virtualClusterConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+     * does not directly control the underlying compute resources, for example,
+     * when creating a [Dataproc-on-GKE
+     * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+     * Note that Dataproc may set default values, and values may change when
+     * clusters are updated. Exactly one of config or virtualClusterConfig must be
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearVirtualClusterConfig() {
+      if (virtualClusterConfigBuilder_ == null) {
+        virtualClusterConfig_ = null;
+        onChanged();
+      } else {
+        virtualClusterConfig_ = null;
+        virtualClusterConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+     * does not directly control the underlying compute resources, for example,
+     * when creating a [Dataproc-on-GKE
+     * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+     * Note that Dataproc may set default values, and values may change when
+     * clusters are updated. Exactly one of config or virtualClusterConfig must be
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.VirtualClusterConfig.Builder
+        getVirtualClusterConfigBuilder() {
+
+      onChanged();
+      return getVirtualClusterConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+     * does not directly control the underlying compute resources, for example,
+     * when creating a [Dataproc-on-GKE
+     * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+     * Note that Dataproc may set default values, and values may change when
+     * clusters are updated. Exactly one of config or virtualClusterConfig must be
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.VirtualClusterConfigOrBuilder
+        getVirtualClusterConfigOrBuilder() {
+      if (virtualClusterConfigBuilder_ != null) {
+        return virtualClusterConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return virtualClusterConfig_ == null
+            ? com.google.cloud.dataproc.v1.VirtualClusterConfig.getDefaultInstance()
+            : virtualClusterConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The virtual cluster config, used when creating a Dataproc cluster that
+     * does not directly control the underlying compute resources, for example,
+     * when creating a [Dataproc-on-GKE
+     * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+     * Note that Dataproc may set default values, and values may change when
+     * clusters are updated. Exactly one of config or virtualClusterConfig must be
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.VirtualClusterConfig virtual_cluster_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.VirtualClusterConfig,
+            com.google.cloud.dataproc.v1.VirtualClusterConfig.Builder,
+            com.google.cloud.dataproc.v1.VirtualClusterConfigOrBuilder>
+        getVirtualClusterConfigFieldBuilder() {
+      if (virtualClusterConfigBuilder_ == null) {
+        virtualClusterConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.VirtualClusterConfig,
+                com.google.cloud.dataproc.v1.VirtualClusterConfig.Builder,
+                com.google.cloud.dataproc.v1.VirtualClusterConfigOrBuilder>(
+                getVirtualClusterConfig(), getParentForChildren(), isClean());
+        virtualClusterConfig_ = null;
+      }
+      return virtualClusterConfigBuilder_;
     }
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;

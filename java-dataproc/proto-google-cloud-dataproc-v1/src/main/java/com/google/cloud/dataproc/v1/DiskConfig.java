@@ -236,8 +236,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Interface type of local SSDs (default is "scsi").
    * Valid values: "scsi" (Small Computer System Interface),
    * "nvme" (Non-Volatile Memory Express).
-   * See [SSD Interface
-   * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+   * See [local SSD
+   * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
    * </pre>
    *
    * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -263,8 +263,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Interface type of local SSDs (default is "scsi").
    * Valid values: "scsi" (Small Computer System Interface),
    * "nvme" (Non-Volatile Memory Express).
-   * See [SSD Interface
-   * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+   * See [local SSD
+   * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
    * </pre>
    *
    * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -898,8 +898,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Interface type of local SSDs (default is "scsi").
      * Valid values: "scsi" (Small Computer System Interface),
      * "nvme" (Non-Volatile Memory Express).
-     * See [SSD Interface
-     * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+     * See [local SSD
+     * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
      * </pre>
      *
      * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -924,8 +924,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Interface type of local SSDs (default is "scsi").
      * Valid values: "scsi" (Small Computer System Interface),
      * "nvme" (Non-Volatile Memory Express).
-     * See [SSD Interface
-     * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+     * See [local SSD
+     * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
      * </pre>
      *
      * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -950,8 +950,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Interface type of local SSDs (default is "scsi").
      * Valid values: "scsi" (Small Computer System Interface),
      * "nvme" (Non-Volatile Memory Express).
-     * See [SSD Interface
-     * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+     * See [local SSD
+     * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
      * </pre>
      *
      * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -975,8 +975,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Interface type of local SSDs (default is "scsi").
      * Valid values: "scsi" (Small Computer System Interface),
      * "nvme" (Non-Volatile Memory Express).
-     * See [SSD Interface
-     * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+     * See [local SSD
+     * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
      * </pre>
      *
      * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -996,8 +996,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Interface type of local SSDs (default is "scsi").
      * Valid values: "scsi" (Small Computer System Interface),
      * "nvme" (Non-Volatile Memory Express).
-     * See [SSD Interface
-     * types](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
+     * See [local SSD
+     * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
      * </pre>
      *
      * <code>string local_ssd_interface = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

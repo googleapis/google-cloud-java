@@ -177,6 +177,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cluster is currently running and healthy. It is ready for use.
+     * **Note:** The cluster state changes from "creating" to "running" status
+     * after the master node(s), first two primary worker nodes (and the last
+     * primary worker node if primary workers &gt; 2) are running.
      * </pre>
      *
      * <code>RUNNING = 2;</code>
@@ -281,6 +284,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cluster is currently running and healthy. It is ready for use.
+     * **Note:** The cluster state changes from "creating" to "running" status
+     * after the master node(s), first two primary worker nodes (and the last
+     * primary worker node if primary workers &gt; 2) are running.
      * </pre>
      *
      * <code>RUNNING = 2;</code>
