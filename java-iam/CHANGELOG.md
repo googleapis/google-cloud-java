@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.5](https://github.com/googleapis/java-iam/compare/v1.2.4...v1.2.5) (2022-02-17)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#287](https://github.com/googleapis/java-iam/issues/287)) ([eb96321](https://github.com/googleapis/java-iam/commit/eb96321d998fa6acf7285c878c4c044535a54af5))
+
 ### [1.2.4](https://github.com/googleapis/java-iam/compare/v1.2.3...v1.2.4) (2022-02-11)
 
 
