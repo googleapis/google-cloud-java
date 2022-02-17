@@ -41,22 +41,18 @@ public final class TextSegmentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/automl/v1/text_segment.pr"
-          + "oto\022\026google.cloud.automl.v1\032\034google/api/"
-          + "annotations.proto\"H\n\013TextSegment\022\017\n\007cont"
-          + "ent\030\003 \001(\t\022\024\n\014start_offset\030\001 \001(\003\022\022\n\nend_o"
-          + "ffset\030\002 \001(\003B\274\001\n\032com.google.cloud.automl."
-          + "v1B\020TextSegmentProtoP\001Z<google.golang.or"
-          + "g/genproto/googleapis/cloud/automl/v1;au"
-          + "toml\252\002\026Google.Cloud.AutoML.V1\312\002\026Google\\C"
-          + "loud\\AutoMl\\V1\352\002\031Google::Cloud::AutoML::"
-          + "V1b\006proto3"
+          + "oto\022\026google.cloud.automl.v1\"H\n\013TextSegme"
+          + "nt\022\017\n\007content\030\003 \001(\t\022\024\n\014start_offset\030\001 \001("
+          + "\003\022\022\n\nend_offset\030\002 \001(\003B\274\001\n\032com.google.clo"
+          + "ud.automl.v1B\020TextSegmentProtoP\001Z<google"
+          + ".golang.org/genproto/googleapis/cloud/au"
+          + "toml/v1;automl\252\002\026Google.Cloud.AutoML.V1\312"
+          + "\002\026Google\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud"
+          + "::AutoML::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_automl_v1_TextSegment_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1_TextSegment_fieldAccessorTable =
@@ -65,7 +61,6 @@ public final class TextSegmentProto {
             new java.lang.String[] {
               "Content", "StartOffset", "EndOffset",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

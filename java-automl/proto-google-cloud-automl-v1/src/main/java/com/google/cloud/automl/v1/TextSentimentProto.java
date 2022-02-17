@@ -45,29 +45,27 @@ public final class TextSentimentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/automl/v1/text_sentiment."
-          + "proto\022\026google.cloud.automl.v1\032\034google/ap"
-          + "i/annotations.proto\032+google/cloud/automl"
-          + "/v1/classification.proto\",\n\027TextSentimen"
-          + "tAnnotation\022\021\n\tsentiment\030\001 \001(\005\"\240\002\n\036TextS"
-          + "entimentEvaluationMetrics\022\021\n\tprecision\030\001"
-          + " \001(\002\022\016\n\006recall\030\002 \001(\002\022\020\n\010f1_score\030\003 \001(\002\022\033"
-          + "\n\023mean_absolute_error\030\004 \001(\002\022\032\n\022mean_squa"
-          + "red_error\030\005 \001(\002\022\024\n\014linear_kappa\030\006 \001(\002\022\027\n"
-          + "\017quadratic_kappa\030\007 \001(\002\022a\n\020confusion_matr"
-          + "ix\030\010 \001(\0132G.google.cloud.automl.v1.Classi"
-          + "ficationEvaluationMetrics.ConfusionMatri"
-          + "xB\276\001\n\032com.google.cloud.automl.v1B\022TextSe"
-          + "ntimentProtoP\001Z<google.golang.org/genpro"
-          + "to/googleapis/cloud/automl/v1;automl\252\002\026G"
-          + "oogle.Cloud.AutoML.V1\312\002\026Google\\Cloud\\Aut"
-          + "oMl\\V1\352\002\031Google::Cloud::AutoML::V1b\006prot"
-          + "o3"
+          + "proto\022\026google.cloud.automl.v1\032+google/cl"
+          + "oud/automl/v1/classification.proto\",\n\027Te"
+          + "xtSentimentAnnotation\022\021\n\tsentiment\030\001 \001(\005"
+          + "\"\240\002\n\036TextSentimentEvaluationMetrics\022\021\n\tp"
+          + "recision\030\001 \001(\002\022\016\n\006recall\030\002 \001(\002\022\020\n\010f1_sco"
+          + "re\030\003 \001(\002\022\033\n\023mean_absolute_error\030\004 \001(\002\022\032\n"
+          + "\022mean_squared_error\030\005 \001(\002\022\024\n\014linear_kapp"
+          + "a\030\006 \001(\002\022\027\n\017quadratic_kappa\030\007 \001(\002\022a\n\020conf"
+          + "usion_matrix\030\010 \001(\0132G.google.cloud.automl"
+          + ".v1.ClassificationEvaluationMetrics.Conf"
+          + "usionMatrixB\276\001\n\032com.google.cloud.automl."
+          + "v1B\022TextSentimentProtoP\001Z<google.golang."
+          + "org/genproto/googleapis/cloud/automl/v1;"
+          + "automl\252\002\026Google.Cloud.AutoML.V1\312\002\026Google"
+          + "\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::AutoML"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.automl.v1.ClassificationProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_TextSentimentAnnotation_descriptor =
@@ -93,7 +91,6 @@ public final class TextSentimentProto {
               "QuadraticKappa",
               "ConfusionMatrix",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1.ClassificationProto.getDescriptor();
   }
 

@@ -53,38 +53,34 @@ public final class Detection {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/automl/v1/detection.proto"
-          + "\022\026google.cloud.automl.v1\032\034google/api/ann"
-          + "otations.proto\032%google/cloud/automl/v1/g"
-          + "eometry.proto\032\036google/protobuf/duration."
-          + "proto\"k\n\036ImageObjectDetectionAnnotation\022"
-          + ":\n\014bounding_box\030\001 \001(\0132$.google.cloud.aut"
-          + "oml.v1.BoundingPoly\022\r\n\005score\030\002 \001(\002\"\251\002\n\027B"
-          + "oundingBoxMetricsEntry\022\025\n\riou_threshold\030"
-          + "\001 \001(\002\022\036\n\026mean_average_precision\030\002 \001(\002\022j\n"
-          + "\032confidence_metrics_entries\030\003 \003(\0132F.goog"
-          + "le.cloud.automl.v1.BoundingBoxMetricsEnt"
-          + "ry.ConfidenceMetricsEntry\032k\n\026ConfidenceM"
-          + "etricsEntry\022\034\n\024confidence_threshold\030\001 \001("
-          + "\002\022\016\n\006recall\030\002 \001(\002\022\021\n\tprecision\030\003 \001(\002\022\020\n\010"
-          + "f1_score\030\004 \001(\002\"\321\001\n%ImageObjectDetectionE"
-          + "valuationMetrics\022$\n\034evaluated_bounding_b"
-          + "ox_count\030\001 \001(\005\022U\n\034bounding_box_metrics_e"
-          + "ntries\030\002 \003(\0132/.google.cloud.automl.v1.Bo"
-          + "undingBoxMetricsEntry\022+\n#bounding_box_me"
-          + "an_average_precision\030\003 \001(\002B\252\001\n\032com.googl"
-          + "e.cloud.automl.v1P\001Z<google.golang.org/g"
-          + "enproto/googleapis/cloud/automl/v1;autom"
-          + "l\252\002\026Google.Cloud.AutoML.V1\312\002\026Google\\Clou"
-          + "d\\AutoMl\\V1\352\002\031Google::Cloud::AutoML::V1b"
-          + "\006proto3"
+          + "\022\026google.cloud.automl.v1\032%google/cloud/a"
+          + "utoml/v1/geometry.proto\"k\n\036ImageObjectDe"
+          + "tectionAnnotation\022:\n\014bounding_box\030\001 \001(\0132"
+          + "$.google.cloud.automl.v1.BoundingPoly\022\r\n"
+          + "\005score\030\002 \001(\002\"\251\002\n\027BoundingBoxMetricsEntry"
+          + "\022\025\n\riou_threshold\030\001 \001(\002\022\036\n\026mean_average_"
+          + "precision\030\002 \001(\002\022j\n\032confidence_metrics_en"
+          + "tries\030\003 \003(\0132F.google.cloud.automl.v1.Bou"
+          + "ndingBoxMetricsEntry.ConfidenceMetricsEn"
+          + "try\032k\n\026ConfidenceMetricsEntry\022\034\n\024confide"
+          + "nce_threshold\030\001 \001(\002\022\016\n\006recall\030\002 \001(\002\022\021\n\tp"
+          + "recision\030\003 \001(\002\022\020\n\010f1_score\030\004 \001(\002\"\321\001\n%Ima"
+          + "geObjectDetectionEvaluationMetrics\022$\n\034ev"
+          + "aluated_bounding_box_count\030\001 \001(\005\022U\n\034boun"
+          + "ding_box_metrics_entries\030\002 \003(\0132/.google."
+          + "cloud.automl.v1.BoundingBoxMetricsEntry\022"
+          + "+\n#bounding_box_mean_average_precision\030\003"
+          + " \001(\002B\252\001\n\032com.google.cloud.automl.v1P\001Z<g"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/automl/v1;automl\252\002\026Google.Cloud.AutoM"
+          + "L.V1\312\002\026Google\\Cloud\\AutoMl\\V1\352\002\031Google::"
+          + "Cloud::AutoML::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.automl.v1.Geometry.getDescriptor(),
-              com.google.protobuf.DurationProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1_ImageObjectDetectionAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -122,9 +118,7 @@ public final class Detection {
               "BoundingBoxMetricsEntries",
               "BoundingBoxMeanAveragePrecision",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1.Geometry.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
