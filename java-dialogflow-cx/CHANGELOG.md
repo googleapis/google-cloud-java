@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.11.3](https://github.com/googleapis/java-dialogflow-cx/compare/v0.11.2...v0.11.3) (2022-02-17)
+
+
+### Dependencies
+
+* update dependency com.google.code.gson:gson to v2.9.0 ([#422](https://github.com/googleapis/java-dialogflow-cx/issues/422)) ([a21bd94](https://github.com/googleapis/java-dialogflow-cx/commit/a21bd9412412ffc6fb8d9732ece8c19f1bc8e42b))
+
 ### [0.11.2](https://github.com/googleapis/java-dialogflow-cx/compare/v0.11.1...v0.11.2) (2022-02-11)
 
 
