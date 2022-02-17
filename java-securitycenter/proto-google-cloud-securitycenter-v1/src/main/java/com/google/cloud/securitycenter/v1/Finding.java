@@ -1881,7 +1881,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Indicates the mute state of a finding (either unspecified, muted, unmuted
-   * or undefined).
+   * or undefined). Unlike other attributes of a finding, a finding provider
+   * shouldn't set the value of mute.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
@@ -1897,7 +1898,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Indicates the mute state of a finding (either unspecified, muted, unmuted
-   * or undefined).
+   * or undefined). Unlike other attributes of a finding, a finding provider
+   * shouldn't set the value of mute.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
@@ -2302,7 +2304,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * First known as mute_annotation. Records additional information about the
    * mute operation e.g. mute config that muted the finding, user who muted the
-   * finding, etc.
+   * finding, etc. Unlike other attributes of a finding, a finding provider
+   * shouldn't set the value of mute.
    * </pre>
    *
    * <code>string mute_initiator = 28;</code>
@@ -2327,7 +2330,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * First known as mute_annotation. Records additional information about the
    * mute operation e.g. mute config that muted the finding, user who muted the
-   * finding, etc.
+   * finding, etc. Unlike other attributes of a finding, a finding provider
+   * shouldn't set the value of mute.
    * </pre>
    *
    * <code>string mute_initiator = 28;</code>
@@ -4859,7 +4863,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates the mute state of a finding (either unspecified, muted, unmuted
-     * or undefined).
+     * or undefined). Unlike other attributes of a finding, a finding provider
+     * shouldn't set the value of mute.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
@@ -4875,7 +4880,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates the mute state of a finding (either unspecified, muted, unmuted
-     * or undefined).
+     * or undefined). Unlike other attributes of a finding, a finding provider
+     * shouldn't set the value of mute.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
@@ -4894,7 +4900,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates the mute state of a finding (either unspecified, muted, unmuted
-     * or undefined).
+     * or undefined). Unlike other attributes of a finding, a finding provider
+     * shouldn't set the value of mute.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
@@ -4913,7 +4920,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates the mute state of a finding (either unspecified, muted, unmuted
-     * or undefined).
+     * or undefined). Unlike other attributes of a finding, a finding provider
+     * shouldn't set the value of mute.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
@@ -4935,7 +4943,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates the mute state of a finding (either unspecified, muted, unmuted
-     * or undefined).
+     * or undefined). Unlike other attributes of a finding, a finding provider
+     * shouldn't set the value of mute.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding.Mute mute = 15;</code>
@@ -6066,7 +6075,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * First known as mute_annotation. Records additional information about the
      * mute operation e.g. mute config that muted the finding, user who muted the
-     * finding, etc.
+     * finding, etc. Unlike other attributes of a finding, a finding provider
+     * shouldn't set the value of mute.
      * </pre>
      *
      * <code>string mute_initiator = 28;</code>
@@ -6090,7 +6100,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * First known as mute_annotation. Records additional information about the
      * mute operation e.g. mute config that muted the finding, user who muted the
-     * finding, etc.
+     * finding, etc. Unlike other attributes of a finding, a finding provider
+     * shouldn't set the value of mute.
      * </pre>
      *
      * <code>string mute_initiator = 28;</code>
@@ -6114,7 +6125,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * First known as mute_annotation. Records additional information about the
      * mute operation e.g. mute config that muted the finding, user who muted the
-     * finding, etc.
+     * finding, etc. Unlike other attributes of a finding, a finding provider
+     * shouldn't set the value of mute.
      * </pre>
      *
      * <code>string mute_initiator = 28;</code>
@@ -6137,7 +6149,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * First known as mute_annotation. Records additional information about the
      * mute operation e.g. mute config that muted the finding, user who muted the
-     * finding, etc.
+     * finding, etc. Unlike other attributes of a finding, a finding provider
+     * shouldn't set the value of mute.
      * </pre>
      *
      * <code>string mute_initiator = 28;</code>
@@ -6156,7 +6169,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * First known as mute_annotation. Records additional information about the
      * mute operation e.g. mute config that muted the finding, user who muted the
-     * finding, etc.
+     * finding, etc. Unlike other attributes of a finding, a finding provider
+     * shouldn't set the value of mute.
      * </pre>
      *
      * <code>string mute_initiator = 28;</code>

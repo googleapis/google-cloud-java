@@ -281,7 +281,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The human readable name of project that the resource belongs to.
+   * The project id that the resource belongs to.
    * </pre>
    *
    * <code>string project_display_name = 3;</code>
@@ -304,7 +304,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The human readable name of project that the resource belongs to.
+   * The project id that the resource belongs to.
    * </pre>
    *
    * <code>string project_display_name = 3;</code>
@@ -1301,7 +1301,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The human readable name of project that the resource belongs to.
+     * The project id that the resource belongs to.
      * </pre>
      *
      * <code>string project_display_name = 3;</code>
@@ -1323,7 +1323,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The human readable name of project that the resource belongs to.
+     * The project id that the resource belongs to.
      * </pre>
      *
      * <code>string project_display_name = 3;</code>
@@ -1345,7 +1345,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The human readable name of project that the resource belongs to.
+     * The project id that the resource belongs to.
      * </pre>
      *
      * <code>string project_display_name = 3;</code>
@@ -1366,7 +1366,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The human readable name of project that the resource belongs to.
+     * The project id that the resource belongs to.
      * </pre>
      *
      * <code>string project_display_name = 3;</code>
@@ -1383,7 +1383,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The human readable name of project that the resource belongs to.
+     * The project id that the resource belongs to.
      * </pre>
      *
      * <code>string project_display_name = 3;</code>
