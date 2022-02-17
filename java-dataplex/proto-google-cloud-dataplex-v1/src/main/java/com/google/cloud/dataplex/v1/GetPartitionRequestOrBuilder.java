@@ -28,7 +28,9 @@ public interface GetPartitionRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the partition:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_id}`.
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_value_path}`.
+   * The {partition_value_path} segment consists of an ordered sequence of
+   * partition values separated by "/". All values must be provided.
    * </pre>
    *
    * <code>
@@ -43,7 +45,9 @@ public interface GetPartitionRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the partition:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_id}`.
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_value_path}`.
+   * The {partition_value_path} segment consists of an ordered sequence of
+   * partition values separated by "/". All values must be provided.
    * </pre>
    *
    * <code>

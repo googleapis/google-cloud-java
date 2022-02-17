@@ -163,7 +163,7 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Include everything.
+     * Include everything. Currently, this is the same as the SCHEMA view.
      * </pre>
      *
      * <code>FULL = 4;</code>
@@ -206,7 +206,7 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Include everything.
+     * Include everything. Currently, this is the same as the SCHEMA view.
      * </pre>
      *
      * <code>FULL = 4;</code>

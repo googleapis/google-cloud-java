@@ -2443,7 +2443,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User friendly display name.
+   * Optional. Display name must be shorter than or equal to 63 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2466,7 +2466,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User friendly display name.
+   * Optional. Display name must be shorter than or equal to 63 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2492,7 +2492,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User friendly longer description text.
+   * Optional. User friendly longer description text. Must be shorter than or equal to
+   * 1024 characters.
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2515,7 +2516,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User friendly longer description text.
+   * Optional. User friendly longer description text. Must be shorter than or equal to
+   * 1024 characters.
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2642,6 +2644,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * Required. A user-provided entity ID. It is mutable, and will be used as the
    * published table name. Specifying a new ID in an update entity
    * request will override the existing value.
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
+   * underscores. Must begin with a letter.
    * </pre>
    *
    * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2667,6 +2671,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * Required. A user-provided entity ID. It is mutable, and will be used as the
    * published table name. Specifying a new ID in an update entity
    * request will override the existing value.
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
+   * underscores. Must begin with a letter.
    * </pre>
    *
    * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2692,8 +2698,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The etag for this entity.
-   * Required for update requests. It must match the server's etag.
+   * Optional. The etag for this entity. Required for update and delete requests. Must
+   * match the server's etag.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2716,8 +2722,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The etag for this entity.
-   * Required for update requests. It must match the server's etag.
+   * Optional. The etag for this entity. Required for update and delete requests. Must
+   * match the server's etag.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2743,11 +2749,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The type of entity.
+   * Required. Immutable. The type of entity.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for type.
@@ -2760,11 +2766,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The type of entity.
+   * Required. Immutable. The type of entity.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The type.
@@ -2783,11 +2789,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the asset associated with the storage location containing the
-   * entity data.
+   * Required. Immutable. The ID of the asset associated with the storage location containing the
+   * entity data. The entity must be with in the same zone with the asset.
    * </pre>
    *
-   * <code>string asset = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string asset = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The asset.
    */
@@ -2807,11 +2815,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the asset associated with the storage location containing the
-   * entity data.
+   * Required. Immutable. The ID of the asset associated with the storage location containing the
+   * entity data. The entity must be with in the same zone with the asset.
    * </pre>
    *
-   * <code>string asset = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string asset = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for asset.
    */
@@ -2997,11 +3007,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Identifies the storage system of the entity data.
+   * Required. Immutable. Identifies the storage system of the entity data.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for system.
@@ -3014,11 +3024,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Identifies the storage system of the entity data.
+   * Required. Immutable. Identifies the storage system of the entity data.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The system.
@@ -3937,7 +3947,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly display name.
+     * Optional. Display name must be shorter than or equal to 63 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3959,7 +3969,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly display name.
+     * Optional. Display name must be shorter than or equal to 63 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3981,7 +3991,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly display name.
+     * Optional. Display name must be shorter than or equal to 63 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4002,7 +4012,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly display name.
+     * Optional. Display name must be shorter than or equal to 63 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4019,7 +4029,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly display name.
+     * Optional. Display name must be shorter than or equal to 63 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4043,7 +4053,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly longer description text.
+     * Optional. User friendly longer description text. Must be shorter than or equal to
+     * 1024 characters.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4065,7 +4076,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly longer description text.
+     * Optional. User friendly longer description text. Must be shorter than or equal to
+     * 1024 characters.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4087,7 +4099,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly longer description text.
+     * Optional. User friendly longer description text. Must be shorter than or equal to
+     * 1024 characters.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4108,7 +4121,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly longer description text.
+     * Optional. User friendly longer description text. Must be shorter than or equal to
+     * 1024 characters.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4125,7 +4139,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly longer description text.
+     * Optional. User friendly longer description text. Must be shorter than or equal to
+     * 1024 characters.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4554,6 +4569,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * Required. A user-provided entity ID. It is mutable, and will be used as the
      * published table name. Specifying a new ID in an update entity
      * request will override the existing value.
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
+     * underscores. Must begin with a letter.
      * </pre>
      *
      * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4578,6 +4595,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * Required. A user-provided entity ID. It is mutable, and will be used as the
      * published table name. Specifying a new ID in an update entity
      * request will override the existing value.
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
+     * underscores. Must begin with a letter.
      * </pre>
      *
      * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4602,6 +4621,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * Required. A user-provided entity ID. It is mutable, and will be used as the
      * published table name. Specifying a new ID in an update entity
      * request will override the existing value.
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
+     * underscores. Must begin with a letter.
      * </pre>
      *
      * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4625,6 +4646,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * Required. A user-provided entity ID. It is mutable, and will be used as the
      * published table name. Specifying a new ID in an update entity
      * request will override the existing value.
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
+     * underscores. Must begin with a letter.
      * </pre>
      *
      * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4644,6 +4667,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * Required. A user-provided entity ID. It is mutable, and will be used as the
      * published table name. Specifying a new ID in an update entity
      * request will override the existing value.
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
+     * underscores. Must begin with a letter.
      * </pre>
      *
      * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4667,8 +4692,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag for this entity.
-     * Required for update requests. It must match the server's etag.
+     * Optional. The etag for this entity. Required for update and delete requests. Must
+     * match the server's etag.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4690,8 +4715,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag for this entity.
-     * Required for update requests. It must match the server's etag.
+     * Optional. The etag for this entity. Required for update and delete requests. Must
+     * match the server's etag.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4713,8 +4738,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag for this entity.
-     * Required for update requests. It must match the server's etag.
+     * Optional. The etag for this entity. Required for update and delete requests. Must
+     * match the server's etag.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4735,8 +4760,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag for this entity.
-     * Required for update requests. It must match the server's etag.
+     * Optional. The etag for this entity. Required for update and delete requests. Must
+     * match the server's etag.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4753,8 +4778,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag for this entity.
-     * Required for update requests. It must match the server's etag.
+     * Optional. The etag for this entity. Required for update and delete requests. Must
+     * match the server's etag.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4778,11 +4803,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of entity.
+     * Required. Immutable. The type of entity.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for type.
@@ -4795,11 +4820,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of entity.
+     * Required. Immutable. The type of entity.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The enum numeric value on the wire for type to set.
@@ -4815,11 +4840,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of entity.
+     * Required. Immutable. The type of entity.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The type.
@@ -4835,11 +4860,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of entity.
+     * Required. Immutable. The type of entity.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The type to set.
@@ -4858,11 +4883,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of entity.
+     * Required. Immutable. The type of entity.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataplex.v1.Entity.Type type = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.
@@ -4879,11 +4904,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the asset associated with the storage location containing the
-     * entity data.
+     * Required. Immutable. The ID of the asset associated with the storage location containing the
+     * entity data. The entity must be with in the same zone with the asset.
      * </pre>
      *
-     * <code>string asset = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string asset = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The asset.
      */
@@ -4902,11 +4929,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the asset associated with the storage location containing the
-     * entity data.
+     * Required. Immutable. The ID of the asset associated with the storage location containing the
+     * entity data. The entity must be with in the same zone with the asset.
      * </pre>
      *
-     * <code>string asset = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string asset = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for asset.
      */
@@ -4925,11 +4954,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the asset associated with the storage location containing the
-     * entity data.
+     * Required. Immutable. The ID of the asset associated with the storage location containing the
+     * entity data. The entity must be with in the same zone with the asset.
      * </pre>
      *
-     * <code>string asset = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string asset = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The asset to set.
      * @return This builder for chaining.
@@ -4947,11 +4978,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the asset associated with the storage location containing the
-     * entity data.
+     * Required. Immutable. The ID of the asset associated with the storage location containing the
+     * entity data. The entity must be with in the same zone with the asset.
      * </pre>
      *
-     * <code>string asset = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string asset = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -4965,11 +4998,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the asset associated with the storage location containing the
-     * entity data.
+     * Required. Immutable. The ID of the asset associated with the storage location containing the
+     * entity data. The entity must be with in the same zone with the asset.
      * </pre>
      *
-     * <code>string asset = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string asset = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for asset to set.
      * @return This builder for chaining.
@@ -5348,11 +5383,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifies the storage system of the entity data.
+     * Required. Immutable. Identifies the storage system of the entity data.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for system.
@@ -5365,11 +5400,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifies the storage system of the entity data.
+     * Required. Immutable. Identifies the storage system of the entity data.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The enum numeric value on the wire for system to set.
@@ -5385,11 +5420,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifies the storage system of the entity data.
+     * Required. Immutable. Identifies the storage system of the entity data.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The system.
@@ -5405,11 +5440,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifies the storage system of the entity data.
+     * Required. Immutable. Identifies the storage system of the entity data.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The system to set.
@@ -5428,11 +5463,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifies the storage system of the entity data.
+     * Required. Immutable. Identifies the storage system of the entity data.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dataplex.v1.StorageSystem system = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.

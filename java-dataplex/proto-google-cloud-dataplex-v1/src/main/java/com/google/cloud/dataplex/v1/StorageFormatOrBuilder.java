@@ -28,7 +28,7 @@ public interface StorageFormatOrBuilder
    *
    * <pre>
    * Output only. The data format associated with the stored data, which represents
-   * content type values.
+   * content type values. The value is inferred from mime type.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface StorageFormatOrBuilder
    *
    * <pre>
    * Output only. The data format associated with the stored data, which represents
-   * content type values.
+   * content type values. The value is inferred from mime type.
    * </pre>
    *
    * <code>
@@ -89,8 +89,19 @@ public interface StorageFormatOrBuilder
    *
    *
    * <pre>
-   * Required. The mime type descriptor for the data. This field is valid for formats
-   * other than `UNKNOWN` and `MIXED`.
+   * Required. The mime type descriptor for the data. Must match the pattern
+   * {type}/{subtype}. Supported values:
+   * - application/x-parquet
+   * - application/x-avro
+   * - application/x-orc
+   * - application/x-tfrecord
+   * - application/json
+   * - application/{subtypes}
+   * - text/csv
+   * - text/&lt;subtypes&gt;
+   * - image/{image subtype}
+   * - video/{video subtype}
+   * - audio/{audio subtype}
    * </pre>
    *
    * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -102,8 +113,19 @@ public interface StorageFormatOrBuilder
    *
    *
    * <pre>
-   * Required. The mime type descriptor for the data. This field is valid for formats
-   * other than `UNKNOWN` and `MIXED`.
+   * Required. The mime type descriptor for the data. Must match the pattern
+   * {type}/{subtype}. Supported values:
+   * - application/x-parquet
+   * - application/x-avro
+   * - application/x-orc
+   * - application/x-tfrecord
+   * - application/json
+   * - application/{subtypes}
+   * - text/csv
+   * - text/&lt;subtypes&gt;
+   * - image/{image subtype}
+   * - video/{video subtype}
+   * - audio/{audio subtype}
    * </pre>
    *
    * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -19,6 +19,7 @@ package com.google.cloud.dataplex.v1;
 import com.google.api.core.BetaApi;
 import com.google.cloud.dataplex.v1.MetadataServiceGrpc.MetadataServiceImplBase;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -59,6 +60,66 @@ public class MockMetadataServiceImpl extends MetadataServiceImplBase {
   }
 
   @Override
+  public void createEntity(CreateEntityRequest request, StreamObserver<Entity> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Entity) {
+      requests.add(request);
+      responseObserver.onNext(((Entity) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEntity, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Entity.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateEntity(UpdateEntityRequest request, StreamObserver<Entity> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Entity) {
+      requests.add(request);
+      responseObserver.onNext(((Entity) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEntity, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Entity.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteEntity(DeleteEntityRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEntity, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getEntity(GetEntityRequest request, StreamObserver<Entity> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Entity) {
@@ -95,6 +156,48 @@ public class MockMetadataServiceImpl extends MetadataServiceImplBase {
                   "Unrecognized response type %s for method ListEntities, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListEntitiesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createPartition(
+      CreatePartitionRequest request, StreamObserver<Partition> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Partition) {
+      requests.add(request);
+      responseObserver.onNext(((Partition) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreatePartition, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Partition.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deletePartition(
+      DeletePartitionRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeletePartition, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

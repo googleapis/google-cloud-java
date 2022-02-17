@@ -18,9 +18,11 @@ package com.google.cloud.dataplex.v1;
 
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetsPagedResponse;
+import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakeActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakesPagedResponse;
+import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListSessionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListTasksPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZoneActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZonesPagedResponse;
@@ -2414,6 +2416,561 @@ public class DataplexServiceClientTest {
     try {
       String name = "name3373707";
       client.cancelJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEnvironmentTest() throws Exception {
+    Environment expectedResponse =
+        Environment.newBuilder()
+            .setName(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setState(State.forNumber(0))
+            .setInfrastructureSpec(Environment.InfrastructureSpec.newBuilder().build())
+            .setSessionSpec(Environment.SessionSpec.newBuilder().build())
+            .setSessionStatus(Environment.SessionStatus.newBuilder().build())
+            .setEndpoints(Environment.Endpoints.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createEnvironmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataplexService.addResponse(resultOperation);
+
+    LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
+    Environment environment = Environment.newBuilder().build();
+    String environmentId = "environmentId-950205810";
+
+    Environment actualResponse =
+        client.createEnvironmentAsync(parent, environment, environmentId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEnvironmentRequest actualRequest = ((CreateEnvironmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(environment, actualRequest.getEnvironment());
+    Assert.assertEquals(environmentId, actualRequest.getEnvironmentId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEnvironmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
+      Environment environment = Environment.newBuilder().build();
+      String environmentId = "environmentId-950205810";
+      client.createEnvironmentAsync(parent, environment, environmentId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createEnvironmentTest2() throws Exception {
+    Environment expectedResponse =
+        Environment.newBuilder()
+            .setName(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setState(State.forNumber(0))
+            .setInfrastructureSpec(Environment.InfrastructureSpec.newBuilder().build())
+            .setSessionSpec(Environment.SessionSpec.newBuilder().build())
+            .setSessionStatus(Environment.SessionStatus.newBuilder().build())
+            .setEndpoints(Environment.Endpoints.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createEnvironmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataplexService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Environment environment = Environment.newBuilder().build();
+    String environmentId = "environmentId-950205810";
+
+    Environment actualResponse =
+        client.createEnvironmentAsync(parent, environment, environmentId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEnvironmentRequest actualRequest = ((CreateEnvironmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(environment, actualRequest.getEnvironment());
+    Assert.assertEquals(environmentId, actualRequest.getEnvironmentId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEnvironmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Environment environment = Environment.newBuilder().build();
+      String environmentId = "environmentId-950205810";
+      client.createEnvironmentAsync(parent, environment, environmentId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateEnvironmentTest() throws Exception {
+    Environment expectedResponse =
+        Environment.newBuilder()
+            .setName(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setState(State.forNumber(0))
+            .setInfrastructureSpec(Environment.InfrastructureSpec.newBuilder().build())
+            .setSessionSpec(Environment.SessionSpec.newBuilder().build())
+            .setSessionStatus(Environment.SessionStatus.newBuilder().build())
+            .setEndpoints(Environment.Endpoints.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateEnvironmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataplexService.addResponse(resultOperation);
+
+    Environment environment = Environment.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Environment actualResponse = client.updateEnvironmentAsync(environment, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateEnvironmentRequest actualRequest = ((UpdateEnvironmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(environment, actualRequest.getEnvironment());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateEnvironmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      Environment environment = Environment.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateEnvironmentAsync(environment, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteEnvironmentTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteEnvironmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataplexService.addResponse(resultOperation);
+
+    EnvironmentName name = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
+
+    client.deleteEnvironmentAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEnvironmentRequest actualRequest = ((DeleteEnvironmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEnvironmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      EnvironmentName name =
+          EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
+      client.deleteEnvironmentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteEnvironmentTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteEnvironmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataplexService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteEnvironmentAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEnvironmentRequest actualRequest = ((DeleteEnvironmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEnvironmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteEnvironmentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listEnvironmentsTest() throws Exception {
+    Environment responsesElement = Environment.newBuilder().build();
+    ListEnvironmentsResponse expectedResponse =
+        ListEnvironmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEnvironments(Arrays.asList(responsesElement))
+            .build();
+    mockDataplexService.addResponse(expectedResponse);
+
+    LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
+
+    ListEnvironmentsPagedResponse pagedListResponse = client.listEnvironments(parent);
+
+    List<Environment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnvironmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEnvironmentsRequest actualRequest = ((ListEnvironmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEnvironmentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
+      client.listEnvironments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEnvironmentsTest2() throws Exception {
+    Environment responsesElement = Environment.newBuilder().build();
+    ListEnvironmentsResponse expectedResponse =
+        ListEnvironmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEnvironments(Arrays.asList(responsesElement))
+            .build();
+    mockDataplexService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListEnvironmentsPagedResponse pagedListResponse = client.listEnvironments(parent);
+
+    List<Environment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnvironmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEnvironmentsRequest actualRequest = ((ListEnvironmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEnvironmentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listEnvironments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEnvironmentTest() throws Exception {
+    Environment expectedResponse =
+        Environment.newBuilder()
+            .setName(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setState(State.forNumber(0))
+            .setInfrastructureSpec(Environment.InfrastructureSpec.newBuilder().build())
+            .setSessionSpec(Environment.SessionSpec.newBuilder().build())
+            .setSessionStatus(Environment.SessionStatus.newBuilder().build())
+            .setEndpoints(Environment.Endpoints.newBuilder().build())
+            .build();
+    mockDataplexService.addResponse(expectedResponse);
+
+    EnvironmentName name = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
+
+    Environment actualResponse = client.getEnvironment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEnvironmentRequest actualRequest = ((GetEnvironmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEnvironmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      EnvironmentName name =
+          EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
+      client.getEnvironment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEnvironmentTest2() throws Exception {
+    Environment expectedResponse =
+        Environment.newBuilder()
+            .setName(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setState(State.forNumber(0))
+            .setInfrastructureSpec(Environment.InfrastructureSpec.newBuilder().build())
+            .setSessionSpec(Environment.SessionSpec.newBuilder().build())
+            .setSessionStatus(Environment.SessionStatus.newBuilder().build())
+            .setEndpoints(Environment.Endpoints.newBuilder().build())
+            .build();
+    mockDataplexService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Environment actualResponse = client.getEnvironment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEnvironmentRequest actualRequest = ((GetEnvironmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEnvironmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getEnvironment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSessionsTest() throws Exception {
+    Session responsesElement = Session.newBuilder().build();
+    ListSessionsResponse expectedResponse =
+        ListSessionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSessions(Arrays.asList(responsesElement))
+            .build();
+    mockDataplexService.addResponse(expectedResponse);
+
+    EnvironmentName parent =
+        EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
+
+    ListSessionsPagedResponse pagedListResponse = client.listSessions(parent);
+
+    List<Session> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSessionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSessionsRequest actualRequest = ((ListSessionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSessionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      EnvironmentName parent =
+          EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
+      client.listSessions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSessionsTest2() throws Exception {
+    Session responsesElement = Session.newBuilder().build();
+    ListSessionsResponse expectedResponse =
+        ListSessionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSessions(Arrays.asList(responsesElement))
+            .build();
+    mockDataplexService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSessionsPagedResponse pagedListResponse = client.listSessions(parent);
+
+    List<Session> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSessionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSessionsRequest actualRequest = ((ListSessionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSessionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSessions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

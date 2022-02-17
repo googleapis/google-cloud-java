@@ -27,9 +27,13 @@ public interface PartitionOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the partition, of the form:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_id}`.
-   * {partition_id} is a generated unique ID.
+   * Output only. The values must be HTML URL encoded two times before constructing the path.
+   * For example, if you have a value of "US:CA", encoded it two times and you
+   * get "US%253ACA". Then if you have the 2nd value is "CA#Sunnyvale", encoded
+   * two times and you get "CA%2523Sunnyvale". The partition values path is
+   * "US%253ACA/CA%2523Sunnyvale". The final URL will be
+   * "https://.../partitions/US%253ACA/CA%2523Sunnyvale". The name field in the
+   * responses will always have the encoded format.
    * </pre>
    *
    * <code>
@@ -43,9 +47,13 @@ public interface PartitionOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the partition, of the form:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_id}`.
-   * {partition_id} is a generated unique ID.
+   * Output only. The values must be HTML URL encoded two times before constructing the path.
+   * For example, if you have a value of "US:CA", encoded it two times and you
+   * get "US%253ACA". Then if you have the 2nd value is "CA#Sunnyvale", encoded
+   * two times and you get "CA%2523Sunnyvale". The partition values path is
+   * "US%253ACA/CA%2523Sunnyvale". The final URL will be
+   * "https://.../partitions/US%253ACA/CA%2523Sunnyvale". The name field in the
+   * responses will always have the encoded format.
    * </pre>
    *
    * <code>
@@ -125,6 +133,7 @@ public interface PartitionOrBuilder
    * <pre>
    * Required. Immutable. The location of the entity data within the partition, for example,
    * `gs://bucket/path/to/entity/key1=value1/key2=value2`.
+   * Or `projects/&lt;project_id&gt;/datasets/&lt;dataset_id&gt;/tables/&lt;table_id&gt;`
    * </pre>
    *
    * <code>
@@ -140,6 +149,7 @@ public interface PartitionOrBuilder
    * <pre>
    * Required. Immutable. The location of the entity data within the partition, for example,
    * `gs://bucket/path/to/entity/key1=value1/key2=value2`.
+   * Or `projects/&lt;project_id&gt;/datasets/&lt;dataset_id&gt;/tables/&lt;table_id&gt;`
    * </pre>
    *
    * <code>
@@ -155,25 +165,25 @@ public interface PartitionOrBuilder
    *
    * <pre>
    * Optional. The etag for this partition.
-   * Required for update requests. It must match the server's etag.
    * </pre>
    *
-   * <code>string etag = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
+  @java.lang.Deprecated
   java.lang.String getEtag();
   /**
    *
    *
    * <pre>
    * Optional. The etag for this partition.
-   * Required for update requests. It must match the server's etag.
    * </pre>
    *
-   * <code>string etag = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getEtagBytes();
 }

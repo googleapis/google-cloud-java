@@ -18,9 +18,11 @@ package com.google.cloud.dataplex.v1.stub;
 
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetsPagedResponse;
+import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakeActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakesPagedResponse;
+import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListSessionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListTasksPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZoneActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZonesPagedResponse;
@@ -31,14 +33,18 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataplex.v1.Asset;
 import com.google.cloud.dataplex.v1.CancelJobRequest;
 import com.google.cloud.dataplex.v1.CreateAssetRequest;
+import com.google.cloud.dataplex.v1.CreateEnvironmentRequest;
 import com.google.cloud.dataplex.v1.CreateLakeRequest;
 import com.google.cloud.dataplex.v1.CreateTaskRequest;
 import com.google.cloud.dataplex.v1.CreateZoneRequest;
 import com.google.cloud.dataplex.v1.DeleteAssetRequest;
+import com.google.cloud.dataplex.v1.DeleteEnvironmentRequest;
 import com.google.cloud.dataplex.v1.DeleteLakeRequest;
 import com.google.cloud.dataplex.v1.DeleteTaskRequest;
 import com.google.cloud.dataplex.v1.DeleteZoneRequest;
+import com.google.cloud.dataplex.v1.Environment;
 import com.google.cloud.dataplex.v1.GetAssetRequest;
+import com.google.cloud.dataplex.v1.GetEnvironmentRequest;
 import com.google.cloud.dataplex.v1.GetJobRequest;
 import com.google.cloud.dataplex.v1.GetLakeRequest;
 import com.google.cloud.dataplex.v1.GetTaskRequest;
@@ -49,11 +55,15 @@ import com.google.cloud.dataplex.v1.ListActionsResponse;
 import com.google.cloud.dataplex.v1.ListAssetActionsRequest;
 import com.google.cloud.dataplex.v1.ListAssetsRequest;
 import com.google.cloud.dataplex.v1.ListAssetsResponse;
+import com.google.cloud.dataplex.v1.ListEnvironmentsRequest;
+import com.google.cloud.dataplex.v1.ListEnvironmentsResponse;
 import com.google.cloud.dataplex.v1.ListJobsRequest;
 import com.google.cloud.dataplex.v1.ListJobsResponse;
 import com.google.cloud.dataplex.v1.ListLakeActionsRequest;
 import com.google.cloud.dataplex.v1.ListLakesRequest;
 import com.google.cloud.dataplex.v1.ListLakesResponse;
+import com.google.cloud.dataplex.v1.ListSessionsRequest;
+import com.google.cloud.dataplex.v1.ListSessionsResponse;
 import com.google.cloud.dataplex.v1.ListTasksRequest;
 import com.google.cloud.dataplex.v1.ListTasksResponse;
 import com.google.cloud.dataplex.v1.ListZoneActionsRequest;
@@ -62,6 +72,7 @@ import com.google.cloud.dataplex.v1.ListZonesResponse;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.Task;
 import com.google.cloud.dataplex.v1.UpdateAssetRequest;
+import com.google.cloud.dataplex.v1.UpdateEnvironmentRequest;
 import com.google.cloud.dataplex.v1.UpdateLakeRequest;
 import com.google.cloud.dataplex.v1.UpdateTaskRequest;
 import com.google.cloud.dataplex.v1.UpdateZoneRequest;
@@ -281,6 +292,58 @@ public abstract class DataplexServiceStub implements BackgroundResource {
 
   public UnaryCallable<CancelJobRequest, Empty> cancelJobCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelJobCallable()");
+  }
+
+  public OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
+      createEnvironmentOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createEnvironmentOperationCallable()");
+  }
+
+  public UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: createEnvironmentCallable()");
+  }
+
+  public OperationCallable<UpdateEnvironmentRequest, Environment, OperationMetadata>
+      updateEnvironmentOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateEnvironmentOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateEnvironmentRequest, Operation> updateEnvironmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateEnvironmentCallable()");
+  }
+
+  public OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
+      deleteEnvironmentOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteEnvironmentOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEnvironmentCallable()");
+  }
+
+  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
+      listEnvironmentsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEnvironmentsPagedCallable()");
+  }
+
+  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
+      listEnvironmentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEnvironmentsCallable()");
+  }
+
+  public UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEnvironmentCallable()");
+  }
+
+  public UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse> listSessionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSessionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSessionsCallable()");
   }
 
   @Override

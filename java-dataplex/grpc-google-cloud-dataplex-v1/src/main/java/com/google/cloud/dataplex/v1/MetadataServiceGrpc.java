@@ -37,6 +37,134 @@ public final class MetadataServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreateEntityRequest, com.google.cloud.dataplex.v1.Entity>
+      getCreateEntityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEntity",
+      requestType = com.google.cloud.dataplex.v1.CreateEntityRequest.class,
+      responseType = com.google.cloud.dataplex.v1.Entity.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreateEntityRequest, com.google.cloud.dataplex.v1.Entity>
+      getCreateEntityMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.CreateEntityRequest, com.google.cloud.dataplex.v1.Entity>
+        getCreateEntityMethod;
+    if ((getCreateEntityMethod = MetadataServiceGrpc.getCreateEntityMethod) == null) {
+      synchronized (MetadataServiceGrpc.class) {
+        if ((getCreateEntityMethod = MetadataServiceGrpc.getCreateEntityMethod) == null) {
+          MetadataServiceGrpc.getCreateEntityMethod =
+              getCreateEntityMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.CreateEntityRequest,
+                          com.google.cloud.dataplex.v1.Entity>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEntity"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.CreateEntityRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.Entity.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MetadataServiceMethodDescriptorSupplier("CreateEntity"))
+                      .build();
+        }
+      }
+    }
+    return getCreateEntityMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.UpdateEntityRequest, com.google.cloud.dataplex.v1.Entity>
+      getUpdateEntityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEntity",
+      requestType = com.google.cloud.dataplex.v1.UpdateEntityRequest.class,
+      responseType = com.google.cloud.dataplex.v1.Entity.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.UpdateEntityRequest, com.google.cloud.dataplex.v1.Entity>
+      getUpdateEntityMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.UpdateEntityRequest, com.google.cloud.dataplex.v1.Entity>
+        getUpdateEntityMethod;
+    if ((getUpdateEntityMethod = MetadataServiceGrpc.getUpdateEntityMethod) == null) {
+      synchronized (MetadataServiceGrpc.class) {
+        if ((getUpdateEntityMethod = MetadataServiceGrpc.getUpdateEntityMethod) == null) {
+          MetadataServiceGrpc.getUpdateEntityMethod =
+              getUpdateEntityMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.UpdateEntityRequest,
+                          com.google.cloud.dataplex.v1.Entity>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEntity"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.UpdateEntityRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.Entity.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MetadataServiceMethodDescriptorSupplier("UpdateEntity"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateEntityMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.DeleteEntityRequest, com.google.protobuf.Empty>
+      getDeleteEntityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEntity",
+      requestType = com.google.cloud.dataplex.v1.DeleteEntityRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.DeleteEntityRequest, com.google.protobuf.Empty>
+      getDeleteEntityMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.DeleteEntityRequest, com.google.protobuf.Empty>
+        getDeleteEntityMethod;
+    if ((getDeleteEntityMethod = MetadataServiceGrpc.getDeleteEntityMethod) == null) {
+      synchronized (MetadataServiceGrpc.class) {
+        if ((getDeleteEntityMethod = MetadataServiceGrpc.getDeleteEntityMethod) == null) {
+          MetadataServiceGrpc.getDeleteEntityMethod =
+              getDeleteEntityMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.DeleteEntityRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEntity"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.DeleteEntityRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MetadataServiceMethodDescriptorSupplier("DeleteEntity"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteEntityMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataplex.v1.GetEntityRequest, com.google.cloud.dataplex.v1.Entity>
       getGetEntityMethod;
 
@@ -122,6 +250,95 @@ public final class MetadataServiceGrpc {
       }
     }
     return getListEntitiesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreatePartitionRequest,
+          com.google.cloud.dataplex.v1.Partition>
+      getCreatePartitionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePartition",
+      requestType = com.google.cloud.dataplex.v1.CreatePartitionRequest.class,
+      responseType = com.google.cloud.dataplex.v1.Partition.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreatePartitionRequest,
+          com.google.cloud.dataplex.v1.Partition>
+      getCreatePartitionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.CreatePartitionRequest,
+            com.google.cloud.dataplex.v1.Partition>
+        getCreatePartitionMethod;
+    if ((getCreatePartitionMethod = MetadataServiceGrpc.getCreatePartitionMethod) == null) {
+      synchronized (MetadataServiceGrpc.class) {
+        if ((getCreatePartitionMethod = MetadataServiceGrpc.getCreatePartitionMethod) == null) {
+          MetadataServiceGrpc.getCreatePartitionMethod =
+              getCreatePartitionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.CreatePartitionRequest,
+                          com.google.cloud.dataplex.v1.Partition>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePartition"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.CreatePartitionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.Partition.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MetadataServiceMethodDescriptorSupplier("CreatePartition"))
+                      .build();
+        }
+      }
+    }
+    return getCreatePartitionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.DeletePartitionRequest, com.google.protobuf.Empty>
+      getDeletePartitionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePartition",
+      requestType = com.google.cloud.dataplex.v1.DeletePartitionRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.DeletePartitionRequest, com.google.protobuf.Empty>
+      getDeletePartitionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.DeletePartitionRequest, com.google.protobuf.Empty>
+        getDeletePartitionMethod;
+    if ((getDeletePartitionMethod = MetadataServiceGrpc.getDeletePartitionMethod) == null) {
+      synchronized (MetadataServiceGrpc.class) {
+        if ((getDeletePartitionMethod = MetadataServiceGrpc.getDeletePartitionMethod) == null) {
+          MetadataServiceGrpc.getDeletePartitionMethod =
+              getDeletePartitionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.DeletePartitionRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletePartition"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.DeletePartitionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MetadataServiceMethodDescriptorSupplier("DeletePartition"))
+                      .build();
+        }
+      }
+    }
+    return getDeletePartitionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -270,6 +487,48 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
+     * Create a metadata entity.
+     * </pre>
+     */
+    public void createEntity(
+        com.google.cloud.dataplex.v1.CreateEntityRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entity> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateEntityMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a metadata entity. Only supports full resource update.
+     * </pre>
+     */
+    public void updateEntity(
+        com.google.cloud.dataplex.v1.UpdateEntityRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entity> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEntityMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a metadata entity.
+     * </pre>
+     */
+    public void deleteEntity(
+        com.google.cloud.dataplex.v1.DeleteEntityRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteEntityMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get a metadata entity.
      * </pre>
      */
@@ -292,6 +551,34 @@ public final class MetadataServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListEntitiesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a metadata partition.
+     * </pre>
+     */
+    public void createPartition(
+        com.google.cloud.dataplex.v1.CreatePartitionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Partition> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreatePartitionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a metadata partition.
+     * </pre>
+     */
+    public void deletePartition(
+        com.google.cloud.dataplex.v1.DeletePartitionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeletePartitionMethod(), responseObserver);
     }
 
     /**
@@ -327,6 +614,24 @@ public final class MetadataServiceGrpc {
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
+              getCreateEntityMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dataplex.v1.CreateEntityRequest,
+                      com.google.cloud.dataplex.v1.Entity>(this, METHODID_CREATE_ENTITY)))
+          .addMethod(
+              getUpdateEntityMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dataplex.v1.UpdateEntityRequest,
+                      com.google.cloud.dataplex.v1.Entity>(this, METHODID_UPDATE_ENTITY)))
+          .addMethod(
+              getDeleteEntityMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dataplex.v1.DeleteEntityRequest, com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_ENTITY)))
+          .addMethod(
               getGetEntityMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -339,6 +644,18 @@ public final class MetadataServiceGrpc {
                       com.google.cloud.dataplex.v1.ListEntitiesRequest,
                       com.google.cloud.dataplex.v1.ListEntitiesResponse>(
                       this, METHODID_LIST_ENTITIES)))
+          .addMethod(
+              getCreatePartitionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dataplex.v1.CreatePartitionRequest,
+                      com.google.cloud.dataplex.v1.Partition>(this, METHODID_CREATE_PARTITION)))
+          .addMethod(
+              getDeletePartitionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dataplex.v1.DeletePartitionRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_PARTITION)))
           .addMethod(
               getGetPartitionMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -379,6 +696,54 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
+     * Create a metadata entity.
+     * </pre>
+     */
+    public void createEntity(
+        com.google.cloud.dataplex.v1.CreateEntityRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entity> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEntityMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a metadata entity. Only supports full resource update.
+     * </pre>
+     */
+    public void updateEntity(
+        com.google.cloud.dataplex.v1.UpdateEntityRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entity> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEntityMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a metadata entity.
+     * </pre>
+     */
+    public void deleteEntity(
+        com.google.cloud.dataplex.v1.DeleteEntityRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteEntityMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get a metadata entity.
      * </pre>
      */
@@ -402,6 +767,38 @@ public final class MetadataServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListEntitiesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a metadata partition.
+     * </pre>
+     */
+    public void createPartition(
+        com.google.cloud.dataplex.v1.CreatePartitionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Partition> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePartitionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a metadata partition.
+     * </pre>
+     */
+    public void deletePartition(
+        com.google.cloud.dataplex.v1.DeletePartitionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePartitionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -464,6 +861,45 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
+     * Create a metadata entity.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entity createEntity(
+        com.google.cloud.dataplex.v1.CreateEntityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEntityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a metadata entity. Only supports full resource update.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entity updateEntity(
+        com.google.cloud.dataplex.v1.UpdateEntityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEntityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a metadata entity.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEntity(
+        com.google.cloud.dataplex.v1.DeleteEntityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEntityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get a metadata entity.
      * </pre>
      */
@@ -484,6 +920,32 @@ public final class MetadataServiceGrpc {
         com.google.cloud.dataplex.v1.ListEntitiesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListEntitiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a metadata partition.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Partition createPartition(
+        com.google.cloud.dataplex.v1.CreatePartitionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePartitionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a metadata partition.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deletePartition(
+        com.google.cloud.dataplex.v1.DeletePartitionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePartitionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -537,6 +999,45 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
+     * Create a metadata entity.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entity>
+        createEntity(com.google.cloud.dataplex.v1.CreateEntityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEntityMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a metadata entity. Only supports full resource update.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entity>
+        updateEntity(com.google.cloud.dataplex.v1.UpdateEntityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEntityMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a metadata entity.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteEntity(com.google.cloud.dataplex.v1.DeleteEntityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteEntityMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get a metadata entity.
      * </pre>
      */
@@ -558,6 +1059,33 @@ public final class MetadataServiceGrpc {
         listEntities(com.google.cloud.dataplex.v1.ListEntitiesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEntitiesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a metadata partition.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.Partition>
+        createPartition(com.google.cloud.dataplex.v1.CreatePartitionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePartitionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a metadata partition.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deletePartition(com.google.cloud.dataplex.v1.DeletePartitionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePartitionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -589,10 +1117,15 @@ public final class MetadataServiceGrpc {
     }
   }
 
-  private static final int METHODID_GET_ENTITY = 0;
-  private static final int METHODID_LIST_ENTITIES = 1;
-  private static final int METHODID_GET_PARTITION = 2;
-  private static final int METHODID_LIST_PARTITIONS = 3;
+  private static final int METHODID_CREATE_ENTITY = 0;
+  private static final int METHODID_UPDATE_ENTITY = 1;
+  private static final int METHODID_DELETE_ENTITY = 2;
+  private static final int METHODID_GET_ENTITY = 3;
+  private static final int METHODID_LIST_ENTITIES = 4;
+  private static final int METHODID_CREATE_PARTITION = 5;
+  private static final int METHODID_DELETE_PARTITION = 6;
+  private static final int METHODID_GET_PARTITION = 7;
+  private static final int METHODID_LIST_PARTITIONS = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -611,6 +1144,21 @@ public final class MetadataServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_CREATE_ENTITY:
+          serviceImpl.createEntity(
+              (com.google.cloud.dataplex.v1.CreateEntityRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entity>) responseObserver);
+          break;
+        case METHODID_UPDATE_ENTITY:
+          serviceImpl.updateEntity(
+              (com.google.cloud.dataplex.v1.UpdateEntityRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entity>) responseObserver);
+          break;
+        case METHODID_DELETE_ENTITY:
+          serviceImpl.deleteEntity(
+              (com.google.cloud.dataplex.v1.DeleteEntityRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         case METHODID_GET_ENTITY:
           serviceImpl.getEntity(
               (com.google.cloud.dataplex.v1.GetEntityRequest) request,
@@ -621,6 +1169,17 @@ public final class MetadataServiceGrpc {
               (com.google.cloud.dataplex.v1.ListEntitiesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListEntitiesResponse>)
                   responseObserver);
+          break;
+        case METHODID_CREATE_PARTITION:
+          serviceImpl.createPartition(
+              (com.google.cloud.dataplex.v1.CreatePartitionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Partition>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_PARTITION:
+          serviceImpl.deletePartition(
+              (com.google.cloud.dataplex.v1.DeletePartitionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_GET_PARTITION:
           serviceImpl.getPartition(
@@ -698,8 +1257,13 @@ public final class MetadataServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new MetadataServiceFileDescriptorSupplier())
+                      .addMethod(getCreateEntityMethod())
+                      .addMethod(getUpdateEntityMethod())
+                      .addMethod(getDeleteEntityMethod())
                       .addMethod(getGetEntityMethod())
                       .addMethod(getListEntitiesMethod())
+                      .addMethod(getCreatePartitionMethod())
+                      .addMethod(getDeletePartitionMethod())
                       .addMethod(getGetPartitionMethod())
                       .addMethod(getListPartitionsMethod())
                       .build();

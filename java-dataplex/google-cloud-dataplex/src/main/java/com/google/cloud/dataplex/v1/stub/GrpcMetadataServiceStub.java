@@ -25,6 +25,10 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dataplex.v1.CreateEntityRequest;
+import com.google.cloud.dataplex.v1.CreatePartitionRequest;
+import com.google.cloud.dataplex.v1.DeleteEntityRequest;
+import com.google.cloud.dataplex.v1.DeletePartitionRequest;
 import com.google.cloud.dataplex.v1.Entity;
 import com.google.cloud.dataplex.v1.GetEntityRequest;
 import com.google.cloud.dataplex.v1.GetPartitionRequest;
@@ -33,8 +37,10 @@ import com.google.cloud.dataplex.v1.ListEntitiesResponse;
 import com.google.cloud.dataplex.v1.ListPartitionsRequest;
 import com.google.cloud.dataplex.v1.ListPartitionsResponse;
 import com.google.cloud.dataplex.v1.Partition;
+import com.google.cloud.dataplex.v1.UpdateEntityRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -49,6 +55,30 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class GrpcMetadataServiceStub extends MetadataServiceStub {
+  private static final MethodDescriptor<CreateEntityRequest, Entity> createEntityMethodDescriptor =
+      MethodDescriptor.<CreateEntityRequest, Entity>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dataplex.v1.MetadataService/CreateEntity")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateEntityRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Entity.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdateEntityRequest, Entity> updateEntityMethodDescriptor =
+      MethodDescriptor.<UpdateEntityRequest, Entity>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dataplex.v1.MetadataService/UpdateEntity")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateEntityRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Entity.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteEntityRequest, Empty> deleteEntityMethodDescriptor =
+      MethodDescriptor.<DeleteEntityRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dataplex.v1.MetadataService/DeleteEntity")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteEntityRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<GetEntityRequest, Entity> getEntityMethodDescriptor =
       MethodDescriptor.<GetEntityRequest, Entity>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -65,6 +95,26 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntitiesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreatePartitionRequest, Partition>
+      createPartitionMethodDescriptor =
+          MethodDescriptor.<CreatePartitionRequest, Partition>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.MetadataService/CreatePartition")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreatePartitionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Partition.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeletePartitionRequest, Empty>
+      deletePartitionMethodDescriptor =
+          MethodDescriptor.<DeletePartitionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.MetadataService/DeletePartition")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeletePartitionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<GetPartitionRequest, Partition>
@@ -87,10 +137,15 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListPartitionsResponse.getDefaultInstance()))
               .build();
 
+  private final UnaryCallable<CreateEntityRequest, Entity> createEntityCallable;
+  private final UnaryCallable<UpdateEntityRequest, Entity> updateEntityCallable;
+  private final UnaryCallable<DeleteEntityRequest, Empty> deleteEntityCallable;
   private final UnaryCallable<GetEntityRequest, Entity> getEntityCallable;
   private final UnaryCallable<ListEntitiesRequest, ListEntitiesResponse> listEntitiesCallable;
   private final UnaryCallable<ListEntitiesRequest, ListEntitiesPagedResponse>
       listEntitiesPagedCallable;
+  private final UnaryCallable<CreatePartitionRequest, Partition> createPartitionCallable;
+  private final UnaryCallable<DeletePartitionRequest, Empty> deletePartitionCallable;
   private final UnaryCallable<GetPartitionRequest, Partition> getPartitionCallable;
   private final UnaryCallable<ListPartitionsRequest, ListPartitionsResponse> listPartitionsCallable;
   private final UnaryCallable<ListPartitionsRequest, ListPartitionsPagedResponse>
@@ -140,6 +195,36 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<CreateEntityRequest, Entity> createEntityTransportSettings =
+        GrpcCallSettings.<CreateEntityRequest, Entity>newBuilder()
+            .setMethodDescriptor(createEntityMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateEntityRequest, Entity> updateEntityTransportSettings =
+        GrpcCallSettings.<UpdateEntityRequest, Entity>newBuilder()
+            .setMethodDescriptor(updateEntityMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("entity.name", String.valueOf(request.getEntity().getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteEntityRequest, Empty> deleteEntityTransportSettings =
+        GrpcCallSettings.<DeleteEntityRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteEntityMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<GetEntityRequest, Entity> getEntityTransportSettings =
         GrpcCallSettings.<GetEntityRequest, Entity>newBuilder()
             .setMethodDescriptor(getEntityMethodDescriptor)
@@ -157,6 +242,26 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                   params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<CreatePartitionRequest, Partition> createPartitionTransportSettings =
+        GrpcCallSettings.<CreatePartitionRequest, Partition>newBuilder()
+            .setMethodDescriptor(createPartitionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeletePartitionRequest, Empty> deletePartitionTransportSettings =
+        GrpcCallSettings.<DeletePartitionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deletePartitionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
                   return params.build();
                 })
             .build();
@@ -182,6 +287,15 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                     })
                 .build();
 
+    this.createEntityCallable =
+        callableFactory.createUnaryCallable(
+            createEntityTransportSettings, settings.createEntitySettings(), clientContext);
+    this.updateEntityCallable =
+        callableFactory.createUnaryCallable(
+            updateEntityTransportSettings, settings.updateEntitySettings(), clientContext);
+    this.deleteEntityCallable =
+        callableFactory.createUnaryCallable(
+            deleteEntityTransportSettings, settings.deleteEntitySettings(), clientContext);
     this.getEntityCallable =
         callableFactory.createUnaryCallable(
             getEntityTransportSettings, settings.getEntitySettings(), clientContext);
@@ -191,6 +305,12 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
     this.listEntitiesPagedCallable =
         callableFactory.createPagedCallable(
             listEntitiesTransportSettings, settings.listEntitiesSettings(), clientContext);
+    this.createPartitionCallable =
+        callableFactory.createUnaryCallable(
+            createPartitionTransportSettings, settings.createPartitionSettings(), clientContext);
+    this.deletePartitionCallable =
+        callableFactory.createUnaryCallable(
+            deletePartitionTransportSettings, settings.deletePartitionSettings(), clientContext);
     this.getPartitionCallable =
         callableFactory.createUnaryCallable(
             getPartitionTransportSettings, settings.getPartitionSettings(), clientContext);
@@ -210,6 +330,21 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   }
 
   @Override
+  public UnaryCallable<CreateEntityRequest, Entity> createEntityCallable() {
+    return createEntityCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateEntityRequest, Entity> updateEntityCallable() {
+    return updateEntityCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteEntityRequest, Empty> deleteEntityCallable() {
+    return deleteEntityCallable;
+  }
+
+  @Override
   public UnaryCallable<GetEntityRequest, Entity> getEntityCallable() {
     return getEntityCallable;
   }
@@ -222,6 +357,16 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   @Override
   public UnaryCallable<ListEntitiesRequest, ListEntitiesPagedResponse> listEntitiesPagedCallable() {
     return listEntitiesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreatePartitionRequest, Partition> createPartitionCallable() {
+    return createPartitionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeletePartitionRequest, Empty> deletePartitionCallable() {
+    return deletePartitionCallable;
   }
 
   @Override

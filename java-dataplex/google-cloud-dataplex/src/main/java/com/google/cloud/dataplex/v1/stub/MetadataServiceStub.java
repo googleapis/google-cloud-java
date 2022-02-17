@@ -21,6 +21,10 @@ import static com.google.cloud.dataplex.v1.MetadataServiceClient.ListPartitionsP
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dataplex.v1.CreateEntityRequest;
+import com.google.cloud.dataplex.v1.CreatePartitionRequest;
+import com.google.cloud.dataplex.v1.DeleteEntityRequest;
+import com.google.cloud.dataplex.v1.DeletePartitionRequest;
 import com.google.cloud.dataplex.v1.Entity;
 import com.google.cloud.dataplex.v1.GetEntityRequest;
 import com.google.cloud.dataplex.v1.GetPartitionRequest;
@@ -29,6 +33,8 @@ import com.google.cloud.dataplex.v1.ListEntitiesResponse;
 import com.google.cloud.dataplex.v1.ListPartitionsRequest;
 import com.google.cloud.dataplex.v1.ListPartitionsResponse;
 import com.google.cloud.dataplex.v1.Partition;
+import com.google.cloud.dataplex.v1.UpdateEntityRequest;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -40,6 +46,18 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class MetadataServiceStub implements BackgroundResource {
 
+  public UnaryCallable<CreateEntityRequest, Entity> createEntityCallable() {
+    throw new UnsupportedOperationException("Not implemented: createEntityCallable()");
+  }
+
+  public UnaryCallable<UpdateEntityRequest, Entity> updateEntityCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateEntityCallable()");
+  }
+
+  public UnaryCallable<DeleteEntityRequest, Empty> deleteEntityCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEntityCallable()");
+  }
+
   public UnaryCallable<GetEntityRequest, Entity> getEntityCallable() {
     throw new UnsupportedOperationException("Not implemented: getEntityCallable()");
   }
@@ -50,6 +68,14 @@ public abstract class MetadataServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListEntitiesRequest, ListEntitiesResponse> listEntitiesCallable() {
     throw new UnsupportedOperationException("Not implemented: listEntitiesCallable()");
+  }
+
+  public UnaryCallable<CreatePartitionRequest, Partition> createPartitionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createPartitionCallable()");
+  }
+
+  public UnaryCallable<DeletePartitionRequest, Empty> deletePartitionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deletePartitionCallable()");
   }
 
   public UnaryCallable<GetPartitionRequest, Partition> getPartitionCallable() {

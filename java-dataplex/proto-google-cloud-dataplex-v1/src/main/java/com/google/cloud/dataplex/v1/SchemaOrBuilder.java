@@ -27,8 +27,23 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Required. Whether the schema is user-managed or managed by the service. User-managed
-   * schemas are not automatically updated by discovery jobs.
+   * Required. Whether the schema is user-managed or managed by the service.
+   * - Set user_manage to false if you would like Dataplex to help you manage
+   * the schema. You will get the full service provided by Dataplex discovery,
+   * including new data discovery, schema inference and schema evolution. You
+   * can still provide input the schema of the entities, for example renaming a
+   * schema field, changing CSV or Json options if you think the discovered
+   * values are not as accurate. Dataplex will consider your input as the
+   * initial schema (as if they were produced by the previous discovery run),
+   * and will evolve schema or flag actions based on that.
+   * - Set user_manage to true if you would like to fully manage the entity
+   * schema by yourself. This is useful when you would like to manually specify
+   * the schema for a table. In this case, the schema defined by the user is
+   * guaranteed to be kept unchanged and would not be overwritten. But this also
+   * means Dataplex will not provide schema evolution management for you.
+   * Dataplex will still be able to manage partition registration (i.e., keeping
+   * the list of partitions up to date) when Dataplex discovery is turned on and
+   * user_managed is set to true.
    * </pre>
    *
    * <code>bool user_managed = 1 [(.google.api.field_behavior) = REQUIRED];</code>

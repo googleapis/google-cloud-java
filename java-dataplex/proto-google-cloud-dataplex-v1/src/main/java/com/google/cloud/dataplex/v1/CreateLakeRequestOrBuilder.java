@@ -28,7 +28,7 @@ public interface CreateLakeRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the lake location, of the form:
-   * `projects/{project_number}/locations/{location_id}`
+   * projects/{project_number}/locations/{location_id}
    * where `location_id` refers to a GCP region.
    * </pre>
    *
@@ -44,7 +44,7 @@ public interface CreateLakeRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the lake location, of the form:
-   * `projects/{project_number}/locations/{location_id}`
+   * projects/{project_number}/locations/{location_id}
    * where `location_id` refers to a GCP region.
    * </pre>
    *

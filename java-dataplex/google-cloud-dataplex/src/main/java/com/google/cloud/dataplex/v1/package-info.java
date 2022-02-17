@@ -19,6 +19,20 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= ContentServiceClient =======================
+ *
+ * <p>Service Description: ContentService manages Notebook and SQL Scripts for Dataplex.
+ *
+ * <p>Sample for ContentServiceClient:
+ *
+ * <pre>{@code
+ * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
+ *   LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
+ *   Content content = Content.newBuilder().build();
+ *   Content response = contentServiceClient.createContent(parent, content);
+ * }
+ * }</pre>
+ *
  * <p>======================= MetadataServiceClient =======================
  *
  * <p>Service Description: Metadata service manages metadata resources such as tables, filesets and
@@ -28,8 +42,9 @@
  *
  * <pre>{@code
  * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
- *   EntityName name = EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]");
- *   Entity response = metadataServiceClient.getEntity(name);
+ *   ZoneName parent = ZoneName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]");
+ *   Entity entity = Entity.newBuilder().build();
+ *   Entity response = metadataServiceClient.createEntity(parent, entity);
  * }
  * }</pre>
  *

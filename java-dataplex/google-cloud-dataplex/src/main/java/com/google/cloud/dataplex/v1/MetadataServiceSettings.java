@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dataplex.v1.stub.MetadataServiceStubSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -50,16 +51,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getEntity to 30 seconds:
+ * <p>For example, to set the total timeout of createEntity to 30 seconds:
  *
  * <pre>{@code
  * MetadataServiceSettings.Builder metadataServiceSettingsBuilder =
  *     MetadataServiceSettings.newBuilder();
  * metadataServiceSettingsBuilder
- *     .getEntitySettings()
+ *     .createEntitySettings()
  *     .setRetrySettings(
  *         metadataServiceSettingsBuilder
- *             .getEntitySettings()
+ *             .createEntitySettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -70,6 +71,21 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class MetadataServiceSettings extends ClientSettings<MetadataServiceSettings> {
 
+  /** Returns the object with the settings used for calls to createEntity. */
+  public UnaryCallSettings<CreateEntityRequest, Entity> createEntitySettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).createEntitySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEntity. */
+  public UnaryCallSettings<UpdateEntityRequest, Entity> updateEntitySettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).updateEntitySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEntity. */
+  public UnaryCallSettings<DeleteEntityRequest, Empty> deleteEntitySettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).deleteEntitySettings();
+  }
+
   /** Returns the object with the settings used for calls to getEntity. */
   public UnaryCallSettings<GetEntityRequest, Entity> getEntitySettings() {
     return ((MetadataServiceStubSettings) getStubSettings()).getEntitySettings();
@@ -79,6 +95,16 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
   public PagedCallSettings<ListEntitiesRequest, ListEntitiesResponse, ListEntitiesPagedResponse>
       listEntitiesSettings() {
     return ((MetadataServiceStubSettings) getStubSettings()).listEntitiesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPartition. */
+  public UnaryCallSettings<CreatePartitionRequest, Partition> createPartitionSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).createPartitionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePartition. */
+  public UnaryCallSettings<DeletePartitionRequest, Empty> deletePartitionSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).deletePartitionSettings();
   }
 
   /** Returns the object with the settings used for calls to getPartition. */
@@ -190,6 +216,21 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to createEntity. */
+    public UnaryCallSettings.Builder<CreateEntityRequest, Entity> createEntitySettings() {
+      return getStubSettingsBuilder().createEntitySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEntity. */
+    public UnaryCallSettings.Builder<UpdateEntityRequest, Entity> updateEntitySettings() {
+      return getStubSettingsBuilder().updateEntitySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEntity. */
+    public UnaryCallSettings.Builder<DeleteEntityRequest, Empty> deleteEntitySettings() {
+      return getStubSettingsBuilder().deleteEntitySettings();
+    }
+
     /** Returns the builder for the settings used for calls to getEntity. */
     public UnaryCallSettings.Builder<GetEntityRequest, Entity> getEntitySettings() {
       return getStubSettingsBuilder().getEntitySettings();
@@ -200,6 +241,16 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
             ListEntitiesRequest, ListEntitiesResponse, ListEntitiesPagedResponse>
         listEntitiesSettings() {
       return getStubSettingsBuilder().listEntitiesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPartition. */
+    public UnaryCallSettings.Builder<CreatePartitionRequest, Partition> createPartitionSettings() {
+      return getStubSettingsBuilder().createPartitionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePartition. */
+    public UnaryCallSettings.Builder<DeletePartitionRequest, Empty> deletePartitionSettings() {
+      return getStubSettingsBuilder().deletePartitionSettings();
     }
 
     /** Returns the builder for the settings used for calls to getPartition. */

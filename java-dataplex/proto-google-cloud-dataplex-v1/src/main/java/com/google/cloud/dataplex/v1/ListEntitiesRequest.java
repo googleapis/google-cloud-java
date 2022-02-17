@@ -401,8 +401,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. Maximum number of entities to return. The service may return fewer than
-   * this value. If unspecified, at most 10 entities will be returned. The
-   * maximum value is 1000; values above 1000 are set to 1000.
+   * this value. If unspecified, 100 entities will be returned by default. The
+   * maximum value is 500; larger values will will be truncated to 500.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -475,7 +475,13 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Filter request by name prefix.
+   * Optional. The following filter parameters can be added to the URL to limit the
+   * entities returned by the API:
+   * - Entity ID: ?filter="id=entityID"
+   * - Asset ID: ?filter="asset=assetID"
+   * - Data path ?filter="data_path=gs://my-bucket"
+   * - Is HIVE compatible: ?filter=”hive_compatible=true”
+   * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -498,7 +504,13 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Filter request by name prefix.
+   * Optional. The following filter parameters can be added to the URL to limit the
+   * entities returned by the API:
+   * - Entity ID: ?filter="id=entityID"
+   * - Asset ID: ?filter="asset=assetID"
+   * - Data path ?filter="data_path=gs://my-bucket"
+   * - Is HIVE compatible: ?filter=”hive_compatible=true”
+   * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1131,8 +1143,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Maximum number of entities to return. The service may return fewer than
-     * this value. If unspecified, at most 10 entities will be returned. The
-     * maximum value is 1000; values above 1000 are set to 1000.
+     * this value. If unspecified, 100 entities will be returned by default. The
+     * maximum value is 500; larger values will will be truncated to 500.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1148,8 +1160,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Maximum number of entities to return. The service may return fewer than
-     * this value. If unspecified, at most 10 entities will be returned. The
-     * maximum value is 1000; values above 1000 are set to 1000.
+     * this value. If unspecified, 100 entities will be returned by default. The
+     * maximum value is 500; larger values will will be truncated to 500.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1168,8 +1180,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Maximum number of entities to return. The service may return fewer than
-     * this value. If unspecified, at most 10 entities will be returned. The
-     * maximum value is 1000; values above 1000 are set to 1000.
+     * this value. If unspecified, 100 entities will be returned by default. The
+     * maximum value is 500; larger values will will be truncated to 500.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1309,7 +1321,13 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Filter request by name prefix.
+     * Optional. The following filter parameters can be added to the URL to limit the
+     * entities returned by the API:
+     * - Entity ID: ?filter="id=entityID"
+     * - Asset ID: ?filter="asset=assetID"
+     * - Data path ?filter="data_path=gs://my-bucket"
+     * - Is HIVE compatible: ?filter=”hive_compatible=true”
+     * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1331,7 +1349,13 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Filter request by name prefix.
+     * Optional. The following filter parameters can be added to the URL to limit the
+     * entities returned by the API:
+     * - Entity ID: ?filter="id=entityID"
+     * - Asset ID: ?filter="asset=assetID"
+     * - Data path ?filter="data_path=gs://my-bucket"
+     * - Is HIVE compatible: ?filter=”hive_compatible=true”
+     * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1353,7 +1377,13 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Filter request by name prefix.
+     * Optional. The following filter parameters can be added to the URL to limit the
+     * entities returned by the API:
+     * - Entity ID: ?filter="id=entityID"
+     * - Asset ID: ?filter="asset=assetID"
+     * - Data path ?filter="data_path=gs://my-bucket"
+     * - Is HIVE compatible: ?filter=”hive_compatible=true”
+     * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1374,7 +1404,13 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Filter request by name prefix.
+     * Optional. The following filter parameters can be added to the URL to limit the
+     * entities returned by the API:
+     * - Entity ID: ?filter="id=entityID"
+     * - Asset ID: ?filter="asset=assetID"
+     * - Data path ?filter="data_path=gs://my-bucket"
+     * - Is HIVE compatible: ?filter=”hive_compatible=true”
+     * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1391,7 +1427,13 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Filter request by name prefix.
+     * Optional. The following filter parameters can be added to the URL to limit the
+     * entities returned by the API:
+     * - Entity ID: ?filter="id=entityID"
+     * - Asset ID: ?filter="asset=assetID"
+     * - Data path ?filter="data_path=gs://my-bucket"
+     * - Is HIVE compatible: ?filter=”hive_compatible=true”
+     * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

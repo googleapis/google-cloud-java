@@ -249,7 +249,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Audio data formats (such as mp3 and wav).
+     * Audio data formats (such as mp3, and wav).
      * </pre>
      *
      * <code>AUDIO = 201;</code>
@@ -382,7 +382,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Audio data formats (such as mp3 and wav).
+     * Audio data formats (such as mp3, and wav).
      * </pre>
      *
      * <code>AUDIO = 201;</code>
@@ -711,7 +711,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. The default is UTF-8.
+     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
+     * "ISO-8859-1". Defaults to UTF-8 if unspecified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -723,7 +724,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. The default is UTF-8.
+     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
+     * "ISO-8859-1". Defaults to UTF-8 if unspecified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -737,7 +739,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The number of rows to interpret as header rows that should be skipped
-     * when reading data rows.
+     * when reading data rows. Defaults to 0.
      * </pre>
      *
      * <code>int32 header_rows = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -775,8 +777,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character used to quote column values. Defaults to empty,
-     * implying unquoted data.
+     * Optional. The character used to quote column values. Accepts '"' and '''.
+     * Defaults to '"' if unspecified.
      * </pre>
      *
      * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -788,8 +790,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character used to quote column values. Defaults to empty,
-     * implying unquoted data.
+     * Optional. The character used to quote column values. Accepts '"' and '''.
+     * Defaults to '"' if unspecified.
      * </pre>
      *
      * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -918,7 +920,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. The default is UTF-8.
+     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
+     * "ISO-8859-1". Defaults to UTF-8 if unspecified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -941,7 +944,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. The default is UTF-8.
+     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
+     * "ISO-8859-1". Defaults to UTF-8 if unspecified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -968,7 +972,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The number of rows to interpret as header rows that should be skipped
-     * when reading data rows.
+     * when reading data rows. Defaults to 0.
      * </pre>
      *
      * <code>int32 header_rows = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1035,8 +1039,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character used to quote column values. Defaults to empty,
-     * implying unquoted data.
+     * Optional. The character used to quote column values. Accepts '"' and '''.
+     * Defaults to '"' if unspecified.
      * </pre>
      *
      * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1059,8 +1063,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character used to quote column values. Defaults to empty,
-     * implying unquoted data.
+     * Optional. The character used to quote column values. Accepts '"' and '''.
+     * Defaults to '"' if unspecified.
      * </pre>
      *
      * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1455,7 +1459,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. The default is UTF-8.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
+       * "ISO-8859-1". Defaults to UTF-8 if unspecified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1477,7 +1482,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. The default is UTF-8.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
+       * "ISO-8859-1". Defaults to UTF-8 if unspecified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1499,7 +1505,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. The default is UTF-8.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
+       * "ISO-8859-1". Defaults to UTF-8 if unspecified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1520,7 +1527,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. The default is UTF-8.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
+       * "ISO-8859-1". Defaults to UTF-8 if unspecified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1537,7 +1545,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. The default is UTF-8.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
+       * "ISO-8859-1". Defaults to UTF-8 if unspecified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1562,7 +1571,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The number of rows to interpret as header rows that should be skipped
-       * when reading data rows.
+       * when reading data rows. Defaults to 0.
        * </pre>
        *
        * <code>int32 header_rows = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1578,7 +1587,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The number of rows to interpret as header rows that should be skipped
-       * when reading data rows.
+       * when reading data rows. Defaults to 0.
        * </pre>
        *
        * <code>int32 header_rows = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1597,7 +1606,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The number of rows to interpret as header rows that should be skipped
-       * when reading data rows.
+       * when reading data rows. Defaults to 0.
        * </pre>
        *
        * <code>int32 header_rows = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1722,8 +1731,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character used to quote column values. Defaults to empty,
-       * implying unquoted data.
+       * Optional. The character used to quote column values. Accepts '"' and '''.
+       * Defaults to '"' if unspecified.
        * </pre>
        *
        * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1745,8 +1754,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character used to quote column values. Defaults to empty,
-       * implying unquoted data.
+       * Optional. The character used to quote column values. Accepts '"' and '''.
+       * Defaults to '"' if unspecified.
        * </pre>
        *
        * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1768,8 +1777,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character used to quote column values. Defaults to empty,
-       * implying unquoted data.
+       * Optional. The character used to quote column values. Accepts '"' and '''.
+       * Defaults to '"' if unspecified.
        * </pre>
        *
        * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1790,8 +1799,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character used to quote column values. Defaults to empty,
-       * implying unquoted data.
+       * Optional. The character used to quote column values. Accepts '"' and '''.
+       * Defaults to '"' if unspecified.
        * </pre>
        *
        * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1808,8 +1817,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character used to quote column values. Defaults to empty,
-       * implying unquoted data.
+       * Optional. The character used to quote column values. Accepts '"' and '''.
+       * Defaults to '"' if unspecified.
        * </pre>
        *
        * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1889,7 +1898,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. The default is UTF-8.
+     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
+     * "ISO-8859-1". Defaults to UTF-8 if not specified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1901,7 +1911,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. The default is UTF-8.
+     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
+     * "ISO-8859-1". Defaults to UTF-8 if not specified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2009,7 +2020,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. The default is UTF-8.
+     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
+     * "ISO-8859-1". Defaults to UTF-8 if not specified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2032,7 +2044,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. The default is UTF-8.
+     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
+     * "ISO-8859-1". Defaults to UTF-8 if not specified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2380,7 +2393,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. The default is UTF-8.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
+       * "ISO-8859-1". Defaults to UTF-8 if not specified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2402,7 +2416,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. The default is UTF-8.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
+       * "ISO-8859-1". Defaults to UTF-8 if not specified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2424,7 +2439,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. The default is UTF-8.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
+       * "ISO-8859-1". Defaults to UTF-8 if not specified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2445,7 +2461,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. The default is UTF-8.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
+       * "ISO-8859-1". Defaults to UTF-8 if not specified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2462,7 +2479,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. The default is UTF-8.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
+       * "ISO-8859-1". Defaults to UTF-8 if not specified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2587,7 +2605,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The data format associated with the stored data, which represents
-   * content type values.
+   * content type values. The value is inferred from mime type.
    * </pre>
    *
    * <code>
@@ -2605,7 +2623,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The data format associated with the stored data, which represents
-   * content type values.
+   * content type values. The value is inferred from mime type.
    * </pre>
    *
    * <code>
@@ -2672,8 +2690,19 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The mime type descriptor for the data. This field is valid for formats
-   * other than `UNKNOWN` and `MIXED`.
+   * Required. The mime type descriptor for the data. Must match the pattern
+   * {type}/{subtype}. Supported values:
+   * - application/x-parquet
+   * - application/x-avro
+   * - application/x-orc
+   * - application/x-tfrecord
+   * - application/json
+   * - application/{subtypes}
+   * - text/csv
+   * - text/&lt;subtypes&gt;
+   * - image/{image subtype}
+   * - video/{video subtype}
+   * - audio/{audio subtype}
    * </pre>
    *
    * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2696,8 +2725,19 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The mime type descriptor for the data. This field is valid for formats
-   * other than `UNKNOWN` and `MIXED`.
+   * Required. The mime type descriptor for the data. Must match the pattern
+   * {type}/{subtype}. Supported values:
+   * - application/x-parquet
+   * - application/x-avro
+   * - application/x-orc
+   * - application/x-tfrecord
+   * - application/json
+   * - application/{subtypes}
+   * - text/csv
+   * - text/&lt;subtypes&gt;
+   * - image/{image subtype}
+   * - video/{video subtype}
+   * - audio/{audio subtype}
    * </pre>
    *
    * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3277,7 +3317,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The data format associated with the stored data, which represents
-     * content type values.
+     * content type values. The value is inferred from mime type.
      * </pre>
      *
      * <code>
@@ -3295,7 +3335,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The data format associated with the stored data, which represents
-     * content type values.
+     * content type values. The value is inferred from mime type.
      * </pre>
      *
      * <code>
@@ -3316,7 +3356,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The data format associated with the stored data, which represents
-     * content type values.
+     * content type values. The value is inferred from mime type.
      * </pre>
      *
      * <code>
@@ -3339,7 +3379,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The data format associated with the stored data, which represents
-     * content type values.
+     * content type values. The value is inferred from mime type.
      * </pre>
      *
      * <code>
@@ -3363,7 +3403,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The data format associated with the stored data, which represents
-     * content type values.
+     * content type values. The value is inferred from mime type.
      * </pre>
      *
      * <code>
@@ -3493,8 +3533,19 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The mime type descriptor for the data. This field is valid for formats
-     * other than `UNKNOWN` and `MIXED`.
+     * Required. The mime type descriptor for the data. Must match the pattern
+     * {type}/{subtype}. Supported values:
+     * - application/x-parquet
+     * - application/x-avro
+     * - application/x-orc
+     * - application/x-tfrecord
+     * - application/json
+     * - application/{subtypes}
+     * - text/csv
+     * - text/&lt;subtypes&gt;
+     * - image/{image subtype}
+     * - video/{video subtype}
+     * - audio/{audio subtype}
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3516,8 +3567,19 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The mime type descriptor for the data. This field is valid for formats
-     * other than `UNKNOWN` and `MIXED`.
+     * Required. The mime type descriptor for the data. Must match the pattern
+     * {type}/{subtype}. Supported values:
+     * - application/x-parquet
+     * - application/x-avro
+     * - application/x-orc
+     * - application/x-tfrecord
+     * - application/json
+     * - application/{subtypes}
+     * - text/csv
+     * - text/&lt;subtypes&gt;
+     * - image/{image subtype}
+     * - video/{video subtype}
+     * - audio/{audio subtype}
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3539,8 +3601,19 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The mime type descriptor for the data. This field is valid for formats
-     * other than `UNKNOWN` and `MIXED`.
+     * Required. The mime type descriptor for the data. Must match the pattern
+     * {type}/{subtype}. Supported values:
+     * - application/x-parquet
+     * - application/x-avro
+     * - application/x-orc
+     * - application/x-tfrecord
+     * - application/json
+     * - application/{subtypes}
+     * - text/csv
+     * - text/&lt;subtypes&gt;
+     * - image/{image subtype}
+     * - video/{video subtype}
+     * - audio/{audio subtype}
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3561,8 +3634,19 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The mime type descriptor for the data. This field is valid for formats
-     * other than `UNKNOWN` and `MIXED`.
+     * Required. The mime type descriptor for the data. Must match the pattern
+     * {type}/{subtype}. Supported values:
+     * - application/x-parquet
+     * - application/x-avro
+     * - application/x-orc
+     * - application/x-tfrecord
+     * - application/json
+     * - application/{subtypes}
+     * - text/csv
+     * - text/&lt;subtypes&gt;
+     * - image/{image subtype}
+     * - video/{video subtype}
+     * - audio/{audio subtype}
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3579,8 +3663,19 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The mime type descriptor for the data. This field is valid for formats
-     * other than `UNKNOWN` and `MIXED`.
+     * Required. The mime type descriptor for the data. Must match the pattern
+     * {type}/{subtype}. Supported values:
+     * - application/x-parquet
+     * - application/x-avro
+     * - application/x-orc
+     * - application/x-tfrecord
+     * - application/json
+     * - application/{subtypes}
+     * - text/csv
+     * - text/&lt;subtypes&gt;
+     * - image/{image subtype}
+     * - video/{video subtype}
+     * - audio/{audio subtype}
      * </pre>
      *
      * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>

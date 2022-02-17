@@ -5,11 +5,47 @@
   "protoPackage": "google.cloud.dataplex.v1",
   "libraryPackage": "com.google.cloud.dataplex.v1",
   "services": {
+    "ContentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ContentServiceClient",
+          "rpcs": {
+            "CreateContent": {
+              "methods": ["createContent", "createContent", "createContent", "createContentCallable"]
+            },
+            "DeleteContent": {
+              "methods": ["deleteContent", "deleteContent", "deleteContent", "deleteContentCallable"]
+            },
+            "GetContent": {
+              "methods": ["getContent", "getContent", "getContent", "getContentCallable"]
+            },
+            "ListContent": {
+              "methods": ["listContent", "listContent", "listContent", "listContentPagedCallable", "listContentCallable"]
+            },
+            "UpdateContent": {
+              "methods": ["updateContent", "updateContent", "updateContentCallable"]
+            }
+          }
+        }
+      }
+    },
     "MetadataService": {
       "clients": {
         "grpc": {
           "libraryClient": "MetadataServiceClient",
           "rpcs": {
+            "CreateEntity": {
+              "methods": ["createEntity", "createEntity", "createEntity", "createEntityCallable"]
+            },
+            "CreatePartition": {
+              "methods": ["createPartition", "createPartition", "createPartition", "createPartitionCallable"]
+            },
+            "DeleteEntity": {
+              "methods": ["deleteEntity", "deleteEntity", "deleteEntity", "deleteEntityCallable"]
+            },
+            "DeletePartition": {
+              "methods": ["deletePartition", "deletePartition", "deletePartition", "deletePartitionCallable"]
+            },
             "GetEntity": {
               "methods": ["getEntity", "getEntity", "getEntity", "getEntityCallable"]
             },
@@ -21,6 +57,9 @@
             },
             "ListPartitions": {
               "methods": ["listPartitions", "listPartitions", "listPartitions", "listPartitionsPagedCallable", "listPartitionsCallable"]
+            },
+            "UpdateEntity": {
+              "methods": ["updateEntity", "updateEntityCallable"]
             }
           }
         }
@@ -37,6 +76,9 @@
             "CreateAsset": {
               "methods": ["createAssetAsync", "createAssetAsync", "createAssetAsync", "createAssetOperationCallable", "createAssetCallable"]
             },
+            "CreateEnvironment": {
+              "methods": ["createEnvironmentAsync", "createEnvironmentAsync", "createEnvironmentAsync", "createEnvironmentOperationCallable", "createEnvironmentCallable"]
+            },
             "CreateLake": {
               "methods": ["createLakeAsync", "createLakeAsync", "createLakeAsync", "createLakeOperationCallable", "createLakeCallable"]
             },
@@ -49,6 +91,9 @@
             "DeleteAsset": {
               "methods": ["deleteAssetAsync", "deleteAssetAsync", "deleteAssetAsync", "deleteAssetOperationCallable", "deleteAssetCallable"]
             },
+            "DeleteEnvironment": {
+              "methods": ["deleteEnvironmentAsync", "deleteEnvironmentAsync", "deleteEnvironmentAsync", "deleteEnvironmentOperationCallable", "deleteEnvironmentCallable"]
+            },
             "DeleteLake": {
               "methods": ["deleteLakeAsync", "deleteLakeAsync", "deleteLakeAsync", "deleteLakeOperationCallable", "deleteLakeCallable"]
             },
@@ -60,6 +105,9 @@
             },
             "GetAsset": {
               "methods": ["getAsset", "getAsset", "getAsset", "getAssetCallable"]
+            },
+            "GetEnvironment": {
+              "methods": ["getEnvironment", "getEnvironment", "getEnvironment", "getEnvironmentCallable"]
             },
             "GetJob": {
               "methods": ["getJob", "getJob", "getJob", "getJobCallable"]
@@ -79,6 +127,9 @@
             "ListAssets": {
               "methods": ["listAssets", "listAssets", "listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
             },
+            "ListEnvironments": {
+              "methods": ["listEnvironments", "listEnvironments", "listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
+            },
             "ListJobs": {
               "methods": ["listJobs", "listJobs", "listJobs", "listJobsPagedCallable", "listJobsCallable"]
             },
@@ -87,6 +138,9 @@
             },
             "ListLakes": {
               "methods": ["listLakes", "listLakes", "listLakes", "listLakesPagedCallable", "listLakesCallable"]
+            },
+            "ListSessions": {
+              "methods": ["listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
             },
             "ListTasks": {
               "methods": ["listTasks", "listTasks", "listTasks", "listTasksPagedCallable", "listTasksCallable"]
@@ -99,6 +153,9 @@
             },
             "UpdateAsset": {
               "methods": ["updateAssetAsync", "updateAssetAsync", "updateAssetOperationCallable", "updateAssetCallable"]
+            },
+            "UpdateEnvironment": {
+              "methods": ["updateEnvironmentAsync", "updateEnvironmentAsync", "updateEnvironmentOperationCallable", "updateEnvironmentCallable"]
             },
             "UpdateLake": {
               "methods": ["updateLakeAsync", "updateLakeAsync", "updateLakeOperationCallable", "updateLakeCallable"]

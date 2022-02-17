@@ -18,9 +18,11 @@ package com.google.cloud.dataplex.v1;
 
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetsPagedResponse;
+import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakeActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakesPagedResponse;
+import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListSessionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListTasksPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZoneActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZonesPagedResponse;
@@ -290,6 +292,57 @@ public class DataplexServiceSettings extends ClientSettings<DataplexServiceSetti
   /** Returns the object with the settings used for calls to cancelJob. */
   public UnaryCallSettings<CancelJobRequest, Empty> cancelJobSettings() {
     return ((DataplexServiceStubSettings) getStubSettings()).cancelJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createEnvironment. */
+  public UnaryCallSettings<CreateEnvironmentRequest, Operation> createEnvironmentSettings() {
+    return ((DataplexServiceStubSettings) getStubSettings()).createEnvironmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createEnvironment. */
+  public OperationCallSettings<CreateEnvironmentRequest, Environment, OperationMetadata>
+      createEnvironmentOperationSettings() {
+    return ((DataplexServiceStubSettings) getStubSettings()).createEnvironmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEnvironment. */
+  public UnaryCallSettings<UpdateEnvironmentRequest, Operation> updateEnvironmentSettings() {
+    return ((DataplexServiceStubSettings) getStubSettings()).updateEnvironmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEnvironment. */
+  public OperationCallSettings<UpdateEnvironmentRequest, Environment, OperationMetadata>
+      updateEnvironmentOperationSettings() {
+    return ((DataplexServiceStubSettings) getStubSettings()).updateEnvironmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEnvironment. */
+  public UnaryCallSettings<DeleteEnvironmentRequest, Operation> deleteEnvironmentSettings() {
+    return ((DataplexServiceStubSettings) getStubSettings()).deleteEnvironmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEnvironment. */
+  public OperationCallSettings<DeleteEnvironmentRequest, Empty, OperationMetadata>
+      deleteEnvironmentOperationSettings() {
+    return ((DataplexServiceStubSettings) getStubSettings()).deleteEnvironmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listEnvironments. */
+  public PagedCallSettings<
+          ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
+      listEnvironmentsSettings() {
+    return ((DataplexServiceStubSettings) getStubSettings()).listEnvironmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEnvironment. */
+  public UnaryCallSettings<GetEnvironmentRequest, Environment> getEnvironmentSettings() {
+    return ((DataplexServiceStubSettings) getStubSettings()).getEnvironmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSessions. */
+  public PagedCallSettings<ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
+      listSessionsSettings() {
+    return ((DataplexServiceStubSettings) getStubSettings()).listSessionsSettings();
   }
 
   public static final DataplexServiceSettings create(DataplexServiceStubSettings stub)
@@ -600,6 +653,61 @@ public class DataplexServiceSettings extends ClientSettings<DataplexServiceSetti
     /** Returns the builder for the settings used for calls to cancelJob. */
     public UnaryCallSettings.Builder<CancelJobRequest, Empty> cancelJobSettings() {
       return getStubSettingsBuilder().cancelJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createEnvironment. */
+    public UnaryCallSettings.Builder<CreateEnvironmentRequest, Operation>
+        createEnvironmentSettings() {
+      return getStubSettingsBuilder().createEnvironmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createEnvironment. */
+    public OperationCallSettings.Builder<CreateEnvironmentRequest, Environment, OperationMetadata>
+        createEnvironmentOperationSettings() {
+      return getStubSettingsBuilder().createEnvironmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEnvironment. */
+    public UnaryCallSettings.Builder<UpdateEnvironmentRequest, Operation>
+        updateEnvironmentSettings() {
+      return getStubSettingsBuilder().updateEnvironmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEnvironment. */
+    public OperationCallSettings.Builder<UpdateEnvironmentRequest, Environment, OperationMetadata>
+        updateEnvironmentOperationSettings() {
+      return getStubSettingsBuilder().updateEnvironmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEnvironment. */
+    public UnaryCallSettings.Builder<DeleteEnvironmentRequest, Operation>
+        deleteEnvironmentSettings() {
+      return getStubSettingsBuilder().deleteEnvironmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEnvironment. */
+    public OperationCallSettings.Builder<DeleteEnvironmentRequest, Empty, OperationMetadata>
+        deleteEnvironmentOperationSettings() {
+      return getStubSettingsBuilder().deleteEnvironmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listEnvironments. */
+    public PagedCallSettings.Builder<
+            ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
+        listEnvironmentsSettings() {
+      return getStubSettingsBuilder().listEnvironmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEnvironment. */
+    public UnaryCallSettings.Builder<GetEnvironmentRequest, Environment> getEnvironmentSettings() {
+      return getStubSettingsBuilder().getEnvironmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSessions. */
+    public PagedCallSettings.Builder<
+            ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
+        listSessionsSettings() {
+      return getStubSettingsBuilder().listSessionsSettings();
     }
 
     @Override

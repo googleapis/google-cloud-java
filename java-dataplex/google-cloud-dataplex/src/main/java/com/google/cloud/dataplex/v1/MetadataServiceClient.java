@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataplex.v1.stub.MetadataServiceStub;
 import com.google.cloud.dataplex.v1.stub.MetadataServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -43,8 +44,9 @@ import javax.annotation.Generated;
  *
  * <pre>{@code
  * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
- *   EntityName name = EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]");
- *   Entity response = metadataServiceClient.getEntity(name);
+ *   ZoneName parent = ZoneName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]");
+ *   Entity entity = Entity.newBuilder().build();
+ *   Entity response = metadataServiceClient.createEntity(parent, entity);
  * }
  * }</pre>
  *
@@ -148,6 +150,252 @@ public class MetadataServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MetadataServiceStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a metadata entity.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   ZoneName parent = ZoneName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]");
+   *   Entity entity = Entity.newBuilder().build();
+   *   Entity response = metadataServiceClient.createEntity(parent, entity);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent zone:
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
+   * @param entity Required. Entity resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Entity createEntity(ZoneName parent, Entity entity) {
+    CreateEntityRequest request =
+        CreateEntityRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setEntity(entity)
+            .build();
+    return createEntity(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a metadata entity.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   String parent = ZoneName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]").toString();
+   *   Entity entity = Entity.newBuilder().build();
+   *   Entity response = metadataServiceClient.createEntity(parent, entity);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent zone:
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
+   * @param entity Required. Entity resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Entity createEntity(String parent, Entity entity) {
+    CreateEntityRequest request =
+        CreateEntityRequest.newBuilder().setParent(parent).setEntity(entity).build();
+    return createEntity(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a metadata entity.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   CreateEntityRequest request =
+   *       CreateEntityRequest.newBuilder()
+   *           .setParent(ZoneName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]").toString())
+   *           .setEntity(Entity.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Entity response = metadataServiceClient.createEntity(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Entity createEntity(CreateEntityRequest request) {
+    return createEntityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a metadata entity.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   CreateEntityRequest request =
+   *       CreateEntityRequest.newBuilder()
+   *           .setParent(ZoneName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]").toString())
+   *           .setEntity(Entity.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Entity> future = metadataServiceClient.createEntityCallable().futureCall(request);
+   *   // Do something.
+   *   Entity response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateEntityRequest, Entity> createEntityCallable() {
+    return stub.createEntityCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a metadata entity. Only supports full resource update.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   UpdateEntityRequest request =
+   *       UpdateEntityRequest.newBuilder()
+   *           .setEntity(Entity.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Entity response = metadataServiceClient.updateEntity(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Entity updateEntity(UpdateEntityRequest request) {
+    return updateEntityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a metadata entity. Only supports full resource update.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   UpdateEntityRequest request =
+   *       UpdateEntityRequest.newBuilder()
+   *           .setEntity(Entity.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Entity> future = metadataServiceClient.updateEntityCallable().futureCall(request);
+   *   // Do something.
+   *   Entity response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateEntityRequest, Entity> updateEntityCallable() {
+    return stub.updateEntityCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a metadata entity.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   EntityName name = EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]");
+   *   metadataServiceClient.deleteEntity(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the entity:
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntity(EntityName name) {
+    DeleteEntityRequest request =
+        DeleteEntityRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteEntity(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a metadata entity.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   String name =
+   *       EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]").toString();
+   *   metadataServiceClient.deleteEntity(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the entity:
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntity(String name) {
+    DeleteEntityRequest request = DeleteEntityRequest.newBuilder().setName(name).build();
+    deleteEntity(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a metadata entity.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   DeleteEntityRequest request =
+   *       DeleteEntityRequest.newBuilder()
+   *           .setName(
+   *               EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   metadataServiceClient.deleteEntity(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntity(DeleteEntityRequest request) {
+    deleteEntityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a metadata entity.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   DeleteEntityRequest request =
+   *       DeleteEntityRequest.newBuilder()
+   *           .setName(
+   *               EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Empty> future = metadataServiceClient.deleteEntityCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteEntityRequest, Empty> deleteEntityCallable() {
+    return stub.deleteEntityCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -389,6 +637,220 @@ public class MetadataServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Create a metadata partition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   EntityName parent = EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]");
+   *   Partition partition = Partition.newBuilder().build();
+   *   Partition response = metadataServiceClient.createPartition(parent, partition);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent zone:
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
+   * @param partition Required. Partition resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Partition createPartition(EntityName parent, Partition partition) {
+    CreatePartitionRequest request =
+        CreatePartitionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPartition(partition)
+            .build();
+    return createPartition(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a metadata partition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   String parent =
+   *       EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]").toString();
+   *   Partition partition = Partition.newBuilder().build();
+   *   Partition response = metadataServiceClient.createPartition(parent, partition);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent zone:
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
+   * @param partition Required. Partition resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Partition createPartition(String parent, Partition partition) {
+    CreatePartitionRequest request =
+        CreatePartitionRequest.newBuilder().setParent(parent).setPartition(partition).build();
+    return createPartition(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a metadata partition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   CreatePartitionRequest request =
+   *       CreatePartitionRequest.newBuilder()
+   *           .setParent(
+   *               EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]")
+   *                   .toString())
+   *           .setPartition(Partition.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Partition response = metadataServiceClient.createPartition(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Partition createPartition(CreatePartitionRequest request) {
+    return createPartitionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a metadata partition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   CreatePartitionRequest request =
+   *       CreatePartitionRequest.newBuilder()
+   *           .setParent(
+   *               EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]")
+   *                   .toString())
+   *           .setPartition(Partition.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Partition> future =
+   *       metadataServiceClient.createPartitionCallable().futureCall(request);
+   *   // Do something.
+   *   Partition response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreatePartitionRequest, Partition> createPartitionCallable() {
+    return stub.createPartitionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a metadata partition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   PartitionName name =
+   *       PartitionName.of(
+   *           "[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]", "[PARTITION]");
+   *   metadataServiceClient.deletePartition(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the partition. format:
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_value_path}`.
+   *     The {partition_value_path} segment consists of an ordered sequence of partition values
+   *     separated by "/". All values must be provided.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deletePartition(PartitionName name) {
+    DeletePartitionRequest request =
+        DeletePartitionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deletePartition(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a metadata partition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   String name =
+   *       PartitionName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]", "[PARTITION]")
+   *           .toString();
+   *   metadataServiceClient.deletePartition(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the partition. format:
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_value_path}`.
+   *     The {partition_value_path} segment consists of an ordered sequence of partition values
+   *     separated by "/". All values must be provided.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deletePartition(String name) {
+    DeletePartitionRequest request = DeletePartitionRequest.newBuilder().setName(name).build();
+    deletePartition(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a metadata partition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   DeletePartitionRequest request =
+   *       DeletePartitionRequest.newBuilder()
+   *           .setName(
+   *               PartitionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]", "[PARTITION]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   metadataServiceClient.deletePartition(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deletePartition(DeletePartitionRequest request) {
+    deletePartitionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a metadata partition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   DeletePartitionRequest request =
+   *       DeletePartitionRequest.newBuilder()
+   *           .setName(
+   *               PartitionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]", "[PARTITION]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Empty> future = metadataServiceClient.deletePartitionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeletePartitionRequest, Empty> deletePartitionCallable() {
+    return stub.deletePartitionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Get a metadata partition of an entity.
    *
    * <p>Sample code:
@@ -403,7 +865,9 @@ public class MetadataServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the partition:
-   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_id}`.
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_value_path}`.
+   *     The {partition_value_path} segment consists of an ordered sequence of partition values
+   *     separated by "/". All values must be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Partition getPartition(PartitionName name) {
@@ -428,7 +892,9 @@ public class MetadataServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the partition:
-   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_id}`.
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_value_path}`.
+   *     The {partition_value_path} segment consists of an ordered sequence of partition values
+   *     separated by "/". All values must be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Partition getPartition(String name) {

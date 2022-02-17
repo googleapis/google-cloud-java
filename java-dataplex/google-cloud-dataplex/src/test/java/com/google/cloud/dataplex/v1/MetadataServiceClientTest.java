@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -79,6 +80,248 @@ public class MetadataServiceClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  public void createEntityTest() throws Exception {
+    Entity expectedResponse =
+        Entity.newBuilder()
+            .setName(
+                EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setId("id3355")
+            .setEtag("etag3123477")
+            .setAsset("asset93121264")
+            .setDataPath("dataPath1788928751")
+            .setDataPathPattern("dataPathPattern1514620321")
+            .setCatalogEntry("catalogEntry-1171922983")
+            .setSystem(StorageSystem.forNumber(0))
+            .setFormat(StorageFormat.newBuilder().build())
+            .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setSchema(Schema.newBuilder().build())
+            .build();
+    mockMetadataService.addResponse(expectedResponse);
+
+    ZoneName parent = ZoneName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]");
+    Entity entity = Entity.newBuilder().build();
+
+    Entity actualResponse = client.createEntity(parent, entity);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEntityRequest actualRequest = ((CreateEntityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(entity, actualRequest.getEntity());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEntityExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      ZoneName parent = ZoneName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]");
+      Entity entity = Entity.newBuilder().build();
+      client.createEntity(parent, entity);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEntityTest2() throws Exception {
+    Entity expectedResponse =
+        Entity.newBuilder()
+            .setName(
+                EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setId("id3355")
+            .setEtag("etag3123477")
+            .setAsset("asset93121264")
+            .setDataPath("dataPath1788928751")
+            .setDataPathPattern("dataPathPattern1514620321")
+            .setCatalogEntry("catalogEntry-1171922983")
+            .setSystem(StorageSystem.forNumber(0))
+            .setFormat(StorageFormat.newBuilder().build())
+            .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setSchema(Schema.newBuilder().build())
+            .build();
+    mockMetadataService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Entity entity = Entity.newBuilder().build();
+
+    Entity actualResponse = client.createEntity(parent, entity);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEntityRequest actualRequest = ((CreateEntityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(entity, actualRequest.getEntity());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEntityExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Entity entity = Entity.newBuilder().build();
+      client.createEntity(parent, entity);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateEntityTest() throws Exception {
+    Entity expectedResponse =
+        Entity.newBuilder()
+            .setName(
+                EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setId("id3355")
+            .setEtag("etag3123477")
+            .setAsset("asset93121264")
+            .setDataPath("dataPath1788928751")
+            .setDataPathPattern("dataPathPattern1514620321")
+            .setCatalogEntry("catalogEntry-1171922983")
+            .setSystem(StorageSystem.forNumber(0))
+            .setFormat(StorageFormat.newBuilder().build())
+            .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setSchema(Schema.newBuilder().build())
+            .build();
+    mockMetadataService.addResponse(expectedResponse);
+
+    UpdateEntityRequest request =
+        UpdateEntityRequest.newBuilder()
+            .setEntity(Entity.newBuilder().build())
+            .setValidateOnly(true)
+            .build();
+
+    Entity actualResponse = client.updateEntity(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateEntityRequest actualRequest = ((UpdateEntityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getEntity(), actualRequest.getEntity());
+    Assert.assertEquals(request.getValidateOnly(), actualRequest.getValidateOnly());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateEntityExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      UpdateEntityRequest request =
+          UpdateEntityRequest.newBuilder()
+              .setEntity(Entity.newBuilder().build())
+              .setValidateOnly(true)
+              .build();
+      client.updateEntity(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEntityTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockMetadataService.addResponse(expectedResponse);
+
+    EntityName name = EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]");
+
+    client.deleteEntity(name);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEntityRequest actualRequest = ((DeleteEntityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEntityExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      EntityName name = EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]");
+      client.deleteEntity(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEntityTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockMetadataService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteEntity(name);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEntityRequest actualRequest = ((DeleteEntityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEntityExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteEntity(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test
@@ -269,6 +512,171 @@ public class MetadataServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listEntities(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createPartitionTest() throws Exception {
+    Partition expectedResponse =
+        Partition.newBuilder()
+            .setName(
+                PartitionName.of(
+                        "[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]", "[PARTITION]")
+                    .toString())
+            .addAllValues(new ArrayList<String>())
+            .setLocation("location1901043637")
+            .setEtag("etag3123477")
+            .build();
+    mockMetadataService.addResponse(expectedResponse);
+
+    EntityName parent = EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]");
+    Partition partition = Partition.newBuilder().build();
+
+    Partition actualResponse = client.createPartition(parent, partition);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreatePartitionRequest actualRequest = ((CreatePartitionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(partition, actualRequest.getPartition());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createPartitionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      EntityName parent = EntityName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]");
+      Partition partition = Partition.newBuilder().build();
+      client.createPartition(parent, partition);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createPartitionTest2() throws Exception {
+    Partition expectedResponse =
+        Partition.newBuilder()
+            .setName(
+                PartitionName.of(
+                        "[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]", "[PARTITION]")
+                    .toString())
+            .addAllValues(new ArrayList<String>())
+            .setLocation("location1901043637")
+            .setEtag("etag3123477")
+            .build();
+    mockMetadataService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Partition partition = Partition.newBuilder().build();
+
+    Partition actualResponse = client.createPartition(parent, partition);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreatePartitionRequest actualRequest = ((CreatePartitionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(partition, actualRequest.getPartition());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createPartitionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Partition partition = Partition.newBuilder().build();
+      client.createPartition(parent, partition);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deletePartitionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockMetadataService.addResponse(expectedResponse);
+
+    PartitionName name =
+        PartitionName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]", "[PARTITION]");
+
+    client.deletePartition(name);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeletePartitionRequest actualRequest = ((DeletePartitionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deletePartitionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      PartitionName name =
+          PartitionName.of(
+              "[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ENTITY]", "[PARTITION]");
+      client.deletePartition(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deletePartitionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockMetadataService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deletePartition(name);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeletePartitionRequest actualRequest = ((DeletePartitionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deletePartitionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deletePartition(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
