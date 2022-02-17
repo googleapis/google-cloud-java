@@ -105,43 +105,37 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * An alternate policy configuration that will be used instead of the baseline
-   * policy configurations as determined by the launch.
-   * Currently the only way the launch can trigger the alternate configuration
-   * is via dry-run/darklaunch.
+   * Deprecated.
    * </pre>
    *
-   * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+   * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @return Whether the alternate field is set.
    */
+  @java.lang.Deprecated
   boolean hasAlternate();
   /**
    *
    *
    * <pre>
-   * An alternate policy configuration that will be used instead of the baseline
-   * policy configurations as determined by the launch.
-   * Currently the only way the launch can trigger the alternate configuration
-   * is via dry-run/darklaunch.
+   * Deprecated.
    * </pre>
    *
-   * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+   * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @return The alternate.
    */
+  @java.lang.Deprecated
   com.google.cloud.orgpolicy.v2.AlternatePolicySpec getAlternate();
   /**
    *
    *
    * <pre>
-   * An alternate policy configuration that will be used instead of the baseline
-   * policy configurations as determined by the launch.
-   * Currently the only way the launch can trigger the alternate configuration
-   * is via dry-run/darklaunch.
+   * Deprecated.
    * </pre>
    *
-   * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+   * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.cloud.orgpolicy.v2.AlternatePolicySpecOrBuilder getAlternateOrBuilder();
 }

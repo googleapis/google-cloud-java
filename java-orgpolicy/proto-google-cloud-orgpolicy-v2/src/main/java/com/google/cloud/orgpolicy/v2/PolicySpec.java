@@ -289,11 +289,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * in the evaluation of the policy. When set, the `expression` field in
      * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
      * or "&amp;&amp;" operators. Each subexpression must be of the form
-     * "resource.matchLabels(key_name, value_name)",
-     * where key_name and value_name are the resource names for Label Keys
-     * and Values. These names are available from the Label Manager Service. An
-     * example expression is:
-     * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+     * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+     * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+     * 'tagValues/value_id')". where key_name and value_name are the resource
+     * names for Label Keys and Values. These names are available from the Tag
+     * Manager Service. An example expression is:
+     * "resource.matchTag('123456789/environment,
+     * 'prod')". or "resource.matchTagId('tagKeys/123',
+     * 'tagValues/456')".
      * </pre>
      *
      * <code>.google.type.Expr condition = 5;</code>
@@ -309,11 +312,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * in the evaluation of the policy. When set, the `expression` field in
      * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
      * or "&amp;&amp;" operators. Each subexpression must be of the form
-     * "resource.matchLabels(key_name, value_name)",
-     * where key_name and value_name are the resource names for Label Keys
-     * and Values. These names are available from the Label Manager Service. An
-     * example expression is:
-     * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+     * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+     * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+     * 'tagValues/value_id')". where key_name and value_name are the resource
+     * names for Label Keys and Values. These names are available from the Tag
+     * Manager Service. An example expression is:
+     * "resource.matchTag('123456789/environment,
+     * 'prod')". or "resource.matchTagId('tagKeys/123',
+     * 'tagValues/456')".
      * </pre>
      *
      * <code>.google.type.Expr condition = 5;</code>
@@ -329,11 +335,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * in the evaluation of the policy. When set, the `expression` field in
      * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
      * or "&amp;&amp;" operators. Each subexpression must be of the form
-     * "resource.matchLabels(key_name, value_name)",
-     * where key_name and value_name are the resource names for Label Keys
-     * and Values. These names are available from the Label Manager Service. An
-     * example expression is:
-     * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+     * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+     * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+     * 'tagValues/value_id')". where key_name and value_name are the resource
+     * names for Label Keys and Values. These names are available from the Tag
+     * Manager Service. An example expression is:
+     * "resource.matchTag('123456789/environment,
+     * 'prod')". or "resource.matchTagId('tagKeys/123',
+     * 'tagValues/456')".
      * </pre>
      *
      * <code>.google.type.Expr condition = 5;</code>
@@ -1858,11 +1867,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * in the evaluation of the policy. When set, the `expression` field in
      * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
      * or "&amp;&amp;" operators. Each subexpression must be of the form
-     * "resource.matchLabels(key_name, value_name)",
-     * where key_name and value_name are the resource names for Label Keys
-     * and Values. These names are available from the Label Manager Service. An
-     * example expression is:
-     * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+     * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+     * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+     * 'tagValues/value_id')". where key_name and value_name are the resource
+     * names for Label Keys and Values. These names are available from the Tag
+     * Manager Service. An example expression is:
+     * "resource.matchTag('123456789/environment,
+     * 'prod')". or "resource.matchTagId('tagKeys/123',
+     * 'tagValues/456')".
      * </pre>
      *
      * <code>.google.type.Expr condition = 5;</code>
@@ -1881,11 +1893,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * in the evaluation of the policy. When set, the `expression` field in
      * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
      * or "&amp;&amp;" operators. Each subexpression must be of the form
-     * "resource.matchLabels(key_name, value_name)",
-     * where key_name and value_name are the resource names for Label Keys
-     * and Values. These names are available from the Label Manager Service. An
-     * example expression is:
-     * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+     * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+     * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+     * 'tagValues/value_id')". where key_name and value_name are the resource
+     * names for Label Keys and Values. These names are available from the Tag
+     * Manager Service. An example expression is:
+     * "resource.matchTag('123456789/environment,
+     * 'prod')". or "resource.matchTagId('tagKeys/123',
+     * 'tagValues/456')".
      * </pre>
      *
      * <code>.google.type.Expr condition = 5;</code>
@@ -1904,11 +1919,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * in the evaluation of the policy. When set, the `expression` field in
      * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
      * or "&amp;&amp;" operators. Each subexpression must be of the form
-     * "resource.matchLabels(key_name, value_name)",
-     * where key_name and value_name are the resource names for Label Keys
-     * and Values. These names are available from the Label Manager Service. An
-     * example expression is:
-     * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+     * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+     * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+     * 'tagValues/value_id')". where key_name and value_name are the resource
+     * names for Label Keys and Values. These names are available from the Tag
+     * Manager Service. An example expression is:
+     * "resource.matchTag('123456789/environment,
+     * 'prod')". or "resource.matchTagId('tagKeys/123',
+     * 'tagValues/456')".
      * </pre>
      *
      * <code>.google.type.Expr condition = 5;</code>
@@ -2847,11 +2865,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * in the evaluation of the policy. When set, the `expression` field in
        * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
        * or "&amp;&amp;" operators. Each subexpression must be of the form
-       * "resource.matchLabels(key_name, value_name)",
-       * where key_name and value_name are the resource names for Label Keys
-       * and Values. These names are available from the Label Manager Service. An
-       * example expression is:
-       * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+       * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+       * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+       * 'tagValues/value_id')". where key_name and value_name are the resource
+       * names for Label Keys and Values. These names are available from the Tag
+       * Manager Service. An example expression is:
+       * "resource.matchTag('123456789/environment,
+       * 'prod')". or "resource.matchTagId('tagKeys/123',
+       * 'tagValues/456')".
        * </pre>
        *
        * <code>.google.type.Expr condition = 5;</code>
@@ -2869,11 +2890,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * in the evaluation of the policy. When set, the `expression` field in
        * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
        * or "&amp;&amp;" operators. Each subexpression must be of the form
-       * "resource.matchLabels(key_name, value_name)",
-       * where key_name and value_name are the resource names for Label Keys
-       * and Values. These names are available from the Label Manager Service. An
-       * example expression is:
-       * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+       * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+       * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+       * 'tagValues/value_id')". where key_name and value_name are the resource
+       * names for Label Keys and Values. These names are available from the Tag
+       * Manager Service. An example expression is:
+       * "resource.matchTag('123456789/environment,
+       * 'prod')". or "resource.matchTagId('tagKeys/123',
+       * 'tagValues/456')".
        * </pre>
        *
        * <code>.google.type.Expr condition = 5;</code>
@@ -2895,11 +2919,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * in the evaluation of the policy. When set, the `expression` field in
        * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
        * or "&amp;&amp;" operators. Each subexpression must be of the form
-       * "resource.matchLabels(key_name, value_name)",
-       * where key_name and value_name are the resource names for Label Keys
-       * and Values. These names are available from the Label Manager Service. An
-       * example expression is:
-       * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+       * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+       * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+       * 'tagValues/value_id')". where key_name and value_name are the resource
+       * names for Label Keys and Values. These names are available from the Tag
+       * Manager Service. An example expression is:
+       * "resource.matchTag('123456789/environment,
+       * 'prod')". or "resource.matchTagId('tagKeys/123',
+       * 'tagValues/456')".
        * </pre>
        *
        * <code>.google.type.Expr condition = 5;</code>
@@ -2925,11 +2952,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * in the evaluation of the policy. When set, the `expression` field in
        * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
        * or "&amp;&amp;" operators. Each subexpression must be of the form
-       * "resource.matchLabels(key_name, value_name)",
-       * where key_name and value_name are the resource names for Label Keys
-       * and Values. These names are available from the Label Manager Service. An
-       * example expression is:
-       * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+       * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+       * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+       * 'tagValues/value_id')". where key_name and value_name are the resource
+       * names for Label Keys and Values. These names are available from the Tag
+       * Manager Service. An example expression is:
+       * "resource.matchTag('123456789/environment,
+       * 'prod')". or "resource.matchTagId('tagKeys/123',
+       * 'tagValues/456')".
        * </pre>
        *
        * <code>.google.type.Expr condition = 5;</code>
@@ -2952,11 +2982,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * in the evaluation of the policy. When set, the `expression` field in
        * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
        * or "&amp;&amp;" operators. Each subexpression must be of the form
-       * "resource.matchLabels(key_name, value_name)",
-       * where key_name and value_name are the resource names for Label Keys
-       * and Values. These names are available from the Label Manager Service. An
-       * example expression is:
-       * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+       * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+       * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+       * 'tagValues/value_id')". where key_name and value_name are the resource
+       * names for Label Keys and Values. These names are available from the Tag
+       * Manager Service. An example expression is:
+       * "resource.matchTag('123456789/environment,
+       * 'prod')". or "resource.matchTagId('tagKeys/123',
+       * 'tagValues/456')".
        * </pre>
        *
        * <code>.google.type.Expr condition = 5;</code>
@@ -2984,11 +3017,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * in the evaluation of the policy. When set, the `expression` field in
        * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
        * or "&amp;&amp;" operators. Each subexpression must be of the form
-       * "resource.matchLabels(key_name, value_name)",
-       * where key_name and value_name are the resource names for Label Keys
-       * and Values. These names are available from the Label Manager Service. An
-       * example expression is:
-       * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+       * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+       * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+       * 'tagValues/value_id')". where key_name and value_name are the resource
+       * names for Label Keys and Values. These names are available from the Tag
+       * Manager Service. An example expression is:
+       * "resource.matchTag('123456789/environment,
+       * 'prod')". or "resource.matchTagId('tagKeys/123',
+       * 'tagValues/456')".
        * </pre>
        *
        * <code>.google.type.Expr condition = 5;</code>
@@ -3012,11 +3048,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * in the evaluation of the policy. When set, the `expression` field in
        * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
        * or "&amp;&amp;" operators. Each subexpression must be of the form
-       * "resource.matchLabels(key_name, value_name)",
-       * where key_name and value_name are the resource names for Label Keys
-       * and Values. These names are available from the Label Manager Service. An
-       * example expression is:
-       * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+       * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+       * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+       * 'tagValues/value_id')". where key_name and value_name are the resource
+       * names for Label Keys and Values. These names are available from the Tag
+       * Manager Service. An example expression is:
+       * "resource.matchTag('123456789/environment,
+       * 'prod')". or "resource.matchTagId('tagKeys/123',
+       * 'tagValues/456')".
        * </pre>
        *
        * <code>.google.type.Expr condition = 5;</code>
@@ -3034,11 +3073,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * in the evaluation of the policy. When set, the `expression` field in
        * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
        * or "&amp;&amp;" operators. Each subexpression must be of the form
-       * "resource.matchLabels(key_name, value_name)",
-       * where key_name and value_name are the resource names for Label Keys
-       * and Values. These names are available from the Label Manager Service. An
-       * example expression is:
-       * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+       * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+       * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+       * 'tagValues/value_id')". where key_name and value_name are the resource
+       * names for Label Keys and Values. These names are available from the Tag
+       * Manager Service. An example expression is:
+       * "resource.matchTag('123456789/environment,
+       * 'prod')". or "resource.matchTagId('tagKeys/123',
+       * 'tagValues/456')".
        * </pre>
        *
        * <code>.google.type.Expr condition = 5;</code>
@@ -3058,11 +3100,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * in the evaluation of the policy. When set, the `expression` field in
        * the `Expr' must include from 1 to 10 subexpressions, joined by the "||"
        * or "&amp;&amp;" operators. Each subexpression must be of the form
-       * "resource.matchLabels(key_name, value_name)",
-       * where key_name and value_name are the resource names for Label Keys
-       * and Values. These names are available from the Label Manager Service. An
-       * example expression is:
-       * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
+       * "resource.matchTag('&lt;ORG_ID&gt;/tag_key_short_name,
+       * 'tag_value_short_name')". or "resource.matchTagId('tagKeys/key_id',
+       * 'tagValues/value_id')". where key_name and value_name are the resource
+       * names for Label Keys and Values. These names are available from the Tag
+       * Manager Service. An example expression is:
+       * "resource.matchTag('123456789/environment,
+       * 'prod')". or "resource.matchTagId('tagKeys/123',
+       * 'tagValues/456')".
        * </pre>
        *
        * <code>.google.type.Expr condition = 5;</code>

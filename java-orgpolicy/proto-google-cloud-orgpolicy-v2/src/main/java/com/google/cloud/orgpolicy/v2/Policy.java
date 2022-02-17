@@ -264,17 +264,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An alternate policy configuration that will be used instead of the baseline
-   * policy configurations as determined by the launch.
-   * Currently the only way the launch can trigger the alternate configuration
-   * is via dry-run/darklaunch.
+   * Deprecated.
    * </pre>
    *
-   * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+   * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @return Whether the alternate field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasAlternate() {
     return alternate_ != null;
   }
@@ -282,17 +280,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An alternate policy configuration that will be used instead of the baseline
-   * policy configurations as determined by the launch.
-   * Currently the only way the launch can trigger the alternate configuration
-   * is via dry-run/darklaunch.
+   * Deprecated.
    * </pre>
    *
-   * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+   * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @return The alternate.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.orgpolicy.v2.AlternatePolicySpec getAlternate() {
     return alternate_ == null
         ? com.google.cloud.orgpolicy.v2.AlternatePolicySpec.getDefaultInstance()
@@ -302,15 +298,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An alternate policy configuration that will be used instead of the baseline
-   * policy configurations as determined by the launch.
-   * Currently the only way the launch can trigger the alternate configuration
-   * is via dry-run/darklaunch.
+   * Deprecated.
    * </pre>
    *
-   * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+   * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.orgpolicy.v2.AlternatePolicySpecOrBuilder getAlternateOrBuilder() {
     return getAlternate();
   }
@@ -1031,16 +1025,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An alternate policy configuration that will be used instead of the baseline
-     * policy configurations as determined by the launch.
-     * Currently the only way the launch can trigger the alternate configuration
-     * is via dry-run/darklaunch.
+     * Deprecated.
      * </pre>
      *
-     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];
+     * </code>
      *
      * @return Whether the alternate field is set.
      */
+    @java.lang.Deprecated
     public boolean hasAlternate() {
       return alternateBuilder_ != null || alternate_ != null;
     }
@@ -1048,16 +1041,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An alternate policy configuration that will be used instead of the baseline
-     * policy configurations as determined by the launch.
-     * Currently the only way the launch can trigger the alternate configuration
-     * is via dry-run/darklaunch.
+     * Deprecated.
      * </pre>
      *
-     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];
+     * </code>
      *
      * @return The alternate.
      */
+    @java.lang.Deprecated
     public com.google.cloud.orgpolicy.v2.AlternatePolicySpec getAlternate() {
       if (alternateBuilder_ == null) {
         return alternate_ == null
@@ -1071,14 +1063,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An alternate policy configuration that will be used instead of the baseline
-     * policy configurations as determined by the launch.
-     * Currently the only way the launch can trigger the alternate configuration
-     * is via dry-run/darklaunch.
+     * Deprecated.
      * </pre>
      *
-     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setAlternate(com.google.cloud.orgpolicy.v2.AlternatePolicySpec value) {
       if (alternateBuilder_ == null) {
         if (value == null) {
@@ -1096,14 +1087,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An alternate policy configuration that will be used instead of the baseline
-     * policy configurations as determined by the launch.
-     * Currently the only way the launch can trigger the alternate configuration
-     * is via dry-run/darklaunch.
+     * Deprecated.
      * </pre>
      *
-     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setAlternate(
         com.google.cloud.orgpolicy.v2.AlternatePolicySpec.Builder builderForValue) {
       if (alternateBuilder_ == null) {
@@ -1119,14 +1109,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An alternate policy configuration that will be used instead of the baseline
-     * policy configurations as determined by the launch.
-     * Currently the only way the launch can trigger the alternate configuration
-     * is via dry-run/darklaunch.
+     * Deprecated.
      * </pre>
      *
-     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeAlternate(com.google.cloud.orgpolicy.v2.AlternatePolicySpec value) {
       if (alternateBuilder_ == null) {
         if (alternate_ != null) {
@@ -1148,14 +1137,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An alternate policy configuration that will be used instead of the baseline
-     * policy configurations as determined by the launch.
-     * Currently the only way the launch can trigger the alternate configuration
-     * is via dry-run/darklaunch.
+     * Deprecated.
      * </pre>
      *
-     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearAlternate() {
       if (alternateBuilder_ == null) {
         alternate_ = null;
@@ -1171,14 +1159,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An alternate policy configuration that will be used instead of the baseline
-     * policy configurations as determined by the launch.
-     * Currently the only way the launch can trigger the alternate configuration
-     * is via dry-run/darklaunch.
+     * Deprecated.
      * </pre>
      *
-     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.orgpolicy.v2.AlternatePolicySpec.Builder getAlternateBuilder() {
 
       onChanged();
@@ -1188,14 +1175,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An alternate policy configuration that will be used instead of the baseline
-     * policy configurations as determined by the launch.
-     * Currently the only way the launch can trigger the alternate configuration
-     * is via dry-run/darklaunch.
+     * Deprecated.
      * </pre>
      *
-     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.orgpolicy.v2.AlternatePolicySpecOrBuilder getAlternateOrBuilder() {
       if (alternateBuilder_ != null) {
         return alternateBuilder_.getMessageOrBuilder();
@@ -1209,13 +1195,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An alternate policy configuration that will be used instead of the baseline
-     * policy configurations as determined by the launch.
-     * Currently the only way the launch can trigger the alternate configuration
-     * is via dry-run/darklaunch.
+     * Deprecated.
      * </pre>
      *
-     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
+     * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.orgpolicy.v2.AlternatePolicySpec,

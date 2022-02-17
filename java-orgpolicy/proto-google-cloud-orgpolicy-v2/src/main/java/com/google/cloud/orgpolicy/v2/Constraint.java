@@ -26,11 +26,11 @@ package com.google.cloud.orgpolicy.v2;
  * example, you could enforce a constraint that controls which cloud services
  * can be activated across an organization, or whether a Compute Engine instance
  * can have serial port connections established. `Constraints` can be configured
- * by the organization's policy adminstrator to fit the needs of the organzation
- * by setting a `policy` that includes `constraints` at different locations in
- * the organization's resource hierarchy. Policies are inherited down the
- * resource hierarchy from higher levels, but can also be overridden. For
- * details about the inheritance rules please read about
+ * by the organization's policy administrator to fit the needs of the
+ * organization by setting a `policy` that includes `constraints` at different
+ * locations in the organization's resource hierarchy. Policies are inherited
+ * down the resource hierarchy from higher levels, but can also be overridden.
+ * For details about the inheritance rules please read about
  * [`policies`][google.cloud.OrgPolicy.v2.Policy].
  * `Constraints` have a default behavior determined by the `constraint_default`
  * field, which is the enforcement behavior that is used in the absence of a
@@ -2082,11 +2082,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    * example, you could enforce a constraint that controls which cloud services
    * can be activated across an organization, or whether a Compute Engine instance
    * can have serial port connections established. `Constraints` can be configured
-   * by the organization's policy adminstrator to fit the needs of the organzation
-   * by setting a `policy` that includes `constraints` at different locations in
-   * the organization's resource hierarchy. Policies are inherited down the
-   * resource hierarchy from higher levels, but can also be overridden. For
-   * details about the inheritance rules please read about
+   * by the organization's policy administrator to fit the needs of the
+   * organization by setting a `policy` that includes `constraints` at different
+   * locations in the organization's resource hierarchy. Policies are inherited
+   * down the resource hierarchy from higher levels, but can also be overridden.
+   * For details about the inheritance rules please read about
    * [`policies`][google.cloud.OrgPolicy.v2.Policy].
    * `Constraints` have a default behavior determined by the `constraint_default`
    * field, which is the enforcement behavior that is used in the absence of a
