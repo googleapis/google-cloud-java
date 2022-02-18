@@ -25,11 +25,15 @@ import org.graalvm.nativeimage.hosted.Feature;
 @AutomaticFeature
 final class OpenCensusFeature implements Feature {
 
-  private static final String OPEN_CENSUS_CLASS = "io.opencensus.impl.tags.TagsComponentImpl";
+  private static final String TAGS_COMPONENT_CLASS = "io.opencensus.impl.tags.TagsComponentImpl";
+  private static final String STATS_COMPONENT_CLASS = "io.opencensus.impl.stats.StatsComponentImpl";
 
   @Override
   public void beforeAnalysis(BeforeAnalysisAccess access) {
-    if (access.findClassByName(OPEN_CENSUS_CLASS) != null) {
+    if (access.findClassByName(STATS_COMPONENT_CLASS) != null) {
+      registerForReflectiveInstantiation(access, STATS_COMPONENT_CLASS);
+    }
+    if (access.findClassByName(TAGS_COMPONENT_CLASS) != null) {
       registerForReflectiveInstantiation(access, "io.opencensus.impl.metrics.MetricsComponentImpl");
       registerForReflectiveInstantiation(access, "io.opencensus.impl.tags.TagsComponentImpl");
       registerForReflectiveInstantiation(access, "io.opencensus.impl.trace.TraceComponentImpl");

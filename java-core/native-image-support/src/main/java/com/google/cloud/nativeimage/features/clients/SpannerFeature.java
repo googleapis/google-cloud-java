@@ -27,9 +27,14 @@ import org.graalvm.nativeimage.hosted.Feature;
 final class SpannerFeature implements Feature {
 
   private static final String SPANNER_CLASS = "com.google.spanner.v1.SpannerGrpc";
+  private static final String SPANNER_TEST_CLASS = "com.google.cloud.spanner.GceTestEnvConfig";
 
   @Override
   public void beforeAnalysis(BeforeAnalysisAccess access) {
+    Class<?> spannerTestClass = access.findClassByName(SPANNER_TEST_CLASS);
+    if (spannerTestClass != null) {
+      NativeImageUtils.registerConstructorsForReflection(access, SPANNER_TEST_CLASS);
+    }
     Class<?> spannerClass = access.findClassByName(SPANNER_CLASS);
     if (spannerClass != null) {
       NativeImageUtils.registerClassHierarchyForReflection(
