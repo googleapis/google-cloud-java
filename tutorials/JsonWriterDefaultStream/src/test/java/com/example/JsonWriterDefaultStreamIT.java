@@ -68,7 +68,7 @@ public class JsonWriterDefaultStreamIT {
     System.out.println(dataFilePath.toString());
     String[] args = {GOOGLE_CLOUD_PROJECT, datasetName, "github", dataFilePath.toString()};
     JsonWriterDefaultStream.main(args);
-    assertThat(bout.toString()).contains("Appended records successfully.");
+    assertThat(bout.toString()).contains("Wrote batch");
   }
 
   @After
