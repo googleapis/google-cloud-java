@@ -86,7 +86,6 @@ public class BigQueryReadStubSettings extends StubSettings<BigQueryReadStubSetti
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/bigquery")
-          .add("https://www.googleapis.com/auth/bigquery.readonly")
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
