@@ -154,7 +154,7 @@
     <gax.version>2.12.2</gax.version>
     <google.api-common.version>2.1.4</google.api-common.version>
     <google.common-protos.version>2.7.4</google.common-protos.version>
-    <google.iam.version>1.2.4</google.iam.version>
+    <google.iam.version>1.2.5</google.iam.version>
     <google.auth.version>1.4.0</google.auth.version>
     <google.api.version>1.33.2</google.api.version>
     <google.http.version>1.41.3</google.http.version>
