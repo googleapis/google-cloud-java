@@ -42,6 +42,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     dataFormat_ = 0;
     table_ = "";
     streams_ = java.util.Collections.emptyList();
+    traceId_ = "";
   }
 
   @java.lang.Override
@@ -195,6 +196,13 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           case 96:
             {
               estimatedTotalBytesScanned_ = input.readInt64();
+              break;
+            }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              traceId_ = s;
               break;
             }
           default:
@@ -3187,6 +3195,63 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     return estimatedTotalBytesScanned_;
   }
 
+  public static final int TRACE_ID_FIELD_NUMBER = 13;
+  private volatile java.lang.Object traceId_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ID set by client to annotate a session identity.  This does not need
+   * to be strictly unique, but instead the same ID should be used to group
+   * logically connected sessions (e.g. All using the same ID for all sessions
+   * needed to complete a Spark SQL query is reasonable).
+   * Maximum length is 256 bytes.
+   * </pre>
+   *
+   * <code>string trace_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The traceId.
+   */
+  @java.lang.Override
+  public java.lang.String getTraceId() {
+    java.lang.Object ref = traceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      traceId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ID set by client to annotate a session identity.  This does not need
+   * to be strictly unique, but instead the same ID should be used to group
+   * logically connected sessions (e.g. All using the same ID for all sessions
+   * needed to complete a Spark SQL query is reasonable).
+   * Maximum length is 256 bytes.
+   * </pre>
+   *
+   * <code>string trace_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for traceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTraceIdBytes() {
+    java.lang.Object ref = traceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      traceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3231,6 +3296,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
     if (estimatedTotalBytesScanned_ != 0L) {
       output.writeInt64(12, estimatedTotalBytesScanned_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, traceId_);
     }
     unknownFields.writeTo(output);
   }
@@ -3277,6 +3345,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(12, estimatedTotalBytesScanned_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, traceId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3310,6 +3381,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getStreamsList().equals(other.getStreamsList())) return false;
     if (getEstimatedTotalBytesScanned() != other.getEstimatedTotalBytesScanned()) return false;
+    if (!getTraceId().equals(other.getTraceId())) return false;
     if (!getSchemaCase().equals(other.getSchemaCase())) return false;
     switch (schemaCase_) {
       case 4:
@@ -3356,6 +3428,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ESTIMATED_TOTAL_BYTES_SCANNED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedTotalBytesScanned());
+    hash = (37 * hash) + TRACE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getTraceId().hashCode();
     switch (schemaCase_) {
       case 4:
         hash = (37 * hash) + AVRO_SCHEMA_FIELD_NUMBER;
@@ -3547,6 +3621,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       estimatedTotalBytesScanned_ = 0L;
 
+      traceId_ = "";
+
       schemaCase_ = 0;
       schema_ = null;
       return this;
@@ -3619,6 +3695,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         result.streams_ = streamsBuilder_.build();
       }
       result.estimatedTotalBytesScanned_ = estimatedTotalBytesScanned_;
+      result.traceId_ = traceId_;
       result.schemaCase_ = schemaCase_;
       onBuilt();
       return result;
@@ -3719,6 +3796,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getEstimatedTotalBytesScanned() != 0L) {
         setEstimatedTotalBytesScanned(other.getEstimatedTotalBytesScanned());
+      }
+      if (!other.getTraceId().isEmpty()) {
+        traceId_ = other.traceId_;
+        onChanged();
       }
       switch (other.getSchemaCase()) {
         case AVRO_SCHEMA:
@@ -5721,6 +5802,132 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEstimatedTotalBytesScanned() {
 
       estimatedTotalBytesScanned_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object traceId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ID set by client to annotate a session identity.  This does not need
+     * to be strictly unique, but instead the same ID should be used to group
+     * logically connected sessions (e.g. All using the same ID for all sessions
+     * needed to complete a Spark SQL query is reasonable).
+     * Maximum length is 256 bytes.
+     * </pre>
+     *
+     * <code>string trace_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The traceId.
+     */
+    public java.lang.String getTraceId() {
+      java.lang.Object ref = traceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        traceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ID set by client to annotate a session identity.  This does not need
+     * to be strictly unique, but instead the same ID should be used to group
+     * logically connected sessions (e.g. All using the same ID for all sessions
+     * needed to complete a Spark SQL query is reasonable).
+     * Maximum length is 256 bytes.
+     * </pre>
+     *
+     * <code>string trace_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for traceId.
+     */
+    public com.google.protobuf.ByteString getTraceIdBytes() {
+      java.lang.Object ref = traceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        traceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ID set by client to annotate a session identity.  This does not need
+     * to be strictly unique, but instead the same ID should be used to group
+     * logically connected sessions (e.g. All using the same ID for all sessions
+     * needed to complete a Spark SQL query is reasonable).
+     * Maximum length is 256 bytes.
+     * </pre>
+     *
+     * <code>string trace_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The traceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTraceId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      traceId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ID set by client to annotate a session identity.  This does not need
+     * to be strictly unique, but instead the same ID should be used to group
+     * logically connected sessions (e.g. All using the same ID for all sessions
+     * needed to complete a Spark SQL query is reasonable).
+     * Maximum length is 256 bytes.
+     * </pre>
+     *
+     * <code>string trace_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTraceId() {
+
+      traceId_ = getDefaultInstance().getTraceId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ID set by client to annotate a session identity.  This does not need
+     * to be strictly unique, but instead the same ID should be used to group
+     * logically connected sessions (e.g. All using the same ID for all sessions
+     * needed to complete a Spark SQL query is reasonable).
+     * Maximum length is 256 bytes.
+     * </pre>
+     *
+     * <code>string trace_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for traceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTraceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      traceId_ = value;
       onChanged();
       return this;
     }

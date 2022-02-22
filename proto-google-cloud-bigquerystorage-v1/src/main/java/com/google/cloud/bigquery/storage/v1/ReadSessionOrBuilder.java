@@ -418,5 +418,38 @@ public interface ReadSessionOrBuilder
    */
   long getEstimatedTotalBytesScanned();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ID set by client to annotate a session identity.  This does not need
+   * to be strictly unique, but instead the same ID should be used to group
+   * logically connected sessions (e.g. All using the same ID for all sessions
+   * needed to complete a Spark SQL query is reasonable).
+   * Maximum length is 256 bytes.
+   * </pre>
+   *
+   * <code>string trace_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The traceId.
+   */
+  java.lang.String getTraceId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ID set by client to annotate a session identity.  This does not need
+   * to be strictly unique, but instead the same ID should be used to group
+   * logically connected sessions (e.g. All using the same ID for all sessions
+   * needed to complete a Spark SQL query is reasonable).
+   * Maximum length is 256 bytes.
+   * </pre>
+   *
+   * <code>string trace_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for traceId.
+   */
+  com.google.protobuf.ByteString getTraceIdBytes();
+
   public com.google.cloud.bigquery.storage.v1.ReadSession.SchemaCase getSchemaCase();
 }
