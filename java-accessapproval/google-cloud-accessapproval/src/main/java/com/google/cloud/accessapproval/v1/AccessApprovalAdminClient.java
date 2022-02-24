@@ -42,15 +42,16 @@ import javax.annotation.Generated;
  *
  * <p>- The API has a collection of
  * [ApprovalRequest][google.cloud.accessapproval.v1.ApprovalRequest] resources, named
- * `approvalRequests/{approval_request_id}` - The API has top-level settings per
+ * `approvalRequests/{approval_request}` - The API has top-level settings per
  * Project/Folder/Organization, named `accessApprovalSettings`
  *
  * <p>The service also periodically emails a list of recipients, defined at the
  * Project/Folder/Organization level in the accessApprovalSettings, when there is a pending
  * ApprovalRequest for them to act on. The ApprovalRequests can also optionally be published to a
- * Cloud Pub/Sub topic owned by the customer (for Beta, the Pub/Sub setup is managed manually).
+ * Pub/Sub topic owned by the customer (contact support if you would like to enable Pub/Sub
+ * notifications).
  *
- * <p>ApprovalRequests can be approved or dismissed. Google personel can only access the indicated
+ * <p>ApprovalRequests can be approved or dismissed. Google personnel can only access the indicated
  * resource or resources if the request is approved (subject to some exclusions:
  * https://cloud.google.com/access-approval/docs/overview#exclusions).
  *
@@ -71,7 +72,8 @@ import javax.annotation.Generated;
  *
  * <pre>{@code
  * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
- *   String name = "name3373707";
+ *   ApprovalRequestName name =
+ *       ApprovalRequestName.ofProjectApprovalRequestName("[PROJECT]", "[APPROVAL_REQUEST]");
  *   ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(name);
  * }
  * }</pre>
@@ -187,7 +189,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   String parent = "parent-995424086";
+   *   FolderName parent = FolderName.of("[FOLDER]");
    *   for (ApprovalRequest element :
    *       accessApprovalAdminClient.listApprovalRequests(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -195,8 +197,95 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The parent resource. This may be "projects/{project_id}", "folders/{folder_id}",
-   *     or "organizations/{organization_id}".
+   * @param parent The parent resource. This may be "projects/{project}", "folders/{folder}", or
+   *     "organizations/{organization}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListApprovalRequestsPagedResponse listApprovalRequests(FolderName parent) {
+    ListApprovalRequestsMessage request =
+        ListApprovalRequestsMessage.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listApprovalRequests(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists approval requests associated with a project, folder, or organization. Approval requests
+   * can be filtered by state (pending, active, dismissed). The order is reverse chronological.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (ApprovalRequest element :
+   *       accessApprovalAdminClient.listApprovalRequests(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent The parent resource. This may be "projects/{project}", "folders/{folder}", or
+   *     "organizations/{organization}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListApprovalRequestsPagedResponse listApprovalRequests(OrganizationName parent) {
+    ListApprovalRequestsMessage request =
+        ListApprovalRequestsMessage.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listApprovalRequests(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists approval requests associated with a project, folder, or organization. Approval requests
+   * can be filtered by state (pending, active, dismissed). The order is reverse chronological.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (ApprovalRequest element :
+   *       accessApprovalAdminClient.listApprovalRequests(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent The parent resource. This may be "projects/{project}", "folders/{folder}", or
+   *     "organizations/{organization}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListApprovalRequestsPagedResponse listApprovalRequests(ProjectName parent) {
+    ListApprovalRequestsMessage request =
+        ListApprovalRequestsMessage.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listApprovalRequests(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists approval requests associated with a project, folder, or organization. Approval requests
+   * can be filtered by state (pending, active, dismissed). The order is reverse chronological.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   for (ApprovalRequest element :
+   *       accessApprovalAdminClient.listApprovalRequests(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent The parent resource. This may be "projects/{project}", "folders/{folder}", or
+   *     "organizations/{organization}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListApprovalRequestsPagedResponse listApprovalRequests(String parent) {
@@ -216,7 +305,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   ListApprovalRequestsMessage request =
    *       ListApprovalRequestsMessage.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -247,7 +336,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   ListApprovalRequestsMessage request =
    *       ListApprovalRequestsMessage.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -277,7 +366,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   ListApprovalRequestsMessage request =
    *       ListApprovalRequestsMessage.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -311,12 +400,41 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   String name = "name3373707";
+   *   ApprovalRequestName name =
+   *       ApprovalRequestName.ofProjectApprovalRequestName("[PROJECT]", "[APPROVAL_REQUEST]");
    *   ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(name);
    * }
    * }</pre>
    *
-   * @param name Name of the approval request to retrieve.
+   * @param name The name of the approval request to retrieve. Format:
+   *     "{projects|folders|organizations}/{id}/approvalRequests/{approval_request}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ApprovalRequest getApprovalRequest(ApprovalRequestName name) {
+    GetApprovalRequestMessage request =
+        GetApprovalRequestMessage.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getApprovalRequest(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an approval request. Returns NOT_FOUND if the request does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+   *   String name =
+   *       ApprovalRequestName.ofProjectApprovalRequestName("[PROJECT]", "[APPROVAL_REQUEST]")
+   *           .toString();
+   *   ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(name);
+   * }
+   * }</pre>
+   *
+   * @param name The name of the approval request to retrieve. Format:
+   *     "{projects|folders|organizations}/{id}/approvalRequests/{approval_request}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApprovalRequest getApprovalRequest(String name) {
@@ -334,7 +452,12 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   GetApprovalRequestMessage request =
-   *       GetApprovalRequestMessage.newBuilder().setName("name3373707").build();
+   *       GetApprovalRequestMessage.newBuilder()
+   *           .setName(
+   *               ApprovalRequestName.ofProjectApprovalRequestName(
+   *                       "[PROJECT]", "[APPROVAL_REQUEST]")
+   *                   .toString())
+   *           .build();
    *   ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(request);
    * }
    * }</pre>
@@ -355,7 +478,12 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   GetApprovalRequestMessage request =
-   *       GetApprovalRequestMessage.newBuilder().setName("name3373707").build();
+   *       GetApprovalRequestMessage.newBuilder()
+   *           .setName(
+   *               ApprovalRequestName.ofProjectApprovalRequestName(
+   *                       "[PROJECT]", "[APPROVAL_REQUEST]")
+   *                   .toString())
+   *           .build();
    *   ApiFuture<ApprovalRequest> future =
    *       accessApprovalAdminClient.getApprovalRequestCallable().futureCall(request);
    *   // Do something.
@@ -381,7 +509,10 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   ApproveApprovalRequestMessage request =
    *       ApproveApprovalRequestMessage.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(
+   *               ApprovalRequestName.ofProjectApprovalRequestName(
+   *                       "[PROJECT]", "[APPROVAL_REQUEST]")
+   *                   .toString())
    *           .setExpireTime(Timestamp.newBuilder().build())
    *           .build();
    *   ApprovalRequest response = accessApprovalAdminClient.approveApprovalRequest(request);
@@ -408,7 +539,10 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   ApproveApprovalRequestMessage request =
    *       ApproveApprovalRequestMessage.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(
+   *               ApprovalRequestName.ofProjectApprovalRequestName(
+   *                       "[PROJECT]", "[APPROVAL_REQUEST]")
+   *                   .toString())
    *           .setExpireTime(Timestamp.newBuilder().build())
    *           .build();
    *   ApiFuture<ApprovalRequest> future =
@@ -439,7 +573,12 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   DismissApprovalRequestMessage request =
-   *       DismissApprovalRequestMessage.newBuilder().setName("name3373707").build();
+   *       DismissApprovalRequestMessage.newBuilder()
+   *           .setName(
+   *               ApprovalRequestName.ofProjectApprovalRequestName(
+   *                       "[PROJECT]", "[APPROVAL_REQUEST]")
+   *                   .toString())
+   *           .build();
    *   ApprovalRequest response = accessApprovalAdminClient.dismissApprovalRequest(request);
    * }
    * }</pre>
@@ -467,7 +606,12 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   DismissApprovalRequestMessage request =
-   *       DismissApprovalRequestMessage.newBuilder().setName("name3373707").build();
+   *       DismissApprovalRequestMessage.newBuilder()
+   *           .setName(
+   *               ApprovalRequestName.ofProjectApprovalRequestName(
+   *                       "[PROJECT]", "[APPROVAL_REQUEST]")
+   *                   .toString())
+   *           .build();
    *   ApiFuture<ApprovalRequest> future =
    *       accessApprovalAdminClient.dismissApprovalRequestCallable().futureCall(request);
    *   // Do something.
@@ -488,12 +632,38 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   String name = "name3373707";
+   *   AccessApprovalSettingsName name = AccessApprovalSettingsName.ofProjectName("[PROJECT]");
    *   AccessApprovalSettings response = accessApprovalAdminClient.getAccessApprovalSettings(name);
    * }
    * }</pre>
    *
-   * @param name Name of the AccessApprovalSettings to retrieve.
+   * @param name The name of the AccessApprovalSettings to retrieve. Format:
+   *     "{projects|folders|organizations}/{id}/accessApprovalSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccessApprovalSettings getAccessApprovalSettings(AccessApprovalSettingsName name) {
+    GetAccessApprovalSettingsMessage request =
+        GetAccessApprovalSettingsMessage.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAccessApprovalSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the settings associated with a project, folder, or organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+   *   String name = AccessApprovalSettingsName.ofProjectName("[PROJECT]").toString();
+   *   AccessApprovalSettings response = accessApprovalAdminClient.getAccessApprovalSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name The name of the AccessApprovalSettings to retrieve. Format:
+   *     "{projects|folders|organizations}/{id}/accessApprovalSettings"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AccessApprovalSettings getAccessApprovalSettings(String name) {
@@ -511,7 +681,9 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   GetAccessApprovalSettingsMessage request =
-   *       GetAccessApprovalSettingsMessage.newBuilder().setName("name3373707").build();
+   *       GetAccessApprovalSettingsMessage.newBuilder()
+   *           .setName(AccessApprovalSettingsName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   AccessApprovalSettings response =
    *       accessApprovalAdminClient.getAccessApprovalSettings(request);
    * }
@@ -534,7 +706,9 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   GetAccessApprovalSettingsMessage request =
-   *       GetAccessApprovalSettingsMessage.newBuilder().setName("name3373707").build();
+   *       GetAccessApprovalSettingsMessage.newBuilder()
+   *           .setName(AccessApprovalSettingsName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   ApiFuture<AccessApprovalSettings> future =
    *       accessApprovalAdminClient.getAccessApprovalSettingsCallable().futureCall(request);
    *   // Do something.
@@ -648,7 +822,35 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   String name = "name3373707";
+   *   AccessApprovalSettingsName name = AccessApprovalSettingsName.ofProjectName("[PROJECT]");
+   *   accessApprovalAdminClient.deleteAccessApprovalSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Name of the AccessApprovalSettings to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAccessApprovalSettings(AccessApprovalSettingsName name) {
+    DeleteAccessApprovalSettingsMessage request =
+        DeleteAccessApprovalSettingsMessage.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteAccessApprovalSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the settings associated with a project, folder, or organization. This will have the
+   * effect of disabling Access Approval for the project, folder, or organization, but only if all
+   * ancestors also have Access Approval disabled. If Access Approval is enabled at a higher level
+   * of the hierarchy, then Access Approval will still be enabled at this level as the settings are
+   * inherited.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+   *   String name = AccessApprovalSettingsName.ofProjectName("[PROJECT]").toString();
    *   accessApprovalAdminClient.deleteAccessApprovalSettings(name);
    * }
    * }</pre>
@@ -675,7 +877,9 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   DeleteAccessApprovalSettingsMessage request =
-   *       DeleteAccessApprovalSettingsMessage.newBuilder().setName("name3373707").build();
+   *       DeleteAccessApprovalSettingsMessage.newBuilder()
+   *           .setName(AccessApprovalSettingsName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   accessApprovalAdminClient.deleteAccessApprovalSettings(request);
    * }
    * }</pre>
@@ -700,7 +904,9 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
    *   DeleteAccessApprovalSettingsMessage request =
-   *       DeleteAccessApprovalSettingsMessage.newBuilder().setName("name3373707").build();
+   *       DeleteAccessApprovalSettingsMessage.newBuilder()
+   *           .setName(AccessApprovalSettingsName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   ApiFuture<Empty> future =
    *       accessApprovalAdminClient.deleteAccessApprovalSettingsCallable().futureCall(request);
    *   // Do something.

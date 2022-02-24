@@ -30,7 +30,7 @@ public interface DismissApprovalRequestMessageOrBuilder
    * Name of the ApprovalRequest to dismiss.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The name.
    */
@@ -42,7 +42,7 @@ public interface DismissApprovalRequestMessageOrBuilder
    * Name of the ApprovalRequest to dismiss.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for name.
    */

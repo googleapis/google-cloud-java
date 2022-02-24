@@ -24,15 +24,16 @@
  *
  * <p>- The API has a collection of
  * [ApprovalRequest][google.cloud.accessapproval.v1.ApprovalRequest] resources, named
- * `approvalRequests/{approval_request_id}` - The API has top-level settings per
+ * `approvalRequests/{approval_request}` - The API has top-level settings per
  * Project/Folder/Organization, named `accessApprovalSettings`
  *
  * <p>The service also periodically emails a list of recipients, defined at the
  * Project/Folder/Organization level in the accessApprovalSettings, when there is a pending
  * ApprovalRequest for them to act on. The ApprovalRequests can also optionally be published to a
- * Cloud Pub/Sub topic owned by the customer (for Beta, the Pub/Sub setup is managed manually).
+ * Pub/Sub topic owned by the customer (contact support if you would like to enable Pub/Sub
+ * notifications).
  *
- * <p>ApprovalRequests can be approved or dismissed. Google personel can only access the indicated
+ * <p>ApprovalRequests can be approved or dismissed. Google personnel can only access the indicated
  * resource or resources if the request is approved (subject to some exclusions:
  * https://cloud.google.com/access-approval/docs/overview#exclusions).
  *
@@ -52,7 +53,8 @@
  *
  * <pre>{@code
  * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
- *   String name = "name3373707";
+ *   ApprovalRequestName name =
+ *       ApprovalRequestName.ofProjectApprovalRequestName("[PROJECT]", "[APPROVAL_REQUEST]");
  *   ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(name);
  * }
  * }</pre>

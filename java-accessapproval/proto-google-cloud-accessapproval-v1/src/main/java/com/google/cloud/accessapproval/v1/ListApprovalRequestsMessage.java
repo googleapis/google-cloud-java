@@ -138,11 +138,11 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The parent resource. This may be "projects/{project_id}",
-   * "folders/{folder_id}", or "organizations/{organization_id}".
+   * The parent resource. This may be "projects/{project}",
+   * "folders/{folder}", or "organizations/{organization}".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The parent.
    */
@@ -162,11 +162,11 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The parent resource. This may be "projects/{project_id}",
-   * "folders/{folder_id}", or "organizations/{organization_id}".
+   * The parent resource. This may be "projects/{project}",
+   * "folders/{folder}", or "organizations/{organization}".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for parent.
    */
@@ -191,11 +191,15 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
    * <pre>
    * A filter on the type of approval requests to retrieve. Must be one of the
    * following values:
-   * - [not set]: Requests that are pending or have active approvals.
-   * - ALL: All requests.
-   * - PENDING: Only pending requests.
-   * - ACTIVE: Only active (i.e. currently approved) requests.
-   * - DISMISSED: Only dismissed (including expired) requests.
+   *   * [not set]: Requests that are pending or have active approvals.
+   *   * ALL: All requests.
+   *   * PENDING: Only pending requests.
+   *   * ACTIVE: Only active (i.e. currently approved) requests.
+   *   * DISMISSED: Only requests that have been dismissed, or requests that
+   *     are not approved and past expiration.
+   *   * EXPIRED: Only requests that have been approved, and the approval has
+   *     expired.
+   *   * HISTORY: Active, dismissed and expired requests.
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -220,11 +224,15 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
    * <pre>
    * A filter on the type of approval requests to retrieve. Must be one of the
    * following values:
-   * - [not set]: Requests that are pending or have active approvals.
-   * - ALL: All requests.
-   * - PENDING: Only pending requests.
-   * - ACTIVE: Only active (i.e. currently approved) requests.
-   * - DISMISSED: Only dismissed (including expired) requests.
+   *   * [not set]: Requests that are pending or have active approvals.
+   *   * ALL: All requests.
+   *   * PENDING: Only pending requests.
+   *   * ACTIVE: Only active (i.e. currently approved) requests.
+   *   * DISMISSED: Only requests that have been dismissed, or requests that
+   *     are not approved and past expiration.
+   *   * EXPIRED: Only requests that have been approved, and the approval has
+   *     expired.
+   *   * HISTORY: Active, dismissed and expired requests.
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -685,11 +693,11 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The parent resource. This may be "projects/{project_id}",
-     * "folders/{folder_id}", or "organizations/{organization_id}".
+     * The parent resource. This may be "projects/{project}",
+     * "folders/{folder}", or "organizations/{organization}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The parent.
      */
@@ -708,11 +716,11 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The parent resource. This may be "projects/{project_id}",
-     * "folders/{folder_id}", or "organizations/{organization_id}".
+     * The parent resource. This may be "projects/{project}",
+     * "folders/{folder}", or "organizations/{organization}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for parent.
      */
@@ -731,11 +739,11 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The parent resource. This may be "projects/{project_id}",
-     * "folders/{folder_id}", or "organizations/{organization_id}".
+     * The parent resource. This may be "projects/{project}",
+     * "folders/{folder}", or "organizations/{organization}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -753,11 +761,11 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The parent resource. This may be "projects/{project_id}",
-     * "folders/{folder_id}", or "organizations/{organization_id}".
+     * The parent resource. This may be "projects/{project}",
+     * "folders/{folder}", or "organizations/{organization}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -771,11 +779,11 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The parent resource. This may be "projects/{project_id}",
-     * "folders/{folder_id}", or "organizations/{organization_id}".
+     * The parent resource. This may be "projects/{project}",
+     * "folders/{folder}", or "organizations/{organization}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -798,11 +806,15 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      * <pre>
      * A filter on the type of approval requests to retrieve. Must be one of the
      * following values:
-     * - [not set]: Requests that are pending or have active approvals.
-     * - ALL: All requests.
-     * - PENDING: Only pending requests.
-     * - ACTIVE: Only active (i.e. currently approved) requests.
-     * - DISMISSED: Only dismissed (including expired) requests.
+     *   * [not set]: Requests that are pending or have active approvals.
+     *   * ALL: All requests.
+     *   * PENDING: Only pending requests.
+     *   * ACTIVE: Only active (i.e. currently approved) requests.
+     *   * DISMISSED: Only requests that have been dismissed, or requests that
+     *     are not approved and past expiration.
+     *   * EXPIRED: Only requests that have been approved, and the approval has
+     *     expired.
+     *   * HISTORY: Active, dismissed and expired requests.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -826,11 +838,15 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      * <pre>
      * A filter on the type of approval requests to retrieve. Must be one of the
      * following values:
-     * - [not set]: Requests that are pending or have active approvals.
-     * - ALL: All requests.
-     * - PENDING: Only pending requests.
-     * - ACTIVE: Only active (i.e. currently approved) requests.
-     * - DISMISSED: Only dismissed (including expired) requests.
+     *   * [not set]: Requests that are pending or have active approvals.
+     *   * ALL: All requests.
+     *   * PENDING: Only pending requests.
+     *   * ACTIVE: Only active (i.e. currently approved) requests.
+     *   * DISMISSED: Only requests that have been dismissed, or requests that
+     *     are not approved and past expiration.
+     *   * EXPIRED: Only requests that have been approved, and the approval has
+     *     expired.
+     *   * HISTORY: Active, dismissed and expired requests.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -854,11 +870,15 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      * <pre>
      * A filter on the type of approval requests to retrieve. Must be one of the
      * following values:
-     * - [not set]: Requests that are pending or have active approvals.
-     * - ALL: All requests.
-     * - PENDING: Only pending requests.
-     * - ACTIVE: Only active (i.e. currently approved) requests.
-     * - DISMISSED: Only dismissed (including expired) requests.
+     *   * [not set]: Requests that are pending or have active approvals.
+     *   * ALL: All requests.
+     *   * PENDING: Only pending requests.
+     *   * ACTIVE: Only active (i.e. currently approved) requests.
+     *   * DISMISSED: Only requests that have been dismissed, or requests that
+     *     are not approved and past expiration.
+     *   * EXPIRED: Only requests that have been approved, and the approval has
+     *     expired.
+     *   * HISTORY: Active, dismissed and expired requests.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -881,11 +901,15 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      * <pre>
      * A filter on the type of approval requests to retrieve. Must be one of the
      * following values:
-     * - [not set]: Requests that are pending or have active approvals.
-     * - ALL: All requests.
-     * - PENDING: Only pending requests.
-     * - ACTIVE: Only active (i.e. currently approved) requests.
-     * - DISMISSED: Only dismissed (including expired) requests.
+     *   * [not set]: Requests that are pending or have active approvals.
+     *   * ALL: All requests.
+     *   * PENDING: Only pending requests.
+     *   * ACTIVE: Only active (i.e. currently approved) requests.
+     *   * DISMISSED: Only requests that have been dismissed, or requests that
+     *     are not approved and past expiration.
+     *   * EXPIRED: Only requests that have been approved, and the approval has
+     *     expired.
+     *   * HISTORY: Active, dismissed and expired requests.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -904,11 +928,15 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      * <pre>
      * A filter on the type of approval requests to retrieve. Must be one of the
      * following values:
-     * - [not set]: Requests that are pending or have active approvals.
-     * - ALL: All requests.
-     * - PENDING: Only pending requests.
-     * - ACTIVE: Only active (i.e. currently approved) requests.
-     * - DISMISSED: Only dismissed (including expired) requests.
+     *   * [not set]: Requests that are pending or have active approvals.
+     *   * ALL: All requests.
+     *   * PENDING: Only pending requests.
+     *   * ACTIVE: Only active (i.e. currently approved) requests.
+     *   * DISMISSED: Only requests that have been dismissed, or requests that
+     *     are not approved and past expiration.
+     *   * EXPIRED: Only requests that have been approved, and the approval has
+     *     expired.
+     *   * HISTORY: Active, dismissed and expired requests.
      * </pre>
      *
      * <code>string filter = 2;</code>

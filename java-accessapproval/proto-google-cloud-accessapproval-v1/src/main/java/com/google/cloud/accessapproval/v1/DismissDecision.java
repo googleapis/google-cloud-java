@@ -83,6 +83,11 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
+          case 16:
+            {
+              implicit_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -163,6 +168,26 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
     return getDismissTime();
   }
 
+  public static final int IMPLICIT_FIELD_NUMBER = 2;
+  private boolean implicit_;
+  /**
+   *
+   *
+   * <pre>
+   * This field will be true if the ApprovalRequest was implcitly dismissed
+   * due to inaction by the access approval approvers (the request is not acted
+   * on by the approvers before the exiration time).
+   * </pre>
+   *
+   * <code>bool implicit = 2;</code>
+   *
+   * @return The implicit.
+   */
+  @java.lang.Override
+  public boolean getImplicit() {
+    return implicit_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -180,6 +205,9 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
     if (dismissTime_ != null) {
       output.writeMessage(1, getDismissTime());
     }
+    if (implicit_ != false) {
+      output.writeBool(2, implicit_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -191,6 +219,9 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
     size = 0;
     if (dismissTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDismissTime());
+    }
+    if (implicit_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, implicit_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -212,6 +243,7 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
     if (hasDismissTime()) {
       if (!getDismissTime().equals(other.getDismissTime())) return false;
     }
+    if (getImplicit() != other.getImplicit()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -227,6 +259,8 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + DISMISS_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getDismissTime().hashCode();
     }
+    hash = (37 * hash) + IMPLICIT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getImplicit());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -378,6 +412,8 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
         dismissTime_ = null;
         dismissTimeBuilder_ = null;
       }
+      implicit_ = false;
+
       return this;
     }
 
@@ -410,6 +446,7 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
       } else {
         result.dismissTime_ = dismissTimeBuilder_.build();
       }
+      result.implicit_ = implicit_;
       onBuilt();
       return result;
     }
@@ -462,6 +499,9 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
         return this;
       if (other.hasDismissTime()) {
         mergeDismissTime(other.getDismissTime());
+      }
+      if (other.getImplicit() != false) {
+        setImplicit(other.getImplicit());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -676,6 +716,64 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
         dismissTime_ = null;
       }
       return dismissTimeBuilder_;
+    }
+
+    private boolean implicit_;
+    /**
+     *
+     *
+     * <pre>
+     * This field will be true if the ApprovalRequest was implcitly dismissed
+     * due to inaction by the access approval approvers (the request is not acted
+     * on by the approvers before the exiration time).
+     * </pre>
+     *
+     * <code>bool implicit = 2;</code>
+     *
+     * @return The implicit.
+     */
+    @java.lang.Override
+    public boolean getImplicit() {
+      return implicit_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will be true if the ApprovalRequest was implcitly dismissed
+     * due to inaction by the access approval approvers (the request is not acted
+     * on by the approvers before the exiration time).
+     * </pre>
+     *
+     * <code>bool implicit = 2;</code>
+     *
+     * @param value The implicit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImplicit(boolean value) {
+
+      implicit_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will be true if the ApprovalRequest was implcitly dismissed
+     * due to inaction by the access approval approvers (the request is not acted
+     * on by the approvers before the exiration time).
+     * </pre>
+     *
+     * <code>bool implicit = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImplicit() {
+
+      implicit_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

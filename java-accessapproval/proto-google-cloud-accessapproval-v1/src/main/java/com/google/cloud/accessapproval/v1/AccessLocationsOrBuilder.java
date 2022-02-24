@@ -32,14 +32,14 @@ public interface AccessLocationsOrBuilder
    * limited situations Google systems may refer refer to a region code instead
    * of a country code.
    * Possible Region Codes:
-   * - ASI: Asia
-   * - EUR: Europe
-   * - OCE: Oceania
-   * - AFR: Africa
-   * - NAM: North America
-   * - SAM: South America
-   * - ANT: Antarctica
-   * - ANY: Any location
+   *   * ASI: Asia
+   *   * EUR: Europe
+   *   * OCE: Oceania
+   *   * AFR: Africa
+   *   * NAM: North America
+   *   * SAM: South America
+   *   * ANT: Antarctica
+   *   * ANY: Any location
    * </pre>
    *
    * <code>string principal_office_country = 1;</code>
@@ -56,14 +56,14 @@ public interface AccessLocationsOrBuilder
    * limited situations Google systems may refer refer to a region code instead
    * of a country code.
    * Possible Region Codes:
-   * - ASI: Asia
-   * - EUR: Europe
-   * - OCE: Oceania
-   * - AFR: Africa
-   * - NAM: North America
-   * - SAM: South America
-   * - ANT: Antarctica
-   * - ANY: Any location
+   *   * ASI: Asia
+   *   * EUR: Europe
+   *   * OCE: Oceania
+   *   * AFR: Africa
+   *   * NAM: North America
+   *   * SAM: South America
+   *   * ANT: Antarctica
+   *   * ANY: Any location
    * </pre>
    *
    * <code>string principal_office_country = 1;</code>
@@ -81,14 +81,14 @@ public interface AccessLocationsOrBuilder
    * a region code. In some limited situations Google systems may refer refer to
    * a region code instead of a country code.
    * Possible Region Codes:
-   * - ASI: Asia
-   * - EUR: Europe
-   * - OCE: Oceania
-   * - AFR: Africa
-   * - NAM: North America
-   * - SAM: South America
-   * - ANT: Antarctica
-   * - ANY: Any location
+   *   * ASI: Asia
+   *   * EUR: Europe
+   *   * OCE: Oceania
+   *   * AFR: Africa
+   *   * NAM: North America
+   *   * SAM: South America
+   *   * ANT: Antarctica
+   *   * ANY: Any location
    * </pre>
    *
    * <code>string principal_physical_location_country = 2;</code>
@@ -105,14 +105,14 @@ public interface AccessLocationsOrBuilder
    * a region code. In some limited situations Google systems may refer refer to
    * a region code instead of a country code.
    * Possible Region Codes:
-   * - ASI: Asia
-   * - EUR: Europe
-   * - OCE: Oceania
-   * - AFR: Africa
-   * - NAM: North America
-   * - SAM: South America
-   * - ANT: Antarctica
-   * - ANY: Any location
+   *   * ASI: Asia
+   *   * EUR: Europe
+   *   * OCE: Oceania
+   *   * AFR: Africa
+   *   * NAM: North America
+   *   * SAM: South America
+   *   * ANT: Antarctica
+   *   * ANY: Any location
    * </pre>
    *
    * <code>string principal_physical_location_country = 2;</code>

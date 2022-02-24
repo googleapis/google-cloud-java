@@ -14,19 +14,19 @@
               "methods": ["approveApprovalRequest", "approveApprovalRequestCallable"]
             },
             "DeleteAccessApprovalSettings": {
-              "methods": ["deleteAccessApprovalSettings", "deleteAccessApprovalSettings", "deleteAccessApprovalSettingsCallable"]
+              "methods": ["deleteAccessApprovalSettings", "deleteAccessApprovalSettings", "deleteAccessApprovalSettings", "deleteAccessApprovalSettingsCallable"]
             },
             "DismissApprovalRequest": {
               "methods": ["dismissApprovalRequest", "dismissApprovalRequestCallable"]
             },
             "GetAccessApprovalSettings": {
-              "methods": ["getAccessApprovalSettings", "getAccessApprovalSettings", "getAccessApprovalSettingsCallable"]
+              "methods": ["getAccessApprovalSettings", "getAccessApprovalSettings", "getAccessApprovalSettings", "getAccessApprovalSettingsCallable"]
             },
             "GetApprovalRequest": {
-              "methods": ["getApprovalRequest", "getApprovalRequest", "getApprovalRequestCallable"]
+              "methods": ["getApprovalRequest", "getApprovalRequest", "getApprovalRequest", "getApprovalRequestCallable"]
             },
             "ListApprovalRequests": {
-              "methods": ["listApprovalRequests", "listApprovalRequests", "listApprovalRequestsPagedCallable", "listApprovalRequestsCallable"]
+              "methods": ["listApprovalRequests", "listApprovalRequests", "listApprovalRequests", "listApprovalRequests", "listApprovalRequests", "listApprovalRequestsPagedCallable", "listApprovalRequestsCallable"]
             },
             "UpdateAccessApprovalSettings": {
               "methods": ["updateAccessApprovalSettings", "updateAccessApprovalSettings", "updateAccessApprovalSettingsCallable"]

@@ -57,4 +57,19 @@ public interface DismissDecisionOrBuilder
    * <code>.google.protobuf.Timestamp dismiss_time = 1;</code>
    */
   com.google.protobuf.TimestampOrBuilder getDismissTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field will be true if the ApprovalRequest was implcitly dismissed
+   * due to inaction by the access approval approvers (the request is not acted
+   * on by the approvers before the exiration time).
+   * </pre>
+   *
+   * <code>bool implicit = 2;</code>
+   *
+   * @return The implicit.
+   */
+  boolean getImplicit();
 }

@@ -27,10 +27,11 @@ public interface GetAccessApprovalSettingsMessageOrBuilder
    *
    *
    * <pre>
-   * Name of the AccessApprovalSettings to retrieve.
+   * The name of the AccessApprovalSettings to retrieve.
+   * Format: "{projects|folders|organizations}/{id}/accessApprovalSettings"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The name.
    */
@@ -39,10 +40,11 @@ public interface GetAccessApprovalSettingsMessageOrBuilder
    *
    *
    * <pre>
-   * Name of the AccessApprovalSettings to retrieve.
+   * The name of the AccessApprovalSettings to retrieve.
+   * Format: "{projects|folders|organizations}/{id}/accessApprovalSettings"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for name.
    */

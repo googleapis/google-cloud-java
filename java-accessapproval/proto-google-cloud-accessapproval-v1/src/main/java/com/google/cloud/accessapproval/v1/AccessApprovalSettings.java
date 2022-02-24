@@ -155,12 +155,12 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The resource name of the settings. Format is one of:
-   * - "projects/{project_id}/accessApprovalSettings"
-   * - "folders/{folder_id}/accessApprovalSettings"
-   * - "organizations/{organization_id}/accessApprovalSettings"
+   *   * "projects/{project}/accessApprovalSettings"
+   *   * "folders/{folder}/accessApprovalSettings"
+   *   * "organizations/{organization}/accessApprovalSettings"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The name.
    */
@@ -181,12 +181,12 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The resource name of the settings. Format is one of:
-   * - "projects/{project_id}/accessApprovalSettings"
-   * - "folders/{folder_id}/accessApprovalSettings"
-   * - "organizations/{organization_id}/accessApprovalSettings"
+   *   * "projects/{project}/accessApprovalSettings"
+   *   * "folders/{folder}/accessApprovalSettings"
+   *   * "organizations/{organization}/accessApprovalSettings"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for name.
    */
@@ -399,7 +399,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Output only. This field is read only (not settable via
-   * UpdateAccessAccessApprovalSettings method). If the field is true, that
+   * UpdateAccessApprovalSettings method). If the field is true, that
    * indicates that at least one service is enrolled for Access Approval in one
    * or more ancestors of the Project or Folder (this field will always be
    * unset for the organization since organizations do not have ancestors).
@@ -845,12 +845,12 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
-     * - "projects/{project_id}/accessApprovalSettings"
-     * - "folders/{folder_id}/accessApprovalSettings"
-     * - "organizations/{organization_id}/accessApprovalSettings"
+     *   * "projects/{project}/accessApprovalSettings"
+     *   * "folders/{folder}/accessApprovalSettings"
+     *   * "organizations/{organization}/accessApprovalSettings"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The name.
      */
@@ -870,12 +870,12 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
-     * - "projects/{project_id}/accessApprovalSettings"
-     * - "folders/{folder_id}/accessApprovalSettings"
-     * - "organizations/{organization_id}/accessApprovalSettings"
+     *   * "projects/{project}/accessApprovalSettings"
+     *   * "folders/{folder}/accessApprovalSettings"
+     *   * "organizations/{organization}/accessApprovalSettings"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for name.
      */
@@ -895,12 +895,12 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
-     * - "projects/{project_id}/accessApprovalSettings"
-     * - "folders/{folder_id}/accessApprovalSettings"
-     * - "organizations/{organization_id}/accessApprovalSettings"
+     *   * "projects/{project}/accessApprovalSettings"
+     *   * "folders/{folder}/accessApprovalSettings"
+     *   * "organizations/{organization}/accessApprovalSettings"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -919,12 +919,12 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
-     * - "projects/{project_id}/accessApprovalSettings"
-     * - "folders/{folder_id}/accessApprovalSettings"
-     * - "organizations/{organization_id}/accessApprovalSettings"
+     *   * "projects/{project}/accessApprovalSettings"
+     *   * "folders/{folder}/accessApprovalSettings"
+     *   * "organizations/{organization}/accessApprovalSettings"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -939,12 +939,12 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
-     * - "projects/{project_id}/accessApprovalSettings"
-     * - "folders/{folder_id}/accessApprovalSettings"
-     * - "organizations/{organization_id}/accessApprovalSettings"
+     *   * "projects/{project}/accessApprovalSettings"
+     *   * "folders/{folder}/accessApprovalSettings"
+     *   * "organizations/{organization}/accessApprovalSettings"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1685,7 +1685,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Output only. This field is read only (not settable via
-     * UpdateAccessAccessApprovalSettings method). If the field is true, that
+     * UpdateAccessApprovalSettings method). If the field is true, that
      * indicates that at least one service is enrolled for Access Approval in one
      * or more ancestors of the Project or Folder (this field will always be
      * unset for the organization since organizations do not have ancestors).
@@ -1704,7 +1704,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Output only. This field is read only (not settable via
-     * UpdateAccessAccessApprovalSettings method). If the field is true, that
+     * UpdateAccessApprovalSettings method). If the field is true, that
      * indicates that at least one service is enrolled for Access Approval in one
      * or more ancestors of the Project or Folder (this field will always be
      * unset for the organization since organizations do not have ancestors).
@@ -1726,7 +1726,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Output only. This field is read only (not settable via
-     * UpdateAccessAccessApprovalSettings method). If the field is true, that
+     * UpdateAccessApprovalSettings method). If the field is true, that
      * indicates that at least one service is enrolled for Access Approval in one
      * or more ancestors of the Project or Folder (this field will always be
      * unset for the organization since organizations do not have ancestors).

@@ -28,7 +28,7 @@ public interface ApprovalRequestOrBuilder
    *
    * <pre>
    * The resource name of the request. Format is
-   * "{projects|folders|organizations}/{id}/approvalRequests/{approval_request_id}".
+   * "{projects|folders|organizations}/{id}/approvalRequests/{approval_request}".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,7 +41,7 @@ public interface ApprovalRequestOrBuilder
    *
    * <pre>
    * The resource name of the request. Format is
-   * "{projects|folders|organizations}/{id}/approvalRequests/{approval_request_id}".
+   * "{projects|folders|organizations}/{id}/approvalRequests/{approval_request}".
    * </pre>
    *
    * <code>string name = 1;</code>
