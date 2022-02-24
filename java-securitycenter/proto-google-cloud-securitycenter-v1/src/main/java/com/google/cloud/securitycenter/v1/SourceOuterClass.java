@@ -42,27 +42,25 @@ public final class SourceOuterClass {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/securitycenter/v1/source."
           + "proto\022\036google.cloud.securitycenter.v1\032\031g"
-          + "oogle/api/resource.proto\032\034google/api/ann"
-          + "otations.proto\"\375\001\n\006Source\022\014\n\004name\030\001 \001(\t\022"
-          + "\024\n\014display_name\030\002 \001(\t\022\023\n\013description\030\003 \001"
-          + "(\t\022\026\n\016canonical_name\030\016 \001(\t:\241\001\352A\235\001\n$secur"
-          + "itycenter.googleapis.com/Source\022-organiz"
-          + "ations/{organization}/sources/{source}\022!"
-          + "folders/{folder}/sources/{source}\022#proje"
-          + "cts/{project}/sources/{source}B\332\001\n\"com.g"
-          + "oogle.cloud.securitycenter.v1P\001ZLgoogle."
-          + "golang.org/genproto/googleapis/cloud/sec"
-          + "uritycenter/v1;securitycenter\252\002\036Google.C"
-          + "loud.SecurityCenter.V1\312\002\036Google\\Cloud\\Se"
-          + "curityCenter\\V1\352\002!Google::Cloud::Securit"
-          + "yCenter::V1b\006proto3"
+          + "oogle/api/resource.proto\"\375\001\n\006Source\022\014\n\004n"
+          + "ame\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\023\n\013descr"
+          + "iption\030\003 \001(\t\022\026\n\016canonical_name\030\016 \001(\t:\241\001\352"
+          + "A\235\001\n$securitycenter.googleapis.com/Sourc"
+          + "e\022-organizations/{organization}/sources/"
+          + "{source}\022!folders/{folder}/sources/{sour"
+          + "ce}\022#projects/{project}/sources/{source}"
+          + "B\332\001\n\"com.google.cloud.securitycenter.v1P"
+          + "\001ZLgoogle.golang.org/genproto/googleapis"
+          + "/cloud/securitycenter/v1;securitycenter\252"
+          + "\002\036Google.Cloud.SecurityCenter.V1\312\002\036Googl"
+          + "e\\Cloud\\SecurityCenter\\V1\352\002!Google::Clou"
+          + "d::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1_Source_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -78,7 +76,6 @@ public final class SourceOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

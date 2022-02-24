@@ -46,36 +46,34 @@ public final class SecurityMarksOuterClass {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/securitycenter/v1/securit"
           + "y_marks.proto\022\036google.cloud.securitycent"
-          + "er.v1\032\031google/api/resource.proto\032\034google"
-          + "/api/annotations.proto\"\325\004\n\rSecurityMarks"
-          + "\022\014\n\004name\030\001 \001(\t\022G\n\005marks\030\002 \003(\01328.google.c"
-          + "loud.securitycenter.v1.SecurityMarks.Mar"
-          + "ksEntry\022\026\n\016canonical_name\030\003 \001(\t\032,\n\nMarks"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\246\003"
-          + "\352A\242\003\n+securitycenter.googleapis.com/Secu"
-          + "rityMarks\0229organizations/{organization}/"
-          + "assets/{asset}/securityMarks\022Norganizati"
-          + "ons/{organization}/sources/{source}/find"
-          + "ings/{finding}/securityMarks\022-folders/{f"
-          + "older}/assets/{asset}/securityMarks\022/pro"
-          + "jects/{project}/assets/{asset}/securityM"
-          + "arks\022Bfolders/{folder}/sources/{source}/"
-          + "findings/{finding}/securityMarks\022Dprojec"
-          + "ts/{project}/sources/{source}/findings/{"
-          + "finding}/securityMarksB\332\001\n\"com.google.cl"
-          + "oud.securitycenter.v1P\001ZLgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/securitycen"
-          + "ter/v1;securitycenter\252\002\036Google.Cloud.Sec"
-          + "urityCenter.V1\312\002\036Google\\Cloud\\SecurityCe"
-          + "nter\\V1\352\002!Google::Cloud::SecurityCenter:"
-          + ":V1b\006proto3"
+          + "er.v1\032\031google/api/resource.proto\"\325\004\n\rSec"
+          + "urityMarks\022\014\n\004name\030\001 \001(\t\022G\n\005marks\030\002 \003(\0132"
+          + "8.google.cloud.securitycenter.v1.Securit"
+          + "yMarks.MarksEntry\022\026\n\016canonical_name\030\003 \001("
+          + "\t\032,\n\nMarksEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
+          + "\001(\t:\0028\001:\246\003\352A\242\003\n+securitycenter.googleapi"
+          + "s.com/SecurityMarks\0229organizations/{orga"
+          + "nization}/assets/{asset}/securityMarks\022N"
+          + "organizations/{organization}/sources/{so"
+          + "urce}/findings/{finding}/securityMarks\022-"
+          + "folders/{folder}/assets/{asset}/security"
+          + "Marks\022/projects/{project}/assets/{asset}"
+          + "/securityMarks\022Bfolders/{folder}/sources"
+          + "/{source}/findings/{finding}/securityMar"
+          + "ks\022Dprojects/{project}/sources/{source}/"
+          + "findings/{finding}/securityMarksB\332\001\n\"com"
+          + ".google.cloud.securitycenter.v1P\001ZLgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/s"
+          + "ecuritycenter/v1;securitycenter\252\002\036Google"
+          + ".Cloud.SecurityCenter.V1\312\002\036Google\\Cloud\\"
+          + "SecurityCenter\\V1\352\002!Google::Cloud::Secur"
+          + "ityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1_SecurityMarks_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -101,7 +99,6 @@ public final class SecurityMarksOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

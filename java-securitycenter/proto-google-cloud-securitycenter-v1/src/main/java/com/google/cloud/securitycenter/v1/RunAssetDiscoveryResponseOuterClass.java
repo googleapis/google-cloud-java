@@ -43,26 +43,24 @@ public final class RunAssetDiscoveryResponseOuterClass {
       "\nAgoogle/cloud/securitycenter/v1/run_ass"
           + "et_discovery_response.proto\022\036google.clou"
           + "d.securitycenter.v1\032\036google/protobuf/dur"
-          + "ation.proto\032\034google/api/annotations.prot"
-          + "o\"\347\001\n\031RunAssetDiscoveryResponse\022N\n\005state"
-          + "\030\001 \001(\0162?.google.cloud.securitycenter.v1."
-          + "RunAssetDiscoveryResponse.State\022+\n\010durat"
-          + "ion\030\002 \001(\0132\031.google.protobuf.Duration\"M\n\005"
-          + "State\022\025\n\021STATE_UNSPECIFIED\020\000\022\r\n\tCOMPLETE"
-          + "D\020\001\022\016\n\nSUPERSEDED\020\002\022\016\n\nTERMINATED\020\003B\332\001\n\""
-          + "com.google.cloud.securitycenter.v1P\001ZLgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/securitycenter/v1;securitycenter\252\002\036Goo"
-          + "gle.Cloud.SecurityCenter.V1\312\002\036Google\\Clo"
-          + "ud\\SecurityCenter\\V1\352\002!Google::Cloud::Se"
-          + "curityCenter::V1b\006proto3"
+          + "ation.proto\"\347\001\n\031RunAssetDiscoveryRespons"
+          + "e\022N\n\005state\030\001 \001(\0162?.google.cloud.security"
+          + "center.v1.RunAssetDiscoveryResponse.Stat"
+          + "e\022+\n\010duration\030\002 \001(\0132\031.google.protobuf.Du"
+          + "ration\"M\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\r"
+          + "\n\tCOMPLETED\020\001\022\016\n\nSUPERSEDED\020\002\022\016\n\nTERMINA"
+          + "TED\020\003B\332\001\n\"com.google.cloud.securitycente"
+          + "r.v1P\001ZLgoogle.golang.org/genproto/googl"
+          + "eapis/cloud/securitycenter/v1;securityce"
+          + "nter\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036"
+          + "Google\\Cloud\\SecurityCenter\\V1\352\002!Google:"
+          + ":Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.DurationProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1_RunAssetDiscoveryResponse_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -73,7 +71,6 @@ public final class RunAssetDiscoveryResponseOuterClass {
               "State", "Duration",
             });
     com.google.protobuf.DurationProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

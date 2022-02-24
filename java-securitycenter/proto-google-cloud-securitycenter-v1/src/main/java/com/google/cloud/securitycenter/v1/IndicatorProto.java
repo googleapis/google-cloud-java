@@ -42,22 +42,18 @@ public final class IndicatorProto {
     java.lang.String[] descriptorData = {
       "\n.google/cloud/securitycenter/v1/indicat"
           + "or.proto\022\036google.cloud.securitycenter.v1"
-          + "\032\034google/api/annotations.proto\"2\n\tIndica"
-          + "tor\022\024\n\014ip_addresses\030\001 \003(\t\022\017\n\007domains\030\002 \003"
-          + "(\tB\352\001\n\"com.google.cloud.securitycenter.v"
-          + "1B\016IndicatorProtoP\001ZLgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/securitycenter/"
-          + "v1;securitycenter\252\002\036Google.Cloud.Securit"
-          + "yCenter.V1\312\002\036Google\\Cloud\\SecurityCenter"
-          + "\\V1\352\002!Google::Cloud::SecurityCenter::V1b"
-          + "\006proto3"
+          + "\"2\n\tIndicator\022\024\n\014ip_addresses\030\001 \003(\t\022\017\n\007d"
+          + "omains\030\002 \003(\tB\352\001\n\"com.google.cloud.securi"
+          + "tycenter.v1B\016IndicatorProtoP\001ZLgoogle.go"
+          + "lang.org/genproto/googleapis/cloud/secur"
+          + "itycenter/v1;securitycenter\252\002\036Google.Clo"
+          + "ud.SecurityCenter.V1\312\002\036Google\\Cloud\\Secu"
+          + "rityCenter\\V1\352\002!Google::Cloud::SecurityC"
+          + "enter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_securitycenter_v1_Indicator_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_securitycenter_v1_Indicator_fieldAccessorTable =
@@ -66,7 +62,6 @@ public final class IndicatorProto {
             new java.lang.String[] {
               "IpAddresses", "Domains",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

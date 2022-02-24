@@ -44,25 +44,24 @@ public final class MuteConfigProto {
           + "nfig.proto\022\036google.cloud.securitycenter."
           + "v1\032\037google/api/field_behavior.proto\032\031goo"
           + "gle/api/resource.proto\032\037google/protobuf/"
-          + "timestamp.proto\032\034google/api/annotations."
-          + "proto\"\256\003\n\nMuteConfig\022\014\n\004name\030\001 \001(\t\022\030\n\014di"
-          + "splay_name\030\002 \001(\tB\002\030\001\022\023\n\013description\030\003 \001("
-          + "\t\022\023\n\006filter\030\004 \001(\tB\003\340A\002\0224\n\013create_time\030\005 "
-          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013"
-          + "update_time\030\006 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\022\037\n\022most_recent_editor\030\007 \001(\tB\003"
-          + "\340A\003:\300\001\352A\274\001\n(securitycenter.googleapis.co"
-          + "m/MuteConfig\0226organizations/{organizatio"
-          + "n}/muteConfigs/{mute_config}\022*folders/{f"
-          + "older}/muteConfigs/{mute_config}\022,projec"
-          + "ts/{project}/muteConfigs/{mute_config}B\353"
-          + "\001\n\"com.google.cloud.securitycenter.v1B\017M"
-          + "uteConfigProtoP\001ZLgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/securitycenter/v1;"
-          + "securitycenter\252\002\036Google.Cloud.SecurityCe"
-          + "nter.V1\312\002\036Google\\Cloud\\SecurityCenter\\V1"
-          + "\352\002!Google::Cloud::SecurityCenter::V1b\006pr"
-          + "oto3"
+          + "timestamp.proto\"\256\003\n\nMuteConfig\022\014\n\004name\030\001"
+          + " \001(\t\022\030\n\014display_name\030\002 \001(\tB\002\030\001\022\023\n\013descri"
+          + "ption\030\003 \001(\t\022\023\n\006filter\030\004 \001(\tB\003\340A\002\0224\n\013crea"
+          + "te_time\030\005 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\022\037\n\022most_recent_edit"
+          + "or\030\007 \001(\tB\003\340A\003:\300\001\352A\274\001\n(securitycenter.goo"
+          + "gleapis.com/MuteConfig\0226organizations/{o"
+          + "rganization}/muteConfigs/{mute_config}\022*"
+          + "folders/{folder}/muteConfigs/{mute_confi"
+          + "g}\022,projects/{project}/muteConfigs/{mute"
+          + "_config}B\353\001\n\"com.google.cloud.securityce"
+          + "nter.v1B\017MuteConfigProtoP\001ZLgoogle.golan"
+          + "g.org/genproto/googleapis/cloud/security"
+          + "center/v1;securitycenter\252\002\036Google.Cloud."
+          + "SecurityCenter.V1\312\002\036Google\\Cloud\\Securit"
+          + "yCenter\\V1\352\002!Google::Cloud::SecurityCent"
+          + "er::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -71,7 +70,6 @@ public final class MuteConfigProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1_MuteConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -96,7 +94,6 @@ public final class MuteConfigProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

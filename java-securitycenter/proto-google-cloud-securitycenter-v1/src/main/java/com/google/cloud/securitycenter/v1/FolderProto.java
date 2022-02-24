@@ -41,23 +41,19 @@ public final class FolderProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/securitycenter/v1/folder."
-          + "proto\022\036google.cloud.securitycenter.v1\032\034g"
-          + "oogle/api/annotations.proto\"G\n\006Folder\022\027\n"
-          + "\017resource_folder\030\001 \001(\t\022$\n\034resource_folde"
-          + "r_display_name\030\002 \001(\tB\347\001\n\"com.google.clou"
-          + "d.securitycenter.v1B\013FolderProtoP\001ZLgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "securitycenter/v1;securitycenter\252\002\036Googl"
-          + "e.Cloud.SecurityCenter.V1\312\002\036Google\\Cloud"
-          + "\\SecurityCenter\\V1\352\002!Google::Cloud::Secu"
-          + "rityCenter::V1b\006proto3"
+          + "proto\022\036google.cloud.securitycenter.v1\"G\n"
+          + "\006Folder\022\027\n\017resource_folder\030\001 \001(\t\022$\n\034reso"
+          + "urce_folder_display_name\030\002 \001(\tB\347\001\n\"com.g"
+          + "oogle.cloud.securitycenter.v1B\013FolderPro"
+          + "toP\001ZLgoogle.golang.org/genproto/googlea"
+          + "pis/cloud/securitycenter/v1;securitycent"
+          + "er\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036Go"
+          + "ogle\\Cloud\\SecurityCenter\\V1\352\002!Google::C"
+          + "loud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_securitycenter_v1_Folder_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_securitycenter_v1_Folder_fieldAccessorTable =
@@ -66,7 +62,6 @@ public final class FolderProto {
             new java.lang.String[] {
               "ResourceFolder", "ResourceFolderDisplayName",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -44,19 +44,18 @@ public final class NotificationMessageProto {
           + "ation_message.proto\022\036google.cloud.securi"
           + "tycenter.v1\032,google/cloud/securitycenter"
           + "/v1/finding.proto\032-google/cloud/security"
-          + "center/v1/resource.proto\032\034google/api/ann"
-          + "otations.proto\"\270\001\n\023NotificationMessage\022 "
-          + "\n\030notification_config_name\030\001 \001(\t\022:\n\007find"
-          + "ing\030\002 \001(\0132\'.google.cloud.securitycenter."
-          + "v1.FindingH\000\022:\n\010resource\030\003 \001(\0132(.google."
-          + "cloud.securitycenter.v1.ResourceB\007\n\005even"
-          + "tB\364\001\n\"com.google.cloud.securitycenter.v1"
-          + "B\030NotificationMessageProtoP\001ZLgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/securi"
-          + "tycenter/v1;securitycenter\252\002\036Google.Clou"
-          + "d.SecurityCenter.V1\312\002\036Google\\Cloud\\Secur"
-          + "ityCenter\\V1\352\002!Google::Cloud::SecurityCe"
-          + "nter::V1b\006proto3"
+          + "center/v1/resource.proto\"\270\001\n\023Notificatio"
+          + "nMessage\022 \n\030notification_config_name\030\001 \001"
+          + "(\t\022:\n\007finding\030\002 \001(\0132\'.google.cloud.secur"
+          + "itycenter.v1.FindingH\000\022:\n\010resource\030\003 \001(\013"
+          + "2(.google.cloud.securitycenter.v1.Resour"
+          + "ceB\007\n\005eventB\364\001\n\"com.google.cloud.securit"
+          + "ycenter.v1B\030NotificationMessageProtoP\001ZL"
+          + "google.golang.org/genproto/googleapis/cl"
+          + "oud/securitycenter/v1;securitycenter\252\002\036G"
+          + "oogle.Cloud.SecurityCenter.V1\312\002\036Google\\C"
+          + "loud\\SecurityCenter\\V1\352\002!Google::Cloud::"
+          + "SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -64,7 +63,6 @@ public final class NotificationMessageProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.cloud.securitycenter.v1.FindingOuterClass.getDescriptor(),
               com.google.cloud.securitycenter.v1.ResourceProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1_NotificationMessage_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -76,7 +74,6 @@ public final class NotificationMessageProto {
             });
     com.google.cloud.securitycenter.v1.FindingOuterClass.getDescriptor();
     com.google.cloud.securitycenter.v1.ResourceProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
