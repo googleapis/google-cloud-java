@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-artifact-registry</artifactId>
-      <version>0.5.0</version>
+      <version>1.0.0</version>
     </dependency>
     <!-- [END artifact-registry_install_without_bom] -->
 
