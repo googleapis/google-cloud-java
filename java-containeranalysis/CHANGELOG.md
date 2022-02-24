@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.9](https://github.com/googleapis/java-containeranalysis/compare/v2.2.8...v2.2.9) (2022-02-24)
+
+
+### Dependencies
+
+* update dependency io.grafeas:grafeas to v2.2.1 ([#827](https://github.com/googleapis/java-containeranalysis/issues/827)) ([7fd3627](https://github.com/googleapis/java-containeranalysis/commit/7fd3627db5f68abf76876776f359f016937741ef))
+
 ### [2.2.8](https://github.com/googleapis/java-containeranalysis/compare/v2.2.7...v2.2.8) (2022-02-11)
 
 
