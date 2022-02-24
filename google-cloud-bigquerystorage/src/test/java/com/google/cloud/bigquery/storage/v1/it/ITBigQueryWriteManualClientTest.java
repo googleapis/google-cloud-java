@@ -29,6 +29,7 @@ import com.google.cloud.bigquery.storage.test.Test.*;
 import com.google.cloud.bigquery.storage.v1.*;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.common.collect.ImmutableList;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
@@ -327,11 +328,18 @@ public class ITBigQueryWriteManualClientTest {
             .setMode(TableFieldSchema.Mode.NULLABLE)
             .setName("test_datetime")
             .build();
+    TableFieldSchema TEST_REPEATED_BYTESTRING =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.BYTES)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .setName("test_bytestring_repeated")
+            .build();
     TableSchema tableSchema =
         TableSchema.newBuilder()
             .addFields(0, TEST_STRING)
             .addFields(1, TEST_DATE)
             .addFields(2, TEST_NUMERIC)
+            .addFields(3, TEST_REPEATED_BYTESTRING)
             .build();
     TableInfo tableInfo =
         TableInfo.newBuilder(
@@ -347,8 +355,13 @@ public class ITBigQueryWriteManualClientTest {
                             .build(),
                         com.google.cloud.bigquery.Field.newBuilder(
                                 "test_datetime", StandardSQLTypeName.DATETIME)
+                            .build(),
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "test_bytestring_repeated", StandardSQLTypeName.BYTES)
+                            .setMode(Field.Mode.REPEATED)
                             .build())))
             .build();
+
     bigquery.create(tableInfo);
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     try (JsonStreamWriter jsonStreamWriter =
@@ -371,6 +384,13 @@ public class ITBigQueryWriteManualClientTest {
       row1.put(
           "test_datetime",
           CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.of(2020, 10, 1, 12, 0)));
+      row1.put(
+          "test_bytestring_repeated",
+          new JSONArray(
+              new byte[][] {
+                ByteString.copyFromUtf8("a").toByteArray(),
+                ByteString.copyFromUtf8("b").toByteArray()
+              }));
       JSONArray jsonArr1 = new JSONArray(new JSONObject[] {row1});
 
       ApiFuture<AppendRowsResponse> response1 = jsonStreamWriter.append(jsonArr1, -1);
@@ -405,6 +425,8 @@ public class ITBigQueryWriteManualClientTest {
       assertEquals("aaa", currentRow.get(0).getStringValue());
       assertEquals("-9000000", currentRow.get(1).getRepeatedValue().get(1).getStringValue());
       assertEquals("2020-10-01T12:00:00", currentRow.get(2).getStringValue());
+      assertEquals(2, currentRow.get(3).getRepeatedValue().size());
+      assertEquals("Yg==", currentRow.get(3).getRepeatedValue().get(1).getStringValue());
       assertEquals("bbb", iter.next().get(0).getStringValue());
       assertEquals("ccc", iter.next().get(0).getStringValue());
       assertEquals("ddd", iter.next().get(0).getStringValue());

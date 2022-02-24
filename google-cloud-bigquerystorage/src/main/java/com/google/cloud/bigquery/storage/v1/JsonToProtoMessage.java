@@ -441,9 +441,6 @@ public class JsonToProtoMessage {
                             + index
                             + "] could not be converted to byte[]."));
               }
-            } else if (val instanceof ByteString) {
-              protoMsg.addRepeatedField(fieldDescriptor, ((ByteString) val).toByteArray());
-              return;
             } else {
               fail = true;
             }
