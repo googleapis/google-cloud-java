@@ -23,7 +23,6 @@ package com.google.dataflow.v1beta3;
  *
  * <pre>
  * Defines a job to be run by the Cloud Dataflow service.
- * nextID: 26
  * </pre>
  *
  * Protobuf type {@code google.dataflow.v1beta3.Job}
@@ -2324,7 +2323,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines a job to be run by the Cloud Dataflow service.
-   * nextID: 26
    * </pre>
    *
    * Protobuf type {@code google.dataflow.v1beta3.Job}
