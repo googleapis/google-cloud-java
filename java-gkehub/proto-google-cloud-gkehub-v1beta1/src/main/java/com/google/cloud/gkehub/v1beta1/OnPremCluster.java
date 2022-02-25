@@ -127,7 +127,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
+   * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
+   * example:
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
    * </pre>
@@ -152,7 +153,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
+   * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
+   * example:
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
    * </pre>
@@ -563,7 +565,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
+     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
+     * example:
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
      * </pre>
@@ -587,7 +590,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
+     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
+     * example:
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
      * </pre>
@@ -611,7 +615,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
+     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
+     * example:
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
      * </pre>
@@ -634,7 +639,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
+     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
+     * example:
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
      * </pre>
@@ -653,7 +659,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
+     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
+     * example:
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
      * </pre>

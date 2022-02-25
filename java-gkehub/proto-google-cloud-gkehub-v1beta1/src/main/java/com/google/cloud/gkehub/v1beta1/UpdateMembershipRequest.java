@@ -207,8 +207,8 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Mask of fields to update. At least one field path must be specified in this
-   * mask.
+   * Required. Mask of fields to update. At least one field path must be
+   * specified in this mask.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -224,8 +224,8 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Mask of fields to update. At least one field path must be specified in this
-   * mask.
+   * Required. Mask of fields to update. At least one field path must be
+   * specified in this mask.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -241,8 +241,8 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Mask of fields to update. At least one field path must be specified in this
-   * mask.
+   * Required. Mask of fields to update. At least one field path must be
+   * specified in this mask.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -909,8 +909,8 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Mask of fields to update. At least one field path must be specified in this
-     * mask.
+     * Required. Mask of fields to update. At least one field path must be
+     * specified in this mask.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -925,8 +925,8 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Mask of fields to update. At least one field path must be specified in this
-     * mask.
+     * Required. Mask of fields to update. At least one field path must be
+     * specified in this mask.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -947,8 +947,8 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Mask of fields to update. At least one field path must be specified in this
-     * mask.
+     * Required. Mask of fields to update. At least one field path must be
+     * specified in this mask.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -971,8 +971,8 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Mask of fields to update. At least one field path must be specified in this
-     * mask.
+     * Required. Mask of fields to update. At least one field path must be
+     * specified in this mask.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -992,8 +992,8 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Mask of fields to update. At least one field path must be specified in this
-     * mask.
+     * Required. Mask of fields to update. At least one field path must be
+     * specified in this mask.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1018,8 +1018,8 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Mask of fields to update. At least one field path must be specified in this
-     * mask.
+     * Required. Mask of fields to update. At least one field path must be
+     * specified in this mask.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1040,8 +1040,8 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Mask of fields to update. At least one field path must be specified in this
-     * mask.
+     * Required. Mask of fields to update. At least one field path must be
+     * specified in this mask.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1056,8 +1056,8 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Mask of fields to update. At least one field path must be specified in this
-     * mask.
+     * Required. Mask of fields to update. At least one field path must be
+     * specified in this mask.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1076,8 +1076,8 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Mask of fields to update. At least one field path must be specified in this
-     * mask.
+     * Required. Mask of fields to update. At least one field path must be
+     * specified in this mask.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

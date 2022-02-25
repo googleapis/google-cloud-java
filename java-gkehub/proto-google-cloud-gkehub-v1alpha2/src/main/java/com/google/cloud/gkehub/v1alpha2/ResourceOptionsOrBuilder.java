@@ -67,4 +67,33 @@ public interface ResourceOptionsOrBuilder
    * @return The v1beta1Crd.
    */
   boolean getV1Beta1Crd();
+
+  /**
+   *
+   *
+   * <pre>
+   * Major version of the Kubernetes cluster. This is only used to determine
+   * which version to use for the CustomResourceDefinition resources,
+   * `apiextensions/v1beta1` or`apiextensions/v1`.
+   * </pre>
+   *
+   * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The k8sVersion.
+   */
+  java.lang.String getK8SVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Major version of the Kubernetes cluster. This is only used to determine
+   * which version to use for the CustomResourceDefinition resources,
+   * `apiextensions/v1beta1` or`apiextensions/v1`.
+   * </pre>
+   *
+   * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for k8sVersion.
+   */
+  com.google.protobuf.ByteString getK8SVersionBytes();
 }

@@ -163,8 +163,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The Membership resource name the Agent will associate with, in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+   * Required. The Membership resource name the Agent will associate with, in
+   * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -187,8 +187,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The Membership resource name the Agent will associate with, in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+   * Required. The Membership resource name the Agent will associate with, in
+   * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -268,7 +268,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. The Connect agent version to use. Defaults to the most current version.
+   * Optional. The Connect agent version to use. Defaults to the most current
+   * version.
    * </pre>
    *
    * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -291,7 +292,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. The Connect agent version to use. Defaults to the most current version.
+   * Optional. The Connect agent version to use. Defaults to the most current
+   * version.
    * </pre>
    *
    * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -818,8 +820,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The Membership resource name the Agent will associate with, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+     * Required. The Membership resource name the Agent will associate with, in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -841,8 +843,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The Membership resource name the Agent will associate with, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+     * Required. The Membership resource name the Agent will associate with, in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -864,8 +866,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The Membership resource name the Agent will associate with, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+     * Required. The Membership resource name the Agent will associate with, in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -886,8 +888,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The Membership resource name the Agent will associate with, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+     * Required. The Membership resource name the Agent will associate with, in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -904,8 +906,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The Membership resource name the Agent will associate with, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+     * Required. The Membership resource name the Agent will associate with, in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1133,7 +1135,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The Connect agent version to use. Defaults to the most current version.
+     * Optional. The Connect agent version to use. Defaults to the most current
+     * version.
      * </pre>
      *
      * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1155,7 +1158,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The Connect agent version to use. Defaults to the most current version.
+     * Optional. The Connect agent version to use. Defaults to the most current
+     * version.
      * </pre>
      *
      * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1177,7 +1181,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The Connect agent version to use. Defaults to the most current version.
+     * Optional. The Connect agent version to use. Defaults to the most current
+     * version.
      * </pre>
      *
      * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1198,7 +1203,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The Connect agent version to use. Defaults to the most current version.
+     * Optional. The Connect agent version to use. Defaults to the most current
+     * version.
      * </pre>
      *
      * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1215,7 +1221,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The Connect agent version to use. Defaults to the most current version.
+     * Optional. The Connect agent version to use. Defaults to the most current
+     * version.
      * </pre>
      *
      * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

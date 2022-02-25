@@ -191,8 +191,8 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
-   * registered cluster, in the steady state. These resources:
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a
+   * correctly registered cluster, in the steady state. These resources:
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -211,8 +211,8 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
-   * registered cluster, in the steady state. These resources:
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a
+   * correctly registered cluster, in the steady state. These resources:
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -231,8 +231,8 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
-   * registered cluster, in the steady state. These resources:
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a
+   * correctly registered cluster, in the steady state. These resources:
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership

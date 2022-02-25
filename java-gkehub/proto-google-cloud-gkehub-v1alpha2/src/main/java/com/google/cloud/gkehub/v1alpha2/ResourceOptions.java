@@ -39,6 +39,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
 
   private ResourceOptions() {
     connectVersion_ = "";
+    k8SVersion_ = "";
   }
 
   @java.lang.Override
@@ -80,6 +81,13 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
           case 16:
             {
               v1Beta1Crd_ = input.readBool();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              k8SVersion_ = s;
               break;
             }
           default:
@@ -190,6 +198,59 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     return v1Beta1Crd_;
   }
 
+  public static final int K8S_VERSION_FIELD_NUMBER = 3;
+  private volatile java.lang.Object k8SVersion_;
+  /**
+   *
+   *
+   * <pre>
+   * Major version of the Kubernetes cluster. This is only used to determine
+   * which version to use for the CustomResourceDefinition resources,
+   * `apiextensions/v1beta1` or`apiextensions/v1`.
+   * </pre>
+   *
+   * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The k8sVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getK8SVersion() {
+    java.lang.Object ref = k8SVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      k8SVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Major version of the Kubernetes cluster. This is only used to determine
+   * which version to use for the CustomResourceDefinition resources,
+   * `apiextensions/v1beta1` or`apiextensions/v1`.
+   * </pre>
+   *
+   * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for k8sVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getK8SVersionBytes() {
+    java.lang.Object ref = k8SVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      k8SVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -210,6 +271,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     if (v1Beta1Crd_ != false) {
       output.writeBool(2, v1Beta1Crd_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(k8SVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, k8SVersion_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -224,6 +288,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     }
     if (v1Beta1Crd_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, v1Beta1Crd_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(k8SVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, k8SVersion_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -243,6 +310,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
 
     if (!getConnectVersion().equals(other.getConnectVersion())) return false;
     if (getV1Beta1Crd() != other.getV1Beta1Crd()) return false;
+    if (!getK8SVersion().equals(other.getK8SVersion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -258,6 +326,8 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getConnectVersion().hashCode();
     hash = (37 * hash) + V1BETA1_CRD_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getV1Beta1Crd());
+    hash = (37 * hash) + K8S_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getK8SVersion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -407,6 +477,8 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
 
       v1Beta1Crd_ = false;
 
+      k8SVersion_ = "";
+
       return this;
     }
 
@@ -436,6 +508,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
           new com.google.cloud.gkehub.v1alpha2.ResourceOptions(this);
       result.connectVersion_ = connectVersion_;
       result.v1Beta1Crd_ = v1Beta1Crd_;
+      result.k8SVersion_ = k8SVersion_;
       onBuilt();
       return result;
     }
@@ -492,6 +565,10 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       }
       if (other.getV1Beta1Crd() != false) {
         setV1Beta1Crd(other.getV1Beta1Crd());
+      }
+      if (!other.getK8SVersion().isEmpty()) {
+        k8SVersion_ = other.k8SVersion_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -695,6 +772,122 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     public Builder clearV1Beta1Crd() {
 
       v1Beta1Crd_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object k8SVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Major version of the Kubernetes cluster. This is only used to determine
+     * which version to use for the CustomResourceDefinition resources,
+     * `apiextensions/v1beta1` or`apiextensions/v1`.
+     * </pre>
+     *
+     * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The k8sVersion.
+     */
+    public java.lang.String getK8SVersion() {
+      java.lang.Object ref = k8SVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        k8SVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Major version of the Kubernetes cluster. This is only used to determine
+     * which version to use for the CustomResourceDefinition resources,
+     * `apiextensions/v1beta1` or`apiextensions/v1`.
+     * </pre>
+     *
+     * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for k8sVersion.
+     */
+    public com.google.protobuf.ByteString getK8SVersionBytes() {
+      java.lang.Object ref = k8SVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        k8SVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Major version of the Kubernetes cluster. This is only used to determine
+     * which version to use for the CustomResourceDefinition resources,
+     * `apiextensions/v1beta1` or`apiextensions/v1`.
+     * </pre>
+     *
+     * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The k8sVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setK8SVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      k8SVersion_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Major version of the Kubernetes cluster. This is only used to determine
+     * which version to use for the CustomResourceDefinition resources,
+     * `apiextensions/v1beta1` or`apiextensions/v1`.
+     * </pre>
+     *
+     * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearK8SVersion() {
+
+      k8SVersion_ = getDefaultInstance().getK8SVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Major version of the Kubernetes cluster. This is only used to determine
+     * which version to use for the CustomResourceDefinition resources,
+     * `apiextensions/v1beta1` or`apiextensions/v1`.
+     * </pre>
+     *
+     * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for k8sVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setK8SVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      k8SVersion_ = value;
       onChanged();
       return this;
     }
