@@ -73,16 +73,6 @@
         <artifactId>grpc-google-cloud-video-transcoder-v1</artifactId>
         <version>1.0.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-transcoder-v1:current} -->
       </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-video-transcoder-v1beta1</artifactId>
-        <version>0.5.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-transcoder-v1beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-video-transcoder-v1beta1</artifactId>
-        <version>0.5.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-transcoder-v1beta1:current} -->
-      </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -113,9 +103,7 @@
 
   <modules>
     <module>google-cloud-video-transcoder</module>
-    <module>grpc-google-cloud-video-transcoder-v1beta1</module>
     <module>grpc-google-cloud-video-transcoder-v1</module>
-    <module>proto-google-cloud-video-transcoder-v1beta1</module>
     <module>proto-google-cloud-video-transcoder-v1</module>
     <module>google-cloud-video-transcoder-bom</module>
   </modules>

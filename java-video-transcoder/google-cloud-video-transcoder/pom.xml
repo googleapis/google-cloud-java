@@ -47,10 +47,6 @@
       <artifactId>proto-google-cloud-video-transcoder-v1</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-video-transcoder-v1beta1</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
     </dependency>
@@ -75,11 +71,6 @@
       <version>4.13.2</version>
     </dependency>
 
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-video-transcoder-v1beta1</artifactId>
-      <scope>test</scope>
-    </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-video-transcoder-v1</artifactId>
