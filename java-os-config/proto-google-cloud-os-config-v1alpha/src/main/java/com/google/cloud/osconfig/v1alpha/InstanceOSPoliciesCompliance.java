@@ -35,6 +35,7 @@ package com.google.cloud.osconfig.v1alpha;
  *
  * Protobuf type {@code google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance}
  */
+@java.lang.Deprecated
 public final class InstanceOSPoliciesCompliance extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance)
@@ -195,6 +196,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
             com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance.Builder.class);
   }
 
+  @java.lang.Deprecated
   public interface OSPolicyComplianceOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance.OSPolicyCompliance)
@@ -361,6 +363,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
    * Protobuf type {@code
    * google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance.OSPolicyCompliance}
    */
+  @java.lang.Deprecated
   public static final class OSPolicyCompliance extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance.OSPolicyCompliance)

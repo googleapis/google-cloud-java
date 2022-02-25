@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to OS Config API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= OsConfigServiceClient =======================
  *
@@ -37,6 +39,7 @@
  *           .setDuration(Duration.newBuilder().build())
  *           .setDryRun(true)
  *           .setDisplayName("displayName1714148973")
+ *           .setRollout(PatchJobs.PatchRollout.newBuilder().build())
  *           .build();
  *   PatchJobs.PatchJob response = osConfigServiceClient.executePatchJob(request);
  * }

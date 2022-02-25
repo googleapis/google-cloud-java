@@ -146,14 +146,14 @@ public final class OSPolicyAssignmentOperationMetadata
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+    return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
         .internal_static_google_cloud_osconfig_v1alpha_OSPolicyAssignmentOperationMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+    return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
         .internal_static_google_cloud_osconfig_v1alpha_OSPolicyAssignmentOperationMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata.class,
@@ -1019,14 +1019,14 @@ public final class OSPolicyAssignmentOperationMetadata
       // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata)
       com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+      return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicyAssignmentOperationMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+      return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicyAssignmentOperationMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata.class,
@@ -1074,7 +1074,7 @@ public final class OSPolicyAssignmentOperationMetadata
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+      return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicyAssignmentOperationMetadata_descriptor;
     }
 

@@ -112,14 +112,14 @@ public final class ListOSPolicyAssignmentRevisionsRequest
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+    return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
         .internal_static_google_cloud_osconfig_v1alpha_ListOSPolicyAssignmentRevisionsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+    return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
         .internal_static_google_cloud_osconfig_v1alpha_ListOSPolicyAssignmentRevisionsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsRequest.class,
@@ -444,14 +444,14 @@ public final class ListOSPolicyAssignmentRevisionsRequest
       // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsRequest)
       com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+      return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
           .internal_static_google_cloud_osconfig_v1alpha_ListOSPolicyAssignmentRevisionsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+      return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
           .internal_static_google_cloud_osconfig_v1alpha_ListOSPolicyAssignmentRevisionsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsRequest.class,
@@ -488,7 +488,7 @@ public final class ListOSPolicyAssignmentRevisionsRequest
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+      return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
           .internal_static_google_cloud_osconfig_v1alpha_ListOSPolicyAssignmentRevisionsRequest_descriptor;
     }
 

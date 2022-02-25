@@ -116,14 +116,14 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+    return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
         .internal_static_google_cloud_osconfig_v1alpha_ListOSPolicyAssignmentsResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+    return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
         .internal_static_google_cloud_osconfig_v1alpha_ListOSPolicyAssignmentsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentsResponse.class,
@@ -442,14 +442,14 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentsResponse)
       com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentsResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+      return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
           .internal_static_google_cloud_osconfig_v1alpha_ListOSPolicyAssignmentsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+      return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
           .internal_static_google_cloud_osconfig_v1alpha_ListOSPolicyAssignmentsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentsResponse.class,
@@ -489,7 +489,7 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+      return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
           .internal_static_google_cloud_osconfig_v1alpha_ListOSPolicyAssignmentsResponse_descriptor;
     }
 

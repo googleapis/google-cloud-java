@@ -18,6 +18,7 @@ package com.google.cloud.osconfig.v1alpha;
 
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListInstanceOSPoliciesCompliancesPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListInventoriesPagedResponse;
+import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentReportsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentRevisionsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListVulnerabilityReportsPagedResponse;
@@ -104,6 +105,7 @@ public class OsConfigZonalServiceClientTest {
             .setRollout(OSPolicyAssignment.Rollout.newBuilder().build())
             .setRevisionId("revisionId-1507445162")
             .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .setBaseline(true)
             .setDeleted(true)
             .setReconciling(true)
@@ -172,6 +174,7 @@ public class OsConfigZonalServiceClientTest {
             .setRollout(OSPolicyAssignment.Rollout.newBuilder().build())
             .setRevisionId("revisionId-1507445162")
             .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .setBaseline(true)
             .setDeleted(true)
             .setReconciling(true)
@@ -240,6 +243,7 @@ public class OsConfigZonalServiceClientTest {
             .setRollout(OSPolicyAssignment.Rollout.newBuilder().build())
             .setRevisionId("revisionId-1507445162")
             .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .setBaseline(true)
             .setDeleted(true)
             .setReconciling(true)
@@ -303,6 +307,7 @@ public class OsConfigZonalServiceClientTest {
             .setRollout(OSPolicyAssignment.Rollout.newBuilder().build())
             .setRevisionId("revisionId-1507445162")
             .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .setBaseline(true)
             .setDeleted(true)
             .setReconciling(true)
@@ -356,6 +361,7 @@ public class OsConfigZonalServiceClientTest {
             .setRollout(OSPolicyAssignment.Rollout.newBuilder().build())
             .setRevisionId("revisionId-1507445162")
             .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .setBaseline(true)
             .setDeleted(true)
             .setReconciling(true)
@@ -858,6 +864,203 @@ public class OsConfigZonalServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listInstanceOSPoliciesCompliances(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getOSPolicyAssignmentReportTest() throws Exception {
+    OSPolicyAssignmentReport expectedResponse =
+        OSPolicyAssignmentReport.newBuilder()
+            .setName(
+                OSPolicyAssignmentReportName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]")
+                    .toString())
+            .setInstance("instance555127957")
+            .setOsPolicyAssignment(
+                OSPolicyAssignmentName.of("[PROJECT]", "[LOCATION]", "[OS_POLICY_ASSIGNMENT]")
+                    .toString())
+            .addAllOsPolicyCompliances(new ArrayList<OSPolicyAssignmentReport.OSPolicyCompliance>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunId("lastRunId2001336336")
+            .build();
+    mockOsConfigZonalService.addResponse(expectedResponse);
+
+    OSPolicyAssignmentReportName name =
+        OSPolicyAssignmentReportName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]");
+
+    OSPolicyAssignmentReport actualResponse = client.getOSPolicyAssignmentReport(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOsConfigZonalService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetOSPolicyAssignmentReportRequest actualRequest =
+        ((GetOSPolicyAssignmentReportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getOSPolicyAssignmentReportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOsConfigZonalService.addException(exception);
+
+    try {
+      OSPolicyAssignmentReportName name =
+          OSPolicyAssignmentReportName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]");
+      client.getOSPolicyAssignmentReport(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getOSPolicyAssignmentReportTest2() throws Exception {
+    OSPolicyAssignmentReport expectedResponse =
+        OSPolicyAssignmentReport.newBuilder()
+            .setName(
+                OSPolicyAssignmentReportName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]")
+                    .toString())
+            .setInstance("instance555127957")
+            .setOsPolicyAssignment(
+                OSPolicyAssignmentName.of("[PROJECT]", "[LOCATION]", "[OS_POLICY_ASSIGNMENT]")
+                    .toString())
+            .addAllOsPolicyCompliances(new ArrayList<OSPolicyAssignmentReport.OSPolicyCompliance>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunId("lastRunId2001336336")
+            .build();
+    mockOsConfigZonalService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    OSPolicyAssignmentReport actualResponse = client.getOSPolicyAssignmentReport(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOsConfigZonalService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetOSPolicyAssignmentReportRequest actualRequest =
+        ((GetOSPolicyAssignmentReportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getOSPolicyAssignmentReportExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOsConfigZonalService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getOSPolicyAssignmentReport(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listOSPolicyAssignmentReportsTest() throws Exception {
+    OSPolicyAssignmentReport responsesElement = OSPolicyAssignmentReport.newBuilder().build();
+    ListOSPolicyAssignmentReportsResponse expectedResponse =
+        ListOSPolicyAssignmentReportsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOsPolicyAssignmentReports(Arrays.asList(responsesElement))
+            .build();
+    mockOsConfigZonalService.addResponse(expectedResponse);
+
+    InstanceOSPolicyAssignmentName parent =
+        InstanceOSPolicyAssignmentName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]");
+
+    ListOSPolicyAssignmentReportsPagedResponse pagedListResponse =
+        client.listOSPolicyAssignmentReports(parent);
+
+    List<OSPolicyAssignmentReport> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getOsPolicyAssignmentReportsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOsConfigZonalService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListOSPolicyAssignmentReportsRequest actualRequest =
+        ((ListOSPolicyAssignmentReportsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listOSPolicyAssignmentReportsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOsConfigZonalService.addException(exception);
+
+    try {
+      InstanceOSPolicyAssignmentName parent =
+          InstanceOSPolicyAssignmentName.of(
+              "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]");
+      client.listOSPolicyAssignmentReports(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listOSPolicyAssignmentReportsTest2() throws Exception {
+    OSPolicyAssignmentReport responsesElement = OSPolicyAssignmentReport.newBuilder().build();
+    ListOSPolicyAssignmentReportsResponse expectedResponse =
+        ListOSPolicyAssignmentReportsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOsPolicyAssignmentReports(Arrays.asList(responsesElement))
+            .build();
+    mockOsConfigZonalService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListOSPolicyAssignmentReportsPagedResponse pagedListResponse =
+        client.listOSPolicyAssignmentReports(parent);
+
+    List<OSPolicyAssignmentReport> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getOsPolicyAssignmentReportsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOsConfigZonalService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListOSPolicyAssignmentReportsRequest actualRequest =
+        ((ListOSPolicyAssignmentReportsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listOSPolicyAssignmentReportsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOsConfigZonalService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listOSPolicyAssignmentReports(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

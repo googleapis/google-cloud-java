@@ -137,14 +137,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+    return com.google.cloud.osconfig.v1alpha.OsPolicyProto
         .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+    return com.google.cloud.osconfig.v1alpha.OsPolicyProto
         .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.osconfig.v1alpha.OSPolicy.class,
@@ -383,8 +383,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The `OSFilter` is used to specify the OS filtering criteria for the
-   * resource group.
+   * Filtering criteria to select VMs based on OS details.
    * </pre>
    *
    * Protobuf type {@code google.cloud.osconfig.v1alpha.OSPolicy.OSFilter}
@@ -467,14 +466,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+      return com.google.cloud.osconfig.v1alpha.OsPolicyProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_OSFilter_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+      return com.google.cloud.osconfig.v1alpha.OsPolicyProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_OSFilter_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter.class,
@@ -763,8 +762,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `OSFilter` is used to specify the OS filtering criteria for the
-     * resource group.
+     * Filtering criteria to select VMs based on OS details.
      * </pre>
      *
      * Protobuf type {@code google.cloud.osconfig.v1alpha.OSPolicy.OSFilter}
@@ -775,14 +773,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.OSFilter)
         com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilterOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_OSFilter_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_OSFilter_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter.class,
@@ -815,7 +813,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_OSFilter_descriptor;
       }
 
@@ -1218,6 +1216,902 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface InventoryFilterOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The OS short name
+     * </pre>
+     *
+     * <code>string os_short_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The osShortName.
+     */
+    java.lang.String getOsShortName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The OS short name
+     * </pre>
+     *
+     * <code>string os_short_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for osShortName.
+     */
+    com.google.protobuf.ByteString getOsShortNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The OS version
+     * Prefix matches are supported if asterisk(*) is provided as the
+     * last character. For example, to match all versions with a major
+     * version of `7`, specify the following value for this field `7.*`
+     * An empty string matches all OS versions.
+     * </pre>
+     *
+     * <code>string os_version = 2;</code>
+     *
+     * @return The osVersion.
+     */
+    java.lang.String getOsVersion();
+    /**
+     *
+     *
+     * <pre>
+     * The OS version
+     * Prefix matches are supported if asterisk(*) is provided as the
+     * last character. For example, to match all versions with a major
+     * version of `7`, specify the following value for this field `7.*`
+     * An empty string matches all OS versions.
+     * </pre>
+     *
+     * <code>string os_version = 2;</code>
+     *
+     * @return The bytes for osVersion.
+     */
+    com.google.protobuf.ByteString getOsVersionBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Filtering criteria to select VMs based on inventory details.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter}
+   */
+  public static final class InventoryFilter extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter)
+      InventoryFilterOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use InventoryFilter.newBuilder() to construct.
+    private InventoryFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InventoryFilter() {
+      osShortName_ = "";
+      osVersion_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new InventoryFilter();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private InventoryFilter(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                osShortName_ = s;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                osVersion_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.osconfig.v1alpha.OsPolicyProto
+          .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_InventoryFilter_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.osconfig.v1alpha.OsPolicyProto
+          .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_InventoryFilter_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.class,
+              com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.Builder.class);
+    }
+
+    public static final int OS_SHORT_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object osShortName_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The OS short name
+     * </pre>
+     *
+     * <code>string os_short_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The osShortName.
+     */
+    @java.lang.Override
+    public java.lang.String getOsShortName() {
+      java.lang.Object ref = osShortName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osShortName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The OS short name
+     * </pre>
+     *
+     * <code>string os_short_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for osShortName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOsShortNameBytes() {
+      java.lang.Object ref = osShortName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        osShortName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OS_VERSION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object osVersion_;
+    /**
+     *
+     *
+     * <pre>
+     * The OS version
+     * Prefix matches are supported if asterisk(*) is provided as the
+     * last character. For example, to match all versions with a major
+     * version of `7`, specify the following value for this field `7.*`
+     * An empty string matches all OS versions.
+     * </pre>
+     *
+     * <code>string os_version = 2;</code>
+     *
+     * @return The osVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getOsVersion() {
+      java.lang.Object ref = osVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The OS version
+     * Prefix matches are supported if asterisk(*) is provided as the
+     * last character. For example, to match all versions with a major
+     * version of `7`, specify the following value for this field `7.*`
+     * An empty string matches all OS versions.
+     * </pre>
+     *
+     * <code>string os_version = 2;</code>
+     *
+     * @return The bytes for osVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOsVersionBytes() {
+      java.lang.Object ref = osVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        osVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(osShortName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, osShortName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(osVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, osVersion_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(osShortName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, osShortName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(osVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, osVersion_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter other =
+          (com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter) obj;
+
+      if (!getOsShortName().equals(other.getOsShortName())) return false;
+      if (!getOsVersion().equals(other.getOsVersion())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OS_SHORT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getOsShortName().hashCode();
+      hash = (37 * hash) + OS_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getOsVersion().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filtering criteria to select VMs based on inventory details.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter)
+        com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
+            .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_InventoryFilter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
+            .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_InventoryFilter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.class,
+                com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.Builder.class);
+      }
+
+      // Construct using com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        osShortName_ = "";
+
+        osVersion_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
+            .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_InventoryFilter_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter
+          getDefaultInstanceForType() {
+        return com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter build() {
+        com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter buildPartial() {
+        com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter result =
+            new com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter(this);
+        result.osShortName_ = osShortName_;
+        result.osVersion_ = osVersion_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter) {
+          return mergeFrom((com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter other) {
+        if (other
+            == com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.getDefaultInstance())
+          return this;
+        if (!other.getOsShortName().isEmpty()) {
+          osShortName_ = other.osShortName_;
+          onChanged();
+        }
+        if (!other.getOsVersion().isEmpty()) {
+          osVersion_ = other.osVersion_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object osShortName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The OS short name
+       * </pre>
+       *
+       * <code>string os_short_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The osShortName.
+       */
+      public java.lang.String getOsShortName() {
+        java.lang.Object ref = osShortName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osShortName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The OS short name
+       * </pre>
+       *
+       * <code>string os_short_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for osShortName.
+       */
+      public com.google.protobuf.ByteString getOsShortNameBytes() {
+        java.lang.Object ref = osShortName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          osShortName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The OS short name
+       * </pre>
+       *
+       * <code>string os_short_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The osShortName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOsShortName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        osShortName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The OS short name
+       * </pre>
+       *
+       * <code>string os_short_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOsShortName() {
+
+        osShortName_ = getDefaultInstance().getOsShortName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The OS short name
+       * </pre>
+       *
+       * <code>string os_short_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for osShortName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOsShortNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        osShortName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object osVersion_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The OS version
+       * Prefix matches are supported if asterisk(*) is provided as the
+       * last character. For example, to match all versions with a major
+       * version of `7`, specify the following value for this field `7.*`
+       * An empty string matches all OS versions.
+       * </pre>
+       *
+       * <code>string os_version = 2;</code>
+       *
+       * @return The osVersion.
+       */
+      public java.lang.String getOsVersion() {
+        java.lang.Object ref = osVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The OS version
+       * Prefix matches are supported if asterisk(*) is provided as the
+       * last character. For example, to match all versions with a major
+       * version of `7`, specify the following value for this field `7.*`
+       * An empty string matches all OS versions.
+       * </pre>
+       *
+       * <code>string os_version = 2;</code>
+       *
+       * @return The bytes for osVersion.
+       */
+      public com.google.protobuf.ByteString getOsVersionBytes() {
+        java.lang.Object ref = osVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          osVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The OS version
+       * Prefix matches are supported if asterisk(*) is provided as the
+       * last character. For example, to match all versions with a major
+       * version of `7`, specify the following value for this field `7.*`
+       * An empty string matches all OS versions.
+       * </pre>
+       *
+       * <code>string os_version = 2;</code>
+       *
+       * @param value The osVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOsVersion(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        osVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The OS version
+       * Prefix matches are supported if asterisk(*) is provided as the
+       * last character. For example, to match all versions with a major
+       * version of `7`, specify the following value for this field `7.*`
+       * An empty string matches all OS versions.
+       * </pre>
+       *
+       * <code>string os_version = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOsVersion() {
+
+        osVersion_ = getDefaultInstance().getOsVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The OS version
+       * Prefix matches are supported if asterisk(*) is provided as the
+       * last character. For example, to match all versions with a major
+       * version of `7`, specify the following value for this field `7.*`
+       * An empty string matches all OS versions.
+       * </pre>
+       *
+       * <code>string os_version = 2;</code>
+       *
+       * @param value The bytes for osVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOsVersionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        osVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter)
+    private static final com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter();
+    }
+
+    public static com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InventoryFilter> PARSER =
+        new com.google.protobuf.AbstractParser<InventoryFilter>() {
+          @java.lang.Override
+          public InventoryFilter parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new InventoryFilter(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<InventoryFilter> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InventoryFilter> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ResourceOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1alpha.OSPolicy.Resource)
@@ -1582,14 +2476,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+      return com.google.cloud.osconfig.v1alpha.OsPolicyProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+      return com.google.cloud.osconfig.v1alpha.OsPolicyProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.class,
@@ -1851,14 +2745,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.File.class,
@@ -2010,14 +2904,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_Remote_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_Remote_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.File.Remote.class,
@@ -2313,14 +3207,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.File.Remote)
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.File.RemoteOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_Remote_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_Remote_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.File.Remote.class,
@@ -2354,7 +3248,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_Remote_descriptor;
           }
 
@@ -2907,14 +3801,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_Gcs_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_Gcs_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.File.Gcs.class,
@@ -3235,14 +4129,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.File.Gcs)
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.File.GcsOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_Gcs_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_Gcs_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.File.Gcs.class,
@@ -3278,7 +4172,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_Gcs_descriptor;
           }
 
@@ -4196,14 +5090,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.File)
           com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.FileOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.File.class,
@@ -4236,7 +5130,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_File_descriptor;
         }
 
@@ -5634,14 +6528,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.class,
@@ -5969,14 +6863,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_Deb_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_Deb_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.Deb.class,
@@ -6262,14 +7156,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.Deb)
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.DebOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_Deb_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_Deb_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.Deb.class,
@@ -6308,7 +7202,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_Deb_descriptor;
           }
 
@@ -6871,14 +7765,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_APT_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_APT_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.APT.class,
@@ -7126,14 +8020,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.APT)
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.APTOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_APT_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_APT_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.APT.class,
@@ -7167,7 +8061,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_APT_descriptor;
           }
 
@@ -7605,14 +8499,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_RPM_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_RPM_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.RPM.class,
@@ -7899,14 +8793,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.RPM)
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.RPMOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_RPM_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_RPM_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.RPM.class,
@@ -7946,7 +8840,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_RPM_descriptor;
           }
 
@@ -8509,14 +9403,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_YUM_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_YUM_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.YUM.class,
@@ -8764,14 +9658,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.YUM)
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.YUMOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_YUM_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_YUM_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.YUM.class,
@@ -8805,7 +9699,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_YUM_descriptor;
           }
 
@@ -9200,14 +10094,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_Zypper_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_Zypper_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.Zypper.class,
@@ -9456,14 +10350,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.Zypper)
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.ZypperOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_Zypper_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_Zypper_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.Zypper
@@ -9497,7 +10391,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_Zypper_descriptor;
           }
 
@@ -9896,14 +10790,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_GooGet_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_GooGet_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.GooGet.class,
@@ -10152,14 +11046,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.GooGet)
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.GooGetOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_GooGet_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_GooGet_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.GooGet
@@ -10193,7 +11087,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_GooGet_descriptor;
           }
 
@@ -10693,14 +11587,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_MSI_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_MSI_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.MSI.class,
@@ -11046,14 +11940,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.MSI)
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.MSIOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_MSI_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_MSI_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.MSI.class,
@@ -11093,7 +11987,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_MSI_descriptor;
           }
 
@@ -12532,14 +13426,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource)
           com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResourceOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.PackageResource.class,
@@ -12574,7 +13468,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_PackageResource_descriptor;
         }
 
@@ -14974,14 +15868,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource.class,
@@ -15279,14 +16173,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_AptRepository_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_AptRepository_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource
@@ -15981,14 +16875,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource
                 .AptRepositoryOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_AptRepository_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_AptRepository_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource
@@ -16030,7 +16924,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_AptRepository_descriptor;
           }
 
@@ -17115,14 +18009,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_YumRepository_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_YumRepository_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource
@@ -17589,14 +18483,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource
                 .YumRepositoryOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_YumRepository_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_YumRepository_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource
@@ -17636,7 +18530,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_YumRepository_descriptor;
           }
 
@@ -18606,14 +19500,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_ZypperRepository_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_ZypperRepository_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource
@@ -19080,14 +19974,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource
                 .ZypperRepositoryOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_ZypperRepository_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_ZypperRepository_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource
@@ -19127,7 +20021,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_ZypperRepository_descriptor;
           }
 
@@ -19994,14 +20888,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_GooRepository_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_GooRepository_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource
@@ -20327,14 +21221,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource
                 .GooRepositoryOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_GooRepository_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_GooRepository_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource
@@ -20370,7 +21264,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_GooRepository_descriptor;
           }
 
@@ -21364,14 +22258,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource)
           com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResourceOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.RepositoryResource.class,
@@ -21404,7 +22298,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_RepositoryResource_descriptor;
         }
 
@@ -22927,14 +23821,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_ExecResource_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_ExecResource_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.class,
@@ -23271,14 +24165,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_ExecResource_Exec_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_ExecResource_Exec_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec.class,
@@ -23301,7 +24195,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Defaults to NONE.
+           * Invalid value, the request will return validation error.
            * </pre>
            *
            * <code>INTERPRETER_UNSPECIFIED = 0;</code>
@@ -23311,11 +24205,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * If no interpreter is specified the
-           * source will be executed directly, which will likely only
-           * succeed for executables and scripts with shebang lines.
-           * [Wikipedia
-           * shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)).
+           * If an interpreter is not specified, the
+           * source is executed directly. This execution, without an
+           * interpreter, only succeeds for executables and scripts that have &lt;a
+           * href="https://en.wikipedia.org/wiki/Shebang_(Unix)"
+           * class="external"&gt;shebang lines&lt;/a&gt;.
            * </pre>
            *
            * <code>NONE = 1;</code>
@@ -23325,8 +24219,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Indicates that the script will be run with /bin/sh on Linux and
-           * cmd.exe on windows.
+           * Indicates that the script runs with `/bin/sh` on Linux and
+           * `cmd.exe` on Windows.
            * </pre>
            *
            * <code>SHELL = 2;</code>
@@ -23336,7 +24230,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Indicates that the script will be run with powershell.
+           * Indicates that the script runs with PowerShell.
            * </pre>
            *
            * <code>POWERSHELL = 3;</code>
@@ -23349,7 +24243,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Defaults to NONE.
+           * Invalid value, the request will return validation error.
            * </pre>
            *
            * <code>INTERPRETER_UNSPECIFIED = 0;</code>
@@ -23359,11 +24253,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * If no interpreter is specified the
-           * source will be executed directly, which will likely only
-           * succeed for executables and scripts with shebang lines.
-           * [Wikipedia
-           * shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)).
+           * If an interpreter is not specified, the
+           * source is executed directly. This execution, without an
+           * interpreter, only succeeds for executables and scripts that have &lt;a
+           * href="https://en.wikipedia.org/wiki/Shebang_(Unix)"
+           * class="external"&gt;shebang lines&lt;/a&gt;.
            * </pre>
            *
            * <code>NONE = 1;</code>
@@ -23373,8 +24267,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Indicates that the script will be run with /bin/sh on Linux and
-           * cmd.exe on windows.
+           * Indicates that the script runs with `/bin/sh` on Linux and
+           * `cmd.exe` on Windows.
            * </pre>
            *
            * <code>SHELL = 2;</code>
@@ -23384,7 +24278,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Indicates that the script will be run with powershell.
+           * Indicates that the script runs with PowerShell.
            * </pre>
            *
            * <code>POWERSHELL = 3;</code>
@@ -24077,14 +24971,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec)
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.ExecOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_ExecResource_Exec_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_ExecResource_Exec_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec.class,
@@ -24123,7 +25017,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+            return com.google.cloud.osconfig.v1alpha.OsPolicyProto
                 .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_ExecResource_Exec_descriptor;
           }
 
@@ -25466,14 +26360,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource)
           com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResourceOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_ExecResource_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_ExecResource_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.class,
@@ -25515,7 +26409,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_ExecResource_descriptor;
         }
 
@@ -26464,14 +27358,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_FileResource_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_FileResource_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.FileResource.class,
@@ -27241,14 +28135,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource.FileResource)
           com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.FileResourceOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_FileResource_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_FileResource_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.FileResource.class,
@@ -27286,7 +28180,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-          return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+          return com.google.cloud.osconfig.v1alpha.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_FileResource_descriptor;
         }
 
@@ -28824,14 +29718,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.Resource)
         com.google.cloud.osconfig.v1alpha.OSPolicy.ResourceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.class,
@@ -28864,7 +29758,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_descriptor;
       }
 
@@ -30138,36 +31032,149 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Use the `inventory_filters` field instead.
      * Used to specify the OS filter for a resource group
      * </pre>
      *
-     * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+     * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+     * </code>
      *
      * @return Whether the osFilter field is set.
      */
+    @java.lang.Deprecated
     boolean hasOsFilter();
     /**
      *
      *
      * <pre>
+     * Deprecated. Use the `inventory_filters` field instead.
      * Used to specify the OS filter for a resource group
      * </pre>
      *
-     * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+     * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+     * </code>
      *
      * @return The osFilter.
      */
+    @java.lang.Deprecated
     com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter getOsFilter();
     /**
      *
      *
      * <pre>
+     * Deprecated. Use the `inventory_filters` field instead.
      * Used to specify the OS filter for a resource group
      * </pre>
      *
-     * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+     * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilterOrBuilder getOsFilterOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of inventory filters for the resource group.
+     * The resources in this resource group are applied to the target VM if it
+     * satisfies at least one of the following inventory filters.
+     * For example, to apply this resource group to VMs running either `RHEL` or
+     * `CentOS` operating systems, specify 2 items for the list with following
+     * values:
+     * inventory_filters[0].os_short_name='rhel' and
+     * inventory_filters[1].os_short_name='centos'
+     * If the list is empty, this resource group will be applied to the target
+     * VM unconditionally.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+     * </code>
+     */
+    java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter>
+        getInventoryFiltersList();
+    /**
+     *
+     *
+     * <pre>
+     * List of inventory filters for the resource group.
+     * The resources in this resource group are applied to the target VM if it
+     * satisfies at least one of the following inventory filters.
+     * For example, to apply this resource group to VMs running either `RHEL` or
+     * `CentOS` operating systems, specify 2 items for the list with following
+     * values:
+     * inventory_filters[0].os_short_name='rhel' and
+     * inventory_filters[1].os_short_name='centos'
+     * If the list is empty, this resource group will be applied to the target
+     * VM unconditionally.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+     * </code>
+     */
+    com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter getInventoryFilters(int index);
+    /**
+     *
+     *
+     * <pre>
+     * List of inventory filters for the resource group.
+     * The resources in this resource group are applied to the target VM if it
+     * satisfies at least one of the following inventory filters.
+     * For example, to apply this resource group to VMs running either `RHEL` or
+     * `CentOS` operating systems, specify 2 items for the list with following
+     * values:
+     * inventory_filters[0].os_short_name='rhel' and
+     * inventory_filters[1].os_short_name='centos'
+     * If the list is empty, this resource group will be applied to the target
+     * VM unconditionally.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+     * </code>
+     */
+    int getInventoryFiltersCount();
+    /**
+     *
+     *
+     * <pre>
+     * List of inventory filters for the resource group.
+     * The resources in this resource group are applied to the target VM if it
+     * satisfies at least one of the following inventory filters.
+     * For example, to apply this resource group to VMs running either `RHEL` or
+     * `CentOS` operating systems, specify 2 items for the list with following
+     * values:
+     * inventory_filters[0].os_short_name='rhel' and
+     * inventory_filters[1].os_short_name='centos'
+     * If the list is empty, this resource group will be applied to the target
+     * VM unconditionally.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilterOrBuilder>
+        getInventoryFiltersOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * List of inventory filters for the resource group.
+     * The resources in this resource group are applied to the target VM if it
+     * satisfies at least one of the following inventory filters.
+     * For example, to apply this resource group to VMs running either `RHEL` or
+     * `CentOS` operating systems, specify 2 items for the list with following
+     * values:
+     * inventory_filters[0].os_short_name='rhel' and
+     * inventory_filters[1].os_short_name='centos'
+     * If the list is empty, this resource group will be applied to the target
+     * VM unconditionally.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+     * </code>
+     */
+    com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilterOrBuilder
+        getInventoryFiltersOrBuilder(int index);
 
     /**
      *
@@ -30261,6 +31268,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private ResourceGroup() {
+      inventoryFilters_ = java.util.Collections.emptyList();
       resources_ = java.util.Collections.emptyList();
     }
 
@@ -30313,15 +31321,29 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   resources_ =
                       new java.util.ArrayList<
                           com.google.cloud.osconfig.v1alpha.OSPolicy.Resource>();
-                  mutable_bitField0_ |= 0x00000001;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 resources_.add(
                     input.readMessage(
                         com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.parser(),
+                        extensionRegistry));
+                break;
+              }
+            case 26:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  inventoryFilters_ =
+                      new java.util.ArrayList<
+                          com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                inventoryFilters_.add(
+                    input.readMessage(
+                        com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.parser(),
                         extensionRegistry));
                 break;
               }
@@ -30339,8 +31361,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           resources_ = java.util.Collections.unmodifiableList(resources_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          inventoryFilters_ = java.util.Collections.unmodifiableList(inventoryFilters_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -30348,14 +31373,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+      return com.google.cloud.osconfig.v1alpha.OsPolicyProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_ResourceGroup_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+      return com.google.cloud.osconfig.v1alpha.OsPolicyProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_ResourceGroup_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroup.class,
@@ -30368,14 +31393,17 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Use the `inventory_filters` field instead.
      * Used to specify the OS filter for a resource group
      * </pre>
      *
-     * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+     * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+     * </code>
      *
      * @return Whether the osFilter field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasOsFilter() {
       return osFilter_ != null;
     }
@@ -30383,14 +31411,17 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Use the `inventory_filters` field instead.
      * Used to specify the OS filter for a resource group
      * </pre>
      *
-     * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+     * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+     * </code>
      *
      * @return The osFilter.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter getOsFilter() {
       return osFilter_ == null
           ? com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter.getDefaultInstance()
@@ -30400,14 +31431,141 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Use the `inventory_filters` field instead.
      * Used to specify the OS filter for a resource group
      * </pre>
      *
-     * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+     * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilterOrBuilder getOsFilterOrBuilder() {
       return getOsFilter();
+    }
+
+    public static final int INVENTORY_FILTERS_FIELD_NUMBER = 3;
+    private java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter>
+        inventoryFilters_;
+    /**
+     *
+     *
+     * <pre>
+     * List of inventory filters for the resource group.
+     * The resources in this resource group are applied to the target VM if it
+     * satisfies at least one of the following inventory filters.
+     * For example, to apply this resource group to VMs running either `RHEL` or
+     * `CentOS` operating systems, specify 2 items for the list with following
+     * values:
+     * inventory_filters[0].os_short_name='rhel' and
+     * inventory_filters[1].os_short_name='centos'
+     * If the list is empty, this resource group will be applied to the target
+     * VM unconditionally.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter>
+        getInventoryFiltersList() {
+      return inventoryFilters_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of inventory filters for the resource group.
+     * The resources in this resource group are applied to the target VM if it
+     * satisfies at least one of the following inventory filters.
+     * For example, to apply this resource group to VMs running either `RHEL` or
+     * `CentOS` operating systems, specify 2 items for the list with following
+     * values:
+     * inventory_filters[0].os_short_name='rhel' and
+     * inventory_filters[1].os_short_name='centos'
+     * If the list is empty, this resource group will be applied to the target
+     * VM unconditionally.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilterOrBuilder>
+        getInventoryFiltersOrBuilderList() {
+      return inventoryFilters_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of inventory filters for the resource group.
+     * The resources in this resource group are applied to the target VM if it
+     * satisfies at least one of the following inventory filters.
+     * For example, to apply this resource group to VMs running either `RHEL` or
+     * `CentOS` operating systems, specify 2 items for the list with following
+     * values:
+     * inventory_filters[0].os_short_name='rhel' and
+     * inventory_filters[1].os_short_name='centos'
+     * If the list is empty, this resource group will be applied to the target
+     * VM unconditionally.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public int getInventoryFiltersCount() {
+      return inventoryFilters_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of inventory filters for the resource group.
+     * The resources in this resource group are applied to the target VM if it
+     * satisfies at least one of the following inventory filters.
+     * For example, to apply this resource group to VMs running either `RHEL` or
+     * `CentOS` operating systems, specify 2 items for the list with following
+     * values:
+     * inventory_filters[0].os_short_name='rhel' and
+     * inventory_filters[1].os_short_name='centos'
+     * If the list is empty, this resource group will be applied to the target
+     * VM unconditionally.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter getInventoryFilters(
+        int index) {
+      return inventoryFilters_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of inventory filters for the resource group.
+     * The resources in this resource group are applied to the target VM if it
+     * satisfies at least one of the following inventory filters.
+     * For example, to apply this resource group to VMs running either `RHEL` or
+     * `CentOS` operating systems, specify 2 items for the list with following
+     * values:
+     * inventory_filters[0].os_short_name='rhel' and
+     * inventory_filters[1].os_short_name='centos'
+     * If the list is empty, this resource group will be applied to the target
+     * VM unconditionally.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilterOrBuilder
+        getInventoryFiltersOrBuilder(int index) {
+      return inventoryFilters_.get(index);
     }
 
     public static final int RESOURCES_FIELD_NUMBER = 2;
@@ -30515,6 +31673,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < resources_.size(); i++) {
         output.writeMessage(2, resources_.get(i));
       }
+      for (int i = 0; i < inventoryFilters_.size(); i++) {
+        output.writeMessage(3, inventoryFilters_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -30529,6 +31690,10 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       for (int i = 0; i < resources_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, resources_.get(i));
+      }
+      for (int i = 0; i < inventoryFilters_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, inventoryFilters_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -30550,6 +31715,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       if (hasOsFilter()) {
         if (!getOsFilter().equals(other.getOsFilter())) return false;
       }
+      if (!getInventoryFiltersList().equals(other.getInventoryFiltersList())) return false;
       if (!getResourcesList().equals(other.getResourcesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -30565,6 +31731,10 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       if (hasOsFilter()) {
         hash = (37 * hash) + OS_FILTER_FIELD_NUMBER;
         hash = (53 * hash) + getOsFilter().hashCode();
+      }
+      if (getInventoryFiltersCount() > 0) {
+        hash = (37 * hash) + INVENTORY_FILTERS_FIELD_NUMBER;
+        hash = (53 * hash) + getInventoryFiltersList().hashCode();
       }
       if (getResourcesCount() > 0) {
         hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
@@ -30692,14 +31862,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroup)
         com.google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroupOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_ResourceGroup_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_ResourceGroup_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroup.class,
@@ -30718,6 +31888,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getInventoryFiltersFieldBuilder();
           getResourcesFieldBuilder();
         }
       }
@@ -30731,9 +31902,15 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           osFilter_ = null;
           osFilterBuilder_ = null;
         }
+        if (inventoryFiltersBuilder_ == null) {
+          inventoryFilters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          inventoryFiltersBuilder_.clear();
+        }
         if (resourcesBuilder_ == null) {
           resources_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           resourcesBuilder_.clear();
         }
@@ -30742,7 +31919,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+        return com.google.cloud.osconfig.v1alpha.OsPolicyProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_ResourceGroup_descriptor;
       }
 
@@ -30770,10 +31947,19 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.osFilter_ = osFilterBuilder_.build();
         }
-        if (resourcesBuilder_ == null) {
+        if (inventoryFiltersBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            resources_ = java.util.Collections.unmodifiableList(resources_);
+            inventoryFilters_ = java.util.Collections.unmodifiableList(inventoryFilters_);
             bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.inventoryFilters_ = inventoryFilters_;
+        } else {
+          result.inventoryFilters_ = inventoryFiltersBuilder_.build();
+        }
+        if (resourcesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            resources_ = java.util.Collections.unmodifiableList(resources_);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.resources_ = resources_;
         } else {
@@ -30834,11 +32020,38 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         if (other.hasOsFilter()) {
           mergeOsFilter(other.getOsFilter());
         }
+        if (inventoryFiltersBuilder_ == null) {
+          if (!other.inventoryFilters_.isEmpty()) {
+            if (inventoryFilters_.isEmpty()) {
+              inventoryFilters_ = other.inventoryFilters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureInventoryFiltersIsMutable();
+              inventoryFilters_.addAll(other.inventoryFilters_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.inventoryFilters_.isEmpty()) {
+            if (inventoryFiltersBuilder_.isEmpty()) {
+              inventoryFiltersBuilder_.dispose();
+              inventoryFiltersBuilder_ = null;
+              inventoryFilters_ = other.inventoryFilters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              inventoryFiltersBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getInventoryFiltersFieldBuilder()
+                      : null;
+            } else {
+              inventoryFiltersBuilder_.addAllMessages(other.inventoryFilters_);
+            }
+          }
+        }
         if (resourcesBuilder_ == null) {
           if (!other.resources_.isEmpty()) {
             if (resources_.isEmpty()) {
               resources_ = other.resources_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureResourcesIsMutable();
               resources_.addAll(other.resources_);
@@ -30851,7 +32064,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               resourcesBuilder_.dispose();
               resourcesBuilder_ = null;
               resources_ = other.resources_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               resourcesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getResourcesFieldBuilder()
@@ -30903,13 +32116,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Deprecated. Use the `inventory_filters` field instead.
        * Used to specify the OS filter for a resource group
        * </pre>
        *
-       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+       * </code>
        *
        * @return Whether the osFilter field is set.
        */
+      @java.lang.Deprecated
       public boolean hasOsFilter() {
         return osFilterBuilder_ != null || osFilter_ != null;
       }
@@ -30917,13 +32133,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Deprecated. Use the `inventory_filters` field instead.
        * Used to specify the OS filter for a resource group
        * </pre>
        *
-       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+       * </code>
        *
        * @return The osFilter.
        */
+      @java.lang.Deprecated
       public com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter getOsFilter() {
         if (osFilterBuilder_ == null) {
           return osFilter_ == null
@@ -30937,11 +32156,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Deprecated. Use the `inventory_filters` field instead.
        * Used to specify the OS filter for a resource group
        * </pre>
        *
-       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder setOsFilter(com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter value) {
         if (osFilterBuilder_ == null) {
           if (value == null) {
@@ -30959,11 +32181,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Deprecated. Use the `inventory_filters` field instead.
        * Used to specify the OS filter for a resource group
        * </pre>
        *
-       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder setOsFilter(
           com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter.Builder builderForValue) {
         if (osFilterBuilder_ == null) {
@@ -30979,11 +32204,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Deprecated. Use the `inventory_filters` field instead.
        * Used to specify the OS filter for a resource group
        * </pre>
        *
-       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder mergeOsFilter(com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter value) {
         if (osFilterBuilder_ == null) {
           if (osFilter_ != null) {
@@ -31005,11 +32233,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Deprecated. Use the `inventory_filters` field instead.
        * Used to specify the OS filter for a resource group
        * </pre>
        *
-       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder clearOsFilter() {
         if (osFilterBuilder_ == null) {
           osFilter_ = null;
@@ -31025,11 +32256,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Deprecated. Use the `inventory_filters` field instead.
        * Used to specify the OS filter for a resource group
        * </pre>
        *
-       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter.Builder getOsFilterBuilder() {
 
         onChanged();
@@ -31039,11 +32273,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Deprecated. Use the `inventory_filters` field instead.
        * Used to specify the OS filter for a resource group
        * </pre>
        *
-       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilterOrBuilder getOsFilterOrBuilder() {
         if (osFilterBuilder_ != null) {
           return osFilterBuilder_.getMessageOrBuilder();
@@ -31057,10 +32294,12 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Deprecated. Use the `inventory_filters` field instead.
        * Used to specify the OS filter for a resource group
        * </pre>
        *
-       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1;</code>
+       * <code>.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter os_filter = 1 [deprecated = true];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.osconfig.v1alpha.OSPolicy.OSFilter,
@@ -31079,15 +32318,584 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         return osFilterBuilder_;
       }
 
+      private java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter>
+          inventoryFilters_ = java.util.Collections.emptyList();
+
+      private void ensureInventoryFiltersIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          inventoryFilters_ =
+              new java.util.ArrayList<com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter>(
+                  inventoryFilters_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter,
+              com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.Builder,
+              com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilterOrBuilder>
+          inventoryFiltersBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter>
+          getInventoryFiltersList() {
+        if (inventoryFiltersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(inventoryFilters_);
+        } else {
+          return inventoryFiltersBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public int getInventoryFiltersCount() {
+        if (inventoryFiltersBuilder_ == null) {
+          return inventoryFilters_.size();
+        } else {
+          return inventoryFiltersBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter getInventoryFilters(
+          int index) {
+        if (inventoryFiltersBuilder_ == null) {
+          return inventoryFilters_.get(index);
+        } else {
+          return inventoryFiltersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public Builder setInventoryFilters(
+          int index, com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter value) {
+        if (inventoryFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInventoryFiltersIsMutable();
+          inventoryFilters_.set(index, value);
+          onChanged();
+        } else {
+          inventoryFiltersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public Builder setInventoryFilters(
+          int index,
+          com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.Builder builderForValue) {
+        if (inventoryFiltersBuilder_ == null) {
+          ensureInventoryFiltersIsMutable();
+          inventoryFilters_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          inventoryFiltersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public Builder addInventoryFilters(
+          com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter value) {
+        if (inventoryFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInventoryFiltersIsMutable();
+          inventoryFilters_.add(value);
+          onChanged();
+        } else {
+          inventoryFiltersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public Builder addInventoryFilters(
+          int index, com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter value) {
+        if (inventoryFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInventoryFiltersIsMutable();
+          inventoryFilters_.add(index, value);
+          onChanged();
+        } else {
+          inventoryFiltersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public Builder addInventoryFilters(
+          com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.Builder builderForValue) {
+        if (inventoryFiltersBuilder_ == null) {
+          ensureInventoryFiltersIsMutable();
+          inventoryFilters_.add(builderForValue.build());
+          onChanged();
+        } else {
+          inventoryFiltersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public Builder addInventoryFilters(
+          int index,
+          com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.Builder builderForValue) {
+        if (inventoryFiltersBuilder_ == null) {
+          ensureInventoryFiltersIsMutable();
+          inventoryFilters_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          inventoryFiltersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public Builder addAllInventoryFilters(
+          java.lang.Iterable<? extends com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter>
+              values) {
+        if (inventoryFiltersBuilder_ == null) {
+          ensureInventoryFiltersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inventoryFilters_);
+          onChanged();
+        } else {
+          inventoryFiltersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public Builder clearInventoryFilters() {
+        if (inventoryFiltersBuilder_ == null) {
+          inventoryFilters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          inventoryFiltersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public Builder removeInventoryFilters(int index) {
+        if (inventoryFiltersBuilder_ == null) {
+          ensureInventoryFiltersIsMutable();
+          inventoryFilters_.remove(index);
+          onChanged();
+        } else {
+          inventoryFiltersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.Builder
+          getInventoryFiltersBuilder(int index) {
+        return getInventoryFiltersFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilterOrBuilder
+          getInventoryFiltersOrBuilder(int index) {
+        if (inventoryFiltersBuilder_ == null) {
+          return inventoryFilters_.get(index);
+        } else {
+          return inventoryFiltersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilterOrBuilder>
+          getInventoryFiltersOrBuilderList() {
+        if (inventoryFiltersBuilder_ != null) {
+          return inventoryFiltersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(inventoryFilters_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.Builder
+          addInventoryFiltersBuilder() {
+        return getInventoryFiltersFieldBuilder()
+            .addBuilder(
+                com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.Builder
+          addInventoryFiltersBuilder(int index) {
+        return getInventoryFiltersFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of inventory filters for the resource group.
+       * The resources in this resource group are applied to the target VM if it
+       * satisfies at least one of the following inventory filters.
+       * For example, to apply this resource group to VMs running either `RHEL` or
+       * `CentOS` operating systems, specify 2 items for the list with following
+       * values:
+       * inventory_filters[0].os_short_name='rhel' and
+       * inventory_filters[1].os_short_name='centos'
+       * If the list is empty, this resource group will be applied to the target
+       * VM unconditionally.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter inventory_filters = 3;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.Builder>
+          getInventoryFiltersBuilderList() {
+        return getInventoryFiltersFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter,
+              com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.Builder,
+              com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilterOrBuilder>
+          getInventoryFiltersFieldBuilder() {
+        if (inventoryFiltersBuilder_ == null) {
+          inventoryFiltersBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter,
+                  com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilter.Builder,
+                  com.google.cloud.osconfig.v1alpha.OSPolicy.InventoryFilterOrBuilder>(
+                  inventoryFilters_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          inventoryFilters_ = null;
+        }
+        return inventoryFiltersBuilder_;
+      }
+
       private java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicy.Resource> resources_ =
           java.util.Collections.emptyList();
 
       private void ensureResourcesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           resources_ =
               new java.util.ArrayList<com.google.cloud.osconfig.v1alpha.OSPolicy.Resource>(
                   resources_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -31340,7 +33148,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       public Builder clearResources() {
         if (resourcesBuilder_ == null) {
           resources_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           resourcesBuilder_.clear();
@@ -31487,7 +33295,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource,
                   com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.Builder,
                   com.google.cloud.osconfig.v1alpha.OSPolicy.ResourceOrBuilder>(
-                  resources_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  resources_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           resources_ = null;
         }
         return resourcesBuilder_;
@@ -32038,14 +33846,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.OSPolicy)
       com.google.cloud.osconfig.v1alpha.OSPolicyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+      return com.google.cloud.osconfig.v1alpha.OsPolicyProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+      return com.google.cloud.osconfig.v1alpha.OsPolicyProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.osconfig.v1alpha.OSPolicy.class,
@@ -32090,7 +33898,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyProto
+      return com.google.cloud.osconfig.v1alpha.OsPolicyProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicy_descriptor;
     }
 

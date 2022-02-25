@@ -124,6 +124,15 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
       listPatchDeploymentsSettings;
   private final UnaryCallSettings<PatchDeployments.DeletePatchDeploymentRequest, Empty>
       deletePatchDeploymentSettings;
+  private final UnaryCallSettings<
+          PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      updatePatchDeploymentSettings;
+  private final UnaryCallSettings<
+          PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      pausePatchDeploymentSettings;
+  private final UnaryCallSettings<
+          PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      resumePatchDeploymentSettings;
   private final UnaryCallSettings<GuestPolicies.CreateGuestPolicyRequest, GuestPolicies.GuestPolicy>
       createGuestPolicySettings;
   private final UnaryCallSettings<GuestPolicies.GetGuestPolicyRequest, GuestPolicies.GuestPolicy>
@@ -514,6 +523,27 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     return deletePatchDeploymentSettings;
   }
 
+  /** Returns the object with the settings used for calls to updatePatchDeployment. */
+  public UnaryCallSettings<
+          PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      updatePatchDeploymentSettings() {
+    return updatePatchDeploymentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to pausePatchDeployment. */
+  public UnaryCallSettings<
+          PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      pausePatchDeploymentSettings() {
+    return pausePatchDeploymentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resumePatchDeployment. */
+  public UnaryCallSettings<
+          PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      resumePatchDeploymentSettings() {
+    return resumePatchDeploymentSettings;
+  }
+
   /** Returns the object with the settings used for calls to createGuestPolicy. */
   public UnaryCallSettings<GuestPolicies.CreateGuestPolicyRequest, GuestPolicies.GuestPolicy>
       createGuestPolicySettings() {
@@ -640,6 +670,9 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     getPatchDeploymentSettings = settingsBuilder.getPatchDeploymentSettings().build();
     listPatchDeploymentsSettings = settingsBuilder.listPatchDeploymentsSettings().build();
     deletePatchDeploymentSettings = settingsBuilder.deletePatchDeploymentSettings().build();
+    updatePatchDeploymentSettings = settingsBuilder.updatePatchDeploymentSettings().build();
+    pausePatchDeploymentSettings = settingsBuilder.pausePatchDeploymentSettings().build();
+    resumePatchDeploymentSettings = settingsBuilder.resumePatchDeploymentSettings().build();
     createGuestPolicySettings = settingsBuilder.createGuestPolicySettings().build();
     getGuestPolicySettings = settingsBuilder.getGuestPolicySettings().build();
     listGuestPoliciesSettings = settingsBuilder.listGuestPoliciesSettings().build();
@@ -681,6 +714,15 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
         listPatchDeploymentsSettings;
     private final UnaryCallSettings.Builder<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentSettings;
+    private final UnaryCallSettings.Builder<
+            PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        updatePatchDeploymentSettings;
+    private final UnaryCallSettings.Builder<
+            PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        pausePatchDeploymentSettings;
+    private final UnaryCallSettings.Builder<
+            PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        resumePatchDeploymentSettings;
     private final UnaryCallSettings.Builder<
             GuestPolicies.CreateGuestPolicyRequest, GuestPolicies.GuestPolicy>
         createGuestPolicySettings;
@@ -749,6 +791,9 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
       listPatchDeploymentsSettings =
           PagedCallSettings.newBuilder(LIST_PATCH_DEPLOYMENTS_PAGE_STR_FACT);
       deletePatchDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updatePatchDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      pausePatchDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resumePatchDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createGuestPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getGuestPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listGuestPoliciesSettings = PagedCallSettings.newBuilder(LIST_GUEST_POLICIES_PAGE_STR_FACT);
@@ -767,6 +812,9 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
               getPatchDeploymentSettings,
               listPatchDeploymentsSettings,
               deletePatchDeploymentSettings,
+              updatePatchDeploymentSettings,
+              pausePatchDeploymentSettings,
+              resumePatchDeploymentSettings,
               createGuestPolicySettings,
               getGuestPolicySettings,
               listGuestPoliciesSettings,
@@ -789,6 +837,9 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
       getPatchDeploymentSettings = settings.getPatchDeploymentSettings.toBuilder();
       listPatchDeploymentsSettings = settings.listPatchDeploymentsSettings.toBuilder();
       deletePatchDeploymentSettings = settings.deletePatchDeploymentSettings.toBuilder();
+      updatePatchDeploymentSettings = settings.updatePatchDeploymentSettings.toBuilder();
+      pausePatchDeploymentSettings = settings.pausePatchDeploymentSettings.toBuilder();
+      resumePatchDeploymentSettings = settings.resumePatchDeploymentSettings.toBuilder();
       createGuestPolicySettings = settings.createGuestPolicySettings.toBuilder();
       getGuestPolicySettings = settings.getGuestPolicySettings.toBuilder();
       listGuestPoliciesSettings = settings.listGuestPoliciesSettings.toBuilder();
@@ -807,6 +858,9 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
               getPatchDeploymentSettings,
               listPatchDeploymentsSettings,
               deletePatchDeploymentSettings,
+              updatePatchDeploymentSettings,
+              pausePatchDeploymentSettings,
+              resumePatchDeploymentSettings,
               createGuestPolicySettings,
               getGuestPolicySettings,
               listGuestPoliciesSettings,
@@ -871,6 +925,21 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
 
       builder
           .deletePatchDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updatePatchDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .pausePatchDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .resumePatchDeploymentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -985,6 +1054,27 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     public UnaryCallSettings.Builder<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentSettings() {
       return deletePatchDeploymentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePatchDeployment. */
+    public UnaryCallSettings.Builder<
+            PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        updatePatchDeploymentSettings() {
+      return updatePatchDeploymentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to pausePatchDeployment. */
+    public UnaryCallSettings.Builder<
+            PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        pausePatchDeploymentSettings() {
+      return pausePatchDeploymentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resumePatchDeployment. */
+    public UnaryCallSettings.Builder<
+            PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        resumePatchDeploymentSettings() {
+      return resumePatchDeploymentSettings;
     }
 
     /** Returns the builder for the settings used for calls to createGuestPolicy. */

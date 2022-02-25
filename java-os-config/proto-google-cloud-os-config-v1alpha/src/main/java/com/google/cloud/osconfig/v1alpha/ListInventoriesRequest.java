@@ -148,10 +148,8 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent resource name.
-   * Format: `projects/{project}/locations/{location}/instances/{instance}`
-   * For `{project}`, either `project-number` or `project-id` can be
-   * provided. For `{instance}`, only hyphen or dash character is supported to
-   * list inventories across VMs.
+   * Format: `projects/{project}/locations/{location}/instances/-`
+   * For `{project}`, either `project-number` or `project-id` can be provided.
    * </pre>
    *
    * <code>
@@ -177,10 +175,8 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent resource name.
-   * Format: `projects/{project}/locations/{location}/instances/{instance}`
-   * For `{project}`, either `project-number` or `project-id` can be
-   * provided. For `{instance}`, only hyphen or dash character is supported to
-   * list inventories across VMs.
+   * Format: `projects/{project}/locations/{location}/instances/-`
+   * For `{project}`, either `project-number` or `project-id` can be provided.
    * </pre>
    *
    * <code>
@@ -752,10 +748,8 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name.
-     * Format: `projects/{project}/locations/{location}/instances/{instance}`
-     * For `{project}`, either `project-number` or `project-id` can be
-     * provided. For `{instance}`, only hyphen or dash character is supported to
-     * list inventories across VMs.
+     * Format: `projects/{project}/locations/{location}/instances/-`
+     * For `{project}`, either `project-number` or `project-id` can be provided.
      * </pre>
      *
      * <code>
@@ -780,10 +774,8 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name.
-     * Format: `projects/{project}/locations/{location}/instances/{instance}`
-     * For `{project}`, either `project-number` or `project-id` can be
-     * provided. For `{instance}`, only hyphen or dash character is supported to
-     * list inventories across VMs.
+     * Format: `projects/{project}/locations/{location}/instances/-`
+     * For `{project}`, either `project-number` or `project-id` can be provided.
      * </pre>
      *
      * <code>
@@ -808,10 +800,8 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name.
-     * Format: `projects/{project}/locations/{location}/instances/{instance}`
-     * For `{project}`, either `project-number` or `project-id` can be
-     * provided. For `{instance}`, only hyphen or dash character is supported to
-     * list inventories across VMs.
+     * Format: `projects/{project}/locations/{location}/instances/-`
+     * For `{project}`, either `project-number` or `project-id` can be provided.
      * </pre>
      *
      * <code>
@@ -835,10 +825,8 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name.
-     * Format: `projects/{project}/locations/{location}/instances/{instance}`
-     * For `{project}`, either `project-number` or `project-id` can be
-     * provided. For `{instance}`, only hyphen or dash character is supported to
-     * list inventories across VMs.
+     * Format: `projects/{project}/locations/{location}/instances/-`
+     * For `{project}`, either `project-number` or `project-id` can be provided.
      * </pre>
      *
      * <code>
@@ -858,10 +846,8 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name.
-     * Format: `projects/{project}/locations/{location}/instances/{instance}`
-     * For `{project}`, either `project-number` or `project-id` can be
-     * provided. For `{instance}`, only hyphen or dash character is supported to
-     * list inventories across VMs.
+     * Format: `projects/{project}/locations/{location}/instances/-`
+     * For `{project}`, either `project-number` or `project-id` can be provided.
      * </pre>
      *
      * <code>

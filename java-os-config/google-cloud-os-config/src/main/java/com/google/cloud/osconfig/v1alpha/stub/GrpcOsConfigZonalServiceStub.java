@@ -18,6 +18,7 @@ package com.google.cloud.osconfig.v1alpha.stub;
 
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListInstanceOSPoliciesCompliancesPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListInventoriesPagedResponse;
+import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentReportsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentRevisionsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListVulnerabilityReportsPagedResponse;
@@ -34,6 +35,7 @@ import com.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1alpha.GetInstanceOSPoliciesComplianceRequest;
 import com.google.cloud.osconfig.v1alpha.GetInventoryRequest;
+import com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest;
 import com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1alpha.GetVulnerabilityReportRequest;
 import com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance;
@@ -42,6 +44,8 @@ import com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesReques
 import com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesResponse;
 import com.google.cloud.osconfig.v1alpha.ListInventoriesRequest;
 import com.google.cloud.osconfig.v1alpha.ListInventoriesResponse;
+import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest;
+import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse;
 import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsRequest;
 import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsResponse;
 import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentsRequest;
@@ -50,6 +54,7 @@ import com.google.cloud.osconfig.v1alpha.ListVulnerabilityReportsRequest;
 import com.google.cloud.osconfig.v1alpha.ListVulnerabilityReportsResponse;
 import com.google.cloud.osconfig.v1alpha.OSPolicyAssignment;
 import com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata;
+import com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport;
 import com.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1alpha.VulnerabilityReport;
 import com.google.common.collect.ImmutableMap;
@@ -178,6 +183,35 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       ListInstanceOSPoliciesCompliancesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+      getOSPolicyAssignmentReportMethodDescriptor =
+          MethodDescriptor
+              .<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1alpha.OsConfigZonalService/GetOSPolicyAssignmentReport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetOSPolicyAssignmentReportRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(OSPolicyAssignmentReport.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+      listOSPolicyAssignmentReportsMethodDescriptor =
+          MethodDescriptor
+              .<ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1alpha.OsConfigZonalService/ListOSPolicyAssignmentReports")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListOSPolicyAssignmentReportsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListOSPolicyAssignmentReportsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetInventoryRequest, Inventory>
       getInventoryMethodDescriptor =
           MethodDescriptor.<GetInventoryRequest, Inventory>newBuilder()
@@ -260,6 +294,14 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
   private final UnaryCallable<
           ListInstanceOSPoliciesCompliancesRequest, ListInstanceOSPoliciesCompliancesPagedResponse>
       listInstanceOSPoliciesCompliancesPagedCallable;
+  private final UnaryCallable<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+      getOSPolicyAssignmentReportCallable;
+  private final UnaryCallable<
+          ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+      listOSPolicyAssignmentReportsCallable;
+  private final UnaryCallable<
+          ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsPagedResponse>
+      listOSPolicyAssignmentReportsPagedCallable;
   private final UnaryCallable<GetInventoryRequest, Inventory> getInventoryCallable;
   private final UnaryCallable<ListInventoriesRequest, ListInventoriesResponse>
       listInventoriesCallable;
@@ -416,6 +458,31 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+        getOSPolicyAssignmentReportTransportSettings =
+            GrpcCallSettings
+                .<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>newBuilder()
+                .setMethodDescriptor(getOSPolicyAssignmentReportMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+        listOSPolicyAssignmentReportsTransportSettings =
+            GrpcCallSettings
+                .<ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listOSPolicyAssignmentReportsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GetInventoryRequest, Inventory> getInventoryTransportSettings =
         GrpcCallSettings.<GetInventoryRequest, Inventory>newBuilder()
             .setMethodDescriptor(getInventoryMethodDescriptor)
@@ -533,6 +600,21 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
         callableFactory.createPagedCallable(
             listInstanceOSPoliciesCompliancesTransportSettings,
             settings.listInstanceOSPoliciesCompliancesSettings(),
+            clientContext);
+    this.getOSPolicyAssignmentReportCallable =
+        callableFactory.createUnaryCallable(
+            getOSPolicyAssignmentReportTransportSettings,
+            settings.getOSPolicyAssignmentReportSettings(),
+            clientContext);
+    this.listOSPolicyAssignmentReportsCallable =
+        callableFactory.createUnaryCallable(
+            listOSPolicyAssignmentReportsTransportSettings,
+            settings.listOSPolicyAssignmentReportsSettings(),
+            clientContext);
+    this.listOSPolicyAssignmentReportsPagedCallable =
+        callableFactory.createPagedCallable(
+            listOSPolicyAssignmentReportsTransportSettings,
+            settings.listOSPolicyAssignmentReportsSettings(),
             clientContext);
     this.getInventoryCallable =
         callableFactory.createUnaryCallable(
@@ -656,6 +738,25 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
           ListInstanceOSPoliciesCompliancesRequest, ListInstanceOSPoliciesCompliancesPagedResponse>
       listInstanceOSPoliciesCompliancesPagedCallable() {
     return listInstanceOSPoliciesCompliancesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+      getOSPolicyAssignmentReportCallable() {
+    return getOSPolicyAssignmentReportCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+      listOSPolicyAssignmentReportsCallable() {
+    return listOSPolicyAssignmentReportsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsPagedResponse>
+      listOSPolicyAssignmentReportsPagedCallable() {
+    return listOSPolicyAssignmentReportsPagedCallable;
   }
 
   @Override

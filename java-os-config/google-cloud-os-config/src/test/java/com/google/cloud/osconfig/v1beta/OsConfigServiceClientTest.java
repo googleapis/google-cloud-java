@@ -104,6 +104,7 @@ public class OsConfigServiceClientTest {
             .setErrorMessage("errorMessage1203236063")
             .setPercentComplete(-1960969229)
             .setPatchDeployment("patchDeployment1500445997")
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
             .build();
     mockOsConfigService.addResponse(expectedResponse);
 
@@ -116,6 +117,7 @@ public class OsConfigServiceClientTest {
             .setDuration(Duration.newBuilder().build())
             .setDryRun(true)
             .setDisplayName("displayName1714148973")
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
             .build();
 
     PatchJobs.PatchJob actualResponse = client.executePatchJob(request);
@@ -133,6 +135,7 @@ public class OsConfigServiceClientTest {
     Assert.assertEquals(request.getDuration(), actualRequest.getDuration());
     Assert.assertEquals(request.getDryRun(), actualRequest.getDryRun());
     Assert.assertEquals(request.getDisplayName(), actualRequest.getDisplayName());
+    Assert.assertEquals(request.getRollout(), actualRequest.getRollout());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -154,6 +157,7 @@ public class OsConfigServiceClientTest {
               .setDuration(Duration.newBuilder().build())
               .setDryRun(true)
               .setDisplayName("displayName1714148973")
+              .setRollout(PatchJobs.PatchRollout.newBuilder().build())
               .build();
       client.executePatchJob(request);
       Assert.fail("No exception raised");
@@ -180,6 +184,7 @@ public class OsConfigServiceClientTest {
             .setErrorMessage("errorMessage1203236063")
             .setPercentComplete(-1960969229)
             .setPatchDeployment("patchDeployment1500445997")
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
             .build();
     mockOsConfigService.addResponse(expectedResponse);
 
@@ -234,6 +239,7 @@ public class OsConfigServiceClientTest {
             .setErrorMessage("errorMessage1203236063")
             .setPercentComplete(-1960969229)
             .setPatchDeployment("patchDeployment1500445997")
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
             .build();
     mockOsConfigService.addResponse(expectedResponse);
 
@@ -382,7 +388,7 @@ public class OsConfigServiceClientTest {
   public void createPatchDeploymentTest() throws Exception {
     PatchDeployments.PatchDeployment expectedResponse =
         PatchDeployments.PatchDeployment.newBuilder()
-            .setName("name3373707")
+            .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
             .setDescription("description-1724546052")
             .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
             .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
@@ -390,6 +396,7 @@ public class OsConfigServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastExecuteTime(Timestamp.newBuilder().build())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
             .build();
     mockOsConfigService.addResponse(expectedResponse);
 
@@ -440,7 +447,7 @@ public class OsConfigServiceClientTest {
   public void getPatchDeploymentTest() throws Exception {
     PatchDeployments.PatchDeployment expectedResponse =
         PatchDeployments.PatchDeployment.newBuilder()
-            .setName("name3373707")
+            .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
             .setDescription("description-1724546052")
             .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
             .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
@@ -448,6 +455,7 @@ public class OsConfigServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastExecuteTime(Timestamp.newBuilder().build())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
             .build();
     mockOsConfigService.addResponse(expectedResponse);
 
@@ -574,6 +582,247 @@ public class OsConfigServiceClientTest {
       PatchDeployments.DeletePatchDeploymentRequest request =
           PatchDeployments.DeletePatchDeploymentRequest.newBuilder().setName("name3373707").build();
       client.deletePatchDeployment(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updatePatchDeploymentTest() throws Exception {
+    PatchDeployments.PatchDeployment expectedResponse =
+        PatchDeployments.PatchDeployment.newBuilder()
+            .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastExecuteTime(Timestamp.newBuilder().build())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
+    mockOsConfigService.addResponse(expectedResponse);
+
+    PatchDeployments.PatchDeployment patchDeployment =
+        PatchDeployments.PatchDeployment.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    PatchDeployments.PatchDeployment actualResponse =
+        client.updatePatchDeployment(patchDeployment, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOsConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PatchDeployments.UpdatePatchDeploymentRequest actualRequest =
+        ((PatchDeployments.UpdatePatchDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(patchDeployment, actualRequest.getPatchDeployment());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updatePatchDeploymentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOsConfigService.addException(exception);
+
+    try {
+      PatchDeployments.PatchDeployment patchDeployment =
+          PatchDeployments.PatchDeployment.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updatePatchDeployment(patchDeployment, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void pausePatchDeploymentTest() throws Exception {
+    PatchDeployments.PatchDeployment expectedResponse =
+        PatchDeployments.PatchDeployment.newBuilder()
+            .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastExecuteTime(Timestamp.newBuilder().build())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
+    mockOsConfigService.addResponse(expectedResponse);
+
+    PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
+
+    PatchDeployments.PatchDeployment actualResponse = client.pausePatchDeployment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOsConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PatchDeployments.PausePatchDeploymentRequest actualRequest =
+        ((PatchDeployments.PausePatchDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void pausePatchDeploymentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOsConfigService.addException(exception);
+
+    try {
+      PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
+      client.pausePatchDeployment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void pausePatchDeploymentTest2() throws Exception {
+    PatchDeployments.PatchDeployment expectedResponse =
+        PatchDeployments.PatchDeployment.newBuilder()
+            .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastExecuteTime(Timestamp.newBuilder().build())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
+    mockOsConfigService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    PatchDeployments.PatchDeployment actualResponse = client.pausePatchDeployment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOsConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PatchDeployments.PausePatchDeploymentRequest actualRequest =
+        ((PatchDeployments.PausePatchDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void pausePatchDeploymentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOsConfigService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.pausePatchDeployment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resumePatchDeploymentTest() throws Exception {
+    PatchDeployments.PatchDeployment expectedResponse =
+        PatchDeployments.PatchDeployment.newBuilder()
+            .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastExecuteTime(Timestamp.newBuilder().build())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
+    mockOsConfigService.addResponse(expectedResponse);
+
+    PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
+
+    PatchDeployments.PatchDeployment actualResponse = client.resumePatchDeployment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOsConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PatchDeployments.ResumePatchDeploymentRequest actualRequest =
+        ((PatchDeployments.ResumePatchDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resumePatchDeploymentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOsConfigService.addException(exception);
+
+    try {
+      PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
+      client.resumePatchDeployment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resumePatchDeploymentTest2() throws Exception {
+    PatchDeployments.PatchDeployment expectedResponse =
+        PatchDeployments.PatchDeployment.newBuilder()
+            .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastExecuteTime(Timestamp.newBuilder().build())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
+    mockOsConfigService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    PatchDeployments.PatchDeployment actualResponse = client.resumePatchDeployment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOsConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PatchDeployments.ResumePatchDeploymentRequest actualRequest =
+        ((PatchDeployments.ResumePatchDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resumePatchDeploymentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOsConfigService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.resumePatchDeployment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

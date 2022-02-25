@@ -489,6 +489,162 @@ public final class OsConfigServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest,
+          com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+      getUpdatePatchDeploymentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePatchDeployment",
+      requestType =
+          com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest.class,
+      responseType = com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest,
+          com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+      getUpdatePatchDeploymentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest,
+            com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+        getUpdatePatchDeploymentMethod;
+    if ((getUpdatePatchDeploymentMethod = OsConfigServiceGrpc.getUpdatePatchDeploymentMethod)
+        == null) {
+      synchronized (OsConfigServiceGrpc.class) {
+        if ((getUpdatePatchDeploymentMethod = OsConfigServiceGrpc.getUpdatePatchDeploymentMethod)
+            == null) {
+          OsConfigServiceGrpc.getUpdatePatchDeploymentMethod =
+              getUpdatePatchDeploymentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1beta.PatchDeployments
+                              .UpdatePatchDeploymentRequest,
+                          com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdatePatchDeployment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1beta.PatchDeployments
+                                  .UpdatePatchDeploymentRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigServiceMethodDescriptorSupplier("UpdatePatchDeployment"))
+                      .build();
+        }
+      }
+    }
+    return getUpdatePatchDeploymentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest,
+          com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+      getPausePatchDeploymentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PausePatchDeployment",
+      requestType =
+          com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest.class,
+      responseType = com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest,
+          com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+      getPausePatchDeploymentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest,
+            com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+        getPausePatchDeploymentMethod;
+    if ((getPausePatchDeploymentMethod = OsConfigServiceGrpc.getPausePatchDeploymentMethod)
+        == null) {
+      synchronized (OsConfigServiceGrpc.class) {
+        if ((getPausePatchDeploymentMethod = OsConfigServiceGrpc.getPausePatchDeploymentMethod)
+            == null) {
+          OsConfigServiceGrpc.getPausePatchDeploymentMethod =
+              getPausePatchDeploymentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1beta.PatchDeployments
+                              .PausePatchDeploymentRequest,
+                          com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "PausePatchDeployment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1beta.PatchDeployments
+                                  .PausePatchDeploymentRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigServiceMethodDescriptorSupplier("PausePatchDeployment"))
+                      .build();
+        }
+      }
+    }
+    return getPausePatchDeploymentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest,
+          com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+      getResumePatchDeploymentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ResumePatchDeployment",
+      requestType =
+          com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest.class,
+      responseType = com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest,
+          com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+      getResumePatchDeploymentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest,
+            com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+        getResumePatchDeploymentMethod;
+    if ((getResumePatchDeploymentMethod = OsConfigServiceGrpc.getResumePatchDeploymentMethod)
+        == null) {
+      synchronized (OsConfigServiceGrpc.class) {
+        if ((getResumePatchDeploymentMethod = OsConfigServiceGrpc.getResumePatchDeploymentMethod)
+            == null) {
+          OsConfigServiceGrpc.getResumePatchDeploymentMethod =
+              getResumePatchDeploymentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1beta.PatchDeployments
+                              .ResumePatchDeploymentRequest,
+                          com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ResumePatchDeployment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1beta.PatchDeployments
+                                  .ResumePatchDeploymentRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigServiceMethodDescriptorSupplier("ResumePatchDeployment"))
+                      .build();
+        }
+      }
+    }
+    return getResumePatchDeploymentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.osconfig.v1beta.GuestPolicies.CreateGuestPolicyRequest,
           com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy>
       getCreateGuestPolicyMethod;
@@ -973,6 +1129,56 @@ public final class OsConfigServiceGrpc {
      *
      *
      * <pre>
+     * Update an OS Config patch deployment.
+     * </pre>
+     */
+    public void updatePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdatePatchDeploymentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Change state of patch deployment to "PAUSED".
+     * Patch deployment in paused state doesn't generate patch jobs.
+     * </pre>
+     */
+    public void pausePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPausePatchDeploymentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Change state of patch deployment back to "ACTIVE".
+     * Patch deployment in active state continues to generate patch jobs.
+     * </pre>
+     */
+    public void resumePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getResumePatchDeploymentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create an OS Config guest policy.
      * </pre>
      */
@@ -1129,6 +1335,29 @@ public final class OsConfigServiceGrpc {
                       com.google.cloud.osconfig.v1beta.PatchDeployments
                           .DeletePatchDeploymentRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_PATCH_DEPLOYMENT)))
+          .addMethod(
+              getUpdatePatchDeploymentMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1beta.PatchDeployments
+                          .UpdatePatchDeploymentRequest,
+                      com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
+                      this, METHODID_UPDATE_PATCH_DEPLOYMENT)))
+          .addMethod(
+              getPausePatchDeploymentMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest,
+                      com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
+                      this, METHODID_PAUSE_PATCH_DEPLOYMENT)))
+          .addMethod(
+              getResumePatchDeploymentMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1beta.PatchDeployments
+                          .ResumePatchDeploymentRequest,
+                      com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
+                      this, METHODID_RESUME_PATCH_DEPLOYMENT)))
           .addMethod(
               getCreateGuestPolicyMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1350,6 +1579,62 @@ public final class OsConfigServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeletePatchDeploymentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an OS Config patch deployment.
+     * </pre>
+     */
+    public void updatePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePatchDeploymentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Change state of patch deployment to "PAUSED".
+     * Patch deployment in paused state doesn't generate patch jobs.
+     * </pre>
+     */
+    public void pausePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPausePatchDeploymentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Change state of patch deployment back to "ACTIVE".
+     * Patch deployment in active state continues to generate patch jobs.
+     * </pre>
+     */
+    public void resumePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getResumePatchDeploymentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1605,6 +1890,47 @@ public final class OsConfigServiceGrpc {
      *
      *
      * <pre>
+     * Update an OS Config patch deployment.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment updatePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePatchDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Change state of patch deployment to "PAUSED".
+     * Patch deployment in paused state doesn't generate patch jobs.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment pausePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPausePatchDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Change state of patch deployment back to "ACTIVE".
+     * Patch deployment in active state continues to generate patch jobs.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment resumePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumePatchDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create an OS Config guest policy.
      * </pre>
      */
@@ -1843,6 +2169,55 @@ public final class OsConfigServiceGrpc {
      *
      *
      * <pre>
+     * Update an OS Config patch deployment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+        updatePatchDeployment(
+            com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePatchDeploymentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Change state of patch deployment to "PAUSED".
+     * Patch deployment in paused state doesn't generate patch jobs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+        pausePatchDeployment(
+            com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPausePatchDeploymentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Change state of patch deployment back to "ACTIVE".
+     * Patch deployment in active state continues to generate patch jobs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
+        resumePatchDeployment(
+            com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getResumePatchDeploymentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create an OS Config guest policy.
      * </pre>
      */
@@ -1940,12 +2315,15 @@ public final class OsConfigServiceGrpc {
   private static final int METHODID_GET_PATCH_DEPLOYMENT = 6;
   private static final int METHODID_LIST_PATCH_DEPLOYMENTS = 7;
   private static final int METHODID_DELETE_PATCH_DEPLOYMENT = 8;
-  private static final int METHODID_CREATE_GUEST_POLICY = 9;
-  private static final int METHODID_GET_GUEST_POLICY = 10;
-  private static final int METHODID_LIST_GUEST_POLICIES = 11;
-  private static final int METHODID_UPDATE_GUEST_POLICY = 12;
-  private static final int METHODID_DELETE_GUEST_POLICY = 13;
-  private static final int METHODID_LOOKUP_EFFECTIVE_GUEST_POLICY = 14;
+  private static final int METHODID_UPDATE_PATCH_DEPLOYMENT = 9;
+  private static final int METHODID_PAUSE_PATCH_DEPLOYMENT = 10;
+  private static final int METHODID_RESUME_PATCH_DEPLOYMENT = 11;
+  private static final int METHODID_CREATE_GUEST_POLICY = 12;
+  private static final int METHODID_GET_GUEST_POLICY = 13;
+  private static final int METHODID_LIST_GUEST_POLICIES = 14;
+  private static final int METHODID_UPDATE_GUEST_POLICY = 15;
+  private static final int METHODID_DELETE_GUEST_POLICY = 16;
+  private static final int METHODID_LOOKUP_EFFECTIVE_GUEST_POLICY = 17;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2027,6 +2405,30 @@ public final class OsConfigServiceGrpc {
               (com.google.cloud.osconfig.v1beta.PatchDeployments.DeletePatchDeploymentRequest)
                   request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_PATCH_DEPLOYMENT:
+          serviceImpl.updatePatchDeployment(
+              (com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>)
+                  responseObserver);
+          break;
+        case METHODID_PAUSE_PATCH_DEPLOYMENT:
+          serviceImpl.pausePatchDeployment(
+              (com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>)
+                  responseObserver);
+          break;
+        case METHODID_RESUME_PATCH_DEPLOYMENT:
+          serviceImpl.resumePatchDeployment(
+              (com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>)
+                  responseObserver);
           break;
         case METHODID_CREATE_GUEST_POLICY:
           serviceImpl.createGuestPolicy(
@@ -2142,6 +2544,9 @@ public final class OsConfigServiceGrpc {
                       .addMethod(getGetPatchDeploymentMethod())
                       .addMethod(getListPatchDeploymentsMethod())
                       .addMethod(getDeletePatchDeploymentMethod())
+                      .addMethod(getUpdatePatchDeploymentMethod())
+                      .addMethod(getPausePatchDeploymentMethod())
+                      .addMethod(getResumePatchDeploymentMethod())
                       .addMethod(getCreateGuestPolicyMethod())
                       .addMethod(getGetGuestPolicyMethod())
                       .addMethod(getListGuestPoliciesMethod())

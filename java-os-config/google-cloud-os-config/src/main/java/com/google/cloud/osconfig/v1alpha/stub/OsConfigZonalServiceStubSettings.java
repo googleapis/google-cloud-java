@@ -18,6 +18,7 @@ package com.google.cloud.osconfig.v1alpha.stub;
 
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListInstanceOSPoliciesCompliancesPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListInventoriesPagedResponse;
+import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentReportsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentRevisionsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListVulnerabilityReportsPagedResponse;
@@ -52,6 +53,7 @@ import com.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1alpha.GetInstanceOSPoliciesComplianceRequest;
 import com.google.cloud.osconfig.v1alpha.GetInventoryRequest;
+import com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest;
 import com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1alpha.GetVulnerabilityReportRequest;
 import com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance;
@@ -60,6 +62,8 @@ import com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesReques
 import com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesResponse;
 import com.google.cloud.osconfig.v1alpha.ListInventoriesRequest;
 import com.google.cloud.osconfig.v1alpha.ListInventoriesResponse;
+import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest;
+import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse;
 import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsRequest;
 import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsResponse;
 import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentsRequest;
@@ -68,6 +72,7 @@ import com.google.cloud.osconfig.v1alpha.ListVulnerabilityReportsRequest;
 import com.google.cloud.osconfig.v1alpha.ListVulnerabilityReportsResponse;
 import com.google.cloud.osconfig.v1alpha.OSPolicyAssignment;
 import com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata;
+import com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport;
 import com.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1alpha.VulnerabilityReport;
 import com.google.common.collect.ImmutableList;
@@ -157,6 +162,13 @@ public class OsConfigZonalServiceStubSettings
           ListInstanceOSPoliciesCompliancesResponse,
           ListInstanceOSPoliciesCompliancesPagedResponse>
       listInstanceOSPoliciesCompliancesSettings;
+  private final UnaryCallSettings<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+      getOSPolicyAssignmentReportSettings;
+  private final PagedCallSettings<
+          ListOSPolicyAssignmentReportsRequest,
+          ListOSPolicyAssignmentReportsResponse,
+          ListOSPolicyAssignmentReportsPagedResponse>
+      listOSPolicyAssignmentReportsSettings;
   private final UnaryCallSettings<GetInventoryRequest, Inventory> getInventorySettings;
   private final PagedCallSettings<
           ListInventoriesRequest, ListInventoriesResponse, ListInventoriesPagedResponse>
@@ -309,6 +321,55 @@ public class OsConfigZonalServiceStubSettings
               return payload.getInstanceOsPoliciesCompliancesList() == null
                   ? ImmutableList.<InstanceOSPoliciesCompliance>of()
                   : payload.getInstanceOsPoliciesCompliancesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListOSPolicyAssignmentReportsRequest,
+          ListOSPolicyAssignmentReportsResponse,
+          OSPolicyAssignmentReport>
+      LIST_O_S_POLICY_ASSIGNMENT_REPORTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListOSPolicyAssignmentReportsRequest,
+              ListOSPolicyAssignmentReportsResponse,
+              OSPolicyAssignmentReport>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListOSPolicyAssignmentReportsRequest injectToken(
+                ListOSPolicyAssignmentReportsRequest payload, String token) {
+              return ListOSPolicyAssignmentReportsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListOSPolicyAssignmentReportsRequest injectPageSize(
+                ListOSPolicyAssignmentReportsRequest payload, int pageSize) {
+              return ListOSPolicyAssignmentReportsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListOSPolicyAssignmentReportsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListOSPolicyAssignmentReportsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<OSPolicyAssignmentReport> extractResources(
+                ListOSPolicyAssignmentReportsResponse payload) {
+              return payload.getOsPolicyAssignmentReportsList() == null
+                  ? ImmutableList.<OSPolicyAssignmentReport>of()
+                  : payload.getOsPolicyAssignmentReportsList();
             }
           };
 
@@ -492,6 +553,38 @@ public class OsConfigZonalServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListOSPolicyAssignmentReportsRequest,
+          ListOSPolicyAssignmentReportsResponse,
+          ListOSPolicyAssignmentReportsPagedResponse>
+      LIST_O_S_POLICY_ASSIGNMENT_REPORTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListOSPolicyAssignmentReportsRequest,
+              ListOSPolicyAssignmentReportsResponse,
+              ListOSPolicyAssignmentReportsPagedResponse>() {
+            @Override
+            public ApiFuture<ListOSPolicyAssignmentReportsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+                    callable,
+                ListOSPolicyAssignmentReportsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListOSPolicyAssignmentReportsResponse> futureResponse) {
+              PageContext<
+                      ListOSPolicyAssignmentReportsRequest,
+                      ListOSPolicyAssignmentReportsResponse,
+                      OSPolicyAssignmentReport>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_O_S_POLICY_ASSIGNMENT_REPORTS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListOSPolicyAssignmentReportsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListInventoriesRequest, ListInventoriesResponse, ListInventoriesPagedResponse>
       LIST_INVENTORIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -598,19 +691,44 @@ public class OsConfigZonalServiceStubSettings
     return deleteOSPolicyAssignmentOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getInstanceOSPoliciesCompliance. */
+  /**
+   * Returns the object with the settings used for calls to getInstanceOSPoliciesCompliance.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetInstanceOSPoliciesComplianceRequest, InstanceOSPoliciesCompliance>
       getInstanceOSPoliciesComplianceSettings() {
     return getInstanceOSPoliciesComplianceSettings;
   }
 
-  /** Returns the object with the settings used for calls to listInstanceOSPoliciesCompliances. */
+  /**
+   * Returns the object with the settings used for calls to listInstanceOSPoliciesCompliances.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListInstanceOSPoliciesCompliancesRequest,
           ListInstanceOSPoliciesCompliancesResponse,
           ListInstanceOSPoliciesCompliancesPagedResponse>
       listInstanceOSPoliciesCompliancesSettings() {
     return listInstanceOSPoliciesCompliancesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getOSPolicyAssignmentReport. */
+  public UnaryCallSettings<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+      getOSPolicyAssignmentReportSettings() {
+    return getOSPolicyAssignmentReportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listOSPolicyAssignmentReports. */
+  public PagedCallSettings<
+          ListOSPolicyAssignmentReportsRequest,
+          ListOSPolicyAssignmentReportsResponse,
+          ListOSPolicyAssignmentReportsPagedResponse>
+      listOSPolicyAssignmentReportsSettings() {
+    return listOSPolicyAssignmentReportsSettings;
   }
 
   /** Returns the object with the settings used for calls to getInventory. */
@@ -733,6 +851,10 @@ public class OsConfigZonalServiceStubSettings
         settingsBuilder.getInstanceOSPoliciesComplianceSettings().build();
     listInstanceOSPoliciesCompliancesSettings =
         settingsBuilder.listInstanceOSPoliciesCompliancesSettings().build();
+    getOSPolicyAssignmentReportSettings =
+        settingsBuilder.getOSPolicyAssignmentReportSettings().build();
+    listOSPolicyAssignmentReportsSettings =
+        settingsBuilder.listOSPolicyAssignmentReportsSettings().build();
     getInventorySettings = settingsBuilder.getInventorySettings().build();
     listInventoriesSettings = settingsBuilder.listInventoriesSettings().build();
     getVulnerabilityReportSettings = settingsBuilder.getVulnerabilityReportSettings().build();
@@ -782,6 +904,14 @@ public class OsConfigZonalServiceStubSettings
             ListInstanceOSPoliciesCompliancesResponse,
             ListInstanceOSPoliciesCompliancesPagedResponse>
         listInstanceOSPoliciesCompliancesSettings;
+    private final UnaryCallSettings.Builder<
+            GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+        getOSPolicyAssignmentReportSettings;
+    private final PagedCallSettings.Builder<
+            ListOSPolicyAssignmentReportsRequest,
+            ListOSPolicyAssignmentReportsResponse,
+            ListOSPolicyAssignmentReportsPagedResponse>
+        listOSPolicyAssignmentReportsSettings;
     private final UnaryCallSettings.Builder<GetInventoryRequest, Inventory> getInventorySettings;
     private final PagedCallSettings.Builder<
             ListInventoriesRequest, ListInventoriesResponse, ListInventoriesPagedResponse>
@@ -845,6 +975,9 @@ public class OsConfigZonalServiceStubSettings
       getInstanceOSPoliciesComplianceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listInstanceOSPoliciesCompliancesSettings =
           PagedCallSettings.newBuilder(LIST_INSTANCE_O_S_POLICIES_COMPLIANCES_PAGE_STR_FACT);
+      getOSPolicyAssignmentReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listOSPolicyAssignmentReportsSettings =
+          PagedCallSettings.newBuilder(LIST_O_S_POLICY_ASSIGNMENT_REPORTS_PAGE_STR_FACT);
       getInventorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listInventoriesSettings = PagedCallSettings.newBuilder(LIST_INVENTORIES_PAGE_STR_FACT);
       getVulnerabilityReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -861,6 +994,8 @@ public class OsConfigZonalServiceStubSettings
               deleteOSPolicyAssignmentSettings,
               getInstanceOSPoliciesComplianceSettings,
               listInstanceOSPoliciesCompliancesSettings,
+              getOSPolicyAssignmentReportSettings,
+              listOSPolicyAssignmentReportsSettings,
               getInventorySettings,
               listInventoriesSettings,
               getVulnerabilityReportSettings,
@@ -888,6 +1023,10 @@ public class OsConfigZonalServiceStubSettings
           settings.getInstanceOSPoliciesComplianceSettings.toBuilder();
       listInstanceOSPoliciesCompliancesSettings =
           settings.listInstanceOSPoliciesCompliancesSettings.toBuilder();
+      getOSPolicyAssignmentReportSettings =
+          settings.getOSPolicyAssignmentReportSettings.toBuilder();
+      listOSPolicyAssignmentReportsSettings =
+          settings.listOSPolicyAssignmentReportsSettings.toBuilder();
       getInventorySettings = settings.getInventorySettings.toBuilder();
       listInventoriesSettings = settings.listInventoriesSettings.toBuilder();
       getVulnerabilityReportSettings = settings.getVulnerabilityReportSettings.toBuilder();
@@ -903,6 +1042,8 @@ public class OsConfigZonalServiceStubSettings
               deleteOSPolicyAssignmentSettings,
               getInstanceOSPoliciesComplianceSettings,
               listInstanceOSPoliciesCompliancesSettings,
+              getOSPolicyAssignmentReportSettings,
+              listOSPolicyAssignmentReportsSettings,
               getInventorySettings,
               listInventoriesSettings,
               getVulnerabilityReportSettings,
@@ -960,6 +1101,16 @@ public class OsConfigZonalServiceStubSettings
 
       builder
           .listInstanceOSPoliciesCompliancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getOSPolicyAssignmentReportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listOSPolicyAssignmentReportsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1149,20 +1300,45 @@ public class OsConfigZonalServiceStubSettings
       return deleteOSPolicyAssignmentOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getInstanceOSPoliciesCompliance. */
+    /**
+     * Returns the builder for the settings used for calls to getInstanceOSPoliciesCompliance.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<
             GetInstanceOSPoliciesComplianceRequest, InstanceOSPoliciesCompliance>
         getInstanceOSPoliciesComplianceSettings() {
       return getInstanceOSPoliciesComplianceSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listInstanceOSPoliciesCompliances. */
+    /**
+     * Returns the builder for the settings used for calls to listInstanceOSPoliciesCompliances.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListInstanceOSPoliciesCompliancesRequest,
             ListInstanceOSPoliciesCompliancesResponse,
             ListInstanceOSPoliciesCompliancesPagedResponse>
         listInstanceOSPoliciesCompliancesSettings() {
       return listInstanceOSPoliciesCompliancesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getOSPolicyAssignmentReport. */
+    public UnaryCallSettings.Builder<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+        getOSPolicyAssignmentReportSettings() {
+      return getOSPolicyAssignmentReportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listOSPolicyAssignmentReports. */
+    public PagedCallSettings.Builder<
+            ListOSPolicyAssignmentReportsRequest,
+            ListOSPolicyAssignmentReportsResponse,
+            ListOSPolicyAssignmentReportsPagedResponse>
+        listOSPolicyAssignmentReportsSettings() {
+      return listOSPolicyAssignmentReportsSettings;
     }
 
     /** Returns the builder for the settings used for calls to getInventory. */

@@ -18230,10 +18230,9 @@ public final class GuestPolicies {
      * recipe.
      * INSTALLED: The software recipe is installed on the instance but
      *            won't be updated to new versions.
-     * INSTALLED_KEEP_UPDATED: The software recipe is installed on the
-     *                         instance. The recipe is updated to a higher
-     *                         version, if a higher version of the recipe is
-     *                         assigned to this instance.
+     * UPDATED: The software recipe is installed on the instance. The recipe is
+     *          updated to a higher version, if a higher version of the recipe is
+     *          assigned to this instance.
      * REMOVE: Remove is unsupported for software recipes and attempts to
      *         create or update a recipe to the REMOVE state is rejected.
      * </pre>
@@ -18251,10 +18250,9 @@ public final class GuestPolicies {
      * recipe.
      * INSTALLED: The software recipe is installed on the instance but
      *            won't be updated to new versions.
-     * INSTALLED_KEEP_UPDATED: The software recipe is installed on the
-     *                         instance. The recipe is updated to a higher
-     *                         version, if a higher version of the recipe is
-     *                         assigned to this instance.
+     * UPDATED: The software recipe is installed on the instance. The recipe is
+     *          updated to a higher version, if a higher version of the recipe is
+     *          assigned to this instance.
      * REMOVE: Remove is unsupported for software recipes and attempts to
      *         create or update a recipe to the REMOVE state is rejected.
      * </pre>
@@ -18281,7 +18279,7 @@ public final class GuestPolicies {
    * Updating a software recipe
    * If a recipe is assigned to an instance and there is a recipe with the same
    * name but a lower version already installed and the assigned state
-   * of the recipe is `INSTALLED_KEEP_UPDATED`, then the recipe is updated to
+   * of the recipe is `UPDATED`, then the recipe is updated to
    * the new version.
    * Script Working Directories
    * Each script or execution step is run in its own temporary directory which
@@ -34432,10 +34430,9 @@ public final class GuestPolicies {
      * recipe.
      * INSTALLED: The software recipe is installed on the instance but
      *            won't be updated to new versions.
-     * INSTALLED_KEEP_UPDATED: The software recipe is installed on the
-     *                         instance. The recipe is updated to a higher
-     *                         version, if a higher version of the recipe is
-     *                         assigned to this instance.
+     * UPDATED: The software recipe is installed on the instance. The recipe is
+     *          updated to a higher version, if a higher version of the recipe is
+     *          assigned to this instance.
      * REMOVE: Remove is unsupported for software recipes and attempts to
      *         create or update a recipe to the REMOVE state is rejected.
      * </pre>
@@ -34456,10 +34453,9 @@ public final class GuestPolicies {
      * recipe.
      * INSTALLED: The software recipe is installed on the instance but
      *            won't be updated to new versions.
-     * INSTALLED_KEEP_UPDATED: The software recipe is installed on the
-     *                         instance. The recipe is updated to a higher
-     *                         version, if a higher version of the recipe is
-     *                         assigned to this instance.
+     * UPDATED: The software recipe is installed on the instance. The recipe is
+     *          updated to a higher version, if a higher version of the recipe is
+     *          assigned to this instance.
      * REMOVE: Remove is unsupported for software recipes and attempts to
      *         create or update a recipe to the REMOVE state is rejected.
      * </pre>
@@ -34710,7 +34706,7 @@ public final class GuestPolicies {
      * Updating a software recipe
      * If a recipe is assigned to an instance and there is a recipe with the same
      * name but a lower version already installed and the assigned state
-     * of the recipe is `INSTALLED_KEEP_UPDATED`, then the recipe is updated to
+     * of the recipe is `UPDATED`, then the recipe is updated to
      * the new version.
      * Script Working Directories
      * Each script or execution step is run in its own temporary directory which
@@ -36479,10 +36475,9 @@ public final class GuestPolicies {
        * recipe.
        * INSTALLED: The software recipe is installed on the instance but
        *            won't be updated to new versions.
-       * INSTALLED_KEEP_UPDATED: The software recipe is installed on the
-       *                         instance. The recipe is updated to a higher
-       *                         version, if a higher version of the recipe is
-       *                         assigned to this instance.
+       * UPDATED: The software recipe is installed on the instance. The recipe is
+       *          updated to a higher version, if a higher version of the recipe is
+       *          assigned to this instance.
        * REMOVE: Remove is unsupported for software recipes and attempts to
        *         create or update a recipe to the REMOVE state is rejected.
        * </pre>
@@ -36503,10 +36498,9 @@ public final class GuestPolicies {
        * recipe.
        * INSTALLED: The software recipe is installed on the instance but
        *            won't be updated to new versions.
-       * INSTALLED_KEEP_UPDATED: The software recipe is installed on the
-       *                         instance. The recipe is updated to a higher
-       *                         version, if a higher version of the recipe is
-       *                         assigned to this instance.
+       * UPDATED: The software recipe is installed on the instance. The recipe is
+       *          updated to a higher version, if a higher version of the recipe is
+       *          assigned to this instance.
        * REMOVE: Remove is unsupported for software recipes and attempts to
        *         create or update a recipe to the REMOVE state is rejected.
        * </pre>
@@ -36530,10 +36524,9 @@ public final class GuestPolicies {
        * recipe.
        * INSTALLED: The software recipe is installed on the instance but
        *            won't be updated to new versions.
-       * INSTALLED_KEEP_UPDATED: The software recipe is installed on the
-       *                         instance. The recipe is updated to a higher
-       *                         version, if a higher version of the recipe is
-       *                         assigned to this instance.
+       * UPDATED: The software recipe is installed on the instance. The recipe is
+       *          updated to a higher version, if a higher version of the recipe is
+       *          assigned to this instance.
        * REMOVE: Remove is unsupported for software recipes and attempts to
        *         create or update a recipe to the REMOVE state is rejected.
        * </pre>
@@ -36559,10 +36552,9 @@ public final class GuestPolicies {
        * recipe.
        * INSTALLED: The software recipe is installed on the instance but
        *            won't be updated to new versions.
-       * INSTALLED_KEEP_UPDATED: The software recipe is installed on the
-       *                         instance. The recipe is updated to a higher
-       *                         version, if a higher version of the recipe is
-       *                         assigned to this instance.
+       * UPDATED: The software recipe is installed on the instance. The recipe is
+       *          updated to a higher version, if a higher version of the recipe is
+       *          assigned to this instance.
        * REMOVE: Remove is unsupported for software recipes and attempts to
        *         create or update a recipe to the REMOVE state is rejected.
        * </pre>
@@ -36590,10 +36582,9 @@ public final class GuestPolicies {
        * recipe.
        * INSTALLED: The software recipe is installed on the instance but
        *            won't be updated to new versions.
-       * INSTALLED_KEEP_UPDATED: The software recipe is installed on the
-       *                         instance. The recipe is updated to a higher
-       *                         version, if a higher version of the recipe is
-       *                         assigned to this instance.
+       * UPDATED: The software recipe is installed on the instance. The recipe is
+       *          updated to a higher version, if a higher version of the recipe is
+       *          assigned to this instance.
        * REMOVE: Remove is unsupported for software recipes and attempts to
        *         create or update a recipe to the REMOVE state is rejected.
        * </pre>
@@ -49901,163 +49892,165 @@ public final class GuestPolicies {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/osconfig/v1beta/guest_pol"
           + "icies.proto\022\034google.cloud.osconfig.v1bet"
-          + "a\032\037google/api/field_behavior.proto\032\031goog"
-          + "le/api/resource.proto\032 google/protobuf/f"
-          + "ield_mask.proto\032\037google/protobuf/timesta"
-          + "mp.proto\"\224\004\n\013GuestPolicy\022\021\n\004name\030\001 \001(\tB\003"
-          + "\340A\002\022\023\n\013description\030\002 \001(\t\0224\n\013create_time\030"
-          + "\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224"
-          + "\n\013update_time\030\004 \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\003\340A\003\022A\n\nassignment\030\006 \001(\0132(.googl"
-          + "e.cloud.osconfig.v1beta.AssignmentB\003\340A\002\022"
-          + "7\n\010packages\030\007 \003(\0132%.google.cloud.osconfi"
-          + "g.v1beta.Package\022M\n\024package_repositories"
-          + "\030\010 \003(\0132/.google.cloud.osconfig.v1beta.Pa"
-          + "ckageRepository\022=\n\007recipes\030\t \003(\0132,.googl"
-          + "e.cloud.osconfig.v1beta.SoftwareRecipe\022\014"
-          + "\n\004etag\030\n \001(\t:Y\352AV\n#osconfig.googleapis.c"
-          + "om/GuestPolicy\022/projects/{project}/guest"
-          + "Policies/{guest_policy}\"\271\003\n\nAssignment\022I"
-          + "\n\014group_labels\030\001 \003(\01323.google.cloud.osco"
-          + "nfig.v1beta.Assignment.GroupLabel\022\r\n\005zon"
-          + "es\030\002 \003(\t\022\021\n\tinstances\030\003 \003(\t\022\036\n\026instance_"
-          + "name_prefixes\030\004 \003(\t\022A\n\010os_types\030\005 \003(\0132/."
-          + "google.cloud.osconfig.v1beta.Assignment."
-          + "OsType\032\214\001\n\nGroupLabel\022O\n\006labels\030\001 \003(\0132?."
-          + "google.cloud.osconfig.v1beta.Assignment."
-          + "GroupLabel.LabelsEntry\032-\n\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032L\n\006OsType\022"
-          + "\025\n\ros_short_name\030\001 \001(\t\022\022\n\nos_version\030\002 \001"
-          + "(\t\022\027\n\017os_architecture\030\003 \001(\t\"\363\001\n\007Package\022"
-          + "\021\n\004name\030\001 \001(\tB\003\340A\002\022A\n\rdesired_state\030\002 \001("
-          + "\0162*.google.cloud.osconfig.v1beta.Desired"
-          + "State\022>\n\007manager\030\003 \001(\0162-.google.cloud.os"
-          + "config.v1beta.Package.Manager\"R\n\007Manager"
-          + "\022\027\n\023MANAGER_UNSPECIFIED\020\000\022\007\n\003ANY\020\001\022\007\n\003AP"
-          + "T\020\002\022\007\n\003YUM\020\003\022\n\n\006ZYPPER\020\004\022\007\n\003GOO\020\005\"\370\001\n\rAp"
-          + "tRepository\022M\n\014archive_type\030\001 \001(\01627.goog"
-          + "le.cloud.osconfig.v1beta.AptRepository.A"
-          + "rchiveType\022\020\n\003uri\030\002 \001(\tB\003\340A\002\022\031\n\014distribu"
-          + "tion\030\003 \001(\tB\003\340A\002\022\027\n\ncomponents\030\004 \003(\tB\003\340A\002"
-          + "\022\017\n\007gpg_key\030\005 \001(\t\"A\n\013ArchiveType\022\034\n\030ARCH"
-          + "IVE_TYPE_UNSPECIFIED\020\000\022\007\n\003DEB\020\001\022\013\n\007DEB_S"
-          + "RC\020\002\"_\n\rYumRepository\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\024"
-          + "\n\014display_name\030\002 \001(\t\022\025\n\010base_url\030\003 \001(\tB\003"
-          + "\340A\002\022\020\n\010gpg_keys\030\004 \003(\t\"b\n\020ZypperRepositor"
-          + "y\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\024\n\014display_name\030\002 \001(\t"
-          + "\022\025\n\010base_url\030\003 \001(\tB\003\340A\002\022\020\n\010gpg_keys\030\004 \003("
-          + "\t\"4\n\rGooRepository\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\020\n"
-          + "\003url\030\002 \001(\tB\003\340A\002\"\227\002\n\021PackageRepository\022:\n"
-          + "\003apt\030\001 \001(\0132+.google.cloud.osconfig.v1bet"
-          + "a.AptRepositoryH\000\022:\n\003yum\030\002 \001(\0132+.google."
-          + "cloud.osconfig.v1beta.YumRepositoryH\000\022@\n"
-          + "\006zypper\030\003 \001(\0132..google.cloud.osconfig.v1"
-          + "beta.ZypperRepositoryH\000\022:\n\003goo\030\004 \001(\0132+.g"
-          + "oogle.cloud.osconfig.v1beta.GooRepositor"
-          + "yH\000B\014\n\nrepository\"\206\021\n\016SoftwareRecipe\022\021\n\004"
-          + "name\030\001 \001(\tB\003\340A\002\022\017\n\007version\030\002 \001(\t\022H\n\tarti"
-          + "facts\030\003 \003(\01325.google.cloud.osconfig.v1be"
-          + "ta.SoftwareRecipe.Artifact\022H\n\rinstall_st"
-          + "eps\030\004 \003(\01321.google.cloud.osconfig.v1beta"
-          + ".SoftwareRecipe.Step\022G\n\014update_steps\030\005 \003"
-          + "(\01321.google.cloud.osconfig.v1beta.Softwa"
-          + "reRecipe.Step\022A\n\rdesired_state\030\006 \001(\0162*.g"
-          + "oogle.cloud.osconfig.v1beta.DesiredState"
-          + "\032\275\002\n\010Artifact\022\017\n\002id\030\001 \001(\tB\003\340A\002\022N\n\006remote"
-          + "\030\002 \001(\0132<.google.cloud.osconfig.v1beta.So"
-          + "ftwareRecipe.Artifact.RemoteH\000\022H\n\003gcs\030\003 "
-          + "\001(\01329.google.cloud.osconfig.v1beta.Softw"
-          + "areRecipe.Artifact.GcsH\000\022\026\n\016allow_insecu"
-          + "re\030\004 \001(\010\032\'\n\006Remote\022\013\n\003uri\030\001 \001(\t\022\020\n\010check"
-          + "sum\030\002 \001(\t\0329\n\003Gcs\022\016\n\006bucket\030\001 \001(\t\022\016\n\006obje"
-          + "ct\030\002 \001(\t\022\022\n\ngeneration\030\003 \001(\003B\n\n\010artifact"
-          + "\032\357\013\n\004Step\022O\n\tfile_copy\030\001 \001(\0132:.google.cl"
+          + "a\032\034google/api/annotations.proto\032\037google/"
+          + "api/field_behavior.proto\032\031google/api/res"
+          + "ource.proto\032 google/protobuf/field_mask."
+          + "proto\032\037google/protobuf/timestamp.proto\"\224"
+          + "\004\n\013GuestPolicy\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\023\n\013des"
+          + "cription\030\002 \001(\t\0224\n\013create_time\030\003 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
+          + "ime\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\022A\n\nassignment\030\006 \001(\0132(.google.cloud.os"
+          + "config.v1beta.AssignmentB\003\340A\002\0227\n\010package"
+          + "s\030\007 \003(\0132%.google.cloud.osconfig.v1beta.P"
+          + "ackage\022M\n\024package_repositories\030\010 \003(\0132/.g"
+          + "oogle.cloud.osconfig.v1beta.PackageRepos"
+          + "itory\022=\n\007recipes\030\t \003(\0132,.google.cloud.os"
+          + "config.v1beta.SoftwareRecipe\022\014\n\004etag\030\n \001"
+          + "(\t:Y\352AV\n#osconfig.googleapis.com/GuestPo"
+          + "licy\022/projects/{project}/guestPolicies/{"
+          + "guest_policy}\"\271\003\n\nAssignment\022I\n\014group_la"
+          + "bels\030\001 \003(\01323.google.cloud.osconfig.v1bet"
+          + "a.Assignment.GroupLabel\022\r\n\005zones\030\002 \003(\t\022\021"
+          + "\n\tinstances\030\003 \003(\t\022\036\n\026instance_name_prefi"
+          + "xes\030\004 \003(\t\022A\n\010os_types\030\005 \003(\0132/.google.clo"
+          + "ud.osconfig.v1beta.Assignment.OsType\032\214\001\n"
+          + "\nGroupLabel\022O\n\006labels\030\001 \003(\0132?.google.clo"
+          + "ud.osconfig.v1beta.Assignment.GroupLabel"
+          + ".LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t"
+          + "\022\r\n\005value\030\002 \001(\t:\0028\001\032L\n\006OsType\022\025\n\ros_shor"
+          + "t_name\030\001 \001(\t\022\022\n\nos_version\030\002 \001(\t\022\027\n\017os_a"
+          + "rchitecture\030\003 \001(\t\"\363\001\n\007Package\022\021\n\004name\030\001 "
+          + "\001(\tB\003\340A\002\022A\n\rdesired_state\030\002 \001(\0162*.google"
+          + ".cloud.osconfig.v1beta.DesiredState\022>\n\007m"
+          + "anager\030\003 \001(\0162-.google.cloud.osconfig.v1b"
+          + "eta.Package.Manager\"R\n\007Manager\022\027\n\023MANAGE"
+          + "R_UNSPECIFIED\020\000\022\007\n\003ANY\020\001\022\007\n\003APT\020\002\022\007\n\003YUM"
+          + "\020\003\022\n\n\006ZYPPER\020\004\022\007\n\003GOO\020\005\"\370\001\n\rAptRepositor"
+          + "y\022M\n\014archive_type\030\001 \001(\01627.google.cloud.o"
+          + "sconfig.v1beta.AptRepository.ArchiveType"
+          + "\022\020\n\003uri\030\002 \001(\tB\003\340A\002\022\031\n\014distribution\030\003 \001(\t"
+          + "B\003\340A\002\022\027\n\ncomponents\030\004 \003(\tB\003\340A\002\022\017\n\007gpg_ke"
+          + "y\030\005 \001(\t\"A\n\013ArchiveType\022\034\n\030ARCHIVE_TYPE_U"
+          + "NSPECIFIED\020\000\022\007\n\003DEB\020\001\022\013\n\007DEB_SRC\020\002\"_\n\rYu"
+          + "mRepository\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\024\n\014display_"
+          + "name\030\002 \001(\t\022\025\n\010base_url\030\003 \001(\tB\003\340A\002\022\020\n\010gpg"
+          + "_keys\030\004 \003(\t\"b\n\020ZypperRepository\022\017\n\002id\030\001 "
+          + "\001(\tB\003\340A\002\022\024\n\014display_name\030\002 \001(\t\022\025\n\010base_u"
+          + "rl\030\003 \001(\tB\003\340A\002\022\020\n\010gpg_keys\030\004 \003(\t\"4\n\rGooRe"
+          + "pository\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\020\n\003url\030\002 \001(\t"
+          + "B\003\340A\002\"\227\002\n\021PackageRepository\022:\n\003apt\030\001 \001(\013"
+          + "2+.google.cloud.osconfig.v1beta.AptRepos"
+          + "itoryH\000\022:\n\003yum\030\002 \001(\0132+.google.cloud.osco"
+          + "nfig.v1beta.YumRepositoryH\000\022@\n\006zypper\030\003 "
+          + "\001(\0132..google.cloud.osconfig.v1beta.Zyppe"
+          + "rRepositoryH\000\022:\n\003goo\030\004 \001(\0132+.google.clou"
+          + "d.osconfig.v1beta.GooRepositoryH\000B\014\n\nrep"
+          + "ository\"\206\021\n\016SoftwareRecipe\022\021\n\004name\030\001 \001(\t"
+          + "B\003\340A\002\022\017\n\007version\030\002 \001(\t\022H\n\tartifacts\030\003 \003("
+          + "\01325.google.cloud.osconfig.v1beta.Softwar"
+          + "eRecipe.Artifact\022H\n\rinstall_steps\030\004 \003(\0132"
+          + "1.google.cloud.osconfig.v1beta.SoftwareR"
+          + "ecipe.Step\022G\n\014update_steps\030\005 \003(\01321.googl"
+          + "e.cloud.osconfig.v1beta.SoftwareRecipe.S"
+          + "tep\022A\n\rdesired_state\030\006 \001(\0162*.google.clou"
+          + "d.osconfig.v1beta.DesiredState\032\275\002\n\010Artif"
+          + "act\022\017\n\002id\030\001 \001(\tB\003\340A\002\022N\n\006remote\030\002 \001(\0132<.g"
+          + "oogle.cloud.osconfig.v1beta.SoftwareReci"
+          + "pe.Artifact.RemoteH\000\022H\n\003gcs\030\003 \001(\01329.goog"
+          + "le.cloud.osconfig.v1beta.SoftwareRecipe."
+          + "Artifact.GcsH\000\022\026\n\016allow_insecure\030\004 \001(\010\032\'"
+          + "\n\006Remote\022\013\n\003uri\030\001 \001(\t\022\020\n\010checksum\030\002 \001(\t\032"
+          + "9\n\003Gcs\022\016\n\006bucket\030\001 \001(\t\022\016\n\006object\030\002 \001(\t\022\022"
+          + "\n\ngeneration\030\003 \001(\003B\n\n\010artifact\032\357\013\n\004Step\022"
+          + "O\n\tfile_copy\030\001 \001(\0132:.google.cloud.osconf"
+          + "ig.v1beta.SoftwareRecipe.Step.CopyFileH\000"
+          + "\022^\n\022archive_extraction\030\002 \001(\0132@.google.cl"
           + "oud.osconfig.v1beta.SoftwareRecipe.Step."
-          + "CopyFileH\000\022^\n\022archive_extraction\030\002 \001(\0132@"
-          + ".google.cloud.osconfig.v1beta.SoftwareRe"
-          + "cipe.Step.ExtractArchiveH\000\022X\n\020msi_instal"
-          + "lation\030\003 \001(\0132<.google.cloud.osconfig.v1b"
-          + "eta.SoftwareRecipe.Step.InstallMsiH\000\022Z\n\021"
-          + "dpkg_installation\030\004 \001(\0132=.google.cloud.o"
-          + "sconfig.v1beta.SoftwareRecipe.Step.Insta"
-          + "llDpkgH\000\022X\n\020rpm_installation\030\005 \001(\0132<.goo"
-          + "gle.cloud.osconfig.v1beta.SoftwareRecipe"
-          + ".Step.InstallRpmH\000\022O\n\tfile_exec\030\006 \001(\0132:."
-          + "google.cloud.osconfig.v1beta.SoftwareRec"
-          + "ipe.Step.ExecFileH\000\022Q\n\nscript_run\030\007 \001(\0132"
-          + ";.google.cloud.osconfig.v1beta.SoftwareR"
-          + "ecipe.Step.RunScriptH\000\032f\n\010CopyFile\022\030\n\013ar"
-          + "tifact_id\030\001 \001(\tB\003\340A\002\022\030\n\013destination\030\002 \001("
-          + "\tB\003\340A\002\022\021\n\toverwrite\030\003 \001(\010\022\023\n\013permissions"
-          + "\030\004 \001(\t\032\225\002\n\016ExtractArchive\022\030\n\013artifact_id"
-          + "\030\001 \001(\tB\003\340A\002\022\023\n\013destination\030\002 \001(\t\022_\n\004type"
-          + "\030\003 \001(\0162L.google.cloud.osconfig.v1beta.So"
-          + "ftwareRecipe.Step.ExtractArchive.Archive"
-          + "TypeB\003\340A\002\"s\n\013ArchiveType\022\034\n\030ARCHIVE_TYPE"
-          + "_UNSPECIFIED\020\000\022\007\n\003TAR\020\001\022\014\n\010TAR_GZIP\020\002\022\014\n"
-          + "\010TAR_BZIP\020\003\022\014\n\010TAR_LZMA\020\004\022\n\n\006TAR_XZ\020\005\022\007\n"
-          + "\003ZIP\020\013\032Q\n\nInstallMsi\022\030\n\013artifact_id\030\001 \001("
-          + "\tB\003\340A\002\022\r\n\005flags\030\002 \003(\t\022\032\n\022allowed_exit_co"
-          + "des\030\003 \003(\005\032\'\n\013InstallDpkg\022\030\n\013artifact_id\030"
-          + "\001 \001(\tB\003\340A\002\032&\n\nInstallRpm\022\030\n\013artifact_id\030"
-          + "\001 \001(\tB\003\340A\002\032r\n\010ExecFile\022\025\n\013artifact_id\030\001 "
-          + "\001(\tH\000\022\024\n\nlocal_path\030\002 \001(\tH\000\022\014\n\004args\030\003 \003("
-          + "\t\022\032\n\022allowed_exit_codes\030\004 \003(\005B\017\n\rlocatio"
-          + "n_type\032\341\001\n\tRunScript\022\023\n\006script\030\001 \001(\tB\003\340A"
-          + "\002\022\032\n\022allowed_exit_codes\030\002 \003(\005\022\\\n\013interpr"
-          + "eter\030\003 \001(\0162G.google.cloud.osconfig.v1bet"
-          + "a.SoftwareRecipe.Step.RunScript.Interpre"
-          + "ter\"E\n\013Interpreter\022\033\n\027INTERPRETER_UNSPEC"
-          + "IFIED\020\000\022\t\n\005SHELL\020\001\022\016\n\nPOWERSHELL\020\003B\006\n\004st"
-          + "ep\"\273\001\n\030CreateGuestPolicyRequest\022;\n\006paren"
-          + "t\030\001 \001(\tB+\340A\002\372A%\022#osconfig.googleapis.com"
-          + "/GuestPolicy\022\034\n\017guest_policy_id\030\002 \001(\tB\003\340"
-          + "A\002\022D\n\014guest_policy\030\003 \001(\0132).google.cloud."
-          + "osconfig.v1beta.GuestPolicyB\003\340A\002\"R\n\025GetG"
-          + "uestPolicyRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n"
-          + "#osconfig.googleapis.com/GuestPolicy\"~\n\030"
-          + "ListGuestPoliciesRequest\022;\n\006parent\030\001 \001(\t"
-          + "B+\340A\002\372A%\022#osconfig.googleapis.com/GuestP"
-          + "olicy\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003"
-          + " \001(\t\"w\n\031ListGuestPoliciesResponse\022A\n\016gue"
-          + "st_policies\030\001 \003(\0132).google.cloud.osconfi"
-          + "g.v1beta.GuestPolicy\022\027\n\017next_page_token\030"
-          + "\002 \001(\t\"\221\001\n\030UpdateGuestPolicyRequest\022D\n\014gu"
-          + "est_policy\030\001 \001(\0132).google.cloud.osconfig"
-          + ".v1beta.GuestPolicyB\003\340A\002\022/\n\013update_mask\030"
-          + "\002 \001(\0132\032.google.protobuf.FieldMask\"U\n\030Del"
-          + "eteGuestPolicyRequest\0229\n\004name\030\001 \001(\tB+\340A\002"
-          + "\372A%\n#osconfig.googleapis.com/GuestPolicy"
-          + "\"~\n!LookupEffectiveGuestPolicyRequest\022\025\n"
-          + "\010instance\030\001 \001(\tB\003\340A\002\022\025\n\ros_short_name\030\002 "
-          + "\001(\t\022\022\n\nos_version\030\003 \001(\t\022\027\n\017os_architectu"
-          + "re\030\004 \001(\t\"\375\004\n\024EffectiveGuestPolicy\022S\n\010pac"
-          + "kages\030\001 \003(\0132A.google.cloud.osconfig.v1be"
-          + "ta.EffectiveGuestPolicy.SourcedPackage\022i"
-          + "\n\024package_repositories\030\002 \003(\0132K.google.cl"
-          + "oud.osconfig.v1beta.EffectiveGuestPolicy"
-          + ".SourcedPackageRepository\022b\n\020software_re"
-          + "cipes\030\003 \003(\0132H.google.cloud.osconfig.v1be"
-          + "ta.EffectiveGuestPolicy.SourcedSoftwareR"
-          + "ecipe\032X\n\016SourcedPackage\022\016\n\006source\030\001 \001(\t\022"
-          + "6\n\007package\030\002 \001(\0132%.google.cloud.osconfig"
-          + ".v1beta.Package\032w\n\030SourcedPackageReposit"
-          + "ory\022\016\n\006source\030\001 \001(\t\022K\n\022package_repositor"
-          + "y\030\002 \001(\0132/.google.cloud.osconfig.v1beta.P"
-          + "ackageRepository\032n\n\025SourcedSoftwareRecip"
-          + "e\022\016\n\006source\030\001 \001(\t\022E\n\017software_recipe\030\002 \001"
-          + "(\0132,.google.cloud.osconfig.v1beta.Softwa"
-          + "reRecipe*V\n\014DesiredState\022\035\n\031DESIRED_STAT"
-          + "E_UNSPECIFIED\020\000\022\r\n\tINSTALLED\020\001\022\013\n\007UPDATE"
-          + "D\020\002\022\013\n\007REMOVED\020\003Bw\n com.google.cloud.osc"
-          + "onfig.v1betaB\rGuestPoliciesZDgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/osconfi"
-          + "g/v1beta;osconfigb\006proto3"
+          + "ExtractArchiveH\000\022X\n\020msi_installation\030\003 \001"
+          + "(\0132<.google.cloud.osconfig.v1beta.Softwa"
+          + "reRecipe.Step.InstallMsiH\000\022Z\n\021dpkg_insta"
+          + "llation\030\004 \001(\0132=.google.cloud.osconfig.v1"
+          + "beta.SoftwareRecipe.Step.InstallDpkgH\000\022X"
+          + "\n\020rpm_installation\030\005 \001(\0132<.google.cloud."
+          + "osconfig.v1beta.SoftwareRecipe.Step.Inst"
+          + "allRpmH\000\022O\n\tfile_exec\030\006 \001(\0132:.google.clo"
+          + "ud.osconfig.v1beta.SoftwareRecipe.Step.E"
+          + "xecFileH\000\022Q\n\nscript_run\030\007 \001(\0132;.google.c"
+          + "loud.osconfig.v1beta.SoftwareRecipe.Step"
+          + ".RunScriptH\000\032f\n\010CopyFile\022\030\n\013artifact_id\030"
+          + "\001 \001(\tB\003\340A\002\022\030\n\013destination\030\002 \001(\tB\003\340A\002\022\021\n\t"
+          + "overwrite\030\003 \001(\010\022\023\n\013permissions\030\004 \001(\t\032\225\002\n"
+          + "\016ExtractArchive\022\030\n\013artifact_id\030\001 \001(\tB\003\340A"
+          + "\002\022\023\n\013destination\030\002 \001(\t\022_\n\004type\030\003 \001(\0162L.g"
+          + "oogle.cloud.osconfig.v1beta.SoftwareReci"
+          + "pe.Step.ExtractArchive.ArchiveTypeB\003\340A\002\""
+          + "s\n\013ArchiveType\022\034\n\030ARCHIVE_TYPE_UNSPECIFI"
+          + "ED\020\000\022\007\n\003TAR\020\001\022\014\n\010TAR_GZIP\020\002\022\014\n\010TAR_BZIP\020"
+          + "\003\022\014\n\010TAR_LZMA\020\004\022\n\n\006TAR_XZ\020\005\022\007\n\003ZIP\020\013\032Q\n\n"
+          + "InstallMsi\022\030\n\013artifact_id\030\001 \001(\tB\003\340A\002\022\r\n\005"
+          + "flags\030\002 \003(\t\022\032\n\022allowed_exit_codes\030\003 \003(\005\032"
+          + "\'\n\013InstallDpkg\022\030\n\013artifact_id\030\001 \001(\tB\003\340A\002"
+          + "\032&\n\nInstallRpm\022\030\n\013artifact_id\030\001 \001(\tB\003\340A\002"
+          + "\032r\n\010ExecFile\022\025\n\013artifact_id\030\001 \001(\tH\000\022\024\n\nl"
+          + "ocal_path\030\002 \001(\tH\000\022\014\n\004args\030\003 \003(\t\022\032\n\022allow"
+          + "ed_exit_codes\030\004 \003(\005B\017\n\rlocation_type\032\341\001\n"
+          + "\tRunScript\022\023\n\006script\030\001 \001(\tB\003\340A\002\022\032\n\022allow"
+          + "ed_exit_codes\030\002 \003(\005\022\\\n\013interpreter\030\003 \001(\016"
+          + "2G.google.cloud.osconfig.v1beta.Software"
+          + "Recipe.Step.RunScript.Interpreter\"E\n\013Int"
+          + "erpreter\022\033\n\027INTERPRETER_UNSPECIFIED\020\000\022\t\n"
+          + "\005SHELL\020\001\022\016\n\nPOWERSHELL\020\003B\006\n\004step\"\273\001\n\030Cre"
+          + "ateGuestPolicyRequest\022;\n\006parent\030\001 \001(\tB+\340"
+          + "A\002\372A%\022#osconfig.googleapis.com/GuestPoli"
+          + "cy\022\034\n\017guest_policy_id\030\002 \001(\tB\003\340A\002\022D\n\014gues"
+          + "t_policy\030\003 \001(\0132).google.cloud.osconfig.v"
+          + "1beta.GuestPolicyB\003\340A\002\"R\n\025GetGuestPolicy"
+          + "Request\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#osconfig."
+          + "googleapis.com/GuestPolicy\"~\n\030ListGuestP"
+          + "oliciesRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#"
+          + "osconfig.googleapis.com/GuestPolicy\022\021\n\tp"
+          + "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"w\n\031Li"
+          + "stGuestPoliciesResponse\022A\n\016guest_policie"
+          + "s\030\001 \003(\0132).google.cloud.osconfig.v1beta.G"
+          + "uestPolicy\022\027\n\017next_page_token\030\002 \001(\t\"\221\001\n\030"
+          + "UpdateGuestPolicyRequest\022D\n\014guest_policy"
+          + "\030\001 \001(\0132).google.cloud.osconfig.v1beta.Gu"
+          + "estPolicyB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.go"
+          + "ogle.protobuf.FieldMask\"U\n\030DeleteGuestPo"
+          + "licyRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#oscon"
+          + "fig.googleapis.com/GuestPolicy\"~\n!Lookup"
+          + "EffectiveGuestPolicyRequest\022\025\n\010instance\030"
+          + "\001 \001(\tB\003\340A\002\022\025\n\ros_short_name\030\002 \001(\t\022\022\n\nos_"
+          + "version\030\003 \001(\t\022\027\n\017os_architecture\030\004 \001(\t\"\375"
+          + "\004\n\024EffectiveGuestPolicy\022S\n\010packages\030\001 \003("
+          + "\0132A.google.cloud.osconfig.v1beta.Effecti"
+          + "veGuestPolicy.SourcedPackage\022i\n\024package_"
+          + "repositories\030\002 \003(\0132K.google.cloud.osconf"
+          + "ig.v1beta.EffectiveGuestPolicy.SourcedPa"
+          + "ckageRepository\022b\n\020software_recipes\030\003 \003("
+          + "\0132H.google.cloud.osconfig.v1beta.Effecti"
+          + "veGuestPolicy.SourcedSoftwareRecipe\032X\n\016S"
+          + "ourcedPackage\022\016\n\006source\030\001 \001(\t\0226\n\007package"
+          + "\030\002 \001(\0132%.google.cloud.osconfig.v1beta.Pa"
+          + "ckage\032w\n\030SourcedPackageRepository\022\016\n\006sou"
+          + "rce\030\001 \001(\t\022K\n\022package_repository\030\002 \001(\0132/."
+          + "google.cloud.osconfig.v1beta.PackageRepo"
+          + "sitory\032n\n\025SourcedSoftwareRecipe\022\016\n\006sourc"
+          + "e\030\001 \001(\t\022E\n\017software_recipe\030\002 \001(\0132,.googl"
+          + "e.cloud.osconfig.v1beta.SoftwareRecipe*V"
+          + "\n\014DesiredState\022\035\n\031DESIRED_STATE_UNSPECIF"
+          + "IED\020\000\022\r\n\tINSTALLED\020\001\022\013\n\007UPDATED\020\002\022\013\n\007REM"
+          + "OVED\020\003Bw\n com.google.cloud.osconfig.v1be"
+          + "taB\rGuestPoliciesZDgoogle.golang.org/gen"
+          + "proto/googleapis/cloud/osconfig/v1beta;o"
+          + "sconfigb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -50387,6 +50380,7 @@ public final class GuestPolicies {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

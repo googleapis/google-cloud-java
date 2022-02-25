@@ -16945,11 +16945,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains information about a Windows application as retrieved from the
-   * Windows Registry. For more information about these fields, see
-   * [Windows Installer Properties for the Uninstall
-   * Registry](https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key){:
-   * class="external" }
+   * Contains information about a Windows application that is retrieved from the
+   * Windows Registry. For more information about these fields, see:
+   * https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key
    * </pre>
    *
    * Protobuf type {@code google.cloud.osconfig.v1alpha.Inventory.WindowsApplication}
@@ -17530,11 +17528,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains information about a Windows application as retrieved from the
-     * Windows Registry. For more information about these fields, see
-     * [Windows Installer Properties for the Uninstall
-     * Registry](https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key){:
-     * class="external" }
+     * Contains information about a Windows application that is retrieved from the
+     * Windows Registry. For more information about these fields, see:
+     * https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key
      * </pre>
      *
      * Protobuf type {@code google.cloud.osconfig.v1alpha.Inventory.WindowsApplication}
@@ -18547,10 +18543,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>
@@ -18575,10 +18571,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>
@@ -18594,10 +18590,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>
@@ -18618,10 +18614,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>
@@ -19466,10 +19462,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>
@@ -19494,10 +19490,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>
@@ -19513,10 +19509,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>
@@ -19537,10 +19533,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>
@@ -19568,10 +19564,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>
@@ -19595,10 +19591,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>
@@ -19620,10 +19616,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>

@@ -461,6 +461,112 @@ public final class OsConfigZonalServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest,
+          com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport>
+      getGetOSPolicyAssignmentReportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetOSPolicyAssignmentReport",
+      requestType = com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest.class,
+      responseType = com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest,
+          com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport>
+      getGetOSPolicyAssignmentReportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest,
+            com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport>
+        getGetOSPolicyAssignmentReportMethod;
+    if ((getGetOSPolicyAssignmentReportMethod =
+            OsConfigZonalServiceGrpc.getGetOSPolicyAssignmentReportMethod)
+        == null) {
+      synchronized (OsConfigZonalServiceGrpc.class) {
+        if ((getGetOSPolicyAssignmentReportMethod =
+                OsConfigZonalServiceGrpc.getGetOSPolicyAssignmentReportMethod)
+            == null) {
+          OsConfigZonalServiceGrpc.getGetOSPolicyAssignmentReportMethod =
+              getGetOSPolicyAssignmentReportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest,
+                          com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetOSPolicyAssignmentReport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigZonalServiceMethodDescriptorSupplier(
+                              "GetOSPolicyAssignmentReport"))
+                      .build();
+        }
+      }
+    }
+    return getGetOSPolicyAssignmentReportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest,
+          com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse>
+      getListOSPolicyAssignmentReportsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOSPolicyAssignmentReports",
+      requestType = com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest.class,
+      responseType = com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest,
+          com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse>
+      getListOSPolicyAssignmentReportsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest,
+            com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse>
+        getListOSPolicyAssignmentReportsMethod;
+    if ((getListOSPolicyAssignmentReportsMethod =
+            OsConfigZonalServiceGrpc.getListOSPolicyAssignmentReportsMethod)
+        == null) {
+      synchronized (OsConfigZonalServiceGrpc.class) {
+        if ((getListOSPolicyAssignmentReportsMethod =
+                OsConfigZonalServiceGrpc.getListOSPolicyAssignmentReportsMethod)
+            == null) {
+          OsConfigZonalServiceGrpc.getListOSPolicyAssignmentReportsMethod =
+              getListOSPolicyAssignmentReportsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest,
+                          com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListOSPolicyAssignmentReports"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.osconfig.v1alpha
+                                  .ListOSPolicyAssignmentReportsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OsConfigZonalServiceMethodDescriptorSupplier(
+                              "ListOSPolicyAssignmentReports"))
+                      .build();
+        }
+      }
+    }
+    return getListOSPolicyAssignmentReportsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.osconfig.v1alpha.GetInventoryRequest,
           com.google.cloud.osconfig.v1alpha.Inventory>
       getGetInventoryMethod;
@@ -829,6 +935,7 @@ public final class OsConfigZonalServiceGrpc {
      * instance.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getInstanceOSPoliciesCompliance(
         com.google.cloud.osconfig.v1alpha.GetInstanceOSPoliciesComplianceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance>
@@ -845,6 +952,7 @@ public final class OsConfigZonalServiceGrpc {
      * specified zone.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listInstanceOSPoliciesCompliances(
         com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesRequest request,
         io.grpc.stub.StreamObserver<
@@ -852,6 +960,39 @@ public final class OsConfigZonalServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListInstanceOSPoliciesCompliancesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the OS policy asssignment report for the specified Compute Engine VM
+     * instance.
+     * </pre>
+     */
+    public void getOSPolicyAssignmentReport(
+        com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetOSPolicyAssignmentReportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List OS policy asssignment reports for all Compute Engine VM instances in
+     * the specified zone.
+     * </pre>
+     */
+    public void listOSPolicyAssignmentReports(
+        com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListOSPolicyAssignmentReportsMethod(), responseObserver);
     }
 
     /**
@@ -972,6 +1113,20 @@ public final class OsConfigZonalServiceGrpc {
                       com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesRequest,
                       com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesResponse>(
                       this, METHODID_LIST_INSTANCE_OSPOLICIES_COMPLIANCES)))
+          .addMethod(
+              getGetOSPolicyAssignmentReportMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest,
+                      com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport>(
+                      this, METHODID_GET_OSPOLICY_ASSIGNMENT_REPORT)))
+          .addMethod(
+              getListOSPolicyAssignmentReportsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest,
+                      com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse>(
+                      this, METHODID_LIST_OSPOLICY_ASSIGNMENT_REPORTS)))
           .addMethod(
               getGetInventoryMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1154,6 +1309,7 @@ public final class OsConfigZonalServiceGrpc {
      * instance.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getInstanceOSPoliciesCompliance(
         com.google.cloud.osconfig.v1alpha.GetInstanceOSPoliciesComplianceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance>
@@ -1172,6 +1328,7 @@ public final class OsConfigZonalServiceGrpc {
      * specified zone.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listInstanceOSPoliciesCompliances(
         com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesRequest request,
         io.grpc.stub.StreamObserver<
@@ -1179,6 +1336,43 @@ public final class OsConfigZonalServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListInstanceOSPoliciesCompliancesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the OS policy asssignment report for the specified Compute Engine VM
+     * instance.
+     * </pre>
+     */
+    public void getOSPolicyAssignmentReport(
+        com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetOSPolicyAssignmentReportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List OS policy asssignment reports for all Compute Engine VM instances in
+     * the specified zone.
+     * </pre>
+     */
+    public void listOSPolicyAssignmentReports(
+        com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListOSPolicyAssignmentReportsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1385,6 +1579,7 @@ public final class OsConfigZonalServiceGrpc {
      * instance.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance
         getInstanceOSPoliciesCompliance(
             com.google.cloud.osconfig.v1alpha.GetInstanceOSPoliciesComplianceRequest request) {
@@ -1400,11 +1595,41 @@ public final class OsConfigZonalServiceGrpc {
      * specified zone.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesResponse
         listInstanceOSPoliciesCompliances(
             com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListInstanceOSPoliciesCompliancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the OS policy asssignment report for the specified Compute Engine VM
+     * instance.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport getOSPolicyAssignmentReport(
+        com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOSPolicyAssignmentReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List OS policy asssignment reports for all Compute Engine VM instances in
+     * the specified zone.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse
+        listOSPolicyAssignmentReports(
+            com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOSPolicyAssignmentReportsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1602,6 +1827,7 @@ public final class OsConfigZonalServiceGrpc {
      * instance.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance>
         getInstanceOSPoliciesCompliance(
@@ -1619,12 +1845,46 @@ public final class OsConfigZonalServiceGrpc {
      * specified zone.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesResponse>
         listInstanceOSPoliciesCompliances(
             com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListInstanceOSPoliciesCompliancesMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the OS policy asssignment report for the specified Compute Engine VM
+     * instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport>
+        getOSPolicyAssignmentReport(
+            com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetOSPolicyAssignmentReportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List OS policy asssignment reports for all Compute Engine VM instances in
+     * the specified zone.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse>
+        listOSPolicyAssignmentReports(
+            com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListOSPolicyAssignmentReportsMethod(), getCallOptions()),
           request);
     }
 
@@ -1697,10 +1957,12 @@ public final class OsConfigZonalServiceGrpc {
   private static final int METHODID_DELETE_OSPOLICY_ASSIGNMENT = 5;
   private static final int METHODID_GET_INSTANCE_OSPOLICIES_COMPLIANCE = 6;
   private static final int METHODID_LIST_INSTANCE_OSPOLICIES_COMPLIANCES = 7;
-  private static final int METHODID_GET_INVENTORY = 8;
-  private static final int METHODID_LIST_INVENTORIES = 9;
-  private static final int METHODID_GET_VULNERABILITY_REPORT = 10;
-  private static final int METHODID_LIST_VULNERABILITY_REPORTS = 11;
+  private static final int METHODID_GET_OSPOLICY_ASSIGNMENT_REPORT = 8;
+  private static final int METHODID_LIST_OSPOLICY_ASSIGNMENT_REPORTS = 9;
+  private static final int METHODID_GET_INVENTORY = 10;
+  private static final int METHODID_LIST_INVENTORIES = 11;
+  private static final int METHODID_GET_VULNERABILITY_REPORT = 12;
+  private static final int METHODID_LIST_VULNERABILITY_REPORTS = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1766,6 +2028,20 @@ public final class OsConfigZonalServiceGrpc {
               (com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_OSPOLICY_ASSIGNMENT_REPORT:
+          serviceImpl.getOSPolicyAssignmentReport(
+              (com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_OSPOLICY_ASSIGNMENT_REPORTS:
+          serviceImpl.listOSPolicyAssignmentReports(
+              (com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse>)
                   responseObserver);
           break;
         case METHODID_GET_INVENTORY:
@@ -1866,6 +2142,8 @@ public final class OsConfigZonalServiceGrpc {
                       .addMethod(getDeleteOSPolicyAssignmentMethod())
                       .addMethod(getGetInstanceOSPoliciesComplianceMethod())
                       .addMethod(getListInstanceOSPoliciesCompliancesMethod())
+                      .addMethod(getGetOSPolicyAssignmentReportMethod())
+                      .addMethod(getListOSPolicyAssignmentReportsMethod())
                       .addMethod(getGetInventoryMethod())
                       .addMethod(getListInventoriesMethod())
                       .addMethod(getGetVulnerabilityReportMethod())

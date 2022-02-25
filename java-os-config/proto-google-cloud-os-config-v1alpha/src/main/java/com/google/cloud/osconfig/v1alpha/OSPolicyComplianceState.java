@@ -27,6 +27,7 @@ package com.google.cloud.osconfig.v1alpha;
  *
  * Protobuf enum {@code google.cloud.osconfig.v1alpha.OSPolicyComplianceState}
  */
+@java.lang.Deprecated
 public enum OSPolicyComplianceState implements com.google.protobuf.ProtocolMessageEnum {
   /**
    *

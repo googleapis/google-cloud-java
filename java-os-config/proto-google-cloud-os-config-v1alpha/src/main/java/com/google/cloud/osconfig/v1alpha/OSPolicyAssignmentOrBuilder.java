@@ -321,6 +321,33 @@ public interface OSPolicyAssignmentOrBuilder
    *
    *
    * <pre>
+   * The etag for this OS policy assignment.
+   * If this is provided on update, it must match the server's etag.
+   * </pre>
+   *
+   * <code>string etag = 8;</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * The etag for this OS policy assignment.
+   * If this is provided on update, it must match the server's etag.
+   * </pre>
+   *
+   * <code>string etag = 8;</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. OS policy assignment rollout state
    * </pre>
    *

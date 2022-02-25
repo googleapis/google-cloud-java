@@ -98,14 +98,14 @@ public final class DeleteOSPolicyAssignmentRequest extends com.google.protobuf.G
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+    return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
         .internal_static_google_cloud_osconfig_v1alpha_DeleteOSPolicyAssignmentRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+    return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
         .internal_static_google_cloud_osconfig_v1alpha_DeleteOSPolicyAssignmentRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest.class,
@@ -340,14 +340,14 @@ public final class DeleteOSPolicyAssignmentRequest extends com.google.protobuf.G
       // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest)
       com.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+      return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
           .internal_static_google_cloud_osconfig_v1alpha_DeleteOSPolicyAssignmentRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+      return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
           .internal_static_google_cloud_osconfig_v1alpha_DeleteOSPolicyAssignmentRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest.class,
@@ -379,7 +379,7 @@ public final class DeleteOSPolicyAssignmentRequest extends com.google.protobuf.G
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.osconfig.v1alpha.OSPolicyAssignments
+      return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
           .internal_static_google_cloud_osconfig_v1alpha_DeleteOSPolicyAssignmentRequest_descriptor;
     }
 

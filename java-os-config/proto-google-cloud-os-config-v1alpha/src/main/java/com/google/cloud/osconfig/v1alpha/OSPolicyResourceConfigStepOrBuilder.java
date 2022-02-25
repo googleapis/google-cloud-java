@@ -18,6 +18,7 @@
 
 package com.google.cloud.osconfig.v1alpha;
 
+@java.lang.Deprecated
 public interface OSPolicyResourceConfigStepOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep)

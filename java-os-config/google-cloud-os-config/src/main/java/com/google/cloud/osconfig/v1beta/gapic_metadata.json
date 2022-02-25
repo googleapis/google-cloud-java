@@ -52,8 +52,17 @@
             "LookupEffectiveGuestPolicy": {
               "methods": ["lookupEffectiveGuestPolicy", "lookupEffectiveGuestPolicyCallable"]
             },
+            "PausePatchDeployment": {
+              "methods": ["pausePatchDeployment", "pausePatchDeployment", "pausePatchDeployment", "pausePatchDeploymentCallable"]
+            },
+            "ResumePatchDeployment": {
+              "methods": ["resumePatchDeployment", "resumePatchDeployment", "resumePatchDeployment", "resumePatchDeploymentCallable"]
+            },
             "UpdateGuestPolicy": {
               "methods": ["updateGuestPolicy", "updateGuestPolicy", "updateGuestPolicyCallable"]
+            },
+            "UpdatePatchDeployment": {
+              "methods": ["updatePatchDeployment", "updatePatchDeployment", "updatePatchDeploymentCallable"]
             }
           }
         }

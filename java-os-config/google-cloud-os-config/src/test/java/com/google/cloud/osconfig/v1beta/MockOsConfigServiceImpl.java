@@ -257,6 +257,72 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
   }
 
   @Override
+  public void updatePatchDeployment(
+      PatchDeployments.UpdatePatchDeploymentRequest request,
+      StreamObserver<PatchDeployments.PatchDeployment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PatchDeployments.PatchDeployment) {
+      requests.add(request);
+      responseObserver.onNext(((PatchDeployments.PatchDeployment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdatePatchDeployment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PatchDeployments.PatchDeployment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void pausePatchDeployment(
+      PatchDeployments.PausePatchDeploymentRequest request,
+      StreamObserver<PatchDeployments.PatchDeployment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PatchDeployments.PatchDeployment) {
+      requests.add(request);
+      responseObserver.onNext(((PatchDeployments.PatchDeployment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PausePatchDeployment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PatchDeployments.PatchDeployment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void resumePatchDeployment(
+      PatchDeployments.ResumePatchDeploymentRequest request,
+      StreamObserver<PatchDeployments.PatchDeployment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PatchDeployments.PatchDeployment) {
+      requests.add(request);
+      responseObserver.onNext(((PatchDeployments.PatchDeployment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ResumePatchDeployment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PatchDeployments.PatchDeployment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createGuestPolicy(
       GuestPolicies.CreateGuestPolicyRequest request,
       StreamObserver<GuestPolicies.GuestPolicy> responseObserver) {

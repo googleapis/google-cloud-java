@@ -232,6 +232,50 @@ public class MockOsConfigZonalServiceImpl extends OsConfigZonalServiceImplBase {
   }
 
   @Override
+  public void getOSPolicyAssignmentReport(
+      GetOSPolicyAssignmentReportRequest request,
+      StreamObserver<OSPolicyAssignmentReport> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof OSPolicyAssignmentReport) {
+      requests.add(request);
+      responseObserver.onNext(((OSPolicyAssignmentReport) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetOSPolicyAssignmentReport, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  OSPolicyAssignmentReport.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listOSPolicyAssignmentReports(
+      ListOSPolicyAssignmentReportsRequest request,
+      StreamObserver<ListOSPolicyAssignmentReportsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListOSPolicyAssignmentReportsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListOSPolicyAssignmentReportsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListOSPolicyAssignmentReports, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListOSPolicyAssignmentReportsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getInventory(
       GetInventoryRequest request, StreamObserver<Inventory> responseObserver) {
     Object response = responses.poll();

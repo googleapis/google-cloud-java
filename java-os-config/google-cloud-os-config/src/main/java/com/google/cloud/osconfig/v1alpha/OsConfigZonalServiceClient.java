@@ -1190,7 +1190,9 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *     <p>For `{project}`, either Compute Engine project-number or project-id can be provided. For
    *     `{instance}`, either Compute Engine VM instance-id or instance-name can be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final InstanceOSPoliciesCompliance getInstanceOSPoliciesCompliance(
       InstanceOSPoliciesComplianceName name) {
     GetInstanceOSPoliciesComplianceRequest request =
@@ -1222,7 +1224,9 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *     <p>For `{project}`, either Compute Engine project-number or project-id can be provided. For
    *     `{instance}`, either Compute Engine VM instance-id or instance-name can be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final InstanceOSPoliciesCompliance getInstanceOSPoliciesCompliance(String name) {
     GetInstanceOSPoliciesComplianceRequest request =
         GetInstanceOSPoliciesComplianceRequest.newBuilder().setName(name).build();
@@ -1251,7 +1255,9 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final InstanceOSPoliciesCompliance getInstanceOSPoliciesCompliance(
       GetInstanceOSPoliciesComplianceRequest request) {
     return getInstanceOSPoliciesComplianceCallable().call(request);
@@ -1278,7 +1284,10 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *   InstanceOSPoliciesCompliance response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetInstanceOSPoliciesComplianceRequest, InstanceOSPoliciesCompliance>
       getInstanceOSPoliciesComplianceCallable() {
     return stub.getInstanceOSPoliciesComplianceCallable();
@@ -1305,7 +1314,9 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *     <p>Format: `projects/{project}/locations/{location}`
    *     <p>For `{project}`, either Compute Engine project-number or project-id can be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListInstanceOSPoliciesCompliancesPagedResponse listInstanceOSPoliciesCompliances(
       LocationName parent) {
     ListInstanceOSPoliciesCompliancesRequest request =
@@ -1336,7 +1347,9 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *     <p>Format: `projects/{project}/locations/{location}`
    *     <p>For `{project}`, either Compute Engine project-number or project-id can be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListInstanceOSPoliciesCompliancesPagedResponse listInstanceOSPoliciesCompliances(
       String parent) {
     ListInstanceOSPoliciesCompliancesRequest request =
@@ -1369,7 +1382,9 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListInstanceOSPoliciesCompliancesPagedResponse listInstanceOSPoliciesCompliances(
       ListInstanceOSPoliciesCompliancesRequest request) {
     return listInstanceOSPoliciesCompliancesPagedCallable().call(request);
@@ -1401,7 +1416,10 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<
           ListInstanceOSPoliciesCompliancesRequest, ListInstanceOSPoliciesCompliancesPagedResponse>
       listInstanceOSPoliciesCompliancesPagedCallable() {
@@ -1439,11 +1457,336 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<
           ListInstanceOSPoliciesCompliancesRequest, ListInstanceOSPoliciesCompliancesResponse>
       listInstanceOSPoliciesCompliancesCallable() {
     return stub.listInstanceOSPoliciesCompliancesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the OS policy asssignment report for the specified Compute Engine VM instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigZonalServiceClient osConfigZonalServiceClient =
+   *     OsConfigZonalServiceClient.create()) {
+   *   OSPolicyAssignmentReportName name =
+   *       OSPolicyAssignmentReportName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]");
+   *   OSPolicyAssignmentReport response =
+   *       osConfigZonalServiceClient.getOSPolicyAssignmentReport(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. API resource name for OS policy assignment report.
+   *     <p>Format:
+   *     `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report`
+   *     <p>For `{project}`, either `project-number` or `project-id` can be provided. For
+   *     `{instance_id}`, either Compute Engine `instance-id` or `instance-name` can be provided.
+   *     For `{assignment_id}`, the OSPolicyAssignment id must be provided.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OSPolicyAssignmentReport getOSPolicyAssignmentReport(
+      OSPolicyAssignmentReportName name) {
+    GetOSPolicyAssignmentReportRequest request =
+        GetOSPolicyAssignmentReportRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getOSPolicyAssignmentReport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the OS policy asssignment report for the specified Compute Engine VM instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigZonalServiceClient osConfigZonalServiceClient =
+   *     OsConfigZonalServiceClient.create()) {
+   *   String name =
+   *       OSPolicyAssignmentReportName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]")
+   *           .toString();
+   *   OSPolicyAssignmentReport response =
+   *       osConfigZonalServiceClient.getOSPolicyAssignmentReport(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. API resource name for OS policy assignment report.
+   *     <p>Format:
+   *     `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report`
+   *     <p>For `{project}`, either `project-number` or `project-id` can be provided. For
+   *     `{instance_id}`, either Compute Engine `instance-id` or `instance-name` can be provided.
+   *     For `{assignment_id}`, the OSPolicyAssignment id must be provided.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OSPolicyAssignmentReport getOSPolicyAssignmentReport(String name) {
+    GetOSPolicyAssignmentReportRequest request =
+        GetOSPolicyAssignmentReportRequest.newBuilder().setName(name).build();
+    return getOSPolicyAssignmentReport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the OS policy asssignment report for the specified Compute Engine VM instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigZonalServiceClient osConfigZonalServiceClient =
+   *     OsConfigZonalServiceClient.create()) {
+   *   GetOSPolicyAssignmentReportRequest request =
+   *       GetOSPolicyAssignmentReportRequest.newBuilder()
+   *           .setName(
+   *               OSPolicyAssignmentReportName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]")
+   *                   .toString())
+   *           .build();
+   *   OSPolicyAssignmentReport response =
+   *       osConfigZonalServiceClient.getOSPolicyAssignmentReport(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OSPolicyAssignmentReport getOSPolicyAssignmentReport(
+      GetOSPolicyAssignmentReportRequest request) {
+    return getOSPolicyAssignmentReportCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the OS policy asssignment report for the specified Compute Engine VM instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigZonalServiceClient osConfigZonalServiceClient =
+   *     OsConfigZonalServiceClient.create()) {
+   *   GetOSPolicyAssignmentReportRequest request =
+   *       GetOSPolicyAssignmentReportRequest.newBuilder()
+   *           .setName(
+   *               OSPolicyAssignmentReportName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<OSPolicyAssignmentReport> future =
+   *       osConfigZonalServiceClient.getOSPolicyAssignmentReportCallable().futureCall(request);
+   *   // Do something.
+   *   OSPolicyAssignmentReport response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+      getOSPolicyAssignmentReportCallable() {
+    return stub.getOSPolicyAssignmentReportCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List OS policy asssignment reports for all Compute Engine VM instances in the specified zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigZonalServiceClient osConfigZonalServiceClient =
+   *     OsConfigZonalServiceClient.create()) {
+   *   InstanceOSPolicyAssignmentName parent =
+   *       InstanceOSPolicyAssignmentName.of(
+   *           "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]");
+   *   for (OSPolicyAssignmentReport element :
+   *       osConfigZonalServiceClient.listOSPolicyAssignmentReports(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name.
+   *     <p>Format:
+   *     `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports`
+   *     <p>For `{project}`, either `project-number` or `project-id` can be provided. For
+   *     `{instance}`, either `instance-name`, `instance-id`, or `-` can be provided. If '-' is
+   *     provided, the response will include OSPolicyAssignmentReports for all instances in the
+   *     project/location. For `{assignment}`, either `assignment-id` or `-` can be provided. If '-'
+   *     is provided, the response will include OSPolicyAssignmentReports for all
+   *     OSPolicyAssignments in the project/location. Either {instance} or {assignment} must be `-`.
+   *     <p>For example:
+   *     `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports`
+   *     returns all reports for the instance
+   *     `projects/{project}/locations/{location}/instances/-/osPolicyAssignments/{assignment-id}/reports`
+   *     returns all the reports for the given assignment across all instances.
+   *     `projects/{project}/locations/{location}/instances/-/osPolicyAssignments/-/reports` returns
+   *     all the reports for all assignments across all instances.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOSPolicyAssignmentReportsPagedResponse listOSPolicyAssignmentReports(
+      InstanceOSPolicyAssignmentName parent) {
+    ListOSPolicyAssignmentReportsRequest request =
+        ListOSPolicyAssignmentReportsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listOSPolicyAssignmentReports(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List OS policy asssignment reports for all Compute Engine VM instances in the specified zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigZonalServiceClient osConfigZonalServiceClient =
+   *     OsConfigZonalServiceClient.create()) {
+   *   String parent =
+   *       InstanceOSPolicyAssignmentName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]")
+   *           .toString();
+   *   for (OSPolicyAssignmentReport element :
+   *       osConfigZonalServiceClient.listOSPolicyAssignmentReports(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name.
+   *     <p>Format:
+   *     `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports`
+   *     <p>For `{project}`, either `project-number` or `project-id` can be provided. For
+   *     `{instance}`, either `instance-name`, `instance-id`, or `-` can be provided. If '-' is
+   *     provided, the response will include OSPolicyAssignmentReports for all instances in the
+   *     project/location. For `{assignment}`, either `assignment-id` or `-` can be provided. If '-'
+   *     is provided, the response will include OSPolicyAssignmentReports for all
+   *     OSPolicyAssignments in the project/location. Either {instance} or {assignment} must be `-`.
+   *     <p>For example:
+   *     `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports`
+   *     returns all reports for the instance
+   *     `projects/{project}/locations/{location}/instances/-/osPolicyAssignments/{assignment-id}/reports`
+   *     returns all the reports for the given assignment across all instances.
+   *     `projects/{project}/locations/{location}/instances/-/osPolicyAssignments/-/reports` returns
+   *     all the reports for all assignments across all instances.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOSPolicyAssignmentReportsPagedResponse listOSPolicyAssignmentReports(
+      String parent) {
+    ListOSPolicyAssignmentReportsRequest request =
+        ListOSPolicyAssignmentReportsRequest.newBuilder().setParent(parent).build();
+    return listOSPolicyAssignmentReports(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List OS policy asssignment reports for all Compute Engine VM instances in the specified zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigZonalServiceClient osConfigZonalServiceClient =
+   *     OsConfigZonalServiceClient.create()) {
+   *   ListOSPolicyAssignmentReportsRequest request =
+   *       ListOSPolicyAssignmentReportsRequest.newBuilder()
+   *           .setParent(
+   *               InstanceOSPolicyAssignmentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setFilter("filter-1274492040")
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (OSPolicyAssignmentReport element :
+   *       osConfigZonalServiceClient.listOSPolicyAssignmentReports(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOSPolicyAssignmentReportsPagedResponse listOSPolicyAssignmentReports(
+      ListOSPolicyAssignmentReportsRequest request) {
+    return listOSPolicyAssignmentReportsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List OS policy asssignment reports for all Compute Engine VM instances in the specified zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigZonalServiceClient osConfigZonalServiceClient =
+   *     OsConfigZonalServiceClient.create()) {
+   *   ListOSPolicyAssignmentReportsRequest request =
+   *       ListOSPolicyAssignmentReportsRequest.newBuilder()
+   *           .setParent(
+   *               InstanceOSPolicyAssignmentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setFilter("filter-1274492040")
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<OSPolicyAssignmentReport> future =
+   *       osConfigZonalServiceClient
+   *           .listOSPolicyAssignmentReportsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (OSPolicyAssignmentReport element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsPagedResponse>
+      listOSPolicyAssignmentReportsPagedCallable() {
+    return stub.listOSPolicyAssignmentReportsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List OS policy asssignment reports for all Compute Engine VM instances in the specified zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigZonalServiceClient osConfigZonalServiceClient =
+   *     OsConfigZonalServiceClient.create()) {
+   *   ListOSPolicyAssignmentReportsRequest request =
+   *       ListOSPolicyAssignmentReportsRequest.newBuilder()
+   *           .setParent(
+   *               InstanceOSPolicyAssignmentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[ASSIGNMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setFilter("filter-1274492040")
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListOSPolicyAssignmentReportsResponse response =
+   *         osConfigZonalServiceClient.listOSPolicyAssignmentReportsCallable().call(request);
+   *     for (OSPolicyAssignmentReport element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
+      listOSPolicyAssignmentReportsCallable() {
+    return stub.listOSPolicyAssignmentReportsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1568,9 +1911,8 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name.
-   *     <p>Format: `projects/{project}/locations/{location}/instances/{instance}`
-   *     <p>For `{project}`, either `project-number` or `project-id` can be provided. For
-   *     `{instance}`, only hyphen or dash character is supported to list inventories across VMs.
+   *     <p>Format: `projects/{project}/locations/{location}/instances/-`
+   *     <p>For `{project}`, either `project-number` or `project-id` can be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInventoriesPagedResponse listInventories(InstanceName parent) {
@@ -1598,9 +1940,8 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name.
-   *     <p>Format: `projects/{project}/locations/{location}/instances/{instance}`
-   *     <p>For `{project}`, either `project-number` or `project-id` can be provided. For
-   *     `{instance}`, only hyphen or dash character is supported to list inventories across VMs.
+   *     <p>Format: `projects/{project}/locations/{location}/instances/-`
+   *     <p>For `{project}`, either `project-number` or `project-id` can be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInventoriesPagedResponse listInventories(String parent) {
@@ -1837,9 +2178,8 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name.
-   *     <p>Format: `projects/{project}/locations/{location}/instances/{instance}`
-   *     <p>For `{project}`, either `project-number` or `project-id` can be provided. For
-   *     `{instance}`, only `-` character is supported to list vulnerability reports across VMs.
+   *     <p>Format: `projects/{project}/locations/{location}/instances/-`
+   *     <p>For `{project}`, either `project-number` or `project-id` can be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVulnerabilityReportsPagedResponse listVulnerabilityReports(InstanceName parent) {
@@ -1868,9 +2208,8 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name.
-   *     <p>Format: `projects/{project}/locations/{location}/instances/{instance}`
-   *     <p>For `{project}`, either `project-number` or `project-id` can be provided. For
-   *     `{instance}`, only `-` character is supported to list vulnerability reports across VMs.
+   *     <p>Format: `projects/{project}/locations/{location}/instances/-`
+   *     <p>For `{project}`, either `project-number` or `project-id` can be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVulnerabilityReportsPagedResponse listVulnerabilityReports(String parent) {
@@ -2287,6 +2626,103 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
     protected ListInstanceOSPoliciesCompliancesFixedSizeCollection createCollection(
         List<ListInstanceOSPoliciesCompliancesPage> pages, int collectionSize) {
       return new ListInstanceOSPoliciesCompliancesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListOSPolicyAssignmentReportsPagedResponse
+      extends AbstractPagedListResponse<
+          ListOSPolicyAssignmentReportsRequest,
+          ListOSPolicyAssignmentReportsResponse,
+          OSPolicyAssignmentReport,
+          ListOSPolicyAssignmentReportsPage,
+          ListOSPolicyAssignmentReportsFixedSizeCollection> {
+
+    public static ApiFuture<ListOSPolicyAssignmentReportsPagedResponse> createAsync(
+        PageContext<
+                ListOSPolicyAssignmentReportsRequest,
+                ListOSPolicyAssignmentReportsResponse,
+                OSPolicyAssignmentReport>
+            context,
+        ApiFuture<ListOSPolicyAssignmentReportsResponse> futureResponse) {
+      ApiFuture<ListOSPolicyAssignmentReportsPage> futurePage =
+          ListOSPolicyAssignmentReportsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListOSPolicyAssignmentReportsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListOSPolicyAssignmentReportsPagedResponse(ListOSPolicyAssignmentReportsPage page) {
+      super(page, ListOSPolicyAssignmentReportsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListOSPolicyAssignmentReportsPage
+      extends AbstractPage<
+          ListOSPolicyAssignmentReportsRequest,
+          ListOSPolicyAssignmentReportsResponse,
+          OSPolicyAssignmentReport,
+          ListOSPolicyAssignmentReportsPage> {
+
+    private ListOSPolicyAssignmentReportsPage(
+        PageContext<
+                ListOSPolicyAssignmentReportsRequest,
+                ListOSPolicyAssignmentReportsResponse,
+                OSPolicyAssignmentReport>
+            context,
+        ListOSPolicyAssignmentReportsResponse response) {
+      super(context, response);
+    }
+
+    private static ListOSPolicyAssignmentReportsPage createEmptyPage() {
+      return new ListOSPolicyAssignmentReportsPage(null, null);
+    }
+
+    @Override
+    protected ListOSPolicyAssignmentReportsPage createPage(
+        PageContext<
+                ListOSPolicyAssignmentReportsRequest,
+                ListOSPolicyAssignmentReportsResponse,
+                OSPolicyAssignmentReport>
+            context,
+        ListOSPolicyAssignmentReportsResponse response) {
+      return new ListOSPolicyAssignmentReportsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListOSPolicyAssignmentReportsPage> createPageAsync(
+        PageContext<
+                ListOSPolicyAssignmentReportsRequest,
+                ListOSPolicyAssignmentReportsResponse,
+                OSPolicyAssignmentReport>
+            context,
+        ApiFuture<ListOSPolicyAssignmentReportsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListOSPolicyAssignmentReportsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListOSPolicyAssignmentReportsRequest,
+          ListOSPolicyAssignmentReportsResponse,
+          OSPolicyAssignmentReport,
+          ListOSPolicyAssignmentReportsPage,
+          ListOSPolicyAssignmentReportsFixedSizeCollection> {
+
+    private ListOSPolicyAssignmentReportsFixedSizeCollection(
+        List<ListOSPolicyAssignmentReportsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListOSPolicyAssignmentReportsFixedSizeCollection createEmptyCollection() {
+      return new ListOSPolicyAssignmentReportsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListOSPolicyAssignmentReportsFixedSizeCollection createCollection(
+        List<ListOSPolicyAssignmentReportsPage> pages, int collectionSize) {
+      return new ListOSPolicyAssignmentReportsFixedSizeCollection(pages, collectionSize);
     }
   }
 

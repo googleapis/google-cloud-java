@@ -28,6 +28,7 @@ package com.google.cloud.osconfig.v1alpha;
  *
  * Protobuf type {@code google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesResponse}
  */
+@java.lang.Deprecated
 public final class ListInstanceOSPoliciesCompliancesResponse
     extends com.google.protobuf.GeneratedMessageV3
     implements

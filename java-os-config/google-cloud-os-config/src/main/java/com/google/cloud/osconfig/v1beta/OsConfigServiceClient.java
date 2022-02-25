@@ -56,6 +56,7 @@ import javax.annotation.Generated;
  *           .setDuration(Duration.newBuilder().build())
  *           .setDryRun(true)
  *           .setDisplayName("displayName1714148973")
+ *           .setRollout(PatchJobs.PatchRollout.newBuilder().build())
  *           .build();
  *   PatchJobs.PatchJob response = osConfigServiceClient.executePatchJob(request);
  * }
@@ -181,6 +182,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    *           .setDuration(Duration.newBuilder().build())
    *           .setDryRun(true)
    *           .setDisplayName("displayName1714148973")
+   *           .setRollout(PatchJobs.PatchRollout.newBuilder().build())
    *           .build();
    *   PatchJobs.PatchJob response = osConfigServiceClient.executePatchJob(request);
    * }
@@ -210,6 +212,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    *           .setDuration(Duration.newBuilder().build())
    *           .setDryRun(true)
    *           .setDisplayName("displayName1714148973")
+   *           .setRollout(PatchJobs.PatchRollout.newBuilder().build())
    *           .build();
    *   ApiFuture<PatchJobs.PatchJob> future =
    *       osConfigServiceClient.executePatchJobCallable().futureCall(request);
@@ -763,6 +766,293 @@ public class OsConfigServiceClient implements BackgroundResource {
   public final UnaryCallable<PatchDeployments.DeletePatchDeploymentRequest, Empty>
       deletePatchDeploymentCallable() {
     return stub.deletePatchDeploymentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an OS Config patch deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.PatchDeployment patchDeployment =
+   *       PatchDeployments.PatchDeployment.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   PatchDeployments.PatchDeployment response =
+   *       osConfigServiceClient.updatePatchDeployment(patchDeployment, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param patchDeployment Required. The patch deployment to Update.
+   * @param updateMask Optional. Field mask that controls which fields of the patch deployment
+   *     should be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PatchDeployments.PatchDeployment updatePatchDeployment(
+      PatchDeployments.PatchDeployment patchDeployment, FieldMask updateMask) {
+    PatchDeployments.UpdatePatchDeploymentRequest request =
+        PatchDeployments.UpdatePatchDeploymentRequest.newBuilder()
+            .setPatchDeployment(patchDeployment)
+            .setUpdateMask(updateMask)
+            .build();
+    return updatePatchDeployment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an OS Config patch deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.UpdatePatchDeploymentRequest request =
+   *       PatchDeployments.UpdatePatchDeploymentRequest.newBuilder()
+   *           .setPatchDeployment(PatchDeployments.PatchDeployment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   PatchDeployments.PatchDeployment response =
+   *       osConfigServiceClient.updatePatchDeployment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PatchDeployments.PatchDeployment updatePatchDeployment(
+      PatchDeployments.UpdatePatchDeploymentRequest request) {
+    return updatePatchDeploymentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an OS Config patch deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.UpdatePatchDeploymentRequest request =
+   *       PatchDeployments.UpdatePatchDeploymentRequest.newBuilder()
+   *           .setPatchDeployment(PatchDeployments.PatchDeployment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<PatchDeployments.PatchDeployment> future =
+   *       osConfigServiceClient.updatePatchDeploymentCallable().futureCall(request);
+   *   // Do something.
+   *   PatchDeployments.PatchDeployment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      updatePatchDeploymentCallable() {
+    return stub.updatePatchDeploymentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Change state of patch deployment to "PAUSED". Patch deployment in paused state doesn't generate
+   * patch jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
+   *   PatchDeployments.PatchDeployment response = osConfigServiceClient.pausePatchDeployment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the patch deployment in the form
+   *     `projects/&#42;/patchDeployments/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PatchDeployments.PatchDeployment pausePatchDeployment(PatchDeploymentName name) {
+    PatchDeployments.PausePatchDeploymentRequest request =
+        PatchDeployments.PausePatchDeploymentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return pausePatchDeployment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Change state of patch deployment to "PAUSED". Patch deployment in paused state doesn't generate
+   * patch jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString();
+   *   PatchDeployments.PatchDeployment response = osConfigServiceClient.pausePatchDeployment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the patch deployment in the form
+   *     `projects/&#42;/patchDeployments/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PatchDeployments.PatchDeployment pausePatchDeployment(String name) {
+    PatchDeployments.PausePatchDeploymentRequest request =
+        PatchDeployments.PausePatchDeploymentRequest.newBuilder().setName(name).build();
+    return pausePatchDeployment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Change state of patch deployment to "PAUSED". Patch deployment in paused state doesn't generate
+   * patch jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.PausePatchDeploymentRequest request =
+   *       PatchDeployments.PausePatchDeploymentRequest.newBuilder()
+   *           .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+   *           .build();
+   *   PatchDeployments.PatchDeployment response =
+   *       osConfigServiceClient.pausePatchDeployment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PatchDeployments.PatchDeployment pausePatchDeployment(
+      PatchDeployments.PausePatchDeploymentRequest request) {
+    return pausePatchDeploymentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Change state of patch deployment to "PAUSED". Patch deployment in paused state doesn't generate
+   * patch jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.PausePatchDeploymentRequest request =
+   *       PatchDeployments.PausePatchDeploymentRequest.newBuilder()
+   *           .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+   *           .build();
+   *   ApiFuture<PatchDeployments.PatchDeployment> future =
+   *       osConfigServiceClient.pausePatchDeploymentCallable().futureCall(request);
+   *   // Do something.
+   *   PatchDeployments.PatchDeployment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      pausePatchDeploymentCallable() {
+    return stub.pausePatchDeploymentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Change state of patch deployment back to "ACTIVE". Patch deployment in active state continues
+   * to generate patch jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
+   *   PatchDeployments.PatchDeployment response = osConfigServiceClient.resumePatchDeployment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the patch deployment in the form
+   *     `projects/&#42;/patchDeployments/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PatchDeployments.PatchDeployment resumePatchDeployment(PatchDeploymentName name) {
+    PatchDeployments.ResumePatchDeploymentRequest request =
+        PatchDeployments.ResumePatchDeploymentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return resumePatchDeployment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Change state of patch deployment back to "ACTIVE". Patch deployment in active state continues
+   * to generate patch jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString();
+   *   PatchDeployments.PatchDeployment response = osConfigServiceClient.resumePatchDeployment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the patch deployment in the form
+   *     `projects/&#42;/patchDeployments/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PatchDeployments.PatchDeployment resumePatchDeployment(String name) {
+    PatchDeployments.ResumePatchDeploymentRequest request =
+        PatchDeployments.ResumePatchDeploymentRequest.newBuilder().setName(name).build();
+    return resumePatchDeployment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Change state of patch deployment back to "ACTIVE". Patch deployment in active state continues
+   * to generate patch jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.ResumePatchDeploymentRequest request =
+   *       PatchDeployments.ResumePatchDeploymentRequest.newBuilder()
+   *           .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+   *           .build();
+   *   PatchDeployments.PatchDeployment response =
+   *       osConfigServiceClient.resumePatchDeployment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PatchDeployments.PatchDeployment resumePatchDeployment(
+      PatchDeployments.ResumePatchDeploymentRequest request) {
+    return resumePatchDeploymentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Change state of patch deployment back to "ACTIVE". Patch deployment in active state continues
+   * to generate patch jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.ResumePatchDeploymentRequest request =
+   *       PatchDeployments.ResumePatchDeploymentRequest.newBuilder()
+   *           .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+   *           .build();
+   *   ApiFuture<PatchDeployments.PatchDeployment> future =
+   *       osConfigServiceClient.resumePatchDeploymentCallable().futureCall(request);
+   *   // Do something.
+   *   PatchDeployments.PatchDeployment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      resumePatchDeploymentCallable() {
+    return stub.resumePatchDeploymentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

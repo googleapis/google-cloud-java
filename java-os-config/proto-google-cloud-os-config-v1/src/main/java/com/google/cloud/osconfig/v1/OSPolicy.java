@@ -22946,7 +22946,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Defaults to NONE.
+           * Invalid value, the request will return validation error.
            * </pre>
            *
            * <code>INTERPRETER_UNSPECIFIED = 0;</code>
@@ -22994,7 +22994,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Defaults to NONE.
+           * Invalid value, the request will return validation error.
            * </pre>
            *
            * <code>INTERPRETER_UNSPECIFIED = 0;</code>

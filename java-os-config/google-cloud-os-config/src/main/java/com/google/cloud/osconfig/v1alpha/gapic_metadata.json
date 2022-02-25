@@ -25,6 +25,9 @@
             "GetOSPolicyAssignment": {
               "methods": ["getOSPolicyAssignment", "getOSPolicyAssignment", "getOSPolicyAssignment", "getOSPolicyAssignmentCallable"]
             },
+            "GetOSPolicyAssignmentReport": {
+              "methods": ["getOSPolicyAssignmentReport", "getOSPolicyAssignmentReport", "getOSPolicyAssignmentReport", "getOSPolicyAssignmentReportCallable"]
+            },
             "GetVulnerabilityReport": {
               "methods": ["getVulnerabilityReport", "getVulnerabilityReport", "getVulnerabilityReport", "getVulnerabilityReportCallable"]
             },
@@ -33,6 +36,9 @@
             },
             "ListInventories": {
               "methods": ["listInventories", "listInventories", "listInventories", "listInventoriesPagedCallable", "listInventoriesCallable"]
+            },
+            "ListOSPolicyAssignmentReports": {
+              "methods": ["listOSPolicyAssignmentReports", "listOSPolicyAssignmentReports", "listOSPolicyAssignmentReports", "listOSPolicyAssignmentReportsPagedCallable", "listOSPolicyAssignmentReportsCallable"]
             },
             "ListOSPolicyAssignmentRevisions": {
               "methods": ["listOSPolicyAssignmentRevisions", "listOSPolicyAssignmentRevisions", "listOSPolicyAssignmentRevisions", "listOSPolicyAssignmentRevisionsPagedCallable", "listOSPolicyAssignmentRevisionsCallable"]

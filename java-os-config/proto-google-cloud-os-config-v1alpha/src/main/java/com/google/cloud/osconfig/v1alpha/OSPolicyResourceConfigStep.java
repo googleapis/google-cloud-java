@@ -28,6 +28,7 @@ package com.google.cloud.osconfig.v1alpha;
  *
  * Protobuf type {@code google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep}
  */
+@java.lang.Deprecated
 public final class OSPolicyResourceConfigStep extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep)
@@ -137,6 +138,7 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
    *
    * Protobuf enum {@code google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type}
    */
+  @java.lang.Deprecated
   public enum Type implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
@@ -350,6 +352,7 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
    *
    * Protobuf enum {@code google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome}
    */
+  @java.lang.Deprecated
   public enum Outcome implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *

@@ -50,40 +50,45 @@ public final class ConfigCommonProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/osconfig/v1alpha/config_c"
           + "ommon.proto\022\035google.cloud.osconfig.v1alp"
-          + "ha\"\245\003\n\032OSPolicyResourceConfigStep\022L\n\004typ"
-          + "e\030\001 \001(\0162>.google.cloud.osconfig.v1alpha."
-          + "OSPolicyResourceConfigStep.Type\022R\n\007outco"
-          + "me\030\002 \001(\0162A.google.cloud.osconfig.v1alpha"
-          + ".OSPolicyResourceConfigStep.Outcome\022\025\n\re"
-          + "rror_message\030\003 \001(\t\"\216\001\n\004Type\022\024\n\020TYPE_UNSP"
-          + "ECIFIED\020\000\022\016\n\nVALIDATION\020\001\022\027\n\023DESIRED_STA"
-          + "TE_CHECK\020\002\022\035\n\031DESIRED_STATE_ENFORCEMENT\020"
-          + "\003\022(\n$DESIRED_STATE_CHECK_POST_ENFORCEMEN"
-          + "T\020\004\"=\n\007Outcome\022\027\n\023OUTCOME_UNSPECIFIED\020\000\022"
-          + "\r\n\tSUCCEEDED\020\001\022\n\n\006FAILED\020\002\"\375\002\n\032OSPolicyR"
-          + "esourceCompliance\022\035\n\025os_policy_resource_"
-          + "id\030\001 \001(\t\022O\n\014config_steps\030\002 \003(\01329.google."
-          + "cloud.osconfig.v1alpha.OSPolicyResourceC"
-          + "onfigStep\022E\n\005state\030\003 \001(\01626.google.cloud."
-          + "osconfig.v1alpha.OSPolicyComplianceState"
-          + "\022l\n\024exec_resource_output\030\004 \001(\0132L.google."
-          + "cloud.osconfig.v1alpha.OSPolicyResourceC"
-          + "ompliance.ExecResourceOutputH\000\0320\n\022ExecRe"
-          + "sourceOutput\022\032\n\022enforcement_output\030\002 \001(\014"
-          + "B\010\n\006output*\223\001\n\027OSPolicyComplianceState\022*"
-          + "\n&OS_POLICY_COMPLIANCE_STATE_UNSPECIFIED"
-          + "\020\000\022\r\n\tCOMPLIANT\020\001\022\021\n\rNON_COMPLIANT\020\002\022\013\n\007"
-          + "UNKNOWN\020\003\022\035\n\031NO_OS_POLICIES_APPLICABLE\020\004"
-          + "B\342\001\n!com.google.cloud.osconfig.v1alphaB\021"
-          + "ConfigCommonProtoP\001ZEgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/osconfig/v1alph"
-          + "a;osconfig\252\002\035Google.Cloud.OsConfig.V1Alp"
-          + "ha\312\002\035Google\\Cloud\\OsConfig\\V1alpha\352\002 Goo"
-          + "gle::Cloud::OsConfig::V1alphab\006proto3"
+          + "ha\032\034google/api/annotations.proto\"\261\003\n\032OSP"
+          + "olicyResourceConfigStep\022L\n\004type\030\001 \001(\0162>."
+          + "google.cloud.osconfig.v1alpha.OSPolicyRe"
+          + "sourceConfigStep.Type\022R\n\007outcome\030\002 \001(\0162A"
+          + ".google.cloud.osconfig.v1alpha.OSPolicyR"
+          + "esourceConfigStep.Outcome\022\025\n\rerror_messa"
+          + "ge\030\003 \001(\t\"\222\001\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022"
+          + "\016\n\nVALIDATION\020\001\022\027\n\023DESIRED_STATE_CHECK\020\002"
+          + "\022\035\n\031DESIRED_STATE_ENFORCEMENT\020\003\022(\n$DESIR"
+          + "ED_STATE_CHECK_POST_ENFORCEMENT\020\004\032\002\030\001\"A\n"
+          + "\007Outcome\022\027\n\023OUTCOME_UNSPECIFIED\020\000\022\r\n\tSUC"
+          + "CEEDED\020\001\022\n\n\006FAILED\020\002\032\002\030\001:\002\030\001\"\205\003\n\032OSPolic"
+          + "yResourceCompliance\022\035\n\025os_policy_resourc"
+          + "e_id\030\001 \001(\t\022O\n\014config_steps\030\002 \003(\01329.googl"
+          + "e.cloud.osconfig.v1alpha.OSPolicyResourc"
+          + "eConfigStep\022E\n\005state\030\003 \001(\01626.google.clou"
+          + "d.osconfig.v1alpha.OSPolicyComplianceSta"
+          + "te\022l\n\024exec_resource_output\030\004 \001(\0132L.googl"
+          + "e.cloud.osconfig.v1alpha.OSPolicyResourc"
+          + "eCompliance.ExecResourceOutputH\000\0324\n\022Exec"
+          + "ResourceOutput\022\032\n\022enforcement_output\030\002 \001"
+          + "(\014:\002\030\001:\002\030\001B\010\n\006output*\227\001\n\027OSPolicyComplia"
+          + "nceState\022*\n&OS_POLICY_COMPLIANCE_STATE_U"
+          + "NSPECIFIED\020\000\022\r\n\tCOMPLIANT\020\001\022\021\n\rNON_COMPL"
+          + "IANT\020\002\022\013\n\007UNKNOWN\020\003\022\035\n\031NO_OS_POLICIES_AP"
+          + "PLICABLE\020\004\032\002\030\001B\342\001\n!com.google.cloud.osco"
+          + "nfig.v1alphaB\021ConfigCommonProtoP\001ZEgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/o"
+          + "sconfig/v1alpha;osconfig\252\002\035Google.Cloud."
+          + "OsConfig.V1Alpha\312\002\035Google\\Cloud\\OsConfig"
+          + "\\V1alpha\352\002 Google::Cloud::OsConfig::V1al"
+          + "phab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+            });
     internal_static_google_cloud_osconfig_v1alpha_OSPolicyResourceConfigStep_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_osconfig_v1alpha_OSPolicyResourceConfigStep_fieldAccessorTable =
@@ -110,6 +115,7 @@ public final class ConfigCommonProto {
             new java.lang.String[] {
               "EnforcementOutput",
             });
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

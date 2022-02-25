@@ -18,8 +18,8 @@
 
 package com.google.cloud.osconfig.v1alpha;
 
-public final class OSPolicyProto {
-  private OSPolicyProto() {}
+public final class OsPolicyProto {
+  private OsPolicyProto() {}
 
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
@@ -35,6 +35,10 @@ public final class OSPolicyProto {
       internal_static_google_cloud_osconfig_v1alpha_OSPolicy_OSFilter_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_osconfig_v1alpha_OSPolicy_OSFilter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_osconfig_v1alpha_OSPolicy_InventoryFilter_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_v1alpha_OSPolicy_InventoryFilter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -129,127 +133,133 @@ public final class OSPolicyProto {
   static {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/osconfig/v1alpha/os_polic"
-          + "y.proto\022\035google.cloud.osconfig.v1alpha\032\037"
-          + "google/api/field_behavior.proto\"\351!\n\010OSPo"
-          + "licy\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\023\n\013description\030\002 \001"
-          + "(\t\022?\n\004mode\030\003 \001(\0162,.google.cloud.osconfig"
-          + ".v1alpha.OSPolicy.ModeB\003\340A\002\022S\n\017resource_"
-          + "groups\030\004 \003(\01325.google.cloud.osconfig.v1a"
-          + "lpha.OSPolicy.ResourceGroupB\003\340A\002\022%\n\035allo"
-          + "w_no_resource_group_match\030\005 \001(\010\0325\n\010OSFil"
-          + "ter\022\025\n\ros_short_name\030\001 \001(\t\022\022\n\nos_version"
-          + "\030\002 \001(\t\032\342\035\n\010Resource\022\017\n\002id\030\001 \001(\tB\003\340A\002\022O\n\003"
-          + "pkg\030\002 \001(\0132@.google.cloud.osconfig.v1alph"
-          + "a.OSPolicy.Resource.PackageResourceH\000\022Y\n"
-          + "\nrepository\030\003 \001(\0132C.google.cloud.osconfi"
-          + "g.v1alpha.OSPolicy.Resource.RepositoryRe"
-          + "sourceH\000\022M\n\004exec\030\004 \001(\0132=.google.cloud.os"
-          + "config.v1alpha.OSPolicy.Resource.ExecRes"
-          + "ourceH\000\022M\n\004file\030\005 \001(\0132=.google.cloud.osc"
-          + "onfig.v1alpha.OSPolicy.Resource.FileReso"
-          + "urceH\000\032\320\002\n\004File\022N\n\006remote\030\001 \001(\0132<.google"
-          + ".cloud.osconfig.v1alpha.OSPolicy.Resourc"
-          + "e.File.RemoteH\000\022H\n\003gcs\030\002 \001(\01329.google.cl"
-          + "oud.osconfig.v1alpha.OSPolicy.Resource.F"
-          + "ile.GcsH\000\022\024\n\nlocal_path\030\003 \001(\tH\000\022\026\n\016allow"
-          + "_insecure\030\004 \001(\010\0323\n\006Remote\022\020\n\003uri\030\001 \001(\tB\003"
-          + "\340A\002\022\027\n\017sha256_checksum\030\002 \001(\t\032C\n\003Gcs\022\023\n\006b"
-          + "ucket\030\001 \001(\tB\003\340A\002\022\023\n\006object\030\002 \001(\tB\003\340A\002\022\022\n"
-          + "\ngeneration\030\003 \001(\003B\006\n\004type\032\331\t\n\017PackageRes"
-          + "ource\022i\n\rdesired_state\030\001 \001(\0162M.google.cl"
-          + "oud.osconfig.v1alpha.OSPolicy.Resource.P"
-          + "ackageResource.DesiredStateB\003\340A\002\022S\n\003apt\030"
-          + "\002 \001(\0132D.google.cloud.osconfig.v1alpha.OS"
-          + "Policy.Resource.PackageResource.APTH\000\022S\n"
-          + "\003deb\030\003 \001(\0132D.google.cloud.osconfig.v1alp"
-          + "ha.OSPolicy.Resource.PackageResource.Deb"
-          + "H\000\022S\n\003yum\030\004 \001(\0132D.google.cloud.osconfig."
-          + "v1alpha.OSPolicy.Resource.PackageResourc"
-          + "e.YUMH\000\022Y\n\006zypper\030\005 \001(\0132G.google.cloud.o"
-          + "sconfig.v1alpha.OSPolicy.Resource.Packag"
-          + "eResource.ZypperH\000\022S\n\003rpm\030\006 \001(\0132D.google"
-          + ".cloud.osconfig.v1alpha.OSPolicy.Resourc"
-          + "e.PackageResource.RPMH\000\022Y\n\006googet\030\007 \001(\0132"
-          + "G.google.cloud.osconfig.v1alpha.OSPolicy"
-          + ".Resource.PackageResource.GooGetH\000\022S\n\003ms"
-          + "i\030\010 \001(\0132D.google.cloud.osconfig.v1alpha."
-          + "OSPolicy.Resource.PackageResource.MSIH\000\032"
-          + "d\n\003Deb\022J\n\006source\030\001 \001(\01325.google.cloud.os"
-          + "config.v1alpha.OSPolicy.Resource.FileB\003\340"
-          + "A\002\022\021\n\tpull_deps\030\002 \001(\010\032\030\n\003APT\022\021\n\004name\030\001 \001"
-          + "(\tB\003\340A\002\032d\n\003RPM\022J\n\006source\030\001 \001(\01325.google."
-          + "cloud.osconfig.v1alpha.OSPolicy.Resource"
-          + ".FileB\003\340A\002\022\021\n\tpull_deps\030\002 \001(\010\032\030\n\003YUM\022\021\n\004"
-          + "name\030\001 \001(\tB\003\340A\002\032\033\n\006Zypper\022\021\n\004name\030\001 \001(\tB"
-          + "\003\340A\002\032\033\n\006GooGet\022\021\n\004name\030\001 \001(\tB\003\340A\002\032e\n\003MSI"
-          + "\022J\n\006source\030\001 \001(\01325.google.cloud.osconfig"
-          + ".v1alpha.OSPolicy.Resource.FileB\003\340A\002\022\022\n\n"
-          + "properties\030\002 \003(\t\"I\n\014DesiredState\022\035\n\031DESI"
-          + "RED_STATE_UNSPECIFIED\020\000\022\r\n\tINSTALLED\020\001\022\013"
-          + "\n\007REMOVED\020\002B\020\n\016system_package\032\321\007\n\022Reposi"
-          + "toryResource\022`\n\003apt\030\001 \001(\0132Q.google.cloud"
-          + ".osconfig.v1alpha.OSPolicy.Resource.Repo"
-          + "sitoryResource.AptRepositoryH\000\022`\n\003yum\030\002 "
-          + "\001(\0132Q.google.cloud.osconfig.v1alpha.OSPo"
-          + "licy.Resource.RepositoryResource.YumRepo"
-          + "sitoryH\000\022f\n\006zypper\030\003 \001(\0132T.google.cloud."
-          + "osconfig.v1alpha.OSPolicy.Resource.Repos"
-          + "itoryResource.ZypperRepositoryH\000\022`\n\003goo\030"
-          + "\004 \001(\0132Q.google.cloud.osconfig.v1alpha.OS"
-          + "Policy.Resource.RepositoryResource.GooRe"
-          + "positoryH\000\032\243\002\n\rAptRepository\022x\n\014archive_"
-          + "type\030\001 \001(\0162].google.cloud.osconfig.v1alp"
-          + "ha.OSPolicy.Resource.RepositoryResource."
-          + "AptRepository.ArchiveTypeB\003\340A\002\022\020\n\003uri\030\002 "
-          + "\001(\tB\003\340A\002\022\031\n\014distribution\030\003 \001(\tB\003\340A\002\022\027\n\nc"
-          + "omponents\030\004 \003(\tB\003\340A\002\022\017\n\007gpg_key\030\005 \001(\t\"A\n"
-          + "\013ArchiveType\022\034\n\030ARCHIVE_TYPE_UNSPECIFIED"
-          + "\020\000\022\007\n\003DEB\020\001\022\013\n\007DEB_SRC\020\002\032_\n\rYumRepositor"
-          + "y\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\024\n\014display_name\030\002 \001(\t"
-          + "\022\025\n\010base_url\030\003 \001(\tB\003\340A\002\022\020\n\010gpg_keys\030\004 \003("
-          + "\t\032b\n\020ZypperRepository\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\024"
-          + "\n\014display_name\030\002 \001(\t\022\025\n\010base_url\030\003 \001(\tB\003"
-          + "\340A\002\022\020\n\010gpg_keys\030\004 \003(\t\0324\n\rGooRepository\022\021"
-          + "\n\004name\030\001 \001(\tB\003\340A\002\022\020\n\003url\030\002 \001(\tB\003\340A\002B\014\n\nr"
-          + "epository\032\215\004\n\014ExecResource\022Y\n\010validate\030\001"
-          + " \001(\0132B.google.cloud.osconfig.v1alpha.OSP"
-          + "olicy.Resource.ExecResource.ExecB\003\340A\002\022S\n"
-          + "\007enforce\030\002 \001(\0132B.google.cloud.osconfig.v"
-          + "1alpha.OSPolicy.Resource.ExecResource.Ex"
-          + "ec\032\314\002\n\004Exec\022E\n\004file\030\001 \001(\01325.google.cloud"
-          + ".osconfig.v1alpha.OSPolicy.Resource.File"
-          + "H\000\022\020\n\006script\030\002 \001(\tH\000\022\014\n\004args\030\003 \003(\t\022h\n\013in"
-          + "terpreter\030\004 \001(\0162N.google.cloud.osconfig."
-          + "v1alpha.OSPolicy.Resource.ExecResource.E"
-          + "xec.InterpreterB\003\340A\002\022\030\n\020output_file_path"
-          + "\030\005 \001(\t\"O\n\013Interpreter\022\033\n\027INTERPRETER_UNS"
-          + "PECIFIED\020\000\022\010\n\004NONE\020\001\022\t\n\005SHELL\020\002\022\016\n\nPOWER"
-          + "SHELL\020\003B\010\n\006source\032\326\002\n\014FileResource\022E\n\004fi"
-          + "le\030\001 \001(\01325.google.cloud.osconfig.v1alpha"
-          + ".OSPolicy.Resource.FileH\000\022\021\n\007content\030\002 \001"
-          + "(\tH\000\022\021\n\004path\030\003 \001(\tB\003\340A\002\022^\n\005state\030\004 \001(\0162J"
+          + "y.proto\022\035google.cloud.osconfig.v1alpha\032\034"
+          + "google/api/annotations.proto\032\037google/api"
+          + "/field_behavior.proto\"\204#\n\010OSPolicy\022\017\n\002id"
+          + "\030\001 \001(\tB\003\340A\002\022\023\n\013description\030\002 \001(\t\022?\n\004mode"
+          + "\030\003 \001(\0162,.google.cloud.osconfig.v1alpha.O"
+          + "SPolicy.ModeB\003\340A\002\022S\n\017resource_groups\030\004 \003"
+          + "(\01325.google.cloud.osconfig.v1alpha.OSPol"
+          + "icy.ResourceGroupB\003\340A\002\022%\n\035allow_no_resou"
+          + "rce_group_match\030\005 \001(\010\0325\n\010OSFilter\022\025\n\ros_"
+          + "short_name\030\001 \001(\t\022\022\n\nos_version\030\002 \001(\t\032A\n\017"
+          + "InventoryFilter\022\032\n\ros_short_name\030\001 \001(\tB\003"
+          + "\340A\002\022\022\n\nos_version\030\002 \001(\t\032\342\035\n\010Resource\022\017\n\002"
+          + "id\030\001 \001(\tB\003\340A\002\022O\n\003pkg\030\002 \001(\0132@.google.clou"
+          + "d.osconfig.v1alpha.OSPolicy.Resource.Pac"
+          + "kageResourceH\000\022Y\n\nrepository\030\003 \001(\0132C.goo"
+          + "gle.cloud.osconfig.v1alpha.OSPolicy.Reso"
+          + "urce.RepositoryResourceH\000\022M\n\004exec\030\004 \001(\0132"
+          + "=.google.cloud.osconfig.v1alpha.OSPolicy"
+          + ".Resource.ExecResourceH\000\022M\n\004file\030\005 \001(\0132="
           + ".google.cloud.osconfig.v1alpha.OSPolicy."
-          + "Resource.FileResource.DesiredStateB\003\340A\002\022"
-          + "\023\n\013permissions\030\005 \001(\t\"Z\n\014DesiredState\022\035\n\031"
-          + "DESIRED_STATE_UNSPECIFIED\020\000\022\013\n\007PRESENT\020\001"
-          + "\022\n\n\006ABSENT\020\002\022\022\n\016CONTENTS_MATCH\020\003B\010\n\006sour"
-          + "ceB\017\n\rresource_type\032\236\001\n\rResourceGroup\022C\n"
-          + "\tos_filter\030\001 \001(\01320.google.cloud.osconfig"
-          + ".v1alpha.OSPolicy.OSFilter\022H\n\tresources\030"
-          + "\002 \003(\01320.google.cloud.osconfig.v1alpha.OS"
-          + "Policy.ResourceB\003\340A\002\"=\n\004Mode\022\024\n\020MODE_UNS"
-          + "PECIFIED\020\000\022\016\n\nVALIDATION\020\001\022\017\n\013ENFORCEMEN"
-          + "T\020\002B\336\001\n!com.google.cloud.osconfig.v1alph"
-          + "aB\rOSPolicyProtoP\001ZEgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/osconfig/v1alpha"
-          + ";osconfig\252\002\035Google.Cloud.OsConfig.V1Alph"
-          + "a\312\002\035Google\\Cloud\\OsConfig\\V1alpha\352\002 Goog"
-          + "le::Cloud::OsConfig::V1alphab\006proto3"
+          + "Resource.FileResourceH\000\032\320\002\n\004File\022N\n\006remo"
+          + "te\030\001 \001(\0132<.google.cloud.osconfig.v1alpha"
+          + ".OSPolicy.Resource.File.RemoteH\000\022H\n\003gcs\030"
+          + "\002 \001(\01329.google.cloud.osconfig.v1alpha.OS"
+          + "Policy.Resource.File.GcsH\000\022\024\n\nlocal_path"
+          + "\030\003 \001(\tH\000\022\026\n\016allow_insecure\030\004 \001(\010\0323\n\006Remo"
+          + "te\022\020\n\003uri\030\001 \001(\tB\003\340A\002\022\027\n\017sha256_checksum\030"
+          + "\002 \001(\t\032C\n\003Gcs\022\023\n\006bucket\030\001 \001(\tB\003\340A\002\022\023\n\006obj"
+          + "ect\030\002 \001(\tB\003\340A\002\022\022\n\ngeneration\030\003 \001(\003B\006\n\004ty"
+          + "pe\032\331\t\n\017PackageResource\022i\n\rdesired_state\030"
+          + "\001 \001(\0162M.google.cloud.osconfig.v1alpha.OS"
+          + "Policy.Resource.PackageResource.DesiredS"
+          + "tateB\003\340A\002\022S\n\003apt\030\002 \001(\0132D.google.cloud.os"
+          + "config.v1alpha.OSPolicy.Resource.Package"
+          + "Resource.APTH\000\022S\n\003deb\030\003 \001(\0132D.google.clo"
+          + "ud.osconfig.v1alpha.OSPolicy.Resource.Pa"
+          + "ckageResource.DebH\000\022S\n\003yum\030\004 \001(\0132D.googl"
+          + "e.cloud.osconfig.v1alpha.OSPolicy.Resour"
+          + "ce.PackageResource.YUMH\000\022Y\n\006zypper\030\005 \001(\013"
+          + "2G.google.cloud.osconfig.v1alpha.OSPolic"
+          + "y.Resource.PackageResource.ZypperH\000\022S\n\003r"
+          + "pm\030\006 \001(\0132D.google.cloud.osconfig.v1alpha"
+          + ".OSPolicy.Resource.PackageResource.RPMH\000"
+          + "\022Y\n\006googet\030\007 \001(\0132G.google.cloud.osconfig"
+          + ".v1alpha.OSPolicy.Resource.PackageResour"
+          + "ce.GooGetH\000\022S\n\003msi\030\010 \001(\0132D.google.cloud."
+          + "osconfig.v1alpha.OSPolicy.Resource.Packa"
+          + "geResource.MSIH\000\032d\n\003Deb\022J\n\006source\030\001 \001(\0132"
+          + "5.google.cloud.osconfig.v1alpha.OSPolicy"
+          + ".Resource.FileB\003\340A\002\022\021\n\tpull_deps\030\002 \001(\010\032\030"
+          + "\n\003APT\022\021\n\004name\030\001 \001(\tB\003\340A\002\032d\n\003RPM\022J\n\006sourc"
+          + "e\030\001 \001(\01325.google.cloud.osconfig.v1alpha."
+          + "OSPolicy.Resource.FileB\003\340A\002\022\021\n\tpull_deps"
+          + "\030\002 \001(\010\032\030\n\003YUM\022\021\n\004name\030\001 \001(\tB\003\340A\002\032\033\n\006Zypp"
+          + "er\022\021\n\004name\030\001 \001(\tB\003\340A\002\032\033\n\006GooGet\022\021\n\004name\030"
+          + "\001 \001(\tB\003\340A\002\032e\n\003MSI\022J\n\006source\030\001 \001(\01325.goog"
+          + "le.cloud.osconfig.v1alpha.OSPolicy.Resou"
+          + "rce.FileB\003\340A\002\022\022\n\nproperties\030\002 \003(\t\"I\n\014Des"
+          + "iredState\022\035\n\031DESIRED_STATE_UNSPECIFIED\020\000"
+          + "\022\r\n\tINSTALLED\020\001\022\013\n\007REMOVED\020\002B\020\n\016system_p"
+          + "ackage\032\321\007\n\022RepositoryResource\022`\n\003apt\030\001 \001"
+          + "(\0132Q.google.cloud.osconfig.v1alpha.OSPol"
+          + "icy.Resource.RepositoryResource.AptRepos"
+          + "itoryH\000\022`\n\003yum\030\002 \001(\0132Q.google.cloud.osco"
+          + "nfig.v1alpha.OSPolicy.Resource.Repositor"
+          + "yResource.YumRepositoryH\000\022f\n\006zypper\030\003 \001("
+          + "\0132T.google.cloud.osconfig.v1alpha.OSPoli"
+          + "cy.Resource.RepositoryResource.ZypperRep"
+          + "ositoryH\000\022`\n\003goo\030\004 \001(\0132Q.google.cloud.os"
+          + "config.v1alpha.OSPolicy.Resource.Reposit"
+          + "oryResource.GooRepositoryH\000\032\243\002\n\rAptRepos"
+          + "itory\022x\n\014archive_type\030\001 \001(\0162].google.clo"
+          + "ud.osconfig.v1alpha.OSPolicy.Resource.Re"
+          + "positoryResource.AptRepository.ArchiveTy"
+          + "peB\003\340A\002\022\020\n\003uri\030\002 \001(\tB\003\340A\002\022\031\n\014distributio"
+          + "n\030\003 \001(\tB\003\340A\002\022\027\n\ncomponents\030\004 \003(\tB\003\340A\002\022\017\n"
+          + "\007gpg_key\030\005 \001(\t\"A\n\013ArchiveType\022\034\n\030ARCHIVE"
+          + "_TYPE_UNSPECIFIED\020\000\022\007\n\003DEB\020\001\022\013\n\007DEB_SRC\020"
+          + "\002\032_\n\rYumRepository\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\024\n\014d"
+          + "isplay_name\030\002 \001(\t\022\025\n\010base_url\030\003 \001(\tB\003\340A\002"
+          + "\022\020\n\010gpg_keys\030\004 \003(\t\032b\n\020ZypperRepository\022\017"
+          + "\n\002id\030\001 \001(\tB\003\340A\002\022\024\n\014display_name\030\002 \001(\t\022\025\n"
+          + "\010base_url\030\003 \001(\tB\003\340A\002\022\020\n\010gpg_keys\030\004 \003(\t\0324"
+          + "\n\rGooRepository\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\020\n\003ur"
+          + "l\030\002 \001(\tB\003\340A\002B\014\n\nrepository\032\215\004\n\014ExecResou"
+          + "rce\022Y\n\010validate\030\001 \001(\0132B.google.cloud.osc"
+          + "onfig.v1alpha.OSPolicy.Resource.ExecReso"
+          + "urce.ExecB\003\340A\002\022S\n\007enforce\030\002 \001(\0132B.google"
+          + ".cloud.osconfig.v1alpha.OSPolicy.Resourc"
+          + "e.ExecResource.Exec\032\314\002\n\004Exec\022E\n\004file\030\001 \001"
+          + "(\01325.google.cloud.osconfig.v1alpha.OSPol"
+          + "icy.Resource.FileH\000\022\020\n\006script\030\002 \001(\tH\000\022\014\n"
+          + "\004args\030\003 \003(\t\022h\n\013interpreter\030\004 \001(\0162N.googl"
+          + "e.cloud.osconfig.v1alpha.OSPolicy.Resour"
+          + "ce.ExecResource.Exec.InterpreterB\003\340A\002\022\030\n"
+          + "\020output_file_path\030\005 \001(\t\"O\n\013Interpreter\022\033"
+          + "\n\027INTERPRETER_UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022\t\n"
+          + "\005SHELL\020\002\022\016\n\nPOWERSHELL\020\003B\010\n\006source\032\326\002\n\014F"
+          + "ileResource\022E\n\004file\030\001 \001(\01325.google.cloud"
+          + ".osconfig.v1alpha.OSPolicy.Resource.File"
+          + "H\000\022\021\n\007content\030\002 \001(\tH\000\022\021\n\004path\030\003 \001(\tB\003\340A\002"
+          + "\022^\n\005state\030\004 \001(\0162J.google.cloud.osconfig."
+          + "v1alpha.OSPolicy.Resource.FileResource.D"
+          + "esiredStateB\003\340A\002\022\023\n\013permissions\030\005 \001(\t\"Z\n"
+          + "\014DesiredState\022\035\n\031DESIRED_STATE_UNSPECIFI"
+          + "ED\020\000\022\013\n\007PRESENT\020\001\022\n\n\006ABSENT\020\002\022\022\n\016CONTENT"
+          + "S_MATCH\020\003B\010\n\006sourceB\017\n\rresource_type\032\366\001\n"
+          + "\rResourceGroup\022G\n\tos_filter\030\001 \001(\01320.goog"
+          + "le.cloud.osconfig.v1alpha.OSPolicy.OSFil"
+          + "terB\002\030\001\022R\n\021inventory_filters\030\003 \003(\01327.goo"
+          + "gle.cloud.osconfig.v1alpha.OSPolicy.Inve"
+          + "ntoryFilter\022H\n\tresources\030\002 \003(\01320.google."
+          + "cloud.osconfig.v1alpha.OSPolicy.Resource"
+          + "B\003\340A\002\"=\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\016\n\nV"
+          + "ALIDATION\020\001\022\017\n\013ENFORCEMENT\020\002B\336\001\n!com.goo"
+          + "gle.cloud.osconfig.v1alphaB\rOsPolicyProt"
+          + "oP\001ZEgoogle.golang.org/genproto/googleap"
+          + "is/cloud/osconfig/v1alpha;osconfig\252\002\035Goo"
+          + "gle.Cloud.OsConfig.V1Alpha\312\002\035Google\\Clou"
+          + "d\\OsConfig\\V1alpha\352\002 Google::Cloud::OsCo"
+          + "nfig::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_osconfig_v1alpha_OSPolicy_descriptor =
@@ -268,8 +278,16 @@ public final class OSPolicyProto {
             new java.lang.String[] {
               "OsShortName", "OsVersion",
             });
-    internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_descriptor =
+    internal_static_google_cloud_osconfig_v1alpha_OSPolicy_InventoryFilter_descriptor =
         internal_static_google_cloud_osconfig_v1alpha_OSPolicy_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_osconfig_v1alpha_OSPolicy_InventoryFilter_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_osconfig_v1alpha_OSPolicy_InventoryFilter_descriptor,
+            new java.lang.String[] {
+              "OsShortName", "OsVersion",
+            });
+    internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_descriptor =
+        internal_static_google_cloud_osconfig_v1alpha_OSPolicy_descriptor.getNestedTypes().get(2);
     internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_descriptor,
@@ -475,18 +493,19 @@ public final class OSPolicyProto {
               "File", "Content", "Path", "State", "Permissions", "Source",
             });
     internal_static_google_cloud_osconfig_v1alpha_OSPolicy_ResourceGroup_descriptor =
-        internal_static_google_cloud_osconfig_v1alpha_OSPolicy_descriptor.getNestedTypes().get(2);
+        internal_static_google_cloud_osconfig_v1alpha_OSPolicy_descriptor.getNestedTypes().get(3);
     internal_static_google_cloud_osconfig_v1alpha_OSPolicy_ResourceGroup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_osconfig_v1alpha_OSPolicy_ResourceGroup_descriptor,
             new java.lang.String[] {
-              "OsFilter", "Resources",
+              "OsFilter", "InventoryFilters", "Resources",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
   }
 

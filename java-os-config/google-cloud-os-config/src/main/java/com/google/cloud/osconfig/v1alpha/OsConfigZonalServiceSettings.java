@@ -18,6 +18,7 @@ package com.google.cloud.osconfig.v1alpha;
 
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListInstanceOSPoliciesCompliancesPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListInventoriesPagedResponse;
+import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentReportsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentRevisionsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListVulnerabilityReportsPagedResponse;
@@ -148,14 +149,24 @@ public class OsConfigZonalServiceSettings extends ClientSettings<OsConfigZonalSe
         .deleteOSPolicyAssignmentOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to getInstanceOSPoliciesCompliance. */
+  /**
+   * Returns the object with the settings used for calls to getInstanceOSPoliciesCompliance.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetInstanceOSPoliciesComplianceRequest, InstanceOSPoliciesCompliance>
       getInstanceOSPoliciesComplianceSettings() {
     return ((OsConfigZonalServiceStubSettings) getStubSettings())
         .getInstanceOSPoliciesComplianceSettings();
   }
 
-  /** Returns the object with the settings used for calls to listInstanceOSPoliciesCompliances. */
+  /**
+   * Returns the object with the settings used for calls to listInstanceOSPoliciesCompliances.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListInstanceOSPoliciesCompliancesRequest,
           ListInstanceOSPoliciesCompliancesResponse,
@@ -163,6 +174,23 @@ public class OsConfigZonalServiceSettings extends ClientSettings<OsConfigZonalSe
       listInstanceOSPoliciesCompliancesSettings() {
     return ((OsConfigZonalServiceStubSettings) getStubSettings())
         .listInstanceOSPoliciesCompliancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getOSPolicyAssignmentReport. */
+  public UnaryCallSettings<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+      getOSPolicyAssignmentReportSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings())
+        .getOSPolicyAssignmentReportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listOSPolicyAssignmentReports. */
+  public PagedCallSettings<
+          ListOSPolicyAssignmentReportsRequest,
+          ListOSPolicyAssignmentReportsResponse,
+          ListOSPolicyAssignmentReportsPagedResponse>
+      listOSPolicyAssignmentReportsSettings() {
+    return ((OsConfigZonalServiceStubSettings) getStubSettings())
+        .listOSPolicyAssignmentReportsSettings();
   }
 
   /** Returns the object with the settings used for calls to getInventory. */
@@ -358,20 +386,45 @@ public class OsConfigZonalServiceSettings extends ClientSettings<OsConfigZonalSe
       return getStubSettingsBuilder().deleteOSPolicyAssignmentOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getInstanceOSPoliciesCompliance. */
+    /**
+     * Returns the builder for the settings used for calls to getInstanceOSPoliciesCompliance.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<
             GetInstanceOSPoliciesComplianceRequest, InstanceOSPoliciesCompliance>
         getInstanceOSPoliciesComplianceSettings() {
       return getStubSettingsBuilder().getInstanceOSPoliciesComplianceSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listInstanceOSPoliciesCompliances. */
+    /**
+     * Returns the builder for the settings used for calls to listInstanceOSPoliciesCompliances.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListInstanceOSPoliciesCompliancesRequest,
             ListInstanceOSPoliciesCompliancesResponse,
             ListInstanceOSPoliciesCompliancesPagedResponse>
         listInstanceOSPoliciesCompliancesSettings() {
       return getStubSettingsBuilder().listInstanceOSPoliciesCompliancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getOSPolicyAssignmentReport. */
+    public UnaryCallSettings.Builder<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
+        getOSPolicyAssignmentReportSettings() {
+      return getStubSettingsBuilder().getOSPolicyAssignmentReportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listOSPolicyAssignmentReports. */
+    public PagedCallSettings.Builder<
+            ListOSPolicyAssignmentReportsRequest,
+            ListOSPolicyAssignmentReportsResponse,
+            ListOSPolicyAssignmentReportsPagedResponse>
+        listOSPolicyAssignmentReportsSettings() {
+      return getStubSettingsBuilder().listOSPolicyAssignmentReportsSettings();
     }
 
     /** Returns the builder for the settings used for calls to getInventory. */

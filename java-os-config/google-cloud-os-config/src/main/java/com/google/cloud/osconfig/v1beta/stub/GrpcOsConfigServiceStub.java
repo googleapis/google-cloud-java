@@ -174,6 +174,54 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
               .build();
 
   private static final MethodDescriptor<
+          PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      updatePatchDeploymentMethodDescriptor =
+          MethodDescriptor
+              .<PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1beta.OsConfigService/UpdatePatchDeployment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      PatchDeployments.UpdatePatchDeploymentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      pausePatchDeploymentMethodDescriptor =
+          MethodDescriptor
+              .<PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1beta.OsConfigService/PausePatchDeployment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      PatchDeployments.PausePatchDeploymentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      resumePatchDeploymentMethodDescriptor =
+          MethodDescriptor
+              .<PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.osconfig.v1beta.OsConfigService/ResumePatchDeployment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      PatchDeployments.ResumePatchDeploymentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
           GuestPolicies.CreateGuestPolicyRequest, GuestPolicies.GuestPolicy>
       createGuestPolicyMethodDescriptor =
           MethodDescriptor
@@ -288,6 +336,15 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
       listPatchDeploymentsPagedCallable;
   private final UnaryCallable<PatchDeployments.DeletePatchDeploymentRequest, Empty>
       deletePatchDeploymentCallable;
+  private final UnaryCallable<
+          PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      updatePatchDeploymentCallable;
+  private final UnaryCallable<
+          PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      pausePatchDeploymentCallable;
+  private final UnaryCallable<
+          PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      resumePatchDeploymentCallable;
   private final UnaryCallable<GuestPolicies.CreateGuestPolicyRequest, GuestPolicies.GuestPolicy>
       createGuestPolicyCallable;
   private final UnaryCallable<GuestPolicies.GetGuestPolicyRequest, GuestPolicies.GuestPolicy>
@@ -465,6 +522,49 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<
+            PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        updatePatchDeploymentTransportSettings =
+            GrpcCallSettings
+                .<PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+                    newBuilder()
+                .setMethodDescriptor(updatePatchDeploymentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "patch_deployment.name",
+                          String.valueOf(request.getPatchDeployment().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        pausePatchDeploymentTransportSettings =
+            GrpcCallSettings
+                .<PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+                    newBuilder()
+                .setMethodDescriptor(pausePatchDeploymentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        resumePatchDeploymentTransportSettings =
+            GrpcCallSettings
+                .<PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+                    newBuilder()
+                .setMethodDescriptor(resumePatchDeploymentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GuestPolicies.CreateGuestPolicyRequest, GuestPolicies.GuestPolicy>
         createGuestPolicyTransportSettings =
             GrpcCallSettings
@@ -593,6 +693,21 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
             deletePatchDeploymentTransportSettings,
             settings.deletePatchDeploymentSettings(),
             clientContext);
+    this.updatePatchDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            updatePatchDeploymentTransportSettings,
+            settings.updatePatchDeploymentSettings(),
+            clientContext);
+    this.pausePatchDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            pausePatchDeploymentTransportSettings,
+            settings.pausePatchDeploymentSettings(),
+            clientContext);
+    this.resumePatchDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            resumePatchDeploymentTransportSettings,
+            settings.resumePatchDeploymentSettings(),
+            clientContext);
     this.createGuestPolicyCallable =
         callableFactory.createUnaryCallable(
             createGuestPolicyTransportSettings,
@@ -711,6 +826,27 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
   public UnaryCallable<PatchDeployments.DeletePatchDeploymentRequest, Empty>
       deletePatchDeploymentCallable() {
     return deletePatchDeploymentCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      updatePatchDeploymentCallable() {
+    return updatePatchDeploymentCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      pausePatchDeploymentCallable() {
+    return pausePatchDeploymentCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      resumePatchDeploymentCallable() {
+    return resumePatchDeploymentCallable;
   }
 
   @Override

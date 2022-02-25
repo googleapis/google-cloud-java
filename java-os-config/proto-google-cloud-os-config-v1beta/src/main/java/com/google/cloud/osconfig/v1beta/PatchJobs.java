@@ -243,13 +243,47 @@ public final class PatchJobs {
      * @return The bytes for displayName.
      */
     com.google.protobuf.ByteString getDisplayNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Rollout strategy of the patch job.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+     *
+     * @return Whether the rollout field is set.
+     */
+    boolean hasRollout();
+    /**
+     *
+     *
+     * <pre>
+     * Rollout strategy of the patch job.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+     *
+     * @return The rollout.
+     */
+    com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout getRollout();
+    /**
+     *
+     *
+     * <pre>
+     * Rollout strategy of the patch job.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+     */
+    com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder getRolloutOrBuilder();
   }
   /**
    *
    *
    * <pre>
-   * A request message to initiate patching across Google Compute Engine
-   * instances.
+   * A request message to initiate patching across Compute Engine instances.
    * </pre>
    *
    * Protobuf type {@code google.cloud.osconfig.v1beta.ExecutePatchJobRequest}
@@ -373,6 +407,23 @@ public final class PatchJobs {
                 java.lang.String s = input.readStringRequireUtf8();
 
                 displayName_ = s;
+                break;
+              }
+            case 74:
+              {
+                com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder subBuilder = null;
+                if (rollout_ != null) {
+                  subBuilder = rollout_.toBuilder();
+                }
+                rollout_ =
+                    input.readMessage(
+                        com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(rollout_);
+                  rollout_ = subBuilder.buildPartial();
+                }
+
                 break;
               }
             default:
@@ -736,6 +787,54 @@ public final class PatchJobs {
       }
     }
 
+    public static final int ROLLOUT_FIELD_NUMBER = 9;
+    private com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout rollout_;
+    /**
+     *
+     *
+     * <pre>
+     * Rollout strategy of the patch job.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+     *
+     * @return Whether the rollout field is set.
+     */
+    @java.lang.Override
+    public boolean hasRollout() {
+      return rollout_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout strategy of the patch job.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+     *
+     * @return The rollout.
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout getRollout() {
+      return rollout_ == null
+          ? com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.getDefaultInstance()
+          : rollout_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout strategy of the patch job.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder getRolloutOrBuilder() {
+      return getRollout();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -771,6 +870,9 @@ public final class PatchJobs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, displayName_);
       }
+      if (rollout_ != null) {
+        output.writeMessage(9, getRollout());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -800,6 +902,9 @@ public final class PatchJobs {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, displayName_);
+      }
+      if (rollout_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getRollout());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -833,6 +938,10 @@ public final class PatchJobs {
       }
       if (getDryRun() != other.getDryRun()) return false;
       if (!getDisplayName().equals(other.getDisplayName())) return false;
+      if (hasRollout() != other.hasRollout()) return false;
+      if (hasRollout()) {
+        if (!getRollout().equals(other.getRollout())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -864,6 +973,10 @@ public final class PatchJobs {
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDryRun());
       hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getDisplayName().hashCode();
+      if (hasRollout()) {
+        hash = (37 * hash) + ROLLOUT_FIELD_NUMBER;
+        hash = (53 * hash) + getRollout().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -971,8 +1084,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * A request message to initiate patching across Google Compute Engine
-     * instances.
+     * A request message to initiate patching across Compute Engine instances.
      * </pre>
      *
      * Protobuf type {@code google.cloud.osconfig.v1beta.ExecutePatchJobRequest}
@@ -1041,6 +1153,12 @@ public final class PatchJobs {
 
         displayName_ = "";
 
+        if (rolloutBuilder_ == null) {
+          rollout_ = null;
+        } else {
+          rollout_ = null;
+          rolloutBuilder_ = null;
+        }
         return this;
       }
 
@@ -1089,6 +1207,11 @@ public final class PatchJobs {
         }
         result.dryRun_ = dryRun_;
         result.displayName_ = displayName_;
+        if (rolloutBuilder_ == null) {
+          result.rollout_ = rollout_;
+        } else {
+          result.rollout_ = rolloutBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1167,6 +1290,9 @@ public final class PatchJobs {
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
           onChanged();
+        }
+        if (other.hasRollout()) {
+          mergeRollout(other.getRollout());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2179,6 +2305,193 @@ public final class PatchJobs {
         displayName_ = value;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout rollout_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout,
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder,
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder>
+          rolloutBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+       *
+       * @return Whether the rollout field is set.
+       */
+      public boolean hasRollout() {
+        return rolloutBuilder_ != null || rollout_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+       *
+       * @return The rollout.
+       */
+      public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout getRollout() {
+        if (rolloutBuilder_ == null) {
+          return rollout_ == null
+              ? com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.getDefaultInstance()
+              : rollout_;
+        } else {
+          return rolloutBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+       */
+      public Builder setRollout(com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout value) {
+        if (rolloutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rollout_ = value;
+          onChanged();
+        } else {
+          rolloutBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+       */
+      public Builder setRollout(
+          com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder builderForValue) {
+        if (rolloutBuilder_ == null) {
+          rollout_ = builderForValue.build();
+          onChanged();
+        } else {
+          rolloutBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+       */
+      public Builder mergeRollout(com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout value) {
+        if (rolloutBuilder_ == null) {
+          if (rollout_ != null) {
+            rollout_ =
+                com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.newBuilder(rollout_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            rollout_ = value;
+          }
+          onChanged();
+        } else {
+          rolloutBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+       */
+      public Builder clearRollout() {
+        if (rolloutBuilder_ == null) {
+          rollout_ = null;
+          onChanged();
+        } else {
+          rollout_ = null;
+          rolloutBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+       */
+      public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder getRolloutBuilder() {
+
+        onChanged();
+        return getRolloutFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+       */
+      public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder
+          getRolloutOrBuilder() {
+        if (rolloutBuilder_ != null) {
+          return rolloutBuilder_.getMessageOrBuilder();
+        } else {
+          return rollout_ == null
+              ? com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.getDefaultInstance()
+              : rollout_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout,
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder,
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder>
+          getRolloutFieldBuilder() {
+        if (rolloutBuilder_ == null) {
+          rolloutBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout,
+                  com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder,
+                  com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder>(
+                  getRollout(), getParentForChildren(), isClean());
+          rollout_ = null;
+        }
+        return rolloutBuilder_;
       }
 
       @java.lang.Override
@@ -5577,7 +5890,7 @@ public final class PatchJobs {
    * Patch details for a VM instance. For more information about reviewing VM
    * instance details, see
    * [Listing all VM instance details for a specific patch
-   * job](/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
+   * job](https://cloud.google.com/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
    * </pre>
    *
    * Protobuf type {@code google.cloud.osconfig.v1beta.PatchJobInstanceDetails}
@@ -6109,7 +6422,7 @@ public final class PatchJobs {
      * Patch details for a VM instance. For more information about reviewing VM
      * instance details, see
      * [Listing all VM instance details for a specific patch
-     * job](/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
+     * job](https://cloud.google.com/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
      * </pre>
      *
      * Protobuf type {@code google.cloud.osconfig.v1beta.PatchJobInstanceDetails}
@@ -9405,7 +9718,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * The current state of the PatchJob .
+     * The current state of the PatchJob.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1beta.PatchJob.State state = 5;</code>
@@ -9417,7 +9730,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * The current state of the PatchJob .
+     * The current state of the PatchJob.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1beta.PatchJob.State state = 5;</code>
@@ -9657,6 +9970,41 @@ public final class PatchJobs {
      * @return The bytes for patchDeployment.
      */
     com.google.protobuf.ByteString getPatchDeploymentBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Rollout strategy being applied.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+     *
+     * @return Whether the rollout field is set.
+     */
+    boolean hasRollout();
+    /**
+     *
+     *
+     * <pre>
+     * Rollout strategy being applied.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+     *
+     * @return The rollout.
+     */
+    com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout getRollout();
+    /**
+     *
+     *
+     * <pre>
+     * Rollout strategy being applied.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+     */
+    com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder getRolloutOrBuilder();
   }
   /**
    *
@@ -9664,10 +10012,11 @@ public final class PatchJobs {
    * <pre>
    * A high level representation of a patch job that is either in progress
    * or has completed.
-   * Instances details are not included in the job. To paginate through instance
-   * details, use ListPatchJobInstanceDetails.
+   * Instance details are not included in the job. To paginate through instance
+   * details, use `ListPatchJobInstanceDetails`.
    * For more information about patch jobs, see
-   * [Creating patch jobs](/compute/docs/os-patch-management/create-patch-job).
+   * [Creating patch
+   * jobs](https://cloud.google.com/compute/docs/os-patch-management/create-patch-job).
    * </pre>
    *
    * Protobuf type {@code google.cloud.osconfig.v1beta.PatchJob}
@@ -9869,6 +10218,23 @@ public final class PatchJobs {
                 java.lang.String s = input.readStringRequireUtf8();
 
                 patchDeployment_ = s;
+                break;
+              }
+            case 130:
+              {
+                com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder subBuilder = null;
+                if (rollout_ != null) {
+                  subBuilder = rollout_.toBuilder();
+                }
+                rollout_ =
+                    input.readMessage(
+                        com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(rollout_);
+                  rollout_ = subBuilder.buildPartial();
+                }
+
                 break;
               }
             default:
@@ -12489,7 +12855,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * The current state of the PatchJob .
+     * The current state of the PatchJob.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1beta.PatchJob.State state = 5;</code>
@@ -12504,7 +12870,7 @@ public final class PatchJobs {
      *
      *
      * <pre>
-     * The current state of the PatchJob .
+     * The current state of the PatchJob.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1beta.PatchJob.State state = 5;</code>
@@ -12864,6 +13230,54 @@ public final class PatchJobs {
       }
     }
 
+    public static final int ROLLOUT_FIELD_NUMBER = 16;
+    private com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout rollout_;
+    /**
+     *
+     *
+     * <pre>
+     * Rollout strategy being applied.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+     *
+     * @return Whether the rollout field is set.
+     */
+    @java.lang.Override
+    public boolean hasRollout() {
+      return rollout_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout strategy being applied.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+     *
+     * @return The rollout.
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout getRollout() {
+      return rollout_ == null
+          ? com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.getDefaultInstance()
+          : rollout_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout strategy being applied.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder getRolloutOrBuilder() {
+      return getRollout();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -12922,6 +13336,9 @@ public final class PatchJobs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(patchDeployment_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, patchDeployment_);
       }
+      if (rollout_ != null) {
+        output.writeMessage(16, getRollout());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -12977,6 +13394,9 @@ public final class PatchJobs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(patchDeployment_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, patchDeployment_);
       }
+      if (rollout_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getRollout());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -13026,6 +13446,10 @@ public final class PatchJobs {
       if (java.lang.Double.doubleToLongBits(getPercentComplete())
           != java.lang.Double.doubleToLongBits(other.getPercentComplete())) return false;
       if (!getPatchDeployment().equals(other.getPatchDeployment())) return false;
+      if (hasRollout() != other.hasRollout()) return false;
+      if (hasRollout()) {
+        if (!getRollout().equals(other.getRollout())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -13080,6 +13504,10 @@ public final class PatchJobs {
                   java.lang.Double.doubleToLongBits(getPercentComplete()));
       hash = (37 * hash) + PATCH_DEPLOYMENT_FIELD_NUMBER;
       hash = (53 * hash) + getPatchDeployment().hashCode();
+      if (hasRollout()) {
+        hash = (37 * hash) + ROLLOUT_FIELD_NUMBER;
+        hash = (53 * hash) + getRollout().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -13188,10 +13616,11 @@ public final class PatchJobs {
      * <pre>
      * A high level representation of a patch job that is either in progress
      * or has completed.
-     * Instances details are not included in the job. To paginate through instance
-     * details, use ListPatchJobInstanceDetails.
+     * Instance details are not included in the job. To paginate through instance
+     * details, use `ListPatchJobInstanceDetails`.
      * For more information about patch jobs, see
-     * [Creating patch jobs](/compute/docs/os-patch-management/create-patch-job).
+     * [Creating patch
+     * jobs](https://cloud.google.com/compute/docs/os-patch-management/create-patch-job).
      * </pre>
      *
      * Protobuf type {@code google.cloud.osconfig.v1beta.PatchJob}
@@ -13285,6 +13714,12 @@ public final class PatchJobs {
 
         patchDeployment_ = "";
 
+        if (rolloutBuilder_ == null) {
+          rollout_ = null;
+        } else {
+          rollout_ = null;
+          rolloutBuilder_ = null;
+        }
         return this;
       }
 
@@ -13350,6 +13785,11 @@ public final class PatchJobs {
         result.errorMessage_ = errorMessage_;
         result.percentComplete_ = percentComplete_;
         result.patchDeployment_ = patchDeployment_;
+        if (rolloutBuilder_ == null) {
+          result.rollout_ = rollout_;
+        } else {
+          result.rollout_ = rolloutBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -13448,6 +13888,9 @@ public final class PatchJobs {
         if (!other.getPatchDeployment().isEmpty()) {
           patchDeployment_ = other.patchDeployment_;
           onChanged();
+        }
+        if (other.hasRollout()) {
+          mergeRollout(other.getRollout());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -14182,7 +14625,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * The current state of the PatchJob .
+       * The current state of the PatchJob.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1beta.PatchJob.State state = 5;</code>
@@ -14197,7 +14640,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * The current state of the PatchJob .
+       * The current state of the PatchJob.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1beta.PatchJob.State state = 5;</code>
@@ -14215,7 +14658,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * The current state of the PatchJob .
+       * The current state of the PatchJob.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1beta.PatchJob.State state = 5;</code>
@@ -14235,7 +14678,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * The current state of the PatchJob .
+       * The current state of the PatchJob.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1beta.PatchJob.State state = 5;</code>
@@ -14256,7 +14699,7 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * The current state of the PatchJob .
+       * The current state of the PatchJob.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1beta.PatchJob.State state = 5;</code>
@@ -15381,6 +15824,193 @@ public final class PatchJobs {
         return this;
       }
 
+      private com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout rollout_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout,
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder,
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder>
+          rolloutBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy being applied.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+       *
+       * @return Whether the rollout field is set.
+       */
+      public boolean hasRollout() {
+        return rolloutBuilder_ != null || rollout_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy being applied.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+       *
+       * @return The rollout.
+       */
+      public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout getRollout() {
+        if (rolloutBuilder_ == null) {
+          return rollout_ == null
+              ? com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.getDefaultInstance()
+              : rollout_;
+        } else {
+          return rolloutBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy being applied.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+       */
+      public Builder setRollout(com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout value) {
+        if (rolloutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rollout_ = value;
+          onChanged();
+        } else {
+          rolloutBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy being applied.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+       */
+      public Builder setRollout(
+          com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder builderForValue) {
+        if (rolloutBuilder_ == null) {
+          rollout_ = builderForValue.build();
+          onChanged();
+        } else {
+          rolloutBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy being applied.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+       */
+      public Builder mergeRollout(com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout value) {
+        if (rolloutBuilder_ == null) {
+          if (rollout_ != null) {
+            rollout_ =
+                com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.newBuilder(rollout_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            rollout_ = value;
+          }
+          onChanged();
+        } else {
+          rolloutBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy being applied.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+       */
+      public Builder clearRollout() {
+        if (rolloutBuilder_ == null) {
+          rollout_ = null;
+          onChanged();
+        } else {
+          rollout_ = null;
+          rolloutBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy being applied.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+       */
+      public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder getRolloutBuilder() {
+
+        onChanged();
+        return getRolloutFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy being applied.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+       */
+      public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder
+          getRolloutOrBuilder() {
+        if (rolloutBuilder_ != null) {
+          return rolloutBuilder_.getMessageOrBuilder();
+        } else {
+          return rollout_ == null
+              ? com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.getDefaultInstance()
+              : rollout_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rollout strategy being applied.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout rollout = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout,
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder,
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder>
+          getRolloutFieldBuilder() {
+        if (rolloutBuilder_ == null) {
+          rolloutBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout,
+                  com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder,
+                  com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder>(
+                  getRollout(), getParentForChildren(), isClean());
+          rollout_ = null;
+        }
+        return rolloutBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -15720,6 +16350,19 @@ public final class PatchJobs {
      * <code>.google.cloud.osconfig.v1beta.ExecStep post_step = 9;</code>
      */
     com.google.cloud.osconfig.v1beta.PatchJobs.ExecStepOrBuilder getPostStepOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Allows the patch job to run on Managed instance groups (MIGs).
+     * </pre>
+     *
+     * <code>bool mig_instances_allowed = 10;</code>
+     *
+     * @return The migInstancesAllowed.
+     */
+    boolean getMigInstancesAllowed();
   }
   /**
    *
@@ -15899,6 +16542,11 @@ public final class PatchJobs {
                   postStep_ = subBuilder.buildPartial();
                 }
 
+                break;
+              }
+            case 80:
+              {
+                migInstancesAllowed_ = input.readBool();
                 break;
               }
             default:
@@ -16510,6 +17158,24 @@ public final class PatchJobs {
       return getPostStep();
     }
 
+    public static final int MIG_INSTANCES_ALLOWED_FIELD_NUMBER = 10;
+    private boolean migInstancesAllowed_;
+    /**
+     *
+     *
+     * <pre>
+     * Allows the patch job to run on Managed instance groups (MIGs).
+     * </pre>
+     *
+     * <code>bool mig_instances_allowed = 10;</code>
+     *
+     * @return The migInstancesAllowed.
+     */
+    @java.lang.Override
+    public boolean getMigInstancesAllowed() {
+      return migInstancesAllowed_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -16551,6 +17217,9 @@ public final class PatchJobs {
       if (postStep_ != null) {
         output.writeMessage(9, getPostStep());
       }
+      if (migInstancesAllowed_ != false) {
+        output.writeBool(10, migInstancesAllowed_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -16586,6 +17255,9 @@ public final class PatchJobs {
       }
       if (postStep_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getPostStep());
+      }
+      if (migInstancesAllowed_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, migInstancesAllowed_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -16632,6 +17304,7 @@ public final class PatchJobs {
       if (hasPostStep()) {
         if (!getPostStep().equals(other.getPostStep())) return false;
       }
+      if (getMigInstancesAllowed() != other.getMigInstancesAllowed()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -16673,6 +17346,8 @@ public final class PatchJobs {
         hash = (37 * hash) + POST_STEP_FIELD_NUMBER;
         hash = (53 * hash) + getPostStep().hashCode();
       }
+      hash = (37 * hash) + MIG_INSTANCES_ALLOWED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMigInstancesAllowed());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -16866,6 +17541,8 @@ public final class PatchJobs {
           postStep_ = null;
           postStepBuilder_ = null;
         }
+        migInstancesAllowed_ = false;
+
         return this;
       }
 
@@ -16929,6 +17606,7 @@ public final class PatchJobs {
         } else {
           result.postStep_ = postStepBuilder_.build();
         }
+        result.migInstancesAllowed_ = migInstancesAllowed_;
         onBuilt();
         return result;
       }
@@ -17004,6 +17682,9 @@ public final class PatchJobs {
         }
         if (other.hasPostStep()) {
           mergePostStep(other.getPostStep());
+        }
+        if (other.getMigInstancesAllowed() != false) {
+          setMigInstancesAllowed(other.getMigInstancesAllowed());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18475,6 +19156,58 @@ public final class PatchJobs {
           postStep_ = null;
         }
         return postStepBuilder_;
+      }
+
+      private boolean migInstancesAllowed_;
+      /**
+       *
+       *
+       * <pre>
+       * Allows the patch job to run on Managed instance groups (MIGs).
+       * </pre>
+       *
+       * <code>bool mig_instances_allowed = 10;</code>
+       *
+       * @return The migInstancesAllowed.
+       */
+      @java.lang.Override
+      public boolean getMigInstancesAllowed() {
+        return migInstancesAllowed_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Allows the patch job to run on Managed instance groups (MIGs).
+       * </pre>
+       *
+       * <code>bool mig_instances_allowed = 10;</code>
+       *
+       * @param value The migInstancesAllowed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMigInstancesAllowed(boolean value) {
+
+        migInstancesAllowed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Allows the patch job to run on Managed instance groups (MIGs).
+       * </pre>
+       *
+       * <code>bool mig_instances_allowed = 10;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMigInstancesAllowed() {
+
+        migInstancesAllowed_ = false;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -31837,8 +32570,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
-       * instance to be targeted by this filter.
+       * Compute Engine instance labels that must be present for a VM instance to
+       * be targeted by this filter.
        * </pre>
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -31848,8 +32581,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
-       * instance to be targeted by this filter.
+       * Compute Engine instance labels that must be present for a VM instance to
+       * be targeted by this filter.
        * </pre>
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -31862,8 +32595,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
-       * instance to be targeted by this filter.
+       * Compute Engine instance labels that must be present for a VM instance to
+       * be targeted by this filter.
        * </pre>
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -31873,8 +32606,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
-       * instance to be targeted by this filter.
+       * Compute Engine instance labels that must be present for a VM instance to
+       * be targeted by this filter.
        * </pre>
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -31884,8 +32617,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
-       * instance to be targeted by this filter.
+       * Compute Engine instance labels that must be present for a VM instance to
+       * be targeted by this filter.
        * </pre>
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -32035,8 +32768,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
-       * instance to be targeted by this filter.
+       * Compute Engine instance labels that must be present for a VM instance to
+       * be targeted by this filter.
        * </pre>
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -32058,8 +32791,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
-       * instance to be targeted by this filter.
+       * Compute Engine instance labels that must be present for a VM instance to
+       * be targeted by this filter.
        * </pre>
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -32072,8 +32805,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
-       * instance to be targeted by this filter.
+       * Compute Engine instance labels that must be present for a VM instance to
+       * be targeted by this filter.
        * </pre>
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -32091,8 +32824,8 @@ public final class PatchJobs {
        *
        *
        * <pre>
-       * Google Compute Engine instance labels that must be present for a VM
-       * instance to be targeted by this filter.
+       * Compute Engine instance labels that must be present for a VM instance to
+       * be targeted by this filter.
        * </pre>
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -32515,8 +33248,8 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
-         * instance to be targeted by this filter.
+         * Compute Engine instance labels that must be present for a VM instance to
+         * be targeted by this filter.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -32538,8 +33271,8 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
-         * instance to be targeted by this filter.
+         * Compute Engine instance labels that must be present for a VM instance to
+         * be targeted by this filter.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -32552,8 +33285,8 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
-         * instance to be targeted by this filter.
+         * Compute Engine instance labels that must be present for a VM instance to
+         * be targeted by this filter.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -32571,8 +33304,8 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
-         * instance to be targeted by this filter.
+         * Compute Engine instance labels that must be present for a VM instance to
+         * be targeted by this filter.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -32597,8 +33330,8 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
-         * instance to be targeted by this filter.
+         * Compute Engine instance labels that must be present for a VM instance to
+         * be targeted by this filter.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -32619,8 +33352,8 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
-         * instance to be targeted by this filter.
+         * Compute Engine instance labels that must be present for a VM instance to
+         * be targeted by this filter.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -32639,8 +33372,8 @@ public final class PatchJobs {
          *
          *
          * <pre>
-         * Google Compute Engine instance labels that must be present for a VM
-         * instance to be targeted by this filter.
+         * Compute Engine instance labels that must be present for a VM instance to
+         * be targeted by this filter.
          * </pre>
          *
          * <code>map&lt;string, string&gt; labels = 1;</code>
@@ -34615,6 +35348,1398 @@ public final class PatchJobs {
     }
   }
 
+  public interface PatchRolloutOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1beta.PatchRollout)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Mode of the patch rollout.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout.Mode mode = 1;</code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    int getModeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Mode of the patch rollout.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout.Mode mode = 1;</code>
+     *
+     * @return The mode.
+     */
+    com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Mode getMode();
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number (or percentage) of VMs per zone to disrupt at any given
+     * moment. The number of VMs calculated from multiplying the percentage by the
+     * total number of VMs in a zone is rounded up.
+     * During patching, a VM is considered disrupted from the time the agent is
+     * notified to begin until patching has completed. This disruption time
+     * includes the time to complete reboot and any post-patch steps.
+     * A VM contributes to the disruption budget if its patching operation fails
+     * either when applying the patches, running pre or post patch steps, or if it
+     * fails to respond with a success notification before timing out. VMs that
+     * are not running or do not have an active agent do not count toward this
+     * disruption budget.
+     * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+     * the patch job stops, because continuing to the next zone requires
+     * completion of the patch process in the previous zone.
+     * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+     * fail to patch in the current zone, the patch job continues to patch 2 VMs
+     * at a time until the zone is completed. When that zone is completed
+     * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+     * VMs in the next zone fail to patch, the patch job stops.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+     *
+     * @return Whether the disruptionBudget field is set.
+     */
+    boolean hasDisruptionBudget();
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number (or percentage) of VMs per zone to disrupt at any given
+     * moment. The number of VMs calculated from multiplying the percentage by the
+     * total number of VMs in a zone is rounded up.
+     * During patching, a VM is considered disrupted from the time the agent is
+     * notified to begin until patching has completed. This disruption time
+     * includes the time to complete reboot and any post-patch steps.
+     * A VM contributes to the disruption budget if its patching operation fails
+     * either when applying the patches, running pre or post patch steps, or if it
+     * fails to respond with a success notification before timing out. VMs that
+     * are not running or do not have an active agent do not count toward this
+     * disruption budget.
+     * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+     * the patch job stops, because continuing to the next zone requires
+     * completion of the patch process in the previous zone.
+     * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+     * fail to patch in the current zone, the patch job continues to patch 2 VMs
+     * at a time until the zone is completed. When that zone is completed
+     * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+     * VMs in the next zone fail to patch, the patch job stops.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+     *
+     * @return The disruptionBudget.
+     */
+    com.google.cloud.osconfig.v1beta.Common.FixedOrPercent getDisruptionBudget();
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number (or percentage) of VMs per zone to disrupt at any given
+     * moment. The number of VMs calculated from multiplying the percentage by the
+     * total number of VMs in a zone is rounded up.
+     * During patching, a VM is considered disrupted from the time the agent is
+     * notified to begin until patching has completed. This disruption time
+     * includes the time to complete reboot and any post-patch steps.
+     * A VM contributes to the disruption budget if its patching operation fails
+     * either when applying the patches, running pre or post patch steps, or if it
+     * fails to respond with a success notification before timing out. VMs that
+     * are not running or do not have an active agent do not count toward this
+     * disruption budget.
+     * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+     * the patch job stops, because continuing to the next zone requires
+     * completion of the patch process in the previous zone.
+     * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+     * fail to patch in the current zone, the patch job continues to patch 2 VMs
+     * at a time until the zone is completed. When that zone is completed
+     * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+     * VMs in the next zone fail to patch, the patch job stops.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+     */
+    com.google.cloud.osconfig.v1beta.Common.FixedOrPercentOrBuilder getDisruptionBudgetOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Patch rollout configuration specifications. Contains details on the
+   * concurrency control when applying patch(es) to all targeted VMs.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.osconfig.v1beta.PatchRollout}
+   */
+  public static final class PatchRollout extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.PatchRollout)
+      PatchRolloutOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PatchRollout.newBuilder() to construct.
+    private PatchRollout(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PatchRollout() {
+      mode_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PatchRollout();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private PatchRollout(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int rawValue = input.readEnum();
+
+                mode_ = rawValue;
+                break;
+              }
+            case 18:
+              {
+                com.google.cloud.osconfig.v1beta.Common.FixedOrPercent.Builder subBuilder = null;
+                if (disruptionBudget_ != null) {
+                  subBuilder = disruptionBudget_.toBuilder();
+                }
+                disruptionBudget_ =
+                    input.readMessage(
+                        com.google.cloud.osconfig.v1beta.Common.FixedOrPercent.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(disruptionBudget_);
+                  disruptionBudget_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.osconfig.v1beta.PatchJobs
+          .internal_static_google_cloud_osconfig_v1beta_PatchRollout_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.osconfig.v1beta.PatchJobs
+          .internal_static_google_cloud_osconfig_v1beta_PatchRollout_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.class,
+              com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of the rollout.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.osconfig.v1beta.PatchRollout.Mode}
+     */
+    public enum Mode implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Mode must be specified.
+       * </pre>
+       *
+       * <code>MODE_UNSPECIFIED = 0;</code>
+       */
+      MODE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Patches are applied one zone at a time. The patch job begins in the
+       * region with the lowest number of targeted VMs. Within the region,
+       * patching begins in the zone with the lowest number of targeted VMs. If
+       * multiple regions (or zones within a region) have the same number of
+       * targeted VMs, a tie-breaker is achieved by sorting the regions or zones
+       * in alphabetical order.
+       * </pre>
+       *
+       * <code>ZONE_BY_ZONE = 1;</code>
+       */
+      ZONE_BY_ZONE(1),
+      /**
+       *
+       *
+       * <pre>
+       * Patches are applied to VMs in all zones at the same time.
+       * </pre>
+       *
+       * <code>CONCURRENT_ZONES = 2;</code>
+       */
+      CONCURRENT_ZONES(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Mode must be specified.
+       * </pre>
+       *
+       * <code>MODE_UNSPECIFIED = 0;</code>
+       */
+      public static final int MODE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Patches are applied one zone at a time. The patch job begins in the
+       * region with the lowest number of targeted VMs. Within the region,
+       * patching begins in the zone with the lowest number of targeted VMs. If
+       * multiple regions (or zones within a region) have the same number of
+       * targeted VMs, a tie-breaker is achieved by sorting the regions or zones
+       * in alphabetical order.
+       * </pre>
+       *
+       * <code>ZONE_BY_ZONE = 1;</code>
+       */
+      public static final int ZONE_BY_ZONE_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Patches are applied to VMs in all zones at the same time.
+       * </pre>
+       *
+       * <code>CONCURRENT_ZONES = 2;</code>
+       */
+      public static final int CONCURRENT_ZONES_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Mode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Mode forNumber(int value) {
+        switch (value) {
+          case 0:
+            return MODE_UNSPECIFIED;
+          case 1:
+            return ZONE_BY_ZONE;
+          case 2:
+            return CONCURRENT_ZONES;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Mode> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Mode> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Mode>() {
+            public Mode findValueByNumber(int number) {
+              return Mode.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Mode[] VALUES = values();
+
+      public static Mode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Mode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.osconfig.v1beta.PatchRollout.Mode)
+    }
+
+    public static final int MODE_FIELD_NUMBER = 1;
+    private int mode_;
+    /**
+     *
+     *
+     * <pre>
+     * Mode of the patch rollout.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout.Mode mode = 1;</code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    @java.lang.Override
+    public int getModeValue() {
+      return mode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mode of the patch rollout.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.PatchRollout.Mode mode = 1;</code>
+     *
+     * @return The mode.
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Mode getMode() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Mode result =
+          com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Mode.valueOf(mode_);
+      return result == null
+          ? com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Mode.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int DISRUPTION_BUDGET_FIELD_NUMBER = 2;
+    private com.google.cloud.osconfig.v1beta.Common.FixedOrPercent disruptionBudget_;
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number (or percentage) of VMs per zone to disrupt at any given
+     * moment. The number of VMs calculated from multiplying the percentage by the
+     * total number of VMs in a zone is rounded up.
+     * During patching, a VM is considered disrupted from the time the agent is
+     * notified to begin until patching has completed. This disruption time
+     * includes the time to complete reboot and any post-patch steps.
+     * A VM contributes to the disruption budget if its patching operation fails
+     * either when applying the patches, running pre or post patch steps, or if it
+     * fails to respond with a success notification before timing out. VMs that
+     * are not running or do not have an active agent do not count toward this
+     * disruption budget.
+     * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+     * the patch job stops, because continuing to the next zone requires
+     * completion of the patch process in the previous zone.
+     * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+     * fail to patch in the current zone, the patch job continues to patch 2 VMs
+     * at a time until the zone is completed. When that zone is completed
+     * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+     * VMs in the next zone fail to patch, the patch job stops.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+     *
+     * @return Whether the disruptionBudget field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisruptionBudget() {
+      return disruptionBudget_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number (or percentage) of VMs per zone to disrupt at any given
+     * moment. The number of VMs calculated from multiplying the percentage by the
+     * total number of VMs in a zone is rounded up.
+     * During patching, a VM is considered disrupted from the time the agent is
+     * notified to begin until patching has completed. This disruption time
+     * includes the time to complete reboot and any post-patch steps.
+     * A VM contributes to the disruption budget if its patching operation fails
+     * either when applying the patches, running pre or post patch steps, or if it
+     * fails to respond with a success notification before timing out. VMs that
+     * are not running or do not have an active agent do not count toward this
+     * disruption budget.
+     * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+     * the patch job stops, because continuing to the next zone requires
+     * completion of the patch process in the previous zone.
+     * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+     * fail to patch in the current zone, the patch job continues to patch 2 VMs
+     * at a time until the zone is completed. When that zone is completed
+     * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+     * VMs in the next zone fail to patch, the patch job stops.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+     *
+     * @return The disruptionBudget.
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1beta.Common.FixedOrPercent getDisruptionBudget() {
+      return disruptionBudget_ == null
+          ? com.google.cloud.osconfig.v1beta.Common.FixedOrPercent.getDefaultInstance()
+          : disruptionBudget_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number (or percentage) of VMs per zone to disrupt at any given
+     * moment. The number of VMs calculated from multiplying the percentage by the
+     * total number of VMs in a zone is rounded up.
+     * During patching, a VM is considered disrupted from the time the agent is
+     * notified to begin until patching has completed. This disruption time
+     * includes the time to complete reboot and any post-patch steps.
+     * A VM contributes to the disruption budget if its patching operation fails
+     * either when applying the patches, running pre or post patch steps, or if it
+     * fails to respond with a success notification before timing out. VMs that
+     * are not running or do not have an active agent do not count toward this
+     * disruption budget.
+     * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+     * the patch job stops, because continuing to the next zone requires
+     * completion of the patch process in the previous zone.
+     * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+     * fail to patch in the current zone, the patch job continues to patch 2 VMs
+     * at a time until the zone is completed. When that zone is completed
+     * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+     * VMs in the next zone fail to patch, the patch job stops.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1beta.Common.FixedOrPercentOrBuilder
+        getDisruptionBudgetOrBuilder() {
+      return getDisruptionBudget();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (mode_
+          != com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Mode.MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, mode_);
+      }
+      if (disruptionBudget_ != null) {
+        output.writeMessage(2, getDisruptionBudget());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (mode_
+          != com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Mode.MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, mode_);
+      }
+      if (disruptionBudget_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDisruptionBudget());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout other =
+          (com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout) obj;
+
+      if (mode_ != other.mode_) return false;
+      if (hasDisruptionBudget() != other.hasDisruptionBudget()) return false;
+      if (hasDisruptionBudget()) {
+        if (!getDisruptionBudget().equals(other.getDisruptionBudget())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + mode_;
+      if (hasDisruptionBudget()) {
+        hash = (37 * hash) + DISRUPTION_BUDGET_FIELD_NUMBER;
+        hash = (53 * hash) + getDisruptionBudget().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Patch rollout configuration specifications. Contains details on the
+     * concurrency control when applying patch(es) to all targeted VMs.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.osconfig.v1beta.PatchRollout}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1beta.PatchRollout)
+        com.google.cloud.osconfig.v1beta.PatchJobs.PatchRolloutOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.osconfig.v1beta.PatchJobs
+            .internal_static_google_cloud_osconfig_v1beta_PatchRollout_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.osconfig.v1beta.PatchJobs
+            .internal_static_google_cloud_osconfig_v1beta_PatchRollout_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.class,
+                com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Builder.class);
+      }
+
+      // Construct using com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        mode_ = 0;
+
+        if (disruptionBudgetBuilder_ == null) {
+          disruptionBudget_ = null;
+        } else {
+          disruptionBudget_ = null;
+          disruptionBudgetBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.osconfig.v1beta.PatchJobs
+            .internal_static_google_cloud_osconfig_v1beta_PatchRollout_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout getDefaultInstanceForType() {
+        return com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout build() {
+        com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout buildPartial() {
+        com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout result =
+            new com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout(this);
+        result.mode_ = mode_;
+        if (disruptionBudgetBuilder_ == null) {
+          result.disruptionBudget_ = disruptionBudget_;
+        } else {
+          result.disruptionBudget_ = disruptionBudgetBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout) {
+          return mergeFrom((com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout other) {
+        if (other == com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.getDefaultInstance())
+          return this;
+        if (other.mode_ != 0) {
+          setModeValue(other.getModeValue());
+        }
+        if (other.hasDisruptionBudget()) {
+          mergeDisruptionBudget(other.getDisruptionBudget());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int mode_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Mode of the patch rollout.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout.Mode mode = 1;</code>
+       *
+       * @return The enum numeric value on the wire for mode.
+       */
+      @java.lang.Override
+      public int getModeValue() {
+        return mode_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mode of the patch rollout.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout.Mode mode = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModeValue(int value) {
+
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mode of the patch rollout.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout.Mode mode = 1;</code>
+       *
+       * @return The mode.
+       */
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Mode getMode() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Mode result =
+            com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Mode.valueOf(mode_);
+        return result == null
+            ? com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Mode.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mode of the patch rollout.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout.Mode mode = 1;</code>
+       *
+       * @param value The mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMode(com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout.Mode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        mode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mode of the patch rollout.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.PatchRollout.Mode mode = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMode() {
+
+        mode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.osconfig.v1beta.Common.FixedOrPercent disruptionBudget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.osconfig.v1beta.Common.FixedOrPercent,
+              com.google.cloud.osconfig.v1beta.Common.FixedOrPercent.Builder,
+              com.google.cloud.osconfig.v1beta.Common.FixedOrPercentOrBuilder>
+          disruptionBudgetBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number (or percentage) of VMs per zone to disrupt at any given
+       * moment. The number of VMs calculated from multiplying the percentage by the
+       * total number of VMs in a zone is rounded up.
+       * During patching, a VM is considered disrupted from the time the agent is
+       * notified to begin until patching has completed. This disruption time
+       * includes the time to complete reboot and any post-patch steps.
+       * A VM contributes to the disruption budget if its patching operation fails
+       * either when applying the patches, running pre or post patch steps, or if it
+       * fails to respond with a success notification before timing out. VMs that
+       * are not running or do not have an active agent do not count toward this
+       * disruption budget.
+       * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+       * the patch job stops, because continuing to the next zone requires
+       * completion of the patch process in the previous zone.
+       * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+       * fail to patch in the current zone, the patch job continues to patch 2 VMs
+       * at a time until the zone is completed. When that zone is completed
+       * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+       * VMs in the next zone fail to patch, the patch job stops.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+       *
+       * @return Whether the disruptionBudget field is set.
+       */
+      public boolean hasDisruptionBudget() {
+        return disruptionBudgetBuilder_ != null || disruptionBudget_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number (or percentage) of VMs per zone to disrupt at any given
+       * moment. The number of VMs calculated from multiplying the percentage by the
+       * total number of VMs in a zone is rounded up.
+       * During patching, a VM is considered disrupted from the time the agent is
+       * notified to begin until patching has completed. This disruption time
+       * includes the time to complete reboot and any post-patch steps.
+       * A VM contributes to the disruption budget if its patching operation fails
+       * either when applying the patches, running pre or post patch steps, or if it
+       * fails to respond with a success notification before timing out. VMs that
+       * are not running or do not have an active agent do not count toward this
+       * disruption budget.
+       * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+       * the patch job stops, because continuing to the next zone requires
+       * completion of the patch process in the previous zone.
+       * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+       * fail to patch in the current zone, the patch job continues to patch 2 VMs
+       * at a time until the zone is completed. When that zone is completed
+       * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+       * VMs in the next zone fail to patch, the patch job stops.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+       *
+       * @return The disruptionBudget.
+       */
+      public com.google.cloud.osconfig.v1beta.Common.FixedOrPercent getDisruptionBudget() {
+        if (disruptionBudgetBuilder_ == null) {
+          return disruptionBudget_ == null
+              ? com.google.cloud.osconfig.v1beta.Common.FixedOrPercent.getDefaultInstance()
+              : disruptionBudget_;
+        } else {
+          return disruptionBudgetBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number (or percentage) of VMs per zone to disrupt at any given
+       * moment. The number of VMs calculated from multiplying the percentage by the
+       * total number of VMs in a zone is rounded up.
+       * During patching, a VM is considered disrupted from the time the agent is
+       * notified to begin until patching has completed. This disruption time
+       * includes the time to complete reboot and any post-patch steps.
+       * A VM contributes to the disruption budget if its patching operation fails
+       * either when applying the patches, running pre or post patch steps, or if it
+       * fails to respond with a success notification before timing out. VMs that
+       * are not running or do not have an active agent do not count toward this
+       * disruption budget.
+       * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+       * the patch job stops, because continuing to the next zone requires
+       * completion of the patch process in the previous zone.
+       * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+       * fail to patch in the current zone, the patch job continues to patch 2 VMs
+       * at a time until the zone is completed. When that zone is completed
+       * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+       * VMs in the next zone fail to patch, the patch job stops.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+       */
+      public Builder setDisruptionBudget(
+          com.google.cloud.osconfig.v1beta.Common.FixedOrPercent value) {
+        if (disruptionBudgetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          disruptionBudget_ = value;
+          onChanged();
+        } else {
+          disruptionBudgetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number (or percentage) of VMs per zone to disrupt at any given
+       * moment. The number of VMs calculated from multiplying the percentage by the
+       * total number of VMs in a zone is rounded up.
+       * During patching, a VM is considered disrupted from the time the agent is
+       * notified to begin until patching has completed. This disruption time
+       * includes the time to complete reboot and any post-patch steps.
+       * A VM contributes to the disruption budget if its patching operation fails
+       * either when applying the patches, running pre or post patch steps, or if it
+       * fails to respond with a success notification before timing out. VMs that
+       * are not running or do not have an active agent do not count toward this
+       * disruption budget.
+       * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+       * the patch job stops, because continuing to the next zone requires
+       * completion of the patch process in the previous zone.
+       * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+       * fail to patch in the current zone, the patch job continues to patch 2 VMs
+       * at a time until the zone is completed. When that zone is completed
+       * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+       * VMs in the next zone fail to patch, the patch job stops.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+       */
+      public Builder setDisruptionBudget(
+          com.google.cloud.osconfig.v1beta.Common.FixedOrPercent.Builder builderForValue) {
+        if (disruptionBudgetBuilder_ == null) {
+          disruptionBudget_ = builderForValue.build();
+          onChanged();
+        } else {
+          disruptionBudgetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number (or percentage) of VMs per zone to disrupt at any given
+       * moment. The number of VMs calculated from multiplying the percentage by the
+       * total number of VMs in a zone is rounded up.
+       * During patching, a VM is considered disrupted from the time the agent is
+       * notified to begin until patching has completed. This disruption time
+       * includes the time to complete reboot and any post-patch steps.
+       * A VM contributes to the disruption budget if its patching operation fails
+       * either when applying the patches, running pre or post patch steps, or if it
+       * fails to respond with a success notification before timing out. VMs that
+       * are not running or do not have an active agent do not count toward this
+       * disruption budget.
+       * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+       * the patch job stops, because continuing to the next zone requires
+       * completion of the patch process in the previous zone.
+       * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+       * fail to patch in the current zone, the patch job continues to patch 2 VMs
+       * at a time until the zone is completed. When that zone is completed
+       * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+       * VMs in the next zone fail to patch, the patch job stops.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+       */
+      public Builder mergeDisruptionBudget(
+          com.google.cloud.osconfig.v1beta.Common.FixedOrPercent value) {
+        if (disruptionBudgetBuilder_ == null) {
+          if (disruptionBudget_ != null) {
+            disruptionBudget_ =
+                com.google.cloud.osconfig.v1beta.Common.FixedOrPercent.newBuilder(disruptionBudget_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            disruptionBudget_ = value;
+          }
+          onChanged();
+        } else {
+          disruptionBudgetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number (or percentage) of VMs per zone to disrupt at any given
+       * moment. The number of VMs calculated from multiplying the percentage by the
+       * total number of VMs in a zone is rounded up.
+       * During patching, a VM is considered disrupted from the time the agent is
+       * notified to begin until patching has completed. This disruption time
+       * includes the time to complete reboot and any post-patch steps.
+       * A VM contributes to the disruption budget if its patching operation fails
+       * either when applying the patches, running pre or post patch steps, or if it
+       * fails to respond with a success notification before timing out. VMs that
+       * are not running or do not have an active agent do not count toward this
+       * disruption budget.
+       * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+       * the patch job stops, because continuing to the next zone requires
+       * completion of the patch process in the previous zone.
+       * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+       * fail to patch in the current zone, the patch job continues to patch 2 VMs
+       * at a time until the zone is completed. When that zone is completed
+       * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+       * VMs in the next zone fail to patch, the patch job stops.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+       */
+      public Builder clearDisruptionBudget() {
+        if (disruptionBudgetBuilder_ == null) {
+          disruptionBudget_ = null;
+          onChanged();
+        } else {
+          disruptionBudget_ = null;
+          disruptionBudgetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number (or percentage) of VMs per zone to disrupt at any given
+       * moment. The number of VMs calculated from multiplying the percentage by the
+       * total number of VMs in a zone is rounded up.
+       * During patching, a VM is considered disrupted from the time the agent is
+       * notified to begin until patching has completed. This disruption time
+       * includes the time to complete reboot and any post-patch steps.
+       * A VM contributes to the disruption budget if its patching operation fails
+       * either when applying the patches, running pre or post patch steps, or if it
+       * fails to respond with a success notification before timing out. VMs that
+       * are not running or do not have an active agent do not count toward this
+       * disruption budget.
+       * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+       * the patch job stops, because continuing to the next zone requires
+       * completion of the patch process in the previous zone.
+       * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+       * fail to patch in the current zone, the patch job continues to patch 2 VMs
+       * at a time until the zone is completed. When that zone is completed
+       * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+       * VMs in the next zone fail to patch, the patch job stops.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+       */
+      public com.google.cloud.osconfig.v1beta.Common.FixedOrPercent.Builder
+          getDisruptionBudgetBuilder() {
+
+        onChanged();
+        return getDisruptionBudgetFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number (or percentage) of VMs per zone to disrupt at any given
+       * moment. The number of VMs calculated from multiplying the percentage by the
+       * total number of VMs in a zone is rounded up.
+       * During patching, a VM is considered disrupted from the time the agent is
+       * notified to begin until patching has completed. This disruption time
+       * includes the time to complete reboot and any post-patch steps.
+       * A VM contributes to the disruption budget if its patching operation fails
+       * either when applying the patches, running pre or post patch steps, or if it
+       * fails to respond with a success notification before timing out. VMs that
+       * are not running or do not have an active agent do not count toward this
+       * disruption budget.
+       * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+       * the patch job stops, because continuing to the next zone requires
+       * completion of the patch process in the previous zone.
+       * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+       * fail to patch in the current zone, the patch job continues to patch 2 VMs
+       * at a time until the zone is completed. When that zone is completed
+       * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+       * VMs in the next zone fail to patch, the patch job stops.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+       */
+      public com.google.cloud.osconfig.v1beta.Common.FixedOrPercentOrBuilder
+          getDisruptionBudgetOrBuilder() {
+        if (disruptionBudgetBuilder_ != null) {
+          return disruptionBudgetBuilder_.getMessageOrBuilder();
+        } else {
+          return disruptionBudget_ == null
+              ? com.google.cloud.osconfig.v1beta.Common.FixedOrPercent.getDefaultInstance()
+              : disruptionBudget_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number (or percentage) of VMs per zone to disrupt at any given
+       * moment. The number of VMs calculated from multiplying the percentage by the
+       * total number of VMs in a zone is rounded up.
+       * During patching, a VM is considered disrupted from the time the agent is
+       * notified to begin until patching has completed. This disruption time
+       * includes the time to complete reboot and any post-patch steps.
+       * A VM contributes to the disruption budget if its patching operation fails
+       * either when applying the patches, running pre or post patch steps, or if it
+       * fails to respond with a success notification before timing out. VMs that
+       * are not running or do not have an active agent do not count toward this
+       * disruption budget.
+       * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
+       * the patch job stops, because continuing to the next zone requires
+       * completion of the patch process in the previous zone.
+       * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
+       * fail to patch in the current zone, the patch job continues to patch 2 VMs
+       * at a time until the zone is completed. When that zone is completed
+       * successfully, patching begins with 10 VMs at a time in the next zone. If 10
+       * VMs in the next zone fail to patch, the patch job stops.
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1beta.FixedOrPercent disruption_budget = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.osconfig.v1beta.Common.FixedOrPercent,
+              com.google.cloud.osconfig.v1beta.Common.FixedOrPercent.Builder,
+              com.google.cloud.osconfig.v1beta.Common.FixedOrPercentOrBuilder>
+          getDisruptionBudgetFieldBuilder() {
+        if (disruptionBudgetBuilder_ == null) {
+          disruptionBudgetBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.osconfig.v1beta.Common.FixedOrPercent,
+                  com.google.cloud.osconfig.v1beta.Common.FixedOrPercent.Builder,
+                  com.google.cloud.osconfig.v1beta.Common.FixedOrPercentOrBuilder>(
+                  getDisruptionBudget(), getParentForChildren(), isClean());
+          disruptionBudget_ = null;
+        }
+        return disruptionBudgetBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.osconfig.v1beta.PatchRollout)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.osconfig.v1beta.PatchRollout)
+    private static final com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout();
+    }
+
+    public static com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PatchRollout> PARSER =
+        new com.google.protobuf.AbstractParser<PatchRollout>() {
+          @java.lang.Override
+          public PatchRollout parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PatchRollout(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<PatchRollout> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PatchRollout> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1beta.PatchJobs.PatchRollout getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_osconfig_v1beta_ExecutePatchJobRequest_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -34707,6 +36832,10 @@ public final class PatchJobs {
       internal_static_google_cloud_osconfig_v1beta_PatchInstanceFilter_GroupLabel_LabelsEntry_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_osconfig_v1beta_PatchInstanceFilter_GroupLabel_LabelsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_osconfig_v1beta_PatchRollout_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_v1beta_PatchRollout_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -34717,146 +36846,161 @@ public final class PatchJobs {
   static {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/osconfig/v1beta/patch_job"
-          + "s.proto\022\034google.cloud.osconfig.v1beta\032\037g"
-          + "oogle/api/field_behavior.proto\032\031google/a"
-          + "pi/resource.proto\032\036google/protobuf/durat"
-          + "ion.proto\032\037google/protobuf/timestamp.pro"
-          + "to\"\250\002\n\026ExecutePatchJobRequest\022\023\n\006parent\030"
-          + "\001 \001(\tB\003\340A\002\022\023\n\013description\030\002 \001(\t\022O\n\017insta"
-          + "nce_filter\030\007 \001(\01321.google.cloud.osconfig"
-          + ".v1beta.PatchInstanceFilterB\003\340A\002\022?\n\014patc"
-          + "h_config\030\004 \001(\0132).google.cloud.osconfig.v"
-          + "1beta.PatchConfig\022+\n\010duration\030\005 \001(\0132\031.go"
-          + "ogle.protobuf.Duration\022\017\n\007dry_run\030\006 \001(\010\022"
-          + "\024\n\014display_name\030\010 \001(\t\"\'\n\022GetPatchJobRequ"
-          + "est\022\021\n\004name\030\001 \001(\tB\003\340A\002\"p\n\"ListPatchJobIn"
-          + "stanceDetailsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A"
-          + "\002\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t"
-          + "\022\016\n\006filter\030\004 \001(\t\"\231\001\n#ListPatchJobInstanc"
-          + "eDetailsResponse\022Y\n\032patch_job_instance_d"
-          + "etails\030\001 \003(\01325.google.cloud.osconfig.v1b"
-          + "eta.PatchJobInstanceDetails\022\027\n\017next_page"
-          + "_token\030\002 \001(\t\"\264\001\n\027PatchJobInstanceDetails"
-          + "\022\014\n\004name\030\001 \001(\t\022\032\n\022instance_system_id\030\002 \001"
-          + "(\t\022@\n\005state\030\003 \001(\01621.google.cloud.osconfi"
-          + "g.v1beta.Instance.PatchState\022\026\n\016failure_"
-          + "reason\030\004 \001(\t\022\025\n\rattempt_count\030\005 \001(\003\"b\n\024L"
-          + "istPatchJobsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002"
-          + "\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022"
-          + "\016\n\006filter\030\004 \001(\t\"l\n\025ListPatchJobsResponse"
-          + "\022:\n\npatch_jobs\030\001 \003(\0132&.google.cloud.osco"
-          + "nfig.v1beta.PatchJob\022\027\n\017next_page_token\030"
-          + "\002 \001(\t\"\266\n\n\010PatchJob\022\014\n\004name\030\001 \001(\t\022\024\n\014disp"
-          + "lay_name\030\016 \001(\t\022\023\n\013description\030\002 \001(\t\022/\n\013c"
-          + "reate_time\030\003 \001(\0132\032.google.protobuf.Times"
-          + "tamp\022/\n\013update_time\030\004 \001(\0132\032.google.proto"
-          + "buf.Timestamp\022;\n\005state\030\005 \001(\0162,.google.cl"
-          + "oud.osconfig.v1beta.PatchJob.State\022J\n\017in"
-          + "stance_filter\030\r \001(\01321.google.cloud.oscon"
-          + "fig.v1beta.PatchInstanceFilter\022?\n\014patch_"
-          + "config\030\007 \001(\0132).google.cloud.osconfig.v1b"
-          + "eta.PatchConfig\022+\n\010duration\030\010 \001(\0132\031.goog"
-          + "le.protobuf.Duration\022_\n\030instance_details"
-          + "_summary\030\t \001(\0132=.google.cloud.osconfig.v"
-          + "1beta.PatchJob.InstanceDetailsSummary\022\017\n"
-          + "\007dry_run\030\n \001(\010\022\025\n\rerror_message\030\013 \001(\t\022\030\n"
-          + "\020percent_complete\030\014 \001(\001\022\035\n\020patch_deploym"
-          + "ent\030\017 \001(\tB\003\340A\003\032\275\004\n\026InstanceDetailsSummar"
-          + "y\022\036\n\026pending_instance_count\030\001 \001(\003\022\037\n\027ina"
-          + "ctive_instance_count\030\002 \001(\003\022\037\n\027notified_i"
-          + "nstance_count\030\003 \001(\003\022\036\n\026started_instance_"
-          + "count\030\004 \001(\003\022*\n\"downloading_patches_insta"
-          + "nce_count\030\005 \001(\003\022\'\n\037applying_patches_inst"
-          + "ance_count\030\006 \001(\003\022 \n\030rebooting_instance_c"
-          + "ount\030\007 \001(\003\022 \n\030succeeded_instance_count\030\010"
-          + " \001(\003\0220\n(succeeded_reboot_required_instan"
-          + "ce_count\030\t \001(\003\022\035\n\025failed_instance_count\030"
-          + "\n \001(\003\022\034\n\024acked_instance_count\030\013 \001(\003\022 \n\030t"
-          + "imed_out_instance_count\030\014 \001(\003\022%\n\035pre_pat"
-          + "ch_step_instance_count\030\r \001(\003\022&\n\036post_pat"
-          + "ch_step_instance_count\030\016 \001(\003\022(\n no_agent"
-          + "_detected_instance_count\030\017 \001(\003\"\225\001\n\005State"
-          + "\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007STARTED\020\001\022\023\n\017"
-          + "INSTANCE_LOOKUP\020\002\022\014\n\010PATCHING\020\003\022\r\n\tSUCCE"
-          + "EDED\020\004\022\031\n\025COMPLETED_WITH_ERRORS\020\005\022\014\n\010CAN"
-          + "CELED\020\006\022\r\n\tTIMED_OUT\020\007\"\327\004\n\013PatchConfig\022M"
-          + "\n\rreboot_config\030\001 \001(\01626.google.cloud.osc"
-          + "onfig.v1beta.PatchConfig.RebootConfig\0226\n"
-          + "\003apt\030\003 \001(\0132).google.cloud.osconfig.v1bet"
-          + "a.AptSettings\0226\n\003yum\030\004 \001(\0132).google.clou"
-          + "d.osconfig.v1beta.YumSettings\0226\n\003goo\030\005 \001"
-          + "(\0132).google.cloud.osconfig.v1beta.GooSet"
-          + "tings\022<\n\006zypper\030\006 \001(\0132,.google.cloud.osc"
-          + "onfig.v1beta.ZypperSettings\022K\n\016windows_u"
-          + "pdate\030\007 \001(\01323.google.cloud.osconfig.v1be"
-          + "ta.WindowsUpdateSettings\0228\n\010pre_step\030\010 \001"
-          + "(\0132&.google.cloud.osconfig.v1beta.ExecSt"
-          + "ep\0229\n\tpost_step\030\t \001(\0132&.google.cloud.osc"
-          + "onfig.v1beta.ExecStep\"Q\n\014RebootConfig\022\035\n"
-          + "\031REBOOT_CONFIG_UNSPECIFIED\020\000\022\013\n\007DEFAULT\020"
-          + "\001\022\n\n\006ALWAYS\020\002\022\t\n\005NEVER\020\003\"\316\002\n\010Instance\"\301\002"
-          + "\n\nPatchState\022\033\n\027PATCH_STATE_UNSPECIFIED\020"
-          + "\000\022\013\n\007PENDING\020\001\022\014\n\010INACTIVE\020\002\022\014\n\010NOTIFIED"
-          + "\020\003\022\013\n\007STARTED\020\004\022\027\n\023DOWNLOADING_PATCHES\020\005"
-          + "\022\024\n\020APPLYING_PATCHES\020\006\022\r\n\tREBOOTING\020\007\022\r\n"
-          + "\tSUCCEEDED\020\010\022\035\n\031SUCCEEDED_REBOOT_REQUIRE"
-          + "D\020\t\022\n\n\006FAILED\020\n\022\t\n\005ACKED\020\013\022\r\n\tTIMED_OUT\020"
-          + "\014\022\032\n\026RUNNING_PRE_PATCH_STEP\020\r\022\033\n\027RUNNING"
-          + "_POST_PATCH_STEP\020\016\022\025\n\021NO_AGENT_DETECTED\020"
-          + "\017\"*\n\025CancelPatchJobRequest\022\021\n\004name\030\001 \001(\t"
-          + "B\003\340A\002\"\256\001\n\013AptSettings\022<\n\004type\030\001 \001(\0162..go"
-          + "ogle.cloud.osconfig.v1beta.AptSettings.T"
-          + "ype\022\020\n\010excludes\030\002 \003(\t\022\032\n\022exclusive_packa"
-          + "ges\030\003 \003(\t\"3\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022"
-          + "\010\n\004DIST\020\001\022\013\n\007UPGRADE\020\002\"^\n\013YumSettings\022\020\n"
-          + "\010security\030\001 \001(\010\022\017\n\007minimal\030\002 \001(\010\022\020\n\010excl"
-          + "udes\030\003 \003(\t\022\032\n\022exclusive_packages\030\004 \003(\t\"\r"
-          + "\n\013GooSettings\"\221\001\n\016ZypperSettings\022\025\n\rwith"
-          + "_optional\030\001 \001(\010\022\023\n\013with_update\030\002 \001(\010\022\022\n\n"
-          + "categories\030\003 \003(\t\022\022\n\nseverities\030\004 \003(\t\022\020\n\010"
-          + "excludes\030\005 \003(\t\022\031\n\021exclusive_patches\030\006 \003("
-          + "\t\"\331\002\n\025WindowsUpdateSettings\022[\n\017classific"
-          + "ations\030\001 \003(\0162B.google.cloud.osconfig.v1b"
-          + "eta.WindowsUpdateSettings.Classification"
-          + "\022\020\n\010excludes\030\002 \003(\t\022\031\n\021exclusive_patches\030"
-          + "\003 \003(\t\"\265\001\n\016Classification\022\036\n\032CLASSIFICATI"
-          + "ON_UNSPECIFIED\020\000\022\014\n\010CRITICAL\020\001\022\014\n\010SECURI"
-          + "TY\020\002\022\016\n\nDEFINITION\020\003\022\n\n\006DRIVER\020\004\022\020\n\014FEAT"
-          + "URE_PACK\020\005\022\020\n\014SERVICE_PACK\020\006\022\010\n\004TOOL\020\007\022\021"
-          + "\n\rUPDATE_ROLLUP\020\010\022\n\n\006UPDATE\020\t\"\250\001\n\010ExecSt"
-          + "ep\022L\n\026linux_exec_step_config\030\001 \001(\0132,.goo"
-          + "gle.cloud.osconfig.v1beta.ExecStepConfig"
-          + "\022N\n\030windows_exec_step_config\030\002 \001(\0132,.goo"
-          + "gle.cloud.osconfig.v1beta.ExecStepConfig"
-          + "\"\250\002\n\016ExecStepConfig\022\024\n\nlocal_path\030\001 \001(\tH"
-          + "\000\022=\n\ngcs_object\030\002 \001(\0132\'.google.cloud.osc"
-          + "onfig.v1beta.GcsObjectH\000\022\035\n\025allowed_succ"
-          + "ess_codes\030\003 \003(\005\022M\n\013interpreter\030\004 \001(\01628.g"
-          + "oogle.cloud.osconfig.v1beta.ExecStepConf"
-          + "ig.Interpreter\"E\n\013Interpreter\022\033\n\027INTERPR"
-          + "ETER_UNSPECIFIED\020\000\022\t\n\005SHELL\020\001\022\016\n\nPOWERSH"
-          + "ELL\020\002B\014\n\nexecutable\"U\n\tGcsObject\022\023\n\006buck"
-          + "et\030\001 \001(\tB\003\340A\002\022\023\n\006object\030\002 \001(\tB\003\340A\002\022\036\n\021ge"
-          + "neration_number\030\003 \001(\003B\003\340A\002\"\320\002\n\023PatchInst"
-          + "anceFilter\022\013\n\003all\030\001 \001(\010\022R\n\014group_labels\030"
-          + "\002 \003(\0132<.google.cloud.osconfig.v1beta.Pat"
-          + "chInstanceFilter.GroupLabel\022\r\n\005zones\030\003 \003"
-          + "(\t\022\021\n\tinstances\030\004 \003(\t\022\036\n\026instance_name_p"
-          + "refixes\030\005 \003(\t\032\225\001\n\nGroupLabel\022X\n\006labels\030\001"
-          + " \003(\0132H.google.cloud.osconfig.v1beta.Patc"
-          + "hInstanceFilter.GroupLabel.LabelsEntry\032-"
-          + "\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
-          + "\t:\0028\001Bs\n com.google.cloud.osconfig.v1bet"
-          + "aB\tPatchJobsZDgoogle.golang.org/genproto"
-          + "/googleapis/cloud/osconfig/v1beta;osconf"
-          + "igb\006proto3"
+          + "s.proto\022\034google.cloud.osconfig.v1beta\032\034g"
+          + "oogle/api/annotations.proto\032\037google/api/"
+          + "field_behavior.proto\032\031google/api/resourc"
+          + "e.proto\0322google/cloud/osconfig/v1beta/os"
+          + "config_common.proto\032\036google/protobuf/dur"
+          + "ation.proto\032\037google/protobuf/timestamp.p"
+          + "roto\"\345\002\n\026ExecutePatchJobRequest\022\023\n\006paren"
+          + "t\030\001 \001(\tB\003\340A\002\022\023\n\013description\030\002 \001(\t\022O\n\017ins"
+          + "tance_filter\030\007 \001(\01321.google.cloud.osconf"
+          + "ig.v1beta.PatchInstanceFilterB\003\340A\002\022?\n\014pa"
+          + "tch_config\030\004 \001(\0132).google.cloud.osconfig"
+          + ".v1beta.PatchConfig\022+\n\010duration\030\005 \001(\0132\031."
+          + "google.protobuf.Duration\022\017\n\007dry_run\030\006 \001("
+          + "\010\022\024\n\014display_name\030\010 \001(\t\022;\n\007rollout\030\t \001(\013"
+          + "2*.google.cloud.osconfig.v1beta.PatchRol"
+          + "lout\"\'\n\022GetPatchJobRequest\022\021\n\004name\030\001 \001(\t"
+          + "B\003\340A\002\"p\n\"ListPatchJobInstanceDetailsRequ"
+          + "est\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\021\n\tpage_size\030\002 "
+          + "\001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\""
+          + "\231\001\n#ListPatchJobInstanceDetailsResponse\022"
+          + "Y\n\032patch_job_instance_details\030\001 \003(\01325.go"
+          + "ogle.cloud.osconfig.v1beta.PatchJobInsta"
+          + "nceDetails\022\027\n\017next_page_token\030\002 \001(\t\"\264\001\n\027"
+          + "PatchJobInstanceDetails\022\014\n\004name\030\001 \001(\t\022\032\n"
+          + "\022instance_system_id\030\002 \001(\t\022@\n\005state\030\003 \001(\016"
+          + "21.google.cloud.osconfig.v1beta.Instance"
+          + ".PatchState\022\026\n\016failure_reason\030\004 \001(\t\022\025\n\ra"
+          + "ttempt_count\030\005 \001(\003\"b\n\024ListPatchJobsReque"
+          + "st\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\021\n\tpage_size\030\002 \001"
+          + "(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"l"
+          + "\n\025ListPatchJobsResponse\022:\n\npatch_jobs\030\001 "
+          + "\003(\0132&.google.cloud.osconfig.v1beta.Patch"
+          + "Job\022\027\n\017next_page_token\030\002 \001(\t\"\304\013\n\010PatchJo"
+          + "b\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\016 \001(\t\022\023\n"
+          + "\013description\030\002 \001(\t\022/\n\013create_time\030\003 \001(\0132"
+          + "\032.google.protobuf.Timestamp\022/\n\013update_ti"
+          + "me\030\004 \001(\0132\032.google.protobuf.Timestamp\022;\n\005"
+          + "state\030\005 \001(\0162,.google.cloud.osconfig.v1be"
+          + "ta.PatchJob.State\022J\n\017instance_filter\030\r \001"
+          + "(\01321.google.cloud.osconfig.v1beta.PatchI"
+          + "nstanceFilter\022?\n\014patch_config\030\007 \001(\0132).go"
+          + "ogle.cloud.osconfig.v1beta.PatchConfig\022+"
+          + "\n\010duration\030\010 \001(\0132\031.google.protobuf.Durat"
+          + "ion\022_\n\030instance_details_summary\030\t \001(\0132=."
+          + "google.cloud.osconfig.v1beta.PatchJob.In"
+          + "stanceDetailsSummary\022\017\n\007dry_run\030\n \001(\010\022\025\n"
+          + "\rerror_message\030\013 \001(\t\022\030\n\020percent_complete"
+          + "\030\014 \001(\001\022\035\n\020patch_deployment\030\017 \001(\tB\003\340A\003\022;\n"
+          + "\007rollout\030\020 \001(\0132*.google.cloud.osconfig.v"
+          + "1beta.PatchRollout\032\275\004\n\026InstanceDetailsSu"
+          + "mmary\022\036\n\026pending_instance_count\030\001 \001(\003\022\037\n"
+          + "\027inactive_instance_count\030\002 \001(\003\022\037\n\027notifi"
+          + "ed_instance_count\030\003 \001(\003\022\036\n\026started_insta"
+          + "nce_count\030\004 \001(\003\022*\n\"downloading_patches_i"
+          + "nstance_count\030\005 \001(\003\022\'\n\037applying_patches_"
+          + "instance_count\030\006 \001(\003\022 \n\030rebooting_instan"
+          + "ce_count\030\007 \001(\003\022 \n\030succeeded_instance_cou"
+          + "nt\030\010 \001(\003\0220\n(succeeded_reboot_required_in"
+          + "stance_count\030\t \001(\003\022\035\n\025failed_instance_co"
+          + "unt\030\n \001(\003\022\034\n\024acked_instance_count\030\013 \001(\003\022"
+          + " \n\030timed_out_instance_count\030\014 \001(\003\022%\n\035pre"
+          + "_patch_step_instance_count\030\r \001(\003\022&\n\036post"
+          + "_patch_step_instance_count\030\016 \001(\003\022(\n no_a"
+          + "gent_detected_instance_count\030\017 \001(\003\"\225\001\n\005S"
+          + "tate\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007STARTED\020\001"
+          + "\022\023\n\017INSTANCE_LOOKUP\020\002\022\014\n\010PATCHING\020\003\022\r\n\tS"
+          + "UCCEEDED\020\004\022\031\n\025COMPLETED_WITH_ERRORS\020\005\022\014\n"
+          + "\010CANCELED\020\006\022\r\n\tTIMED_OUT\020\007:O\352AL\n osconfi"
+          + "g.googleapis.com/PatchJob\022(projects/{pro"
+          + "ject}/patchJobs/{patch_job}\"\366\004\n\013PatchCon"
+          + "fig\022M\n\rreboot_config\030\001 \001(\01626.google.clou"
+          + "d.osconfig.v1beta.PatchConfig.RebootConf"
+          + "ig\0226\n\003apt\030\003 \001(\0132).google.cloud.osconfig."
+          + "v1beta.AptSettings\0226\n\003yum\030\004 \001(\0132).google"
+          + ".cloud.osconfig.v1beta.YumSettings\0226\n\003go"
+          + "o\030\005 \001(\0132).google.cloud.osconfig.v1beta.G"
+          + "ooSettings\022<\n\006zypper\030\006 \001(\0132,.google.clou"
+          + "d.osconfig.v1beta.ZypperSettings\022K\n\016wind"
+          + "ows_update\030\007 \001(\01323.google.cloud.osconfig"
+          + ".v1beta.WindowsUpdateSettings\0228\n\010pre_ste"
+          + "p\030\010 \001(\0132&.google.cloud.osconfig.v1beta.E"
+          + "xecStep\0229\n\tpost_step\030\t \001(\0132&.google.clou"
+          + "d.osconfig.v1beta.ExecStep\022\035\n\025mig_instan"
+          + "ces_allowed\030\n \001(\010\"Q\n\014RebootConfig\022\035\n\031REB"
+          + "OOT_CONFIG_UNSPECIFIED\020\000\022\013\n\007DEFAULT\020\001\022\n\n"
+          + "\006ALWAYS\020\002\022\t\n\005NEVER\020\003\"\316\002\n\010Instance\"\301\002\n\nPa"
+          + "tchState\022\033\n\027PATCH_STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007PENDING\020\001\022\014\n\010INACTIVE\020\002\022\014\n\010NOTIFIED\020\003\022\013"
+          + "\n\007STARTED\020\004\022\027\n\023DOWNLOADING_PATCHES\020\005\022\024\n\020"
+          + "APPLYING_PATCHES\020\006\022\r\n\tREBOOTING\020\007\022\r\n\tSUC"
+          + "CEEDED\020\010\022\035\n\031SUCCEEDED_REBOOT_REQUIRED\020\t\022"
+          + "\n\n\006FAILED\020\n\022\t\n\005ACKED\020\013\022\r\n\tTIMED_OUT\020\014\022\032\n"
+          + "\026RUNNING_PRE_PATCH_STEP\020\r\022\033\n\027RUNNING_POS"
+          + "T_PATCH_STEP\020\016\022\025\n\021NO_AGENT_DETECTED\020\017\"*\n"
+          + "\025CancelPatchJobRequest\022\021\n\004name\030\001 \001(\tB\003\340A"
+          + "\002\"\256\001\n\013AptSettings\022<\n\004type\030\001 \001(\0162..google"
+          + ".cloud.osconfig.v1beta.AptSettings.Type\022"
+          + "\020\n\010excludes\030\002 \003(\t\022\032\n\022exclusive_packages\030"
+          + "\003 \003(\t\"3\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\010\n\004D"
+          + "IST\020\001\022\013\n\007UPGRADE\020\002\"^\n\013YumSettings\022\020\n\010sec"
+          + "urity\030\001 \001(\010\022\017\n\007minimal\030\002 \001(\010\022\020\n\010excludes"
+          + "\030\003 \003(\t\022\032\n\022exclusive_packages\030\004 \003(\t\"\r\n\013Go"
+          + "oSettings\"\221\001\n\016ZypperSettings\022\025\n\rwith_opt"
+          + "ional\030\001 \001(\010\022\023\n\013with_update\030\002 \001(\010\022\022\n\ncate"
+          + "gories\030\003 \003(\t\022\022\n\nseverities\030\004 \003(\t\022\020\n\010excl"
+          + "udes\030\005 \003(\t\022\031\n\021exclusive_patches\030\006 \003(\t\"\331\002"
+          + "\n\025WindowsUpdateSettings\022[\n\017classificatio"
+          + "ns\030\001 \003(\0162B.google.cloud.osconfig.v1beta."
+          + "WindowsUpdateSettings.Classification\022\020\n\010"
+          + "excludes\030\002 \003(\t\022\031\n\021exclusive_patches\030\003 \003("
+          + "\t\"\265\001\n\016Classification\022\036\n\032CLASSIFICATION_U"
+          + "NSPECIFIED\020\000\022\014\n\010CRITICAL\020\001\022\014\n\010SECURITY\020\002"
+          + "\022\016\n\nDEFINITION\020\003\022\n\n\006DRIVER\020\004\022\020\n\014FEATURE_"
+          + "PACK\020\005\022\020\n\014SERVICE_PACK\020\006\022\010\n\004TOOL\020\007\022\021\n\rUP"
+          + "DATE_ROLLUP\020\010\022\n\n\006UPDATE\020\t\"\250\001\n\010ExecStep\022L"
+          + "\n\026linux_exec_step_config\030\001 \001(\0132,.google."
+          + "cloud.osconfig.v1beta.ExecStepConfig\022N\n\030"
+          + "windows_exec_step_config\030\002 \001(\0132,.google."
+          + "cloud.osconfig.v1beta.ExecStepConfig\"\250\002\n"
+          + "\016ExecStepConfig\022\024\n\nlocal_path\030\001 \001(\tH\000\022=\n"
+          + "\ngcs_object\030\002 \001(\0132\'.google.cloud.osconfi"
+          + "g.v1beta.GcsObjectH\000\022\035\n\025allowed_success_"
+          + "codes\030\003 \003(\005\022M\n\013interpreter\030\004 \001(\01628.googl"
+          + "e.cloud.osconfig.v1beta.ExecStepConfig.I"
+          + "nterpreter\"E\n\013Interpreter\022\033\n\027INTERPRETER"
+          + "_UNSPECIFIED\020\000\022\t\n\005SHELL\020\001\022\016\n\nPOWERSHELL\020"
+          + "\002B\014\n\nexecutable\"U\n\tGcsObject\022\023\n\006bucket\030\001"
+          + " \001(\tB\003\340A\002\022\023\n\006object\030\002 \001(\tB\003\340A\002\022\036\n\021genera"
+          + "tion_number\030\003 \001(\003B\003\340A\002\"\320\002\n\023PatchInstance"
+          + "Filter\022\013\n\003all\030\001 \001(\010\022R\n\014group_labels\030\002 \003("
+          + "\0132<.google.cloud.osconfig.v1beta.PatchIn"
+          + "stanceFilter.GroupLabel\022\r\n\005zones\030\003 \003(\t\022\021"
+          + "\n\tinstances\030\004 \003(\t\022\036\n\026instance_name_prefi"
+          + "xes\030\005 \003(\t\032\225\001\n\nGroupLabel\022X\n\006labels\030\001 \003(\013"
+          + "2H.google.cloud.osconfig.v1beta.PatchIns"
+          + "tanceFilter.GroupLabel.LabelsEntry\032-\n\013La"
+          + "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
+          + "\001\"\334\001\n\014PatchRollout\022=\n\004mode\030\001 \001(\0162/.googl"
+          + "e.cloud.osconfig.v1beta.PatchRollout.Mod"
+          + "e\022G\n\021disruption_budget\030\002 \001(\0132,.google.cl"
+          + "oud.osconfig.v1beta.FixedOrPercent\"D\n\004Mo"
+          + "de\022\024\n\020MODE_UNSPECIFIED\020\000\022\020\n\014ZONE_BY_ZONE"
+          + "\020\001\022\024\n\020CONCURRENT_ZONES\020\002Bs\n com.google.c"
+          + "loud.osconfig.v1betaB\tPatchJobsZDgoogle."
+          + "golang.org/genproto/googleapis/cloud/osc"
+          + "onfig/v1beta;osconfigb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.osconfig.v1beta.Common.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -34873,6 +37017,7 @@ public final class PatchJobs {
               "Duration",
               "DryRun",
               "DisplayName",
+              "Rollout",
             });
     internal_static_google_cloud_osconfig_v1beta_GetPatchJobRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -34942,6 +37087,7 @@ public final class PatchJobs {
               "ErrorMessage",
               "PercentComplete",
               "PatchDeployment",
+              "Rollout",
             });
     internal_static_google_cloud_osconfig_v1beta_PatchJob_InstanceDetailsSummary_descriptor =
         internal_static_google_cloud_osconfig_v1beta_PatchJob_descriptor.getNestedTypes().get(0);
@@ -34971,7 +37117,15 @@ public final class PatchJobs {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_osconfig_v1beta_PatchConfig_descriptor,
             new java.lang.String[] {
-              "RebootConfig", "Apt", "Yum", "Goo", "Zypper", "WindowsUpdate", "PreStep", "PostStep",
+              "RebootConfig",
+              "Apt",
+              "Yum",
+              "Goo",
+              "Zypper",
+              "WindowsUpdate",
+              "PreStep",
+              "PostStep",
+              "MigInstancesAllowed",
             });
     internal_static_google_cloud_osconfig_v1beta_Instance_descriptor =
         getDescriptor().getMessageTypes().get(9);
@@ -35082,13 +37236,24 @@ public final class PatchJobs {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_osconfig_v1beta_PatchRollout_descriptor =
+        getDescriptor().getMessageTypes().get(20);
+    internal_static_google_cloud_osconfig_v1beta_PatchRollout_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_osconfig_v1beta_PatchRollout_descriptor,
+            new java.lang.String[] {
+              "Mode", "DisruptionBudget",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.osconfig.v1beta.Common.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
