@@ -27,11 +27,13 @@ public interface ListAvailableVersionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location for which to retrieve instance
-   * information in the format projects/{project}/locations/{location}.
+   * Required. The project and location for which to retrieve instance information
+   * in the format projects/{project}/locations/{location}.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface ListAvailableVersionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location for which to retrieve instance
-   * information in the format projects/{project}/locations/{location}.
+   * Required. The project and location for which to retrieve instance information
+   * in the format projects/{project}/locations/{location}.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

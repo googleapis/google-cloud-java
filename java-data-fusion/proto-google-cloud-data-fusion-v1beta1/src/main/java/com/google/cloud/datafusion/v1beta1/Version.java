@@ -40,6 +40,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   private Version() {
     versionNumber_ = "";
     availableFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -94,6 +95,13 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
               availableFeatures_.add(s);
               break;
             }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -129,6 +137,163 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.datafusion.v1beta1.Version.class,
             com.google.cloud.datafusion.v1beta1.Version.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Each type represents the release availability of a CDF version
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.datafusion.v1beta1.Version.Type}
+   */
+  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Version does not have availability yet
+     * </pre>
+     *
+     * <code>TYPE_UNSPECIFIED = 0;</code>
+     */
+    TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Version is under development and not considered stable
+     * </pre>
+     *
+     * <code>TYPE_PREVIEW = 1;</code>
+     */
+    TYPE_PREVIEW(1),
+    /**
+     *
+     *
+     * <pre>
+     * Version is available for public use
+     * </pre>
+     *
+     * <code>TYPE_GENERAL_AVAILABILITY = 2;</code>
+     */
+    TYPE_GENERAL_AVAILABILITY(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Version does not have availability yet
+     * </pre>
+     *
+     * <code>TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Version is under development and not considered stable
+     * </pre>
+     *
+     * <code>TYPE_PREVIEW = 1;</code>
+     */
+    public static final int TYPE_PREVIEW_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Version is available for public use
+     * </pre>
+     *
+     * <code>TYPE_GENERAL_AVAILABILITY = 2;</code>
+     */
+    public static final int TYPE_GENERAL_AVAILABILITY_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TYPE_UNSPECIFIED;
+        case 1:
+          return TYPE_PREVIEW;
+        case 2:
+          return TYPE_GENERAL_AVAILABILITY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+          public Type findValueByNumber(int number) {
+            return Type.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.datafusion.v1beta1.Version.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.datafusion.v1beta1.Version.Type)
   }
 
   public static final int VERSION_NUMBER_FIELD_NUMBER = 1;
@@ -259,6 +424,42 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     return availableFeatures_.getByteString(index);
   }
 
+  public static final int TYPE_FIELD_NUMBER = 4;
+  private int type_;
+  /**
+   *
+   *
+   * <pre>
+   * Type represents the release availability of the version
+   * </pre>
+   *
+   * <code>.google.cloud.datafusion.v1beta1.Version.Type type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override
+  public int getTypeValue() {
+    return type_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type represents the release availability of the version
+   * </pre>
+   *
+   * <code>.google.cloud.datafusion.v1beta1.Version.Type type = 4;</code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public com.google.cloud.datafusion.v1beta1.Version.Type getType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.datafusion.v1beta1.Version.Type result =
+        com.google.cloud.datafusion.v1beta1.Version.Type.valueOf(type_);
+    return result == null ? com.google.cloud.datafusion.v1beta1.Version.Type.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -281,6 +482,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < availableFeatures_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, availableFeatures_.getRaw(i));
+    }
+    if (type_ != com.google.cloud.datafusion.v1beta1.Version.Type.TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, type_);
     }
     unknownFields.writeTo(output);
   }
@@ -305,6 +509,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getAvailableFeaturesList().size();
     }
+    if (type_ != com.google.cloud.datafusion.v1beta1.Version.Type.TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, type_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -324,6 +531,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (!getVersionNumber().equals(other.getVersionNumber())) return false;
     if (getDefaultVersion() != other.getDefaultVersion()) return false;
     if (!getAvailableFeaturesList().equals(other.getAvailableFeaturesList())) return false;
+    if (type_ != other.type_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -343,6 +551,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + AVAILABLE_FEATURES_FIELD_NUMBER;
       hash = (53 * hash) + getAvailableFeaturesList().hashCode();
     }
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -494,6 +704,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
       availableFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      type_ = 0;
+
       return this;
     }
 
@@ -529,6 +741,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.availableFeatures_ = availableFeatures_;
+      result.type_ = type_;
       onBuilt();
       return result;
     }
@@ -594,6 +807,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
           availableFeatures_.addAll(other.availableFeatures_);
         }
         onChanged();
+      }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -948,6 +1164,99 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAvailableFeaturesIsMutable();
       availableFeatures_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Type represents the release availability of the version
+     * </pre>
+     *
+     * <code>.google.cloud.datafusion.v1beta1.Version.Type type = 4;</code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type represents the release availability of the version
+     * </pre>
+     *
+     * <code>.google.cloud.datafusion.v1beta1.Version.Type type = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type represents the release availability of the version
+     * </pre>
+     *
+     * <code>.google.cloud.datafusion.v1beta1.Version.Type type = 4;</code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.datafusion.v1beta1.Version.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.datafusion.v1beta1.Version.Type result =
+          com.google.cloud.datafusion.v1beta1.Version.Type.valueOf(type_);
+      return result == null
+          ? com.google.cloud.datafusion.v1beta1.Version.Type.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type represents the release availability of the version
+     * </pre>
+     *
+     * <code>.google.cloud.datafusion.v1beta1.Version.Type type = 4;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.google.cloud.datafusion.v1beta1.Version.Type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type represents the release availability of the version
+     * </pre>
+     *
+     * <code>.google.cloud.datafusion.v1beta1.Version.Type type = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+
+      type_ = 0;
       onChanged();
       return this;
     }

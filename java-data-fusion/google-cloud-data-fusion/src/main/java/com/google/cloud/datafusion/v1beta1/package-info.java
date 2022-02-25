@@ -26,7 +26,10 @@
  *
  * <pre>{@code
  * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
- *   GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
+ *   GetInstanceRequest request =
+ *       GetInstanceRequest.newBuilder()
+ *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+ *           .build();
  *   Instance response = dataFusionClient.getInstance(request);
  * }
  * }</pre>

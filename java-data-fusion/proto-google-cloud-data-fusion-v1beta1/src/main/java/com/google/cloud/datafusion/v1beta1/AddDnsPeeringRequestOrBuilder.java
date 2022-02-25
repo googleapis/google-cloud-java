@@ -27,10 +27,12 @@ public interface AddDnsPeeringRequestOrBuilder
    *
    *
    * <pre>
-   * The resource on which DNS peering will be created.
+   * Required. The resource on which DNS peering will be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -39,10 +41,12 @@ public interface AddDnsPeeringRequestOrBuilder
    *
    *
    * <pre>
-   * The resource on which DNS peering will be created.
+   * Required. The resource on which DNS peering will be created.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

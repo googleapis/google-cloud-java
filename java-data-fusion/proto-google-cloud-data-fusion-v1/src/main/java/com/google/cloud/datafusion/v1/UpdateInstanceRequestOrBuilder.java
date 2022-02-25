@@ -27,12 +27,14 @@ public interface UpdateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The instance resource that replaces the resource on the server. Currently,
+   * Required. The instance resource that replaces the resource on the server. Currently,
    * Data Fusion only allows replacing labels, options, and stack driver
    * settings. All other fields will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+   * <code>
+   * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instance field is set.
    */
@@ -41,12 +43,14 @@ public interface UpdateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The instance resource that replaces the resource on the server. Currently,
+   * Required. The instance resource that replaces the resource on the server. Currently,
    * Data Fusion only allows replacing labels, options, and stack driver
    * settings. All other fields will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+   * <code>
+   * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instance.
    */
@@ -55,12 +59,14 @@ public interface UpdateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * The instance resource that replaces the resource on the server. Currently,
+   * Required. The instance resource that replaces the resource on the server. Currently,
    * Data Fusion only allows replacing labels, options, and stack driver
    * settings. All other fields will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+   * <code>
+   * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datafusion.v1.InstanceOrBuilder getInstanceOrBuilder();
 

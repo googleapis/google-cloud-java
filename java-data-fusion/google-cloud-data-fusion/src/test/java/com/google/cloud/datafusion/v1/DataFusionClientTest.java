@@ -98,6 +98,51 @@ public class DataFusionClientTest {
             .build();
     mockDataFusion.addResponse(expectedResponse);
 
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAvailableVersionsPagedResponse pagedListResponse = client.listAvailableVersions(parent);
+
+    List<Version> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAvailableVersionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataFusion.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAvailableVersionsRequest actualRequest =
+        ((ListAvailableVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAvailableVersionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataFusion.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAvailableVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAvailableVersionsTest2() throws Exception {
+    Version responsesElement = Version.newBuilder().build();
+    ListAvailableVersionsResponse expectedResponse =
+        ListAvailableVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAvailableVersions(Arrays.asList(responsesElement))
+            .build();
+    mockDataFusion.addResponse(expectedResponse);
+
     String parent = "parent-995424086";
 
     ListAvailableVersionsPagedResponse pagedListResponse = client.listAvailableVersions(parent);
@@ -120,7 +165,7 @@ public class DataFusionClientTest {
   }
 
   @Test
-  public void listAvailableVersionsExceptionTest() throws Exception {
+  public void listAvailableVersionsExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDataFusion.addException(exception);
 
@@ -145,7 +190,7 @@ public class DataFusionClientTest {
 
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
-            .setParent("parent-995424086")
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setFilter("filter-1274492040")
@@ -182,7 +227,7 @@ public class DataFusionClientTest {
     try {
       ListInstancesRequest request =
           ListInstancesRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
@@ -199,7 +244,7 @@ public class DataFusionClientTest {
   public void getInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName("name3373707")
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
             .setDescription("description-1724546052")
             .setEnableStackdriverLogging(true)
             .setEnableStackdriverMonitoring(true)
@@ -224,10 +269,14 @@ public class DataFusionClientTest {
             .setDataprocServiceAccount("dataprocServiceAccount-1287630888")
             .setEnableRbac(true)
             .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
+            .addAllDisabledReason(new ArrayList<Instance.DisabledReason>())
             .build();
     mockDataFusion.addResponse(expectedResponse);
 
-    GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
+    GetInstanceRequest request =
+        GetInstanceRequest.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .build();
 
     Instance actualResponse = client.getInstance(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -249,7 +298,10 @@ public class DataFusionClientTest {
     mockDataFusion.addException(exception);
 
     try {
-      GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
+      GetInstanceRequest request =
+          GetInstanceRequest.newBuilder()
+              .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .build();
       client.getInstance(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -261,7 +313,7 @@ public class DataFusionClientTest {
   public void createInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName("name3373707")
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
             .setDescription("description-1724546052")
             .setEnableStackdriverLogging(true)
             .setEnableStackdriverMonitoring(true)
@@ -286,6 +338,84 @@ public class DataFusionClientTest {
             .setDataprocServiceAccount("dataprocServiceAccount-1287630888")
             .setEnableRbac(true)
             .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
+            .addAllDisabledReason(new ArrayList<Instance.DisabledReason>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataFusion.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Instance instance = Instance.newBuilder().build();
+    String instanceId = "instanceId902024336";
+
+    Instance actualResponse = client.createInstanceAsync(parent, instance, instanceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataFusion.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateInstanceRequest actualRequest = ((CreateInstanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(instance, actualRequest.getInstance());
+    Assert.assertEquals(instanceId, actualRequest.getInstanceId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createInstanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataFusion.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Instance instance = Instance.newBuilder().build();
+      String instanceId = "instanceId902024336";
+      client.createInstanceAsync(parent, instance, instanceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createInstanceTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setDescription("description-1724546052")
+            .setEnableStackdriverLogging(true)
+            .setEnableStackdriverMonitoring(true)
+            .setPrivateInstance(true)
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllOptions(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setStateMessage("stateMessage1128185398")
+            .setServiceEndpoint("serviceEndpoint-1323187350")
+            .setZone("zone3744684")
+            .setVersion("version351608024")
+            .setServiceAccount("serviceAccount1079137720")
+            .setDisplayName("displayName1714148973")
+            .addAllAvailableVersion(new ArrayList<Version>())
+            .setApiEndpoint("apiEndpoint-2038677041")
+            .setGcsBucket("gcsBucket239654881")
+            .addAllAccelerators(new ArrayList<Accelerator>())
+            .setP4ServiceAccount("p4ServiceAccount-184825700")
+            .setTenantProjectId("tenantProjectId674318474")
+            .setDataprocServiceAccount("dataprocServiceAccount-1287630888")
+            .setEnableRbac(true)
+            .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
+            .addAllDisabledReason(new ArrayList<Instance.DisabledReason>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -316,7 +446,7 @@ public class DataFusionClientTest {
   }
 
   @Test
-  public void createInstanceExceptionTest() throws Exception {
+  public void createInstanceExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDataFusion.addException(exception);
 
@@ -344,6 +474,48 @@ public class DataFusionClientTest {
             .build();
     mockDataFusion.addResponse(resultOperation);
 
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    client.deleteInstanceAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDataFusion.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteInstanceRequest actualRequest = ((DeleteInstanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteInstanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataFusion.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.deleteInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteInstanceTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataFusion.addResponse(resultOperation);
+
     String name = "name3373707";
 
     client.deleteInstanceAsync(name).get();
@@ -360,7 +532,7 @@ public class DataFusionClientTest {
   }
 
   @Test
-  public void deleteInstanceExceptionTest() throws Exception {
+  public void deleteInstanceExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDataFusion.addException(exception);
 
@@ -379,7 +551,7 @@ public class DataFusionClientTest {
   public void updateInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName("name3373707")
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
             .setDescription("description-1724546052")
             .setEnableStackdriverLogging(true)
             .setEnableStackdriverMonitoring(true)
@@ -404,6 +576,7 @@ public class DataFusionClientTest {
             .setDataprocServiceAccount("dataprocServiceAccount-1287630888")
             .setEnableRbac(true)
             .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
+            .addAllDisabledReason(new ArrayList<Instance.DisabledReason>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -452,7 +625,7 @@ public class DataFusionClientTest {
   public void restartInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName("name3373707")
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
             .setDescription("description-1724546052")
             .setEnableStackdriverLogging(true)
             .setEnableStackdriverMonitoring(true)
@@ -477,6 +650,7 @@ public class DataFusionClientTest {
             .setDataprocServiceAccount("dataprocServiceAccount-1287630888")
             .setEnableRbac(true)
             .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
+            .addAllDisabledReason(new ArrayList<Instance.DisabledReason>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -487,7 +661,9 @@ public class DataFusionClientTest {
     mockDataFusion.addResponse(resultOperation);
 
     RestartInstanceRequest request =
-        RestartInstanceRequest.newBuilder().setName("name3373707").build();
+        RestartInstanceRequest.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .build();
 
     Instance actualResponse = client.restartInstanceAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -510,7 +686,9 @@ public class DataFusionClientTest {
 
     try {
       RestartInstanceRequest request =
-          RestartInstanceRequest.newBuilder().setName("name3373707").build();
+          RestartInstanceRequest.newBuilder()
+              .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .build();
       client.restartInstanceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {

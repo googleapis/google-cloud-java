@@ -141,11 +141,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The instance's project and location in the format
+   * Required. The instance's project and location in the format
    * projects/{project}/locations/{location}.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -165,11 +167,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The instance's project and location in the format
+   * Required. The instance's project and location in the format
    * projects/{project}/locations/{location}.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -192,10 +196,10 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The name of the instance to create.
+   * Required. The name of the instance to create.
    * </pre>
    *
-   * <code>string instance_id = 2;</code>
+   * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The instanceId.
    */
@@ -215,10 +219,10 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The name of the instance to create.
+   * Required. The name of the instance to create.
    * </pre>
    *
-   * <code>string instance_id = 2;</code>
+   * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for instanceId.
    */
@@ -651,11 +655,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance's project and location in the format
+     * Required. The instance's project and location in the format
      * projects/{project}/locations/{location}.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -674,11 +680,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance's project and location in the format
+     * Required. The instance's project and location in the format
      * projects/{project}/locations/{location}.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -697,11 +705,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance's project and location in the format
+     * Required. The instance's project and location in the format
      * projects/{project}/locations/{location}.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -719,11 +729,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance's project and location in the format
+     * Required. The instance's project and location in the format
      * projects/{project}/locations/{location}.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -737,11 +749,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance's project and location in the format
+     * Required. The instance's project and location in the format
      * projects/{project}/locations/{location}.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -762,10 +776,10 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the instance to create.
+     * Required. The name of the instance to create.
      * </pre>
      *
-     * <code>string instance_id = 2;</code>
+     * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The instanceId.
      */
@@ -784,10 +798,10 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the instance to create.
+     * Required. The name of the instance to create.
      * </pre>
      *
-     * <code>string instance_id = 2;</code>
+     * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for instanceId.
      */
@@ -806,10 +820,10 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the instance to create.
+     * Required. The name of the instance to create.
      * </pre>
      *
-     * <code>string instance_id = 2;</code>
+     * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The instanceId to set.
      * @return This builder for chaining.
@@ -827,10 +841,10 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the instance to create.
+     * Required. The name of the instance to create.
      * </pre>
      *
-     * <code>string instance_id = 2;</code>
+     * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -844,10 +858,10 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the instance to create.
+     * Required. The name of the instance to create.
      * </pre>
      *
-     * <code>string instance_id = 2;</code>
+     * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for instanceId to set.
      * @return This builder for chaining.

@@ -146,13 +146,15 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The project and location for which to retrieve instance information
+   * Required. The project and location for which to retrieve instance information
    * in the format projects/{project}/locations/{location}. If the location is
    * specified as '-' (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -172,13 +174,15 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The project and location for which to retrieve instance information
+   * Required. The project and location for which to retrieve instance information
    * in the format projects/{project}/locations/{location}. If the location is
    * specified as '-' (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -749,13 +753,15 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The project and location for which to retrieve instance information
+     * Required. The project and location for which to retrieve instance information
      * in the format projects/{project}/locations/{location}. If the location is
      * specified as '-' (wildcard), then all regions available to the project
      * are queried, and the results are aggregated.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -774,13 +780,15 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The project and location for which to retrieve instance information
+     * Required. The project and location for which to retrieve instance information
      * in the format projects/{project}/locations/{location}. If the location is
      * specified as '-' (wildcard), then all regions available to the project
      * are queried, and the results are aggregated.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -799,13 +807,15 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The project and location for which to retrieve instance information
+     * Required. The project and location for which to retrieve instance information
      * in the format projects/{project}/locations/{location}. If the location is
      * specified as '-' (wildcard), then all regions available to the project
      * are queried, and the results are aggregated.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -823,13 +833,15 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The project and location for which to retrieve instance information
+     * Required. The project and location for which to retrieve instance information
      * in the format projects/{project}/locations/{location}. If the location is
      * specified as '-' (wildcard), then all regions available to the project
      * are queried, and the results are aggregated.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -843,13 +855,15 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The project and location for which to retrieve instance information
+     * Required. The project and location for which to retrieve instance information
      * in the format projects/{project}/locations/{location}. If the location is
      * specified as '-' (wildcard), then all regions available to the project
      * are queried, and the results are aggregated.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

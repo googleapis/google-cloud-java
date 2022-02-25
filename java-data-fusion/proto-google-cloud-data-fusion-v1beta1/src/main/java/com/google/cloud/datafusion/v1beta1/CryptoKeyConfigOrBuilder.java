@@ -32,7 +32,7 @@ public interface CryptoKeyConfigOrBuilder
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>string key_reference = 1;</code>
+   * <code>string key_reference = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The keyReference.
    */
@@ -46,7 +46,7 @@ public interface CryptoKeyConfigOrBuilder
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>string key_reference = 1;</code>
+   * <code>string key_reference = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for keyReference.
    */

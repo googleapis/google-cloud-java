@@ -18,7 +18,17 @@
 
 package com.google.cloud.datafusion.v1;
 
-/** Protobuf type {@code google.cloud.datafusion.v1.UpdateInstanceRequest} */
+/**
+ *
+ *
+ * <pre>
+ * Request message for updating a Data Fusion instance.
+ * Data Fusion allows updating the labels, options, and stack driver settings.
+ * This is also used for CDF version upgrade.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.datafusion.v1.UpdateInstanceRequest}
+ */
 public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.datafusion.v1.UpdateInstanceRequest)
@@ -131,12 +141,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The instance resource that replaces the resource on the server. Currently,
+   * Required. The instance resource that replaces the resource on the server. Currently,
    * Data Fusion only allows replacing labels, options, and stack driver
    * settings. All other fields will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+   * <code>
+   * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instance field is set.
    */
@@ -148,12 +160,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The instance resource that replaces the resource on the server. Currently,
+   * Required. The instance resource that replaces the resource on the server. Currently,
    * Data Fusion only allows replacing labels, options, and stack driver
    * settings. All other fields will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+   * <code>
+   * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instance.
    */
@@ -167,12 +181,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The instance resource that replaces the resource on the server. Currently,
+   * Required. The instance resource that replaces the resource on the server. Currently,
    * Data Fusion only allows replacing labels, options, and stack driver
    * settings. All other fields will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+   * <code>
+   * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.datafusion.v1.InstanceOrBuilder getInstanceOrBuilder() {
@@ -418,7 +434,17 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.datafusion.v1.UpdateInstanceRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * Request message for updating a Data Fusion instance.
+   * Data Fusion allows updating the labels, options, and stack driver settings.
+   * This is also used for CDF version upgrade.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datafusion.v1.UpdateInstanceRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.datafusion.v1.UpdateInstanceRequest)
@@ -600,12 +626,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance resource that replaces the resource on the server. Currently,
+     * Required. The instance resource that replaces the resource on the server. Currently,
      * Data Fusion only allows replacing labels, options, and stack driver
      * settings. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+     * <code>
+     * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the instance field is set.
      */
@@ -616,12 +644,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance resource that replaces the resource on the server. Currently,
+     * Required. The instance resource that replaces the resource on the server. Currently,
      * Data Fusion only allows replacing labels, options, and stack driver
      * settings. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+     * <code>
+     * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The instance.
      */
@@ -638,12 +668,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance resource that replaces the resource on the server. Currently,
+     * Required. The instance resource that replaces the resource on the server. Currently,
      * Data Fusion only allows replacing labels, options, and stack driver
      * settings. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+     * <code>
+     * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInstance(com.google.cloud.datafusion.v1.Instance value) {
       if (instanceBuilder_ == null) {
@@ -662,12 +694,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance resource that replaces the resource on the server. Currently,
+     * Required. The instance resource that replaces the resource on the server. Currently,
      * Data Fusion only allows replacing labels, options, and stack driver
      * settings. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+     * <code>
+     * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInstance(com.google.cloud.datafusion.v1.Instance.Builder builderForValue) {
       if (instanceBuilder_ == null) {
@@ -683,12 +717,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance resource that replaces the resource on the server. Currently,
+     * Required. The instance resource that replaces the resource on the server. Currently,
      * Data Fusion only allows replacing labels, options, and stack driver
      * settings. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+     * <code>
+     * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeInstance(com.google.cloud.datafusion.v1.Instance value) {
       if (instanceBuilder_ == null) {
@@ -711,12 +747,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance resource that replaces the resource on the server. Currently,
+     * Required. The instance resource that replaces the resource on the server. Currently,
      * Data Fusion only allows replacing labels, options, and stack driver
      * settings. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+     * <code>
+     * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInstance() {
       if (instanceBuilder_ == null) {
@@ -733,12 +771,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance resource that replaces the resource on the server. Currently,
+     * Required. The instance resource that replaces the resource on the server. Currently,
      * Data Fusion only allows replacing labels, options, and stack driver
      * settings. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+     * <code>
+     * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datafusion.v1.Instance.Builder getInstanceBuilder() {
 
@@ -749,12 +789,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance resource that replaces the resource on the server. Currently,
+     * Required. The instance resource that replaces the resource on the server. Currently,
      * Data Fusion only allows replacing labels, options, and stack driver
      * settings. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+     * <code>
+     * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datafusion.v1.InstanceOrBuilder getInstanceOrBuilder() {
       if (instanceBuilder_ != null) {
@@ -769,12 +811,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The instance resource that replaces the resource on the server. Currently,
+     * Required. The instance resource that replaces the resource on the server. Currently,
      * Data Fusion only allows replacing labels, options, and stack driver
      * settings. All other fields will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.datafusion.v1.Instance instance = 1;</code>
+     * <code>
+     * .google.cloud.datafusion.v1.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datafusion.v1.Instance,

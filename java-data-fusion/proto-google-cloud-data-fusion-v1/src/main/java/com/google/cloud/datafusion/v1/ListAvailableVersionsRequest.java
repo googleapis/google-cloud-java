@@ -135,11 +135,13 @@ public final class ListAvailableVersionsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The project and location for which to retrieve instance
-   * information in the format projects/{project}/locations/{location}.
+   * Required. The project and location for which to retrieve instance information
+   * in the format projects/{project}/locations/{location}.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -159,11 +161,13 @@ public final class ListAvailableVersionsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The project and location for which to retrieve instance
-   * information in the format projects/{project}/locations/{location}.
+   * Required. The project and location for which to retrieve instance information
+   * in the format projects/{project}/locations/{location}.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -639,11 +643,13 @@ public final class ListAvailableVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The project and location for which to retrieve instance
-     * information in the format projects/{project}/locations/{location}.
+     * Required. The project and location for which to retrieve instance information
+     * in the format projects/{project}/locations/{location}.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -662,11 +668,13 @@ public final class ListAvailableVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The project and location for which to retrieve instance
-     * information in the format projects/{project}/locations/{location}.
+     * Required. The project and location for which to retrieve instance information
+     * in the format projects/{project}/locations/{location}.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -685,11 +693,13 @@ public final class ListAvailableVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The project and location for which to retrieve instance
-     * information in the format projects/{project}/locations/{location}.
+     * Required. The project and location for which to retrieve instance information
+     * in the format projects/{project}/locations/{location}.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -707,11 +717,13 @@ public final class ListAvailableVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The project and location for which to retrieve instance
-     * information in the format projects/{project}/locations/{location}.
+     * Required. The project and location for which to retrieve instance information
+     * in the format projects/{project}/locations/{location}.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -725,11 +737,13 @@ public final class ListAvailableVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The project and location for which to retrieve instance
-     * information in the format projects/{project}/locations/{location}.
+     * Required. The project and location for which to retrieve instance information
+     * in the format projects/{project}/locations/{location}.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

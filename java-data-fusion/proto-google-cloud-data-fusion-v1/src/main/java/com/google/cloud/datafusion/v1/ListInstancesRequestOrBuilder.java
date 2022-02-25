@@ -27,13 +27,15 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The project and location for which to retrieve instance information
+   * Required. The project and location for which to retrieve instance information
    * in the format projects/{project}/locations/{location}. If the location is
    * specified as '-' (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -42,13 +44,15 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The project and location for which to retrieve instance information
+   * Required. The project and location for which to retrieve instance information
    * in the format projects/{project}/locations/{location}. If the location is
    * specified as '-' (wildcard), then all regions available to the project
    * are queried, and the results are aggregated.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

@@ -27,13 +27,15 @@ public interface UpgradeInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Data Fusion instance which need to be upgraded in the form of
+   * Required. Name of the Data Fusion instance which need to be upgraded in the form of
    * projects/{project}/locations/{location}/instances/{instance}
    * Instance will be upgraded with the latest stable version of the Data
    * Fusion.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -42,13 +44,15 @@ public interface UpgradeInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Data Fusion instance which need to be upgraded in the form of
+   * Required. Name of the Data Fusion instance which need to be upgraded in the form of
    * projects/{project}/locations/{location}/instances/{instance}
    * Instance will be upgraded with the latest stable version of the Data
    * Fusion.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

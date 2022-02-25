@@ -49,7 +49,10 @@ import javax.annotation.Generated;
  *
  * <pre>{@code
  * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
- *   GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
+ *   GetInstanceRequest request =
+ *       GetInstanceRequest.newBuilder()
+ *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+ *           .build();
  *   Instance response = dataFusionClient.getInstance(request);
  * }
  * }</pre>
@@ -170,7 +173,34 @@ public class DataFusionClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
-   *   String parent = "parent-995424086";
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Version element : dataFusionClient.listAvailableVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve instance information in
+   *     the format projects/{project}/locations/{location}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAvailableVersionsPagedResponse listAvailableVersions(LocationName parent) {
+    ListAvailableVersionsRequest request =
+        ListAvailableVersionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAvailableVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists possible versions for Data Fusion instances in the specified project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Version element : dataFusionClient.listAvailableVersions(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -197,7 +227,7 @@ public class DataFusionClient implements BackgroundResource {
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   ListAvailableVersionsRequest request =
    *       ListAvailableVersionsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLatestPatchOnly(true)
@@ -226,7 +256,7 @@ public class DataFusionClient implements BackgroundResource {
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   ListAvailableVersionsRequest request =
    *       ListAvailableVersionsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLatestPatchOnly(true)
@@ -255,7 +285,7 @@ public class DataFusionClient implements BackgroundResource {
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   ListAvailableVersionsRequest request =
    *       ListAvailableVersionsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLatestPatchOnly(true)
@@ -291,7 +321,7 @@ public class DataFusionClient implements BackgroundResource {
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -320,7 +350,7 @@ public class DataFusionClient implements BackgroundResource {
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -350,7 +380,7 @@ public class DataFusionClient implements BackgroundResource {
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -383,7 +413,10 @@ public class DataFusionClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
-   *   GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
+   *   GetInstanceRequest request =
+   *       GetInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
    *   Instance response = dataFusionClient.getInstance(request);
    * }
    * }</pre>
@@ -403,7 +436,10 @@ public class DataFusionClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
-   *   GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
+   *   GetInstanceRequest request =
+   *       GetInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
    *   ApiFuture<Instance> future = dataFusionClient.getInstanceCallable().futureCall(request);
    *   // Do something.
    *   Instance response = future.get();
@@ -422,17 +458,49 @@ public class DataFusionClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
-   *   String parent = "parent-995424086";
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Instance instance = Instance.newBuilder().build();
    *   String instanceId = "instanceId902024336";
    *   Instance response = dataFusionClient.createInstanceAsync(parent, instance, instanceId).get();
    * }
    * }</pre>
    *
-   * @param parent The instance's project and location in the format
+   * @param parent Required. The instance's project and location in the format
    *     projects/{project}/locations/{location}.
    * @param instance An instance resource.
-   * @param instanceId The name of the instance to create.
+   * @param instanceId Required. The name of the instance to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> createInstanceAsync(
+      LocationName parent, Instance instance, String instanceId) {
+    CreateInstanceRequest request =
+        CreateInstanceRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInstance(instance)
+            .setInstanceId(instanceId)
+            .build();
+    return createInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Data Fusion instance in the specified project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Instance instance = Instance.newBuilder().build();
+   *   String instanceId = "instanceId902024336";
+   *   Instance response = dataFusionClient.createInstanceAsync(parent, instance, instanceId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The instance's project and location in the format
+   *     projects/{project}/locations/{location}.
+   * @param instance An instance resource.
+   * @param instanceId Required. The name of the instance to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> createInstanceAsync(
@@ -456,7 +524,7 @@ public class DataFusionClient implements BackgroundResource {
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   CreateInstanceRequest request =
    *       CreateInstanceRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setInstanceId("instanceId902024336")
    *           .setInstance(Instance.newBuilder().build())
    *           .build();
@@ -482,7 +550,7 @@ public class DataFusionClient implements BackgroundResource {
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   CreateInstanceRequest request =
    *       CreateInstanceRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setInstanceId("instanceId902024336")
    *           .setInstance(Instance.newBuilder().build())
    *           .build();
@@ -508,7 +576,7 @@ public class DataFusionClient implements BackgroundResource {
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   CreateInstanceRequest request =
    *       CreateInstanceRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setInstanceId("instanceId902024336")
    *           .setInstance(Instance.newBuilder().build())
    *           .build();
@@ -530,12 +598,35 @@ public class DataFusionClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
-   *   String name = "name3373707";
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   dataFusionClient.deleteInstanceAsync(name).get();
    * }
    * }</pre>
    *
-   * @param name The instance resource name in the format
+   * @param name Required. The instance resource name in the format
+   *     projects/{project}/locations/{location}/instances/{instance}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(InstanceName name) {
+    DeleteInstanceRequest request =
+        DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Date Fusion instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   dataFusionClient.deleteInstanceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The instance resource name in the format
    *     projects/{project}/locations/{location}/instances/{instance}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -553,7 +644,9 @@ public class DataFusionClient implements BackgroundResource {
    * <pre>{@code
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   DeleteInstanceRequest request =
-   *       DeleteInstanceRequest.newBuilder().setName("name3373707").build();
+   *       DeleteInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
    *   dataFusionClient.deleteInstanceAsync(request).get();
    * }
    * }</pre>
@@ -575,7 +668,9 @@ public class DataFusionClient implements BackgroundResource {
    * <pre>{@code
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   DeleteInstanceRequest request =
-   *       DeleteInstanceRequest.newBuilder().setName("name3373707").build();
+   *       DeleteInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       dataFusionClient.deleteInstanceOperationCallable().futureCall(request);
    *   // Do something.
@@ -597,7 +692,9 @@ public class DataFusionClient implements BackgroundResource {
    * <pre>{@code
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   DeleteInstanceRequest request =
-   *       DeleteInstanceRequest.newBuilder().setName("name3373707").build();
+   *       DeleteInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
    *   ApiFuture<Operation> future = dataFusionClient.deleteInstanceCallable().futureCall(request);
    *   // Do something.
    *   future.get();
@@ -622,9 +719,9 @@ public class DataFusionClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param instance The instance resource that replaces the resource on the server. Currently, Data
-   *     Fusion only allows replacing labels, options, and stack driver settings. All other fields
-   *     will be ignored.
+   * @param instance Required. The instance resource that replaces the resource on the server.
+   *     Currently, Data Fusion only allows replacing labels, options, and stack driver settings.
+   *     All other fields will be ignored.
    * @param updateMask Field mask is used to specify the fields that the update will overwrite in an
    *     instance resource. The fields specified in the update_mask are relative to the resource,
    *     not the full request. A field will be overwritten if it is in the mask. If the user does
@@ -721,7 +818,9 @@ public class DataFusionClient implements BackgroundResource {
    * <pre>{@code
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   RestartInstanceRequest request =
-   *       RestartInstanceRequest.newBuilder().setName("name3373707").build();
+   *       RestartInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
    *   Instance response = dataFusionClient.restartInstanceAsync(request).get();
    * }
    * }</pre>
@@ -743,7 +842,9 @@ public class DataFusionClient implements BackgroundResource {
    * <pre>{@code
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   RestartInstanceRequest request =
-   *       RestartInstanceRequest.newBuilder().setName("name3373707").build();
+   *       RestartInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
    *   OperationFuture<Instance, OperationMetadata> future =
    *       dataFusionClient.restartInstanceOperationCallable().futureCall(request);
    *   // Do something.
@@ -765,7 +866,9 @@ public class DataFusionClient implements BackgroundResource {
    * <pre>{@code
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   RestartInstanceRequest request =
-   *       RestartInstanceRequest.newBuilder().setName("name3373707").build();
+   *       RestartInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
    *   ApiFuture<Operation> future = dataFusionClient.restartInstanceCallable().futureCall(request);
    *   // Do something.
    *   Operation response = future.get();

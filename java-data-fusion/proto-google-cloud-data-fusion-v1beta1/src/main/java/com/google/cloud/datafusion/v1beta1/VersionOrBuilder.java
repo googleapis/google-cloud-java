@@ -111,4 +111,29 @@ public interface VersionOrBuilder
    * @return The bytes of the availableFeatures at the given index.
    */
   com.google.protobuf.ByteString getAvailableFeaturesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Type represents the release availability of the version
+   * </pre>
+   *
+   * <code>.google.cloud.datafusion.v1beta1.Version.Type type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Type represents the release availability of the version
+   * </pre>
+   *
+   * <code>.google.cloud.datafusion.v1beta1.Version.Type type = 4;</code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.datafusion.v1beta1.Version.Type getType();
 }

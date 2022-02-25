@@ -55,6 +55,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     p4ServiceAccount_ = "";
     tenantProjectId_ = "";
     dataprocServiceAccount_ = "";
+    disabledReason_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -327,6 +328,31 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 224:
+            {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                disabledReason_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              disabledReason_.add(rawValue);
+              break;
+            }
+          case 226:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                  disabledReason_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000010;
+                }
+                disabledReason_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -346,6 +372,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (((mutable_bitField0_ & 0x00000008) != 0)) {
         accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        disabledReason_ = java.util.Collections.unmodifiableList(disabledReason_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -686,6 +715,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTO_UPGRADING = 9;</code>
      */
     AUTO_UPGRADING(9),
+    /**
+     *
+     *
+     * <pre>
+     * Instance is disabled
+     * </pre>
+     *
+     * <code>DISABLED = 10;</code>
+     */
+    DISABLED(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -789,6 +828,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTO_UPGRADING = 9;</code>
      */
     public static final int AUTO_UPGRADING_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Instance is disabled
+     * </pre>
+     *
+     * <code>DISABLED = 10;</code>
+     */
+    public static final int DISABLED_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -834,6 +883,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return AUTO_UPDATING;
         case 9:
           return AUTO_UPGRADING;
+        case 10:
+          return DISABLED;
         default:
           return null;
       }
@@ -887,6 +938,141 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.datafusion.v1beta1.Instance.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The reason for disabling the instance if the state is DISABLED.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.datafusion.v1beta1.Instance.DisabledReason}
+   */
+  public enum DisabledReason implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * This is an unknown reason for disabling.
+     * </pre>
+     *
+     * <code>DISABLED_REASON_UNSPECIFIED = 0;</code>
+     */
+    DISABLED_REASON_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The KMS key used by the instance is either revoked or denied access to
+     * </pre>
+     *
+     * <code>KMS_KEY_ISSUE = 1;</code>
+     */
+    KMS_KEY_ISSUE(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * This is an unknown reason for disabling.
+     * </pre>
+     *
+     * <code>DISABLED_REASON_UNSPECIFIED = 0;</code>
+     */
+    public static final int DISABLED_REASON_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The KMS key used by the instance is either revoked or denied access to
+     * </pre>
+     *
+     * <code>KMS_KEY_ISSUE = 1;</code>
+     */
+    public static final int KMS_KEY_ISSUE_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DisabledReason valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DisabledReason forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DISABLED_REASON_UNSPECIFIED;
+        case 1:
+          return KMS_KEY_ISSUE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DisabledReason> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DisabledReason> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<DisabledReason>() {
+          public DisabledReason findValueByNumber(int number) {
+            return DisabledReason.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.datafusion.v1beta1.Instance.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final DisabledReason[] VALUES = values();
+
+    public static DisabledReason valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DisabledReason(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.datafusion.v1beta1.Instance.DisabledReason)
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -897,7 +1083,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * projects/{project}/locations/{location}/instances/{instance}.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -921,7 +1109,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * projects/{project}/locations/{location}/instances/{instance}.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -1688,8 +1878,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Deprecated. Use tenant_project_id instead to extract the
-   * tenant project ID.
+   * Output only. Deprecated. Use tenant_project_id instead to extract the tenant project ID.
    * </pre>
    *
    * <code>
@@ -1715,8 +1904,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Deprecated. Use tenant_project_id instead to extract the
-   * tenant project ID.
+   * Output only. Deprecated. Use tenant_project_id instead to extract the tenant project ID.
    * </pre>
    *
    * <code>
@@ -1918,8 +2106,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Cloud Storage bucket generated by Data Fusion in the customer
-   * project.
+   * Output only. Cloud Storage bucket generated by Data Fusion in the customer project.
    * </pre>
    *
    * <code>string gcs_bucket = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1942,8 +2129,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Cloud Storage bucket generated by Data Fusion in the customer
-   * project.
+   * Output only. Cloud Storage bucket generated by Data Fusion in the customer project.
    * </pre>
    *
    * <code>string gcs_bucket = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2256,6 +2442,116 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return getCryptoKeyConfig();
   }
 
+  public static final int DISABLED_REASON_FIELD_NUMBER = 28;
+  private java.util.List<java.lang.Integer> disabledReason_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.cloud.datafusion.v1beta1.Instance.DisabledReason>
+      disabledReason_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.cloud.datafusion.v1beta1.Instance.DisabledReason>() {
+            public com.google.cloud.datafusion.v1beta1.Instance.DisabledReason convert(
+                java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.google.cloud.datafusion.v1beta1.Instance.DisabledReason result =
+                  com.google.cloud.datafusion.v1beta1.Instance.DisabledReason.valueOf(from);
+              return result == null
+                  ? com.google.cloud.datafusion.v1beta1.Instance.DisabledReason.UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the disabledReason.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.datafusion.v1beta1.Instance.DisabledReason>
+      getDisabledReasonList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.cloud.datafusion.v1beta1.Instance.DisabledReason>(
+        disabledReason_, disabledReason_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of disabledReason.
+   */
+  @java.lang.Override
+  public int getDisabledReasonCount() {
+    return disabledReason_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The disabledReason at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.datafusion.v1beta1.Instance.DisabledReason getDisabledReason(int index) {
+    return disabledReason_converter_.convert(disabledReason_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for disabledReason.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getDisabledReasonValueList() {
+    return disabledReason_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of disabledReason at the given index.
+   */
+  @java.lang.Override
+  public int getDisabledReasonValue(int index) {
+    return disabledReason_.get(index);
+  }
+
+  private int disabledReasonMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2270,6 +2566,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -2349,6 +2646,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (cryptoKeyConfig_ != null) {
       output.writeMessage(27, getCryptoKeyConfig());
+    }
+    if (getDisabledReasonList().size() > 0) {
+      output.writeUInt32NoTag(226);
+      output.writeUInt32NoTag(disabledReasonMemoizedSerializedSize);
+    }
+    for (int i = 0; i < disabledReason_.size(); i++) {
+      output.writeEnumNoTag(disabledReason_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -2457,6 +2761,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (cryptoKeyConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getCryptoKeyConfig());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < disabledReason_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(disabledReason_.get(i));
+      }
+      size += dataSize;
+      if (!getDisabledReasonList().isEmpty()) {
+        size += 2;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      disabledReasonMemoizedSerializedSize = dataSize;
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2512,6 +2829,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasCryptoKeyConfig()) {
       if (!getCryptoKeyConfig().equals(other.getCryptoKeyConfig())) return false;
     }
+    if (!disabledReason_.equals(other.disabledReason_)) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2592,6 +2910,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasCryptoKeyConfig()) {
       hash = (37 * hash) + CRYPTO_KEY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getCryptoKeyConfig().hashCode();
+    }
+    if (getDisabledReasonCount() > 0) {
+      hash = (37 * hash) + DISABLED_REASON_FIELD_NUMBER;
+      hash = (53 * hash) + disabledReason_.hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2841,6 +3163,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         cryptoKeyConfig_ = null;
         cryptoKeyConfigBuilder_ = null;
       }
+      disabledReason_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -2930,6 +3254,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.cryptoKeyConfig_ = cryptoKeyConfigBuilder_.build();
       }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        disabledReason_ = java.util.Collections.unmodifiableList(disabledReason_);
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.disabledReason_ = disabledReason_;
       onBuilt();
       return result;
     }
@@ -3117,6 +3446,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCryptoKeyConfig()) {
         mergeCryptoKeyConfig(other.getCryptoKeyConfig());
       }
+      if (!other.disabledReason_.isEmpty()) {
+        if (disabledReason_.isEmpty()) {
+          disabledReason_ = other.disabledReason_;
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          ensureDisabledReasonIsMutable();
+          disabledReason_.addAll(other.disabledReason_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -3157,7 +3496,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * projects/{project}/locations/{location}/instances/{instance}.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -3180,7 +3521,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * projects/{project}/locations/{location}/instances/{instance}.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -3203,7 +3546,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * projects/{project}/locations/{location}/instances/{instance}.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3225,7 +3570,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * projects/{project}/locations/{location}/instances/{instance}.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3243,7 +3590,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * projects/{project}/locations/{location}/instances/{instance}.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -5104,8 +5453,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated. Use tenant_project_id instead to extract the
-     * tenant project ID.
+     * Output only. Deprecated. Use tenant_project_id instead to extract the tenant project ID.
      * </pre>
      *
      * <code>
@@ -5130,8 +5478,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated. Use tenant_project_id instead to extract the
-     * tenant project ID.
+     * Output only. Deprecated. Use tenant_project_id instead to extract the tenant project ID.
      * </pre>
      *
      * <code>
@@ -5156,8 +5503,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated. Use tenant_project_id instead to extract the
-     * tenant project ID.
+     * Output only. Deprecated. Use tenant_project_id instead to extract the tenant project ID.
      * </pre>
      *
      * <code>
@@ -5181,8 +5527,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated. Use tenant_project_id instead to extract the
-     * tenant project ID.
+     * Output only. Deprecated. Use tenant_project_id instead to extract the tenant project ID.
      * </pre>
      *
      * <code>
@@ -5202,8 +5547,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated. Use tenant_project_id instead to extract the
-     * tenant project ID.
+     * Output only. Deprecated. Use tenant_project_id instead to extract the tenant project ID.
      * </pre>
      *
      * <code>
@@ -5819,8 +6163,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Cloud Storage bucket generated by Data Fusion in the customer
-     * project.
+     * Output only. Cloud Storage bucket generated by Data Fusion in the customer project.
      * </pre>
      *
      * <code>string gcs_bucket = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5842,8 +6185,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Cloud Storage bucket generated by Data Fusion in the customer
-     * project.
+     * Output only. Cloud Storage bucket generated by Data Fusion in the customer project.
      * </pre>
      *
      * <code>string gcs_bucket = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5865,8 +6207,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Cloud Storage bucket generated by Data Fusion in the customer
-     * project.
+     * Output only. Cloud Storage bucket generated by Data Fusion in the customer project.
      * </pre>
      *
      * <code>string gcs_bucket = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5887,8 +6228,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Cloud Storage bucket generated by Data Fusion in the customer
-     * project.
+     * Output only. Cloud Storage bucket generated by Data Fusion in the customer project.
      * </pre>
      *
      * <code>string gcs_bucket = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5905,8 +6245,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Cloud Storage bucket generated by Data Fusion in the customer
-     * project.
+     * Output only. Cloud Storage bucket generated by Data Fusion in the customer project.
      * </pre>
      *
      * <code>string gcs_bucket = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6860,6 +7199,256 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         cryptoKeyConfig_ = null;
       }
       return cryptoKeyConfigBuilder_;
+    }
+
+    private java.util.List<java.lang.Integer> disabledReason_ = java.util.Collections.emptyList();
+
+    private void ensureDisabledReasonIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        disabledReason_ = new java.util.ArrayList<java.lang.Integer>(disabledReason_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the disabledReason.
+     */
+    public java.util.List<com.google.cloud.datafusion.v1beta1.Instance.DisabledReason>
+        getDisabledReasonList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.cloud.datafusion.v1beta1.Instance.DisabledReason>(
+          disabledReason_, disabledReason_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of disabledReason.
+     */
+    public int getDisabledReasonCount() {
+      return disabledReason_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The disabledReason at the given index.
+     */
+    public com.google.cloud.datafusion.v1beta1.Instance.DisabledReason getDisabledReason(
+        int index) {
+      return disabledReason_converter_.convert(disabledReason_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The disabledReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisabledReason(
+        int index, com.google.cloud.datafusion.v1beta1.Instance.DisabledReason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDisabledReasonIsMutable();
+      disabledReason_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The disabledReason to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDisabledReason(
+        com.google.cloud.datafusion.v1beta1.Instance.DisabledReason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDisabledReasonIsMutable();
+      disabledReason_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The disabledReason to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDisabledReason(
+        java.lang.Iterable<? extends com.google.cloud.datafusion.v1beta1.Instance.DisabledReason>
+            values) {
+      ensureDisabledReasonIsMutable();
+      for (com.google.cloud.datafusion.v1beta1.Instance.DisabledReason value : values) {
+        disabledReason_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisabledReason() {
+      disabledReason_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for disabledReason.
+     */
+    public java.util.List<java.lang.Integer> getDisabledReasonValueList() {
+      return java.util.Collections.unmodifiableList(disabledReason_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of disabledReason at the given index.
+     */
+    public int getDisabledReasonValue(int index) {
+      return disabledReason_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of disabledReason at the given index.
+     * @return This builder for chaining.
+     */
+    public Builder setDisabledReasonValue(int index, int value) {
+      ensureDisabledReasonIsMutable();
+      disabledReason_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for disabledReason to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDisabledReasonValue(int value) {
+      ensureDisabledReasonIsMutable();
+      disabledReason_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the instance state is DISABLED, the reason for disabling the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datafusion.v1beta1.Instance.DisabledReason disabled_reason = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for disabledReason to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDisabledReasonValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureDisabledReasonIsMutable();
+      for (int value : values) {
+        disabledReason_.add(value);
+      }
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

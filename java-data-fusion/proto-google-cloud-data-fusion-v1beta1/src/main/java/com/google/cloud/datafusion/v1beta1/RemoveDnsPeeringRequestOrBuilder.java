@@ -27,10 +27,12 @@ public interface RemoveDnsPeeringRequestOrBuilder
    *
    *
    * <pre>
-   * The resource on which DNS peering will be removed.
+   * Required. The resource on which DNS peering will be removed.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -39,10 +41,12 @@ public interface RemoveDnsPeeringRequestOrBuilder
    *
    *
    * <pre>
-   * The resource on which DNS peering will be removed.
+   * Required. The resource on which DNS peering will be removed.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

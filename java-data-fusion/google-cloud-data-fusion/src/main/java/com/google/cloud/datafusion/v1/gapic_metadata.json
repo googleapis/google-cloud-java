@@ -11,16 +11,16 @@
           "libraryClient": "DataFusionClient",
           "rpcs": {
             "CreateInstance": {
-              "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
+              "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
             },
             "DeleteInstance": {
-              "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
+              "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
             },
             "GetInstance": {
               "methods": ["getInstance", "getInstanceCallable"]
             },
             "ListAvailableVersions": {
-              "methods": ["listAvailableVersions", "listAvailableVersions", "listAvailableVersionsPagedCallable", "listAvailableVersionsCallable"]
+              "methods": ["listAvailableVersions", "listAvailableVersions", "listAvailableVersions", "listAvailableVersionsPagedCallable", "listAvailableVersionsCallable"]
             },
             "ListInstances": {
               "methods": ["listInstances", "listInstancesPagedCallable", "listInstancesCallable"]

@@ -27,11 +27,13 @@ public interface RestartInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Data Fusion instance which need to be restarted in the form of
+   * Required. Name of the Data Fusion instance which need to be restarted in the form of
    * projects/{project}/locations/{location}/instances/{instance}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface RestartInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Data Fusion instance which need to be restarted in the form of
+   * Required. Name of the Data Fusion instance which need to be restarted in the form of
    * projects/{project}/locations/{location}/instances/{instance}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

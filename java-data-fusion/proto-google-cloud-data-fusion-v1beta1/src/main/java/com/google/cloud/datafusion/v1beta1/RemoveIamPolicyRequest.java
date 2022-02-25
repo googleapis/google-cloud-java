@@ -117,10 +117,10 @@ public final class RemoveIamPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The resource on which IAM policy to be removed is attached to.
+   * Required. The resource on which IAM policy to be removed is attached to.
    * </pre>
    *
-   * <code>string resource = 1;</code>
+   * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The resource.
    */
@@ -140,10 +140,10 @@ public final class RemoveIamPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The resource on which IAM policy to be removed is attached to.
+   * Required. The resource on which IAM policy to be removed is attached to.
    * </pre>
    *
-   * <code>string resource = 1;</code>
+   * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for resource.
    */
@@ -484,10 +484,10 @@ public final class RemoveIamPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource on which IAM policy to be removed is attached to.
+     * Required. The resource on which IAM policy to be removed is attached to.
      * </pre>
      *
-     * <code>string resource = 1;</code>
+     * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The resource.
      */
@@ -506,10 +506,10 @@ public final class RemoveIamPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource on which IAM policy to be removed is attached to.
+     * Required. The resource on which IAM policy to be removed is attached to.
      * </pre>
      *
-     * <code>string resource = 1;</code>
+     * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for resource.
      */
@@ -528,10 +528,10 @@ public final class RemoveIamPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource on which IAM policy to be removed is attached to.
+     * Required. The resource on which IAM policy to be removed is attached to.
      * </pre>
      *
-     * <code>string resource = 1;</code>
+     * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The resource to set.
      * @return This builder for chaining.
@@ -549,10 +549,10 @@ public final class RemoveIamPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource on which IAM policy to be removed is attached to.
+     * Required. The resource on which IAM policy to be removed is attached to.
      * </pre>
      *
-     * <code>string resource = 1;</code>
+     * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -566,10 +566,10 @@ public final class RemoveIamPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The resource on which IAM policy to be removed is attached to.
+     * Required. The resource on which IAM policy to be removed is attached to.
      * </pre>
      *
-     * <code>string resource = 1;</code>
+     * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for resource to set.
      * @return This builder for chaining.
