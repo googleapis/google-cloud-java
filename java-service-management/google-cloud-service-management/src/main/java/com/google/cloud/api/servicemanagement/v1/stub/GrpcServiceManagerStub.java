@@ -32,10 +32,6 @@ import com.google.api.servicemanagement.v1.CreateServiceConfigRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRolloutRequest;
 import com.google.api.servicemanagement.v1.DeleteServiceRequest;
-import com.google.api.servicemanagement.v1.DisableServiceRequest;
-import com.google.api.servicemanagement.v1.DisableServiceResponse;
-import com.google.api.servicemanagement.v1.EnableServiceRequest;
-import com.google.api.servicemanagement.v1.EnableServiceResponse;
 import com.google.api.servicemanagement.v1.GenerateConfigReportRequest;
 import com.google.api.servicemanagement.v1.GenerateConfigReportResponse;
 import com.google.api.servicemanagement.v1.GetServiceConfigRequest;
@@ -210,26 +206,6 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
                   ProtoUtils.marshaller(GenerateConfigReportResponse.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<EnableServiceRequest, Operation>
-      enableServiceMethodDescriptor =
-          MethodDescriptor.<EnableServiceRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.api.servicemanagement.v1.ServiceManager/EnableService")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(EnableServiceRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DisableServiceRequest, Operation>
-      disableServiceMethodDescriptor =
-          MethodDescriptor.<DisableServiceRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.api.servicemanagement.v1.ServiceManager/DisableService")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DisableServiceRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
   private final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable;
   private final UnaryCallable<ListServicesRequest, ListServicesPagedResponse>
       listServicesPagedCallable;
@@ -264,12 +240,6 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
       createServiceRolloutOperationCallable;
   private final UnaryCallable<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportCallable;
-  private final UnaryCallable<EnableServiceRequest, Operation> enableServiceCallable;
-  private final OperationCallable<EnableServiceRequest, EnableServiceResponse, OperationMetadata>
-      enableServiceOperationCallable;
-  private final UnaryCallable<DisableServiceRequest, Operation> disableServiceCallable;
-  private final OperationCallable<DisableServiceRequest, DisableServiceResponse, OperationMetadata>
-      disableServiceOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -432,26 +402,6 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             GrpcCallSettings.<GenerateConfigReportRequest, GenerateConfigReportResponse>newBuilder()
                 .setMethodDescriptor(generateConfigReportMethodDescriptor)
                 .build();
-    GrpcCallSettings<EnableServiceRequest, Operation> enableServiceTransportSettings =
-        GrpcCallSettings.<EnableServiceRequest, Operation>newBuilder()
-            .setMethodDescriptor(enableServiceMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<DisableServiceRequest, Operation> disableServiceTransportSettings =
-        GrpcCallSettings.<DisableServiceRequest, Operation>newBuilder()
-            .setMethodDescriptor(disableServiceMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
-                })
-            .build();
 
     this.listServicesCallable =
         callableFactory.createUnaryCallable(
@@ -549,24 +499,6 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             generateConfigReportTransportSettings,
             settings.generateConfigReportSettings(),
             clientContext);
-    this.enableServiceCallable =
-        callableFactory.createUnaryCallable(
-            enableServiceTransportSettings, settings.enableServiceSettings(), clientContext);
-    this.enableServiceOperationCallable =
-        callableFactory.createOperationCallable(
-            enableServiceTransportSettings,
-            settings.enableServiceOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.disableServiceCallable =
-        callableFactory.createUnaryCallable(
-            disableServiceTransportSettings, settings.disableServiceSettings(), clientContext);
-    this.disableServiceOperationCallable =
-        callableFactory.createOperationCallable(
-            disableServiceTransportSettings,
-            settings.disableServiceOperationSettings(),
-            clientContext,
-            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -689,28 +621,6 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
   public UnaryCallable<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportCallable() {
     return generateConfigReportCallable;
-  }
-
-  @Override
-  public UnaryCallable<EnableServiceRequest, Operation> enableServiceCallable() {
-    return enableServiceCallable;
-  }
-
-  @Override
-  public OperationCallable<EnableServiceRequest, EnableServiceResponse, OperationMetadata>
-      enableServiceOperationCallable() {
-    return enableServiceOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<DisableServiceRequest, Operation> disableServiceCallable() {
-    return disableServiceCallable;
-  }
-
-  @Override
-  public OperationCallable<DisableServiceRequest, DisableServiceResponse, OperationMetadata>
-      disableServiceOperationCallable() {
-    return disableServiceOperationCallable;
   }
 
   @Override

@@ -53,10 +53,6 @@ import com.google.api.servicemanagement.v1.CreateServiceRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRolloutRequest;
 import com.google.api.servicemanagement.v1.DeleteServiceRequest;
 import com.google.api.servicemanagement.v1.Diagnostic;
-import com.google.api.servicemanagement.v1.DisableServiceRequest;
-import com.google.api.servicemanagement.v1.DisableServiceResponse;
-import com.google.api.servicemanagement.v1.EnableServiceRequest;
-import com.google.api.servicemanagement.v1.EnableServiceResponse;
 import com.google.api.servicemanagement.v1.GenerateConfigReportRequest;
 import com.google.api.servicemanagement.v1.GenerateConfigReportResponse;
 import com.google.api.servicemanagement.v1.GetServiceConfigRequest;
@@ -776,99 +772,6 @@ public class ServiceManagerClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
-    }
-  }
-
-  @Test
-  public void enableServiceTest() throws Exception {
-    EnableServiceResponse expectedResponse = EnableServiceResponse.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("enableServiceTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockServiceManager.addResponse(resultOperation);
-
-    String serviceName = "serviceName-1928572192";
-    String consumerId = "consumerId-166238287";
-
-    EnableServiceResponse actualResponse = client.enableServiceAsync(serviceName, consumerId).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockServiceManager.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    EnableServiceRequest actualRequest = ((EnableServiceRequest) actualRequests.get(0));
-
-    Assert.assertEquals(serviceName, actualRequest.getServiceName());
-    Assert.assertEquals(consumerId, actualRequest.getConsumerId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void enableServiceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockServiceManager.addException(exception);
-
-    try {
-      String serviceName = "serviceName-1928572192";
-      String consumerId = "consumerId-166238287";
-      client.enableServiceAsync(serviceName, consumerId).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  public void disableServiceTest() throws Exception {
-    DisableServiceResponse expectedResponse = DisableServiceResponse.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("disableServiceTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockServiceManager.addResponse(resultOperation);
-
-    String serviceName = "serviceName-1928572192";
-    String consumerId = "consumerId-166238287";
-
-    DisableServiceResponse actualResponse =
-        client.disableServiceAsync(serviceName, consumerId).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockServiceManager.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DisableServiceRequest actualRequest = ((DisableServiceRequest) actualRequests.get(0));
-
-    Assert.assertEquals(serviceName, actualRequest.getServiceName());
-    Assert.assertEquals(consumerId, actualRequest.getConsumerId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void disableServiceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockServiceManager.addException(exception);
-
-    try {
-      String serviceName = "serviceName-1928572192";
-      String consumerId = "consumerId-166238287";
-      client.disableServiceAsync(serviceName, consumerId).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

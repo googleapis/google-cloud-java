@@ -22,8 +22,6 @@ import com.google.api.servicemanagement.v1.CreateServiceConfigRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRolloutRequest;
 import com.google.api.servicemanagement.v1.DeleteServiceRequest;
-import com.google.api.servicemanagement.v1.DisableServiceRequest;
-import com.google.api.servicemanagement.v1.EnableServiceRequest;
 import com.google.api.servicemanagement.v1.GenerateConfigReportRequest;
 import com.google.api.servicemanagement.v1.GenerateConfigReportResponse;
 import com.google.api.servicemanagement.v1.GetServiceConfigRequest;
@@ -353,48 +351,6 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
                   "Unrecognized response type %s for method GenerateConfigReport, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateConfigReportResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void enableService(
-      EnableServiceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext(((Operation) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method EnableService, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Operation.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void disableService(
-      DisableServiceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext(((Operation) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method DisableService, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

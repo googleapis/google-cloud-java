@@ -22,12 +22,6 @@
             "DeleteService": {
               "methods": ["deleteServiceAsync", "deleteServiceAsync", "deleteServiceOperationCallable", "deleteServiceCallable"]
             },
-            "DisableService": {
-              "methods": ["disableServiceAsync", "disableServiceAsync", "disableServiceOperationCallable", "disableServiceCallable"]
-            },
-            "EnableService": {
-              "methods": ["enableServiceAsync", "enableServiceAsync", "enableServiceOperationCallable", "enableServiceCallable"]
-            },
             "GenerateConfigReport": {
               "methods": ["generateConfigReport", "generateConfigReport", "generateConfigReportCallable"]
             },

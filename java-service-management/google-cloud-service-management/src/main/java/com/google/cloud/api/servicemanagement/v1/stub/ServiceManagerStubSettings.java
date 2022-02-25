@@ -51,10 +51,6 @@ import com.google.api.servicemanagement.v1.CreateServiceConfigRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRolloutRequest;
 import com.google.api.servicemanagement.v1.DeleteServiceRequest;
-import com.google.api.servicemanagement.v1.DisableServiceRequest;
-import com.google.api.servicemanagement.v1.DisableServiceResponse;
-import com.google.api.servicemanagement.v1.EnableServiceRequest;
-import com.google.api.servicemanagement.v1.EnableServiceResponse;
 import com.google.api.servicemanagement.v1.GenerateConfigReportRequest;
 import com.google.api.servicemanagement.v1.GenerateConfigReportResponse;
 import com.google.api.servicemanagement.v1.GetServiceConfigRequest;
@@ -161,14 +157,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
       createServiceRolloutOperationSettings;
   private final UnaryCallSettings<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportSettings;
-  private final UnaryCallSettings<EnableServiceRequest, Operation> enableServiceSettings;
-  private final OperationCallSettings<
-          EnableServiceRequest, EnableServiceResponse, OperationMetadata>
-      enableServiceOperationSettings;
-  private final UnaryCallSettings<DisableServiceRequest, Operation> disableServiceSettings;
-  private final OperationCallSettings<
-          DisableServiceRequest, DisableServiceResponse, OperationMetadata>
-      disableServiceOperationSettings;
 
   private static final PagedListDescriptor<
           ListServicesRequest, ListServicesResponse, ManagedService>
@@ -448,38 +436,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     return generateConfigReportSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to enableService.
-   *
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public UnaryCallSettings<EnableServiceRequest, Operation> enableServiceSettings() {
-    return enableServiceSettings;
-  }
-
-  /** Returns the object with the settings used for calls to enableService. */
-  public OperationCallSettings<EnableServiceRequest, EnableServiceResponse, OperationMetadata>
-      enableServiceOperationSettings() {
-    return enableServiceOperationSettings;
-  }
-
-  /**
-   * Returns the object with the settings used for calls to disableService.
-   *
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public UnaryCallSettings<DisableServiceRequest, Operation> disableServiceSettings() {
-    return disableServiceSettings;
-  }
-
-  /** Returns the object with the settings used for calls to disableService. */
-  public OperationCallSettings<DisableServiceRequest, DisableServiceResponse, OperationMetadata>
-      disableServiceOperationSettings() {
-    return disableServiceOperationSettings;
-  }
-
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ServiceManagerStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -576,10 +532,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     createServiceRolloutOperationSettings =
         settingsBuilder.createServiceRolloutOperationSettings().build();
     generateConfigReportSettings = settingsBuilder.generateConfigReportSettings().build();
-    enableServiceSettings = settingsBuilder.enableServiceSettings().build();
-    enableServiceOperationSettings = settingsBuilder.enableServiceOperationSettings().build();
-    disableServiceSettings = settingsBuilder.disableServiceSettings().build();
-    disableServiceOperationSettings = settingsBuilder.disableServiceOperationSettings().build();
   }
 
   /** Builder for ServiceManagerStubSettings. */
@@ -628,15 +580,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     private final UnaryCallSettings.Builder<
             GenerateConfigReportRequest, GenerateConfigReportResponse>
         generateConfigReportSettings;
-    private final UnaryCallSettings.Builder<EnableServiceRequest, Operation> enableServiceSettings;
-    private final OperationCallSettings.Builder<
-            EnableServiceRequest, EnableServiceResponse, OperationMetadata>
-        enableServiceOperationSettings;
-    private final UnaryCallSettings.Builder<DisableServiceRequest, Operation>
-        disableServiceSettings;
-    private final OperationCallSettings.Builder<
-            DisableServiceRequest, DisableServiceResponse, OperationMetadata>
-        disableServiceOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -690,10 +633,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
       createServiceRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createServiceRolloutOperationSettings = OperationCallSettings.newBuilder();
       generateConfigReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      enableServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      enableServiceOperationSettings = OperationCallSettings.newBuilder();
-      disableServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      disableServiceOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -709,9 +648,7 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
               listServiceRolloutsSettings,
               getServiceRolloutSettings,
               createServiceRolloutSettings,
-              generateConfigReportSettings,
-              enableServiceSettings,
-              disableServiceSettings);
+              generateConfigReportSettings);
       initDefaults(this);
     }
 
@@ -738,10 +675,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
       createServiceRolloutOperationSettings =
           settings.createServiceRolloutOperationSettings.toBuilder();
       generateConfigReportSettings = settings.generateConfigReportSettings.toBuilder();
-      enableServiceSettings = settings.enableServiceSettings.toBuilder();
-      enableServiceOperationSettings = settings.enableServiceOperationSettings.toBuilder();
-      disableServiceSettings = settings.disableServiceSettings.toBuilder();
-      disableServiceOperationSettings = settings.disableServiceOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -757,9 +690,7 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
               listServiceRolloutsSettings,
               getServiceRolloutSettings,
               createServiceRolloutSettings,
-              generateConfigReportSettings,
-              enableServiceSettings,
-              disableServiceSettings);
+              generateConfigReportSettings);
     }
 
     private static Builder createDefault() {
@@ -838,16 +769,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
 
       builder
           .generateConfigReportSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .enableServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .disableServiceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -958,54 +879,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Rollout.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      builder
-          .enableServiceOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<EnableServiceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(EnableServiceResponse.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      builder
-          .disableServiceOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DisableServiceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(DisableServiceResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -1156,44 +1029,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     public UnaryCallSettings.Builder<GenerateConfigReportRequest, GenerateConfigReportResponse>
         generateConfigReportSettings() {
       return generateConfigReportSettings;
-    }
-
-    /**
-     * Returns the builder for the settings used for calls to enableService.
-     *
-     * @deprecated This method is deprecated and will be removed in the next major version update.
-     */
-    @Deprecated
-    public UnaryCallSettings.Builder<EnableServiceRequest, Operation> enableServiceSettings() {
-      return enableServiceSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to enableService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            EnableServiceRequest, EnableServiceResponse, OperationMetadata>
-        enableServiceOperationSettings() {
-      return enableServiceOperationSettings;
-    }
-
-    /**
-     * Returns the builder for the settings used for calls to disableService.
-     *
-     * @deprecated This method is deprecated and will be removed in the next major version update.
-     */
-    @Deprecated
-    public UnaryCallSettings.Builder<DisableServiceRequest, Operation> disableServiceSettings() {
-      return disableServiceSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to disableService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            DisableServiceRequest, DisableServiceResponse, OperationMetadata>
-        disableServiceOperationSettings() {
-      return disableServiceOperationSettings;
     }
 
     @Override

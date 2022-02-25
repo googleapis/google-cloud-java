@@ -133,7 +133,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+   * Required. The name of the service.  See the [overview](/service-management/overview)
    * for naming requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
@@ -157,7 +157,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+   * Required. The name of the service.  See the [overview](/service-management/overview)
    * for naming requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
@@ -588,7 +588,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+     * Required. The name of the service.  See the [overview](/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
@@ -611,7 +611,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+     * Required. The name of the service.  See the [overview](/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
@@ -634,7 +634,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+     * Required. The name of the service.  See the [overview](/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
@@ -656,7 +656,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+     * Required. The name of the service.  See the [overview](/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
@@ -674,7 +674,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+     * Required. The name of the service.  See the [overview](/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *

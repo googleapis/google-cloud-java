@@ -132,7 +132,7 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+   * Required. The name of the service.  See the [overview](/service-management/overview)
    * for naming requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
@@ -156,7 +156,7 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+   * Required. The name of the service.  See the [overview](/service-management/overview)
    * for naming requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
@@ -578,7 +578,7 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+     * Required. The name of the service.  See the [overview](/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
@@ -601,7 +601,7 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+     * Required. The name of the service.  See the [overview](/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
@@ -624,7 +624,7 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+     * Required. The name of the service.  See the [overview](/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
@@ -646,7 +646,7 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+     * Required. The name of the service.  See the [overview](/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
@@ -664,7 +664,7 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+     * Required. The name of the service.  See the [overview](/service-management/overview)
      * for naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *

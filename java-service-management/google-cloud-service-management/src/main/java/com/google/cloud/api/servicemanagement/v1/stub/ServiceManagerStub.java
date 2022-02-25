@@ -28,10 +28,6 @@ import com.google.api.servicemanagement.v1.CreateServiceConfigRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRolloutRequest;
 import com.google.api.servicemanagement.v1.DeleteServiceRequest;
-import com.google.api.servicemanagement.v1.DisableServiceRequest;
-import com.google.api.servicemanagement.v1.DisableServiceResponse;
-import com.google.api.servicemanagement.v1.EnableServiceRequest;
-import com.google.api.servicemanagement.v1.EnableServiceResponse;
 import com.google.api.servicemanagement.v1.GenerateConfigReportRequest;
 import com.google.api.servicemanagement.v1.GenerateConfigReportResponse;
 import com.google.api.servicemanagement.v1.GetServiceConfigRequest;
@@ -162,28 +158,6 @@ public abstract class ServiceManagerStub implements BackgroundResource {
   public UnaryCallable<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportCallable() {
     throw new UnsupportedOperationException("Not implemented: generateConfigReportCallable()");
-  }
-
-  @Deprecated
-  public OperationCallable<EnableServiceRequest, EnableServiceResponse, OperationMetadata>
-      enableServiceOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: enableServiceOperationCallable()");
-  }
-
-  @Deprecated
-  public UnaryCallable<EnableServiceRequest, Operation> enableServiceCallable() {
-    throw new UnsupportedOperationException("Not implemented: enableServiceCallable()");
-  }
-
-  @Deprecated
-  public OperationCallable<DisableServiceRequest, DisableServiceResponse, OperationMetadata>
-      disableServiceOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: disableServiceOperationCallable()");
-  }
-
-  @Deprecated
-  public UnaryCallable<DisableServiceRequest, Operation> disableServiceCallable() {
-    throw new UnsupportedOperationException("Not implemented: disableServiceCallable()");
   }
 
   @Override

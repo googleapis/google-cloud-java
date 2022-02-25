@@ -126,7 +126,7 @@ public final class ManagedService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
+   * The name of the service. See the [overview](/service-management/overview)
    * for naming requirements.
    * </pre>
    *
@@ -150,7 +150,7 @@ public final class ManagedService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
+   * The name of the service. See the [overview](/service-management/overview)
    * for naming requirements.
    * </pre>
    *
@@ -560,7 +560,7 @@ public final class ManagedService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
+     * The name of the service. See the [overview](/service-management/overview)
      * for naming requirements.
      * </pre>
      *
@@ -583,7 +583,7 @@ public final class ManagedService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
+     * The name of the service. See the [overview](/service-management/overview)
      * for naming requirements.
      * </pre>
      *
@@ -606,7 +606,7 @@ public final class ManagedService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
+     * The name of the service. See the [overview](/service-management/overview)
      * for naming requirements.
      * </pre>
      *
@@ -628,7 +628,7 @@ public final class ManagedService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
+     * The name of the service. See the [overview](/service-management/overview)
      * for naming requirements.
      * </pre>
      *
@@ -646,7 +646,7 @@ public final class ManagedService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the service. See the [overview](https://cloud.google.com/service-management/overview)
+     * The name of the service. See the [overview](/service-management/overview)
      * for naming requirements.
      * </pre>
      *

@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * [Google Service Management API](https://cloud.google.com/service-management/overview)
+ * [Google Service Management API](/service-management/overview)
  * </pre>
  */
 @javax.annotation.Generated(
@@ -643,98 +643,6 @@ public final class ServiceManagerGrpc {
     return getGenerateConfigReportMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.api.servicemanagement.v1.EnableServiceRequest,
-          com.google.longrunning.Operation>
-      getEnableServiceMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "EnableService",
-      requestType = com.google.api.servicemanagement.v1.EnableServiceRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.api.servicemanagement.v1.EnableServiceRequest,
-          com.google.longrunning.Operation>
-      getEnableServiceMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.api.servicemanagement.v1.EnableServiceRequest,
-            com.google.longrunning.Operation>
-        getEnableServiceMethod;
-    if ((getEnableServiceMethod = ServiceManagerGrpc.getEnableServiceMethod) == null) {
-      synchronized (ServiceManagerGrpc.class) {
-        if ((getEnableServiceMethod = ServiceManagerGrpc.getEnableServiceMethod) == null) {
-          ServiceManagerGrpc.getEnableServiceMethod =
-              getEnableServiceMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.api.servicemanagement.v1.EnableServiceRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnableService"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.api.servicemanagement.v1.EnableServiceRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new ServiceManagerMethodDescriptorSupplier("EnableService"))
-                      .build();
-        }
-      }
-    }
-    return getEnableServiceMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.api.servicemanagement.v1.DisableServiceRequest,
-          com.google.longrunning.Operation>
-      getDisableServiceMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DisableService",
-      requestType = com.google.api.servicemanagement.v1.DisableServiceRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.api.servicemanagement.v1.DisableServiceRequest,
-          com.google.longrunning.Operation>
-      getDisableServiceMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.api.servicemanagement.v1.DisableServiceRequest,
-            com.google.longrunning.Operation>
-        getDisableServiceMethod;
-    if ((getDisableServiceMethod = ServiceManagerGrpc.getDisableServiceMethod) == null) {
-      synchronized (ServiceManagerGrpc.class) {
-        if ((getDisableServiceMethod = ServiceManagerGrpc.getDisableServiceMethod) == null) {
-          ServiceManagerGrpc.getDisableServiceMethod =
-              getDisableServiceMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.api.servicemanagement.v1.DisableServiceRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisableService"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.api.servicemanagement.v1.DisableServiceRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new ServiceManagerMethodDescriptorSupplier("DisableService"))
-                      .build();
-        }
-      }
-    }
-    return getDisableServiceMethod;
-  }
-
   /** Creates a new async stub that supports all call types for the service */
   public static ServiceManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ServiceManagerStub> factory =
@@ -780,7 +688,7 @@ public final class ServiceManagerGrpc {
    *
    *
    * <pre>
-   * [Google Service Management API](https://cloud.google.com/service-management/overview)
+   * [Google Service Management API](/service-management/overview)
    * </pre>
    */
   public abstract static class ServiceManagerImplBase implements io.grpc.BindableService {
@@ -793,9 +701,6 @@ public final class ServiceManagerGrpc {
      * Returns all public services. For authenticated users, also returns all
      * services the calling user has "servicemanagement.services.get" permission
      * for.
-     * **BETA:** If the caller specifies the `consumer_id`, it returns only the
-     * services enabled on the consumer. The `consumer_id` must have the format
-     * of "project:{PROJECT-ID}".
      * </pre>
      */
     public void listServices(
@@ -826,7 +731,12 @@ public final class ServiceManagerGrpc {
      *
      * <pre>
      * Creates a new managed service.
-     * Please note one producer project can own no more than 20 services.
+     * A managed service is immutable, and is subject to mandatory 30-day
+     * data retention. You cannot move a service or recreate it within 30 days
+     * after deletion.
+     * One producer project can own no more than 500 services. For security and
+     * reliability purposes, a production service should be hosted in a
+     * dedicated producer project.
      * Operation&lt;response: ManagedService&gt;
      * </pre>
      */
@@ -1026,43 +936,6 @@ public final class ServiceManagerGrpc {
           getGenerateConfigReportMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Enables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can be used
-     * for the project. See
-     * [Cloud Auth Guide](https://cloud.google.com/docs/authentication) for
-     * more information.
-     * Operation&lt;response: EnableServiceResponse&gt;
-     * </pre>
-     */
-    @java.lang.Deprecated
-    public void enableService(
-        com.google.api.servicemanagement.v1.EnableServiceRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getEnableServiceMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Disables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can no longer be
-     * be used for the project. It prevents accidental usage that may cause
-     * unexpected billing charges or security leaks.
-     * Operation&lt;response: DisableServiceResponse&gt;
-     * </pre>
-     */
-    @java.lang.Deprecated
-    public void disableService(
-        com.google.api.servicemanagement.v1.DisableServiceRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDisableServiceMethod(), responseObserver);
-    }
-
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -1150,18 +1023,6 @@ public final class ServiceManagerGrpc {
                       com.google.api.servicemanagement.v1.GenerateConfigReportRequest,
                       com.google.api.servicemanagement.v1.GenerateConfigReportResponse>(
                       this, METHODID_GENERATE_CONFIG_REPORT)))
-          .addMethod(
-              getEnableServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.EnableServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ENABLE_SERVICE)))
-          .addMethod(
-              getDisableServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.DisableServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DISABLE_SERVICE)))
           .build();
     }
   }
@@ -1170,7 +1031,7 @@ public final class ServiceManagerGrpc {
    *
    *
    * <pre>
-   * [Google Service Management API](https://cloud.google.com/service-management/overview)
+   * [Google Service Management API](/service-management/overview)
    * </pre>
    */
   public static final class ServiceManagerStub
@@ -1192,9 +1053,6 @@ public final class ServiceManagerGrpc {
      * Returns all public services. For authenticated users, also returns all
      * services the calling user has "servicemanagement.services.get" permission
      * for.
-     * **BETA:** If the caller specifies the `consumer_id`, it returns only the
-     * services enabled on the consumer. The `consumer_id` must have the format
-     * of "project:{PROJECT-ID}".
      * </pre>
      */
     public void listServices(
@@ -1228,7 +1086,12 @@ public final class ServiceManagerGrpc {
      *
      * <pre>
      * Creates a new managed service.
-     * Please note one producer project can own no more than 20 services.
+     * A managed service is immutable, and is subject to mandatory 30-day
+     * data retention. You cannot move a service or recreate it within 30 days
+     * after deletion.
+     * One producer project can own no more than 500 services. For security and
+     * reliability purposes, a production service should be hosted in a
+     * dedicated producer project.
      * Operation&lt;response: ManagedService&gt;
      * </pre>
      */
@@ -1449,54 +1312,13 @@ public final class ServiceManagerGrpc {
           request,
           responseObserver);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Enables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can be used
-     * for the project. See
-     * [Cloud Auth Guide](https://cloud.google.com/docs/authentication) for
-     * more information.
-     * Operation&lt;response: EnableServiceResponse&gt;
-     * </pre>
-     */
-    @java.lang.Deprecated
-    public void enableService(
-        com.google.api.servicemanagement.v1.EnableServiceRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getEnableServiceMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Disables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can no longer be
-     * be used for the project. It prevents accidental usage that may cause
-     * unexpected billing charges or security leaks.
-     * Operation&lt;response: DisableServiceResponse&gt;
-     * </pre>
-     */
-    @java.lang.Deprecated
-    public void disableService(
-        com.google.api.servicemanagement.v1.DisableServiceRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDisableServiceMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
   }
 
   /**
    *
    *
    * <pre>
-   * [Google Service Management API](https://cloud.google.com/service-management/overview)
+   * [Google Service Management API](/service-management/overview)
    * </pre>
    */
   public static final class ServiceManagerBlockingStub
@@ -1519,9 +1341,6 @@ public final class ServiceManagerGrpc {
      * Returns all public services. For authenticated users, also returns all
      * services the calling user has "servicemanagement.services.get" permission
      * for.
-     * **BETA:** If the caller specifies the `consumer_id`, it returns only the
-     * services enabled on the consumer. The `consumer_id` must have the format
-     * of "project:{PROJECT-ID}".
      * </pre>
      */
     public com.google.api.servicemanagement.v1.ListServicesResponse listServices(
@@ -1549,7 +1368,12 @@ public final class ServiceManagerGrpc {
      *
      * <pre>
      * Creates a new managed service.
-     * Please note one producer project can own no more than 20 services.
+     * A managed service is immutable, and is subject to mandatory 30-day
+     * data retention. You cannot move a service or recreate it within 30 days
+     * after deletion.
+     * One producer project can own no more than 500 services. For security and
+     * reliability purposes, a production service should be hosted in a
+     * dedicated producer project.
      * Operation&lt;response: ManagedService&gt;
      * </pre>
      */
@@ -1733,48 +1557,13 @@ public final class ServiceManagerGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateConfigReportMethod(), getCallOptions(), request);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Enables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can be used
-     * for the project. See
-     * [Cloud Auth Guide](https://cloud.google.com/docs/authentication) for
-     * more information.
-     * Operation&lt;response: EnableServiceResponse&gt;
-     * </pre>
-     */
-    @java.lang.Deprecated
-    public com.google.longrunning.Operation enableService(
-        com.google.api.servicemanagement.v1.EnableServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getEnableServiceMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Disables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can no longer be
-     * be used for the project. It prevents accidental usage that may cause
-     * unexpected billing charges or security leaks.
-     * Operation&lt;response: DisableServiceResponse&gt;
-     * </pre>
-     */
-    @java.lang.Deprecated
-    public com.google.longrunning.Operation disableService(
-        com.google.api.servicemanagement.v1.DisableServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDisableServiceMethod(), getCallOptions(), request);
-    }
   }
 
   /**
    *
    *
    * <pre>
-   * [Google Service Management API](https://cloud.google.com/service-management/overview)
+   * [Google Service Management API](/service-management/overview)
    * </pre>
    */
   public static final class ServiceManagerFutureStub
@@ -1797,9 +1586,6 @@ public final class ServiceManagerGrpc {
      * Returns all public services. For authenticated users, also returns all
      * services the calling user has "servicemanagement.services.get" permission
      * for.
-     * **BETA:** If the caller specifies the `consumer_id`, it returns only the
-     * services enabled on the consumer. The `consumer_id` must have the format
-     * of "project:{PROJECT-ID}".
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1829,7 +1615,12 @@ public final class ServiceManagerGrpc {
      *
      * <pre>
      * Creates a new managed service.
-     * Please note one producer project can own no more than 20 services.
+     * A managed service is immutable, and is subject to mandatory 30-day
+     * data retention. You cannot move a service or recreate it within 30 days
+     * after deletion.
+     * One producer project can own no more than 500 services. For security and
+     * reliability purposes, a production service should be hosted in a
+     * dedicated producer project.
      * Operation&lt;response: ManagedService&gt;
      * </pre>
      */
@@ -2021,41 +1812,6 @@ public final class ServiceManagerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateConfigReportMethod(), getCallOptions()), request);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Enables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can be used
-     * for the project. See
-     * [Cloud Auth Guide](https://cloud.google.com/docs/authentication) for
-     * more information.
-     * Operation&lt;response: EnableServiceResponse&gt;
-     * </pre>
-     */
-    @java.lang.Deprecated
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        enableService(com.google.api.servicemanagement.v1.EnableServiceRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getEnableServiceMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Disables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can no longer be
-     * be used for the project. It prevents accidental usage that may cause
-     * unexpected billing charges or security leaks.
-     * Operation&lt;response: DisableServiceResponse&gt;
-     * </pre>
-     */
-    @java.lang.Deprecated
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        disableService(com.google.api.servicemanagement.v1.DisableServiceRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDisableServiceMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_LIST_SERVICES = 0;
@@ -2071,8 +1827,6 @@ public final class ServiceManagerGrpc {
   private static final int METHODID_GET_SERVICE_ROLLOUT = 10;
   private static final int METHODID_CREATE_SERVICE_ROLLOUT = 11;
   private static final int METHODID_GENERATE_CONFIG_REPORT = 12;
-  private static final int METHODID_ENABLE_SERVICE = 13;
-  private static final int METHODID_DISABLE_SERVICE = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2166,16 +1920,6 @@ public final class ServiceManagerGrpc {
                       com.google.api.servicemanagement.v1.GenerateConfigReportResponse>)
                   responseObserver);
           break;
-        case METHODID_ENABLE_SERVICE:
-          serviceImpl.enableService(
-              (com.google.api.servicemanagement.v1.EnableServiceRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_DISABLE_SERVICE:
-          serviceImpl.disableService(
-              (com.google.api.servicemanagement.v1.DisableServiceRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
         default:
           throw new AssertionError();
       }
@@ -2253,8 +1997,6 @@ public final class ServiceManagerGrpc {
                       .addMethod(getGetServiceRolloutMethod())
                       .addMethod(getCreateServiceRolloutMethod())
                       .addMethod(getGenerateConfigReportMethod())
-                      .addMethod(getEnableServiceMethod())
-                      .addMethod(getDisableServiceMethod())
                       .build();
         }
       }

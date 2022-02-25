@@ -33,10 +33,6 @@ import com.google.api.servicemanagement.v1.CreateServiceConfigRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRolloutRequest;
 import com.google.api.servicemanagement.v1.DeleteServiceRequest;
-import com.google.api.servicemanagement.v1.DisableServiceRequest;
-import com.google.api.servicemanagement.v1.DisableServiceResponse;
-import com.google.api.servicemanagement.v1.EnableServiceRequest;
-import com.google.api.servicemanagement.v1.EnableServiceResponse;
 import com.google.api.servicemanagement.v1.GenerateConfigReportRequest;
 import com.google.api.servicemanagement.v1.GenerateConfigReportResponse;
 import com.google.api.servicemanagement.v1.GetServiceConfigRequest;
@@ -69,8 +65,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: [Google Service Management
- * API](https://cloud.google.com/service-management/overview)
+ * Service Description: [Google Service Management API](/service-management/overview)
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -199,10 +194,6 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Returns all public services. For authenticated users, also returns all services the calling
    * user has "servicemanagement.services.get" permission for.
    *
-   * <p>&#42;&#42;BETA:&#42;&#42; If the caller specifies the `consumer_id`, it returns only the
-   * services enabled on the consumer. The `consumer_id` must have the format of
-   * "project:{PROJECT-ID}".
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -238,10 +229,6 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Returns all public services. For authenticated users, also returns all services the calling
    * user has "servicemanagement.services.get" permission for.
    *
-   * <p>&#42;&#42;BETA:&#42;&#42; If the caller specifies the `consumer_id`, it returns only the
-   * services enabled on the consumer. The `consumer_id` must have the format of
-   * "project:{PROJECT-ID}".
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -272,10 +259,6 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <p>Returns all public services. For authenticated users, also returns all services the calling
    * user has "servicemanagement.services.get" permission for.
-   *
-   * <p>&#42;&#42;BETA:&#42;&#42; If the caller specifies the `consumer_id`, it returns only the
-   * services enabled on the consumer. The `consumer_id` must have the format of
-   * "project:{PROJECT-ID}".
    *
    * <p>Sample code:
    *
@@ -308,10 +291,6 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <p>Returns all public services. For authenticated users, also returns all services the calling
    * user has "servicemanagement.services.get" permission for.
-   *
-   * <p>&#42;&#42;BETA:&#42;&#42; If the caller specifies the `consumer_id`, it returns only the
-   * services enabled on the consumer. The `consumer_id` must have the format of
-   * "project:{PROJECT-ID}".
    *
    * <p>Sample code:
    *
@@ -409,8 +388,13 @@ public class ServiceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new managed service. Please note one producer project can own no more than 20
-   * services.
+   * Creates a new managed service.
+   *
+   * <p>A managed service is immutable, and is subject to mandatory 30-day data retention. You
+   * cannot move a service or recreate it within 30 days after deletion.
+   *
+   * <p>One producer project can own no more than 500 services. For security and reliability
+   * purposes, a production service should be hosted in a dedicated producer project.
    *
    * <p>Operation&lt;response: ManagedService&gt;
    *
@@ -434,8 +418,13 @@ public class ServiceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new managed service. Please note one producer project can own no more than 20
-   * services.
+   * Creates a new managed service.
+   *
+   * <p>A managed service is immutable, and is subject to mandatory 30-day data retention. You
+   * cannot move a service or recreate it within 30 days after deletion.
+   *
+   * <p>One producer project can own no more than 500 services. For security and reliability
+   * purposes, a production service should be hosted in a dedicated producer project.
    *
    * <p>Operation&lt;response: ManagedService&gt;
    *
@@ -459,8 +448,13 @@ public class ServiceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new managed service. Please note one producer project can own no more than 20
-   * services.
+   * Creates a new managed service.
+   *
+   * <p>A managed service is immutable, and is subject to mandatory 30-day data retention. You
+   * cannot move a service or recreate it within 30 days after deletion.
+   *
+   * <p>One producer project can own no more than 500 services. For security and reliability
+   * purposes, a production service should be hosted in a dedicated producer project.
    *
    * <p>Operation&lt;response: ManagedService&gt;
    *
@@ -484,8 +478,13 @@ public class ServiceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new managed service. Please note one producer project can own no more than 20
-   * services.
+   * Creates a new managed service.
+   *
+   * <p>A managed service is immutable, and is subject to mandatory 30-day data retention. You
+   * cannot move a service or recreate it within 30 days after deletion.
+   *
+   * <p>One producer project can own no more than 500 services. For security and reliability
+   * purposes, a production service should be hosted in a dedicated producer project.
    *
    * <p>Operation&lt;response: ManagedService&gt;
    *
@@ -525,8 +524,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
-   *     For example: `example.googleapis.com`.
+   *     [overview](/service-management/overview) for naming requirements. For example:
+   *     `example.googleapis.com`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceAsync(String serviceName) {
@@ -634,8 +633,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
-   *     For example: `example.googleapis.com`.
+   *     [overview](/service-management/overview) for naming requirements. For example:
+   *     `example.googleapis.com`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<UndeleteServiceResponse, OperationMetadata> undeleteServiceAsync(
@@ -739,8 +738,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
-   *     For example: `example.googleapis.com`.
+   *     [overview](/service-management/overview) for naming requirements. For example:
+   *     `example.googleapis.com`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceConfigsPagedResponse listServiceConfigs(String serviceName) {
@@ -859,8 +858,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
-   *     For example: `example.googleapis.com`.
+   *     [overview](/service-management/overview) for naming requirements. For example:
+   *     `example.googleapis.com`.
    * @param configId Required. The id of the service configuration resource.
    *     <p>This field must be specified for the server to return all fields, including
    *     `SourceInfo`.
@@ -946,8 +945,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
-   *     For example: `example.googleapis.com`.
+   *     [overview](/service-management/overview) for naming requirements. For example:
+   *     `example.googleapis.com`.
    * @param serviceConfig Required. The service configuration resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1046,8 +1045,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
-   *     For example: `example.googleapis.com`.
+   *     [overview](/service-management/overview) for naming requirements. For example:
+   *     `example.googleapis.com`.
    * @param configSource Required. The source configuration for the service.
    * @param validateOnly Optional. If set, this will result in the generation of a
    *     `google.api.Service` configuration based on the `ConfigSource` provided, but the generated
@@ -1190,13 +1189,14 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
-   *     For example: `example.googleapis.com`.
+   *     [overview](/service-management/overview) for naming requirements. For example:
+   *     `example.googleapis.com`.
    * @param filter Required. Use `filter` to return subset of rollouts. The following filters are
-   *     supported: -- To limit the results to only those in status
-   *     (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS', use filter='status=SUCCESS' --
-   *     To limit the results to those in status (google.api.servicemanagement.v1.RolloutStatus)
-   *     'CANCELLED' or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
+   *     supported: -- To limit the results to only those in
+   *     [status](google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS', use
+   *     filter='status=SUCCESS' -- To limit the results to those in
+   *     [status](google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED' or 'FAILED', use
+   *     filter='status=CANCELLED OR status=FAILED'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceRolloutsPagedResponse listServiceRollouts(
@@ -1321,8 +1321,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
-   *     For example: `example.googleapis.com`.
+   *     [overview](/service-management/overview) for naming requirements. For example:
+   *     `example.googleapis.com`.
    * @param rolloutId Required. The id of the rollout resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1409,8 +1409,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](https://cloud.google.com/service-management/overview) for naming requirements.
-   *     For example: `example.googleapis.com`.
+   *     [overview](/service-management/overview) for naming requirements. For example:
+   *     `example.googleapis.com`.
    * @param rollout Required. The rollout resource. The `service_name` field is output only.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1637,274 +1637,6 @@ public class ServiceManagerClient implements BackgroundResource {
   public final UnaryCallable<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportCallable() {
     return stub.generateConfigReportCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Enables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can be
-   * used for the project. See [Cloud Auth Guide](https://cloud.google.com/docs/authentication) for
-   * more information.
-   *
-   * <p>Operation&lt;response: EnableServiceResponse&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
-   *   String serviceName = "serviceName-1928572192";
-   *   String consumerId = "consumerId-166238287";
-   *   EnableServiceResponse response =
-   *       serviceManagerClient.enableServiceAsync(serviceName, consumerId).get();
-   * }
-   * }</pre>
-   *
-   * @param serviceName Required. Name of the service to enable. Specifying an unknown service name
-   *     will cause the request to fail.
-   * @param consumerId Required. The identity of consumer resource which service enablement will be
-   *     applied to.
-   *     <p>The Google Service Management implementation accepts the following forms: -
-   *     "project:&lt;project_id&gt;"
-   *     <p>Note: this is made compatible with google.api.servicecontrol.v1.Operation.consumer_id.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public final OperationFuture<EnableServiceResponse, OperationMetadata> enableServiceAsync(
-      String serviceName, String consumerId) {
-    EnableServiceRequest request =
-        EnableServiceRequest.newBuilder()
-            .setServiceName(serviceName)
-            .setConsumerId(consumerId)
-            .build();
-    return enableServiceAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Enables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can be
-   * used for the project. See [Cloud Auth Guide](https://cloud.google.com/docs/authentication) for
-   * more information.
-   *
-   * <p>Operation&lt;response: EnableServiceResponse&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
-   *   EnableServiceRequest request =
-   *       EnableServiceRequest.newBuilder()
-   *           .setServiceName("serviceName-1928572192")
-   *           .setConsumerId("consumerId-166238287")
-   *           .build();
-   *   EnableServiceResponse response = serviceManagerClient.enableServiceAsync(request).get();
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public final OperationFuture<EnableServiceResponse, OperationMetadata> enableServiceAsync(
-      EnableServiceRequest request) {
-    return enableServiceOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Enables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can be
-   * used for the project. See [Cloud Auth Guide](https://cloud.google.com/docs/authentication) for
-   * more information.
-   *
-   * <p>Operation&lt;response: EnableServiceResponse&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
-   *   EnableServiceRequest request =
-   *       EnableServiceRequest.newBuilder()
-   *           .setServiceName("serviceName-1928572192")
-   *           .setConsumerId("consumerId-166238287")
-   *           .build();
-   *   OperationFuture<EnableServiceResponse, OperationMetadata> future =
-   *       serviceManagerClient.enableServiceOperationCallable().futureCall(request);
-   *   // Do something.
-   *   EnableServiceResponse response = future.get();
-   * }
-   * }</pre>
-   *
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public final OperationCallable<EnableServiceRequest, EnableServiceResponse, OperationMetadata>
-      enableServiceOperationCallable() {
-    return stub.enableServiceOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Enables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can be
-   * used for the project. See [Cloud Auth Guide](https://cloud.google.com/docs/authentication) for
-   * more information.
-   *
-   * <p>Operation&lt;response: EnableServiceResponse&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
-   *   EnableServiceRequest request =
-   *       EnableServiceRequest.newBuilder()
-   *           .setServiceName("serviceName-1928572192")
-   *           .setConsumerId("consumerId-166238287")
-   *           .build();
-   *   ApiFuture<Operation> future =
-   *       serviceManagerClient.enableServiceCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
-   * }</pre>
-   *
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public final UnaryCallable<EnableServiceRequest, Operation> enableServiceCallable() {
-    return stub.enableServiceCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Disables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can
-   * no longer be be used for the project. It prevents accidental usage that may cause unexpected
-   * billing charges or security leaks.
-   *
-   * <p>Operation&lt;response: DisableServiceResponse&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
-   *   String serviceName = "serviceName-1928572192";
-   *   String consumerId = "consumerId-166238287";
-   *   DisableServiceResponse response =
-   *       serviceManagerClient.disableServiceAsync(serviceName, consumerId).get();
-   * }
-   * }</pre>
-   *
-   * @param serviceName Required. Name of the service to disable. Specifying an unknown service name
-   *     will cause the request to fail.
-   * @param consumerId Required. The identity of consumer resource which service disablement will be
-   *     applied to.
-   *     <p>The Google Service Management implementation accepts the following forms: -
-   *     "project:&lt;project_id&gt;"
-   *     <p>Note: this is made compatible with google.api.servicecontrol.v1.Operation.consumer_id.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public final OperationFuture<DisableServiceResponse, OperationMetadata> disableServiceAsync(
-      String serviceName, String consumerId) {
-    DisableServiceRequest request =
-        DisableServiceRequest.newBuilder()
-            .setServiceName(serviceName)
-            .setConsumerId(consumerId)
-            .build();
-    return disableServiceAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Disables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can
-   * no longer be be used for the project. It prevents accidental usage that may cause unexpected
-   * billing charges or security leaks.
-   *
-   * <p>Operation&lt;response: DisableServiceResponse&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
-   *   DisableServiceRequest request =
-   *       DisableServiceRequest.newBuilder()
-   *           .setServiceName("serviceName-1928572192")
-   *           .setConsumerId("consumerId-166238287")
-   *           .build();
-   *   DisableServiceResponse response = serviceManagerClient.disableServiceAsync(request).get();
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public final OperationFuture<DisableServiceResponse, OperationMetadata> disableServiceAsync(
-      DisableServiceRequest request) {
-    return disableServiceOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Disables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can
-   * no longer be be used for the project. It prevents accidental usage that may cause unexpected
-   * billing charges or security leaks.
-   *
-   * <p>Operation&lt;response: DisableServiceResponse&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
-   *   DisableServiceRequest request =
-   *       DisableServiceRequest.newBuilder()
-   *           .setServiceName("serviceName-1928572192")
-   *           .setConsumerId("consumerId-166238287")
-   *           .build();
-   *   OperationFuture<DisableServiceResponse, OperationMetadata> future =
-   *       serviceManagerClient.disableServiceOperationCallable().futureCall(request);
-   *   // Do something.
-   *   DisableServiceResponse response = future.get();
-   * }
-   * }</pre>
-   *
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public final OperationCallable<DisableServiceRequest, DisableServiceResponse, OperationMetadata>
-      disableServiceOperationCallable() {
-    return stub.disableServiceOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Disables a [service][google.api.servicemanagement.v1.ManagedService] for a project, so it can
-   * no longer be be used for the project. It prevents accidental usage that may cause unexpected
-   * billing charges or security leaks.
-   *
-   * <p>Operation&lt;response: DisableServiceResponse&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
-   *   DisableServiceRequest request =
-   *       DisableServiceRequest.newBuilder()
-   *           .setServiceName("serviceName-1928572192")
-   *           .setConsumerId("consumerId-166238287")
-   *           .build();
-   *   ApiFuture<Operation> future =
-   *       serviceManagerClient.disableServiceCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
-   * }</pre>
-   *
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public final UnaryCallable<DisableServiceRequest, Operation> disableServiceCallable() {
-    return stub.disableServiceCallable();
   }
 
   @Override

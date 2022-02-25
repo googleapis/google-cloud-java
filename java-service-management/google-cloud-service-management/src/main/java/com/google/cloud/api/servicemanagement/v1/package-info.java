@@ -15,12 +15,13 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Service Management API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= ServiceManagerClient =======================
  *
- * <p>Service Description: [Google Service Management
- * API](https://cloud.google.com/service-management/overview)
+ * <p>Service Description: [Google Service Management API](/service-management/overview)
  *
  * <p>Sample for ServiceManagerClient:
  *

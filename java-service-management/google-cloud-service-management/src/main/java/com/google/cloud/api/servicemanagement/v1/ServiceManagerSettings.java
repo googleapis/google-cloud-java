@@ -37,10 +37,6 @@ import com.google.api.servicemanagement.v1.CreateServiceConfigRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRolloutRequest;
 import com.google.api.servicemanagement.v1.DeleteServiceRequest;
-import com.google.api.servicemanagement.v1.DisableServiceRequest;
-import com.google.api.servicemanagement.v1.DisableServiceResponse;
-import com.google.api.servicemanagement.v1.EnableServiceRequest;
-import com.google.api.servicemanagement.v1.EnableServiceResponse;
 import com.google.api.servicemanagement.v1.GenerateConfigReportRequest;
 import com.google.api.servicemanagement.v1.GenerateConfigReportResponse;
 import com.google.api.servicemanagement.v1.GetServiceConfigRequest;
@@ -202,48 +198,6 @@ public class ServiceManagerSettings extends ClientSettings<ServiceManagerSetting
   public UnaryCallSettings<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportSettings() {
     return ((ServiceManagerStubSettings) getStubSettings()).generateConfigReportSettings();
-  }
-
-  /**
-   * Returns the object with the settings used for calls to enableService.
-   *
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public UnaryCallSettings<EnableServiceRequest, Operation> enableServiceSettings() {
-    return ((ServiceManagerStubSettings) getStubSettings()).enableServiceSettings();
-  }
-
-  /**
-   * Returns the object with the settings used for calls to enableService.
-   *
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public OperationCallSettings<EnableServiceRequest, EnableServiceResponse, OperationMetadata>
-      enableServiceOperationSettings() {
-    return ((ServiceManagerStubSettings) getStubSettings()).enableServiceOperationSettings();
-  }
-
-  /**
-   * Returns the object with the settings used for calls to disableService.
-   *
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public UnaryCallSettings<DisableServiceRequest, Operation> disableServiceSettings() {
-    return ((ServiceManagerStubSettings) getStubSettings()).disableServiceSettings();
-  }
-
-  /**
-   * Returns the object with the settings used for calls to disableService.
-   *
-   * @deprecated This method is deprecated and will be removed in the next major version update.
-   */
-  @Deprecated
-  public OperationCallSettings<DisableServiceRequest, DisableServiceResponse, OperationMetadata>
-      disableServiceOperationSettings() {
-    return ((ServiceManagerStubSettings) getStubSettings()).disableServiceOperationSettings();
   }
 
   public static final ServiceManagerSettings create(ServiceManagerStubSettings stub)
@@ -451,50 +405,6 @@ public class ServiceManagerSettings extends ClientSettings<ServiceManagerSetting
     public UnaryCallSettings.Builder<GenerateConfigReportRequest, GenerateConfigReportResponse>
         generateConfigReportSettings() {
       return getStubSettingsBuilder().generateConfigReportSettings();
-    }
-
-    /**
-     * Returns the builder for the settings used for calls to enableService.
-     *
-     * @deprecated This method is deprecated and will be removed in the next major version update.
-     */
-    @Deprecated
-    public UnaryCallSettings.Builder<EnableServiceRequest, Operation> enableServiceSettings() {
-      return getStubSettingsBuilder().enableServiceSettings();
-    }
-
-    /**
-     * Returns the builder for the settings used for calls to enableService.
-     *
-     * @deprecated This method is deprecated and will be removed in the next major version update.
-     */
-    @Deprecated
-    public OperationCallSettings.Builder<
-            EnableServiceRequest, EnableServiceResponse, OperationMetadata>
-        enableServiceOperationSettings() {
-      return getStubSettingsBuilder().enableServiceOperationSettings();
-    }
-
-    /**
-     * Returns the builder for the settings used for calls to disableService.
-     *
-     * @deprecated This method is deprecated and will be removed in the next major version update.
-     */
-    @Deprecated
-    public UnaryCallSettings.Builder<DisableServiceRequest, Operation> disableServiceSettings() {
-      return getStubSettingsBuilder().disableServiceSettings();
-    }
-
-    /**
-     * Returns the builder for the settings used for calls to disableService.
-     *
-     * @deprecated This method is deprecated and will be removed in the next major version update.
-     */
-    @Deprecated
-    public OperationCallSettings.Builder<
-            DisableServiceRequest, DisableServiceResponse, OperationMetadata>
-        disableServiceOperationSettings() {
-      return getStubSettingsBuilder().disableServiceOperationSettings();
     }
 
     @Override
