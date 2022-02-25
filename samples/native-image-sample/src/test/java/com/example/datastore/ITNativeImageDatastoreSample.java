@@ -27,9 +27,7 @@ import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Tests for {@link com.example.datastore.NativeImageDatastoreSample}
- */
+/** Tests for {@link com.example.datastore.NativeImageDatastoreSample} */
 public class ITNativeImageDatastoreSample {
 
   private Datastore datastore;
@@ -42,7 +40,6 @@ public class ITNativeImageDatastoreSample {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
-
   }
 
   @Test
@@ -51,8 +48,7 @@ public class ITNativeImageDatastoreSample {
     String testId = "test-id-" + UUID.randomUUID();
     NativeImageDatastoreSample.addEntity(datastore, testId);
     NativeImageDatastoreSample.getEntity(datastore, testId);
-    assertThat(bout.toString()).contains(
-        "Reading entity: " + testId);
+    assertThat(bout.toString()).contains("Reading entity: " + testId);
 
     NativeImageDatastoreSample.deleteEntity(datastore, testId);
   }
@@ -63,12 +59,16 @@ public class ITNativeImageDatastoreSample {
     String testId = "test-id-" + UUID.randomUUID();
     Key key = NativeImageDatastoreSample.createKey(datastore, testId);
     NativeImageDatastoreSample.runTransactionCallable(datastore, key);
-    assertThat(bout.toString()).contains(
-        "Found entity:" + "\n\t\tname=" + testId + "\n\t\tkind=test-kind"
-            + "\n\t\tnamespace=nativeimage-test-namespace"
-            + "\n\t\tproperties={description=StringValue{valueType=STRING, excludeFromIndexes=false,"
-            + " meaning=0, value=hello world}}\n"
-            + "Ran transaction callable.");
+    assertThat(bout.toString())
+        .contains(
+            "Found entity:"
+                + "\n\t\tname="
+                + testId
+                + "\n\t\tkind=test-kind"
+                + "\n\t\tnamespace=nativeimage-test-namespace"
+                + "\n\t\tproperties={description=StringValue{valueType=STRING, excludeFromIndexes=false,"
+                + " meaning=0, value=hello world}}\n"
+                + "Ran transaction callable.");
 
     NativeImageDatastoreSample.deleteEntity(datastore, "test-id");
   }

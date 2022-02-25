@@ -232,6 +232,7 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-datastore/tre
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
+| Native Image Datastore Sample | [source code](https://github.com/googleapis/java-datastore/blob/main/samples/native-image-sample/src/main/java/com/example/datastore/NativeImageDatastoreSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datastore&page=editor&open_in_editor=samples/native-image-sample/src/main/java/com/example/datastore/NativeImageDatastoreSample.java) |
 | Quickstart Sample | [source code](https://github.com/googleapis/java-datastore/blob/main/samples/snippets/src/main/java/com/example/datastore/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datastore&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datastore/QuickstartSample.java) |
 | Task List | [source code](https://github.com/googleapis/java-datastore/blob/main/samples/snippets/src/main/java/com/google/datastore/snippets/TaskList.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datastore&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/datastore/snippets/TaskList.java) |
 

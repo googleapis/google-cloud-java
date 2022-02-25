@@ -28,9 +28,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.UUID;
 
-/**
- * Sample Datastore Application.
- */
+/** Sample Datastore Application. */
 public class NativeImageDatastoreSample {
 
   /* Datastore namespace where entities will be created. */
@@ -39,9 +37,7 @@ public class NativeImageDatastoreSample {
   /* Datastore kind used. */
   private static final String TEST_KIND = "test-kind";
 
-  /**
-   * Entrypoint to the Datastore sample application.
-   */
+  /** Entrypoint to the Datastore sample application. */
   public static void main(String[] args) {
     Instant startTime = Instant.now();
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
@@ -64,9 +60,7 @@ public class NativeImageDatastoreSample {
 
   static void addEntity(Datastore datastore, String id) {
     Key key = createKey(datastore, id);
-    Entity entity = Entity.newBuilder(key)
-        .set("description", "hello world")
-        .build();
+    Entity entity = Entity.newBuilder(key).set("description", "hello world").build();
     datastore.add(entity);
     System.out.println("Successfully added entity.");
   }
@@ -90,32 +84,35 @@ public class NativeImageDatastoreSample {
   }
 
   static void runTransactionCallable(Datastore datastore, Key entityKey) {
-    datastore.runInTransaction(client -> {
-      Entity entity = Entity.newBuilder(entityKey)
-          .set("description", "hello world")
-          .build();
-      datastore.add(entity);
+    datastore.runInTransaction(
+        client -> {
+          Entity entity = Entity.newBuilder(entityKey).set("description", "hello world").build();
+          datastore.add(entity);
 
-      StructuredQuery query =
-          Query.newEntityQueryBuilder()
-              .setNamespace(TEST_NAMESPACE)
-              .setKind(TEST_KIND)
-              .build();
+          StructuredQuery query =
+              Query.newEntityQueryBuilder().setNamespace(TEST_NAMESPACE).setKind(TEST_KIND).build();
 
-      QueryResults<Entity> results = datastore.run(query);
-      while (results.hasNext()) {
-        Entity result = results.next();
-        String name = result.getKey().getName();
-        String kind = result.getKey().getKind();
-        String namespace = result.getKey().getNamespace();
-        System.out.println(
-            "Found entity:" + "\n\t\tname=" + name + "\n\t\tkind=" + kind + "\n\t\tnamespace="
-                + namespace + "\n\t\tproperties=" + result.getProperties().toString());
-      }
+          QueryResults<Entity> results = datastore.run(query);
+          while (results.hasNext()) {
+            Entity result = results.next();
+            String name = result.getKey().getName();
+            String kind = result.getKey().getKind();
+            String namespace = result.getKey().getNamespace();
+            System.out.println(
+                "Found entity:"
+                    + "\n\t\tname="
+                    + name
+                    + "\n\t\tkind="
+                    + kind
+                    + "\n\t\tnamespace="
+                    + namespace
+                    + "\n\t\tproperties="
+                    + result.getProperties().toString());
+          }
 
-      datastore.delete(entityKey);
-      return null;
-    });
+          datastore.delete(entityKey);
+          return null;
+        });
 
     System.out.println("Ran transaction callable.");
   }
@@ -129,9 +126,6 @@ public class NativeImageDatastoreSample {
   }
 
   static Key createKey(Datastore datastore, String id) {
-    return datastore.newKeyFactory()
-        .setNamespace(TEST_NAMESPACE)
-        .setKind(TEST_KIND)
-        .newKey(id);
+    return datastore.newKeyFactory().setNamespace(TEST_NAMESPACE).setKind(TEST_KIND).newKey(id);
   }
 }
