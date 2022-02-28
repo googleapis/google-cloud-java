@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.7](https://github.com/googleapis/java-iot/compare/v2.1.6...v2.1.7) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#686](https://github.com/googleapis/java-iot/issues/686)) ([d4c341f](https://github.com/googleapis/java-iot/commit/d4c341fd778fe77d1c6e22807beb5772796460b9))
+
 ### [2.1.6](https://github.com/googleapis/java-iot/compare/v2.1.5...v2.1.6) (2022-02-03)
 
 
