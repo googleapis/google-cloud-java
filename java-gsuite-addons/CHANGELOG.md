@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.8](https://github.com/googleapis/java-gsuite-addons/compare/v2.1.7...v2.1.8) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#190](https://github.com/googleapis/java-gsuite-addons/issues/190)) ([55e545e](https://github.com/googleapis/java-gsuite-addons/commit/55e545e56f13b414db16306815caac08f0eeedbc))
+
 ### [2.1.7](https://github.com/googleapis/java-gsuite-addons/compare/v2.1.6...v2.1.7) (2022-02-11)
 
 
