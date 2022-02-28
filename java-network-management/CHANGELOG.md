@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.8](https://github.com/googleapis/java-network-management/compare/v1.1.7...v1.1.8) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#136](https://github.com/googleapis/java-network-management/issues/136)) ([0a0df2e](https://github.com/googleapis/java-network-management/commit/0a0df2ef2dd97025693517ed85c76f81f820a208))
+
 ### [1.1.7](https://github.com/googleapis/java-network-management/compare/v1.1.6...v1.1.7) (2022-02-11)
 
 
