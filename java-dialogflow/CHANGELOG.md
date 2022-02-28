@@ -1,5 +1,12 @@
 # Changelog
 
+### [4.5.4](https://github.com/googleapis/java-dialogflow/compare/v4.5.3...v4.5.4) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#862](https://github.com/googleapis/java-dialogflow/issues/862)) ([e3f4858](https://github.com/googleapis/java-dialogflow/commit/e3f4858b3d7b664e91c4598abe4c520b057197d2))
+
 ### [4.5.3](https://github.com/googleapis/java-dialogflow/compare/v4.5.2...v4.5.3) (2022-02-15)
 
 
