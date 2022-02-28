@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.2](https://github.com/googleapis/java-storage-transfer/compare/v1.0.1...v1.0.2) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#114](https://github.com/googleapis/java-storage-transfer/issues/114)) ([bf37868](https://github.com/googleapis/java-storage-transfer/commit/bf37868f549e443eabdecb6955364e3dbdfa330b))
+
 ### [1.0.1](https://github.com/googleapis/java-storage-transfer/compare/v1.0.0...v1.0.1) (2022-02-11)
 
 
