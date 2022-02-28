@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.7](https://github.com/googleapis/java-appengine-admin/compare/v2.1.6...v2.1.7) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#201](https://github.com/googleapis/java-appengine-admin/issues/201)) ([0a485ac](https://github.com/googleapis/java-appengine-admin/commit/0a485aca0e9b93159c7c6cbf064a4abb48078525))
+
 ### [2.1.6](https://github.com/googleapis/java-appengine-admin/compare/v2.1.5...v2.1.6) (2022-02-11)
 
 
