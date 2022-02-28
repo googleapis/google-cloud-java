@@ -410,12 +410,24 @@ public class ITBigQueryWriteManualClientTest {
       JSONArray jsonArr3 = new JSONArray();
       jsonArr3.put(row4);
 
-      LOG.info("Sending two more messages");
+      JSONObject row5 = new JSONObject();
+      // Add another ARRAY<BYTES> using a more idiomatic way
+      JSONArray testArr = new JSONArray(); // create empty JSONArray
+      testArr.put(0, ByteString.copyFromUtf8("a").toByteArray()); // insert 1st bytes array
+      testArr.put(1, ByteString.copyFromUtf8("b").toByteArray()); // insert 2nd bytes array
+      row5.put("test_bytestring_repeated", testArr);
+      JSONArray jsonArr4 = new JSONArray();
+      jsonArr4.put(row5);
+
+      LOG.info("Sending three more messages");
       ApiFuture<AppendRowsResponse> response2 = jsonStreamWriter.append(jsonArr2, -1);
-      LOG.info("Sending one more message");
+      LOG.info("Sending two more messages");
       ApiFuture<AppendRowsResponse> response3 = jsonStreamWriter.append(jsonArr3, -1);
+      LOG.info("Sending one more message");
+      ApiFuture<AppendRowsResponse> response4 = jsonStreamWriter.append(jsonArr4, -1);
       Assert.assertFalse(response2.get().getAppendResult().hasOffset());
       Assert.assertFalse(response3.get().getAppendResult().hasOffset());
+      Assert.assertFalse(response4.get().getAppendResult().hasOffset());
 
       TableResult result =
           bigquery.listTableData(
@@ -430,6 +442,9 @@ public class ITBigQueryWriteManualClientTest {
       assertEquals("bbb", iter.next().get(0).getStringValue());
       assertEquals("ccc", iter.next().get(0).getStringValue());
       assertEquals("ddd", iter.next().get(0).getStringValue());
+      FieldValueList currentRow2 = iter.next();
+      assertEquals("YQ==", currentRow2.get(3).getRepeatedValue().get(0).getStringValue());
+      assertEquals("Yg==", currentRow2.get(3).getRepeatedValue().get(1).getStringValue());
       assertEquals(false, iter.hasNext());
     }
   }
