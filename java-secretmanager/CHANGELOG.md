@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.2](https://github.com/googleapis/java-secretmanager/compare/v2.1.1...v2.1.2) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#708](https://github.com/googleapis/java-secretmanager/issues/708)) ([19d54ed](https://github.com/googleapis/java-secretmanager/commit/19d54ed4c9ec111354635d3b081b8a7d0a73835c))
+
 ### [2.1.1](https://github.com/googleapis/java-secretmanager/compare/v2.1.0...v2.1.1) (2022-02-11)
 
 
