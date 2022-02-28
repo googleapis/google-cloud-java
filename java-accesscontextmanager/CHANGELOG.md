@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.7](https://github.com/googleapis/java-accesscontextmanager/compare/v1.2.6...v1.2.7) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#310](https://github.com/googleapis/java-accesscontextmanager/issues/310)) ([e8e003f](https://github.com/googleapis/java-accesscontextmanager/commit/e8e003fa89b162f345bbed63c609a58dec8028b5))
+
 ### [1.2.6](https://github.com/googleapis/java-accesscontextmanager/compare/v1.2.5...v1.2.6) (2022-02-15)
 
 
