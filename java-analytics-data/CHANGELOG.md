@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.11.3](https://github.com/googleapis/java-analytics-data/compare/v0.11.2...v0.11.3) (2022-02-28)
+
+
+### Dependencies
+
+* update dependency com.google.auth:google-auth-library-oauth2-http to v1.5.3 ([#421](https://github.com/googleapis/java-analytics-data/issues/421)) ([99a3382](https://github.com/googleapis/java-analytics-data/commit/99a33829b10b1f56be86690b4218a7ccc7970f0e))
+
 ### [0.11.2](https://github.com/googleapis/java-analytics-data/compare/v0.11.1...v0.11.2) (2022-02-11)
 
 
