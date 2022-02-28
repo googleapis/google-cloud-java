@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.19](https://github.com/googleapis/java-video-intelligence/compare/v2.0.18...v2.0.19) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#827](https://github.com/googleapis/java-video-intelligence/issues/827)) ([8f6a283](https://github.com/googleapis/java-video-intelligence/commit/8f6a283427ad5718705518ea80fe1efd1cf71844))
+
 ### [2.0.18](https://github.com/googleapis/java-video-intelligence/compare/v2.0.17...v2.0.18) (2022-02-15)
 
 
