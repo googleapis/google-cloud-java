@@ -61,7 +61,6 @@ public class TableExistsIT {
     System.setOut(out);
     // create a temporary table
     tableName = "MY_TABLE_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
-    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, Schema.of());
   }
 
   @After
@@ -76,6 +75,9 @@ public class TableExistsIT {
 
   @Test
   public void testTableExists() {
+    TableExists.tableExists(BIGQUERY_DATASET_NAME, tableName);
+    assertThat(bout.toString()).contains("Table not found");
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, Schema.of());
     TableExists.tableExists(BIGQUERY_DATASET_NAME, tableName);
     assertThat(bout.toString()).contains("Table already exist");
   }
