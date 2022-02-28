@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.4](https://github.com/googleapis/java-bigqueryreservation/compare/v2.2.3...v2.2.4) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#621](https://github.com/googleapis/java-bigqueryreservation/issues/621)) ([9ac813c](https://github.com/googleapis/java-bigqueryreservation/commit/9ac813c984887781829adadde23fe7872d63af42))
+
 ### [2.2.3](https://github.com/googleapis/java-bigqueryreservation/compare/v2.2.2...v2.2.3) (2022-02-11)
 
 
