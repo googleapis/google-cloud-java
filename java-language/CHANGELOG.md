@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.8](https://github.com/googleapis/java-language/compare/v2.1.7...v2.1.8) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#808](https://github.com/googleapis/java-language/issues/808)) ([d0bdffc](https://github.com/googleapis/java-language/commit/d0bdffc7da94c916beb12888569c510f5ed816da))
+
 ### [2.1.7](https://github.com/googleapis/java-language/compare/v2.1.6...v2.1.7) (2022-02-11)
 
 
