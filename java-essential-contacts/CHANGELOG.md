@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.8](https://github.com/googleapis/java-essential-contacts/compare/v2.1.7...v2.1.8) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#185](https://github.com/googleapis/java-essential-contacts/issues/185)) ([e8c86da](https://github.com/googleapis/java-essential-contacts/commit/e8c86dada00b3dd98590a59b59179b0c18a51061))
+
 ### [2.1.7](https://github.com/googleapis/java-essential-contacts/compare/v2.1.6...v2.1.7) (2022-02-11)
 
 
