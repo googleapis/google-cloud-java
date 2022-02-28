@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.2](https://github.com/googleapis/java-eventarc/compare/v1.2.1...v1.2.2) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#154](https://github.com/googleapis/java-eventarc/issues/154)) ([7cf1b3b](https://github.com/googleapis/java-eventarc/commit/7cf1b3bd3bc66722d2d90f62a265f4bb050d81af))
+
 ### [1.2.1](https://github.com/googleapis/java-eventarc/compare/v1.2.0...v1.2.1) (2022-02-11)
 
 
