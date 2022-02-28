@@ -204,6 +204,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
               detached_ = input.readBool();
               break;
             }
+          case 128:
+            {
+              enableExactlyOnceDelivery_ = input.readBool();
+              break;
+            }
           case 138:
             {
               com.google.protobuf.Duration.Builder subBuilder = null;
@@ -946,6 +951,32 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     return detached_;
   }
 
+  public static final int ENABLE_EXACTLY_ONCE_DELIVERY_FIELD_NUMBER = 16;
+  private boolean enableExactlyOnceDelivery_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, Pub/Sub provides the following guarantees for the delivery of
+   * a message with a given value of `message_id` on this subscription:
+   * * The message sent to a subscriber is guaranteed not to be resent
+   * before the message's acknowledgement deadline expires.
+   * * An acknowledged message will not be resent to a subscriber.
+   * Note that subscribers may still receive multiple copies of a message
+   * when `enable_exactly_once_delivery` is true if the message was published
+   * multiple times by a publisher client. These copies are  considered distinct
+   * by Pub/Sub and have distinct `message_id` values.
+   * </pre>
+   *
+   * <code>bool enable_exactly_once_delivery = 16;</code>
+   *
+   * @return The enableExactlyOnceDelivery.
+   */
+  @java.lang.Override
+  public boolean getEnableExactlyOnceDelivery() {
+    return enableExactlyOnceDelivery_;
+  }
+
   public static final int TOPIC_MESSAGE_RETENTION_DURATION_FIELD_NUMBER = 17;
   private com.google.protobuf.Duration topicMessageRetentionDuration_;
   /**
@@ -1067,6 +1098,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (detached_ != false) {
       output.writeBool(15, detached_);
     }
+    if (enableExactlyOnceDelivery_ != false) {
+      output.writeBool(16, enableExactlyOnceDelivery_);
+    }
     if (topicMessageRetentionDuration_ != null) {
       output.writeMessage(17, getTopicMessageRetentionDuration());
     }
@@ -1127,6 +1161,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (detached_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, detached_);
     }
+    if (enableExactlyOnceDelivery_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, enableExactlyOnceDelivery_);
+    }
     if (topicMessageRetentionDuration_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1175,6 +1212,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       if (!getRetryPolicy().equals(other.getRetryPolicy())) return false;
     }
     if (getDetached() != other.getDetached()) return false;
+    if (getEnableExactlyOnceDelivery() != other.getEnableExactlyOnceDelivery()) return false;
     if (hasTopicMessageRetentionDuration() != other.hasTopicMessageRetentionDuration())
       return false;
     if (hasTopicMessageRetentionDuration()) {
@@ -1230,6 +1268,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DETACHED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDetached());
+    hash = (37 * hash) + ENABLE_EXACTLY_ONCE_DELIVERY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableExactlyOnceDelivery());
     if (hasTopicMessageRetentionDuration()) {
       hash = (37 * hash) + TOPIC_MESSAGE_RETENTION_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getTopicMessageRetentionDuration().hashCode();
@@ -1443,6 +1483,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       detached_ = false;
 
+      enableExactlyOnceDelivery_ = false;
+
       if (topicMessageRetentionDurationBuilder_ == null) {
         topicMessageRetentionDuration_ = null;
       } else {
@@ -1510,6 +1552,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         result.retryPolicy_ = retryPolicyBuilder_.build();
       }
       result.detached_ = detached_;
+      result.enableExactlyOnceDelivery_ = enableExactlyOnceDelivery_;
       if (topicMessageRetentionDurationBuilder_ == null) {
         result.topicMessageRetentionDuration_ = topicMessageRetentionDuration_;
       } else {
@@ -1603,6 +1646,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getDetached() != false) {
         setDetached(other.getDetached());
+      }
+      if (other.getEnableExactlyOnceDelivery() != false) {
+        setEnableExactlyOnceDelivery(other.getEnableExactlyOnceDelivery());
       }
       if (other.hasTopicMessageRetentionDuration()) {
         mergeTopicMessageRetentionDuration(other.getTopicMessageRetentionDuration());
@@ -3608,6 +3654,82 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDetached() {
 
       detached_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableExactlyOnceDelivery_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, Pub/Sub provides the following guarantees for the delivery of
+     * a message with a given value of `message_id` on this subscription:
+     * * The message sent to a subscriber is guaranteed not to be resent
+     * before the message's acknowledgement deadline expires.
+     * * An acknowledged message will not be resent to a subscriber.
+     * Note that subscribers may still receive multiple copies of a message
+     * when `enable_exactly_once_delivery` is true if the message was published
+     * multiple times by a publisher client. These copies are  considered distinct
+     * by Pub/Sub and have distinct `message_id` values.
+     * </pre>
+     *
+     * <code>bool enable_exactly_once_delivery = 16;</code>
+     *
+     * @return The enableExactlyOnceDelivery.
+     */
+    @java.lang.Override
+    public boolean getEnableExactlyOnceDelivery() {
+      return enableExactlyOnceDelivery_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, Pub/Sub provides the following guarantees for the delivery of
+     * a message with a given value of `message_id` on this subscription:
+     * * The message sent to a subscriber is guaranteed not to be resent
+     * before the message's acknowledgement deadline expires.
+     * * An acknowledged message will not be resent to a subscriber.
+     * Note that subscribers may still receive multiple copies of a message
+     * when `enable_exactly_once_delivery` is true if the message was published
+     * multiple times by a publisher client. These copies are  considered distinct
+     * by Pub/Sub and have distinct `message_id` values.
+     * </pre>
+     *
+     * <code>bool enable_exactly_once_delivery = 16;</code>
+     *
+     * @param value The enableExactlyOnceDelivery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableExactlyOnceDelivery(boolean value) {
+
+      enableExactlyOnceDelivery_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, Pub/Sub provides the following guarantees for the delivery of
+     * a message with a given value of `message_id` on this subscription:
+     * * The message sent to a subscriber is guaranteed not to be resent
+     * before the message's acknowledgement deadline expires.
+     * * An acknowledged message will not be resent to a subscriber.
+     * Note that subscribers may still receive multiple copies of a message
+     * when `enable_exactly_once_delivery` is true if the message was published
+     * multiple times by a publisher client. These copies are  considered distinct
+     * by Pub/Sub and have distinct `message_id` values.
+     * </pre>
+     *
+     * <code>bool enable_exactly_once_delivery = 16;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableExactlyOnceDelivery() {
+
+      enableExactlyOnceDelivery_ = false;
       onChanged();
       return this;
     }

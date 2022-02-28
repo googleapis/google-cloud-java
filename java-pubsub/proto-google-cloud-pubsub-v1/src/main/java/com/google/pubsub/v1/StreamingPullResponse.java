@@ -83,6 +83,25 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
                       com.google.pubsub.v1.ReceivedMessage.parser(), extensionRegistry));
               break;
             }
+          case 26:
+            {
+              com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.Builder
+                  subBuilder = null;
+              if (modifyAckDeadlineConfirmation_ != null) {
+                subBuilder = modifyAckDeadlineConfirmation_.toBuilder();
+              }
+              modifyAckDeadlineConfirmation_ =
+                  input.readMessage(
+                      com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(modifyAckDeadlineConfirmation_);
+                modifyAckDeadlineConfirmation_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 34:
             {
               com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties.Builder subBuilder =
@@ -97,6 +116,24 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
               if (subBuilder != null) {
                 subBuilder.mergeFrom(subscriptionProperties_);
                 subscriptionProperties_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 42:
+            {
+              com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.Builder
+                  subBuilder = null;
+              if (acknowledgeConfirmation_ != null) {
+                subBuilder = acknowledgeConfirmation_.toBuilder();
+              }
+              acknowledgeConfirmation_ =
+                  input.readMessage(
+                      com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(acknowledgeConfirmation_);
+                acknowledgeConfirmation_ = subBuilder.buildPartial();
               }
 
               break;
@@ -138,10 +175,2639 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
             com.google.pubsub.v1.StreamingPullResponse.Builder.class);
   }
 
+  public interface AcknowledgeConfirmationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @return A list containing the ackIds.
+     */
+    java.util.List<java.lang.String> getAckIdsList();
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @return The count of ackIds.
+     */
+    int getAckIdsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The ackIds at the given index.
+     */
+    java.lang.String getAckIds(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the ackIds at the given index.
+     */
+    com.google.protobuf.ByteString getAckIdsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @return A list containing the invalidAckIds.
+     */
+    java.util.List<java.lang.String> getInvalidAckIdsList();
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @return The count of invalidAckIds.
+     */
+    int getInvalidAckIdsCount();
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The invalidAckIds at the given index.
+     */
+    java.lang.String getInvalidAckIds(int index);
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the invalidAckIds at the given index.
+     */
+    com.google.protobuf.ByteString getInvalidAckIdsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were out of order.
+     * </pre>
+     *
+     * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+     *
+     * @return A list containing the unorderedAckIds.
+     */
+    java.util.List<java.lang.String> getUnorderedAckIdsList();
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were out of order.
+     * </pre>
+     *
+     * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+     *
+     * @return The count of unorderedAckIds.
+     */
+    int getUnorderedAckIdsCount();
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were out of order.
+     * </pre>
+     *
+     * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The unorderedAckIds at the given index.
+     */
+    java.lang.String getUnorderedAckIds(int index);
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were out of order.
+     * </pre>
+     *
+     * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the unorderedAckIds at the given index.
+     */
+    com.google.protobuf.ByteString getUnorderedAckIdsBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Acknowledgement IDs sent in one or more previous requests to acknowledge a
+   * previously received message.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation}
+   */
+  public static final class AcknowledgeConfirmation extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation)
+      AcknowledgeConfirmationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AcknowledgeConfirmation.newBuilder() to construct.
+    private AcknowledgeConfirmation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AcknowledgeConfirmation() {
+      ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      invalidAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      unorderedAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AcknowledgeConfirmation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private AcknowledgeConfirmation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  ackIds_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                ackIds_.add(s);
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  invalidAckIds_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                invalidAckIds_.add(s);
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                  unorderedAckIds_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                unorderedAckIds_.add(s);
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          ackIds_ = ackIds_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          invalidAckIds_ = invalidAckIds_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          unorderedAckIds_ = unorderedAckIds_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_StreamingPullResponse_AcknowledgeConfirmation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_StreamingPullResponse_AcknowledgeConfirmation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.class,
+              com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.Builder.class);
+    }
+
+    public static final int ACK_IDS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList ackIds_;
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @return A list containing the ackIds.
+     */
+    public com.google.protobuf.ProtocolStringList getAckIdsList() {
+      return ackIds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @return The count of ackIds.
+     */
+    public int getAckIdsCount() {
+      return ackIds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The ackIds at the given index.
+     */
+    public java.lang.String getAckIds(int index) {
+      return ackIds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the ackIds at the given index.
+     */
+    public com.google.protobuf.ByteString getAckIdsBytes(int index) {
+      return ackIds_.getByteString(index);
+    }
+
+    public static final int INVALID_ACK_IDS_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList invalidAckIds_;
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @return A list containing the invalidAckIds.
+     */
+    public com.google.protobuf.ProtocolStringList getInvalidAckIdsList() {
+      return invalidAckIds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @return The count of invalidAckIds.
+     */
+    public int getInvalidAckIdsCount() {
+      return invalidAckIds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The invalidAckIds at the given index.
+     */
+    public java.lang.String getInvalidAckIds(int index) {
+      return invalidAckIds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the invalidAckIds at the given index.
+     */
+    public com.google.protobuf.ByteString getInvalidAckIdsBytes(int index) {
+      return invalidAckIds_.getByteString(index);
+    }
+
+    public static final int UNORDERED_ACK_IDS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList unorderedAckIds_;
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were out of order.
+     * </pre>
+     *
+     * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+     *
+     * @return A list containing the unorderedAckIds.
+     */
+    public com.google.protobuf.ProtocolStringList getUnorderedAckIdsList() {
+      return unorderedAckIds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were out of order.
+     * </pre>
+     *
+     * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+     *
+     * @return The count of unorderedAckIds.
+     */
+    public int getUnorderedAckIdsCount() {
+      return unorderedAckIds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were out of order.
+     * </pre>
+     *
+     * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The unorderedAckIds at the given index.
+     */
+    public java.lang.String getUnorderedAckIds(int index) {
+      return unorderedAckIds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were out of order.
+     * </pre>
+     *
+     * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the unorderedAckIds at the given index.
+     */
+    public com.google.protobuf.ByteString getUnorderedAckIdsBytes(int index) {
+      return unorderedAckIds_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < ackIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ackIds_.getRaw(i));
+      }
+      for (int i = 0; i < invalidAckIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, invalidAckIds_.getRaw(i));
+      }
+      for (int i = 0; i < unorderedAckIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, unorderedAckIds_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < ackIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(ackIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAckIdsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < invalidAckIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(invalidAckIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getInvalidAckIdsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < unorderedAckIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(unorderedAckIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getUnorderedAckIdsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation other =
+          (com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation) obj;
+
+      if (!getAckIdsList().equals(other.getAckIdsList())) return false;
+      if (!getInvalidAckIdsList().equals(other.getInvalidAckIdsList())) return false;
+      if (!getUnorderedAckIdsList().equals(other.getUnorderedAckIdsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAckIdsCount() > 0) {
+        hash = (37 * hash) + ACK_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getAckIdsList().hashCode();
+      }
+      if (getInvalidAckIdsCount() > 0) {
+        hash = (37 * hash) + INVALID_ACK_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getInvalidAckIdsList().hashCode();
+      }
+      if (getUnorderedAckIdsCount() > 0) {
+        hash = (37 * hash) + UNORDERED_ACK_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getUnorderedAckIdsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledgement IDs sent in one or more previous requests to acknowledge a
+     * previously received message.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation)
+        com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_StreamingPullResponse_AcknowledgeConfirmation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_StreamingPullResponse_AcknowledgeConfirmation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.class,
+                com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.Builder.class);
+      }
+
+      // Construct using
+      // com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        invalidAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        unorderedAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_StreamingPullResponse_AcknowledgeConfirmation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+          getDefaultInstanceForType() {
+        return com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation build() {
+        com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation buildPartial() {
+        com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation result =
+            new com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          ackIds_ = ackIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.ackIds_ = ackIds_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          invalidAckIds_ = invalidAckIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.invalidAckIds_ = invalidAckIds_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          unorderedAckIds_ = unorderedAckIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.unorderedAckIds_ = unorderedAckIds_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation) {
+          return mergeFrom(
+              (com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation other) {
+        if (other
+            == com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+                .getDefaultInstance()) return this;
+        if (!other.ackIds_.isEmpty()) {
+          if (ackIds_.isEmpty()) {
+            ackIds_ = other.ackIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAckIdsIsMutable();
+            ackIds_.addAll(other.ackIds_);
+          }
+          onChanged();
+        }
+        if (!other.invalidAckIds_.isEmpty()) {
+          if (invalidAckIds_.isEmpty()) {
+            invalidAckIds_ = other.invalidAckIds_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureInvalidAckIdsIsMutable();
+            invalidAckIds_.addAll(other.invalidAckIds_);
+          }
+          onChanged();
+        }
+        if (!other.unorderedAckIds_.isEmpty()) {
+          if (unorderedAckIds_.isEmpty()) {
+            unorderedAckIds_ = other.unorderedAckIds_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureUnorderedAckIdsIsMutable();
+            unorderedAckIds_.addAll(other.unorderedAckIds_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList ackIds_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureAckIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          ackIds_ = new com.google.protobuf.LazyStringArrayList(ackIds_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @return A list containing the ackIds.
+       */
+      public com.google.protobuf.ProtocolStringList getAckIdsList() {
+        return ackIds_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @return The count of ackIds.
+       */
+      public int getAckIdsCount() {
+        return ackIds_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The ackIds at the given index.
+       */
+      public java.lang.String getAckIds(int index) {
+        return ackIds_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the ackIds at the given index.
+       */
+      public com.google.protobuf.ByteString getAckIdsBytes(int index) {
+        return ackIds_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The ackIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAckIds(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAckIdsIsMutable();
+        ackIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @param value The ackIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAckIds(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAckIdsIsMutable();
+        ackIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @param values The ackIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAckIds(java.lang.Iterable<java.lang.String> values) {
+        ensureAckIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ackIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAckIds() {
+        ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @param value The bytes of the ackIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAckIdsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureAckIdsIsMutable();
+        ackIds_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList invalidAckIds_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureInvalidAckIdsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          invalidAckIds_ = new com.google.protobuf.LazyStringArrayList(invalidAckIds_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @return A list containing the invalidAckIds.
+       */
+      public com.google.protobuf.ProtocolStringList getInvalidAckIdsList() {
+        return invalidAckIds_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @return The count of invalidAckIds.
+       */
+      public int getInvalidAckIdsCount() {
+        return invalidAckIds_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The invalidAckIds at the given index.
+       */
+      public java.lang.String getInvalidAckIds(int index) {
+        return invalidAckIds_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the invalidAckIds at the given index.
+       */
+      public com.google.protobuf.ByteString getInvalidAckIdsBytes(int index) {
+        return invalidAckIds_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The invalidAckIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInvalidAckIds(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInvalidAckIdsIsMutable();
+        invalidAckIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @param value The invalidAckIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addInvalidAckIds(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInvalidAckIdsIsMutable();
+        invalidAckIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @param values The invalidAckIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllInvalidAckIds(java.lang.Iterable<java.lang.String> values) {
+        ensureInvalidAckIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, invalidAckIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInvalidAckIds() {
+        invalidAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @param value The bytes of the invalidAckIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addInvalidAckIdsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureInvalidAckIdsIsMutable();
+        invalidAckIds_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList unorderedAckIds_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureUnorderedAckIdsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          unorderedAckIds_ = new com.google.protobuf.LazyStringArrayList(unorderedAckIds_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were out of order.
+       * </pre>
+       *
+       * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+       *
+       * @return A list containing the unorderedAckIds.
+       */
+      public com.google.protobuf.ProtocolStringList getUnorderedAckIdsList() {
+        return unorderedAckIds_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were out of order.
+       * </pre>
+       *
+       * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+       *
+       * @return The count of unorderedAckIds.
+       */
+      public int getUnorderedAckIdsCount() {
+        return unorderedAckIds_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were out of order.
+       * </pre>
+       *
+       * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The unorderedAckIds at the given index.
+       */
+      public java.lang.String getUnorderedAckIds(int index) {
+        return unorderedAckIds_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were out of order.
+       * </pre>
+       *
+       * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the unorderedAckIds at the given index.
+       */
+      public com.google.protobuf.ByteString getUnorderedAckIdsBytes(int index) {
+        return unorderedAckIds_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were out of order.
+       * </pre>
+       *
+       * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The unorderedAckIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnorderedAckIds(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUnorderedAckIdsIsMutable();
+        unorderedAckIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were out of order.
+       * </pre>
+       *
+       * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+       *
+       * @param value The unorderedAckIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUnorderedAckIds(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUnorderedAckIdsIsMutable();
+        unorderedAckIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were out of order.
+       * </pre>
+       *
+       * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+       *
+       * @param values The unorderedAckIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUnorderedAckIds(java.lang.Iterable<java.lang.String> values) {
+        ensureUnorderedAckIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unorderedAckIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were out of order.
+       * </pre>
+       *
+       * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUnorderedAckIds() {
+        unorderedAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were out of order.
+       * </pre>
+       *
+       * <code>repeated string unordered_ack_ids = 3 [ctype = CORD];</code>
+       *
+       * @param value The bytes of the unorderedAckIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUnorderedAckIdsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureUnorderedAckIdsIsMutable();
+        unorderedAckIds_.add(value);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation)
+    private static final com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation();
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AcknowledgeConfirmation> PARSER =
+        new com.google.protobuf.AbstractParser<AcknowledgeConfirmation>() {
+          @java.lang.Override
+          public AcknowledgeConfirmation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new AcknowledgeConfirmation(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<AcknowledgeConfirmation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AcknowledgeConfirmation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ModifyAckDeadlineConfirmationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @return A list containing the ackIds.
+     */
+    java.util.List<java.lang.String> getAckIdsList();
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @return The count of ackIds.
+     */
+    int getAckIdsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The ackIds at the given index.
+     */
+    java.lang.String getAckIds(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the ackIds at the given index.
+     */
+    com.google.protobuf.ByteString getAckIdsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @return A list containing the invalidAckIds.
+     */
+    java.util.List<java.lang.String> getInvalidAckIdsList();
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @return The count of invalidAckIds.
+     */
+    int getInvalidAckIdsCount();
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The invalidAckIds at the given index.
+     */
+    java.lang.String getInvalidAckIds(int index);
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the invalidAckIds at the given index.
+     */
+    com.google.protobuf.ByteString getInvalidAckIdsBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Acknowledgement IDs sent in one or more previous requests to modify the
+   * deadline for a specific message.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation}
+   */
+  public static final class ModifyAckDeadlineConfirmation
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation)
+      ModifyAckDeadlineConfirmationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ModifyAckDeadlineConfirmation.newBuilder() to construct.
+    private ModifyAckDeadlineConfirmation(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ModifyAckDeadlineConfirmation() {
+      ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      invalidAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ModifyAckDeadlineConfirmation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ModifyAckDeadlineConfirmation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  ackIds_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                ackIds_.add(s);
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  invalidAckIds_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                invalidAckIds_.add(s);
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          ackIds_ = ackIds_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          invalidAckIds_ = invalidAckIds_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_StreamingPullResponse_ModifyAckDeadlineConfirmation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_StreamingPullResponse_ModifyAckDeadlineConfirmation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.class,
+              com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.Builder
+                  .class);
+    }
+
+    public static final int ACK_IDS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList ackIds_;
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @return A list containing the ackIds.
+     */
+    public com.google.protobuf.ProtocolStringList getAckIdsList() {
+      return ackIds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @return The count of ackIds.
+     */
+    public int getAckIdsCount() {
+      return ackIds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The ackIds at the given index.
+     */
+    public java.lang.String getAckIds(int index) {
+      return ackIds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Successfully processed acknowledgement IDs.
+     * </pre>
+     *
+     * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the ackIds at the given index.
+     */
+    public com.google.protobuf.ByteString getAckIdsBytes(int index) {
+      return ackIds_.getByteString(index);
+    }
+
+    public static final int INVALID_ACK_IDS_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList invalidAckIds_;
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @return A list containing the invalidAckIds.
+     */
+    public com.google.protobuf.ProtocolStringList getInvalidAckIdsList() {
+      return invalidAckIds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @return The count of invalidAckIds.
+     */
+    public int getInvalidAckIdsCount() {
+      return invalidAckIds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The invalidAckIds at the given index.
+     */
+    public java.lang.String getInvalidAckIds(int index) {
+      return invalidAckIds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of acknowledgement IDs that were malformed or whose acknowledgement
+     * deadline has expired.
+     * </pre>
+     *
+     * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the invalidAckIds at the given index.
+     */
+    public com.google.protobuf.ByteString getInvalidAckIdsBytes(int index) {
+      return invalidAckIds_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < ackIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ackIds_.getRaw(i));
+      }
+      for (int i = 0; i < invalidAckIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, invalidAckIds_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < ackIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(ackIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAckIdsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < invalidAckIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(invalidAckIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getInvalidAckIdsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation other =
+          (com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation) obj;
+
+      if (!getAckIdsList().equals(other.getAckIdsList())) return false;
+      if (!getInvalidAckIdsList().equals(other.getInvalidAckIdsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAckIdsCount() > 0) {
+        hash = (37 * hash) + ACK_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getAckIdsList().hashCode();
+      }
+      if (getInvalidAckIdsCount() > 0) {
+        hash = (37 * hash) + INVALID_ACK_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getInvalidAckIdsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledgement IDs sent in one or more previous requests to modify the
+     * deadline for a specific message.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation)
+        com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_StreamingPullResponse_ModifyAckDeadlineConfirmation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_StreamingPullResponse_ModifyAckDeadlineConfirmation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.class,
+                com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        invalidAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_StreamingPullResponse_ModifyAckDeadlineConfirmation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+          getDefaultInstanceForType() {
+        return com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation build() {
+        com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+          buildPartial() {
+        com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation result =
+            new com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          ackIds_ = ackIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.ackIds_ = ackIds_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          invalidAckIds_ = invalidAckIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.invalidAckIds_ = invalidAckIds_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation) {
+          return mergeFrom(
+              (com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation other) {
+        if (other
+            == com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+                .getDefaultInstance()) return this;
+        if (!other.ackIds_.isEmpty()) {
+          if (ackIds_.isEmpty()) {
+            ackIds_ = other.ackIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAckIdsIsMutable();
+            ackIds_.addAll(other.ackIds_);
+          }
+          onChanged();
+        }
+        if (!other.invalidAckIds_.isEmpty()) {
+          if (invalidAckIds_.isEmpty()) {
+            invalidAckIds_ = other.invalidAckIds_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureInvalidAckIdsIsMutable();
+            invalidAckIds_.addAll(other.invalidAckIds_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList ackIds_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureAckIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          ackIds_ = new com.google.protobuf.LazyStringArrayList(ackIds_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @return A list containing the ackIds.
+       */
+      public com.google.protobuf.ProtocolStringList getAckIdsList() {
+        return ackIds_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @return The count of ackIds.
+       */
+      public int getAckIdsCount() {
+        return ackIds_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The ackIds at the given index.
+       */
+      public java.lang.String getAckIds(int index) {
+        return ackIds_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the ackIds at the given index.
+       */
+      public com.google.protobuf.ByteString getAckIdsBytes(int index) {
+        return ackIds_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The ackIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAckIds(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAckIdsIsMutable();
+        ackIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @param value The ackIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAckIds(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAckIdsIsMutable();
+        ackIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @param values The ackIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAckIds(java.lang.Iterable<java.lang.String> values) {
+        ensureAckIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ackIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAckIds() {
+        ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Successfully processed acknowledgement IDs.
+       * </pre>
+       *
+       * <code>repeated string ack_ids = 1 [ctype = CORD];</code>
+       *
+       * @param value The bytes of the ackIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAckIdsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureAckIdsIsMutable();
+        ackIds_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList invalidAckIds_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureInvalidAckIdsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          invalidAckIds_ = new com.google.protobuf.LazyStringArrayList(invalidAckIds_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @return A list containing the invalidAckIds.
+       */
+      public com.google.protobuf.ProtocolStringList getInvalidAckIdsList() {
+        return invalidAckIds_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @return The count of invalidAckIds.
+       */
+      public int getInvalidAckIdsCount() {
+        return invalidAckIds_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The invalidAckIds at the given index.
+       */
+      public java.lang.String getInvalidAckIds(int index) {
+        return invalidAckIds_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the invalidAckIds at the given index.
+       */
+      public com.google.protobuf.ByteString getInvalidAckIdsBytes(int index) {
+        return invalidAckIds_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The invalidAckIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInvalidAckIds(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInvalidAckIdsIsMutable();
+        invalidAckIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @param value The invalidAckIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addInvalidAckIds(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInvalidAckIdsIsMutable();
+        invalidAckIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @param values The invalidAckIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllInvalidAckIds(java.lang.Iterable<java.lang.String> values) {
+        ensureInvalidAckIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, invalidAckIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInvalidAckIds() {
+        invalidAckIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of acknowledgement IDs that were malformed or whose acknowledgement
+       * deadline has expired.
+       * </pre>
+       *
+       * <code>repeated string invalid_ack_ids = 2 [ctype = CORD];</code>
+       *
+       * @param value The bytes of the invalidAckIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addInvalidAckIdsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureInvalidAckIdsIsMutable();
+        invalidAckIds_.add(value);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation)
+    private static final com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation();
+    }
+
+    public static com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ModifyAckDeadlineConfirmation> PARSER =
+        new com.google.protobuf.AbstractParser<ModifyAckDeadlineConfirmation>() {
+          @java.lang.Override
+          public ModifyAckDeadlineConfirmation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ModifyAckDeadlineConfirmation(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ModifyAckDeadlineConfirmation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ModifyAckDeadlineConfirmation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface SubscriptionPropertiesOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.pubsub.v1.StreamingPullResponse.SubscriptionProperties)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * True iff exactly once delivery is enabled for this subscription.
+     * </pre>
+     *
+     * <code>bool exactly_once_delivery_enabled = 1;</code>
+     *
+     * @return The exactlyOnceDeliveryEnabled.
+     */
+    boolean getExactlyOnceDeliveryEnabled();
 
     /**
      *
@@ -206,6 +2872,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
             case 0:
               done = true;
               break;
+            case 8:
+              {
+                exactlyOnceDeliveryEnabled_ = input.readBool();
+                break;
+              }
             case 16:
               {
                 messageOrderingEnabled_ = input.readBool();
@@ -245,6 +2916,24 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
               com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties.Builder.class);
     }
 
+    public static final int EXACTLY_ONCE_DELIVERY_ENABLED_FIELD_NUMBER = 1;
+    private boolean exactlyOnceDeliveryEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * True iff exactly once delivery is enabled for this subscription.
+     * </pre>
+     *
+     * <code>bool exactly_once_delivery_enabled = 1;</code>
+     *
+     * @return The exactlyOnceDeliveryEnabled.
+     */
+    @java.lang.Override
+    public boolean getExactlyOnceDeliveryEnabled() {
+      return exactlyOnceDeliveryEnabled_;
+    }
+
     public static final int MESSAGE_ORDERING_ENABLED_FIELD_NUMBER = 2;
     private boolean messageOrderingEnabled_;
     /**
@@ -277,6 +2966,9 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (exactlyOnceDeliveryEnabled_ != false) {
+        output.writeBool(1, exactlyOnceDeliveryEnabled_);
+      }
       if (messageOrderingEnabled_ != false) {
         output.writeBool(2, messageOrderingEnabled_);
       }
@@ -289,6 +2981,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       if (size != -1) return size;
 
       size = 0;
+      if (exactlyOnceDeliveryEnabled_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(1, exactlyOnceDeliveryEnabled_);
+      }
       if (messageOrderingEnabled_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, messageOrderingEnabled_);
       }
@@ -308,6 +3004,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties other =
           (com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties) obj;
 
+      if (getExactlyOnceDeliveryEnabled() != other.getExactlyOnceDeliveryEnabled()) return false;
       if (getMessageOrderingEnabled() != other.getMessageOrderingEnabled()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -320,6 +3017,9 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EXACTLY_ONCE_DELIVERY_ENABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExactlyOnceDeliveryEnabled());
       hash = (37 * hash) + MESSAGE_ORDERING_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMessageOrderingEnabled());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -472,6 +3172,8 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        exactlyOnceDeliveryEnabled_ = false;
+
         messageOrderingEnabled_ = false;
 
         return this;
@@ -503,6 +3205,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       public com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties buildPartial() {
         com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties result =
             new com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties(this);
+        result.exactlyOnceDeliveryEnabled_ = exactlyOnceDeliveryEnabled_;
         result.messageOrderingEnabled_ = messageOrderingEnabled_;
         onBuilt();
         return result;
@@ -559,6 +3262,9 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
         if (other
             == com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties
                 .getDefaultInstance()) return this;
+        if (other.getExactlyOnceDeliveryEnabled() != false) {
+          setExactlyOnceDeliveryEnabled(other.getExactlyOnceDeliveryEnabled());
+        }
         if (other.getMessageOrderingEnabled() != false) {
           setMessageOrderingEnabled(other.getMessageOrderingEnabled());
         }
@@ -590,6 +3296,58 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private boolean exactlyOnceDeliveryEnabled_;
+      /**
+       *
+       *
+       * <pre>
+       * True iff exactly once delivery is enabled for this subscription.
+       * </pre>
+       *
+       * <code>bool exactly_once_delivery_enabled = 1;</code>
+       *
+       * @return The exactlyOnceDeliveryEnabled.
+       */
+      @java.lang.Override
+      public boolean getExactlyOnceDeliveryEnabled() {
+        return exactlyOnceDeliveryEnabled_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * True iff exactly once delivery is enabled for this subscription.
+       * </pre>
+       *
+       * <code>bool exactly_once_delivery_enabled = 1;</code>
+       *
+       * @param value The exactlyOnceDeliveryEnabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExactlyOnceDeliveryEnabled(boolean value) {
+
+        exactlyOnceDeliveryEnabled_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * True iff exactly once delivery is enabled for this subscription.
+       * </pre>
+       *
+       * <code>bool exactly_once_delivery_enabled = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExactlyOnceDeliveryEnabled() {
+
+        exactlyOnceDeliveryEnabled_ = false;
+        onChanged();
         return this;
       }
 
@@ -769,6 +3527,127 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
     return receivedMessages_.get(index);
   }
 
+  public static final int ACKNOWLEDGE_CONFIRMATION_FIELD_NUMBER = 5;
+  private com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+      acknowledgeConfirmation_;
+  /**
+   *
+   *
+   * <pre>
+   * This field will only be set if `enable_exactly_once_delivery` is set to
+   * `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+   * </code>
+   *
+   * @return Whether the acknowledgeConfirmation field is set.
+   */
+  @java.lang.Override
+  public boolean hasAcknowledgeConfirmation() {
+    return acknowledgeConfirmation_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field will only be set if `enable_exactly_once_delivery` is set to
+   * `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+   * </code>
+   *
+   * @return The acknowledgeConfirmation.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+      getAcknowledgeConfirmation() {
+    return acknowledgeConfirmation_ == null
+        ? com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.getDefaultInstance()
+        : acknowledgeConfirmation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field will only be set if `enable_exactly_once_delivery` is set to
+   * `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmationOrBuilder
+      getAcknowledgeConfirmationOrBuilder() {
+    return getAcknowledgeConfirmation();
+  }
+
+  public static final int MODIFY_ACK_DEADLINE_CONFIRMATION_FIELD_NUMBER = 3;
+  private com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+      modifyAckDeadlineConfirmation_;
+  /**
+   *
+   *
+   * <pre>
+   * This field will only be set if `enable_exactly_once_delivery` is set to
+   * `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+   * </code>
+   *
+   * @return Whether the modifyAckDeadlineConfirmation field is set.
+   */
+  @java.lang.Override
+  public boolean hasModifyAckDeadlineConfirmation() {
+    return modifyAckDeadlineConfirmation_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field will only be set if `enable_exactly_once_delivery` is set to
+   * `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+   * </code>
+   *
+   * @return The modifyAckDeadlineConfirmation.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+      getModifyAckDeadlineConfirmation() {
+    return modifyAckDeadlineConfirmation_ == null
+        ? com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+            .getDefaultInstance()
+        : modifyAckDeadlineConfirmation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field will only be set if `enable_exactly_once_delivery` is set to
+   * `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmationOrBuilder
+      getModifyAckDeadlineConfirmationOrBuilder() {
+    return getModifyAckDeadlineConfirmation();
+  }
+
   public static final int SUBSCRIPTION_PROPERTIES_FIELD_NUMBER = 4;
   private com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscriptionProperties_;
   /**
@@ -842,8 +3721,14 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < receivedMessages_.size(); i++) {
       output.writeMessage(1, receivedMessages_.get(i));
     }
+    if (modifyAckDeadlineConfirmation_ != null) {
+      output.writeMessage(3, getModifyAckDeadlineConfirmation());
+    }
     if (subscriptionProperties_ != null) {
       output.writeMessage(4, getSubscriptionProperties());
+    }
+    if (acknowledgeConfirmation_ != null) {
+      output.writeMessage(5, getAcknowledgeConfirmation());
     }
     unknownFields.writeTo(output);
   }
@@ -857,9 +3742,18 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < receivedMessages_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, receivedMessages_.get(i));
     }
+    if (modifyAckDeadlineConfirmation_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, getModifyAckDeadlineConfirmation());
+    }
     if (subscriptionProperties_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSubscriptionProperties());
+    }
+    if (acknowledgeConfirmation_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(5, getAcknowledgeConfirmation());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -878,6 +3772,16 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
         (com.google.pubsub.v1.StreamingPullResponse) obj;
 
     if (!getReceivedMessagesList().equals(other.getReceivedMessagesList())) return false;
+    if (hasAcknowledgeConfirmation() != other.hasAcknowledgeConfirmation()) return false;
+    if (hasAcknowledgeConfirmation()) {
+      if (!getAcknowledgeConfirmation().equals(other.getAcknowledgeConfirmation())) return false;
+    }
+    if (hasModifyAckDeadlineConfirmation() != other.hasModifyAckDeadlineConfirmation())
+      return false;
+    if (hasModifyAckDeadlineConfirmation()) {
+      if (!getModifyAckDeadlineConfirmation().equals(other.getModifyAckDeadlineConfirmation()))
+        return false;
+    }
     if (hasSubscriptionProperties() != other.hasSubscriptionProperties()) return false;
     if (hasSubscriptionProperties()) {
       if (!getSubscriptionProperties().equals(other.getSubscriptionProperties())) return false;
@@ -896,6 +3800,14 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
     if (getReceivedMessagesCount() > 0) {
       hash = (37 * hash) + RECEIVED_MESSAGES_FIELD_NUMBER;
       hash = (53 * hash) + getReceivedMessagesList().hashCode();
+    }
+    if (hasAcknowledgeConfirmation()) {
+      hash = (37 * hash) + ACKNOWLEDGE_CONFIRMATION_FIELD_NUMBER;
+      hash = (53 * hash) + getAcknowledgeConfirmation().hashCode();
+    }
+    if (hasModifyAckDeadlineConfirmation()) {
+      hash = (37 * hash) + MODIFY_ACK_DEADLINE_CONFIRMATION_FIELD_NUMBER;
+      hash = (53 * hash) + getModifyAckDeadlineConfirmation().hashCode();
     }
     if (hasSubscriptionProperties()) {
       hash = (37 * hash) + SUBSCRIPTION_PROPERTIES_FIELD_NUMBER;
@@ -1055,6 +3967,18 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       } else {
         receivedMessagesBuilder_.clear();
       }
+      if (acknowledgeConfirmationBuilder_ == null) {
+        acknowledgeConfirmation_ = null;
+      } else {
+        acknowledgeConfirmation_ = null;
+        acknowledgeConfirmationBuilder_ = null;
+      }
+      if (modifyAckDeadlineConfirmationBuilder_ == null) {
+        modifyAckDeadlineConfirmation_ = null;
+      } else {
+        modifyAckDeadlineConfirmation_ = null;
+        modifyAckDeadlineConfirmationBuilder_ = null;
+      }
       if (subscriptionPropertiesBuilder_ == null) {
         subscriptionProperties_ = null;
       } else {
@@ -1097,6 +4021,16 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
         result.receivedMessages_ = receivedMessages_;
       } else {
         result.receivedMessages_ = receivedMessagesBuilder_.build();
+      }
+      if (acknowledgeConfirmationBuilder_ == null) {
+        result.acknowledgeConfirmation_ = acknowledgeConfirmation_;
+      } else {
+        result.acknowledgeConfirmation_ = acknowledgeConfirmationBuilder_.build();
+      }
+      if (modifyAckDeadlineConfirmationBuilder_ == null) {
+        result.modifyAckDeadlineConfirmation_ = modifyAckDeadlineConfirmation_;
+      } else {
+        result.modifyAckDeadlineConfirmation_ = modifyAckDeadlineConfirmationBuilder_.build();
       }
       if (subscriptionPropertiesBuilder_ == null) {
         result.subscriptionProperties_ = subscriptionProperties_;
@@ -1178,6 +4112,12 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
             receivedMessagesBuilder_.addAllMessages(other.receivedMessages_);
           }
         }
+      }
+      if (other.hasAcknowledgeConfirmation()) {
+        mergeAcknowledgeConfirmation(other.getAcknowledgeConfirmation());
+      }
+      if (other.hasModifyAckDeadlineConfirmation()) {
+        mergeModifyAckDeadlineConfirmation(other.getModifyAckDeadlineConfirmation());
       }
       if (other.hasSubscriptionProperties()) {
         mergeSubscriptionProperties(other.getSubscriptionProperties());
@@ -1565,6 +4505,453 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
         receivedMessages_ = null;
       }
       return receivedMessagesBuilder_;
+    }
+
+    private com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+        acknowledgeConfirmation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation,
+            com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.Builder,
+            com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmationOrBuilder>
+        acknowledgeConfirmationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * </code>
+     *
+     * @return Whether the acknowledgeConfirmation field is set.
+     */
+    public boolean hasAcknowledgeConfirmation() {
+      return acknowledgeConfirmationBuilder_ != null || acknowledgeConfirmation_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * </code>
+     *
+     * @return The acknowledgeConfirmation.
+     */
+    public com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+        getAcknowledgeConfirmation() {
+      if (acknowledgeConfirmationBuilder_ == null) {
+        return acknowledgeConfirmation_ == null
+            ? com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+                .getDefaultInstance()
+            : acknowledgeConfirmation_;
+      } else {
+        return acknowledgeConfirmationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * </code>
+     */
+    public Builder setAcknowledgeConfirmation(
+        com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation value) {
+      if (acknowledgeConfirmationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        acknowledgeConfirmation_ = value;
+        onChanged();
+      } else {
+        acknowledgeConfirmationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * </code>
+     */
+    public Builder setAcknowledgeConfirmation(
+        com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.Builder
+            builderForValue) {
+      if (acknowledgeConfirmationBuilder_ == null) {
+        acknowledgeConfirmation_ = builderForValue.build();
+        onChanged();
+      } else {
+        acknowledgeConfirmationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * </code>
+     */
+    public Builder mergeAcknowledgeConfirmation(
+        com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation value) {
+      if (acknowledgeConfirmationBuilder_ == null) {
+        if (acknowledgeConfirmation_ != null) {
+          acknowledgeConfirmation_ =
+              com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.newBuilder(
+                      acknowledgeConfirmation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          acknowledgeConfirmation_ = value;
+        }
+        onChanged();
+      } else {
+        acknowledgeConfirmationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * </code>
+     */
+    public Builder clearAcknowledgeConfirmation() {
+      if (acknowledgeConfirmationBuilder_ == null) {
+        acknowledgeConfirmation_ = null;
+        onChanged();
+      } else {
+        acknowledgeConfirmation_ = null;
+        acknowledgeConfirmationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * </code>
+     */
+    public com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.Builder
+        getAcknowledgeConfirmationBuilder() {
+
+      onChanged();
+      return getAcknowledgeConfirmationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * </code>
+     */
+    public com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmationOrBuilder
+        getAcknowledgeConfirmationOrBuilder() {
+      if (acknowledgeConfirmationBuilder_ != null) {
+        return acknowledgeConfirmationBuilder_.getMessageOrBuilder();
+      } else {
+        return acknowledgeConfirmation_ == null
+            ? com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation
+                .getDefaultInstance()
+            : acknowledgeConfirmation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation acknowledge_confirmation = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation,
+            com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.Builder,
+            com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmationOrBuilder>
+        getAcknowledgeConfirmationFieldBuilder() {
+      if (acknowledgeConfirmationBuilder_ == null) {
+        acknowledgeConfirmationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation,
+                com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.Builder,
+                com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmationOrBuilder>(
+                getAcknowledgeConfirmation(), getParentForChildren(), isClean());
+        acknowledgeConfirmation_ = null;
+      }
+      return acknowledgeConfirmationBuilder_;
+    }
+
+    private com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        modifyAckDeadlineConfirmation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation,
+            com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.Builder,
+            com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmationOrBuilder>
+        modifyAckDeadlineConfirmationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * </code>
+     *
+     * @return Whether the modifyAckDeadlineConfirmation field is set.
+     */
+    public boolean hasModifyAckDeadlineConfirmation() {
+      return modifyAckDeadlineConfirmationBuilder_ != null
+          || modifyAckDeadlineConfirmation_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * </code>
+     *
+     * @return The modifyAckDeadlineConfirmation.
+     */
+    public com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+        getModifyAckDeadlineConfirmation() {
+      if (modifyAckDeadlineConfirmationBuilder_ == null) {
+        return modifyAckDeadlineConfirmation_ == null
+            ? com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+                .getDefaultInstance()
+            : modifyAckDeadlineConfirmation_;
+      } else {
+        return modifyAckDeadlineConfirmationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * </code>
+     */
+    public Builder setModifyAckDeadlineConfirmation(
+        com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation value) {
+      if (modifyAckDeadlineConfirmationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modifyAckDeadlineConfirmation_ = value;
+        onChanged();
+      } else {
+        modifyAckDeadlineConfirmationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * </code>
+     */
+    public Builder setModifyAckDeadlineConfirmation(
+        com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.Builder
+            builderForValue) {
+      if (modifyAckDeadlineConfirmationBuilder_ == null) {
+        modifyAckDeadlineConfirmation_ = builderForValue.build();
+        onChanged();
+      } else {
+        modifyAckDeadlineConfirmationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * </code>
+     */
+    public Builder mergeModifyAckDeadlineConfirmation(
+        com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation value) {
+      if (modifyAckDeadlineConfirmationBuilder_ == null) {
+        if (modifyAckDeadlineConfirmation_ != null) {
+          modifyAckDeadlineConfirmation_ =
+              com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.newBuilder(
+                      modifyAckDeadlineConfirmation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modifyAckDeadlineConfirmation_ = value;
+        }
+        onChanged();
+      } else {
+        modifyAckDeadlineConfirmationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * </code>
+     */
+    public Builder clearModifyAckDeadlineConfirmation() {
+      if (modifyAckDeadlineConfirmationBuilder_ == null) {
+        modifyAckDeadlineConfirmation_ = null;
+        onChanged();
+      } else {
+        modifyAckDeadlineConfirmation_ = null;
+        modifyAckDeadlineConfirmationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * </code>
+     */
+    public com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.Builder
+        getModifyAckDeadlineConfirmationBuilder() {
+
+      onChanged();
+      return getModifyAckDeadlineConfirmationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * </code>
+     */
+    public com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmationOrBuilder
+        getModifyAckDeadlineConfirmationOrBuilder() {
+      if (modifyAckDeadlineConfirmationBuilder_ != null) {
+        return modifyAckDeadlineConfirmationBuilder_.getMessageOrBuilder();
+      } else {
+        return modifyAckDeadlineConfirmation_ == null
+            ? com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
+                .getDefaultInstance()
+            : modifyAckDeadlineConfirmation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field will only be set if `enable_exactly_once_delivery` is set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation modify_ack_deadline_confirmation = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation,
+            com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.Builder,
+            com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmationOrBuilder>
+        getModifyAckDeadlineConfirmationFieldBuilder() {
+      if (modifyAckDeadlineConfirmationBuilder_ == null) {
+        modifyAckDeadlineConfirmationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation,
+                com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.Builder,
+                com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmationOrBuilder>(
+                getModifyAckDeadlineConfirmation(), getParentForChildren(), isClean());
+        modifyAckDeadlineConfirmation_ = null;
+      }
+      return modifyAckDeadlineConfirmationBuilder_;
     }
 
     private com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties

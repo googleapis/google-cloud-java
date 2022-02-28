@@ -149,6 +149,7 @@ public class SubscriptionAdminClientTest {
             .setDeadLetterPolicy(DeadLetterPolicy.newBuilder().build())
             .setRetryPolicy(RetryPolicy.newBuilder().build())
             .setDetached(true)
+            .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
@@ -210,6 +211,7 @@ public class SubscriptionAdminClientTest {
             .setDeadLetterPolicy(DeadLetterPolicy.newBuilder().build())
             .setRetryPolicy(RetryPolicy.newBuilder().build())
             .setDetached(true)
+            .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
@@ -271,6 +273,7 @@ public class SubscriptionAdminClientTest {
             .setDeadLetterPolicy(DeadLetterPolicy.newBuilder().build())
             .setRetryPolicy(RetryPolicy.newBuilder().build())
             .setDetached(true)
+            .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
@@ -332,6 +335,7 @@ public class SubscriptionAdminClientTest {
             .setDeadLetterPolicy(DeadLetterPolicy.newBuilder().build())
             .setRetryPolicy(RetryPolicy.newBuilder().build())
             .setDetached(true)
+            .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
@@ -393,6 +397,7 @@ public class SubscriptionAdminClientTest {
             .setDeadLetterPolicy(DeadLetterPolicy.newBuilder().build())
             .setRetryPolicy(RetryPolicy.newBuilder().build())
             .setDetached(true)
+            .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
@@ -444,6 +449,7 @@ public class SubscriptionAdminClientTest {
             .setDeadLetterPolicy(DeadLetterPolicy.newBuilder().build())
             .setRetryPolicy(RetryPolicy.newBuilder().build())
             .setDetached(true)
+            .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
@@ -495,6 +501,7 @@ public class SubscriptionAdminClientTest {
             .setDeadLetterPolicy(DeadLetterPolicy.newBuilder().build())
             .setRetryPolicy(RetryPolicy.newBuilder().build())
             .setDetached(true)
+            .setEnableExactlyOnceDelivery(true)
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .build();
     mockSubscriber.addResponse(expectedResponse);
@@ -1015,6 +1022,10 @@ public class SubscriptionAdminClientTest {
     StreamingPullResponse expectedResponse =
         StreamingPullResponse.newBuilder()
             .addAllReceivedMessages(new ArrayList<ReceivedMessage>())
+            .setAcknowledgeConfirmation(
+                StreamingPullResponse.AcknowledgeConfirmation.newBuilder().build())
+            .setModifyAckDeadlineConfirmation(
+                StreamingPullResponse.ModifyAckDeadlineConfirmation.newBuilder().build())
             .setSubscriptionProperties(
                 StreamingPullResponse.SubscriptionProperties.newBuilder().build())
             .build();
