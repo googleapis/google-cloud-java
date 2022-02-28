@@ -32,8 +32,8 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unspecified state.  This is only used/useful for distinguishing
-   * unset values.
+   * Unspecified state. This is only used/useful for distinguishing unset
+   * values.
    * </pre>
    *
    * <code>LIFECYCLE_STATE_UNSPECIFIED = 0;</code>
@@ -53,7 +53,8 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The bucket has been marked for deletion by the user.
+   * The resource has been marked for deletion by the user. For some resources
+   * (e.g. buckets), this can be reversed by an un-delete operation.
    * </pre>
    *
    * <code>DELETE_REQUESTED = 2;</code>
@@ -66,8 +67,8 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unspecified state.  This is only used/useful for distinguishing
-   * unset values.
+   * Unspecified state. This is only used/useful for distinguishing unset
+   * values.
    * </pre>
    *
    * <code>LIFECYCLE_STATE_UNSPECIFIED = 0;</code>
@@ -87,7 +88,8 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The bucket has been marked for deletion by the user.
+   * The resource has been marked for deletion by the user. For some resources
+   * (e.g. buckets), this can be reversed by an un-delete operation.
    * </pre>
    *
    * <code>DELETE_REQUESTED = 2;</code>

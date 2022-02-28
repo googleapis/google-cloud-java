@@ -29,11 +29,15 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.logging.v2.stub.ConfigServiceV2StubSettings;
 import com.google.logging.v2.CmekSettings;
+import com.google.logging.v2.CopyLogEntriesMetadata;
+import com.google.logging.v2.CopyLogEntriesRequest;
+import com.google.logging.v2.CopyLogEntriesResponse;
 import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
@@ -45,6 +49,7 @@ import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
+import com.google.logging.v2.GetSettingsRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.GetViewRequest;
 import com.google.logging.v2.ListBucketsRequest;
@@ -59,12 +64,15 @@ import com.google.logging.v2.LogBucket;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
 import com.google.logging.v2.LogView;
+import com.google.logging.v2.Settings;
 import com.google.logging.v2.UndeleteBucketRequest;
 import com.google.logging.v2.UpdateBucketRequest;
 import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
+import com.google.logging.v2.UpdateSettingsRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.UpdateViewRequest;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -222,6 +230,28 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
   /** Returns the object with the settings used for calls to updateCmekSettings. */
   public UnaryCallSettings<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsSettings() {
     return ((ConfigServiceV2StubSettings) getStubSettings()).updateCmekSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSettings. */
+  public UnaryCallSettings<GetSettingsRequest, Settings> getSettingsSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).getSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSettings. */
+  public UnaryCallSettings<UpdateSettingsRequest, Settings> updateSettingsSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).updateSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to copyLogEntries. */
+  public UnaryCallSettings<CopyLogEntriesRequest, Operation> copyLogEntriesSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).copyLogEntriesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to copyLogEntries. */
+  public OperationCallSettings<
+          CopyLogEntriesRequest, CopyLogEntriesResponse, CopyLogEntriesMetadata>
+      copyLogEntriesOperationSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).copyLogEntriesOperationSettings();
   }
 
   public static final ConfigSettings create(ConfigServiceV2StubSettings stub) throws IOException {
@@ -443,6 +473,28 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     public UnaryCallSettings.Builder<UpdateCmekSettingsRequest, CmekSettings>
         updateCmekSettingsSettings() {
       return getStubSettingsBuilder().updateCmekSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSettings. */
+    public UnaryCallSettings.Builder<GetSettingsRequest, Settings> getSettingsSettings() {
+      return getStubSettingsBuilder().getSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSettings. */
+    public UnaryCallSettings.Builder<UpdateSettingsRequest, Settings> updateSettingsSettings() {
+      return getStubSettingsBuilder().updateSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to copyLogEntries. */
+    public UnaryCallSettings.Builder<CopyLogEntriesRequest, Operation> copyLogEntriesSettings() {
+      return getStubSettingsBuilder().copyLogEntriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to copyLogEntries. */
+    public OperationCallSettings.Builder<
+            CopyLogEntriesRequest, CopyLogEntriesResponse, CopyLogEntriesMetadata>
+        copyLogEntriesOperationSettings() {
+      return getStubSettingsBuilder().copyLogEntriesOperationSettings();
     }
 
     @Override

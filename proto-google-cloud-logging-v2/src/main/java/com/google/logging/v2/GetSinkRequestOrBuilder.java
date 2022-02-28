@@ -32,7 +32,8 @@ public interface GetSinkRequestOrBuilder
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
    *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-   * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * For example:
+   *   `"projects/my-project/sinks/my-sink"`
    * </pre>
    *
    * <code>
@@ -51,7 +52,8 @@ public interface GetSinkRequestOrBuilder
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
    *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-   * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * For example:
+   *   `"projects/my-project/sinks/my-sink"`
    * </pre>
    *
    * <code>

@@ -28,10 +28,10 @@ public interface ListLogsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name that owns the logs:
-   *     "projects/[PROJECT_ID]"
-   *     "organizations/[ORGANIZATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]"
-   *     "folders/[FOLDER_ID]"
+   * *  `projects/[PROJECT_ID]`
+   * *  `organizations/[ORGANIZATION_ID]`
+   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+   * *  `folders/[FOLDER_ID]`
    * </pre>
    *
    * <code>
@@ -46,10 +46,10 @@ public interface ListLogsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name that owns the logs:
-   *     "projects/[PROJECT_ID]"
-   *     "organizations/[ORGANIZATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]"
-   *     "folders/[FOLDER_ID]"
+   * *  `projects/[PROJECT_ID]`
+   * *  `organizations/[ORGANIZATION_ID]`
+   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+   * *  `folders/[FOLDER_ID]`
    * </pre>
    *
    * <code>
@@ -111,18 +111,20 @@ public interface ListLogsRequestOrBuilder
    *
    * <pre>
    * Optional. The resource name that owns the logs:
-   *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
-   *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
-   *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
-   *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    * To support legacy queries, it could also be:
-   *     "projects/[PROJECT_ID]"
-   *     "organizations/[ORGANIZATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]"
-   *     "folders/[FOLDER_ID]"
+   * *  `projects/[PROJECT_ID]`
+   * *  `organizations/[ORGANIZATION_ID]`
+   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+   * *  `folders/[FOLDER_ID]`
    * </pre>
    *
-   * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return A list containing the resourceNames.
    */
@@ -132,18 +134,20 @@ public interface ListLogsRequestOrBuilder
    *
    * <pre>
    * Optional. The resource name that owns the logs:
-   *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
-   *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
-   *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
-   *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    * To support legacy queries, it could also be:
-   *     "projects/[PROJECT_ID]"
-   *     "organizations/[ORGANIZATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]"
-   *     "folders/[FOLDER_ID]"
+   * *  `projects/[PROJECT_ID]`
+   * *  `organizations/[ORGANIZATION_ID]`
+   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+   * *  `folders/[FOLDER_ID]`
    * </pre>
    *
-   * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The count of resourceNames.
    */
@@ -153,18 +157,20 @@ public interface ListLogsRequestOrBuilder
    *
    * <pre>
    * Optional. The resource name that owns the logs:
-   *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
-   *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
-   *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
-   *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    * To support legacy queries, it could also be:
-   *     "projects/[PROJECT_ID]"
-   *     "organizations/[ORGANIZATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]"
-   *     "folders/[FOLDER_ID]"
+   * *  `projects/[PROJECT_ID]`
+   * *  `organizations/[ORGANIZATION_ID]`
+   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+   * *  `folders/[FOLDER_ID]`
    * </pre>
    *
-   * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The resourceNames at the given index.
@@ -175,18 +181,20 @@ public interface ListLogsRequestOrBuilder
    *
    * <pre>
    * Optional. The resource name that owns the logs:
-   *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
-   *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
-   *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
-   *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
    * To support legacy queries, it could also be:
-   *     "projects/[PROJECT_ID]"
-   *     "organizations/[ORGANIZATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]"
-   *     "folders/[FOLDER_ID]"
+   * *  `projects/[PROJECT_ID]`
+   * *  `organizations/[ORGANIZATION_ID]`
+   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+   * *  `folders/[FOLDER_ID]`
    * </pre>
    *
-   * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the resourceNames at the given index.

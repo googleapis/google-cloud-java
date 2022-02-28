@@ -32,7 +32,8 @@ public interface GetExclusionRequestOrBuilder
    *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
    *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-   * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
+   * For example:
+   *   `"projects/my-project/exclusions/my-exclusion"`
    * </pre>
    *
    * <code>
@@ -51,7 +52,8 @@ public interface GetExclusionRequestOrBuilder
    *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
    *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-   * Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
+   * For example:
+   *   `"projects/my-project/exclusions/my-exclusion"`
    * </pre>
    *
    * <code>

@@ -41,7 +41,7 @@ public interface LogEntryOrBuilder
    * following characters: upper and lower case alphanumeric characters,
    * forward-slash, underscore, hyphen, and period.
    * For backward compatibility, if `log_name` begins with a forward-slash, such
-   * as `/projects/...`, then the log entry is ingested as usual but the
+   * as `/projects/...`, then the log entry is ingested as usual, but the
    * forward-slash is removed. Listing the log entry will not show the leading
    * slash and filtering for a log name with a leading slash will never return
    * any results.
@@ -70,7 +70,7 @@ public interface LogEntryOrBuilder
    * following characters: upper and lower case alphanumeric characters,
    * forward-slash, underscore, hyphen, and period.
    * For backward compatibility, if `log_name` begins with a forward-slash, such
-   * as `/projects/...`, then the log entry is ingested as usual but the
+   * as `/projects/...`, then the log entry is ingested as usual, but the
    * forward-slash is removed. Listing the log entry will not show the leading
    * slash and filtering for a log name with a leading slash will never return
    * any results.
@@ -397,7 +397,7 @@ public interface LogEntryOrBuilder
    * removed in a single query result. However, there are no guarantees of
    * de-duplication in the export of logs.
    * If the `insert_id` is omitted when writing a log entry, the Logging API
-   *  assigns its own unique identifier in this field.
+   * assigns its own unique identifier in this field.
    * In queries, the `insert_id` is also used to order log entries that have
    * the same `log_name` and `timestamp` values.
    * </pre>
@@ -417,7 +417,7 @@ public interface LogEntryOrBuilder
    * removed in a single query result. However, there are no guarantees of
    * de-duplication in the export of logs.
    * If the `insert_id` is omitted when writing a log entry, the Logging API
-   *  assigns its own unique identifier in this field.
+   * assigns its own unique identifier in this field.
    * In queries, the `insert_id` is also used to order log entries that have
    * the same `log_name` and `timestamp` values.
    * </pre>
@@ -476,8 +476,17 @@ public interface LogEntryOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of user-defined (key, value) data that provides additional
-   * information about the log entry.
+   * Optional. A map of key, value pairs that provides additional information about the
+   * log entry. The labels can be user-defined or system-defined.
+   * User-defined labels are arbitrary key, value pairs that you can use to
+   * classify logs.
+   * System-defined labels are defined by GCP services for platform logs.
+   * They have two components - a service namespace component and the
+   * attribute name. For example: `compute.googleapis.com/resource_name`.
+   * Cloud Logging truncates label keys that exceed 512 B and label
+   * values that exceed 64 KB upon their associated log entry being
+   * written. The truncation is indicated by an ellipsis at the
+   * end of the character string.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -487,8 +496,17 @@ public interface LogEntryOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of user-defined (key, value) data that provides additional
-   * information about the log entry.
+   * Optional. A map of key, value pairs that provides additional information about the
+   * log entry. The labels can be user-defined or system-defined.
+   * User-defined labels are arbitrary key, value pairs that you can use to
+   * classify logs.
+   * System-defined labels are defined by GCP services for platform logs.
+   * They have two components - a service namespace component and the
+   * attribute name. For example: `compute.googleapis.com/resource_name`.
+   * Cloud Logging truncates label keys that exceed 512 B and label
+   * values that exceed 64 KB upon their associated log entry being
+   * written. The truncation is indicated by an ellipsis at the
+   * end of the character string.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -501,8 +519,17 @@ public interface LogEntryOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of user-defined (key, value) data that provides additional
-   * information about the log entry.
+   * Optional. A map of key, value pairs that provides additional information about the
+   * log entry. The labels can be user-defined or system-defined.
+   * User-defined labels are arbitrary key, value pairs that you can use to
+   * classify logs.
+   * System-defined labels are defined by GCP services for platform logs.
+   * They have two components - a service namespace component and the
+   * attribute name. For example: `compute.googleapis.com/resource_name`.
+   * Cloud Logging truncates label keys that exceed 512 B and label
+   * values that exceed 64 KB upon their associated log entry being
+   * written. The truncation is indicated by an ellipsis at the
+   * end of the character string.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -512,8 +539,17 @@ public interface LogEntryOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of user-defined (key, value) data that provides additional
-   * information about the log entry.
+   * Optional. A map of key, value pairs that provides additional information about the
+   * log entry. The labels can be user-defined or system-defined.
+   * User-defined labels are arbitrary key, value pairs that you can use to
+   * classify logs.
+   * System-defined labels are defined by GCP services for platform logs.
+   * They have two components - a service namespace component and the
+   * attribute name. For example: `compute.googleapis.com/resource_name`.
+   * Cloud Logging truncates label keys that exceed 512 B and label
+   * values that exceed 64 KB upon their associated log entry being
+   * written. The truncation is indicated by an ellipsis at the
+   * end of the character string.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -523,8 +559,17 @@ public interface LogEntryOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of user-defined (key, value) data that provides additional
-   * information about the log entry.
+   * Optional. A map of key, value pairs that provides additional information about the
+   * log entry. The labels can be user-defined or system-defined.
+   * User-defined labels are arbitrary key, value pairs that you can use to
+   * classify logs.
+   * System-defined labels are defined by GCP services for platform logs.
+   * They have two components - a service namespace component and the
+   * attribute name. For example: `compute.googleapis.com/resource_name`.
+   * Cloud Logging truncates label keys that exceed 512 B and label
+   * values that exceed 64 KB upon their associated log entry being
+   * written. The truncation is indicated by an ellipsis at the
+   * end of the character string.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -695,6 +740,44 @@ public interface LogEntryOrBuilder
    * </code>
    */
   com.google.logging.v2.LogEntrySourceLocationOrBuilder getSourceLocationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+   * entries split from a single LogEntry.
+   * </pre>
+   *
+   * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the split field is set.
+   */
+  boolean hasSplit();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+   * entries split from a single LogEntry.
+   * </pre>
+   *
+   * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The split.
+   */
+  com.google.logging.v2.LogSplit getSplit();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+   * entries split from a single LogEntry.
+   * </pre>
+   *
+   * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.logging.v2.LogSplitOrBuilder getSplitOrBuilder();
 
   public com.google.logging.v2.LogEntry.PayloadCase getPayloadCase();
 }

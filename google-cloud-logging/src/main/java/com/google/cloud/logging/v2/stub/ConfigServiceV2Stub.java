@@ -22,8 +22,12 @@ import static com.google.cloud.logging.v2.ConfigClient.ListSinksPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListViewsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.logging.v2.CmekSettings;
+import com.google.logging.v2.CopyLogEntriesMetadata;
+import com.google.logging.v2.CopyLogEntriesRequest;
+import com.google.logging.v2.CopyLogEntriesResponse;
 import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
@@ -35,6 +39,7 @@ import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
+import com.google.logging.v2.GetSettingsRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.GetViewRequest;
 import com.google.logging.v2.ListBucketsRequest;
@@ -49,12 +54,16 @@ import com.google.logging.v2.LogBucket;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
 import com.google.logging.v2.LogView;
+import com.google.logging.v2.Settings;
 import com.google.logging.v2.UndeleteBucketRequest;
 import com.google.logging.v2.UpdateBucketRequest;
 import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
+import com.google.logging.v2.UpdateSettingsRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.UpdateViewRequest;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -66,6 +75,10 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class ConfigServiceV2Stub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
 
   public UnaryCallable<ListBucketsRequest, ListBucketsPagedResponse> listBucketsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listBucketsPagedCallable()");
@@ -174,6 +187,23 @@ public abstract class ConfigServiceV2Stub implements BackgroundResource {
 
   public UnaryCallable<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: updateCmekSettingsCallable()");
+  }
+
+  public UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSettingsCallable()");
+  }
+
+  public UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSettingsCallable()");
+  }
+
+  public OperationCallable<CopyLogEntriesRequest, CopyLogEntriesResponse, CopyLogEntriesMetadata>
+      copyLogEntriesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: copyLogEntriesOperationCallable()");
+  }
+
+  public UnaryCallable<CopyLogEntriesRequest, Operation> copyLogEntriesCallable() {
+    throw new UnsupportedOperationException("Not implemented: copyLogEntriesCallable()");
   }
 
   @Override

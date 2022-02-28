@@ -24,10 +24,10 @@ package com.google.logging.v2;
  * <pre>
  * Describes the customer-managed encryption key (CMEK) settings associated with
  * a project, folder, organization, billing account, or flexible resource.
- * Note: CMEK for the Logs Router can currently only be configured for GCP
- * organizations. Once configured, it applies to all projects and folders in the
- * GCP organization.
- * See [Enabling CMEK for Logs
+ * Note: CMEK for the Log Router can currently only be configured for Google
+ * Cloud organizations. Once configured, it applies to all projects and folders
+ * in the Google Cloud organization.
+ * See [Enabling CMEK for Log
  * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for
  * more information.
  * </pre>
@@ -193,17 +193,18 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
    * KMS key name format:
    *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]"
    * For example:
-   *     `"projects/my-project-id/locations/my-region/keyRings/key-ring-name/cryptoKeys/key-name"`
-   * To enable CMEK for the Logs Router, set this field to a valid
+   *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key"`
+   * To enable CMEK for the Log Router, set this field to a valid
    * `kms_key_name` for which the associated service account has the required
-   * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key.
+   * cloudkms.cryptoKeyEncrypterDecrypter roles assigned for the key.
    * The Cloud KMS key used by the Log Router can be updated by changing the
-   * `kms_key_name` to a new valid key name. Encryption operations that are in
-   * progress will be completed with the key that was in use when they started.
-   * Decryption operations will be completed using the key that was used at the
-   * time of encryption unless access to that key has been revoked.
-   * To disable CMEK for the Logs Router, set this field to an empty string.
-   * See [Enabling CMEK for Logs
+   * `kms_key_name` to a new valid key name or disabled by setting the key name
+   * to an empty string. Encryption operations that are in progress will be
+   * completed with the key that was in use when they started. Decryption
+   * operations will be completed using the key that was used at the time of
+   * encryption unless access to that key has been revoked.
+   * To disable CMEK for the Log Router, set this field to an empty string.
+   * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
    * </pre>
@@ -232,17 +233,18 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
    * KMS key name format:
    *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]"
    * For example:
-   *     `"projects/my-project-id/locations/my-region/keyRings/key-ring-name/cryptoKeys/key-name"`
-   * To enable CMEK for the Logs Router, set this field to a valid
+   *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key"`
+   * To enable CMEK for the Log Router, set this field to a valid
    * `kms_key_name` for which the associated service account has the required
-   * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key.
+   * cloudkms.cryptoKeyEncrypterDecrypter roles assigned for the key.
    * The Cloud KMS key used by the Log Router can be updated by changing the
-   * `kms_key_name` to a new valid key name. Encryption operations that are in
-   * progress will be completed with the key that was in use when they started.
-   * Decryption operations will be completed using the key that was used at the
-   * time of encryption unless access to that key has been revoked.
-   * To disable CMEK for the Logs Router, set this field to an empty string.
-   * See [Enabling CMEK for Logs
+   * `kms_key_name` to a new valid key name or disabled by setting the key name
+   * to an empty string. Encryption operations that are in progress will be
+   * completed with the key that was in use when they started. Decryption
+   * operations will be completed using the key that was used at the time of
+   * encryption unless access to that key has been revoked.
+   * To disable CMEK for the Log Router, set this field to an empty string.
+   * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
    * </pre>
@@ -270,14 +272,14 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service account that will be used by the Logs Router to access your
+   * Output only. The service account that will be used by the Log Router to access your
    * Cloud KMS key.
-   * Before enabling CMEK for Logs Router, you must first assign the role
-   * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
-   * the Logs Router will use to access your Cloud KMS key. Use
+   * Before enabling CMEK for Log Router, you must first assign the
+   * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
+   * the Log Router will use to access your Cloud KMS key. Use
    * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings] to
    * obtain the service account ID.
-   * See [Enabling CMEK for Logs
+   * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
    * </pre>
@@ -302,14 +304,14 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service account that will be used by the Logs Router to access your
+   * Output only. The service account that will be used by the Log Router to access your
    * Cloud KMS key.
-   * Before enabling CMEK for Logs Router, you must first assign the role
-   * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
-   * the Logs Router will use to access your Cloud KMS key. Use
+   * Before enabling CMEK for Log Router, you must first assign the
+   * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
+   * the Log Router will use to access your Cloud KMS key. Use
    * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings] to
    * obtain the service account ID.
-   * See [Enabling CMEK for Logs
+   * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
    * </pre>
@@ -512,10 +514,10 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Describes the customer-managed encryption key (CMEK) settings associated with
    * a project, folder, organization, billing account, or flexible resource.
-   * Note: CMEK for the Logs Router can currently only be configured for GCP
-   * organizations. Once configured, it applies to all projects and folders in the
-   * GCP organization.
-   * See [Enabling CMEK for Logs
+   * Note: CMEK for the Log Router can currently only be configured for Google
+   * Cloud organizations. Once configured, it applies to all projects and folders
+   * in the Google Cloud organization.
+   * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for
    * more information.
    * </pre>
@@ -798,17 +800,18 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      * KMS key name format:
      *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]"
      * For example:
-     *     `"projects/my-project-id/locations/my-region/keyRings/key-ring-name/cryptoKeys/key-name"`
-     * To enable CMEK for the Logs Router, set this field to a valid
+     *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key"`
+     * To enable CMEK for the Log Router, set this field to a valid
      * `kms_key_name` for which the associated service account has the required
-     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key.
+     * cloudkms.cryptoKeyEncrypterDecrypter roles assigned for the key.
      * The Cloud KMS key used by the Log Router can be updated by changing the
-     * `kms_key_name` to a new valid key name. Encryption operations that are in
-     * progress will be completed with the key that was in use when they started.
-     * Decryption operations will be completed using the key that was used at the
-     * time of encryption unless access to that key has been revoked.
-     * To disable CMEK for the Logs Router, set this field to an empty string.
-     * See [Enabling CMEK for Logs
+     * `kms_key_name` to a new valid key name or disabled by setting the key name
+     * to an empty string. Encryption operations that are in progress will be
+     * completed with the key that was in use when they started. Decryption
+     * operations will be completed using the key that was used at the time of
+     * encryption unless access to that key has been revoked.
+     * To disable CMEK for the Log Router, set this field to an empty string.
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -836,17 +839,18 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      * KMS key name format:
      *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]"
      * For example:
-     *     `"projects/my-project-id/locations/my-region/keyRings/key-ring-name/cryptoKeys/key-name"`
-     * To enable CMEK for the Logs Router, set this field to a valid
+     *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key"`
+     * To enable CMEK for the Log Router, set this field to a valid
      * `kms_key_name` for which the associated service account has the required
-     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key.
+     * cloudkms.cryptoKeyEncrypterDecrypter roles assigned for the key.
      * The Cloud KMS key used by the Log Router can be updated by changing the
-     * `kms_key_name` to a new valid key name. Encryption operations that are in
-     * progress will be completed with the key that was in use when they started.
-     * Decryption operations will be completed using the key that was used at the
-     * time of encryption unless access to that key has been revoked.
-     * To disable CMEK for the Logs Router, set this field to an empty string.
-     * See [Enabling CMEK for Logs
+     * `kms_key_name` to a new valid key name or disabled by setting the key name
+     * to an empty string. Encryption operations that are in progress will be
+     * completed with the key that was in use when they started. Decryption
+     * operations will be completed using the key that was used at the time of
+     * encryption unless access to that key has been revoked.
+     * To disable CMEK for the Log Router, set this field to an empty string.
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -874,17 +878,18 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      * KMS key name format:
      *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]"
      * For example:
-     *     `"projects/my-project-id/locations/my-region/keyRings/key-ring-name/cryptoKeys/key-name"`
-     * To enable CMEK for the Logs Router, set this field to a valid
+     *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key"`
+     * To enable CMEK for the Log Router, set this field to a valid
      * `kms_key_name` for which the associated service account has the required
-     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key.
+     * cloudkms.cryptoKeyEncrypterDecrypter roles assigned for the key.
      * The Cloud KMS key used by the Log Router can be updated by changing the
-     * `kms_key_name` to a new valid key name. Encryption operations that are in
-     * progress will be completed with the key that was in use when they started.
-     * Decryption operations will be completed using the key that was used at the
-     * time of encryption unless access to that key has been revoked.
-     * To disable CMEK for the Logs Router, set this field to an empty string.
-     * See [Enabling CMEK for Logs
+     * `kms_key_name` to a new valid key name or disabled by setting the key name
+     * to an empty string. Encryption operations that are in progress will be
+     * completed with the key that was in use when they started. Decryption
+     * operations will be completed using the key that was used at the time of
+     * encryption unless access to that key has been revoked.
+     * To disable CMEK for the Log Router, set this field to an empty string.
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -911,17 +916,18 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      * KMS key name format:
      *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]"
      * For example:
-     *     `"projects/my-project-id/locations/my-region/keyRings/key-ring-name/cryptoKeys/key-name"`
-     * To enable CMEK for the Logs Router, set this field to a valid
+     *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key"`
+     * To enable CMEK for the Log Router, set this field to a valid
      * `kms_key_name` for which the associated service account has the required
-     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key.
+     * cloudkms.cryptoKeyEncrypterDecrypter roles assigned for the key.
      * The Cloud KMS key used by the Log Router can be updated by changing the
-     * `kms_key_name` to a new valid key name. Encryption operations that are in
-     * progress will be completed with the key that was in use when they started.
-     * Decryption operations will be completed using the key that was used at the
-     * time of encryption unless access to that key has been revoked.
-     * To disable CMEK for the Logs Router, set this field to an empty string.
-     * See [Enabling CMEK for Logs
+     * `kms_key_name` to a new valid key name or disabled by setting the key name
+     * to an empty string. Encryption operations that are in progress will be
+     * completed with the key that was in use when they started. Decryption
+     * operations will be completed using the key that was used at the time of
+     * encryption unless access to that key has been revoked.
+     * To disable CMEK for the Log Router, set this field to an empty string.
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -944,17 +950,18 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      * KMS key name format:
      *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]"
      * For example:
-     *     `"projects/my-project-id/locations/my-region/keyRings/key-ring-name/cryptoKeys/key-name"`
-     * To enable CMEK for the Logs Router, set this field to a valid
+     *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key"`
+     * To enable CMEK for the Log Router, set this field to a valid
      * `kms_key_name` for which the associated service account has the required
-     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key.
+     * cloudkms.cryptoKeyEncrypterDecrypter roles assigned for the key.
      * The Cloud KMS key used by the Log Router can be updated by changing the
-     * `kms_key_name` to a new valid key name. Encryption operations that are in
-     * progress will be completed with the key that was in use when they started.
-     * Decryption operations will be completed using the key that was used at the
-     * time of encryption unless access to that key has been revoked.
-     * To disable CMEK for the Logs Router, set this field to an empty string.
-     * See [Enabling CMEK for Logs
+     * `kms_key_name` to a new valid key name or disabled by setting the key name
+     * to an empty string. Encryption operations that are in progress will be
+     * completed with the key that was in use when they started. Decryption
+     * operations will be completed using the key that was used at the time of
+     * encryption unless access to that key has been revoked.
+     * To disable CMEK for the Log Router, set this field to an empty string.
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -980,14 +987,14 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Logs Router to access your
+     * Output only. The service account that will be used by the Log Router to access your
      * Cloud KMS key.
-     * Before enabling CMEK for Logs Router, you must first assign the role
-     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
-     * the Logs Router will use to access your Cloud KMS key. Use
+     * Before enabling CMEK for Log Router, you must first assign the
+     * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
+     * the Log Router will use to access your Cloud KMS key. Use
      * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings] to
      * obtain the service account ID.
-     * See [Enabling CMEK for Logs
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -1011,14 +1018,14 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Logs Router to access your
+     * Output only. The service account that will be used by the Log Router to access your
      * Cloud KMS key.
-     * Before enabling CMEK for Logs Router, you must first assign the role
-     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
-     * the Logs Router will use to access your Cloud KMS key. Use
+     * Before enabling CMEK for Log Router, you must first assign the
+     * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
+     * the Log Router will use to access your Cloud KMS key. Use
      * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings] to
      * obtain the service account ID.
-     * See [Enabling CMEK for Logs
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -1042,14 +1049,14 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Logs Router to access your
+     * Output only. The service account that will be used by the Log Router to access your
      * Cloud KMS key.
-     * Before enabling CMEK for Logs Router, you must first assign the role
-     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
-     * the Logs Router will use to access your Cloud KMS key. Use
+     * Before enabling CMEK for Log Router, you must first assign the
+     * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
+     * the Log Router will use to access your Cloud KMS key. Use
      * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings] to
      * obtain the service account ID.
-     * See [Enabling CMEK for Logs
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -1072,14 +1079,14 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Logs Router to access your
+     * Output only. The service account that will be used by the Log Router to access your
      * Cloud KMS key.
-     * Before enabling CMEK for Logs Router, you must first assign the role
-     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
-     * the Logs Router will use to access your Cloud KMS key. Use
+     * Before enabling CMEK for Log Router, you must first assign the
+     * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
+     * the Log Router will use to access your Cloud KMS key. Use
      * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings] to
      * obtain the service account ID.
-     * See [Enabling CMEK for Logs
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -1098,14 +1105,14 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Logs Router to access your
+     * Output only. The service account that will be used by the Log Router to access your
      * Cloud KMS key.
-     * Before enabling CMEK for Logs Router, you must first assign the role
-     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
-     * the Logs Router will use to access your Cloud KMS key. Use
+     * Before enabling CMEK for Log Router, you must first assign the
+     * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
+     * the Log Router will use to access your Cloud KMS key. Use
      * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings] to
      * obtain the service account ID.
-     * See [Enabling CMEK for Logs
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>

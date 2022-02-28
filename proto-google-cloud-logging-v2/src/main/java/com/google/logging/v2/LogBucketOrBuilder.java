@@ -27,17 +27,17 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * The resource name of the bucket.
+   * Output only. The resource name of the bucket.
    * For example:
-   * "projects/my-project-id/locations/my-location/buckets/my-bucket-id The
-   * supported locations are:
-   *   "global"
-   * For the location of `global` it is unspecified where logs are actually
-   * stored.
-   * Once a bucket has been created, the location can not be changed.
+   *   `projects/my-project/locations/global/buckets/my-bucket`
+   * For a list of supported locations, see [Supported
+   * Regions](https://cloud.google.com/logging/docs/region-support)
+   * For the location of `global` it is unspecified where log entries are
+   * actually stored.
+   * After a bucket has been created, the location cannot be changed.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -46,17 +46,17 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * The resource name of the bucket.
+   * Output only. The resource name of the bucket.
    * For example:
-   * "projects/my-project-id/locations/my-location/buckets/my-bucket-id The
-   * supported locations are:
-   *   "global"
-   * For the location of `global` it is unspecified where logs are actually
-   * stored.
-   * Once a bucket has been created, the location can not be changed.
+   *   `projects/my-project/locations/global/buckets/my-bucket`
+   * For a list of supported locations, see [Supported
+   * Regions](https://cloud.google.com/logging/docs/region-support)
+   * For the location of `global` it is unspecified where log entries are
+   * actually stored.
+   * After a bucket has been created, the location cannot be changed.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -171,9 +171,9 @@ public interface LogBucketOrBuilder
    *
    * <pre>
    * Logs will be retained by default for this amount of time, after which they
-   * will automatically be deleted. The minimum retention period is 1 day.
-   * If this value is set to zero at bucket creation time, the default time of
-   * 30 days will be used.
+   * will automatically be deleted. The minimum retention period is 1 day. If
+   * this value is set to zero at bucket creation time, the default time of 30
+   * days will be used.
    * </pre>
    *
    * <code>int32 retention_days = 11;</code>
@@ -186,9 +186,9 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Whether the bucket has been locked.
-   * The retention period on a locked bucket may not be changed.
-   * Locked buckets may only be deleted if they are empty.
+   * Whether the bucket is locked.
+   * The retention period on a locked bucket cannot be changed. Locked buckets
+   * may only be deleted if they are empty.
    * </pre>
    *
    * <code>bool locked = 9;</code>
@@ -225,4 +225,118 @@ public interface LogBucketOrBuilder
    * @return The lifecycleState.
    */
   com.google.logging.v2.LifecycleState getLifecycleState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Log entry field paths that are denied access in this bucket.
+   * The following fields and their children are eligible: `textPayload`,
+   * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+   * Restricting a repeated field will restrict all values. Adding a parent will
+   * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
+   * </pre>
+   *
+   * <code>repeated string restricted_fields = 15;</code>
+   *
+   * @return A list containing the restrictedFields.
+   */
+  java.util.List<java.lang.String> getRestrictedFieldsList();
+  /**
+   *
+   *
+   * <pre>
+   * Log entry field paths that are denied access in this bucket.
+   * The following fields and their children are eligible: `textPayload`,
+   * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+   * Restricting a repeated field will restrict all values. Adding a parent will
+   * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
+   * </pre>
+   *
+   * <code>repeated string restricted_fields = 15;</code>
+   *
+   * @return The count of restrictedFields.
+   */
+  int getRestrictedFieldsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Log entry field paths that are denied access in this bucket.
+   * The following fields and their children are eligible: `textPayload`,
+   * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+   * Restricting a repeated field will restrict all values. Adding a parent will
+   * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
+   * </pre>
+   *
+   * <code>repeated string restricted_fields = 15;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The restrictedFields at the given index.
+   */
+  java.lang.String getRestrictedFields(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Log entry field paths that are denied access in this bucket.
+   * The following fields and their children are eligible: `textPayload`,
+   * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
+   * Restricting a repeated field will restrict all values. Adding a parent will
+   * block all child fields. (e.g. `foo.bar` will block `foo.bar.baz`)
+   * </pre>
+   *
+   * <code>repeated string restricted_fields = 15;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the restrictedFields at the given index.
+   */
+  com.google.protobuf.ByteString getRestrictedFieldsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The CMEK settings of the log bucket. If present, new log entries written to
+   * this log bucket are encrypted using the CMEK key provided in this
+   * configuration. If a log bucket has CMEK settings, the CMEK settings cannot
+   * be disabled later by updating the log bucket. Changing the KMS key is
+   * allowed.
+   * </pre>
+   *
+   * <code>.google.logging.v2.CmekSettings cmek_settings = 19;</code>
+   *
+   * @return Whether the cmekSettings field is set.
+   */
+  boolean hasCmekSettings();
+  /**
+   *
+   *
+   * <pre>
+   * The CMEK settings of the log bucket. If present, new log entries written to
+   * this log bucket are encrypted using the CMEK key provided in this
+   * configuration. If a log bucket has CMEK settings, the CMEK settings cannot
+   * be disabled later by updating the log bucket. Changing the KMS key is
+   * allowed.
+   * </pre>
+   *
+   * <code>.google.logging.v2.CmekSettings cmek_settings = 19;</code>
+   *
+   * @return The cmekSettings.
+   */
+  com.google.logging.v2.CmekSettings getCmekSettings();
+  /**
+   *
+   *
+   * <pre>
+   * The CMEK settings of the log bucket. If present, new log entries written to
+   * this log bucket are encrypted using the CMEK key provided in this
+   * configuration. If a log bucket has CMEK settings, the CMEK settings cannot
+   * be disabled later by updating the log bucket. Changing the KMS key is
+   * allowed.
+   * </pre>
+   *
+   * <code>.google.logging.v2.CmekSettings cmek_settings = 19;</code>
+   */
+  com.google.logging.v2.CmekSettingsOrBuilder getCmekSettingsOrBuilder();
 }

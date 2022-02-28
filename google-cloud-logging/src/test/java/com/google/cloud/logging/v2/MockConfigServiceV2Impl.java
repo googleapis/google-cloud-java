@@ -19,6 +19,7 @@ package com.google.cloud.logging.v2;
 import com.google.api.core.BetaApi;
 import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.ConfigServiceV2Grpc.ConfigServiceV2ImplBase;
+import com.google.logging.v2.CopyLogEntriesRequest;
 import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
@@ -30,6 +31,7 @@ import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
+import com.google.logging.v2.GetSettingsRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.GetViewRequest;
 import com.google.logging.v2.ListBucketsRequest;
@@ -44,12 +46,15 @@ import com.google.logging.v2.LogBucket;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
 import com.google.logging.v2.LogView;
+import com.google.logging.v2.Settings;
 import com.google.logging.v2.UndeleteBucketRequest;
 import com.google.logging.v2.UpdateBucketRequest;
 import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
+import com.google.logging.v2.UpdateSettingsRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.UpdateViewRequest;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
@@ -560,6 +565,68 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
                   "Unrecognized response type %s for method UpdateCmekSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CmekSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getSettings(GetSettingsRequest request, StreamObserver<Settings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Settings) {
+      requests.add(request);
+      responseObserver.onNext(((Settings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Settings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSettings(
+      UpdateSettingsRequest request, StreamObserver<Settings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Settings) {
+      requests.add(request);
+      responseObserver.onNext(((Settings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Settings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void copyLogEntries(
+      CopyLogEntriesRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CopyLogEntries, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

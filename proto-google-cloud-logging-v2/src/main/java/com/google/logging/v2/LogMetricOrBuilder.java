@@ -33,11 +33,11 @@ public interface LogMetricOrBuilder
    * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
    * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
    * name pieces, and it cannot be the first character of the name.
-   * The metric identifier in this field must not be
-   * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-   * However, when the metric identifier appears as the `[METRIC_ID]` part of a
-   * `metric_name` API parameter, then the metric identifier must be
-   * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
+   * This field is the `[METRIC_ID]` part of a metric resource name in the
+   * format "projects/[PROJECT_ID]/metrics/[METRIC_ID]". Example: If the
+   * resource name of a metric is
+   * `"projects/my-project/metrics/nginx%2Frequests"`, this field's value is
+   * `"nginx/requests"`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -55,11 +55,11 @@ public interface LogMetricOrBuilder
    * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
    * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
    * name pieces, and it cannot be the first character of the name.
-   * The metric identifier in this field must not be
-   * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-   * However, when the metric identifier appears as the `[METRIC_ID]` part of a
-   * `metric_name` API parameter, then the metric identifier must be
-   * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
+   * This field is the `[METRIC_ID]` part of a metric resource name in the
+   * format "projects/[PROJECT_ID]/metrics/[METRIC_ID]". Example: If the
+   * resource name of a metric is
+   * `"projects/my-project/metrics/nginx%2Frequests"`, this field's value is
+   * `"nginx/requests"`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -127,6 +127,20 @@ public interface LogMetricOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to True, then this metric is disabled and it does not
+   * generate any points.
+   * </pre>
+   *
+   * <code>bool disabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disabled.
+   */
+  boolean getDisabled();
 
   /**
    *

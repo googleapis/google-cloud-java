@@ -88,9 +88,9 @@ public interface LogExclusionOrBuilder
    * matches the log entries to be excluded. By using the [sample
    * function](https://cloud.google.com/logging/docs/view/advanced-queries#sample),
    * you can exclude less than 100% of the matching log entries.
-   * For example, the following query matches 99% of low-severity log
-   * entries from Google Cloud Storage buckets:
-   * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
+   * For example, the following query matches 99% of low-severity log entries
+   * from Google Cloud Storage buckets:
+   *   `resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)`
    * </pre>
    *
    * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -107,9 +107,9 @@ public interface LogExclusionOrBuilder
    * matches the log entries to be excluded. By using the [sample
    * function](https://cloud.google.com/logging/docs/view/advanced-queries#sample),
    * you can exclude less than 100% of the matching log entries.
-   * For example, the following query matches 99% of low-severity log
-   * entries from Google Cloud Storage buckets:
-   * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
+   * For example, the following query matches 99% of low-severity log entries
+   * from Google Cloud Storage buckets:
+   *   `resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)`
    * </pre>
    *
    * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>

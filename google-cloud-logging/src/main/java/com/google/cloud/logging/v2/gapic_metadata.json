@@ -37,6 +37,9 @@
         "grpc": {
           "libraryClient": "ConfigClient",
           "rpcs": {
+            "CopyLogEntries": {
+              "methods": ["copyLogEntriesAsync", "copyLogEntriesOperationCallable", "copyLogEntriesCallable"]
+            },
             "CreateBucket": {
               "methods": ["createBucket", "createBucketCallable"]
             },
@@ -70,6 +73,9 @@
             "GetExclusion": {
               "methods": ["getExclusion", "getExclusion", "getExclusion", "getExclusionCallable"]
             },
+            "GetSettings": {
+              "methods": ["getSettings", "getSettings", "getSettings", "getSettingsCallable"]
+            },
             "GetSink": {
               "methods": ["getSink", "getSink", "getSink", "getSinkCallable"]
             },
@@ -99,6 +105,9 @@
             },
             "UpdateExclusion": {
               "methods": ["updateExclusion", "updateExclusion", "updateExclusion", "updateExclusionCallable"]
+            },
+            "UpdateSettings": {
+              "methods": ["updateSettings", "updateSettings", "updateSettingsCallable"]
             },
             "UpdateSink": {
               "methods": ["updateSink", "updateSink", "updateSink", "updateSink", "updateSink", "updateSinkCallable"]

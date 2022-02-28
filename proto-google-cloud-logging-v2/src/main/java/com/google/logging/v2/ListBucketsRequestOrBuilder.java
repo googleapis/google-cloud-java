@@ -70,10 +70,10 @@ public interface ListBucketsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method. `pageToken` must be the value of
-   * `nextPageToken` from the previous response. The values of other method
-   * parameters should be identical to those in the previous call.
+   * Optional. If present, then retrieve the next batch of results from the preceding call
+   * to this method. `pageToken` must be the value of `nextPageToken` from the
+   * previous response. The values of other method parameters should be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -85,10 +85,10 @@ public interface ListBucketsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method. `pageToken` must be the value of
-   * `nextPageToken` from the previous response. The values of other method
-   * parameters should be identical to those in the previous call.
+   * Optional. If present, then retrieve the next batch of results from the preceding call
+   * to this method. `pageToken` must be the value of `nextPageToken` from the
+   * previous response. The values of other method parameters should be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -101,9 +101,9 @@ public interface ListBucketsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of results to return from this request.
-   * Non-positive values are ignored. The presence of `nextPageToken` in the
-   * response indicates that more results might be available.
+   * Optional. The maximum number of results to return from this request. Non-positive
+   * values are ignored. The presence of `nextPageToken` in the response
+   * indicates that more results might be available.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

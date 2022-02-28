@@ -29,13 +29,13 @@ public interface WriteLogEntriesRequestOrBuilder
    * <pre>
    * Optional. A default log resource name that is assigned to all log entries
    * in `entries` that do not specify a value for `log_name`:
-   *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-   *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-   *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+   * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
+   * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
+   * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
+   * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
    * `[LOG_ID]` must be URL-encoded. For example:
    *     "projects/my-project-id/logs/syslog"
-   *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
+   *     "organizations/123/logs/cloudaudit.googleapis.com%2Factivity"
    * The permission `logging.logEntries.create` is needed on each project,
    * organization, billing account, or folder that is receiving new log
    * entries, whether the resource is specified in `logName` or in an
@@ -55,13 +55,13 @@ public interface WriteLogEntriesRequestOrBuilder
    * <pre>
    * Optional. A default log resource name that is assigned to all log entries
    * in `entries` that do not specify a value for `log_name`:
-   *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-   *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-   *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+   * * `projects/[PROJECT_ID]/logs/[LOG_ID]`
+   * * `organizations/[ORGANIZATION_ID]/logs/[LOG_ID]`
+   * * `billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]`
+   * * `folders/[FOLDER_ID]/logs/[LOG_ID]`
    * `[LOG_ID]` must be URL-encoded. For example:
    *     "projects/my-project-id/logs/syslog"
-   *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
+   *     "organizations/123/logs/cloudaudit.googleapis.com%2Factivity"
    * The permission `logging.logEntries.create` is needed on each project,
    * organization, billing account, or folder that is receiving new log
    * entries, whether the resource is specified in `logName` or in an
@@ -214,13 +214,13 @@ public interface WriteLogEntriesRequestOrBuilder
    * supply their own values, the entries earlier in the list will sort before
    * the entries later in the list. See the `entries.list` method.
    * Log entries with timestamps that are more than the
-   * [logs retention period](https://cloud.google.com/logging/quota-policy) in
+   * [logs retention period](https://cloud.google.com/logging/quotas) in
    * the past or more than 24 hours in the future will not be available when
    * calling `entries.list`. However, those log entries can still be [exported
    * with
    * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
-   * [quota limit](https://cloud.google.com/logging/quota-policy) for calls to
+   * [quota limit](https://cloud.google.com/logging/quotas) for calls to
    * `entries.write`, you should try to include several log entries in this
    * list, rather than calling this method for each individual log entry.
    * </pre>
@@ -246,13 +246,13 @@ public interface WriteLogEntriesRequestOrBuilder
    * supply their own values, the entries earlier in the list will sort before
    * the entries later in the list. See the `entries.list` method.
    * Log entries with timestamps that are more than the
-   * [logs retention period](https://cloud.google.com/logging/quota-policy) in
+   * [logs retention period](https://cloud.google.com/logging/quotas) in
    * the past or more than 24 hours in the future will not be available when
    * calling `entries.list`. However, those log entries can still be [exported
    * with
    * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
-   * [quota limit](https://cloud.google.com/logging/quota-policy) for calls to
+   * [quota limit](https://cloud.google.com/logging/quotas) for calls to
    * `entries.write`, you should try to include several log entries in this
    * list, rather than calling this method for each individual log entry.
    * </pre>
@@ -278,13 +278,13 @@ public interface WriteLogEntriesRequestOrBuilder
    * supply their own values, the entries earlier in the list will sort before
    * the entries later in the list. See the `entries.list` method.
    * Log entries with timestamps that are more than the
-   * [logs retention period](https://cloud.google.com/logging/quota-policy) in
+   * [logs retention period](https://cloud.google.com/logging/quotas) in
    * the past or more than 24 hours in the future will not be available when
    * calling `entries.list`. However, those log entries can still be [exported
    * with
    * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
-   * [quota limit](https://cloud.google.com/logging/quota-policy) for calls to
+   * [quota limit](https://cloud.google.com/logging/quotas) for calls to
    * `entries.write`, you should try to include several log entries in this
    * list, rather than calling this method for each individual log entry.
    * </pre>
@@ -310,13 +310,13 @@ public interface WriteLogEntriesRequestOrBuilder
    * supply their own values, the entries earlier in the list will sort before
    * the entries later in the list. See the `entries.list` method.
    * Log entries with timestamps that are more than the
-   * [logs retention period](https://cloud.google.com/logging/quota-policy) in
+   * [logs retention period](https://cloud.google.com/logging/quotas) in
    * the past or more than 24 hours in the future will not be available when
    * calling `entries.list`. However, those log entries can still be [exported
    * with
    * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
-   * [quota limit](https://cloud.google.com/logging/quota-policy) for calls to
+   * [quota limit](https://cloud.google.com/logging/quotas) for calls to
    * `entries.write`, you should try to include several log entries in this
    * list, rather than calling this method for each individual log entry.
    * </pre>
@@ -342,13 +342,13 @@ public interface WriteLogEntriesRequestOrBuilder
    * supply their own values, the entries earlier in the list will sort before
    * the entries later in the list. See the `entries.list` method.
    * Log entries with timestamps that are more than the
-   * [logs retention period](https://cloud.google.com/logging/quota-policy) in
+   * [logs retention period](https://cloud.google.com/logging/quotas) in
    * the past or more than 24 hours in the future will not be available when
    * calling `entries.list`. However, those log entries can still be [exported
    * with
    * LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
-   * [quota limit](https://cloud.google.com/logging/quota-policy) for calls to
+   * [quota limit](https://cloud.google.com/logging/quotas) for calls to
    * `entries.write`, you should try to include several log entries in this
    * list, rather than calling this method for each individual log entry.
    * </pre>

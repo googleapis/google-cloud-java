@@ -974,6 +974,130 @@ public final class ConfigServiceV2Grpc {
     return getUpdateCmekSettingsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.GetSettingsRequest, com.google.logging.v2.Settings>
+      getGetSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSettings",
+      requestType = com.google.logging.v2.GetSettingsRequest.class,
+      responseType = com.google.logging.v2.Settings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.GetSettingsRequest, com.google.logging.v2.Settings>
+      getGetSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.GetSettingsRequest, com.google.logging.v2.Settings>
+        getGetSettingsMethod;
+    if ((getGetSettingsMethod = ConfigServiceV2Grpc.getGetSettingsMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getGetSettingsMethod = ConfigServiceV2Grpc.getGetSettingsMethod) == null) {
+          ConfigServiceV2Grpc.getGetSettingsMethod =
+              getGetSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.GetSettingsRequest, com.google.logging.v2.Settings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.GetSettingsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.Settings.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("GetSettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.UpdateSettingsRequest, com.google.logging.v2.Settings>
+      getUpdateSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSettings",
+      requestType = com.google.logging.v2.UpdateSettingsRequest.class,
+      responseType = com.google.logging.v2.Settings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.UpdateSettingsRequest, com.google.logging.v2.Settings>
+      getUpdateSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.UpdateSettingsRequest, com.google.logging.v2.Settings>
+        getUpdateSettingsMethod;
+    if ((getUpdateSettingsMethod = ConfigServiceV2Grpc.getUpdateSettingsMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getUpdateSettingsMethod = ConfigServiceV2Grpc.getUpdateSettingsMethod) == null) {
+          ConfigServiceV2Grpc.getUpdateSettingsMethod =
+              getUpdateSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.UpdateSettingsRequest, com.google.logging.v2.Settings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.UpdateSettingsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.Settings.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("UpdateSettings"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.CopyLogEntriesRequest, com.google.longrunning.Operation>
+      getCopyLogEntriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CopyLogEntries",
+      requestType = com.google.logging.v2.CopyLogEntriesRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.CopyLogEntriesRequest, com.google.longrunning.Operation>
+      getCopyLogEntriesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.CopyLogEntriesRequest, com.google.longrunning.Operation>
+        getCopyLogEntriesMethod;
+    if ((getCopyLogEntriesMethod = ConfigServiceV2Grpc.getCopyLogEntriesMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getCopyLogEntriesMethod = ConfigServiceV2Grpc.getCopyLogEntriesMethod) == null) {
+          ConfigServiceV2Grpc.getCopyLogEntriesMethod =
+              getCopyLogEntriesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.CopyLogEntriesRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CopyLogEntries"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.CopyLogEntriesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("CopyLogEntries"))
+                      .build();
+        }
+      }
+    }
+    return getCopyLogEntriesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConfigServiceV2Stub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConfigServiceV2Stub> factory =
@@ -1028,7 +1152,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists buckets.
+     * Lists log buckets.
      * </pre>
      */
     public void listBuckets(
@@ -1042,7 +1166,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets a bucket.
+     * Gets a log bucket.
      * </pre>
      */
     public void getBucket(
@@ -1055,8 +1179,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a bucket that can be used to store log entries. Once a bucket has
-     * been created, the region cannot be changed.
+     * Creates a log bucket that can be used to store log entries. After a bucket
+     * has been created, the bucket's location cannot be changed.
      * </pre>
      */
     public void createBucket(
@@ -1070,13 +1194,13 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a bucket. This method replaces the following fields in the
+     * Updates a log bucket. This method replaces the following fields in the
      * existing bucket with values from the new bucket: `retention_period`
      * If the retention period is decreased and the bucket is locked,
-     * FAILED_PRECONDITION will be returned.
-     * If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
-     * will be returned.
-     * A buckets region may not be modified after it is created.
+     * `FAILED_PRECONDITION` will be returned.
+     * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
+     * `FAILED_PRECONDITION` will be returned.
+     * After a bucket has been created, the bucket's location cannot be changed.
      * </pre>
      */
     public void updateBucket(
@@ -1090,10 +1214,10 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes a bucket.
-     * Moves the bucket to the DELETE_REQUESTED state. After 7 days, the
-     * bucket will be purged and all logs in the bucket will be permanently
-     * deleted.
+     * Deletes a log bucket.
+     * Changes the bucket's `lifecycle_state` to the `DELETE_REQUESTED` state.
+     * After 7 days, the bucket will be purged and all log entries in the bucket
+     * will be permanently deleted.
      * </pre>
      */
     public void deleteBucket(
@@ -1107,8 +1231,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Undeletes a bucket. A bucket that has been deleted may be undeleted within
-     * the grace period of 7 days.
+     * Undeletes a log bucket. A bucket that has been deleted can be undeleted
+     * within the grace period of 7 days.
      * </pre>
      */
     public void undeleteBucket(
@@ -1122,7 +1246,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists views on a bucket.
+     * Lists views on a log bucket.
      * </pre>
      */
     public void listViews(
@@ -1135,7 +1259,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets a view.
+     * Gets a view on a log bucket..
      * </pre>
      */
     public void getView(
@@ -1148,8 +1272,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a view over logs in a bucket. A bucket may contain a maximum of
-     * 50 views.
+     * Creates a view over log entries in a log bucket. A bucket may contain a
+     * maximum of 30 views.
      * </pre>
      */
     public void createView(
@@ -1162,8 +1286,11 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a view. This method replaces the following fields in the existing
-     * view with values from the new view: `filter`.
+     * Updates a view on a log bucket. This method replaces the following fields
+     * in the existing view with values from the new view: `filter`.
+     * If an `UNAVAILABLE` error is returned, this indicates that system is not in
+     * a state where it can update the view. If this occurs, please try again in a
+     * few minutes.
      * </pre>
      */
     public void updateView(
@@ -1176,7 +1303,10 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes a view from a bucket.
+     * Deletes a view on a log bucket.
+     * If an `UNAVAILABLE` error is returned, this indicates that system is not in
+     * a state where it can delete the view. If this occurs, please try again in a
+     * few minutes.
      * </pre>
      */
     public void deleteView(
@@ -1261,7 +1391,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists all the exclusions in a parent resource.
+     * Lists all the exclusions on the _Default sink in a parent resource.
      * </pre>
      */
     public void listExclusions(
@@ -1276,7 +1406,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets the description of an exclusion.
+     * Gets the description of an exclusion in the _Default sink.
      * </pre>
      */
     public void getExclusion(
@@ -1290,9 +1420,9 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a new exclusion in a specified parent resource.
-     * Only log entries belonging to that resource can be excluded.
-     * You can have up to 10 exclusions in a resource.
+     * Creates a new exclusion in the _Default sink in a specified parent
+     * resource. Only log entries belonging to that resource can be excluded. You
+     * can have up to 10 exclusions in a resource.
      * </pre>
      */
     public void createExclusion(
@@ -1306,7 +1436,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Changes one or more properties of an existing exclusion.
+     * Changes one or more properties of an existing exclusion in the _Default
+     * sink.
      * </pre>
      */
     public void updateExclusion(
@@ -1320,7 +1451,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes an exclusion.
+     * Deletes an exclusion in the _Default sink.
      * </pre>
      */
     public void deleteExclusion(
@@ -1334,11 +1465,12 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets the Logs Router CMEK settings for the given resource.
-     * Note: CMEK for the Logs Router can currently only be configured for GCP
-     * organizations. Once configured, it applies to all projects and folders in
-     * the GCP organization.
-     * See [Enabling CMEK for Logs
+     * Gets the Logging CMEK settings for the given resource.
+     * Note: CMEK for the Log Router can be configured for Google Cloud projects,
+     * folders, organizations and billing accounts. Once configured for an
+     * organization, it applies to all projects and folders in the Google Cloud
+     * organization.
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -1354,16 +1486,16 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates the Logs Router CMEK settings for the given resource.
-     * Note: CMEK for the Logs Router can currently only be configured for GCP
-     * organizations. Once configured, it applies to all projects and folders in
-     * the GCP organization.
+     * Updates the Log Router CMEK settings for the given resource.
+     * Note: CMEK for the Log Router can currently only be configured for Google
+     * Cloud organizations. Once configured, it applies to all projects and
+     * folders in the Google Cloud organization.
      * [UpdateCmekSettings][google.logging.v2.ConfigServiceV2.UpdateCmekSettings]
      * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
      * account does not have the required
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
      * 3) access to the key is disabled.
-     * See [Enabling CMEK for Logs
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -1373,6 +1505,67 @@ public final class ConfigServiceV2Grpc {
         io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateCmekSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Log Router settings for the given resource.
+     * Note: Settings for the Log Router can be get for Google Cloud projects,
+     * folders, organizations and billing accounts. Currently it can only be
+     * configured for organizations. Once configured for an organization, it
+     * applies to all projects and folders in the Google Cloud organization.
+     * See [Enabling CMEK for Log
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
+     * </pre>
+     */
+    public void getSettings(
+        com.google.logging.v2.GetSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.Settings> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Log Router settings for the given resource.
+     * Note: Settings for the Log Router can currently only be configured for
+     * Google Cloud organizations. Once configured, it applies to all projects and
+     * folders in the Google Cloud organization.
+     * [UpdateSettings][google.logging.v2.ConfigServiceV2.UpdateSettings]
+     * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
+     * account does not have the required
+     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
+     * 3) access to the key is disabled. 4) `location_id` is not supported by
+     * Logging. 5) `location_id` violate OrgPolicy.
+     * See [Enabling CMEK for Log
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
+     * </pre>
+     */
+    public void updateSettings(
+        com.google.logging.v2.UpdateSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.Settings> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies a set of log entries from a log bucket to a Cloud Storage bucket.
+     * </pre>
+     */
+    public void copyLogEntries(
+        com.google.logging.v2.CopyLogEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCopyLogEntriesMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -1517,6 +1710,24 @@ public final class ConfigServiceV2Grpc {
                   new MethodHandlers<
                       com.google.logging.v2.UpdateCmekSettingsRequest,
                       com.google.logging.v2.CmekSettings>(this, METHODID_UPDATE_CMEK_SETTINGS)))
+          .addMethod(
+              getGetSettingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.GetSettingsRequest, com.google.logging.v2.Settings>(
+                      this, METHODID_GET_SETTINGS)))
+          .addMethod(
+              getUpdateSettingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.UpdateSettingsRequest, com.google.logging.v2.Settings>(
+                      this, METHODID_UPDATE_SETTINGS)))
+          .addMethod(
+              getCopyLogEntriesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.CopyLogEntriesRequest,
+                      com.google.longrunning.Operation>(this, METHODID_COPY_LOG_ENTRIES)))
           .build();
     }
   }
@@ -1543,7 +1754,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists buckets.
+     * Lists log buckets.
      * </pre>
      */
     public void listBuckets(
@@ -1559,7 +1770,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets a bucket.
+     * Gets a log bucket.
      * </pre>
      */
     public void getBucket(
@@ -1573,8 +1784,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a bucket that can be used to store log entries. Once a bucket has
-     * been created, the region cannot be changed.
+     * Creates a log bucket that can be used to store log entries. After a bucket
+     * has been created, the bucket's location cannot be changed.
      * </pre>
      */
     public void createBucket(
@@ -1590,13 +1801,13 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a bucket. This method replaces the following fields in the
+     * Updates a log bucket. This method replaces the following fields in the
      * existing bucket with values from the new bucket: `retention_period`
      * If the retention period is decreased and the bucket is locked,
-     * FAILED_PRECONDITION will be returned.
-     * If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
-     * will be returned.
-     * A buckets region may not be modified after it is created.
+     * `FAILED_PRECONDITION` will be returned.
+     * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
+     * `FAILED_PRECONDITION` will be returned.
+     * After a bucket has been created, the bucket's location cannot be changed.
      * </pre>
      */
     public void updateBucket(
@@ -1612,10 +1823,10 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes a bucket.
-     * Moves the bucket to the DELETE_REQUESTED state. After 7 days, the
-     * bucket will be purged and all logs in the bucket will be permanently
-     * deleted.
+     * Deletes a log bucket.
+     * Changes the bucket's `lifecycle_state` to the `DELETE_REQUESTED` state.
+     * After 7 days, the bucket will be purged and all log entries in the bucket
+     * will be permanently deleted.
      * </pre>
      */
     public void deleteBucket(
@@ -1631,8 +1842,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Undeletes a bucket. A bucket that has been deleted may be undeleted within
-     * the grace period of 7 days.
+     * Undeletes a log bucket. A bucket that has been deleted can be undeleted
+     * within the grace period of 7 days.
      * </pre>
      */
     public void undeleteBucket(
@@ -1648,7 +1859,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists views on a bucket.
+     * Lists views on a log bucket.
      * </pre>
      */
     public void listViews(
@@ -1662,7 +1873,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets a view.
+     * Gets a view on a log bucket..
      * </pre>
      */
     public void getView(
@@ -1676,8 +1887,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a view over logs in a bucket. A bucket may contain a maximum of
-     * 50 views.
+     * Creates a view over log entries in a log bucket. A bucket may contain a
+     * maximum of 30 views.
      * </pre>
      */
     public void createView(
@@ -1691,8 +1902,11 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a view. This method replaces the following fields in the existing
-     * view with values from the new view: `filter`.
+     * Updates a view on a log bucket. This method replaces the following fields
+     * in the existing view with values from the new view: `filter`.
+     * If an `UNAVAILABLE` error is returned, this indicates that system is not in
+     * a state where it can update the view. If this occurs, please try again in a
+     * few minutes.
      * </pre>
      */
     public void updateView(
@@ -1706,7 +1920,10 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes a view from a bucket.
+     * Deletes a view on a log bucket.
+     * If an `UNAVAILABLE` error is returned, this indicates that system is not in
+     * a state where it can delete the view. If this occurs, please try again in a
+     * few minutes.
      * </pre>
      */
     public void deleteView(
@@ -1797,7 +2014,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists all the exclusions in a parent resource.
+     * Lists all the exclusions on the _Default sink in a parent resource.
      * </pre>
      */
     public void listExclusions(
@@ -1814,7 +2031,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets the description of an exclusion.
+     * Gets the description of an exclusion in the _Default sink.
      * </pre>
      */
     public void getExclusion(
@@ -1830,9 +2047,9 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a new exclusion in a specified parent resource.
-     * Only log entries belonging to that resource can be excluded.
-     * You can have up to 10 exclusions in a resource.
+     * Creates a new exclusion in the _Default sink in a specified parent
+     * resource. Only log entries belonging to that resource can be excluded. You
+     * can have up to 10 exclusions in a resource.
      * </pre>
      */
     public void createExclusion(
@@ -1848,7 +2065,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Changes one or more properties of an existing exclusion.
+     * Changes one or more properties of an existing exclusion in the _Default
+     * sink.
      * </pre>
      */
     public void updateExclusion(
@@ -1864,7 +2082,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes an exclusion.
+     * Deletes an exclusion in the _Default sink.
      * </pre>
      */
     public void deleteExclusion(
@@ -1880,11 +2098,12 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets the Logs Router CMEK settings for the given resource.
-     * Note: CMEK for the Logs Router can currently only be configured for GCP
-     * organizations. Once configured, it applies to all projects and folders in
-     * the GCP organization.
-     * See [Enabling CMEK for Logs
+     * Gets the Logging CMEK settings for the given resource.
+     * Note: CMEK for the Log Router can be configured for Google Cloud projects,
+     * folders, organizations and billing accounts. Once configured for an
+     * organization, it applies to all projects and folders in the Google Cloud
+     * organization.
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -1902,16 +2121,16 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates the Logs Router CMEK settings for the given resource.
-     * Note: CMEK for the Logs Router can currently only be configured for GCP
-     * organizations. Once configured, it applies to all projects and folders in
-     * the GCP organization.
+     * Updates the Log Router CMEK settings for the given resource.
+     * Note: CMEK for the Log Router can currently only be configured for Google
+     * Cloud organizations. Once configured, it applies to all projects and
+     * folders in the Google Cloud organization.
      * [UpdateCmekSettings][google.logging.v2.ConfigServiceV2.UpdateCmekSettings]
      * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
      * account does not have the required
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
      * 3) access to the key is disabled.
-     * See [Enabling CMEK for Logs
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -1921,6 +2140,73 @@ public final class ConfigServiceV2Grpc {
         io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCmekSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Log Router settings for the given resource.
+     * Note: Settings for the Log Router can be get for Google Cloud projects,
+     * folders, organizations and billing accounts. Currently it can only be
+     * configured for organizations. Once configured for an organization, it
+     * applies to all projects and folders in the Google Cloud organization.
+     * See [Enabling CMEK for Log
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
+     * </pre>
+     */
+    public void getSettings(
+        com.google.logging.v2.GetSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.Settings> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Log Router settings for the given resource.
+     * Note: Settings for the Log Router can currently only be configured for
+     * Google Cloud organizations. Once configured, it applies to all projects and
+     * folders in the Google Cloud organization.
+     * [UpdateSettings][google.logging.v2.ConfigServiceV2.UpdateSettings]
+     * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
+     * account does not have the required
+     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
+     * 3) access to the key is disabled. 4) `location_id` is not supported by
+     * Logging. 5) `location_id` violate OrgPolicy.
+     * See [Enabling CMEK for Log
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
+     * </pre>
+     */
+    public void updateSettings(
+        com.google.logging.v2.UpdateSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.Settings> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies a set of log entries from a log bucket to a Cloud Storage bucket.
+     * </pre>
+     */
+    public void copyLogEntries(
+        com.google.logging.v2.CopyLogEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCopyLogEntriesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1949,7 +2235,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists buckets.
+     * Lists log buckets.
      * </pre>
      */
     public com.google.logging.v2.ListBucketsResponse listBuckets(
@@ -1962,7 +2248,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets a bucket.
+     * Gets a log bucket.
      * </pre>
      */
     public com.google.logging.v2.LogBucket getBucket(
@@ -1975,8 +2261,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a bucket that can be used to store log entries. Once a bucket has
-     * been created, the region cannot be changed.
+     * Creates a log bucket that can be used to store log entries. After a bucket
+     * has been created, the bucket's location cannot be changed.
      * </pre>
      */
     public com.google.logging.v2.LogBucket createBucket(
@@ -1989,13 +2275,13 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a bucket. This method replaces the following fields in the
+     * Updates a log bucket. This method replaces the following fields in the
      * existing bucket with values from the new bucket: `retention_period`
      * If the retention period is decreased and the bucket is locked,
-     * FAILED_PRECONDITION will be returned.
-     * If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
-     * will be returned.
-     * A buckets region may not be modified after it is created.
+     * `FAILED_PRECONDITION` will be returned.
+     * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
+     * `FAILED_PRECONDITION` will be returned.
+     * After a bucket has been created, the bucket's location cannot be changed.
      * </pre>
      */
     public com.google.logging.v2.LogBucket updateBucket(
@@ -2008,10 +2294,10 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes a bucket.
-     * Moves the bucket to the DELETE_REQUESTED state. After 7 days, the
-     * bucket will be purged and all logs in the bucket will be permanently
-     * deleted.
+     * Deletes a log bucket.
+     * Changes the bucket's `lifecycle_state` to the `DELETE_REQUESTED` state.
+     * After 7 days, the bucket will be purged and all log entries in the bucket
+     * will be permanently deleted.
      * </pre>
      */
     public com.google.protobuf.Empty deleteBucket(
@@ -2024,8 +2310,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Undeletes a bucket. A bucket that has been deleted may be undeleted within
-     * the grace period of 7 days.
+     * Undeletes a log bucket. A bucket that has been deleted can be undeleted
+     * within the grace period of 7 days.
      * </pre>
      */
     public com.google.protobuf.Empty undeleteBucket(
@@ -2038,7 +2324,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists views on a bucket.
+     * Lists views on a log bucket.
      * </pre>
      */
     public com.google.logging.v2.ListViewsResponse listViews(
@@ -2051,7 +2337,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets a view.
+     * Gets a view on a log bucket..
      * </pre>
      */
     public com.google.logging.v2.LogView getView(com.google.logging.v2.GetViewRequest request) {
@@ -2063,8 +2349,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a view over logs in a bucket. A bucket may contain a maximum of
-     * 50 views.
+     * Creates a view over log entries in a log bucket. A bucket may contain a
+     * maximum of 30 views.
      * </pre>
      */
     public com.google.logging.v2.LogView createView(
@@ -2077,8 +2363,11 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a view. This method replaces the following fields in the existing
-     * view with values from the new view: `filter`.
+     * Updates a view on a log bucket. This method replaces the following fields
+     * in the existing view with values from the new view: `filter`.
+     * If an `UNAVAILABLE` error is returned, this indicates that system is not in
+     * a state where it can update the view. If this occurs, please try again in a
+     * few minutes.
      * </pre>
      */
     public com.google.logging.v2.LogView updateView(
@@ -2091,7 +2380,10 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes a view from a bucket.
+     * Deletes a view on a log bucket.
+     * If an `UNAVAILABLE` error is returned, this indicates that system is not in
+     * a state where it can delete the view. If this occurs, please try again in a
+     * few minutes.
      * </pre>
      */
     public com.google.protobuf.Empty deleteView(com.google.logging.v2.DeleteViewRequest request) {
@@ -2173,7 +2465,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists all the exclusions in a parent resource.
+     * Lists all the exclusions on the _Default sink in a parent resource.
      * </pre>
      */
     public com.google.logging.v2.ListExclusionsResponse listExclusions(
@@ -2186,7 +2478,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets the description of an exclusion.
+     * Gets the description of an exclusion in the _Default sink.
      * </pre>
      */
     public com.google.logging.v2.LogExclusion getExclusion(
@@ -2199,9 +2491,9 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a new exclusion in a specified parent resource.
-     * Only log entries belonging to that resource can be excluded.
-     * You can have up to 10 exclusions in a resource.
+     * Creates a new exclusion in the _Default sink in a specified parent
+     * resource. Only log entries belonging to that resource can be excluded. You
+     * can have up to 10 exclusions in a resource.
      * </pre>
      */
     public com.google.logging.v2.LogExclusion createExclusion(
@@ -2214,7 +2506,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Changes one or more properties of an existing exclusion.
+     * Changes one or more properties of an existing exclusion in the _Default
+     * sink.
      * </pre>
      */
     public com.google.logging.v2.LogExclusion updateExclusion(
@@ -2227,7 +2520,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes an exclusion.
+     * Deletes an exclusion in the _Default sink.
      * </pre>
      */
     public com.google.protobuf.Empty deleteExclusion(
@@ -2240,11 +2533,12 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets the Logs Router CMEK settings for the given resource.
-     * Note: CMEK for the Logs Router can currently only be configured for GCP
-     * organizations. Once configured, it applies to all projects and folders in
-     * the GCP organization.
-     * See [Enabling CMEK for Logs
+     * Gets the Logging CMEK settings for the given resource.
+     * Note: CMEK for the Log Router can be configured for Google Cloud projects,
+     * folders, organizations and billing accounts. Once configured for an
+     * organization, it applies to all projects and folders in the Google Cloud
+     * organization.
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -2259,16 +2553,16 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates the Logs Router CMEK settings for the given resource.
-     * Note: CMEK for the Logs Router can currently only be configured for GCP
-     * organizations. Once configured, it applies to all projects and folders in
-     * the GCP organization.
+     * Updates the Log Router CMEK settings for the given resource.
+     * Note: CMEK for the Log Router can currently only be configured for Google
+     * Cloud organizations. Once configured, it applies to all projects and
+     * folders in the Google Cloud organization.
      * [UpdateCmekSettings][google.logging.v2.ConfigServiceV2.UpdateCmekSettings]
      * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
      * account does not have the required
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
      * 3) access to the key is disabled.
-     * See [Enabling CMEK for Logs
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -2277,6 +2571,64 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.UpdateCmekSettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCmekSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Log Router settings for the given resource.
+     * Note: Settings for the Log Router can be get for Google Cloud projects,
+     * folders, organizations and billing accounts. Currently it can only be
+     * configured for organizations. Once configured for an organization, it
+     * applies to all projects and folders in the Google Cloud organization.
+     * See [Enabling CMEK for Log
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
+     * </pre>
+     */
+    public com.google.logging.v2.Settings getSettings(
+        com.google.logging.v2.GetSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Log Router settings for the given resource.
+     * Note: Settings for the Log Router can currently only be configured for
+     * Google Cloud organizations. Once configured, it applies to all projects and
+     * folders in the Google Cloud organization.
+     * [UpdateSettings][google.logging.v2.ConfigServiceV2.UpdateSettings]
+     * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
+     * account does not have the required
+     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
+     * 3) access to the key is disabled. 4) `location_id` is not supported by
+     * Logging. 5) `location_id` violate OrgPolicy.
+     * See [Enabling CMEK for Log
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
+     * </pre>
+     */
+    public com.google.logging.v2.Settings updateSettings(
+        com.google.logging.v2.UpdateSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies a set of log entries from a log bucket to a Cloud Storage bucket.
+     * </pre>
+     */
+    public com.google.longrunning.Operation copyLogEntries(
+        com.google.logging.v2.CopyLogEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCopyLogEntriesMethod(), getCallOptions(), request);
     }
   }
 
@@ -2303,7 +2655,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists buckets.
+     * Lists log buckets.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2317,7 +2669,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets a bucket.
+     * Gets a log bucket.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogBucket>
@@ -2330,8 +2682,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a bucket that can be used to store log entries. Once a bucket has
-     * been created, the region cannot be changed.
+     * Creates a log bucket that can be used to store log entries. After a bucket
+     * has been created, the bucket's location cannot be changed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogBucket>
@@ -2344,13 +2696,13 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a bucket. This method replaces the following fields in the
+     * Updates a log bucket. This method replaces the following fields in the
      * existing bucket with values from the new bucket: `retention_period`
      * If the retention period is decreased and the bucket is locked,
-     * FAILED_PRECONDITION will be returned.
-     * If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
-     * will be returned.
-     * A buckets region may not be modified after it is created.
+     * `FAILED_PRECONDITION` will be returned.
+     * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
+     * `FAILED_PRECONDITION` will be returned.
+     * After a bucket has been created, the bucket's location cannot be changed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogBucket>
@@ -2363,10 +2715,10 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes a bucket.
-     * Moves the bucket to the DELETE_REQUESTED state. After 7 days, the
-     * bucket will be purged and all logs in the bucket will be permanently
-     * deleted.
+     * Deletes a log bucket.
+     * Changes the bucket's `lifecycle_state` to the `DELETE_REQUESTED` state.
+     * After 7 days, the bucket will be purged and all log entries in the bucket
+     * will be permanently deleted.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2379,8 +2731,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Undeletes a bucket. A bucket that has been deleted may be undeleted within
-     * the grace period of 7 days.
+     * Undeletes a log bucket. A bucket that has been deleted can be undeleted
+     * within the grace period of 7 days.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2393,7 +2745,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists views on a bucket.
+     * Lists views on a log bucket.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2407,7 +2759,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets a view.
+     * Gets a view on a log bucket..
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogView>
@@ -2420,8 +2772,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a view over logs in a bucket. A bucket may contain a maximum of
-     * 50 views.
+     * Creates a view over log entries in a log bucket. A bucket may contain a
+     * maximum of 30 views.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogView>
@@ -2434,8 +2786,11 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a view. This method replaces the following fields in the existing
-     * view with values from the new view: `filter`.
+     * Updates a view on a log bucket. This method replaces the following fields
+     * in the existing view with values from the new view: `filter`.
+     * If an `UNAVAILABLE` error is returned, this indicates that system is not in
+     * a state where it can update the view. If this occurs, please try again in a
+     * few minutes.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogView>
@@ -2448,7 +2803,10 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes a view from a bucket.
+     * Deletes a view on a log bucket.
+     * If an `UNAVAILABLE` error is returned, this indicates that system is not in
+     * a state where it can delete the view. If this occurs, please try again in a
+     * few minutes.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteView(
@@ -2534,7 +2892,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists all the exclusions in a parent resource.
+     * Lists all the exclusions on the _Default sink in a parent resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2548,7 +2906,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets the description of an exclusion.
+     * Gets the description of an exclusion in the _Default sink.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogExclusion>
@@ -2561,9 +2919,9 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a new exclusion in a specified parent resource.
-     * Only log entries belonging to that resource can be excluded.
-     * You can have up to 10 exclusions in a resource.
+     * Creates a new exclusion in the _Default sink in a specified parent
+     * resource. Only log entries belonging to that resource can be excluded. You
+     * can have up to 10 exclusions in a resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogExclusion>
@@ -2576,7 +2934,8 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Changes one or more properties of an existing exclusion.
+     * Changes one or more properties of an existing exclusion in the _Default
+     * sink.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogExclusion>
@@ -2589,7 +2948,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Deletes an exclusion.
+     * Deletes an exclusion in the _Default sink.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2602,11 +2961,12 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets the Logs Router CMEK settings for the given resource.
-     * Note: CMEK for the Logs Router can currently only be configured for GCP
-     * organizations. Once configured, it applies to all projects and folders in
-     * the GCP organization.
-     * See [Enabling CMEK for Logs
+     * Gets the Logging CMEK settings for the given resource.
+     * Note: CMEK for the Log Router can be configured for Google Cloud projects,
+     * folders, organizations and billing accounts. Once configured for an
+     * organization, it applies to all projects and folders in the Google Cloud
+     * organization.
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -2621,16 +2981,16 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates the Logs Router CMEK settings for the given resource.
-     * Note: CMEK for the Logs Router can currently only be configured for GCP
-     * organizations. Once configured, it applies to all projects and folders in
-     * the GCP organization.
+     * Updates the Log Router CMEK settings for the given resource.
+     * Note: CMEK for the Log Router can currently only be configured for Google
+     * Cloud organizations. Once configured, it applies to all projects and
+     * folders in the Google Cloud organization.
      * [UpdateCmekSettings][google.logging.v2.ConfigServiceV2.UpdateCmekSettings]
      * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
      * account does not have the required
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
      * 3) access to the key is disabled.
-     * See [Enabling CMEK for Logs
+     * See [Enabling CMEK for Log
      * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
      * for more information.
      * </pre>
@@ -2639,6 +2999,64 @@ public final class ConfigServiceV2Grpc {
         updateCmekSettings(com.google.logging.v2.UpdateCmekSettingsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCmekSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Log Router settings for the given resource.
+     * Note: Settings for the Log Router can be get for Google Cloud projects,
+     * folders, organizations and billing accounts. Currently it can only be
+     * configured for organizations. Once configured for an organization, it
+     * applies to all projects and folders in the Google Cloud organization.
+     * See [Enabling CMEK for Log
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.Settings>
+        getSettings(com.google.logging.v2.GetSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Log Router settings for the given resource.
+     * Note: Settings for the Log Router can currently only be configured for
+     * Google Cloud organizations. Once configured, it applies to all projects and
+     * folders in the Google Cloud organization.
+     * [UpdateSettings][google.logging.v2.ConfigServiceV2.UpdateSettings]
+     * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
+     * account does not have the required
+     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
+     * 3) access to the key is disabled. 4) `location_id` is not supported by
+     * Logging. 5) `location_id` violate OrgPolicy.
+     * See [Enabling CMEK for Log
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.Settings>
+        updateSettings(com.google.logging.v2.UpdateSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies a set of log entries from a log bucket to a Cloud Storage bucket.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        copyLogEntries(com.google.logging.v2.CopyLogEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCopyLogEntriesMethod(), getCallOptions()), request);
     }
   }
 
@@ -2665,6 +3083,9 @@ public final class ConfigServiceV2Grpc {
   private static final int METHODID_DELETE_EXCLUSION = 20;
   private static final int METHODID_GET_CMEK_SETTINGS = 21;
   private static final int METHODID_UPDATE_CMEK_SETTINGS = 22;
+  private static final int METHODID_GET_SETTINGS = 23;
+  private static final int METHODID_UPDATE_SETTINGS = 24;
+  private static final int METHODID_COPY_LOG_ENTRIES = 25;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2802,6 +3223,21 @@ public final class ConfigServiceV2Grpc {
               (com.google.logging.v2.UpdateCmekSettingsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings>) responseObserver);
           break;
+        case METHODID_GET_SETTINGS:
+          serviceImpl.getSettings(
+              (com.google.logging.v2.GetSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.Settings>) responseObserver);
+          break;
+        case METHODID_UPDATE_SETTINGS:
+          serviceImpl.updateSettings(
+              (com.google.logging.v2.UpdateSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.Settings>) responseObserver);
+          break;
+        case METHODID_COPY_LOG_ENTRIES:
+          serviceImpl.copyLogEntries(
+              (com.google.logging.v2.CopyLogEntriesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2889,6 +3325,9 @@ public final class ConfigServiceV2Grpc {
                       .addMethod(getDeleteExclusionMethod())
                       .addMethod(getGetCmekSettingsMethod())
                       .addMethod(getUpdateCmekSettingsMethod())
+                      .addMethod(getGetSettingsMethod())
+                      .addMethod(getUpdateSettingsMethod())
+                      .addMethod(getCopyLogEntriesMethod())
                       .build();
         }
       }

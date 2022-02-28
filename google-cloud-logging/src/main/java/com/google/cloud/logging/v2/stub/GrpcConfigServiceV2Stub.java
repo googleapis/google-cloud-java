@@ -26,9 +26,13 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.CmekSettings;
+import com.google.logging.v2.CopyLogEntriesMetadata;
+import com.google.logging.v2.CopyLogEntriesRequest;
+import com.google.logging.v2.CopyLogEntriesResponse;
 import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
@@ -40,6 +44,7 @@ import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
+import com.google.logging.v2.GetSettingsRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.GetViewRequest;
 import com.google.logging.v2.ListBucketsRequest;
@@ -54,12 +59,15 @@ import com.google.logging.v2.LogBucket;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
 import com.google.logging.v2.LogView;
+import com.google.logging.v2.Settings;
 import com.google.logging.v2.UndeleteBucketRequest;
 import com.google.logging.v2.UpdateBucketRequest;
 import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
+import com.google.logging.v2.UpdateSettingsRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.UpdateViewRequest;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -282,6 +290,34 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
               .setResponseMarshaller(ProtoUtils.marshaller(CmekSettings.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetSettingsRequest, Settings> getSettingsMethodDescriptor =
+      MethodDescriptor.<GetSettingsRequest, Settings>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/GetSettings")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetSettingsRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdateSettingsRequest, Settings>
+      updateSettingsMethodDescriptor =
+          MethodDescriptor.<UpdateSettingsRequest, Settings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/UpdateSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CopyLogEntriesRequest, Operation>
+      copyLogEntriesMethodDescriptor =
+          MethodDescriptor.<CopyLogEntriesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/CopyLogEntries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CopyLogEntriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListBucketsRequest, ListBucketsResponse> listBucketsCallable;
   private final UnaryCallable<ListBucketsRequest, ListBucketsPagedResponse>
       listBucketsPagedCallable;
@@ -311,6 +347,12 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   private final UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable;
   private final UnaryCallable<GetCmekSettingsRequest, CmekSettings> getCmekSettingsCallable;
   private final UnaryCallable<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsCallable;
+  private final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable;
+  private final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable;
+  private final UnaryCallable<CopyLogEntriesRequest, Operation> copyLogEntriesCallable;
+  private final OperationCallable<
+          CopyLogEntriesRequest, CopyLogEntriesResponse, CopyLogEntriesMetadata>
+      copyLogEntriesOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -587,6 +629,30 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =
+        GrpcCallSettings.<GetSettingsRequest, Settings>newBuilder()
+            .setMethodDescriptor(getSettingsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateSettingsRequest, Settings> updateSettingsTransportSettings =
+        GrpcCallSettings.<UpdateSettingsRequest, Settings>newBuilder()
+            .setMethodDescriptor(updateSettingsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<CopyLogEntriesRequest, Operation> copyLogEntriesTransportSettings =
+        GrpcCallSettings.<CopyLogEntriesRequest, Operation>newBuilder()
+            .setMethodDescriptor(copyLogEntriesMethodDescriptor)
+            .build();
 
     this.listBucketsCallable =
         callableFactory.createUnaryCallable(
@@ -671,6 +737,21 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
             updateCmekSettingsTransportSettings,
             settings.updateCmekSettingsSettings(),
             clientContext);
+    this.getSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getSettingsTransportSettings, settings.getSettingsSettings(), clientContext);
+    this.updateSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateSettingsTransportSettings, settings.updateSettingsSettings(), clientContext);
+    this.copyLogEntriesCallable =
+        callableFactory.createUnaryCallable(
+            copyLogEntriesTransportSettings, settings.copyLogEntriesSettings(), clientContext);
+    this.copyLogEntriesOperationCallable =
+        callableFactory.createOperationCallable(
+            copyLogEntriesTransportSettings,
+            settings.copyLogEntriesOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -814,6 +895,27 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   @Override
   public UnaryCallable<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsCallable() {
     return updateCmekSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable() {
+    return getSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
+    return updateSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CopyLogEntriesRequest, Operation> copyLogEntriesCallable() {
+    return copyLogEntriesCallable;
+  }
+
+  @Override
+  public OperationCallable<CopyLogEntriesRequest, CopyLogEntriesResponse, CopyLogEntriesMetadata>
+      copyLogEntriesOperationCallable() {
+    return copyLogEntriesOperationCallable;
   }
 
   @Override

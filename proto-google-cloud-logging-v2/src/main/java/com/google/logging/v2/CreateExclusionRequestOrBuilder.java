@@ -32,7 +32,9 @@ public interface CreateExclusionRequestOrBuilder
    *     "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]"
    *     "folders/[FOLDER_ID]"
-   * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * For examples:
+   *   `"projects/my-logging-project"`
+   *   `"organizations/123456789"`
    * </pre>
    *
    * <code>
@@ -51,7 +53,9 @@ public interface CreateExclusionRequestOrBuilder
    *     "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]"
    *     "folders/[FOLDER_ID]"
-   * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * For examples:
+   *   `"projects/my-logging-project"`
+   *   `"organizations/123456789"`
    * </pre>
    *
    * <code>

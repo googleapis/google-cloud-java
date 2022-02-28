@@ -23,10 +23,10 @@ package com.google.logging.v2;
  *
  * <pre>
  * Describes a sink used to export log entries to one of the following
- * destinations in any project: a Cloud Storage bucket, a BigQuery dataset, or a
- * Cloud Pub/Sub topic. A logs filter controls which log entries are exported.
- * The sink must be created within a project, organization, billing account, or
- * folder.
+ * destinations in any project: a Cloud Storage bucket, a BigQuery dataset, a
+ * Pub/Sub topic or a Cloud Logging log bucket. A logs filter controls which log
+ * entries are exported. The sink must be created within a project,
+ * organization, billing account, or folder.
  * </pre>
  *
  * Protobuf type {@code google.logging.v2.LogSink}
@@ -433,9 +433,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The client-assigned sink identifier, unique within the project. Example:
-   * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
-   * characters and can include only the following characters: upper and
+   * Required. The client-assigned sink identifier, unique within the project.
+   * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
+   * to 100 characters and can include only the following characters: upper and
    * lower-case alphanumeric characters, underscores, hyphens, and periods.
    * First character has to be alphanumeric.
    * </pre>
@@ -460,9 +460,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The client-assigned sink identifier, unique within the project. Example:
-   * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
-   * characters and can include only the following characters: upper and
+   * Required. The client-assigned sink identifier, unique within the project.
+   * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
+   * to 100 characters and can include only the following characters: upper and
    * lower-case alphanumeric characters, underscores, hyphens, and periods.
    * First character has to be alphanumeric.
    * </pre>
@@ -494,9 +494,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *     "storage.googleapis.com/[GCS_BUCKET]"
    *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
    *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
-   * The sink's `writer_identity`, set when the sink is created, must
-   * have permission to write to the destination or else the log
-   * entries are not exported. For more information, see
+   * The sink's `writer_identity`, set when the sink is created, must have
+   * permission to write to the destination or else the log entries are not
+   * exported. For more information, see
    * [Exporting Logs with
    * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * </pre>
@@ -527,9 +527,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *     "storage.googleapis.com/[GCS_BUCKET]"
    *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
    *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
-   * The sink's `writer_identity`, set when the sink is created, must
-   * have permission to write to the destination or else the log
-   * entries are not exported. For more information, see
+   * The sink's `writer_identity`, set when the sink is created, must have
+   * permission to write to the destination or else the log entries are not
+   * exported. For more information, see
    * [Exporting Logs with
    * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * </pre>
@@ -562,8 +562,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * Optional. An [advanced logs
    * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
    * only exported log entries are those that are in the resource owning the
-   * sink and that match the filter. For example:
-   *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
+   * sink and that match the filter.
+   * For example:
+   *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -589,8 +590,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * Optional. An [advanced logs
    * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
    * only exported log entries are those that are in the resource owning the
-   * sink and that match the filter. For example:
-   *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
+   * sink and that match the filter.
+   * For example:
+   *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -667,8 +669,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If set to True, then this sink is disabled and it does not
-   * export any log entries.
+   * Optional. If set to true, then this sink is disabled and it does not export any log
+   * entries.
    * </pre>
    *
    * <code>bool disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -686,7 +688,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * Optional. Log entries that match any of these exclusion filters will not be exported.
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -703,7 +705,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * Optional. Log entries that match any of these exclusion filters will not be exported.
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -721,7 +723,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * Optional. Log entries that match any of these exclusion filters will not be exported.
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -738,7 +740,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * Optional. Log entries that match any of these exclusion filters will not be exported.
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -755,7 +757,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * Optional. Log entries that match any of these exclusion filters will not be exported.
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -815,17 +817,21 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
-   * writes the exported log entries to the sink's destination. This field is
-   * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Cloud
+   * Logging writes the exported log entries to the sink's destination. This
+   * field is set by
+   * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
    * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
    * value of `unique_writer_identity` in those methods.
    * Until you grant this identity write-access to the destination, log entry
-   * exports from this sink will fail. For more information,
-   * see [Granting Access for a
+   * exports from this sink will fail. For more information, see [Granting
+   * Access for a
    * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
    * Consult the destination service's documentation to determine the
    * appropriate IAM roles to assign to the identity.
+   * Sinks that have a destination that is a log bucket in the same project as
+   * the sink do not have a writer_identity and no additional permissions are
+   * required.
    * </pre>
    *
    * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -848,17 +854,21 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
-   * writes the exported log entries to the sink's destination. This field is
-   * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Cloud
+   * Logging writes the exported log entries to the sink's destination. This
+   * field is set by
+   * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
    * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
    * value of `unique_writer_identity` in those methods.
    * Until you grant this identity write-access to the destination, log entry
-   * exports from this sink will fail. For more information,
-   * see [Granting Access for a
+   * exports from this sink will fail. For more information, see [Granting
+   * Access for a
    * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
    * Consult the destination service's documentation to determine the
    * appropriate IAM roles to assign to the identity.
+   * Sinks that have a destination that is a log bucket in the same project as
+   * the sink do not have a writer_identity and no additional permissions are
+   * required.
    * </pre>
    *
    * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -884,18 +894,20 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. This field applies only to sinks owned by organizations and
-   * folders. If the field is false, the default, only the logs owned by the
-   * sink's parent resource are available for export. If the field is true, then
-   * logs from all the projects, folders, and billing accounts contained in the
+   * Optional. This field applies only to sinks owned by organizations and folders. If the
+   * field is false, the default, only the logs owned by the sink's parent
+   * resource are available for export. If the field is true, then log entries
+   * from all the projects, folders, and billing accounts contained in the
    * sink's parent resource are also available for export. Whether a particular
    * log entry from the children is exported depends on the sink's filter
-   * expression. For example, if this field is true, then the filter
+   * expression.
+   * For example, if this field is true, then the filter
    * `resource.type=gce_instance` would export all Compute Engine VM instance
-   * log entries from all projects in the sink's parent. To only export entries
-   * from certain child projects, filter on the project part of the log name:
-   *     logName:("projects/test-project1/" OR "projects/test-project2/") AND
-   *     resource.type=gce_instance
+   * log entries from all projects in the sink's parent.
+   * To only export entries from certain child projects, filter on the project
+   * part of the log name:
+   *   logName:("projects/test-project1/" OR "projects/test-project2/") AND
+   *   resource.type=gce_instance
    * </pre>
    *
    * <code>bool include_children = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1358,10 +1370,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Describes a sink used to export log entries to one of the following
-   * destinations in any project: a Cloud Storage bucket, a BigQuery dataset, or a
-   * Cloud Pub/Sub topic. A logs filter controls which log entries are exported.
-   * The sink must be created within a project, organization, billing account, or
-   * folder.
+   * destinations in any project: a Cloud Storage bucket, a BigQuery dataset, a
+   * Pub/Sub topic or a Cloud Logging log bucket. A logs filter controls which log
+   * entries are exported. The sink must be created within a project,
+   * organization, billing account, or folder.
    * </pre>
    *
    * Protobuf type {@code google.logging.v2.LogSink}
@@ -1673,9 +1685,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The client-assigned sink identifier, unique within the project. Example:
-     * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
-     * characters and can include only the following characters: upper and
+     * Required. The client-assigned sink identifier, unique within the project.
+     * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
+     * to 100 characters and can include only the following characters: upper and
      * lower-case alphanumeric characters, underscores, hyphens, and periods.
      * First character has to be alphanumeric.
      * </pre>
@@ -1699,9 +1711,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The client-assigned sink identifier, unique within the project. Example:
-     * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
-     * characters and can include only the following characters: upper and
+     * Required. The client-assigned sink identifier, unique within the project.
+     * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
+     * to 100 characters and can include only the following characters: upper and
      * lower-case alphanumeric characters, underscores, hyphens, and periods.
      * First character has to be alphanumeric.
      * </pre>
@@ -1725,9 +1737,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The client-assigned sink identifier, unique within the project. Example:
-     * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
-     * characters and can include only the following characters: upper and
+     * Required. The client-assigned sink identifier, unique within the project.
+     * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
+     * to 100 characters and can include only the following characters: upper and
      * lower-case alphanumeric characters, underscores, hyphens, and periods.
      * First character has to be alphanumeric.
      * </pre>
@@ -1750,9 +1762,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The client-assigned sink identifier, unique within the project. Example:
-     * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
-     * characters and can include only the following characters: upper and
+     * Required. The client-assigned sink identifier, unique within the project.
+     * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
+     * to 100 characters and can include only the following characters: upper and
      * lower-case alphanumeric characters, underscores, hyphens, and periods.
      * First character has to be alphanumeric.
      * </pre>
@@ -1771,9 +1783,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The client-assigned sink identifier, unique within the project. Example:
-     * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
-     * characters and can include only the following characters: upper and
+     * Required. The client-assigned sink identifier, unique within the project.
+     * For example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited
+     * to 100 characters and can include only the following characters: upper and
      * lower-case alphanumeric characters, underscores, hyphens, and periods.
      * First character has to be alphanumeric.
      * </pre>
@@ -1803,9 +1815,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *     "storage.googleapis.com/[GCS_BUCKET]"
      *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
-     * The sink's `writer_identity`, set when the sink is created, must
-     * have permission to write to the destination or else the log
-     * entries are not exported. For more information, see
+     * The sink's `writer_identity`, set when the sink is created, must have
+     * permission to write to the destination or else the log entries are not
+     * exported. For more information, see
      * [Exporting Logs with
      * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
@@ -1835,9 +1847,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *     "storage.googleapis.com/[GCS_BUCKET]"
      *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
-     * The sink's `writer_identity`, set when the sink is created, must
-     * have permission to write to the destination or else the log
-     * entries are not exported. For more information, see
+     * The sink's `writer_identity`, set when the sink is created, must have
+     * permission to write to the destination or else the log entries are not
+     * exported. For more information, see
      * [Exporting Logs with
      * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
@@ -1867,9 +1879,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *     "storage.googleapis.com/[GCS_BUCKET]"
      *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
-     * The sink's `writer_identity`, set when the sink is created, must
-     * have permission to write to the destination or else the log
-     * entries are not exported. For more information, see
+     * The sink's `writer_identity`, set when the sink is created, must have
+     * permission to write to the destination or else the log entries are not
+     * exported. For more information, see
      * [Exporting Logs with
      * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
@@ -1898,9 +1910,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *     "storage.googleapis.com/[GCS_BUCKET]"
      *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
-     * The sink's `writer_identity`, set when the sink is created, must
-     * have permission to write to the destination or else the log
-     * entries are not exported. For more information, see
+     * The sink's `writer_identity`, set when the sink is created, must have
+     * permission to write to the destination or else the log entries are not
+     * exported. For more information, see
      * [Exporting Logs with
      * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
@@ -1925,9 +1937,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *     "storage.googleapis.com/[GCS_BUCKET]"
      *     "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
-     * The sink's `writer_identity`, set when the sink is created, must
-     * have permission to write to the destination or else the log
-     * entries are not exported. For more information, see
+     * The sink's `writer_identity`, set when the sink is created, must have
+     * permission to write to the destination or else the log entries are not
+     * exported. For more information, see
      * [Exporting Logs with
      * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
@@ -1958,8 +1970,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * Optional. An [advanced logs
      * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
      * only exported log entries are those that are in the resource owning the
-     * sink and that match the filter. For example:
-     *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
+     * sink and that match the filter.
+     * For example:
+     *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1984,8 +1997,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * Optional. An [advanced logs
      * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
      * only exported log entries are those that are in the resource owning the
-     * sink and that match the filter. For example:
-     *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
+     * sink and that match the filter.
+     * For example:
+     *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2010,8 +2024,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * Optional. An [advanced logs
      * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
      * only exported log entries are those that are in the resource owning the
-     * sink and that match the filter. For example:
-     *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
+     * sink and that match the filter.
+     * For example:
+     *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2035,8 +2050,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * Optional. An [advanced logs
      * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
      * only exported log entries are those that are in the resource owning the
-     * sink and that match the filter. For example:
-     *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
+     * sink and that match the filter.
+     * For example:
+     *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2056,8 +2072,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * Optional. An [advanced logs
      * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
      * only exported log entries are those that are in the resource owning the
-     * sink and that match the filter. For example:
-     *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
+     * sink and that match the filter.
+     * For example:
+     *   `logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2192,8 +2209,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set to True, then this sink is disabled and it does not
-     * export any log entries.
+     * Optional. If set to true, then this sink is disabled and it does not export any log
+     * entries.
      * </pre>
      *
      * <code>bool disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2208,8 +2225,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set to True, then this sink is disabled and it does not
-     * export any log entries.
+     * Optional. If set to true, then this sink is disabled and it does not export any log
+     * entries.
      * </pre>
      *
      * <code>bool disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2227,8 +2244,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set to True, then this sink is disabled and it does not
-     * export any log entries.
+     * Optional. If set to true, then this sink is disabled and it does not export any log
+     * entries.
      * </pre>
      *
      * <code>bool disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2262,7 +2279,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2282,7 +2299,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2302,7 +2319,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2322,7 +2339,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2348,7 +2365,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2372,7 +2389,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2398,7 +2415,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2424,7 +2441,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2447,7 +2464,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2471,7 +2488,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2495,7 +2512,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2518,7 +2535,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2541,7 +2558,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2557,7 +2574,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2577,7 +2594,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2598,7 +2615,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2615,7 +2632,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2632,7 +2649,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * Optional. Log entries that match any of these exclusion filters will not be exported.
      * If a log entry is matched by both `filter` and one of `exclusion_filters`
      * it will not be exported.
      * </pre>
@@ -2768,17 +2785,21 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
-     * writes the exported log entries to the sink's destination. This field is
-     * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Cloud
+     * Logging writes the exported log entries to the sink's destination. This
+     * field is set by
+     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
      * value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
-     * exports from this sink will fail. For more information,
-     * see [Granting Access for a
+     * exports from this sink will fail. For more information, see [Granting
+     * Access for a
      * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
+     * Sinks that have a destination that is a log bucket in the same project as
+     * the sink do not have a writer_identity and no additional permissions are
+     * required.
      * </pre>
      *
      * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2800,17 +2821,21 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
-     * writes the exported log entries to the sink's destination. This field is
-     * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Cloud
+     * Logging writes the exported log entries to the sink's destination. This
+     * field is set by
+     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
      * value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
-     * exports from this sink will fail. For more information,
-     * see [Granting Access for a
+     * exports from this sink will fail. For more information, see [Granting
+     * Access for a
      * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
+     * Sinks that have a destination that is a log bucket in the same project as
+     * the sink do not have a writer_identity and no additional permissions are
+     * required.
      * </pre>
      *
      * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2832,17 +2857,21 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
-     * writes the exported log entries to the sink's destination. This field is
-     * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Cloud
+     * Logging writes the exported log entries to the sink's destination. This
+     * field is set by
+     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
      * value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
-     * exports from this sink will fail. For more information,
-     * see [Granting Access for a
+     * exports from this sink will fail. For more information, see [Granting
+     * Access for a
      * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
+     * Sinks that have a destination that is a log bucket in the same project as
+     * the sink do not have a writer_identity and no additional permissions are
+     * required.
      * </pre>
      *
      * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2863,17 +2892,21 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
-     * writes the exported log entries to the sink's destination. This field is
-     * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Cloud
+     * Logging writes the exported log entries to the sink's destination. This
+     * field is set by
+     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
      * value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
-     * exports from this sink will fail. For more information,
-     * see [Granting Access for a
+     * exports from this sink will fail. For more information, see [Granting
+     * Access for a
      * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
+     * Sinks that have a destination that is a log bucket in the same project as
+     * the sink do not have a writer_identity and no additional permissions are
+     * required.
      * </pre>
      *
      * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2890,17 +2923,21 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
-     * writes the exported log entries to the sink's destination. This field is
-     * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Cloud
+     * Logging writes the exported log entries to the sink's destination. This
+     * field is set by
+     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
      * value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
-     * exports from this sink will fail. For more information,
-     * see [Granting Access for a
+     * exports from this sink will fail. For more information, see [Granting
+     * Access for a
      * Resource](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
+     * Sinks that have a destination that is a log bucket in the same project as
+     * the sink do not have a writer_identity and no additional permissions are
+     * required.
      * </pre>
      *
      * <code>string writer_identity = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2924,18 +2961,20 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This field applies only to sinks owned by organizations and
-     * folders. If the field is false, the default, only the logs owned by the
-     * sink's parent resource are available for export. If the field is true, then
-     * logs from all the projects, folders, and billing accounts contained in the
+     * Optional. This field applies only to sinks owned by organizations and folders. If the
+     * field is false, the default, only the logs owned by the sink's parent
+     * resource are available for export. If the field is true, then log entries
+     * from all the projects, folders, and billing accounts contained in the
      * sink's parent resource are also available for export. Whether a particular
      * log entry from the children is exported depends on the sink's filter
-     * expression. For example, if this field is true, then the filter
+     * expression.
+     * For example, if this field is true, then the filter
      * `resource.type=gce_instance` would export all Compute Engine VM instance
-     * log entries from all projects in the sink's parent. To only export entries
-     * from certain child projects, filter on the project part of the log name:
-     *     logName:("projects/test-project1/" OR "projects/test-project2/") AND
-     *     resource.type=gce_instance
+     * log entries from all projects in the sink's parent.
+     * To only export entries from certain child projects, filter on the project
+     * part of the log name:
+     *   logName:("projects/test-project1/" OR "projects/test-project2/") AND
+     *   resource.type=gce_instance
      * </pre>
      *
      * <code>bool include_children = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2950,18 +2989,20 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This field applies only to sinks owned by organizations and
-     * folders. If the field is false, the default, only the logs owned by the
-     * sink's parent resource are available for export. If the field is true, then
-     * logs from all the projects, folders, and billing accounts contained in the
+     * Optional. This field applies only to sinks owned by organizations and folders. If the
+     * field is false, the default, only the logs owned by the sink's parent
+     * resource are available for export. If the field is true, then log entries
+     * from all the projects, folders, and billing accounts contained in the
      * sink's parent resource are also available for export. Whether a particular
      * log entry from the children is exported depends on the sink's filter
-     * expression. For example, if this field is true, then the filter
+     * expression.
+     * For example, if this field is true, then the filter
      * `resource.type=gce_instance` would export all Compute Engine VM instance
-     * log entries from all projects in the sink's parent. To only export entries
-     * from certain child projects, filter on the project part of the log name:
-     *     logName:("projects/test-project1/" OR "projects/test-project2/") AND
-     *     resource.type=gce_instance
+     * log entries from all projects in the sink's parent.
+     * To only export entries from certain child projects, filter on the project
+     * part of the log name:
+     *   logName:("projects/test-project1/" OR "projects/test-project2/") AND
+     *   resource.type=gce_instance
      * </pre>
      *
      * <code>bool include_children = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2979,18 +3020,20 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This field applies only to sinks owned by organizations and
-     * folders. If the field is false, the default, only the logs owned by the
-     * sink's parent resource are available for export. If the field is true, then
-     * logs from all the projects, folders, and billing accounts contained in the
+     * Optional. This field applies only to sinks owned by organizations and folders. If the
+     * field is false, the default, only the logs owned by the sink's parent
+     * resource are available for export. If the field is true, then log entries
+     * from all the projects, folders, and billing accounts contained in the
      * sink's parent resource are also available for export. Whether a particular
      * log entry from the children is exported depends on the sink's filter
-     * expression. For example, if this field is true, then the filter
+     * expression.
+     * For example, if this field is true, then the filter
      * `resource.type=gce_instance` would export all Compute Engine VM instance
-     * log entries from all projects in the sink's parent. To only export entries
-     * from certain child projects, filter on the project part of the log name:
-     *     logName:("projects/test-project1/" OR "projects/test-project2/") AND
-     *     resource.type=gce_instance
+     * log entries from all projects in the sink's parent.
+     * To only export entries from certain child projects, filter on the project
+     * part of the log name:
+     *   logName:("projects/test-project1/" OR "projects/test-project2/") AND
+     *   resource.type=gce_instance
      * </pre>
      *
      * <code>bool include_children = 9 [(.google.api.field_behavior) = OPTIONAL];</code>

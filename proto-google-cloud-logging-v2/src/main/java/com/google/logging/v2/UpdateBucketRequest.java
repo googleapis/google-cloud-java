@@ -152,10 +152,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-   * Example:
-   * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-   * requires permission "resourcemanager.projects.updateLiens" to set the
-   * locked property
+   * For example:
+   *   `"projects/my-project/locations/global/buckets/my-bucket"`
    * </pre>
    *
    * <code>
@@ -185,10 +183,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-   * Example:
-   * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-   * requires permission "resourcemanager.projects.updateLiens" to set the
-   * locked property
+   * For example:
+   *   `"projects/my-project/locations/global/buckets/my-bucket"`
    * </pre>
    *
    * <code>
@@ -263,11 +259,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Field mask that specifies the fields in `bucket` that need an update. A
-   * bucket field will be overwritten if, and only if, it is in the update
-   * mask. `name` and output only fields cannot be updated.
-   * For a detailed `FieldMask` definition, see
+   * bucket field will be overwritten if, and only if, it is in the update mask.
+   * `name` and output only fields cannot be updated.
+   * For a detailed `FieldMask` definition, see:
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-   * Example: `updateMask=retention_days`.
+   * For example: `updateMask=retention_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -284,11 +280,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Field mask that specifies the fields in `bucket` that need an update. A
-   * bucket field will be overwritten if, and only if, it is in the update
-   * mask. `name` and output only fields cannot be updated.
-   * For a detailed `FieldMask` definition, see
+   * bucket field will be overwritten if, and only if, it is in the update mask.
+   * `name` and output only fields cannot be updated.
+   * For a detailed `FieldMask` definition, see:
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-   * Example: `updateMask=retention_days`.
+   * For example: `updateMask=retention_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -305,11 +301,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Field mask that specifies the fields in `bucket` that need an update. A
-   * bucket field will be overwritten if, and only if, it is in the update
-   * mask. `name` and output only fields cannot be updated.
-   * For a detailed `FieldMask` definition, see
+   * bucket field will be overwritten if, and only if, it is in the update mask.
+   * `name` and output only fields cannot be updated.
+   * For a detailed `FieldMask` definition, see:
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-   * Example: `updateMask=retention_days`.
+   * For example: `updateMask=retention_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -702,10 +698,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-     * requires permission "resourcemanager.projects.updateLiens" to set the
-     * locked property
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
      * <code>
@@ -734,10 +728,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-     * requires permission "resourcemanager.projects.updateLiens" to set the
-     * locked property
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
      * <code>
@@ -766,10 +758,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-     * requires permission "resourcemanager.projects.updateLiens" to set the
-     * locked property
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
      * <code>
@@ -797,10 +787,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-     * requires permission "resourcemanager.projects.updateLiens" to set the
-     * locked property
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
      * <code>
@@ -824,10 +812,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-     * requires permission "resourcemanager.projects.updateLiens" to set the
-     * locked property
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
      * <code>
@@ -1047,11 +1033,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
-     * For a detailed `FieldMask` definition, see
+     * bucket field will be overwritten if, and only if, it is in the update mask.
+     * `name` and output only fields cannot be updated.
+     * For a detailed `FieldMask` definition, see:
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * For example: `updateMask=retention_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1067,11 +1053,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
-     * For a detailed `FieldMask` definition, see
+     * bucket field will be overwritten if, and only if, it is in the update mask.
+     * `name` and output only fields cannot be updated.
+     * For a detailed `FieldMask` definition, see:
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * For example: `updateMask=retention_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1093,11 +1079,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
-     * For a detailed `FieldMask` definition, see
+     * bucket field will be overwritten if, and only if, it is in the update mask.
+     * `name` and output only fields cannot be updated.
+     * For a detailed `FieldMask` definition, see:
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * For example: `updateMask=retention_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1121,11 +1107,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
-     * For a detailed `FieldMask` definition, see
+     * bucket field will be overwritten if, and only if, it is in the update mask.
+     * `name` and output only fields cannot be updated.
+     * For a detailed `FieldMask` definition, see:
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * For example: `updateMask=retention_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1146,11 +1132,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
-     * For a detailed `FieldMask` definition, see
+     * bucket field will be overwritten if, and only if, it is in the update mask.
+     * `name` and output only fields cannot be updated.
+     * For a detailed `FieldMask` definition, see:
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * For example: `updateMask=retention_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1176,11 +1162,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
-     * For a detailed `FieldMask` definition, see
+     * bucket field will be overwritten if, and only if, it is in the update mask.
+     * `name` and output only fields cannot be updated.
+     * For a detailed `FieldMask` definition, see:
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * For example: `updateMask=retention_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1202,11 +1188,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
-     * For a detailed `FieldMask` definition, see
+     * bucket field will be overwritten if, and only if, it is in the update mask.
+     * `name` and output only fields cannot be updated.
+     * For a detailed `FieldMask` definition, see:
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * For example: `updateMask=retention_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1222,11 +1208,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
-     * For a detailed `FieldMask` definition, see
+     * bucket field will be overwritten if, and only if, it is in the update mask.
+     * `name` and output only fields cannot be updated.
+     * For a detailed `FieldMask` definition, see:
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * For example: `updateMask=retention_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1246,11 +1232,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
-     * For a detailed `FieldMask` definition, see
+     * bucket field will be overwritten if, and only if, it is in the update mask.
+     * `name` and output only fields cannot be updated.
+     * For a detailed `FieldMask` definition, see:
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * For example: `updateMask=retention_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];

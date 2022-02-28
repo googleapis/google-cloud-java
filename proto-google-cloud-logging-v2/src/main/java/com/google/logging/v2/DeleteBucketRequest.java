@@ -122,8 +122,8 @@ public final class DeleteBucketRequest extends com.google.protobuf.GeneratedMess
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-   * Example:
-   * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`.
+   * For example:
+   *   `"projects/my-project/locations/global/buckets/my-bucket"`
    * </pre>
    *
    * <code>
@@ -153,8 +153,8 @@ public final class DeleteBucketRequest extends com.google.protobuf.GeneratedMess
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-   * Example:
-   * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`.
+   * For example:
+   *   `"projects/my-project/locations/global/buckets/my-bucket"`
    * </pre>
    *
    * <code>
@@ -502,8 +502,8 @@ public final class DeleteBucketRequest extends com.google.protobuf.GeneratedMess
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`.
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
      * <code>
@@ -532,8 +532,8 @@ public final class DeleteBucketRequest extends com.google.protobuf.GeneratedMess
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`.
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
      * <code>
@@ -562,8 +562,8 @@ public final class DeleteBucketRequest extends com.google.protobuf.GeneratedMess
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`.
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
      * <code>
@@ -591,8 +591,8 @@ public final class DeleteBucketRequest extends com.google.protobuf.GeneratedMess
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`.
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
      * <code>
@@ -616,8 +616,8 @@ public final class DeleteBucketRequest extends com.google.protobuf.GeneratedMess
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`.
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket"`
      * </pre>
      *
      * <code>

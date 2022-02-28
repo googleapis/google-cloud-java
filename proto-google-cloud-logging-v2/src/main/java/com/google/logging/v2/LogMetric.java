@@ -193,6 +193,11 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 96:
+            {
+              disabled_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -384,11 +389,11 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
    * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
    * name pieces, and it cannot be the first character of the name.
-   * The metric identifier in this field must not be
-   * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-   * However, when the metric identifier appears as the `[METRIC_ID]` part of a
-   * `metric_name` API parameter, then the metric identifier must be
-   * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
+   * This field is the `[METRIC_ID]` part of a metric resource name in the
+   * format "projects/[PROJECT_ID]/metrics/[METRIC_ID]". Example: If the
+   * resource name of a metric is
+   * `"projects/my-project/metrics/nginx%2Frequests"`, this field's value is
+   * `"nginx/requests"`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -417,11 +422,11 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
    * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
    * name pieces, and it cannot be the first character of the name.
-   * The metric identifier in this field must not be
-   * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-   * However, when the metric identifier appears as the `[METRIC_ID]` part of a
-   * `metric_name` API parameter, then the metric identifier must be
-   * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
+   * This field is the `[METRIC_ID]` part of a metric resource name in the
+   * format "projects/[PROJECT_ID]/metrics/[METRIC_ID]". Example: If the
+   * resource name of a metric is
+   * `"projects/my-project/metrics/nginx%2Frequests"`, this field's value is
+   * `"nginx/requests"`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -547,6 +552,25 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int DISABLED_FIELD_NUMBER = 12;
+  private boolean disabled_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to True, then this metric is disabled and it does not
+   * generate any points.
+   * </pre>
+   *
+   * <code>bool disabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disabled.
+   */
+  @java.lang.Override
+  public boolean getDisabled() {
+    return disabled_;
   }
 
   public static final int METRIC_DESCRIPTOR_FIELD_NUMBER = 5;
@@ -1128,6 +1152,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(10, getUpdateTime());
     }
+    if (disabled_ != false) {
+      output.writeBool(12, disabled_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1174,6 +1201,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUpdateTime());
     }
+    if (disabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, disabled_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1192,6 +1222,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (getDisabled() != other.getDisabled()) return false;
     if (hasMetricDescriptor() != other.hasMetricDescriptor()) return false;
     if (hasMetricDescriptor()) {
       if (!getMetricDescriptor().equals(other.getMetricDescriptor())) return false;
@@ -1228,6 +1259,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
     if (hasMetricDescriptor()) {
       hash = (37 * hash) + METRIC_DESCRIPTOR_FIELD_NUMBER;
       hash = (53 * hash) + getMetricDescriptor().hashCode();
@@ -1426,6 +1459,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
 
       filter_ = "";
 
+      disabled_ = false;
+
       if (metricDescriptorBuilder_ == null) {
         metricDescriptor_ = null;
       } else {
@@ -1485,6 +1520,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       result.name_ = name_;
       result.description_ = description_;
       result.filter_ = filter_;
+      result.disabled_ = disabled_;
       if (metricDescriptorBuilder_ == null) {
         result.metricDescriptor_ = metricDescriptor_;
       } else {
@@ -1570,6 +1606,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
         filter_ = other.filter_;
         onChanged();
       }
+      if (other.getDisabled() != false) {
+        setDisabled(other.getDisabled());
+      }
       if (other.hasMetricDescriptor()) {
         mergeMetricDescriptor(other.getMetricDescriptor());
       }
@@ -1632,11 +1671,11 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
      * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
      * name pieces, and it cannot be the first character of the name.
-     * The metric identifier in this field must not be
-     * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-     * However, when the metric identifier appears as the `[METRIC_ID]` part of a
-     * `metric_name` API parameter, then the metric identifier must be
-     * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
+     * This field is the `[METRIC_ID]` part of a metric resource name in the
+     * format "projects/[PROJECT_ID]/metrics/[METRIC_ID]". Example: If the
+     * resource name of a metric is
+     * `"projects/my-project/metrics/nginx%2Frequests"`, this field's value is
+     * `"nginx/requests"`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1664,11 +1703,11 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
      * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
      * name pieces, and it cannot be the first character of the name.
-     * The metric identifier in this field must not be
-     * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-     * However, when the metric identifier appears as the `[METRIC_ID]` part of a
-     * `metric_name` API parameter, then the metric identifier must be
-     * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
+     * This field is the `[METRIC_ID]` part of a metric resource name in the
+     * format "projects/[PROJECT_ID]/metrics/[METRIC_ID]". Example: If the
+     * resource name of a metric is
+     * `"projects/my-project/metrics/nginx%2Frequests"`, this field's value is
+     * `"nginx/requests"`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1696,11 +1735,11 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
      * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
      * name pieces, and it cannot be the first character of the name.
-     * The metric identifier in this field must not be
-     * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-     * However, when the metric identifier appears as the `[METRIC_ID]` part of a
-     * `metric_name` API parameter, then the metric identifier must be
-     * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
+     * This field is the `[METRIC_ID]` part of a metric resource name in the
+     * format "projects/[PROJECT_ID]/metrics/[METRIC_ID]". Example: If the
+     * resource name of a metric is
+     * `"projects/my-project/metrics/nginx%2Frequests"`, this field's value is
+     * `"nginx/requests"`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1727,11 +1766,11 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
      * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
      * name pieces, and it cannot be the first character of the name.
-     * The metric identifier in this field must not be
-     * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-     * However, when the metric identifier appears as the `[METRIC_ID]` part of a
-     * `metric_name` API parameter, then the metric identifier must be
-     * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
+     * This field is the `[METRIC_ID]` part of a metric resource name in the
+     * format "projects/[PROJECT_ID]/metrics/[METRIC_ID]". Example: If the
+     * resource name of a metric is
+     * `"projects/my-project/metrics/nginx%2Frequests"`, this field's value is
+     * `"nginx/requests"`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1754,11 +1793,11 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
      * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
      * name pieces, and it cannot be the first character of the name.
-     * The metric identifier in this field must not be
-     * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-     * However, when the metric identifier appears as the `[METRIC_ID]` part of a
-     * `metric_name` API parameter, then the metric identifier must be
-     * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
+     * This field is the `[METRIC_ID]` part of a metric resource name in the
+     * format "projects/[PROJECT_ID]/metrics/[METRIC_ID]". Example: If the
+     * resource name of a metric is
+     * `"projects/my-project/metrics/nginx%2Frequests"`, this field's value is
+     * `"nginx/requests"`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2010,6 +2049,61 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       filter_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean disabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to True, then this metric is disabled and it does not
+     * generate any points.
+     * </pre>
+     *
+     * <code>bool disabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disabled.
+     */
+    @java.lang.Override
+    public boolean getDisabled() {
+      return disabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to True, then this metric is disabled and it does not
+     * generate any points.
+     * </pre>
+     *
+     * <code>bool disabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The disabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisabled(boolean value) {
+
+      disabled_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to True, then this metric is disabled and it does not
+     * generate any points.
+     * </pre>
+     *
+     * <code>bool disabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisabled() {
+
+      disabled_ = false;
       onChanged();
       return this;
     }

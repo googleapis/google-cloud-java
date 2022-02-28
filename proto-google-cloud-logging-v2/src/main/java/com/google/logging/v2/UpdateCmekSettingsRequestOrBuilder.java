@@ -32,10 +32,11 @@ public interface UpdateCmekSettingsRequestOrBuilder
    *     "organizations/[ORGANIZATION_ID]/cmekSettings"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
    *     "folders/[FOLDER_ID]/cmekSettings"
-   * Example: `"organizations/12345/cmekSettings"`.
-   * Note: CMEK for the Logs Router can currently only be configured for GCP
-   * organizations. Once configured, it applies to all projects and folders in
-   * the GCP organization.
+   * For example:
+   *   `"organizations/12345/cmekSettings"`
+   * Note: CMEK for the Log Router can currently only be configured for Google
+   * Cloud organizations. Once configured, it applies to all projects and
+   * folders in the Google Cloud organization.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -52,10 +53,11 @@ public interface UpdateCmekSettingsRequestOrBuilder
    *     "organizations/[ORGANIZATION_ID]/cmekSettings"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
    *     "folders/[FOLDER_ID]/cmekSettings"
-   * Example: `"organizations/12345/cmekSettings"`.
-   * Note: CMEK for the Logs Router can currently only be configured for GCP
-   * organizations. Once configured, it applies to all projects and folders in
-   * the GCP organization.
+   * For example:
+   *   `"organizations/12345/cmekSettings"`
+   * Note: CMEK for the Log Router can currently only be configured for Google
+   * Cloud organizations. Once configured, it applies to all projects and
+   * folders in the Google Cloud organization.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -69,7 +71,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The CMEK settings to update.
-   * See [Enabling CMEK for Logs
+   * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
    * </pre>
@@ -86,7 +88,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The CMEK settings to update.
-   * See [Enabling CMEK for Logs
+   * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
    * </pre>
@@ -103,7 +105,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The CMEK settings to update.
-   * See [Enabling CMEK for Logs
+   * See [Enabling CMEK for Log
    * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
    * </pre>
@@ -122,7 +124,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * be updated. A field will be overwritten if and only if it is in the update
    * mask. Output only fields cannot be updated.
    * See [FieldMask][google.protobuf.FieldMask] for more information.
-   * Example: `"updateMask=kmsKeyName"`
+   * For example: `"updateMask=kmsKeyName"`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -139,7 +141,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * be updated. A field will be overwritten if and only if it is in the update
    * mask. Output only fields cannot be updated.
    * See [FieldMask][google.protobuf.FieldMask] for more information.
-   * Example: `"updateMask=kmsKeyName"`
+   * For example: `"updateMask=kmsKeyName"`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -156,7 +158,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * be updated. A field will be overwritten if and only if it is in the update
    * mask. Output only fields cannot be updated.
    * See [FieldMask][google.protobuf.FieldMask] for more information.
-   * Example: `"updateMask=kmsKeyName"`
+   * For example: `"updateMask=kmsKeyName"`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];

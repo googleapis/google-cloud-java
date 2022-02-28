@@ -28,11 +28,14 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.logging.v2.BillingAccountLocationName;
 import com.google.logging.v2.BillingAccountName;
 import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CmekSettingsName;
+import com.google.logging.v2.CopyLogEntriesRequest;
+import com.google.logging.v2.CopyLogEntriesResponse;
 import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
@@ -46,6 +49,7 @@ import com.google.logging.v2.FolderName;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
+import com.google.logging.v2.GetSettingsRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.GetViewRequest;
 import com.google.logging.v2.LifecycleState;
@@ -69,13 +73,18 @@ import com.google.logging.v2.LogViewName;
 import com.google.logging.v2.OrganizationLocationName;
 import com.google.logging.v2.OrganizationName;
 import com.google.logging.v2.ProjectName;
+import com.google.logging.v2.Settings;
+import com.google.logging.v2.SettingsName;
 import com.google.logging.v2.UndeleteBucketRequest;
 import com.google.logging.v2.UpdateBucketRequest;
 import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
+import com.google.logging.v2.UpdateSettingsRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.UpdateViewRequest;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -85,6 +94,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -366,6 +376,8 @@ public class ConfigClientTest {
             .setRetentionDays(1544391896)
             .setLocked(true)
             .setLifecycleState(LifecycleState.forNumber(0))
+            .addAllRestrictedFields(new ArrayList<String>())
+            .setCmekSettings(CmekSettings.newBuilder().build())
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
@@ -422,6 +434,8 @@ public class ConfigClientTest {
             .setRetentionDays(1544391896)
             .setLocked(true)
             .setLifecycleState(LifecycleState.forNumber(0))
+            .addAllRestrictedFields(new ArrayList<String>())
+            .setCmekSettings(CmekSettings.newBuilder().build())
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
@@ -480,6 +494,8 @@ public class ConfigClientTest {
             .setRetentionDays(1544391896)
             .setLocked(true)
             .setLifecycleState(LifecycleState.forNumber(0))
+            .addAllRestrictedFields(new ArrayList<String>())
+            .setCmekSettings(CmekSettings.newBuilder().build())
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
@@ -2513,6 +2529,191 @@ public class ConfigClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSettingsTest() throws Exception {
+    Settings expectedResponse =
+        Settings.newBuilder()
+            .setName(SettingsName.ofProjectName("[PROJECT]").toString())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsServiceAccountId("kmsServiceAccountId662368868")
+            .setStorageLocation("storageLocation911842128")
+            .setDisableDefaultSink(true)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    SettingsName name = SettingsName.ofProjectName("[PROJECT]");
+
+    Settings actualResponse = client.getSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSettingsRequest actualRequest = ((GetSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      SettingsName name = SettingsName.ofProjectName("[PROJECT]");
+      client.getSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSettingsTest2() throws Exception {
+    Settings expectedResponse =
+        Settings.newBuilder()
+            .setName(SettingsName.ofProjectName("[PROJECT]").toString())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsServiceAccountId("kmsServiceAccountId662368868")
+            .setStorageLocation("storageLocation911842128")
+            .setDisableDefaultSink(true)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Settings actualResponse = client.getSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSettingsRequest actualRequest = ((GetSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSettingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSettingsTest() throws Exception {
+    Settings expectedResponse =
+        Settings.newBuilder()
+            .setName(SettingsName.ofProjectName("[PROJECT]").toString())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsServiceAccountId("kmsServiceAccountId662368868")
+            .setStorageLocation("storageLocation911842128")
+            .setDisableDefaultSink(true)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    Settings settings = Settings.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Settings actualResponse = client.updateSettings(settings, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSettingsRequest actualRequest = ((UpdateSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(settings, actualRequest.getSettings());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      Settings settings = Settings.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSettings(settings, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void copyLogEntriesTest() throws Exception {
+    CopyLogEntriesResponse expectedResponse =
+        CopyLogEntriesResponse.newBuilder().setLogEntriesCopiedCount(-2134326978).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("copyLogEntriesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfigServiceV2.addResponse(resultOperation);
+
+    CopyLogEntriesRequest request =
+        CopyLogEntriesRequest.newBuilder()
+            .setName("name3373707")
+            .setFilter("filter-1274492040")
+            .setDestination("destination-1429847026")
+            .build();
+
+    CopyLogEntriesResponse actualResponse = client.copyLogEntriesAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CopyLogEntriesRequest actualRequest = ((CopyLogEntriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getDestination(), actualRequest.getDestination());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void copyLogEntriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      CopyLogEntriesRequest request =
+          CopyLogEntriesRequest.newBuilder()
+              .setName("name3373707")
+              .setFilter("filter-1274492040")
+              .setDestination("destination-1429847026")
+              .build();
+      client.copyLogEntriesAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

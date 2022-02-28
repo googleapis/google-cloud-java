@@ -137,7 +137,9 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
    *     "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]"
    *     "folders/[FOLDER_ID]"
-   * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * For examples:
+   *   `"projects/my-logging-project"`
+   *   `"organizations/123456789"`
    * </pre>
    *
    * <code>
@@ -167,7 +169,9 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
    *     "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]"
    *     "folders/[FOLDER_ID]"
-   * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * For examples:
+   *   `"projects/my-logging-project"`
+   *   `"organizations/123456789"`
    * </pre>
    *
    * <code>
@@ -597,7 +601,9 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
      *     "folders/[FOLDER_ID]"
-     * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+     * For examples:
+     *   `"projects/my-logging-project"`
+     *   `"organizations/123456789"`
      * </pre>
      *
      * <code>
@@ -626,7 +632,9 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
      *     "folders/[FOLDER_ID]"
-     * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+     * For examples:
+     *   `"projects/my-logging-project"`
+     *   `"organizations/123456789"`
      * </pre>
      *
      * <code>
@@ -655,7 +663,9 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
      *     "folders/[FOLDER_ID]"
-     * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+     * For examples:
+     *   `"projects/my-logging-project"`
+     *   `"organizations/123456789"`
      * </pre>
      *
      * <code>
@@ -683,7 +693,9 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
      *     "folders/[FOLDER_ID]"
-     * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+     * For examples:
+     *   `"projects/my-logging-project"`
+     *   `"organizations/123456789"`
      * </pre>
      *
      * <code>
@@ -707,7 +719,9 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      *     "organizations/[ORGANIZATION_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]"
      *     "folders/[FOLDER_ID]"
-     * Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+     * For examples:
+     *   `"projects/my-logging-project"`
+     *   `"organizations/123456789"`
      * </pre>
      *
      * <code>

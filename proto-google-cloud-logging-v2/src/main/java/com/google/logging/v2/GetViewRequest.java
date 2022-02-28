@@ -119,8 +119,8 @@ public final class GetViewRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The resource name of the policy:
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
-   * Example:
-   * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
+   * For example:
+   *   `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
    * </pre>
    *
    * <code>
@@ -147,8 +147,8 @@ public final class GetViewRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The resource name of the policy:
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
-   * Example:
-   * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
+   * For example:
+   *   `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
    * </pre>
    *
    * <code>
@@ -490,8 +490,8 @@ public final class GetViewRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the policy:
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
      * </pre>
      *
      * <code>
@@ -517,8 +517,8 @@ public final class GetViewRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the policy:
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
      * </pre>
      *
      * <code>
@@ -544,8 +544,8 @@ public final class GetViewRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the policy:
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
      * </pre>
      *
      * <code>
@@ -570,8 +570,8 @@ public final class GetViewRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the policy:
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
      * </pre>
      *
      * <code>
@@ -592,8 +592,8 @@ public final class GetViewRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the policy:
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
-     * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
+     * For example:
+     *   `"projects/my-project/locations/global/buckets/my-bucket/views/my-view"`
      * </pre>
      *
      * <code>

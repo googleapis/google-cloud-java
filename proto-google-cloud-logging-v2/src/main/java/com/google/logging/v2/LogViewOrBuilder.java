@@ -28,8 +28,8 @@ public interface LogViewOrBuilder
    *
    * <pre>
    * The resource name of the view.
-   * For example
-   * "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view
+   * For example:
+   *   `projects/my-project/locations/global/buckets/my-bucket/views/my-view`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -42,8 +42,8 @@ public interface LogViewOrBuilder
    *
    * <pre>
    * The resource name of the view.
-   * For example
-   * "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view
+   * For example:
+   *   `projects/my-project/locations/global/buckets/my-bucket/views/my-view`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -158,13 +158,15 @@ public interface LogViewOrBuilder
    *
    * <pre>
    * Filter that restricts which log entries in a bucket are visible in this
-   * view. Filters are restricted to be a logical AND of ==/!= of any of the
+   * view.
+   * Filters are restricted to be a logical AND of ==/!= of any of the
    * following:
-   *   originating project/folder/organization/billing account.
-   *   resource type
-   *   log id
-   * Example: SOURCE("projects/myproject") AND resource.type = "gce_instance"
-   *             AND LOG_ID("stdout")
+   *   - originating project/folder/organization/billing account.
+   *   - resource type
+   *   - log id
+   * For example:
+   *   SOURCE("projects/myproject") AND resource.type = "gce_instance"
+   *                                AND LOG_ID("stdout")
    * </pre>
    *
    * <code>string filter = 7;</code>
@@ -177,13 +179,15 @@ public interface LogViewOrBuilder
    *
    * <pre>
    * Filter that restricts which log entries in a bucket are visible in this
-   * view. Filters are restricted to be a logical AND of ==/!= of any of the
+   * view.
+   * Filters are restricted to be a logical AND of ==/!= of any of the
    * following:
-   *   originating project/folder/organization/billing account.
-   *   resource type
-   *   log id
-   * Example: SOURCE("projects/myproject") AND resource.type = "gce_instance"
-   *             AND LOG_ID("stdout")
+   *   - originating project/folder/organization/billing account.
+   *   - resource type
+   *   - log id
+   * For example:
+   *   SOURCE("projects/myproject") AND resource.type = "gce_instance"
+   *                                AND LOG_ID("stdout")
    * </pre>
    *
    * <code>string filter = 7;</code>

@@ -256,6 +256,21 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
               traceSampled_ = input.readBool();
               break;
             }
+          case 282:
+            {
+              com.google.logging.v2.LogSplit.Builder subBuilder = null;
+              if (split_ != null) {
+                subBuilder = split_.toBuilder();
+              }
+              split_ =
+                  input.readMessage(com.google.logging.v2.LogSplit.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(split_);
+                split_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -370,7 +385,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * following characters: upper and lower case alphanumeric characters,
    * forward-slash, underscore, hyphen, and period.
    * For backward compatibility, if `log_name` begins with a forward-slash, such
-   * as `/projects/...`, then the log entry is ingested as usual but the
+   * as `/projects/...`, then the log entry is ingested as usual, but the
    * forward-slash is removed. Listing the log entry will not show the leading
    * slash and filtering for a log name with a leading slash will never return
    * any results.
@@ -410,7 +425,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * following characters: upper and lower case alphanumeric characters,
    * forward-slash, underscore, hyphen, and period.
    * For backward compatibility, if `log_name` begins with a forward-slash, such
-   * as `/projects/...`, then the log entry is ingested as usual but the
+   * as `/projects/...`, then the log entry is ingested as usual, but the
    * forward-slash is removed. Listing the log entry will not show the leading
    * slash and filtering for a log name with a leading slash will never return
    * any results.
@@ -861,7 +876,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * removed in a single query result. However, there are no guarantees of
    * de-duplication in the export of logs.
    * If the `insert_id` is omitted when writing a log entry, the Logging API
-   *  assigns its own unique identifier in this field.
+   * assigns its own unique identifier in this field.
    * In queries, the `insert_id` is also used to order log entries that have
    * the same `log_name` and `timestamp` values.
    * </pre>
@@ -892,7 +907,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * removed in a single query result. However, there are no guarantees of
    * de-duplication in the export of logs.
    * If the `insert_id` is omitted when writing a log entry, the Logging API
-   *  assigns its own unique identifier in this field.
+   * assigns its own unique identifier in this field.
    * In queries, the `insert_id` is also used to order log entries that have
    * the same `log_name` and `timestamp` values.
    * </pre>
@@ -1000,8 +1015,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of user-defined (key, value) data that provides additional
-   * information about the log entry.
+   * Optional. A map of key, value pairs that provides additional information about the
+   * log entry. The labels can be user-defined or system-defined.
+   * User-defined labels are arbitrary key, value pairs that you can use to
+   * classify logs.
+   * System-defined labels are defined by GCP services for platform logs.
+   * They have two components - a service namespace component and the
+   * attribute name. For example: `compute.googleapis.com/resource_name`.
+   * Cloud Logging truncates label keys that exceed 512 B and label
+   * values that exceed 64 KB upon their associated log entry being
+   * written. The truncation is indicated by an ellipsis at the
+   * end of the character string.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1023,8 +1047,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of user-defined (key, value) data that provides additional
-   * information about the log entry.
+   * Optional. A map of key, value pairs that provides additional information about the
+   * log entry. The labels can be user-defined or system-defined.
+   * User-defined labels are arbitrary key, value pairs that you can use to
+   * classify logs.
+   * System-defined labels are defined by GCP services for platform logs.
+   * They have two components - a service namespace component and the
+   * attribute name. For example: `compute.googleapis.com/resource_name`.
+   * Cloud Logging truncates label keys that exceed 512 B and label
+   * values that exceed 64 KB upon their associated log entry being
+   * written. The truncation is indicated by an ellipsis at the
+   * end of the character string.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1037,8 +1070,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of user-defined (key, value) data that provides additional
-   * information about the log entry.
+   * Optional. A map of key, value pairs that provides additional information about the
+   * log entry. The labels can be user-defined or system-defined.
+   * User-defined labels are arbitrary key, value pairs that you can use to
+   * classify logs.
+   * System-defined labels are defined by GCP services for platform logs.
+   * They have two components - a service namespace component and the
+   * attribute name. For example: `compute.googleapis.com/resource_name`.
+   * Cloud Logging truncates label keys that exceed 512 B and label
+   * values that exceed 64 KB upon their associated log entry being
+   * written. The truncation is indicated by an ellipsis at the
+   * end of the character string.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1055,8 +1097,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of user-defined (key, value) data that provides additional
-   * information about the log entry.
+   * Optional. A map of key, value pairs that provides additional information about the
+   * log entry. The labels can be user-defined or system-defined.
+   * User-defined labels are arbitrary key, value pairs that you can use to
+   * classify logs.
+   * System-defined labels are defined by GCP services for platform logs.
+   * They have two components - a service namespace component and the
+   * attribute name. For example: `compute.googleapis.com/resource_name`.
+   * Cloud Logging truncates label keys that exceed 512 B and label
+   * values that exceed 64 KB upon their associated log entry being
+   * written. The truncation is indicated by an ellipsis at the
+   * end of the character string.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1317,6 +1368,55 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     return getSourceLocation();
   }
 
+  public static final int SPLIT_FIELD_NUMBER = 35;
+  private com.google.logging.v2.LogSplit split_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+   * entries split from a single LogEntry.
+   * </pre>
+   *
+   * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the split field is set.
+   */
+  @java.lang.Override
+  public boolean hasSplit() {
+    return split_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+   * entries split from a single LogEntry.
+   * </pre>
+   *
+   * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The split.
+   */
+  @java.lang.Override
+  public com.google.logging.v2.LogSplit getSplit() {
+    return split_ == null ? com.google.logging.v2.LogSplit.getDefaultInstance() : split_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+   * entries split from a single LogEntry.
+   * </pre>
+   *
+   * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.logging.v2.LogSplitOrBuilder getSplitOrBuilder() {
+    return getSplit();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1377,6 +1477,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     }
     if (traceSampled_ != false) {
       output.writeBool(30, traceSampled_);
+    }
+    if (split_ != null) {
+      output.writeMessage(35, getSplit());
     }
     unknownFields.writeTo(output);
   }
@@ -1446,6 +1549,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     if (traceSampled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, traceSampled_);
     }
+    if (split_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(35, getSplit());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1491,6 +1597,10 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     if (hasSourceLocation() != other.hasSourceLocation()) return false;
     if (hasSourceLocation()) {
       if (!getSourceLocation().equals(other.getSourceLocation())) return false;
+    }
+    if (hasSplit() != other.hasSplit()) return false;
+    if (hasSplit()) {
+      if (!getSplit().equals(other.getSplit())) return false;
     }
     if (!getPayloadCase().equals(other.getPayloadCase())) return false;
     switch (payloadCase_) {
@@ -1556,6 +1666,10 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     if (hasSourceLocation()) {
       hash = (37 * hash) + SOURCE_LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getSourceLocation().hashCode();
+    }
+    if (hasSplit()) {
+      hash = (37 * hash) + SPLIT_FIELD_NUMBER;
+      hash = (53 * hash) + getSplit().hashCode();
     }
     switch (payloadCase_) {
       case 2:
@@ -1785,6 +1899,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         sourceLocation_ = null;
         sourceLocationBuilder_ = null;
       }
+      if (splitBuilder_ == null) {
+        split_ = null;
+      } else {
+        split_ = null;
+        splitBuilder_ = null;
+      }
       payloadCase_ = 0;
       payload_ = null;
       return this;
@@ -1868,6 +1988,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         result.sourceLocation_ = sourceLocation_;
       } else {
         result.sourceLocation_ = sourceLocationBuilder_.build();
+      }
+      if (splitBuilder_ == null) {
+        result.split_ = split_;
+      } else {
+        result.split_ = splitBuilder_.build();
       }
       result.payloadCase_ = payloadCase_;
       onBuilt();
@@ -1960,6 +2085,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSourceLocation()) {
         mergeSourceLocation(other.getSourceLocation());
       }
+      if (other.hasSplit()) {
+        mergeSplit(other.getSplit());
+      }
       switch (other.getPayloadCase()) {
         case PROTO_PAYLOAD:
           {
@@ -2047,7 +2175,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * following characters: upper and lower case alphanumeric characters,
      * forward-slash, underscore, hyphen, and period.
      * For backward compatibility, if `log_name` begins with a forward-slash, such
-     * as `/projects/...`, then the log entry is ingested as usual but the
+     * as `/projects/...`, then the log entry is ingested as usual, but the
      * forward-slash is removed. Listing the log entry will not show the leading
      * slash and filtering for a log name with a leading slash will never return
      * any results.
@@ -2086,7 +2214,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * following characters: upper and lower case alphanumeric characters,
      * forward-slash, underscore, hyphen, and period.
      * For backward compatibility, if `log_name` begins with a forward-slash, such
-     * as `/projects/...`, then the log entry is ingested as usual but the
+     * as `/projects/...`, then the log entry is ingested as usual, but the
      * forward-slash is removed. Listing the log entry will not show the leading
      * slash and filtering for a log name with a leading slash will never return
      * any results.
@@ -2125,7 +2253,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * following characters: upper and lower case alphanumeric characters,
      * forward-slash, underscore, hyphen, and period.
      * For backward compatibility, if `log_name` begins with a forward-slash, such
-     * as `/projects/...`, then the log entry is ingested as usual but the
+     * as `/projects/...`, then the log entry is ingested as usual, but the
      * forward-slash is removed. Listing the log entry will not show the leading
      * slash and filtering for a log name with a leading slash will never return
      * any results.
@@ -2163,7 +2291,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * following characters: upper and lower case alphanumeric characters,
      * forward-slash, underscore, hyphen, and period.
      * For backward compatibility, if `log_name` begins with a forward-slash, such
-     * as `/projects/...`, then the log entry is ingested as usual but the
+     * as `/projects/...`, then the log entry is ingested as usual, but the
      * forward-slash is removed. Listing the log entry will not show the leading
      * slash and filtering for a log name with a leading slash will never return
      * any results.
@@ -2197,7 +2325,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * following characters: upper and lower case alphanumeric characters,
      * forward-slash, underscore, hyphen, and period.
      * For backward compatibility, if `log_name` begins with a forward-slash, such
-     * as `/projects/...`, then the log entry is ingested as usual but the
+     * as `/projects/...`, then the log entry is ingested as usual, but the
      * forward-slash is removed. Listing the log entry will not show the leading
      * slash and filtering for a log name with a leading slash will never return
      * any results.
@@ -3620,7 +3748,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * removed in a single query result. However, there are no guarantees of
      * de-duplication in the export of logs.
      * If the `insert_id` is omitted when writing a log entry, the Logging API
-     *  assigns its own unique identifier in this field.
+     * assigns its own unique identifier in this field.
      * In queries, the `insert_id` is also used to order log entries that have
      * the same `log_name` and `timestamp` values.
      * </pre>
@@ -3650,7 +3778,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * removed in a single query result. However, there are no guarantees of
      * de-duplication in the export of logs.
      * If the `insert_id` is omitted when writing a log entry, the Logging API
-     *  assigns its own unique identifier in this field.
+     * assigns its own unique identifier in this field.
      * In queries, the `insert_id` is also used to order log entries that have
      * the same `log_name` and `timestamp` values.
      * </pre>
@@ -3680,7 +3808,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * removed in a single query result. However, there are no guarantees of
      * de-duplication in the export of logs.
      * If the `insert_id` is omitted when writing a log entry, the Logging API
-     *  assigns its own unique identifier in this field.
+     * assigns its own unique identifier in this field.
      * In queries, the `insert_id` is also used to order log entries that have
      * the same `log_name` and `timestamp` values.
      * </pre>
@@ -3709,7 +3837,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * removed in a single query result. However, there are no guarantees of
      * de-duplication in the export of logs.
      * If the `insert_id` is omitted when writing a log entry, the Logging API
-     *  assigns its own unique identifier in this field.
+     * assigns its own unique identifier in this field.
      * In queries, the `insert_id` is also used to order log entries that have
      * the same `log_name` and `timestamp` values.
      * </pre>
@@ -3734,7 +3862,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * removed in a single query result. However, there are no guarantees of
      * de-duplication in the export of logs.
      * If the `insert_id` is omitted when writing a log entry, the Logging API
-     *  assigns its own unique identifier in this field.
+     * assigns its own unique identifier in this field.
      * In queries, the `insert_id` is also used to order log entries that have
      * the same `log_name` and `timestamp` values.
      * </pre>
@@ -3996,8 +4124,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of user-defined (key, value) data that provides additional
-     * information about the log entry.
+     * Optional. A map of key, value pairs that provides additional information about the
+     * log entry. The labels can be user-defined or system-defined.
+     * User-defined labels are arbitrary key, value pairs that you can use to
+     * classify logs.
+     * System-defined labels are defined by GCP services for platform logs.
+     * They have two components - a service namespace component and the
+     * attribute name. For example: `compute.googleapis.com/resource_name`.
+     * Cloud Logging truncates label keys that exceed 512 B and label
+     * values that exceed 64 KB upon their associated log entry being
+     * written. The truncation is indicated by an ellipsis at the
+     * end of the character string.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4019,8 +4156,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of user-defined (key, value) data that provides additional
-     * information about the log entry.
+     * Optional. A map of key, value pairs that provides additional information about the
+     * log entry. The labels can be user-defined or system-defined.
+     * User-defined labels are arbitrary key, value pairs that you can use to
+     * classify logs.
+     * System-defined labels are defined by GCP services for platform logs.
+     * They have two components - a service namespace component and the
+     * attribute name. For example: `compute.googleapis.com/resource_name`.
+     * Cloud Logging truncates label keys that exceed 512 B and label
+     * values that exceed 64 KB upon their associated log entry being
+     * written. The truncation is indicated by an ellipsis at the
+     * end of the character string.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4033,8 +4179,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of user-defined (key, value) data that provides additional
-     * information about the log entry.
+     * Optional. A map of key, value pairs that provides additional information about the
+     * log entry. The labels can be user-defined or system-defined.
+     * User-defined labels are arbitrary key, value pairs that you can use to
+     * classify logs.
+     * System-defined labels are defined by GCP services for platform logs.
+     * They have two components - a service namespace component and the
+     * attribute name. For example: `compute.googleapis.com/resource_name`.
+     * Cloud Logging truncates label keys that exceed 512 B and label
+     * values that exceed 64 KB upon their associated log entry being
+     * written. The truncation is indicated by an ellipsis at the
+     * end of the character string.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4052,8 +4207,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of user-defined (key, value) data that provides additional
-     * information about the log entry.
+     * Optional. A map of key, value pairs that provides additional information about the
+     * log entry. The labels can be user-defined or system-defined.
+     * User-defined labels are arbitrary key, value pairs that you can use to
+     * classify logs.
+     * System-defined labels are defined by GCP services for platform logs.
+     * They have two components - a service namespace component and the
+     * attribute name. For example: `compute.googleapis.com/resource_name`.
+     * Cloud Logging truncates label keys that exceed 512 B and label
+     * values that exceed 64 KB upon their associated log entry being
+     * written. The truncation is indicated by an ellipsis at the
+     * end of the character string.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4078,8 +4242,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of user-defined (key, value) data that provides additional
-     * information about the log entry.
+     * Optional. A map of key, value pairs that provides additional information about the
+     * log entry. The labels can be user-defined or system-defined.
+     * User-defined labels are arbitrary key, value pairs that you can use to
+     * classify logs.
+     * System-defined labels are defined by GCP services for platform logs.
+     * They have two components - a service namespace component and the
+     * attribute name. For example: `compute.googleapis.com/resource_name`.
+     * Cloud Logging truncates label keys that exceed 512 B and label
+     * values that exceed 64 KB upon their associated log entry being
+     * written. The truncation is indicated by an ellipsis at the
+     * end of the character string.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4100,8 +4273,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of user-defined (key, value) data that provides additional
-     * information about the log entry.
+     * Optional. A map of key, value pairs that provides additional information about the
+     * log entry. The labels can be user-defined or system-defined.
+     * User-defined labels are arbitrary key, value pairs that you can use to
+     * classify logs.
+     * System-defined labels are defined by GCP services for platform logs.
+     * They have two components - a service namespace component and the
+     * attribute name. For example: `compute.googleapis.com/resource_name`.
+     * Cloud Logging truncates label keys that exceed 512 B and label
+     * values that exceed 64 KB upon their associated log entry being
+     * written. The truncation is indicated by an ellipsis at the
+     * end of the character string.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4120,8 +4302,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of user-defined (key, value) data that provides additional
-     * information about the log entry.
+     * Optional. A map of key, value pairs that provides additional information about the
+     * log entry. The labels can be user-defined or system-defined.
+     * User-defined labels are arbitrary key, value pairs that you can use to
+     * classify logs.
+     * System-defined labels are defined by GCP services for platform logs.
+     * They have two components - a service namespace component and the
+     * attribute name. For example: `compute.googleapis.com/resource_name`.
+     * Cloud Logging truncates label keys that exceed 512 B and label
+     * values that exceed 64 KB upon their associated log entry being
+     * written. The truncation is indicated by an ellipsis at the
+     * end of the character string.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4854,6 +5045,203 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         sourceLocation_ = null;
       }
       return sourceLocationBuilder_;
+    }
+
+    private com.google.logging.v2.LogSplit split_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.logging.v2.LogSplit,
+            com.google.logging.v2.LogSplit.Builder,
+            com.google.logging.v2.LogSplitOrBuilder>
+        splitBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+     * entries split from a single LogEntry.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the split field is set.
+     */
+    public boolean hasSplit() {
+      return splitBuilder_ != null || split_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+     * entries split from a single LogEntry.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The split.
+     */
+    public com.google.logging.v2.LogSplit getSplit() {
+      if (splitBuilder_ == null) {
+        return split_ == null ? com.google.logging.v2.LogSplit.getDefaultInstance() : split_;
+      } else {
+        return splitBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+     * entries split from a single LogEntry.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSplit(com.google.logging.v2.LogSplit value) {
+      if (splitBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        split_ = value;
+        onChanged();
+      } else {
+        splitBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+     * entries split from a single LogEntry.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSplit(com.google.logging.v2.LogSplit.Builder builderForValue) {
+      if (splitBuilder_ == null) {
+        split_ = builderForValue.build();
+        onChanged();
+      } else {
+        splitBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+     * entries split from a single LogEntry.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSplit(com.google.logging.v2.LogSplit value) {
+      if (splitBuilder_ == null) {
+        if (split_ != null) {
+          split_ =
+              com.google.logging.v2.LogSplit.newBuilder(split_).mergeFrom(value).buildPartial();
+        } else {
+          split_ = value;
+        }
+        onChanged();
+      } else {
+        splitBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+     * entries split from a single LogEntry.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSplit() {
+      if (splitBuilder_ == null) {
+        split_ = null;
+        onChanged();
+      } else {
+        split_ = null;
+        splitBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+     * entries split from a single LogEntry.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.logging.v2.LogSplit.Builder getSplitBuilder() {
+
+      onChanged();
+      return getSplitFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+     * entries split from a single LogEntry.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.logging.v2.LogSplitOrBuilder getSplitOrBuilder() {
+      if (splitBuilder_ != null) {
+        return splitBuilder_.getMessageOrBuilder();
+      } else {
+        return split_ == null ? com.google.logging.v2.LogSplit.getDefaultInstance() : split_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information indicating this LogEntry is part of a sequence of multiple log
+     * entries split from a single LogEntry.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogSplit split = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.logging.v2.LogSplit,
+            com.google.logging.v2.LogSplit.Builder,
+            com.google.logging.v2.LogSplitOrBuilder>
+        getSplitFieldBuilder() {
+      if (splitBuilder_ == null) {
+        splitBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.logging.v2.LogSplit,
+                com.google.logging.v2.LogSplit.Builder,
+                com.google.logging.v2.LogSplitOrBuilder>(
+                getSplit(), getParentForChildren(), isClean());
+        split_ = null;
+      }
+      return splitBuilder_;
     }
 
     @java.lang.Override

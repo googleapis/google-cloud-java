@@ -27,9 +27,10 @@ public interface CreateBucketRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource in which to create the bucket:
+   * Required. The resource in which to create the log bucket:
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-   * Example: `"projects/my-logging-project/locations/global"`
+   * For example:
+   *   `"projects/my-project/locations/global"`
    * </pre>
    *
    * <code>
@@ -43,9 +44,10 @@ public interface CreateBucketRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource in which to create the bucket:
+   * Required. The resource in which to create the log bucket:
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-   * Example: `"projects/my-logging-project/locations/global"`
+   * For example:
+   *   `"projects/my-project/locations/global"`
    * </pre>
    *
    * <code>
@@ -60,9 +62,9 @@ public interface CreateBucketRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are
-   * limited to 100 characters and can include only letters, digits,
-   * underscores, hyphens, and periods.
+   * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are limited
+   * to 100 characters and can include only letters, digits, underscores,
+   * hyphens, and periods.
    * </pre>
    *
    * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -74,9 +76,9 @@ public interface CreateBucketRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are
-   * limited to 100 characters and can include only letters, digits,
-   * underscores, hyphens, and periods.
+   * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are limited
+   * to 100 characters and can include only letters, digits, underscores,
+   * hyphens, and periods.
    * </pre>
    *
    * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
