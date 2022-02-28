@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.5.11](https://github.com/googleapis/java-securitycenter-settings/compare/v0.5.10...v0.5.11) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#472](https://github.com/googleapis/java-securitycenter-settings/issues/472)) ([c44b53a](https://github.com/googleapis/java-securitycenter-settings/commit/c44b53aa1359dcf0671414ff3a7a418eedef6942))
+
 ### [0.5.10](https://github.com/googleapis/java-securitycenter-settings/compare/v0.5.9...v0.5.10) (2022-02-11)
 
 
