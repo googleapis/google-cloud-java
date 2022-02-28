@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.8](https://github.com/googleapis/java-dataproc-metastore/compare/v2.1.7...v2.1.8) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#206](https://github.com/googleapis/java-dataproc-metastore/issues/206)) ([f75d8d8](https://github.com/googleapis/java-dataproc-metastore/commit/f75d8d8c6a63fcac2ff51f551910796b28f1cbeb))
+
 ### [2.1.7](https://github.com/googleapis/java-dataproc-metastore/compare/v2.1.6...v2.1.7) (2022-02-11)
 
 
