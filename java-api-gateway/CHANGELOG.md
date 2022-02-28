@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.9](https://github.com/googleapis/java-api-gateway/compare/v2.1.8...v2.1.9) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#219](https://github.com/googleapis/java-api-gateway/issues/219)) ([9650785](https://github.com/googleapis/java-api-gateway/commit/9650785b711519b6b9d6f2e7d63a1b1e89ee85d5))
+
 ### [2.1.8](https://github.com/googleapis/java-api-gateway/compare/v2.1.7...v2.1.8) (2022-02-11)
 
 
