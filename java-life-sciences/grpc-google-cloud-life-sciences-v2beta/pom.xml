@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-life-sciences-v2beta</artifactId>
-  <version>0.3.6</version><!-- {x-version-update:grpc-google-cloud-life-sciences-v2beta:current} -->
+  <version>0.3.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-life-sciences-v2beta:current} -->
   <name>grpc-google-cloud-life-sciences-v2beta</name>
   <description>GRPC library for google-cloud-life-sciences</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-life-sciences-parent</artifactId>
-    <version>0.3.6</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
+    <version>0.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
   </parent>
   <dependencies>
     <dependency>
