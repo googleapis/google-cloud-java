@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.5.6](https://github.com/googleapis/java-area120-tables/compare/v0.5.5...v0.5.6) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#319](https://github.com/googleapis/java-area120-tables/issues/319)) ([682f675](https://github.com/googleapis/java-area120-tables/commit/682f675e578ac2eb89d34e66ae929750709b75d8))
+
 ### [0.5.5](https://github.com/googleapis/java-area120-tables/compare/v0.5.4...v0.5.5) (2022-02-11)
 
 
