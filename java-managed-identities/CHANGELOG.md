@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.2](https://github.com/googleapis/java-managed-identities/compare/v1.0.1...v1.0.2) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#196](https://github.com/googleapis/java-managed-identities/issues/196)) ([bd4a184](https://github.com/googleapis/java-managed-identities/commit/bd4a1845b0122269185bdfbf7232457ad596d8a2))
+
 ### [1.0.1](https://github.com/googleapis/java-managed-identities/compare/v1.0.0...v1.0.1) (2022-02-11)
 
 
