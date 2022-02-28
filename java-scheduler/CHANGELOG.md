@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.16](https://github.com/googleapis/java-scheduler/compare/v2.1.15...v2.1.16) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#702](https://github.com/googleapis/java-scheduler/issues/702)) ([6e6abd1](https://github.com/googleapis/java-scheduler/commit/6e6abd1497c30b96ec4e07f0a715bb2893e38d4e))
+
 ### [2.1.15](https://github.com/googleapis/java-scheduler/compare/v2.1.14...v2.1.15) (2022-02-15)
 
 
