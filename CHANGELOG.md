@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.10.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.9.1...v2.10.0) (2022-02-28)
+
+
+### Features
+
+* add trace_id for Read API ([#1544](https://github.com/googleapis/java-bigquerystorage/issues/1544)) ([5a92ade](https://github.com/googleapis/java-bigquerystorage/commit/5a92ade809d16e2770c07bd5287fbccb75645b21))
+
+
+### Bug Fixes
+
+* Add a e2e test on byte string array and remove a impossible case for byte array conversion ([#1546](https://github.com/googleapis/java-bigquerystorage/issues/1546)) ([adcb9bb](https://github.com/googleapis/java-bigquerystorage/commit/adcb9bb699e54d93da320e6a458caff79faa2f9f))
+* add more idiomatic way to insert ARRAY<BYTES> data ([#1550](https://github.com/googleapis/java-bigquerystorage/issues/1550)) ([3ae4038](https://github.com/googleapis/java-bigquerystorage/commit/3ae40381aeacd21676f2c896216faa26eb1ef960))
+* remove bigquery.readonly auth scope ([#1543](https://github.com/googleapis/java-bigquerystorage/issues/1543)) ([a70ae45](https://github.com/googleapis/java-bigquerystorage/commit/a70ae45c013a311aaeccd6885a9b9752bbcf57cc))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#1533](https://github.com/googleapis/java-bigquerystorage/issues/1533)) ([370c3b5](https://github.com/googleapis/java-bigquerystorage/commit/370c3b5bf236ab7853c4cc6d32393f93f5a165e4))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.9.0 ([#1538](https://github.com/googleapis/java-bigquerystorage/issues/1538)) ([43446b2](https://github.com/googleapis/java-bigquerystorage/commit/43446b24438526cc31542a0181fbed610df4b3c0))
+
+
+### Documentation
+
+* **tutorials:** Add STRUCT column to tutorial ([#1534](https://github.com/googleapis/java-bigquerystorage/issues/1534)) ([9595dab](https://github.com/googleapis/java-bigquerystorage/commit/9595dab89144cb13e812f4a277bb424d98c6591c))
+* **tutorials:** Call append asynchronously instead of blocking ([#1542](https://github.com/googleapis/java-bigquerystorage/issues/1542)) ([c777e23](https://github.com/googleapis/java-bigquerystorage/commit/c777e236c21204300231c3d3cbfaa3760da643b8))
+
 ### [2.9.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.9.0...v2.9.1) (2022-02-11)
 
 
