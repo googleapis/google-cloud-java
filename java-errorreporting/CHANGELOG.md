@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.122.15](https://github.com/googleapis/java-errorreporting/compare/v0.122.14...v0.122.15) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#801](https://github.com/googleapis/java-errorreporting/issues/801)) ([a7715ad](https://github.com/googleapis/java-errorreporting/commit/a7715ad5a5b021fd47356763c491094515d8bf39))
+
 ### [0.122.14](https://github.com/googleapis/java-errorreporting/compare/v0.122.13...v0.122.14) (2022-02-16)
 
 
