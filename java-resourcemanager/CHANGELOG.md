@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.4](https://github.com/googleapis/java-resourcemanager/compare/v1.2.3...v1.2.4) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#723](https://github.com/googleapis/java-resourcemanager/issues/723)) ([3dcbad2](https://github.com/googleapis/java-resourcemanager/commit/3dcbad263499f51de3e284ba7d3fd30691d334f7))
+
 ### [1.2.3](https://github.com/googleapis/java-resourcemanager/compare/v1.2.2...v1.2.3) (2022-02-11)
 
 
