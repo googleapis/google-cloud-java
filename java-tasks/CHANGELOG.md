@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.4](https://github.com/googleapis/java-tasks/compare/v2.1.3...v2.1.4) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#618](https://github.com/googleapis/java-tasks/issues/618)) ([767f3c9](https://github.com/googleapis/java-tasks/commit/767f3c9671b5dcd4d1b6683f77956388937ec8ad))
+
 ### [2.1.3](https://github.com/googleapis/java-tasks/compare/v2.1.2...v2.1.3) (2022-02-11)
 
 
