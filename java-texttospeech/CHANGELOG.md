@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.4](https://github.com/googleapis/java-texttospeech/compare/v2.1.3...v2.1.4) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#654](https://github.com/googleapis/java-texttospeech/issues/654)) ([cc3b21b](https://github.com/googleapis/java-texttospeech/commit/cc3b21b500c8bee8fcbe4b2a45de0c67f82c8b53))
+
 ### [2.1.3](https://github.com/googleapis/java-texttospeech/compare/v2.1.2...v2.1.3) (2022-02-11)
 
 
