@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.10](https://github.com/googleapis/java-containeranalysis/compare/v2.2.9...v2.2.10) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#832](https://github.com/googleapis/java-containeranalysis/issues/832)) ([df9f029](https://github.com/googleapis/java-containeranalysis/commit/df9f0293121fa8f3dd70b71f5c2adeadc4bfb301))
+
 ### [2.2.9](https://github.com/googleapis/java-containeranalysis/compare/v2.2.8...v2.2.9) (2022-02-24)
 
 
