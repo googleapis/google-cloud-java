@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.3.4](https://github.com/googleapis/java-functions/compare/v2.3.3...v2.3.4) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#386](https://github.com/googleapis/java-functions/issues/386)) ([aca9131](https://github.com/googleapis/java-functions/commit/aca913103b8bf5aec237d4b40da42edfdb28206d))
+
 ### [2.3.3](https://github.com/googleapis/java-functions/compare/v2.3.2...v2.3.3) (2022-02-14)
 
 
