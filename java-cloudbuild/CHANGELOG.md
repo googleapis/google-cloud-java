@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.3.10](https://github.com/googleapis/java-cloudbuild/compare/v3.3.9...v3.3.10) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#710](https://github.com/googleapis/java-cloudbuild/issues/710)) ([3f008c9](https://github.com/googleapis/java-cloudbuild/commit/3f008c9c39c71b2a3cf5e362fafb9b3e2c887b41))
+
 ### [3.3.9](https://github.com/googleapis/java-cloudbuild/compare/v3.3.8...v3.3.9) (2022-02-11)
 
 
