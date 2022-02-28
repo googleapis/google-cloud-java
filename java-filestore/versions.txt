@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-filestore:1.1.8:1.1.8
-grpc-google-cloud-filestore-v1beta1:0.3.8:0.3.8
-grpc-google-cloud-filestore-v1:1.1.8:1.1.8
-proto-google-cloud-filestore-v1:1.1.8:1.1.8
-proto-google-cloud-filestore-v1beta1:0.3.8:0.3.8
+google-cloud-filestore:1.1.8:1.1.9-SNAPSHOT
+grpc-google-cloud-filestore-v1beta1:0.3.8:0.3.9-SNAPSHOT
+grpc-google-cloud-filestore-v1:1.1.8:1.1.9-SNAPSHOT
+proto-google-cloud-filestore-v1:1.1.8:1.1.9-SNAPSHOT
+proto-google-cloud-filestore-v1beta1:0.3.8:0.3.9-SNAPSHOT
