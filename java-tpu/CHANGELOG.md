@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.4](https://github.com/googleapis/java-tpu/compare/v2.2.3...v2.2.4) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#163](https://github.com/googleapis/java-tpu/issues/163)) ([57bb610](https://github.com/googleapis/java-tpu/commit/57bb6107fe8807f98dd29e535487fc41e0cd7645))
+
 ### [2.2.3](https://github.com/googleapis/java-tpu/compare/v2.2.2...v2.2.3) (2022-02-11)
 
 
