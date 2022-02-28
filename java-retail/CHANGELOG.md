@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.10](https://github.com/googleapis/java-retail/compare/v2.0.9...v2.0.10) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#306](https://github.com/googleapis/java-retail/issues/306)) ([a506bcb](https://github.com/googleapis/java-retail/commit/a506bcbf4d982ef35be1f0914c9cce46c441cbe8))
+
 ### [2.0.9](https://github.com/googleapis/java-retail/compare/v2.0.8...v2.0.9) (2022-02-11)
 
 
