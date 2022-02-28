@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.8.2](https://github.com/googleapis/java-analytics-admin/compare/v0.8.1...v0.8.2) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#364](https://github.com/googleapis/java-analytics-admin/issues/364)) ([fcf3783](https://github.com/googleapis/java-analytics-admin/commit/fcf378339c58471f38323f694bedfd6c0399d71a))
+
 ### [0.8.1](https://github.com/googleapis/java-analytics-admin/compare/v0.8.0...v0.8.1) (2022-02-11)
 
 
