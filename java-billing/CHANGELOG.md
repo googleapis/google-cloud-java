@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.8](https://github.com/googleapis/java-billing/compare/v2.1.7...v2.1.8) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#618](https://github.com/googleapis/java-billing/issues/618)) ([75240a1](https://github.com/googleapis/java-billing/commit/75240a1a08c913f87728341e1e9a29383e41abbc))
+
 ### [2.1.7](https://github.com/googleapis/java-billing/compare/v2.1.6...v2.1.7) (2022-02-11)
 
 
