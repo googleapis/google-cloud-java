@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.5](https://github.com/googleapis/java-servicedirectory/compare/v2.2.4...v2.2.5) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#631](https://github.com/googleapis/java-servicedirectory/issues/631)) ([928c23c](https://github.com/googleapis/java-servicedirectory/commit/928c23c70bc1485d6d7a4c61d358fbc0f3772d3b))
+
 ### [2.2.4](https://github.com/googleapis/java-servicedirectory/compare/v2.2.3...v2.2.4) (2022-02-11)
 
 
