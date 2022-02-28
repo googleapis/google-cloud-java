@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.18](https://github.com/googleapis/java-automl/compare/v2.1.17...v2.1.18) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#1064](https://github.com/googleapis/java-automl/issues/1064)) ([247a327](https://github.com/googleapis/java-automl/commit/247a327df34379d1b49d59087b91f8f6ebe41d45))
+
 ### [2.1.17](https://github.com/googleapis/java-automl/compare/v2.1.16...v2.1.17) (2022-02-15)
 
 
