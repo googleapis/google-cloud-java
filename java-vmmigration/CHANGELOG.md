@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.3](https://github.com/googleapis/java-vmmigration/compare/v1.0.2...v1.0.3) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#57](https://github.com/googleapis/java-vmmigration/issues/57)) ([234aae8](https://github.com/googleapis/java-vmmigration/commit/234aae8a80a7237514a7c6d92c7c898e859f24fd))
+
 ### [1.0.2](https://github.com/googleapis/java-vmmigration/compare/v1.0.1...v1.0.2) (2022-02-15)
 
 
