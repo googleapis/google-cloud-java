@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.7](https://github.com/googleapis/java-talent/compare/v2.2.6...v2.2.7) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#741](https://github.com/googleapis/java-talent/issues/741)) ([cfb4349](https://github.com/googleapis/java-talent/commit/cfb4349b1f3115dec23057edee753ee10d63592a))
+
 ### [2.2.6](https://github.com/googleapis/java-talent/compare/v2.2.5...v2.2.6) (2022-02-11)
 
 
