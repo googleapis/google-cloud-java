@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.3.4](https://github.com/googleapis/java-container/compare/v2.3.3...v2.3.4) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#688](https://github.com/googleapis/java-container/issues/688)) ([88f8024](https://github.com/googleapis/java-container/commit/88f8024b29f1bb79fe802826292e2a92097ac49a))
+
 ### [2.3.3](https://github.com/googleapis/java-container/compare/v2.3.2...v2.3.3) (2022-02-11)
 
 
