@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-automl:2.1.18:2.1.18
-grpc-google-cloud-automl-v1beta1:0.88.18:0.88.18
-grpc-google-cloud-automl-v1:2.1.18:2.1.18
-proto-google-cloud-automl-v1beta1:0.88.18:0.88.18
-proto-google-cloud-automl-v1:2.1.18:2.1.18
+google-cloud-automl:2.1.18:2.1.19-SNAPSHOT
+grpc-google-cloud-automl-v1beta1:0.88.18:0.88.19-SNAPSHOT
+grpc-google-cloud-automl-v1:2.1.18:2.1.19-SNAPSHOT
+proto-google-cloud-automl-v1beta1:0.88.18:0.88.19-SNAPSHOT
+proto-google-cloud-automl-v1:2.1.18:2.1.19-SNAPSHOT
