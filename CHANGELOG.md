@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.7.0](https://github.com/googleapis/java-logging/compare/v3.6.4...v3.7.0) (2022-02-28)
+
+
+### Features
+
+* KMS configuration in settings ([#877](https://github.com/googleapis/java-logging/issues/877)) ([27c199b](https://github.com/googleapis/java-logging/commit/27c199ba91b8423934788cbd6cb8e449dfc7b115))
+* Update Logging API with latest changes ([27c199b](https://github.com/googleapis/java-logging/commit/27c199ba91b8423934788cbd6cb8e449dfc7b115))
+
+
+### Bug Fixes
+
+* **deps:** set gson via java-shared-deps ([#878](https://github.com/googleapis/java-logging/issues/878)) ([5c97fea](https://github.com/googleapis/java-logging/commit/5c97feadf1d4fd80618cdcee19e02e4cbabfb1ea))
+
 ### [3.6.4](https://github.com/googleapis/java-logging/compare/v3.6.3...v3.6.4) (2022-02-15)
 
 
