@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.4](https://github.com/googleapis/java-workflow-executions/compare/v2.1.3...v2.1.4) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#275](https://github.com/googleapis/java-workflow-executions/issues/275)) ([8f756a7](https://github.com/googleapis/java-workflow-executions/commit/8f756a76ad13c3e4badd35482999213ee6613a7d))
+
 ### [2.1.3](https://github.com/googleapis/java-workflow-executions/compare/v2.1.2...v2.1.3) (2022-02-11)
 
 
