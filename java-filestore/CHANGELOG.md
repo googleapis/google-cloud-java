@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.8](https://github.com/googleapis/java-filestore/compare/v1.1.7...v1.1.8) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#147](https://github.com/googleapis/java-filestore/issues/147)) ([a2442bd](https://github.com/googleapis/java-filestore/commit/a2442bd19cbe7fc840f1e37614256ef134d28965))
+
 ### [1.1.7](https://github.com/googleapis/java-filestore/compare/v1.1.6...v1.1.7) (2022-02-11)
 
 
