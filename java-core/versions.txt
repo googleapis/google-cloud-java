@@ -1,5 +1,5 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-core:2.5.6:2.5.6
-native-image-support:0.12.6:0.12.6
+google-cloud-core:2.5.6:2.5.7-SNAPSHOT
+native-image-support:0.12.6:0.12.7-SNAPSHOT
