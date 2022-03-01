@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.8](https://github.com/googleapis/java-service-control/compare/v1.1.7...v1.1.8) (2022-03-01)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#142](https://github.com/googleapis/java-service-control/issues/142)) ([67d65e7](https://github.com/googleapis/java-service-control/commit/67d65e771c65065c86694316d920c5beedfb9097))
+
 ### [1.1.7](https://github.com/googleapis/java-service-control/compare/v1.1.6...v1.1.7) (2022-02-11)
 
 
