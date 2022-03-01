@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.2.4](https://github.com/googleapis/java-monitoring/compare/v3.2.3...v3.2.4) (2022-03-01)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#803](https://github.com/googleapis/java-monitoring/issues/803)) ([cb13c16](https://github.com/googleapis/java-monitoring/commit/cb13c163dec0a7fdd921ad9b3d2ad0850082b650))
+
 ### [3.2.3](https://github.com/googleapis/java-monitoring/compare/v3.2.2...v3.2.3) (2022-02-17)
 
 
