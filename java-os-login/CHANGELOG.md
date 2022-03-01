@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.11](https://github.com/googleapis/java-os-login/compare/v2.0.10...v2.0.11) (2022-03-01)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#640](https://github.com/googleapis/java-os-login/issues/640)) ([5a16ed2](https://github.com/googleapis/java-os-login/commit/5a16ed2e0d46f4da2077604499d865006d5cb249))
+
 ### [2.0.10](https://github.com/googleapis/java-os-login/compare/v2.0.9...v2.0.10) (2022-02-11)
 
 
