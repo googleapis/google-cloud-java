@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.1.19](https://github.com/googleapis/java-automl/compare/v2.1.18...v2.1.19) (2022-03-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.5 ([#1069](https://github.com/googleapis/java-automl/issues/1069)) ([02f645d](https://github.com/googleapis/java-automl/commit/02f645de6b4aaf022c7e591faae48ad20b28373c))
+* update dependency com.google.cloud:google-cloud-storage to v2.4.4 ([#1070](https://github.com/googleapis/java-automl/issues/1070)) ([1e13bbc](https://github.com/googleapis/java-automl/commit/1e13bbc4b32ee4fb5c0438a8c6df03a644ade866))
+
 ### [2.1.18](https://github.com/googleapis/java-automl/compare/v2.1.17...v2.1.18) (2022-02-28)
 
 
