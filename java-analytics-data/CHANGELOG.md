@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.11.4](https://github.com/googleapis/java-analytics-data/compare/v0.11.3...v0.11.4) (2022-03-01)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#423](https://github.com/googleapis/java-analytics-data/issues/423)) ([9b0c521](https://github.com/googleapis/java-analytics-data/commit/9b0c521b26422dfeb12695b761583851967f5222))
+
 ### [0.11.3](https://github.com/googleapis/java-analytics-data/compare/v0.11.2...v0.11.3) (2022-02-28)
 
 
