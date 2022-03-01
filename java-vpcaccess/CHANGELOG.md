@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.8](https://github.com/googleapis/java-vpcaccess/compare/v2.1.7...v2.1.8) (2022-03-01)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#160](https://github.com/googleapis/java-vpcaccess/issues/160)) ([a7e398c](https://github.com/googleapis/java-vpcaccess/commit/a7e398cf38f8e74c66f6b16ec115127d7707bd5f))
+
 ### [2.1.7](https://github.com/googleapis/java-vpcaccess/compare/v2.1.6...v2.1.7) (2022-02-11)
 
 
