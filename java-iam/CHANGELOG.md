@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.2.6](https://github.com/googleapis/java-iam/compare/v1.2.5...v1.2.6) (2022-03-01)
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-protobuf to v1.44.1 ([#290](https://github.com/googleapis/java-iam/issues/290)) ([47cd461](https://github.com/googleapis/java-iam/commit/47cd461fd06a1529f6dc928a9e76893ebb489a39))
+* update dependency io.grpc:grpc-stub to v1.44.1 ([#291](https://github.com/googleapis/java-iam/issues/291)) ([83a2206](https://github.com/googleapis/java-iam/commit/83a2206864380ac1e4ed94af364a5809e32d358c))
+
 ### [1.2.5](https://github.com/googleapis/java-iam/compare/v1.2.4...v1.2.5) (2022-02-17)
 
 
