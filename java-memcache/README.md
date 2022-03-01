@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-memcache'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-memcache:2.1.7'
+implementation 'com.google.cloud:google-cloud-memcache:2.1.8'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-memcache" % "2.1.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-memcache" % "2.1.8"
 ```
 
 ## Authentication
