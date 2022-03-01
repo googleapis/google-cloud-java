@@ -1,5 +1,16 @@
 # Changelog
 
+### [2.4.4](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.4.3...v2.4.4) (2022-03-01)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#723](https://github.com/googleapis/java-recaptchaenterprise/issues/723)) ([6e20cb0](https://github.com/googleapis/java-recaptchaenterprise/commit/6e20cb09c53139a1484ce39df532c85edc5edc1f))
+* update dependency com.google.guava:guava to v31.1-jre ([#725](https://github.com/googleapis/java-recaptchaenterprise/issues/725)) ([9834c30](https://github.com/googleapis/java-recaptchaenterprise/commit/9834c30fd9158949596cc146da45a0a8b686de25))
+* update dependency org.springframework.boot:spring-boot-starter-test to v2.6.4 ([#720](https://github.com/googleapis/java-recaptchaenterprise/issues/720)) ([959629b](https://github.com/googleapis/java-recaptchaenterprise/commit/959629b028fe816bd02fc816dc242bec853bca0e))
+* update dependency org.springframework.boot:spring-boot-starter-thymeleaf to v2.6.4 ([#721](https://github.com/googleapis/java-recaptchaenterprise/issues/721)) ([9db2422](https://github.com/googleapis/java-recaptchaenterprise/commit/9db24225480bb96c60049f7f52afe9ad8b7b3d80))
+* update dependency org.springframework.boot:spring-boot-starter-web to v2.6.4 ([#722](https://github.com/googleapis/java-recaptchaenterprise/issues/722)) ([4a9334a](https://github.com/googleapis/java-recaptchaenterprise/commit/4a9334a88e3b88305f1cae5d394235170a0e1779))
+
 ### [2.4.3](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.4.2...v2.4.3) (2022-02-18)
 
 
