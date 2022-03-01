@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.1.7](https://github.com/googleapis/java-game-servers/compare/v2.1.6...v2.1.7) (2022-03-01)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#619](https://github.com/googleapis/java-game-servers/issues/619)) ([dd2f367](https://github.com/googleapis/java-game-servers/commit/dd2f367d2215af5dfb12d5a1124287c68d09758d))
+* update actions/setup-java action to v3 ([#628](https://github.com/googleapis/java-game-servers/issues/628)) ([c8a2408](https://github.com/googleapis/java-game-servers/commit/c8a24087377edf587cec4b989ed21b6306b66236))
+* update dependency com.google.code.gson:gson to v2.9.0 ([#621](https://github.com/googleapis/java-game-servers/issues/621)) ([555b4b4](https://github.com/googleapis/java-game-servers/commit/555b4b4fddc7329d4f92885cea1a8481c476b914))
+
 ### [2.1.6](https://github.com/googleapis/java-game-servers/compare/v2.1.5...v2.1.6) (2022-02-02)
 
 
