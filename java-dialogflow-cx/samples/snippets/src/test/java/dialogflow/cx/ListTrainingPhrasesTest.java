@@ -29,7 +29,7 @@ public class ListTrainingPhrasesTest {
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION = "global";
   private static String AGENT_ID = "b8d0e85d-0741-4e6d-a66a-3671184b7b93";
-  private static String INTENT_ID = "45974f75-9412-445a-9863-47bfdfa3d96d";
+  private static String INTENT_ID = "e2d688a6-c8b4-448e-a7d6-208f147ae689";
 
   private ByteArrayOutputStream stdOut;
 

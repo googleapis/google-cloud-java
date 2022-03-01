@@ -79,8 +79,10 @@ public class CreateFlow {
 
       // Performs the create flow request.
       Flow response = flowsClient.createFlow(parent, flow);
-      System.out.format("Flow created: %s\n", response);
 
+      // TODO : Uncomment if you want to print response
+      // System.out.format("Flow created: %s\n", response.toString());
+      flowsClient.shutdown();
       return response;
     }
   }
