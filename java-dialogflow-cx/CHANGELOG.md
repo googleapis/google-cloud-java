@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.11.4](https://github.com/googleapis/java-dialogflow-cx/compare/v0.11.3...v0.11.4) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#430](https://github.com/googleapis/java-dialogflow-cx/issues/430)) ([fefdae5](https://github.com/googleapis/java-dialogflow-cx/commit/fefdae522e67f6705be82a75966126b3d25a5b04))
+
 ### [0.11.3](https://github.com/googleapis/java-dialogflow-cx/compare/v0.11.2...v0.11.3) (2022-02-17)
 
 
