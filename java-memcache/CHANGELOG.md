@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.9](https://github.com/googleapis/java-memcache/compare/v2.1.8...v2.1.9) (2022-03-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#596](https://github.com/googleapis/java-memcache/issues/596)) ([c50ea28](https://github.com/googleapis/java-memcache/commit/c50ea28f3828b31aa1fc125f5f82673f5f3a6c62))
+
 ### [2.1.8](https://github.com/googleapis/java-memcache/compare/v2.1.7...v2.1.8) (2022-02-28)
 
 
