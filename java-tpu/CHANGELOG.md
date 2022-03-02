@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.5](https://github.com/googleapis/java-tpu/compare/v2.2.4...v2.2.5) (2022-03-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#170](https://github.com/googleapis/java-tpu/issues/170)) ([ff68671](https://github.com/googleapis/java-tpu/commit/ff68671029778575465e27048719e52acc9305c2))
+
 ### [2.2.4](https://github.com/googleapis/java-tpu/compare/v2.2.3...v2.2.4) (2022-02-28)
 
 
