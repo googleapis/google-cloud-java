@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.8](https://github.com/googleapis/java-appengine-admin/compare/v2.1.7...v2.1.8) (2022-03-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#208](https://github.com/googleapis/java-appengine-admin/issues/208)) ([ef607a8](https://github.com/googleapis/java-appengine-admin/commit/ef607a89218bcff9e864ce752c06a217d77acc5f))
+
 ### [2.1.7](https://github.com/googleapis/java-appengine-admin/compare/v2.1.6...v2.1.7) (2022-02-28)
 
 
