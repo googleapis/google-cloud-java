@@ -17,8 +17,9 @@
   </parent>
 
   <properties>
-    <maven.compiler.target>11</maven.compiler.target>
-    <maven.compiler.source>11</maven.compiler.source>
+    <!-- Java 8 because the Kokoro Sample test uses that Java version -->
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -62,8 +63,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.example.datastore.NativeImageDatastoreSample
-              </mainClass>
+              <mainClass>com.example.datastore.NativeImageDatastoreSample</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -115,8 +115,7 @@
             <version>0.9.10</version>
             <extensions>true</extensions>
             <configuration>
-              <mainClass>com.example.datastore.NativeImageDatastoreSample
-              </mainClass>
+              <mainClass>com.example.datastore.NativeImageDatastoreSample</mainClass>
               <buildArgs>
                 <buildArg>--no-fallback</buildArg>
                 <buildArg>--no-server</buildArg>
