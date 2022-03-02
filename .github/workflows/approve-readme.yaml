@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository_owner == 'googleapis' && github.head_ref == 'autosynth-readme'
     steps:
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@v5
         with:
           github-token: ${{secrets.YOSHI_APPROVER_TOKEN}}
           script: |
