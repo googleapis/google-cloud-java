@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.11.5](https://github.com/googleapis/java-analytics-data/compare/v0.11.4...v0.11.5) (2022-03-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#436](https://github.com/googleapis/java-analytics-data/issues/436)) ([ea835bc](https://github.com/googleapis/java-analytics-data/commit/ea835bc760850556d731a6adcb41f72a76645cf0))
+
 ### [0.11.4](https://github.com/googleapis/java-analytics-data/compare/v0.11.3...v0.11.4) (2022-03-01)
 
 
