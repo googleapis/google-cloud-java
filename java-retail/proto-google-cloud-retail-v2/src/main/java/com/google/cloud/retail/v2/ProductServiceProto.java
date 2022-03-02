@@ -100,11 +100,9 @@ public final class ProductServiceProto {
           + ".proto\022\026google.cloud.retail.v2\032\034google/a"
           + "pi/annotations.proto\032\027google/api/client."
           + "proto\032\037google/api/field_behavior.proto\032\031"
-          + "google/api/resource.proto\032#google/cloud/"
-          + "retail/v2/common.proto\032*google/cloud/ret"
-          + "ail/v2/import_config.proto\032$google/cloud"
-          + "/retail/v2/product.proto\032)google/cloud/r"
-          + "etail/v2/purge_config.proto\032#google/long"
+          + "google/api/resource.proto\032*google/cloud/"
+          + "retail/v2/import_config.proto\032$google/cl"
+          + "oud/retail/v2/product.proto\032#google/long"
           + "running/operations.proto\032\033google/protobu"
           + "f/empty.proto\032 google/protobuf/field_mas"
           + "k.proto\032\037google/protobuf/timestamp.proto"
@@ -219,10 +217,8 @@ public final class ProductServiceProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.cloud.retail.v2.CommonProto.getDescriptor(),
               com.google.cloud.retail.v2.ImportConfigProto.getDescriptor(),
               com.google.cloud.retail.v2.ProductProto.getDescriptor(),
-              com.google.cloud.retail.v2.PurgeConfigProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -351,10 +347,8 @@ public final class ProductServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.cloud.retail.v2.CommonProto.getDescriptor();
     com.google.cloud.retail.v2.ImportConfigProto.getDescriptor();
     com.google.cloud.retail.v2.ProductProto.getDescriptor();
-    com.google.cloud.retail.v2.PurgeConfigProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

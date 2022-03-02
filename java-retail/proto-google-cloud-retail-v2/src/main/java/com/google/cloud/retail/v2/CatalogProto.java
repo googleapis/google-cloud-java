@@ -45,35 +45,29 @@ public final class CatalogProto {
   static {
     java.lang.String[] descriptorData = {
       "\n$google/cloud/retail/v2/catalog.proto\022\026"
-          + "google.cloud.retail.v2\032\034google/api/annot"
-          + "ations.proto\032\037google/api/field_behavior."
-          + "proto\032\031google/api/resource.proto\032#google"
-          + "/cloud/retail/v2/common.proto\032*google/cl"
-          + "oud/retail/v2/import_config.proto\"^\n\022Pro"
-          + "ductLevelConfig\022\036\n\026ingestion_product_typ"
-          + "e\030\001 \001(\t\022(\n merchant_center_product_id_fi"
-          + "eld\030\002 \001(\t\"\354\001\n\007Catalog\022\024\n\004name\030\001 \001(\tB\006\340A\002"
-          + "\340A\005\022\034\n\014display_name\030\002 \001(\tB\006\340A\002\340A\005\022M\n\024pro"
-          + "duct_level_config\030\004 \001(\0132*.google.cloud.r"
-          + "etail.v2.ProductLevelConfigB\003\340A\002:^\352A[\n\035r"
-          + "etail.googleapis.com/Catalog\022:projects/{"
-          + "project}/locations/{location}/catalogs/{"
-          + "catalog}B\301\001\n\032com.google.cloud.retail.v2B"
-          + "\014CatalogProtoP\001Z<google.golang.org/genpr"
-          + "oto/googleapis/cloud/retail/v2;retail\242\002\006"
-          + "RETAIL\252\002\026Google.Cloud.Retail.V2\312\002\026Google"
-          + "\\Cloud\\Retail\\V2\352\002\031Google::Cloud::Retail"
-          + "::V2b\006proto3"
+          + "google.cloud.retail.v2\032\037google/api/field"
+          + "_behavior.proto\032\031google/api/resource.pro"
+          + "to\"^\n\022ProductLevelConfig\022\036\n\026ingestion_pr"
+          + "oduct_type\030\001 \001(\t\022(\n merchant_center_prod"
+          + "uct_id_field\030\002 \001(\t\"\354\001\n\007Catalog\022\024\n\004name\030\001"
+          + " \001(\tB\006\340A\002\340A\005\022\034\n\014display_name\030\002 \001(\tB\006\340A\002\340"
+          + "A\005\022M\n\024product_level_config\030\004 \001(\0132*.googl"
+          + "e.cloud.retail.v2.ProductLevelConfigB\003\340A"
+          + "\002:^\352A[\n\035retail.googleapis.com/Catalog\022:p"
+          + "rojects/{project}/locations/{location}/c"
+          + "atalogs/{catalog}B\301\001\n\032com.google.cloud.r"
+          + "etail.v2B\014CatalogProtoP\001Z<google.golang."
+          + "org/genproto/googleapis/cloud/retail/v2;"
+          + "retail\242\002\006RETAIL\252\002\026Google.Cloud.Retail.V2"
+          + "\312\002\026Google\\Cloud\\Retail\\V2\352\002\031Google::Clou"
+          + "d::Retail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.cloud.retail.v2.CommonProto.getDescriptor(),
-              com.google.cloud.retail.v2.ImportConfigProto.getDescriptor(),
             });
     internal_static_google_cloud_retail_v2_ProductLevelConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -97,11 +91,8 @@ public final class CatalogProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.cloud.retail.v2.CommonProto.getDescriptor();
-    com.google.cloud.retail.v2.ImportConfigProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

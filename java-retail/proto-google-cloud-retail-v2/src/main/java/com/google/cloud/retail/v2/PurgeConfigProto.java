@@ -49,24 +49,22 @@ public final class PurgeConfigProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/retail/v2/purge_config.pr"
-          + "oto\022\026google.cloud.retail.v2\032\034google/api/"
-          + "annotations.proto\032\037google/api/field_beha"
-          + "vior.proto\"\017\n\rPurgeMetadata\"Q\n\026PurgeUser"
-          + "EventsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\023\n\006fi"
-          + "lter\030\002 \001(\tB\003\340A\002\022\r\n\005force\030\003 \001(\010\"6\n\027PurgeU"
-          + "serEventsResponse\022\033\n\023purged_events_count"
-          + "\030\001 \001(\003B\305\001\n\032com.google.cloud.retail.v2B\020P"
-          + "urgeConfigProtoP\001Z<google.golang.org/gen"
-          + "proto/googleapis/cloud/retail/v2;retail\242"
-          + "\002\006RETAIL\252\002\026Google.Cloud.Retail.V2\312\002\026Goog"
-          + "le\\Cloud\\Retail\\V2\352\002\031Google::Cloud::Reta"
-          + "il::V2b\006proto3"
+          + "oto\022\026google.cloud.retail.v2\032\037google/api/"
+          + "field_behavior.proto\"\017\n\rPurgeMetadata\"Q\n"
+          + "\026PurgeUserEventsRequest\022\023\n\006parent\030\001 \001(\tB"
+          + "\003\340A\002\022\023\n\006filter\030\002 \001(\tB\003\340A\002\022\r\n\005force\030\003 \001(\010"
+          + "\"6\n\027PurgeUserEventsResponse\022\033\n\023purged_ev"
+          + "ents_count\030\001 \001(\003B\305\001\n\032com.google.cloud.re"
+          + "tail.v2B\020PurgeConfigProtoP\001Z<google.gola"
+          + "ng.org/genproto/googleapis/cloud/retail/"
+          + "v2;retail\242\002\006RETAIL\252\002\026Google.Cloud.Retail"
+          + ".V2\312\002\026Google\\Cloud\\Retail\\V2\352\002\031Google::C"
+          + "loud::Retail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_retail_v2_PurgeMetadata_descriptor =
@@ -96,7 +94,6 @@ public final class PurgeConfigProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
   }
 

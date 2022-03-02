@@ -81,47 +81,46 @@ public final class CommonProto {
   static {
     java.lang.String[] descriptorData = {
       "\n#google/cloud/retail/v2/common.proto\022\026g"
-          + "oogle.cloud.retail.v2\032\034google/api/annota"
-          + "tions.proto\032\037google/api/field_behavior.p"
-          + "roto\032\037google/protobuf/timestamp.proto\"/\n"
-          + "\010Audience\022\017\n\007genders\030\001 \003(\t\022\022\n\nage_groups"
-          + "\030\002 \003(\t\"3\n\tColorInfo\022\026\n\016color_families\030\001 "
-          + "\003(\t\022\016\n\006colors\030\002 \003(\t\"~\n\017CustomAttribute\022\014"
-          + "\n\004text\030\001 \003(\t\022\017\n\007numbers\030\002 \003(\001\022\027\n\nsearcha"
-          + "ble\030\003 \001(\010H\000\210\001\001\022\026\n\tindexable\030\004 \001(\010H\001\210\001\001B\r"
-          + "\n\013_searchableB\014\n\n_indexable\"2\n\017Fulfillme"
-          + "ntInfo\022\014\n\004type\030\001 \001(\t\022\021\n\tplace_ids\030\002 \003(\t\""
-          + "8\n\005Image\022\020\n\003uri\030\001 \001(\tB\003\340A\002\022\016\n\006height\030\002 \001"
-          + "(\005\022\r\n\005width\030\003 \001(\005\"x\n\010Interval\022\021\n\007minimum"
-          + "\030\001 \001(\001H\000\022\033\n\021exclusive_minimum\030\002 \001(\001H\000\022\021\n"
-          + "\007maximum\030\003 \001(\001H\001\022\033\n\021exclusive_maximum\030\004 "
-          + "\001(\001H\001B\005\n\003minB\005\n\003max\"\211\003\n\tPriceInfo\022\025\n\rcur"
-          + "rency_code\030\001 \001(\t\022\r\n\005price\030\002 \001(\002\022\026\n\016origi"
-          + "nal_price\030\003 \001(\002\022\014\n\004cost\030\004 \001(\002\0228\n\024price_e"
-          + "ffective_time\030\005 \001(\0132\032.google.protobuf.Ti"
-          + "mestamp\0225\n\021price_expire_time\030\006 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp\022F\n\013price_range\030\007 "
-          + "\001(\0132,.google.cloud.retail.v2.PriceInfo.P"
-          + "riceRangeB\003\340A\003\032w\n\nPriceRange\022/\n\005price\030\001 "
-          + "\001(\0132 .google.cloud.retail.v2.Interval\0228\n"
-          + "\016original_price\030\002 \001(\0132 .google.cloud.ret"
-          + "ail.v2.Interval\"P\n\006Rating\022\024\n\014rating_coun"
-          + "t\030\001 \001(\005\022\026\n\016average_rating\030\002 \001(\002\022\030\n\020ratin"
-          + "g_histogram\030\003 \003(\005\"`\n\010UserInfo\022\017\n\007user_id"
-          + "\030\001 \001(\t\022\022\n\nip_address\030\002 \001(\t\022\022\n\nuser_agent"
-          + "\030\003 \001(\t\022\033\n\023direct_user_request\030\004 \001(\010\"!\n\tP"
-          + "romotion\022\024\n\014promotion_id\030\001 \001(\tB\300\001\n\032com.g"
-          + "oogle.cloud.retail.v2B\013CommonProtoP\001Z<go"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/retail/v2;retail\242\002\006RETAIL\252\002\026Google.Clo"
-          + "ud.Retail.V2\312\002\026Google\\Cloud\\Retail\\V2\352\002\031"
-          + "Google::Cloud::Retail::V2b\006proto3"
+          + "oogle.cloud.retail.v2\032\037google/api/field_"
+          + "behavior.proto\032\037google/protobuf/timestam"
+          + "p.proto\"/\n\010Audience\022\017\n\007genders\030\001 \003(\t\022\022\n\n"
+          + "age_groups\030\002 \003(\t\"3\n\tColorInfo\022\026\n\016color_f"
+          + "amilies\030\001 \003(\t\022\016\n\006colors\030\002 \003(\t\"~\n\017CustomA"
+          + "ttribute\022\014\n\004text\030\001 \003(\t\022\017\n\007numbers\030\002 \003(\001\022"
+          + "\027\n\nsearchable\030\003 \001(\010H\000\210\001\001\022\026\n\tindexable\030\004 "
+          + "\001(\010H\001\210\001\001B\r\n\013_searchableB\014\n\n_indexable\"2\n"
+          + "\017FulfillmentInfo\022\014\n\004type\030\001 \001(\t\022\021\n\tplace_"
+          + "ids\030\002 \003(\t\"8\n\005Image\022\020\n\003uri\030\001 \001(\tB\003\340A\002\022\016\n\006"
+          + "height\030\002 \001(\005\022\r\n\005width\030\003 \001(\005\"x\n\010Interval\022"
+          + "\021\n\007minimum\030\001 \001(\001H\000\022\033\n\021exclusive_minimum\030"
+          + "\002 \001(\001H\000\022\021\n\007maximum\030\003 \001(\001H\001\022\033\n\021exclusive_"
+          + "maximum\030\004 \001(\001H\001B\005\n\003minB\005\n\003max\"\211\003\n\tPriceI"
+          + "nfo\022\025\n\rcurrency_code\030\001 \001(\t\022\r\n\005price\030\002 \001("
+          + "\002\022\026\n\016original_price\030\003 \001(\002\022\014\n\004cost\030\004 \001(\002\022"
+          + "8\n\024price_effective_time\030\005 \001(\0132\032.google.p"
+          + "rotobuf.Timestamp\0225\n\021price_expire_time\030\006"
+          + " \001(\0132\032.google.protobuf.Timestamp\022F\n\013pric"
+          + "e_range\030\007 \001(\0132,.google.cloud.retail.v2.P"
+          + "riceInfo.PriceRangeB\003\340A\003\032w\n\nPriceRange\022/"
+          + "\n\005price\030\001 \001(\0132 .google.cloud.retail.v2.I"
+          + "nterval\0228\n\016original_price\030\002 \001(\0132 .google"
+          + ".cloud.retail.v2.Interval\"P\n\006Rating\022\024\n\014r"
+          + "ating_count\030\001 \001(\005\022\026\n\016average_rating\030\002 \001("
+          + "\002\022\030\n\020rating_histogram\030\003 \003(\005\"`\n\010UserInfo\022"
+          + "\017\n\007user_id\030\001 \001(\t\022\022\n\nip_address\030\002 \001(\t\022\022\n\n"
+          + "user_agent\030\003 \001(\t\022\033\n\023direct_user_request\030"
+          + "\004 \001(\010\"!\n\tPromotion\022\024\n\014promotion_id\030\001 \001(\t"
+          + "B\300\001\n\032com.google.cloud.retail.v2B\013CommonP"
+          + "rotoP\001Z<google.golang.org/genproto/googl"
+          + "eapis/cloud/retail/v2;retail\242\002\006RETAIL\252\002\026"
+          + "Google.Cloud.Retail.V2\312\002\026Google\\Cloud\\Re"
+          + "tail\\V2\352\002\031Google::Cloud::Retail::V2b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -224,7 +223,6 @@ public final class CommonProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
