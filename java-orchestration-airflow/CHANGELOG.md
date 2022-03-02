@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.1.4](https://github.com/googleapis/java-orchestration-airflow/compare/v1.1.3...v1.1.4) (2022-03-02)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#153](https://github.com/googleapis/java-orchestration-airflow/issues/153)) ([f7640b7](https://github.com/googleapis/java-orchestration-airflow/commit/f7640b7e71c9151150562e6bfd18c4e653a5566f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#158](https://github.com/googleapis/java-orchestration-airflow/issues/158)) ([425fde8](https://github.com/googleapis/java-orchestration-airflow/commit/425fde8b4f397906802b54c9e9e5c6145328bbb9))
+
 ### [1.1.3](https://github.com/googleapis/java-orchestration-airflow/compare/v1.1.2...v1.1.3) (2022-02-14)
 
 
