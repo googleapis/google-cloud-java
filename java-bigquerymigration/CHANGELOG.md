@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.2](https://github.com/googleapis/java-bigquerymigration/compare/v0.2.1...v0.2.2) (2022-03-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#92](https://github.com/googleapis/java-bigquerymigration/issues/92)) ([49487d4](https://github.com/googleapis/java-bigquerymigration/commit/49487d492c4f17a6e8511e805e1a52f577d61a3b))
+
 ### [0.2.1](https://github.com/googleapis/java-bigquerymigration/compare/v0.2.0...v0.2.1) (2022-02-11)
 
 
