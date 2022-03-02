@@ -1,5 +1,28 @@
 # Changelog
 
+### [2.2.5](https://github.com/googleapis/java-datastore/compare/v2.2.4...v2.2.5) (2022-03-02)
+
+
+### Bug Fixes
+
+* Use ImmutableMap.Bulder.buildOrThrow() instead of build(). ([#632](https://github.com/googleapis/java-datastore/issues/632)) ([5d0f484](https://github.com/googleapis/java-datastore/commit/5d0f48403f6746bb7901b13aa223e4de31c3c5a4))
+
+
+### Documentation
+
+* **sample:** Add sample for native image support in Datastore ([#640](https://github.com/googleapis/java-datastore/issues/640)) ([f728901](https://github.com/googleapis/java-datastore/commit/f728901b4984f1cc79a02ecc2ff631322974d761))
+* **sample:** Use Java 8 for Native Image sample ([#656](https://github.com/googleapis/java-datastore/issues/656)) ([b95ee96](https://github.com/googleapis/java-datastore/commit/b95ee9635173617cd13605928b306974c70423e8))
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#648](https://github.com/googleapis/java-datastore/issues/648)) ([8d85b64](https://github.com/googleapis/java-datastore/commit/8d85b64faa72265851e92562f5381ace1088c066))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#653](https://github.com/googleapis/java-datastore/issues/653)) ([03162a6](https://github.com/googleapis/java-datastore/commit/03162a69c01c5cddc524b99325900196aa26cd0d))
+* update dependency com.google.cloud:native-image-support to v0.12.5 ([#650](https://github.com/googleapis/java-datastore/issues/650)) ([b449554](https://github.com/googleapis/java-datastore/commit/b4495542bb086e7e169fea10795342e78aac2e1e))
+* update dependency com.google.cloud:native-image-support to v0.12.6 ([#654](https://github.com/googleapis/java-datastore/issues/654)) ([5e69833](https://github.com/googleapis/java-datastore/commit/5e69833713421d7deee2f4cf2f50a725270c36e0))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.10 ([#646](https://github.com/googleapis/java-datastore/issues/646)) ([c62a390](https://github.com/googleapis/java-datastore/commit/c62a39074a44e58222115b05f14e3ffdd52273c0))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.10 ([#647](https://github.com/googleapis/java-datastore/issues/647)) ([d6e2a16](https://github.com/googleapis/java-datastore/commit/d6e2a16fe2e6dfd07892ff6928118a4a031de9f2))
+
 ### [2.2.4](https://github.com/googleapis/java-datastore/compare/v2.2.3...v2.2.4) (2022-02-03)
 
 
