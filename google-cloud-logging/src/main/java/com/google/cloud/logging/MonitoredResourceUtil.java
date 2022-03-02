@@ -175,7 +175,6 @@ public class MonitoredResourceUtil {
       return Resource.CloudRun;
     }
     if (getter.getEnv("GAE_INSTANCE") != null
-        && getter.getEnv("GAE_RUNTIME") != null
         && getter.getEnv("GAE_SERVICE") != null
         && getter.getEnv("GAE_VERSION") != null) {
       return Resource.AppEngine;

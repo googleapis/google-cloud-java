@@ -155,7 +155,6 @@ public class MonitoredResourceUtilTest {
   private void setupCommonGAEMocks(String mockedModuleId, String mockedVersionId) {
     expect(getterMock.getAttribute("instance/zone")).andReturn(MOCKED_QUALIFIED_ZONE).once();
     expect(getterMock.getEnv("GAE_INSTANCE")).andReturn(MOCKED_NON_EMPTY).once();
-    expect(getterMock.getEnv("GAE_RUNTIME")).andReturn(MOCKED_NON_EMPTY).once();
     expect(getterMock.getEnv("GAE_SERVICE")).andReturn(mockedModuleId).times(2);
     expect(getterMock.getEnv("GAE_VERSION")).andReturn(mockedVersionId).times(2);
     expect(getterMock.getEnv(anyString())).andReturn(null).anyTimes();
