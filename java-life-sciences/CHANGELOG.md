@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.7](https://github.com/googleapis/java-life-sciences/compare/v0.3.6...v0.3.7) (2022-03-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#156](https://github.com/googleapis/java-life-sciences/issues/156)) ([b1cb16b](https://github.com/googleapis/java-life-sciences/commit/b1cb16b9de4d47d8b0f3310beb74061ec3382586))
+
 ### [0.3.6](https://github.com/googleapis/java-life-sciences/compare/v0.3.5...v0.3.6) (2022-02-28)
 
 
