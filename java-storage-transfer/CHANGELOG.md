@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.3](https://github.com/googleapis/java-storage-transfer/compare/v1.0.2...v1.0.3) (2022-03-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#122](https://github.com/googleapis/java-storage-transfer/issues/122)) ([14c0f2d](https://github.com/googleapis/java-storage-transfer/commit/14c0f2d46518b02a4fde84ab17065f6b0a89da9b))
+
 ### [1.0.2](https://github.com/googleapis/java-storage-transfer/compare/v1.0.1...v1.0.2) (2022-02-28)
 
 
