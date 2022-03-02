@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.6](https://github.com/googleapis/java-private-catalog/compare/v0.2.5...v0.2.6) (2022-03-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#151](https://github.com/googleapis/java-private-catalog/issues/151)) ([bf916ca](https://github.com/googleapis/java-private-catalog/commit/bf916caabf099bdb9656841ac0abd09b2fce9fec))
+
 ### [0.2.5](https://github.com/googleapis/java-private-catalog/compare/v0.2.4...v0.2.5) (2022-02-11)
 
 
