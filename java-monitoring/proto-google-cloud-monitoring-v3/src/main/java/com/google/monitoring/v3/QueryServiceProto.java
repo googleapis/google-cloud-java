@@ -37,32 +37,29 @@ public final class QueryServiceProto {
     java.lang.String[] descriptorData = {
       "\n(google/monitoring/v3/query_service.pro"
           + "to\022\024google.monitoring.v3\032\034google/api/ann"
-          + "otations.proto\032\026google/api/label.proto\032!"
-          + "google/monitoring/v3/metric.proto\032)googl"
-          + "e/monitoring/v3/metric_service.proto\032\027go"
-          + "ogle/api/client.proto2\336\002\n\014QueryService\022\241"
-          + "\001\n\017QueryTimeSeries\022,.google.monitoring.v"
-          + "3.QueryTimeSeriesRequest\032-.google.monito"
-          + "ring.v3.QueryTimeSeriesResponse\"1\202\323\344\223\002+\""
-          + "&/v3/{name=projects/*}/timeSeries:query:"
-          + "\001*\032\251\001\312A\031monitoring.googleapis.com\322A\211\001htt"
-          + "ps://www.googleapis.com/auth/cloud-platf"
-          + "orm,https://www.googleapis.com/auth/moni"
-          + "toring,https://www.googleapis.com/auth/m"
-          + "onitoring.readB\311\001\n\030com.google.monitoring"
-          + ".v3B\021QueryServiceProtoP\001Z>google.golang."
-          + "org/genproto/googleapis/monitoring/v3;mo"
-          + "nitoring\252\002\032Google.Cloud.Monitoring.V3\312\002\032"
-          + "Google\\Cloud\\Monitoring\\V3\352\002\035Google::Clo"
-          + "ud::Monitoring::V3b\006proto3"
+          + "otations.proto\032)google/monitoring/v3/met"
+          + "ric_service.proto\032\027google/api/client.pro"
+          + "to2\336\002\n\014QueryService\022\241\001\n\017QueryTimeSeries\022"
+          + ",.google.monitoring.v3.QueryTimeSeriesRe"
+          + "quest\032-.google.monitoring.v3.QueryTimeSe"
+          + "riesResponse\"1\202\323\344\223\002+\"&/v3/{name=projects"
+          + "/*}/timeSeries:query:\001*\032\251\001\312A\031monitoring."
+          + "googleapis.com\322A\211\001https://www.googleapis"
+          + ".com/auth/cloud-platform,https://www.goo"
+          + "gleapis.com/auth/monitoring,https://www."
+          + "googleapis.com/auth/monitoring.readB\311\001\n\030"
+          + "com.google.monitoring.v3B\021QueryServicePr"
+          + "otoP\001Z>google.golang.org/genproto/google"
+          + "apis/monitoring/v3;monitoring\252\002\032Google.C"
+          + "loud.Monitoring.V3\312\002\032Google\\Cloud\\Monito"
+          + "ring\\V3\352\002\035Google::Cloud::Monitoring::V3b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
-              com.google.api.LabelProto.getDescriptor(),
-              com.google.monitoring.v3.MetricProto.getDescriptor(),
               com.google.monitoring.v3.MetricServiceProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
             });
@@ -74,8 +71,6 @@ public final class QueryServiceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.api.LabelProto.getDescriptor();
-    com.google.monitoring.v3.MetricProto.getDescriptor();
     com.google.monitoring.v3.MetricServiceProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
   }
