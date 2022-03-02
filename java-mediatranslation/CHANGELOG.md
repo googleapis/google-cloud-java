@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.7.9](https://github.com/googleapis/java-mediatranslation/compare/v0.7.8...v0.7.9) (2022-03-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#622](https://github.com/googleapis/java-mediatranslation/issues/622)) ([6fb5904](https://github.com/googleapis/java-mediatranslation/commit/6fb59046c7351e49d7ba4b63846ef632227442ac))
+
 ### [0.7.8](https://github.com/googleapis/java-mediatranslation/compare/v0.7.7...v0.7.8) (2022-02-28)
 
 
