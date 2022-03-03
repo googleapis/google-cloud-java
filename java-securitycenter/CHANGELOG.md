@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-securitycenter/compare/v2.4.0...v2.5.0) (2022-03-03)
+
+
+### Features
+
+* Add BigQuery export APIs that help you enable writing new/updated findings from  Security Command Center to a BigQuery table in near-real time. You can then integrate the data into existing workflows and create custom analyses. You can enable thi... ([#769](https://github.com/googleapis/java-securitycenter/issues/769)) ([b4641d8](https://github.com/googleapis/java-securitycenter/commit/b4641d8f54a43d4cb2746846b60b817027479755))
+
+
+### Documentation
+
+* Update documentation for the Finding resource field "project_display_name" ([#760](https://github.com/googleapis/java-securitycenter/issues/760)) ([2d4fb45](https://github.com/googleapis/java-securitycenter/commit/2d4fb45c9e101ea4c959f0fa432d3f515db7d379))
+* Update documentation for the Mute fields on Findings ([2d4fb45](https://github.com/googleapis/java-securitycenter/commit/2d4fb45c9e101ea4c959f0fa432d3f515db7d379))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#756](https://github.com/googleapis/java-securitycenter/issues/756)) ([9fda568](https://github.com/googleapis/java-securitycenter/commit/9fda56897f82d236b9ca0f7bd6e922d813ca8e7a))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.115.2 ([#748](https://github.com/googleapis/java-securitycenter/issues/748)) ([330195a](https://github.com/googleapis/java-securitycenter/commit/330195a4a7d146170f0ec4c9cbcaf661715fc340))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.115.5 ([#772](https://github.com/googleapis/java-securitycenter/issues/772)) ([ef57ca0](https://github.com/googleapis/java-securitycenter/commit/ef57ca098acac3913bfd503f68f4b0f913b7a515))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#768](https://github.com/googleapis/java-securitycenter/issues/768)) ([80d33d3](https://github.com/googleapis/java-securitycenter/commit/80d33d3a14cd8582bbd1a1cb307d303ac5fe6455))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.4 ([#724](https://github.com/googleapis/java-securitycenter/issues/724)) ([c955858](https://github.com/googleapis/java-securitycenter/commit/c955858eb60845ad96c31550f9d2686e82ab708a))
+
 ## [2.4.0](https://github.com/googleapis/java-securitycenter/compare/v2.3.2...v2.4.0) (2022-02-03)
 
 
