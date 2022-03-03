@@ -32,9 +32,9 @@ public interface AppendRowsRequestOrBuilder
    * If provided for subsequent requests, it must match the value of the first
    * request.
    * For explicitly created write streams, the format is:
-   * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
+   * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
    * For the special default stream, the format is:
-   * `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
+   * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
    * </pre>
    *
    * <code>
@@ -53,9 +53,9 @@ public interface AppendRowsRequestOrBuilder
    * If provided for subsequent requests, it must match the value of the first
    * request.
    * For explicitly created write streams, the format is:
-   * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
+   * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
    * For the special default stream, the format is:
-   * `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
+   * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
    * </pre>
    *
    * <code>

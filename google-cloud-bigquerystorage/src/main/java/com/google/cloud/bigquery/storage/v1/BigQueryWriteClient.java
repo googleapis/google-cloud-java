@@ -294,6 +294,12 @@ public class BigQueryWriteClient implements BackgroundResource {
    *       `BatchCommitWriteStreams` rpc.
    * </ul>
    *
+   * <p>Note: For users coding against the gRPC api directly, it may be necessary to supply the
+   * x-goog-request-params system parameter with `write_stream=&lt;full_write_stream_name&gt;`.
+   *
+   * <p>More information about system parameters:
+   * https://cloud.google.com/apis/docs/system-parameters
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -523,7 +529,36 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
-   *   String parent = "parent-995424086";
+   *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+   *   BatchCommitWriteStreamsResponse response =
+   *       bigQueryWriteClient.batchCommitWriteStreams(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent table that all the streams should belong to, in the form of
+   *     `projects/{project}/datasets/{dataset}/tables/{table}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCommitWriteStreamsResponse batchCommitWriteStreams(TableName parent) {
+    BatchCommitWriteStreamsRequest request =
+        BatchCommitWriteStreamsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return batchCommitWriteStreams(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Atomically commits a group of `PENDING` streams that belong to the same `parent` table.
+   *
+   * <p>Streams must be finalized before commit and cannot be committed multiple times. Once a
+   * stream is committed, data in the stream becomes available for read operations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   String parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString();
    *   BatchCommitWriteStreamsResponse response =
    *       bigQueryWriteClient.batchCommitWriteStreams(parent);
    * }
@@ -552,7 +587,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   BatchCommitWriteStreamsRequest request =
    *       BatchCommitWriteStreamsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
    *           .addAllWriteStreams(new ArrayList<String>())
    *           .build();
    *   BatchCommitWriteStreamsResponse response =
@@ -581,7 +616,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   BatchCommitWriteStreamsRequest request =
    *       BatchCommitWriteStreamsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
    *           .addAllWriteStreams(new ArrayList<String>())
    *           .build();
    *   ApiFuture<BatchCommitWriteStreamsResponse> future =

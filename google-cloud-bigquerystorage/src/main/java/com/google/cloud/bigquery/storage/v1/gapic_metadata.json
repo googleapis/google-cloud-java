@@ -32,7 +32,7 @@
               "methods": ["appendRowsCallable"]
             },
             "BatchCommitWriteStreams": {
-              "methods": ["batchCommitWriteStreams", "batchCommitWriteStreams", "batchCommitWriteStreamsCallable"]
+              "methods": ["batchCommitWriteStreams", "batchCommitWriteStreams", "batchCommitWriteStreams", "batchCommitWriteStreamsCallable"]
             },
             "CreateWriteStream": {
               "methods": ["createWriteStream", "createWriteStream", "createWriteStream", "createWriteStreamCallable"]

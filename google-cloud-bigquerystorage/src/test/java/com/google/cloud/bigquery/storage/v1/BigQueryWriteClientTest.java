@@ -393,6 +393,46 @@ public class BigQueryWriteClientTest {
             .build();
     mockBigQueryWrite.addResponse(expectedResponse);
 
+    TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+
+    BatchCommitWriteStreamsResponse actualResponse = client.batchCommitWriteStreams(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCommitWriteStreamsRequest actualRequest =
+        ((BatchCommitWriteStreamsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCommitWriteStreamsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigQueryWrite.addException(exception);
+
+    try {
+      TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+      client.batchCommitWriteStreams(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCommitWriteStreamsTest2() throws Exception {
+    BatchCommitWriteStreamsResponse expectedResponse =
+        BatchCommitWriteStreamsResponse.newBuilder()
+            .setCommitTime(Timestamp.newBuilder().build())
+            .addAllStreamErrors(new ArrayList<StorageError>())
+            .build();
+    mockBigQueryWrite.addResponse(expectedResponse);
+
     String parent = "parent-995424086";
 
     BatchCommitWriteStreamsResponse actualResponse = client.batchCommitWriteStreams(parent);
@@ -411,7 +451,7 @@ public class BigQueryWriteClientTest {
   }
 
   @Test
-  public void batchCommitWriteStreamsExceptionTest() throws Exception {
+  public void batchCommitWriteStreamsExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockBigQueryWrite.addException(exception);
 

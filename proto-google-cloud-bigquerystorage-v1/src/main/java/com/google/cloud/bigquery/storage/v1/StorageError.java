@@ -224,6 +224,26 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * <code>SCHEMA_MISMATCH_EXTRA_FIELDS = 7;</code>
      */
     SCHEMA_MISMATCH_EXTRA_FIELDS(7),
+    /**
+     *
+     *
+     * <pre>
+     * Offset already exists.
+     * </pre>
+     *
+     * <code>OFFSET_ALREADY_EXISTS = 8;</code>
+     */
+    OFFSET_ALREADY_EXISTS(8),
+    /**
+     *
+     *
+     * <pre>
+     * Offset out of range.
+     * </pre>
+     *
+     * <code>OFFSET_OUT_OF_RANGE = 9;</code>
+     */
+    OFFSET_OUT_OF_RANGE(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -311,6 +331,26 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * <code>SCHEMA_MISMATCH_EXTRA_FIELDS = 7;</code>
      */
     public static final int SCHEMA_MISMATCH_EXTRA_FIELDS_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Offset already exists.
+     * </pre>
+     *
+     * <code>OFFSET_ALREADY_EXISTS = 8;</code>
+     */
+    public static final int OFFSET_ALREADY_EXISTS_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Offset out of range.
+     * </pre>
+     *
+     * <code>OFFSET_OUT_OF_RANGE = 9;</code>
+     */
+    public static final int OFFSET_OUT_OF_RANGE_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -352,6 +392,10 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
           return STREAM_FINALIZED;
         case 7:
           return SCHEMA_MISMATCH_EXTRA_FIELDS;
+        case 8:
+          return OFFSET_ALREADY_EXISTS;
+        case 9:
+          return OFFSET_OUT_OF_RANGE;
         default:
           return null;
       }
