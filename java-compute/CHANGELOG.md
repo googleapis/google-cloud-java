@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.8.0](https://github.com/googleapis/java-compute/compare/v1.7.2...v1.8.0) (2022-03-03)
+
+
+### Features
+
+* update compute API to revision 20220112 ([#641](https://github.com/googleapis/java-compute/issues/641)) ([5345e39](https://github.com/googleapis/java-compute/commit/5345e390185f6bf7338c1ed4425e5fffa3f73b8a))
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#653](https://github.com/googleapis/java-compute/issues/653)) ([83d6dfd](https://github.com/googleapis/java-compute/commit/83d6dfdc8e125450e4fd554be1218dca527d520b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#657](https://github.com/googleapis/java-compute/issues/657)) ([d897b43](https://github.com/googleapis/java-compute/commit/d897b439fa7428a2c247334629ff4955fc57d784))
+
 ### [1.7.2](https://github.com/googleapis/java-compute/compare/v1.7.1...v1.7.2) (2022-02-11)
 
 
