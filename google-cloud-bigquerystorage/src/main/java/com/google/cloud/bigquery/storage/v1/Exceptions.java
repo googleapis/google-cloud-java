@@ -19,6 +19,9 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
+import io.grpc.Metadata;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.StatusProto;
 import javax.annotation.Nullable;
 
@@ -30,7 +33,7 @@ public final class Exceptions {
     }
   }
   /** Main Storage Exception. Might contain map of streams to errors for that stream. */
-  public static class StorageException extends RuntimeException {
+  public static class StorageException extends StatusRuntimeException {
 
     private final ImmutableMap<String, GrpcStatusCode> errors;
     private final String streamName;
@@ -40,11 +43,11 @@ public final class Exceptions {
     }
 
     private StorageException(
-        @Nullable String message,
-        @Nullable Throwable cause,
+        @Nullable Status grpcStatus,
+        @Nullable Metadata metadata,
         @Nullable String streamName,
         ImmutableMap<String, GrpcStatusCode> errors) {
-      super(message, cause);
+      super(grpcStatus, metadata);
       this.streamName = streamName;
       this.errors = errors;
     }
@@ -60,8 +63,8 @@ public final class Exceptions {
 
   /** Stream has already been finalized. */
   public static final class StreamFinalizedException extends StorageException {
-    protected StreamFinalizedException(String name, String message, Throwable cause) {
-      super(message, cause, name, ImmutableMap.of());
+    protected StreamFinalizedException(Status grpcStatus, Metadata metadata, String name) {
+      super(grpcStatus, metadata, name, ImmutableMap.of());
     }
   }
 
@@ -70,8 +73,8 @@ public final class Exceptions {
    * This can be resolved by updating the table's schema with the message schema.
    */
   public static final class SchemaMismatchedException extends StorageException {
-    protected SchemaMismatchedException(String name, String message, Throwable cause) {
-      super(message, cause, name, ImmutableMap.of());
+    protected SchemaMismatchedException(Status grpcStatus, Metadata metadata, String name) {
+      super(grpcStatus, metadata, name, ImmutableMap.of());
     }
   }
 
@@ -98,15 +101,17 @@ public final class Exceptions {
   public static StorageException toStorageException(
       com.google.rpc.Status rpcStatus, Throwable exception) {
     StorageError error = toStorageError(rpcStatus);
+    Status grpcStatus =
+        Status.fromCodeValue(rpcStatus.getCode()).withDescription(rpcStatus.getMessage());
     if (error == null) {
       return null;
     }
     switch (error.getCode()) {
       case STREAM_FINALIZED:
-        return new StreamFinalizedException(error.getEntity(), error.getErrorMessage(), exception);
+        return new StreamFinalizedException(grpcStatus, null, error.getEntity());
 
       case SCHEMA_MISMATCH_EXTRA_FIELDS:
-        return new SchemaMismatchedException(error.getEntity(), error.getErrorMessage(), exception);
+        return new SchemaMismatchedException(grpcStatus, null, error.getEntity());
 
       default:
         return null;

@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.storage.v1.it;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.core.ApiFuture;
@@ -27,11 +28,15 @@ import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.storage.test.Test.*;
 import com.google.cloud.bigquery.storage.v1.*;
+import com.google.cloud.bigquery.storage.v1.Exceptions.SchemaMismatchedException;
+import com.google.cloud.bigquery.storage.v1.Exceptions.StreamFinalizedException;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
+import io.grpc.Status;
+import io.grpc.Status.Code;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.*;
@@ -835,8 +840,10 @@ public class ITBigQueryWriteManualClientTest {
         Assert.fail("Should fail");
       } catch (ExecutionException e) {
         assertEquals(Exceptions.SchemaMismatchedException.class, e.getCause().getClass());
-        assertThat(e.getCause().getMessage())
-            .contains("Schema mismatch due to extra fields in user schema");
+        Exceptions.SchemaMismatchedException actualError = (SchemaMismatchedException) e.getCause();
+        assertNotNull(actualError.getStreamName());
+        // This verifies that the Beam connector can consume this custom exception's grpc StatusCode
+        assertEquals(Code.INVALID_ARGUMENT, Status.fromThrowable(e.getCause()).getCode());
       }
     }
   }
@@ -853,20 +860,28 @@ public class ITBigQueryWriteManualClientTest {
                 .build());
     try (StreamWriter streamWriter =
         StreamWriter.newBuilder(writeStream.getName())
-            .setWriterSchema(ProtoSchemaConverter.convert(UpdatedFooType.getDescriptor()))
+            .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
             .build()) {
+      // Append once before finalizing the stream
+      ApiFuture<AppendRowsResponse> response =
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 0);
+      response.get();
       // Finalize the stream in order to trigger STREAM_FINALIZED error
       client.finalizeWriteStream(
           FinalizeWriteStreamRequest.newBuilder().setName(writeStream.getName()).build());
       // Try to append to a finalized stream
-      ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 0);
+      ApiFuture<AppendRowsResponse> response2 =
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 1);
       try {
-        response.get();
+        response2.get();
         Assert.fail("Should fail");
       } catch (ExecutionException e) {
         assertEquals(Exceptions.StreamFinalizedException.class, e.getCause().getClass());
-        assertThat(e.getCause().getMessage()).contains("Stream is finalized");
+        Exceptions.StreamFinalizedException actualError = (StreamFinalizedException) e.getCause();
+        assertNotNull(actualError.getStreamName());
+        // This verifies that the Beam connector can consume this custom exception's grpc StatusCode
+        assertEquals(Code.INVALID_ARGUMENT, Status.fromThrowable(e.getCause()).getCode());
+        assertThat(e.getCause().getMessage()).contains("Stream has been finalized");
       }
     }
   }

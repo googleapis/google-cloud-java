@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.api.gax.rpc.UnknownException;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.v1.StorageError.StorageErrorCode;
 import com.google.common.base.Strings;
@@ -339,6 +340,21 @@ public class StreamWriterTest {
         assertFutureException(Exceptions.SchemaMismatchedException.class, appendFuture2);
     assertEquals("foobar", actualError.getStreamName());
     assertEquals(1, appendFuture3.get().getAppendResult().getOffset().getValue());
+
+    writer.close();
+  }
+
+  @Test
+  public void testAppendFailRandomException() throws Exception {
+    StreamWriter writer = getTestStreamWriter();
+    // Trigger a non-StatusRuntimeException for append operation (although grpc API should not
+    // return anything other than StatusRuntimeException)
+    IllegalArgumentException illegalArgumentException =
+        new IllegalArgumentException("Illegal argument");
+    testBigQueryWrite.addException(illegalArgumentException);
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    UnknownException actualError = assertFutureException(UnknownException.class, appendFuture1);
+    assertEquals(Code.UNKNOWN, actualError.getStatusCode().getCode());
 
     writer.close();
   }
