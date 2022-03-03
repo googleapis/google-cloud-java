@@ -1,5 +1,16 @@
 # Changelog
 
+### [2.2.4](https://github.com/googleapis/java-security-private-ca/compare/v2.2.3...v2.2.4) (2022-03-03)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#364](https://github.com/googleapis/java-security-private-ca/issues/364)) ([a0828d8](https://github.com/googleapis/java-security-private-ca/commit/a0828d84cafb15f882be31927f2e8015a85664fb))
+* update dependency com.google.api.grpc:grpc-google-iam-v1 to v1.2.7 ([#355](https://github.com/googleapis/java-security-private-ca/issues/355)) ([3cf8756](https://github.com/googleapis/java-security-private-ca/commit/3cf8756d468847d8808bfd7a409d5b3f5cbf35c4))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.2.2 ([#356](https://github.com/googleapis/java-security-private-ca/issues/356)) ([83baab2](https://github.com/googleapis/java-security-private-ca/commit/83baab20d23a35442e5b88a015d3e1eb02c1f569))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.2.7 ([#374](https://github.com/googleapis/java-security-private-ca/issues/374)) ([a353dad](https://github.com/googleapis/java-security-private-ca/commit/a353dad35a304c7d4035985b6be6224c0d8817c1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#377](https://github.com/googleapis/java-security-private-ca/issues/377)) ([4ed3947](https://github.com/googleapis/java-security-private-ca/commit/4ed3947469693b4b989abe56c3144c44b50d863d))
+
 ### [2.2.3](https://github.com/googleapis/java-security-private-ca/compare/v2.2.2...v2.2.3) (2022-02-03)
 
 
