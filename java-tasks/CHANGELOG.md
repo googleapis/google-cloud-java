@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.1.5](https://github.com/googleapis/java-tasks/compare/v2.1.4...v2.1.5) (2022-03-03)
+
+
+### Documentation
+
+* **sample:** add native-image sample ([#621](https://github.com/googleapis/java-tasks/issues/621)) ([ec53481](https://github.com/googleapis/java-tasks/commit/ec53481cc690561f4aa7ffd6307f66197d1239bc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#631](https://github.com/googleapis/java-tasks/issues/631)) ([fb1ef62](https://github.com/googleapis/java-tasks/commit/fb1ef621fe3c14a875de8dd25bd0ac702bb2e996))
+* update dependency com.google.cloud:native-image-support to v0.12.6 ([#628](https://github.com/googleapis/java-tasks/issues/628)) ([457b697](https://github.com/googleapis/java-tasks/commit/457b697a3d9029bd4f33b258ea98918bb38cc1b2))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.10 ([#626](https://github.com/googleapis/java-tasks/issues/626)) ([808c56e](https://github.com/googleapis/java-tasks/commit/808c56ef98ecdf7a57cbf31234ef4c6b1c93c609))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.10 ([#627](https://github.com/googleapis/java-tasks/issues/627)) ([1f08e4a](https://github.com/googleapis/java-tasks/commit/1f08e4a446881032d3c40ee31986fa748dbc1914))
+
 ### [2.1.4](https://github.com/googleapis/java-tasks/compare/v2.1.3...v2.1.4) (2022-02-28)
 
 
