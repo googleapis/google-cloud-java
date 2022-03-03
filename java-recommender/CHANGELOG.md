@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-recommender/compare/v2.2.0...v2.3.0) (2022-03-03)
+
+
+### Features
+
+* Sustainability Projection ([#720](https://github.com/googleapis/java-recommender/issues/720)) ([2e6b524](https://github.com/googleapis/java-recommender/commit/2e6b5249320900da3e35d064402c9e6eb3c78a9f))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#722](https://github.com/googleapis/java-recommender/issues/722)) ([88bf1f5](https://github.com/googleapis/java-recommender/commit/88bf1f59bdda66f6aa9502a384c51fada2f11161))
+* update actions/setup-java action to v3 ([#729](https://github.com/googleapis/java-recommender/issues/729)) ([cd26561](https://github.com/googleapis/java-recommender/commit/cd2656119e67229ab68e4cba05f6a8f9d6e1a761))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#733](https://github.com/googleapis/java-recommender/issues/733)) ([9be75d1](https://github.com/googleapis/java-recommender/commit/9be75d1fc37d92ef3f3d663bdb68ac08bd5f397f))
+
 ## [2.2.0](https://github.com/googleapis/java-recommender/compare/v2.1.5...v2.2.0) (2022-02-03)
 
 
