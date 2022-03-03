@@ -1,5 +1,25 @@
 # Changelog
 
+## [3.0.0](https://github.com/googleapis/java-dataproc/compare/v2.3.2...v3.0.0) (2022-03-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* add support for Virtual Dataproc cluster running on GKE cluster (#795)
+
+### Features
+
+* add support for Virtual Dataproc cluster running on GKE cluster ([#795](https://github.com/googleapis/java-dataproc/issues/795)) ([71aa406](https://github.com/googleapis/java-dataproc/commit/71aa40686cf1d7d9a9b3a15b2037392d3c1e6fd3))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#790](https://github.com/googleapis/java-dataproc/issues/790)) ([de5ac7b](https://github.com/googleapis/java-dataproc/commit/de5ac7b2693d3434c6369d2888e790383347bd39))
+* update actions/setup-java action to v3 ([#798](https://github.com/googleapis/java-dataproc/issues/798)) ([a054ce8](https://github.com/googleapis/java-dataproc/commit/a054ce8fb637f3452fd641a3f4689cbac3070456))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#804](https://github.com/googleapis/java-dataproc/issues/804)) ([4b4092b](https://github.com/googleapis/java-dataproc/commit/4b4092b14c592b09202e484028a696a408f976d0))
+* update dependency com.google.cloud:google-cloud-storage to v2.4.0 ([#782](https://github.com/googleapis/java-dataproc/issues/782)) ([4754aa0](https://github.com/googleapis/java-dataproc/commit/4754aa0321069b5b68bbc5cf6f237c44b317a84d))
+* update dependency com.google.cloud:google-cloud-storage to v2.4.4 ([#800](https://github.com/googleapis/java-dataproc/issues/800)) ([bfab095](https://github.com/googleapis/java-dataproc/commit/bfab0958ffc81615768d00bc8bc1e6af03a770e2))
+
 ### [2.3.2](https://github.com/googleapis/java-dataproc/compare/v2.3.1...v2.3.2) (2022-02-03)
 
 
