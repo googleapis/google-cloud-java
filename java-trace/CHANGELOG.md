@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.1.4](https://github.com/googleapis/java-trace/compare/v2.1.3...v2.1.4) (2022-03-03)
+
+
+### Documentation
+
+* **sample:** adding native-image-sample for java-trace ([#732](https://github.com/googleapis/java-trace/issues/732)) ([88695dc](https://github.com/googleapis/java-trace/commit/88695dc3f896473a2e7187e9382cadf3d40eff58))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#734](https://github.com/googleapis/java-trace/issues/734)) ([dfe6d94](https://github.com/googleapis/java-trace/commit/dfe6d9492572a6177e1026d388343e82f98a8d59))
+* update dependency com.google.cloud:native-image-support to v0.12.6 ([#737](https://github.com/googleapis/java-trace/issues/737)) ([c27d313](https://github.com/googleapis/java-trace/commit/c27d3136b5a04718bb27f4e5fe6dde7aa7090a45))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.10 ([#738](https://github.com/googleapis/java-trace/issues/738)) ([94e1915](https://github.com/googleapis/java-trace/commit/94e1915c7e0e634b8ebb26418b6d5e495d59b5f5))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.10 ([#739](https://github.com/googleapis/java-trace/issues/739)) ([a6598fa](https://github.com/googleapis/java-trace/commit/a6598facb29fb027b67fa12cfc71f52e8f0ce3f0))
+
 ### [2.1.3](https://github.com/googleapis/java-trace/compare/v2.1.2...v2.1.3) (2022-02-11)
 
 
