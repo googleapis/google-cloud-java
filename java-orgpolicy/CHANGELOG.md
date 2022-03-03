@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/googleapis/java-orgpolicy/compare/v2.0.10...v2.1.0) (2022-03-03)
+
+
+### Features
+
+* Deprecates AlternativePolicySpec ([#320](https://github.com/googleapis/java-orgpolicy/issues/320)) ([59f588b](https://github.com/googleapis/java-orgpolicy/commit/59f588bb027097cd2121a578ec4b74f659e75c14))
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#322](https://github.com/googleapis/java-orgpolicy/issues/322)) ([5129e16](https://github.com/googleapis/java-orgpolicy/commit/5129e16a37ed160e6a8676eaab8c4fde12614faa))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#326](https://github.com/googleapis/java-orgpolicy/issues/326)) ([4376148](https://github.com/googleapis/java-orgpolicy/commit/43761487aa99357afcbfd758c44b1e9fd46fb395))
+
 ### [2.0.10](https://github.com/googleapis/java-orgpolicy/compare/v2.0.9...v2.0.10) (2022-02-11)
 
 
