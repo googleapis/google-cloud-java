@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.0.0](https://github.com/googleapis/java-service-management/compare/v2.1.7...v3.0.0) (2022-03-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* * chore: cleanup unused imports in google/api/servicemanagement/v1
+
+### Features
+
+* Remove EnableService and DisableService RPC methods and related protos from service management API ([#203](https://github.com/googleapis/java-service-management/issues/203)) ([6af0eb6](https://github.com/googleapis/java-service-management/commit/6af0eb6cb6f9a6479e7b1d574afc09c59cbc4bd3))
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#209](https://github.com/googleapis/java-service-management/issues/209)) ([5668c4f](https://github.com/googleapis/java-service-management/commit/5668c4f2d857b3ef9a7b8ba6ab1a9c6edf73347d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#216](https://github.com/googleapis/java-service-management/issues/216)) ([22dda7c](https://github.com/googleapis/java-service-management/commit/22dda7c5746537a51b78021ef36b35a17d87096b))
+
 ### [2.1.7](https://github.com/googleapis/java-service-management/compare/v2.1.6...v2.1.7) (2022-02-11)
 
 
