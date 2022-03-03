@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-document-ai/compare/v2.2.1...v2.3.0) (2022-03-03)
+
+
+### Features
+
+* add `symbols` field, and auto-format comments ([54057f6](https://github.com/googleapis/java-document-ai/commit/54057f6d1b14decb1a3b3db8a85e9d6355e2fb4a))
+* add `symbols` field, and auto-format comments ([#762](https://github.com/googleapis/java-document-ai/issues/762)) ([54057f6](https://github.com/googleapis/java-document-ai/commit/54057f6d1b14decb1a3b3db8a85e9d6355e2fb4a))
+* add question_id field in ReviewDocumentOperationMetadata ([#742](https://github.com/googleapis/java-document-ai/issues/742)) ([388a704](https://github.com/googleapis/java-document-ai/commit/388a704282d7854b38143b2692b90893da040fb8))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#757](https://github.com/googleapis/java-document-ai/issues/757)) ([3ce8bd6](https://github.com/googleapis/java-document-ai/commit/3ce8bd611e1a6b1000151ac6ce384e57e5f4e34c))
+* update actions/setup-java action to v3 ([#767](https://github.com/googleapis/java-document-ai/issues/767)) ([eb6897d](https://github.com/googleapis/java-document-ai/commit/eb6897d0702a79f83c008053d2d8b96611082fe5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#773](https://github.com/googleapis/java-document-ai/issues/773)) ([12ce269](https://github.com/googleapis/java-document-ai/commit/12ce269360b478c7777f1282f89ec84a1da5577e))
+* update dependency com.google.cloud:google-cloud-storage to v2.4.1 ([#755](https://github.com/googleapis/java-document-ai/issues/755)) ([b76f1c8](https://github.com/googleapis/java-document-ai/commit/b76f1c82d62d1c847669cd759d7ae70b7b6368d6))
+* update dependency com.google.cloud:google-cloud-storage to v2.4.2 ([#759](https://github.com/googleapis/java-document-ai/issues/759)) ([e6f6d26](https://github.com/googleapis/java-document-ai/commit/e6f6d26e3cbf7bc4e33a18642a91900355990465))
+* update dependency com.google.cloud:google-cloud-storage to v2.4.4 ([#770](https://github.com/googleapis/java-document-ai/issues/770)) ([de6eb16](https://github.com/googleapis/java-document-ai/commit/de6eb1678c098aefc0278e8b8ac800ef43124984))
+
 ### [2.2.1](https://github.com/googleapis/java-document-ai/compare/v2.2.0...v2.2.1) (2022-02-08)
 
 
