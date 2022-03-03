@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.0.21](https://github.com/googleapis/java-vision/compare/v2.0.20...v2.0.21) (2022-03-03)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.4.4 ([#832](https://github.com/googleapis/java-vision/issues/832)) ([d9639a6](https://github.com/googleapis/java-vision/commit/d9639a61755fe7d5d1fae36ebb1ecee4724e7af9))
+* update dependency org.springframework.boot:spring-boot-maven-plugin to v2.6.4 ([#822](https://github.com/googleapis/java-vision/issues/822)) ([de248e3](https://github.com/googleapis/java-vision/commit/de248e3543008022b5cd76b542243ec1e716b96e))
+
 ### [2.0.20](https://github.com/googleapis/java-vision/compare/v2.0.19...v2.0.20) (2022-03-03)
 
 
