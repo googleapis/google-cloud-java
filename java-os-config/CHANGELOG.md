@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-os-config/compare/v2.3.2...v2.4.0) (2022-03-03)
+
+
+### Features
+
+* Add existing os_policy_assignment_reports.proto fixing the build ([19ebd73](https://github.com/googleapis/java-os-config/commit/19ebd734a5796650c659f0fe6d9fbd0e3c414620))
+* Add GetOsPolicyAssignmentReport and analogous List rpc method ([19ebd73](https://github.com/googleapis/java-os-config/commit/19ebd734a5796650c659f0fe6d9fbd0e3c414620))
+* Add Inventory to InstanceFilter ([19ebd73](https://github.com/googleapis/java-os-config/commit/19ebd734a5796650c659f0fe6d9fbd0e3c414620))
+* Add item that is affected by vulnerability ([19ebd73](https://github.com/googleapis/java-os-config/commit/19ebd734a5796650c659f0fe6d9fbd0e3c414620))
+* Mark methods as deprecated ([19ebd73](https://github.com/googleapis/java-os-config/commit/19ebd734a5796650c659f0fe6d9fbd0e3c414620))
+* Update osconfig v1 protos ([#437](https://github.com/googleapis/java-os-config/issues/437)) ([5bc7869](https://github.com/googleapis/java-os-config/commit/5bc78698005820e400115722341958c67e70a532))
+* Update v1beta protos with recently added features. PatchRollout proto, mig_instances_allowed field to PatchConfig, UpdatePatchDeployment RPC,PausePatchDeployment and ResumePatchDeployment pair of RPCs ([19ebd73](https://github.com/googleapis/java-os-config/commit/19ebd734a5796650c659f0fe6d9fbd0e3c414620))
+
+
+### Bug Fixes
+
+* Fix description of an interpreter field, validate if the field is not unspecified ([#440](https://github.com/googleapis/java-os-config/issues/440)) ([19ebd73](https://github.com/googleapis/java-os-config/commit/19ebd734a5796650c659f0fe6d9fbd0e3c414620))
+* update third_party protos to the most actual version: ([19ebd73](https://github.com/googleapis/java-os-config/commit/19ebd734a5796650c659f0fe6d9fbd0e3c414620))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#442](https://github.com/googleapis/java-os-config/issues/442)) ([4ebcf46](https://github.com/googleapis/java-os-config/commit/4ebcf46c1ce1523b2eb6a51dbf7ec6b54887301e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#453](https://github.com/googleapis/java-os-config/issues/453)) ([0bc72b2](https://github.com/googleapis/java-os-config/commit/0bc72b275b1be3386c102bf3009241f78bd75ab8))
+
 ### [2.3.2](https://github.com/googleapis/java-os-config/compare/v2.3.1...v2.3.2) (2022-02-03)
 
 
