@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.8](https://github.com/googleapis/java-game-servers/compare/v2.1.7...v2.1.8) (2022-03-03)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#635](https://github.com/googleapis/java-game-servers/issues/635)) ([daad2c5](https://github.com/googleapis/java-game-servers/commit/daad2c5a425a9d264de1d76fb12afba58c6df79e))
+
 ### [2.1.7](https://github.com/googleapis/java-game-servers/compare/v2.1.6...v2.1.7) (2022-03-01)
 
 
