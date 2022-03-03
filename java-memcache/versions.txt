@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-memcache:2.1.9:2.1.9
-grpc-google-cloud-memcache-v1beta2:0.8.9:0.8.9
-grpc-google-cloud-memcache-v1:2.1.9:2.1.9
-proto-google-cloud-memcache-v1beta2:0.8.9:0.8.9
-proto-google-cloud-memcache-v1:2.1.9:2.1.9
+google-cloud-memcache:2.1.9:2.1.10-SNAPSHOT
+grpc-google-cloud-memcache-v1beta2:0.8.9:0.8.10-SNAPSHOT
+grpc-google-cloud-memcache-v1:2.1.9:2.1.10-SNAPSHOT
+proto-google-cloud-memcache-v1beta2:0.8.9:0.8.10-SNAPSHOT
+proto-google-cloud-memcache-v1:2.1.9:2.1.10-SNAPSHOT
