@@ -25,6 +25,8 @@ import com.google.api.gax.retrying.RetryingContext;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.api.gax.retrying.TimedRetryAlgorithmWithContext;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import java.util.Iterator;
 import java.util.UUID;
 import java.util.concurrent.CancellationException;
@@ -107,9 +109,10 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
       /*
       In some cases error messages may come without an exception
       e.g. status code 200 with a rate limit exceeded for job create
-      in these cases there is now previousThrowable so we need to check previousResponse
+      in these cases there is no previousThrowable so we need
+      to check for error messages in previousResponse
        */
-      errorDesc = previousResponse.toString();
+      errorDesc = getErrorDescFromResponse(previousResponse);
     }
 
     if (errorDesc != null) {
@@ -211,5 +214,29 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
       return timedAlgorithmWithContext.createNextAttempt(context, previousSettings);
     }
     return getTimedAlgorithm().createNextAttempt(previousSettings);
+  }
+
+  private String getErrorDescFromResponse(ResponseT previousResponse) {
+    /*
+    error messages may come without an exception and must be extracted from response
+    following logic based on response body of jobs.insert method, so far the only
+    known case where a response with status code 200 may contain an error message
+     */
+    try {
+      JsonObject responseJson =
+          JsonParser.parseString(previousResponse.toString()).getAsJsonObject();
+      if (responseJson.has("status") && responseJson.getAsJsonObject("status").has("errorResult")) {
+        return responseJson
+            .getAsJsonObject("status")
+            .getAsJsonObject("errorResult")
+            .get("message")
+            .toString();
+      } else {
+        return null;
+      }
+    } catch (Exception e) {
+      // exceptions here implies no error message present in response, returning null
+      return null;
+    }
   }
 }
