@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.5.0](https://github.com/googleapis/java-channel/compare/v3.4.0...v3.5.0) (2022-03-02)
+
+
+### Features
+
+* Change description for GCP ProvisionedService.provisioning_id value feat: Update year from 2021 to 2022 ([#254](https://github.com/googleapis/java-channel/issues/254)) ([9eb360f](https://github.com/googleapis/java-channel/commit/9eb360f46868c186fc19706814e9b34c5f55a62c))
+
+
+### Bug Fixes
+
+* clarify language ([#267](https://github.com/googleapis/java-channel/issues/267)) ([8496bea](https://github.com/googleapis/java-channel/commit/8496bea176c217e961780b354a5e4f184ef9134b))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#263](https://github.com/googleapis/java-channel/issues/263)) ([f1b52a3](https://github.com/googleapis/java-channel/commit/f1b52a3f83acbd852161b6e183decc75ed9b421a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#275](https://github.com/googleapis/java-channel/issues/275)) ([081ca10](https://github.com/googleapis/java-channel/commit/081ca1026e71a21afad7c594411fe395aa7ee08e))
+
 ## [3.4.0](https://github.com/googleapis/java-channel/compare/v3.3.1...v3.4.0) (2022-02-03)
 
 
