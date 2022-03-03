@@ -13,6 +13,9 @@
             "BulkMuteFindings": {
               "methods": ["bulkMuteFindingsAsync", "bulkMuteFindingsAsync", "bulkMuteFindingsAsync", "bulkMuteFindingsOperationCallable", "bulkMuteFindingsCallable"]
             },
+            "CreateBigQueryExport": {
+              "methods": ["createBigQueryExport", "createBigQueryExport", "createBigQueryExport", "createBigQueryExport", "createBigQueryExport", "createBigQueryExportCallable"]
+            },
             "CreateFinding": {
               "methods": ["createFinding", "createFinding", "createFinding", "createFindingCallable"]
             },
@@ -25,11 +28,17 @@
             "CreateSource": {
               "methods": ["createSource", "createSource", "createSource", "createSourceCallable"]
             },
+            "DeleteBigQueryExport": {
+              "methods": ["deleteBigQueryExport", "deleteBigQueryExport", "deleteBigQueryExport", "deleteBigQueryExportCallable"]
+            },
             "DeleteMuteConfig": {
               "methods": ["deleteMuteConfig", "deleteMuteConfig", "deleteMuteConfig", "deleteMuteConfigCallable"]
             },
             "DeleteNotificationConfig": {
               "methods": ["deleteNotificationConfig", "deleteNotificationConfig", "deleteNotificationConfig", "deleteNotificationConfigCallable"]
+            },
+            "GetBigQueryExport": {
+              "methods": ["getBigQueryExport", "getBigQueryExport", "getBigQueryExport", "getBigQueryExportCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
@@ -54,6 +63,9 @@
             },
             "ListAssets": {
               "methods": ["listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
+            },
+            "ListBigQueryExports": {
+              "methods": ["listBigQueryExports", "listBigQueryExports", "listBigQueryExports", "listBigQueryExports", "listBigQueryExports", "listBigQueryExportsPagedCallable", "listBigQueryExportsCallable"]
             },
             "ListFindings": {
               "methods": ["listFindings", "listFindingsPagedCallable", "listFindingsCallable"]
@@ -81,6 +93,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateBigQueryExport": {
+              "methods": ["updateBigQueryExport", "updateBigQueryExport", "updateBigQueryExportCallable"]
             },
             "UpdateExternalSystem": {
               "methods": ["updateExternalSystem", "updateExternalSystem", "updateExternalSystemCallable"]

@@ -108,6 +108,11 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 32:
+            {
+              upstreamFixAvailable_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -319,6 +324,24 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     return getCvssv3();
   }
 
+  public static final int UPSTREAM_FIX_AVAILABLE_FIELD_NUMBER = 4;
+  private boolean upstreamFixAvailable_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether upstream fix is available for the CVE.
+   * </pre>
+   *
+   * <code>bool upstream_fix_available = 4;</code>
+   *
+   * @return The upstreamFixAvailable.
+   */
+  @java.lang.Override
+  public boolean getUpstreamFixAvailable() {
+    return upstreamFixAvailable_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -342,6 +365,9 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     if (cvssv3_ != null) {
       output.writeMessage(3, getCvssv3());
     }
+    if (upstreamFixAvailable_ != false) {
+      output.writeBool(4, upstreamFixAvailable_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -359,6 +385,9 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     }
     if (cvssv3_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCvssv3());
+    }
+    if (upstreamFixAvailable_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, upstreamFixAvailable_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -381,6 +410,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     if (hasCvssv3()) {
       if (!getCvssv3().equals(other.getCvssv3())) return false;
     }
+    if (getUpstreamFixAvailable() != other.getUpstreamFixAvailable()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -402,6 +432,8 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CVSSV3_FIELD_NUMBER;
       hash = (53 * hash) + getCvssv3().hashCode();
     }
+    hash = (37 * hash) + UPSTREAM_FIX_AVAILABLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUpstreamFixAvailable());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -564,6 +596,8 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         cvssv3_ = null;
         cvssv3Builder_ = null;
       }
+      upstreamFixAvailable_ = false;
+
       return this;
     }
 
@@ -607,6 +641,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.cvssv3_ = cvssv3Builder_.build();
       }
+      result.upstreamFixAvailable_ = upstreamFixAvailable_;
       onBuilt();
       return result;
     }
@@ -689,6 +724,9 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCvssv3()) {
         mergeCvssv3(other.getCvssv3());
+      }
+      if (other.getUpstreamFixAvailable() != false) {
+        setUpstreamFixAvailable(other.getUpstreamFixAvailable());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1388,6 +1426,58 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         cvssv3_ = null;
       }
       return cvssv3Builder_;
+    }
+
+    private boolean upstreamFixAvailable_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether upstream fix is available for the CVE.
+     * </pre>
+     *
+     * <code>bool upstream_fix_available = 4;</code>
+     *
+     * @return The upstreamFixAvailable.
+     */
+    @java.lang.Override
+    public boolean getUpstreamFixAvailable() {
+      return upstreamFixAvailable_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether upstream fix is available for the CVE.
+     * </pre>
+     *
+     * <code>bool upstream_fix_available = 4;</code>
+     *
+     * @param value The upstreamFixAvailable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpstreamFixAvailable(boolean value) {
+
+      upstreamFixAvailable_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether upstream fix is available for the CVE.
+     * </pre>
+     *
+     * <code>bool upstream_fix_available = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUpstreamFixAvailable() {
+
+      upstreamFixAvailable_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

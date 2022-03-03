@@ -19,6 +19,7 @@ package com.google.cloud.securitycenter.v1.stub;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
@@ -31,16 +32,20 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.securitycenter.v1.BigQueryExport;
 import com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest;
 import com.google.cloud.securitycenter.v1.BulkMuteFindingsResponse;
+import com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
 import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
+import com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.Finding;
+import com.google.cloud.securitycenter.v1.GetBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
@@ -51,6 +56,8 @@ import com.google.cloud.securitycenter.v1.GroupFindingsRequest;
 import com.google.cloud.securitycenter.v1.GroupFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
+import com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest;
+import com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
@@ -68,6 +75,7 @@ import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
 import com.google.cloud.securitycenter.v1.Source;
+import com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
 import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
@@ -166,6 +174,16 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetBigQueryExportRequest, BigQueryExport>
+      getBigQueryExportMethodDescriptor =
+          MethodDescriptor.<GetBigQueryExportRequest, BigQueryExport>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/GetBigQueryExport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetBigQueryExportRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(BigQueryExport.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -412,6 +430,51 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(ProtoUtils.marshaller(SecurityMarks.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateBigQueryExportRequest, BigQueryExport>
+      createBigQueryExportMethodDescriptor =
+          MethodDescriptor.<CreateBigQueryExportRequest, BigQueryExport>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/CreateBigQueryExport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateBigQueryExportRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(BigQueryExport.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteBigQueryExportRequest, Empty>
+      deleteBigQueryExportMethodDescriptor =
+          MethodDescriptor.<DeleteBigQueryExportRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/DeleteBigQueryExport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteBigQueryExportRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateBigQueryExportRequest, BigQueryExport>
+      updateBigQueryExportMethodDescriptor =
+          MethodDescriptor.<UpdateBigQueryExportRequest, BigQueryExport>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/UpdateBigQueryExport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateBigQueryExportRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(BigQueryExport.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListBigQueryExportsRequest, ListBigQueryExportsResponse>
+      listBigQueryExportsMethodDescriptor =
+          MethodDescriptor.<ListBigQueryExportsRequest, ListBigQueryExportsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListBigQueryExports")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListBigQueryExportsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListBigQueryExportsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<BulkMuteFindingsRequest, Operation> bulkMuteFindingsCallable;
   private final OperationCallable<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
       bulkMuteFindingsOperationCallable;
@@ -423,6 +486,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<DeleteMuteConfigRequest, Empty> deleteMuteConfigCallable;
   private final UnaryCallable<DeleteNotificationConfigRequest, Empty>
       deleteNotificationConfigCallable;
+  private final UnaryCallable<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<GetMuteConfigRequest, MuteConfig> getMuteConfigCallable;
   private final UnaryCallable<GetNotificationConfigRequest, NotificationConfig>
@@ -471,6 +535,15 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<UpdateSourceRequest, Source> updateSourceCallable;
   private final UnaryCallable<UpdateSecurityMarksRequest, SecurityMarks>
       updateSecurityMarksCallable;
+  private final UnaryCallable<CreateBigQueryExportRequest, BigQueryExport>
+      createBigQueryExportCallable;
+  private final UnaryCallable<DeleteBigQueryExportRequest, Empty> deleteBigQueryExportCallable;
+  private final UnaryCallable<UpdateBigQueryExportRequest, BigQueryExport>
+      updateBigQueryExportCallable;
+  private final UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsResponse>
+      listBigQueryExportsCallable;
+  private final UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsPagedResponse>
+      listBigQueryExportsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -588,6 +661,16 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportTransportSettings =
+        GrpcCallSettings.<GetBigQueryExportRequest, BigQueryExport>newBuilder()
+            .setMethodDescriptor(getBigQueryExportMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
@@ -846,6 +929,51 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<CreateBigQueryExportRequest, BigQueryExport>
+        createBigQueryExportTransportSettings =
+            GrpcCallSettings.<CreateBigQueryExportRequest, BigQueryExport>newBuilder()
+                .setMethodDescriptor(createBigQueryExportMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteBigQueryExportRequest, Empty> deleteBigQueryExportTransportSettings =
+        GrpcCallSettings.<DeleteBigQueryExportRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteBigQueryExportMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateBigQueryExportRequest, BigQueryExport>
+        updateBigQueryExportTransportSettings =
+            GrpcCallSettings.<UpdateBigQueryExportRequest, BigQueryExport>newBuilder()
+                .setMethodDescriptor(updateBigQueryExportMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "big_query_export.name",
+                          String.valueOf(request.getBigQueryExport().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListBigQueryExportsRequest, ListBigQueryExportsResponse>
+        listBigQueryExportsTransportSettings =
+            GrpcCallSettings.<ListBigQueryExportsRequest, ListBigQueryExportsResponse>newBuilder()
+                .setMethodDescriptor(listBigQueryExportsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
 
     this.bulkMuteFindingsCallable =
         callableFactory.createUnaryCallable(
@@ -877,6 +1005,11 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
         callableFactory.createUnaryCallable(
             deleteNotificationConfigTransportSettings,
             settings.deleteNotificationConfigSettings(),
+            clientContext);
+    this.getBigQueryExportCallable =
+        callableFactory.createUnaryCallable(
+            getBigQueryExportTransportSettings,
+            settings.getBigQueryExportSettings(),
             clientContext);
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
@@ -997,6 +1130,31 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             updateSecurityMarksTransportSettings,
             settings.updateSecurityMarksSettings(),
             clientContext);
+    this.createBigQueryExportCallable =
+        callableFactory.createUnaryCallable(
+            createBigQueryExportTransportSettings,
+            settings.createBigQueryExportSettings(),
+            clientContext);
+    this.deleteBigQueryExportCallable =
+        callableFactory.createUnaryCallable(
+            deleteBigQueryExportTransportSettings,
+            settings.deleteBigQueryExportSettings(),
+            clientContext);
+    this.updateBigQueryExportCallable =
+        callableFactory.createUnaryCallable(
+            updateBigQueryExportTransportSettings,
+            settings.updateBigQueryExportSettings(),
+            clientContext);
+    this.listBigQueryExportsCallable =
+        callableFactory.createUnaryCallable(
+            listBigQueryExportsTransportSettings,
+            settings.listBigQueryExportsSettings(),
+            clientContext);
+    this.listBigQueryExportsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBigQueryExportsTransportSettings,
+            settings.listBigQueryExportsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1046,6 +1204,11 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   @Override
   public UnaryCallable<DeleteNotificationConfigRequest, Empty> deleteNotificationConfigCallable() {
     return deleteNotificationConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportCallable() {
+    return getBigQueryExportCallable;
   }
 
   @Override
@@ -1216,6 +1379,33 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   @Override
   public UnaryCallable<UpdateSecurityMarksRequest, SecurityMarks> updateSecurityMarksCallable() {
     return updateSecurityMarksCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateBigQueryExportRequest, BigQueryExport> createBigQueryExportCallable() {
+    return createBigQueryExportCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBigQueryExportRequest, Empty> deleteBigQueryExportCallable() {
+    return deleteBigQueryExportCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBigQueryExportRequest, BigQueryExport> updateBigQueryExportCallable() {
+    return updateBigQueryExportCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsResponse>
+      listBigQueryExportsCallable() {
+    return listBigQueryExportsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsPagedResponse>
+      listBigQueryExportsPagedCallable() {
+    return listBigQueryExportsPagedCallable;
   }
 
   @Override

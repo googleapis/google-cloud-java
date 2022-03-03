@@ -659,8 +659,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -672,8 +672,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -689,8 +689,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -703,8 +703,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -717,8 +717,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -726,6 +726,44 @@ public interface FindingOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v1.ExternalSystem getExternalSystemsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * MITRE ATT&amp;CK tactics and techniques related to this finding.
+   * See: https://attack.mitre.org
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+   *
+   * @return Whether the mitreAttack field is set.
+   */
+  boolean hasMitreAttack();
+  /**
+   *
+   *
+   * <pre>
+   * MITRE ATT&amp;CK tactics and techniques related to this finding.
+   * See: https://attack.mitre.org
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+   *
+   * @return The mitreAttack.
+   */
+  com.google.cloud.securitycenter.v1.MitreAttack getMitreAttack();
+  /**
+   *
+   *
+   * <pre>
+   * MITRE ATT&amp;CK tactics and techniques related to this finding.
+   * See: https://attack.mitre.org
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+   */
+  com.google.cloud.securitycenter.v1.MitreAttackOrBuilder getMitreAttackOrBuilder();
 
   /**
    *

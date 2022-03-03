@@ -22,29 +22,31 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Request message for creating a source.
+ * Request message for listing  BigQuery exports at a given scope e.g.
+ * organization, folder or project.
  * </pre>
  *
- * Protobuf type {@code google.cloud.securitycenter.v1.CreateSourceRequest}
+ * Protobuf type {@code google.cloud.securitycenter.v1.ListBigQueryExportsRequest}
  */
-public final class CreateSourceRequest extends com.google.protobuf.GeneratedMessageV3
+public final class ListBigQueryExportsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.CreateSourceRequest)
-    CreateSourceRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ListBigQueryExportsRequest)
+    ListBigQueryExportsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use CreateSourceRequest.newBuilder() to construct.
-  private CreateSourceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListBigQueryExportsRequest.newBuilder() to construct.
+  private ListBigQueryExportsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private CreateSourceRequest() {
+  private ListBigQueryExportsRequest() {
     parent_ = "";
+    pageToken_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new CreateSourceRequest();
+    return new ListBigQueryExportsRequest();
   }
 
   @java.lang.Override
@@ -52,7 +54,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private CreateSourceRequest(
+  private ListBigQueryExportsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -77,20 +79,16 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
               parent_ = s;
               break;
             }
-          case 18:
+          case 16:
             {
-              com.google.cloud.securitycenter.v1.Source.Builder subBuilder = null;
-              if (source_ != null) {
-                subBuilder = source_.toBuilder();
-              }
-              source_ =
-                  input.readMessage(
-                      com.google.cloud.securitycenter.v1.Source.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(source_);
-                source_ = subBuilder.buildPartial();
-              }
+              pageSize_ = input.readInt32();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
+              pageToken_ = s;
               break;
             }
           default:
@@ -114,17 +112,17 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
-        .internal_static_google_cloud_securitycenter_v1_CreateSourceRequest_descriptor;
+        .internal_static_google_cloud_securitycenter_v1_ListBigQueryExportsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
-        .internal_static_google_cloud_securitycenter_v1_CreateSourceRequest_fieldAccessorTable
+        .internal_static_google_cloud_securitycenter_v1_ListBigQueryExportsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.securitycenter.v1.CreateSourceRequest.class,
-            com.google.cloud.securitycenter.v1.CreateSourceRequest.Builder.class);
+            com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest.class,
+            com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -133,8 +131,9 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Resource name of the new source's parent. Its format should be
-   * "organizations/[organization_id]".
+   * Required. The parent, which owns the collection of BigQuery exports. Its
+   * format is "organizations/[organization_id]", "folders/[folder_id]",
+   * "projects/[project_id]".
    * </pre>
    *
    * <code>
@@ -159,8 +158,9 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Resource name of the new source's parent. Its format should be
-   * "organizations/[organization_id]".
+   * Required. The parent, which owns the collection of BigQuery exports. Its
+   * format is "organizations/[organization_id]", "folders/[folder_id]",
+   * "projects/[project_id]".
    * </pre>
    *
    * <code>
@@ -182,61 +182,80 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
-  public static final int SOURCE_FIELD_NUMBER = 2;
-  private com.google.cloud.securitycenter.v1.Source source_;
+  public static final int PAGE_SIZE_FIELD_NUMBER = 2;
+  private int pageSize_;
   /**
    *
    *
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * The maximum number of configs to return. The service may return fewer than
+   * this value.
+   * If unspecified, at most 10 configs will be returned.
+   * The maximum value is 1000; values above 1000 will be coerced to 1000.
    * </pre>
    *
-   * <code>
-   * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>int32 page_size = 2;</code>
    *
-   * @return Whether the source field is set.
+   * @return The pageSize.
    */
   @java.lang.Override
-  public boolean hasSource() {
-    return source_ != null;
+  public int getPageSize() {
+    return pageSize_;
+  }
+
+  public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
+  private volatile java.lang.Object pageToken_;
+  /**
+   *
+   *
+   * <pre>
+   * A page token, received from a previous `ListBigQueryExports` call.
+   * Provide this to retrieve the subsequent page.
+   * When paginating, all other parameters provided to `ListBigQueryExports`
+   * must match the call that provided the page token.
+   * </pre>
+   *
+   * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getPageToken() {
+    java.lang.Object ref = pageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pageToken_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * A page token, received from a previous `ListBigQueryExports` call.
+   * Provide this to retrieve the subsequent page.
+   * When paginating, all other parameters provided to `ListBigQueryExports`
+   * must match the call that provided the page token.
    * </pre>
    *
-   * <code>
-   * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string page_token = 3;</code>
    *
-   * @return The source.
+   * @return The bytes for pageToken.
    */
   @java.lang.Override
-  public com.google.cloud.securitycenter.v1.Source getSource() {
-    return source_ == null
-        ? com.google.cloud.securitycenter.v1.Source.getDefaultInstance()
-        : source_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.securitycenter.v1.SourceOrBuilder getSourceOrBuilder() {
-    return getSource();
+  public com.google.protobuf.ByteString getPageTokenBytes() {
+    java.lang.Object ref = pageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -256,8 +275,11 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
-    if (source_ != null) {
-      output.writeMessage(2, getSource());
+    if (pageSize_ != 0) {
+      output.writeInt32(2, pageSize_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
     unknownFields.writeTo(output);
   }
@@ -271,8 +293,11 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
-    if (source_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSource());
+    if (pageSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -284,17 +309,15 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.securitycenter.v1.CreateSourceRequest)) {
+    if (!(obj instanceof com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.securitycenter.v1.CreateSourceRequest other =
-        (com.google.cloud.securitycenter.v1.CreateSourceRequest) obj;
+    com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest other =
+        (com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
-    if (hasSource() != other.hasSource()) return false;
-    if (hasSource()) {
-      if (!getSource().equals(other.getSource())) return false;
-    }
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -308,80 +331,80 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
-    if (hasSource()) {
-      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
-      hash = (53 * hash) + getSource().hashCode();
-    }
+    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getPageSize();
+    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest parseFrom(byte[] data)
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest parseDelimitedFrom(
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest parseDelimitedFrom(
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -399,7 +422,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static Builder newBuilder(
-      com.google.cloud.securitycenter.v1.CreateSourceRequest prototype) {
+      com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -417,31 +440,32 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for creating a source.
+   * Request message for listing  BigQuery exports at a given scope e.g.
+   * organization, folder or project.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.securitycenter.v1.CreateSourceRequest}
+   * Protobuf type {@code google.cloud.securitycenter.v1.ListBigQueryExportsRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.CreateSourceRequest)
-      com.google.cloud.securitycenter.v1.CreateSourceRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.ListBigQueryExportsRequest)
+      com.google.cloud.securitycenter.v1.ListBigQueryExportsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_CreateSourceRequest_descriptor;
+          .internal_static_google_cloud_securitycenter_v1_ListBigQueryExportsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_CreateSourceRequest_fieldAccessorTable
+          .internal_static_google_cloud_securitycenter_v1_ListBigQueryExportsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1.CreateSourceRequest.class,
-              com.google.cloud.securitycenter.v1.CreateSourceRequest.Builder.class);
+              com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest.class,
+              com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.securitycenter.v1.CreateSourceRequest.newBuilder()
+    // Construct using com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -460,29 +484,28 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
       super.clear();
       parent_ = "";
 
-      if (sourceBuilder_ == null) {
-        source_ = null;
-      } else {
-        source_ = null;
-        sourceBuilder_ = null;
-      }
+      pageSize_ = 0;
+
+      pageToken_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_CreateSourceRequest_descriptor;
+          .internal_static_google_cloud_securitycenter_v1_ListBigQueryExportsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.CreateSourceRequest getDefaultInstanceForType() {
-      return com.google.cloud.securitycenter.v1.CreateSourceRequest.getDefaultInstance();
+    public com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.CreateSourceRequest build() {
-      com.google.cloud.securitycenter.v1.CreateSourceRequest result = buildPartial();
+    public com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest build() {
+      com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -490,15 +513,12 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.CreateSourceRequest buildPartial() {
-      com.google.cloud.securitycenter.v1.CreateSourceRequest result =
-          new com.google.cloud.securitycenter.v1.CreateSourceRequest(this);
+    public com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest buildPartial() {
+      com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest result =
+          new com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest(this);
       result.parent_ = parent_;
-      if (sourceBuilder_ == null) {
-        result.source_ = source_;
-      } else {
-        result.source_ = sourceBuilder_.build();
-      }
+      result.pageSize_ = pageSize_;
+      result.pageToken_ = pageToken_;
       onBuilt();
       return result;
     }
@@ -538,23 +558,28 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.securitycenter.v1.CreateSourceRequest) {
-        return mergeFrom((com.google.cloud.securitycenter.v1.CreateSourceRequest) other);
+      if (other instanceof com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest) {
+        return mergeFrom((com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.securitycenter.v1.CreateSourceRequest other) {
-      if (other == com.google.cloud.securitycenter.v1.CreateSourceRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest other) {
+      if (other
+          == com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest.getDefaultInstance())
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
       }
-      if (other.hasSource()) {
-        mergeSource(other.getSource());
+      if (other.getPageSize() != 0) {
+        setPageSize(other.getPageSize());
+      }
+      if (!other.getPageToken().isEmpty()) {
+        pageToken_ = other.pageToken_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -571,12 +596,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.securitycenter.v1.CreateSourceRequest parsedMessage = null;
+      com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.securitycenter.v1.CreateSourceRequest) e.getUnfinishedMessage();
+            (com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -591,8 +617,9 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the new source's parent. Its format should be
-     * "organizations/[organization_id]".
+     * Required. The parent, which owns the collection of BigQuery exports. Its
+     * format is "organizations/[organization_id]", "folders/[folder_id]",
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -616,8 +643,9 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the new source's parent. Its format should be
-     * "organizations/[organization_id]".
+     * Required. The parent, which owns the collection of BigQuery exports. Its
+     * format is "organizations/[organization_id]", "folders/[folder_id]",
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -641,8 +669,9 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the new source's parent. Its format should be
-     * "organizations/[organization_id]".
+     * Required. The parent, which owns the collection of BigQuery exports. Its
+     * format is "organizations/[organization_id]", "folders/[folder_id]",
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -665,8 +694,9 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the new source's parent. Its format should be
-     * "organizations/[organization_id]".
+     * Required. The parent, which owns the collection of BigQuery exports. Its
+     * format is "organizations/[organization_id]", "folders/[folder_id]",
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -685,8 +715,9 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Resource name of the new source's parent. Its format should be
-     * "organizations/[organization_id]".
+     * Required. The parent, which owns the collection of BigQuery exports. Its
+     * format is "organizations/[organization_id]", "folders/[folder_id]",
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -707,216 +738,186 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.cloud.securitycenter.v1.Source source_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.securitycenter.v1.Source,
-            com.google.cloud.securitycenter.v1.Source.Builder,
-            com.google.cloud.securitycenter.v1.SourceOrBuilder>
-        sourceBuilder_;
+    private int pageSize_;
     /**
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * The maximum number of configs to return. The service may return fewer than
+     * this value.
+     * If unspecified, at most 10 configs will be returned.
+     * The maximum value is 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
-     * <code>
-     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>int32 page_size = 2;</code>
      *
-     * @return Whether the source field is set.
+     * @return The pageSize.
      */
-    public boolean hasSource() {
-      return sourceBuilder_ != null || source_ != null;
+    @java.lang.Override
+    public int getPageSize() {
+      return pageSize_;
     }
     /**
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * The maximum number of configs to return. The service may return fewer than
+     * this value.
+     * If unspecified, at most 10 configs will be returned.
+     * The maximum value is 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
-     * <code>
-     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>int32 page_size = 2;</code>
      *
-     * @return The source.
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
      */
-    public com.google.cloud.securitycenter.v1.Source getSource() {
-      if (sourceBuilder_ == null) {
-        return source_ == null
-            ? com.google.cloud.securitycenter.v1.Source.getDefaultInstance()
-            : source_;
-      } else {
-        return sourceBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder setSource(com.google.cloud.securitycenter.v1.Source value) {
-      if (sourceBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        source_ = value;
-        onChanged();
-      } else {
-        sourceBuilder_.setMessage(value);
-      }
+    public Builder setPageSize(int value) {
 
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder setSource(com.google.cloud.securitycenter.v1.Source.Builder builderForValue) {
-      if (sourceBuilder_ == null) {
-        source_ = builderForValue.build();
-        onChanged();
-      } else {
-        sourceBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder mergeSource(com.google.cloud.securitycenter.v1.Source value) {
-      if (sourceBuilder_ == null) {
-        if (source_ != null) {
-          source_ =
-              com.google.cloud.securitycenter.v1.Source.newBuilder(source_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          source_ = value;
-        }
-        onChanged();
-      } else {
-        sourceBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder clearSource() {
-      if (sourceBuilder_ == null) {
-        source_ = null;
-        onChanged();
-      } else {
-        source_ = null;
-        sourceBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public com.google.cloud.securitycenter.v1.Source.Builder getSourceBuilder() {
-
+      pageSize_ = value;
       onChanged();
-      return getSourceFieldBuilder().getBuilder();
+      return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * The maximum number of configs to return. The service may return fewer than
+     * this value.
+     * If unspecified, at most 10 configs will be returned.
+     * The maximum value is 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
-     * <code>
-     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>int32 page_size = 2;</code>
+     *
+     * @return This builder for chaining.
      */
-    public com.google.cloud.securitycenter.v1.SourceOrBuilder getSourceOrBuilder() {
-      if (sourceBuilder_ != null) {
-        return sourceBuilder_.getMessageOrBuilder();
+    public Builder clearPageSize() {
+
+      pageSize_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A page token, received from a previous `ListBigQueryExports` call.
+     * Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to `ListBigQueryExports`
+     * must match the call that provided the page token.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     *
+     * @return The pageToken.
+     */
+    public java.lang.String getPageToken() {
+      java.lang.Object ref = pageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pageToken_ = s;
+        return s;
       } else {
-        return source_ == null
-            ? com.google.cloud.securitycenter.v1.Source.getDefaultInstance()
-            : source_;
+        return (java.lang.String) ref;
       }
     }
     /**
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * A page token, received from a previous `ListBigQueryExports` call.
+     * Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to `ListBigQueryExports`
+     * must match the call that provided the page token.
      * </pre>
      *
-     * <code>
-     * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string page_token = 3;</code>
+     *
+     * @return The bytes for pageToken.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.securitycenter.v1.Source,
-            com.google.cloud.securitycenter.v1.Source.Builder,
-            com.google.cloud.securitycenter.v1.SourceOrBuilder>
-        getSourceFieldBuilder() {
-      if (sourceBuilder_ == null) {
-        sourceBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.securitycenter.v1.Source,
-                com.google.cloud.securitycenter.v1.Source.Builder,
-                com.google.cloud.securitycenter.v1.SourceOrBuilder>(
-                getSource(), getParentForChildren(), isClean());
-        source_ = null;
+    public com.google.protobuf.ByteString getPageTokenBytes() {
+      java.lang.Object ref = pageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
-      return sourceBuilder_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A page token, received from a previous `ListBigQueryExports` call.
+     * Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to `ListBigQueryExports`
+     * must match the call that provided the page token.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      pageToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A page token, received from a previous `ListBigQueryExports` call.
+     * Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to `ListBigQueryExports`
+     * must match the call that provided the page token.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPageToken() {
+
+      pageToken_ = getDefaultInstance().getPageToken();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A page token, received from a previous `ListBigQueryExports` call.
+     * Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to `ListBigQueryExports`
+     * must match the call that provided the page token.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      pageToken_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
@@ -930,42 +931,43 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.CreateSourceRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.ListBigQueryExportsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.CreateSourceRequest)
-  private static final com.google.cloud.securitycenter.v1.CreateSourceRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.ListBigQueryExportsRequest)
+  private static final com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.CreateSourceRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest();
   }
 
-  public static com.google.cloud.securitycenter.v1.CreateSourceRequest getDefaultInstance() {
+  public static com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateSourceRequest> PARSER =
-      new com.google.protobuf.AbstractParser<CreateSourceRequest>() {
+  private static final com.google.protobuf.Parser<ListBigQueryExportsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListBigQueryExportsRequest>() {
         @java.lang.Override
-        public CreateSourceRequest parsePartialFrom(
+        public ListBigQueryExportsRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CreateSourceRequest(input, extensionRegistry);
+          return new ListBigQueryExportsRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<CreateSourceRequest> parser() {
+  public static com.google.protobuf.Parser<ListBigQueryExportsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CreateSourceRequest> getParserForType() {
+  public com.google.protobuf.Parser<ListBigQueryExportsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.securitycenter.v1.CreateSourceRequest getDefaultInstanceForType() {
+  public com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

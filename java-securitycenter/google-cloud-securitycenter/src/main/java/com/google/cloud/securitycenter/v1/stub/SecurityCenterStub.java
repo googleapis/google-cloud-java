@@ -19,6 +19,7 @@ package com.google.cloud.securitycenter.v1.stub;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
@@ -27,16 +28,20 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSource
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.securitycenter.v1.BigQueryExport;
 import com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest;
 import com.google.cloud.securitycenter.v1.BulkMuteFindingsResponse;
+import com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
 import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
+import com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.Finding;
+import com.google.cloud.securitycenter.v1.GetBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
@@ -47,6 +52,8 @@ import com.google.cloud.securitycenter.v1.GroupFindingsRequest;
 import com.google.cloud.securitycenter.v1.GroupFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
+import com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest;
+import com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
@@ -64,6 +71,7 @@ import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
 import com.google.cloud.securitycenter.v1.Source;
+import com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
 import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
@@ -126,6 +134,10 @@ public abstract class SecurityCenterStub implements BackgroundResource {
 
   public UnaryCallable<DeleteNotificationConfigRequest, Empty> deleteNotificationConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteNotificationConfigCallable()");
+  }
+
+  public UnaryCallable<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBigQueryExportCallable()");
   }
 
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
@@ -267,6 +279,28 @@ public abstract class SecurityCenterStub implements BackgroundResource {
 
   public UnaryCallable<UpdateSecurityMarksRequest, SecurityMarks> updateSecurityMarksCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSecurityMarksCallable()");
+  }
+
+  public UnaryCallable<CreateBigQueryExportRequest, BigQueryExport> createBigQueryExportCallable() {
+    throw new UnsupportedOperationException("Not implemented: createBigQueryExportCallable()");
+  }
+
+  public UnaryCallable<DeleteBigQueryExportRequest, Empty> deleteBigQueryExportCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBigQueryExportCallable()");
+  }
+
+  public UnaryCallable<UpdateBigQueryExportRequest, BigQueryExport> updateBigQueryExportCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateBigQueryExportCallable()");
+  }
+
+  public UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsPagedResponse>
+      listBigQueryExportsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBigQueryExportsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsResponse>
+      listBigQueryExportsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBigQueryExportsCallable()");
   }
 
   @Override

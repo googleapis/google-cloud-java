@@ -19,6 +19,7 @@ package com.google.cloud.securitycenter.v1;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
@@ -125,6 +126,11 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
   public UnaryCallSettings<DeleteNotificationConfigRequest, Empty>
       deleteNotificationConfigSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).deleteNotificationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBigQueryExport. */
+  public UnaryCallSettings<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).getBigQueryExportSettings();
   }
 
   /** Returns the object with the settings used for calls to getIamPolicy. */
@@ -271,6 +277,30 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).updateSecurityMarksSettings();
   }
 
+  /** Returns the object with the settings used for calls to createBigQueryExport. */
+  public UnaryCallSettings<CreateBigQueryExportRequest, BigQueryExport>
+      createBigQueryExportSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).createBigQueryExportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBigQueryExport. */
+  public UnaryCallSettings<DeleteBigQueryExportRequest, Empty> deleteBigQueryExportSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).deleteBigQueryExportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBigQueryExport. */
+  public UnaryCallSettings<UpdateBigQueryExportRequest, BigQueryExport>
+      updateBigQueryExportSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).updateBigQueryExportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBigQueryExports. */
+  public PagedCallSettings<
+          ListBigQueryExportsRequest, ListBigQueryExportsResponse, ListBigQueryExportsPagedResponse>
+      listBigQueryExportsSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).listBigQueryExportsSettings();
+  }
+
   public static final SecurityCenterSettings create(SecurityCenterStubSettings stub)
       throws IOException {
     return new SecurityCenterSettings.Builder(stub.toBuilder()).build();
@@ -411,6 +441,12 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     public UnaryCallSettings.Builder<DeleteNotificationConfigRequest, Empty>
         deleteNotificationConfigSettings() {
       return getStubSettingsBuilder().deleteNotificationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBigQueryExport. */
+    public UnaryCallSettings.Builder<GetBigQueryExportRequest, BigQueryExport>
+        getBigQueryExportSettings() {
+      return getStubSettingsBuilder().getBigQueryExportSettings();
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */
@@ -561,6 +597,33 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     public UnaryCallSettings.Builder<UpdateSecurityMarksRequest, SecurityMarks>
         updateSecurityMarksSettings() {
       return getStubSettingsBuilder().updateSecurityMarksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBigQueryExport. */
+    public UnaryCallSettings.Builder<CreateBigQueryExportRequest, BigQueryExport>
+        createBigQueryExportSettings() {
+      return getStubSettingsBuilder().createBigQueryExportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBigQueryExport. */
+    public UnaryCallSettings.Builder<DeleteBigQueryExportRequest, Empty>
+        deleteBigQueryExportSettings() {
+      return getStubSettingsBuilder().deleteBigQueryExportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBigQueryExport. */
+    public UnaryCallSettings.Builder<UpdateBigQueryExportRequest, BigQueryExport>
+        updateBigQueryExportSettings() {
+      return getStubSettingsBuilder().updateBigQueryExportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBigQueryExports. */
+    public PagedCallSettings.Builder<
+            ListBigQueryExportsRequest,
+            ListBigQueryExportsResponse,
+            ListBigQueryExportsPagedResponse>
+        listBigQueryExportsSettings() {
+      return getStubSettingsBuilder().listBigQueryExportsSettings();
     }
 
     @Override

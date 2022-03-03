@@ -45,27 +45,23 @@ public final class AccessProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/securitycenter/v1/access."
-          + "proto\022\036google.cloud.securitycenter.v1\032\034g"
-          + "oogle/api/annotations.proto\"\276\001\n\006Access\022\027"
-          + "\n\017principal_email\030\001 \001(\t\022\021\n\tcaller_ip\030\002 \001"
-          + "(\t\022B\n\rcaller_ip_geo\030\003 \001(\0132+.google.cloud"
-          + ".securitycenter.v1.Geolocation\022\031\n\021user_a"
-          + "gent_family\030\004 \001(\t\022\024\n\014service_name\030\005 \001(\t\022"
-          + "\023\n\013method_name\030\006 \001(\t\"\"\n\013Geolocation\022\023\n\013r"
-          + "egion_code\030\001 \001(\tB\347\001\n\"com.google.cloud.se"
-          + "curitycenter.v1B\013AccessProtoP\001ZLgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/secu"
-          + "ritycenter/v1;securitycenter\252\002\036Google.Cl"
-          + "oud.SecurityCenter.V1\312\002\036Google\\Cloud\\Sec"
-          + "urityCenter\\V1\352\002!Google::Cloud::Security"
-          + "Center::V1b\006proto3"
+          + "proto\022\036google.cloud.securitycenter.v1\"\276\001"
+          + "\n\006Access\022\027\n\017principal_email\030\001 \001(\t\022\021\n\tcal"
+          + "ler_ip\030\002 \001(\t\022B\n\rcaller_ip_geo\030\003 \001(\0132+.go"
+          + "ogle.cloud.securitycenter.v1.Geolocation"
+          + "\022\031\n\021user_agent_family\030\004 \001(\t\022\024\n\014service_n"
+          + "ame\030\005 \001(\t\022\023\n\013method_name\030\006 \001(\t\"\"\n\013Geoloc"
+          + "ation\022\023\n\013region_code\030\001 \001(\tB\347\001\n\"com.googl"
+          + "e.cloud.securitycenter.v1B\013AccessProtoP\001"
+          + "ZLgoogle.golang.org/genproto/googleapis/"
+          + "cloud/securitycenter/v1;securitycenter\252\002"
+          + "\036Google.Cloud.SecurityCenter.V1\312\002\036Google"
+          + "\\Cloud\\SecurityCenter\\V1\352\002!Google::Cloud"
+          + "::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_securitycenter_v1_Access_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_securitycenter_v1_Access_fieldAccessorTable =
@@ -87,7 +83,6 @@ public final class AccessProto {
             new java.lang.String[] {
               "RegionCode",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

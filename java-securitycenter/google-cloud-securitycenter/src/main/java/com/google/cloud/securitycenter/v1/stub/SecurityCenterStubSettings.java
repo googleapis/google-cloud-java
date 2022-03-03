@@ -19,6 +19,7 @@ package com.google.cloud.securitycenter.v1.stub;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
@@ -50,16 +51,20 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.securitycenter.v1.BigQueryExport;
 import com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest;
 import com.google.cloud.securitycenter.v1.BulkMuteFindingsResponse;
+import com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
 import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
+import com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.Finding;
+import com.google.cloud.securitycenter.v1.GetBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
@@ -71,6 +76,8 @@ import com.google.cloud.securitycenter.v1.GroupFindingsResponse;
 import com.google.cloud.securitycenter.v1.GroupResult;
 import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
+import com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest;
+import com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
@@ -88,6 +95,7 @@ import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
 import com.google.cloud.securitycenter.v1.Source;
+import com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
 import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
@@ -161,6 +169,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private final UnaryCallSettings<DeleteMuteConfigRequest, Empty> deleteMuteConfigSettings;
   private final UnaryCallSettings<DeleteNotificationConfigRequest, Empty>
       deleteNotificationConfigSettings;
+  private final UnaryCallSettings<GetBigQueryExportRequest, BigQueryExport>
+      getBigQueryExportSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<GetMuteConfigRequest, MuteConfig> getMuteConfigSettings;
   private final UnaryCallSettings<GetNotificationConfigRequest, NotificationConfig>
@@ -207,6 +217,14 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private final UnaryCallSettings<UpdateSourceRequest, Source> updateSourceSettings;
   private final UnaryCallSettings<UpdateSecurityMarksRequest, SecurityMarks>
       updateSecurityMarksSettings;
+  private final UnaryCallSettings<CreateBigQueryExportRequest, BigQueryExport>
+      createBigQueryExportSettings;
+  private final UnaryCallSettings<DeleteBigQueryExportRequest, Empty> deleteBigQueryExportSettings;
+  private final UnaryCallSettings<UpdateBigQueryExportRequest, BigQueryExport>
+      updateBigQueryExportSettings;
+  private final PagedCallSettings<
+          ListBigQueryExportsRequest, ListBigQueryExportsResponse, ListBigQueryExportsPagedResponse>
+      listBigQueryExportsSettings;
 
   private static final PagedListDescriptor<GroupAssetsRequest, GroupAssetsResponse, GroupResult>
       GROUP_ASSETS_PAGE_STR_DESC =
@@ -480,6 +498,46 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             }
           };
 
+  private static final PagedListDescriptor<
+          ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>
+      LIST_BIG_QUERY_EXPORTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBigQueryExportsRequest injectToken(
+                ListBigQueryExportsRequest payload, String token) {
+              return ListBigQueryExportsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBigQueryExportsRequest injectPageSize(
+                ListBigQueryExportsRequest payload, int pageSize) {
+              return ListBigQueryExportsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBigQueryExportsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBigQueryExportsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BigQueryExport> extractResources(ListBigQueryExportsResponse payload) {
+              return payload.getBigQueryExportsList() == null
+                  ? ImmutableList.<BigQueryExport>of()
+                  : payload.getBigQueryExportsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           GroupAssetsRequest, GroupAssetsResponse, GroupAssetsPagedResponse>
       GROUP_ASSETS_PAGE_STR_FACT =
@@ -615,6 +673,27 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListBigQueryExportsRequest, ListBigQueryExportsResponse, ListBigQueryExportsPagedResponse>
+      LIST_BIG_QUERY_EXPORTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBigQueryExportsRequest,
+              ListBigQueryExportsResponse,
+              ListBigQueryExportsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBigQueryExportsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsResponse> callable,
+                ListBigQueryExportsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBigQueryExportsResponse> futureResponse) {
+              PageContext<ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BIG_QUERY_EXPORTS_PAGE_STR_DESC, request, context);
+              return ListBigQueryExportsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to bulkMuteFindings. */
   public UnaryCallSettings<BulkMuteFindingsRequest, Operation> bulkMuteFindingsSettings() {
     return bulkMuteFindingsSettings;
@@ -656,6 +735,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   public UnaryCallSettings<DeleteNotificationConfigRequest, Empty>
       deleteNotificationConfigSettings() {
     return deleteNotificationConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBigQueryExport. */
+  public UnaryCallSettings<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportSettings() {
+    return getBigQueryExportSettings;
   }
 
   /** Returns the object with the settings used for calls to getIamPolicy. */
@@ -802,6 +886,30 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return updateSecurityMarksSettings;
   }
 
+  /** Returns the object with the settings used for calls to createBigQueryExport. */
+  public UnaryCallSettings<CreateBigQueryExportRequest, BigQueryExport>
+      createBigQueryExportSettings() {
+    return createBigQueryExportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBigQueryExport. */
+  public UnaryCallSettings<DeleteBigQueryExportRequest, Empty> deleteBigQueryExportSettings() {
+    return deleteBigQueryExportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBigQueryExport. */
+  public UnaryCallSettings<UpdateBigQueryExportRequest, BigQueryExport>
+      updateBigQueryExportSettings() {
+    return updateBigQueryExportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBigQueryExports. */
+  public PagedCallSettings<
+          ListBigQueryExportsRequest, ListBigQueryExportsResponse, ListBigQueryExportsPagedResponse>
+      listBigQueryExportsSettings() {
+    return listBigQueryExportsSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SecurityCenterStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -886,6 +994,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     createNotificationConfigSettings = settingsBuilder.createNotificationConfigSettings().build();
     deleteMuteConfigSettings = settingsBuilder.deleteMuteConfigSettings().build();
     deleteNotificationConfigSettings = settingsBuilder.deleteNotificationConfigSettings().build();
+    getBigQueryExportSettings = settingsBuilder.getBigQueryExportSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     getMuteConfigSettings = settingsBuilder.getMuteConfigSettings().build();
     getNotificationConfigSettings = settingsBuilder.getNotificationConfigSettings().build();
@@ -913,6 +1022,10 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
         settingsBuilder.updateOrganizationSettingsSettings().build();
     updateSourceSettings = settingsBuilder.updateSourceSettings().build();
     updateSecurityMarksSettings = settingsBuilder.updateSecurityMarksSettings().build();
+    createBigQueryExportSettings = settingsBuilder.createBigQueryExportSettings().build();
+    deleteBigQueryExportSettings = settingsBuilder.deleteBigQueryExportSettings().build();
+    updateBigQueryExportSettings = settingsBuilder.updateBigQueryExportSettings().build();
+    listBigQueryExportsSettings = settingsBuilder.listBigQueryExportsSettings().build();
   }
 
   /** Builder for SecurityCenterStubSettings. */
@@ -933,6 +1046,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
         deleteMuteConfigSettings;
     private final UnaryCallSettings.Builder<DeleteNotificationConfigRequest, Empty>
         deleteNotificationConfigSettings;
+    private final UnaryCallSettings.Builder<GetBigQueryExportRequest, BigQueryExport>
+        getBigQueryExportSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<GetMuteConfigRequest, MuteConfig> getMuteConfigSettings;
     private final UnaryCallSettings.Builder<GetNotificationConfigRequest, NotificationConfig>
@@ -986,6 +1101,17 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     private final UnaryCallSettings.Builder<UpdateSourceRequest, Source> updateSourceSettings;
     private final UnaryCallSettings.Builder<UpdateSecurityMarksRequest, SecurityMarks>
         updateSecurityMarksSettings;
+    private final UnaryCallSettings.Builder<CreateBigQueryExportRequest, BigQueryExport>
+        createBigQueryExportSettings;
+    private final UnaryCallSettings.Builder<DeleteBigQueryExportRequest, Empty>
+        deleteBigQueryExportSettings;
+    private final UnaryCallSettings.Builder<UpdateBigQueryExportRequest, BigQueryExport>
+        updateBigQueryExportSettings;
+    private final PagedCallSettings.Builder<
+            ListBigQueryExportsRequest,
+            ListBigQueryExportsResponse,
+            ListBigQueryExportsPagedResponse>
+        listBigQueryExportsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1073,6 +1199,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       createNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getBigQueryExportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1099,6 +1226,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       updateOrganizationSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSecurityMarksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBigQueryExportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBigQueryExportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBigQueryExportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBigQueryExportsSettings =
+          PagedCallSettings.newBuilder(LIST_BIG_QUERY_EXPORTS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1109,6 +1241,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               createNotificationConfigSettings,
               deleteMuteConfigSettings,
               deleteNotificationConfigSettings,
+              getBigQueryExportSettings,
               getIamPolicySettings,
               getMuteConfigSettings,
               getNotificationConfigSettings,
@@ -1132,7 +1265,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               updateNotificationConfigSettings,
               updateOrganizationSettingsSettings,
               updateSourceSettings,
-              updateSecurityMarksSettings);
+              updateSecurityMarksSettings,
+              createBigQueryExportSettings,
+              deleteBigQueryExportSettings,
+              updateBigQueryExportSettings,
+              listBigQueryExportsSettings);
       initDefaults(this);
     }
 
@@ -1147,6 +1284,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       createNotificationConfigSettings = settings.createNotificationConfigSettings.toBuilder();
       deleteMuteConfigSettings = settings.deleteMuteConfigSettings.toBuilder();
       deleteNotificationConfigSettings = settings.deleteNotificationConfigSettings.toBuilder();
+      getBigQueryExportSettings = settings.getBigQueryExportSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       getMuteConfigSettings = settings.getMuteConfigSettings.toBuilder();
       getNotificationConfigSettings = settings.getNotificationConfigSettings.toBuilder();
@@ -1172,6 +1310,10 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       updateOrganizationSettingsSettings = settings.updateOrganizationSettingsSettings.toBuilder();
       updateSourceSettings = settings.updateSourceSettings.toBuilder();
       updateSecurityMarksSettings = settings.updateSecurityMarksSettings.toBuilder();
+      createBigQueryExportSettings = settings.createBigQueryExportSettings.toBuilder();
+      deleteBigQueryExportSettings = settings.deleteBigQueryExportSettings.toBuilder();
+      updateBigQueryExportSettings = settings.updateBigQueryExportSettings.toBuilder();
+      listBigQueryExportsSettings = settings.listBigQueryExportsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1182,6 +1324,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               createNotificationConfigSettings,
               deleteMuteConfigSettings,
               deleteNotificationConfigSettings,
+              getBigQueryExportSettings,
               getIamPolicySettings,
               getMuteConfigSettings,
               getNotificationConfigSettings,
@@ -1205,7 +1348,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               updateNotificationConfigSettings,
               updateOrganizationSettingsSettings,
               updateSourceSettings,
-              updateSecurityMarksSettings);
+              updateSecurityMarksSettings,
+              createBigQueryExportSettings,
+              deleteBigQueryExportSettings,
+              updateBigQueryExportSettings,
+              listBigQueryExportsSettings);
     }
 
     private static Builder createDefault() {
@@ -1256,6 +1403,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .deleteNotificationConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getBigQueryExportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getIamPolicySettings()
@@ -1378,6 +1530,26 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
+          .createBigQueryExportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteBigQueryExportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateBigQueryExportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listBigQueryExportsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .bulkMuteFindingsOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1489,6 +1661,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     public UnaryCallSettings.Builder<DeleteNotificationConfigRequest, Empty>
         deleteNotificationConfigSettings() {
       return deleteNotificationConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBigQueryExport. */
+    public UnaryCallSettings.Builder<GetBigQueryExportRequest, BigQueryExport>
+        getBigQueryExportSettings() {
+      return getBigQueryExportSettings;
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */
@@ -1641,6 +1819,33 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     public UnaryCallSettings.Builder<UpdateSecurityMarksRequest, SecurityMarks>
         updateSecurityMarksSettings() {
       return updateSecurityMarksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBigQueryExport. */
+    public UnaryCallSettings.Builder<CreateBigQueryExportRequest, BigQueryExport>
+        createBigQueryExportSettings() {
+      return createBigQueryExportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBigQueryExport. */
+    public UnaryCallSettings.Builder<DeleteBigQueryExportRequest, Empty>
+        deleteBigQueryExportSettings() {
+      return deleteBigQueryExportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBigQueryExport. */
+    public UnaryCallSettings.Builder<UpdateBigQueryExportRequest, BigQueryExport>
+        updateBigQueryExportSettings() {
+      return updateBigQueryExportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBigQueryExports. */
+    public PagedCallSettings.Builder<
+            ListBigQueryExportsRequest,
+            ListBigQueryExportsResponse,
+            ListBigQueryExportsPagedResponse>
+        listBigQueryExportsSettings() {
+      return listBigQueryExportsSettings;
     }
 
     @Override

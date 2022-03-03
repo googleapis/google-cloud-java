@@ -142,4 +142,17 @@ public interface CveOrBuilder
    * <code>.google.cloud.securitycenter.v1.Cvssv3 cvssv3 = 3;</code>
    */
   com.google.cloud.securitycenter.v1.Cvssv3OrBuilder getCvssv3OrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether upstream fix is available for the CVE.
+   * </pre>
+   *
+   * <code>bool upstream_fix_available = 4;</code>
+   *
+   * @return The upstreamFixAvailable.
+   */
+  boolean getUpstreamFixAvailable();
 }

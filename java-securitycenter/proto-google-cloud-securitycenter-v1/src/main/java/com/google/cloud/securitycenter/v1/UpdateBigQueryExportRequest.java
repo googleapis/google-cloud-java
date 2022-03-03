@@ -22,27 +22,27 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Request message for updating or creating a finding.
+ * Request message for updating a BigQuery export.
  * </pre>
  *
- * Protobuf type {@code google.cloud.securitycenter.v1.UpdateFindingRequest}
+ * Protobuf type {@code google.cloud.securitycenter.v1.UpdateBigQueryExportRequest}
  */
-public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMessageV3
+public final class UpdateBigQueryExportRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.UpdateFindingRequest)
-    UpdateFindingRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.UpdateBigQueryExportRequest)
+    UpdateBigQueryExportRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use UpdateFindingRequest.newBuilder() to construct.
-  private UpdateFindingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateBigQueryExportRequest.newBuilder() to construct.
+  private UpdateBigQueryExportRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private UpdateFindingRequest() {}
+  private UpdateBigQueryExportRequest() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new UpdateFindingRequest();
+    return new UpdateBigQueryExportRequest();
   }
 
   @java.lang.Override
@@ -50,7 +50,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private UpdateFindingRequest(
+  private UpdateBigQueryExportRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -70,16 +70,17 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
             break;
           case 10:
             {
-              com.google.cloud.securitycenter.v1.Finding.Builder subBuilder = null;
-              if (finding_ != null) {
-                subBuilder = finding_.toBuilder();
+              com.google.cloud.securitycenter.v1.BigQueryExport.Builder subBuilder = null;
+              if (bigQueryExport_ != null) {
+                subBuilder = bigQueryExport_.toBuilder();
               }
-              finding_ =
+              bigQueryExport_ =
                   input.readMessage(
-                      com.google.cloud.securitycenter.v1.Finding.parser(), extensionRegistry);
+                      com.google.cloud.securitycenter.v1.BigQueryExport.parser(),
+                      extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(finding_);
-                finding_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(bigQueryExport_);
+                bigQueryExport_ = subBuilder.buildPartial();
               }
 
               break;
@@ -120,83 +121,71 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
-        .internal_static_google_cloud_securitycenter_v1_UpdateFindingRequest_descriptor;
+        .internal_static_google_cloud_securitycenter_v1_UpdateBigQueryExportRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
-        .internal_static_google_cloud_securitycenter_v1_UpdateFindingRequest_fieldAccessorTable
+        .internal_static_google_cloud_securitycenter_v1_UpdateBigQueryExportRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.securitycenter.v1.UpdateFindingRequest.class,
-            com.google.cloud.securitycenter.v1.UpdateFindingRequest.Builder.class);
+            com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest.class,
+            com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest.Builder.class);
   }
 
-  public static final int FINDING_FIELD_NUMBER = 1;
-  private com.google.cloud.securitycenter.v1.Finding finding_;
+  public static final int BIG_QUERY_EXPORT_FIELD_NUMBER = 1;
+  private com.google.cloud.securitycenter.v1.BigQueryExport bigQueryExport_;
   /**
    *
    *
    * <pre>
-   * Required. The finding resource to update or create if it does not already
-   * exist. parent, security_marks, and update_time will be ignored.
-   * In the case of creation, the finding id portion of the name must be
-   * alphanumeric and less than or equal to 32 characters and greater than 0
-   * characters in length.
+   * Required. The BigQuery export being updated.
    * </pre>
    *
    * <code>
-   * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.securitycenter.v1.BigQueryExport big_query_export = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return Whether the finding field is set.
+   * @return Whether the bigQueryExport field is set.
    */
   @java.lang.Override
-  public boolean hasFinding() {
-    return finding_ != null;
+  public boolean hasBigQueryExport() {
+    return bigQueryExport_ != null;
   }
   /**
    *
    *
    * <pre>
-   * Required. The finding resource to update or create if it does not already
-   * exist. parent, security_marks, and update_time will be ignored.
-   * In the case of creation, the finding id portion of the name must be
-   * alphanumeric and less than or equal to 32 characters and greater than 0
-   * characters in length.
+   * Required. The BigQuery export being updated.
    * </pre>
    *
    * <code>
-   * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.securitycenter.v1.BigQueryExport big_query_export = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return The finding.
+   * @return The bigQueryExport.
    */
   @java.lang.Override
-  public com.google.cloud.securitycenter.v1.Finding getFinding() {
-    return finding_ == null
-        ? com.google.cloud.securitycenter.v1.Finding.getDefaultInstance()
-        : finding_;
+  public com.google.cloud.securitycenter.v1.BigQueryExport getBigQueryExport() {
+    return bigQueryExport_ == null
+        ? com.google.cloud.securitycenter.v1.BigQueryExport.getDefaultInstance()
+        : bigQueryExport_;
   }
   /**
    *
    *
    * <pre>
-   * Required. The finding resource to update or create if it does not already
-   * exist. parent, security_marks, and update_time will be ignored.
-   * In the case of creation, the finding id portion of the name must be
-   * alphanumeric and less than or equal to 32 characters and greater than 0
-   * characters in length.
+   * Required. The BigQuery export being updated.
    * </pre>
    *
    * <code>
-   * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.securitycenter.v1.BigQueryExport big_query_export = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.securitycenter.v1.FindingOrBuilder getFindingOrBuilder() {
-    return getFinding();
+  public com.google.cloud.securitycenter.v1.BigQueryExportOrBuilder getBigQueryExportOrBuilder() {
+    return getBigQueryExport();
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -205,12 +194,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The FieldMask to use when updating the finding resource. This field should
-   * not be specified when creating a finding.
-   * When updating a finding, an empty mask is treated as updating all mutable
-   * fields and replacing source_properties.  Individual source_properties can
-   * be added/updated by using "source_properties.&lt;property key&gt;" in the field
-   * mask.
+   * The list of fields to be updated.
+   * If empty all mutable fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -225,12 +210,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The FieldMask to use when updating the finding resource. This field should
-   * not be specified when creating a finding.
-   * When updating a finding, an empty mask is treated as updating all mutable
-   * fields and replacing source_properties.  Individual source_properties can
-   * be added/updated by using "source_properties.&lt;property key&gt;" in the field
-   * mask.
+   * The list of fields to be updated.
+   * If empty all mutable fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -245,12 +226,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The FieldMask to use when updating the finding resource. This field should
-   * not be specified when creating a finding.
-   * When updating a finding, an empty mask is treated as updating all mutable
-   * fields and replacing source_properties.  Individual source_properties can
-   * be added/updated by using "source_properties.&lt;property key&gt;" in the field
-   * mask.
+   * The list of fields to be updated.
+   * If empty all mutable fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -274,8 +251,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (finding_ != null) {
-      output.writeMessage(1, getFinding());
+    if (bigQueryExport_ != null) {
+      output.writeMessage(1, getBigQueryExport());
     }
     if (updateMask_ != null) {
       output.writeMessage(2, getUpdateMask());
@@ -289,8 +266,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (finding_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getFinding());
+    if (bigQueryExport_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBigQueryExport());
     }
     if (updateMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
@@ -305,15 +282,15 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.securitycenter.v1.UpdateFindingRequest)) {
+    if (!(obj instanceof com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.securitycenter.v1.UpdateFindingRequest other =
-        (com.google.cloud.securitycenter.v1.UpdateFindingRequest) obj;
+    com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest other =
+        (com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest) obj;
 
-    if (hasFinding() != other.hasFinding()) return false;
-    if (hasFinding()) {
-      if (!getFinding().equals(other.getFinding())) return false;
+    if (hasBigQueryExport() != other.hasBigQueryExport()) return false;
+    if (hasBigQueryExport()) {
+      if (!getBigQueryExport().equals(other.getBigQueryExport())) return false;
     }
     if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
@@ -330,9 +307,9 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasFinding()) {
-      hash = (37 * hash) + FINDING_FIELD_NUMBER;
-      hash = (53 * hash) + getFinding().hashCode();
+    if (hasBigQueryExport()) {
+      hash = (37 * hash) + BIG_QUERY_EXPORT_FIELD_NUMBER;
+      hash = (53 * hash) + getBigQueryExport().hashCode();
     }
     if (hasUpdateMask()) {
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
@@ -343,71 +320,71 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     return hash;
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest parseDelimitedFrom(
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest parseDelimitedFrom(
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -425,7 +402,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static Builder newBuilder(
-      com.google.cloud.securitycenter.v1.UpdateFindingRequest prototype) {
+      com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -443,31 +420,31 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for updating or creating a finding.
+   * Request message for updating a BigQuery export.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.securitycenter.v1.UpdateFindingRequest}
+   * Protobuf type {@code google.cloud.securitycenter.v1.UpdateBigQueryExportRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.UpdateFindingRequest)
-      com.google.cloud.securitycenter.v1.UpdateFindingRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.UpdateBigQueryExportRequest)
+      com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_UpdateFindingRequest_descriptor;
+          .internal_static_google_cloud_securitycenter_v1_UpdateBigQueryExportRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_UpdateFindingRequest_fieldAccessorTable
+          .internal_static_google_cloud_securitycenter_v1_UpdateBigQueryExportRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1.UpdateFindingRequest.class,
-              com.google.cloud.securitycenter.v1.UpdateFindingRequest.Builder.class);
+              com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest.class,
+              com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.securitycenter.v1.UpdateFindingRequest.newBuilder()
+    // Construct using com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -484,11 +461,11 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (findingBuilder_ == null) {
-        finding_ = null;
+      if (bigQueryExportBuilder_ == null) {
+        bigQueryExport_ = null;
       } else {
-        finding_ = null;
-        findingBuilder_ = null;
+        bigQueryExport_ = null;
+        bigQueryExportBuilder_ = null;
       }
       if (updateMaskBuilder_ == null) {
         updateMask_ = null;
@@ -502,17 +479,18 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_UpdateFindingRequest_descriptor;
+          .internal_static_google_cloud_securitycenter_v1_UpdateBigQueryExportRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.UpdateFindingRequest getDefaultInstanceForType() {
-      return com.google.cloud.securitycenter.v1.UpdateFindingRequest.getDefaultInstance();
+    public com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.UpdateFindingRequest build() {
-      com.google.cloud.securitycenter.v1.UpdateFindingRequest result = buildPartial();
+    public com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest build() {
+      com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -520,13 +498,13 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.UpdateFindingRequest buildPartial() {
-      com.google.cloud.securitycenter.v1.UpdateFindingRequest result =
-          new com.google.cloud.securitycenter.v1.UpdateFindingRequest(this);
-      if (findingBuilder_ == null) {
-        result.finding_ = finding_;
+    public com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest buildPartial() {
+      com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest result =
+          new com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest(this);
+      if (bigQueryExportBuilder_ == null) {
+        result.bigQueryExport_ = bigQueryExport_;
       } else {
-        result.finding_ = findingBuilder_.build();
+        result.bigQueryExport_ = bigQueryExportBuilder_.build();
       }
       if (updateMaskBuilder_ == null) {
         result.updateMask_ = updateMask_;
@@ -572,19 +550,20 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.securitycenter.v1.UpdateFindingRequest) {
-        return mergeFrom((com.google.cloud.securitycenter.v1.UpdateFindingRequest) other);
+      if (other instanceof com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest) {
+        return mergeFrom((com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.securitycenter.v1.UpdateFindingRequest other) {
-      if (other == com.google.cloud.securitycenter.v1.UpdateFindingRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest other) {
+      if (other
+          == com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest.getDefaultInstance())
         return this;
-      if (other.hasFinding()) {
-        mergeFinding(other.getFinding());
+      if (other.hasBigQueryExport()) {
+        mergeBigQueryExport(other.getBigQueryExport());
       }
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
@@ -604,12 +583,13 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.securitycenter.v1.UpdateFindingRequest parsedMessage = null;
+      com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.securitycenter.v1.UpdateFindingRequest) e.getUnfinishedMessage();
+            (com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -619,82 +599,70 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.cloud.securitycenter.v1.Finding finding_;
+    private com.google.cloud.securitycenter.v1.BigQueryExport bigQueryExport_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.securitycenter.v1.Finding,
-            com.google.cloud.securitycenter.v1.Finding.Builder,
-            com.google.cloud.securitycenter.v1.FindingOrBuilder>
-        findingBuilder_;
+            com.google.cloud.securitycenter.v1.BigQueryExport,
+            com.google.cloud.securitycenter.v1.BigQueryExport.Builder,
+            com.google.cloud.securitycenter.v1.BigQueryExportOrBuilder>
+        bigQueryExportBuilder_;
     /**
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
-     * In the case of creation, the finding id portion of the name must be
-     * alphanumeric and less than or equal to 32 characters and greater than 0
-     * characters in length.
+     * Required. The BigQuery export being updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.securitycenter.v1.BigQueryExport big_query_export = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
-     * @return Whether the finding field is set.
+     * @return Whether the bigQueryExport field is set.
      */
-    public boolean hasFinding() {
-      return findingBuilder_ != null || finding_ != null;
+    public boolean hasBigQueryExport() {
+      return bigQueryExportBuilder_ != null || bigQueryExport_ != null;
     }
     /**
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
-     * In the case of creation, the finding id portion of the name must be
-     * alphanumeric and less than or equal to 32 characters and greater than 0
-     * characters in length.
+     * Required. The BigQuery export being updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.securitycenter.v1.BigQueryExport big_query_export = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
-     * @return The finding.
+     * @return The bigQueryExport.
      */
-    public com.google.cloud.securitycenter.v1.Finding getFinding() {
-      if (findingBuilder_ == null) {
-        return finding_ == null
-            ? com.google.cloud.securitycenter.v1.Finding.getDefaultInstance()
-            : finding_;
+    public com.google.cloud.securitycenter.v1.BigQueryExport getBigQueryExport() {
+      if (bigQueryExportBuilder_ == null) {
+        return bigQueryExport_ == null
+            ? com.google.cloud.securitycenter.v1.BigQueryExport.getDefaultInstance()
+            : bigQueryExport_;
       } else {
-        return findingBuilder_.getMessage();
+        return bigQueryExportBuilder_.getMessage();
       }
     }
     /**
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
-     * In the case of creation, the finding id portion of the name must be
-     * alphanumeric and less than or equal to 32 characters and greater than 0
-     * characters in length.
+     * Required. The BigQuery export being updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.securitycenter.v1.BigQueryExport big_query_export = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder setFinding(com.google.cloud.securitycenter.v1.Finding value) {
-      if (findingBuilder_ == null) {
+    public Builder setBigQueryExport(com.google.cloud.securitycenter.v1.BigQueryExport value) {
+      if (bigQueryExportBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        finding_ = value;
+        bigQueryExport_ = value;
         onChanged();
       } else {
-        findingBuilder_.setMessage(value);
+        bigQueryExportBuilder_.setMessage(value);
       }
 
       return this;
@@ -703,23 +671,20 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
-     * In the case of creation, the finding id portion of the name must be
-     * alphanumeric and less than or equal to 32 characters and greater than 0
-     * characters in length.
+     * Required. The BigQuery export being updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.securitycenter.v1.BigQueryExport big_query_export = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder setFinding(com.google.cloud.securitycenter.v1.Finding.Builder builderForValue) {
-      if (findingBuilder_ == null) {
-        finding_ = builderForValue.build();
+    public Builder setBigQueryExport(
+        com.google.cloud.securitycenter.v1.BigQueryExport.Builder builderForValue) {
+      if (bigQueryExportBuilder_ == null) {
+        bigQueryExport_ = builderForValue.build();
         onChanged();
       } else {
-        findingBuilder_.setMessage(builderForValue.build());
+        bigQueryExportBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -728,30 +693,26 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
-     * In the case of creation, the finding id portion of the name must be
-     * alphanumeric and less than or equal to 32 characters and greater than 0
-     * characters in length.
+     * Required. The BigQuery export being updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.securitycenter.v1.BigQueryExport big_query_export = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder mergeFinding(com.google.cloud.securitycenter.v1.Finding value) {
-      if (findingBuilder_ == null) {
-        if (finding_ != null) {
-          finding_ =
-              com.google.cloud.securitycenter.v1.Finding.newBuilder(finding_)
+    public Builder mergeBigQueryExport(com.google.cloud.securitycenter.v1.BigQueryExport value) {
+      if (bigQueryExportBuilder_ == null) {
+        if (bigQueryExport_ != null) {
+          bigQueryExport_ =
+              com.google.cloud.securitycenter.v1.BigQueryExport.newBuilder(bigQueryExport_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          finding_ = value;
+          bigQueryExport_ = value;
         }
         onChanged();
       } else {
-        findingBuilder_.mergeFrom(value);
+        bigQueryExportBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -760,24 +721,20 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
-     * In the case of creation, the finding id portion of the name must be
-     * alphanumeric and less than or equal to 32 characters and greater than 0
-     * characters in length.
+     * Required. The BigQuery export being updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.securitycenter.v1.BigQueryExport big_query_export = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder clearFinding() {
-      if (findingBuilder_ == null) {
-        finding_ = null;
+    public Builder clearBigQueryExport() {
+      if (bigQueryExportBuilder_ == null) {
+        bigQueryExport_ = null;
         onChanged();
       } else {
-        finding_ = null;
-        findingBuilder_ = null;
+        bigQueryExport_ = null;
+        bigQueryExportBuilder_ = null;
       }
 
       return this;
@@ -786,76 +743,64 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
-     * In the case of creation, the finding id portion of the name must be
-     * alphanumeric and less than or equal to 32 characters and greater than 0
-     * characters in length.
+     * Required. The BigQuery export being updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.securitycenter.v1.BigQueryExport big_query_export = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public com.google.cloud.securitycenter.v1.Finding.Builder getFindingBuilder() {
+    public com.google.cloud.securitycenter.v1.BigQueryExport.Builder getBigQueryExportBuilder() {
 
       onChanged();
-      return getFindingFieldBuilder().getBuilder();
+      return getBigQueryExportFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
-     * In the case of creation, the finding id portion of the name must be
-     * alphanumeric and less than or equal to 32 characters and greater than 0
-     * characters in length.
+     * Required. The BigQuery export being updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.securitycenter.v1.BigQueryExport big_query_export = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public com.google.cloud.securitycenter.v1.FindingOrBuilder getFindingOrBuilder() {
-      if (findingBuilder_ != null) {
-        return findingBuilder_.getMessageOrBuilder();
+    public com.google.cloud.securitycenter.v1.BigQueryExportOrBuilder getBigQueryExportOrBuilder() {
+      if (bigQueryExportBuilder_ != null) {
+        return bigQueryExportBuilder_.getMessageOrBuilder();
       } else {
-        return finding_ == null
-            ? com.google.cloud.securitycenter.v1.Finding.getDefaultInstance()
-            : finding_;
+        return bigQueryExport_ == null
+            ? com.google.cloud.securitycenter.v1.BigQueryExport.getDefaultInstance()
+            : bigQueryExport_;
       }
     }
     /**
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
-     * In the case of creation, the finding id portion of the name must be
-     * alphanumeric and less than or equal to 32 characters and greater than 0
-     * characters in length.
+     * Required. The BigQuery export being updated.
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.securitycenter.v1.BigQueryExport big_query_export = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.securitycenter.v1.Finding,
-            com.google.cloud.securitycenter.v1.Finding.Builder,
-            com.google.cloud.securitycenter.v1.FindingOrBuilder>
-        getFindingFieldBuilder() {
-      if (findingBuilder_ == null) {
-        findingBuilder_ =
+            com.google.cloud.securitycenter.v1.BigQueryExport,
+            com.google.cloud.securitycenter.v1.BigQueryExport.Builder,
+            com.google.cloud.securitycenter.v1.BigQueryExportOrBuilder>
+        getBigQueryExportFieldBuilder() {
+      if (bigQueryExportBuilder_ == null) {
+        bigQueryExportBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.securitycenter.v1.Finding,
-                com.google.cloud.securitycenter.v1.Finding.Builder,
-                com.google.cloud.securitycenter.v1.FindingOrBuilder>(
-                getFinding(), getParentForChildren(), isClean());
-        finding_ = null;
+                com.google.cloud.securitycenter.v1.BigQueryExport,
+                com.google.cloud.securitycenter.v1.BigQueryExport.Builder,
+                com.google.cloud.securitycenter.v1.BigQueryExportOrBuilder>(
+                getBigQueryExport(), getParentForChildren(), isClean());
+        bigQueryExport_ = null;
       }
-      return findingBuilder_;
+      return bigQueryExportBuilder_;
     }
 
     private com.google.protobuf.FieldMask updateMask_;
@@ -868,12 +813,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The FieldMask to use when updating the finding resource. This field should
-     * not be specified when creating a finding.
-     * When updating a finding, an empty mask is treated as updating all mutable
-     * fields and replacing source_properties.  Individual source_properties can
-     * be added/updated by using "source_properties.&lt;property key&gt;" in the field
-     * mask.
+     * The list of fields to be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -887,12 +828,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The FieldMask to use when updating the finding resource. This field should
-     * not be specified when creating a finding.
-     * When updating a finding, an empty mask is treated as updating all mutable
-     * fields and replacing source_properties.  Individual source_properties can
-     * be added/updated by using "source_properties.&lt;property key&gt;" in the field
-     * mask.
+     * The list of fields to be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -912,12 +849,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The FieldMask to use when updating the finding resource. This field should
-     * not be specified when creating a finding.
-     * When updating a finding, an empty mask is treated as updating all mutable
-     * fields and replacing source_properties.  Individual source_properties can
-     * be added/updated by using "source_properties.&lt;property key&gt;" in the field
-     * mask.
+     * The list of fields to be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -939,12 +872,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The FieldMask to use when updating the finding resource. This field should
-     * not be specified when creating a finding.
-     * When updating a finding, an empty mask is treated as updating all mutable
-     * fields and replacing source_properties.  Individual source_properties can
-     * be added/updated by using "source_properties.&lt;property key&gt;" in the field
-     * mask.
+     * The list of fields to be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -963,12 +892,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The FieldMask to use when updating the finding resource. This field should
-     * not be specified when creating a finding.
-     * When updating a finding, an empty mask is treated as updating all mutable
-     * fields and replacing source_properties.  Individual source_properties can
-     * be added/updated by using "source_properties.&lt;property key&gt;" in the field
-     * mask.
+     * The list of fields to be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -992,12 +917,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The FieldMask to use when updating the finding resource. This field should
-     * not be specified when creating a finding.
-     * When updating a finding, an empty mask is treated as updating all mutable
-     * fields and replacing source_properties.  Individual source_properties can
-     * be added/updated by using "source_properties.&lt;property key&gt;" in the field
-     * mask.
+     * The list of fields to be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1017,12 +938,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The FieldMask to use when updating the finding resource. This field should
-     * not be specified when creating a finding.
-     * When updating a finding, an empty mask is treated as updating all mutable
-     * fields and replacing source_properties.  Individual source_properties can
-     * be added/updated by using "source_properties.&lt;property key&gt;" in the field
-     * mask.
+     * The list of fields to be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1036,12 +953,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The FieldMask to use when updating the finding resource. This field should
-     * not be specified when creating a finding.
-     * When updating a finding, an empty mask is treated as updating all mutable
-     * fields and replacing source_properties.  Individual source_properties can
-     * be added/updated by using "source_properties.&lt;property key&gt;" in the field
-     * mask.
+     * The list of fields to be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1059,12 +972,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The FieldMask to use when updating the finding resource. This field should
-     * not be specified when creating a finding.
-     * When updating a finding, an empty mask is treated as updating all mutable
-     * fields and replacing source_properties.  Individual source_properties can
-     * be added/updated by using "source_properties.&lt;property key&gt;" in the field
-     * mask.
+     * The list of fields to be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1097,42 +1006,45 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.UpdateFindingRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.UpdateBigQueryExportRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.UpdateFindingRequest)
-  private static final com.google.cloud.securitycenter.v1.UpdateFindingRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.UpdateBigQueryExportRequest)
+  private static final com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.UpdateFindingRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest();
   }
 
-  public static com.google.cloud.securitycenter.v1.UpdateFindingRequest getDefaultInstance() {
+  public static com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateFindingRequest> PARSER =
-      new com.google.protobuf.AbstractParser<UpdateFindingRequest>() {
+  private static final com.google.protobuf.Parser<UpdateBigQueryExportRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateBigQueryExportRequest>() {
         @java.lang.Override
-        public UpdateFindingRequest parsePartialFrom(
+        public UpdateBigQueryExportRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UpdateFindingRequest(input, extensionRegistry);
+          return new UpdateBigQueryExportRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<UpdateFindingRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateBigQueryExportRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpdateFindingRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateBigQueryExportRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.securitycenter.v1.UpdateFindingRequest getDefaultInstanceForType() {
+  public com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

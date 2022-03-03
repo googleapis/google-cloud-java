@@ -286,6 +286,22 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                   .put(externalSystems__.getKey(), externalSystems__.getValue());
               break;
             }
+          case 202:
+            {
+              com.google.cloud.securitycenter.v1.MitreAttack.Builder subBuilder = null;
+              if (mitreAttack_ != null) {
+                subBuilder = mitreAttack_.toBuilder();
+              }
+              mitreAttack_ =
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1.MitreAttack.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mitreAttack_);
+                mitreAttack_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 210:
             {
               com.google.cloud.securitycenter.v1.Access.Builder subBuilder = null;
@@ -1031,6 +1047,16 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>OBSERVATION = 4;</code>
      */
     OBSERVATION(4),
+    /**
+     *
+     *
+     * <pre>
+     * Describes an error that prevents some SCC functionality.
+     * </pre>
+     *
+     * <code>SCC_ERROR = 5;</code>
+     */
+    SCC_ERROR(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -1086,6 +1112,16 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>OBSERVATION = 4;</code>
      */
     public static final int OBSERVATION_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Describes an error that prevents some SCC functionality.
+     * </pre>
+     *
+     * <code>SCC_ERROR = 5;</code>
+     */
+    public static final int SCC_ERROR_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1121,6 +1157,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           return MISCONFIGURATION;
         case 4:
           return OBSERVATION;
+        case 5:
+          return SCC_ERROR;
         default:
           return null;
       }
@@ -2158,8 +2196,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2184,8 +2222,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2201,8 +2239,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2223,8 +2261,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2243,6 +2281,57 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int MITRE_ATTACK_FIELD_NUMBER = 25;
+  private com.google.cloud.securitycenter.v1.MitreAttack mitreAttack_;
+  /**
+   *
+   *
+   * <pre>
+   * MITRE ATT&amp;CK tactics and techniques related to this finding.
+   * See: https://attack.mitre.org
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+   *
+   * @return Whether the mitreAttack field is set.
+   */
+  @java.lang.Override
+  public boolean hasMitreAttack() {
+    return mitreAttack_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * MITRE ATT&amp;CK tactics and techniques related to this finding.
+   * See: https://attack.mitre.org
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+   *
+   * @return The mitreAttack.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.MitreAttack getMitreAttack() {
+    return mitreAttack_ == null
+        ? com.google.cloud.securitycenter.v1.MitreAttack.getDefaultInstance()
+        : mitreAttack_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * MITRE ATT&amp;CK tactics and techniques related to this finding.
+   * See: https://attack.mitre.org
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.MitreAttackOrBuilder getMitreAttackOrBuilder() {
+    return getMitreAttack();
   }
 
   public static final int ACCESS_FIELD_NUMBER = 26;
@@ -2420,6 +2509,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetExternalSystems(), ExternalSystemsDefaultEntryHolder.defaultEntry, 22);
+    if (mitreAttack_ != null) {
+      output.writeMessage(25, getMitreAttack());
+    }
     if (access_ != null) {
       output.writeMessage(26, getAccess());
     }
@@ -2508,6 +2600,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, externalSystems__);
     }
+    if (mitreAttack_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getMitreAttack());
+    }
     if (access_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getAccess());
     }
@@ -2566,6 +2661,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (!getMuteUpdateTime().equals(other.getMuteUpdateTime())) return false;
     }
     if (!internalGetExternalSystems().equals(other.internalGetExternalSystems())) return false;
+    if (hasMitreAttack() != other.hasMitreAttack()) return false;
+    if (hasMitreAttack()) {
+      if (!getMitreAttack().equals(other.getMitreAttack())) return false;
+    }
     if (hasAccess() != other.hasAccess()) return false;
     if (hasAccess()) {
       if (!getAccess().equals(other.getAccess())) return false;
@@ -2633,6 +2732,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetExternalSystems().getMap().isEmpty()) {
       hash = (37 * hash) + EXTERNAL_SYSTEMS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetExternalSystems().hashCode();
+    }
+    if (hasMitreAttack()) {
+      hash = (37 * hash) + MITRE_ATTACK_FIELD_NUMBER;
+      hash = (53 * hash) + getMitreAttack().hashCode();
     }
     if (hasAccess()) {
       hash = (37 * hash) + ACCESS_FIELD_NUMBER;
@@ -2872,6 +2975,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         muteUpdateTimeBuilder_ = null;
       }
       internalGetMutableExternalSystems().clear();
+      if (mitreAttackBuilder_ == null) {
+        mitreAttack_ = null;
+      } else {
+        mitreAttack_ = null;
+        mitreAttackBuilder_ = null;
+      }
       if (accessBuilder_ == null) {
         access_ = null;
       } else {
@@ -2952,6 +3061,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       result.externalSystems_ = internalGetExternalSystems();
       result.externalSystems_.makeImmutable();
+      if (mitreAttackBuilder_ == null) {
+        result.mitreAttack_ = mitreAttack_;
+      } else {
+        result.mitreAttack_ = mitreAttackBuilder_.build();
+      }
       if (accessBuilder_ == null) {
         result.access_ = access_;
       } else {
@@ -3063,6 +3177,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         mergeMuteUpdateTime(other.getMuteUpdateTime());
       }
       internalGetMutableExternalSystems().mergeFrom(other.internalGetExternalSystems());
+      if (other.hasMitreAttack()) {
+        mergeMitreAttack(other.getMitreAttack());
+      }
       if (other.hasAccess()) {
         mergeAccess(other.getAccess());
       }
@@ -5717,8 +5834,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -5743,8 +5860,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -5760,8 +5877,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -5782,8 +5899,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -5812,8 +5929,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -5837,8 +5954,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -5860,8 +5977,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -5872,6 +5989,201 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> values) {
       internalGetMutableExternalSystems().getMutableMap().putAll(values);
       return this;
+    }
+
+    private com.google.cloud.securitycenter.v1.MitreAttack mitreAttack_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.MitreAttack,
+            com.google.cloud.securitycenter.v1.MitreAttack.Builder,
+            com.google.cloud.securitycenter.v1.MitreAttackOrBuilder>
+        mitreAttackBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * MITRE ATT&amp;CK tactics and techniques related to this finding.
+     * See: https://attack.mitre.org
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+     *
+     * @return Whether the mitreAttack field is set.
+     */
+    public boolean hasMitreAttack() {
+      return mitreAttackBuilder_ != null || mitreAttack_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MITRE ATT&amp;CK tactics and techniques related to this finding.
+     * See: https://attack.mitre.org
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+     *
+     * @return The mitreAttack.
+     */
+    public com.google.cloud.securitycenter.v1.MitreAttack getMitreAttack() {
+      if (mitreAttackBuilder_ == null) {
+        return mitreAttack_ == null
+            ? com.google.cloud.securitycenter.v1.MitreAttack.getDefaultInstance()
+            : mitreAttack_;
+      } else {
+        return mitreAttackBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MITRE ATT&amp;CK tactics and techniques related to this finding.
+     * See: https://attack.mitre.org
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+     */
+    public Builder setMitreAttack(com.google.cloud.securitycenter.v1.MitreAttack value) {
+      if (mitreAttackBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mitreAttack_ = value;
+        onChanged();
+      } else {
+        mitreAttackBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MITRE ATT&amp;CK tactics and techniques related to this finding.
+     * See: https://attack.mitre.org
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+     */
+    public Builder setMitreAttack(
+        com.google.cloud.securitycenter.v1.MitreAttack.Builder builderForValue) {
+      if (mitreAttackBuilder_ == null) {
+        mitreAttack_ = builderForValue.build();
+        onChanged();
+      } else {
+        mitreAttackBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MITRE ATT&amp;CK tactics and techniques related to this finding.
+     * See: https://attack.mitre.org
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+     */
+    public Builder mergeMitreAttack(com.google.cloud.securitycenter.v1.MitreAttack value) {
+      if (mitreAttackBuilder_ == null) {
+        if (mitreAttack_ != null) {
+          mitreAttack_ =
+              com.google.cloud.securitycenter.v1.MitreAttack.newBuilder(mitreAttack_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          mitreAttack_ = value;
+        }
+        onChanged();
+      } else {
+        mitreAttackBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MITRE ATT&amp;CK tactics and techniques related to this finding.
+     * See: https://attack.mitre.org
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+     */
+    public Builder clearMitreAttack() {
+      if (mitreAttackBuilder_ == null) {
+        mitreAttack_ = null;
+        onChanged();
+      } else {
+        mitreAttack_ = null;
+        mitreAttackBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MITRE ATT&amp;CK tactics and techniques related to this finding.
+     * See: https://attack.mitre.org
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+     */
+    public com.google.cloud.securitycenter.v1.MitreAttack.Builder getMitreAttackBuilder() {
+
+      onChanged();
+      return getMitreAttackFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MITRE ATT&amp;CK tactics and techniques related to this finding.
+     * See: https://attack.mitre.org
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+     */
+    public com.google.cloud.securitycenter.v1.MitreAttackOrBuilder getMitreAttackOrBuilder() {
+      if (mitreAttackBuilder_ != null) {
+        return mitreAttackBuilder_.getMessageOrBuilder();
+      } else {
+        return mitreAttack_ == null
+            ? com.google.cloud.securitycenter.v1.MitreAttack.getDefaultInstance()
+            : mitreAttack_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MITRE ATT&amp;CK tactics and techniques related to this finding.
+     * See: https://attack.mitre.org
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.MitreAttack mitre_attack = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.MitreAttack,
+            com.google.cloud.securitycenter.v1.MitreAttack.Builder,
+            com.google.cloud.securitycenter.v1.MitreAttackOrBuilder>
+        getMitreAttackFieldBuilder() {
+      if (mitreAttackBuilder_ == null) {
+        mitreAttackBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.MitreAttack,
+                com.google.cloud.securitycenter.v1.MitreAttack.Builder,
+                com.google.cloud.securitycenter.v1.MitreAttackOrBuilder>(
+                getMitreAttack(), getParentForChildren(), isClean());
+        mitreAttack_ = null;
+      }
+      return mitreAttackBuilder_;
     }
 
     private com.google.cloud.securitycenter.v1.Access access_;

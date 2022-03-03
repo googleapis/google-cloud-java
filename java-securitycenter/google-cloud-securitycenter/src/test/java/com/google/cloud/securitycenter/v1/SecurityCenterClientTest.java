@@ -19,6 +19,7 @@ package com.google.cloud.securitycenter.v1;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
@@ -298,6 +299,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
@@ -360,6 +362,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
@@ -1133,6 +1136,102 @@ public class SecurityCenterClientTest {
     try {
       String name = "name3373707";
       client.deleteNotificationConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBigQueryExportTest() throws Exception {
+    BigQueryExport expectedResponse =
+        BigQueryExport.newBuilder()
+            .setName(
+                BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setDataset("dataset1443214456")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setPrincipal("principal-1812041682")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    BigQueryExportName name =
+        BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]");
+
+    BigQueryExport actualResponse = client.getBigQueryExport(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBigQueryExportRequest actualRequest = ((GetBigQueryExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBigQueryExportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      BigQueryExportName name =
+          BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]");
+      client.getBigQueryExport(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBigQueryExportTest2() throws Exception {
+    BigQueryExport expectedResponse =
+        BigQueryExport.newBuilder()
+            .setName(
+                BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setDataset("dataset1443214456")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setPrincipal("principal-1812041682")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    BigQueryExport actualResponse = client.getBigQueryExport(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBigQueryExportRequest actualRequest = ((GetBigQueryExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBigQueryExportExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getBigQueryExport(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -2425,6 +2524,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
@@ -2489,6 +2589,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
@@ -2551,6 +2652,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
@@ -2612,6 +2714,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
@@ -2881,6 +2984,7 @@ public class SecurityCenterClientTest {
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
+            .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
             .setMuteInitiator("muteInitiator1395645462")
             .build();
@@ -3171,6 +3275,525 @@ public class SecurityCenterClientTest {
     try {
       SecurityMarks securityMarks = SecurityMarks.newBuilder().build();
       client.updateSecurityMarks(securityMarks);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createBigQueryExportTest() throws Exception {
+    BigQueryExport expectedResponse =
+        BigQueryExport.newBuilder()
+            .setName(
+                BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setDataset("dataset1443214456")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setPrincipal("principal-1812041682")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    FolderName parent = FolderName.of("[FOLDER]");
+    BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+    String bigQueryExportId = "bigQueryExportId1024198583";
+
+    BigQueryExport actualResponse =
+        client.createBigQueryExport(parent, bigQueryExport, bigQueryExportId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBigQueryExportRequest actualRequest =
+        ((CreateBigQueryExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(bigQueryExport, actualRequest.getBigQueryExport());
+    Assert.assertEquals(bigQueryExportId, actualRequest.getBigQueryExportId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createBigQueryExportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      FolderName parent = FolderName.of("[FOLDER]");
+      BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+      String bigQueryExportId = "bigQueryExportId1024198583";
+      client.createBigQueryExport(parent, bigQueryExport, bigQueryExportId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createBigQueryExportTest2() throws Exception {
+    BigQueryExport expectedResponse =
+        BigQueryExport.newBuilder()
+            .setName(
+                BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setDataset("dataset1443214456")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setPrincipal("principal-1812041682")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+    String bigQueryExportId = "bigQueryExportId1024198583";
+
+    BigQueryExport actualResponse =
+        client.createBigQueryExport(parent, bigQueryExport, bigQueryExportId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBigQueryExportRequest actualRequest =
+        ((CreateBigQueryExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(bigQueryExport, actualRequest.getBigQueryExport());
+    Assert.assertEquals(bigQueryExportId, actualRequest.getBigQueryExportId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createBigQueryExportExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+      String bigQueryExportId = "bigQueryExportId1024198583";
+      client.createBigQueryExport(parent, bigQueryExport, bigQueryExportId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createBigQueryExportTest3() throws Exception {
+    BigQueryExport expectedResponse =
+        BigQueryExport.newBuilder()
+            .setName(
+                BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setDataset("dataset1443214456")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setPrincipal("principal-1812041682")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+    String bigQueryExportId = "bigQueryExportId1024198583";
+
+    BigQueryExport actualResponse =
+        client.createBigQueryExport(parent, bigQueryExport, bigQueryExportId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBigQueryExportRequest actualRequest =
+        ((CreateBigQueryExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(bigQueryExport, actualRequest.getBigQueryExport());
+    Assert.assertEquals(bigQueryExportId, actualRequest.getBigQueryExportId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createBigQueryExportExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+      String bigQueryExportId = "bigQueryExportId1024198583";
+      client.createBigQueryExport(parent, bigQueryExport, bigQueryExportId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createBigQueryExportTest4() throws Exception {
+    BigQueryExport expectedResponse =
+        BigQueryExport.newBuilder()
+            .setName(
+                BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setDataset("dataset1443214456")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setPrincipal("principal-1812041682")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+    String bigQueryExportId = "bigQueryExportId1024198583";
+
+    BigQueryExport actualResponse =
+        client.createBigQueryExport(parent, bigQueryExport, bigQueryExportId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBigQueryExportRequest actualRequest =
+        ((CreateBigQueryExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(bigQueryExport, actualRequest.getBigQueryExport());
+    Assert.assertEquals(bigQueryExportId, actualRequest.getBigQueryExportId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createBigQueryExportExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+      String bigQueryExportId = "bigQueryExportId1024198583";
+      client.createBigQueryExport(parent, bigQueryExport, bigQueryExportId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteBigQueryExportTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    BigQueryExportName name =
+        BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]");
+
+    client.deleteBigQueryExport(name);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteBigQueryExportRequest actualRequest =
+        ((DeleteBigQueryExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteBigQueryExportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      BigQueryExportName name =
+          BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]");
+      client.deleteBigQueryExport(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteBigQueryExportTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteBigQueryExport(name);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteBigQueryExportRequest actualRequest =
+        ((DeleteBigQueryExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteBigQueryExportExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteBigQueryExport(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateBigQueryExportTest() throws Exception {
+    BigQueryExport expectedResponse =
+        BigQueryExport.newBuilder()
+            .setName(
+                BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setDataset("dataset1443214456")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setPrincipal("principal-1812041682")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    BigQueryExport actualResponse = client.updateBigQueryExport(bigQueryExport, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateBigQueryExportRequest actualRequest =
+        ((UpdateBigQueryExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(bigQueryExport, actualRequest.getBigQueryExport());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateBigQueryExportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateBigQueryExport(bigQueryExport, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBigQueryExportsTest() throws Exception {
+    BigQueryExport responsesElement = BigQueryExport.newBuilder().build();
+    ListBigQueryExportsResponse expectedResponse =
+        ListBigQueryExportsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBigQueryExports(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    FolderName parent = FolderName.of("[FOLDER]");
+
+    ListBigQueryExportsPagedResponse pagedListResponse = client.listBigQueryExports(parent);
+
+    List<BigQueryExport> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBigQueryExportsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBigQueryExportsRequest actualRequest = ((ListBigQueryExportsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBigQueryExportsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      FolderName parent = FolderName.of("[FOLDER]");
+      client.listBigQueryExports(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBigQueryExportsTest2() throws Exception {
+    BigQueryExport responsesElement = BigQueryExport.newBuilder().build();
+    ListBigQueryExportsResponse expectedResponse =
+        ListBigQueryExportsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBigQueryExports(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+
+    ListBigQueryExportsPagedResponse pagedListResponse = client.listBigQueryExports(parent);
+
+    List<BigQueryExport> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBigQueryExportsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBigQueryExportsRequest actualRequest = ((ListBigQueryExportsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBigQueryExportsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      client.listBigQueryExports(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBigQueryExportsTest3() throws Exception {
+    BigQueryExport responsesElement = BigQueryExport.newBuilder().build();
+    ListBigQueryExportsResponse expectedResponse =
+        ListBigQueryExportsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBigQueryExports(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListBigQueryExportsPagedResponse pagedListResponse = client.listBigQueryExports(parent);
+
+    List<BigQueryExport> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBigQueryExportsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBigQueryExportsRequest actualRequest = ((ListBigQueryExportsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBigQueryExportsExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listBigQueryExports(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBigQueryExportsTest4() throws Exception {
+    BigQueryExport responsesElement = BigQueryExport.newBuilder().build();
+    ListBigQueryExportsResponse expectedResponse =
+        ListBigQueryExportsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBigQueryExports(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListBigQueryExportsPagedResponse pagedListResponse = client.listBigQueryExports(parent);
+
+    List<BigQueryExport> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBigQueryExportsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBigQueryExportsRequest actualRequest = ((ListBigQueryExportsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBigQueryExportsExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listBigQueryExports(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

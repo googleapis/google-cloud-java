@@ -27,8 +27,8 @@ public interface BulkMuteFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, at which bulk action needs to be applied. Its format is
-   * "organizations/[organization_id]", "folders/[folder_id]",
+   * Required. The parent, at which bulk action needs to be applied. Its format
+   * is "organizations/[organization_id]", "folders/[folder_id]",
    * "projects/[project_id]".
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface BulkMuteFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, at which bulk action needs to be applied. Its format is
-   * "organizations/[organization_id]", "folders/[folder_id]",
+   * Required. The parent, at which bulk action needs to be applied. Its format
+   * is "organizations/[organization_id]", "folders/[folder_id]",
    * "projects/[project_id]".
    * </pre>
    *

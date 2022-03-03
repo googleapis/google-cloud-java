@@ -1208,6 +1208,109 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets a big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   BigQueryExportName name =
+   *       BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]");
+   *   BigQueryExport response = securityCenterClient.getBigQueryExport(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the big query export to retrieve. Its format is
+   *     organizations/{organization}/bigQueryExports/{export_id},
+   *     folders/{folder}/bigQueryExports/{export_id}, or
+   *     projects/{project}/bigQueryExports/{export_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryExport getBigQueryExport(BigQueryExportName name) {
+    GetBigQueryExportRequest request =
+        GetBigQueryExportRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getBigQueryExport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String name =
+   *       BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]").toString();
+   *   BigQueryExport response = securityCenterClient.getBigQueryExport(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the big query export to retrieve. Its format is
+   *     organizations/{organization}/bigQueryExports/{export_id},
+   *     folders/{folder}/bigQueryExports/{export_id}, or
+   *     projects/{project}/bigQueryExports/{export_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryExport getBigQueryExport(String name) {
+    GetBigQueryExportRequest request = GetBigQueryExportRequest.newBuilder().setName(name).build();
+    return getBigQueryExport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   GetBigQueryExportRequest request =
+   *       GetBigQueryExportRequest.newBuilder()
+   *           .setName(
+   *               BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]")
+   *                   .toString())
+   *           .build();
+   *   BigQueryExport response = securityCenterClient.getBigQueryExport(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryExport getBigQueryExport(GetBigQueryExportRequest request) {
+    return getBigQueryExportCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   GetBigQueryExportRequest request =
+   *       GetBigQueryExportRequest.newBuilder()
+   *           .setName(
+   *               BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<BigQueryExport> future =
+   *       securityCenterClient.getBigQueryExportCallable().futureCall(request);
+   *   // Do something.
+   *   BigQueryExport response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportCallable() {
+    return stub.getBigQueryExportCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets the access control policy on the specified Source.
    *
    * <p>Sample code:
@@ -3899,6 +4002,599 @@ public class SecurityCenterClient implements BackgroundResource {
     return stub.updateSecurityMarksCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+   *   String bigQueryExportId = "bigQueryExportId1024198583";
+   *   BigQueryExport response =
+   *       securityCenterClient.createBigQueryExport(parent, bigQueryExport, bigQueryExportId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new big query export's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param bigQueryExport Required. The big query export being created.
+   * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
+   *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
+   *     a letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryExport createBigQueryExport(
+      FolderName parent, BigQueryExport bigQueryExport, String bigQueryExportId) {
+    CreateBigQueryExportRequest request =
+        CreateBigQueryExportRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBigQueryExport(bigQueryExport)
+            .setBigQueryExportId(bigQueryExportId)
+            .build();
+    return createBigQueryExport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+   *   String bigQueryExportId = "bigQueryExportId1024198583";
+   *   BigQueryExport response =
+   *       securityCenterClient.createBigQueryExport(parent, bigQueryExport, bigQueryExportId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new big query export's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param bigQueryExport Required. The big query export being created.
+   * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
+   *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
+   *     a letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryExport createBigQueryExport(
+      OrganizationName parent, BigQueryExport bigQueryExport, String bigQueryExportId) {
+    CreateBigQueryExportRequest request =
+        CreateBigQueryExportRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBigQueryExport(bigQueryExport)
+            .setBigQueryExportId(bigQueryExportId)
+            .build();
+    return createBigQueryExport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+   *   String bigQueryExportId = "bigQueryExportId1024198583";
+   *   BigQueryExport response =
+   *       securityCenterClient.createBigQueryExport(parent, bigQueryExport, bigQueryExportId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new big query export's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param bigQueryExport Required. The big query export being created.
+   * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
+   *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
+   *     a letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryExport createBigQueryExport(
+      ProjectName parent, BigQueryExport bigQueryExport, String bigQueryExportId) {
+    CreateBigQueryExportRequest request =
+        CreateBigQueryExportRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBigQueryExport(bigQueryExport)
+            .setBigQueryExportId(bigQueryExportId)
+            .build();
+    return createBigQueryExport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
+   *   BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+   *   String bigQueryExportId = "bigQueryExportId1024198583";
+   *   BigQueryExport response =
+   *       securityCenterClient.createBigQueryExport(parent, bigQueryExport, bigQueryExportId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new big query export's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param bigQueryExport Required. The big query export being created.
+   * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
+   *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
+   *     a letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryExport createBigQueryExport(
+      String parent, BigQueryExport bigQueryExport, String bigQueryExportId) {
+    CreateBigQueryExportRequest request =
+        CreateBigQueryExportRequest.newBuilder()
+            .setParent(parent)
+            .setBigQueryExport(bigQueryExport)
+            .setBigQueryExportId(bigQueryExportId)
+            .build();
+    return createBigQueryExport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   CreateBigQueryExportRequest request =
+   *       CreateBigQueryExportRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setBigQueryExport(BigQueryExport.newBuilder().build())
+   *           .setBigQueryExportId("bigQueryExportId1024198583")
+   *           .build();
+   *   BigQueryExport response = securityCenterClient.createBigQueryExport(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryExport createBigQueryExport(CreateBigQueryExportRequest request) {
+    return createBigQueryExportCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   CreateBigQueryExportRequest request =
+   *       CreateBigQueryExportRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setBigQueryExport(BigQueryExport.newBuilder().build())
+   *           .setBigQueryExportId("bigQueryExportId1024198583")
+   *           .build();
+   *   ApiFuture<BigQueryExport> future =
+   *       securityCenterClient.createBigQueryExportCallable().futureCall(request);
+   *   // Do something.
+   *   BigQueryExport response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateBigQueryExportRequest, BigQueryExport>
+      createBigQueryExportCallable() {
+    return stub.createBigQueryExportCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an existing big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   BigQueryExportName name =
+   *       BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]");
+   *   securityCenterClient.deleteBigQueryExport(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the big query export to delete. Its format is
+   *     organizations/{organization}/bigQueryExports/{export_id},
+   *     folders/{folder}/bigQueryExports/{export_id}, or
+   *     projects/{project}/bigQueryExports/{export_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBigQueryExport(BigQueryExportName name) {
+    DeleteBigQueryExportRequest request =
+        DeleteBigQueryExportRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteBigQueryExport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an existing big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String name =
+   *       BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]").toString();
+   *   securityCenterClient.deleteBigQueryExport(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the big query export to delete. Its format is
+   *     organizations/{organization}/bigQueryExports/{export_id},
+   *     folders/{folder}/bigQueryExports/{export_id}, or
+   *     projects/{project}/bigQueryExports/{export_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBigQueryExport(String name) {
+    DeleteBigQueryExportRequest request =
+        DeleteBigQueryExportRequest.newBuilder().setName(name).build();
+    deleteBigQueryExport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an existing big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   DeleteBigQueryExportRequest request =
+   *       DeleteBigQueryExportRequest.newBuilder()
+   *           .setName(
+   *               BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]")
+   *                   .toString())
+   *           .build();
+   *   securityCenterClient.deleteBigQueryExport(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBigQueryExport(DeleteBigQueryExportRequest request) {
+    deleteBigQueryExportCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an existing big query export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   DeleteBigQueryExportRequest request =
+   *       DeleteBigQueryExportRequest.newBuilder()
+   *           .setName(
+   *               BigQueryExportName.ofOrganizationExportName("[ORGANIZATION]", "[EXPORT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       securityCenterClient.deleteBigQueryExportCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteBigQueryExportRequest, Empty> deleteBigQueryExportCallable() {
+    return stub.deleteBigQueryExportCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a BigQuery export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   BigQueryExport bigQueryExport = BigQueryExport.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   BigQueryExport response =
+   *       securityCenterClient.updateBigQueryExport(bigQueryExport, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param bigQueryExport Required. The BigQuery export being updated.
+   * @param updateMask The list of fields to be updated. If empty all mutable fields will be
+   *     updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryExport updateBigQueryExport(
+      BigQueryExport bigQueryExport, FieldMask updateMask) {
+    UpdateBigQueryExportRequest request =
+        UpdateBigQueryExportRequest.newBuilder()
+            .setBigQueryExport(bigQueryExport)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateBigQueryExport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a BigQuery export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   UpdateBigQueryExportRequest request =
+   *       UpdateBigQueryExportRequest.newBuilder()
+   *           .setBigQueryExport(BigQueryExport.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   BigQueryExport response = securityCenterClient.updateBigQueryExport(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryExport updateBigQueryExport(UpdateBigQueryExportRequest request) {
+    return updateBigQueryExportCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a BigQuery export.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   UpdateBigQueryExportRequest request =
+   *       UpdateBigQueryExportRequest.newBuilder()
+   *           .setBigQueryExport(BigQueryExport.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BigQueryExport> future =
+   *       securityCenterClient.updateBigQueryExportCallable().futureCall(request);
+   *   // Do something.
+   *   BigQueryExport response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateBigQueryExportRequest, BigQueryExport>
+      updateBigQueryExportCallable() {
+    return stub.updateBigQueryExportCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BigQuery exports. Note that when requesting BigQuery exports at a given level all exports
+   * under that level are also returned e.g. if requesting BigQuery exports under a folder, then all
+   * BigQuery exports immediately under the folder plus the ones created under the projects within
+   * the folder are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   for (BigQueryExport element : securityCenterClient.listBigQueryExports(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns the collection of BigQuery exports. Its format
+   *     is "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBigQueryExportsPagedResponse listBigQueryExports(FolderName parent) {
+    ListBigQueryExportsRequest request =
+        ListBigQueryExportsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBigQueryExports(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BigQuery exports. Note that when requesting BigQuery exports at a given level all exports
+   * under that level are also returned e.g. if requesting BigQuery exports under a folder, then all
+   * BigQuery exports immediately under the folder plus the ones created under the projects within
+   * the folder are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (BigQueryExport element : securityCenterClient.listBigQueryExports(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns the collection of BigQuery exports. Its format
+   *     is "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBigQueryExportsPagedResponse listBigQueryExports(OrganizationName parent) {
+    ListBigQueryExportsRequest request =
+        ListBigQueryExportsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBigQueryExports(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BigQuery exports. Note that when requesting BigQuery exports at a given level all exports
+   * under that level are also returned e.g. if requesting BigQuery exports under a folder, then all
+   * BigQuery exports immediately under the folder plus the ones created under the projects within
+   * the folder are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (BigQueryExport element : securityCenterClient.listBigQueryExports(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns the collection of BigQuery exports. Its format
+   *     is "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBigQueryExportsPagedResponse listBigQueryExports(ProjectName parent) {
+    ListBigQueryExportsRequest request =
+        ListBigQueryExportsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBigQueryExports(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BigQuery exports. Note that when requesting BigQuery exports at a given level all exports
+   * under that level are also returned e.g. if requesting BigQuery exports under a folder, then all
+   * BigQuery exports immediately under the folder plus the ones created under the projects within
+   * the folder are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
+   *   for (BigQueryExport element : securityCenterClient.listBigQueryExports(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns the collection of BigQuery exports. Its format
+   *     is "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBigQueryExportsPagedResponse listBigQueryExports(String parent) {
+    ListBigQueryExportsRequest request =
+        ListBigQueryExportsRequest.newBuilder().setParent(parent).build();
+    return listBigQueryExports(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BigQuery exports. Note that when requesting BigQuery exports at a given level all exports
+   * under that level are also returned e.g. if requesting BigQuery exports under a folder, then all
+   * BigQuery exports immediately under the folder plus the ones created under the projects within
+   * the folder are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListBigQueryExportsRequest request =
+   *       ListBigQueryExportsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (BigQueryExport element :
+   *       securityCenterClient.listBigQueryExports(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBigQueryExportsPagedResponse listBigQueryExports(
+      ListBigQueryExportsRequest request) {
+    return listBigQueryExportsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BigQuery exports. Note that when requesting BigQuery exports at a given level all exports
+   * under that level are also returned e.g. if requesting BigQuery exports under a folder, then all
+   * BigQuery exports immediately under the folder plus the ones created under the projects within
+   * the folder are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListBigQueryExportsRequest request =
+   *       ListBigQueryExportsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<BigQueryExport> future =
+   *       securityCenterClient.listBigQueryExportsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BigQueryExport element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsPagedResponse>
+      listBigQueryExportsPagedCallable() {
+    return stub.listBigQueryExportsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BigQuery exports. Note that when requesting BigQuery exports at a given level all exports
+   * under that level are also returned e.g. if requesting BigQuery exports under a folder, then all
+   * BigQuery exports immediately under the folder plus the ones created under the projects within
+   * the folder are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListBigQueryExportsRequest request =
+   *       ListBigQueryExportsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListBigQueryExportsResponse response =
+   *         securityCenterClient.listBigQueryExportsCallable().call(request);
+   *     for (BigQueryExport element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsResponse>
+      listBigQueryExportsCallable() {
+    return stub.listBigQueryExportsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -4481,6 +5177,90 @@ public class SecurityCenterClient implements BackgroundResource {
     protected ListSourcesFixedSizeCollection createCollection(
         List<ListSourcesPage> pages, int collectionSize) {
       return new ListSourcesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBigQueryExportsPagedResponse
+      extends AbstractPagedListResponse<
+          ListBigQueryExportsRequest,
+          ListBigQueryExportsResponse,
+          BigQueryExport,
+          ListBigQueryExportsPage,
+          ListBigQueryExportsFixedSizeCollection> {
+
+    public static ApiFuture<ListBigQueryExportsPagedResponse> createAsync(
+        PageContext<ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>
+            context,
+        ApiFuture<ListBigQueryExportsResponse> futureResponse) {
+      ApiFuture<ListBigQueryExportsPage> futurePage =
+          ListBigQueryExportsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListBigQueryExportsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBigQueryExportsPagedResponse(ListBigQueryExportsPage page) {
+      super(page, ListBigQueryExportsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBigQueryExportsPage
+      extends AbstractPage<
+          ListBigQueryExportsRequest,
+          ListBigQueryExportsResponse,
+          BigQueryExport,
+          ListBigQueryExportsPage> {
+
+    private ListBigQueryExportsPage(
+        PageContext<ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>
+            context,
+        ListBigQueryExportsResponse response) {
+      super(context, response);
+    }
+
+    private static ListBigQueryExportsPage createEmptyPage() {
+      return new ListBigQueryExportsPage(null, null);
+    }
+
+    @Override
+    protected ListBigQueryExportsPage createPage(
+        PageContext<ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>
+            context,
+        ListBigQueryExportsResponse response) {
+      return new ListBigQueryExportsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBigQueryExportsPage> createPageAsync(
+        PageContext<ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>
+            context,
+        ApiFuture<ListBigQueryExportsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBigQueryExportsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBigQueryExportsRequest,
+          ListBigQueryExportsResponse,
+          BigQueryExport,
+          ListBigQueryExportsPage,
+          ListBigQueryExportsFixedSizeCollection> {
+
+    private ListBigQueryExportsFixedSizeCollection(
+        List<ListBigQueryExportsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBigQueryExportsFixedSizeCollection createEmptyCollection() {
+      return new ListBigQueryExportsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBigQueryExportsFixedSizeCollection createCollection(
+        List<ListBigQueryExportsPage> pages, int collectionSize) {
+      return new ListBigQueryExportsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

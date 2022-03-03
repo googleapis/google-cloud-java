@@ -213,6 +213,27 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
+  public void getBigQueryExport(
+      GetBigQueryExportRequest request, StreamObserver<BigQueryExport> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BigQueryExport) {
+      requests.add(request);
+      responseObserver.onNext(((BigQueryExport) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBigQueryExport, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BigQueryExport.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Policy) {
@@ -712,6 +733,91 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
                   "Unrecognized response type %s for method UpdateSecurityMarks, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SecurityMarks.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createBigQueryExport(
+      CreateBigQueryExportRequest request, StreamObserver<BigQueryExport> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BigQueryExport) {
+      requests.add(request);
+      responseObserver.onNext(((BigQueryExport) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateBigQueryExport, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BigQueryExport.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteBigQueryExport(
+      DeleteBigQueryExportRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteBigQueryExport, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateBigQueryExport(
+      UpdateBigQueryExportRequest request, StreamObserver<BigQueryExport> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BigQueryExport) {
+      requests.add(request);
+      responseObserver.onNext(((BigQueryExport) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateBigQueryExport, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BigQueryExport.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listBigQueryExports(
+      ListBigQueryExportsRequest request,
+      StreamObserver<ListBigQueryExportsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBigQueryExportsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBigQueryExportsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBigQueryExports, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBigQueryExportsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

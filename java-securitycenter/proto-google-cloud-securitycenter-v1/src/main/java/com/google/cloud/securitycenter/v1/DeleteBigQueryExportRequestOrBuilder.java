@@ -18,39 +18,43 @@
 
 package com.google.cloud.securitycenter.v1;
 
-public interface RunAssetDiscoveryRequestOrBuilder
+public interface DeleteBigQueryExportRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1.RunAssetDiscoveryRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1.DeleteBigQueryExportRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. Name of the organization to run asset discovery for. Its format
-   * is "organizations/[organization_id]".
+   * Required. Name of the big query export to delete. Its format is
+   * organizations/{organization}/bigQueryExports/{export_id},
+   * folders/{folder}/bigQueryExports/{export_id}, or
+   * projects/{project}/bigQueryExports/{export_id}
    * </pre>
    *
    * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The parent.
+   * @return The name.
    */
-  java.lang.String getParent();
+  java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Required. Name of the organization to run asset discovery for. Its format
-   * is "organizations/[organization_id]".
+   * Required. Name of the big query export to delete. Its format is
+   * organizations/{organization}/bigQueryExports/{export_id},
+   * folders/{folder}/bigQueryExports/{export_id}, or
+   * projects/{project}/bigQueryExports/{export_id}
    * </pre>
    *
    * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The bytes for parent.
+   * @return The bytes for name.
    */
-  com.google.protobuf.ByteString getParentBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

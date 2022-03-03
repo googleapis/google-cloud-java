@@ -18,17 +18,17 @@
 
 package com.google.cloud.securitycenter.v1;
 
-public interface ListMuteConfigsRequestOrBuilder
+public interface ListBigQueryExportsRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1.ListMuteConfigsRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1.ListBigQueryExportsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The parent, which owns the collection of mute configs. Its format
-   * is "organizations/[organization_id]", "folders/[folder_id]",
+   * Required. The parent, which owns the collection of BigQuery exports. Its
+   * format is "organizations/[organization_id]", "folders/[folder_id]",
    * "projects/[project_id]".
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface ListMuteConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns the collection of mute configs. Its format
-   * is "organizations/[organization_id]", "folders/[folder_id]",
+   * Required. The parent, which owns the collection of BigQuery exports. Its
+   * format is "organizations/[organization_id]", "folders/[folder_id]",
    * "projects/[project_id]".
    * </pre>
    *
@@ -76,10 +76,10 @@ public interface ListMuteConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * A page token, received from a previous `ListMuteConfigs` call.
+   * A page token, received from a previous `ListBigQueryExports` call.
    * Provide this to retrieve the subsequent page.
-   * When paginating, all other parameters provided to `ListMuteConfigs` must
-   * match the call that provided the page token.
+   * When paginating, all other parameters provided to `ListBigQueryExports`
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -91,10 +91,10 @@ public interface ListMuteConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * A page token, received from a previous `ListMuteConfigs` call.
+   * A page token, received from a previous `ListBigQueryExports` call.
    * Provide this to retrieve the subsequent page.
-   * When paginating, all other parameters provided to `ListMuteConfigs` must
-   * match the call that provided the page token.
+   * When paginating, all other parameters provided to `ListBigQueryExports`
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3;</code>

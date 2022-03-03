@@ -364,6 +364,53 @@ public final class SecurityCenterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.GetBigQueryExportRequest,
+          com.google.cloud.securitycenter.v1.BigQueryExport>
+      getGetBigQueryExportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBigQueryExport",
+      requestType = com.google.cloud.securitycenter.v1.GetBigQueryExportRequest.class,
+      responseType = com.google.cloud.securitycenter.v1.BigQueryExport.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.GetBigQueryExportRequest,
+          com.google.cloud.securitycenter.v1.BigQueryExport>
+      getGetBigQueryExportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.GetBigQueryExportRequest,
+            com.google.cloud.securitycenter.v1.BigQueryExport>
+        getGetBigQueryExportMethod;
+    if ((getGetBigQueryExportMethod = SecurityCenterGrpc.getGetBigQueryExportMethod) == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getGetBigQueryExportMethod = SecurityCenterGrpc.getGetBigQueryExportMethod) == null) {
+          SecurityCenterGrpc.getGetBigQueryExportMethod =
+              getGetBigQueryExportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1.GetBigQueryExportRequest,
+                          com.google.cloud.securitycenter.v1.BigQueryExport>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBigQueryExport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.GetBigQueryExportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.BigQueryExport
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier("GetBigQueryExport"))
+                      .build();
+        }
+      }
+    }
+    return getGetBigQueryExportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
       getGetIamPolicyMethod;
 
@@ -1484,6 +1531,202 @@ public final class SecurityCenterGrpc {
     return getUpdateSecurityMarksMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest,
+          com.google.cloud.securitycenter.v1.BigQueryExport>
+      getCreateBigQueryExportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBigQueryExport",
+      requestType = com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest.class,
+      responseType = com.google.cloud.securitycenter.v1.BigQueryExport.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest,
+          com.google.cloud.securitycenter.v1.BigQueryExport>
+      getCreateBigQueryExportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest,
+            com.google.cloud.securitycenter.v1.BigQueryExport>
+        getCreateBigQueryExportMethod;
+    if ((getCreateBigQueryExportMethod = SecurityCenterGrpc.getCreateBigQueryExportMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getCreateBigQueryExportMethod = SecurityCenterGrpc.getCreateBigQueryExportMethod)
+            == null) {
+          SecurityCenterGrpc.getCreateBigQueryExportMethod =
+              getCreateBigQueryExportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest,
+                          com.google.cloud.securitycenter.v1.BigQueryExport>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateBigQueryExport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.BigQueryExport
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier("CreateBigQueryExport"))
+                      .build();
+        }
+      }
+    }
+    return getCreateBigQueryExportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest, com.google.protobuf.Empty>
+      getDeleteBigQueryExportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBigQueryExport",
+      requestType = com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest, com.google.protobuf.Empty>
+      getDeleteBigQueryExportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest,
+            com.google.protobuf.Empty>
+        getDeleteBigQueryExportMethod;
+    if ((getDeleteBigQueryExportMethod = SecurityCenterGrpc.getDeleteBigQueryExportMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getDeleteBigQueryExportMethod = SecurityCenterGrpc.getDeleteBigQueryExportMethod)
+            == null) {
+          SecurityCenterGrpc.getDeleteBigQueryExportMethod =
+              getDeleteBigQueryExportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteBigQueryExport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier("DeleteBigQueryExport"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBigQueryExportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest,
+          com.google.cloud.securitycenter.v1.BigQueryExport>
+      getUpdateBigQueryExportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBigQueryExport",
+      requestType = com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest.class,
+      responseType = com.google.cloud.securitycenter.v1.BigQueryExport.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest,
+          com.google.cloud.securitycenter.v1.BigQueryExport>
+      getUpdateBigQueryExportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest,
+            com.google.cloud.securitycenter.v1.BigQueryExport>
+        getUpdateBigQueryExportMethod;
+    if ((getUpdateBigQueryExportMethod = SecurityCenterGrpc.getUpdateBigQueryExportMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getUpdateBigQueryExportMethod = SecurityCenterGrpc.getUpdateBigQueryExportMethod)
+            == null) {
+          SecurityCenterGrpc.getUpdateBigQueryExportMethod =
+              getUpdateBigQueryExportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest,
+                          com.google.cloud.securitycenter.v1.BigQueryExport>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateBigQueryExport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.BigQueryExport
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier("UpdateBigQueryExport"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBigQueryExportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest,
+          com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse>
+      getListBigQueryExportsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBigQueryExports",
+      requestType = com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest.class,
+      responseType = com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest,
+          com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse>
+      getListBigQueryExportsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest,
+            com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse>
+        getListBigQueryExportsMethod;
+    if ((getListBigQueryExportsMethod = SecurityCenterGrpc.getListBigQueryExportsMethod) == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getListBigQueryExportsMethod = SecurityCenterGrpc.getListBigQueryExportsMethod)
+            == null) {
+          SecurityCenterGrpc.getListBigQueryExportsMethod =
+              getListBigQueryExportsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest,
+                          com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListBigQueryExports"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier("ListBigQueryExports"))
+                      .build();
+        }
+      }
+    }
+    return getListBigQueryExportsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SecurityCenterStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SecurityCenterStub> factory =
@@ -1635,6 +1878,21 @@ public final class SecurityCenterGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteNotificationConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a big query export.
+     * </pre>
+     */
+    public void getBigQueryExport(
+        com.google.cloud.securitycenter.v1.GetBigQueryExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.BigQueryExport>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBigQueryExportMethod(), responseObserver);
     }
 
     /**
@@ -2001,6 +2259,69 @@ public final class SecurityCenterGrpc {
           getUpdateSecurityMarksMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Creates a big query export.
+     * </pre>
+     */
+    public void createBigQueryExport(
+        com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.BigQueryExport>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateBigQueryExportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing big query export.
+     * </pre>
+     */
+    public void deleteBigQueryExport(
+        com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteBigQueryExportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BigQuery export.
+     * </pre>
+     */
+    public void updateBigQueryExport(
+        com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.BigQueryExport>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBigQueryExportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BigQuery exports. Note that when requesting BigQuery exports at a
+     * given level all exports under that level are also returned e.g. if
+     * requesting BigQuery exports under a folder, then all BigQuery exports
+     * immediately under the folder plus the ones created under the projects
+     * within the folder are returned.
+     * </pre>
+     */
+    public void listBigQueryExports(
+        com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBigQueryExportsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -2048,6 +2369,13 @@ public final class SecurityCenterGrpc {
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_NOTIFICATION_CONFIG)))
+          .addMethod(
+              getGetBigQueryExportMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.securitycenter.v1.GetBigQueryExportRequest,
+                      com.google.cloud.securitycenter.v1.BigQueryExport>(
+                      this, METHODID_GET_BIG_QUERY_EXPORT)))
           .addMethod(
               getGetIamPolicyMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2209,6 +2537,33 @@ public final class SecurityCenterGrpc {
                       com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest,
                       com.google.cloud.securitycenter.v1.SecurityMarks>(
                       this, METHODID_UPDATE_SECURITY_MARKS)))
+          .addMethod(
+              getCreateBigQueryExportMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest,
+                      com.google.cloud.securitycenter.v1.BigQueryExport>(
+                      this, METHODID_CREATE_BIG_QUERY_EXPORT)))
+          .addMethod(
+              getDeleteBigQueryExportMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_BIG_QUERY_EXPORT)))
+          .addMethod(
+              getUpdateBigQueryExportMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest,
+                      com.google.cloud.securitycenter.v1.BigQueryExport>(
+                      this, METHODID_UPDATE_BIG_QUERY_EXPORT)))
+          .addMethod(
+              getListBigQueryExportsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest,
+                      com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse>(
+                      this, METHODID_LIST_BIG_QUERY_EXPORTS)))
           .build();
     }
   }
@@ -2344,6 +2699,23 @@ public final class SecurityCenterGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteNotificationConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a big query export.
+     * </pre>
+     */
+    public void getBigQueryExport(
+        com.google.cloud.securitycenter.v1.GetBigQueryExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.BigQueryExport>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBigQueryExportMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2756,6 +3128,77 @@ public final class SecurityCenterGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a big query export.
+     * </pre>
+     */
+    public void createBigQueryExport(
+        com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.BigQueryExport>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateBigQueryExportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing big query export.
+     * </pre>
+     */
+    public void deleteBigQueryExport(
+        com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteBigQueryExportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BigQuery export.
+     * </pre>
+     */
+    public void updateBigQueryExport(
+        com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.BigQueryExport>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBigQueryExportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BigQuery exports. Note that when requesting BigQuery exports at a
+     * given level all exports under that level are also returned e.g. if
+     * requesting BigQuery exports under a folder, then all BigQuery exports
+     * immediately under the folder plus the ones created under the projects
+     * within the folder are returned.
+     * </pre>
+     */
+    public void listBigQueryExports(
+        com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBigQueryExportsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2869,6 +3312,19 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteNotificationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a big query export.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.BigQueryExport getBigQueryExport(
+        com.google.cloud.securitycenter.v1.GetBigQueryExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBigQueryExportMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3195,6 +3651,62 @@ public final class SecurityCenterGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSecurityMarksMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a big query export.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.BigQueryExport createBigQueryExport(
+        com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBigQueryExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing big query export.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBigQueryExport(
+        com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBigQueryExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BigQuery export.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.BigQueryExport updateBigQueryExport(
+        com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBigQueryExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BigQuery exports. Note that when requesting BigQuery exports at a
+     * given level all exports under that level are also returned e.g. if
+     * requesting BigQuery exports under a folder, then all BigQuery exports
+     * immediately under the folder plus the ones created under the projects
+     * within the folder are returned.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse listBigQueryExports(
+        com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBigQueryExportsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3314,6 +3826,20 @@ public final class SecurityCenterGrpc {
             com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteNotificationConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a big query export.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.BigQueryExport>
+        getBigQueryExport(com.google.cloud.securitycenter.v1.GetBigQueryExportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBigQueryExportMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3668,6 +4194,68 @@ public final class SecurityCenterGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSecurityMarksMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a big query export.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.BigQueryExport>
+        createBigQueryExport(
+            com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateBigQueryExportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing big query export.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteBigQueryExport(
+            com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteBigQueryExportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BigQuery export.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.BigQueryExport>
+        updateBigQueryExport(
+            com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBigQueryExportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BigQuery exports. Note that when requesting BigQuery exports at a
+     * given level all exports under that level are also returned e.g. if
+     * requesting BigQuery exports under a folder, then all BigQuery exports
+     * immediately under the folder plus the ones created under the projects
+     * within the folder are returned.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse>
+        listBigQueryExports(com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBigQueryExportsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_BULK_MUTE_FINDINGS = 0;
@@ -3677,30 +4265,35 @@ public final class SecurityCenterGrpc {
   private static final int METHODID_CREATE_NOTIFICATION_CONFIG = 4;
   private static final int METHODID_DELETE_MUTE_CONFIG = 5;
   private static final int METHODID_DELETE_NOTIFICATION_CONFIG = 6;
-  private static final int METHODID_GET_IAM_POLICY = 7;
-  private static final int METHODID_GET_MUTE_CONFIG = 8;
-  private static final int METHODID_GET_NOTIFICATION_CONFIG = 9;
-  private static final int METHODID_GET_ORGANIZATION_SETTINGS = 10;
-  private static final int METHODID_GET_SOURCE = 11;
-  private static final int METHODID_GROUP_ASSETS = 12;
-  private static final int METHODID_GROUP_FINDINGS = 13;
-  private static final int METHODID_LIST_ASSETS = 14;
-  private static final int METHODID_LIST_FINDINGS = 15;
-  private static final int METHODID_LIST_MUTE_CONFIGS = 16;
-  private static final int METHODID_LIST_NOTIFICATION_CONFIGS = 17;
-  private static final int METHODID_LIST_SOURCES = 18;
-  private static final int METHODID_RUN_ASSET_DISCOVERY = 19;
-  private static final int METHODID_SET_FINDING_STATE = 20;
-  private static final int METHODID_SET_MUTE = 21;
-  private static final int METHODID_SET_IAM_POLICY = 22;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 23;
-  private static final int METHODID_UPDATE_EXTERNAL_SYSTEM = 24;
-  private static final int METHODID_UPDATE_FINDING = 25;
-  private static final int METHODID_UPDATE_MUTE_CONFIG = 26;
-  private static final int METHODID_UPDATE_NOTIFICATION_CONFIG = 27;
-  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 28;
-  private static final int METHODID_UPDATE_SOURCE = 29;
-  private static final int METHODID_UPDATE_SECURITY_MARKS = 30;
+  private static final int METHODID_GET_BIG_QUERY_EXPORT = 7;
+  private static final int METHODID_GET_IAM_POLICY = 8;
+  private static final int METHODID_GET_MUTE_CONFIG = 9;
+  private static final int METHODID_GET_NOTIFICATION_CONFIG = 10;
+  private static final int METHODID_GET_ORGANIZATION_SETTINGS = 11;
+  private static final int METHODID_GET_SOURCE = 12;
+  private static final int METHODID_GROUP_ASSETS = 13;
+  private static final int METHODID_GROUP_FINDINGS = 14;
+  private static final int METHODID_LIST_ASSETS = 15;
+  private static final int METHODID_LIST_FINDINGS = 16;
+  private static final int METHODID_LIST_MUTE_CONFIGS = 17;
+  private static final int METHODID_LIST_NOTIFICATION_CONFIGS = 18;
+  private static final int METHODID_LIST_SOURCES = 19;
+  private static final int METHODID_RUN_ASSET_DISCOVERY = 20;
+  private static final int METHODID_SET_FINDING_STATE = 21;
+  private static final int METHODID_SET_MUTE = 22;
+  private static final int METHODID_SET_IAM_POLICY = 23;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 24;
+  private static final int METHODID_UPDATE_EXTERNAL_SYSTEM = 25;
+  private static final int METHODID_UPDATE_FINDING = 26;
+  private static final int METHODID_UPDATE_MUTE_CONFIG = 27;
+  private static final int METHODID_UPDATE_NOTIFICATION_CONFIG = 28;
+  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 29;
+  private static final int METHODID_UPDATE_SOURCE = 30;
+  private static final int METHODID_UPDATE_SECURITY_MARKS = 31;
+  private static final int METHODID_CREATE_BIG_QUERY_EXPORT = 32;
+  private static final int METHODID_DELETE_BIG_QUERY_EXPORT = 33;
+  private static final int METHODID_UPDATE_BIG_QUERY_EXPORT = 34;
+  private static final int METHODID_LIST_BIG_QUERY_EXPORTS = 35;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3757,6 +4350,12 @@ public final class SecurityCenterGrpc {
           serviceImpl.deleteNotificationConfig(
               (com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_BIG_QUERY_EXPORT:
+          serviceImpl.getBigQueryExport(
+              (com.google.cloud.securitycenter.v1.GetBigQueryExportRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.BigQueryExport>)
+                  responseObserver);
           break;
         case METHODID_GET_IAM_POLICY:
           serviceImpl.getIamPolicy(
@@ -3902,6 +4501,30 @@ public final class SecurityCenterGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.SecurityMarks>)
                   responseObserver);
           break;
+        case METHODID_CREATE_BIG_QUERY_EXPORT:
+          serviceImpl.createBigQueryExport(
+              (com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.BigQueryExport>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_BIG_QUERY_EXPORT:
+          serviceImpl.deleteBigQueryExport(
+              (com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_BIG_QUERY_EXPORT:
+          serviceImpl.updateBigQueryExport(
+              (com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.BigQueryExport>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_BIG_QUERY_EXPORTS:
+          serviceImpl.listBigQueryExports(
+              (com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -3973,6 +4596,7 @@ public final class SecurityCenterGrpc {
                       .addMethod(getCreateNotificationConfigMethod())
                       .addMethod(getDeleteMuteConfigMethod())
                       .addMethod(getDeleteNotificationConfigMethod())
+                      .addMethod(getGetBigQueryExportMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getGetMuteConfigMethod())
                       .addMethod(getGetNotificationConfigMethod())
@@ -3997,6 +4621,10 @@ public final class SecurityCenterGrpc {
                       .addMethod(getUpdateOrganizationSettingsMethod())
                       .addMethod(getUpdateSourceMethod())
                       .addMethod(getUpdateSecurityMarksMethod())
+                      .addMethod(getCreateBigQueryExportMethod())
+                      .addMethod(getDeleteBigQueryExportMethod())
+                      .addMethod(getUpdateBigQueryExportMethod())
+                      .addMethod(getListBigQueryExportsMethod())
                       .build();
         }
       }

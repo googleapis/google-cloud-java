@@ -22,29 +22,29 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Request message for running asset discovery for an organization.
+ * Request message for retrieving a big query export.
  * </pre>
  *
- * Protobuf type {@code google.cloud.securitycenter.v1.RunAssetDiscoveryRequest}
+ * Protobuf type {@code google.cloud.securitycenter.v1.GetBigQueryExportRequest}
  */
-public final class RunAssetDiscoveryRequest extends com.google.protobuf.GeneratedMessageV3
+public final class GetBigQueryExportRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.RunAssetDiscoveryRequest)
-    RunAssetDiscoveryRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.GetBigQueryExportRequest)
+    GetBigQueryExportRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use RunAssetDiscoveryRequest.newBuilder() to construct.
-  private RunAssetDiscoveryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetBigQueryExportRequest.newBuilder() to construct.
+  private GetBigQueryExportRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private RunAssetDiscoveryRequest() {
-    parent_ = "";
+  private GetBigQueryExportRequest() {
+    name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new RunAssetDiscoveryRequest();
+    return new GetBigQueryExportRequest();
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
     return this.unknownFields;
   }
 
-  private RunAssetDiscoveryRequest(
+  private GetBigQueryExportRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -74,7 +74,7 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              parent_ = s;
+              name_ = s;
               break;
             }
           default:
@@ -98,44 +98,46 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
-        .internal_static_google_cloud_securitycenter_v1_RunAssetDiscoveryRequest_descriptor;
+        .internal_static_google_cloud_securitycenter_v1_GetBigQueryExportRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.securitycenter.v1.SecuritycenterService
-        .internal_static_google_cloud_securitycenter_v1_RunAssetDiscoveryRequest_fieldAccessorTable
+        .internal_static_google_cloud_securitycenter_v1_GetBigQueryExportRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest.class,
-            com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest.Builder.class);
+            com.google.cloud.securitycenter.v1.GetBigQueryExportRequest.class,
+            com.google.cloud.securitycenter.v1.GetBigQueryExportRequest.Builder.class);
   }
 
-  public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
    *
    *
    * <pre>
-   * Required. Name of the organization to run asset discovery for. Its format
-   * is "organizations/[organization_id]".
+   * Required. Name of the big query export to retrieve. Its format is
+   * organizations/{organization}/bigQueryExports/{export_id},
+   * folders/{folder}/bigQueryExports/{export_id}, or
+   * projects/{project}/bigQueryExports/{export_id}
    * </pre>
    *
    * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The parent.
+   * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getParent() {
-    java.lang.Object ref = parent_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      parent_ = s;
+      name_ = s;
       return s;
     }
   }
@@ -143,23 +145,25 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Name of the organization to run asset discovery for. Its format
-   * is "organizations/[organization_id]".
+   * Required. Name of the big query export to retrieve. Its format is
+   * organizations/{organization}/bigQueryExports/{export_id},
+   * folders/{folder}/bigQueryExports/{export_id}, or
+   * projects/{project}/bigQueryExports/{export_id}
    * </pre>
    *
    * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The bytes for parent.
+   * @return The bytes for name.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getParentBytes() {
-    java.lang.Object ref = parent_;
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      parent_ = b;
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -180,8 +184,8 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -192,8 +196,8 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -205,13 +209,13 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest)) {
+    if (!(obj instanceof com.google.cloud.securitycenter.v1.GetBigQueryExportRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest other =
-        (com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest) obj;
+    com.google.cloud.securitycenter.v1.GetBigQueryExportRequest other =
+        (com.google.cloud.securitycenter.v1.GetBigQueryExportRequest) obj;
 
-    if (!getParent().equals(other.getParent())) return false;
+    if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -223,78 +227,78 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PARENT_FIELD_NUMBER;
-    hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parseFrom(byte[] data)
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parseDelimitedFrom(
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parseDelimitedFrom(
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parseFrom(
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -312,7 +316,7 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
   }
 
   public static Builder newBuilder(
-      com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest prototype) {
+      com.google.cloud.securitycenter.v1.GetBigQueryExportRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -330,31 +334,31 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for running asset discovery for an organization.
+   * Request message for retrieving a big query export.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.securitycenter.v1.RunAssetDiscoveryRequest}
+   * Protobuf type {@code google.cloud.securitycenter.v1.GetBigQueryExportRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.RunAssetDiscoveryRequest)
-      com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.GetBigQueryExportRequest)
+      com.google.cloud.securitycenter.v1.GetBigQueryExportRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_RunAssetDiscoveryRequest_descriptor;
+          .internal_static_google_cloud_securitycenter_v1_GetBigQueryExportRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_RunAssetDiscoveryRequest_fieldAccessorTable
+          .internal_static_google_cloud_securitycenter_v1_GetBigQueryExportRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest.class,
-              com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest.Builder.class);
+              com.google.cloud.securitycenter.v1.GetBigQueryExportRequest.class,
+              com.google.cloud.securitycenter.v1.GetBigQueryExportRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest.newBuilder()
+    // Construct using com.google.cloud.securitycenter.v1.GetBigQueryExportRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -371,7 +375,7 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      parent_ = "";
+      name_ = "";
 
       return this;
     }
@@ -379,17 +383,17 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.securitycenter.v1.SecuritycenterService
-          .internal_static_google_cloud_securitycenter_v1_RunAssetDiscoveryRequest_descriptor;
+          .internal_static_google_cloud_securitycenter_v1_GetBigQueryExportRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest getDefaultInstanceForType() {
-      return com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest.getDefaultInstance();
+    public com.google.cloud.securitycenter.v1.GetBigQueryExportRequest getDefaultInstanceForType() {
+      return com.google.cloud.securitycenter.v1.GetBigQueryExportRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest build() {
-      com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest result = buildPartial();
+    public com.google.cloud.securitycenter.v1.GetBigQueryExportRequest build() {
+      com.google.cloud.securitycenter.v1.GetBigQueryExportRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -397,10 +401,10 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest buildPartial() {
-      com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest result =
-          new com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest(this);
-      result.parent_ = parent_;
+    public com.google.cloud.securitycenter.v1.GetBigQueryExportRequest buildPartial() {
+      com.google.cloud.securitycenter.v1.GetBigQueryExportRequest result =
+          new com.google.cloud.securitycenter.v1.GetBigQueryExportRequest(this);
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -440,19 +444,19 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest) {
-        return mergeFrom((com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest) other);
+      if (other instanceof com.google.cloud.securitycenter.v1.GetBigQueryExportRequest) {
+        return mergeFrom((com.google.cloud.securitycenter.v1.GetBigQueryExportRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest other) {
-      if (other == com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.securitycenter.v1.GetBigQueryExportRequest other) {
+      if (other == com.google.cloud.securitycenter.v1.GetBigQueryExportRequest.getDefaultInstance())
         return this;
-      if (!other.getParent().isEmpty()) {
-        parent_ = other.parent_;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -470,12 +474,12 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest parsedMessage = null;
+      com.google.cloud.securitycenter.v1.GetBigQueryExportRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest) e.getUnfinishedMessage();
+            (com.google.cloud.securitycenter.v1.GetBigQueryExportRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -485,27 +489,29 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
       return this;
     }
 
-    private java.lang.Object parent_ = "";
+    private java.lang.Object name_ = "";
     /**
      *
      *
      * <pre>
-     * Required. Name of the organization to run asset discovery for. Its format
-     * is "organizations/[organization_id]".
+     * Required. Name of the big query export to retrieve. Its format is
+     * organizations/{organization}/bigQueryExports/{export_id},
+     * folders/{folder}/bigQueryExports/{export_id}, or
+     * projects/{project}/bigQueryExports/{export_id}
      * </pre>
      *
      * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @return The parent.
+     * @return The name.
      */
-    public java.lang.String getParent() {
-      java.lang.Object ref = parent_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        parent_ = s;
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -515,22 +521,24 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Name of the organization to run asset discovery for. Its format
-     * is "organizations/[organization_id]".
+     * Required. Name of the big query export to retrieve. Its format is
+     * organizations/{organization}/bigQueryExports/{export_id},
+     * folders/{folder}/bigQueryExports/{export_id}, or
+     * projects/{project}/bigQueryExports/{export_id}
      * </pre>
      *
      * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @return The bytes for parent.
+     * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString getParentBytes() {
-      java.lang.Object ref = parent_;
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        parent_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -540,23 +548,25 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Name of the organization to run asset discovery for. Its format
-     * is "organizations/[organization_id]".
+     * Required. Name of the big query export to retrieve. Its format is
+     * organizations/{organization}/bigQueryExports/{export_id},
+     * folders/{folder}/bigQueryExports/{export_id}, or
+     * projects/{project}/bigQueryExports/{export_id}
      * </pre>
      *
      * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @param value The parent to set.
+     * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setParent(java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      parent_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
@@ -564,19 +574,21 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Name of the organization to run asset discovery for. Its format
-     * is "organizations/[organization_id]".
+     * Required. Name of the big query export to retrieve. Its format is
+     * organizations/{organization}/bigQueryExports/{export_id},
+     * folders/{folder}/bigQueryExports/{export_id}, or
+     * projects/{project}/bigQueryExports/{export_id}
      * </pre>
      *
      * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearParent() {
+    public Builder clearName() {
 
-      parent_ = getDefaultInstance().getParent();
+      name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
@@ -584,24 +596,26 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Name of the organization to run asset discovery for. Its format
-     * is "organizations/[organization_id]".
+     * Required. Name of the big query export to retrieve. Its format is
+     * organizations/{organization}/bigQueryExports/{export_id},
+     * folders/{folder}/bigQueryExports/{export_id}, or
+     * projects/{project}/bigQueryExports/{export_id}
      * </pre>
      *
      * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @param value The bytes for parent to set.
+     * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setParentBytes(com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      parent_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
@@ -617,42 +631,42 @@ public final class RunAssetDiscoveryRequest extends com.google.protobuf.Generate
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.RunAssetDiscoveryRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.GetBigQueryExportRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.RunAssetDiscoveryRequest)
-  private static final com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.GetBigQueryExportRequest)
+  private static final com.google.cloud.securitycenter.v1.GetBigQueryExportRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.GetBigQueryExportRequest();
   }
 
-  public static com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest getDefaultInstance() {
+  public static com.google.cloud.securitycenter.v1.GetBigQueryExportRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RunAssetDiscoveryRequest> PARSER =
-      new com.google.protobuf.AbstractParser<RunAssetDiscoveryRequest>() {
+  private static final com.google.protobuf.Parser<GetBigQueryExportRequest> PARSER =
+      new com.google.protobuf.AbstractParser<GetBigQueryExportRequest>() {
         @java.lang.Override
-        public RunAssetDiscoveryRequest parsePartialFrom(
+        public GetBigQueryExportRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RunAssetDiscoveryRequest(input, extensionRegistry);
+          return new GetBigQueryExportRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<RunAssetDiscoveryRequest> parser() {
+  public static com.google.protobuf.Parser<GetBigQueryExportRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<RunAssetDiscoveryRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetBigQueryExportRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest getDefaultInstanceForType() {
+  public com.google.cloud.securitycenter.v1.GetBigQueryExportRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }
