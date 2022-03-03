@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.7.0](https://github.com/googleapis/java-datacatalog/compare/v1.6.3...v1.7.0) (2022-03-03)
+
+
+### Features
+
+* Add methods and messages related to starring feature feat: Add methods and messages related to business context feature docs: Updates copyright message ([#746](https://github.com/googleapis/java-datacatalog/issues/746)) ([2d04a1e](https://github.com/googleapis/java-datacatalog/commit/2d04a1e991f3cca06c55727f760f5ee05047b391))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#750](https://github.com/googleapis/java-datacatalog/issues/750)) ([fd801af](https://github.com/googleapis/java-datacatalog/commit/fd801af42ba9f81dadb438f4a32888745ff84b29))
+* update actions/setup-java action to v3 ([#755](https://github.com/googleapis/java-datacatalog/issues/755)) ([fc98e72](https://github.com/googleapis/java-datacatalog/commit/fc98e72ada8976fb4abc47d72334b24ef97680fa))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#760](https://github.com/googleapis/java-datacatalog/issues/760)) ([ba0a479](https://github.com/googleapis/java-datacatalog/commit/ba0a4793990edf75fbe8f71f3dc347f5202ea41b))
+* update dependency com.google.protobuf:protobuf-java-util to v3.19.4 ([#737](https://github.com/googleapis/java-datacatalog/issues/737)) ([aff8fd4](https://github.com/googleapis/java-datacatalog/commit/aff8fd4114d96ccb8b83f23ec145921f13927a25))
+
 ### [1.6.3](https://github.com/googleapis/java-datacatalog/compare/v1.6.2...v1.6.3) (2022-02-03)
 
 
