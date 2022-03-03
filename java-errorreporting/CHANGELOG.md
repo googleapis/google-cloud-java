@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.122.18](https://github.com/googleapis/java-errorreporting/compare/v0.122.17...v0.122.18) (2022-03-03)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#810](https://github.com/googleapis/java-errorreporting/issues/810)) ([d9dfc32](https://github.com/googleapis/java-errorreporting/commit/d9dfc3291d0f18f5894eb39000434442293e9c8b))
+
 ### [0.122.17](https://github.com/googleapis/java-errorreporting/compare/v0.122.16...v0.122.17) (2022-03-03)
 
 
