@@ -84,14 +84,8 @@ public final class VersionProto {
           + "proto\022\035google.cloud.dialogflow.cx.v3\032\034go"
           + "ogle/api/annotations.proto\032\027google/api/c"
           + "lient.proto\032\037google/api/field_behavior.p"
-          + "roto\032\031google/api/resource.proto\032/google/"
-          + "cloud/dialogflow/cx/v3/entity_type.proto"
-          + "\032(google/cloud/dialogflow/cx/v3/flow.pro"
-          + "to\032*google/cloud/dialogflow/cx/v3/intent"
-          + ".proto\032(google/cloud/dialogflow/cx/v3/pa"
-          + "ge.proto\032:google/cloud/dialogflow/cx/v3/"
-          + "transition_route_group.proto\032+google/clo"
-          + "ud/dialogflow/cx/v3/webhook.proto\032#googl"
+          + "roto\032\031google/api/resource.proto\032(google/"
+          + "cloud/dialogflow/cx/v3/flow.proto\032#googl"
           + "e/longrunning/operations.proto\032\033google/p"
           + "rotobuf/empty.proto\032 google/protobuf/fie"
           + "ld_mask.proto\032\037google/protobuf/timestamp"
@@ -193,12 +187,7 @@ public final class VersionProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.cloud.dialogflow.cx.v3.EntityTypeProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3.FlowProto.getDescriptor(),
-              com.google.cloud.dialogflow.cx.v3.IntentProto.getDescriptor(),
-              com.google.cloud.dialogflow.cx.v3.PageProto.getDescriptor(),
-              com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupProto.getDescriptor(),
-              com.google.cloud.dialogflow.cx.v3.WebhookProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -308,12 +297,7 @@ public final class VersionProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.cloud.dialogflow.cx.v3.EntityTypeProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3.FlowProto.getDescriptor();
-    com.google.cloud.dialogflow.cx.v3.IntentProto.getDescriptor();
-    com.google.cloud.dialogflow.cx.v3.PageProto.getDescriptor();
-    com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupProto.getDescriptor();
-    com.google.cloud.dialogflow.cx.v3.WebhookProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

@@ -56,43 +56,42 @@ public final class ChangelogProto {
           + "g.proto\022\035google.cloud.dialogflow.cx.v3\032\034"
           + "google/api/annotations.proto\032\027google/api"
           + "/client.proto\032\037google/api/field_behavior"
-          + ".proto\032\031google/api/resource.proto\032\034googl"
-          + "e/protobuf/struct.proto\032\037google/protobuf"
-          + "/timestamp.proto\"\213\001\n\025ListChangelogsReque"
-          + "st\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#dialogflow.g"
-          + "oogleapis.com/Changelog\022\016\n\006filter\030\002 \001(\t\022"
-          + "\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"o"
-          + "\n\026ListChangelogsResponse\022<\n\nchangelogs\030\001"
-          + " \003(\0132(.google.cloud.dialogflow.cx.v3.Cha"
-          + "ngelog\022\027\n\017next_page_token\030\002 \001(\t\"P\n\023GetCh"
-          + "angelogRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#di"
-          + "alogflow.googleapis.com/Changelog\"\235\002\n\tCh"
-          + "angelog\022\014\n\004name\030\001 \001(\t\022\022\n\nuser_email\030\002 \001("
-          + "\t\022\024\n\014display_name\030\007 \001(\t\022\016\n\006action\030\013 \001(\t\022"
-          + "\014\n\004type\030\010 \001(\t\022\020\n\010resource\030\003 \001(\t\022/\n\013creat"
-          + "e_time\030\004 \001(\0132\032.google.protobuf.Timestamp"
-          + ":w\352At\n#dialogflow.googleapis.com/Changel"
-          + "og\022Mprojects/{project}/locations/{locati"
-          + "on}/agents/{agent}/changelogs/{changelog"
-          + "}2\207\004\n\nChangelogs\022\307\001\n\016ListChangelogs\0224.go"
-          + "ogle.cloud.dialogflow.cx.v3.ListChangelo"
-          + "gsRequest\0325.google.cloud.dialogflow.cx.v"
-          + "3.ListChangelogsResponse\"H\202\323\344\223\0029\0227/v3/{p"
-          + "arent=projects/*/locations/*/agents/*}/c"
-          + "hangelogs\332A\006parent\022\264\001\n\014GetChangelog\0222.go"
-          + "ogle.cloud.dialogflow.cx.v3.GetChangelog"
-          + "Request\032(.google.cloud.dialogflow.cx.v3."
-          + "Changelog\"F\202\323\344\223\0029\0227/v3/{name=projects/*/"
-          + "locations/*/agents/*/changelogs/*}\332A\004nam"
-          + "e\032x\312A\031dialogflow.googleapis.com\322AYhttps:"
-          + "//www.googleapis.com/auth/cloud-platform"
-          + ",https://www.googleapis.com/auth/dialogf"
-          + "lowB\302\001\n!com.google.cloud.dialogflow.cx.v"
-          + "3B\016ChangelogProtoP\001Z?google.golang.org/g"
-          + "enproto/googleapis/cloud/dialogflow/cx/v"
-          + "3;cx\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow.C"
-          + "x.V3\352\002!Google::Cloud::Dialogflow::CX::V3"
-          + "b\006proto3"
+          + ".proto\032\031google/api/resource.proto\032\037googl"
+          + "e/protobuf/timestamp.proto\"\213\001\n\025ListChang"
+          + "elogsRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#di"
+          + "alogflow.googleapis.com/Changelog\022\016\n\006fil"
+          + "ter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_tok"
+          + "en\030\004 \001(\t\"o\n\026ListChangelogsResponse\022<\n\nch"
+          + "angelogs\030\001 \003(\0132(.google.cloud.dialogflow"
+          + ".cx.v3.Changelog\022\027\n\017next_page_token\030\002 \001("
+          + "\t\"P\n\023GetChangelogRequest\0229\n\004name\030\001 \001(\tB+"
+          + "\340A\002\372A%\n#dialogflow.googleapis.com/Change"
+          + "log\"\235\002\n\tChangelog\022\014\n\004name\030\001 \001(\t\022\022\n\nuser_"
+          + "email\030\002 \001(\t\022\024\n\014display_name\030\007 \001(\t\022\016\n\006act"
+          + "ion\030\013 \001(\t\022\014\n\004type\030\010 \001(\t\022\020\n\010resource\030\003 \001("
+          + "\t\022/\n\013create_time\030\004 \001(\0132\032.google.protobuf"
+          + ".Timestamp:w\352At\n#dialogflow.googleapis.c"
+          + "om/Changelog\022Mprojects/{project}/locatio"
+          + "ns/{location}/agents/{agent}/changelogs/"
+          + "{changelog}2\207\004\n\nChangelogs\022\307\001\n\016ListChang"
+          + "elogs\0224.google.cloud.dialogflow.cx.v3.Li"
+          + "stChangelogsRequest\0325.google.cloud.dialo"
+          + "gflow.cx.v3.ListChangelogsResponse\"H\202\323\344\223"
+          + "\0029\0227/v3/{parent=projects/*/locations/*/a"
+          + "gents/*}/changelogs\332A\006parent\022\264\001\n\014GetChan"
+          + "gelog\0222.google.cloud.dialogflow.cx.v3.Ge"
+          + "tChangelogRequest\032(.google.cloud.dialogf"
+          + "low.cx.v3.Changelog\"F\202\323\344\223\0029\0227/v3/{name=p"
+          + "rojects/*/locations/*/agents/*/changelog"
+          + "s/*}\332A\004name\032x\312A\031dialogflow.googleapis.co"
+          + "m\322AYhttps://www.googleapis.com/auth/clou"
+          + "d-platform,https://www.googleapis.com/au"
+          + "th/dialogflowB\302\001\n!com.google.cloud.dialo"
+          + "gflow.cx.v3B\016ChangelogProtoP\001Z?google.go"
+          + "lang.org/genproto/googleapis/cloud/dialo"
+          + "gflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Google.Cloud.Di"
+          + "alogflow.Cx.V3\352\002!Google::Cloud::Dialogfl"
+          + "ow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -102,7 +101,6 @@ public final class ChangelogProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_cx_v3_ListChangelogsRequest_descriptor =
@@ -152,7 +150,6 @@ public final class ChangelogProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

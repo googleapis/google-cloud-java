@@ -46,39 +46,33 @@ public final class ValidationMessageProto {
     java.lang.String[] descriptorData = {
       "\n6google/cloud/dialogflow/cx/v3/validati"
           + "on_message.proto\022\035google.cloud.dialogflo"
-          + "w.cx.v3\032\034google/api/annotations.proto\032\034g"
-          + "oogle/protobuf/struct.proto\"\370\004\n\021Validati"
-          + "onMessage\022T\n\rresource_type\030\001 \001(\0162=.googl"
-          + "e.cloud.dialogflow.cx.v3.ValidationMessa"
-          + "ge.ResourceType\022\025\n\tresources\030\002 \003(\tB\002\030\001\022C"
-          + "\n\016resource_names\030\006 \003(\0132+.google.cloud.di"
-          + "alogflow.cx.v3.ResourceName\022K\n\010severity\030"
-          + "\003 \001(\01629.google.cloud.dialogflow.cx.v3.Va"
-          + "lidationMessage.Severity\022\016\n\006detail\030\004 \001(\t"
-          + "\"\213\002\n\014ResourceType\022\035\n\031RESOURCE_TYPE_UNSPE"
-          + "CIFIED\020\000\022\t\n\005AGENT\020\001\022\n\n\006INTENT\020\002\022\032\n\026INTEN"
-          + "T_TRAINING_PHRASE\020\010\022\024\n\020INTENT_PARAMETER\020"
-          + "\t\022\013\n\007INTENTS\020\n\022\033\n\027INTENT_TRAINING_PHRASE"
-          + "S\020\013\022\017\n\013ENTITY_TYPE\020\003\022\020\n\014ENTITY_TYPES\020\014\022\013"
-          + "\n\007WEBHOOK\020\004\022\010\n\004FLOW\020\005\022\010\n\004PAGE\020\006\022\t\n\005PAGES"
-          + "\020\r\022\032\n\026TRANSITION_ROUTE_GROUP\020\007\"F\n\010Severi"
-          + "ty\022\030\n\024SEVERITY_UNSPECIFIED\020\000\022\010\n\004INFO\020\001\022\013"
-          + "\n\007WARNING\020\002\022\t\n\005ERROR\020\003\"2\n\014ResourceName\022\014"
-          + "\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\tB\312\001\n!c"
-          + "om.google.cloud.dialogflow.cx.v3B\026Valida"
-          + "tionMessageProtoP\001Z?google.golang.org/ge"
-          + "nproto/googleapis/cloud/dialogflow/cx/v3"
-          + ";cx\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx"
-          + ".V3\352\002!Google::Cloud::Dialogflow::CX::V3b"
-          + "\006proto3"
+          + "w.cx.v3\"\370\004\n\021ValidationMessage\022T\n\rresourc"
+          + "e_type\030\001 \001(\0162=.google.cloud.dialogflow.c"
+          + "x.v3.ValidationMessage.ResourceType\022\025\n\tr"
+          + "esources\030\002 \003(\tB\002\030\001\022C\n\016resource_names\030\006 \003"
+          + "(\0132+.google.cloud.dialogflow.cx.v3.Resou"
+          + "rceName\022K\n\010severity\030\003 \001(\01629.google.cloud"
+          + ".dialogflow.cx.v3.ValidationMessage.Seve"
+          + "rity\022\016\n\006detail\030\004 \001(\t\"\213\002\n\014ResourceType\022\035\n"
+          + "\031RESOURCE_TYPE_UNSPECIFIED\020\000\022\t\n\005AGENT\020\001\022"
+          + "\n\n\006INTENT\020\002\022\032\n\026INTENT_TRAINING_PHRASE\020\010\022"
+          + "\024\n\020INTENT_PARAMETER\020\t\022\013\n\007INTENTS\020\n\022\033\n\027IN"
+          + "TENT_TRAINING_PHRASES\020\013\022\017\n\013ENTITY_TYPE\020\003"
+          + "\022\020\n\014ENTITY_TYPES\020\014\022\013\n\007WEBHOOK\020\004\022\010\n\004FLOW\020"
+          + "\005\022\010\n\004PAGE\020\006\022\t\n\005PAGES\020\r\022\032\n\026TRANSITION_ROU"
+          + "TE_GROUP\020\007\"F\n\010Severity\022\030\n\024SEVERITY_UNSPE"
+          + "CIFIED\020\000\022\010\n\004INFO\020\001\022\013\n\007WARNING\020\002\022\t\n\005ERROR"
+          + "\020\003\"2\n\014ResourceName\022\014\n\004name\030\001 \001(\t\022\024\n\014disp"
+          + "lay_name\030\002 \001(\tB\312\001\n!com.google.cloud.dial"
+          + "ogflow.cx.v3B\026ValidationMessageProtoP\001Z?"
+          + "google.golang.org/genproto/googleapis/cl"
+          + "oud/dialogflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Google"
+          + ".Cloud.Dialogflow.Cx.V3\352\002!Google::Cloud:"
+          + ":Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-              com.google.protobuf.StructProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_dialogflow_cx_v3_ValidationMessage_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_dialogflow_cx_v3_ValidationMessage_fieldAccessorTable =
@@ -95,8 +89,6 @@ public final class ValidationMessageProto {
             new java.lang.String[] {
               "Name", "DisplayName",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
-    com.google.protobuf.StructProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
