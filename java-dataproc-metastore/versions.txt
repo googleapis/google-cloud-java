@@ -1,10 +1,10 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-dataproc-metastore:2.1.8:2.1.9-SNAPSHOT
-grpc-google-cloud-dataproc-metastore-v1beta:0.5.8:0.5.9-SNAPSHOT
-grpc-google-cloud-dataproc-metastore-v1alpha:0.5.8:0.5.9-SNAPSHOT
-grpc-google-cloud-dataproc-metastore-v1:2.1.8:2.1.9-SNAPSHOT
-proto-google-cloud-dataproc-metastore-v1beta:0.5.8:0.5.9-SNAPSHOT
-proto-google-cloud-dataproc-metastore-v1alpha:0.5.8:0.5.9-SNAPSHOT
-proto-google-cloud-dataproc-metastore-v1:2.1.8:2.1.9-SNAPSHOT
+google-cloud-dataproc-metastore:2.1.9:2.1.9
+grpc-google-cloud-dataproc-metastore-v1beta:0.5.9:0.5.9
+grpc-google-cloud-dataproc-metastore-v1alpha:0.5.9:0.5.9
+grpc-google-cloud-dataproc-metastore-v1:2.1.9:2.1.9
+proto-google-cloud-dataproc-metastore-v1beta:0.5.9:0.5.9
+proto-google-cloud-dataproc-metastore-v1alpha:0.5.9:0.5.9
+proto-google-cloud-dataproc-metastore-v1:2.1.9:2.1.9
