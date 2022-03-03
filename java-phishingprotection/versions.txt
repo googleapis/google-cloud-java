@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-phishingprotection:0.32.9:0.32.9
-grpc-google-cloud-phishingprotection-v1beta1:0.32.9:0.32.9
-proto-google-cloud-phishingprotection-v1beta1:0.32.9:0.32.9
+google-cloud-phishingprotection:0.32.9:0.32.10-SNAPSHOT
+grpc-google-cloud-phishingprotection-v1beta1:0.32.9:0.32.10-SNAPSHOT
+proto-google-cloud-phishingprotection-v1beta1:0.32.9:0.32.10-SNAPSHOT
