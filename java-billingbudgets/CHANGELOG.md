@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.1.7](https://github.com/googleapis/java-billingbudgets/compare/v2.1.6...v2.1.7) (2022-03-03)
+
+
+### Documentation
+
+* Formatting change from HTML to markdown; Additional clarifications ([#666](https://github.com/googleapis/java-billingbudgets/issues/666)) ([008f532](https://github.com/googleapis/java-billingbudgets/commit/008f5321d26aba1ae5a01ef3dfe5ef4051f9e2d0))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#668](https://github.com/googleapis/java-billingbudgets/issues/668)) ([39c71c9](https://github.com/googleapis/java-billingbudgets/commit/39c71c9bd5c8e80e8a3830c1de06ce6050cca79c))
+* update actions/setup-java action to v3 ([#675](https://github.com/googleapis/java-billingbudgets/issues/675)) ([f31d95a](https://github.com/googleapis/java-billingbudgets/commit/f31d95a56b460b1f9f712b1d6a8c41429133db68))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#680](https://github.com/googleapis/java-billingbudgets/issues/680)) ([5e3b0da](https://github.com/googleapis/java-billingbudgets/commit/5e3b0da56f0f20256c4c756f65925b67fee11715))
+
 ### [2.1.6](https://github.com/googleapis/java-billingbudgets/compare/v2.1.5...v2.1.6) (2022-02-03)
 
 
