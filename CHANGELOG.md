@@ -1,5 +1,17 @@
 # Changelog
 
+### [3.7.1](https://github.com/googleapis/java-logging/compare/v3.7.0...v3.7.1) (2022-03-03)
+
+
+### Bug Fixes
+
+* do not use GAE_RUNTIME for GAE environment detection ([#891](https://github.com/googleapis/java-logging/issues/891)) ([19e9abb](https://github.com/googleapis/java-logging/commit/19e9abb389ed98cdcca7ef0dfa5b07e69568f6f9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#889](https://github.com/googleapis/java-logging/issues/889)) ([4885440](https://github.com/googleapis/java-logging/commit/48854405838151a4179f6d1727fc925b06d1727d))
+
 ## [3.7.0](https://github.com/googleapis/java-logging/compare/v3.6.4...v3.7.0) (2022-02-28)
 
 
