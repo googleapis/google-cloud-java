@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.7.0](https://github.com/googleapis/java-aiplatform/compare/v2.6.0...v2.7.0) (2022-03-03)
+
+
+### Features
+
+* add TPU_V2 & TPU_V3 values to AcceleratorType in aiplatform v1/v1beta1 accelerator_type.proto ([#796](https://github.com/googleapis/java-aiplatform/issues/796)) ([019a774](https://github.com/googleapis/java-aiplatform/commit/019a7748d194aa6ccadd18492bb38c1ed35a6362))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#791](https://github.com/googleapis/java-aiplatform/issues/791)) ([fec15cf](https://github.com/googleapis/java-aiplatform/commit/fec15cfe528a5ae2efd2523201558a18f24be4e5))
+* update actions/setup-java action to v3 ([#798](https://github.com/googleapis/java-aiplatform/issues/798)) ([d27b5da](https://github.com/googleapis/java-aiplatform/commit/d27b5da83263e4f708c10ba5dd208b0ed5c17494))
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.12.0 ([#782](https://github.com/googleapis/java-aiplatform/issues/782)) ([a32771e](https://github.com/googleapis/java-aiplatform/commit/a32771ef61ae4bf654e90243e342e96a82297b50))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#804](https://github.com/googleapis/java-aiplatform/issues/804)) ([92a51e5](https://github.com/googleapis/java-aiplatform/commit/92a51e59a1b678dc4f14e607fbf0e40dd4b423a8))
+* update dependency com.google.cloud:google-cloud-storage to v2.4.0 ([#783](https://github.com/googleapis/java-aiplatform/issues/783)) ([c91ab37](https://github.com/googleapis/java-aiplatform/commit/c91ab3765d49637635f174a87e41ff2bfb41bc73))
+* update dependency com.google.cloud:google-cloud-storage to v2.4.4 ([#801](https://github.com/googleapis/java-aiplatform/issues/801)) ([1f98d03](https://github.com/googleapis/java-aiplatform/commit/1f98d03485c9b007faa6a5e106631c11239f8b82))
+* update dependency com.google.code.gson:gson to v2.9.0 ([#792](https://github.com/googleapis/java-aiplatform/issues/792)) ([46b6e19](https://github.com/googleapis/java-aiplatform/commit/46b6e1931125aaaca7c7449b41467db5eef9d9d9))
+
 ## [2.6.0](https://github.com/googleapis/java-aiplatform/compare/v2.5.3...v2.6.0) (2022-02-03)
 
 
