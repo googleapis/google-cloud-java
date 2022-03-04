@@ -1,5 +1,23 @@
 # Changelog
 
+### [2.10.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.10.0...v2.10.1) (2022-03-03)
+
+
+### Bug Fixes
+
+* change customer StorageException from RuntimeException to StatusRuntimeException ([#1559](https://github.com/googleapis/java-bigquerystorage/issues/1559)) ([523377e](https://github.com/googleapis/java-bigquerystorage/commit/523377e0bbfbae33165258b8eeed812c81cfeb82))
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#1554](https://github.com/googleapis/java-bigquerystorage/issues/1554)) ([1371ac9](https://github.com/googleapis/java-bigquerystorage/commit/1371ac91bad55711b66e08ddeed6302598329a46))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#1555](https://github.com/googleapis/java-bigquerystorage/issues/1555)) ([cc25162](https://github.com/googleapis/java-bigquerystorage/commit/cc25162021a2b05e68fd3dd1f98e252a10626f6b))
+
+
+### Documentation
+
+* improve documentation for write client ([#1560](https://github.com/googleapis/java-bigquerystorage/issues/1560)) ([fbb5321](https://github.com/googleapis/java-bigquerystorage/commit/fbb5321bd35bdd7ba81bcb95278d6cdd9abd3dee))
+
 ## [2.10.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.9.1...v2.10.0) (2022-02-28)
 
 
