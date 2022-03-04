@@ -45,6 +45,8 @@ public class AdminIT {
   private static final String pushSubscriptionId = "iam-push-subscription-" + _suffix;
   private static final String orderedSubscriptionId = "iam-ordered-subscription-" + _suffix;
   private static final String filteredSubscriptionId = "iam-filtered-subscription-" + _suffix;
+  private static final String exactlyOnceSubscriptionId =
+      "iam-exactly-once-subscription-" + _suffix;
   private static final String pushEndpoint = "https://my-test-project.appspot.com/push";
 
   private static final TopicName topicName = TopicName.of(projectId, topicId);
@@ -56,6 +58,8 @@ public class AdminIT {
       SubscriptionName.of(projectId, orderedSubscriptionId);
   private static final SubscriptionName filteredSubscriptionName =
       SubscriptionName.of(projectId, filteredSubscriptionId);
+  private static final SubscriptionName exactlyOnceSubscriptionName =
+      SubscriptionName.of(projectId, exactlyOnceSubscriptionId);
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -86,6 +90,7 @@ public class AdminIT {
         subscriptionAdminClient.deleteSubscription(pushSubscriptionName);
         subscriptionAdminClient.deleteSubscription(orderedSubscriptionName);
         subscriptionAdminClient.deleteSubscription(filteredSubscriptionName);
+        subscriptionAdminClient.deleteSubscription(exactlyOnceSubscriptionName);
       } catch (NotFoundException ignored) {
         // ignore this as resources may not have been created
       }
@@ -196,10 +201,19 @@ public class AdminIT {
         .contains("google.pubsub.v1.Subscription.filter=attributes.author=\"unknown\"");
 
     bout.reset();
-    // Test delete subscription. Run twice to delete both pull and push subscriptions.
+    // Test create a subscription with exactly once delivery enabled
+    CreateSubscriptionWithExactlyOnceDelivery.createSubscriptionWithExactlyOnceDeliveryExample(
+        projectId, topicId, exactlyOnceSubscriptionId);
+    assertThat(bout.toString())
+        .contains("Created a subscription with exactly once delivery enabled:");
+    assertThat(bout.toString()).contains("enable_exactly_once_delivery=true");
+
+    bout.reset();
+    // Test delete subscription.
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, pullSubscriptionId);
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, pushSubscriptionId);
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, orderedSubscriptionId);
+    DeleteSubscriptionExample.deleteSubscriptionExample(projectId, exactlyOnceSubscriptionId);
     assertThat(bout.toString()).contains("Deleted subscription.");
 
     bout.reset();
