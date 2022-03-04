@@ -28,19 +28,8 @@ import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.Executor;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+import java.util.*;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
@@ -57,8 +46,8 @@ import org.threeten.bp.temporal.ChronoUnit;
  */
 class MessageDispatcher {
   private static final Logger logger = Logger.getLogger(MessageDispatcher.class.getName());
-  private static final double PERCENTILE_FOR_ACK_DEADLINE_UPDATES = 99.9;
 
+  @InternalApi static final double PERCENTILE_FOR_ACK_DEADLINE_UPDATES = 99.9;
   @InternalApi static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
 
   private final Executor executor;
@@ -68,24 +57,31 @@ class MessageDispatcher {
 
   private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
-  private final int maxSecondsPerAckExtension;
-  private final MessageReceiver receiver;
+  private int minDurationPerAckExtensionSeconds;
+  private final boolean minDurationPerAckExtensionDefaultUsed;
+  private final int maxDurationPerAckExtensionSeconds;
+  private final boolean maxDurationPerAckExtensionDefaultUsed;
+
+  // Only one of receiver or receiverWithAckResponse will be set
+  private MessageReceiver receiver;
+  private MessageReceiverWithAckResponse receiverWithAckResponse;
+
   private final AckProcessor ackProcessor;
 
   private final FlowController flowController;
+
+  private AtomicBoolean enableExactlyOnceDelivery;
+
   private final Waiter messagesWaiter;
 
   // Maps ID to "total expiration time". If it takes longer than this, stop extending.
   private final ConcurrentMap<String, AckHandler> pendingMessages = new ConcurrentHashMap<>();
 
-  private final LinkedBlockingQueue<String> pendingAcks = new LinkedBlockingQueue<>();
-  private final LinkedBlockingQueue<String> pendingNacks = new LinkedBlockingQueue<>();
-  private final LinkedBlockingQueue<String> pendingReceipts = new LinkedBlockingQueue<>();
+  private final LinkedBlockingQueue<AckRequestData> pendingAcks = new LinkedBlockingQueue<>();
+  private final LinkedBlockingQueue<AckRequestData> pendingNacks = new LinkedBlockingQueue<>();
+  private final LinkedBlockingQueue<AckRequestData> pendingReceipts = new LinkedBlockingQueue<>();
 
-  // Start the deadline at the minimum ack deadline so messages which arrive before this is
-  // updated will not have a long ack deadline.
-  private final AtomicInteger messageDeadlineSeconds =
-      new AtomicInteger(Subscriber.MIN_ACK_DEADLINE_SECONDS);
+  private final AtomicInteger messageDeadlineSeconds = new AtomicInteger();
   private final AtomicBoolean extendDeadline = new AtomicBoolean(true);
   private final Lock jobLock;
   private ScheduledFuture<?> backgroundJob;
@@ -93,28 +89,6 @@ class MessageDispatcher {
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
-
-  /** Stores the data needed to asynchronously modify acknowledgement deadlines. */
-  static class PendingModifyAckDeadline {
-    final List<String> ackIds;
-    final int deadlineExtensionSeconds;
-
-    PendingModifyAckDeadline(int deadlineExtensionSeconds, String... ackIds) {
-      this(deadlineExtensionSeconds, Arrays.asList(ackIds));
-    }
-
-    private PendingModifyAckDeadline(int deadlineExtensionSeconds, Collection<String> ackIds) {
-      this.ackIds = new ArrayList<String>(ackIds);
-      this.deadlineExtensionSeconds = deadlineExtensionSeconds;
-    }
-
-    @Override
-    public String toString() {
-      return String.format(
-          "PendingModifyAckDeadline{extension: %d sec, ackIds: %s}",
-          deadlineExtensionSeconds, ackIds);
-    }
-  }
 
   /** Internal representation of a reply to a Pubsub message, to be sent back to the service. */
   public enum AckReply {
@@ -124,21 +98,30 @@ class MessageDispatcher {
 
   /** Handles callbacks for acking/nacking messages from the {@link MessageReceiver}. */
   private class AckHandler implements ApiFutureCallback<AckReply> {
-    private final String ackId;
+    private final AckRequestData ackRequestData;
     private final int outstandingBytes;
     private final long receivedTimeMillis;
     private final Instant totalExpiration;
 
-    private AckHandler(String ackId, int outstandingBytes, Instant totalExpiration) {
-      this.ackId = ackId;
+    private AckHandler(
+        AckRequestData ackRequestData, int outstandingBytes, Instant totalExpiration) {
+      this.ackRequestData = ackRequestData;
       this.outstandingBytes = outstandingBytes;
       this.receivedTimeMillis = clock.millisTime();
       this.totalExpiration = totalExpiration;
     }
 
+    public AckRequestData getAckRequestData() {
+      return ackRequestData;
+    }
+
+    public SettableApiFuture<AckResponse> getMessageFutureIfExists() {
+      return this.ackRequestData.getMessageFutureIfExists();
+    }
+
     /** Stop extending deadlines for this message and free flow control. */
     private void forget() {
-      if (pendingMessages.remove(ackId) == null) {
+      if (pendingMessages.remove(this.ackRequestData.getAckId()) == null) {
         /*
          * We're forgetting the message for the second time. Probably because we ran out of total
          * expiration, forget the message, then the user finishes working on the message, and forget
@@ -154,64 +137,77 @@ class MessageDispatcher {
     public void onFailure(Throwable t) {
       logger.log(
           Level.WARNING,
-          "MessageReceiver failed to process ack ID: " + ackId + ", the message will be nacked.",
+          "MessageReceiver failed to process ack ID: "
+              + this.ackRequestData.getAckId()
+              + ", the message will be nacked.",
           t);
-      pendingNacks.add(ackId);
+      this.ackRequestData.setResponse(AckResponse.OTHER, false);
+      pendingNacks.add(this.ackRequestData);
       forget();
     }
 
     @Override
     public void onSuccess(AckReply reply) {
-      LinkedBlockingQueue<String> destination;
       switch (reply) {
         case ACK:
-          destination = pendingAcks;
+          pendingAcks.add(this.ackRequestData);
           // Record the latency rounded to the next closest integer.
           ackLatencyDistribution.record(
               Ints.saturatedCast(
                   (long) Math.ceil((clock.millisTime() - receivedTimeMillis) / 1000D)));
           break;
         case NACK:
-          destination = pendingNacks;
+          pendingNacks.add(this.ackRequestData);
           break;
         default:
           throw new IllegalArgumentException(String.format("AckReply: %s not supported", reply));
       }
-      destination.add(ackId);
       forget();
     }
   }
 
   interface AckProcessor {
-    void sendAckOperations(
-        List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions);
+    public void sendAckOperations(List<AckRequestData> ackRequestDataList);
+
+    public void sendModackOperations(List<ModackRequestData> modackRequestDataList);
   }
 
-  MessageDispatcher(
-      MessageReceiver receiver,
-      AckProcessor ackProcessor,
-      Duration ackExpirationPadding,
-      Duration maxAckExtensionPeriod,
-      Duration maxDurationPerAckExtension,
-      Distribution ackLatencyDistribution,
-      FlowController flowController,
-      Executor executor,
-      ScheduledExecutorService systemExecutor,
-      ApiClock clock) {
-    this.executor = executor;
-    this.systemExecutor = systemExecutor;
-    this.ackExpirationPadding = ackExpirationPadding;
-    this.maxAckExtensionPeriod = maxAckExtensionPeriod;
-    this.maxSecondsPerAckExtension = Math.toIntExact(maxDurationPerAckExtension.getSeconds());
-    this.receiver = receiver;
-    this.ackProcessor = ackProcessor;
-    this.flowController = flowController;
-    // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
-    this.ackLatencyDistribution = ackLatencyDistribution;
+  private MessageDispatcher(Builder builder) {
+    executor = builder.executor;
+    systemExecutor = builder.systemExecutor;
+    ackExpirationPadding = builder.ackExpirationPadding;
+    maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
+
+    minDurationPerAckExtensionSeconds =
+        Math.toIntExact(builder.minDurationPerAckExtension.getSeconds());
+    minDurationPerAckExtensionDefaultUsed = builder.minDurationPerAckExtensionDefaultUsed;
+    maxDurationPerAckExtensionSeconds =
+        Math.toIntExact(builder.maxDurationPerAckExtension.getSeconds());
+    maxDurationPerAckExtensionDefaultUsed = builder.maxDurationPerAckExtensionDefaultUsed;
+
+    // Start the deadline at the minimum ack deadline so messages which arrive before this is
+    // updated will not have a long ack deadline.
+    if (minDurationPerAckExtensionDefaultUsed) {
+      messageDeadlineSeconds.set(Math.toIntExact(Subscriber.MIN_STREAM_ACK_DEADLINE.getSeconds()));
+    } else {
+      messageDeadlineSeconds.set(minDurationPerAckExtensionSeconds);
+    }
+
+    receiver = builder.receiver;
+    receiverWithAckResponse = builder.receiverWithAckResponse;
+
+    ackProcessor = builder.ackProcessor;
+    flowController = builder.flowController;
+    enableExactlyOnceDelivery = new AtomicBoolean(builder.enableExactlyOnceDelivery);
+    ackLatencyDistribution = builder.ackLatencyDistribution;
+    clock = builder.clock;
     jobLock = new ReentrantLock();
     messagesWaiter = new Waiter();
-    this.clock = clock;
-    this.sequentialExecutor = new SequentialExecutorService.AutoExecutor(executor);
+    sequentialExecutor = new SequentialExecutorService.AutoExecutor(builder.executor);
+  }
+
+  private boolean shouldSetMessageFuture() {
+    return receiverWithAckResponse != null;
   }
 
   void start() {
@@ -256,7 +252,7 @@ class MessageDispatcher {
                               newDeadlineSec - ackExpirationPadding.getSeconds(),
                               TimeUnit.SECONDS);
                     }
-                    processOutstandingAckOperations();
+                    processOutstandingOperations();
                   } catch (Throwable t) {
                     // Catch everything so that one run failing doesn't prevent subsequent runs.
                     logger.log(Level.WARNING, "failed to run periodic job", t);
@@ -286,7 +282,7 @@ class MessageDispatcher {
     } finally {
       jobLock.unlock();
     }
-    processOutstandingAckOperations();
+    processOutstandingOperations();
   }
 
   @InternalApi
@@ -297,6 +293,43 @@ class MessageDispatcher {
   @InternalApi
   int getMessageDeadlineSeconds() {
     return messageDeadlineSeconds.get();
+  }
+
+  @InternalApi
+  void setEnableExactlyOnceDelivery(boolean enableExactlyOnceDelivery) {
+    // Sanity check that we are changing the enableExactlyOnceDelivery state
+    if (enableExactlyOnceDelivery == this.enableExactlyOnceDelivery.get()) {
+      return;
+    }
+
+    this.enableExactlyOnceDelivery.set(enableExactlyOnceDelivery);
+
+    // If a custom value for minDurationPerAckExtension, we should respect that
+    if (!minDurationPerAckExtensionDefaultUsed) {
+      return;
+    }
+
+    // We just need to update the minDurationPerAckExtensionSeconds as the
+    // maxDurationPerAckExtensionSeconds does not change
+    int possibleNewMinAckDeadlineExtensionSeconds;
+
+    if (enableExactlyOnceDelivery) {
+      possibleNewMinAckDeadlineExtensionSeconds =
+          Math.toIntExact(
+              Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION_EXACTLY_ONCE_DELIVERY.getSeconds());
+    } else {
+      possibleNewMinAckDeadlineExtensionSeconds =
+          Math.toIntExact(Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION.getSeconds());
+    }
+
+    // If we are not using the default maxDurationAckExtension, check if the
+    // minAckDeadlineExtensionExactlyOnce needs to be bounded by the set max
+    if (!maxDurationPerAckExtensionDefaultUsed
+        && (possibleNewMinAckDeadlineExtensionSeconds > maxDurationPerAckExtensionSeconds)) {
+      minDurationPerAckExtensionSeconds = maxDurationPerAckExtensionSeconds;
+    } else {
+      minDurationPerAckExtensionSeconds = possibleNewMinAckDeadlineExtensionSeconds;
+    }
   }
 
   private static class OutstandingMessage {
@@ -313,9 +346,13 @@ class MessageDispatcher {
     Instant totalExpiration = now().plus(maxAckExtensionPeriod);
     List<OutstandingMessage> outstandingBatch = new ArrayList<>(messages.size());
     for (ReceivedMessage message : messages) {
+      AckRequestData.Builder builder = AckRequestData.newBuilder(message.getAckId());
+      if (shouldSetMessageFuture()) {
+        builder.setMessageFuture(SettableApiFuture.create());
+      }
+      AckRequestData ackRequestData = builder.build();
       AckHandler ackHandler =
-          new AckHandler(
-              message.getAckId(), message.getMessage().getSerializedSize(), totalExpiration);
+          new AckHandler(ackRequestData, message.getMessage().getSerializedSize(), totalExpiration);
       if (pendingMessages.putIfAbsent(message.getAckId(), ackHandler) != null) {
         // putIfAbsent puts ackHandler if ackID isn't previously mapped, then return the
         // previously-mapped element.
@@ -328,7 +365,7 @@ class MessageDispatcher {
         continue;
       }
       outstandingBatch.add(new OutstandingMessage(message, ackHandler));
-      pendingReceipts.add(message.getAckId());
+      pendingReceipts.add(ackRequestData);
     }
 
     processBatch(outstandingBatch);
@@ -363,20 +400,11 @@ class MessageDispatcher {
   }
 
   private void processOutstandingMessage(final PubsubMessage message, final AckHandler ackHandler) {
-    final SettableApiFuture<AckReply> response = SettableApiFuture.create();
-    final AckReplyConsumer consumer =
-        new AckReplyConsumer() {
-          @Override
-          public void ack() {
-            response.set(AckReply.ACK);
-          }
+    // This future is for internal bookkeeping to be sent to the StreamingSubscriberConnection
+    // use below in the consumers
+    SettableApiFuture<AckReply> ackReplySettableApiFuture = SettableApiFuture.create();
+    ApiFutures.addCallback(ackReplySettableApiFuture, ackHandler, MoreExecutors.directExecutor());
 
-          @Override
-          public void nack() {
-            response.set(AckReply.NACK);
-          }
-        };
-    ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
     Runnable deliverMessageTask =
         new Runnable() {
           @Override
@@ -392,10 +420,42 @@ class MessageDispatcher {
                 ackHandler.forget();
                 return;
               }
+              if (shouldSetMessageFuture()) {
+                // This is the message future that is propagated to the user
+                SettableApiFuture<AckResponse> messageFuture =
+                    ackHandler.getMessageFutureIfExists();
+                final AckReplyConsumerWithResponse ackReplyConsumerWithResponse =
+                    new AckReplyConsumerWithResponse() {
+                      @Override
+                      public Future<AckResponse> ack() {
+                        ackReplySettableApiFuture.set(AckReply.ACK);
+                        return messageFuture;
+                      }
 
-              receiver.receiveMessage(message, consumer);
+                      @Override
+                      public Future<AckResponse> nack() {
+                        ackReplySettableApiFuture.set(AckReply.NACK);
+                        return messageFuture;
+                      }
+                    };
+                receiverWithAckResponse.receiveMessage(message, ackReplyConsumerWithResponse);
+              } else {
+                final AckReplyConsumer ackReplyConsumer =
+                    new AckReplyConsumer() {
+                      @Override
+                      public void ack() {
+                        ackReplySettableApiFuture.set(AckReply.ACK);
+                      }
+
+                      @Override
+                      public void nack() {
+                        ackReplySettableApiFuture.set(AckReply.NACK);
+                      }
+                    };
+                receiver.receiveMessage(message, ackReplyConsumer);
+              }
             } catch (Exception e) {
-              response.setException(e);
+              ackReplySettableApiFuture.setException(e);
             }
           }
         };
@@ -409,26 +469,32 @@ class MessageDispatcher {
   /** Compute the ideal deadline, set subsequent modacks to this deadline, and return it. */
   @InternalApi
   int computeDeadlineSeconds() {
-    int sec = ackLatencyDistribution.getPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
+    int deadlineSeconds = ackLatencyDistribution.getPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
 
-    if ((maxSecondsPerAckExtension > 0) && (sec > maxSecondsPerAckExtension)) {
-      sec = maxSecondsPerAckExtension;
+    // Bound deadlineSeconds by extensions
+    if (!maxDurationPerAckExtensionDefaultUsed
+        && (deadlineSeconds > maxDurationPerAckExtensionSeconds)) {
+      deadlineSeconds = maxDurationPerAckExtensionSeconds;
+    } else if (deadlineSeconds < minDurationPerAckExtensionSeconds) {
+      deadlineSeconds = minDurationPerAckExtensionSeconds;
     }
 
-    // Use Ints.constrainToRange when we get guava 21.
-    if (sec < Subscriber.MIN_ACK_DEADLINE_SECONDS) {
-      sec = Subscriber.MIN_ACK_DEADLINE_SECONDS;
-    } else if (sec > Subscriber.MAX_ACK_DEADLINE_SECONDS) {
-      sec = Subscriber.MAX_ACK_DEADLINE_SECONDS;
+    // Bound deadlineSeconds by hard limits in subscriber
+    if (deadlineSeconds < Subscriber.MIN_STREAM_ACK_DEADLINE.getSeconds()) {
+      deadlineSeconds = Math.toIntExact(Subscriber.MIN_STREAM_ACK_DEADLINE.getSeconds());
+    } else if (deadlineSeconds > Subscriber.MAX_STREAM_ACK_DEADLINE.getSeconds()) {
+      deadlineSeconds = Math.toIntExact(Subscriber.MAX_STREAM_ACK_DEADLINE.getSeconds());
     }
-    return sec;
+
+    return deadlineSeconds;
   }
 
   @InternalApi
   void extendDeadlines() {
     int extendSeconds = getMessageDeadlineSeconds();
-    List<PendingModifyAckDeadline> modacks = new ArrayList<>();
-    PendingModifyAckDeadline modack = new PendingModifyAckDeadline(extendSeconds);
+    int numAckIdToSend = 0;
+    Map<Integer, ModackRequestData> deadlineExtensionModacks =
+        new HashMap<Integer, ModackRequestData>();
     Instant now = now();
     Instant extendTo = now.plusSeconds(extendSeconds);
 
@@ -436,7 +502,12 @@ class MessageDispatcher {
       String ackId = entry.getKey();
       Instant totalExpiration = entry.getValue().totalExpiration;
       if (totalExpiration.isAfter(extendTo)) {
-        modack.ackIds.add(ackId);
+        ModackRequestData modackRequestData =
+            deadlineExtensionModacks.computeIfAbsent(
+                extendSeconds,
+                deadlineExtensionSeconds -> new ModackRequestData(deadlineExtensionSeconds));
+        modackRequestData.addAckRequestData(entry.getValue().getAckRequestData());
+        numAckIdToSend++;
         continue;
       }
 
@@ -445,43 +516,161 @@ class MessageDispatcher {
       entry.getValue().forget();
       if (totalExpiration.isAfter(now)) {
         int sec = Math.max(1, (int) now.until(totalExpiration, ChronoUnit.SECONDS));
-        modacks.add(new PendingModifyAckDeadline(sec, ackId));
+        ModackRequestData modackRequestData =
+            deadlineExtensionModacks.computeIfAbsent(
+                sec, extensionSeconds -> new ModackRequestData(extensionSeconds));
+        modackRequestData.addAckRequestData(entry.getValue().getAckRequestData());
+        numAckIdToSend++;
       }
     }
-    logger.log(Level.FINER, "Sending {0} modacks", modack.ackIds.size() + modacks.size());
-    modacks.add(modack);
 
-    List<String> acksToSend = Collections.emptyList();
-    ackProcessor.sendAckOperations(acksToSend, modacks);
+    if (numAckIdToSend > 0) {
+      logger.log(Level.FINER, "Sending {0} modacks", numAckIdToSend);
+      ackProcessor.sendModackOperations(
+          new ArrayList<ModackRequestData>(deadlineExtensionModacks.values()));
+    }
   }
 
   @InternalApi
-  void processOutstandingAckOperations() {
-    List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
+  void processOutstandingOperations() {
+    List<ModackRequestData> modackRequestData = new ArrayList<ModackRequestData>();
 
-    List<String> acksToSend = new ArrayList<>();
-    pendingAcks.drainTo(acksToSend);
-    logger.log(Level.FINER, "Sending {0} acks", acksToSend.size());
+    // Nacks are modacks with an expiration of 0
+    List<AckRequestData> nackRequestDataList = new ArrayList<AckRequestData>();
+    pendingNacks.drainTo(nackRequestDataList);
 
-    PendingModifyAckDeadline nacksToSend = new PendingModifyAckDeadline(0);
-    pendingNacks.drainTo(nacksToSend.ackIds);
-    logger.log(Level.FINER, "Sending {0} nacks", nacksToSend.ackIds.size());
-    if (!nacksToSend.ackIds.isEmpty()) {
-      modifyAckDeadlinesToSend.add(nacksToSend);
+    if (!nackRequestDataList.isEmpty()) {
+      modackRequestData.add(new ModackRequestData(0, nackRequestDataList));
     }
+    logger.log(Level.FINER, "Sending {0} nacks", nackRequestDataList.size());
 
-    PendingModifyAckDeadline receiptsToSend =
-        new PendingModifyAckDeadline(getMessageDeadlineSeconds());
-    pendingReceipts.drainTo(receiptsToSend.ackIds);
-    logger.log(Level.FINER, "Sending {0} receipts", receiptsToSend.ackIds.size());
-    if (!receiptsToSend.ackIds.isEmpty()) {
-      modifyAckDeadlinesToSend.add(receiptsToSend);
+    List<AckRequestData> ackRequestDataReceipts = new ArrayList<AckRequestData>();
+    pendingReceipts.drainTo(ackRequestDataReceipts);
+    if (!ackRequestDataReceipts.isEmpty()) {
+      modackRequestData.add(
+          new ModackRequestData(this.getMessageDeadlineSeconds(), ackRequestDataReceipts));
     }
+    logger.log(Level.FINER, "Sending {0} receipts", ackRequestDataReceipts.size());
 
-    ackProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
+    ackProcessor.sendModackOperations(modackRequestData);
+
+    List<AckRequestData> ackRequestDataList = new ArrayList<AckRequestData>();
+    pendingAcks.drainTo(ackRequestDataList);
+    logger.log(Level.FINER, "Sending {0} acks", ackRequestDataList.size());
+
+    ackProcessor.sendAckOperations(ackRequestDataList);
   }
 
   private Instant now() {
     return Instant.ofEpochMilli(clock.millisTime());
+  }
+
+  /** Builder of {@link MessageDispatcher MessageDispatchers}. */
+  public static final class Builder {
+    private MessageReceiver receiver;
+    private MessageReceiverWithAckResponse receiverWithAckResponse;
+
+    private AckProcessor ackProcessor;
+    private Duration ackExpirationPadding;
+    private Duration maxAckExtensionPeriod;
+    private Duration minDurationPerAckExtension;
+    private boolean minDurationPerAckExtensionDefaultUsed;
+    private Duration maxDurationPerAckExtension;
+    private boolean maxDurationPerAckExtensionDefaultUsed;
+
+    private Distribution ackLatencyDistribution;
+    private FlowController flowController;
+    private boolean enableExactlyOnceDelivery;
+
+    private Executor executor;
+    private ScheduledExecutorService systemExecutor;
+    private ApiClock clock;
+
+    protected Builder(MessageReceiver receiver) {
+      this.receiver = receiver;
+    }
+
+    protected Builder(MessageReceiverWithAckResponse receiverWithAckResponse) {
+      this.receiverWithAckResponse = receiverWithAckResponse;
+    }
+
+    public Builder setAckProcessor(AckProcessor ackProcessor) {
+      this.ackProcessor = ackProcessor;
+      return this;
+    }
+
+    public Builder setAckExpirationPadding(Duration ackExpirationPadding) {
+      this.ackExpirationPadding = ackExpirationPadding;
+      return this;
+    }
+
+    public Builder setMaxAckExtensionPeriod(Duration maxAckExtensionPeriod) {
+      this.maxAckExtensionPeriod = maxAckExtensionPeriod;
+      return this;
+    }
+
+    public Builder setMinDurationPerAckExtension(Duration minDurationPerAckExtension) {
+      this.minDurationPerAckExtension = minDurationPerAckExtension;
+      return this;
+    }
+
+    public Builder setMinDurationPerAckExtensionDefaultUsed(
+        boolean minDurationPerAckExtensionDefaultUsed) {
+      this.minDurationPerAckExtensionDefaultUsed = minDurationPerAckExtensionDefaultUsed;
+      return this;
+    }
+
+    public Builder setMaxDurationPerAckExtension(Duration maxDurationPerAckExtension) {
+      this.maxDurationPerAckExtension = maxDurationPerAckExtension;
+      return this;
+    }
+
+    public Builder setMaxDurationPerAckExtensionDefaultUsed(
+        boolean maxDurationPerAckExtensionDefaultUsed) {
+      this.maxDurationPerAckExtensionDefaultUsed = maxDurationPerAckExtensionDefaultUsed;
+      return this;
+    }
+
+    public Builder setAckLatencyDistribution(Distribution ackLatencyDistribution) {
+      this.ackLatencyDistribution = ackLatencyDistribution;
+      return this;
+    }
+
+    public Builder setFlowController(FlowController flowController) {
+      this.flowController = flowController;
+      return this;
+    }
+
+    public Builder setEnableExactlyOnceDelivery(boolean enableExactlyOnceDelivery) {
+      this.enableExactlyOnceDelivery = enableExactlyOnceDelivery;
+      return this;
+    }
+
+    public Builder setExecutor(Executor executor) {
+      this.executor = executor;
+      return this;
+    }
+
+    public Builder setSystemExecutor(ScheduledExecutorService systemExecutor) {
+      this.systemExecutor = systemExecutor;
+      return this;
+    }
+
+    public Builder setApiClock(ApiClock clock) {
+      this.clock = clock;
+      return this;
+    }
+
+    public MessageDispatcher build() {
+      return new MessageDispatcher(this);
+    }
+  }
+
+  public static Builder newBuilder(MessageReceiver receiver) {
+    return new Builder(receiver);
+  }
+
+  public static Builder newBuilder(MessageReceiverWithAckResponse receiverWithAckResponse) {
+    return new Builder(receiverWithAckResponse);
   }
 }

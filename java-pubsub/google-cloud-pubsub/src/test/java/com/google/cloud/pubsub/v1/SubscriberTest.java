@@ -16,12 +16,7 @@
 
 package com.google.cloud.pubsub.v1;
 
-import static com.google.cloud.pubsub.v1.StreamingSubscriberConnection.DEFAULT_STREAM_ACK_DEADLINE;
-import static com.google.cloud.pubsub.v1.StreamingSubscriberConnection.MAX_STREAM_ACK_DEADLINE;
-import static com.google.cloud.pubsub.v1.StreamingSubscriberConnection.MIN_STREAM_ACK_DEADLINE;
-import static com.google.cloud.pubsub.v1.Subscriber.DEFAULT_MAX_DURATION_PER_ACK_EXTENSION;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.ExecutorProvider;
@@ -30,9 +25,7 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.FixedTransportChannelProvider;
-import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.*;
 import com.google.cloud.pubsub.v1.Subscriber.Builder;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PubsubMessage;
@@ -42,9 +35,7 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -62,6 +53,8 @@ public class SubscriberTest {
   private FakeScheduledExecutorService fakeExecutor;
   private FakeSubscriberServiceImpl fakeSubscriberServiceImpl;
   private Server testServer;
+  private LinkedBlockingQueue<AckReplyConsumerWithResponse> consumersWithResponse;
+  private MessageReceiverWithAckResponse messageReceiverWithAckResponse;
 
   private final MessageReceiver testReceiver =
       new MessageReceiver() {
@@ -75,6 +68,7 @@ public class SubscriberTest {
 
   @Before
   public void setUp() throws Exception {
+    consumersWithResponse = new LinkedBlockingQueue<>();
     InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName(testName.getMethodName());
     fakeSubscriberServiceImpl = new FakeSubscriberServiceImpl();
     fakeExecutor = new FakeScheduledExecutorService();
@@ -82,6 +76,16 @@ public class SubscriberTest {
     serverBuilder.addService(fakeSubscriberServiceImpl);
     testServer = serverBuilder.build();
     testServer.start();
+
+    messageReceiverWithAckResponse =
+        new MessageReceiverWithAckResponse() {
+          @Override
+          public void receiveMessage(
+              final PubsubMessage message,
+              final AckReplyConsumerWithResponse consumerWithResponse) {
+            consumersWithResponse.add(consumerWithResponse);
+          }
+        };
   }
 
   @After
@@ -241,7 +245,7 @@ public class SubscriberTest {
     assertEquals(
         expectedChannelCount, fakeSubscriberServiceImpl.waitForOpenedStreams(expectedChannelCount));
     assertEquals(
-        MIN_STREAM_ACK_DEADLINE.getSeconds(),
+        Math.toIntExact(Subscriber.MIN_STREAM_ACK_DEADLINE.getSeconds()),
         fakeSubscriberServiceImpl.getLastSeenRequest().getStreamAckDeadlineSeconds());
 
     subscriber.stopAsync().awaitTerminated();
@@ -255,7 +259,7 @@ public class SubscriberTest {
     assertEquals(
         expectedChannelCount, fakeSubscriberServiceImpl.waitForOpenedStreams(expectedChannelCount));
     assertEquals(
-        MAX_STREAM_ACK_DEADLINE.getSeconds(),
+        Math.toIntExact(Subscriber.MAX_STREAM_ACK_DEADLINE.getSeconds()),
         fakeSubscriberServiceImpl.getLastSeenRequest().getStreamAckDeadlineSeconds());
 
     subscriber.stopAsync().awaitTerminated();
@@ -275,17 +279,23 @@ public class SubscriberTest {
     subscriber.stopAsync().awaitTerminated();
 
     // maxDurationPerAckExtension is unset.
-    maxDurationPerAckExtension = (int) DEFAULT_MAX_DURATION_PER_ACK_EXTENSION.getSeconds();
-    subscriber =
-        startSubscriber(
-            getTestSubscriberBuilder(testReceiver)
-                .setMaxDurationPerAckExtension(Duration.ofSeconds(maxDurationPerAckExtension)));
+    subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
     assertEquals(
         expectedChannelCount, fakeSubscriberServiceImpl.waitForOpenedStreams(expectedChannelCount));
     assertEquals(
-        DEFAULT_STREAM_ACK_DEADLINE.getSeconds(),
+        Math.toIntExact(Subscriber.STREAM_ACK_DEADLINE_DEFAULT.getSeconds()),
         fakeSubscriberServiceImpl.getLastSeenRequest().getStreamAckDeadlineSeconds());
 
+    subscriber.stopAsync().awaitTerminated();
+
+    // maxDurationPerAckExtension is unset with exactly once enabled
+    subscriber =
+        startSubscriber(getTestSubscriberBuilder(testReceiver).setExactlyOnceDeliveryEnabled(true));
+    assertEquals(
+        expectedChannelCount, fakeSubscriberServiceImpl.waitForOpenedStreams(expectedChannelCount));
+    assertEquals(
+        Math.toIntExact(Subscriber.STREAM_ACK_DEADLINE_EXACTLY_ONCE_DELIVERY_DEFAULT.getSeconds()),
+        fakeSubscriberServiceImpl.getLastSeenRequest().getStreamAckDeadlineSeconds());
     subscriber.stopAsync().awaitTerminated();
   }
 
@@ -325,8 +335,8 @@ public class SubscriberTest {
     return subscriber;
   }
 
-  private Builder getTestSubscriberBuilder(MessageReceiver receiver) {
-    return Subscriber.newBuilder(TEST_SUBSCRIPTION, receiver)
+  private Builder getTestSubscriberBuilder(MessageReceiver messageReceiver) {
+    return Subscriber.newBuilder(TEST_SUBSCRIPTION, messageReceiver)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setSystemExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setChannelProvider(
@@ -334,7 +344,21 @@ public class SubscriberTest {
         .setCredentialsProvider(NoCredentialsProvider.create())
         .setClock(fakeExecutor.getClock())
         .setParallelPullCount(1)
-        .setMaxDurationPerAckExtension(Duration.ofSeconds(5))
+        .setFlowControlSettings(
+            FlowControlSettings.newBuilder().setMaxOutstandingElementCount(1000L).build());
+  }
+
+  private Builder getTestSubscriberBuilder(
+      MessageReceiverWithAckResponse messageReceiverWithAckResponse) {
+    return Subscriber.newBuilder(TEST_SUBSCRIPTION, messageReceiverWithAckResponse)
+        .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
+        .setSystemExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
+        .setChannelProvider(
+            FixedTransportChannelProvider.create(GrpcTransportChannel.create(testChannel)))
+        .setCredentialsProvider(NoCredentialsProvider.create())
+        .setClock(fakeExecutor.getClock())
+        .setParallelPullCount(1)
+        .setExactlyOnceDeliveryEnabled(true)
         .setFlowControlSettings(
             FlowControlSettings.newBuilder().setMaxOutstandingElementCount(1000L).build());
   }

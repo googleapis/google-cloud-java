@@ -17,23 +17,17 @@
 package com.google.cloud.pubsub.v1;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
-import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
-import com.google.auto.value.AutoValue;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.*;
+import java.util.concurrent.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.threeten.bp.Duration;
@@ -41,50 +35,51 @@ import org.threeten.bp.Duration;
 public class MessageDispatcherTest {
   private static final ByteString MESSAGE_DATA = ByteString.copyFromUtf8("message-data");
   private static final int DELIVERY_INFO_COUNT = 3;
+  private static final String ACK_ID = "ACK-ID";
   private static final ReceivedMessage TEST_MESSAGE =
       ReceivedMessage.newBuilder()
-          .setAckId("ackid")
+          .setAckId(ACK_ID)
           .setMessage(PubsubMessage.newBuilder().setData(MESSAGE_DATA).build())
           .setDeliveryAttempt(DELIVERY_INFO_COUNT)
           .build();
-  private static final Runnable NOOP_RUNNABLE =
-      new Runnable() {
-        @Override
-        public void run() {
-          // No-op; don't do anything.
-        }
-      };
   private static final int MAX_SECONDS_PER_ACK_EXTENSION = 60;
+  private static final int MIN_ACK_DEADLINE_SECONDS = 10;
+  private static final Duration MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
+  private static final Duration ACK_EXPIRATION_PADDING_DEFAULT =
+      Subscriber.ACK_EXPIRATION_PADDING_DEFAULT;
 
-  private MessageDispatcher dispatcher;
-  private LinkedBlockingQueue<AckReplyConsumer> consumers;
-  private List<String> sentAcks;
-  private List<ModAckItem> sentModAcks;
+  private Distribution mockAckLatencyDistribution;
+
+  private MessageDispatcher.AckProcessor mockAckProcessor;
   private FakeClock clock;
-  private FlowController flowController;
   private boolean messageContainsDeliveryAttempt;
 
-  @AutoValue
-  abstract static class ModAckItem {
-    abstract String ackId();
+  private FakeScheduledExecutorService systemExecutor;
 
-    abstract int seconds();
+  private static MessageReceiver messageReceiver;
+  private static MessageReceiverWithAckResponse messageReceiverWithAckResponse;
 
-    static ModAckItem of(String ackId, int seconds) {
-      return new AutoValue_MessageDispatcherTest_ModAckItem(ackId, seconds);
-    }
-  }
+  private LinkedBlockingQueue<AckReplyConsumer> consumers;
+  private LinkedBlockingQueue<AckReplyConsumerWithResponse> consumersWithResponse;
 
   @Before
   public void setUp() {
-    consumers = new LinkedBlockingQueue<>();
-    sentAcks = new ArrayList<>();
-    sentModAcks = new ArrayList<>();
+    systemExecutor = new FakeScheduledExecutorService();
+    clock = new FakeClock();
+    mockAckLatencyDistribution = mock(Distribution.class);
 
-    MessageReceiver receiver =
+    mockAckProcessor = mock(MessageDispatcher.AckProcessor.class);
+    messageContainsDeliveryAttempt = true;
+
+    consumers = new LinkedBlockingQueue<>();
+    consumersWithResponse = new LinkedBlockingQueue<>();
+
+    // We are instantiating "real" message receivers to easily ack/nack messages
+    messageReceiver =
         new MessageReceiver() {
           @Override
-          public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
+          public void receiveMessage(
+              final PubsubMessage message, final AckReplyConsumer ackReplyConsumer) {
             assertThat(message.getData()).isEqualTo(MESSAGE_DATA);
             if (messageContainsDeliveryAttempt) {
               assertTrue(message.containsAttributes("googclient_deliveryattempt"));
@@ -93,159 +88,410 @@ public class MessageDispatcherTest {
             } else {
               assertFalse(message.containsAttributes("googclient_deliveryattempt"));
             }
-            consumers.add(consumer);
+            consumers.add(ackReplyConsumer);
           }
         };
-    MessageDispatcher.AckProcessor processor =
-        new MessageDispatcher.AckProcessor() {
-          public void sendAckOperations(
-              List<String> acksToSend,
-              List<MessageDispatcher.PendingModifyAckDeadline> ackDeadlineExtensions) {
-            sentAcks.addAll(acksToSend);
-            for (MessageDispatcher.PendingModifyAckDeadline modack : ackDeadlineExtensions) {
-              for (String ackId : modack.ackIds) {
-                sentModAcks.add(ModAckItem.of(ackId, modack.deadlineExtensionSeconds));
-              }
+
+    messageReceiverWithAckResponse =
+        new MessageReceiverWithAckResponse() {
+          @Override
+          public void receiveMessage(
+              PubsubMessage message, AckReplyConsumerWithResponse ackReplyConsumerWithResponse) {
+            assertThat(message.getData()).isEqualTo(MESSAGE_DATA);
+            if (messageContainsDeliveryAttempt) {
+              assertTrue(message.containsAttributes("googclient_deliveryattempt"));
+              assertThat(message.getAttributesOrThrow("googclient_deliveryattempt"))
+                  .isEqualTo(Integer.toString(DELIVERY_INFO_COUNT));
+            } else {
+              assertFalse(message.containsAttributes("googclient_deliveryattempt"));
             }
+            consumersWithResponse.add(ackReplyConsumerWithResponse);
           }
         };
-
-    // This executor isn't used because we're not actually scheduling anything until we call
-    // dispatcher.start(), which we're not doing here.
-    ScheduledThreadPoolExecutor systemExecutor = new ScheduledThreadPoolExecutor(1);
-    systemExecutor.shutdownNow();
-
-    clock = new FakeClock();
-    flowController =
-        new FlowController(
-            FlowControlSettings.newBuilder()
-                .setMaxOutstandingElementCount(1L)
-                .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Block)
-                .build());
-
-    dispatcher =
-        new MessageDispatcher(
-            receiver,
-            processor,
-            Duration.ofSeconds(5),
-            Duration.ofMinutes(60),
-            Duration.ofSeconds(MAX_SECONDS_PER_ACK_EXTENSION),
-            new Distribution(Subscriber.MAX_ACK_DEADLINE_SECONDS + 1),
-            flowController,
-            MoreExecutors.directExecutor(),
-            systemExecutor,
-            clock);
-    dispatcher.setMessageDeadlineSeconds(Subscriber.MIN_ACK_DEADLINE_SECONDS);
-
-    messageContainsDeliveryAttempt = true;
   }
 
   @Test
-  public void testReceipt() {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
-    dispatcher.processOutstandingAckOperations();
-    assertThat(sentModAcks)
-        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
+  public void testSetupAndTeardown() {
+    MessageDispatcher messageDispatcher = getMessageDispatcher();
+
+    messageDispatcher.start();
+    messageDispatcher.stop();
   }
 
   @Test
-  public void testReceiptNoDeliveryAttempt() {
-    messageContainsDeliveryAttempt = false;
-    ReceivedMessage messageNoDeliveryAttempt =
-        ReceivedMessage.newBuilder()
-            .setAckId("ackid")
-            .setMessage(PubsubMessage.newBuilder().setData(MESSAGE_DATA).build())
-            .build();
-    dispatcher.processReceivedMessages(Collections.singletonList(messageNoDeliveryAttempt));
-    dispatcher.processOutstandingAckOperations();
-    assertThat(sentModAcks)
-        .contains(
-            ModAckItem.of(
-                messageNoDeliveryAttempt.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
+  public void testReceiptMessageReceiver() {
+    MessageReceiver mockMessageReceiver = mock(MessageReceiver.class);
+    MessageDispatcher messageDispatcher = getMessageDispatcher(mockMessageReceiver);
+    messageDispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+    messageDispatcher.processOutstandingOperations();
+
+    // Assert expected behavior
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    modackRequestDataList.add(
+        new ModackRequestData(
+            MIN_ACK_DEADLINE_SECONDS, AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build()));
+
+    verify(mockAckProcessor, times(1))
+        .sendModackOperations(
+            argThat(
+                new CustomArgumentMatchers.ModackRequestDataListMatcher(modackRequestDataList)));
+    verify(mockMessageReceiver, never())
+        .receiveMessage(eq(TEST_MESSAGE.getMessage()), any(AckReplyConsumer.class));
   }
 
   @Test
-  public void testAck() throws Exception {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
-    consumers.take().ack();
-    dispatcher.processOutstandingAckOperations();
-    assertThat(sentAcks).contains(TEST_MESSAGE.getAckId());
+  public void testReceiptMessageReceiverWithAckResponse() {
+    MessageReceiverWithAckResponse mockMessageReceiverWithAckResponse =
+        mock(MessageReceiverWithAckResponse.class);
+    MessageDispatcher messageDispatcher = getMessageDispatcher(mockMessageReceiverWithAckResponse);
+    messageDispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+    messageDispatcher.processOutstandingOperations();
+
+    // Assert expected behavior
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    modackRequestDataList.add(
+        new ModackRequestData(
+            MIN_ACK_DEADLINE_SECONDS, AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build()));
+
+    verify(mockAckProcessor, times(1))
+        .sendModackOperations(
+            argThat(
+                new CustomArgumentMatchers.ModackRequestDataListMatcher(modackRequestDataList)));
+    verify(mockMessageReceiverWithAckResponse, never())
+        .receiveMessage(eq(TEST_MESSAGE.getMessage()), any(AckReplyConsumerWithResponse.class));
   }
 
   @Test
-  public void testNack() throws Exception {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
-    consumers.take().nack();
-    dispatcher.processOutstandingAckOperations();
-    assertThat(sentModAcks).contains(ModAckItem.of(TEST_MESSAGE.getAckId(), 0));
+  public void testConsumerAckMessageReceiver() {
+    MessageDispatcher messageDispatcher = getMessageDispatcher(messageReceiver);
+    messageDispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+
+    try {
+      // Ack a message
+      consumers.take().ack();
+    } catch (Throwable t) {
+      // In case our consumers fail
+      throw new AssertionError();
+    }
+
+    messageDispatcher.processOutstandingOperations();
+
+    // Assert expected behavior
+    List<AckRequestData> ackRequestDataList = new ArrayList<AckRequestData>();
+    AckRequestData ackRequestData = AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build();
+    ackRequestDataList.add(ackRequestData);
+
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    modackRequestDataList.add(new ModackRequestData(MIN_ACK_DEADLINE_SECONDS, ackRequestData));
+
+    verify(mockAckProcessor, times(1))
+        .sendModackOperations(
+            argThat(
+                new CustomArgumentMatchers.ModackRequestDataListMatcher(modackRequestDataList)));
+    verify(mockAckProcessor, times(1))
+        .sendAckOperations(
+            argThat(new CustomArgumentMatchers.AckRequestDataListMatcher(ackRequestDataList)));
   }
 
   @Test
-  public void testExtension() throws Exception {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
-    dispatcher.extendDeadlines();
-    assertThat(sentModAcks)
-        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
+  public void testConsumerAckMessageReceiverWithAckResponse() {
+    MessageDispatcher messageDispatcher = getMessageDispatcher(messageReceiverWithAckResponse);
+    messageDispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+    Future<AckResponse> ackResponseFuture;
 
-    sentModAcks.clear();
-    consumers.take().ack();
-    dispatcher.extendDeadlines();
-    assertThat(sentModAcks).isEmpty();
+    try {
+      // Ack a message - at this point we do not care about the message future so just drop it
+      consumersWithResponse.take().ack();
+    } catch (Throwable t) {
+      // In case our consumers fail
+      throw new AssertionError();
+    }
+
+    messageDispatcher.processOutstandingOperations();
+
+    // Assert expected behavior
+    List<AckRequestData> ackRequestDataList = new ArrayList<AckRequestData>();
+    AckRequestData ackRequestData = AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build();
+    ackRequestDataList.add(ackRequestData);
+
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    modackRequestDataList.add(new ModackRequestData(MIN_ACK_DEADLINE_SECONDS, ackRequestData));
+
+    verify(mockAckProcessor, times(1))
+        .sendModackOperations(
+            argThat(
+                new CustomArgumentMatchers.ModackRequestDataListMatcher(modackRequestDataList)));
+    verify(mockAckProcessor, times(1))
+        .sendAckOperations(
+            argThat(new CustomArgumentMatchers.AckRequestDataListMatcher(ackRequestDataList)));
   }
 
   @Test
-  public void testExtension_Close() {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
-    dispatcher.extendDeadlines();
-    assertThat(sentModAcks)
-        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
-    sentModAcks.clear();
+  public void testConsumerNackMessageReceiver() {
+    MessageDispatcher messageDispatcher = getMessageDispatcher(messageReceiver);
+    messageDispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
 
-    // Default total expiration is an hour (60*60 seconds). We normally would extend by 10s.
-    // However, only extend by 5s here, since there's only 5s left before total expiration.
-    clock.advance(60 * 60 - 5, TimeUnit.SECONDS);
-    dispatcher.extendDeadlines();
-    assertThat(sentModAcks).contains(ModAckItem.of(TEST_MESSAGE.getAckId(), 5));
+    try {
+      consumers.take().nack();
+    } catch (Throwable t) {
+      // Just in case something went wrong with our consumers
+      throw new AssertionError();
+    }
+
+    messageDispatcher.processOutstandingOperations();
+
+    // Assert expected behavior
+    AckRequestData ackRequestData = AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build();
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    modackRequestDataList.add(new ModackRequestData(0, ackRequestData));
+    modackRequestDataList.add(new ModackRequestData(MIN_ACK_DEADLINE_SECONDS, ackRequestData));
+
+    verify(mockAckProcessor, times(1))
+        .sendModackOperations(
+            argThat(
+                new CustomArgumentMatchers.ModackRequestDataListMatcher(modackRequestDataList)));
+  }
+
+  @Test
+  public void testConsumerNackMessageReceiverWithAckResponse() {
+    MessageDispatcher messageDispatcher = getMessageDispatcher(messageReceiverWithAckResponse);
+    messageDispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+
+    try {
+      // Ack a message - at this point we do not care about the message future so just drop it
+      consumersWithResponse.take().nack();
+    } catch (Throwable t) {
+      // Just in case something went wrong with our consumers
+      throw new AssertionError();
+    }
+
+    messageDispatcher.processOutstandingOperations();
+
+    // Assert expected behavior
+    AckRequestData ackRequestData = AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build();
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    modackRequestDataList.add(new ModackRequestData(0, ackRequestData));
+    modackRequestDataList.add(new ModackRequestData(MIN_ACK_DEADLINE_SECONDS, ackRequestData));
+
+    verify(mockAckProcessor, times(1))
+        .sendModackOperations(
+            argThat(
+                new CustomArgumentMatchers.ModackRequestDataListMatcher(modackRequestDataList)));
+  }
+
+  @Test
+  public void testExtension() {
+    MessageDispatcher messageDispatcher = getMessageDispatcher();
+    messageDispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+    messageDispatcher.extendDeadlines();
+
+    // Assert expected behavior
+    List<AckRequestData> ackRequestDataList = new ArrayList<AckRequestData>();
+
+    AckRequestData ackRequestData = AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build();
+    ackRequestDataList.add(ackRequestData);
+
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    modackRequestDataList.add(new ModackRequestData(MIN_ACK_DEADLINE_SECONDS, ackRequestData));
+
+    verify(mockAckProcessor, times(1))
+        .sendModackOperations(
+            argThat(
+                new CustomArgumentMatchers.ModackRequestDataListMatcher(modackRequestDataList)));
+  }
+
+  @Test
+  public void testExtension_ExpirationExtension() {
+    MessageDispatcher messageDispatcher = getMessageDispatcher();
+    messageDispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+    int secondsLeft = 5;
+    // Advance clock to have 5 seconds left in extension period
+    clock.advance(MAX_ACK_EXTENSION_PERIOD.getSeconds() - secondsLeft, TimeUnit.SECONDS);
+    messageDispatcher.extendDeadlines();
+
+    // Assert expected behavior
+    List<AckRequestData> ackRequestDataList = new ArrayList<AckRequestData>();
+    AckRequestData ackRequestData = AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build();
+    ackRequestDataList.add(ackRequestData);
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    modackRequestDataList.add(new ModackRequestData(secondsLeft, ackRequestData));
+
+    verify(mockAckProcessor, times(1))
+        .sendModackOperations(
+            argThat(
+                new CustomArgumentMatchers.ModackRequestDataListMatcher(modackRequestDataList)));
   }
 
   @Test
   public void testExtension_GiveUp() throws Exception {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
-    dispatcher.extendDeadlines();
-    assertThat(sentModAcks)
-        .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
-    sentModAcks.clear();
+    MessageDispatcher messageDispatcher = getMessageDispatcher();
+    messageDispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
 
     // If we run extendDeadlines after totalExpiration, we shouldn't send anything.
-    // In particular, don't send negative modacks.
     clock.advance(1, TimeUnit.DAYS);
-    dispatcher.extendDeadlines();
-    assertThat(sentModAcks).isEmpty();
+    messageDispatcher.extendDeadlines();
 
-    // We should be able to reserve another item in the flow controller and not block.
-    flowController.reserve(1, 0);
-    dispatcher.stop();
+    // Assert expected behavior
+    verify(mockAckProcessor, times(0)).sendAckOperations(eq(Collections.emptyList()));
+    verify(mockAckProcessor, times(0)).sendModackOperations(eq(Collections.emptyList()));
   }
 
   @Test
-  public void testDeadlineAdjustment() throws Exception {
-    assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(10);
+  public void testAckExtensionDefaultsExactlyOnceDeliveryOffThenOn() {
+    // EnableExactlyOnceDelivery is turned off by default
+    MessageDispatcher messageDispatcher =
+        MessageDispatcher.newBuilder(mock(MessageReceiver.class))
+            .setAckLatencyDistribution(mockAckLatencyDistribution)
+            .setMinDurationPerAckExtension(Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION)
+            .setMinDurationPerAckExtensionDefaultUsed(true)
+            .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MAX_ACK_DEADLINE_EXTENSION)
+            .setMaxDurationPerAckExtensionDefaultUsed(true)
+            .build();
 
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
-    clock.advance(42, TimeUnit.SECONDS);
-    consumers.take().ack();
+    // We should be using the Subscriber set hard deadlines
+    assertMinAndMaxAckDeadlines(
+        messageDispatcher,
+        Math.toIntExact(Subscriber.MIN_STREAM_ACK_DEADLINE.getSeconds()),
+        Math.toIntExact(Subscriber.MAX_STREAM_ACK_DEADLINE.getSeconds()));
 
-    assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(42);
+    messageDispatcher.setEnableExactlyOnceDelivery(true);
+
+    // Should only change min deadline
+    assertMinAndMaxAckDeadlines(
+        messageDispatcher,
+        Math.toIntExact(
+            Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION_EXACTLY_ONCE_DELIVERY.getSeconds()),
+        Math.toIntExact(Subscriber.MAX_STREAM_ACK_DEADLINE.getSeconds()));
   }
 
   @Test
-  public void testMaxDurationPerAckExtension() throws Exception {
-    assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(10);
+  public void testAckExtensionDefaultsExactlyOnceDeliveryOnThenOff() {
+    MessageDispatcher messageDispatcher =
+        MessageDispatcher.newBuilder(mock(MessageReceiver.class))
+            .setAckLatencyDistribution(mockAckLatencyDistribution)
+            .setEnableExactlyOnceDelivery(true)
+            .setMinDurationPerAckExtension(
+                Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION_EXACTLY_ONCE_DELIVERY)
+            .setMinDurationPerAckExtensionDefaultUsed(true)
+            .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION)
+            .setMaxDurationPerAckExtensionDefaultUsed(true)
+            .build();
 
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
-    clock.advance(MAX_SECONDS_PER_ACK_EXTENSION + 5, TimeUnit.SECONDS);
-    consumers.take().ack();
+    assertMinAndMaxAckDeadlines(
+        messageDispatcher,
+        Math.toIntExact(
+            Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION_EXACTLY_ONCE_DELIVERY.getSeconds()),
+        Math.toIntExact(Subscriber.MAX_STREAM_ACK_DEADLINE.getSeconds()));
 
-    assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(MAX_SECONDS_PER_ACK_EXTENSION);
+    messageDispatcher.setEnableExactlyOnceDelivery(false);
+
+    // Should change min deadline
+    assertMinAndMaxAckDeadlines(
+        messageDispatcher,
+        Math.toIntExact(Subscriber.MIN_STREAM_ACK_DEADLINE.getSeconds()),
+        Math.toIntExact(Subscriber.MAX_STREAM_ACK_DEADLINE.getSeconds()));
+  }
+
+  @Test
+  public void testAckExtensionCustomMinExactlyOnceDeliveryOffThenOn() {
+    int customMinSeconds = 30;
+    MessageDispatcher messageDispatcher =
+        MessageDispatcher.newBuilder(mock(MessageReceiver.class))
+            .setAckLatencyDistribution(mockAckLatencyDistribution)
+            .setMinDurationPerAckExtension(Duration.ofSeconds(customMinSeconds))
+            .setMinDurationPerAckExtensionDefaultUsed(false)
+            .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION)
+            .setMaxDurationPerAckExtensionDefaultUsed(true)
+            .build();
+
+    assertMinAndMaxAckDeadlines(
+        messageDispatcher,
+        customMinSeconds,
+        Math.toIntExact(Subscriber.MAX_STREAM_ACK_DEADLINE.getSeconds()));
+
+    messageDispatcher.setEnableExactlyOnceDelivery(true);
+
+    // no changes should occur
+    assertMinAndMaxAckDeadlines(
+        messageDispatcher,
+        customMinSeconds,
+        Math.toIntExact(Subscriber.MAX_STREAM_ACK_DEADLINE.getSeconds()));
+  }
+
+  @Test
+  public void testAckExtensionCustomMaxExactlyOnceDeliveryOffThenOn() {
+    int customMaxSeconds = 30;
+    MessageDispatcher messageDispatcher =
+        MessageDispatcher.newBuilder(mock(MessageReceiver.class))
+            .setAckLatencyDistribution(mockAckLatencyDistribution)
+            .setMinDurationPerAckExtension(Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION)
+            .setMinDurationPerAckExtensionDefaultUsed(true)
+            .setMaxDurationPerAckExtension(Duration.ofSeconds(customMaxSeconds))
+            .setMaxDurationPerAckExtensionDefaultUsed(false)
+            .build();
+
+    assertMinAndMaxAckDeadlines(
+        messageDispatcher,
+        Math.toIntExact(Subscriber.MIN_STREAM_ACK_DEADLINE.getSeconds()),
+        customMaxSeconds);
+
+    messageDispatcher.setEnableExactlyOnceDelivery(true);
+
+    // Because the customMaxSeconds is above the
+    // DEFAULT_MIN_ACK_DEADLINE_EXTENSION_EXACTLY_ONCE_DELIVERY, we should use the customMaxSeconds
+    // as the new min
+    assertMinAndMaxAckDeadlines(messageDispatcher, customMaxSeconds, customMaxSeconds);
+  }
+
+  private void assertMinAndMaxAckDeadlines(
+      MessageDispatcher messageDispatcher, int minAckDeadline, int maxAckDeadline) {
+    // Helper function to assert if min and max deadlines are being respected
+
+    // Set distribution to return a low value to assert min value
+    when(mockAckLatencyDistribution.getPercentile(
+            MessageDispatcher.PERCENTILE_FOR_ACK_DEADLINE_UPDATES))
+        .thenReturn(0);
+    assertEquals(minAckDeadline, messageDispatcher.computeDeadlineSeconds());
+
+    // Set distribution to return a high value to assert max value
+    when(mockAckLatencyDistribution.getPercentile(
+            MessageDispatcher.PERCENTILE_FOR_ACK_DEADLINE_UPDATES))
+        .thenReturn(60 * 60);
+    assertEquals(maxAckDeadline, messageDispatcher.computeDeadlineSeconds());
+  }
+
+  private MessageDispatcher getMessageDispatcher() {
+    return getMessageDispatcher(mock(MessageReceiver.class));
+  }
+
+  private MessageDispatcher getMessageDispatcher(MessageReceiver messageReceiver) {
+    return getMessageDispatcherFromBuilder(MessageDispatcher.newBuilder(messageReceiver));
+  }
+
+  private MessageDispatcher getMessageDispatcher(
+      MessageReceiverWithAckResponse messageReceiverWithAckResponse) {
+    return getMessageDispatcherFromBuilder(
+        MessageDispatcher.newBuilder(messageReceiverWithAckResponse));
+  }
+
+  private MessageDispatcher getMessageDispatcherFromBuilder(MessageDispatcher.Builder builder) {
+    MessageDispatcher messageDispatcher =
+        builder
+            .setAckProcessor(mockAckProcessor)
+            .setAckExpirationPadding(ACK_EXPIRATION_PADDING_DEFAULT)
+            .setMaxAckExtensionPeriod(MAX_ACK_EXTENSION_PERIOD)
+            .setMinDurationPerAckExtension(Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION)
+            .setMinDurationPerAckExtensionDefaultUsed(true)
+            .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MAX_ACK_DEADLINE_EXTENSION)
+            .setMaxDurationPerAckExtensionDefaultUsed(true)
+            .setAckLatencyDistribution(mock(Distribution.class))
+            .setFlowController(mock(FlowController.class))
+            .setExecutor(MoreExecutors.directExecutor())
+            .setSystemExecutor(systemExecutor)
+            .setApiClock(clock)
+            .build();
+
+    messageDispatcher.setMessageDeadlineSeconds(MIN_ACK_DEADLINE_SECONDS);
+    return messageDispatcher;
   }
 }

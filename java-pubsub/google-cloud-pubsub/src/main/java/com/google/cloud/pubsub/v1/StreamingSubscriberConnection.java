@@ -16,41 +16,31 @@
 
 package com.google.cloud.pubsub.v1;
 
-import static com.google.cloud.pubsub.v1.Subscriber.DEFAULT_MAX_DURATION_PER_ACK_EXTENSION;
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
-import com.google.api.core.AbstractApiService;
-import com.google.api.core.ApiClock;
-import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutureCallback;
-import com.google.api.core.ApiFutures;
-import com.google.api.core.InternalApi;
-import com.google.api.core.SettableApiFuture;
+import com.google.api.core.*;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.ApiExceptionFactory;
-import com.google.api.gax.rpc.ClientStream;
-import com.google.api.gax.rpc.ResponseObserver;
-import com.google.api.gax.rpc.StreamController;
+import com.google.api.gax.rpc.*;
 import com.google.cloud.pubsub.v1.MessageDispatcher.AckProcessor;
-import com.google.cloud.pubsub.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
-import com.google.pubsub.v1.AcknowledgeRequest;
-import com.google.pubsub.v1.ModifyAckDeadlineRequest;
-import com.google.pubsub.v1.StreamingPullRequest;
-import com.google.pubsub.v1.StreamingPullResponse;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.pubsub.v1.*;
+import com.google.rpc.ErrorInfo;
 import io.grpc.Status;
-import java.util.List;
-import java.util.UUID;
+import io.grpc.protobuf.StatusProto;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -64,15 +54,21 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private static final Logger logger =
       Logger.getLogger(StreamingSubscriberConnection.class.getName());
 
-  @InternalApi static final Duration DEFAULT_STREAM_ACK_DEADLINE = Duration.ofSeconds(60);
-  @InternalApi static final Duration MAX_STREAM_ACK_DEADLINE = Duration.ofSeconds(600);
-  @InternalApi static final Duration MIN_STREAM_ACK_DEADLINE = Duration.ofSeconds(10);
   private static final Duration INITIAL_CHANNEL_RECONNECT_BACKOFF = Duration.ofMillis(100);
   private static final Duration MAX_CHANNEL_RECONNECT_BACKOFF = Duration.ofSeconds(10);
+
+  private static final long INITIAL_ACK_OPERATIONS_RECONNECT_BACKOFF_MILLIS = 100;
+  private static final long MAX_ACK_OPERATIONS_RECONNECT_BACKOFF_MILLIS =
+      Duration.ofSeconds(10).toMillis();
   private static final int MAX_PER_REQUEST_CHANGES = 1000;
 
-  private final Duration streamAckDeadline;
-  private final SubscriberStub stub;
+  private final String PERMANENT_FAILURE_INVALID_ACK_ID_METADATA =
+      "PERMANENT_FAILURE_INVALID_ACK_ID";
+  private final String TRANSIENT_FAILURE_METADATA_PREFIX = "TRANSIENT_";
+
+  private Duration inititalStreamAckDeadline;
+
+  private final SubscriberStub subscriberStub;
   private final int channelAffinity;
   private final String subscription;
   private final ScheduledExecutorService systemExecutor;
@@ -81,12 +77,17 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private final FlowControlSettings flowControlSettings;
   private final boolean useLegacyFlowControl;
 
+  // Keeps track of requests without closed futures
+  private final Set<AckRequestData> pendingRequests = ConcurrentHashMap.newKeySet();
+
   private final AtomicLong channelReconnectBackoffMillis =
       new AtomicLong(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
   private final Waiter ackOperationsWaiter = new Waiter();
 
   private final Lock lock = new ReentrantLock();
   private ClientStream<StreamingPullRequest> clientStream;
+
+  private AtomicBoolean exactlyOnceDeliveryEnabled = new AtomicBoolean(false);
 
   /**
    * The same clientId is used across all streaming pull connections that are created. This is
@@ -95,48 +96,71 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
    */
   private final String clientId = UUID.randomUUID().toString();
 
-  public StreamingSubscriberConnection(
-      String subscription,
-      MessageReceiver receiver,
-      Duration ackExpirationPadding,
-      Duration maxAckExtensionPeriod,
-      Duration maxDurationPerAckExtension,
-      Distribution ackLatencyDistribution,
-      SubscriberStub stub,
-      int channelAffinity,
-      FlowControlSettings flowControlSettings,
-      boolean useLegacyFlowControl,
-      FlowController flowController,
-      ScheduledExecutorService executor,
-      ScheduledExecutorService systemExecutor,
-      ApiClock clock) {
-    this.subscription = subscription;
-    this.systemExecutor = systemExecutor;
-    if (maxDurationPerAckExtension.compareTo(DEFAULT_MAX_DURATION_PER_ACK_EXTENSION) == 0) {
-      this.streamAckDeadline = DEFAULT_STREAM_ACK_DEADLINE;
-    } else if (maxDurationPerAckExtension.compareTo(MIN_STREAM_ACK_DEADLINE) < 0) {
-      this.streamAckDeadline = MIN_STREAM_ACK_DEADLINE;
-    } else if (maxDurationPerAckExtension.compareTo(MAX_STREAM_ACK_DEADLINE) > 0) {
-      this.streamAckDeadline = MAX_STREAM_ACK_DEADLINE;
+  private StreamingSubscriberConnection(Builder builder) {
+    subscription = builder.subscription;
+    systemExecutor = builder.systemExecutor;
+
+    // We need to set the default stream ack deadline on the initial request, this will be
+    // updated by modack requests in the message dispatcher
+    if (builder.maxDurationPerAckExtensionDefaultUsed) {
+      // If the default is used, check if exactly once is enabled and set appropriately
+      if (builder.exactlyOnceDeliveryEnabled) {
+        inititalStreamAckDeadline = Subscriber.STREAM_ACK_DEADLINE_EXACTLY_ONCE_DELIVERY_DEFAULT;
+      } else {
+        inititalStreamAckDeadline = Subscriber.STREAM_ACK_DEADLINE_DEFAULT;
+      }
+    } else if (builder.maxDurationPerAckExtension.compareTo(Subscriber.MIN_STREAM_ACK_DEADLINE)
+        < 0) {
+      // We will not be able to extend more than the default minimum
+      inititalStreamAckDeadline = Subscriber.MIN_STREAM_ACK_DEADLINE;
+    } else if (builder.maxDurationPerAckExtension.compareTo(Subscriber.MAX_STREAM_ACK_DEADLINE)
+        > 0) {
+      // Will not be able to extend past the max
+      inititalStreamAckDeadline = Subscriber.MAX_STREAM_ACK_DEADLINE;
     } else {
-      this.streamAckDeadline = maxDurationPerAckExtension;
+      inititalStreamAckDeadline = builder.maxDurationPerAckExtension;
     }
-    this.stub = stub;
-    this.channelAffinity = channelAffinity;
-    this.messageDispatcher =
-        new MessageDispatcher(
-            receiver,
-            this,
-            ackExpirationPadding,
-            maxAckExtensionPeriod,
-            maxDurationPerAckExtension,
-            ackLatencyDistribution,
-            flowController,
-            executor,
-            systemExecutor,
-            clock);
-    this.flowControlSettings = flowControlSettings;
-    this.useLegacyFlowControl = useLegacyFlowControl;
+
+    subscriberStub = builder.subscriberStub;
+    channelAffinity = builder.channelAffinity;
+    exactlyOnceDeliveryEnabled.set(builder.exactlyOnceDeliveryEnabled);
+
+    MessageDispatcher.Builder messageDispatcherBuilder;
+    if (builder.receiver != null) {
+      messageDispatcherBuilder = MessageDispatcher.newBuilder(builder.receiver);
+    } else {
+      messageDispatcherBuilder = MessageDispatcher.newBuilder(builder.receiverWithAckResponse);
+    }
+
+    messageDispatcher =
+        messageDispatcherBuilder
+            .setAckProcessor(this)
+            .setAckExpirationPadding(builder.ackExpirationPadding)
+            .setMaxAckExtensionPeriod(builder.maxAckExtensionPeriod)
+            .setMinDurationPerAckExtension(builder.minDurationPerAckExtension)
+            .setMinDurationPerAckExtensionDefaultUsed(builder.minDurationPerAckExtensionDefaultUsed)
+            .setMaxDurationPerAckExtension(builder.maxDurationPerAckExtension)
+            .setMaxDurationPerAckExtensionDefaultUsed(builder.maxDurationPerAckExtensionDefaultUsed)
+            .setAckLatencyDistribution(builder.ackLatencyDistribution)
+            .setFlowController(builder.flowController)
+            .setEnableExactlyOnceDelivery(builder.exactlyOnceDeliveryEnabled)
+            .setExecutor(builder.executor)
+            .setSystemExecutor(builder.systemExecutor)
+            .setApiClock(builder.clock)
+            .build();
+
+    flowControlSettings = builder.flowControlSettings;
+    useLegacyFlowControl = builder.useLegacyFlowControl;
+  }
+
+  public StreamingSubscriberConnection setExactlyOnceDeliveryEnabled(
+      boolean isExactlyOnceDeliveryEnabled) {
+    exactlyOnceDeliveryEnabled.set(isExactlyOnceDeliveryEnabled);
+    return this;
+  }
+
+  public boolean isExactlyOnceDeliveryEnabled() {
+    return exactlyOnceDeliveryEnabled.get();
   }
 
   @Override
@@ -192,7 +216,14 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     @Override
     public void onResponse(StreamingPullResponse response) {
       channelReconnectBackoffMillis.set(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
+
+      boolean exactlyOnceDeliveryEnabledResponse =
+          response.getSubscriptionProperties().getExactlyOnceDeliveryEnabled();
+
+      setExactlyOnceDeliveryEnabled(exactlyOnceDeliveryEnabledResponse);
+      messageDispatcher.setEnableExactlyOnceDelivery(exactlyOnceDeliveryEnabledResponse);
       messageDispatcher.processReceivedMessages(response.getReceivedMessagesList());
+
       // Only request more if we're not shutdown.
       // If errorFuture is done, the stream has either failed or hung up,
       // and we don't need to request.
@@ -222,10 +253,13 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   private void initialize() {
     final SettableApiFuture<Void> errorFuture = SettableApiFuture.create();
+
     final ResponseObserver<StreamingPullResponse> responseObserver =
         new StreamingPullResponseObserver(errorFuture);
+
     ClientStream<StreamingPullRequest> initClientStream =
-        stub.streamingPullCallable()
+        subscriberStub
+            .streamingPullCallable()
             .splitCall(
                 responseObserver,
                 GrpcCallContext.createDefault().withChannelAffinity(channelAffinity));
@@ -236,7 +270,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     initClientStream.send(
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
-            .setStreamAckDeadlineSeconds((int) streamAckDeadline.getSeconds())
+            .setStreamAckDeadlineSeconds(Math.toIntExact(inititalStreamAckDeadline.getSeconds()))
             .setClientId(clientId)
             .setMaxOutstandingMessages(
                 this.useLegacyFlowControl
@@ -287,6 +321,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                       cause, GrpcStatusCode.of(Status.fromThrowable(cause).getCode()), false);
               logger.log(Level.SEVERE, "terminated streaming with exception", gaxException);
               runShutdown();
+              setFailureFutureOutstandingMessages(cause);
               notifyFailed(gaxException);
               return;
             }
@@ -319,52 +354,372 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     return state == State.RUNNING || state == State.STARTING;
   }
 
-  @Override
-  public void sendAckOperations(
-      List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
-    ApiFutureCallback<Empty> loggingCallback =
-        new ApiFutureCallback<Empty>() {
-          @Override
-          public void onSuccess(Empty empty) {
-            ackOperationsWaiter.incrementPendingCount(-1);
-          }
-
-          @Override
-          public void onFailure(Throwable t) {
-            ackOperationsWaiter.incrementPendingCount(-1);
-            Level level = isAlive() ? Level.WARNING : Level.FINER;
-            logger.log(level, "failed to send operations", t);
-          }
-        };
-
-    int pendingOperations = 0;
-    for (PendingModifyAckDeadline modack : ackDeadlineExtensions) {
-      for (List<String> idChunk : Lists.partition(modack.ackIds, MAX_PER_REQUEST_CHANGES)) {
-        ApiFuture<Empty> future =
-            stub.modifyAckDeadlineCallable()
-                .futureCall(
-                    ModifyAckDeadlineRequest.newBuilder()
-                        .setSubscription(subscription)
-                        .addAllAckIds(idChunk)
-                        .setAckDeadlineSeconds(modack.deadlineExtensionSeconds)
-                        .build());
-        ApiFutures.addCallback(future, loggingCallback, directExecutor());
-        pendingOperations++;
-      }
+  public void setResponseOutstandingMessages(AckResponse ackResponse) {
+    // We will close the futures with ackResponse - if there are multiple references to the same
+    // future they will be handled appropriately
+    logger.log(
+        Level.WARNING, "Setting response: {0} on outstanding messages", ackResponse.toString());
+    for (AckRequestData ackRequestData : pendingRequests) {
+      ackRequestData.setResponse(ackResponse, false);
     }
 
-    for (List<String> idChunk : Lists.partition(acksToSend, MAX_PER_REQUEST_CHANGES)) {
-      ApiFuture<Empty> future =
-          stub.acknowledgeCallable()
+    // Clear our pending requests
+    pendingRequests.clear();
+  }
+
+  private void setFailureFutureOutstandingMessages(Throwable t) {
+    AckResponse ackResponse;
+
+    if (isExactlyOnceDeliveryEnabled()) {
+      if (!(t instanceof ApiException)) {
+        ackResponse = AckResponse.OTHER;
+      }
+
+      ApiException apiException = (ApiException) t;
+      switch (apiException.getStatusCode().getCode()) {
+        case FAILED_PRECONDITION:
+          ackResponse = AckResponse.FAILED_PRECONDITION;
+          break;
+        case PERMISSION_DENIED:
+          ackResponse = AckResponse.PERMISSION_DENIED;
+          break;
+        default:
+          ackResponse = AckResponse.OTHER;
+      }
+    } else {
+      // We should set success regardless if ExactlyOnceDelivery is not enabled
+      ackResponse = AckResponse.SUCCESSFUL;
+    }
+
+    setResponseOutstandingMessages(ackResponse);
+  }
+
+  @Override
+  public void sendAckOperations(List<AckRequestData> ackRequestDataList) {
+    sendAckOperations(ackRequestDataList, INITIAL_ACK_OPERATIONS_RECONNECT_BACKOFF_MILLIS);
+  }
+
+  @Override
+  public void sendModackOperations(List<ModackRequestData> modackRequestDataList) {
+    sendModackOperations(modackRequestDataList, INITIAL_ACK_OPERATIONS_RECONNECT_BACKOFF_MILLIS);
+  }
+
+  private void sendAckOperations(
+      List<AckRequestData> ackRequestDataList, long currentBackoffMillis) {
+    int pendingOperations = 0;
+    for (List<AckRequestData> ackRequestDataInRequestList :
+        Lists.partition(ackRequestDataList, MAX_PER_REQUEST_CHANGES)) {
+      List<String> ackIdsInRequest = new ArrayList<>();
+      for (AckRequestData ackRequestData : ackRequestDataInRequestList) {
+        ackIdsInRequest.add(ackRequestData.getAckId());
+        if (ackRequestData.hasMessageFuture()) {
+          // Add to our pending requests if we care about the response
+          pendingRequests.add(ackRequestData);
+        }
+      }
+      ApiFutureCallback<Empty> callback =
+          getCallback(ackRequestDataInRequestList, 0, false, currentBackoffMillis);
+      ApiFuture<Empty> ackFuture =
+          subscriberStub
+              .acknowledgeCallable()
               .futureCall(
                   AcknowledgeRequest.newBuilder()
                       .setSubscription(subscription)
-                      .addAllAckIds(idChunk)
+                      .addAllAckIds(ackIdsInRequest)
                       .build());
-      ApiFutures.addCallback(future, loggingCallback, directExecutor());
+      ApiFutures.addCallback(ackFuture, callback, directExecutor());
       pendingOperations++;
     }
-
     ackOperationsWaiter.incrementPendingCount(pendingOperations);
+  }
+
+  private void sendModackOperations(
+      List<ModackRequestData> modackRequestDataList, long currentBackoffMillis) {
+    // Send modacks
+    int pendingOperations = 0;
+    for (ModackRequestData modackRequestData : modackRequestDataList) {
+      List<String> ackIdsInRequest = new ArrayList<>();
+      for (List<AckRequestData> ackRequestDataInRequestList :
+          Lists.partition(modackRequestData.getAckRequestData(), MAX_PER_REQUEST_CHANGES)) {
+        for (AckRequestData ackRequestData : ackRequestDataInRequestList) {
+          ackIdsInRequest.add(ackRequestData.getAckId());
+          if (ackRequestData.hasMessageFuture()) {
+            // Add to our pending requests if we care about the response
+            pendingRequests.add(ackRequestData);
+          }
+        }
+        ApiFutureCallback<Empty> callback =
+            getCallback(
+                modackRequestData.getAckRequestData(),
+                modackRequestData.getDeadlineExtensionSeconds(),
+                true,
+                currentBackoffMillis);
+        ApiFuture<Empty> modackFuture =
+            subscriberStub
+                .modifyAckDeadlineCallable()
+                .futureCall(
+                    ModifyAckDeadlineRequest.newBuilder()
+                        .setSubscription(subscription)
+                        .addAllAckIds(ackIdsInRequest)
+                        .setAckDeadlineSeconds(modackRequestData.getDeadlineExtensionSeconds())
+                        .build());
+        ApiFutures.addCallback(modackFuture, callback, directExecutor());
+        pendingOperations++;
+      }
+    }
+    ackOperationsWaiter.incrementPendingCount(pendingOperations);
+  }
+
+  private Map<String, String> getMetadataMapFromThrowable(Throwable t)
+      throws InvalidProtocolBufferException {
+    // This converts a Throwable (from a "OK" grpc response) to a map of metadata
+    // will be of the format:
+    // {
+    //    "ACK-ID-1": "PERMANENT_*",
+    //    "ACK-ID-2": "TRANSIENT_*"
+    // }
+    com.google.rpc.Status status = StatusProto.fromThrowable(t);
+    Map<String, String> metadataMap = new HashMap<>();
+    if (status != null) {
+      for (Any any : status.getDetailsList()) {
+        if (any.is(ErrorInfo.class)) {
+          ErrorInfo errorInfo = any.unpack(ErrorInfo.class);
+          metadataMap = errorInfo.getMetadataMap();
+        }
+      }
+    }
+    return metadataMap;
+  }
+
+  private ApiFutureCallback<Empty> getCallback(
+      List<AckRequestData> ackRequestDataList,
+      int deadlineExtensionSeconds,
+      boolean isModack,
+      long currentBackoffMillis) {
+    // This callback handles retries, and sets message futures
+
+    // Check if ack or nack
+    boolean setResponseOnSuccess = (!isModack || (deadlineExtensionSeconds == 0)) ? true : false;
+
+    return new ApiFutureCallback<Empty>() {
+      @Override
+      public void onSuccess(Empty empty) {
+        ackOperationsWaiter.incrementPendingCount(-1);
+        for (AckRequestData ackRequestData : ackRequestDataList) {
+          // This will check if a response is needed, and if it has already been set
+          ackRequestData.setResponse(AckResponse.SUCCESSFUL, setResponseOnSuccess);
+          // Remove from our pending operations
+          pendingRequests.remove(ackRequestData);
+        }
+      }
+
+      @Override
+      public void onFailure(Throwable t) {
+        // Remove from our pending operations
+        ackOperationsWaiter.incrementPendingCount(-1);
+
+        if (!isExactlyOnceDeliveryEnabled()) {
+          Level level = isAlive() ? Level.WARNING : Level.FINER;
+          logger.log(level, "failed to send operations", t);
+          return;
+        }
+
+        List<AckRequestData> ackRequestDataArrayRetryList = new ArrayList<>();
+        try {
+          Map<String, String> metadataMap = getMetadataMapFromThrowable(t);
+          ackRequestDataList.forEach(
+              ackRequestData -> {
+                String ackId = ackRequestData.getAckId();
+                if (metadataMap.containsKey(ackId)) {
+                  // An error occured
+                  String errorMessage = metadataMap.get(ackId);
+                  if (errorMessage.startsWith(TRANSIENT_FAILURE_METADATA_PREFIX)) {
+                    // Retry all "TRANSIENT_*" error messages - do not set message future
+                    logger.log(Level.WARNING, "Transient error message, will resend", errorMessage);
+                    ackRequestDataArrayRetryList.add(ackRequestData);
+                  } else if (errorMessage.equals(PERMANENT_FAILURE_INVALID_ACK_ID_METADATA)) {
+                    // Permanent failure, send
+                    logger.log(
+                        Level.WARNING,
+                        "Permanent error invalid ack id message, will not resend",
+                        errorMessage);
+                    ackRequestData.setResponse(AckResponse.INVALID, setResponseOnSuccess);
+                  } else {
+                    logger.log(
+                        Level.WARNING, "Unknown error message, will not resend", errorMessage);
+                    ackRequestData.setResponse(AckResponse.OTHER, setResponseOnSuccess);
+                  }
+                } else {
+                  ackRequestData.setResponse(AckResponse.SUCCESSFUL, setResponseOnSuccess);
+                }
+                // Remove from our pending
+                pendingRequests.remove(ackRequestData);
+              });
+        } catch (InvalidProtocolBufferException e) {
+          // If we fail to parse out the errorInfo, we should retry all
+          logger.log(
+              Level.WARNING, "Exception occurred when parsing throwable {0} for errorInfo", t);
+          ackRequestDataArrayRetryList.addAll(ackRequestDataList);
+        }
+
+        // Handle retries
+        if (!ackRequestDataArrayRetryList.isEmpty()) {
+          long newBackoffMillis =
+              Math.min(currentBackoffMillis * 2, MAX_ACK_OPERATIONS_RECONNECT_BACKOFF_MILLIS);
+          systemExecutor.schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  if (isModack) {
+                    // Create a new modackRequest with only the retries
+                    ModackRequestData modackRequestData =
+                        new ModackRequestData(
+                            deadlineExtensionSeconds, ackRequestDataArrayRetryList);
+                    sendModackOperations(
+                        Collections.singletonList(modackRequestData), newBackoffMillis);
+                  } else {
+                    sendAckOperations(ackRequestDataArrayRetryList, newBackoffMillis);
+                  }
+                }
+              },
+              currentBackoffMillis,
+              TimeUnit.MILLISECONDS);
+        }
+
+        Level level = isAlive() ? Level.WARNING : Level.FINER;
+        logger.log(level, "failed to send operations", t);
+      }
+    };
+  }
+
+  /** Builder of {@link StreamingSubscriberConnection StreamingSubscriberConnections}. */
+  public static final class Builder {
+    private MessageReceiver receiver;
+    private MessageReceiverWithAckResponse receiverWithAckResponse;
+    private String subscription;
+    private Duration ackExpirationPadding;
+    private Duration maxAckExtensionPeriod;
+    private Duration minDurationPerAckExtension;
+    private boolean minDurationPerAckExtensionDefaultUsed;
+    private Duration maxDurationPerAckExtension;
+    private boolean maxDurationPerAckExtensionDefaultUsed;
+
+    private Distribution ackLatencyDistribution;
+    private SubscriberStub subscriberStub;
+    private int channelAffinity;
+    private FlowController flowController;
+    private FlowControlSettings flowControlSettings;
+    private boolean exactlyOnceDeliveryEnabled;
+    private boolean useLegacyFlowControl;
+    private ScheduledExecutorService executor;
+    private ScheduledExecutorService systemExecutor;
+    private ApiClock clock;
+
+    protected Builder(MessageReceiver receiver) {
+      this.receiver = receiver;
+    }
+
+    protected Builder(MessageReceiverWithAckResponse receiverWithAckResponse) {
+      this.receiverWithAckResponse = receiverWithAckResponse;
+    }
+
+    public Builder setSubscription(String subscription) {
+      this.subscription = subscription;
+      return this;
+    }
+
+    public Builder setAckExpirationPadding(Duration ackExpirationPadding) {
+      this.ackExpirationPadding = ackExpirationPadding;
+      return this;
+    }
+
+    public Builder setMaxAckExtensionPeriod(Duration maxAckExtensionPeriod) {
+      this.maxAckExtensionPeriod = maxAckExtensionPeriod;
+      return this;
+    }
+
+    public Builder setMinDurationPerAckExtension(Duration minDurationPerAckExtension) {
+      this.minDurationPerAckExtension = minDurationPerAckExtension;
+      return this;
+    }
+
+    public Builder setMinDurationPerAckExtensionDefaultUsed(
+        boolean minDurationPerAckExtensionDefaultUsed) {
+      this.minDurationPerAckExtensionDefaultUsed = minDurationPerAckExtensionDefaultUsed;
+      return this;
+    }
+
+    public Builder setMaxDurationPerAckExtension(Duration maxDurationPerAckExtension) {
+      this.maxDurationPerAckExtension = maxDurationPerAckExtension;
+      return this;
+    }
+
+    public Builder setMaxDurationPerAckExtensionDefaultUsed(
+        boolean maxDurationPerAckExtensionDefaultUsed) {
+      this.maxDurationPerAckExtensionDefaultUsed = maxDurationPerAckExtensionDefaultUsed;
+      return this;
+    }
+
+    public Builder setAckLatencyDistribution(Distribution ackLatencyDistribution) {
+      this.ackLatencyDistribution = ackLatencyDistribution;
+      return this;
+    }
+
+    public Builder setSubscriberStub(SubscriberStub subscriberStub) {
+      this.subscriberStub = subscriberStub;
+      return this;
+    }
+
+    public Builder setChannelAffinity(int channelAffinity) {
+      this.channelAffinity = channelAffinity;
+      return this;
+    }
+
+    public Builder setFlowController(FlowController flowController) {
+      this.flowController = flowController;
+      return this;
+    }
+
+    public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
+      this.flowControlSettings = flowControlSettings;
+      return this;
+    }
+
+    public Builder setUseLegacyFlowControl(boolean useLegacyFlowControl) {
+      this.useLegacyFlowControl = useLegacyFlowControl;
+      return this;
+    }
+
+    public Builder setExactlyOnceDeliveryEnabled(boolean exactlyOnceDeliveryEnabled) {
+      this.exactlyOnceDeliveryEnabled = exactlyOnceDeliveryEnabled;
+      return this;
+    }
+
+    public Builder setExecutor(ScheduledExecutorService executor) {
+      this.executor = executor;
+      return this;
+    }
+
+    public Builder setSystemExecutor(ScheduledExecutorService systemExecutor) {
+      this.systemExecutor = systemExecutor;
+      return this;
+    }
+
+    public Builder setClock(ApiClock clock) {
+      this.clock = clock;
+      return this;
+    }
+
+    public StreamingSubscriberConnection build() {
+      return new StreamingSubscriberConnection(this);
+    }
+  }
+
+  public static Builder newBuilder(MessageReceiver receiver) {
+    return new Builder(receiver);
+  }
+
+  public static Builder newBuilder(MessageReceiverWithAckResponse receiverWithAckResponse) {
+    return new Builder(receiverWithAckResponse);
   }
 }

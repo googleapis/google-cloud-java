@@ -16,7 +16,6 @@
 
 package com.google.cloud.pubsub.v1;
 
-import com.google.api.core.ApiClock;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.SettableFuture;
 import java.util.ArrayList;
@@ -48,7 +47,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   private final FakeClock clock = new FakeClock();
   private final Deque<Duration> expectedWorkQueue = new LinkedList<>();
 
-  public ApiClock getClock() {
+  public FakeClock getClock() {
     return clock;
   }
 
