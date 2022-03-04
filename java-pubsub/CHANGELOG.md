@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.116.0](https://github.com/googleapis/java-pubsub/compare/v1.115.5...v1.116.0) (2022-03-04)
+
+
+### Features
+
+* exactly once support v3 ([#1022](https://github.com/googleapis/java-pubsub/issues/1022)) ([02ed621](https://github.com/googleapis/java-pubsub/commit/02ed621f5ca6c96e1bb63cd9a5ed137896313c4f))
+
+
+### Bug Fixes
+
+* removing misspelled field, add correctly spelled field ([#1011](https://github.com/googleapis/java-pubsub/issues/1011)) ([2e8b681](https://github.com/googleapis/java-pubsub/commit/2e8b68111c1d50a5322ad1fdc5d3b93561090e98))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.4 ([#1017](https://github.com/googleapis/java-pubsub/issues/1017)) ([55c53e3](https://github.com/googleapis/java-pubsub/commit/55c53e34448a0fda7c4ea1fb087bd2dc2dc8e163))
+* update dependency com.google.cloud:google-cloud-core to v2.5.6 ([#1038](https://github.com/googleapis/java-pubsub/issues/1038)) ([c319f59](https://github.com/googleapis/java-pubsub/commit/c319f59f26973dbb0b88f9ccd6c60b3e480392a8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#1035](https://github.com/googleapis/java-pubsub/issues/1035)) ([10dba36](https://github.com/googleapis/java-pubsub/commit/10dba36088a54860061d5435ac51ef7101eec891))
+
 ### [1.115.5](https://github.com/googleapis/java-pubsub/compare/v1.115.4...v1.115.5) (2022-02-11)
 
 
