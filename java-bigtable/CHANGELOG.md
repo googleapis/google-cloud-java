@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.6.0](https://github.com/googleapis/java-bigtable/compare/v2.5.3...v2.6.0) (2022-03-03)
+
+
+### Features
+
+* add WarmAndPing request for channel priming ([#1178](https://github.com/googleapis/java-bigtable/issues/1178)) ([385ab33](https://github.com/googleapis/java-bigtable/commit/385ab33d12479a9d2b1b66babef9b9b5846b902a))
+
+
+### Documentation
+
+* **sample:** Add sample for native image support in Bigtable ([#1165](https://github.com/googleapis/java-bigtable/issues/1165)) ([143aaee](https://github.com/googleapis/java-bigtable/commit/143aaee42e1b59d125250982dbeb34a31d906e30))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#1170](https://github.com/googleapis/java-bigtable/issues/1170)) ([5790bdf](https://github.com/googleapis/java-bigtable/commit/5790bdf875d27e6194f1753ff66d208f65488716))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#1186](https://github.com/googleapis/java-bigtable/issues/1186)) ([74cafca](https://github.com/googleapis/java-bigtable/commit/74cafcae4a562b87f1664b8844794a2e68c97625))
+* update dependency com.google.cloud:native-image-support to v0.12.4 ([#1175](https://github.com/googleapis/java-bigtable/issues/1175)) ([9cc6fbc](https://github.com/googleapis/java-bigtable/commit/9cc6fbc7de22303e17492824971fcc52fb041254))
+* update dependency com.google.cloud:native-image-support to v0.12.5 ([#1183](https://github.com/googleapis/java-bigtable/issues/1183)) ([b025b34](https://github.com/googleapis/java-bigtable/commit/b025b343af0b9309558f530dc0765bf2b4c4d588))
+* update dependency com.google.cloud:native-image-support to v0.12.6 ([#1187](https://github.com/googleapis/java-bigtable/issues/1187)) ([b110d65](https://github.com/googleapis/java-bigtable/commit/b110d650edd38a1866f6c2168c78ec8e31b528c2))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.10 ([#1174](https://github.com/googleapis/java-bigtable/issues/1174)) ([7ff5fa7](https://github.com/googleapis/java-bigtable/commit/7ff5fa712b6dcbbd3c721c8babb8ed4e1c7dad17))
+
 ### [2.5.3](https://github.com/googleapis/java-bigtable/compare/v2.5.2...v2.5.3) (2022-02-08)
 
 
