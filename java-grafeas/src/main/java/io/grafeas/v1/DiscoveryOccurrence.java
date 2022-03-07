@@ -124,6 +124,21 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
               break;
             }
+          case 50:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (archiveTime_ != null) {
+                subBuilder = archiveTime_.toBuilder();
+              }
+              archiveTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(archiveTime_);
+                archiveTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -767,6 +782,55 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     return getLastScanTime();
   }
 
+  public static final int ARCHIVE_TIME_FIELD_NUMBER = 6;
+  private com.google.protobuf.Timestamp archiveTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The time occurrences related to this discovery occurrence were archived.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the archiveTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasArchiveTime() {
+    return archiveTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time occurrences related to this discovery occurrence were archived.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The archiveTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getArchiveTime() {
+    return archiveTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : archiveTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time occurrences related to this discovery occurrence were archived.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getArchiveTimeOrBuilder() {
+    return getArchiveTime();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -800,6 +864,9 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (lastScanTime_ != null) {
       output.writeMessage(5, getLastScanTime());
     }
+    if (archiveTime_ != null) {
+      output.writeMessage(6, getArchiveTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -828,6 +895,9 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (lastScanTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getLastScanTime());
     }
+    if (archiveTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getArchiveTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -854,6 +924,10 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (hasLastScanTime()) {
       if (!getLastScanTime().equals(other.getLastScanTime())) return false;
     }
+    if (hasArchiveTime() != other.hasArchiveTime()) return false;
+    if (hasArchiveTime()) {
+      if (!getArchiveTime().equals(other.getArchiveTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -878,6 +952,10 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (hasLastScanTime()) {
       hash = (37 * hash) + LAST_SCAN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastScanTime().hashCode();
+    }
+    if (hasArchiveTime()) {
+      hash = (37 * hash) + ARCHIVE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getArchiveTime().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1040,6 +1118,12 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         lastScanTime_ = null;
         lastScanTimeBuilder_ = null;
       }
+      if (archiveTimeBuilder_ == null) {
+        archiveTime_ = null;
+      } else {
+        archiveTime_ = null;
+        archiveTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -1077,6 +1161,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         result.lastScanTime_ = lastScanTime_;
       } else {
         result.lastScanTime_ = lastScanTimeBuilder_.build();
+      }
+      if (archiveTimeBuilder_ == null) {
+        result.archiveTime_ = archiveTime_;
+      } else {
+        result.archiveTime_ = archiveTimeBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1142,6 +1231,9 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       if (other.hasLastScanTime()) {
         mergeLastScanTime(other.getLastScanTime());
+      }
+      if (other.hasArchiveTime()) {
+        mergeArchiveTime(other.getArchiveTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1847,6 +1939,209 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         lastScanTime_ = null;
       }
       return lastScanTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp archiveTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        archiveTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The time occurrences related to this discovery occurrence were archived.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the archiveTime field is set.
+     */
+    public boolean hasArchiveTime() {
+      return archiveTimeBuilder_ != null || archiveTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time occurrences related to this discovery occurrence were archived.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The archiveTime.
+     */
+    public com.google.protobuf.Timestamp getArchiveTime() {
+      if (archiveTimeBuilder_ == null) {
+        return archiveTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : archiveTime_;
+      } else {
+        return archiveTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time occurrences related to this discovery occurrence were archived.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setArchiveTime(com.google.protobuf.Timestamp value) {
+      if (archiveTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        archiveTime_ = value;
+        onChanged();
+      } else {
+        archiveTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time occurrences related to this discovery occurrence were archived.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setArchiveTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (archiveTimeBuilder_ == null) {
+        archiveTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        archiveTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time occurrences related to this discovery occurrence were archived.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeArchiveTime(com.google.protobuf.Timestamp value) {
+      if (archiveTimeBuilder_ == null) {
+        if (archiveTime_ != null) {
+          archiveTime_ =
+              com.google.protobuf.Timestamp.newBuilder(archiveTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          archiveTime_ = value;
+        }
+        onChanged();
+      } else {
+        archiveTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time occurrences related to this discovery occurrence were archived.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearArchiveTime() {
+      if (archiveTimeBuilder_ == null) {
+        archiveTime_ = null;
+        onChanged();
+      } else {
+        archiveTime_ = null;
+        archiveTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time occurrences related to this discovery occurrence were archived.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getArchiveTimeBuilder() {
+
+      onChanged();
+      return getArchiveTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time occurrences related to this discovery occurrence were archived.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getArchiveTimeOrBuilder() {
+      if (archiveTimeBuilder_ != null) {
+        return archiveTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return archiveTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : archiveTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time occurrences related to this discovery occurrence were archived.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getArchiveTimeFieldBuilder() {
+      if (archiveTimeBuilder_ == null) {
+        archiveTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getArchiveTime(), getParentForChildren(), isClean());
+        archiveTime_ = null;
+      }
+      return archiveTimeBuilder_;
     }
 
     @java.lang.Override

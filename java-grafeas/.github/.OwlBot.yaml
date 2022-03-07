@@ -16,9 +16,7 @@ docker:
   image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/src"
 
 deep-preserve-regex:
 - "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"

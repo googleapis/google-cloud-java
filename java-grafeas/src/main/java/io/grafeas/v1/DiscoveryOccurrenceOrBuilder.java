@@ -174,4 +174,42 @@ public interface DiscoveryOccurrenceOrBuilder
    * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
    */
   com.google.protobuf.TimestampOrBuilder getLastScanTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time occurrences related to this discovery occurrence were archived.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the archiveTime field is set.
+   */
+  boolean hasArchiveTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time occurrences related to this discovery occurrence were archived.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The archiveTime.
+   */
+  com.google.protobuf.Timestamp getArchiveTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time occurrences related to this discovery occurrence were archived.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getArchiveTimeOrBuilder();
 }
