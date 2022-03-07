@@ -193,7 +193,8 @@ public final class Acl implements Serializable {
       }
       DatasetAclEntity datasetAclEntity = (DatasetAclEntity) obj;
       return Objects.equals(getType(), datasetAclEntity.getType())
-          && Objects.equals(id, datasetAclEntity.id);
+          && Objects.equals(id, datasetAclEntity.id)
+          && Objects.equals(targetTypes, datasetAclEntity.targetTypes);
     }
 
     @Override
