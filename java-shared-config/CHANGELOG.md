@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-shared-config/compare/v1.2.7...v1.3.0) (2022-03-07)
+
+
+### Features
+
+* increase IT timeout from 20 to 60 mins ([#440](https://github.com/googleapis/java-shared-config/issues/440)) ([a4427bc](https://github.com/googleapis/java-shared-config/commit/a4427bceebd0624e23f0b02bb24d7ed46ea4b3a6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:native-image-support to v0.12.6 ([#423](https://github.com/googleapis/java-shared-config/issues/423)) ([9a0cb79](https://github.com/googleapis/java-shared-config/commit/9a0cb79896d5c97dc3c5648a6740d53eb9ada673))
+* update dependency com.puppycrawl.tools:checkstyle to v9.3 ([#415](https://github.com/googleapis/java-shared-config/issues/415)) ([9e2d3fd](https://github.com/googleapis/java-shared-config/commit/9e2d3fd8bd42bc210dae5798f7d5dfe950c29f51))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.10 ([#429](https://github.com/googleapis/java-shared-config/issues/429)) ([0355f29](https://github.com/googleapis/java-shared-config/commit/0355f2988ebcff19615b72bc65523555e4844523))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.10 ([#430](https://github.com/googleapis/java-shared-config/issues/430)) ([16984d2](https://github.com/googleapis/java-shared-config/commit/16984d25a84aa6a8daf2a0925ea57cd0d3f0ee24))
+
 ### [1.2.7](https://github.com/googleapis/java-shared-config/compare/v1.2.6...v1.2.7) (2022-02-04)
 
 
