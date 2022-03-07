@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.2.2](https://github.com/googleapis/java-grafeas/compare/v2.2.1...v2.2.2) (2022-03-07)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#469](https://github.com/googleapis/java-grafeas/issues/469)) ([325cd1c](https://github.com/googleapis/java-grafeas/commit/325cd1c55ea06b4a23c36c38f1b2aed4d211fd2b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#476](https://github.com/googleapis/java-grafeas/issues/476)) ([14c9aee](https://github.com/googleapis/java-grafeas/commit/14c9aee1d4e077dd8d9464f54d0d7c2dbb68641e))
+
 ### [2.2.1](https://github.com/googleapis/java-grafeas/compare/v2.2.0...v2.2.1) (2022-02-22)
 
 
