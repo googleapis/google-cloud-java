@@ -776,7 +776,7 @@
         <dependency>
           <groupId>com.google.cloud</groupId>
           <artifactId>native-image-support</artifactId>
-          <version>0.12.0</version>
+          <version>0.12.6</version>
           <scope>test</scope>
         </dependency>
 
