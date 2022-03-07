@@ -1,5 +1,5 @@
 {
-  "api_shortname": "certificate-manager",
+  "api_shortname": "certificatemanager",
   "name_pretty": "Certificate Manager",
   "product_documentation": "https://cloud.google.com/certificate-manager/docs",
   "api_description": "lets you acquire and manage TLS (SSL) certificates for use with Cloud Load Balancing.",
