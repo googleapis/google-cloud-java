@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.9.2](https://github.com/googleapis/java-bigquery/compare/v2.9.1...v2.9.2) (2022-03-07)
+
+
+### Bug Fixes
+
+* add missing equality check for targetTypes in DatasetAclEntity ([#1866](https://github.com/googleapis/java-bigquery/issues/1866)) ([ca28e2d](https://github.com/googleapis/java-bigquery/commit/ca28e2d68901b6c9332f97c7985aaca7f4486e29))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20220222-1.32.1 ([#1888](https://github.com/googleapis/java-bigquery/issues/1888)) ([c8eb867](https://github.com/googleapis/java-bigquery/commit/c8eb8671e53759e786955dd44fae4867632237e4))
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20220226-1.32.1 ([#1890](https://github.com/googleapis/java-bigquery/issues/1890)) ([c8c5643](https://github.com/googleapis/java-bigquery/commit/c8c5643d0552f9f28a684514cd192f985e0d711c))
+
 ### [2.9.1](https://github.com/googleapis/java-bigquery/compare/v2.9.0...v2.9.1) (2022-03-03)
 
 
