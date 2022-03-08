@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.4.2](https://github.com/googleapis/java-dataflow/compare/v0.4.1...v0.4.2) (2022-03-08)
+
+
+### Bug Fixes
+
+* Use http binding with location field as primary http bindings ([#138](https://github.com/googleapis/java-dataflow/issues/138)) ([4c727e1](https://github.com/googleapis/java-dataflow/commit/4c727e11eedec5bf7cb5a202340b4d43e4afb031))
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#143](https://github.com/googleapis/java-dataflow/issues/143)) ([e89292c](https://github.com/googleapis/java-dataflow/commit/e89292ce45ed7b8ed0a78db7c0b72ee5ab7dcc91))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#145](https://github.com/googleapis/java-dataflow/issues/145)) ([ab6b527](https://github.com/googleapis/java-dataflow/commit/ab6b527ae82546cc9f485e25e460c15efee780b4))
+
 ### [0.4.1](https://github.com/googleapis/java-dataflow/compare/v0.4.0...v0.4.1) (2022-02-11)
 
 
