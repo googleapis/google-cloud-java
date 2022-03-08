@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-redis/compare/v2.2.0...v2.3.0) (2022-03-08)
+
+
+### Features
+
+* add secondary_ip_range field ([#599](https://github.com/googleapis/java-redis/issues/599)) ([a844e79](https://github.com/googleapis/java-redis/commit/a844e79f5600030bff42d439e744291964617d82))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#601](https://github.com/googleapis/java-redis/issues/601)) ([8f3c134](https://github.com/googleapis/java-redis/commit/8f3c134967bda155024a77136ad0b56144114cec))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#609](https://github.com/googleapis/java-redis/issues/609)) ([3a6cc3e](https://github.com/googleapis/java-redis/commit/3a6cc3e110fc5772ae611a30db53d6f348823407))
+* upgrade google-cloud-shared-config to 1.3.0 ([#613](https://github.com/googleapis/java-redis/issues/613)) ([3eaa357](https://github.com/googleapis/java-redis/commit/3eaa3578683a20c51863ababf9454b30a0cc546a))
+
 ## [2.2.0](https://github.com/googleapis/java-redis/compare/v2.1.1...v2.2.0) (2022-02-07)
 
 
