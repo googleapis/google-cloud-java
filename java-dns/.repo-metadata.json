@@ -9,6 +9,6 @@
   "repo": "googleapis/java-dns",
   "repo_short": "java-dns",
   "distribution_name": "com.google.cloud:google-cloud-dns",
-  "library_type": "GAPIC_AUTO",
+  "library_type": "REST",
   "api_id": "dns.googleapis.com"
 }
