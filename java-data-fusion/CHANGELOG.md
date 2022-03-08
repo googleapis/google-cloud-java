@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-data-fusion/compare/v1.0.1...v1.1.0) (2022-03-08)
+
+
+### Features
+
+* publish updated definitions for cloud/datafusion/v1 and cloud/datafusion/v1beta1 ([#111](https://github.com/googleapis/java-data-fusion/issues/111)) ([995973b](https://github.com/googleapis/java-data-fusion/commit/995973b65bb3f7a78f30dfc3df75550c992fae5d))
+
+
+### Bug Fixes
+
+* multiple fields now have field_behavior REQUIRED in cloud/datafusion/v1 service definition ([995973b](https://github.com/googleapis/java-data-fusion/commit/995973b65bb3f7a78f30dfc3df75550c992fae5d))
+* multiple fields now have field_behavior REQUIRED in cloud/datafusion/v1beta1 service definition ([995973b](https://github.com/googleapis/java-data-fusion/commit/995973b65bb3f7a78f30dfc3df75550c992fae5d))
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#141](https://github.com/googleapis/java-data-fusion/issues/141)) ([531e905](https://github.com/googleapis/java-data-fusion/commit/531e905164c85dac2892acb631a72cccf9962940))
+* update actions/setup-java action to v3 ([#136](https://github.com/googleapis/java-data-fusion/issues/136)) ([335322c](https://github.com/googleapis/java-data-fusion/commit/335322cd402746b9a91ce051df95cf9687ab8b15))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#143](https://github.com/googleapis/java-data-fusion/issues/143)) ([985322e](https://github.com/googleapis/java-data-fusion/commit/985322e4c65337eb3547d2155f0120c9d6a07eb3))
+
 ### [1.0.1](https://github.com/googleapis/java-data-fusion/compare/v1.0.0...v1.0.1) (2022-02-11)
 
 
