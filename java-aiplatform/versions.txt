@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-aiplatform:2.7.1:2.7.2-SNAPSHOT
-grpc-google-cloud-aiplatform-v1:2.7.1:2.7.2-SNAPSHOT
-grpc-google-cloud-aiplatform-v1beta1:0.13.1:0.13.2-SNAPSHOT
-proto-google-cloud-aiplatform-v1:2.7.1:2.7.2-SNAPSHOT
-proto-google-cloud-aiplatform-v1beta1:0.13.1:0.13.2-SNAPSHOT
+google-cloud-aiplatform:2.7.2:2.7.2
+grpc-google-cloud-aiplatform-v1:2.7.2:2.7.2
+grpc-google-cloud-aiplatform-v1beta1:0.13.2:0.13.2
+proto-google-cloud-aiplatform-v1:2.7.2:2.7.2
+proto-google-cloud-aiplatform-v1beta1:0.13.2:0.13.2
