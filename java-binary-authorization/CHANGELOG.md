@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://github.com/googleapis/java-binary-authorization/compare/v1.0.3...v1.0.4) (2022-03-08)
+
+
+### Dependencies
+
+* update dependency io.grafeas:grafeas to v2.2.2 ([#183](https://github.com/googleapis/java-binary-authorization/issues/183)) ([6b442fa](https://github.com/googleapis/java-binary-authorization/commit/6b442faa0b0e565094885cce27dec91fa2c65633))
+
 ### [1.0.3](https://github.com/googleapis/java-binary-authorization/compare/v1.0.2...v1.0.3) (2022-03-02)
 
 
