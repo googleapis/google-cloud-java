@@ -1269,6 +1269,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testListZonesBatch() {
     assumeFalse(IS_VPC_TEST);
     try {
@@ -1439,6 +1440,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testCreateValidZoneBatch() {
     assumeFalse(IS_VPC_TEST);
     try {
@@ -1501,6 +1503,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testCreateZoneWithOptionsBatch() {
     assumeFalse(IS_VPC_TEST);
     try {
@@ -1614,6 +1617,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testGetZoneBatch() {
     assumeFalse(IS_VPC_TEST);
     try {
@@ -1713,6 +1717,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testDeleteZoneBatch() {
     assumeFalse(IS_VPC_TEST);
     try {
@@ -1729,6 +1734,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testGetProjectBatch() {
     // fetches all fields
     DnsBatch batch = DNS.batch();
@@ -1752,6 +1758,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testCreateChangeBatch() {
     assumeFalse(IS_VPC_TEST);
     try {
@@ -1857,6 +1864,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testGetChangeBatch() {
     assumeFalse(IS_VPC_TEST);
     try {
@@ -1941,6 +1949,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testListChangesBatch() {
     assumeFalse(IS_VPC_TEST);
     try {
@@ -2071,6 +2080,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testListDnsRecordSetsBatch() {
     assumeFalse(IS_VPC_TEST);
     try {
@@ -2223,6 +2233,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testBatchCombined() {
     assumeFalse(IS_VPC_TEST);
     // only testing that the combination is possible
