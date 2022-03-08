@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.5](https://github.com/googleapis/java-trace/compare/v2.1.4...v2.1.5) (2022-03-08)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:native-image-support to v0.12.7 ([#745](https://github.com/googleapis/java-trace/issues/745)) ([7d4ba8b](https://github.com/googleapis/java-trace/commit/7d4ba8b9b500532e3a9dd3001c905b837e8d858e))
+
 ### [2.1.4](https://github.com/googleapis/java-trace/compare/v2.1.3...v2.1.4) (2022-03-03)
 
 
