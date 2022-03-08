@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.8](https://github.com/googleapis/java-iam/compare/v1.2.7...v1.2.8) (2022-03-08)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#297](https://github.com/googleapis/java-iam/issues/297)) ([868362a](https://github.com/googleapis/java-iam/commit/868362ad7b801e79409e2415e51aee858055334c))
+
 ### [1.2.7](https://github.com/googleapis/java-iam/compare/v1.2.6...v1.2.7) (2022-03-02)
 
 
