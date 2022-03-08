@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.6](https://github.com/googleapis/java-tasks/compare/v2.1.5...v2.1.6) (2022-03-08)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:native-image-support to v0.12.7 ([#637](https://github.com/googleapis/java-tasks/issues/637)) ([57b9e27](https://github.com/googleapis/java-tasks/commit/57b9e27762fb6f599ee936318f3ce3091c425bba))
+
 ### [2.1.5](https://github.com/googleapis/java-tasks/compare/v2.1.4...v2.1.5) (2022-03-03)
 
 
