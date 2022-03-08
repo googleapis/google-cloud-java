@@ -103,6 +103,30 @@ samples)
         echo "no sample pom.xml found - skipping sample tests"
     fi
     ;;
+    tutorials-samples)
+    SAMPLES_DIR=samples/interactive-tutorials
+
+    if [[ -f ${SAMPLES_DIR}/pom.xml ]]
+    then
+        for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
+          [[ -f "$FILE" ]] || continue
+          source "$FILE"
+        done
+
+        pushd ${SAMPLES_DIR}
+        mvn -B \
+          -ntp \
+          -DtrimStackTrace=false \
+          -Dclirr.skip=true \
+          -Denforcer.skip=true \
+          -fae \
+          verify
+        RETURN_CODE=$?
+        popd
+    else
+        echo "no interactive-tutorials pom.xml found - skipping interactive-tutorials tests"
+    fi
+    ;;
 clirr)
     mvn -B -ntp -Denforcer.skip=true clirr:check
     RETURN_CODE=$?

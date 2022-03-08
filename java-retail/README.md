@@ -71,6 +71,18 @@ use this Cloud Retail Client Library.
 
 
 
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-retail/tree/main/samples) directory.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Search With Filtering | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/search/SearchWithFiltering.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/search/SearchWithFiltering.java) |
+| Search With Ordering | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/search/SearchWithOrdering.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/search/SearchWithOrdering.java) |
+| Search With Pagination | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/search/SearchWithPagination.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/search/SearchWithPagination.java) |
+| Search With Query Expansion Spec | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/search/SearchWithQueryExpansionSpec.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/search/SearchWithQueryExpansionSpec.java) |
+
+
 
 ## Troubleshooting
 

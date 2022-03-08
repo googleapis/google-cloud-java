@@ -31,6 +31,7 @@
     <module>install-without-bom</module>
     <module>snapshot</module>
     <module>snippets</module>
+    <module>interactive-tutorials</module>
   </modules>
 
   <build>
@@ -44,6 +45,13 @@
         </configuration>
       </plugin>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <skip>false</skip>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.sonatype.plugins</groupId>
         <artifactId>nexus-staging-maven-plugin</artifactId>
         <version>1.6.11</version>
@@ -53,4 +61,4 @@
       </plugin>
     </plugins>
   </build>
-</project> 
+</project>
