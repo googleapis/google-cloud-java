@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-gkehub/compare/v1.0.1...v1.1.0) (2022-03-08)
+
+
+### Features
+
+* added support for k8s_version field ([#204](https://github.com/googleapis/java-gkehub/issues/204)) ([c10f8a3](https://github.com/googleapis/java-gkehub/commit/c10f8a3b9e16dacf0b25e4039088d02212a0e10a))
+
+
+### Documentation
+
+* k8s_version field is not part of resource_options struct ([c10f8a3](https://github.com/googleapis/java-gkehub/commit/c10f8a3b9e16dacf0b25e4039088d02212a0e10a))
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#205](https://github.com/googleapis/java-gkehub/issues/205)) ([1cfd7b9](https://github.com/googleapis/java-gkehub/commit/1cfd7b98751dc8410f1006a0afca3703465aed03))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#210](https://github.com/googleapis/java-gkehub/issues/210)) ([da898e4](https://github.com/googleapis/java-gkehub/commit/da898e44ad58b0f66ed6e44bc06689fe6a1abc8c))
+
 ### [1.0.1](https://github.com/googleapis/java-gkehub/compare/v1.0.0...v1.0.1) (2022-02-11)
 
 
