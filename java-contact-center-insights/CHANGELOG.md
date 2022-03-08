@@ -1,5 +1,23 @@
 # Changelog
 
+### [2.2.2](https://github.com/googleapis/java-contact-center-insights/compare/v2.2.2-SNAPSHOT...v2.2.2) (2022-03-08)
+
+
+### Documentation
+
+* Updating copyright to 2022 ([#210](https://github.com/googleapis/java-contact-center-insights/issues/210)) ([f9860b1](https://github.com/googleapis/java-contact-center-insights/commit/f9860b184a1623cb891b653249569fc9526528c6))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#203](https://github.com/googleapis/java-contact-center-insights/issues/203)) ([74baf84](https://github.com/googleapis/java-contact-center-insights/commit/74baf84834ad10bf86e3a7a4f07fc621f80294c8))
+* update actions/setup-java action to v3 ([#213](https://github.com/googleapis/java-contact-center-insights/issues/213)) ([91b58dd](https://github.com/googleapis/java-contact-center-insights/commit/91b58dd44e2a1d766ac82a65af64a932bde3199a))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.9.0 ([#206](https://github.com/googleapis/java-contact-center-insights/issues/206)) ([75fb9e0](https://github.com/googleapis/java-contact-center-insights/commit/75fb9e092584c0c23775405e8a9bf1754f4dd01c))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.9.3 ([#221](https://github.com/googleapis/java-contact-center-insights/issues/221)) ([0963bd4](https://github.com/googleapis/java-contact-center-insights/commit/0963bd4b6c4abaf91f8783abe5f98cec7a97d14e))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.115.2 ([#194](https://github.com/googleapis/java-contact-center-insights/issues/194)) ([17c7a0c](https://github.com/googleapis/java-contact-center-insights/commit/17c7a0c842cae710385edaf306fd86286662d49c))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.116.0 ([#217](https://github.com/googleapis/java-contact-center-insights/issues/217)) ([1b25d9b](https://github.com/googleapis/java-contact-center-insights/commit/1b25d9bdd821a230c41d6ca5b6e54a506d1fa9c5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#219](https://github.com/googleapis/java-contact-center-insights/issues/219)) ([b1256b3](https://github.com/googleapis/java-contact-center-insights/commit/b1256b34f197ca7c12ffbb5939ad8add3c7aef20))
+
 ### [2.2.1](https://www.github.com/googleapis/java-contact-center-insights/compare/v2.2.0...v2.2.1) (2022-01-10)
 
 
