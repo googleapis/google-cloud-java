@@ -79,6 +79,10 @@ public final class ConnectionOuterClass {
       internal_static_google_cloud_bigquery_connection_v1_AwsAccessRole_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_connection_v1_AwsAccessRole_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_connection_v1_CloudResourceProperties_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_connection_v1_CloudResourceProperties_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -96,110 +100,113 @@ public final class ConnectionOuterClass {
           + ".proto\032\036google/iam/v1/iam_policy.proto\032\032"
           + "google/iam/v1/policy.proto\032\033google/proto"
           + "buf/empty.proto\032 google/protobuf/field_m"
-          + "ask.proto\032\036google/protobuf/wrappers.prot"
-          + "o\"\272\001\n\027CreateConnectionRequest\0229\n\006parent\030"
-          + "\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.com/"
-          + "Location\022\032\n\rconnection_id\030\002 \001(\tB\003\340A\001\022H\n\n"
-          + "connection\030\003 \001(\0132/.google.cloud.bigquery"
-          + ".connection.v1.ConnectionB\003\340A\002\"Z\n\024GetCon"
-          + "nectionRequest\022B\n\004name\030\001 \001(\tB4\340A\002\372A.\n,bi"
-          + "gqueryconnection.googleapis.com/Connecti"
-          + "on\"\177\n\026ListConnectionsRequest\0229\n\006parent\030\001"
-          + " \001(\tB)\340A\002\372A#\n!locations.googleapis.com/L"
-          + "ocation\022\026\n\tpage_size\030\004 \001(\005B\003\340A\002\022\022\n\npage_"
-          + "token\030\003 \001(\t\"x\n\027ListConnectionsResponse\022\027"
-          + "\n\017next_page_token\030\001 \001(\t\022D\n\013connections\030\002"
-          + " \003(\0132/.google.cloud.bigquery.connection."
-          + "v1.Connection\"\335\001\n\027UpdateConnectionReques"
-          + "t\022B\n\004name\030\001 \001(\tB4\340A\002\372A.\n,bigqueryconnect"
-          + "ion.googleapis.com/Connection\022H\n\nconnect"
-          + "ion\030\002 \001(\0132/.google.cloud.bigquery.connec"
-          + "tion.v1.ConnectionB\003\340A\002\0224\n\013update_mask\030\003"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"]\n"
-          + "\027DeleteConnectionRequest\022B\n\004name\030\001 \001(\tB4"
-          + "\340A\002\372A.\n,bigqueryconnection.googleapis.co"
-          + "m/Connection\"\212\004\n\nConnection\022\014\n\004name\030\001 \001("
-          + "\t\022\025\n\rfriendly_name\030\002 \001(\t\022\023\n\013description\030"
-          + "\003 \001(\t\022L\n\tcloud_sql\030\004 \001(\01327.google.cloud."
-          + "bigquery.connection.v1.CloudSqlPropertie"
-          + "sH\000\022A\n\003aws\030\010 \001(\01322.google.cloud.bigquery"
-          + ".connection.v1.AwsPropertiesH\000\022T\n\rcloud_"
-          + "spanner\030\025 \001(\0132;.google.cloud.bigquery.co"
-          + "nnection.v1.CloudSpannerPropertiesH\000\022\032\n\r"
-          + "creation_time\030\005 \001(\003B\003\340A\003\022\037\n\022last_modifie"
-          + "d_time\030\006 \001(\003B\003\340A\003\022\033\n\016has_credential\030\007 \001("
-          + "\010B\003\340A\003:s\352Ap\n,bigqueryconnection.googleap"
-          + "is.com/Connection\022@projects/{project}/lo"
-          + "cations/{location}/connections/{connecti"
-          + "on}B\014\n\nproperties\"\251\002\n\022CloudSqlProperties"
-          + "\022\023\n\013instance_id\030\001 \001(\t\022\020\n\010database\030\002 \001(\t\022"
-          + "R\n\004type\030\003 \001(\0162D.google.cloud.bigquery.co"
-          + "nnection.v1.CloudSqlProperties.DatabaseT"
-          + "ype\022P\n\ncredential\030\004 \001(\01327.google.cloud.b"
-          + "igquery.connection.v1.CloudSqlCredential"
-          + "B\003\340A\004\"F\n\014DatabaseType\022\035\n\031DATABASE_TYPE_U"
-          + "NSPECIFIED\020\000\022\014\n\010POSTGRES\020\001\022\t\n\005MYSQL\020\002\"8\n"
-          + "\022CloudSqlCredential\022\020\n\010username\030\001 \001(\t\022\020\n"
-          + "\010password\030\002 \001(\t\"C\n\026CloudSpannerPropertie"
-          + "s\022\020\n\010database\030\001 \001(\t\022\027\n\017use_parallelism\030\002"
-          + " \001(\010\"\313\001\n\rAwsProperties\022V\n\022cross_account_"
-          + "role\030\002 \001(\01328.google.cloud.bigquery.conne"
-          + "ction.v1.AwsCrossAccountRoleH\000\022I\n\013access"
-          + "_role\030\003 \001(\01322.google.cloud.bigquery.conn"
-          + "ection.v1.AwsAccessRoleH\000B\027\n\025authenticat"
-          + "ion_method\"^\n\023AwsCrossAccountRole\022\023\n\013iam"
-          + "_role_id\030\001 \001(\t\022\030\n\013iam_user_id\030\002 \001(\tB\003\340A\003"
-          + "\022\030\n\013external_id\030\003 \001(\tB\003\340A\003\"6\n\rAwsAccessR"
-          + "ole\022\023\n\013iam_role_id\030\001 \001(\t\022\020\n\010identity\030\002 \001"
-          + "(\t2\314\r\n\021ConnectionService\022\350\001\n\020CreateConne"
-          + "ction\022<.google.cloud.bigquery.connection"
-          + ".v1.CreateConnectionRequest\032/.google.clo"
-          + "ud.bigquery.connection.v1.Connection\"e\202\323"
-          + "\344\223\002=\"//v1/{parent=projects/*/locations/*"
-          + "}/connections:\nconnection\332A\037parent,conne"
-          + "ction,connection_id\022\273\001\n\rGetConnection\0229."
-          + "google.cloud.bigquery.connection.v1.GetC"
-          + "onnectionRequest\032/.google.cloud.bigquery"
-          + ".connection.v1.Connection\">\202\323\344\223\0021\022//v1/{"
-          + "name=projects/*/locations/*/connections/"
-          + "*}\332A\004name\022\316\001\n\017ListConnections\022;.google.c"
-          + "loud.bigquery.connection.v1.ListConnecti"
-          + "onsRequest\032<.google.cloud.bigquery.conne"
-          + "ction.v1.ListConnectionsResponse\"@\202\323\344\223\0021"
-          + "\022//v1/{parent=projects/*/locations/*}/co"
-          + "nnections\332A\006parent\022\344\001\n\020UpdateConnection\022"
-          + "<.google.cloud.bigquery.connection.v1.Up"
-          + "dateConnectionRequest\032/.google.cloud.big"
-          + "query.connection.v1.Connection\"a\202\323\344\223\002=2/"
-          + "/v1/{name=projects/*/locations/*/connect"
-          + "ions/*}:\nconnection\332A\033name,connection,up"
-          + "date_mask\022\250\001\n\020DeleteConnection\022<.google."
-          + "cloud.bigquery.connection.v1.DeleteConne"
-          + "ctionRequest\032\026.google.protobuf.Empty\">\202\323"
-          + "\344\223\0021*//v1/{name=projects/*/locations/*/c"
-          + "onnections/*}\332A\004name\022\251\001\n\014GetIamPolicy\022\"."
-          + "google.iam.v1.GetIamPolicyRequest\032\025.goog"
-          + "le.iam.v1.Policy\"^\202\323\344\223\002E\"@/v1/{resource="
-          + "projects/*/locations/*/connections/*}:ge"
-          + "tIamPolicy:\001*\332A\020resource,options\022\250\001\n\014Set"
-          + "IamPolicy\022\".google.iam.v1.SetIamPolicyRe"
-          + "quest\032\025.google.iam.v1.Policy\"]\202\323\344\223\002E\"@/v"
-          + "1/{resource=projects/*/locations/*/conne"
-          + "ctions/*}:setIamPolicy:\001*\332A\017resource,pol"
-          + "icy\022\323\001\n\022TestIamPermissions\022(.google.iam."
-          + "v1.TestIamPermissionsRequest\032).google.ia"
-          + "m.v1.TestIamPermissionsResponse\"h\202\323\344\223\002K\""
-          + "F/v1/{resource=projects/*/locations/*/co"
-          + "nnections/*}:testIamPermissions:\001*\332A\024res"
-          + "ource,permissions\032~\312A!bigqueryconnection"
-          + ".googleapis.com\322AWhttps://www.googleapis"
-          + ".com/auth/bigquery,https://www.googleapi"
-          + "s.com/auth/cloud-platformB\306\001\n\'com.google"
-          + ".cloud.bigquery.connection.v1P\001ZMgoogle."
-          + "golang.org/genproto/googleapis/cloud/big"
-          + "query/connection/v1;connection\252\002#Google."
-          + "Cloud.BigQuery.Connection.V1\312\002#Google\\Cl"
-          + "oud\\BigQuery\\Connection\\V1b\006proto3"
+          + "ask.proto\"\272\001\n\027CreateConnectionRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googlea"
+          + "pis.com/Location\022\032\n\rconnection_id\030\002 \001(\tB"
+          + "\003\340A\001\022H\n\nconnection\030\003 \001(\0132/.google.cloud."
+          + "bigquery.connection.v1.ConnectionB\003\340A\002\"Z"
+          + "\n\024GetConnectionRequest\022B\n\004name\030\001 \001(\tB4\340A"
+          + "\002\372A.\n,bigqueryconnection.googleapis.com/"
+          + "Connection\"\177\n\026ListConnectionsRequest\0229\n\006"
+          + "parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleap"
+          + "is.com/Location\022\026\n\tpage_size\030\004 \001(\005B\003\340A\002\022"
+          + "\022\n\npage_token\030\003 \001(\t\"x\n\027ListConnectionsRe"
+          + "sponse\022\027\n\017next_page_token\030\001 \001(\t\022D\n\013conne"
+          + "ctions\030\002 \003(\0132/.google.cloud.bigquery.con"
+          + "nection.v1.Connection\"\335\001\n\027UpdateConnecti"
+          + "onRequest\022B\n\004name\030\001 \001(\tB4\340A\002\372A.\n,bigquer"
+          + "yconnection.googleapis.com/Connection\022H\n"
+          + "\nconnection\030\002 \001(\0132/.google.cloud.bigquer"
+          + "y.connection.v1.ConnectionB\003\340A\002\0224\n\013updat"
+          + "e_mask\030\003 \001(\0132\032.google.protobuf.FieldMask"
+          + "B\003\340A\002\"]\n\027DeleteConnectionRequest\022B\n\004name"
+          + "\030\001 \001(\tB4\340A\002\372A.\n,bigqueryconnection.googl"
+          + "eapis.com/Connection\"\342\004\n\nConnection\022\014\n\004n"
+          + "ame\030\001 \001(\t\022\025\n\rfriendly_name\030\002 \001(\t\022\023\n\013desc"
+          + "ription\030\003 \001(\t\022L\n\tcloud_sql\030\004 \001(\01327.googl"
+          + "e.cloud.bigquery.connection.v1.CloudSqlP"
+          + "ropertiesH\000\022A\n\003aws\030\010 \001(\01322.google.cloud."
+          + "bigquery.connection.v1.AwsPropertiesH\000\022T"
+          + "\n\rcloud_spanner\030\025 \001(\0132;.google.cloud.big"
+          + "query.connection.v1.CloudSpannerProperti"
+          + "esH\000\022V\n\016cloud_resource\030\026 \001(\0132<.google.cl"
+          + "oud.bigquery.connection.v1.CloudResource"
+          + "PropertiesH\000\022\032\n\rcreation_time\030\005 \001(\003B\003\340A\003"
+          + "\022\037\n\022last_modified_time\030\006 \001(\003B\003\340A\003\022\033\n\016has"
+          + "_credential\030\007 \001(\010B\003\340A\003:s\352Ap\n,bigquerycon"
+          + "nection.googleapis.com/Connection\022@proje"
+          + "cts/{project}/locations/{location}/conne"
+          + "ctions/{connection}B\014\n\nproperties\"\251\002\n\022Cl"
+          + "oudSqlProperties\022\023\n\013instance_id\030\001 \001(\t\022\020\n"
+          + "\010database\030\002 \001(\t\022R\n\004type\030\003 \001(\0162D.google.c"
+          + "loud.bigquery.connection.v1.CloudSqlProp"
+          + "erties.DatabaseType\022P\n\ncredential\030\004 \001(\0132"
+          + "7.google.cloud.bigquery.connection.v1.Cl"
+          + "oudSqlCredentialB\003\340A\004\"F\n\014DatabaseType\022\035\n"
+          + "\031DATABASE_TYPE_UNSPECIFIED\020\000\022\014\n\010POSTGRES"
+          + "\020\001\022\t\n\005MYSQL\020\002\"8\n\022CloudSqlCredential\022\020\n\010u"
+          + "sername\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"C\n\026Cloud"
+          + "SpannerProperties\022\020\n\010database\030\001 \001(\t\022\027\n\017u"
+          + "se_parallelism\030\002 \001(\010\"\313\001\n\rAwsProperties\022V"
+          + "\n\022cross_account_role\030\002 \001(\01328.google.clou"
+          + "d.bigquery.connection.v1.AwsCrossAccount"
+          + "RoleH\000\022I\n\013access_role\030\003 \001(\01322.google.clo"
+          + "ud.bigquery.connection.v1.AwsAccessRoleH"
+          + "\000B\027\n\025authentication_method\"^\n\023AwsCrossAc"
+          + "countRole\022\023\n\013iam_role_id\030\001 \001(\t\022\030\n\013iam_us"
+          + "er_id\030\002 \001(\tB\003\340A\003\022\030\n\013external_id\030\003 \001(\tB\003\340"
+          + "A\003\"6\n\rAwsAccessRole\022\023\n\013iam_role_id\030\001 \001(\t"
+          + "\022\020\n\010identity\030\002 \001(\t\":\n\027CloudResourcePrope"
+          + "rties\022\037\n\022service_account_id\030\001 \001(\tB\003\340A\0032\314"
+          + "\r\n\021ConnectionService\022\350\001\n\020CreateConnectio"
+          + "n\022<.google.cloud.bigquery.connection.v1."
+          + "CreateConnectionRequest\032/.google.cloud.b"
+          + "igquery.connection.v1.Connection\"e\202\323\344\223\002="
+          + "\"//v1/{parent=projects/*/locations/*}/co"
+          + "nnections:\nconnection\332A\037parent,connectio"
+          + "n,connection_id\022\273\001\n\rGetConnection\0229.goog"
+          + "le.cloud.bigquery.connection.v1.GetConne"
+          + "ctionRequest\032/.google.cloud.bigquery.con"
+          + "nection.v1.Connection\">\202\323\344\223\0021\022//v1/{name"
+          + "=projects/*/locations/*/connections/*}\332A"
+          + "\004name\022\316\001\n\017ListConnections\022;.google.cloud"
+          + ".bigquery.connection.v1.ListConnectionsR"
+          + "equest\032<.google.cloud.bigquery.connectio"
+          + "n.v1.ListConnectionsResponse\"@\202\323\344\223\0021\022//v"
+          + "1/{parent=projects/*/locations/*}/connec"
+          + "tions\332A\006parent\022\344\001\n\020UpdateConnection\022<.go"
+          + "ogle.cloud.bigquery.connection.v1.Update"
+          + "ConnectionRequest\032/.google.cloud.bigquer"
+          + "y.connection.v1.Connection\"a\202\323\344\223\002=2//v1/"
+          + "{name=projects/*/locations/*/connections"
+          + "/*}:\nconnection\332A\033name,connection,update"
+          + "_mask\022\250\001\n\020DeleteConnection\022<.google.clou"
+          + "d.bigquery.connection.v1.DeleteConnectio"
+          + "nRequest\032\026.google.protobuf.Empty\">\202\323\344\223\0021"
+          + "*//v1/{name=projects/*/locations/*/conne"
+          + "ctions/*}\332A\004name\022\251\001\n\014GetIamPolicy\022\".goog"
+          + "le.iam.v1.GetIamPolicyRequest\032\025.google.i"
+          + "am.v1.Policy\"^\202\323\344\223\002E\"@/v1/{resource=proj"
+          + "ects/*/locations/*/connections/*}:getIam"
+          + "Policy:\001*\332A\020resource,options\022\250\001\n\014SetIamP"
+          + "olicy\022\".google.iam.v1.SetIamPolicyReques"
+          + "t\032\025.google.iam.v1.Policy\"]\202\323\344\223\002E\"@/v1/{r"
+          + "esource=projects/*/locations/*/connectio"
+          + "ns/*}:setIamPolicy:\001*\332A\017resource,policy\022"
+          + "\323\001\n\022TestIamPermissions\022(.google.iam.v1.T"
+          + "estIamPermissionsRequest\032).google.iam.v1"
+          + ".TestIamPermissionsResponse\"h\202\323\344\223\002K\"F/v1"
+          + "/{resource=projects/*/locations/*/connec"
+          + "tions/*}:testIamPermissions:\001*\332A\024resourc"
+          + "e,permissions\032~\312A!bigqueryconnection.goo"
+          + "gleapis.com\322AWhttps://www.googleapis.com"
+          + "/auth/bigquery,https://www.googleapis.co"
+          + "m/auth/cloud-platformB\306\001\n\'com.google.clo"
+          + "ud.bigquery.connection.v1P\001ZMgoogle.gola"
+          + "ng.org/genproto/googleapis/cloud/bigquer"
+          + "y/connection/v1;connection\252\002#Google.Clou"
+          + "d.BigQuery.Connection.V1\312\002#Google\\Cloud\\"
+          + "BigQuery\\Connection\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -213,7 +220,6 @@ public final class ConnectionOuterClass {
               com.google.iam.v1.PolicyProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
-              com.google.protobuf.WrappersProto.getDescriptor(),
             });
     internal_static_google_cloud_bigquery_connection_v1_CreateConnectionRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -275,6 +281,7 @@ public final class ConnectionOuterClass {
               "CloudSql",
               "Aws",
               "CloudSpanner",
+              "CloudResource",
               "CreationTime",
               "LastModifiedTime",
               "HasCredential",
@@ -328,6 +335,14 @@ public final class ConnectionOuterClass {
             new java.lang.String[] {
               "IamRoleId", "Identity",
             });
+    internal_static_google_cloud_bigquery_connection_v1_CloudResourceProperties_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_bigquery_connection_v1_CloudResourceProperties_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_connection_v1_CloudResourceProperties_descriptor,
+            new java.lang.String[] {
+              "ServiceAccountId",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -347,7 +362,6 @@ public final class ConnectionOuterClass {
     com.google.iam.v1.PolicyProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
-    com.google.protobuf.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

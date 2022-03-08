@@ -210,6 +210,42 @@ public interface ConnectionOrBuilder
    *
    *
    * <pre>
+   * Cloud Resource properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;</code>
+   *
+   * @return Whether the cloudResource field is set.
+   */
+  boolean hasCloudResource();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Resource properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;</code>
+   *
+   * @return The cloudResource.
+   */
+  com.google.cloud.bigquery.connection.v1.CloudResourceProperties getCloudResource();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Resource properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;</code>
+   */
+  com.google.cloud.bigquery.connection.v1.CloudResourcePropertiesOrBuilder
+      getCloudResourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The creation timestamp of the connection.
    * </pre>
    *

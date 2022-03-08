@@ -170,6 +170,27 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
               propertiesCase_ = 21;
               break;
             }
+          case 178:
+            {
+              com.google.cloud.bigquery.connection.v1.CloudResourceProperties.Builder subBuilder =
+                  null;
+              if (propertiesCase_ == 22) {
+                subBuilder =
+                    ((com.google.cloud.bigquery.connection.v1.CloudResourceProperties) properties_)
+                        .toBuilder();
+              }
+              properties_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.connection.v1.CloudResourceProperties.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.bigquery.connection.v1.CloudResourceProperties) properties_);
+                properties_ = subBuilder.buildPartial();
+              }
+              propertiesCase_ = 22;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -214,6 +235,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     CLOUD_SQL(4),
     AWS(8),
     CLOUD_SPANNER(21),
+    CLOUD_RESOURCE(22),
     PROPERTIES_NOT_SET(0);
     private final int value;
 
@@ -238,6 +260,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           return AWS;
         case 21:
           return CLOUD_SPANNER;
+        case 22:
+          return CLOUD_RESOURCE;
         case 0:
           return PROPERTIES_NOT_SET;
         default:
@@ -558,6 +582,58 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.bigquery.connection.v1.CloudSpannerProperties.getDefaultInstance();
   }
 
+  public static final int CLOUD_RESOURCE_FIELD_NUMBER = 22;
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Resource properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;</code>
+   *
+   * @return Whether the cloudResource field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudResource() {
+    return propertiesCase_ == 22;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Resource properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;</code>
+   *
+   * @return The cloudResource.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.connection.v1.CloudResourceProperties getCloudResource() {
+    if (propertiesCase_ == 22) {
+      return (com.google.cloud.bigquery.connection.v1.CloudResourceProperties) properties_;
+    }
+    return com.google.cloud.bigquery.connection.v1.CloudResourceProperties.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Resource properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.connection.v1.CloudResourcePropertiesOrBuilder
+      getCloudResourceOrBuilder() {
+    if (propertiesCase_ == 22) {
+      return (com.google.cloud.bigquery.connection.v1.CloudResourceProperties) properties_;
+    }
+    return com.google.cloud.bigquery.connection.v1.CloudResourceProperties.getDefaultInstance();
+  }
+
   public static final int CREATION_TIME_FIELD_NUMBER = 5;
   private long creationTime_;
   /**
@@ -655,6 +731,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           21, (com.google.cloud.bigquery.connection.v1.CloudSpannerProperties) properties_);
     }
+    if (propertiesCase_ == 22) {
+      output.writeMessage(
+          22, (com.google.cloud.bigquery.connection.v1.CloudResourceProperties) properties_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -697,6 +777,11 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               21, (com.google.cloud.bigquery.connection.v1.CloudSpannerProperties) properties_);
     }
+    if (propertiesCase_ == 22) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, (com.google.cloud.bigquery.connection.v1.CloudResourceProperties) properties_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -729,6 +814,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         break;
       case 21:
         if (!getCloudSpanner().equals(other.getCloudSpanner())) return false;
+        break;
+      case 22:
+        if (!getCloudResource().equals(other.getCloudResource())) return false;
         break;
       case 0:
       default:
@@ -768,6 +856,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       case 21:
         hash = (37 * hash) + CLOUD_SPANNER_FIELD_NUMBER;
         hash = (53 * hash) + getCloudSpanner().hashCode();
+        break;
+      case 22:
+        hash = (37 * hash) + CLOUD_RESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudResource().hashCode();
         break;
       case 0:
       default:
@@ -983,6 +1075,13 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           result.properties_ = cloudSpannerBuilder_.build();
         }
       }
+      if (propertiesCase_ == 22) {
+        if (cloudResourceBuilder_ == null) {
+          result.properties_ = properties_;
+        } else {
+          result.properties_ = cloudResourceBuilder_.build();
+        }
+      }
       result.creationTime_ = creationTime_;
       result.lastModifiedTime_ = lastModifiedTime_;
       result.hasCredential_ = hasCredential_;
@@ -1072,6 +1171,11 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         case CLOUD_SPANNER:
           {
             mergeCloudSpanner(other.getCloudSpanner());
+            break;
+          }
+        case CLOUD_RESOURCE:
+          {
+            mergeCloudResource(other.getCloudResource());
             break;
           }
         case PROPERTIES_NOT_SET:
@@ -2083,6 +2187,231 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return cloudSpannerBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.connection.v1.CloudResourceProperties,
+            com.google.cloud.bigquery.connection.v1.CloudResourceProperties.Builder,
+            com.google.cloud.bigquery.connection.v1.CloudResourcePropertiesOrBuilder>
+        cloudResourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Resource properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;
+     * </code>
+     *
+     * @return Whether the cloudResource field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudResource() {
+      return propertiesCase_ == 22;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Resource properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;
+     * </code>
+     *
+     * @return The cloudResource.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.connection.v1.CloudResourceProperties getCloudResource() {
+      if (cloudResourceBuilder_ == null) {
+        if (propertiesCase_ == 22) {
+          return (com.google.cloud.bigquery.connection.v1.CloudResourceProperties) properties_;
+        }
+        return com.google.cloud.bigquery.connection.v1.CloudResourceProperties.getDefaultInstance();
+      } else {
+        if (propertiesCase_ == 22) {
+          return cloudResourceBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.connection.v1.CloudResourceProperties.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Resource properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;
+     * </code>
+     */
+    public Builder setCloudResource(
+        com.google.cloud.bigquery.connection.v1.CloudResourceProperties value) {
+      if (cloudResourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        properties_ = value;
+        onChanged();
+      } else {
+        cloudResourceBuilder_.setMessage(value);
+      }
+      propertiesCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Resource properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;
+     * </code>
+     */
+    public Builder setCloudResource(
+        com.google.cloud.bigquery.connection.v1.CloudResourceProperties.Builder builderForValue) {
+      if (cloudResourceBuilder_ == null) {
+        properties_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudResourceBuilder_.setMessage(builderForValue.build());
+      }
+      propertiesCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Resource properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;
+     * </code>
+     */
+    public Builder mergeCloudResource(
+        com.google.cloud.bigquery.connection.v1.CloudResourceProperties value) {
+      if (cloudResourceBuilder_ == null) {
+        if (propertiesCase_ == 22
+            && properties_
+                != com.google.cloud.bigquery.connection.v1.CloudResourceProperties
+                    .getDefaultInstance()) {
+          properties_ =
+              com.google.cloud.bigquery.connection.v1.CloudResourceProperties.newBuilder(
+                      (com.google.cloud.bigquery.connection.v1.CloudResourceProperties) properties_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          properties_ = value;
+        }
+        onChanged();
+      } else {
+        if (propertiesCase_ == 22) {
+          cloudResourceBuilder_.mergeFrom(value);
+        }
+        cloudResourceBuilder_.setMessage(value);
+      }
+      propertiesCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Resource properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;
+     * </code>
+     */
+    public Builder clearCloudResource() {
+      if (cloudResourceBuilder_ == null) {
+        if (propertiesCase_ == 22) {
+          propertiesCase_ = 0;
+          properties_ = null;
+          onChanged();
+        }
+      } else {
+        if (propertiesCase_ == 22) {
+          propertiesCase_ = 0;
+          properties_ = null;
+        }
+        cloudResourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Resource properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;
+     * </code>
+     */
+    public com.google.cloud.bigquery.connection.v1.CloudResourceProperties.Builder
+        getCloudResourceBuilder() {
+      return getCloudResourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Resource properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.connection.v1.CloudResourcePropertiesOrBuilder
+        getCloudResourceOrBuilder() {
+      if ((propertiesCase_ == 22) && (cloudResourceBuilder_ != null)) {
+        return cloudResourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (propertiesCase_ == 22) {
+          return (com.google.cloud.bigquery.connection.v1.CloudResourceProperties) properties_;
+        }
+        return com.google.cloud.bigquery.connection.v1.CloudResourceProperties.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Resource properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.CloudResourceProperties cloud_resource = 22;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.connection.v1.CloudResourceProperties,
+            com.google.cloud.bigquery.connection.v1.CloudResourceProperties.Builder,
+            com.google.cloud.bigquery.connection.v1.CloudResourcePropertiesOrBuilder>
+        getCloudResourceFieldBuilder() {
+      if (cloudResourceBuilder_ == null) {
+        if (!(propertiesCase_ == 22)) {
+          properties_ =
+              com.google.cloud.bigquery.connection.v1.CloudResourceProperties.getDefaultInstance();
+        }
+        cloudResourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.connection.v1.CloudResourceProperties,
+                com.google.cloud.bigquery.connection.v1.CloudResourceProperties.Builder,
+                com.google.cloud.bigquery.connection.v1.CloudResourcePropertiesOrBuilder>(
+                (com.google.cloud.bigquery.connection.v1.CloudResourceProperties) properties_,
+                getParentForChildren(),
+                isClean());
+        properties_ = null;
+      }
+      propertiesCase_ = 22;
+      onChanged();
+      ;
+      return cloudResourceBuilder_;
     }
 
     private long creationTime_;
