@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-networkconnectivity/compare/v1.0.0...v1.1.0) (2022-03-08)
+
+
+### Features
+
+* Add LocationMetadata message feat: Add RoutingVPC.required_for_new_site_to_site_data_transfer_spokes field docs: Update comments to reflect that spokes can now be created with data transfer disabled ([#210](https://github.com/googleapis/java-networkconnectivity/issues/210)) ([0aa4c7d](https://github.com/googleapis/java-networkconnectivity/commit/0aa4c7da3b26eda85b4840d2ffee1f2a0b1e088c))
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#216](https://github.com/googleapis/java-networkconnectivity/issues/216)) ([079084e](https://github.com/googleapis/java-networkconnectivity/commit/079084e7b717364cb112fd9fca73690175df8ddb))
+* update actions/setup-java action to v3 ([#221](https://github.com/googleapis/java-networkconnectivity/issues/221)) ([7296709](https://github.com/googleapis/java-networkconnectivity/commit/729670966d090eb8de1e88bb90108198b0e1c1b3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#226](https://github.com/googleapis/java-networkconnectivity/issues/226)) ([a512078](https://github.com/googleapis/java-networkconnectivity/commit/a5120788d42c96f5ca17087eaed1ee3e8c206724))
+
 ## [1.0.0](https://github.com/googleapis/java-networkconnectivity/compare/v0.5.0...v1.0.0) (2022-02-03)
 
 
