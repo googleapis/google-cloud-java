@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.0.2](https://github.com/googleapis/java-video-transcoder/compare/v1.0.1...v1.0.2) (2022-03-08)
+
+
+### Bug Fixes
+
+* Remove deprecated v1beta1 API that is no longer available ([#298](https://github.com/googleapis/java-video-transcoder/issues/298)) ([467e5eb](https://github.com/googleapis/java-video-transcoder/commit/467e5eb3027889ca650aac776383cf61570ce7d3))
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#312](https://github.com/googleapis/java-video-transcoder/issues/312)) ([4a6cdd1](https://github.com/googleapis/java-video-transcoder/commit/4a6cdd15c47417f21ac401585c9c0acc0e714c2f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#318](https://github.com/googleapis/java-video-transcoder/issues/318)) ([0458868](https://github.com/googleapis/java-video-transcoder/commit/04588684125ac2d1ad577a30e7d734025a2ca38c))
+
 ### [1.0.1](https://github.com/googleapis/java-video-transcoder/compare/v1.0.0...v1.0.1) (2022-02-11)
 
 
