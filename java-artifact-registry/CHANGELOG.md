@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-artifact-registry/compare/v1.0.0...v1.1.0) (2022-03-08)
+
+
+### Features
+
+* add order_by support for listing versions ([eb227fe](https://github.com/googleapis/java-artifact-registry/commit/eb227fe9a669d3debff40ee2f013fd71859bc025))
+* add version policy support for Maven repositories ([eb227fe](https://github.com/googleapis/java-artifact-registry/commit/eb227fe9a669d3debff40ee2f013fd71859bc025))
+
+
+### Bug Fixes
+
+* mark a few resource name fields as required ([eb227fe](https://github.com/googleapis/java-artifact-registry/commit/eb227fe9a669d3debff40ee2f013fd71859bc025))
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#237](https://github.com/googleapis/java-artifact-registry/issues/237)) ([82787c7](https://github.com/googleapis/java-artifact-registry/commit/82787c7ae3b84ee8fc8f3646fcb2d32b5fde1533))
+* update actions/github-script action to v6 ([#228](https://github.com/googleapis/java-artifact-registry/issues/228)) ([d07c561](https://github.com/googleapis/java-artifact-registry/commit/d07c561ed392eca901d20ff21676e84e71182548))
+* update actions/setup-java action to v3 ([#234](https://github.com/googleapis/java-artifact-registry/issues/234)) ([6b88715](https://github.com/googleapis/java-artifact-registry/commit/6b887155b6881ca4f5980aeab590ecf97efb1d26))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#238](https://github.com/googleapis/java-artifact-registry/issues/238)) ([d993524](https://github.com/googleapis/java-artifact-registry/commit/d9935248aff29aad01f78df1d5c21a96a2df778d))
+
 ## [1.0.0](https://github.com/googleapis/java-artifact-registry/compare/v0.5.0...v1.0.0) (2022-02-03)
 
 
