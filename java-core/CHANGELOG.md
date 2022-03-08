@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.5.8](https://github.com/googleapis/java-core/compare/v2.5.7...v2.5.8) (2022-03-08)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.2.8 ([#753](https://github.com/googleapis/java-core/issues/753)) ([6866b84](https://github.com/googleapis/java-core/commit/6866b8407162ecbff7ed5a6eec5e3e4d130fcfa7))
+
 ### [2.5.7](https://github.com/googleapis/java-core/compare/v2.5.6...v2.5.7) (2022-03-08)
 
 
