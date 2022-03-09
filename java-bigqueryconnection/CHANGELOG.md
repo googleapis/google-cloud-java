@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-bigqueryconnection/compare/v2.1.11...v2.2.0) (2022-03-08)
+
+
+### Features
+
+* Add Cloud_Resource Connection Support ([#652](https://github.com/googleapis/java-bigqueryconnection/issues/652)) ([793b33f](https://github.com/googleapis/java-bigqueryconnection/commit/793b33f6a55351e6d58dfdc285a3f75227e8b918))
+
 ### [2.1.11](https://github.com/googleapis/java-bigqueryconnection/compare/v2.1.10...v2.1.11) (2022-03-02)
 
 
