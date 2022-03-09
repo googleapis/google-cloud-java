@@ -111,16 +111,6 @@ To run examples from your command line:
     target/appassembler/bin/ResourceManagerExample get your-project-id
     ```
 
-  * Here's an example run of `StorageExample`.
-
-    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Cloud Storage" and "Google Cloud Storage JSON API" are enabled and that you have a bucket.  Also ensure that you have a test file (`test.txt` is chosen here) to upload to Cloud Storage stored locally on your machine.
-    ```
-    target/appassembler/bin/StorageExample upload /path/to/test.txt <bucket_name>
-    target/appassembler/bin/StorageExample list <bucket_name>
-    target/appassembler/bin/StorageExample download <bucket_name> test.txt
-    target/appassembler/bin/StorageExample delete <bucket_name> test.txt
-    ```
-
  * Here's an example run of `Stat`, illustrating the use of google-cloud-nio.
 
     Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket with a file in it.
