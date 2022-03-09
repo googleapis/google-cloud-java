@@ -24,7 +24,6 @@ import java.util.concurrent.Callable;
 import java.util.stream.Collectors;
 
 public class StreamGobbler implements Callable<String> {
-
   private final InputStream inputStream;
 
   public StreamGobbler(InputStream inputStream) {
