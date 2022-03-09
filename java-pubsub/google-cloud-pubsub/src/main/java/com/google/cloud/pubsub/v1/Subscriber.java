@@ -134,7 +134,6 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
   private SubscriberStub subscriberStub;
   private final SubscriberStubSettings subStubSettings;
   private final FlowController flowController;
-  private boolean exactlyOnceDeliveryEnabled = false;
   private final int numPullers;
 
   private final MessageReceiver receiver;
@@ -165,8 +164,6 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
                 .toBuilder()
                 .setLimitExceededBehavior(LimitExceededBehavior.Block)
                 .build());
-
-    exactlyOnceDeliveryEnabled = builder.exactlyOnceDeliveryEnabled;
 
     this.numPullers = builder.parallelPullCount;
 
@@ -385,7 +382,6 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
                 .setExecutor(executor)
                 .setSystemExecutor(alarmsExecutor)
                 .setClock(clock)
-                .setExactlyOnceDeliveryEnabled(exactlyOnceDeliveryEnabled)
                 .build();
 
         streamingSubscriberConnections.add(streamingSubscriberConnection);
@@ -479,8 +475,6 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     private boolean useLegacyFlowControl = false;
     private FlowControlSettings flowControlSettings = DEFAULT_FLOW_CONTROL_SETTINGS;
 
-    private boolean exactlyOnceDeliveryEnabled = false;
-
     private ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     private ExecutorProvider systemExecutorProvider = null;
     private TransportChannelProvider channelProvider =
@@ -570,22 +564,6 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
      */
     public Builder setUseLegacyFlowControl(boolean value) {
       this.useLegacyFlowControl = value;
-      return this;
-    }
-
-    /**
-     * Enables/Disabled ExactlyOnceDelivery
-     *
-     * <p>Will update the minDurationPerAckExtension if a user-provided value is not set
-     */
-    public Builder setExactlyOnceDeliveryEnabled(boolean exactlyOnceDeliveryEnabled) {
-      // If exactlyOnceDeliveryIsEnabled we want to update the default minAckDeadlineExtension if
-      // applicable
-      if (exactlyOnceDeliveryEnabled && this.minDurationPerAckExtensionDefaultUsed) {
-        this.minDurationPerAckExtension = DEFAULT_MIN_ACK_DEADLINE_EXTENSION_EXACTLY_ONCE_DELIVERY;
-      }
-
-      this.exactlyOnceDeliveryEnabled = exactlyOnceDeliveryEnabled;
       return this;
     }
 

@@ -287,16 +287,6 @@ public class SubscriberTest {
         fakeSubscriberServiceImpl.getLastSeenRequest().getStreamAckDeadlineSeconds());
 
     subscriber.stopAsync().awaitTerminated();
-
-    // maxDurationPerAckExtension is unset with exactly once enabled
-    subscriber =
-        startSubscriber(getTestSubscriberBuilder(testReceiver).setExactlyOnceDeliveryEnabled(true));
-    assertEquals(
-        expectedChannelCount, fakeSubscriberServiceImpl.waitForOpenedStreams(expectedChannelCount));
-    assertEquals(
-        Math.toIntExact(Subscriber.STREAM_ACK_DEADLINE_EXACTLY_ONCE_DELIVERY_DEFAULT.getSeconds()),
-        fakeSubscriberServiceImpl.getLastSeenRequest().getStreamAckDeadlineSeconds());
-    subscriber.stopAsync().awaitTerminated();
   }
 
   @Test
@@ -358,7 +348,6 @@ public class SubscriberTest {
         .setCredentialsProvider(NoCredentialsProvider.create())
         .setClock(fakeExecutor.getClock())
         .setParallelPullCount(1)
-        .setExactlyOnceDeliveryEnabled(true)
         .setFlowControlSettings(
             FlowControlSettings.newBuilder().setMaxOutstandingElementCount(1000L).build());
   }

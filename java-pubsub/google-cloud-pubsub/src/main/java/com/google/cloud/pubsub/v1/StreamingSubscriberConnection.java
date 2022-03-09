@@ -103,12 +103,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     // We need to set the default stream ack deadline on the initial request, this will be
     // updated by modack requests in the message dispatcher
     if (builder.maxDurationPerAckExtensionDefaultUsed) {
-      // If the default is used, check if exactly once is enabled and set appropriately
-      if (builder.exactlyOnceDeliveryEnabled) {
-        inititalStreamAckDeadline = Subscriber.STREAM_ACK_DEADLINE_EXACTLY_ONCE_DELIVERY_DEFAULT;
-      } else {
-        inititalStreamAckDeadline = Subscriber.STREAM_ACK_DEADLINE_DEFAULT;
-      }
+      inititalStreamAckDeadline = Subscriber.STREAM_ACK_DEADLINE_DEFAULT;
     } else if (builder.maxDurationPerAckExtension.compareTo(Subscriber.MIN_STREAM_ACK_DEADLINE)
         < 0) {
       // We will not be able to extend more than the default minimum
@@ -123,7 +118,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     subscriberStub = builder.subscriberStub;
     channelAffinity = builder.channelAffinity;
-    exactlyOnceDeliveryEnabled.set(builder.exactlyOnceDeliveryEnabled);
 
     MessageDispatcher.Builder messageDispatcherBuilder;
     if (builder.receiver != null) {
@@ -143,7 +137,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             .setMaxDurationPerAckExtensionDefaultUsed(builder.maxDurationPerAckExtensionDefaultUsed)
             .setAckLatencyDistribution(builder.ackLatencyDistribution)
             .setFlowController(builder.flowController)
-            .setEnableExactlyOnceDelivery(builder.exactlyOnceDeliveryEnabled)
             .setExecutor(builder.executor)
             .setSystemExecutor(builder.systemExecutor)
             .setApiClock(builder.clock)
@@ -159,7 +152,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     return this;
   }
 
-  public boolean isExactlyOnceDeliveryEnabled() {
+  public boolean getExactlyOnceDeliveryEnabled() {
     return exactlyOnceDeliveryEnabled.get();
   }
 
@@ -221,7 +214,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
           response.getSubscriptionProperties().getExactlyOnceDeliveryEnabled();
 
       setExactlyOnceDeliveryEnabled(exactlyOnceDeliveryEnabledResponse);
-      messageDispatcher.setEnableExactlyOnceDelivery(exactlyOnceDeliveryEnabledResponse);
+      messageDispatcher.setExactlyOnceDeliveryEnabled(exactlyOnceDeliveryEnabledResponse);
       messageDispatcher.processReceivedMessages(response.getReceivedMessagesList());
 
       // Only request more if we're not shutdown.
@@ -370,7 +363,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private void setFailureFutureOutstandingMessages(Throwable t) {
     AckResponse ackResponse;
 
-    if (isExactlyOnceDeliveryEnabled()) {
+    if (getExactlyOnceDeliveryEnabled()) {
       if (!(t instanceof ApiException)) {
         ackResponse = AckResponse.OTHER;
       }
@@ -518,7 +511,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         // Remove from our pending operations
         ackOperationsWaiter.incrementPendingCount(-1);
 
-        if (!isExactlyOnceDeliveryEnabled()) {
+        if (!getExactlyOnceDeliveryEnabled()) {
           Level level = isAlive() ? Level.WARNING : Level.FINER;
           logger.log(level, "failed to send operations", t);
           return;
@@ -609,7 +602,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     private int channelAffinity;
     private FlowController flowController;
     private FlowControlSettings flowControlSettings;
-    private boolean exactlyOnceDeliveryEnabled;
     private boolean useLegacyFlowControl;
     private ScheduledExecutorService executor;
     private ScheduledExecutorService systemExecutor;
@@ -687,11 +679,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     public Builder setUseLegacyFlowControl(boolean useLegacyFlowControl) {
       this.useLegacyFlowControl = useLegacyFlowControl;
-      return this;
-    }
-
-    public Builder setExactlyOnceDeliveryEnabled(boolean exactlyOnceDeliveryEnabled) {
-      this.exactlyOnceDeliveryEnabled = exactlyOnceDeliveryEnabled;
       return this;
     }
 

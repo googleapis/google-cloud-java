@@ -70,7 +70,7 @@ class MessageDispatcher {
 
   private final FlowController flowController;
 
-  private AtomicBoolean enableExactlyOnceDelivery;
+  private AtomicBoolean exactlyOnceDeliveryEnabled = new AtomicBoolean(false);
 
   private final Waiter messagesWaiter;
 
@@ -198,7 +198,6 @@ class MessageDispatcher {
 
     ackProcessor = builder.ackProcessor;
     flowController = builder.flowController;
-    enableExactlyOnceDelivery = new AtomicBoolean(builder.enableExactlyOnceDelivery);
     ackLatencyDistribution = builder.ackLatencyDistribution;
     clock = builder.clock;
     jobLock = new ReentrantLock();
@@ -296,13 +295,13 @@ class MessageDispatcher {
   }
 
   @InternalApi
-  void setEnableExactlyOnceDelivery(boolean enableExactlyOnceDelivery) {
-    // Sanity check that we are changing the enableExactlyOnceDelivery state
-    if (enableExactlyOnceDelivery == this.enableExactlyOnceDelivery.get()) {
+  void setExactlyOnceDeliveryEnabled(boolean exactlyOnceDeliveryEnabled) {
+    // Sanity check that we are changing the exactlyOnceDeliveryEnabled state
+    if (exactlyOnceDeliveryEnabled == this.exactlyOnceDeliveryEnabled.get()) {
       return;
     }
 
-    this.enableExactlyOnceDelivery.set(enableExactlyOnceDelivery);
+    this.exactlyOnceDeliveryEnabled.set(exactlyOnceDeliveryEnabled);
 
     // If a custom value for minDurationPerAckExtension, we should respect that
     if (!minDurationPerAckExtensionDefaultUsed) {
@@ -313,7 +312,7 @@ class MessageDispatcher {
     // maxDurationPerAckExtensionSeconds does not change
     int possibleNewMinAckDeadlineExtensionSeconds;
 
-    if (enableExactlyOnceDelivery) {
+    if (exactlyOnceDeliveryEnabled) {
       possibleNewMinAckDeadlineExtensionSeconds =
           Math.toIntExact(
               Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION_EXACTLY_ONCE_DELIVERY.getSeconds());
@@ -323,7 +322,7 @@ class MessageDispatcher {
     }
 
     // If we are not using the default maxDurationAckExtension, check if the
-    // minAckDeadlineExtensionExactlyOnce needs to be bounded by the set max
+    // minAckDeadlineExtensionExactlyOnceDelivery needs to be bounded by the set max
     if (!maxDurationPerAckExtensionDefaultUsed
         && (possibleNewMinAckDeadlineExtensionSeconds > maxDurationPerAckExtensionSeconds)) {
       minDurationPerAckExtensionSeconds = maxDurationPerAckExtensionSeconds;
@@ -580,7 +579,6 @@ class MessageDispatcher {
 
     private Distribution ackLatencyDistribution;
     private FlowController flowController;
-    private boolean enableExactlyOnceDelivery;
 
     private Executor executor;
     private ScheduledExecutorService systemExecutor;
@@ -638,11 +636,6 @@ class MessageDispatcher {
 
     public Builder setFlowController(FlowController flowController) {
       this.flowController = flowController;
-      return this;
-    }
-
-    public Builder setEnableExactlyOnceDelivery(boolean enableExactlyOnceDelivery) {
-      this.enableExactlyOnceDelivery = enableExactlyOnceDelivery;
       return this;
     }
 

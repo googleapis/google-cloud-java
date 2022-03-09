@@ -452,13 +452,18 @@ public class StreamingSubscriberConnectionTest {
 
   private StreamingSubscriberConnection getStreamingSubscriberConnection(
       boolean exactlyOnceDeliveryEnabled) {
-    return getStreamingSubscriberReceiverFromBuilder(
-        StreamingSubscriberConnection.newBuilder(mock(MessageReceiverWithAckResponse.class)),
-        exactlyOnceDeliveryEnabled);
+    StreamingSubscriberConnection streamingSubscriberConnection =
+        getStreamingSubscriberConnectionFromBuilder(
+            StreamingSubscriberConnection.newBuilder(mock(MessageReceiverWithAckResponse.class)));
+
+    // This would normally be set from the streaming pull response
+    streamingSubscriberConnection.setExactlyOnceDeliveryEnabled(exactlyOnceDeliveryEnabled);
+
+    return streamingSubscriberConnection;
   }
 
-  private StreamingSubscriberConnection getStreamingSubscriberReceiverFromBuilder(
-      StreamingSubscriberConnection.Builder builder, boolean exactlyOnceDeliveryEnabled) {
+  private StreamingSubscriberConnection getStreamingSubscriberConnectionFromBuilder(
+      StreamingSubscriberConnection.Builder builder) {
     return builder
         .setSubscription(MOCK_SUBSCRIPTION_NAME)
         .setAckExpirationPadding(ACK_EXPIRATION_PADDING_DEFAULT)
@@ -474,7 +479,6 @@ public class StreamingSubscriberConnectionTest {
         .setMinDurationPerAckExtensionDefaultUsed(true)
         .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MAX_ACK_DEADLINE_EXTENSION)
         .setMaxDurationPerAckExtensionDefaultUsed(true)
-        .setExactlyOnceDeliveryEnabled(exactlyOnceDeliveryEnabled)
         .build();
   }
 

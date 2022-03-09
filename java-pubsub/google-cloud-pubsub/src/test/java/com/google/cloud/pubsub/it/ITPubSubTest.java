@@ -209,7 +209,6 @@ public class ITPubSubTest {
                     receiveQueue.offer(MessageAndConsumer.create(message, consumer));
                   }
                 })
-            .setExactlyOnceDeliveryEnabled(true)
             .build();
     subscriber.addListener(
         new Subscriber.Listener() {
@@ -282,7 +281,6 @@ public class ITPubSubTest {
                 SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
                     .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
                     .build())
-            .setExactlyOnceDeliveryEnabled(false)
             .build();
     subscriber.addListener(
         new Subscriber.Listener() {
@@ -360,7 +358,6 @@ public class ITPubSubTest {
                 SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
                     .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
                     .build())
-            .setExactlyOnceDeliveryEnabled(false)
             .build();
     subscriber.addListener(
         new Subscriber.Listener() {
