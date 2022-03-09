@@ -19,7 +19,9 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
@@ -62,7 +64,11 @@ public class UndeleteTableIT {
     tableName = "UNDELETE_TABLE_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     recoverTableName = "RECOVER_DELETE_TABLE_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     // Create table in dataset for testing
-    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, Schema.of());
+    Schema schema =
+        Schema.of(
+            Field.of("stringField", StandardSQLTypeName.STRING),
+            Field.of("booleanField", StandardSQLTypeName.BOOL));
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
   }
 
   @After
