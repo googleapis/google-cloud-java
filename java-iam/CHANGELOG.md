@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.9](https://github.com/googleapis/java-iam/compare/v1.2.8...v1.2.9) (2022-03-09)
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-stub to v1.45.0 ([#307](https://github.com/googleapis/java-iam/issues/307)) ([756e6b0](https://github.com/googleapis/java-iam/commit/756e6b0399cfd29006a1c3f8e5bca9e6ef9892bc))
+
 ### [1.2.8](https://github.com/googleapis/java-iam/compare/v1.2.7...v1.2.8) (2022-03-08)
 
 
