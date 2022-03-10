@@ -27,5 +27,4 @@ java.common_templates(excludes=[
     '.kokoro/dependencies.sh',
     'codecov.yaml',
     'renovate.json',
-    '.kokoro/nightly/integration.cfg'
 ])
