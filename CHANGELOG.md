@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.2.8](https://github.com/googleapis/java-datastore/compare/v2.2.7...v2.2.8) (2022-03-10)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:native-image-support to v0.12.9 ([#671](https://github.com/googleapis/java-datastore/issues/671)) ([4338c40](https://github.com/googleapis/java-datastore/commit/4338c4008c5e5bf7522713b45d13950f1a881ee7))
+* update dependency com.google.errorprone:error_prone_core to v2.11.0 ([#673](https://github.com/googleapis/java-datastore/issues/673)) ([0888bac](https://github.com/googleapis/java-datastore/commit/0888bac22704f5b2befd170267be28454f5ee059))
+
 ### [2.2.7](https://github.com/googleapis/java-datastore/compare/v2.2.6...v2.2.7) (2022-03-09)
 
 
