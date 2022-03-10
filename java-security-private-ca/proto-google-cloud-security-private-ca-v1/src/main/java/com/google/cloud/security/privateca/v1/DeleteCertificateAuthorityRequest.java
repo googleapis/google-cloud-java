@@ -92,6 +92,11 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
               ignoreActiveCertificates_ = input.readBool();
               break;
             }
+          case 40:
+            {
+              skipGracePeriod_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -269,6 +274,26 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
     return ignoreActiveCertificates_;
   }
 
+  public static final int SKIP_GRACE_PERIOD_FIELD_NUMBER = 5;
+  private boolean skipGracePeriod_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If this flag is set, the Certificate Authority will be deleted as soon as
+   * possible without a 30-day grace period where undeletion would have been
+   * allowed. If you proceed, there will be no way to recover this CA.
+   * </pre>
+   *
+   * <code>bool skip_grace_period = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skipGracePeriod.
+   */
+  @java.lang.Override
+  public boolean getSkipGracePeriod() {
+    return skipGracePeriod_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -292,6 +317,9 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
     if (ignoreActiveCertificates_ != false) {
       output.writeBool(4, ignoreActiveCertificates_);
     }
+    if (skipGracePeriod_ != false) {
+      output.writeBool(5, skipGracePeriod_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -309,6 +337,9 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
     }
     if (ignoreActiveCertificates_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, ignoreActiveCertificates_);
+    }
+    if (skipGracePeriod_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, skipGracePeriod_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -330,6 +361,7 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
     if (!getName().equals(other.getName())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
     if (getIgnoreActiveCertificates() != other.getIgnoreActiveCertificates()) return false;
+    if (getSkipGracePeriod() != other.getSkipGracePeriod()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -347,6 +379,8 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
     hash = (53 * hash) + getRequestId().hashCode();
     hash = (37 * hash) + IGNORE_ACTIVE_CERTIFICATES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreActiveCertificates());
+    hash = (37 * hash) + SKIP_GRACE_PERIOD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipGracePeriod());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -503,6 +537,8 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
 
       ignoreActiveCertificates_ = false;
 
+      skipGracePeriod_ = false;
+
       return this;
     }
 
@@ -536,6 +572,7 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
       result.name_ = name_;
       result.requestId_ = requestId_;
       result.ignoreActiveCertificates_ = ignoreActiveCertificates_;
+      result.skipGracePeriod_ = skipGracePeriod_;
       onBuilt();
       return result;
     }
@@ -600,6 +637,9 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
       }
       if (other.getIgnoreActiveCertificates() != false) {
         setIgnoreActiveCertificates(other.getIgnoreActiveCertificates());
+      }
+      if (other.getSkipGracePeriod() != false) {
+        setSkipGracePeriod(other.getSkipGracePeriod());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -960,6 +1000,64 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
     public Builder clearIgnoreActiveCertificates() {
 
       ignoreActiveCertificates_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean skipGracePeriod_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If this flag is set, the Certificate Authority will be deleted as soon as
+     * possible without a 30-day grace period where undeletion would have been
+     * allowed. If you proceed, there will be no way to recover this CA.
+     * </pre>
+     *
+     * <code>bool skip_grace_period = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The skipGracePeriod.
+     */
+    @java.lang.Override
+    public boolean getSkipGracePeriod() {
+      return skipGracePeriod_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If this flag is set, the Certificate Authority will be deleted as soon as
+     * possible without a 30-day grace period where undeletion would have been
+     * allowed. If you proceed, there will be no way to recover this CA.
+     * </pre>
+     *
+     * <code>bool skip_grace_period = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The skipGracePeriod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipGracePeriod(boolean value) {
+
+      skipGracePeriod_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If this flag is set, the Certificate Authority will be deleted as soon as
+     * possible without a 30-day grace period where undeletion would have been
+     * allowed. If you proceed, there will be no way to recover this CA.
+     * </pre>
+     *
+     * <code>bool skip_grace_period = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipGracePeriod() {
+
+      skipGracePeriod_ = false;
       onChanged();
       return this;
     }

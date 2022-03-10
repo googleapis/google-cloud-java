@@ -112,4 +112,19 @@ public interface DeleteCertificateAuthorityRequestOrBuilder
    * @return The ignoreActiveCertificates.
    */
   boolean getIgnoreActiveCertificates();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If this flag is set, the Certificate Authority will be deleted as soon as
+   * possible without a 30-day grace period where undeletion would have been
+   * allowed. If you proceed, there will be no way to recover this CA.
+   * </pre>
+   *
+   * <code>bool skip_grace_period = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skipGracePeriod.
+   */
+  boolean getSkipGracePeriod();
 }

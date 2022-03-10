@@ -2142,6 +2142,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setRequestId("requestId693933066")
    *           .setIgnoreActiveCertificates(true)
+   *           .setSkipGracePeriod(true)
    *           .build();
    *   CertificateAuthority response =
    *       certificateAuthorityServiceClient.deleteCertificateAuthorityAsync(request).get();
@@ -2173,6 +2174,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setRequestId("requestId693933066")
    *           .setIgnoreActiveCertificates(true)
+   *           .setSkipGracePeriod(true)
    *           .build();
    *   OperationFuture<CertificateAuthority, OperationMetadata> future =
    *       certificateAuthorityServiceClient
@@ -2206,6 +2208,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setRequestId("requestId693933066")
    *           .setIgnoreActiveCertificates(true)
+   *           .setSkipGracePeriod(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       certificateAuthorityServiceClient
