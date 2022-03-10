@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-datastore:2.2.8:2.2.8
-google-cloud-datastore-bom:2.2.8:2.2.8
-proto-google-cloud-datastore-v1:0.93.8:0.93.8
-datastore-v1-proto-client:2.2.8:2.2.8
+google-cloud-datastore:2.2.8:2.2.9-SNAPSHOT
+google-cloud-datastore-bom:2.2.8:2.2.9-SNAPSHOT
+proto-google-cloud-datastore-v1:0.93.8:0.93.9-SNAPSHOT
+datastore-v1-proto-client:2.2.8:2.2.9-SNAPSHOT
