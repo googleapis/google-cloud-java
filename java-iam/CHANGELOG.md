@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.10](https://github.com/googleapis/java-iam/compare/v1.2.9...v1.2.10) (2022-03-10)
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-protobuf to v1.45.0 ([#310](https://github.com/googleapis/java-iam/issues/310)) ([2abec16](https://github.com/googleapis/java-iam/commit/2abec16ca95bffd6c3bdcaf4c98c53f8cb118a59))
+
 ### [1.2.9](https://github.com/googleapis/java-iam/compare/v1.2.8...v1.2.9) (2022-03-09)
 
 
