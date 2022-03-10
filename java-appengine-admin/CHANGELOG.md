@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.9](https://github.com/googleapis/java-appengine-admin/compare/v2.1.8...v2.1.9) (2022-03-10)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#206](https://github.com/googleapis/java-appengine-admin/issues/206)) ([1b95de8](https://github.com/googleapis/java-appengine-admin/commit/1b95de8ba6c821793ca063a62eddf8bb944de51b))
+
 ### [2.1.8](https://github.com/googleapis/java-appengine-admin/compare/v2.1.7...v2.1.8) (2022-03-02)
 
 
