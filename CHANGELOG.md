@@ -1,6 +1,15 @@
 # Changelog
 
 
+### [0.122.16](https://github.com/googleapis/java-logging-logback/compare/v0.122.15...v0.122.16) (2022-03-10)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#705](https://github.com/googleapis/java-logging-logback/issues/705)) ([a7427a0](https://github.com/googleapis/java-logging-logback/commit/a7427a0648847c123d6bea0d752fb892a412468d))
+* update dependency ch.qos.logback:logback-classic to v1.2.11 ([#714](https://github.com/googleapis/java-logging-logback/issues/714)) ([181ac4a](https://github.com/googleapis/java-logging-logback/commit/181ac4abadf852752b95e44fe1ae3bfbed924aad))
+* update dependency com.google.cloud:google-cloud-logging to v3.7.1 ([#713](https://github.com/googleapis/java-logging-logback/issues/713)) ([4d6f04d](https://github.com/googleapis/java-logging-logback/commit/4d6f04dc9644c205965eecdbdf40ad3d022fa076))
+
 ### [0.122.15](https://github.com/googleapis/java-logging-logback/compare/v0.122.14...v0.122.15) (2022-03-03)
 
 
