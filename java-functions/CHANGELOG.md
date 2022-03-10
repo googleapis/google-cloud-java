@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.3.6](https://github.com/googleapis/java-functions/compare/v2.3.5...v2.3.6) (2022-03-10)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#393](https://github.com/googleapis/java-functions/issues/393)) ([5c987fa](https://github.com/googleapis/java-functions/commit/5c987fab5dc047228e4a0a117eacdbf90462262d))
+
 ### [2.3.5](https://github.com/googleapis/java-functions/compare/v2.3.4...v2.3.5) (2022-03-02)
 
 
