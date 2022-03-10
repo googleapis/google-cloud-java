@@ -27,7 +27,8 @@ public interface ListFilesRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the parent resource whose files will be listed.
+   * The name of the repository whose files will be listed. For example:
+   * "projects/p1/locations/us-central1/repositories/repo1
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -39,7 +40,8 @@ public interface ListFilesRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the parent resource whose files will be listed.
+   * The name of the repository whose files will be listed. For example:
+   * "projects/p1/locations/us-central1/repositories/repo1
    * </pre>
    *
    * <code>string parent = 1;</code>

@@ -1458,7 +1458,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The name of the parent resource whose files will be listed.
+   * @param parent The name of the repository whose files will be listed. For example:
+   *     "projects/p1/locations/us-central1/repositories/repo1
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFilesPagedResponse listFiles(String parent) {
