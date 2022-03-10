@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.2.5](https://github.com/googleapis/java-security-private-ca/compare/v2.2.4...v2.2.5) (2022-03-09)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.2.8 ([#385](https://github.com/googleapis/java-security-private-ca/issues/385)) ([02702ba](https://github.com/googleapis/java-security-private-ca/commit/02702bafbab9c58f57c1c4f020b9c8d84959dd7c))
+* using shared deps for iam proto dependency version ([#387](https://github.com/googleapis/java-security-private-ca/issues/387)) ([dbb82c6](https://github.com/googleapis/java-security-private-ca/commit/dbb82c61ae099b0e9fdf50a33b10218b0e74da9b))
+
 ### [2.2.4](https://github.com/googleapis/java-security-private-ca/compare/v2.2.3...v2.2.4) (2022-03-03)
 
 
