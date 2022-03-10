@@ -45,34 +45,32 @@ public final class DataItemProto {
   static {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/aiplatform/v1/data_item.p"
-          + "roto\022\032google.cloud.aiplatform.v1\032\034google"
-          + "/api/annotations.proto\032\037google/api/field"
-          + "_behavior.proto\032\031google/api/resource.pro"
-          + "to\032\034google/protobuf/struct.proto\032\037google"
-          + "/protobuf/timestamp.proto\"\273\003\n\010DataItem\022\021"
-          + "\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\002 \001(\0132\032"
-          + ".google.protobuf.TimestampB\003\340A\003\0224\n\013updat"
-          + "e_time\030\006 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\003\340A\003\022E\n\006labels\030\003 \003(\01320.google.cloud.aip"
-          + "latform.v1.DataItem.LabelsEntryB\003\340A\001\022,\n\007"
-          + "payload\030\004 \001(\0132\026.google.protobuf.ValueB\003\340"
-          + "A\002\022\021\n\004etag\030\007 \001(\tB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003"
-          + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:y\352Av\n\"aipla"
-          + "tform.googleapis.com/DataItem\022Pprojects/"
-          + "{project}/locations/{location}/datasets/"
-          + "{dataset}/dataItems/{data_item}B\321\001\n\036com."
-          + "google.cloud.aiplatform.v1B\rDataItemProt"
-          + "oP\001ZDgoogle.golang.org/genproto/googleap"
-          + "is/cloud/aiplatform/v1;aiplatform\252\002\032Goog"
-          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
-          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
-          + ":V1b\006proto3"
+          + "roto\022\032google.cloud.aiplatform.v1\032\037google"
+          + "/api/field_behavior.proto\032\031google/api/re"
+          + "source.proto\032\034google/protobuf/struct.pro"
+          + "to\032\037google/protobuf/timestamp.proto\"\273\003\n\010"
+          + "DataItem\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013create_ti"
+          + "me\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\0224\n\013update_time\030\006 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\022E\n\006labels\030\003 \003(\01320.google"
+          + ".cloud.aiplatform.v1.DataItem.LabelsEntr"
+          + "yB\003\340A\001\022,\n\007payload\030\004 \001(\0132\026.google.protobu"
+          + "f.ValueB\003\340A\002\022\021\n\004etag\030\007 \001(\tB\003\340A\001\032-\n\013Label"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:y"
+          + "\352Av\n\"aiplatform.googleapis.com/DataItem\022"
+          + "Pprojects/{project}/locations/{location}"
+          + "/datasets/{dataset}/dataItems/{data_item"
+          + "}B\321\001\n\036com.google.cloud.aiplatform.v1B\rDa"
+          + "taItemProtoP\001ZDgoogle.golang.org/genprot"
+          + "o/googleapis/cloud/aiplatform/v1;aiplatf"
+          + "orm\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Googl"
+          + "e\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::A"
+          + "IPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
@@ -100,7 +98,6 @@ public final class DataItemProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();

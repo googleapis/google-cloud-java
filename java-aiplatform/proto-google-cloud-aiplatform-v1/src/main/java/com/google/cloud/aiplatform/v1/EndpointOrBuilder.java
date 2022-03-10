@@ -528,10 +528,11 @@ public interface EndpointOrBuilder
    * can be set.
    * </pre>
    *
-   * <code>bool enable_private_service_connect = 17;</code>
+   * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
    *
    * @return The enablePrivateServiceConnect.
    */
+  @java.lang.Deprecated
   boolean getEnablePrivateServiceConnect();
 
   /**
@@ -568,4 +569,47 @@ public interface EndpointOrBuilder
    * @return The bytes for modelDeploymentMonitoringJob.
    */
   com.google.protobuf.ByteString getModelDeploymentMonitoringJobBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configures the request-response logging for online prediction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+   * </code>
+   *
+   * @return Whether the predictRequestResponseLoggingConfig field is set.
+   */
+  boolean hasPredictRequestResponseLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configures the request-response logging for online prediction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+   * </code>
+   *
+   * @return The predictRequestResponseLoggingConfig.
+   */
+  com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig
+      getPredictRequestResponseLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configures the request-response logging for online prediction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfigOrBuilder
+      getPredictRequestResponseLoggingConfigOrBuilder();
 }

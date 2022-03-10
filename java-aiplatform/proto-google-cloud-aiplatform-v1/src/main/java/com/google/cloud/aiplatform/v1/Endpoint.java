@@ -211,6 +211,24 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
               enablePrivateServiceConnect_ = input.readBool();
               break;
             }
+          case 146:
+            {
+              com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig.Builder
+                  subBuilder = null;
+              if (predictRequestResponseLoggingConfig_ != null) {
+                subBuilder = predictRequestResponseLoggingConfig_.toBuilder();
+              }
+              predictRequestResponseLoggingConfig_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(predictRequestResponseLoggingConfig_);
+                predictRequestResponseLoggingConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1022,11 +1040,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * can be set.
    * </pre>
    *
-   * <code>bool enable_private_service_connect = 17;</code>
+   * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
    *
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getEnablePrivateServiceConnect() {
     return enablePrivateServiceConnect_;
   }
@@ -1090,6 +1109,63 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PREDICT_REQUEST_RESPONSE_LOGGING_CONFIG_FIELD_NUMBER = 18;
+  private com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig
+      predictRequestResponseLoggingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configures the request-response logging for online prediction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+   * </code>
+   *
+   * @return Whether the predictRequestResponseLoggingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPredictRequestResponseLoggingConfig() {
+    return predictRequestResponseLoggingConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configures the request-response logging for online prediction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+   * </code>
+   *
+   * @return The predictRequestResponseLoggingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig
+      getPredictRequestResponseLoggingConfig() {
+    return predictRequestResponseLoggingConfig_ == null
+        ? com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig.getDefaultInstance()
+        : predictRequestResponseLoggingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configures the request-response logging for online prediction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfigOrBuilder
+      getPredictRequestResponseLoggingConfigOrBuilder() {
+    return getPredictRequestResponseLoggingConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1140,6 +1216,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
     if (enablePrivateServiceConnect_ != false) {
       output.writeBool(17, enablePrivateServiceConnect_);
+    }
+    if (predictRequestResponseLoggingConfig_ != null) {
+      output.writeMessage(18, getPredictRequestResponseLoggingConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -1206,6 +1285,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(17, enablePrivateServiceConnect_);
     }
+    if (predictRequestResponseLoggingConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, getPredictRequestResponseLoggingConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1244,6 +1328,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (getEnablePrivateServiceConnect() != other.getEnablePrivateServiceConnect()) return false;
     if (!getModelDeploymentMonitoringJob().equals(other.getModelDeploymentMonitoringJob()))
       return false;
+    if (hasPredictRequestResponseLoggingConfig() != other.hasPredictRequestResponseLoggingConfig())
+      return false;
+    if (hasPredictRequestResponseLoggingConfig()) {
+      if (!getPredictRequestResponseLoggingConfig()
+          .equals(other.getPredictRequestResponseLoggingConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1293,6 +1383,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePrivateServiceConnect());
     hash = (37 * hash) + MODEL_DEPLOYMENT_MONITORING_JOB_FIELD_NUMBER;
     hash = (53 * hash) + getModelDeploymentMonitoringJob().hashCode();
+    if (hasPredictRequestResponseLoggingConfig()) {
+      hash = (37 * hash) + PREDICT_REQUEST_RESPONSE_LOGGING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPredictRequestResponseLoggingConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1505,6 +1599,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
       modelDeploymentMonitoringJob_ = "";
 
+      if (predictRequestResponseLoggingConfigBuilder_ == null) {
+        predictRequestResponseLoggingConfig_ = null;
+      } else {
+        predictRequestResponseLoggingConfig_ = null;
+        predictRequestResponseLoggingConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1568,6 +1668,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       result.network_ = network_;
       result.enablePrivateServiceConnect_ = enablePrivateServiceConnect_;
       result.modelDeploymentMonitoringJob_ = modelDeploymentMonitoringJob_;
+      if (predictRequestResponseLoggingConfigBuilder_ == null) {
+        result.predictRequestResponseLoggingConfig_ = predictRequestResponseLoggingConfig_;
+      } else {
+        result.predictRequestResponseLoggingConfig_ =
+            predictRequestResponseLoggingConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1681,6 +1787,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (!other.getModelDeploymentMonitoringJob().isEmpty()) {
         modelDeploymentMonitoringJob_ = other.modelDeploymentMonitoringJob_;
         onChanged();
+      }
+      if (other.hasPredictRequestResponseLoggingConfig()) {
+        mergePredictRequestResponseLoggingConfig(other.getPredictRequestResponseLoggingConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3738,11 +3847,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * can be set.
      * </pre>
      *
-     * <code>bool enable_private_service_connect = 17;</code>
+     * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @return The enablePrivateServiceConnect.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getEnablePrivateServiceConnect() {
       return enablePrivateServiceConnect_;
     }
@@ -3756,11 +3866,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * can be set.
      * </pre>
      *
-     * <code>bool enable_private_service_connect = 17;</code>
+     * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @param value The enablePrivateServiceConnect to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setEnablePrivateServiceConnect(boolean value) {
 
       enablePrivateServiceConnect_ = value;
@@ -3777,10 +3888,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * can be set.
      * </pre>
      *
-     * <code>bool enable_private_service_connect = 17;</code>
+     * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearEnablePrivateServiceConnect() {
 
       enablePrivateServiceConnect_ = false;
@@ -3917,6 +4029,221 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       modelDeploymentMonitoringJob_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig
+        predictRequestResponseLoggingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig,
+            com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig.Builder,
+            com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfigOrBuilder>
+        predictRequestResponseLoggingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configures the request-response logging for online prediction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+     * </code>
+     *
+     * @return Whether the predictRequestResponseLoggingConfig field is set.
+     */
+    public boolean hasPredictRequestResponseLoggingConfig() {
+      return predictRequestResponseLoggingConfigBuilder_ != null
+          || predictRequestResponseLoggingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configures the request-response logging for online prediction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+     * </code>
+     *
+     * @return The predictRequestResponseLoggingConfig.
+     */
+    public com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig
+        getPredictRequestResponseLoggingConfig() {
+      if (predictRequestResponseLoggingConfigBuilder_ == null) {
+        return predictRequestResponseLoggingConfig_ == null
+            ? com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig
+                .getDefaultInstance()
+            : predictRequestResponseLoggingConfig_;
+      } else {
+        return predictRequestResponseLoggingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configures the request-response logging for online prediction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+     * </code>
+     */
+    public Builder setPredictRequestResponseLoggingConfig(
+        com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig value) {
+      if (predictRequestResponseLoggingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        predictRequestResponseLoggingConfig_ = value;
+        onChanged();
+      } else {
+        predictRequestResponseLoggingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configures the request-response logging for online prediction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+     * </code>
+     */
+    public Builder setPredictRequestResponseLoggingConfig(
+        com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig.Builder
+            builderForValue) {
+      if (predictRequestResponseLoggingConfigBuilder_ == null) {
+        predictRequestResponseLoggingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        predictRequestResponseLoggingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configures the request-response logging for online prediction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+     * </code>
+     */
+    public Builder mergePredictRequestResponseLoggingConfig(
+        com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig value) {
+      if (predictRequestResponseLoggingConfigBuilder_ == null) {
+        if (predictRequestResponseLoggingConfig_ != null) {
+          predictRequestResponseLoggingConfig_ =
+              com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig.newBuilder(
+                      predictRequestResponseLoggingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          predictRequestResponseLoggingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        predictRequestResponseLoggingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configures the request-response logging for online prediction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+     * </code>
+     */
+    public Builder clearPredictRequestResponseLoggingConfig() {
+      if (predictRequestResponseLoggingConfigBuilder_ == null) {
+        predictRequestResponseLoggingConfig_ = null;
+        onChanged();
+      } else {
+        predictRequestResponseLoggingConfig_ = null;
+        predictRequestResponseLoggingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configures the request-response logging for online prediction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig.Builder
+        getPredictRequestResponseLoggingConfigBuilder() {
+
+      onChanged();
+      return getPredictRequestResponseLoggingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configures the request-response logging for online prediction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfigOrBuilder
+        getPredictRequestResponseLoggingConfigOrBuilder() {
+      if (predictRequestResponseLoggingConfigBuilder_ != null) {
+        return predictRequestResponseLoggingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return predictRequestResponseLoggingConfig_ == null
+            ? com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig
+                .getDefaultInstance()
+            : predictRequestResponseLoggingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configures the request-response logging for online prediction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig predict_request_response_logging_config = 18;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig,
+            com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig.Builder,
+            com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfigOrBuilder>
+        getPredictRequestResponseLoggingConfigFieldBuilder() {
+      if (predictRequestResponseLoggingConfigBuilder_ == null) {
+        predictRequestResponseLoggingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig,
+                com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig.Builder,
+                com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfigOrBuilder>(
+                getPredictRequestResponseLoggingConfig(), getParentForChildren(), isClean());
+        predictRequestResponseLoggingConfig_ = null;
+      }
+      return predictRequestResponseLoggingConfigBuilder_;
     }
 
     @java.lang.Override

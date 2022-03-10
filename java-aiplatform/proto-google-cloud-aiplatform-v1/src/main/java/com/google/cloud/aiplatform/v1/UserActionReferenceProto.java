@@ -42,23 +42,19 @@ public final class UserActionReferenceProto {
     java.lang.String[] descriptorData = {
       "\n6google/cloud/aiplatform/v1/user_action"
           + "_reference.proto\022\032google.cloud.aiplatfor"
-          + "m.v1\032\034google/api/annotations.proto\"d\n\023Us"
-          + "erActionReference\022\023\n\toperation\030\001 \001(\tH\000\022\033"
-          + "\n\021data_labeling_job\030\002 \001(\tH\000\022\016\n\006method\030\003 "
-          + "\001(\tB\013\n\treferenceB\334\001\n\036com.google.cloud.ai"
-          + "platform.v1B\030UserActionReferenceProtoP\001Z"
-          + "Dgoogle.golang.org/genproto/googleapis/c"
-          + "loud/aiplatform/v1;aiplatform\252\002\032Google.C"
-          + "loud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlat"
-          + "form\\V1\352\002\035Google::Cloud::AIPlatform::V1b"
-          + "\006proto3"
+          + "m.v1\"d\n\023UserActionReference\022\023\n\toperation"
+          + "\030\001 \001(\tH\000\022\033\n\021data_labeling_job\030\002 \001(\tH\000\022\016\n"
+          + "\006method\030\003 \001(\tB\013\n\treferenceB\334\001\n\036com.googl"
+          + "e.cloud.aiplatform.v1B\030UserActionReferen"
+          + "ceProtoP\001ZDgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/aiplatform/v1;aiplatform\252"
+          + "\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\Cl"
+          + "oud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPla"
+          + "tform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_UserActionReference_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_UserActionReference_fieldAccessorTable =
@@ -67,7 +63,6 @@ public final class UserActionReferenceProto {
             new java.lang.String[] {
               "Operation", "DataLabelingJob", "Method", "Reference",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

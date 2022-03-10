@@ -45,32 +45,30 @@ public final class EventProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/aiplatform/v1/event.proto"
-          + "\022\032google.cloud.aiplatform.v1\032\034google/api"
-          + "/annotations.proto\032\037google/api/field_beh"
-          + "avior.proto\032\031google/api/resource.proto\032\037"
-          + "google/protobuf/timestamp.proto\"\230\003\n\005Even"
-          + "t\022<\n\010artifact\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform."
-          + "googleapis.com/Artifact\022>\n\texecution\030\002 \001"
-          + "(\tB+\340A\003\372A%\n#aiplatform.googleapis.com/Ex"
-          + "ecution\0223\n\nevent_time\030\003 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\003\340A\003\0229\n\004type\030\004 \001(\0162&.goo"
-          + "gle.cloud.aiplatform.v1.Event.TypeB\003\340A\002\022"
-          + "=\n\006labels\030\005 \003(\0132-.google.cloud.aiplatfor"
-          + "m.v1.Event.LabelsEntry\032-\n\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"3\n\004Type\022\024\n"
-          + "\020TYPE_UNSPECIFIED\020\000\022\t\n\005INPUT\020\001\022\n\n\006OUTPUT"
-          + "\020\002B\316\001\n\036com.google.cloud.aiplatform.v1B\nE"
-          + "ventProtoP\001ZDgoogle.golang.org/genproto/"
-          + "googleapis/cloud/aiplatform/v1;aiplatfor"
-          + "m\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\"
-          + "Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIP"
-          + "latform::V1b\006proto3"
+          + "\022\032google.cloud.aiplatform.v1\032\037google/api"
+          + "/field_behavior.proto\032\031google/api/resour"
+          + "ce.proto\032\037google/protobuf/timestamp.prot"
+          + "o\"\230\003\n\005Event\022<\n\010artifact\030\001 \001(\tB*\340A\002\372A$\n\"a"
+          + "iplatform.googleapis.com/Artifact\022>\n\texe"
+          + "cution\030\002 \001(\tB+\340A\003\372A%\n#aiplatform.googlea"
+          + "pis.com/Execution\0223\n\nevent_time\030\003 \001(\0132\032."
+          + "google.protobuf.TimestampB\003\340A\003\0229\n\004type\030\004"
+          + " \001(\0162&.google.cloud.aiplatform.v1.Event."
+          + "TypeB\003\340A\002\022=\n\006labels\030\005 \003(\0132-.google.cloud"
+          + ".aiplatform.v1.Event.LabelsEntry\032-\n\013Labe"
+          + "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\""
+          + "3\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\t\n\005INPUT\020\001"
+          + "\022\n\n\006OUTPUT\020\002B\316\001\n\036com.google.cloud.aiplat"
+          + "form.v1B\nEventProtoP\001ZDgoogle.golang.org"
+          + "/genproto/googleapis/cloud/aiplatform/v1"
+          + ";aiplatform\252\002\032Google.Cloud.AIPlatform.V1"
+          + "\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::"
+          + "Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -97,7 +95,6 @@ public final class EventProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

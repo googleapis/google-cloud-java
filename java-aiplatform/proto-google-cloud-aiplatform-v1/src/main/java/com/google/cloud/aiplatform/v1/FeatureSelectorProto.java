@@ -46,23 +46,21 @@ public final class FeatureSelectorProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1/feature_sel"
           + "ector.proto\022\032google.cloud.aiplatform.v1\032"
-          + "\034google/api/annotations.proto\032\037google/ap"
-          + "i/field_behavior.proto\"\035\n\tIdMatcher\022\020\n\003i"
-          + "ds\030\001 \003(\tB\003\340A\002\"Q\n\017FeatureSelector\022>\n\nid_m"
-          + "atcher\030\001 \001(\0132%.google.cloud.aiplatform.v"
-          + "1.IdMatcherB\003\340A\002B\330\001\n\036com.google.cloud.ai"
-          + "platform.v1B\024FeatureSelectorProtoP\001ZDgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/aiplatform/v1;aiplatform\252\002\032Google.Cloud"
-          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
-          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pro"
-          + "to3"
+          + "\037google/api/field_behavior.proto\"\035\n\tIdMa"
+          + "tcher\022\020\n\003ids\030\001 \003(\tB\003\340A\002\"Q\n\017FeatureSelect"
+          + "or\022>\n\nid_matcher\030\001 \001(\0132%.google.cloud.ai"
+          + "platform.v1.IdMatcherB\003\340A\002B\330\001\n\036com.googl"
+          + "e.cloud.aiplatform.v1B\024FeatureSelectorPr"
+          + "otoP\001ZDgoogle.golang.org/genproto/google"
+          + "apis/cloud/aiplatform/v1;aiplatform\252\002\032Go"
+          + "ogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\"
+          + "AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfor"
+          + "m::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_IdMatcher_descriptor =
@@ -86,7 +84,6 @@ public final class FeatureSelectorProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
   }
 

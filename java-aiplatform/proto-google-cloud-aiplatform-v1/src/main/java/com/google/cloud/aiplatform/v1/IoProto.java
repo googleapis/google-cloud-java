@@ -73,34 +73,33 @@ public final class IoProto {
   static {
     java.lang.String[] descriptorData = {
       "\n#google/cloud/aiplatform/v1/io.proto\022\032g"
-          + "oogle.cloud.aiplatform.v1\032\034google/api/an"
-          + "notations.proto\032\037google/api/field_behavi"
-          + "or.proto\"L\n\nAvroSource\022>\n\ngcs_source\030\001 \001"
-          + "(\0132%.google.cloud.aiplatform.v1.GcsSourc"
-          + "eB\003\340A\002\"K\n\tCsvSource\022>\n\ngcs_source\030\001 \001(\0132"
-          + "%.google.cloud.aiplatform.v1.GcsSourceB\003"
-          + "\340A\002\"\036\n\tGcsSource\022\021\n\004uris\030\001 \003(\tB\003\340A\002\"0\n\016G"
-          + "csDestination\022\036\n\021output_uri_prefix\030\001 \001(\t"
-          + "B\003\340A\002\"(\n\016BigQuerySource\022\026\n\tinput_uri\030\001 \001"
-          + "(\tB\003\340A\002\".\n\023BigQueryDestination\022\027\n\noutput"
-          + "_uri\030\001 \001(\tB\003\340A\002\"Z\n\016CsvDestination\022H\n\017gcs"
-          + "_destination\030\001 \001(\0132*.google.cloud.aiplat"
-          + "form.v1.GcsDestinationB\003\340A\002\"_\n\023TFRecordD"
-          + "estination\022H\n\017gcs_destination\030\001 \001(\0132*.go"
-          + "ogle.cloud.aiplatform.v1.GcsDestinationB"
-          + "\003\340A\002\"7\n\034ContainerRegistryDestination\022\027\n\n"
-          + "output_uri\030\001 \001(\tB\003\340A\002B\313\001\n\036com.google.clo"
-          + "ud.aiplatform.v1B\007IoProtoP\001ZDgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/aiplatf"
-          + "orm/v1;aiplatform\252\002\032Google.Cloud.AIPlatf"
-          + "orm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Go"
-          + "ogle::Cloud::AIPlatform::V1b\006proto3"
+          + "oogle.cloud.aiplatform.v1\032\037google/api/fi"
+          + "eld_behavior.proto\"L\n\nAvroSource\022>\n\ngcs_"
+          + "source\030\001 \001(\0132%.google.cloud.aiplatform.v"
+          + "1.GcsSourceB\003\340A\002\"K\n\tCsvSource\022>\n\ngcs_sou"
+          + "rce\030\001 \001(\0132%.google.cloud.aiplatform.v1.G"
+          + "csSourceB\003\340A\002\"\036\n\tGcsSource\022\021\n\004uris\030\001 \003(\t"
+          + "B\003\340A\002\"0\n\016GcsDestination\022\036\n\021output_uri_pr"
+          + "efix\030\001 \001(\tB\003\340A\002\"(\n\016BigQuerySource\022\026\n\tinp"
+          + "ut_uri\030\001 \001(\tB\003\340A\002\".\n\023BigQueryDestination"
+          + "\022\027\n\noutput_uri\030\001 \001(\tB\003\340A\002\"Z\n\016CsvDestinat"
+          + "ion\022H\n\017gcs_destination\030\001 \001(\0132*.google.cl"
+          + "oud.aiplatform.v1.GcsDestinationB\003\340A\002\"_\n"
+          + "\023TFRecordDestination\022H\n\017gcs_destination\030"
+          + "\001 \001(\0132*.google.cloud.aiplatform.v1.GcsDe"
+          + "stinationB\003\340A\002\"7\n\034ContainerRegistryDesti"
+          + "nation\022\027\n\noutput_uri\030\001 \001(\tB\003\340A\002B\313\001\n\036com."
+          + "google.cloud.aiplatform.v1B\007IoProtoP\001ZDg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/aiplatform/v1;aiplatform\252\002\032Google.Clo"
+          + "ud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfo"
+          + "rm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_AvroSource_descriptor =
@@ -180,7 +179,6 @@ public final class IoProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
   }
 

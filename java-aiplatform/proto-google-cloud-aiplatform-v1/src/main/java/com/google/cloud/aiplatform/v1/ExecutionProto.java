@@ -45,44 +45,41 @@ public final class ExecutionProto {
   static {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/aiplatform/v1/execution.p"
-          + "roto\022\032google.cloud.aiplatform.v1\032\034google"
-          + "/api/annotations.proto\032\037google/api/field"
-          + "_behavior.proto\032\031google/api/resource.pro"
-          + "to\032&google/cloud/aiplatform/v1/value.pro"
-          + "to\032\034google/protobuf/struct.proto\032\037google"
-          + "/protobuf/timestamp.proto\"\301\005\n\tExecution\022"
-          + "\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014display_name\030\002 \001(\t"
-          + "\022:\n\005state\030\006 \001(\0162+.google.cloud.aiplatfor"
-          + "m.v1.Execution.State\022\014\n\004etag\030\t \001(\t\022A\n\006la"
-          + "bels\030\n \003(\01321.google.cloud.aiplatform.v1."
-          + "Execution.LabelsEntry\0224\n\013create_time\030\013 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013u"
-          + "pdate_time\030\014 \001(\0132\032.google.protobuf.Times"
-          + "tampB\003\340A\003\022\024\n\014schema_title\030\r \001(\t\022\026\n\016schem"
-          + "a_version\030\016 \001(\t\022)\n\010metadata\030\017 \001(\0132\027.goog"
-          + "le.protobuf.Struct\022\023\n\013description\030\020 \001(\t\032"
-          + "-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-          + "(\t:\0028\001\"i\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\007"
-          + "\n\003NEW\020\001\022\013\n\007RUNNING\020\002\022\014\n\010COMPLETE\020\003\022\n\n\006FA"
-          + "ILED\020\004\022\n\n\006CACHED\020\005\022\r\n\tCANCELLED\020\006:\211\001\352A\205\001"
-          + "\n#aiplatform.googleapis.com/Execution\022^p"
-          + "rojects/{project}/locations/{location}/m"
-          + "etadataStores/{metadata_store}/execution"
-          + "s/{execution}B\322\001\n\036com.google.cloud.aipla"
-          + "tform.v1B\016ExecutionProtoP\001ZDgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/aiplatfo"
-          + "rm/v1;aiplatform\252\002\032Google.Cloud.AIPlatfo"
-          + "rm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goo"
-          + "gle::Cloud::AIPlatform::V1b\006proto3"
+          + "roto\022\032google.cloud.aiplatform.v1\032\037google"
+          + "/api/field_behavior.proto\032\031google/api/re"
+          + "source.proto\032\034google/protobuf/struct.pro"
+          + "to\032\037google/protobuf/timestamp.proto\"\301\005\n\t"
+          + "Execution\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014display_"
+          + "name\030\002 \001(\t\022:\n\005state\030\006 \001(\0162+.google.cloud"
+          + ".aiplatform.v1.Execution.State\022\014\n\004etag\030\t"
+          + " \001(\t\022A\n\006labels\030\n \003(\01321.google.cloud.aipl"
+          + "atform.v1.Execution.LabelsEntry\0224\n\013creat"
+          + "e_time\030\013 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\003\340A\003\0224\n\013update_time\030\014 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\003\340A\003\022\024\n\014schema_title\030\r \001("
+          + "\t\022\026\n\016schema_version\030\016 \001(\t\022)\n\010metadata\030\017 "
+          + "\001(\0132\027.google.protobuf.Struct\022\023\n\013descript"
+          + "ion\030\020 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"i\n\005State\022\025\n\021STATE_UNSPE"
+          + "CIFIED\020\000\022\007\n\003NEW\020\001\022\013\n\007RUNNING\020\002\022\014\n\010COMPLE"
+          + "TE\020\003\022\n\n\006FAILED\020\004\022\n\n\006CACHED\020\005\022\r\n\tCANCELLE"
+          + "D\020\006:\211\001\352A\205\001\n#aiplatform.googleapis.com/Ex"
+          + "ecution\022^projects/{project}/locations/{l"
+          + "ocation}/metadataStores/{metadata_store}"
+          + "/executions/{execution}B\322\001\n\036com.google.c"
+          + "loud.aiplatform.v1B\016ExecutionProtoP\001ZDgo"
+          + "ogle.golang.org/genproto/googleapis/clou"
+          + "d/aiplatform/v1;aiplatform\252\002\032Google.Clou"
+          + "d.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfor"
+          + "m\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.cloud.aiplatform.v1.ValueProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -118,10 +115,8 @@ public final class ExecutionProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.cloud.aiplatform.v1.ValueProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

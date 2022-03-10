@@ -42,33 +42,32 @@ public final class ModelEvaluationProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1/model_evalu"
           + "ation.proto\022\032google.cloud.aiplatform.v1\032"
-          + "\034google/api/annotations.proto\032\037google/ap"
-          + "i/field_behavior.proto\032\031google/api/resou"
-          + "rce.proto\032,google/cloud/aiplatform/v1/ex"
-          + "planation.proto\032\034google/protobuf/struct."
-          + "proto\032\037google/protobuf/timestamp.proto\"\227"
-          + "\003\n\017ModelEvaluation\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\037\n"
-          + "\022metrics_schema_uri\030\002 \001(\tB\003\340A\003\022,\n\007metric"
-          + "s\030\003 \001(\0132\026.google.protobuf.ValueB\003\340A\003\0224\n\013"
-          + "create_time\030\004 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\022\035\n\020slice_dimensions\030\005 \003(\tB\003\340A"
-          + "\003\022L\n\021model_explanation\030\010 \001(\0132,.google.cl"
-          + "oud.aiplatform.v1.ModelExplanationB\003\340A\003:"
-          + "\177\352A|\n)aiplatform.googleapis.com/ModelEva"
-          + "luation\022Oprojects/{project}/locations/{l"
-          + "ocation}/models/{model}/evaluations/{eva"
-          + "luation}B\330\001\n\036com.google.cloud.aiplatform"
-          + ".v1B\024ModelEvaluationProtoP\001ZDgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/aiplatf"
-          + "orm/v1;aiplatform\252\002\032Google.Cloud.AIPlatf"
-          + "orm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Go"
-          + "ogle::Cloud::AIPlatform::V1b\006proto3"
+          + "\037google/api/field_behavior.proto\032\031google"
+          + "/api/resource.proto\032,google/cloud/aiplat"
+          + "form/v1/explanation.proto\032\034google/protob"
+          + "uf/struct.proto\032\037google/protobuf/timesta"
+          + "mp.proto\"\227\003\n\017ModelEvaluation\022\021\n\004name\030\001 \001"
+          + "(\tB\003\340A\003\022\037\n\022metrics_schema_uri\030\002 \001(\tB\003\340A\003"
+          + "\022,\n\007metrics\030\003 \001(\0132\026.google.protobuf.Valu"
+          + "eB\003\340A\003\0224\n\013create_time\030\004 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\022\035\n\020slice_dimensions"
+          + "\030\005 \003(\tB\003\340A\003\022L\n\021model_explanation\030\010 \001(\0132,"
+          + ".google.cloud.aiplatform.v1.ModelExplana"
+          + "tionB\003\340A\003:\177\352A|\n)aiplatform.googleapis.co"
+          + "m/ModelEvaluation\022Oprojects/{project}/lo"
+          + "cations/{location}/models/{model}/evalua"
+          + "tions/{evaluation}B\330\001\n\036com.google.cloud."
+          + "aiplatform.v1B\024ModelEvaluationProtoP\001ZDg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/aiplatform/v1;aiplatform\252\002\032Google.Clo"
+          + "ud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfo"
+          + "rm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.ExplanationProto.getDescriptor(),
@@ -94,7 +93,6 @@ public final class ModelEvaluationProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.ExplanationProto.getDescriptor();

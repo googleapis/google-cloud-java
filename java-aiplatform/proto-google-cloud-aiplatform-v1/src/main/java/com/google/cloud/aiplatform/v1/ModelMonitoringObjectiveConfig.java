@@ -22,7 +22,7 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Next ID: 6
+ * Next ID: 7
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig}
@@ -8584,7 +8584,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Next ID: 6
+   * Next ID: 7
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig}

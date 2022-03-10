@@ -49,42 +49,40 @@ public final class FeaturestoreProto {
   static {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/aiplatform/v1/featurestor"
-          + "e.proto\022\032google.cloud.aiplatform.v1\032\034goo"
-          + "gle/api/annotations.proto\032\037google/api/fi"
-          + "eld_behavior.proto\032\031google/api/resource."
-          + "proto\0320google/cloud/aiplatform/v1/encryp"
-          + "tion_spec.proto\032\037google/protobuf/timesta"
-          + "mp.proto\"\350\005\n\014Featurestore\022\021\n\004name\030\001 \001(\tB"
-          + "\003\340A\003\0224\n\013create_time\030\003 \001(\0132\032.google.proto"
-          + "buf.TimestampB\003\340A\003\0224\n\013update_time\030\004 \001(\0132"
-          + "\032.google.protobuf.TimestampB\003\340A\003\022\021\n\004etag"
-          + "\030\005 \001(\tB\003\340A\001\022I\n\006labels\030\006 \003(\01324.google.clo"
-          + "ud.aiplatform.v1.Featurestore.LabelsEntr"
-          + "yB\003\340A\001\022`\n\025online_serving_config\030\007 \001(\0132<."
+          + "e.proto\022\032google.cloud.aiplatform.v1\032\037goo"
+          + "gle/api/field_behavior.proto\032\031google/api"
+          + "/resource.proto\0320google/cloud/aiplatform"
+          + "/v1/encryption_spec.proto\032\037google/protob"
+          + "uf/timestamp.proto\"\350\005\n\014Featurestore\022\021\n\004n"
+          + "ame\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\003 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
+          + "ime\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\022\021\n\004etag\030\005 \001(\tB\003\340A\001\022I\n\006labels\030\006 \003(\01324."
           + "google.cloud.aiplatform.v1.Featurestore."
-          + "OnlineServingConfigB\003\340A\002\022B\n\005state\030\010 \001(\0162"
-          + "..google.cloud.aiplatform.v1.Featurestor"
-          + "e.StateB\003\340A\003\022H\n\017encryption_spec\030\n \001(\0132*."
-          + "google.cloud.aiplatform.v1.EncryptionSpe"
-          + "cB\003\340A\001\032/\n\023OnlineServingConfig\022\030\n\020fixed_n"
-          + "ode_count\030\002 \001(\005\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\005State\022\025\n\021STATE"
-          + "_UNSPECIFIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010UPDATING\020\002"
-          + ":q\352An\n&aiplatform.googleapis.com/Feature"
-          + "store\022Dprojects/{project}/locations/{loc"
-          + "ation}/featurestores/{featurestore}B\325\001\n\036"
-          + "com.google.cloud.aiplatform.v1B\021Features"
-          + "toreProtoP\001ZDgoogle.golang.org/genproto/"
-          + "googleapis/cloud/aiplatform/v1;aiplatfor"
-          + "m\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\"
-          + "Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIP"
-          + "latform::V1b\006proto3"
+          + "LabelsEntryB\003\340A\001\022`\n\025online_serving_confi"
+          + "g\030\007 \001(\0132<.google.cloud.aiplatform.v1.Fea"
+          + "turestore.OnlineServingConfigB\003\340A\002\022B\n\005st"
+          + "ate\030\010 \001(\0162..google.cloud.aiplatform.v1.F"
+          + "eaturestore.StateB\003\340A\003\022H\n\017encryption_spe"
+          + "c\030\n \001(\0132*.google.cloud.aiplatform.v1.Enc"
+          + "ryptionSpecB\003\340A\001\032/\n\023OnlineServingConfig\022"
+          + "\030\n\020fixed_node_count\030\002 \001(\005\032-\n\013LabelsEntry"
+          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\005Stat"
+          + "e\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010"
+          + "UPDATING\020\002:q\352An\n&aiplatform.googleapis.c"
+          + "om/Featurestore\022Dprojects/{project}/loca"
+          + "tions/{location}/featurestores/{features"
+          + "tore}B\325\001\n\036com.google.cloud.aiplatform.v1"
+          + "B\021FeaturestoreProtoP\001ZDgoogle.golang.org"
+          + "/genproto/googleapis/cloud/aiplatform/v1"
+          + ";aiplatform\252\002\032Google.Cloud.AIPlatform.V1"
+          + "\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::"
+          + "Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor(),
@@ -127,7 +125,6 @@ public final class FeaturestoreProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor();

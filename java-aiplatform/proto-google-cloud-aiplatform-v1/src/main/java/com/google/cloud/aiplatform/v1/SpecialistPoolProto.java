@@ -41,30 +41,28 @@ public final class SpecialistPoolProto {
   static {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/aiplatform/v1/specialist_"
-          + "pool.proto\022\032google.cloud.aiplatform.v1\032\034"
-          + "google/api/annotations.proto\032\037google/api"
-          + "/field_behavior.proto\032\031google/api/resour"
-          + "ce.proto\"\316\002\n\016SpecialistPool\022\021\n\004name\030\001 \001("
-          + "\tB\003\340A\002\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022&\n\031spe"
-          + "cialist_managers_count\030\003 \001(\005B\003\340A\003\022!\n\031spe"
-          + "cialist_manager_emails\030\004 \003(\t\022\'\n\032pending_"
-          + "data_labeling_jobs\030\005 \003(\tB\003\340A\003\022 \n\030special"
-          + "ist_worker_emails\030\007 \003(\t:x\352Au\n(aiplatform"
-          + ".googleapis.com/SpecialistPool\022Iprojects"
-          + "/{project}/locations/{location}/speciali"
-          + "stPools/{specialist_pool}B\327\001\n\036com.google"
-          + ".cloud.aiplatform.v1B\023SpecialistPoolProt"
-          + "oP\001ZDgoogle.golang.org/genproto/googleap"
-          + "is/cloud/aiplatform/v1;aiplatform\252\002\032Goog"
-          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
-          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
-          + ":V1b\006proto3"
+          + "pool.proto\022\032google.cloud.aiplatform.v1\032\037"
+          + "google/api/field_behavior.proto\032\031google/"
+          + "api/resource.proto\"\316\002\n\016SpecialistPool\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\022\031\n\014display_name\030\002 \001(\tB\003"
+          + "\340A\002\022&\n\031specialist_managers_count\030\003 \001(\005B\003"
+          + "\340A\003\022!\n\031specialist_manager_emails\030\004 \003(\t\022\'"
+          + "\n\032pending_data_labeling_jobs\030\005 \003(\tB\003\340A\003\022"
+          + " \n\030specialist_worker_emails\030\007 \003(\t:x\352Au\n("
+          + "aiplatform.googleapis.com/SpecialistPool"
+          + "\022Iprojects/{project}/locations/{location"
+          + "}/specialistPools/{specialist_pool}B\327\001\n\036"
+          + "com.google.cloud.aiplatform.v1B\023Speciali"
+          + "stPoolProtoP\001ZDgoogle.golang.org/genprot"
+          + "o/googleapis/cloud/aiplatform/v1;aiplatf"
+          + "orm\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Googl"
+          + "e\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::A"
+          + "IPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
@@ -87,7 +85,6 @@ public final class SpecialistPoolProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
   }

@@ -42,22 +42,20 @@ public final class ManualBatchTuningParametersProto {
     java.lang.String[] descriptorData = {
       "\n?google/cloud/aiplatform/v1/manual_batc"
           + "h_tuning_parameters.proto\022\032google.cloud."
-          + "aiplatform.v1\032\034google/api/annotations.pr"
-          + "oto\032\037google/api/field_behavior.proto\"6\n\033"
-          + "ManualBatchTuningParameters\022\027\n\nbatch_siz"
-          + "e\030\001 \001(\005B\003\340A\005B\344\001\n\036com.google.cloud.aiplat"
-          + "form.v1B ManualBatchTuningParametersProt"
-          + "oP\001ZDgoogle.golang.org/genproto/googleap"
-          + "is/cloud/aiplatform/v1;aiplatform\252\002\032Goog"
-          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
-          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
-          + ":V1b\006proto3"
+          + "aiplatform.v1\032\037google/api/field_behavior"
+          + ".proto\"6\n\033ManualBatchTuningParameters\022\027\n"
+          + "\nbatch_size\030\001 \001(\005B\003\340A\005B\344\001\n\036com.google.cl"
+          + "oud.aiplatform.v1B ManualBatchTuningPara"
+          + "metersProtoP\001ZDgoogle.golang.org/genprot"
+          + "o/googleapis/cloud/aiplatform/v1;aiplatf"
+          + "orm\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Googl"
+          + "e\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::A"
+          + "IPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_ManualBatchTuningParameters_descriptor =
@@ -73,7 +71,6 @@ public final class ManualBatchTuningParametersProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
   }
 

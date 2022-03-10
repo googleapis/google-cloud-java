@@ -42,23 +42,22 @@ public final class DeployedModelNameProto {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/aiplatform/v1/deployed_mo"
           + "del_ref.proto\022\032google.cloud.aiplatform.v"
-          + "1\032\034google/api/annotations.proto\032\037google/"
-          + "api/field_behavior.proto\032\031google/api/res"
-          + "ource.proto\"p\n\020DeployedModelRef\022<\n\010endpo"
-          + "int\030\001 \001(\tB*\340A\005\372A$\n\"aiplatform.googleapis"
-          + ".com/Endpoint\022\036\n\021deployed_model_id\030\002 \001(\t"
-          + "B\003\340A\005B\332\001\n\036com.google.cloud.aiplatform.v1"
-          + "B\026DeployedModelNameProtoP\001ZDgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/aiplatfo"
-          + "rm/v1;aiplatform\252\002\032Google.Cloud.AIPlatfo"
-          + "rm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goo"
-          + "gle::Cloud::AIPlatform::V1b\006proto3"
+          + "1\032\037google/api/field_behavior.proto\032\031goog"
+          + "le/api/resource.proto\"p\n\020DeployedModelRe"
+          + "f\022<\n\010endpoint\030\001 \001(\tB*\340A\005\372A$\n\"aiplatform."
+          + "googleapis.com/Endpoint\022\036\n\021deployed_mode"
+          + "l_id\030\002 \001(\tB\003\340A\005B\332\001\n\036com.google.cloud.aip"
+          + "latform.v1B\026DeployedModelNameProtoP\001ZDgo"
+          + "ogle.golang.org/genproto/googleapis/clou"
+          + "d/aiplatform/v1;aiplatform\252\002\032Google.Clou"
+          + "d.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfor"
+          + "m\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
@@ -76,7 +75,6 @@ public final class DeployedModelNameProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
   }
