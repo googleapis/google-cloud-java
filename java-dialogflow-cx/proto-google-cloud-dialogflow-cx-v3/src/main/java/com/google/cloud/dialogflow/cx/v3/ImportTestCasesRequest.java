@@ -234,6 +234,11 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import test cases from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * Dialogflow performs a read operation for the Cloud Storage object
+   * on the caller's behalf, so your request authentication must
+   * have read permissions for the object. For more information, see
+   * [Dialogflow access
+   * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
    * </pre>
    *
    * <code>string gcs_uri = 2;</code>
@@ -250,6 +255,11 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import test cases from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * Dialogflow performs a read operation for the Cloud Storage object
+   * on the caller's behalf, so your request authentication must
+   * have read permissions for the object. For more information, see
+   * [Dialogflow access
+   * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
    * </pre>
    *
    * <code>string gcs_uri = 2;</code>
@@ -279,6 +289,11 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import test cases from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * Dialogflow performs a read operation for the Cloud Storage object
+   * on the caller's behalf, so your request authentication must
+   * have read permissions for the object. For more information, see
+   * [Dialogflow access
+   * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
    * </pre>
    *
    * <code>string gcs_uri = 2;</code>
@@ -862,6 +877,11 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import test cases from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * Dialogflow performs a read operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have read permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string gcs_uri = 2;</code>
@@ -879,6 +899,11 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import test cases from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * Dialogflow performs a read operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have read permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string gcs_uri = 2;</code>
@@ -909,6 +934,11 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import test cases from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * Dialogflow performs a read operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have read permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string gcs_uri = 2;</code>
@@ -939,6 +969,11 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import test cases from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * Dialogflow performs a read operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have read permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string gcs_uri = 2;</code>
@@ -962,6 +997,11 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import test cases from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * Dialogflow performs a read operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have read permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string gcs_uri = 2;</code>
@@ -983,6 +1023,11 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import test cases from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * Dialogflow performs a read operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have read permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string gcs_uri = 2;</code>

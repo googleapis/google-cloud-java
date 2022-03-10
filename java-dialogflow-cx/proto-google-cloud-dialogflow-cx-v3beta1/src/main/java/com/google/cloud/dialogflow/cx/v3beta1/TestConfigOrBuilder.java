@@ -78,9 +78,13 @@ public interface TestConfigOrBuilder
    *
    *
    * <pre>
-   * Flow name. If not set, default start flow is assumed.
+   * Flow name to start the test case with.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Only one of `flow` and `page` should be set to indicate the starting point
+   * of the test case. If both are set, `page` takes precedence over `flow`. If
+   * neither is set, the test case will start with start page on the default
+   * start flow.
    * </pre>
    *
    * <code>string flow = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -92,9 +96,13 @@ public interface TestConfigOrBuilder
    *
    *
    * <pre>
-   * Flow name. If not set, default start flow is assumed.
+   * Flow name to start the test case with.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Only one of `flow` and `page` should be set to indicate the starting point
+   * of the test case. If both are set, `page` takes precedence over `flow`. If
+   * neither is set, the test case will start with start page on the default
+   * start flow.
    * </pre>
    *
    * <code>string flow = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -102,4 +110,41 @@ public interface TestConfigOrBuilder
    * @return The bytes for flow.
    */
   com.google.protobuf.ByteString getFlowBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [page][google.cloud.dialogflow.cx.v3beta1.Page] to start the test case with.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * Only one of `flow` and `page` should be set to indicate the starting point
+   * of the test case. If both are set, `page` takes precedence over `flow`. If
+   * neither is set, the test case will start with start page on the default
+   * start flow.
+   * </pre>
+   *
+   * <code>string page = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The page.
+   */
+  java.lang.String getPage();
+  /**
+   *
+   *
+   * <pre>
+   * The [page][google.cloud.dialogflow.cx.v3beta1.Page] to start the test case with.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * Only one of `flow` and `page` should be set to indicate the starting point
+   * of the test case. If both are set, `page` takes precedence over `flow`. If
+   * neither is set, the test case will start with start page on the default
+   * start flow.
+   * </pre>
+   *
+   * <code>string page = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for page.
+   */
+  com.google.protobuf.ByteString getPageBytes();
 }
