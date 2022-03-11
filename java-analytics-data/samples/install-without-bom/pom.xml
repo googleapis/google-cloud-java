@@ -32,6 +32,11 @@
       <version>0.11.4</version>
     </dependency>
     <!-- [END analytics_data_install_without_bom] -->
+    <dependency>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-oauth2-http</artifactId>
+      <version>1.4.0</version>
+    </dependency>
 
     <dependency>
       <groupId>junit</groupId>
