@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-admin</artifactId>
-  <version>0.8.2</version>
+  <version>0.8.4</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.analytics:google-analytics-admin:0.8.2'
+implementation 'com.google.analytics:google-analytics-admin:0.8.4'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.analytics" % "google-analytics-admin" % "0.8.2"
+libraryDependencies += "com.google.analytics" % "google-analytics-admin" % "0.8.4"
 ```
 
 ## Authentication
