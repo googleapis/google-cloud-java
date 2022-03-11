@@ -286,6 +286,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                     ? getOptions().getProjectId()
                     : tableInfo.getTableId().getProject())
             .toPb();
+    // Set schema on the Table for permanent external table
+    if (tablePb.getExternalDataConfiguration() != null) {
+      tablePb.setSchema(tablePb.getExternalDataConfiguration().getSchema());
+      // clear table schema on ExternalDataConfiguration
+      tablePb.getExternalDataConfiguration().setSchema(null);
+    }
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return Table.fromPb(
