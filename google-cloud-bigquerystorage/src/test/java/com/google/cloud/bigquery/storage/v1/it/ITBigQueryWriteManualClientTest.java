@@ -39,6 +39,7 @@ import io.grpc.Status;
 import io.grpc.Status.Code;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -339,12 +340,19 @@ public class ITBigQueryWriteManualClientTest {
             .setMode(TableFieldSchema.Mode.REPEATED)
             .setName("test_bytestring_repeated")
             .build();
+    TableFieldSchema TEST_TIMESTAMP =
+        TableFieldSchema.newBuilder()
+            .setName("test_timeStamp")
+            .setType(TableFieldSchema.Type.TIMESTAMP)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .build();
     TableSchema tableSchema =
         TableSchema.newBuilder()
             .addFields(0, TEST_STRING)
             .addFields(1, TEST_DATE)
             .addFields(2, TEST_NUMERIC)
             .addFields(3, TEST_REPEATED_BYTESTRING)
+            .addFields(4, TEST_TIMESTAMP)
             .build();
     TableInfo tableInfo =
         TableInfo.newBuilder(
@@ -364,6 +372,9 @@ public class ITBigQueryWriteManualClientTest {
                         com.google.cloud.bigquery.Field.newBuilder(
                                 "test_bytestring_repeated", StandardSQLTypeName.BYTES)
                             .setMode(Field.Mode.REPEATED)
+                            .build(),
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "test_timestamp", StandardSQLTypeName.TIMESTAMP)
                             .build())))
             .build();
 
@@ -396,6 +407,7 @@ public class ITBigQueryWriteManualClientTest {
                 ByteString.copyFromUtf8("a").toByteArray(),
                 ByteString.copyFromUtf8("b").toByteArray()
               }));
+      row1.put("test_timestamp", "2022-02-06 07:24:47.84");
       JSONArray jsonArr1 = new JSONArray(new JSONObject[] {row1});
 
       ApiFuture<AppendRowsResponse> response1 = jsonStreamWriter.append(jsonArr1, -1);
@@ -444,6 +456,9 @@ public class ITBigQueryWriteManualClientTest {
       assertEquals("2020-10-01T12:00:00", currentRow.get(2).getStringValue());
       assertEquals(2, currentRow.get(3).getRepeatedValue().size());
       assertEquals("Yg==", currentRow.get(3).getRepeatedValue().get(1).getStringValue());
+      assertEquals(
+          Timestamp.valueOf("2022-02-06 07:24:47.84").getTime(),
+          currentRow.get(4).getTimestampValue()); // timestamp long of "2022-02-06 07:24:47.84"
       assertEquals("bbb", iter.next().get(0).getStringValue());
       assertEquals("ccc", iter.next().get(0).getStringValue());
       assertEquals("ddd", iter.next().get(0).getStringValue());

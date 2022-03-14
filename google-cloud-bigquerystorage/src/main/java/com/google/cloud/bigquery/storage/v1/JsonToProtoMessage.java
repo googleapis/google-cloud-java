@@ -25,6 +25,7 @@ import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Message;
 import com.google.protobuf.UninitializedMessageException;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Logger;
@@ -294,6 +295,14 @@ public class JsonToProtoMessage {
               protoMsg.setField(fieldDescriptor, (Long) val);
               return;
             }
+          } else if (fieldSchema.getType() == TableFieldSchema.Type.TIMESTAMP) {
+            if (val instanceof String) {
+              protoMsg.setField(fieldDescriptor, Timestamp.valueOf((String) val).getTime());
+              return;
+            } else if (val instanceof Long) {
+              protoMsg.setField(fieldDescriptor, (Long) val);
+              return;
+            }
           }
         }
         if (val instanceof Integer) {
@@ -464,6 +473,15 @@ public class JsonToProtoMessage {
               protoMsg.addRepeatedField(
                   fieldDescriptor,
                   CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.parse((String) val)));
+            } else if (val instanceof Long) {
+              protoMsg.addRepeatedField(fieldDescriptor, (Long) val);
+            } else {
+              fail = true;
+            }
+          } else if (fieldSchema != null
+              && fieldSchema.getType() == TableFieldSchema.Type.TIMESTAMP) {
+            if (val instanceof String) {
+              protoMsg.addRepeatedField(fieldDescriptor, Timestamp.valueOf((String) val).getTime());
             } else if (val instanceof Long) {
               protoMsg.addRepeatedField(fieldDescriptor, (Long) val);
             } else {
