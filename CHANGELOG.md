@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.11.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.10.1...v2.11.0) (2022-03-14)
+
+
+### Features
+
+* add JsonToProtoMessage support for TIMESTAMP ([#1574](https://github.com/googleapis/java-bigquerystorage/issues/1574)) ([6412fb2](https://github.com/googleapis/java-bigquerystorage/commit/6412fb2c03fc6b2c6d220d72bbd89e47922bf970)), closes [#1515](https://github.com/googleapis/java-bigquerystorage/issues/1515)
+
+
+### Bug Fixes
+
+* a possible race condition that we used table schema out of the lock. ([#1575](https://github.com/googleapis/java-bigquerystorage/issues/1575)) ([b587638](https://github.com/googleapis/java-bigquerystorage/commit/b58763833ad4bd51515c055bbcb8e29d9fea05a9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.9.1 ([#1562](https://github.com/googleapis/java-bigquerystorage/issues/1562)) ([7efdbf0](https://github.com/googleapis/java-bigquerystorage/commit/7efdbf0df14ccc84409d09b5c93ac1058c95d50e))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.9.3 ([#1570](https://github.com/googleapis/java-bigquerystorage/issues/1570)) ([3d281d2](https://github.com/googleapis/java-bigquerystorage/commit/3d281d2e01f9170eac92ac51757fbd434d9b6b73))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.9.4 ([#1572](https://github.com/googleapis/java-bigquerystorage/issues/1572)) ([d3935cd](https://github.com/googleapis/java-bigquerystorage/commit/d3935cd3120f49aaae4c4e6839782bfa05836e90))
+
 ### [2.10.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.10.0...v2.10.1) (2022-03-03)
 
 
