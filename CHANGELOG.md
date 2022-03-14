@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.9](https://github.com/googleapis/java-datastore/compare/v2.2.8...v2.2.9) (2022-03-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:native-image-support to v0.12.10 ([#679](https://github.com/googleapis/java-datastore/issues/679)) ([0f8afd7](https://github.com/googleapis/java-datastore/commit/0f8afd7409955efb89b481218861fa9ee531de89))
+
 ### [2.2.8](https://github.com/googleapis/java-datastore/compare/v2.2.7...v2.2.8) (2022-03-10)
 
 
