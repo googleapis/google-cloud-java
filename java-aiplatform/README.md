@@ -18,7 +18,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-aiplatform</artifactId>
-    <version>2.7.3</version>
+    <version>2.7.4</version>
   </dependency>
 
 ```
@@ -30,7 +30,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-aiplatform</artifactId>
-  <version>2.7.3</version>
+  <version>2.7.4</version>
 </dependency>
 
 ```
@@ -38,20 +38,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:24.4.0')
+implementation platform('com.google.cloud:libraries-bom:25.0.0')
 
 implementation 'com.google.cloud:google-cloud-aiplatform'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-aiplatform:2.7.3'
+implementation 'com.google.cloud:google-cloud-aiplatform:2.7.4'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-aiplatform" % "2.7.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-aiplatform" % "2.7.4"
 ```
 
 ## Authentication
