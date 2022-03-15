@@ -52,10 +52,16 @@ public class SubscriberIT {
   private static final String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String _suffix = UUID.randomUUID().toString();
   private static final String topicId = "subscriber-test-topic-" + _suffix;
+  private static final String topicIdEod = "subscriber-test-topic-eod" + _suffix;
   private static final String subscriptionId = "subscriber-test-subscription-" + _suffix;
+  // For a subscription with exactly once delivery enabled.
+  private static final String subscriptionEodId = "subscriber-test-subscription-eod" + _suffix;
   private static final TopicName topicName = TopicName.of(projectId, topicId);
+  private static final TopicName topicNameEod = TopicName.of(projectId, topicIdEod);
   private static final ProjectSubscriptionName subscriptionName =
       ProjectSubscriptionName.of(projectId, subscriptionId);
+  private static final ProjectSubscriptionName subscriptionEodName =
+      ProjectSubscriptionName.of(projectId, subscriptionEodId);
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -63,8 +69,13 @@ public class SubscriberIT {
         System.getenv(varName));
   }
 
+  private static List<String> publishSomeMessages(Integer numOfMessages) throws Exception {
+    return publishSomeMessages(numOfMessages, topicId);
+  }
+
   // Helper function to publish some messages.
-  private static void publishSomeMessages(Integer numOfMessages) throws Exception {
+  private static List<String> publishSomeMessages(Integer numOfMessages, String topicId)
+      throws Exception {
     ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
     Publisher publisher = Publisher.newBuilder(topicName).build();
     List<ApiFuture<String>> messageIdFutures = new ArrayList<>();
@@ -78,7 +89,7 @@ public class SubscriberIT {
       ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
       messageIdFutures.add(messageIdFuture);
     }
-    ApiFutures.allAsList(messageIdFutures).get();
+    return ApiFutures.allAsList(messageIdFutures).get();
   }
 
   // Helper function to retry synchronous pull attempts until all outstanding messages are received.
@@ -123,6 +134,9 @@ public class SubscriberIT {
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       Topic topic = Topic.newBuilder().setName(topicName.toString()).build();
       topicAdminClient.createTopic(topic);
+
+      Topic topicEod = Topic.newBuilder().setName(topicNameEod.toString()).build();
+      topicAdminClient.createTopic(topicEod);
     }
 
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
@@ -132,6 +146,15 @@ public class SubscriberIT {
               .setTopic(topicName.toString())
               .build();
       subscriptionAdminClient.createSubscription(subscription);
+
+      Subscription subscriptionEod =
+          Subscription.newBuilder()
+              .setName(subscriptionEodName.toString())
+              .setTopic(topicNameEod.toString())
+              // Enable exactly once delivery in the subscription.
+              .setEnableExactlyOnceDelivery(true)
+              .build();
+      subscriptionAdminClient.createSubscription(subscriptionEod);
     }
   }
 
@@ -139,10 +162,12 @@ public class SubscriberIT {
   public void tearDown() throws Exception {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       subscriptionAdminClient.deleteSubscription(subscriptionName.toString());
+      subscriptionAdminClient.deleteSubscription(subscriptionEodName.toString());
     }
 
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       topicAdminClient.deleteTopic(topicName.toString());
+      topicAdminClient.deleteTopic(topicNameEod.toString());
     }
 
     System.setOut(null);
@@ -203,5 +228,16 @@ public class SubscriberIT {
         () ->
             SubscribeSyncWithLeaseExample.subscribeSyncWithLeaseExample(
                 projectId, subscriptionId, 10));
+  }
+
+  @Test
+  public void testSubscriberExactlyOnceDelivery() throws Exception {
+    List<String> messageIds = publishSomeMessages(10, topicIdEod);
+    bout.reset();
+    SubscribeWithExactlyOnceConsumerWithResponseExample
+        .subscribeWithExactlyOnceConsumerWithResponseExample(projectId, subscriptionEodId);
+    for (String messageId : messageIds) {
+      assertThat(bout.toString()).contains("Message successfully acked: " + messageId);
+    }
   }
 }
