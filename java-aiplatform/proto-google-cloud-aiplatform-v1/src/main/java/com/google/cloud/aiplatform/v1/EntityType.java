@@ -139,6 +139,23 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
               etag_ = s;
               break;
             }
+          case 66:
+            {
+              com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.Builder subBuilder = null;
+              if (monitoringConfig_ != null) {
+                subBuilder = monitoringConfig_.toBuilder();
+              }
+              monitoringConfig_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(monitoringConfig_);
+                monitoringConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -573,6 +590,82 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MONITORING_CONFIG_FIELD_NUMBER = 8;
+  private com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoringConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default monitoring configuration for all Features with value
+   * type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+   * STRING, DOUBLE or INT64 under this EntityType.
+   * If this is populated with
+   * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+   * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+   * disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the monitoringConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMonitoringConfig() {
+    return monitoringConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default monitoring configuration for all Features with value
+   * type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+   * STRING, DOUBLE or INT64 under this EntityType.
+   * If this is populated with
+   * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+   * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+   * disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The monitoringConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig getMonitoringConfig() {
+    return monitoringConfig_ == null
+        ? com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.getDefaultInstance()
+        : monitoringConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default monitoring configuration for all Features with value
+   * type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+   * STRING, DOUBLE or INT64 under this EntityType.
+   * If this is populated with
+   * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+   * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+   * disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfigOrBuilder
+      getMonitoringConfigOrBuilder() {
+    return getMonitoringConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -603,6 +696,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 6);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, etag_);
+    }
+    if (monitoringConfig_ != null) {
+      output.writeMessage(8, getMonitoringConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -638,6 +734,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, etag_);
     }
+    if (monitoringConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getMonitoringConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -666,6 +765,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (hasMonitoringConfig() != other.hasMonitoringConfig()) return false;
+    if (hasMonitoringConfig()) {
+      if (!getMonitoringConfig().equals(other.getMonitoringConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -695,6 +798,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    if (hasMonitoringConfig()) {
+      hash = (37 * hash) + MONITORING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMonitoringConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -881,6 +988,12 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       etag_ = "";
 
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfig_ = null;
+      } else {
+        monitoringConfig_ = null;
+        monitoringConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -924,6 +1037,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
       result.etag_ = etag_;
+      if (monitoringConfigBuilder_ == null) {
+        result.monitoringConfig_ = monitoringConfig_;
+      } else {
+        result.monitoringConfig_ = monitoringConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -991,6 +1109,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
         onChanged();
+      }
+      if (other.hasMonitoringConfig()) {
+        mergeMonitoringConfig(other.getMonitoringConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1989,6 +2110,278 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       etag_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoringConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig,
+            com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.Builder,
+            com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfigOrBuilder>
+        monitoringConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+     * STRING, DOUBLE or INT64 under this EntityType.
+     * If this is populated with
+     * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+     * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the monitoringConfig field is set.
+     */
+    public boolean hasMonitoringConfig() {
+      return monitoringConfigBuilder_ != null || monitoringConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+     * STRING, DOUBLE or INT64 under this EntityType.
+     * If this is populated with
+     * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+     * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The monitoringConfig.
+     */
+    public com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig getMonitoringConfig() {
+      if (monitoringConfigBuilder_ == null) {
+        return monitoringConfig_ == null
+            ? com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.getDefaultInstance()
+            : monitoringConfig_;
+      } else {
+        return monitoringConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+     * STRING, DOUBLE or INT64 under this EntityType.
+     * If this is populated with
+     * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+     * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMonitoringConfig(
+        com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig value) {
+      if (monitoringConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        monitoringConfig_ = value;
+        onChanged();
+      } else {
+        monitoringConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+     * STRING, DOUBLE or INT64 under this EntityType.
+     * If this is populated with
+     * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+     * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMonitoringConfig(
+        com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.Builder builderForValue) {
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        monitoringConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+     * STRING, DOUBLE or INT64 under this EntityType.
+     * If this is populated with
+     * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+     * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMonitoringConfig(
+        com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig value) {
+      if (monitoringConfigBuilder_ == null) {
+        if (monitoringConfig_ != null) {
+          monitoringConfig_ =
+              com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.newBuilder(
+                      monitoringConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          monitoringConfig_ = value;
+        }
+        onChanged();
+      } else {
+        monitoringConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+     * STRING, DOUBLE or INT64 under this EntityType.
+     * If this is populated with
+     * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+     * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMonitoringConfig() {
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfig_ = null;
+        onChanged();
+      } else {
+        monitoringConfig_ = null;
+        monitoringConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+     * STRING, DOUBLE or INT64 under this EntityType.
+     * If this is populated with
+     * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+     * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.Builder
+        getMonitoringConfigBuilder() {
+
+      onChanged();
+      return getMonitoringConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+     * STRING, DOUBLE or INT64 under this EntityType.
+     * If this is populated with
+     * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+     * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfigOrBuilder
+        getMonitoringConfigOrBuilder() {
+      if (monitoringConfigBuilder_ != null) {
+        return monitoringConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return monitoringConfig_ == null
+            ? com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.getDefaultInstance()
+            : monitoringConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+     * STRING, DOUBLE or INT64 under this EntityType.
+     * If this is populated with
+     * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+     * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+     * disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig,
+            com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.Builder,
+            com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfigOrBuilder>
+        getMonitoringConfigFieldBuilder() {
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig,
+                com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.Builder,
+                com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfigOrBuilder>(
+                getMonitoringConfig(), getParentForChildren(), isClean());
+        monitoringConfig_ = null;
+      }
+      return monitoringConfigBuilder_;
     }
 
     @java.lang.Override

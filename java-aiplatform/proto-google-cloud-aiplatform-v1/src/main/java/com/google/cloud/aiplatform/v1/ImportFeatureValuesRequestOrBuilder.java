@@ -314,6 +314,19 @@ public interface ImportFeatureValuesRequestOrBuilder
    */
   int getWorkerCount();
 
+  /**
+   *
+   *
+   * <pre>
+   * If true, API doesn't start ingestion analysis pipeline.
+   * </pre>
+   *
+   * <code>bool disable_ingestion_analysis = 12;</code>
+   *
+   * @return The disableIngestionAnalysis.
+   */
+  boolean getDisableIngestionAnalysis();
+
   public com.google.cloud.aiplatform.v1.ImportFeatureValuesRequest.SourceCase getSourceCase();
 
   public com.google.cloud.aiplatform.v1.ImportFeatureValuesRequest.FeatureTimeSourceCase

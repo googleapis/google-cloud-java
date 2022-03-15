@@ -281,4 +281,67 @@ public interface EntityTypeOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default monitoring configuration for all Features with value
+   * type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+   * STRING, DOUBLE or INT64 under this EntityType.
+   * If this is populated with
+   * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+   * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+   * disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the monitoringConfig field is set.
+   */
+  boolean hasMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default monitoring configuration for all Features with value
+   * type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+   * STRING, DOUBLE or INT64 under this EntityType.
+   * If this is populated with
+   * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+   * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+   * disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The monitoringConfig.
+   */
+  com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig getMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default monitoring configuration for all Features with value
+   * type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+   * STRING, DOUBLE or INT64 under this EntityType.
+   * If this is populated with
+   * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
+   * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
+   * disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig monitoring_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfigOrBuilder
+      getMonitoringConfigOrBuilder();
 }

@@ -185,6 +185,11 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
               workerCount_ = input.readInt32();
               break;
             }
+          case 96:
+            {
+              disableIngestionAnalysis_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1684,6 +1689,24 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     return workerCount_;
   }
 
+  public static final int DISABLE_INGESTION_ANALYSIS_FIELD_NUMBER = 12;
+  private boolean disableIngestionAnalysis_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, API doesn't start ingestion analysis pipeline.
+   * </pre>
+   *
+   * <code>bool disable_ingestion_analysis = 12;</code>
+   *
+   * @return The disableIngestionAnalysis.
+   */
+  @java.lang.Override
+  public boolean getDisableIngestionAnalysis() {
+    return disableIngestionAnalysis_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1727,6 +1750,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     }
     if (workerCount_ != 0) {
       output.writeInt32(11, workerCount_);
+    }
+    if (disableIngestionAnalysis_ != false) {
+      output.writeBool(12, disableIngestionAnalysis_);
     }
     unknownFields.writeTo(output);
   }
@@ -1775,6 +1801,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     if (workerCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(11, workerCount_);
     }
+    if (disableIngestionAnalysis_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, disableIngestionAnalysis_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1796,6 +1825,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     if (!getFeatureSpecsList().equals(other.getFeatureSpecsList())) return false;
     if (getDisableOnlineServing() != other.getDisableOnlineServing()) return false;
     if (getWorkerCount() != other.getWorkerCount()) return false;
+    if (getDisableIngestionAnalysis() != other.getDisableIngestionAnalysis()) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 2:
@@ -1844,6 +1874,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableOnlineServing());
     hash = (37 * hash) + WORKER_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getWorkerCount();
+    hash = (37 * hash) + DISABLE_INGESTION_ANALYSIS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableIngestionAnalysis());
     switch (sourceCase_) {
       case 2:
         hash = (37 * hash) + AVRO_SOURCE_FIELD_NUMBER;
@@ -2034,6 +2066,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
 
       workerCount_ = 0;
 
+      disableIngestionAnalysis_ = false;
+
       sourceCase_ = 0;
       source_ = null;
       featureTimeSourceCase_ = 0;
@@ -2111,6 +2145,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       result.disableOnlineServing_ = disableOnlineServing_;
       result.workerCount_ = workerCount_;
+      result.disableIngestionAnalysis_ = disableIngestionAnalysis_;
       result.sourceCase_ = sourceCase_;
       result.featureTimeSourceCase_ = featureTimeSourceCase_;
       onBuilt();
@@ -2204,6 +2239,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
       if (other.getWorkerCount() != 0) {
         setWorkerCount(other.getWorkerCount());
+      }
+      if (other.getDisableIngestionAnalysis() != false) {
+        setDisableIngestionAnalysis(other.getDisableIngestionAnalysis());
       }
       switch (other.getSourceCase()) {
         case AVRO_SOURCE:
@@ -3899,6 +3937,58 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     public Builder clearWorkerCount() {
 
       workerCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableIngestionAnalysis_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, API doesn't start ingestion analysis pipeline.
+     * </pre>
+     *
+     * <code>bool disable_ingestion_analysis = 12;</code>
+     *
+     * @return The disableIngestionAnalysis.
+     */
+    @java.lang.Override
+    public boolean getDisableIngestionAnalysis() {
+      return disableIngestionAnalysis_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, API doesn't start ingestion analysis pipeline.
+     * </pre>
+     *
+     * <code>bool disable_ingestion_analysis = 12;</code>
+     *
+     * @param value The disableIngestionAnalysis to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableIngestionAnalysis(boolean value) {
+
+      disableIngestionAnalysis_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, API doesn't start ingestion analysis pipeline.
+     * </pre>
+     *
+     * <code>bool disable_ingestion_analysis = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableIngestionAnalysis() {
+
+      disableIngestionAnalysis_ = false;
       onChanged();
       return this;
     }

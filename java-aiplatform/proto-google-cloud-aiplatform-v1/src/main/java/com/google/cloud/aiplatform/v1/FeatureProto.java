@@ -32,6 +32,10 @@ public final class FeatureProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_Feature_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_Feature_MonitoringStatsAnomaly_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_Feature_MonitoringStatsAnomaly_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_Feature_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_Feature_LabelsEntry_fieldAccessorTable;
@@ -47,30 +51,43 @@ public final class FeatureProto {
       "\n(google/cloud/aiplatform/v1/feature.pro"
           + "to\022\032google.cloud.aiplatform.v1\032\037google/a"
           + "pi/field_behavior.proto\032\031google/api/reso"
-          + "urce.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\"\257\005\n\007Feature\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\023\n\013de"
-          + "scription\030\002 \001(\t\022I\n\nvalue_type\030\003 \001(\0162-.go"
-          + "ogle.cloud.aiplatform.v1.Feature.ValueTy"
-          + "peB\006\340A\002\340A\005\0224\n\013create_time\030\004 \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\0224\n\013update_time\030"
-          + "\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022D"
-          + "\n\006labels\030\006 \003(\0132/.google.cloud.aiplatform"
-          + ".v1.Feature.LabelsEntryB\003\340A\001\022\014\n\004etag\030\007 \001"
-          + "(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
-          + "\002 \001(\t:\0028\001\"\244\001\n\tValueType\022\032\n\026VALUE_TYPE_UN"
-          + "SPECIFIED\020\000\022\010\n\004BOOL\020\001\022\016\n\nBOOL_ARRAY\020\002\022\n\n"
-          + "\006DOUBLE\020\003\022\020\n\014DOUBLE_ARRAY\020\004\022\t\n\005INT64\020\t\022\017"
-          + "\n\013INT64_ARRAY\020\n\022\n\n\006STRING\020\013\022\020\n\014STRING_AR"
-          + "RAY\020\014\022\t\n\005BYTES\020\r:\232\001\352A\226\001\n!aiplatform.goog"
-          + "leapis.com/Feature\022qprojects/{project}/l"
-          + "ocations/{location}/featurestores/{featu"
-          + "restore}/entityTypes/{entity_type}/featu"
-          + "res/{feature}B\320\001\n\036com.google.cloud.aipla"
-          + "tform.v1B\014FeatureProtoP\001ZDgoogle.golang."
-          + "org/genproto/googleapis/cloud/aiplatform"
-          + "/v1;aiplatform\252\002\032Google.Cloud.AIPlatform"
-          + ".V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Googl"
-          + "e::Cloud::AIPlatform::V1b\006proto3"
+          + "urce.proto\0329google/cloud/aiplatform/v1/f"
+          + "eature_monitoring_stats.proto\032\037google/pr"
+          + "otobuf/timestamp.proto\"\337\010\n\007Feature\022\021\n\004na"
+          + "me\030\001 \001(\tB\003\340A\005\022\023\n\013description\030\002 \001(\t\022I\n\nva"
+          + "lue_type\030\003 \001(\0162-.google.cloud.aiplatform"
+          + ".v1.Feature.ValueTypeB\006\340A\002\340A\005\0224\n\013create_"
+          + "time\030\004 \001(\0132\032.google.protobuf.TimestampB\003"
+          + "\340A\003\0224\n\013update_time\030\005 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\022D\n\006labels\030\006 \003(\0132/.goog"
+          + "le.cloud.aiplatform.v1.Feature.LabelsEnt"
+          + "ryB\003\340A\001\022\014\n\004etag\030\007 \001(\t\022\037\n\022disable_monitor"
+          + "ing\030\014 \001(\010B\003\340A\001\022c\n\032monitoring_stats_anoma"
+          + "lies\030\013 \003(\0132:.google.cloud.aiplatform.v1."
+          + "Feature.MonitoringStatsAnomalyB\003\340A\003\032\247\002\n\026"
+          + "MonitoringStatsAnomaly\022\\\n\tobjective\030\001 \001("
+          + "\0162D.google.cloud.aiplatform.v1.Feature.M"
+          + "onitoringStatsAnomaly.ObjectiveB\003\340A\003\022S\n\025"
+          + "feature_stats_anomaly\030\002 \001(\0132/.google.clo"
+          + "ud.aiplatform.v1.FeatureStatsAnomalyB\003\340A"
+          + "\003\"Z\n\tObjective\022\031\n\025OBJECTIVE_UNSPECIFIED\020"
+          + "\000\022\033\n\027IMPORT_FEATURE_ANALYSIS\020\001\022\025\n\021SNAPSH"
+          + "OT_ANALYSIS\020\002\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\244\001\n\tValueType\022\032\n\026VA"
+          + "LUE_TYPE_UNSPECIFIED\020\000\022\010\n\004BOOL\020\001\022\016\n\nBOOL"
+          + "_ARRAY\020\002\022\n\n\006DOUBLE\020\003\022\020\n\014DOUBLE_ARRAY\020\004\022\t"
+          + "\n\005INT64\020\t\022\017\n\013INT64_ARRAY\020\n\022\n\n\006STRING\020\013\022\020"
+          + "\n\014STRING_ARRAY\020\014\022\t\n\005BYTES\020\r:\232\001\352A\226\001\n!aipl"
+          + "atform.googleapis.com/Feature\022qprojects/"
+          + "{project}/locations/{location}/featurest"
+          + "ores/{featurestore}/entityTypes/{entity_"
+          + "type}/features/{feature}B\320\001\n\036com.google."
+          + "cloud.aiplatform.v1B\014FeatureProtoP\001ZDgoo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/aiplatform/v1;aiplatform\252\002\032Google.Cloud"
+          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
+          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -78,6 +95,7 @@ public final class FeatureProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1.FeatureMonitoringStatsProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_Feature_descriptor =
@@ -86,10 +104,26 @@ public final class FeatureProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Feature_descriptor,
             new java.lang.String[] {
-              "Name", "Description", "ValueType", "CreateTime", "UpdateTime", "Labels", "Etag",
+              "Name",
+              "Description",
+              "ValueType",
+              "CreateTime",
+              "UpdateTime",
+              "Labels",
+              "Etag",
+              "DisableMonitoring",
+              "MonitoringStatsAnomalies",
+            });
+    internal_static_google_cloud_aiplatform_v1_Feature_MonitoringStatsAnomaly_descriptor =
+        internal_static_google_cloud_aiplatform_v1_Feature_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1_Feature_MonitoringStatsAnomaly_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_Feature_MonitoringStatsAnomaly_descriptor,
+            new java.lang.String[] {
+              "Objective", "FeatureStatsAnomaly",
             });
     internal_static_google_cloud_aiplatform_v1_Feature_LabelsEntry_descriptor =
-        internal_static_google_cloud_aiplatform_v1_Feature_descriptor.getNestedTypes().get(0);
+        internal_static_google_cloud_aiplatform_v1_Feature_descriptor.getNestedTypes().get(1);
     internal_static_google_cloud_aiplatform_v1_Feature_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Feature_LabelsEntry_descriptor,
@@ -104,6 +138,7 @@ public final class FeatureProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1.FeatureMonitoringStatsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

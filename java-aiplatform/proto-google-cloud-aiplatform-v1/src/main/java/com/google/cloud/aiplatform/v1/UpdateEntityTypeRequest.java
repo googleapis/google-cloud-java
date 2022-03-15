@@ -213,7 +213,12 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *   * `description`
    *   * `labels`
    *   * `monitoring_config.snapshot_analysis.disabled`
-   *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+   *   * `monitoring_config.snapshot_analysis.monitoring_interval_days`
+   *   * `monitoring_config.snapshot_analysis.staleness_days`
+   *   * `monitoring_config.import_features_analysis.state`
+   *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
+   *   * `monitoring_config.numerical_threshold_config.value`
+   *   * `monitoring_config.categorical_threshold_config.value`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -239,7 +244,12 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *   * `description`
    *   * `labels`
    *   * `monitoring_config.snapshot_analysis.disabled`
-   *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+   *   * `monitoring_config.snapshot_analysis.monitoring_interval_days`
+   *   * `monitoring_config.snapshot_analysis.staleness_days`
+   *   * `monitoring_config.import_features_analysis.state`
+   *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
+   *   * `monitoring_config.numerical_threshold_config.value`
+   *   * `monitoring_config.categorical_threshold_config.value`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -265,7 +275,12 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *   * `description`
    *   * `labels`
    *   * `monitoring_config.snapshot_analysis.disabled`
-   *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+   *   * `monitoring_config.snapshot_analysis.monitoring_interval_days`
+   *   * `monitoring_config.snapshot_analysis.staleness_days`
+   *   * `monitoring_config.import_features_analysis.state`
+   *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
+   *   * `monitoring_config.numerical_threshold_config.value`
+   *   * `monitoring_config.categorical_threshold_config.value`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -886,7 +901,12 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `description`
      *   * `labels`
      *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `monitoring_config.snapshot_analysis.monitoring_interval_days`
+     *   * `monitoring_config.snapshot_analysis.staleness_days`
+     *   * `monitoring_config.import_features_analysis.state`
+     *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
+     *   * `monitoring_config.numerical_threshold_config.value`
+     *   * `monitoring_config.categorical_threshold_config.value`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -911,7 +931,12 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `description`
      *   * `labels`
      *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `monitoring_config.snapshot_analysis.monitoring_interval_days`
+     *   * `monitoring_config.snapshot_analysis.staleness_days`
+     *   * `monitoring_config.import_features_analysis.state`
+     *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
+     *   * `monitoring_config.numerical_threshold_config.value`
+     *   * `monitoring_config.categorical_threshold_config.value`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -942,7 +967,12 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `description`
      *   * `labels`
      *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `monitoring_config.snapshot_analysis.monitoring_interval_days`
+     *   * `monitoring_config.snapshot_analysis.staleness_days`
+     *   * `monitoring_config.import_features_analysis.state`
+     *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
+     *   * `monitoring_config.numerical_threshold_config.value`
+     *   * `monitoring_config.categorical_threshold_config.value`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -975,7 +1005,12 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `description`
      *   * `labels`
      *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `monitoring_config.snapshot_analysis.monitoring_interval_days`
+     *   * `monitoring_config.snapshot_analysis.staleness_days`
+     *   * `monitoring_config.import_features_analysis.state`
+     *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
+     *   * `monitoring_config.numerical_threshold_config.value`
+     *   * `monitoring_config.categorical_threshold_config.value`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1005,7 +1040,12 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `description`
      *   * `labels`
      *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `monitoring_config.snapshot_analysis.monitoring_interval_days`
+     *   * `monitoring_config.snapshot_analysis.staleness_days`
+     *   * `monitoring_config.import_features_analysis.state`
+     *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
+     *   * `monitoring_config.numerical_threshold_config.value`
+     *   * `monitoring_config.categorical_threshold_config.value`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1040,7 +1080,12 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `description`
      *   * `labels`
      *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `monitoring_config.snapshot_analysis.monitoring_interval_days`
+     *   * `monitoring_config.snapshot_analysis.staleness_days`
+     *   * `monitoring_config.import_features_analysis.state`
+     *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
+     *   * `monitoring_config.numerical_threshold_config.value`
+     *   * `monitoring_config.categorical_threshold_config.value`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1071,7 +1116,12 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `description`
      *   * `labels`
      *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `monitoring_config.snapshot_analysis.monitoring_interval_days`
+     *   * `monitoring_config.snapshot_analysis.staleness_days`
+     *   * `monitoring_config.import_features_analysis.state`
+     *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
+     *   * `monitoring_config.numerical_threshold_config.value`
+     *   * `monitoring_config.categorical_threshold_config.value`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1096,7 +1146,12 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `description`
      *   * `labels`
      *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `monitoring_config.snapshot_analysis.monitoring_interval_days`
+     *   * `monitoring_config.snapshot_analysis.staleness_days`
+     *   * `monitoring_config.import_features_analysis.state`
+     *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
+     *   * `monitoring_config.numerical_threshold_config.value`
+     *   * `monitoring_config.categorical_threshold_config.value`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1125,7 +1180,12 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `description`
      *   * `labels`
      *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `monitoring_config.snapshot_analysis.monitoring_interval_days`
+     *   * `monitoring_config.snapshot_analysis.staleness_days`
+     *   * `monitoring_config.import_features_analysis.state`
+     *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
+     *   * `monitoring_config.numerical_threshold_config.value`
+     *   * `monitoring_config.categorical_threshold_config.value`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

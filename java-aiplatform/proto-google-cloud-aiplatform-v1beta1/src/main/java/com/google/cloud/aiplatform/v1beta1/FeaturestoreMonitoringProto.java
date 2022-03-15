@@ -35,6 +35,14 @@ public final class FeaturestoreMonitoringProto {
       internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_SnapshotAnalysis_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_SnapshotAnalysis_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_ImportFeaturesAnalysis_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_ImportFeaturesAnalysis_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_ThresholdConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_ThresholdConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -47,21 +55,43 @@ public final class FeaturestoreMonitoringProto {
       "\n=google/cloud/aiplatform/v1beta1/featur"
           + "estore_monitoring.proto\022\037google.cloud.ai"
           + "platform.v1beta1\032\034google/api/annotations"
-          + ".proto\032\036google/protobuf/duration.proto\"\216"
-          + "\002\n\034FeaturestoreMonitoringConfig\022i\n\021snaps"
+          + ".proto\032\036google/protobuf/duration.proto\"\205"
+          + "\t\n\034FeaturestoreMonitoringConfig\022i\n\021snaps"
           + "hot_analysis\030\001 \001(\0132N.google.cloud.aiplat"
           + "form.v1beta1.FeaturestoreMonitoringConfi"
-          + "g.SnapshotAnalysis\032\202\001\n\020SnapshotAnalysis\022"
-          + "\020\n\010disabled\030\001 \001(\010\022:\n\023monitoring_interval"
-          + "\030\002 \001(\0132\031.google.protobuf.DurationB\002\030\001\022 \n"
-          + "\030monitoring_interval_days\030\003 \001(\005B\370\001\n#com."
-          + "google.cloud.aiplatform.v1beta1B\033Feature"
-          + "storeMonitoringProtoP\001ZIgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/aiplatform/v"
-          + "1beta1;aiplatform\252\002\037Google.Cloud.AIPlatf"
-          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
-          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
-          + "a1b\006proto3"
+          + "g.SnapshotAnalysis\022v\n\030import_features_an"
+          + "alysis\030\002 \001(\0132T.google.cloud.aiplatform.v"
+          + "1beta1.FeaturestoreMonitoringConfig.Impo"
+          + "rtFeaturesAnalysis\022q\n\032numerical_threshol"
+          + "d_config\030\003 \001(\0132M.google.cloud.aiplatform"
+          + ".v1beta1.FeaturestoreMonitoringConfig.Th"
+          + "resholdConfig\022s\n\034categorical_threshold_c"
+          + "onfig\030\004 \001(\0132M.google.cloud.aiplatform.v1"
+          + "beta1.FeaturestoreMonitoringConfig.Thres"
+          + "holdConfig\032\232\001\n\020SnapshotAnalysis\022\020\n\010disab"
+          + "led\030\001 \001(\010\022:\n\023monitoring_interval\030\002 \001(\0132\031"
+          + ".google.protobuf.DurationB\002\030\001\022 \n\030monitor"
+          + "ing_interval_days\030\003 \001(\005\022\026\n\016staleness_day"
+          + "s\030\004 \001(\005\032\313\003\n\026ImportFeaturesAnalysis\022i\n\005st"
+          + "ate\030\001 \001(\0162Z.google.cloud.aiplatform.v1be"
+          + "ta1.FeaturestoreMonitoringConfig.ImportF"
+          + "eaturesAnalysis.State\022\201\001\n\032anomaly_detect"
+          + "ion_baseline\030\002 \001(\0162].google.cloud.aiplat"
+          + "form.v1beta1.FeaturestoreMonitoringConfi"
+          + "g.ImportFeaturesAnalysis.Baseline\"F\n\005Sta"
+          + "te\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007DEFAULT\020\001\022\013"
+          + "\n\007ENABLED\020\002\022\014\n\010DISABLED\020\003\"z\n\010Baseline\022\030\n"
+          + "\024BASELINE_UNSPECIFIED\020\000\022\020\n\014LATEST_STATS\020"
+          + "\001\022\036\n\032MOST_RECENT_SNAPSHOT_STATS\020\002\022\"\n\036PRE"
+          + "VIOUS_IMPORT_FEATURES_STATS\020\003\032/\n\017Thresho"
+          + "ldConfig\022\017\n\005value\030\001 \001(\001H\000B\013\n\tthresholdB\370"
+          + "\001\n#com.google.cloud.aiplatform.v1beta1B\033"
+          + "FeaturestoreMonitoringProtoP\001ZIgoogle.go"
+          + "lang.org/genproto/googleapis/cloud/aipla"
+          + "tform/v1beta1;aiplatform\252\002\037Google.Cloud."
+          + "AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlat"
+          + "form\\V1beta1\352\002\"Google::Cloud::AIPlatform"
+          + "::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -77,6 +107,9 @@ public final class FeaturestoreMonitoringProto {
             internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_descriptor,
             new java.lang.String[] {
               "SnapshotAnalysis",
+              "ImportFeaturesAnalysis",
+              "NumericalThresholdConfig",
+              "CategoricalThresholdConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_SnapshotAnalysis_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_descriptor
@@ -86,7 +119,27 @@ public final class FeaturestoreMonitoringProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_SnapshotAnalysis_descriptor,
             new java.lang.String[] {
-              "Disabled", "MonitoringInterval", "MonitoringIntervalDays",
+              "Disabled", "MonitoringInterval", "MonitoringIntervalDays", "StalenessDays",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_ImportFeaturesAnalysis_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_ImportFeaturesAnalysis_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_ImportFeaturesAnalysis_descriptor,
+            new java.lang.String[] {
+              "State", "AnomalyDetectionBaseline",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_ThresholdConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_ThresholdConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_FeaturestoreMonitoringConfig_ThresholdConfig_descriptor,
+            new java.lang.String[] {
+              "Value", "Threshold",
             });
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();

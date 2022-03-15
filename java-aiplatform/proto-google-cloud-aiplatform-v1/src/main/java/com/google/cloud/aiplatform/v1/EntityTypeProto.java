@@ -47,24 +47,28 @@ public final class EntityTypeProto {
       "\n,google/cloud/aiplatform/v1/entity_type"
           + ".proto\022\032google.cloud.aiplatform.v1\032\037goog"
           + "le/api/field_behavior.proto\032\031google/api/"
-          + "resource.proto\032\037google/protobuf/timestam"
-          + "p.proto\"\275\003\n\nEntityType\022\021\n\004name\030\001 \001(\tB\003\340A"
-          + "\005\022\030\n\013description\030\002 \001(\tB\003\340A\001\0224\n\013create_ti"
-          + "me\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\0224\n\013update_time\030\004 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\022G\n\006labels\030\006 \003(\01322.google"
-          + ".cloud.aiplatform.v1.EntityType.LabelsEn"
-          + "tryB\003\340A\001\022\021\n\004etag\030\007 \001(\tB\003\340A\001\032-\n\013LabelsEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\212\001\352A\206"
-          + "\001\n$aiplatform.googleapis.com/EntityType\022"
-          + "^projects/{project}/locations/{location}"
-          + "/featurestores/{featurestore}/entityType"
-          + "s/{entity_type}B\323\001\n\036com.google.cloud.aip"
-          + "latform.v1B\017EntityTypeProtoP\001ZDgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/aipla"
-          + "tform/v1;aiplatform\252\002\032Google.Cloud.AIPla"
-          + "tform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035"
-          + "Google::Cloud::AIPlatform::V1b\006proto3"
+          + "resource.proto\0328google/cloud/aiplatform/"
+          + "v1/featurestore_monitoring.proto\032\037google"
+          + "/protobuf/timestamp.proto\"\227\004\n\nEntityType"
+          + "\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\030\n\013description\030\002 \001(\t"
+          + "B\003\340A\001\0224\n\013create_time\030\003 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\003\340A\003\0224\n\013update_time\030\004 \001(\013"
+          + "2\032.google.protobuf.TimestampB\003\340A\003\022G\n\006lab"
+          + "els\030\006 \003(\01322.google.cloud.aiplatform.v1.E"
+          + "ntityType.LabelsEntryB\003\340A\001\022\021\n\004etag\030\007 \001(\t"
+          + "B\003\340A\001\022X\n\021monitoring_config\030\010 \001(\01328.googl"
+          + "e.cloud.aiplatform.v1.FeaturestoreMonito"
+          + "ringConfigB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\212\001\352A\206\001\n$aiplatfor"
+          + "m.googleapis.com/EntityType\022^projects/{p"
+          + "roject}/locations/{location}/featurestor"
+          + "es/{featurestore}/entityTypes/{entity_ty"
+          + "pe}B\323\001\n\036com.google.cloud.aiplatform.v1B\017"
+          + "EntityTypeProtoP\001ZDgoogle.golang.org/gen"
+          + "proto/googleapis/cloud/aiplatform/v1;aip"
+          + "latform\252\002\032Google.Cloud.AIPlatform.V1\312\002\032G"
+          + "oogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Clou"
+          + "d::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -72,6 +76,7 @@ public final class EntityTypeProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1.FeaturestoreMonitoringProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_EntityType_descriptor =
@@ -80,7 +85,13 @@ public final class EntityTypeProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_EntityType_descriptor,
             new java.lang.String[] {
-              "Name", "Description", "CreateTime", "UpdateTime", "Labels", "Etag",
+              "Name",
+              "Description",
+              "CreateTime",
+              "UpdateTime",
+              "Labels",
+              "Etag",
+              "MonitoringConfig",
             });
     internal_static_google_cloud_aiplatform_v1_EntityType_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_EntityType_descriptor.getNestedTypes().get(0);
@@ -98,6 +109,7 @@ public final class EntityTypeProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1.FeaturestoreMonitoringProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

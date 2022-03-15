@@ -87,8 +87,7 @@ public interface UpdateFeatureRequestOrBuilder
    * Updatable fields:
    *   * `description`
    *   * `labels`
-   *   * `monitoring_config.snapshot_analysis.disabled`
-   *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+   *   * `disable_monitoring`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -110,8 +109,7 @@ public interface UpdateFeatureRequestOrBuilder
    * Updatable fields:
    *   * `description`
    *   * `labels`
-   *   * `monitoring_config.snapshot_analysis.disabled`
-   *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+   *   * `disable_monitoring`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -133,8 +131,7 @@ public interface UpdateFeatureRequestOrBuilder
    * Updatable fields:
    *   * `description`
    *   * `labels`
-   *   * `monitoring_config.snapshot_analysis.disabled`
-   *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+   *   * `disable_monitoring`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -735,6 +735,7 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -791,6 +792,7 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -847,6 +849,7 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -907,6 +910,7 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -967,6 +971,7 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1014,6 +1019,7 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1147,6 +1153,7 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1374,6 +1381,8 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setDisableMonitoring(true)
+            .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1433,6 +1442,8 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setDisableMonitoring(true)
+            .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1490,6 +1501,8 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setDisableMonitoring(true)
+            .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1552,6 +1565,8 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setDisableMonitoring(true)
+            .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1710,6 +1725,8 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setDisableMonitoring(true)
+            .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1758,6 +1775,8 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setDisableMonitoring(true)
+            .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1894,6 +1913,8 @@ public class FeaturestoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setDisableMonitoring(true)
+            .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 

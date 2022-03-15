@@ -212,8 +212,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * Updatable fields:
    *   * `description`
    *   * `labels`
-   *   * `monitoring_config.snapshot_analysis.disabled`
-   *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+   *   * `disable_monitoring`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -238,8 +237,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * Updatable fields:
    *   * `description`
    *   * `labels`
-   *   * `monitoring_config.snapshot_analysis.disabled`
-   *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+   *   * `disable_monitoring`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -264,8 +262,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * Updatable fields:
    *   * `description`
    *   * `labels`
-   *   * `monitoring_config.snapshot_analysis.disabled`
-   *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+   *   * `disable_monitoring`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -884,8 +881,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * Updatable fields:
      *   * `description`
      *   * `labels`
-     *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `disable_monitoring`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -909,8 +905,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * Updatable fields:
      *   * `description`
      *   * `labels`
-     *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `disable_monitoring`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -940,8 +935,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * Updatable fields:
      *   * `description`
      *   * `labels`
-     *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `disable_monitoring`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -973,8 +967,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * Updatable fields:
      *   * `description`
      *   * `labels`
-     *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `disable_monitoring`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1003,8 +996,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * Updatable fields:
      *   * `description`
      *   * `labels`
-     *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `disable_monitoring`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1038,8 +1030,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * Updatable fields:
      *   * `description`
      *   * `labels`
-     *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `disable_monitoring`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1069,8 +1060,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * Updatable fields:
      *   * `description`
      *   * `labels`
-     *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `disable_monitoring`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1094,8 +1084,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * Updatable fields:
      *   * `description`
      *   * `labels`
-     *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `disable_monitoring`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1123,8 +1112,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * Updatable fields:
      *   * `description`
      *   * `labels`
-     *   * `monitoring_config.snapshot_analysis.disabled`
-     *   * `monitoring_config.snapshot_analysis.monitoring_interval`
+     *   * `disable_monitoring`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

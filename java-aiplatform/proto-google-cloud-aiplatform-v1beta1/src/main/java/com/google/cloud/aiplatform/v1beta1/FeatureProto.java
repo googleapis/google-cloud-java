@@ -32,6 +32,10 @@ public final class FeatureProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_Feature_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_Feature_MonitoringStatsAnomaly_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_Feature_MonitoringStatsAnomaly_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_Feature_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_Feature_LabelsEntry_fieldAccessorTable;
@@ -52,7 +56,7 @@ public final class FeatureProto {
           + "ta1/feature_monitoring_stats.proto\032=goog"
           + "le/cloud/aiplatform/v1beta1/featurestore"
           + "_monitoring.proto\032\037google/protobuf/times"
-          + "tamp.proto\"\355\006\n\007Feature\022\021\n\004name\030\001 \001(\tB\003\340A"
+          + "tamp.proto\"\254\n\n\007Feature\022\021\n\004name\030\001 \001(\tB\003\340A"
           + "\005\022\023\n\013description\030\002 \001(\t\022N\n\nvalue_type\030\003 \001"
           + "(\01622.google.cloud.aiplatform.v1beta1.Fea"
           + "ture.ValueTypeB\006\340A\002\340A\005\0224\n\013create_time\030\004 "
@@ -62,25 +66,36 @@ public final class FeatureProto {
           + "d.aiplatform.v1beta1.Feature.LabelsEntry"
           + "B\003\340A\001\022\014\n\004etag\030\007 \001(\t\022]\n\021monitoring_config"
           + "\030\t \001(\0132=.google.cloud.aiplatform.v1beta1"
-          + ".FeaturestoreMonitoringConfigB\003\340A\001\022S\n\020mo"
-          + "nitoring_stats\030\n \003(\01324.google.cloud.aipl"
-          + "atform.v1beta1.FeatureStatsAnomalyB\003\340A\003\032"
-          + "-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-          + "(\t:\0028\001\"\244\001\n\tValueType\022\032\n\026VALUE_TYPE_UNSPE"
-          + "CIFIED\020\000\022\010\n\004BOOL\020\001\022\016\n\nBOOL_ARRAY\020\002\022\n\n\006DO"
-          + "UBLE\020\003\022\020\n\014DOUBLE_ARRAY\020\004\022\t\n\005INT64\020\t\022\017\n\013I"
-          + "NT64_ARRAY\020\n\022\n\n\006STRING\020\013\022\020\n\014STRING_ARRAY"
-          + "\020\014\022\t\n\005BYTES\020\r:\232\001\352A\226\001\n!aiplatform.googlea"
-          + "pis.com/Feature\022qprojects/{project}/loca"
-          + "tions/{location}/featurestores/{features"
-          + "tore}/entityTypes/{entity_type}/features"
-          + "/{feature}B\351\001\n#com.google.cloud.aiplatfo"
-          + "rm.v1beta1B\014FeatureProtoP\001ZIgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/aiplatfo"
-          + "rm/v1beta1;aiplatform\252\002\037Google.Cloud.AIP"
-          + "latform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfor"
-          + "m\\V1beta1\352\002\"Google::Cloud::AIPlatform::V"
-          + "1beta1b\006proto3"
+          + ".FeaturestoreMonitoringConfigB\003\340A\001\022\037\n\022di"
+          + "sable_monitoring\030\014 \001(\010B\003\340A\001\022S\n\020monitorin"
+          + "g_stats\030\n \003(\01324.google.cloud.aiplatform."
+          + "v1beta1.FeatureStatsAnomalyB\003\340A\003\022h\n\032moni"
+          + "toring_stats_anomalies\030\013 \003(\0132?.google.cl"
+          + "oud.aiplatform.v1beta1.Feature.Monitorin"
+          + "gStatsAnomalyB\003\340A\003\032\261\002\n\026MonitoringStatsAn"
+          + "omaly\022a\n\tobjective\030\001 \001(\0162I.google.cloud."
+          + "aiplatform.v1beta1.Feature.MonitoringSta"
+          + "tsAnomaly.ObjectiveB\003\340A\003\022X\n\025feature_stat"
+          + "s_anomaly\030\002 \001(\01324.google.cloud.aiplatfor"
+          + "m.v1beta1.FeatureStatsAnomalyB\003\340A\003\"Z\n\tOb"
+          + "jective\022\031\n\025OBJECTIVE_UNSPECIFIED\020\000\022\033\n\027IM"
+          + "PORT_FEATURE_ANALYSIS\020\001\022\025\n\021SNAPSHOT_ANAL"
+          + "YSIS\020\002\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
+          + "lue\030\002 \001(\t:\0028\001\"\244\001\n\tValueType\022\032\n\026VALUE_TYP"
+          + "E_UNSPECIFIED\020\000\022\010\n\004BOOL\020\001\022\016\n\nBOOL_ARRAY\020"
+          + "\002\022\n\n\006DOUBLE\020\003\022\020\n\014DOUBLE_ARRAY\020\004\022\t\n\005INT64"
+          + "\020\t\022\017\n\013INT64_ARRAY\020\n\022\n\n\006STRING\020\013\022\020\n\014STRIN"
+          + "G_ARRAY\020\014\022\t\n\005BYTES\020\r:\232\001\352A\226\001\n!aiplatform."
+          + "googleapis.com/Feature\022qprojects/{projec"
+          + "t}/locations/{location}/featurestores/{f"
+          + "eaturestore}/entityTypes/{entity_type}/f"
+          + "eatures/{feature}B\351\001\n#com.google.cloud.a"
+          + "iplatform.v1beta1B\014FeatureProtoP\001ZIgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/a"
+          + "iplatform/v1beta1;aiplatform\252\002\037Google.Cl"
+          + "oud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AI"
+          + "Platform\\V1beta1\352\002\"Google::Cloud::AIPlat"
+          + "form::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -107,10 +122,20 @@ public final class FeatureProto {
               "Labels",
               "Etag",
               "MonitoringConfig",
+              "DisableMonitoring",
               "MonitoringStats",
+              "MonitoringStatsAnomalies",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_Feature_MonitoringStatsAnomaly_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_Feature_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_Feature_MonitoringStatsAnomaly_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_Feature_MonitoringStatsAnomaly_descriptor,
+            new java.lang.String[] {
+              "Objective", "FeatureStatsAnomaly",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Feature_LabelsEntry_descriptor =
-        internal_static_google_cloud_aiplatform_v1beta1_Feature_descriptor.getNestedTypes().get(0);
+        internal_static_google_cloud_aiplatform_v1beta1_Feature_descriptor.getNestedTypes().get(1);
     internal_static_google_cloud_aiplatform_v1beta1_Feature_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Feature_LabelsEntry_descriptor,

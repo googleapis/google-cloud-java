@@ -45,6 +45,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     valueType_ = 0;
     etag_ = "";
     monitoringStats_ = java.util.Collections.emptyList();
+    monitoringStatsAnomalies_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -180,6 +181,25 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
+          case 90:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                monitoringStatsAnomalies_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              monitoringStatsAnomalies_.add(
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 96:
+            {
+              disableMonitoring_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -196,6 +216,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     } finally {
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         monitoringStats_ = java.util.Collections.unmodifiableList(monitoringStats_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        monitoringStatsAnomalies_ =
+            java.util.Collections.unmodifiableList(monitoringStatsAnomalies_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -537,6 +561,1201 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.Feature.ValueType)
+  }
+
+  public interface MonitoringStatsAnomalyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The objective for each stats.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective objective = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for objective.
+     */
+    int getObjectiveValue();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The objective for each stats.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective objective = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The objective.
+     */
+    com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective getObjective();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The stats and anomalies generated at specific timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the featureStatsAnomaly field is set.
+     */
+    boolean hasFeatureStatsAnomaly();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The stats and anomalies generated at specific timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The featureStatsAnomaly.
+     */
+    com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly getFeatureStatsAnomaly();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The stats and anomalies generated at specific timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomalyOrBuilder
+        getFeatureStatsAnomalyOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of historical [Snapshot
+   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
+   * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
+   * requested by user, sorted by
+   * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
+   * descending.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly}
+   */
+  public static final class MonitoringStatsAnomaly extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly)
+      MonitoringStatsAnomalyOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use MonitoringStatsAnomaly.newBuilder() to construct.
+    private MonitoringStatsAnomaly(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MonitoringStatsAnomaly() {
+      objective_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MonitoringStatsAnomaly();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private MonitoringStatsAnomaly(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int rawValue = input.readEnum();
+
+                objective_ = rawValue;
+                break;
+              }
+            case 18:
+              {
+                com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.Builder subBuilder = null;
+                if (featureStatsAnomaly_ != null) {
+                  subBuilder = featureStatsAnomaly_.toBuilder();
+                }
+                featureStatsAnomaly_ =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(featureStatsAnomaly_);
+                  featureStatsAnomaly_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Feature_MonitoringStatsAnomaly_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Feature_MonitoringStatsAnomaly_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.class,
+              com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If the objective in the request is both
+     * Import Feature Analysis and Snapshot Analysis, this objective could be
+     * one of them. Otherwise, this objective should be the same as the
+     * objective in the request.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective}
+     */
+    public enum Objective implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * If it's OBJECTIVE_UNSPECIFIED, monitoring_stats will be empty.
+       * </pre>
+       *
+       * <code>OBJECTIVE_UNSPECIFIED = 0;</code>
+       */
+      OBJECTIVE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Stats are generated by Import Feature Analysis.
+       * </pre>
+       *
+       * <code>IMPORT_FEATURE_ANALYSIS = 1;</code>
+       */
+      IMPORT_FEATURE_ANALYSIS(1),
+      /**
+       *
+       *
+       * <pre>
+       * Stats are generated by Snapshot Analysis.
+       * </pre>
+       *
+       * <code>SNAPSHOT_ANALYSIS = 2;</code>
+       */
+      SNAPSHOT_ANALYSIS(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * If it's OBJECTIVE_UNSPECIFIED, monitoring_stats will be empty.
+       * </pre>
+       *
+       * <code>OBJECTIVE_UNSPECIFIED = 0;</code>
+       */
+      public static final int OBJECTIVE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Stats are generated by Import Feature Analysis.
+       * </pre>
+       *
+       * <code>IMPORT_FEATURE_ANALYSIS = 1;</code>
+       */
+      public static final int IMPORT_FEATURE_ANALYSIS_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Stats are generated by Snapshot Analysis.
+       * </pre>
+       *
+       * <code>SNAPSHOT_ANALYSIS = 2;</code>
+       */
+      public static final int SNAPSHOT_ANALYSIS_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Objective valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Objective forNumber(int value) {
+        switch (value) {
+          case 0:
+            return OBJECTIVE_UNSPECIFIED;
+          case 1:
+            return IMPORT_FEATURE_ANALYSIS;
+          case 2:
+            return SNAPSHOT_ANALYSIS;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Objective> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Objective> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Objective>() {
+            public Objective findValueByNumber(int number) {
+              return Objective.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Objective[] VALUES = values();
+
+      public static Objective valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Objective(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective)
+    }
+
+    public static final int OBJECTIVE_FIELD_NUMBER = 1;
+    private int objective_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The objective for each stats.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective objective = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for objective.
+     */
+    @java.lang.Override
+    public int getObjectiveValue() {
+      return objective_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The objective for each stats.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective objective = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The objective.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective
+        getObjective() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective result =
+          com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective.valueOf(
+              objective_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int FEATURE_STATS_ANOMALY_FIELD_NUMBER = 2;
+    private com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly featureStatsAnomaly_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The stats and anomalies generated at specific timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the featureStatsAnomaly field is set.
+     */
+    @java.lang.Override
+    public boolean hasFeatureStatsAnomaly() {
+      return featureStatsAnomaly_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The stats and anomalies generated at specific timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The featureStatsAnomaly.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly getFeatureStatsAnomaly() {
+      return featureStatsAnomaly_ == null
+          ? com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.getDefaultInstance()
+          : featureStatsAnomaly_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The stats and anomalies generated at specific timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomalyOrBuilder
+        getFeatureStatsAnomalyOrBuilder() {
+      return getFeatureStatsAnomaly();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (objective_
+          != com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective
+              .OBJECTIVE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, objective_);
+      }
+      if (featureStatsAnomaly_ != null) {
+        output.writeMessage(2, getFeatureStatsAnomaly());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (objective_
+          != com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective
+              .OBJECTIVE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, objective_);
+      }
+      if (featureStatsAnomaly_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFeatureStatsAnomaly());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly other =
+          (com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly) obj;
+
+      if (objective_ != other.objective_) return false;
+      if (hasFeatureStatsAnomaly() != other.hasFeatureStatsAnomaly()) return false;
+      if (hasFeatureStatsAnomaly()) {
+        if (!getFeatureStatsAnomaly().equals(other.getFeatureStatsAnomaly())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OBJECTIVE_FIELD_NUMBER;
+      hash = (53 * hash) + objective_;
+      if (hasFeatureStatsAnomaly()) {
+        hash = (37 * hash) + FEATURE_STATS_ANOMALY_FIELD_NUMBER;
+        hash = (53 * hash) + getFeatureStatsAnomaly().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of historical [Snapshot
+     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
+     * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
+     * requested by user, sorted by
+     * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
+     * descending.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly)
+        com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomalyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Feature_MonitoringStatsAnomaly_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Feature_MonitoringStatsAnomaly_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.class,
+                com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        objective_ = 0;
+
+        if (featureStatsAnomalyBuilder_ == null) {
+          featureStatsAnomaly_ = null;
+        } else {
+          featureStatsAnomaly_ = null;
+          featureStatsAnomalyBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Feature_MonitoringStatsAnomaly_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly build() {
+        com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly result =
+            new com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly(this);
+        result.objective_ = objective_;
+        if (featureStatsAnomalyBuilder_ == null) {
+          result.featureStatsAnomaly_ = featureStatsAnomaly_;
+        } else {
+          result.featureStatsAnomaly_ = featureStatsAnomalyBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly
+                .getDefaultInstance()) return this;
+        if (other.objective_ != 0) {
+          setObjectiveValue(other.getObjectiveValue());
+        }
+        if (other.hasFeatureStatsAnomaly()) {
+          mergeFeatureStatsAnomaly(other.getFeatureStatsAnomaly());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int objective_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The objective for each stats.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective objective = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for objective.
+       */
+      @java.lang.Override
+      public int getObjectiveValue() {
+        return objective_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The objective for each stats.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective objective = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for objective to set.
+       * @return This builder for chaining.
+       */
+      public Builder setObjectiveValue(int value) {
+
+        objective_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The objective for each stats.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective objective = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The objective.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective
+          getObjective() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective result =
+            com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective.valueOf(
+                objective_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The objective for each stats.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective objective = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The objective to set.
+       * @return This builder for chaining.
+       */
+      public Builder setObjective(
+          com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        objective_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The objective for each stats.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Objective objective = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearObjective() {
+
+        objective_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly featureStatsAnomaly_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly,
+              com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.Builder,
+              com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomalyOrBuilder>
+          featureStatsAnomalyBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stats and anomalies generated at specific timestamp.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the featureStatsAnomaly field is set.
+       */
+      public boolean hasFeatureStatsAnomaly() {
+        return featureStatsAnomalyBuilder_ != null || featureStatsAnomaly_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stats and anomalies generated at specific timestamp.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The featureStatsAnomaly.
+       */
+      public com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly getFeatureStatsAnomaly() {
+        if (featureStatsAnomalyBuilder_ == null) {
+          return featureStatsAnomaly_ == null
+              ? com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.getDefaultInstance()
+              : featureStatsAnomaly_;
+        } else {
+          return featureStatsAnomalyBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stats and anomalies generated at specific timestamp.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setFeatureStatsAnomaly(
+          com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly value) {
+        if (featureStatsAnomalyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          featureStatsAnomaly_ = value;
+          onChanged();
+        } else {
+          featureStatsAnomalyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stats and anomalies generated at specific timestamp.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setFeatureStatsAnomaly(
+          com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.Builder builderForValue) {
+        if (featureStatsAnomalyBuilder_ == null) {
+          featureStatsAnomaly_ = builderForValue.build();
+          onChanged();
+        } else {
+          featureStatsAnomalyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stats and anomalies generated at specific timestamp.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeFeatureStatsAnomaly(
+          com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly value) {
+        if (featureStatsAnomalyBuilder_ == null) {
+          if (featureStatsAnomaly_ != null) {
+            featureStatsAnomaly_ =
+                com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.newBuilder(
+                        featureStatsAnomaly_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            featureStatsAnomaly_ = value;
+          }
+          onChanged();
+        } else {
+          featureStatsAnomalyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stats and anomalies generated at specific timestamp.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearFeatureStatsAnomaly() {
+        if (featureStatsAnomalyBuilder_ == null) {
+          featureStatsAnomaly_ = null;
+          onChanged();
+        } else {
+          featureStatsAnomaly_ = null;
+          featureStatsAnomalyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stats and anomalies generated at specific timestamp.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.Builder
+          getFeatureStatsAnomalyBuilder() {
+
+        onChanged();
+        return getFeatureStatsAnomalyFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stats and anomalies generated at specific timestamp.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomalyOrBuilder
+          getFeatureStatsAnomalyOrBuilder() {
+        if (featureStatsAnomalyBuilder_ != null) {
+          return featureStatsAnomalyBuilder_.getMessageOrBuilder();
+        } else {
+          return featureStatsAnomaly_ == null
+              ? com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.getDefaultInstance()
+              : featureStatsAnomaly_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stats and anomalies generated at specific timestamp.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly feature_stats_anomaly = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly,
+              com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.Builder,
+              com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomalyOrBuilder>
+          getFeatureStatsAnomalyFieldBuilder() {
+        if (featureStatsAnomalyBuilder_ == null) {
+          featureStatsAnomalyBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly,
+                  com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.Builder,
+                  com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomalyOrBuilder>(
+                  getFeatureStatsAnomaly(), getParentForChildren(), isClean());
+          featureStatsAnomaly_ = null;
+        }
+        return featureStatsAnomalyBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly)
+    private static final com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MonitoringStatsAnomaly> PARSER =
+        new com.google.protobuf.AbstractParser<MonitoringStatsAnomaly>() {
+          @java.lang.Override
+          public MonitoringStatsAnomaly parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new MonitoringStatsAnomaly(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<MonitoringStatsAnomaly> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MonitoringStatsAnomaly> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1052,6 +2271,29 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     return getMonitoringConfig();
   }
 
+  public static final int DISABLE_MONITORING_FIELD_NUMBER = 12;
+  private boolean disableMonitoring_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If not set, use the monitoring_config defined for the EntityType
+   * this Feature belongs to. Only Features with type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+   * If set to true, all types of data monitoring are disabled despite the
+   * config on EntityType.
+   * </pre>
+   *
+   * <code>bool disable_monitoring = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disableMonitoring.
+   */
+  @java.lang.Override
+  public boolean getDisableMonitoring() {
+    return disableMonitoring_;
+  }
+
   public static final int MONITORING_STATS_FIELD_NUMBER = 10;
   private java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly> monitoringStats_;
   /**
@@ -1148,6 +2390,95 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     return monitoringStats_.get(index);
   }
 
+  public static final int MONITORING_STATS_ANOMALIES_FIELD_NUMBER = 11;
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly>
+      monitoringStatsAnomalies_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly>
+      getMonitoringStatsAnomaliesList() {
+    return monitoringStatsAnomalies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomalyOrBuilder>
+      getMonitoringStatsAnomaliesOrBuilderList() {
+    return monitoringStatsAnomalies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getMonitoringStatsAnomaliesCount() {
+    return monitoringStatsAnomalies_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly
+      getMonitoringStatsAnomalies(int index) {
+    return monitoringStatsAnomalies_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomalyOrBuilder
+      getMonitoringStatsAnomaliesOrBuilder(int index) {
+    return monitoringStatsAnomalies_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1189,6 +2520,12 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < monitoringStats_.size(); i++) {
       output.writeMessage(10, monitoringStats_.get(i));
+    }
+    for (int i = 0; i < monitoringStatsAnomalies_.size(); i++) {
+      output.writeMessage(11, monitoringStatsAnomalies_.get(i));
+    }
+    if (disableMonitoring_ != false) {
+      output.writeBool(12, disableMonitoring_);
     }
     unknownFields.writeTo(output);
   }
@@ -1235,6 +2572,14 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < monitoringStats_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, monitoringStats_.get(i));
     }
+    for (int i = 0; i < monitoringStatsAnomalies_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, monitoringStatsAnomalies_.get(i));
+    }
+    if (disableMonitoring_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, disableMonitoring_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1268,7 +2613,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     if (hasMonitoringConfig()) {
       if (!getMonitoringConfig().equals(other.getMonitoringConfig())) return false;
     }
+    if (getDisableMonitoring() != other.getDisableMonitoring()) return false;
     if (!getMonitoringStatsList().equals(other.getMonitoringStatsList())) return false;
+    if (!getMonitoringStatsAnomaliesList().equals(other.getMonitoringStatsAnomaliesList()))
+      return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1304,9 +2652,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MONITORING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getMonitoringConfig().hashCode();
     }
+    hash = (37 * hash) + DISABLE_MONITORING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableMonitoring());
     if (getMonitoringStatsCount() > 0) {
       hash = (37 * hash) + MONITORING_STATS_FIELD_NUMBER;
       hash = (53 * hash) + getMonitoringStatsList().hashCode();
+    }
+    if (getMonitoringStatsAnomaliesCount() > 0) {
+      hash = (37 * hash) + MONITORING_STATS_ANOMALIES_FIELD_NUMBER;
+      hash = (53 * hash) + getMonitoringStatsAnomaliesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1471,6 +2825,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getMonitoringStatsFieldBuilder();
+        getMonitoringStatsAnomaliesFieldBuilder();
       }
     }
 
@@ -1504,11 +2859,19 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         monitoringConfig_ = null;
         monitoringConfigBuilder_ = null;
       }
+      disableMonitoring_ = false;
+
       if (monitoringStatsBuilder_ == null) {
         monitoringStats_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         monitoringStatsBuilder_.clear();
+      }
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        monitoringStatsAnomalies_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        monitoringStatsAnomaliesBuilder_.clear();
       }
       return this;
     }
@@ -1559,6 +2922,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.monitoringConfig_ = monitoringConfigBuilder_.build();
       }
+      result.disableMonitoring_ = disableMonitoring_;
       if (monitoringStatsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           monitoringStats_ = java.util.Collections.unmodifiableList(monitoringStats_);
@@ -1567,6 +2931,16 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         result.monitoringStats_ = monitoringStats_;
       } else {
         result.monitoringStats_ = monitoringStatsBuilder_.build();
+      }
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          monitoringStatsAnomalies_ =
+              java.util.Collections.unmodifiableList(monitoringStatsAnomalies_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.monitoringStatsAnomalies_ = monitoringStatsAnomalies_;
+      } else {
+        result.monitoringStatsAnomalies_ = monitoringStatsAnomaliesBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1642,6 +3016,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       if (other.hasMonitoringConfig()) {
         mergeMonitoringConfig(other.getMonitoringConfig());
       }
+      if (other.getDisableMonitoring() != false) {
+        setDisableMonitoring(other.getDisableMonitoring());
+      }
       if (monitoringStatsBuilder_ == null) {
         if (!other.monitoringStats_.isEmpty()) {
           if (monitoringStats_.isEmpty()) {
@@ -1666,6 +3043,33 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
                     : null;
           } else {
             monitoringStatsBuilder_.addAllMessages(other.monitoringStats_);
+          }
+        }
+      }
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        if (!other.monitoringStatsAnomalies_.isEmpty()) {
+          if (monitoringStatsAnomalies_.isEmpty()) {
+            monitoringStatsAnomalies_ = other.monitoringStatsAnomalies_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureMonitoringStatsAnomaliesIsMutable();
+            monitoringStatsAnomalies_.addAll(other.monitoringStatsAnomalies_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.monitoringStatsAnomalies_.isEmpty()) {
+          if (monitoringStatsAnomaliesBuilder_.isEmpty()) {
+            monitoringStatsAnomaliesBuilder_.dispose();
+            monitoringStatsAnomaliesBuilder_ = null;
+            monitoringStatsAnomalies_ = other.monitoringStatsAnomalies_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            monitoringStatsAnomaliesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMonitoringStatsAnomaliesFieldBuilder()
+                    : null;
+          } else {
+            monitoringStatsAnomaliesBuilder_.addAllMessages(other.monitoringStatsAnomalies_);
           }
         }
       }
@@ -3061,6 +4465,73 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       return monitoringConfigBuilder_;
     }
 
+    private boolean disableMonitoring_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If not set, use the monitoring_config defined for the EntityType
+     * this Feature belongs to. Only Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     * If set to true, all types of data monitoring are disabled despite the
+     * config on EntityType.
+     * </pre>
+     *
+     * <code>bool disable_monitoring = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disableMonitoring.
+     */
+    @java.lang.Override
+    public boolean getDisableMonitoring() {
+      return disableMonitoring_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If not set, use the monitoring_config defined for the EntityType
+     * this Feature belongs to. Only Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     * If set to true, all types of data monitoring are disabled despite the
+     * config on EntityType.
+     * </pre>
+     *
+     * <code>bool disable_monitoring = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The disableMonitoring to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableMonitoring(boolean value) {
+
+      disableMonitoring_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If not set, use the monitoring_config defined for the EntityType
+     * this Feature belongs to. Only Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     * If set to true, all types of data monitoring are disabled despite the
+     * config on EntityType.
+     * </pre>
+     *
+     * <code>bool disable_monitoring = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableMonitoring() {
+
+      disableMonitoring_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly>
         monitoringStats_ = java.util.Collections.emptyList();
 
@@ -3517,6 +4988,439 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         monitoringStats_ = null;
       }
       return monitoringStatsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly>
+        monitoringStatsAnomalies_ = java.util.Collections.emptyList();
+
+    private void ensureMonitoringStatsAnomaliesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        monitoringStatsAnomalies_ =
+            new java.util.ArrayList<
+                com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly>(
+                monitoringStatsAnomalies_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly,
+            com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Builder,
+            com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomalyOrBuilder>
+        monitoringStatsAnomaliesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly>
+        getMonitoringStatsAnomaliesList() {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(monitoringStatsAnomalies_);
+      } else {
+        return monitoringStatsAnomaliesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getMonitoringStatsAnomaliesCount() {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        return monitoringStatsAnomalies_.size();
+      } else {
+        return monitoringStatsAnomaliesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly
+        getMonitoringStatsAnomalies(int index) {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        return monitoringStatsAnomalies_.get(index);
+      } else {
+        return monitoringStatsAnomaliesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMonitoringStatsAnomalies(
+        int index, com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly value) {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMonitoringStatsAnomaliesIsMutable();
+        monitoringStatsAnomalies_.set(index, value);
+        onChanged();
+      } else {
+        monitoringStatsAnomaliesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMonitoringStatsAnomalies(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Builder
+            builderForValue) {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        ensureMonitoringStatsAnomaliesIsMutable();
+        monitoringStatsAnomalies_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        monitoringStatsAnomaliesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addMonitoringStatsAnomalies(
+        com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly value) {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMonitoringStatsAnomaliesIsMutable();
+        monitoringStatsAnomalies_.add(value);
+        onChanged();
+      } else {
+        monitoringStatsAnomaliesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addMonitoringStatsAnomalies(
+        int index, com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly value) {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMonitoringStatsAnomaliesIsMutable();
+        monitoringStatsAnomalies_.add(index, value);
+        onChanged();
+      } else {
+        monitoringStatsAnomaliesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addMonitoringStatsAnomalies(
+        com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Builder
+            builderForValue) {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        ensureMonitoringStatsAnomaliesIsMutable();
+        monitoringStatsAnomalies_.add(builderForValue.build());
+        onChanged();
+      } else {
+        monitoringStatsAnomaliesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addMonitoringStatsAnomalies(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Builder
+            builderForValue) {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        ensureMonitoringStatsAnomaliesIsMutable();
+        monitoringStatsAnomalies_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        monitoringStatsAnomaliesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllMonitoringStatsAnomalies(
+        java.lang.Iterable<
+                ? extends com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly>
+            values) {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        ensureMonitoringStatsAnomaliesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, monitoringStatsAnomalies_);
+        onChanged();
+      } else {
+        monitoringStatsAnomaliesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMonitoringStatsAnomalies() {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        monitoringStatsAnomalies_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        monitoringStatsAnomaliesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeMonitoringStatsAnomalies(int index) {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        ensureMonitoringStatsAnomaliesIsMutable();
+        monitoringStatsAnomalies_.remove(index);
+        onChanged();
+      } else {
+        monitoringStatsAnomaliesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Builder
+        getMonitoringStatsAnomaliesBuilder(int index) {
+      return getMonitoringStatsAnomaliesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomalyOrBuilder
+        getMonitoringStatsAnomaliesOrBuilder(int index) {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        return monitoringStatsAnomalies_.get(index);
+      } else {
+        return monitoringStatsAnomaliesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomalyOrBuilder>
+        getMonitoringStatsAnomaliesOrBuilderList() {
+      if (monitoringStatsAnomaliesBuilder_ != null) {
+        return monitoringStatsAnomaliesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(monitoringStatsAnomalies_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Builder
+        addMonitoringStatsAnomaliesBuilder() {
+      return getMonitoringStatsAnomaliesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Builder
+        addMonitoringStatsAnomaliesBuilder(int index) {
+      return getMonitoringStatsAnomaliesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Builder>
+        getMonitoringStatsAnomaliesBuilderList() {
+      return getMonitoringStatsAnomaliesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly,
+            com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Builder,
+            com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomalyOrBuilder>
+        getMonitoringStatsAnomaliesFieldBuilder() {
+      if (monitoringStatsAnomaliesBuilder_ == null) {
+        monitoringStatsAnomaliesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly,
+                com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly.Builder,
+                com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomalyOrBuilder>(
+                monitoringStatsAnomalies_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        monitoringStatsAnomalies_ = null;
+      }
+      return monitoringStatsAnomaliesBuilder_;
     }
 
     @java.lang.Override

@@ -384,6 +384,24 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
+   * Optional. If not set, use the monitoring_config defined for the EntityType
+   * this Feature belongs to. Only Features with type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+   * If set to true, all types of data monitoring are disabled despite the
+   * config on EntityType.
+   * </pre>
+   *
+   * <code>bool disable_monitoring = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disableMonitoring.
+   */
+  boolean getDisableMonitoring();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. A list of historical [Snapshot
    * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
@@ -457,4 +475,75 @@ public interface FeatureOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomalyOrBuilder getMonitoringStatsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly>
+      getMonitoringStatsAnomaliesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly getMonitoringStatsAnomalies(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getMonitoringStatsAnomaliesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomalyOrBuilder>
+      getMonitoringStatsAnomaliesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly monitoring_stats_anomalies = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomalyOrBuilder
+      getMonitoringStatsAnomaliesOrBuilder(int index);
 }

@@ -1414,7 +1414,12 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     overwritten. Set the update_mask to `&#42;` to override all fields.
    *     <p>Updatable fields:
    *     <p>&#42; `description` &#42; `labels` &#42; `monitoring_config.snapshot_analysis.disabled`
-   *     &#42; `monitoring_config.snapshot_analysis.monitoring_interval`
+   *     &#42; `monitoring_config.snapshot_analysis.monitoring_interval_days` &#42;
+   *     `monitoring_config.snapshot_analysis.staleness_days` &#42;
+   *     `monitoring_config.import_features_analysis.state` &#42;
+   *     `monitoring_config.import_features_analysis.anomaly_detection_baseline` &#42;
+   *     `monitoring_config.numerical_threshold_config.value` &#42;
+   *     `monitoring_config.categorical_threshold_config.value`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType updateEntityType(EntityType entityType, FieldMask updateMask) {
@@ -2324,8 +2329,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     user does not provide a mask then only the non-empty fields present in the request will be
    *     overwritten. Set the update_mask to `&#42;` to override all fields.
    *     <p>Updatable fields:
-   *     <p>&#42; `description` &#42; `labels` &#42; `monitoring_config.snapshot_analysis.disabled`
-   *     &#42; `monitoring_config.snapshot_analysis.monitoring_interval`
+   *     <p>&#42; `description` &#42; `labels` &#42; `disable_monitoring`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Feature updateFeature(Feature feature, FieldMask updateMask) {
@@ -2633,6 +2637,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *           .addAllFeatureSpecs(new ArrayList<ImportFeatureValuesRequest.FeatureSpec>())
    *           .setDisableOnlineServing(true)
    *           .setWorkerCount(372044046)
+   *           .setDisableIngestionAnalysis(true)
    *           .build();
    *   ImportFeatureValuesResponse response =
    *       featurestoreServiceClient.importFeatureValuesAsync(request).get();
@@ -2680,6 +2685,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *           .addAllFeatureSpecs(new ArrayList<ImportFeatureValuesRequest.FeatureSpec>())
    *           .setDisableOnlineServing(true)
    *           .setWorkerCount(372044046)
+   *           .setDisableIngestionAnalysis(true)
    *           .build();
    *   OperationFuture<ImportFeatureValuesResponse, ImportFeatureValuesOperationMetadata> future =
    *       featurestoreServiceClient.importFeatureValuesOperationCallable().futureCall(request);
@@ -2729,6 +2735,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *           .addAllFeatureSpecs(new ArrayList<ImportFeatureValuesRequest.FeatureSpec>())
    *           .setDisableOnlineServing(true)
    *           .setWorkerCount(372044046)
+   *           .setDisableIngestionAnalysis(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       featurestoreServiceClient.importFeatureValuesCallable().futureCall(request);
