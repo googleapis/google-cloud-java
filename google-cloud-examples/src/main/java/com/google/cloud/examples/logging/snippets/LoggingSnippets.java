@@ -423,7 +423,6 @@ public class LoggingSnippets {
   // [TARGET write(Iterable, WriteOption...)]
   // [VARIABLE "my_log_name"]
   public void write(String logName) {
-    // [START logging_write_log_entry]
     List<LogEntry> entries = new ArrayList<>();
     entries.add(LogEntry.of(StringPayload.of("Entry payload")));
     Map<String, Object> jsonMap = new HashMap<>();
@@ -433,7 +432,6 @@ public class LoggingSnippets {
         entries,
         WriteOption.logName(logName),
         WriteOption.resource(MonitoredResource.newBuilder("global").build()));
-    // [END logging_write_log_entry]
   }
 
   /** Example of listing log entries for a specific log. */
