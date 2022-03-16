@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,5 +45,10 @@ public class RemoveTestResourcesTest {
   public void testRemoveTestResources() {
     Assert.assertTrue(output.matches("(?s)^(.*Deleting products in process, please wait.*)$"));
     Assert.assertTrue(output.matches("(?s)^(.*products were deleted from.*)$"));
+  }
+
+  @After
+  public void restoreRemove() throws IOException {
+    Runtime.getRuntime().exec("mvn compile exec:java -Dexec.mainClass=init.CreateTestResources");
   }
 }

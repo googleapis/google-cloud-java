@@ -40,8 +40,7 @@ public class ImportProductsGcs {
   private static final String PROJECT_ID = System.getenv("PROJECT_ID");
   private static final String DEFAULT_CATALOG =
       String.format(
-          "projects/%s/locations/global/catalogs/default_catalog/" + "branches/default_branch",
-          PROJECT_ID);
+          "projects/%s/locations/global/catalogs/default_catalog/" + "branches/0", PROJECT_ID);
   private static final String GCS_BUCKET = String.format("gs://%s", System.getenv("BUCKET_NAME"));
   private static final String GCS_ERROR_BUCKET = String.format("%s/errors", GCS_BUCKET);
   private static final String GCS_PRODUCTS_OBJECT = "products.json";

@@ -38,8 +38,7 @@ public class ImportProductsBigQueryTable {
   private static final String PROJECT_ID = System.getenv("PROJECT_ID");
   private static final String DEFAULT_CATALOG =
       String.format(
-          "projects/%s/locations/global/catalogs/default_catalog/" + "branches/default_branch",
-          PROJECT_ID);
+          "projects/%s/locations/global/catalogs/default_catalog/" + "branches/0", PROJECT_ID);
   private static final String DATASET_ID = "products";
   private static final String TABLE_ID = "products";
   // TO CHECK ERROR HANDLING USE THE TABLE WITH INVALID PRODUCTS:

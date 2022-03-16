@@ -47,8 +47,7 @@ public class ImportProductsInlineSource {
   private static final String PROJECT_ID = System.getenv("PROJECT_ID");
   private static final String DEFAULT_CATALOG =
       String.format(
-          "projects/%s/locations/global/catalogs/default_catalog/" + "branches/default_branch",
-          PROJECT_ID);
+          "projects/%s/locations/global/catalogs/default_catalog/" + "branches/0", PROJECT_ID);
 
   public static void main(String[] args) throws IOException, InterruptedException {
     ImportProductsRequest importRequest = getImportProductsInlineRequest(getProducts());

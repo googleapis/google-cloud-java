@@ -39,8 +39,7 @@ public class AddFulfillmentPlaces {
     String generatedProductId = UUID.randomUUID().toString();
     String productName =
         String.format(
-            "projects/%s/locations/global/catalogs/default_catalog/branches/"
-                + "default_branch/products/%s",
+            "projects/%s/locations/global/catalogs/default_catalog/branches/" + "0/products/%s",
             projectId, generatedProductId);
     Timestamp currentDate =
         Timestamp.newBuilder()
