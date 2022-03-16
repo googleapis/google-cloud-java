@@ -15,7 +15,7 @@
 
 set -eo pipefail
 
-cd ${KOKORO_ARTIFACTS_DIR}/github/java-livestream
+cd ${KOKORO_ARTIFACTS_DIR}/github/java-video-live-stream
 
 # Disable buffering, so that the logs stream through.
 export PYTHONUNBUFFERED=1
@@ -31,7 +31,7 @@ python3.6 -m pip install git+https://github.com/googleapis/synthtool.git#egg=gcp
 
 set +e
 python3.6 -m autosynth.synth \
-    --repository=googleapis/java-livestream \
+    --repository=googleapis/java-video-live-stream \
     --synth-file-name=.github/readme/synth.py \
     --metadata-path=.github/readme/synth.metadata \
     --pr-title="chore: regenerate README" \

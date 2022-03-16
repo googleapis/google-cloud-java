@@ -5,7 +5,7 @@
   <artifactId>-install-without-bom</artifactId>
   <packaging>jar</packaging>
   <name>Google Cloud Live Stream Install Without Bom</name>
-  <url>https://github.com/googleapis/java-livestream</url>
+  <url>https://github.com/googleapis/java-video-live-stream</url>
 
   <!--
     The parent pom defines common style checks and testing strategies for our samples.
