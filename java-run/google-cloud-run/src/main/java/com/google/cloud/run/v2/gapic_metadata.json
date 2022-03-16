@@ -1,0 +1,60 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.run.v2",
+  "libraryPackage": "com.google.cloud.run.v2",
+  "services": {
+    "Revisions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RevisionsClient",
+          "rpcs": {
+            "DeleteRevision": {
+              "methods": ["deleteRevisionAsync", "deleteRevisionAsync", "deleteRevisionAsync", "deleteRevisionOperationCallable", "deleteRevisionCallable"]
+            },
+            "GetRevision": {
+              "methods": ["getRevision", "getRevision", "getRevision", "getRevisionCallable"]
+            },
+            "ListRevisions": {
+              "methods": ["listRevisions", "listRevisions", "listRevisions", "listRevisionsPagedCallable", "listRevisionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Services": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServicesClient",
+          "rpcs": {
+            "CreateService": {
+              "methods": ["createServiceAsync", "createServiceAsync", "createServiceAsync", "createServiceOperationCallable", "createServiceCallable"]
+            },
+            "DeleteService": {
+              "methods": ["deleteServiceAsync", "deleteServiceAsync", "deleteServiceAsync", "deleteServiceOperationCallable", "deleteServiceCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetService": {
+              "methods": ["getService", "getService", "getService", "getServiceCallable"]
+            },
+            "ListServices": {
+              "methods": ["listServices", "listServices", "listServices", "listServicesPagedCallable", "listServicesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateService": {
+              "methods": ["updateServiceAsync", "updateServiceAsync", "updateServiceOperationCallable", "updateServiceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
