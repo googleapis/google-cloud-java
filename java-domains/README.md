@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-domains</artifactId>
-  <version>0.5.1</version>
+  <version>0.5.4</version>
 </dependency>
 
 ```
