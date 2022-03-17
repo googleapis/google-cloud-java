@@ -91,4 +91,59 @@ public interface SdkHarnessContainerImageOrBuilder
    * @return The bytes for environmentId.
    */
   com.google.protobuf.ByteString getEnvironmentIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The set of capabilities enumerated in the above Environment proto. See also
+   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * </pre>
+   *
+   * <code>repeated string capabilities = 4;</code>
+   *
+   * @return A list containing the capabilities.
+   */
+  java.util.List<java.lang.String> getCapabilitiesList();
+  /**
+   *
+   *
+   * <pre>
+   * The set of capabilities enumerated in the above Environment proto. See also
+   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * </pre>
+   *
+   * <code>repeated string capabilities = 4;</code>
+   *
+   * @return The count of capabilities.
+   */
+  int getCapabilitiesCount();
+  /**
+   *
+   *
+   * <pre>
+   * The set of capabilities enumerated in the above Environment proto. See also
+   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * </pre>
+   *
+   * <code>repeated string capabilities = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The capabilities at the given index.
+   */
+  java.lang.String getCapabilities(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The set of capabilities enumerated in the above Environment proto. See also
+   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * </pre>
+   *
+   * <code>repeated string capabilities = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the capabilities at the given index.
+   */
+  com.google.protobuf.ByteString getCapabilitiesBytes(int index);
 }

@@ -40,6 +40,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
   private SdkHarnessContainerImage() {
     containerImage_ = "";
     environmentId_ = "";
+    capabilities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -61,6 +62,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -90,6 +92,16 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
               environmentId_ = s;
               break;
             }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                capabilities_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              capabilities_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -104,6 +116,9 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        capabilities_ = capabilities_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -246,6 +261,71 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     }
   }
 
+  public static final int CAPABILITIES_FIELD_NUMBER = 4;
+  private com.google.protobuf.LazyStringList capabilities_;
+  /**
+   *
+   *
+   * <pre>
+   * The set of capabilities enumerated in the above Environment proto. See also
+   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * </pre>
+   *
+   * <code>repeated string capabilities = 4;</code>
+   *
+   * @return A list containing the capabilities.
+   */
+  public com.google.protobuf.ProtocolStringList getCapabilitiesList() {
+    return capabilities_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The set of capabilities enumerated in the above Environment proto. See also
+   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * </pre>
+   *
+   * <code>repeated string capabilities = 4;</code>
+   *
+   * @return The count of capabilities.
+   */
+  public int getCapabilitiesCount() {
+    return capabilities_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The set of capabilities enumerated in the above Environment proto. See also
+   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * </pre>
+   *
+   * <code>repeated string capabilities = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The capabilities at the given index.
+   */
+  public java.lang.String getCapabilities(int index) {
+    return capabilities_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The set of capabilities enumerated in the above Environment proto. See also
+   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * </pre>
+   *
+   * <code>repeated string capabilities = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the capabilities at the given index.
+   */
+  public com.google.protobuf.ByteString getCapabilitiesBytes(int index) {
+    return capabilities_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -269,6 +349,9 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environmentId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, environmentId_);
     }
+    for (int i = 0; i < capabilities_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, capabilities_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -286,6 +369,14 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environmentId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, environmentId_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < capabilities_.size(); i++) {
+        dataSize += computeStringSizeNoTag(capabilities_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getCapabilitiesList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -306,6 +397,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     if (!getContainerImage().equals(other.getContainerImage())) return false;
     if (getUseSingleCorePerContainer() != other.getUseSingleCorePerContainer()) return false;
     if (!getEnvironmentId().equals(other.getEnvironmentId())) return false;
+    if (!getCapabilitiesList().equals(other.getCapabilitiesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -323,6 +415,10 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseSingleCorePerContainer());
     hash = (37 * hash) + ENVIRONMENT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getEnvironmentId().hashCode();
+    if (getCapabilitiesCount() > 0) {
+      hash = (37 * hash) + CAPABILITIES_FIELD_NUMBER;
+      hash = (53 * hash) + getCapabilitiesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -474,6 +570,8 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
 
       environmentId_ = "";
 
+      capabilities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -501,9 +599,15 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     public com.google.dataflow.v1beta3.SdkHarnessContainerImage buildPartial() {
       com.google.dataflow.v1beta3.SdkHarnessContainerImage result =
           new com.google.dataflow.v1beta3.SdkHarnessContainerImage(this);
+      int from_bitField0_ = bitField0_;
       result.containerImage_ = containerImage_;
       result.useSingleCorePerContainer_ = useSingleCorePerContainer_;
       result.environmentId_ = environmentId_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        capabilities_ = capabilities_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.capabilities_ = capabilities_;
       onBuilt();
       return result;
     }
@@ -565,6 +669,16 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
         environmentId_ = other.environmentId_;
         onChanged();
       }
+      if (!other.capabilities_.isEmpty()) {
+        if (capabilities_.isEmpty()) {
+          capabilities_ = other.capabilities_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureCapabilitiesIsMutable();
+          capabilities_.addAll(other.capabilities_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -594,6 +708,8 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object containerImage_ = "";
     /**
@@ -872,6 +988,183 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
 
       environmentId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList capabilities_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureCapabilitiesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        capabilities_ = new com.google.protobuf.LazyStringArrayList(capabilities_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The set of capabilities enumerated in the above Environment proto. See also
+     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * </pre>
+     *
+     * <code>repeated string capabilities = 4;</code>
+     *
+     * @return A list containing the capabilities.
+     */
+    public com.google.protobuf.ProtocolStringList getCapabilitiesList() {
+      return capabilities_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The set of capabilities enumerated in the above Environment proto. See also
+     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * </pre>
+     *
+     * <code>repeated string capabilities = 4;</code>
+     *
+     * @return The count of capabilities.
+     */
+    public int getCapabilitiesCount() {
+      return capabilities_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The set of capabilities enumerated in the above Environment proto. See also
+     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * </pre>
+     *
+     * <code>repeated string capabilities = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The capabilities at the given index.
+     */
+    public java.lang.String getCapabilities(int index) {
+      return capabilities_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The set of capabilities enumerated in the above Environment proto. See also
+     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * </pre>
+     *
+     * <code>repeated string capabilities = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the capabilities at the given index.
+     */
+    public com.google.protobuf.ByteString getCapabilitiesBytes(int index) {
+      return capabilities_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The set of capabilities enumerated in the above Environment proto. See also
+     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * </pre>
+     *
+     * <code>repeated string capabilities = 4;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The capabilities to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCapabilities(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCapabilitiesIsMutable();
+      capabilities_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The set of capabilities enumerated in the above Environment proto. See also
+     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * </pre>
+     *
+     * <code>repeated string capabilities = 4;</code>
+     *
+     * @param value The capabilities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCapabilities(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCapabilitiesIsMutable();
+      capabilities_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The set of capabilities enumerated in the above Environment proto. See also
+     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * </pre>
+     *
+     * <code>repeated string capabilities = 4;</code>
+     *
+     * @param values The capabilities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCapabilities(java.lang.Iterable<java.lang.String> values) {
+      ensureCapabilitiesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, capabilities_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The set of capabilities enumerated in the above Environment proto. See also
+     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * </pre>
+     *
+     * <code>repeated string capabilities = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCapabilities() {
+      capabilities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The set of capabilities enumerated in the above Environment proto. See also
+     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * </pre>
+     *
+     * <code>repeated string capabilities = 4;</code>
+     *
+     * @param value The bytes of the capabilities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCapabilitiesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureCapabilitiesIsMutable();
+      capabilities_.add(value);
       onChanged();
       return this;
     }
