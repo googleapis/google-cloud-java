@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,8 +216,8 @@ public interface ValueOrBuilder
    *
    * <pre>
    * A UTF-8 encoded string value.
-   * When `exclude_from_indexes` is false (it is indexed), may have at most
-   * 1500 bytes. Otherwise, may be set to at most 1,000,000 bytes.
+   * When `exclude_from_indexes` is false (it is indexed) , may have at most 1500 bytes.
+   * Otherwise, may be set to at most 1,000,000 bytes.
    * </pre>
    *
    * <code>string string_value = 17;</code>
@@ -230,8 +230,8 @@ public interface ValueOrBuilder
    *
    * <pre>
    * A UTF-8 encoded string value.
-   * When `exclude_from_indexes` is false (it is indexed), may have at most
-   * 1500 bytes. Otherwise, may be set to at most 1,000,000 bytes.
+   * When `exclude_from_indexes` is false (it is indexed) , may have at most 1500 bytes.
+   * Otherwise, may be set to at most 1,000,000 bytes.
    * </pre>
    *
    * <code>string string_value = 17;</code>
@@ -244,8 +244,8 @@ public interface ValueOrBuilder
    *
    * <pre>
    * A UTF-8 encoded string value.
-   * When `exclude_from_indexes` is false (it is indexed), may have at most
-   * 1500 bytes. Otherwise, may be set to at most 1,000,000 bytes.
+   * When `exclude_from_indexes` is false (it is indexed) , may have at most 1500 bytes.
+   * Otherwise, may be set to at most 1,000,000 bytes.
    * </pre>
    *
    * <code>string string_value = 17;</code>

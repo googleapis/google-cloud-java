@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -485,8 +485,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The version of the entity that this mutation is being applied to. If this
-   * does not match the current version on the server, the mutation conflicts.
+   * The version of the entity that this mutation is being applied
+   * to. If this does not match the current version on the server, the
+   * mutation conflicts.
    * </pre>
    *
    * <code>int64 base_version = 8;</code>
@@ -501,8 +502,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The version of the entity that this mutation is being applied to. If this
-   * does not match the current version on the server, the mutation conflicts.
+   * The version of the entity that this mutation is being applied
+   * to. If this does not match the current version on the server, the
+   * mutation conflicts.
    * </pre>
    *
    * <code>int64 base_version = 8;</code>
@@ -1869,8 +1871,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The version of the entity that this mutation is being applied to. If this
-     * does not match the current version on the server, the mutation conflicts.
+     * The version of the entity that this mutation is being applied
+     * to. If this does not match the current version on the server, the
+     * mutation conflicts.
      * </pre>
      *
      * <code>int64 base_version = 8;</code>
@@ -1884,8 +1887,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The version of the entity that this mutation is being applied to. If this
-     * does not match the current version on the server, the mutation conflicts.
+     * The version of the entity that this mutation is being applied
+     * to. If this does not match the current version on the server, the
+     * mutation conflicts.
      * </pre>
      *
      * <code>int64 base_version = 8;</code>
@@ -1902,8 +1906,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The version of the entity that this mutation is being applied to. If this
-     * does not match the current version on the server, the mutation conflicts.
+     * The version of the entity that this mutation is being applied
+     * to. If this does not match the current version on the server, the
+     * mutation conflicts.
      * </pre>
      *
      * <code>int64 base_version = 8;</code>
@@ -1921,8 +1926,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The version of the entity that this mutation is being applied to. If this
-     * does not match the current version on the server, the mutation conflicts.
+     * The version of the entity that this mutation is being applied
+     * to. If this does not match the current version on the server, the
+     * mutation conflicts.
      * </pre>
      *
      * <code>int64 base_version = 8;</code>

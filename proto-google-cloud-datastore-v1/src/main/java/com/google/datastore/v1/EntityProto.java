@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,46 +65,44 @@ public final class EntityProto {
   static {
     java.lang.String[] descriptorData = {
       "\n google/datastore/v1/entity.proto\022\023goog"
-          + "le.datastore.v1\032\034google/api/annotations."
-          + "proto\032\034google/protobuf/struct.proto\032\037goo"
-          + "gle/protobuf/timestamp.proto\032\030google/typ"
-          + "e/latlng.proto\"7\n\013PartitionId\022\022\n\nproject"
-          + "_id\030\002 \001(\t\022\024\n\014namespace_id\030\004 \001(\t\"\267\001\n\003Key\022"
-          + "6\n\014partition_id\030\001 \001(\0132 .google.datastore"
-          + ".v1.PartitionId\0222\n\004path\030\002 \003(\0132$.google.d"
-          + "atastore.v1.Key.PathElement\032D\n\013PathEleme"
-          + "nt\022\014\n\004kind\030\001 \001(\t\022\014\n\002id\030\002 \001(\003H\000\022\016\n\004name\030\003"
-          + " \001(\tH\000B\t\n\007id_type\"8\n\nArrayValue\022*\n\006value"
-          + "s\030\001 \003(\0132\032.google.datastore.v1.Value\"\361\003\n\005"
-          + "Value\0220\n\nnull_value\030\013 \001(\0162\032.google.proto"
-          + "buf.NullValueH\000\022\027\n\rboolean_value\030\001 \001(\010H\000"
-          + "\022\027\n\rinteger_value\030\002 \001(\003H\000\022\026\n\014double_valu"
-          + "e\030\003 \001(\001H\000\0225\n\017timestamp_value\030\n \001(\0132\032.goo"
-          + "gle.protobuf.TimestampH\000\022-\n\tkey_value\030\005 "
-          + "\001(\0132\030.google.datastore.v1.KeyH\000\022\026\n\014strin"
-          + "g_value\030\021 \001(\tH\000\022\024\n\nblob_value\030\022 \001(\014H\000\022.\n"
-          + "\017geo_point_value\030\010 \001(\0132\023.google.type.Lat"
-          + "LngH\000\0223\n\014entity_value\030\006 \001(\0132\033.google.dat"
-          + "astore.v1.EntityH\000\0226\n\013array_value\030\t \001(\0132"
-          + "\037.google.datastore.v1.ArrayValueH\000\022\017\n\007me"
-          + "aning\030\016 \001(\005\022\034\n\024exclude_from_indexes\030\023 \001("
-          + "\010B\014\n\nvalue_type\"\277\001\n\006Entity\022%\n\003key\030\001 \001(\0132"
-          + "\030.google.datastore.v1.Key\022?\n\nproperties\030"
-          + "\003 \003(\0132+.google.datastore.v1.Entity.Prope"
-          + "rtiesEntry\032M\n\017PropertiesEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022)\n\005value\030\002 \001(\0132\032.google.datastore.v1."
-          + "Value:\0028\001B\275\001\n\027com.google.datastore.v1B\013E"
-          + "ntityProtoP\001Z<google.golang.org/genproto"
-          + "/googleapis/datastore/v1;datastore\252\002\031Goo"
-          + "gle.Cloud.Datastore.V1\312\002\031Google\\Cloud\\Da"
-          + "tastore\\V1\352\002\034Google::Cloud::Datastore::V"
-          + "1b\006proto3"
+          + "le.datastore.v1\032\034google/protobuf/struct."
+          + "proto\032\037google/protobuf/timestamp.proto\032\030"
+          + "google/type/latlng.proto\"7\n\013PartitionId\022"
+          + "\022\n\nproject_id\030\002 \001(\t\022\024\n\014namespace_id\030\004 \001("
+          + "\t\"\267\001\n\003Key\0226\n\014partition_id\030\001 \001(\0132 .google"
+          + ".datastore.v1.PartitionId\0222\n\004path\030\002 \003(\0132"
+          + "$.google.datastore.v1.Key.PathElement\032D\n"
+          + "\013PathElement\022\014\n\004kind\030\001 \001(\t\022\014\n\002id\030\002 \001(\003H\000"
+          + "\022\016\n\004name\030\003 \001(\tH\000B\t\n\007id_type\"8\n\nArrayValu"
+          + "e\022*\n\006values\030\001 \003(\0132\032.google.datastore.v1."
+          + "Value\"\361\003\n\005Value\0220\n\nnull_value\030\013 \001(\0162\032.go"
+          + "ogle.protobuf.NullValueH\000\022\027\n\rboolean_val"
+          + "ue\030\001 \001(\010H\000\022\027\n\rinteger_value\030\002 \001(\003H\000\022\026\n\014d"
+          + "ouble_value\030\003 \001(\001H\000\0225\n\017timestamp_value\030\n"
+          + " \001(\0132\032.google.protobuf.TimestampH\000\022-\n\tke"
+          + "y_value\030\005 \001(\0132\030.google.datastore.v1.KeyH"
+          + "\000\022\026\n\014string_value\030\021 \001(\tH\000\022\024\n\nblob_value\030"
+          + "\022 \001(\014H\000\022.\n\017geo_point_value\030\010 \001(\0132\023.googl"
+          + "e.type.LatLngH\000\0223\n\014entity_value\030\006 \001(\0132\033."
+          + "google.datastore.v1.EntityH\000\0226\n\013array_va"
+          + "lue\030\t \001(\0132\037.google.datastore.v1.ArrayVal"
+          + "ueH\000\022\017\n\007meaning\030\016 \001(\005\022\034\n\024exclude_from_in"
+          + "dexes\030\023 \001(\010B\014\n\nvalue_type\"\277\001\n\006Entity\022%\n\003"
+          + "key\030\001 \001(\0132\030.google.datastore.v1.Key\022?\n\np"
+          + "roperties\030\003 \003(\0132+.google.datastore.v1.En"
+          + "tity.PropertiesEntry\032M\n\017PropertiesEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.google.dat"
+          + "astore.v1.Value:\0028\001B\275\001\n\027com.google.datas"
+          + "tore.v1B\013EntityProtoP\001Z<google.golang.or"
+          + "g/genproto/googleapis/datastore/v1;datas"
+          + "tore\252\002\031Google.Cloud.Datastore.V1\312\002\031Googl"
+          + "e\\Cloud\\Datastore\\V1\352\002\034Google::Cloud::Da"
+          + "tastore::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.LatLngProto.getDescriptor(),
@@ -176,7 +174,6 @@ public final class EntityProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
