@@ -35347,6 +35347,33 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.documentai.v1beta2.Document.TextAnchor.TextSegmentOrBuilder
         getTextSegmentsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains the content of the text span so that users do
+     * not have to look it up in the text_segments.
+     * </pre>
+     *
+     * <code>string content = 2;</code>
+     *
+     * @return The content.
+     */
+    java.lang.String getContent();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the content of the text span so that users do
+     * not have to look it up in the text_segments.
+     * </pre>
+     *
+     * <code>string content = 2;</code>
+     *
+     * @return The bytes for content.
+     */
+    com.google.protobuf.ByteString getContentBytes();
   }
   /**
    *
@@ -35369,6 +35396,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
     private TextAnchor() {
       textSegments_ = java.util.Collections.emptyList();
+      content_ = "";
     }
 
     @java.lang.Override
@@ -35414,6 +35442,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                         com.google.cloud.documentai.v1beta2.Document.TextAnchor.TextSegment
                             .parser(),
                         extensionRegistry));
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                content_ = s;
                 break;
               }
             default:
@@ -36217,6 +36252,57 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return textSegments_.get(index);
     }
 
+    public static final int CONTENT_FIELD_NUMBER = 2;
+    private volatile java.lang.Object content_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains the content of the text span so that users do
+     * not have to look it up in the text_segments.
+     * </pre>
+     *
+     * <code>string content = 2;</code>
+     *
+     * @return The content.
+     */
+    @java.lang.Override
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        content_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the content of the text span so that users do
+     * not have to look it up in the text_segments.
+     * </pre>
+     *
+     * <code>string content = 2;</code>
+     *
+     * @return The bytes for content.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getContentBytes() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        content_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -36234,6 +36320,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < textSegments_.size(); i++) {
         output.writeMessage(1, textSegments_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, content_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -36245,6 +36334,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       for (int i = 0; i < textSegments_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, textSegments_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, content_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -36263,6 +36355,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.documentai.v1beta2.Document.TextAnchor) obj;
 
       if (!getTextSegmentsList().equals(other.getTextSegmentsList())) return false;
+      if (!getContent().equals(other.getContent())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -36278,6 +36371,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + TEXT_SEGMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getTextSegmentsList().hashCode();
       }
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -36434,6 +36529,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         } else {
           textSegmentsBuilder_.clear();
         }
+        content_ = "";
+
         return this;
       }
 
@@ -36471,6 +36568,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.textSegments_ = textSegmentsBuilder_.build();
         }
+        result.content_ = content_;
         onBuilt();
         return result;
       }
@@ -36549,6 +36647,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               textSegmentsBuilder_.addAllMessages(other.textSegments_);
             }
           }
+        }
+        if (!other.getContent().isEmpty()) {
+          content_ = other.content_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -36996,6 +37098,117 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           textSegments_ = null;
         }
         return textSegmentsBuilder_;
+      }
+
+      private java.lang.Object content_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Contains the content of the text span so that users do
+       * not have to look it up in the text_segments.
+       * </pre>
+       *
+       * <code>string content = 2;</code>
+       *
+       * @return The content.
+       */
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          content_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the content of the text span so that users do
+       * not have to look it up in the text_segments.
+       * </pre>
+       *
+       * <code>string content = 2;</code>
+       *
+       * @return The bytes for content.
+       */
+      public com.google.protobuf.ByteString getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the content of the text span so that users do
+       * not have to look it up in the text_segments.
+       * </pre>
+       *
+       * <code>string content = 2;</code>
+       *
+       * @param value The content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContent(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the content of the text span so that users do
+       * not have to look it up in the text_segments.
+       * </pre>
+       *
+       * <code>string content = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearContent() {
+
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the content of the text span so that users do
+       * not have to look it up in the text_segments.
+       * </pre>
+       *
+       * <code>string content = 2;</code>
+       *
+       * @param value The bytes for content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        content_ = value;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

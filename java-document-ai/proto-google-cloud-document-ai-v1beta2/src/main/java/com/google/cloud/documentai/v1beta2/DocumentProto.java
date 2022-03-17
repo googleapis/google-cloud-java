@@ -142,7 +142,7 @@ public final class DocumentProto {
           + "le/cloud/documentai/v1beta2/geometry.pro"
           + "to\032\027google/rpc/status.proto\032\027google/type"
           + "/color.proto\032\034google/api/annotations.pro"
-          + "to\"\302+\n\010Document\022\r\n\003uri\030\001 \001(\tH\000\022\021\n\007conten"
+          + "to\"\323+\n\010Document\022\r\n\003uri\030\001 \001(\tH\000\022\021\n\007conten"
           + "t\030\002 \001(\014H\000\022\021\n\tmime_type\030\003 \001(\t\022\014\n\004text\030\004 \001"
           + "(\t\022D\n\013text_styles\030\005 \003(\0132/.google.cloud.d"
           + "ocumentai.v1beta2.Document.Style\022=\n\005page"
@@ -267,27 +267,27 @@ public final class DocumentProto {
           + "ntend\030\010 \001(\0132-.google.cloud.documentai.v1"
           + "beta2.BoundingPolyB\003\340A\001\032I\n\016EntityRelatio"
           + "n\022\022\n\nsubject_id\030\001 \001(\t\022\021\n\tobject_id\030\002 \001(\t"
-          + "\022\020\n\010relation\030\003 \001(\t\032\234\001\n\nTextAnchor\022W\n\rtex"
+          + "\022\020\n\010relation\030\003 \001(\t\032\255\001\n\nTextAnchor\022W\n\rtex"
           + "t_segments\030\001 \003(\0132@.google.cloud.document"
           + "ai.v1beta2.Document.TextAnchor.TextSegme"
-          + "nt\0325\n\013TextSegment\022\023\n\013start_index\030\001 \001(\003\022\021"
-          + "\n\tend_index\030\002 \001(\003\032\201\003\n\nPageAnchor\022O\n\tpage"
-          + "_refs\030\001 \003(\0132<.google.cloud.documentai.v1"
-          + "beta2.Document.PageAnchor.PageRef\032\241\002\n\007Pa"
-          + "geRef\022\021\n\004page\030\001 \001(\003B\003\340A\002\022a\n\013layout_type\030"
-          + "\002 \001(\0162G.google.cloud.documentai.v1beta2."
-          + "Document.PageAnchor.PageRef.LayoutTypeB\003"
-          + "\340A\001\022\026\n\tlayout_id\030\003 \001(\tB\003\340A\001\"\207\001\n\nLayoutTy"
-          + "pe\022\033\n\027LAYOUT_TYPE_UNSPECIFIED\020\000\022\t\n\005BLOCK"
-          + "\020\001\022\r\n\tPARAGRAPH\020\002\022\010\n\004LINE\020\003\022\t\n\005TOKEN\020\004\022\022"
-          + "\n\016VISUAL_ELEMENT\020\005\022\t\n\005TABLE\020\006\022\016\n\nFORM_FI"
-          + "ELD\020\007B\010\n\006sourceB\352\001\n#com.google.cloud.doc"
-          + "umentai.v1beta2B\rDocumentProtoP\001ZIgoogle"
-          + ".golang.org/genproto/googleapis/cloud/do"
-          + "cumentai/v1beta2;documentai\252\002\037Google.Clo"
-          + "ud.DocumentAI.V1Beta2\312\002\037Google\\Cloud\\Doc"
-          + "umentAI\\V1beta2\352\002\"Google::Cloud::Documen"
-          + "tAI::V1beta2b\006proto3"
+          + "nt\022\017\n\007content\030\002 \001(\t\0325\n\013TextSegment\022\023\n\013st"
+          + "art_index\030\001 \001(\003\022\021\n\tend_index\030\002 \001(\003\032\201\003\n\nP"
+          + "ageAnchor\022O\n\tpage_refs\030\001 \003(\0132<.google.cl"
+          + "oud.documentai.v1beta2.Document.PageAnch"
+          + "or.PageRef\032\241\002\n\007PageRef\022\021\n\004page\030\001 \001(\003B\003\340A"
+          + "\002\022a\n\013layout_type\030\002 \001(\0162G.google.cloud.do"
+          + "cumentai.v1beta2.Document.PageAnchor.Pag"
+          + "eRef.LayoutTypeB\003\340A\001\022\026\n\tlayout_id\030\003 \001(\tB"
+          + "\003\340A\001\"\207\001\n\nLayoutType\022\033\n\027LAYOUT_TYPE_UNSPE"
+          + "CIFIED\020\000\022\t\n\005BLOCK\020\001\022\r\n\tPARAGRAPH\020\002\022\010\n\004LI"
+          + "NE\020\003\022\t\n\005TOKEN\020\004\022\022\n\016VISUAL_ELEMENT\020\005\022\t\n\005T"
+          + "ABLE\020\006\022\016\n\nFORM_FIELD\020\007B\010\n\006sourceB\352\001\n#com"
+          + ".google.cloud.documentai.v1beta2B\rDocume"
+          + "ntProtoP\001ZIgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/documentai/v1beta2;docume"
+          + "ntai\252\002\037Google.Cloud.DocumentAI.V1Beta2\312\002"
+          + "\037Google\\Cloud\\DocumentAI\\V1beta2\352\002\"Googl"
+          + "e::Cloud::DocumentAI::V1beta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -541,7 +541,7 @@ public final class DocumentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta2_Document_TextAnchor_descriptor,
             new java.lang.String[] {
-              "TextSegments",
+              "TextSegments", "Content",
             });
     internal_static_google_cloud_documentai_v1beta2_Document_TextAnchor_TextSegment_descriptor =
         internal_static_google_cloud_documentai_v1beta2_Document_TextAnchor_descriptor
