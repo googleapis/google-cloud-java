@@ -101,6 +101,27 @@ public class MockCloudRedisImpl extends CloudRedisImplBase {
   }
 
   @Override
+  public void getInstanceAuthString(
+      GetInstanceAuthStringRequest request, StreamObserver<InstanceAuthString> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof InstanceAuthString) {
+      requests.add(request);
+      responseObserver.onNext(((InstanceAuthString) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetInstanceAuthString, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  InstanceAuthString.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createInstance(
       CreateInstanceRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -241,6 +262,27 @@ public class MockCloudRedisImpl extends CloudRedisImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteInstance, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void rescheduleMaintenance(
+      RescheduleMaintenanceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RescheduleMaintenance, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

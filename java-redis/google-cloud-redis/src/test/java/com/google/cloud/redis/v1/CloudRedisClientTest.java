@@ -186,6 +186,7 @@ public class CloudRedisClientTest {
             .setAlternativeLocationId("alternativeLocationId1787141949")
             .setRedisVersion("redisVersion-1972584739")
             .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
             .setHost("host3208616")
             .setPort(3446913)
             .setCurrentLocationId("currentLocationId-1808505335")
@@ -195,6 +196,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setReplicaCount(564075208)
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
@@ -243,6 +248,7 @@ public class CloudRedisClientTest {
             .setAlternativeLocationId("alternativeLocationId1787141949")
             .setRedisVersion("redisVersion-1972584739")
             .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
             .setHost("host3208616")
             .setPort(3446913)
             .setCurrentLocationId("currentLocationId-1808505335")
@@ -252,6 +258,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setReplicaCount(564075208)
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
@@ -290,6 +300,80 @@ public class CloudRedisClientTest {
   }
 
   @Test
+  public void getInstanceAuthStringTest() throws Exception {
+    InstanceAuthString expectedResponse =
+        InstanceAuthString.newBuilder().setAuthString("authString1994738649").build();
+    mockCloudRedis.addResponse(expectedResponse);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    InstanceAuthString actualResponse = client.getInstanceAuthString(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetInstanceAuthStringRequest actualRequest =
+        ((GetInstanceAuthStringRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getInstanceAuthStringExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedis.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.getInstanceAuthString(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getInstanceAuthStringTest2() throws Exception {
+    InstanceAuthString expectedResponse =
+        InstanceAuthString.newBuilder().setAuthString("authString1994738649").build();
+    mockCloudRedis.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    InstanceAuthString actualResponse = client.getInstanceAuthString(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetInstanceAuthStringRequest actualRequest =
+        ((GetInstanceAuthStringRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getInstanceAuthStringExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedis.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getInstanceAuthString(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
@@ -300,6 +384,7 @@ public class CloudRedisClientTest {
             .setAlternativeLocationId("alternativeLocationId1787141949")
             .setRedisVersion("redisVersion-1972584739")
             .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
             .setHost("host3208616")
             .setPort(3446913)
             .setCurrentLocationId("currentLocationId-1808505335")
@@ -309,6 +394,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setReplicaCount(564075208)
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
@@ -371,6 +460,7 @@ public class CloudRedisClientTest {
             .setAlternativeLocationId("alternativeLocationId1787141949")
             .setRedisVersion("redisVersion-1972584739")
             .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
             .setHost("host3208616")
             .setPort(3446913)
             .setCurrentLocationId("currentLocationId-1808505335")
@@ -380,6 +470,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setReplicaCount(564075208)
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
@@ -442,6 +536,7 @@ public class CloudRedisClientTest {
             .setAlternativeLocationId("alternativeLocationId1787141949")
             .setRedisVersion("redisVersion-1972584739")
             .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
             .setHost("host3208616")
             .setPort(3446913)
             .setCurrentLocationId("currentLocationId-1808505335")
@@ -451,6 +546,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setReplicaCount(564075208)
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
@@ -510,6 +609,7 @@ public class CloudRedisClientTest {
             .setAlternativeLocationId("alternativeLocationId1787141949")
             .setRedisVersion("redisVersion-1972584739")
             .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
             .setHost("host3208616")
             .setPort(3446913)
             .setCurrentLocationId("currentLocationId-1808505335")
@@ -519,6 +619,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setReplicaCount(564075208)
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
@@ -578,6 +682,7 @@ public class CloudRedisClientTest {
             .setAlternativeLocationId("alternativeLocationId1787141949")
             .setRedisVersion("redisVersion-1972584739")
             .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
             .setHost("host3208616")
             .setPort(3446913)
             .setCurrentLocationId("currentLocationId-1808505335")
@@ -587,6 +692,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setReplicaCount(564075208)
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
@@ -646,6 +755,7 @@ public class CloudRedisClientTest {
             .setAlternativeLocationId("alternativeLocationId1787141949")
             .setRedisVersion("redisVersion-1972584739")
             .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
             .setHost("host3208616")
             .setPort(3446913)
             .setCurrentLocationId("currentLocationId-1808505335")
@@ -655,6 +765,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setReplicaCount(564075208)
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
@@ -714,6 +828,7 @@ public class CloudRedisClientTest {
             .setAlternativeLocationId("alternativeLocationId1787141949")
             .setRedisVersion("redisVersion-1972584739")
             .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
             .setHost("host3208616")
             .setPort(3446913)
             .setCurrentLocationId("currentLocationId-1808505335")
@@ -723,6 +838,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setReplicaCount(564075208)
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
@@ -782,6 +901,7 @@ public class CloudRedisClientTest {
             .setAlternativeLocationId("alternativeLocationId1787141949")
             .setRedisVersion("redisVersion-1972584739")
             .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
             .setHost("host3208616")
             .setPort(3446913)
             .setCurrentLocationId("currentLocationId-1808505335")
@@ -791,6 +911,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setReplicaCount(564075208)
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
@@ -852,6 +976,7 @@ public class CloudRedisClientTest {
             .setAlternativeLocationId("alternativeLocationId1787141949")
             .setRedisVersion("redisVersion-1972584739")
             .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
             .setHost("host3208616")
             .setPort(3446913)
             .setCurrentLocationId("currentLocationId-1808505335")
@@ -861,6 +986,10 @@ public class CloudRedisClientTest {
             .setMemorySizeGb(34199707)
             .setAuthorizedNetwork("authorizedNetwork1515554835")
             .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setReplicaCount(564075208)
             .addAllNodes(new ArrayList<NodeInfo>())
             .setReadEndpoint("readEndpoint294053195")
@@ -987,6 +1116,166 @@ public class CloudRedisClientTest {
     try {
       String name = "name3373707";
       client.deleteInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rescheduleMaintenanceTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setLocationId("locationId1541836720")
+            .setAlternativeLocationId("alternativeLocationId1787141949")
+            .setRedisVersion("redisVersion-1972584739")
+            .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
+            .setHost("host3208616")
+            .setPort(3446913)
+            .setCurrentLocationId("currentLocationId-1808505335")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStatusMessage("statusMessage-958704715")
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setMemorySizeGb(34199707)
+            .setAuthorizedNetwork("authorizedNetwork1515554835")
+            .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rescheduleMaintenanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudRedis.addResponse(resultOperation);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+        RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+    Timestamp scheduleTime = Timestamp.newBuilder().build();
+
+    Instance actualResponse =
+        client.rescheduleMaintenanceAsync(name, rescheduleType, scheduleTime).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RescheduleMaintenanceRequest actualRequest =
+        ((RescheduleMaintenanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(rescheduleType, actualRequest.getRescheduleType());
+    Assert.assertEquals(scheduleTime, actualRequest.getScheduleTime());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rescheduleMaintenanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedis.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+          RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+      Timestamp scheduleTime = Timestamp.newBuilder().build();
+      client.rescheduleMaintenanceAsync(name, rescheduleType, scheduleTime).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rescheduleMaintenanceTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setLocationId("locationId1541836720")
+            .setAlternativeLocationId("alternativeLocationId1787141949")
+            .setRedisVersion("redisVersion-1972584739")
+            .setReservedIpRange("reservedIpRange575015950")
+            .setSecondaryIpRange("secondaryIpRange-1937131454")
+            .setHost("host3208616")
+            .setPort(3446913)
+            .setCurrentLocationId("currentLocationId-1808505335")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStatusMessage("statusMessage-958704715")
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setMemorySizeGb(34199707)
+            .setAuthorizedNetwork("authorizedNetwork1515554835")
+            .setPersistenceIamIdentity("persistenceIamIdentity1464017428")
+            .setAuthEnabled(true)
+            .addAllServerCaCerts(new ArrayList<TlsCertificate>())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setReplicaCount(564075208)
+            .addAllNodes(new ArrayList<NodeInfo>())
+            .setReadEndpoint("readEndpoint294053195")
+            .setReadEndpointPort(-1676143102)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rescheduleMaintenanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudRedis.addResponse(resultOperation);
+
+    String name = "name3373707";
+    RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+        RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+    Timestamp scheduleTime = Timestamp.newBuilder().build();
+
+    Instance actualResponse =
+        client.rescheduleMaintenanceAsync(name, rescheduleType, scheduleTime).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RescheduleMaintenanceRequest actualRequest =
+        ((RescheduleMaintenanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(rescheduleType, actualRequest.getRescheduleType());
+    Assert.assertEquals(scheduleTime, actualRequest.getScheduleTime());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rescheduleMaintenanceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedis.addException(exception);
+
+    try {
+      String name = "name3373707";
+      RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+          RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+      Timestamp scheduleTime = Timestamp.newBuilder().build();
+      client.rescheduleMaintenanceAsync(name, rescheduleType, scheduleTime).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

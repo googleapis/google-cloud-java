@@ -132,6 +132,54 @@ public final class CloudRedisGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.v1.GetInstanceAuthStringRequest,
+          com.google.cloud.redis.v1.InstanceAuthString>
+      getGetInstanceAuthStringMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetInstanceAuthString",
+      requestType = com.google.cloud.redis.v1.GetInstanceAuthStringRequest.class,
+      responseType = com.google.cloud.redis.v1.InstanceAuthString.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.v1.GetInstanceAuthStringRequest,
+          com.google.cloud.redis.v1.InstanceAuthString>
+      getGetInstanceAuthStringMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.v1.GetInstanceAuthStringRequest,
+            com.google.cloud.redis.v1.InstanceAuthString>
+        getGetInstanceAuthStringMethod;
+    if ((getGetInstanceAuthStringMethod = CloudRedisGrpc.getGetInstanceAuthStringMethod) == null) {
+      synchronized (CloudRedisGrpc.class) {
+        if ((getGetInstanceAuthStringMethod = CloudRedisGrpc.getGetInstanceAuthStringMethod)
+            == null) {
+          CloudRedisGrpc.getGetInstanceAuthStringMethod =
+              getGetInstanceAuthStringMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.v1.GetInstanceAuthStringRequest,
+                          com.google.cloud.redis.v1.InstanceAuthString>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetInstanceAuthString"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.v1.GetInstanceAuthStringRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.v1.InstanceAuthString.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisMethodDescriptorSupplier("GetInstanceAuthString"))
+                      .build();
+        }
+      }
+    }
+    return getGetInstanceAuthStringMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.CreateInstanceRequest, com.google.longrunning.Operation>
       getCreateInstanceMethod;
 
@@ -422,6 +470,52 @@ public final class CloudRedisGrpc {
     return getDeleteInstanceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.v1.RescheduleMaintenanceRequest, com.google.longrunning.Operation>
+      getRescheduleMaintenanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RescheduleMaintenance",
+      requestType = com.google.cloud.redis.v1.RescheduleMaintenanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.v1.RescheduleMaintenanceRequest, com.google.longrunning.Operation>
+      getRescheduleMaintenanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.v1.RescheduleMaintenanceRequest,
+            com.google.longrunning.Operation>
+        getRescheduleMaintenanceMethod;
+    if ((getRescheduleMaintenanceMethod = CloudRedisGrpc.getRescheduleMaintenanceMethod) == null) {
+      synchronized (CloudRedisGrpc.class) {
+        if ((getRescheduleMaintenanceMethod = CloudRedisGrpc.getRescheduleMaintenanceMethod)
+            == null) {
+          CloudRedisGrpc.getRescheduleMaintenanceMethod =
+              getRescheduleMaintenanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.v1.RescheduleMaintenanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RescheduleMaintenance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.v1.RescheduleMaintenanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisMethodDescriptorSupplier("RescheduleMaintenance"))
+                      .build();
+        }
+      }
+    }
+    return getRescheduleMaintenanceMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudRedisStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudRedisStub> factory =
@@ -514,6 +608,23 @@ public final class CloudRedisGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.Instance> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the AUTH string for a Redis instance. If AUTH is not enabled for the
+     * instance the response will be empty. This information is not included in
+     * the details returned to GetInstance.
+     * </pre>
+     */
+    public void getInstanceAuthString(
+        com.google.cloud.redis.v1.GetInstanceAuthStringRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.InstanceAuthString>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetInstanceAuthStringMethod(), responseObserver);
     }
 
     /**
@@ -636,6 +747,21 @@ public final class CloudRedisGrpc {
           getDeleteInstanceMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Reschedule maintenance for a given instance in a given project and
+     * location.
+     * </pre>
+     */
+    public void rescheduleMaintenance(
+        com.google.cloud.redis.v1.RescheduleMaintenanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRescheduleMaintenanceMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -652,6 +778,13 @@ public final class CloudRedisGrpc {
                   new MethodHandlers<
                       com.google.cloud.redis.v1.GetInstanceRequest,
                       com.google.cloud.redis.v1.Instance>(this, METHODID_GET_INSTANCE)))
+          .addMethod(
+              getGetInstanceAuthStringMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.redis.v1.GetInstanceAuthStringRequest,
+                      com.google.cloud.redis.v1.InstanceAuthString>(
+                      this, METHODID_GET_INSTANCE_AUTH_STRING)))
           .addMethod(
               getCreateInstanceMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -694,6 +827,12 @@ public final class CloudRedisGrpc {
                   new MethodHandlers<
                       com.google.cloud.redis.v1.DeleteInstanceRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_INSTANCE)))
+          .addMethod(
+              getRescheduleMaintenanceMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.redis.v1.RescheduleMaintenanceRequest,
+                      com.google.longrunning.Operation>(this, METHODID_RESCHEDULE_MAINTENANCE)))
           .build();
     }
   }
@@ -760,6 +899,25 @@ public final class CloudRedisGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.Instance> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the AUTH string for a Redis instance. If AUTH is not enabled for the
+     * instance the response will be empty. This information is not included in
+     * the details returned to GetInstance.
+     * </pre>
+     */
+    public void getInstanceAuthString(
+        com.google.cloud.redis.v1.GetInstanceAuthStringRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.InstanceAuthString>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetInstanceAuthStringMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -897,6 +1055,23 @@ public final class CloudRedisGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedule maintenance for a given instance in a given project and
+     * location.
+     * </pre>
+     */
+    public void rescheduleMaintenance(
+        com.google.cloud.redis.v1.RescheduleMaintenanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRescheduleMaintenanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -958,6 +1133,21 @@ public final class CloudRedisGrpc {
         com.google.cloud.redis.v1.GetInstanceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the AUTH string for a Redis instance. If AUTH is not enabled for the
+     * instance the response will be empty. This information is not included in
+     * the details returned to GetInstance.
+     * </pre>
+     */
+    public com.google.cloud.redis.v1.InstanceAuthString getInstanceAuthString(
+        com.google.cloud.redis.v1.GetInstanceAuthStringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInstanceAuthStringMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1072,6 +1262,20 @@ public final class CloudRedisGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedule maintenance for a given instance in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rescheduleMaintenance(
+        com.google.cloud.redis.v1.RescheduleMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRescheduleMaintenanceMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1133,6 +1337,22 @@ public final class CloudRedisGrpc {
         getInstance(com.google.cloud.redis.v1.GetInstanceRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the AUTH string for a Redis instance. If AUTH is not enabled for the
+     * instance the response will be empty. This information is not included in
+     * the details returned to GetInstance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.v1.InstanceAuthString>
+        getInstanceAuthString(com.google.cloud.redis.v1.GetInstanceAuthStringRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetInstanceAuthStringMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1247,17 +1467,33 @@ public final class CloudRedisGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteInstanceMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedule maintenance for a given instance in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        rescheduleMaintenance(com.google.cloud.redis.v1.RescheduleMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRescheduleMaintenanceMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSTANCES = 0;
   private static final int METHODID_GET_INSTANCE = 1;
-  private static final int METHODID_CREATE_INSTANCE = 2;
-  private static final int METHODID_UPDATE_INSTANCE = 3;
-  private static final int METHODID_UPGRADE_INSTANCE = 4;
-  private static final int METHODID_IMPORT_INSTANCE = 5;
-  private static final int METHODID_EXPORT_INSTANCE = 6;
-  private static final int METHODID_FAILOVER_INSTANCE = 7;
-  private static final int METHODID_DELETE_INSTANCE = 8;
+  private static final int METHODID_GET_INSTANCE_AUTH_STRING = 2;
+  private static final int METHODID_CREATE_INSTANCE = 3;
+  private static final int METHODID_UPDATE_INSTANCE = 4;
+  private static final int METHODID_UPGRADE_INSTANCE = 5;
+  private static final int METHODID_IMPORT_INSTANCE = 6;
+  private static final int METHODID_EXPORT_INSTANCE = 7;
+  private static final int METHODID_FAILOVER_INSTANCE = 8;
+  private static final int METHODID_DELETE_INSTANCE = 9;
+  private static final int METHODID_RESCHEDULE_MAINTENANCE = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1286,6 +1522,12 @@ public final class CloudRedisGrpc {
           serviceImpl.getInstance(
               (com.google.cloud.redis.v1.GetInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.Instance>) responseObserver);
+          break;
+        case METHODID_GET_INSTANCE_AUTH_STRING:
+          serviceImpl.getInstanceAuthString(
+              (com.google.cloud.redis.v1.GetInstanceAuthStringRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.InstanceAuthString>)
+                  responseObserver);
           break;
         case METHODID_CREATE_INSTANCE:
           serviceImpl.createInstance(
@@ -1320,6 +1562,11 @@ public final class CloudRedisGrpc {
         case METHODID_DELETE_INSTANCE:
           serviceImpl.deleteInstance(
               (com.google.cloud.redis.v1.DeleteInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RESCHEDULE_MAINTENANCE:
+          serviceImpl.rescheduleMaintenance(
+              (com.google.cloud.redis.v1.RescheduleMaintenanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -1388,6 +1635,7 @@ public final class CloudRedisGrpc {
                       .setSchemaDescriptor(new CloudRedisFileDescriptorSupplier())
                       .addMethod(getListInstancesMethod())
                       .addMethod(getGetInstanceMethod())
+                      .addMethod(getGetInstanceAuthStringMethod())
                       .addMethod(getCreateInstanceMethod())
                       .addMethod(getUpdateInstanceMethod())
                       .addMethod(getUpgradeInstanceMethod())
@@ -1395,6 +1643,7 @@ public final class CloudRedisGrpc {
                       .addMethod(getExportInstanceMethod())
                       .addMethod(getFailoverInstanceMethod())
                       .addMethod(getDeleteInstanceMethod())
+                      .addMethod(getRescheduleMaintenanceMethod())
                       .build();
         }
       }

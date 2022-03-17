@@ -34,6 +34,7 @@ import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -459,6 +460,107 @@ public class CloudRedisClient implements BackgroundResource {
    */
   public final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return stub.getInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the AUTH string for a Redis instance. If AUTH is not enabled for the instance the response
+   * will be empty. This information is not included in the details returned to GetInstance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InstanceAuthString response = cloudRedisClient.getInstanceAuthString(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InstanceAuthString getInstanceAuthString(InstanceName name) {
+    GetInstanceAuthStringRequest request =
+        GetInstanceAuthStringRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getInstanceAuthString(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the AUTH string for a Redis instance. If AUTH is not enabled for the instance the response
+   * will be empty. This information is not included in the details returned to GetInstance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   InstanceAuthString response = cloudRedisClient.getInstanceAuthString(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InstanceAuthString getInstanceAuthString(String name) {
+    GetInstanceAuthStringRequest request =
+        GetInstanceAuthStringRequest.newBuilder().setName(name).build();
+    return getInstanceAuthString(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the AUTH string for a Redis instance. If AUTH is not enabled for the instance the response
+   * will be empty. This information is not included in the details returned to GetInstance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   GetInstanceAuthStringRequest request =
+   *       GetInstanceAuthStringRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   InstanceAuthString response = cloudRedisClient.getInstanceAuthString(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InstanceAuthString getInstanceAuthString(GetInstanceAuthStringRequest request) {
+    return getInstanceAuthStringCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the AUTH string for a Redis instance. If AUTH is not enabled for the instance the response
+   * will be empty. This information is not included in the details returned to GetInstance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   GetInstanceAuthStringRequest request =
+   *       GetInstanceAuthStringRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   ApiFuture<InstanceAuthString> future =
+   *       cloudRedisClient.getInstanceAuthStringCallable().futureCall(request);
+   *   // Do something.
+   *   InstanceAuthString response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetInstanceAuthStringRequest, InstanceAuthString>
+      getInstanceAuthStringCallable() {
+    return stub.getInstanceAuthStringCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1420,6 +1522,159 @@ public class CloudRedisClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return stub.deleteInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedule maintenance for a given instance in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+   *       RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+   *   Timestamp scheduleTime = Timestamp.newBuilder().build();
+   *   Instance response =
+   *       cloudRedisClient.rescheduleMaintenanceAsync(name, rescheduleType, scheduleTime).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param rescheduleType Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time
+   *     as well.
+   * @param scheduleTime Optional. Timestamp when the maintenance shall be rescheduled to if
+   *     reschedule_type=SPECIFIC_TIME, in RFC 3339 format, for example `2012-11-15T16:19:00.094Z`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> rescheduleMaintenanceAsync(
+      InstanceName name,
+      RescheduleMaintenanceRequest.RescheduleType rescheduleType,
+      Timestamp scheduleTime) {
+    RescheduleMaintenanceRequest request =
+        RescheduleMaintenanceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setRescheduleType(rescheduleType)
+            .setScheduleTime(scheduleTime)
+            .build();
+    return rescheduleMaintenanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedule maintenance for a given instance in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+   *       RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+   *   Timestamp scheduleTime = Timestamp.newBuilder().build();
+   *   Instance response =
+   *       cloudRedisClient.rescheduleMaintenanceAsync(name, rescheduleType, scheduleTime).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param rescheduleType Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time
+   *     as well.
+   * @param scheduleTime Optional. Timestamp when the maintenance shall be rescheduled to if
+   *     reschedule_type=SPECIFIC_TIME, in RFC 3339 format, for example `2012-11-15T16:19:00.094Z`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> rescheduleMaintenanceAsync(
+      String name,
+      RescheduleMaintenanceRequest.RescheduleType rescheduleType,
+      Timestamp scheduleTime) {
+    RescheduleMaintenanceRequest request =
+        RescheduleMaintenanceRequest.newBuilder()
+            .setName(name)
+            .setRescheduleType(rescheduleType)
+            .setScheduleTime(scheduleTime)
+            .build();
+    return rescheduleMaintenanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedule maintenance for a given instance in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   RescheduleMaintenanceRequest request =
+   *       RescheduleMaintenanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setScheduleTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   Instance response = cloudRedisClient.rescheduleMaintenanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> rescheduleMaintenanceAsync(
+      RescheduleMaintenanceRequest request) {
+    return rescheduleMaintenanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedule maintenance for a given instance in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   RescheduleMaintenanceRequest request =
+   *       RescheduleMaintenanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setScheduleTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       cloudRedisClient.rescheduleMaintenanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable() {
+    return stub.rescheduleMaintenanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedule maintenance for a given instance in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   RescheduleMaintenanceRequest request =
+   *       RescheduleMaintenanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setScheduleTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudRedisClient.rescheduleMaintenanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceCallable() {
+    return stub.rescheduleMaintenanceCallable();
   }
 
   @Override

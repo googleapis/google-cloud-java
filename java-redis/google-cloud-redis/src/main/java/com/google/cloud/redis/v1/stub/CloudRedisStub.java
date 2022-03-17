@@ -25,12 +25,15 @@ import com.google.cloud.redis.v1.CreateInstanceRequest;
 import com.google.cloud.redis.v1.DeleteInstanceRequest;
 import com.google.cloud.redis.v1.ExportInstanceRequest;
 import com.google.cloud.redis.v1.FailoverInstanceRequest;
+import com.google.cloud.redis.v1.GetInstanceAuthStringRequest;
 import com.google.cloud.redis.v1.GetInstanceRequest;
 import com.google.cloud.redis.v1.ImportInstanceRequest;
 import com.google.cloud.redis.v1.Instance;
+import com.google.cloud.redis.v1.InstanceAuthString;
 import com.google.cloud.redis.v1.ListInstancesRequest;
 import com.google.cloud.redis.v1.ListInstancesResponse;
 import com.google.cloud.redis.v1.OperationMetadata;
+import com.google.cloud.redis.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.redis.v1.UpdateInstanceRequest;
 import com.google.cloud.redis.v1.UpgradeInstanceRequest;
 import com.google.longrunning.Operation;
@@ -62,6 +65,11 @@ public abstract class CloudRedisStub implements BackgroundResource {
 
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: getInstanceCallable()");
+  }
+
+  public UnaryCallable<GetInstanceAuthStringRequest, InstanceAuthString>
+      getInstanceAuthStringCallable() {
+    throw new UnsupportedOperationException("Not implemented: getInstanceAuthStringCallable()");
   }
 
   public OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
@@ -125,6 +133,16 @@ public abstract class CloudRedisStub implements BackgroundResource {
 
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteInstanceCallable()");
+  }
+
+  public OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: rescheduleMaintenanceOperationCallable()");
+  }
+
+  public UnaryCallable<RescheduleMaintenanceRequest, Operation> rescheduleMaintenanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: rescheduleMaintenanceCallable()");
   }
 
   @Override

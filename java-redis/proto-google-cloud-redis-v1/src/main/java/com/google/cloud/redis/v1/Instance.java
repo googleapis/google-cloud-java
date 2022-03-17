@@ -22,7 +22,7 @@ package com.google.cloud.redis.v1;
  *
  *
  * <pre>
- * A Google Cloud Redis instance.
+ * A Memorystore for Redis instance.
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1.Instance}
@@ -44,6 +44,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     alternativeLocationId_ = "";
     redisVersion_ = "";
     reservedIpRange_ = "";
+    secondaryIpRange_ = "";
     host_ = "";
     currentLocationId_ = "";
     state_ = 0;
@@ -52,6 +53,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     authorizedNetwork_ = "";
     persistenceIamIdentity_ = "";
     connectMode_ = 0;
+    serverCaCerts_ = java.util.Collections.emptyList();
+    transitEncryptionMode_ = 0;
     nodes_ = java.util.Collections.emptyList();
     readEndpoint_ = "";
     readReplicasMode_ = 0;
@@ -238,6 +241,69 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               connectMode_ = rawValue;
               break;
             }
+          case 184:
+            {
+              authEnabled_ = input.readBool();
+              break;
+            }
+          case 202:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                serverCaCerts_ =
+                    new java.util.ArrayList<com.google.cloud.redis.v1.TlsCertificate>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              serverCaCerts_.add(
+                  input.readMessage(
+                      com.google.cloud.redis.v1.TlsCertificate.parser(), extensionRegistry));
+              break;
+            }
+          case 208:
+            {
+              int rawValue = input.readEnum();
+
+              transitEncryptionMode_ = rawValue;
+              break;
+            }
+          case 218:
+            {
+              com.google.cloud.redis.v1.MaintenancePolicy.Builder subBuilder = null;
+              if (maintenancePolicy_ != null) {
+                subBuilder = maintenancePolicy_.toBuilder();
+              }
+              maintenancePolicy_ =
+                  input.readMessage(
+                      com.google.cloud.redis.v1.MaintenancePolicy.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maintenancePolicy_);
+                maintenancePolicy_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 226:
+            {
+              com.google.cloud.redis.v1.MaintenanceSchedule.Builder subBuilder = null;
+              if (maintenanceSchedule_ != null) {
+                subBuilder = maintenanceSchedule_.toBuilder();
+              }
+              maintenanceSchedule_ =
+                  input.readMessage(
+                      com.google.cloud.redis.v1.MaintenanceSchedule.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maintenanceSchedule_);
+                maintenanceSchedule_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 242:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              secondaryIpRange_ = s;
+              break;
+            }
           case 248:
             {
               replicaCount_ = input.readInt32();
@@ -245,9 +311,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             }
           case 258:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 nodes_ = new java.util.ArrayList<com.google.cloud.redis.v1.NodeInfo>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               nodes_.add(
                   input.readMessage(
@@ -288,6 +354,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        serverCaCerts_ = java.util.Collections.unmodifiableList(serverCaCerts_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         nodes_ = java.util.Collections.unmodifiableList(nodes_);
       }
       this.unknownFields = unknownFields.build();
@@ -938,6 +1007,166 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Available TLS modes.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.redis.v1.Instance.TransitEncryptionMode}
+   */
+  public enum TransitEncryptionMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>TRANSIT_ENCRYPTION_MODE_UNSPECIFIED = 0;</code>
+     */
+    TRANSIT_ENCRYPTION_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Client to Server traffic encryption enabled with server authentication.
+     * </pre>
+     *
+     * <code>SERVER_AUTHENTICATION = 1;</code>
+     */
+    SERVER_AUTHENTICATION(1),
+    /**
+     *
+     *
+     * <pre>
+     * TLS is disabled for the instance.
+     * </pre>
+     *
+     * <code>DISABLED = 2;</code>
+     */
+    DISABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>TRANSIT_ENCRYPTION_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TRANSIT_ENCRYPTION_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Client to Server traffic encryption enabled with server authentication.
+     * </pre>
+     *
+     * <code>SERVER_AUTHENTICATION = 1;</code>
+     */
+    public static final int SERVER_AUTHENTICATION_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * TLS is disabled for the instance.
+     * </pre>
+     *
+     * <code>DISABLED = 2;</code>
+     */
+    public static final int DISABLED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TransitEncryptionMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TransitEncryptionMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TRANSIT_ENCRYPTION_MODE_UNSPECIFIED;
+        case 1:
+          return SERVER_AUTHENTICATION;
+        case 2:
+          return DISABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TransitEncryptionMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TransitEncryptionMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<TransitEncryptionMode>() {
+              public TransitEncryptionMode findValueByNumber(int number) {
+                return TransitEncryptionMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.redis.v1.Instance.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final TransitEncryptionMode[] VALUES = values();
+
+    public static TransitEncryptionMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TransitEncryptionMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.redis.v1.Instance.TransitEncryptionMode)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * Read replicas mode.
    * </pre>
    *
@@ -948,8 +1177,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If not set, Memorystore Redis backend will pick the mode based on other fields in
-     * the request.
+     * If not set, Memorystore Redis backend will default to
+     * READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>READ_REPLICAS_MODE_UNSPECIFIED = 0;</code>
@@ -971,7 +1200,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If enabled, read endpoint will be provided and the instance can scale
-     * up and down the number of replicas.
+     * up and down the number of replicas. Not valid for basic tier.
      * </pre>
      *
      * <code>READ_REPLICAS_ENABLED = 2;</code>
@@ -984,8 +1213,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If not set, Memorystore Redis backend will pick the mode based on other fields in
-     * the request.
+     * If not set, Memorystore Redis backend will default to
+     * READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>READ_REPLICAS_MODE_UNSPECIFIED = 0;</code>
@@ -1007,7 +1236,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If enabled, read endpoint will be provided and the instance can scale
-     * up and down the number of replicas.
+     * up and down the number of replicas. Not valid for basic tier.
      * </pre>
      *
      * <code>READ_REPLICAS_ENABLED = 2;</code>
@@ -1074,7 +1303,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.redis.v1.Instance.getDescriptor().getEnumTypes().get(3);
+      return com.google.cloud.redis.v1.Instance.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final ReadReplicasMode[] VALUES = values();
@@ -1541,6 +1770,63 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       reservedIpRange_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SECONDARY_IP_RANGE_FIELD_NUMBER = 30;
+  private volatile java.lang.Object secondaryIpRange_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional IP range for node placement. Required when enabling read
+   * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+   * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+   * must be the name of an allocated address range associated with the private
+   * service access connection, or "auto".
+   * </pre>
+   *
+   * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The secondaryIpRange.
+   */
+  @java.lang.Override
+  public java.lang.String getSecondaryIpRange() {
+    java.lang.Object ref = secondaryIpRange_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      secondaryIpRange_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional IP range for node placement. Required when enabling read
+   * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+   * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+   * must be the name of an allocated address range associated with the private
+   * service access connection, or "auto".
+   * </pre>
+   *
+   * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for secondaryIpRange.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSecondaryIpRangeBytes() {
+    java.lang.Object ref = secondaryIpRange_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      secondaryIpRange_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -2176,15 +2462,274 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.redis.v1.Instance.ConnectMode.UNRECOGNIZED : result;
   }
 
+  public static final int AUTH_ENABLED_FIELD_NUMBER = 23;
+  private boolean authEnabled_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to
+   * "true" AUTH is enabled on the instance. Default value is "false" meaning
+   * AUTH is disabled.
+   * </pre>
+   *
+   * <code>bool auth_enabled = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The authEnabled.
+   */
+  @java.lang.Override
+  public boolean getAuthEnabled() {
+    return authEnabled_;
+  }
+
+  public static final int SERVER_CA_CERTS_FIELD_NUMBER = 25;
+  private java.util.List<com.google.cloud.redis.v1.TlsCertificate> serverCaCerts_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of server CA certificates for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.redis.v1.TlsCertificate> getServerCaCertsList() {
+    return serverCaCerts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of server CA certificates for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.redis.v1.TlsCertificateOrBuilder>
+      getServerCaCertsOrBuilderList() {
+    return serverCaCerts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of server CA certificates for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getServerCaCertsCount() {
+    return serverCaCerts_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of server CA certificates for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1.TlsCertificate getServerCaCerts(int index) {
+    return serverCaCerts_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of server CA certificates for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1.TlsCertificateOrBuilder getServerCaCertsOrBuilder(int index) {
+    return serverCaCerts_.get(index);
+  }
+
+  public static final int TRANSIT_ENCRYPTION_MODE_FIELD_NUMBER = 26;
+  private int transitEncryptionMode_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The TLS mode of the Redis instance.
+   * If not provided, TLS is disabled for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.Instance.TransitEncryptionMode transit_encryption_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for transitEncryptionMode.
+   */
+  @java.lang.Override
+  public int getTransitEncryptionModeValue() {
+    return transitEncryptionMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The TLS mode of the Redis instance.
+   * If not provided, TLS is disabled for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.Instance.TransitEncryptionMode transit_encryption_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transitEncryptionMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1.Instance.TransitEncryptionMode getTransitEncryptionMode() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.redis.v1.Instance.TransitEncryptionMode result =
+        com.google.cloud.redis.v1.Instance.TransitEncryptionMode.valueOf(transitEncryptionMode_);
+    return result == null
+        ? com.google.cloud.redis.v1.Instance.TransitEncryptionMode.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 27;
+  private com.google.cloud.redis.v1.MaintenancePolicy maintenancePolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance. If not provided,
+   * maintenance events can be performed at any time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenancePolicy() {
+    return maintenancePolicy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance. If not provided,
+   * maintenance events can be performed at any time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenancePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1.MaintenancePolicy getMaintenancePolicy() {
+    return maintenancePolicy_ == null
+        ? com.google.cloud.redis.v1.MaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance. If not provided,
+   * maintenance events can be performed at any time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder() {
+    return getMaintenancePolicy();
+  }
+
+  public static final int MAINTENANCE_SCHEDULE_FIELD_NUMBER = 28;
+  private com.google.cloud.redis.v1.MaintenanceSchedule maintenanceSchedule_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Date and time of upcoming maintenance events which have been
+   * scheduled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the maintenanceSchedule field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceSchedule() {
+    return maintenanceSchedule_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Date and time of upcoming maintenance events which have been
+   * scheduled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The maintenanceSchedule.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1.MaintenanceSchedule getMaintenanceSchedule() {
+    return maintenanceSchedule_ == null
+        ? com.google.cloud.redis.v1.MaintenanceSchedule.getDefaultInstance()
+        : maintenanceSchedule_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Date and time of upcoming maintenance events which have been
+   * scheduled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1.MaintenanceScheduleOrBuilder getMaintenanceScheduleOrBuilder() {
+    return getMaintenanceSchedule();
+  }
+
   public static final int REPLICA_COUNT_FIELD_NUMBER = 31;
   private int replicaCount_;
   /**
    *
    *
    * <pre>
-   * Optional. The number of replica nodes. Valid range for standard tier
-   * is [1-5] and defaults to 1. Valid value for basic tier is 0 and defaults
-   * to 0.
+   * Optional. The number of replica nodes. The valid range for the Standard Tier with
+   * read replicas enabled is [1-5] and defaults to 2. If read replicas are not
+   * enabled for a Standard Tier instance, the only valid value is 1 and the
+   * default is 1. The valid value for basic tier is 0 and the default is also
+   * 0.
    * </pre>
    *
    * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2355,7 +2900,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Read replica mode.
+   * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
    * </pre>
    *
    * <code>
@@ -2372,7 +2917,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Read replica mode.
+   * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
    * </pre>
    *
    * <code>
@@ -2460,6 +3005,27 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (connectMode_
         != com.google.cloud.redis.v1.Instance.ConnectMode.CONNECT_MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(22, connectMode_);
+    }
+    if (authEnabled_ != false) {
+      output.writeBool(23, authEnabled_);
+    }
+    for (int i = 0; i < serverCaCerts_.size(); i++) {
+      output.writeMessage(25, serverCaCerts_.get(i));
+    }
+    if (transitEncryptionMode_
+        != com.google.cloud.redis.v1.Instance.TransitEncryptionMode
+            .TRANSIT_ENCRYPTION_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(26, transitEncryptionMode_);
+    }
+    if (maintenancePolicy_ != null) {
+      output.writeMessage(27, getMaintenancePolicy());
+    }
+    if (maintenanceSchedule_ != null) {
+      output.writeMessage(28, getMaintenanceSchedule());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secondaryIpRange_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 30, secondaryIpRange_);
     }
     if (replicaCount_ != 0) {
       output.writeInt32(31, replicaCount_);
@@ -2559,6 +3125,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.redis.v1.Instance.ConnectMode.CONNECT_MODE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, connectMode_);
     }
+    if (authEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(23, authEnabled_);
+    }
+    for (int i = 0; i < serverCaCerts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, serverCaCerts_.get(i));
+    }
+    if (transitEncryptionMode_
+        != com.google.cloud.redis.v1.Instance.TransitEncryptionMode
+            .TRANSIT_ENCRYPTION_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(26, transitEncryptionMode_);
+    }
+    if (maintenancePolicy_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getMaintenancePolicy());
+    }
+    if (maintenanceSchedule_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(28, getMaintenanceSchedule());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secondaryIpRange_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, secondaryIpRange_);
+    }
     if (replicaCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(31, replicaCount_);
     }
@@ -2598,6 +3186,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getAlternativeLocationId().equals(other.getAlternativeLocationId())) return false;
     if (!getRedisVersion().equals(other.getRedisVersion())) return false;
     if (!getReservedIpRange().equals(other.getReservedIpRange())) return false;
+    if (!getSecondaryIpRange().equals(other.getSecondaryIpRange())) return false;
     if (!getHost().equals(other.getHost())) return false;
     if (getPort() != other.getPort()) return false;
     if (!getCurrentLocationId().equals(other.getCurrentLocationId())) return false;
@@ -2613,6 +3202,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getAuthorizedNetwork().equals(other.getAuthorizedNetwork())) return false;
     if (!getPersistenceIamIdentity().equals(other.getPersistenceIamIdentity())) return false;
     if (connectMode_ != other.connectMode_) return false;
+    if (getAuthEnabled() != other.getAuthEnabled()) return false;
+    if (!getServerCaCertsList().equals(other.getServerCaCertsList())) return false;
+    if (transitEncryptionMode_ != other.transitEncryptionMode_) return false;
+    if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
+    if (hasMaintenancePolicy()) {
+      if (!getMaintenancePolicy().equals(other.getMaintenancePolicy())) return false;
+    }
+    if (hasMaintenanceSchedule() != other.hasMaintenanceSchedule()) return false;
+    if (hasMaintenanceSchedule()) {
+      if (!getMaintenanceSchedule().equals(other.getMaintenanceSchedule())) return false;
+    }
     if (getReplicaCount() != other.getReplicaCount()) return false;
     if (!getNodesList().equals(other.getNodesList())) return false;
     if (!getReadEndpoint().equals(other.getReadEndpoint())) return false;
@@ -2645,6 +3245,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getRedisVersion().hashCode();
     hash = (37 * hash) + RESERVED_IP_RANGE_FIELD_NUMBER;
     hash = (53 * hash) + getReservedIpRange().hashCode();
+    hash = (37 * hash) + SECONDARY_IP_RANGE_FIELD_NUMBER;
+    hash = (53 * hash) + getSecondaryIpRange().hashCode();
     hash = (37 * hash) + HOST_FIELD_NUMBER;
     hash = (53 * hash) + getHost().hashCode();
     hash = (37 * hash) + PORT_FIELD_NUMBER;
@@ -2673,6 +3275,22 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getPersistenceIamIdentity().hashCode();
     hash = (37 * hash) + CONNECT_MODE_FIELD_NUMBER;
     hash = (53 * hash) + connectMode_;
+    hash = (37 * hash) + AUTH_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAuthEnabled());
+    if (getServerCaCertsCount() > 0) {
+      hash = (37 * hash) + SERVER_CA_CERTS_FIELD_NUMBER;
+      hash = (53 * hash) + getServerCaCertsList().hashCode();
+    }
+    hash = (37 * hash) + TRANSIT_ENCRYPTION_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + transitEncryptionMode_;
+    if (hasMaintenancePolicy()) {
+      hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenancePolicy().hashCode();
+    }
+    if (hasMaintenanceSchedule()) {
+      hash = (37 * hash) + MAINTENANCE_SCHEDULE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceSchedule().hashCode();
+    }
     hash = (37 * hash) + REPLICA_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getReplicaCount();
     if (getNodesCount() > 0) {
@@ -2788,7 +3406,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Google Cloud Redis instance.
+   * A Memorystore for Redis instance.
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1.Instance}
@@ -2848,6 +3466,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getServerCaCertsFieldBuilder();
         getNodesFieldBuilder();
       }
     }
@@ -2867,6 +3486,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       redisVersion_ = "";
 
       reservedIpRange_ = "";
+
+      secondaryIpRange_ = "";
 
       host_ = "";
 
@@ -2895,11 +3516,33 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
       connectMode_ = 0;
 
+      authEnabled_ = false;
+
+      if (serverCaCertsBuilder_ == null) {
+        serverCaCerts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        serverCaCertsBuilder_.clear();
+      }
+      transitEncryptionMode_ = 0;
+
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = null;
+      } else {
+        maintenancePolicy_ = null;
+        maintenancePolicyBuilder_ = null;
+      }
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceSchedule_ = null;
+      } else {
+        maintenanceSchedule_ = null;
+        maintenanceScheduleBuilder_ = null;
+      }
       replicaCount_ = 0;
 
       if (nodesBuilder_ == null) {
         nodes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         nodesBuilder_.clear();
       }
@@ -2944,6 +3587,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       result.alternativeLocationId_ = alternativeLocationId_;
       result.redisVersion_ = redisVersion_;
       result.reservedIpRange_ = reservedIpRange_;
+      result.secondaryIpRange_ = secondaryIpRange_;
       result.host_ = host_;
       result.port_ = port_;
       result.currentLocationId_ = currentLocationId_;
@@ -2961,11 +3605,32 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       result.authorizedNetwork_ = authorizedNetwork_;
       result.persistenceIamIdentity_ = persistenceIamIdentity_;
       result.connectMode_ = connectMode_;
+      result.authEnabled_ = authEnabled_;
+      if (serverCaCertsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          serverCaCerts_ = java.util.Collections.unmodifiableList(serverCaCerts_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.serverCaCerts_ = serverCaCerts_;
+      } else {
+        result.serverCaCerts_ = serverCaCertsBuilder_.build();
+      }
+      result.transitEncryptionMode_ = transitEncryptionMode_;
+      if (maintenancePolicyBuilder_ == null) {
+        result.maintenancePolicy_ = maintenancePolicy_;
+      } else {
+        result.maintenancePolicy_ = maintenancePolicyBuilder_.build();
+      }
+      if (maintenanceScheduleBuilder_ == null) {
+        result.maintenanceSchedule_ = maintenanceSchedule_;
+      } else {
+        result.maintenanceSchedule_ = maintenanceScheduleBuilder_.build();
+      }
       result.replicaCount_ = replicaCount_;
       if (nodesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           nodes_ = java.util.Collections.unmodifiableList(nodes_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.nodes_ = nodes_;
       } else {
@@ -3048,6 +3713,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         reservedIpRange_ = other.reservedIpRange_;
         onChanged();
       }
+      if (!other.getSecondaryIpRange().isEmpty()) {
+        secondaryIpRange_ = other.secondaryIpRange_;
+        onChanged();
+      }
       if (!other.getHost().isEmpty()) {
         host_ = other.host_;
         onChanged();
@@ -3087,6 +3756,45 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (other.connectMode_ != 0) {
         setConnectModeValue(other.getConnectModeValue());
       }
+      if (other.getAuthEnabled() != false) {
+        setAuthEnabled(other.getAuthEnabled());
+      }
+      if (serverCaCertsBuilder_ == null) {
+        if (!other.serverCaCerts_.isEmpty()) {
+          if (serverCaCerts_.isEmpty()) {
+            serverCaCerts_ = other.serverCaCerts_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureServerCaCertsIsMutable();
+            serverCaCerts_.addAll(other.serverCaCerts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.serverCaCerts_.isEmpty()) {
+          if (serverCaCertsBuilder_.isEmpty()) {
+            serverCaCertsBuilder_.dispose();
+            serverCaCertsBuilder_ = null;
+            serverCaCerts_ = other.serverCaCerts_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            serverCaCertsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getServerCaCertsFieldBuilder()
+                    : null;
+          } else {
+            serverCaCertsBuilder_.addAllMessages(other.serverCaCerts_);
+          }
+        }
+      }
+      if (other.transitEncryptionMode_ != 0) {
+        setTransitEncryptionModeValue(other.getTransitEncryptionModeValue());
+      }
+      if (other.hasMaintenancePolicy()) {
+        mergeMaintenancePolicy(other.getMaintenancePolicy());
+      }
+      if (other.hasMaintenanceSchedule()) {
+        mergeMaintenanceSchedule(other.getMaintenanceSchedule());
+      }
       if (other.getReplicaCount() != 0) {
         setReplicaCount(other.getReplicaCount());
       }
@@ -3094,7 +3802,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         if (!other.nodes_.isEmpty()) {
           if (nodes_.isEmpty()) {
             nodes_ = other.nodes_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureNodesIsMutable();
             nodes_.addAll(other.nodes_);
@@ -3107,7 +3815,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             nodesBuilder_.dispose();
             nodesBuilder_ = null;
             nodes_ = other.nodes_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             nodesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNodesFieldBuilder()
@@ -4087,6 +4795,132 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       reservedIpRange_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object secondaryIpRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional IP range for node placement. Required when enabling read
+     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+     * must be the name of an allocated address range associated with the private
+     * service access connection, or "auto".
+     * </pre>
+     *
+     * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The secondaryIpRange.
+     */
+    public java.lang.String getSecondaryIpRange() {
+      java.lang.Object ref = secondaryIpRange_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secondaryIpRange_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional IP range for node placement. Required when enabling read
+     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+     * must be the name of an allocated address range associated with the private
+     * service access connection, or "auto".
+     * </pre>
+     *
+     * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for secondaryIpRange.
+     */
+    public com.google.protobuf.ByteString getSecondaryIpRangeBytes() {
+      java.lang.Object ref = secondaryIpRange_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        secondaryIpRange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional IP range for node placement. Required when enabling read
+     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+     * must be the name of an allocated address range associated with the private
+     * service access connection, or "auto".
+     * </pre>
+     *
+     * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The secondaryIpRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecondaryIpRange(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      secondaryIpRange_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional IP range for node placement. Required when enabling read
+     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+     * must be the name of an allocated address range associated with the private
+     * service access connection, or "auto".
+     * </pre>
+     *
+     * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecondaryIpRange() {
+
+      secondaryIpRange_ = getDefaultInstance().getSecondaryIpRange();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional IP range for node placement. Required when enabling read
+     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+     * must be the name of an allocated address range associated with the private
+     * service access connection, or "auto".
+     * </pre>
+     *
+     * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for secondaryIpRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecondaryIpRangeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      secondaryIpRange_ = value;
       onChanged();
       return this;
     }
@@ -5552,14 +6386,1000 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean authEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to
+     * "true" AUTH is enabled on the instance. Default value is "false" meaning
+     * AUTH is disabled.
+     * </pre>
+     *
+     * <code>bool auth_enabled = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The authEnabled.
+     */
+    @java.lang.Override
+    public boolean getAuthEnabled() {
+      return authEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to
+     * "true" AUTH is enabled on the instance. Default value is "false" meaning
+     * AUTH is disabled.
+     * </pre>
+     *
+     * <code>bool auth_enabled = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The authEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthEnabled(boolean value) {
+
+      authEnabled_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to
+     * "true" AUTH is enabled on the instance. Default value is "false" meaning
+     * AUTH is disabled.
+     * </pre>
+     *
+     * <code>bool auth_enabled = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthEnabled() {
+
+      authEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.redis.v1.TlsCertificate> serverCaCerts_ =
+        java.util.Collections.emptyList();
+
+    private void ensureServerCaCertsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        serverCaCerts_ =
+            new java.util.ArrayList<com.google.cloud.redis.v1.TlsCertificate>(serverCaCerts_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.redis.v1.TlsCertificate,
+            com.google.cloud.redis.v1.TlsCertificate.Builder,
+            com.google.cloud.redis.v1.TlsCertificateOrBuilder>
+        serverCaCertsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.redis.v1.TlsCertificate> getServerCaCertsList() {
+      if (serverCaCertsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(serverCaCerts_);
+      } else {
+        return serverCaCertsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getServerCaCertsCount() {
+      if (serverCaCertsBuilder_ == null) {
+        return serverCaCerts_.size();
+      } else {
+        return serverCaCertsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.v1.TlsCertificate getServerCaCerts(int index) {
+      if (serverCaCertsBuilder_ == null) {
+        return serverCaCerts_.get(index);
+      } else {
+        return serverCaCertsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setServerCaCerts(int index, com.google.cloud.redis.v1.TlsCertificate value) {
+      if (serverCaCertsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServerCaCertsIsMutable();
+        serverCaCerts_.set(index, value);
+        onChanged();
+      } else {
+        serverCaCertsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setServerCaCerts(
+        int index, com.google.cloud.redis.v1.TlsCertificate.Builder builderForValue) {
+      if (serverCaCertsBuilder_ == null) {
+        ensureServerCaCertsIsMutable();
+        serverCaCerts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        serverCaCertsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addServerCaCerts(com.google.cloud.redis.v1.TlsCertificate value) {
+      if (serverCaCertsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServerCaCertsIsMutable();
+        serverCaCerts_.add(value);
+        onChanged();
+      } else {
+        serverCaCertsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addServerCaCerts(int index, com.google.cloud.redis.v1.TlsCertificate value) {
+      if (serverCaCertsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServerCaCertsIsMutable();
+        serverCaCerts_.add(index, value);
+        onChanged();
+      } else {
+        serverCaCertsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addServerCaCerts(
+        com.google.cloud.redis.v1.TlsCertificate.Builder builderForValue) {
+      if (serverCaCertsBuilder_ == null) {
+        ensureServerCaCertsIsMutable();
+        serverCaCerts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        serverCaCertsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addServerCaCerts(
+        int index, com.google.cloud.redis.v1.TlsCertificate.Builder builderForValue) {
+      if (serverCaCertsBuilder_ == null) {
+        ensureServerCaCertsIsMutable();
+        serverCaCerts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        serverCaCertsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllServerCaCerts(
+        java.lang.Iterable<? extends com.google.cloud.redis.v1.TlsCertificate> values) {
+      if (serverCaCertsBuilder_ == null) {
+        ensureServerCaCertsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serverCaCerts_);
+        onChanged();
+      } else {
+        serverCaCertsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearServerCaCerts() {
+      if (serverCaCertsBuilder_ == null) {
+        serverCaCerts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        serverCaCertsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeServerCaCerts(int index) {
+      if (serverCaCertsBuilder_ == null) {
+        ensureServerCaCertsIsMutable();
+        serverCaCerts_.remove(index);
+        onChanged();
+      } else {
+        serverCaCertsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.v1.TlsCertificate.Builder getServerCaCertsBuilder(int index) {
+      return getServerCaCertsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.v1.TlsCertificateOrBuilder getServerCaCertsOrBuilder(int index) {
+      if (serverCaCertsBuilder_ == null) {
+        return serverCaCerts_.get(index);
+      } else {
+        return serverCaCertsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.redis.v1.TlsCertificateOrBuilder>
+        getServerCaCertsOrBuilderList() {
+      if (serverCaCertsBuilder_ != null) {
+        return serverCaCertsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(serverCaCerts_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.v1.TlsCertificate.Builder addServerCaCertsBuilder() {
+      return getServerCaCertsFieldBuilder()
+          .addBuilder(com.google.cloud.redis.v1.TlsCertificate.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.v1.TlsCertificate.Builder addServerCaCertsBuilder(int index) {
+      return getServerCaCertsFieldBuilder()
+          .addBuilder(index, com.google.cloud.redis.v1.TlsCertificate.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of server CA certificates for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.redis.v1.TlsCertificate.Builder>
+        getServerCaCertsBuilderList() {
+      return getServerCaCertsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.redis.v1.TlsCertificate,
+            com.google.cloud.redis.v1.TlsCertificate.Builder,
+            com.google.cloud.redis.v1.TlsCertificateOrBuilder>
+        getServerCaCertsFieldBuilder() {
+      if (serverCaCertsBuilder_ == null) {
+        serverCaCertsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.redis.v1.TlsCertificate,
+                com.google.cloud.redis.v1.TlsCertificate.Builder,
+                com.google.cloud.redis.v1.TlsCertificateOrBuilder>(
+                serverCaCerts_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        serverCaCerts_ = null;
+      }
+      return serverCaCertsBuilder_;
+    }
+
+    private int transitEncryptionMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The TLS mode of the Redis instance.
+     * If not provided, TLS is disabled for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.Instance.TransitEncryptionMode transit_encryption_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for transitEncryptionMode.
+     */
+    @java.lang.Override
+    public int getTransitEncryptionModeValue() {
+      return transitEncryptionMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The TLS mode of the Redis instance.
+     * If not provided, TLS is disabled for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.Instance.TransitEncryptionMode transit_encryption_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for transitEncryptionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransitEncryptionModeValue(int value) {
+
+      transitEncryptionMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The TLS mode of the Redis instance.
+     * If not provided, TLS is disabled for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.Instance.TransitEncryptionMode transit_encryption_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The transitEncryptionMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.redis.v1.Instance.TransitEncryptionMode getTransitEncryptionMode() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.redis.v1.Instance.TransitEncryptionMode result =
+          com.google.cloud.redis.v1.Instance.TransitEncryptionMode.valueOf(transitEncryptionMode_);
+      return result == null
+          ? com.google.cloud.redis.v1.Instance.TransitEncryptionMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The TLS mode of the Redis instance.
+     * If not provided, TLS is disabled for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.Instance.TransitEncryptionMode transit_encryption_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The transitEncryptionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransitEncryptionMode(
+        com.google.cloud.redis.v1.Instance.TransitEncryptionMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      transitEncryptionMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The TLS mode of the Redis instance.
+     * If not provided, TLS is disabled for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.Instance.TransitEncryptionMode transit_encryption_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTransitEncryptionMode() {
+
+      transitEncryptionMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.redis.v1.MaintenancePolicy maintenancePolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.v1.MaintenancePolicy,
+            com.google.cloud.redis.v1.MaintenancePolicy.Builder,
+            com.google.cloud.redis.v1.MaintenancePolicyOrBuilder>
+        maintenancePolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * maintenance events can be performed at any time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maintenancePolicy field is set.
+     */
+    public boolean hasMaintenancePolicy() {
+      return maintenancePolicyBuilder_ != null || maintenancePolicy_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * maintenance events can be performed at any time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maintenancePolicy.
+     */
+    public com.google.cloud.redis.v1.MaintenancePolicy getMaintenancePolicy() {
+      if (maintenancePolicyBuilder_ == null) {
+        return maintenancePolicy_ == null
+            ? com.google.cloud.redis.v1.MaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      } else {
+        return maintenancePolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * maintenance events can be performed at any time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenancePolicy(com.google.cloud.redis.v1.MaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenancePolicy_ = value;
+        onChanged();
+      } else {
+        maintenancePolicyBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * maintenance events can be performed at any time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenancePolicy(
+        com.google.cloud.redis.v1.MaintenancePolicy.Builder builderForValue) {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        maintenancePolicyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * maintenance events can be performed at any time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMaintenancePolicy(com.google.cloud.redis.v1.MaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (maintenancePolicy_ != null) {
+          maintenancePolicy_ =
+              com.google.cloud.redis.v1.MaintenancePolicy.newBuilder(maintenancePolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          maintenancePolicy_ = value;
+        }
+        onChanged();
+      } else {
+        maintenancePolicyBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * maintenance events can be performed at any time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMaintenancePolicy() {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = null;
+        onChanged();
+      } else {
+        maintenancePolicy_ = null;
+        maintenancePolicyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * maintenance events can be performed at any time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.v1.MaintenancePolicy.Builder getMaintenancePolicyBuilder() {
+
+      onChanged();
+      return getMaintenancePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * maintenance events can be performed at any time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder() {
+      if (maintenancePolicyBuilder_ != null) {
+        return maintenancePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenancePolicy_ == null
+            ? com.google.cloud.redis.v1.MaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * maintenance events can be performed at any time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.v1.MaintenancePolicy,
+            com.google.cloud.redis.v1.MaintenancePolicy.Builder,
+            com.google.cloud.redis.v1.MaintenancePolicyOrBuilder>
+        getMaintenancePolicyFieldBuilder() {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.v1.MaintenancePolicy,
+                com.google.cloud.redis.v1.MaintenancePolicy.Builder,
+                com.google.cloud.redis.v1.MaintenancePolicyOrBuilder>(
+                getMaintenancePolicy(), getParentForChildren(), isClean());
+        maintenancePolicy_ = null;
+      }
+      return maintenancePolicyBuilder_;
+    }
+
+    private com.google.cloud.redis.v1.MaintenanceSchedule maintenanceSchedule_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.v1.MaintenanceSchedule,
+            com.google.cloud.redis.v1.MaintenanceSchedule.Builder,
+            com.google.cloud.redis.v1.MaintenanceScheduleOrBuilder>
+        maintenanceScheduleBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance events which have been
+     * scheduled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the maintenanceSchedule field is set.
+     */
+    public boolean hasMaintenanceSchedule() {
+      return maintenanceScheduleBuilder_ != null || maintenanceSchedule_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance events which have been
+     * scheduled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The maintenanceSchedule.
+     */
+    public com.google.cloud.redis.v1.MaintenanceSchedule getMaintenanceSchedule() {
+      if (maintenanceScheduleBuilder_ == null) {
+        return maintenanceSchedule_ == null
+            ? com.google.cloud.redis.v1.MaintenanceSchedule.getDefaultInstance()
+            : maintenanceSchedule_;
+      } else {
+        return maintenanceScheduleBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance events which have been
+     * scheduled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMaintenanceSchedule(com.google.cloud.redis.v1.MaintenanceSchedule value) {
+      if (maintenanceScheduleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenanceSchedule_ = value;
+        onChanged();
+      } else {
+        maintenanceScheduleBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance events which have been
+     * scheduled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMaintenanceSchedule(
+        com.google.cloud.redis.v1.MaintenanceSchedule.Builder builderForValue) {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceSchedule_ = builderForValue.build();
+        onChanged();
+      } else {
+        maintenanceScheduleBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance events which have been
+     * scheduled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMaintenanceSchedule(com.google.cloud.redis.v1.MaintenanceSchedule value) {
+      if (maintenanceScheduleBuilder_ == null) {
+        if (maintenanceSchedule_ != null) {
+          maintenanceSchedule_ =
+              com.google.cloud.redis.v1.MaintenanceSchedule.newBuilder(maintenanceSchedule_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          maintenanceSchedule_ = value;
+        }
+        onChanged();
+      } else {
+        maintenanceScheduleBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance events which have been
+     * scheduled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMaintenanceSchedule() {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceSchedule_ = null;
+        onChanged();
+      } else {
+        maintenanceSchedule_ = null;
+        maintenanceScheduleBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance events which have been
+     * scheduled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.v1.MaintenanceSchedule.Builder getMaintenanceScheduleBuilder() {
+
+      onChanged();
+      return getMaintenanceScheduleFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance events which have been
+     * scheduled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.v1.MaintenanceScheduleOrBuilder
+        getMaintenanceScheduleOrBuilder() {
+      if (maintenanceScheduleBuilder_ != null) {
+        return maintenanceScheduleBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenanceSchedule_ == null
+            ? com.google.cloud.redis.v1.MaintenanceSchedule.getDefaultInstance()
+            : maintenanceSchedule_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance events which have been
+     * scheduled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.v1.MaintenanceSchedule,
+            com.google.cloud.redis.v1.MaintenanceSchedule.Builder,
+            com.google.cloud.redis.v1.MaintenanceScheduleOrBuilder>
+        getMaintenanceScheduleFieldBuilder() {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceScheduleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.v1.MaintenanceSchedule,
+                com.google.cloud.redis.v1.MaintenanceSchedule.Builder,
+                com.google.cloud.redis.v1.MaintenanceScheduleOrBuilder>(
+                getMaintenanceSchedule(), getParentForChildren(), isClean());
+        maintenanceSchedule_ = null;
+      }
+      return maintenanceScheduleBuilder_;
+    }
+
     private int replicaCount_;
     /**
      *
      *
      * <pre>
-     * Optional. The number of replica nodes. Valid range for standard tier
-     * is [1-5] and defaults to 1. Valid value for basic tier is 0 and defaults
-     * to 0.
+     * Optional. The number of replica nodes. The valid range for the Standard Tier with
+     * read replicas enabled is [1-5] and defaults to 2. If read replicas are not
+     * enabled for a Standard Tier instance, the only valid value is 1 and the
+     * default is 1. The valid value for basic tier is 0 and the default is also
+     * 0.
      * </pre>
      *
      * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5574,9 +7394,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The number of replica nodes. Valid range for standard tier
-     * is [1-5] and defaults to 1. Valid value for basic tier is 0 and defaults
-     * to 0.
+     * Optional. The number of replica nodes. The valid range for the Standard Tier with
+     * read replicas enabled is [1-5] and defaults to 2. If read replicas are not
+     * enabled for a Standard Tier instance, the only valid value is 1 and the
+     * default is 1. The valid value for basic tier is 0 and the default is also
+     * 0.
      * </pre>
      *
      * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5594,9 +7416,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The number of replica nodes. Valid range for standard tier
-     * is [1-5] and defaults to 1. Valid value for basic tier is 0 and defaults
-     * to 0.
+     * Optional. The number of replica nodes. The valid range for the Standard Tier with
+     * read replicas enabled is [1-5] and defaults to 2. If read replicas are not
+     * enabled for a Standard Tier instance, the only valid value is 1 and the
+     * default is 1. The valid value for basic tier is 0 and the default is also
+     * 0.
      * </pre>
      *
      * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5614,9 +7438,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNodesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         nodes_ = new java.util.ArrayList<com.google.cloud.redis.v1.NodeInfo>(nodes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -5851,7 +7675,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNodes() {
       if (nodesBuilder_ == null) {
         nodes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         nodesBuilder_.clear();
@@ -5986,7 +7810,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.redis.v1.NodeInfo,
                 com.google.cloud.redis.v1.NodeInfo.Builder,
                 com.google.cloud.redis.v1.NodeInfoOrBuilder>(
-                nodes_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                nodes_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         nodes_ = null;
       }
       return nodesBuilder_;
@@ -6173,7 +7997,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replica mode.
+     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -6190,7 +8014,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replica mode.
+     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -6210,7 +8034,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replica mode.
+     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -6232,7 +8056,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replica mode.
+     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -6255,7 +8079,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replica mode.
+     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>

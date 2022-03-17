@@ -287,6 +287,39 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Optional. Additional IP range for node placement. Required when enabling read
+   * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+   * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+   * must be the name of an allocated address range associated with the private
+   * service access connection, or "auto".
+   * </pre>
+   *
+   * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The secondaryIpRange.
+   */
+  java.lang.String getSecondaryIpRange();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional IP range for node placement. Required when enabling read
+   * replicas on an existing instance. For DIRECT_PEERING mode value must be a
+   * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
+   * must be the name of an allocated address range associated with the private
+   * service access connection, or "auto".
+   * </pre>
+   *
+   * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for secondaryIpRange.
+   */
+  com.google.protobuf.ByteString getSecondaryIpRangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Hostname or IP address of the exposed Redis endpoint used by
    * clients to connect to the service.
    * </pre>
@@ -709,9 +742,207 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. The number of replica nodes. Valid range for standard tier
-   * is [1-5] and defaults to 1. Valid value for basic tier is 0 and defaults
-   * to 0.
+   * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to
+   * "true" AUTH is enabled on the instance. Default value is "false" meaning
+   * AUTH is disabled.
+   * </pre>
+   *
+   * <code>bool auth_enabled = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The authEnabled.
+   */
+  boolean getAuthEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of server CA certificates for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.redis.v1.TlsCertificate> getServerCaCertsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of server CA certificates for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.redis.v1.TlsCertificate getServerCaCerts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of server CA certificates for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getServerCaCertsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of server CA certificates for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.redis.v1.TlsCertificateOrBuilder>
+      getServerCaCertsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of server CA certificates for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.TlsCertificate server_ca_certs = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.redis.v1.TlsCertificateOrBuilder getServerCaCertsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The TLS mode of the Redis instance.
+   * If not provided, TLS is disabled for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.Instance.TransitEncryptionMode transit_encryption_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for transitEncryptionMode.
+   */
+  int getTransitEncryptionModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The TLS mode of the Redis instance.
+   * If not provided, TLS is disabled for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.Instance.TransitEncryptionMode transit_encryption_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transitEncryptionMode.
+   */
+  com.google.cloud.redis.v1.Instance.TransitEncryptionMode getTransitEncryptionMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance. If not provided,
+   * maintenance events can be performed at any time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  boolean hasMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance. If not provided,
+   * maintenance events can be performed at any time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenancePolicy.
+   */
+  com.google.cloud.redis.v1.MaintenancePolicy getMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance. If not provided,
+   * maintenance events can be performed at any time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.MaintenancePolicy maintenance_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.redis.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Date and time of upcoming maintenance events which have been
+   * scheduled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the maintenanceSchedule field is set.
+   */
+  boolean hasMaintenanceSchedule();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Date and time of upcoming maintenance events which have been
+   * scheduled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The maintenanceSchedule.
+   */
+  com.google.cloud.redis.v1.MaintenanceSchedule getMaintenanceSchedule();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Date and time of upcoming maintenance events which have been
+   * scheduled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.MaintenanceSchedule maintenance_schedule = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.redis.v1.MaintenanceScheduleOrBuilder getMaintenanceScheduleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The number of replica nodes. The valid range for the Standard Tier with
+   * read replicas enabled is [1-5] and defaults to 2. If read replicas are not
+   * enabled for a Standard Tier instance, the only valid value is 1 and the
+   * default is 1. The valid value for basic tier is 0 and the default is also
+   * 0.
    * </pre>
    *
    * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -830,7 +1061,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Read replica mode.
+   * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
    * </pre>
    *
    * <code>
@@ -844,7 +1075,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Read replica mode.
+   * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
    * </pre>
    *
    * <code>
