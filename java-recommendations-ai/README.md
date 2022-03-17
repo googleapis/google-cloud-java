@@ -23,7 +23,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recommendations-ai</artifactId>
-  <version>0.8.4</version>
+  <version>0.8.5</version>
 </dependency>
 
 ```
