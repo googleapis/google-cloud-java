@@ -216,8 +216,8 @@ public final class DatastoreHelper {
    *   <li>No credentials (if the DATASTORE_EMULATOR_HOST environment variable is set)
    *   <li>Service Account specified by the DATASTORE_SERVICE_ACCOUNT and DATASTORE_PRIVATE_KEY_FILE
    *       environment variables
-   *   <li>Google Application Default as described at {@link
-   *       "https://developers.google.com/identity/protocols/application-default-credentials"}
+   *   <li>Google Application Default as described <a
+   *       href="https://cloud.google.com/docs/authentication/production">here</a>.
    * </ol>
    */
   public static DatastoreOptions.Builder getOptionsFromEnv()
