@@ -49,24 +49,20 @@ public final class HistogramProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/talent/v4/histogram.proto"
-          + "\022\026google.cloud.talent.v4\032\034google/api/ann"
-          + "otations.proto\")\n\016HistogramQuery\022\027\n\017hist"
-          + "ogram_query\030\001 \001(\t\"\261\001\n\024HistogramQueryResu"
-          + "lt\022\027\n\017histogram_query\030\001 \001(\t\022N\n\thistogram"
-          + "\030\002 \003(\0132;.google.cloud.talent.v4.Histogra"
-          + "mQueryResult.HistogramEntry\0320\n\016Histogram"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001Br\n"
-          + "\032com.google.cloud.talent.v4B\016HistogramPr"
-          + "otoP\001Z<google.golang.org/genproto/google"
-          + "apis/cloud/talent/v4;talent\242\002\003CTSb\006proto"
-          + "3"
+          + "\022\026google.cloud.talent.v4\")\n\016HistogramQue"
+          + "ry\022\027\n\017histogram_query\030\001 \001(\t\"\261\001\n\024Histogra"
+          + "mQueryResult\022\027\n\017histogram_query\030\001 \001(\t\022N\n"
+          + "\thistogram\030\002 \003(\0132;.google.cloud.talent.v"
+          + "4.HistogramQueryResult.HistogramEntry\0320\n"
+          + "\016HistogramEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
+          + "\001(\003:\0028\001Br\n\032com.google.cloud.talent.v4B\016H"
+          + "istogramProtoP\001Z<google.golang.org/genpr"
+          + "oto/googleapis/cloud/talent/v4;talent\242\002\003"
+          + "CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_talent_v4_HistogramQuery_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_talent_v4_HistogramQuery_fieldAccessorTable =
@@ -93,7 +89,6 @@ public final class HistogramProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

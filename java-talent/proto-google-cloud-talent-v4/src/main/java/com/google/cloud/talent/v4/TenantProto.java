@@ -43,13 +43,13 @@ public final class TenantProto {
       "\n#google/cloud/talent/v4/tenant.proto\022\026g"
           + "oogle.cloud.talent.v4\032\037google/api/field_"
           + "behavior.proto\032\031google/api/resource.prot"
-          + "o\032\034google/api/annotations.proto\"v\n\006Tenan"
-          + "t\022\014\n\004name\030\001 \001(\t\022\030\n\013external_id\030\002 \001(\tB\003\340A"
-          + "\002:D\352AA\n\032jobs.googleapis.com/Tenant\022#proj"
-          + "ects/{project}/tenants/{tenant}Bo\n\032com.g"
-          + "oogle.cloud.talent.v4B\013TenantProtoP\001Z<go"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/talent/v4;talent\242\002\003CTSb\006proto3"
+          + "o\"v\n\006Tenant\022\014\n\004name\030\001 \001(\t\022\030\n\013external_id"
+          + "\030\002 \001(\tB\003\340A\002:D\352AA\n\032jobs.googleapis.com/Te"
+          + "nant\022#projects/{project}/tenants/{tenant"
+          + "}Bo\n\032com.google.cloud.talent.v4B\013TenantP"
+          + "rotoP\001Z<google.golang.org/genproto/googl"
+          + "eapis/cloud/talent/v4;talent\242\002\003CTSb\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -57,7 +57,6 @@ public final class TenantProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4_Tenant_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -75,7 +74,6 @@ public final class TenantProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

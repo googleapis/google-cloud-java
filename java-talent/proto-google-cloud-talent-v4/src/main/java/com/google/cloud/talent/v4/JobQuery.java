@@ -809,8 +809,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-   * of the jobs to search against.
+   * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+   * of the jobs to search against. The company name must match the value
+   * exactly (case sensitive).
+   * Alternatively, if the value being searched for is wrapped in
+   * `SUBSTRING_MATCH([value])`, the company name must contain a case
+   * insensitive substring match of the value. Using this function may increase
+   * latency.
+   * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
    * If multiple values are specified, jobs within the search results may be
@@ -829,8 +835,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-   * of the jobs to search against.
+   * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+   * of the jobs to search against. The company name must match the value
+   * exactly (case sensitive).
+   * Alternatively, if the value being searched for is wrapped in
+   * `SUBSTRING_MATCH([value])`, the company name must contain a case
+   * insensitive substring match of the value. Using this function may increase
+   * latency.
+   * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
    * If multiple values are specified, jobs within the search results may be
@@ -849,8 +861,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-   * of the jobs to search against.
+   * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+   * of the jobs to search against. The company name must match the value
+   * exactly (case sensitive).
+   * Alternatively, if the value being searched for is wrapped in
+   * `SUBSTRING_MATCH([value])`, the company name must contain a case
+   * insensitive substring match of the value. Using this function may increase
+   * latency.
+   * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
    * If multiple values are specified, jobs within the search results may be
@@ -870,8 +888,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-   * of the jobs to search against.
+   * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+   * of the jobs to search against. The company name must match the value
+   * exactly (case sensitive).
+   * Alternatively, if the value being searched for is wrapped in
+   * `SUBSTRING_MATCH([value])`, the company name must contain a case
+   * insensitive substring match of the value. Using this function may increase
+   * latency.
+   * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
    * If multiple values are specified, jobs within the search results may be
@@ -3592,8 +3616,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly (case sensitive).
+     * Alternatively, if the value being searched for is wrapped in
+     * `SUBSTRING_MATCH([value])`, the company name must contain a case
+     * insensitive substring match of the value. Using this function may increase
+     * latency.
+     * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3612,8 +3642,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly (case sensitive).
+     * Alternatively, if the value being searched for is wrapped in
+     * `SUBSTRING_MATCH([value])`, the company name must contain a case
+     * insensitive substring match of the value. Using this function may increase
+     * latency.
+     * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3632,8 +3668,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly (case sensitive).
+     * Alternatively, if the value being searched for is wrapped in
+     * `SUBSTRING_MATCH([value])`, the company name must contain a case
+     * insensitive substring match of the value. Using this function may increase
+     * latency.
+     * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3653,8 +3695,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly (case sensitive).
+     * Alternatively, if the value being searched for is wrapped in
+     * `SUBSTRING_MATCH([value])`, the company name must contain a case
+     * insensitive substring match of the value. Using this function may increase
+     * latency.
+     * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3674,8 +3722,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly (case sensitive).
+     * Alternatively, if the value being searched for is wrapped in
+     * `SUBSTRING_MATCH([value])`, the company name must contain a case
+     * insensitive substring match of the value. Using this function may increase
+     * latency.
+     * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3702,8 +3756,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly (case sensitive).
+     * Alternatively, if the value being searched for is wrapped in
+     * `SUBSTRING_MATCH([value])`, the company name must contain a case
+     * insensitive substring match of the value. Using this function may increase
+     * latency.
+     * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3729,8 +3789,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly (case sensitive).
+     * Alternatively, if the value being searched for is wrapped in
+     * `SUBSTRING_MATCH([value])`, the company name must contain a case
+     * insensitive substring match of the value. Using this function may increase
+     * latency.
+     * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3753,8 +3819,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly (case sensitive).
+     * Alternatively, if the value being searched for is wrapped in
+     * `SUBSTRING_MATCH([value])`, the company name must contain a case
+     * insensitive substring match of the value. Using this function may increase
+     * latency.
+     * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3776,8 +3848,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly (case sensitive).
+     * Alternatively, if the value being searched for is wrapped in
+     * `SUBSTRING_MATCH([value])`, the company name must contain a case
+     * insensitive substring match of the value. Using this function may increase
+     * latency.
+     * Sample Values: `["Google LLC", "SUBSTRING_MATCH(google)"]`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
