@@ -118,6 +118,9 @@
         "grpc": {
           "libraryClient": "ConversationProfilesClient",
           "rpcs": {
+            "ClearSuggestionFeatureConfig": {
+              "methods": ["clearSuggestionFeatureConfigAsync", "clearSuggestionFeatureConfigAsync", "clearSuggestionFeatureConfigOperationCallable", "clearSuggestionFeatureConfigCallable"]
+            },
             "CreateConversationProfile": {
               "methods": ["createConversationProfile", "createConversationProfile", "createConversationProfile", "createConversationProfile", "createConversationProfileCallable"]
             },
@@ -129,6 +132,9 @@
             },
             "ListConversationProfiles": {
               "methods": ["listConversationProfiles", "listConversationProfiles", "listConversationProfiles", "listConversationProfiles", "listConversationProfilesPagedCallable", "listConversationProfilesCallable"]
+            },
+            "SetSuggestionFeatureConfig": {
+              "methods": ["setSuggestionFeatureConfigAsync", "setSuggestionFeatureConfigAsync", "setSuggestionFeatureConfigOperationCallable", "setSuggestionFeatureConfigCallable"]
             },
             "UpdateConversationProfile": {
               "methods": ["updateConversationProfile", "updateConversationProfile", "updateConversationProfileCallable"]

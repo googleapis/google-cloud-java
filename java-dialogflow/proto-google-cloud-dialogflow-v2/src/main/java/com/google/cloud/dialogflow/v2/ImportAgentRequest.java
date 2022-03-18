@@ -233,6 +233,11 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The URI to a Google Cloud Storage file containing the agent to import.
    * Note: The URI must start with "gs://".
+   * Dialogflow performs a read operation for the Cloud Storage object
+   * on the caller's behalf, so your request authentication must
+   * have read permissions for the object. For more information, see
+   * [Dialogflow access
+   * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
    * </pre>
    *
    * <code>string agent_uri = 2;</code>
@@ -248,6 +253,11 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The URI to a Google Cloud Storage file containing the agent to import.
    * Note: The URI must start with "gs://".
+   * Dialogflow performs a read operation for the Cloud Storage object
+   * on the caller's behalf, so your request authentication must
+   * have read permissions for the object. For more information, see
+   * [Dialogflow access
+   * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
    * </pre>
    *
    * <code>string agent_uri = 2;</code>
@@ -276,6 +286,11 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The URI to a Google Cloud Storage file containing the agent to import.
    * Note: The URI must start with "gs://".
+   * Dialogflow performs a read operation for the Cloud Storage object
+   * on the caller's behalf, so your request authentication must
+   * have read permissions for the object. For more information, see
+   * [Dialogflow access
+   * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
    * </pre>
    *
    * <code>string agent_uri = 2;</code>
@@ -857,6 +872,11 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The URI to a Google Cloud Storage file containing the agent to import.
      * Note: The URI must start with "gs://".
+     * Dialogflow performs a read operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have read permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string agent_uri = 2;</code>
@@ -873,6 +893,11 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The URI to a Google Cloud Storage file containing the agent to import.
      * Note: The URI must start with "gs://".
+     * Dialogflow performs a read operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have read permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string agent_uri = 2;</code>
@@ -902,6 +927,11 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The URI to a Google Cloud Storage file containing the agent to import.
      * Note: The URI must start with "gs://".
+     * Dialogflow performs a read operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have read permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string agent_uri = 2;</code>
@@ -931,6 +961,11 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The URI to a Google Cloud Storage file containing the agent to import.
      * Note: The URI must start with "gs://".
+     * Dialogflow performs a read operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have read permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string agent_uri = 2;</code>
@@ -953,6 +988,11 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The URI to a Google Cloud Storage file containing the agent to import.
      * Note: The URI must start with "gs://".
+     * Dialogflow performs a read operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have read permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string agent_uri = 2;</code>
@@ -973,6 +1013,11 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The URI to a Google Cloud Storage file containing the agent to import.
      * Note: The URI must start with "gs://".
+     * Dialogflow performs a read operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have read permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string agent_uri = 2;</code>

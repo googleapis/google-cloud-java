@@ -16,7 +16,9 @@
 
 package com.google.cloud.dialogflow.v2;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,7 +34,12 @@ public class ConversationModelName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_CONVERSATION_MODEL =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/conversationModels/{conversation_model}");
+  private static final PathTemplate PROJECT_CONVERSATION_MODEL =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/conversationModels/{conversation_model}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String conversationModel;
@@ -48,6 +55,14 @@ public class ConversationModelName implements ResourceName {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
     conversationModel = Preconditions.checkNotNull(builder.getConversationModel());
+    pathTemplate = PROJECT_LOCATION_CONVERSATION_MODEL;
+  }
+
+  private ConversationModelName(ProjectConversationModelBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    conversationModel = Preconditions.checkNotNull(builder.getConversationModel());
+    location = null;
+    pathTemplate = PROJECT_CONVERSATION_MODEL;
   }
 
   public String getProject() {
@@ -66,6 +81,16 @@ public class ConversationModelName implements ResourceName {
     return new Builder();
   }
 
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectLocationConversationModelBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectConversationModelBuilder newProjectConversationModelBuilder() {
+    return new ProjectConversationModelBuilder();
+  }
+
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -79,6 +104,25 @@ public class ConversationModelName implements ResourceName {
         .build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static ConversationModelName ofProjectLocationConversationModelName(
+      String project, String location, String conversationModel) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setConversationModel(conversationModel)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static ConversationModelName ofProjectConversationModelName(
+      String project, String conversationModel) {
+    return newProjectConversationModelBuilder()
+        .setProject(project)
+        .setConversationModel(conversationModel)
+        .build();
+  }
+
   public static String format(String project, String location, String conversationModel) {
     return newBuilder()
         .setProject(project)
@@ -88,15 +132,42 @@ public class ConversationModelName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationConversationModelName(
+      String project, String location, String conversationModel) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setConversationModel(conversationModel)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectConversationModelName(
+      String project, String conversationModel) {
+    return newProjectConversationModelBuilder()
+        .setProject(project)
+        .setConversationModel(conversationModel)
+        .build()
+        .toString();
+  }
+
   public static ConversationModelName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_CONVERSATION_MODEL.validatedMatch(
-            formattedString, "ConversationModelName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("project"), matchMap.get("location"), matchMap.get("conversation_model"));
+    if (PROJECT_LOCATION_CONVERSATION_MODEL.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_CONVERSATION_MODEL.match(formattedString);
+      return ofProjectLocationConversationModelName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("conversation_model"));
+    } else if (PROJECT_CONVERSATION_MODEL.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_CONVERSATION_MODEL.match(formattedString);
+      return ofProjectConversationModelName(
+          matchMap.get("project"), matchMap.get("conversation_model"));
+    }
+    throw new ValidationException(
+        "ConversationModelName.parse: formattedString not in valid format");
   }
 
   public static List<ConversationModelName> parseList(List<String> formattedStrings) {
@@ -120,7 +191,8 @@ public class ConversationModelName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_CONVERSATION_MODEL.matches(formattedString);
+    return PROJECT_LOCATION_CONVERSATION_MODEL.matches(formattedString)
+        || PROJECT_CONVERSATION_MODEL.matches(formattedString);
   }
 
   @Override
@@ -151,8 +223,7 @@ public class ConversationModelName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_CONVERSATION_MODEL.instantiate(
-        "project", project, "location", location, "conversation_model", conversationModel);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -172,6 +243,8 @@ public class ConversationModelName implements ResourceName {
   @Override
   public int hashCode() {
     int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
@@ -219,9 +292,43 @@ public class ConversationModelName implements ResourceName {
     }
 
     private Builder(ConversationModelName conversationModelName) {
+      Preconditions.checkArgument(
+          Objects.equals(conversationModelName.pathTemplate, PROJECT_LOCATION_CONVERSATION_MODEL),
+          "toBuilder is only supported when ConversationModelName has the pattern of projects/{project}/locations/{location}/conversationModels/{conversation_model}");
       this.project = conversationModelName.project;
       this.location = conversationModelName.location;
       this.conversationModel = conversationModelName.conversationModel;
+    }
+
+    public ConversationModelName build() {
+      return new ConversationModelName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/conversationModels/{conversation_model}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectConversationModelBuilder {
+    private String project;
+    private String conversationModel;
+
+    protected ProjectConversationModelBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getConversationModel() {
+      return conversationModel;
+    }
+
+    public ProjectConversationModelBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectConversationModelBuilder setConversationModel(String conversationModel) {
+      this.conversationModel = conversationModel;
+      return this;
     }
 
     public ConversationModelName build() {

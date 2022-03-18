@@ -402,5 +402,34 @@ public interface DocumentOrBuilder
    */
   java.lang.String getMetadataOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of the document.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.Document.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of the document.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.Document.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.dialogflow.v2.Document.State getState();
+
   public com.google.cloud.dialogflow.v2.Document.SourceCase getSourceCase();
 }

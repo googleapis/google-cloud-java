@@ -45,20 +45,19 @@ public final class GcsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n$google/cloud/dialogflow/v2/gcs.proto\022\032"
-          + "google.cloud.dialogflow.v2\032\034google/api/a"
-          + "nnotations.proto\032\037google/api/field_behav"
-          + "ior.proto\"\037\n\nGcsSources\022\021\n\004uris\030\002 \003(\tB\003\340"
-          + "A\002\"\035\n\016GcsDestination\022\013\n\003uri\030\001 \001(\tB\227\001\n\036co"
-          + "m.google.cloud.dialogflow.v2B\010GcsProtoP\001"
-          + "ZDgoogle.golang.org/genproto/googleapis/"
-          + "cloud/dialogflow/v2;dialogflow\370\001\001\242\002\002DF\252\002"
-          + "\032Google.Cloud.Dialogflow.V2b\006proto3"
+          + "google.cloud.dialogflow.v2\032\037google/api/f"
+          + "ield_behavior.proto\"\037\n\nGcsSources\022\021\n\004uri"
+          + "s\030\002 \003(\tB\003\340A\002\"\035\n\016GcsDestination\022\013\n\003uri\030\001 "
+          + "\001(\tB\227\001\n\036com.google.cloud.dialogflow.v2B\010"
+          + "GcsProtoP\001ZDgoogle.golang.org/genproto/g"
+          + "oogleapis/cloud/dialogflow/v2;dialogflow"
+          + "\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_v2_GcsSources_descriptor =
@@ -82,7 +81,6 @@ public final class GcsProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
   }
 

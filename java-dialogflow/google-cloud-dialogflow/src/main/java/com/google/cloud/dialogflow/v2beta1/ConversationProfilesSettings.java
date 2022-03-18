@@ -26,10 +26,12 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2beta1.stub.ConversationProfilesStubSettings;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -107,6 +109,40 @@ public class ConversationProfilesSettings extends ClientSettings<ConversationPro
       deleteConversationProfileSettings() {
     return ((ConversationProfilesStubSettings) getStubSettings())
         .deleteConversationProfileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSuggestionFeatureConfig. */
+  public UnaryCallSettings<SetSuggestionFeatureConfigRequest, Operation>
+      setSuggestionFeatureConfigSettings() {
+    return ((ConversationProfilesStubSettings) getStubSettings())
+        .setSuggestionFeatureConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSuggestionFeatureConfig. */
+  public OperationCallSettings<
+          SetSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          SetSuggestionFeatureConfigOperationMetadata>
+      setSuggestionFeatureConfigOperationSettings() {
+    return ((ConversationProfilesStubSettings) getStubSettings())
+        .setSuggestionFeatureConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to clearSuggestionFeatureConfig. */
+  public UnaryCallSettings<ClearSuggestionFeatureConfigRequest, Operation>
+      clearSuggestionFeatureConfigSettings() {
+    return ((ConversationProfilesStubSettings) getStubSettings())
+        .clearSuggestionFeatureConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to clearSuggestionFeatureConfig. */
+  public OperationCallSettings<
+          ClearSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          ClearSuggestionFeatureConfigOperationMetadata>
+      clearSuggestionFeatureConfigOperationSettings() {
+    return ((ConversationProfilesStubSettings) getStubSettings())
+        .clearSuggestionFeatureConfigOperationSettings();
   }
 
   public static final ConversationProfilesSettings create(ConversationProfilesStubSettings stub)
@@ -238,6 +274,36 @@ public class ConversationProfilesSettings extends ClientSettings<ConversationPro
     public UnaryCallSettings.Builder<DeleteConversationProfileRequest, Empty>
         deleteConversationProfileSettings() {
       return getStubSettingsBuilder().deleteConversationProfileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSuggestionFeatureConfig. */
+    public UnaryCallSettings.Builder<SetSuggestionFeatureConfigRequest, Operation>
+        setSuggestionFeatureConfigSettings() {
+      return getStubSettingsBuilder().setSuggestionFeatureConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSuggestionFeatureConfig. */
+    public OperationCallSettings.Builder<
+            SetSuggestionFeatureConfigRequest,
+            ConversationProfile,
+            SetSuggestionFeatureConfigOperationMetadata>
+        setSuggestionFeatureConfigOperationSettings() {
+      return getStubSettingsBuilder().setSuggestionFeatureConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to clearSuggestionFeatureConfig. */
+    public UnaryCallSettings.Builder<ClearSuggestionFeatureConfigRequest, Operation>
+        clearSuggestionFeatureConfigSettings() {
+      return getStubSettingsBuilder().clearSuggestionFeatureConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to clearSuggestionFeatureConfig. */
+    public OperationCallSettings.Builder<
+            ClearSuggestionFeatureConfigRequest,
+            ConversationProfile,
+            ClearSuggestionFeatureConfigOperationMetadata>
+        clearSuggestionFeatureConfigOperationSettings() {
+      return getStubSettingsBuilder().clearSuggestionFeatureConfigOperationSettings();
     }
 
     @Override

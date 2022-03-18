@@ -46,26 +46,23 @@ public final class ValidationResultProto {
     java.lang.String[] descriptorData = {
       "\n2google/cloud/dialogflow/v2/validation_"
           + "result.proto\022\032google.cloud.dialogflow.v2"
-          + "\032\034google/api/annotations.proto\"\327\001\n\017Valid"
-          + "ationError\022F\n\010severity\030\001 \001(\01624.google.cl"
-          + "oud.dialogflow.v2.ValidationError.Severi"
-          + "ty\022\017\n\007entries\030\003 \003(\t\022\025\n\rerror_message\030\004 \001"
-          + "(\t\"T\n\010Severity\022\030\n\024SEVERITY_UNSPECIFIED\020\000"
-          + "\022\010\n\004INFO\020\001\022\013\n\007WARNING\020\002\022\t\n\005ERROR\020\003\022\014\n\010CR"
-          + "ITICAL\020\004\"Z\n\020ValidationResult\022F\n\021validati"
-          + "on_errors\030\001 \003(\0132+.google.cloud.dialogflo"
-          + "w.v2.ValidationErrorB\244\001\n\036com.google.clou"
-          + "d.dialogflow.v2B\025ValidationResultProtoP\001"
-          + "ZDgoogle.golang.org/genproto/googleapis/"
-          + "cloud/dialogflow/v2;dialogflow\370\001\001\242\002\002DF\252\002"
-          + "\032Google.Cloud.Dialogflow.V2b\006proto3"
+          + "\"\327\001\n\017ValidationError\022F\n\010severity\030\001 \001(\01624"
+          + ".google.cloud.dialogflow.v2.ValidationEr"
+          + "ror.Severity\022\017\n\007entries\030\003 \003(\t\022\025\n\rerror_m"
+          + "essage\030\004 \001(\t\"T\n\010Severity\022\030\n\024SEVERITY_UNS"
+          + "PECIFIED\020\000\022\010\n\004INFO\020\001\022\013\n\007WARNING\020\002\022\t\n\005ERR"
+          + "OR\020\003\022\014\n\010CRITICAL\020\004\"Z\n\020ValidationResult\022F"
+          + "\n\021validation_errors\030\001 \003(\0132+.google.cloud"
+          + ".dialogflow.v2.ValidationErrorB\244\001\n\036com.g"
+          + "oogle.cloud.dialogflow.v2B\025ValidationRes"
+          + "ultProtoP\001ZDgoogle.golang.org/genproto/g"
+          + "oogleapis/cloud/dialogflow/v2;dialogflow"
+          + "\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_dialogflow_v2_ValidationError_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_dialogflow_v2_ValidationError_fieldAccessorTable =
@@ -82,7 +79,6 @@ public final class ValidationResultProto {
             new java.lang.String[] {
               "ValidationErrors",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -324,7 +324,7 @@ public interface DocumentOrBuilder
    * fails, we will keep the document unchanged.
    * If a reload fails with internal errors, the system will try to reload the
    * document on the next day.
-   * If a reload fails with non-retriable errors (e.g. PERMISION_DENIED), the
+   * If a reload fails with non-retriable errors (e.g. PERMISSION_DENIED), the
    * system will not try to reload the document anymore. You need to manually
    * reload the document successfully by calling `ReloadDocument` and clear the
    * errors.
@@ -452,6 +452,35 @@ public interface DocumentOrBuilder
    * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getMetadataOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of the document.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of the document.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.dialogflow.v2beta1.Document.State getState();
 
   public com.google.cloud.dialogflow.v2beta1.Document.SourceCase getSourceCase();
 }

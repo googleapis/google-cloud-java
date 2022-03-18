@@ -198,6 +198,10 @@ public interface AnalyzeContentResponseOrBuilder
    * The suggestions for most recent human agent. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   * Note that any failure of Agent Assist features will not lead to the overall
+   * failure of an AnalyzeContent API call. Instead, the features will
+   * fail silently with the error field set in the corresponding
+   * SuggestionResult.
    * </pre>
    *
    * <code>
@@ -213,6 +217,10 @@ public interface AnalyzeContentResponseOrBuilder
    * The suggestions for most recent human agent. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   * Note that any failure of Agent Assist features will not lead to the overall
+   * failure of an AnalyzeContent API call. Instead, the features will
+   * fail silently with the error field set in the corresponding
+   * SuggestionResult.
    * </pre>
    *
    * <code>
@@ -227,6 +235,10 @@ public interface AnalyzeContentResponseOrBuilder
    * The suggestions for most recent human agent. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   * Note that any failure of Agent Assist features will not lead to the overall
+   * failure of an AnalyzeContent API call. Instead, the features will
+   * fail silently with the error field set in the corresponding
+   * SuggestionResult.
    * </pre>
    *
    * <code>
@@ -241,6 +253,10 @@ public interface AnalyzeContentResponseOrBuilder
    * The suggestions for most recent human agent. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   * Note that any failure of Agent Assist features will not lead to the overall
+   * failure of an AnalyzeContent API call. Instead, the features will
+   * fail silently with the error field set in the corresponding
+   * SuggestionResult.
    * </pre>
    *
    * <code>
@@ -256,6 +272,10 @@ public interface AnalyzeContentResponseOrBuilder
    * The suggestions for most recent human agent. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   * Note that any failure of Agent Assist features will not lead to the overall
+   * failure of an AnalyzeContent API call. Instead, the features will
+   * fail silently with the error field set in the corresponding
+   * SuggestionResult.
    * </pre>
    *
    * <code>
@@ -272,6 +292,10 @@ public interface AnalyzeContentResponseOrBuilder
    * The suggestions for end user. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+   * Same as human_agent_suggestion_results, any failure of Agent Assist
+   * features will not lead to the overall failure of an AnalyzeContent API
+   * call. Instead, the features will fail silently with the error field set in
+   * the corresponding SuggestionResult.
    * </pre>
    *
    * <code>
@@ -287,6 +311,10 @@ public interface AnalyzeContentResponseOrBuilder
    * The suggestions for end user. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+   * Same as human_agent_suggestion_results, any failure of Agent Assist
+   * features will not lead to the overall failure of an AnalyzeContent API
+   * call. Instead, the features will fail silently with the error field set in
+   * the corresponding SuggestionResult.
    * </pre>
    *
    * <code>
@@ -301,6 +329,10 @@ public interface AnalyzeContentResponseOrBuilder
    * The suggestions for end user. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+   * Same as human_agent_suggestion_results, any failure of Agent Assist
+   * features will not lead to the overall failure of an AnalyzeContent API
+   * call. Instead, the features will fail silently with the error field set in
+   * the corresponding SuggestionResult.
    * </pre>
    *
    * <code>
@@ -315,6 +347,10 @@ public interface AnalyzeContentResponseOrBuilder
    * The suggestions for end user. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+   * Same as human_agent_suggestion_results, any failure of Agent Assist
+   * features will not lead to the overall failure of an AnalyzeContent API
+   * call. Instead, the features will fail silently with the error field set in
+   * the corresponding SuggestionResult.
    * </pre>
    *
    * <code>
@@ -330,6 +366,10 @@ public interface AnalyzeContentResponseOrBuilder
    * The suggestions for end user. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+   * Same as human_agent_suggestion_results, any failure of Agent Assist
+   * features will not lead to the overall failure of an AnalyzeContent API
+   * call. Instead, the features will fail silently with the error field set in
+   * the corresponding SuggestionResult.
    * </pre>
    *
    * <code>

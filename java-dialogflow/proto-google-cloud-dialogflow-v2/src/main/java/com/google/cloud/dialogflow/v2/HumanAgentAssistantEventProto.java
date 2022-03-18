@@ -42,23 +42,21 @@ public final class HumanAgentAssistantEventProto {
     java.lang.String[] descriptorData = {
       "\n<google/cloud/dialogflow/v2/human_agent"
           + "_assistant_event.proto\022\032google.cloud.dia"
-          + "logflow.v2\032\034google/api/annotations.proto"
-          + "\032,google/cloud/dialogflow/v2/participant"
-          + ".proto\"\217\001\n\030HumanAgentAssistantEvent\022\024\n\014c"
-          + "onversation\030\001 \001(\t\022\023\n\013participant\030\003 \001(\t\022H"
-          + "\n\022suggestion_results\030\005 \003(\0132,.google.clou"
-          + "d.dialogflow.v2.SuggestionResultB\254\001\n\036com"
-          + ".google.cloud.dialogflow.v2B\035HumanAgentA"
-          + "ssistantEventProtoP\001ZDgoogle.golang.org/"
-          + "genproto/googleapis/cloud/dialogflow/v2;"
-          + "dialogflow\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialog"
-          + "flow.V2b\006proto3"
+          + "logflow.v2\032,google/cloud/dialogflow/v2/p"
+          + "articipant.proto\"\217\001\n\030HumanAgentAssistant"
+          + "Event\022\024\n\014conversation\030\001 \001(\t\022\023\n\013participa"
+          + "nt\030\003 \001(\t\022H\n\022suggestion_results\030\005 \003(\0132,.g"
+          + "oogle.cloud.dialogflow.v2.SuggestionResu"
+          + "ltB\254\001\n\036com.google.cloud.dialogflow.v2B\035H"
+          + "umanAgentAssistantEventProtoP\001ZDgoogle.g"
+          + "olang.org/genproto/googleapis/cloud/dial"
+          + "ogflow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.Cl"
+          + "oud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.dialogflow.v2.ParticipantProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_v2_HumanAgentAssistantEvent_descriptor =
@@ -69,7 +67,6 @@ public final class HumanAgentAssistantEventProto {
             new java.lang.String[] {
               "Conversation", "Participant", "SuggestionResults",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.dialogflow.v2.ParticipantProto.getDescriptor();
   }
 

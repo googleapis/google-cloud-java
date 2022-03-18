@@ -42,29 +42,27 @@ public final class ConversationEventProto {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/dialogflow/v2/conversatio"
           + "n_event.proto\022\032google.cloud.dialogflow.v"
-          + "2\032\034google/api/annotations.proto\032,google/"
-          + "cloud/dialogflow/v2/participant.proto\032\027g"
-          + "oogle/rpc/status.proto\"\201\003\n\021ConversationE"
-          + "vent\022\024\n\014conversation\030\001 \001(\t\022@\n\004type\030\002 \001(\016"
-          + "22.google.cloud.dialogflow.v2.Conversati"
-          + "onEvent.Type\022(\n\014error_status\030\003 \001(\0132\022.goo"
-          + "gle.rpc.Status\022B\n\023new_message_payload\030\004 "
-          + "\001(\0132#.google.cloud.dialogflow.v2.Message"
-          + "H\000\"\232\001\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\030\n\024CON"
-          + "VERSATION_STARTED\020\001\022\031\n\025CONVERSATION_FINI"
-          + "SHED\020\002\022\035\n\031HUMAN_INTERVENTION_NEEDED\020\003\022\017\n"
-          + "\013NEW_MESSAGE\020\005\022\027\n\023UNRECOVERABLE_ERROR\020\004B"
-          + "\t\n\007payloadB\245\001\n\036com.google.cloud.dialogfl"
-          + "ow.v2B\026ConversationEventProtoP\001ZDgoogle."
-          + "golang.org/genproto/googleapis/cloud/dia"
-          + "logflow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.C"
-          + "loud.Dialogflow.V2b\006proto3"
+          + "2\032,google/cloud/dialogflow/v2/participan"
+          + "t.proto\032\027google/rpc/status.proto\"\201\003\n\021Con"
+          + "versationEvent\022\024\n\014conversation\030\001 \001(\t\022@\n\004"
+          + "type\030\002 \001(\01622.google.cloud.dialogflow.v2."
+          + "ConversationEvent.Type\022(\n\014error_status\030\003"
+          + " \001(\0132\022.google.rpc.Status\022B\n\023new_message_"
+          + "payload\030\004 \001(\0132#.google.cloud.dialogflow."
+          + "v2.MessageH\000\"\232\001\n\004Type\022\024\n\020TYPE_UNSPECIFIE"
+          + "D\020\000\022\030\n\024CONVERSATION_STARTED\020\001\022\031\n\025CONVERS"
+          + "ATION_FINISHED\020\002\022\035\n\031HUMAN_INTERVENTION_N"
+          + "EEDED\020\003\022\017\n\013NEW_MESSAGE\020\005\022\027\n\023UNRECOVERABL"
+          + "E_ERROR\020\004B\t\n\007payloadB\245\001\n\036com.google.clou"
+          + "d.dialogflow.v2B\026ConversationEventProtoP"
+          + "\001ZDgoogle.golang.org/genproto/googleapis"
+          + "/cloud/dialogflow/v2;dialogflow\370\001\001\242\002\002DF\252"
+          + "\002\032Google.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.dialogflow.v2.ParticipantProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
             });
@@ -76,7 +74,6 @@ public final class ConversationEventProto {
             new java.lang.String[] {
               "Conversation", "Type", "ErrorStatus", "NewMessagePayload", "Payload",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.dialogflow.v2.ParticipantProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
   }

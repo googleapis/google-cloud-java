@@ -196,6 +196,17 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * An existing conversation has received notification from Dialogflow that
+     * human intervention is required.
+     * </pre>
+     *
+     * <code>HUMAN_INTERVENTION_NEEDED = 3;</code>
+     */
+    HUMAN_INTERVENTION_NEEDED(3),
+    /**
+     *
+     *
+     * <pre>
      * An existing conversation has received a new message, either from API or
      * telephony. It is configured in
      * [ConversationProfile.new_message_event_notification_config][google.cloud.dialogflow.v2beta1.ConversationProfile.new_message_event_notification_config]
@@ -259,6 +270,17 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * An existing conversation has received notification from Dialogflow that
+     * human intervention is required.
+     * </pre>
+     *
+     * <code>HUMAN_INTERVENTION_NEEDED = 3;</code>
+     */
+    public static final int HUMAN_INTERVENTION_NEEDED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
      * An existing conversation has received a new message, either from API or
      * telephony. It is configured in
      * [ConversationProfile.new_message_event_notification_config][google.cloud.dialogflow.v2beta1.ConversationProfile.new_message_event_notification_config]
@@ -314,6 +336,8 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
           return CONVERSATION_STARTED;
         case 2:
           return CONVERSATION_FINISHED;
+        case 3:
+          return HUMAN_INTERVENTION_NEEDED;
         case 5:
           return NEW_MESSAGE;
         case 4:

@@ -46,6 +46,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     mimeType_ = "";
     knowledgeTypes_ = java.util.Collections.emptyList();
+    state_ = 0;
   }
 
   @java.lang.Override
@@ -174,6 +175,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 104:
+            {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -279,6 +287,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>ARTICLE_SUGGESTION = 3;</code>
      */
     ARTICLE_SUGGESTION(3),
+    /**
+     *
+     *
+     * <pre>
+     * The document contains agent-facing Smart Reply entries.
+     * </pre>
+     *
+     * <code>AGENT_FACING_SMART_REPLY = 4;</code>
+     */
+    AGENT_FACING_SMART_REPLY(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -329,6 +347,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>ARTICLE_SUGGESTION = 3;</code>
      */
     public static final int ARTICLE_SUGGESTION_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The document contains agent-facing Smart Reply entries.
+     * </pre>
+     *
+     * <code>AGENT_FACING_SMART_REPLY = 4;</code>
+     */
+    public static final int AGENT_FACING_SMART_REPLY_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -362,6 +390,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           return EXTRACTIVE_QA;
         case 3:
           return ARTICLE_SUGGESTION;
+        case 4:
+          return AGENT_FACING_SMART_REPLY;
         default:
           return null;
       }
@@ -413,6 +443,229 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.Document.KnowledgeType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Possible states of the document
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dialogflow.v2.Document.State}
+   */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The document state is unspecified.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The document creation is in progress.
+     * </pre>
+     *
+     * <code>CREATING = 1;</code>
+     */
+    CREATING(1),
+    /**
+     *
+     *
+     * <pre>
+     * The document is active and ready to use.
+     * </pre>
+     *
+     * <code>ACTIVE = 2;</code>
+     */
+    ACTIVE(2),
+    /**
+     *
+     *
+     * <pre>
+     * The document updation is in progress.
+     * </pre>
+     *
+     * <code>UPDATING = 3;</code>
+     */
+    UPDATING(3),
+    /**
+     *
+     *
+     * <pre>
+     * The document is reloading.
+     * </pre>
+     *
+     * <code>RELOADING = 4;</code>
+     */
+    RELOADING(4),
+    /**
+     *
+     *
+     * <pre>
+     * The document deletion is in progress.
+     * </pre>
+     *
+     * <code>DELETING = 5;</code>
+     */
+    DELETING(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The document state is unspecified.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The document creation is in progress.
+     * </pre>
+     *
+     * <code>CREATING = 1;</code>
+     */
+    public static final int CREATING_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The document is active and ready to use.
+     * </pre>
+     *
+     * <code>ACTIVE = 2;</code>
+     */
+    public static final int ACTIVE_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The document updation is in progress.
+     * </pre>
+     *
+     * <code>UPDATING = 3;</code>
+     */
+    public static final int UPDATING_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The document is reloading.
+     * </pre>
+     *
+     * <code>RELOADING = 4;</code>
+     */
+    public static final int RELOADING_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The document deletion is in progress.
+     * </pre>
+     *
+     * <code>DELETING = 5;</code>
+     */
+    public static final int DELETING_VALUE = 5;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return CREATING;
+        case 2:
+          return ACTIVE;
+        case 3:
+          return UPDATING;
+        case 4:
+          return RELOADING;
+        case 5:
+          return DELETING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.Document.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.Document.State)
   }
 
   public interface ReloadStatusOrBuilder
@@ -2130,6 +2383,46 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int STATE_FIELD_NUMBER = 13;
+  private int state_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of the document.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.Document.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of the document.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.Document.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.Document.State getState() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.dialogflow.v2.Document.State result =
+        com.google.cloud.dialogflow.v2.Document.State.valueOf(state_);
+    return result == null ? com.google.cloud.dialogflow.v2.Document.State.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2174,6 +2467,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
     if (latestReloadStatus_ != null) {
       output.writeMessage(12, getLatestReloadStatus());
+    }
+    if (state_ != com.google.cloud.dialogflow.v2.Document.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(13, state_);
     }
     unknownFields.writeTo(output);
   }
@@ -2230,6 +2526,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (latestReloadStatus_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getLatestReloadStatus());
     }
+    if (state_ != com.google.cloud.dialogflow.v2.Document.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, state_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2255,6 +2554,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!getLatestReloadStatus().equals(other.getLatestReloadStatus())) return false;
     }
     if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
+    if (state_ != other.state_) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 5:
@@ -2297,6 +2597,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetadata().hashCode();
     }
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
     switch (sourceCase_) {
       case 5:
         hash = (37 * hash) + CONTENT_URI_FIELD_NUMBER;
@@ -2495,6 +2797,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         latestReloadStatusBuilder_ = null;
       }
       internalGetMutableMetadata().clear();
+      state_ = 0;
+
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -2547,6 +2851,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       result.metadata_ = internalGetMetadata();
       result.metadata_.makeImmutable();
+      result.state_ = state_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -2626,6 +2931,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         mergeLatestReloadStatus(other.getLatestReloadStatus());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
+      }
       switch (other.getSourceCase()) {
         case CONTENT_URI:
           {
@@ -4018,6 +4326,107 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the document.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Document.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the document.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Document.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+
+      state_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the document.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Document.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.Document.State getState() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.dialogflow.v2.Document.State result =
+          com.google.cloud.dialogflow.v2.Document.State.valueOf(state_);
+      return result == null ? com.google.cloud.dialogflow.v2.Document.State.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the document.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Document.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.cloud.dialogflow.v2.Document.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the document.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Document.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+
+      state_ = 0;
+      onChanged();
       return this;
     }
 

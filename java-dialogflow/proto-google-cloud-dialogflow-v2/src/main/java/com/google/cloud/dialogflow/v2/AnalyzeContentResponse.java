@@ -452,6 +452,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * The suggestions for most recent human agent. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   * Note that any failure of Agent Assist features will not lead to the overall
+   * failure of an AnalyzeContent API call. Instead, the features will
+   * fail silently with the error field set in the corresponding
+   * SuggestionResult.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult human_agent_suggestion_results = 6;
@@ -469,6 +473,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * The suggestions for most recent human agent. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   * Note that any failure of Agent Assist features will not lead to the overall
+   * failure of an AnalyzeContent API call. Instead, the features will
+   * fail silently with the error field set in the corresponding
+   * SuggestionResult.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult human_agent_suggestion_results = 6;
@@ -486,6 +494,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * The suggestions for most recent human agent. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   * Note that any failure of Agent Assist features will not lead to the overall
+   * failure of an AnalyzeContent API call. Instead, the features will
+   * fail silently with the error field set in the corresponding
+   * SuggestionResult.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult human_agent_suggestion_results = 6;
@@ -502,6 +514,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * The suggestions for most recent human agent. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   * Note that any failure of Agent Assist features will not lead to the overall
+   * failure of an AnalyzeContent API call. Instead, the features will
+   * fail silently with the error field set in the corresponding
+   * SuggestionResult.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult human_agent_suggestion_results = 6;
@@ -518,6 +534,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * The suggestions for most recent human agent. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   * Note that any failure of Agent Assist features will not lead to the overall
+   * failure of an AnalyzeContent API call. Instead, the features will
+   * fail silently with the error field set in the corresponding
+   * SuggestionResult.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult human_agent_suggestion_results = 6;
@@ -538,6 +558,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * The suggestions for end user. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+   * Same as human_agent_suggestion_results, any failure of Agent Assist
+   * features will not lead to the overall failure of an AnalyzeContent API
+   * call. Instead, the features will fail silently with the error field set in
+   * the corresponding SuggestionResult.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -555,6 +579,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * The suggestions for end user. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+   * Same as human_agent_suggestion_results, any failure of Agent Assist
+   * features will not lead to the overall failure of an AnalyzeContent API
+   * call. Instead, the features will fail silently with the error field set in
+   * the corresponding SuggestionResult.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -572,6 +600,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * The suggestions for end user. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+   * Same as human_agent_suggestion_results, any failure of Agent Assist
+   * features will not lead to the overall failure of an AnalyzeContent API
+   * call. Instead, the features will fail silently with the error field set in
+   * the corresponding SuggestionResult.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -588,6 +620,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * The suggestions for end user. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+   * Same as human_agent_suggestion_results, any failure of Agent Assist
+   * features will not lead to the overall failure of an AnalyzeContent API
+   * call. Instead, the features will fail silently with the error field set in
+   * the corresponding SuggestionResult.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -604,6 +640,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * The suggestions for end user. The order is the same as
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+   * Same as human_agent_suggestion_results, any failure of Agent Assist
+   * features will not lead to the overall failure of an AnalyzeContent API
+   * call. Instead, the features will fail silently with the error field set in
+   * the corresponding SuggestionResult.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2015,6 +2055,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2036,6 +2080,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2056,6 +2104,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2077,6 +2129,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2104,6 +2160,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2128,6 +2188,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2155,6 +2219,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2182,6 +2250,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2206,6 +2278,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2230,6 +2306,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2255,6 +2335,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2278,6 +2362,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2301,6 +2389,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2318,6 +2410,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2339,6 +2435,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2360,6 +2460,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2378,6 +2482,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2396,6 +2504,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for most recent human agent. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     * Note that any failure of Agent Assist features will not lead to the overall
+     * failure of an AnalyzeContent API call. Instead, the features will
+     * fail silently with the error field set in the corresponding
+     * SuggestionResult.
      * </pre>
      *
      * <code>
@@ -2452,6 +2564,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2472,6 +2588,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2491,6 +2611,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2510,6 +2634,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2536,6 +2664,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2559,6 +2691,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2585,6 +2721,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2611,6 +2751,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2634,6 +2778,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2657,6 +2805,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2680,6 +2832,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2702,6 +2858,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2724,6 +2884,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2740,6 +2904,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2760,6 +2928,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2780,6 +2952,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2797,6 +2973,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;
@@ -2814,6 +2994,10 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * The suggestions for end user. The order is the same as
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.end_user_suggestion_config].
+     * Same as human_agent_suggestion_results, any failure of Agent Assist
+     * features will not lead to the overall failure of an AnalyzeContent API
+     * call. Instead, the features will fail silently with the error field set in
+     * the corresponding SuggestionResult.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SuggestionResult end_user_suggestion_results = 7;

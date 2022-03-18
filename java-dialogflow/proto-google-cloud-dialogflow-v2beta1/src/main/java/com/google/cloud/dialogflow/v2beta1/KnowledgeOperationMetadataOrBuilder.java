@@ -76,4 +76,46 @@ public interface KnowledgeOperationMetadataOrBuilder
    * @return The bytes for knowledgeBase.
    */
   com.google.protobuf.ByteString getKnowledgeBaseBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for the Export Data Operation such as the destination of export.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.ExportOperationMetadata export_operation_metadata = 4;
+   * </code>
+   *
+   * @return Whether the exportOperationMetadata field is set.
+   */
+  boolean hasExportOperationMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for the Export Data Operation such as the destination of export.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.ExportOperationMetadata export_operation_metadata = 4;
+   * </code>
+   *
+   * @return The exportOperationMetadata.
+   */
+  com.google.cloud.dialogflow.v2beta1.ExportOperationMetadata getExportOperationMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for the Export Data Operation such as the destination of export.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.ExportOperationMetadata export_operation_metadata = 4;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.ExportOperationMetadataOrBuilder
+      getExportOperationMetadataOrBuilder();
+
+  public com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.OperationMetadataCase
+      getOperationMetadataCase();
 }

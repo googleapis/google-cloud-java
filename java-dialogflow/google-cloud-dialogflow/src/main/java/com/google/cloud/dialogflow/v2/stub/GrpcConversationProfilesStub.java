@@ -23,15 +23,21 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata;
+import com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest;
 import com.google.cloud.dialogflow.v2.ConversationProfile;
 import com.google.cloud.dialogflow.v2.CreateConversationProfileRequest;
 import com.google.cloud.dialogflow.v2.DeleteConversationProfileRequest;
 import com.google.cloud.dialogflow.v2.GetConversationProfileRequest;
 import com.google.cloud.dialogflow.v2.ListConversationProfilesRequest;
 import com.google.cloud.dialogflow.v2.ListConversationProfilesResponse;
+import com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata;
+import com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest;
 import com.google.cloud.dialogflow.v2.UpdateConversationProfileRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -109,6 +115,28 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SetSuggestionFeatureConfigRequest, Operation>
+      setSuggestionFeatureConfigMethodDescriptor =
+          MethodDescriptor.<SetSuggestionFeatureConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2.ConversationProfiles/SetSuggestionFeatureConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SetSuggestionFeatureConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ClearSuggestionFeatureConfigRequest, Operation>
+      clearSuggestionFeatureConfigMethodDescriptor =
+          MethodDescriptor.<ClearSuggestionFeatureConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2.ConversationProfiles/ClearSuggestionFeatureConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ClearSuggestionFeatureConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListConversationProfilesRequest, ListConversationProfilesResponse>
       listConversationProfilesCallable;
   private final UnaryCallable<
@@ -122,6 +150,20 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
       updateConversationProfileCallable;
   private final UnaryCallable<DeleteConversationProfileRequest, Empty>
       deleteConversationProfileCallable;
+  private final UnaryCallable<SetSuggestionFeatureConfigRequest, Operation>
+      setSuggestionFeatureConfigCallable;
+  private final OperationCallable<
+          SetSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          SetSuggestionFeatureConfigOperationMetadata>
+      setSuggestionFeatureConfigOperationCallable;
+  private final UnaryCallable<ClearSuggestionFeatureConfigRequest, Operation>
+      clearSuggestionFeatureConfigCallable;
+  private final OperationCallable<
+          ClearSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          ClearSuggestionFeatureConfigOperationMetadata>
+      clearSuggestionFeatureConfigOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -225,6 +267,30 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<SetSuggestionFeatureConfigRequest, Operation>
+        setSuggestionFeatureConfigTransportSettings =
+            GrpcCallSettings.<SetSuggestionFeatureConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(setSuggestionFeatureConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "conversation_profile", String.valueOf(request.getConversationProfile()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ClearSuggestionFeatureConfigRequest, Operation>
+        clearSuggestionFeatureConfigTransportSettings =
+            GrpcCallSettings.<ClearSuggestionFeatureConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(clearSuggestionFeatureConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "conversation_profile", String.valueOf(request.getConversationProfile()));
+                      return params.build();
+                    })
+                .build();
 
     this.listConversationProfilesCallable =
         callableFactory.createUnaryCallable(
@@ -256,6 +322,28 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
             deleteConversationProfileTransportSettings,
             settings.deleteConversationProfileSettings(),
             clientContext);
+    this.setSuggestionFeatureConfigCallable =
+        callableFactory.createUnaryCallable(
+            setSuggestionFeatureConfigTransportSettings,
+            settings.setSuggestionFeatureConfigSettings(),
+            clientContext);
+    this.setSuggestionFeatureConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            setSuggestionFeatureConfigTransportSettings,
+            settings.setSuggestionFeatureConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.clearSuggestionFeatureConfigCallable =
+        callableFactory.createUnaryCallable(
+            clearSuggestionFeatureConfigTransportSettings,
+            settings.clearSuggestionFeatureConfigSettings(),
+            clientContext);
+    this.clearSuggestionFeatureConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            clearSuggestionFeatureConfigTransportSettings,
+            settings.clearSuggestionFeatureConfigOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -299,6 +387,36 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
   public UnaryCallable<DeleteConversationProfileRequest, Empty>
       deleteConversationProfileCallable() {
     return deleteConversationProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetSuggestionFeatureConfigRequest, Operation>
+      setSuggestionFeatureConfigCallable() {
+    return setSuggestionFeatureConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          SetSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          SetSuggestionFeatureConfigOperationMetadata>
+      setSuggestionFeatureConfigOperationCallable() {
+    return setSuggestionFeatureConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ClearSuggestionFeatureConfigRequest, Operation>
+      clearSuggestionFeatureConfigCallable() {
+    return clearSuggestionFeatureConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ClearSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          ClearSuggestionFeatureConfigOperationMetadata>
+      clearSuggestionFeatureConfigOperationCallable() {
+    return clearSuggestionFeatureConfigOperationCallable;
   }
 
   @Override

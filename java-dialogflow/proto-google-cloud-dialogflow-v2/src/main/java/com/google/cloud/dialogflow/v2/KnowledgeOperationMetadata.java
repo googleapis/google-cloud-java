@@ -85,6 +85,26 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
               knowledgeBase_ = s;
               break;
             }
+          case 34:
+            {
+              com.google.cloud.dialogflow.v2.ExportOperationMetadata.Builder subBuilder = null;
+              if (operationMetadataCase_ == 4) {
+                subBuilder =
+                    ((com.google.cloud.dialogflow.v2.ExportOperationMetadata) operationMetadata_)
+                        .toBuilder();
+              }
+              operationMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.ExportOperationMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.dialogflow.v2.ExportOperationMetadata) operationMetadata_);
+                operationMetadata_ = subBuilder.buildPartial();
+              }
+              operationMetadataCase_ = 4;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -300,6 +320,50 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.KnowledgeOperationMetadata.State)
   }
 
+  private int operationMetadataCase_ = 0;
+  private java.lang.Object operationMetadata_;
+
+  public enum OperationMetadataCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    EXPORT_OPERATION_METADATA(4),
+    OPERATIONMETADATA_NOT_SET(0);
+    private final int value;
+
+    private OperationMetadataCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OperationMetadataCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static OperationMetadataCase forNumber(int value) {
+      switch (value) {
+        case 4:
+          return EXPORT_OPERATION_METADATA;
+        case 0:
+          return OPERATIONMETADATA_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public OperationMetadataCase getOperationMetadataCase() {
+    return OperationMetadataCase.forNumber(operationMetadataCase_);
+  }
+
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_;
   /**
@@ -391,6 +455,58 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     }
   }
 
+  public static final int EXPORT_OPERATION_METADATA_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for the Export Data Operation such as the destination of export.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.ExportOperationMetadata export_operation_metadata = 4;</code>
+   *
+   * @return Whether the exportOperationMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasExportOperationMetadata() {
+    return operationMetadataCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for the Export Data Operation such as the destination of export.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.ExportOperationMetadata export_operation_metadata = 4;</code>
+   *
+   * @return The exportOperationMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.ExportOperationMetadata getExportOperationMetadata() {
+    if (operationMetadataCase_ == 4) {
+      return (com.google.cloud.dialogflow.v2.ExportOperationMetadata) operationMetadata_;
+    }
+    return com.google.cloud.dialogflow.v2.ExportOperationMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for the Export Data Operation such as the destination of export.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.ExportOperationMetadata export_operation_metadata = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.ExportOperationMetadataOrBuilder
+      getExportOperationMetadataOrBuilder() {
+    if (operationMetadataCase_ == 4) {
+      return (com.google.cloud.dialogflow.v2.ExportOperationMetadata) operationMetadata_;
+    }
+    return com.google.cloud.dialogflow.v2.ExportOperationMetadata.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -413,6 +529,10 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(knowledgeBase_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, knowledgeBase_);
     }
+    if (operationMetadataCase_ == 4) {
+      output.writeMessage(
+          4, (com.google.cloud.dialogflow.v2.ExportOperationMetadata) operationMetadata_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -429,6 +549,11 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(knowledgeBase_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, knowledgeBase_);
+    }
+    if (operationMetadataCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.dialogflow.v2.ExportOperationMetadata) operationMetadata_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -448,6 +573,14 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
 
     if (state_ != other.state_) return false;
     if (!getKnowledgeBase().equals(other.getKnowledgeBase())) return false;
+    if (!getOperationMetadataCase().equals(other.getOperationMetadataCase())) return false;
+    switch (operationMetadataCase_) {
+      case 4:
+        if (!getExportOperationMetadata().equals(other.getExportOperationMetadata())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -463,6 +596,14 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     hash = (53 * hash) + state_;
     hash = (37 * hash) + KNOWLEDGE_BASE_FIELD_NUMBER;
     hash = (53 * hash) + getKnowledgeBase().hashCode();
+    switch (operationMetadataCase_) {
+      case 4:
+        hash = (37 * hash) + EXPORT_OPERATION_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getExportOperationMetadata().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -613,6 +754,8 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
 
       knowledgeBase_ = "";
 
+      operationMetadataCase_ = 0;
+      operationMetadata_ = null;
       return this;
     }
 
@@ -642,6 +785,14 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
           new com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata(this);
       result.state_ = state_;
       result.knowledgeBase_ = knowledgeBase_;
+      if (operationMetadataCase_ == 4) {
+        if (exportOperationMetadataBuilder_ == null) {
+          result.operationMetadata_ = operationMetadata_;
+        } else {
+          result.operationMetadata_ = exportOperationMetadataBuilder_.build();
+        }
+      }
+      result.operationMetadataCase_ = operationMetadataCase_;
       onBuilt();
       return result;
     }
@@ -699,6 +850,17 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         knowledgeBase_ = other.knowledgeBase_;
         onChanged();
       }
+      switch (other.getOperationMetadataCase()) {
+        case EXPORT_OPERATION_METADATA:
+          {
+            mergeExportOperationMetadata(other.getExportOperationMetadata());
+            break;
+          }
+        case OPERATIONMETADATA_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -726,6 +888,20 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int operationMetadataCase_ = 0;
+    private java.lang.Object operationMetadata_;
+
+    public OperationMetadataCase getOperationMetadataCase() {
+      return OperationMetadataCase.forNumber(operationMetadataCase_);
+    }
+
+    public Builder clearOperationMetadata() {
+      operationMetadataCase_ = 0;
+      operationMetadata_ = null;
+      onChanged();
       return this;
     }
 
@@ -936,6 +1112,230 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       knowledgeBase_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.ExportOperationMetadata,
+            com.google.cloud.dialogflow.v2.ExportOperationMetadata.Builder,
+            com.google.cloud.dialogflow.v2.ExportOperationMetadataOrBuilder>
+        exportOperationMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the Export Data Operation such as the destination of export.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.ExportOperationMetadata export_operation_metadata = 4;
+     * </code>
+     *
+     * @return Whether the exportOperationMetadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasExportOperationMetadata() {
+      return operationMetadataCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the Export Data Operation such as the destination of export.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.ExportOperationMetadata export_operation_metadata = 4;
+     * </code>
+     *
+     * @return The exportOperationMetadata.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.ExportOperationMetadata getExportOperationMetadata() {
+      if (exportOperationMetadataBuilder_ == null) {
+        if (operationMetadataCase_ == 4) {
+          return (com.google.cloud.dialogflow.v2.ExportOperationMetadata) operationMetadata_;
+        }
+        return com.google.cloud.dialogflow.v2.ExportOperationMetadata.getDefaultInstance();
+      } else {
+        if (operationMetadataCase_ == 4) {
+          return exportOperationMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2.ExportOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the Export Data Operation such as the destination of export.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.ExportOperationMetadata export_operation_metadata = 4;
+     * </code>
+     */
+    public Builder setExportOperationMetadata(
+        com.google.cloud.dialogflow.v2.ExportOperationMetadata value) {
+      if (exportOperationMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        operationMetadata_ = value;
+        onChanged();
+      } else {
+        exportOperationMetadataBuilder_.setMessage(value);
+      }
+      operationMetadataCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the Export Data Operation such as the destination of export.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.ExportOperationMetadata export_operation_metadata = 4;
+     * </code>
+     */
+    public Builder setExportOperationMetadata(
+        com.google.cloud.dialogflow.v2.ExportOperationMetadata.Builder builderForValue) {
+      if (exportOperationMetadataBuilder_ == null) {
+        operationMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        exportOperationMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      operationMetadataCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the Export Data Operation such as the destination of export.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.ExportOperationMetadata export_operation_metadata = 4;
+     * </code>
+     */
+    public Builder mergeExportOperationMetadata(
+        com.google.cloud.dialogflow.v2.ExportOperationMetadata value) {
+      if (exportOperationMetadataBuilder_ == null) {
+        if (operationMetadataCase_ == 4
+            && operationMetadata_
+                != com.google.cloud.dialogflow.v2.ExportOperationMetadata.getDefaultInstance()) {
+          operationMetadata_ =
+              com.google.cloud.dialogflow.v2.ExportOperationMetadata.newBuilder(
+                      (com.google.cloud.dialogflow.v2.ExportOperationMetadata) operationMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          operationMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (operationMetadataCase_ == 4) {
+          exportOperationMetadataBuilder_.mergeFrom(value);
+        }
+        exportOperationMetadataBuilder_.setMessage(value);
+      }
+      operationMetadataCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the Export Data Operation such as the destination of export.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.ExportOperationMetadata export_operation_metadata = 4;
+     * </code>
+     */
+    public Builder clearExportOperationMetadata() {
+      if (exportOperationMetadataBuilder_ == null) {
+        if (operationMetadataCase_ == 4) {
+          operationMetadataCase_ = 0;
+          operationMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (operationMetadataCase_ == 4) {
+          operationMetadataCase_ = 0;
+          operationMetadata_ = null;
+        }
+        exportOperationMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the Export Data Operation such as the destination of export.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.ExportOperationMetadata export_operation_metadata = 4;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.ExportOperationMetadata.Builder
+        getExportOperationMetadataBuilder() {
+      return getExportOperationMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the Export Data Operation such as the destination of export.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.ExportOperationMetadata export_operation_metadata = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.ExportOperationMetadataOrBuilder
+        getExportOperationMetadataOrBuilder() {
+      if ((operationMetadataCase_ == 4) && (exportOperationMetadataBuilder_ != null)) {
+        return exportOperationMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (operationMetadataCase_ == 4) {
+          return (com.google.cloud.dialogflow.v2.ExportOperationMetadata) operationMetadata_;
+        }
+        return com.google.cloud.dialogflow.v2.ExportOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the Export Data Operation such as the destination of export.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.ExportOperationMetadata export_operation_metadata = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.ExportOperationMetadata,
+            com.google.cloud.dialogflow.v2.ExportOperationMetadata.Builder,
+            com.google.cloud.dialogflow.v2.ExportOperationMetadataOrBuilder>
+        getExportOperationMetadataFieldBuilder() {
+      if (exportOperationMetadataBuilder_ == null) {
+        if (!(operationMetadataCase_ == 4)) {
+          operationMetadata_ =
+              com.google.cloud.dialogflow.v2.ExportOperationMetadata.getDefaultInstance();
+        }
+        exportOperationMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.ExportOperationMetadata,
+                com.google.cloud.dialogflow.v2.ExportOperationMetadata.Builder,
+                com.google.cloud.dialogflow.v2.ExportOperationMetadataOrBuilder>(
+                (com.google.cloud.dialogflow.v2.ExportOperationMetadata) operationMetadata_,
+                getParentForChildren(),
+                isClean());
+        operationMetadata_ = null;
+      }
+      operationMetadataCase_ = 4;
+      onChanged();
+      ;
+      return exportOperationMetadataBuilder_;
     }
 
     @java.lang.Override

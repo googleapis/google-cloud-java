@@ -31,10 +31,13 @@ public interface NotificationConfigOrBuilder
    * events like
    * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED] as
    * serialized [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent] protos.
-   * Notification works for phone calls, if this topic either is in the same
-   * project as the conversation or you grant `service-&lt;Conversation Project
+   * For telephony integration to receive notification, make sure either this
+   * topic is in the same project as the conversation or you grant
+   * `service-&lt;Conversation Project
    * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow Service
    * Agent` role in the topic project.
+   * For chat integration to receive notification, make sure API caller has been
+   * granted the `Dialogflow Service Agent` role for the topic.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/topics/&lt;Topic ID&gt;`.
    * </pre>
    *
@@ -51,10 +54,13 @@ public interface NotificationConfigOrBuilder
    * events like
    * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED] as
    * serialized [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent] protos.
-   * Notification works for phone calls, if this topic either is in the same
-   * project as the conversation or you grant `service-&lt;Conversation Project
+   * For telephony integration to receive notification, make sure either this
+   * topic is in the same project as the conversation or you grant
+   * `service-&lt;Conversation Project
    * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow Service
    * Agent` role in the topic project.
+   * For chat integration to receive notification, make sure API caller has been
+   * granted the `Dialogflow Service Agent` role for the topic.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/topics/&lt;Topic ID&gt;`.
    * </pre>
    *

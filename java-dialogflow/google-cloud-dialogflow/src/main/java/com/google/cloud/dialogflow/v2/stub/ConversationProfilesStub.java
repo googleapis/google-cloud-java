@@ -19,14 +19,21 @@ package com.google.cloud.dialogflow.v2.stub;
 import static com.google.cloud.dialogflow.v2.ConversationProfilesClient.ListConversationProfilesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata;
+import com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest;
 import com.google.cloud.dialogflow.v2.ConversationProfile;
 import com.google.cloud.dialogflow.v2.CreateConversationProfileRequest;
 import com.google.cloud.dialogflow.v2.DeleteConversationProfileRequest;
 import com.google.cloud.dialogflow.v2.GetConversationProfileRequest;
 import com.google.cloud.dialogflow.v2.ListConversationProfilesRequest;
 import com.google.cloud.dialogflow.v2.ListConversationProfilesResponse;
+import com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata;
+import com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest;
 import com.google.cloud.dialogflow.v2.UpdateConversationProfileRequest;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -38,6 +45,10 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class ConversationProfilesStub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
 
   public UnaryCallable<ListConversationProfilesRequest, ListConversationProfilesPagedResponse>
       listConversationProfilesPagedCallable() {
@@ -68,6 +79,36 @@ public abstract class ConversationProfilesStub implements BackgroundResource {
   public UnaryCallable<DeleteConversationProfileRequest, Empty>
       deleteConversationProfileCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteConversationProfileCallable()");
+  }
+
+  public OperationCallable<
+          SetSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          SetSuggestionFeatureConfigOperationMetadata>
+      setSuggestionFeatureConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setSuggestionFeatureConfigOperationCallable()");
+  }
+
+  public UnaryCallable<SetSuggestionFeatureConfigRequest, Operation>
+      setSuggestionFeatureConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setSuggestionFeatureConfigCallable()");
+  }
+
+  public OperationCallable<
+          ClearSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          ClearSuggestionFeatureConfigOperationMetadata>
+      clearSuggestionFeatureConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: clearSuggestionFeatureConfigOperationCallable()");
+  }
+
+  public UnaryCallable<ClearSuggestionFeatureConfigRequest, Operation>
+      clearSuggestionFeatureConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: clearSuggestionFeatureConfigCallable()");
   }
 
   @Override

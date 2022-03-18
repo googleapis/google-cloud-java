@@ -27,10 +27,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -40,17 +44,22 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata;
+import com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigRequest;
 import com.google.cloud.dialogflow.v2beta1.ConversationProfile;
 import com.google.cloud.dialogflow.v2beta1.CreateConversationProfileRequest;
 import com.google.cloud.dialogflow.v2beta1.DeleteConversationProfileRequest;
 import com.google.cloud.dialogflow.v2beta1.GetConversationProfileRequest;
 import com.google.cloud.dialogflow.v2beta1.ListConversationProfilesRequest;
 import com.google.cloud.dialogflow.v2beta1.ListConversationProfilesResponse;
+import com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata;
+import com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigRequest;
 import com.google.cloud.dialogflow.v2beta1.UpdateConversationProfileRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -114,6 +123,20 @@ public class ConversationProfilesStubSettings
       updateConversationProfileSettings;
   private final UnaryCallSettings<DeleteConversationProfileRequest, Empty>
       deleteConversationProfileSettings;
+  private final UnaryCallSettings<SetSuggestionFeatureConfigRequest, Operation>
+      setSuggestionFeatureConfigSettings;
+  private final OperationCallSettings<
+          SetSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          SetSuggestionFeatureConfigOperationMetadata>
+      setSuggestionFeatureConfigOperationSettings;
+  private final UnaryCallSettings<ClearSuggestionFeatureConfigRequest, Operation>
+      clearSuggestionFeatureConfigSettings;
+  private final OperationCallSettings<
+          ClearSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          ClearSuggestionFeatureConfigOperationMetadata>
+      clearSuggestionFeatureConfigOperationSettings;
 
   private static final PagedListDescriptor<
           ListConversationProfilesRequest, ListConversationProfilesResponse, ConversationProfile>
@@ -222,6 +245,36 @@ public class ConversationProfilesStubSettings
     return deleteConversationProfileSettings;
   }
 
+  /** Returns the object with the settings used for calls to setSuggestionFeatureConfig. */
+  public UnaryCallSettings<SetSuggestionFeatureConfigRequest, Operation>
+      setSuggestionFeatureConfigSettings() {
+    return setSuggestionFeatureConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setSuggestionFeatureConfig. */
+  public OperationCallSettings<
+          SetSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          SetSuggestionFeatureConfigOperationMetadata>
+      setSuggestionFeatureConfigOperationSettings() {
+    return setSuggestionFeatureConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to clearSuggestionFeatureConfig. */
+  public UnaryCallSettings<ClearSuggestionFeatureConfigRequest, Operation>
+      clearSuggestionFeatureConfigSettings() {
+    return clearSuggestionFeatureConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to clearSuggestionFeatureConfig. */
+  public OperationCallSettings<
+          ClearSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          ClearSuggestionFeatureConfigOperationMetadata>
+      clearSuggestionFeatureConfigOperationSettings() {
+    return clearSuggestionFeatureConfigOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ConversationProfilesStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -303,6 +356,14 @@ public class ConversationProfilesStubSettings
     createConversationProfileSettings = settingsBuilder.createConversationProfileSettings().build();
     updateConversationProfileSettings = settingsBuilder.updateConversationProfileSettings().build();
     deleteConversationProfileSettings = settingsBuilder.deleteConversationProfileSettings().build();
+    setSuggestionFeatureConfigSettings =
+        settingsBuilder.setSuggestionFeatureConfigSettings().build();
+    setSuggestionFeatureConfigOperationSettings =
+        settingsBuilder.setSuggestionFeatureConfigOperationSettings().build();
+    clearSuggestionFeatureConfigSettings =
+        settingsBuilder.clearSuggestionFeatureConfigSettings().build();
+    clearSuggestionFeatureConfigOperationSettings =
+        settingsBuilder.clearSuggestionFeatureConfigOperationSettings().build();
   }
 
   /** Builder for ConversationProfilesStubSettings. */
@@ -322,6 +383,20 @@ public class ConversationProfilesStubSettings
         updateConversationProfileSettings;
     private final UnaryCallSettings.Builder<DeleteConversationProfileRequest, Empty>
         deleteConversationProfileSettings;
+    private final UnaryCallSettings.Builder<SetSuggestionFeatureConfigRequest, Operation>
+        setSuggestionFeatureConfigSettings;
+    private final OperationCallSettings.Builder<
+            SetSuggestionFeatureConfigRequest,
+            ConversationProfile,
+            SetSuggestionFeatureConfigOperationMetadata>
+        setSuggestionFeatureConfigOperationSettings;
+    private final UnaryCallSettings.Builder<ClearSuggestionFeatureConfigRequest, Operation>
+        clearSuggestionFeatureConfigSettings;
+    private final OperationCallSettings.Builder<
+            ClearSuggestionFeatureConfigRequest,
+            ConversationProfile,
+            ClearSuggestionFeatureConfigOperationMetadata>
+        clearSuggestionFeatureConfigOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -366,6 +441,10 @@ public class ConversationProfilesStubSettings
       createConversationProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateConversationProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteConversationProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setSuggestionFeatureConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setSuggestionFeatureConfigOperationSettings = OperationCallSettings.newBuilder();
+      clearSuggestionFeatureConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      clearSuggestionFeatureConfigOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -373,7 +452,9 @@ public class ConversationProfilesStubSettings
               getConversationProfileSettings,
               createConversationProfileSettings,
               updateConversationProfileSettings,
-              deleteConversationProfileSettings);
+              deleteConversationProfileSettings,
+              setSuggestionFeatureConfigSettings,
+              clearSuggestionFeatureConfigSettings);
       initDefaults(this);
     }
 
@@ -385,6 +466,13 @@ public class ConversationProfilesStubSettings
       createConversationProfileSettings = settings.createConversationProfileSettings.toBuilder();
       updateConversationProfileSettings = settings.updateConversationProfileSettings.toBuilder();
       deleteConversationProfileSettings = settings.deleteConversationProfileSettings.toBuilder();
+      setSuggestionFeatureConfigSettings = settings.setSuggestionFeatureConfigSettings.toBuilder();
+      setSuggestionFeatureConfigOperationSettings =
+          settings.setSuggestionFeatureConfigOperationSettings.toBuilder();
+      clearSuggestionFeatureConfigSettings =
+          settings.clearSuggestionFeatureConfigSettings.toBuilder();
+      clearSuggestionFeatureConfigOperationSettings =
+          settings.clearSuggestionFeatureConfigOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -392,7 +480,9 @@ public class ConversationProfilesStubSettings
               getConversationProfileSettings,
               createConversationProfileSettings,
               updateConversationProfileSettings,
-              deleteConversationProfileSettings);
+              deleteConversationProfileSettings,
+              setSuggestionFeatureConfigSettings,
+              clearSuggestionFeatureConfigSettings);
     }
 
     private static Builder createDefault() {
@@ -433,6 +523,68 @@ public class ConversationProfilesStubSettings
           .deleteConversationProfileSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setSuggestionFeatureConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .clearSuggestionFeatureConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setSuggestionFeatureConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetSuggestionFeatureConfigRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ConversationProfile.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  SetSuggestionFeatureConfigOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .clearSuggestionFeatureConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ClearSuggestionFeatureConfigRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ConversationProfile.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ClearSuggestionFeatureConfigOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -483,6 +635,40 @@ public class ConversationProfilesStubSettings
     public UnaryCallSettings.Builder<DeleteConversationProfileRequest, Empty>
         deleteConversationProfileSettings() {
       return deleteConversationProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setSuggestionFeatureConfig. */
+    public UnaryCallSettings.Builder<SetSuggestionFeatureConfigRequest, Operation>
+        setSuggestionFeatureConfigSettings() {
+      return setSuggestionFeatureConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setSuggestionFeatureConfig. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetSuggestionFeatureConfigRequest,
+            ConversationProfile,
+            SetSuggestionFeatureConfigOperationMetadata>
+        setSuggestionFeatureConfigOperationSettings() {
+      return setSuggestionFeatureConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to clearSuggestionFeatureConfig. */
+    public UnaryCallSettings.Builder<ClearSuggestionFeatureConfigRequest, Operation>
+        clearSuggestionFeatureConfigSettings() {
+      return clearSuggestionFeatureConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to clearSuggestionFeatureConfig. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ClearSuggestionFeatureConfigRequest,
+            ConversationProfile,
+            ClearSuggestionFeatureConfigOperationMetadata>
+        clearSuggestionFeatureConfigOperationSettings() {
+      return clearSuggestionFeatureConfigOperationSettings;
     }
 
     @Override

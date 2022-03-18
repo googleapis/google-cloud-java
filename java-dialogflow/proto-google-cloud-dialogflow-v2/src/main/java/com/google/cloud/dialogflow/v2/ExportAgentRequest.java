@@ -184,6 +184,11 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    * URI to export the agent to.
    * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * If left unspecified, the serialized agent is returned inline.
+   * Dialogflow performs a write operation for the Cloud Storage object
+   * on the caller's behalf, so your request authentication must
+   * have write permissions for the object. For more information, see
+   * [Dialogflow access
+   * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
    * </pre>
    *
    * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -210,6 +215,11 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    * URI to export the agent to.
    * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * If left unspecified, the serialized agent is returned inline.
+   * Dialogflow performs a write operation for the Cloud Storage object
+   * on the caller's behalf, so your request authentication must
+   * have write permissions for the object. For more information, see
+   * [Dialogflow access
+   * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
    * </pre>
    *
    * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -693,6 +703,11 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
+     * Dialogflow performs a write operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have write permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -718,6 +733,11 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
+     * Dialogflow performs a write operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have write permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -743,6 +763,11 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
+     * Dialogflow performs a write operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have write permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -767,6 +792,11 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
+     * Dialogflow performs a write operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have write permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -787,6 +817,11 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
+     * Dialogflow performs a write operation for the Cloud Storage object
+     * on the caller's behalf, so your request authentication must
+     * have write permissions for the object. For more information, see
+     * [Dialogflow access
+     * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
      * </pre>
      *
      * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>

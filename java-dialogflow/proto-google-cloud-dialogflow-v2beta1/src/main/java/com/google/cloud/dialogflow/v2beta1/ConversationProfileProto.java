@@ -127,6 +127,22 @@ public final class ConversationProfileProto {
       internal_static_google_cloud_dialogflow_v2beta1_DeleteConversationProfileRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_DeleteConversationProfileRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_SetSuggestionFeatureConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_SetSuggestionFeatureConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_ClearSuggestionFeatureConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_ClearSuggestionFeatureConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_SetSuggestionFeatureConfigOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_SetSuggestionFeatureConfigOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_ClearSuggestionFeatureConfigOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_ClearSuggestionFeatureConfigOperationMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -142,11 +158,9 @@ public final class ConversationProfileProto {
           + "oto\032\027google/api/client.proto\032\037google/api"
           + "/field_behavior.proto\032\031google/api/resour"
           + "ce.proto\0322google/cloud/dialogflow/v2beta"
-          + "1/audio_config.proto\032.google/cloud/dialo"
-          + "gflow/v2beta1/document.proto\0321google/clo"
-          + "ud/dialogflow/v2beta1/participant.proto\032"
-          + "#google/longrunning/operations.proto\032\036go"
-          + "ogle/protobuf/duration.proto\032\033google/pro"
+          + "1/audio_config.proto\0321google/cloud/dialo"
+          + "gflow/v2beta1/participant.proto\032#google/"
+          + "longrunning/operations.proto\032\033google/pro"
           + "tobuf/empty.proto\032 google/protobuf/field"
           + "_mask.proto\032\037google/protobuf/timestamp.p"
           + "roto\"\313\010\n\023ConversationProfile\022\014\n\004name\030\001 \001"
@@ -283,61 +297,112 @@ public final class ConversationProfileProto {
           + "\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"g"
           + "\n DeleteConversationProfileRequest\022C\n\004na"
           + "me\030\001 \001(\tB5\340A\002\372A/\n-dialogflow.googleapis."
-          + "com/ConversationProfile2\267\r\n\024Conversation"
-          + "Profiles\022\245\002\n\030ListConversationProfiles\022@."
-          + "google.cloud.dialogflow.v2beta1.ListConv"
-          + "ersationProfilesRequest\032A.google.cloud.d"
-          + "ialogflow.v2beta1.ListConversationProfil"
-          + "esResponse\"\203\001\202\323\344\223\002t\0221/v2beta1/{parent=pr"
-          + "ojects/*}/conversationProfilesZ?\022=/v2bet"
-          + "a1/{parent=projects/*/locations/*}/conve"
-          + "rsationProfiles\332A\006parent\022\222\002\n\026GetConversa"
-          + "tionProfile\022>.google.cloud.dialogflow.v2"
-          + "beta1.GetConversationProfileRequest\0324.go"
-          + "ogle.cloud.dialogflow.v2beta1.Conversati"
-          + "onProfile\"\201\001\202\323\344\223\002t\0221/v2beta1/{name=proje"
-          + "cts/*/conversationProfiles/*}Z?\022=/v2beta"
-          + "1/{name=projects/*/locations/*/conversat"
-          + "ionProfiles/*}\332A\004name\022\334\002\n\031CreateConversa"
-          + "tionProfile\022A.google.cloud.dialogflow.v2"
-          + "beta1.CreateConversationProfileRequest\0324"
-          + ".google.cloud.dialogflow.v2beta1.Convers"
-          + "ationProfile\"\305\001\202\323\344\223\002\240\001\"1/v2beta1/{parent"
-          + "=projects/*}/conversationProfiles:\024conve"
-          + "rsation_profileZU\"=/v2beta1/{parent=proj"
-          + "ects/*/locations/*}/conversationProfiles"
-          + ":\024conversation_profile\332A\033parent,conversa"
-          + "tion_profile\022\213\003\n\031UpdateConversationProfi"
-          + "le\022A.google.cloud.dialogflow.v2beta1.Upd"
-          + "ateConversationProfileRequest\0324.google.c"
-          + "loud.dialogflow.v2beta1.ConversationProf"
-          + "ile\"\364\001\202\323\344\223\002\312\0012F/v2beta1/{conversation_pr"
-          + "ofile.name=projects/*/conversationProfil"
-          + "es/*}:\024conversation_profileZj2R/v2beta1/"
-          + "{conversation_profile.name=projects/*/lo"
-          + "cations/*/conversationProfiles/*}:\024conve"
-          + "rsation_profile\332A conversation_profile,u"
-          + "pdate_mask\022\372\001\n\031DeleteConversationProfile"
-          + "\022A.google.cloud.dialogflow.v2beta1.Delet"
-          + "eConversationProfileRequest\032\026.google.pro"
-          + "tobuf.Empty\"\201\001\202\323\344\223\002t*1/v2beta1/{name=pro"
-          + "jects/*/conversationProfiles/*}Z?*=/v2be"
-          + "ta1/{name=projects/*/locations/*/convers"
-          + "ationProfiles/*}\332A\004name\032x\312A\031dialogflow.g"
-          + "oogleapis.com\322AYhttps://www.googleapis.c"
-          + "om/auth/cloud-platform,https://www.googl"
-          + "eapis.com/auth/dialogflowB\266\003\n#com.google"
-          + ".cloud.dialogflow.v2beta1B\030ConversationP"
-          + "rofileProtoP\001ZIgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/dialogflow/v2beta1;di"
-          + "alogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogfl"
-          + "ow.V2beta1\352A|\n,dialogflow.googleapis.com"
-          + "/CXSecuritySettings\022Lprojects/{project}/"
-          + "locations/{location}/securitySettings/{s"
-          + "ecurity_settings}\352A~\n+dialogflow.googlea"
-          + "pis.com/ConversationModel\022Oprojects/{pro"
-          + "ject}/locations/{location}/conversationM"
-          + "odels/{conversation_model}b\006proto3"
+          + "com/ConversationProfile\"\224\002\n!SetSuggestio"
+          + "nFeatureConfigRequest\022!\n\024conversation_pr"
+          + "ofile\030\001 \001(\tB\003\340A\002\022P\n\020participant_role\030\002 \001"
+          + "(\01621.google.cloud.dialogflow.v2beta1.Par"
+          + "ticipant.RoleB\003\340A\002\022z\n\031suggestion_feature"
+          + "_config\030\003 \001(\0132R.google.cloud.dialogflow."
+          + "v2beta1.HumanAgentAssistantConfig.Sugges"
+          + "tionFeatureConfigB\003\340A\002\"\371\001\n#ClearSuggesti"
+          + "onFeatureConfigRequest\022!\n\024conversation_p"
+          + "rofile\030\001 \001(\tB\003\340A\002\022P\n\020participant_role\030\002 "
+          + "\001(\01621.google.cloud.dialogflow.v2beta1.Pa"
+          + "rticipant.RoleB\003\340A\002\022]\n\027suggestion_featur"
+          + "e_type\030\003 \001(\01627.google.cloud.dialogflow.v"
+          + "2beta1.SuggestionFeature.TypeB\003\340A\002\"\255\002\n+S"
+          + "etSuggestionFeatureConfigOperationMetada"
+          + "ta\022\034\n\024conversation_profile\030\001 \001(\t\022P\n\020part"
+          + "icipant_role\030\002 \001(\01621.google.cloud.dialog"
+          + "flow.v2beta1.Participant.RoleB\003\340A\002\022]\n\027su"
+          + "ggestion_feature_type\030\003 \001(\01627.google.clo"
+          + "ud.dialogflow.v2beta1.SuggestionFeature."
+          + "TypeB\003\340A\002\022/\n\013create_time\030\004 \001(\0132\032.google."
+          + "protobuf.Timestamp\"\257\002\n-ClearSuggestionFe"
+          + "atureConfigOperationMetadata\022\034\n\024conversa"
+          + "tion_profile\030\001 \001(\t\022P\n\020participant_role\030\002"
+          + " \001(\01621.google.cloud.dialogflow.v2beta1.P"
+          + "articipant.RoleB\003\340A\002\022]\n\027suggestion_featu"
+          + "re_type\030\003 \001(\01627.google.cloud.dialogflow."
+          + "v2beta1.SuggestionFeature.TypeB\003\340A\002\022/\n\013c"
+          + "reate_time\030\004 \001(\0132\032.google.protobuf.Times"
+          + "tamp2\261\024\n\024ConversationProfiles\022\245\002\n\030ListCo"
+          + "nversationProfiles\022@.google.cloud.dialog"
+          + "flow.v2beta1.ListConversationProfilesReq"
+          + "uest\032A.google.cloud.dialogflow.v2beta1.L"
+          + "istConversationProfilesResponse\"\203\001\202\323\344\223\002t"
+          + "\0221/v2beta1/{parent=projects/*}/conversat"
+          + "ionProfilesZ?\022=/v2beta1/{parent=projects"
+          + "/*/locations/*}/conversationProfiles\332A\006p"
+          + "arent\022\222\002\n\026GetConversationProfile\022>.googl"
+          + "e.cloud.dialogflow.v2beta1.GetConversati"
+          + "onProfileRequest\0324.google.cloud.dialogfl"
+          + "ow.v2beta1.ConversationProfile\"\201\001\202\323\344\223\002t\022"
+          + "1/v2beta1/{name=projects/*/conversationP"
+          + "rofiles/*}Z?\022=/v2beta1/{name=projects/*/"
+          + "locations/*/conversationProfiles/*}\332A\004na"
+          + "me\022\334\002\n\031CreateConversationProfile\022A.googl"
+          + "e.cloud.dialogflow.v2beta1.CreateConvers"
+          + "ationProfileRequest\0324.google.cloud.dialo"
+          + "gflow.v2beta1.ConversationProfile\"\305\001\202\323\344\223"
+          + "\002\240\001\"1/v2beta1/{parent=projects/*}/conver"
+          + "sationProfiles:\024conversation_profileZU\"="
+          + "/v2beta1/{parent=projects/*/locations/*}"
+          + "/conversationProfiles:\024conversation_prof"
+          + "ile\332A\033parent,conversation_profile\022\213\003\n\031Up"
+          + "dateConversationProfile\022A.google.cloud.d"
+          + "ialogflow.v2beta1.UpdateConversationProf"
+          + "ileRequest\0324.google.cloud.dialogflow.v2b"
+          + "eta1.ConversationProfile\"\364\001\202\323\344\223\002\312\0012F/v2b"
+          + "eta1/{conversation_profile.name=projects"
+          + "/*/conversationProfiles/*}:\024conversation"
+          + "_profileZj2R/v2beta1/{conversation_profi"
+          + "le.name=projects/*/locations/*/conversat"
+          + "ionProfiles/*}:\024conversation_profile\332A c"
+          + "onversation_profile,update_mask\022\372\001\n\031Dele"
+          + "teConversationProfile\022A.google.cloud.dia"
+          + "logflow.v2beta1.DeleteConversationProfil"
+          + "eRequest\032\026.google.protobuf.Empty\"\201\001\202\323\344\223\002"
+          + "t*1/v2beta1/{name=projects/*/conversatio"
+          + "nProfiles/*}Z?*=/v2beta1/{name=projects/"
+          + "*/locations/*/conversationProfiles/*}\332A\004"
+          + "name\022\265\003\n\032SetSuggestionFeatureConfig\022B.go"
+          + "ogle.cloud.dialogflow.v2beta1.SetSuggest"
+          + "ionFeatureConfigRequest\032\035.google.longrun"
+          + "ning.Operation\"\263\002\202\323\344\223\002\320\001\"\\/v2beta1/{conv"
+          + "ersation_profile=projects/*/conversation"
+          + "Profiles/*}:setSuggestionFeatureConfig:\001"
+          + "*Zm\"h/v2beta1/{conversation_profile=proj"
+          + "ects/*/locations/*/conversationProfiles/"
+          + "*}:setSuggestionFeatureConfig:\001*\332A\024conve"
+          + "rsation_profile\312AB\n\023ConversationProfile\022"
+          + "+SetSuggestionFeatureConfigOperationMeta"
+          + "data\022\277\003\n\034ClearSuggestionFeatureConfig\022D."
+          + "google.cloud.dialogflow.v2beta1.ClearSug"
+          + "gestionFeatureConfigRequest\032\035.google.lon"
+          + "grunning.Operation\"\271\002\202\323\344\223\002\324\001\"^/v2beta1/{"
+          + "conversation_profile=projects/*/conversa"
+          + "tionProfiles/*}:clearSuggestionFeatureCo"
+          + "nfig:\001*Zo\"j/v2beta1/{conversation_profil"
+          + "e=projects/*/locations/*/conversationPro"
+          + "files/*}:clearSuggestionFeatureConfig:\001*"
+          + "\332A\024conversation_profile\312AD\n\023Conversation"
+          + "Profile\022-ClearSuggestionFeatureConfigOpe"
+          + "rationMetadata\032x\312A\031dialogflow.googleapis"
+          + ".com\322AYhttps://www.googleapis.com/auth/c"
+          + "loud-platform,https://www.googleapis.com"
+          + "/auth/dialogflowB\266\003\n#com.google.cloud.di"
+          + "alogflow.v2beta1B\030ConversationProfilePro"
+          + "toP\001ZIgoogle.golang.org/genproto/googlea"
+          + "pis/cloud/dialogflow/v2beta1;dialogflow\370"
+          + "\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2beta"
+          + "1\352A|\n,dialogflow.googleapis.com/CXSecuri"
+          + "tySettings\022Lprojects/{project}/locations"
+          + "/{location}/securitySettings/{security_s"
+          + "ettings}\352A~\n+dialogflow.googleapis.com/C"
+          + "onversationModel\022Oprojects/{project}/loc"
+          + "ations/{location}/conversationModels/{co"
+          + "nversation_model}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -348,10 +413,8 @@ public final class ConversationProfileProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.dialogflow.v2beta1.AudioConfigProto.getDescriptor(),
-              com.google.cloud.dialogflow.v2beta1.DocumentProto.getDescriptor(),
               com.google.cloud.dialogflow.v2beta1.ParticipantProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
-              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -609,6 +672,38 @@ public final class ConversationProfileProto {
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_dialogflow_v2beta1_SetSuggestionFeatureConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_dialogflow_v2beta1_SetSuggestionFeatureConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_SetSuggestionFeatureConfigRequest_descriptor,
+            new java.lang.String[] {
+              "ConversationProfile", "ParticipantRole", "SuggestionFeatureConfig",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_ClearSuggestionFeatureConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_dialogflow_v2beta1_ClearSuggestionFeatureConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_ClearSuggestionFeatureConfigRequest_descriptor,
+            new java.lang.String[] {
+              "ConversationProfile", "ParticipantRole", "SuggestionFeatureType",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_SetSuggestionFeatureConfigOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_dialogflow_v2beta1_SetSuggestionFeatureConfigOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_SetSuggestionFeatureConfigOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "ConversationProfile", "ParticipantRole", "SuggestionFeatureType", "CreateTime",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_ClearSuggestionFeatureConfigOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_dialogflow_v2beta1_ClearSuggestionFeatureConfigOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_ClearSuggestionFeatureConfigOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "ConversationProfile", "ParticipantRole", "SuggestionFeatureType", "CreateTime",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -619,6 +714,7 @@ public final class ConversationProfileProto {
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
+    registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
@@ -626,10 +722,8 @@ public final class ConversationProfileProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.dialogflow.v2beta1.AudioConfigProto.getDescriptor();
-    com.google.cloud.dialogflow.v2beta1.DocumentProto.getDescriptor();
     com.google.cloud.dialogflow.v2beta1.ParticipantProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

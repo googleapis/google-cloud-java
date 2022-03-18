@@ -298,6 +298,110 @@ public final class ConversationProfilesGrpc {
     return getDeleteConversationProfileMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest,
+          com.google.longrunning.Operation>
+      getSetSuggestionFeatureConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetSuggestionFeatureConfig",
+      requestType = com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest,
+          com.google.longrunning.Operation>
+      getSetSuggestionFeatureConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest,
+            com.google.longrunning.Operation>
+        getSetSuggestionFeatureConfigMethod;
+    if ((getSetSuggestionFeatureConfigMethod =
+            ConversationProfilesGrpc.getSetSuggestionFeatureConfigMethod)
+        == null) {
+      synchronized (ConversationProfilesGrpc.class) {
+        if ((getSetSuggestionFeatureConfigMethod =
+                ConversationProfilesGrpc.getSetSuggestionFeatureConfigMethod)
+            == null) {
+          ConversationProfilesGrpc.getSetSuggestionFeatureConfigMethod =
+              getSetSuggestionFeatureConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SetSuggestionFeatureConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationProfilesMethodDescriptorSupplier(
+                              "SetSuggestionFeatureConfig"))
+                      .build();
+        }
+      }
+    }
+    return getSetSuggestionFeatureConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest,
+          com.google.longrunning.Operation>
+      getClearSuggestionFeatureConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ClearSuggestionFeatureConfig",
+      requestType = com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest,
+          com.google.longrunning.Operation>
+      getClearSuggestionFeatureConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest,
+            com.google.longrunning.Operation>
+        getClearSuggestionFeatureConfigMethod;
+    if ((getClearSuggestionFeatureConfigMethod =
+            ConversationProfilesGrpc.getClearSuggestionFeatureConfigMethod)
+        == null) {
+      synchronized (ConversationProfilesGrpc.class) {
+        if ((getClearSuggestionFeatureConfigMethod =
+                ConversationProfilesGrpc.getClearSuggestionFeatureConfigMethod)
+            == null) {
+          ConversationProfilesGrpc.getClearSuggestionFeatureConfigMethod =
+              getClearSuggestionFeatureConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ClearSuggestionFeatureConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationProfilesMethodDescriptorSupplier(
+                              "ClearSuggestionFeatureConfig"))
+                      .build();
+        }
+      }
+    }
+    return getClearSuggestionFeatureConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConversationProfilesStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConversationProfilesStub> factory =
@@ -428,6 +532,52 @@ public final class ConversationProfilesGrpc {
           getDeleteConversationProfileMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Adds or updates a suggestion feature in a conversation profile.
+     * If the conversation profile contains the type of suggestion feature for
+     * the participant role, it will update it. Otherwise it will insert the
+     * suggestion feature.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata]
+     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+     * If a long running operation to add or update suggestion feature
+     * config for the same conversation profile, participant role and suggestion
+     * feature type exists, please cancel the existing long running operation
+     * before sending such request, otherwise the request will be rejected.
+     * </pre>
+     */
+    public void setSuggestionFeatureConfig(
+        com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetSuggestionFeatureConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Clears a suggestion feature from a conversation profile for the given
+     * participant role.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata]
+     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+     * </pre>
+     */
+    public void clearSuggestionFeatureConfig(
+        com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getClearSuggestionFeatureConfigMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -465,6 +615,20 @@ public final class ConversationProfilesGrpc {
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.DeleteConversationProfileRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_CONVERSATION_PROFILE)))
+          .addMethod(
+              getSetSuggestionFeatureConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest,
+                      com.google.longrunning.Operation>(
+                      this, METHODID_SET_SUGGESTION_FEATURE_CONFIG)))
+          .addMethod(
+              getClearSuggestionFeatureConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest,
+                      com.google.longrunning.Operation>(
+                      this, METHODID_CLEAR_SUGGESTION_FEATURE_CONFIG)))
           .build();
     }
   }
@@ -577,6 +741,56 @@ public final class ConversationProfilesGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds or updates a suggestion feature in a conversation profile.
+     * If the conversation profile contains the type of suggestion feature for
+     * the participant role, it will update it. Otherwise it will insert the
+     * suggestion feature.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata]
+     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+     * If a long running operation to add or update suggestion feature
+     * config for the same conversation profile, participant role and suggestion
+     * feature type exists, please cancel the existing long running operation
+     * before sending such request, otherwise the request will be rejected.
+     * </pre>
+     */
+    public void setSuggestionFeatureConfig(
+        com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetSuggestionFeatureConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Clears a suggestion feature from a conversation profile for the given
+     * participant role.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata]
+     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+     * </pre>
+     */
+    public void clearSuggestionFeatureConfig(
+        com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getClearSuggestionFeatureConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -668,6 +882,50 @@ public final class ConversationProfilesGrpc {
         com.google.cloud.dialogflow.v2.DeleteConversationProfileRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteConversationProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds or updates a suggestion feature in a conversation profile.
+     * If the conversation profile contains the type of suggestion feature for
+     * the participant role, it will update it. Otherwise it will insert the
+     * suggestion feature.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata]
+     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+     * If a long running operation to add or update suggestion feature
+     * config for the same conversation profile, participant role and suggestion
+     * feature type exists, please cancel the existing long running operation
+     * before sending such request, otherwise the request will be rejected.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setSuggestionFeatureConfig(
+        com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetSuggestionFeatureConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Clears a suggestion feature from a conversation profile for the given
+     * participant role.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata]
+     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+     * </pre>
+     */
+    public com.google.longrunning.Operation clearSuggestionFeatureConfig(
+        com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getClearSuggestionFeatureConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -770,6 +1028,52 @@ public final class ConversationProfilesGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteConversationProfileMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds or updates a suggestion feature in a conversation profile.
+     * If the conversation profile contains the type of suggestion feature for
+     * the participant role, it will update it. Otherwise it will insert the
+     * suggestion feature.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata]
+     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+     * If a long running operation to add or update suggestion feature
+     * config for the same conversation profile, participant role and suggestion
+     * feature type exists, please cancel the existing long running operation
+     * before sending such request, otherwise the request will be rejected.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        setSuggestionFeatureConfig(
+            com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetSuggestionFeatureConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Clears a suggestion feature from a conversation profile for the given
+     * participant role.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata]
+     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        clearSuggestionFeatureConfig(
+            com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getClearSuggestionFeatureConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONVERSATION_PROFILES = 0;
@@ -777,6 +1081,8 @@ public final class ConversationProfilesGrpc {
   private static final int METHODID_CREATE_CONVERSATION_PROFILE = 2;
   private static final int METHODID_UPDATE_CONVERSATION_PROFILE = 3;
   private static final int METHODID_DELETE_CONVERSATION_PROFILE = 4;
+  private static final int METHODID_SET_SUGGESTION_FEATURE_CONFIG = 5;
+  private static final int METHODID_CLEAR_SUGGESTION_FEATURE_CONFIG = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -824,6 +1130,16 @@ public final class ConversationProfilesGrpc {
           serviceImpl.deleteConversationProfile(
               (com.google.cloud.dialogflow.v2.DeleteConversationProfileRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_SET_SUGGESTION_FEATURE_CONFIG:
+          serviceImpl.setSuggestionFeatureConfig(
+              (com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CLEAR_SUGGESTION_FEATURE_CONFIG:
+          serviceImpl.clearSuggestionFeatureConfig(
+              (com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -894,6 +1210,8 @@ public final class ConversationProfilesGrpc {
                       .addMethod(getCreateConversationProfileMethod())
                       .addMethod(getUpdateConversationProfileMethod())
                       .addMethod(getDeleteConversationProfileMethod())
+                      .addMethod(getSetSuggestionFeatureConfigMethod())
+                      .addMethod(getClearSuggestionFeatureConfigMethod())
                       .build();
         }
       }

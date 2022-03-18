@@ -76,6 +76,37 @@
  * }
  * }</pre>
  *
+ * <p>======================= ConversationDatasetsClient =======================
+ *
+ * <p>Service Description: Conversation datasets.
+ *
+ * <p>Conversation datasets contain raw conversation files and their customizable metadata that can
+ * be used for model training.
+ *
+ * <p>Sample for ConversationDatasetsClient:
+ *
+ * <pre>{@code
+ * try (ConversationDatasetsClient conversationDatasetsClient =
+ *     ConversationDatasetsClient.create()) {
+ *   ConversationDatasetName name =
+ *       ConversationDatasetName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION_DATASET]");
+ *   ConversationDataset response = conversationDatasetsClient.getConversationDataset(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ConversationModelsClient =======================
+ *
+ * <p>Service Description: Manages a collection of models for human agent assistant.
+ *
+ * <p>Sample for ConversationModelsClient:
+ *
+ * <pre>{@code
+ * try (ConversationModelsClient conversationModelsClient = ConversationModelsClient.create()) {
+ *   String name = "name3373707";
+ *   ConversationModel response = conversationModelsClient.getConversationModel(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= ConversationProfilesClient =======================
  *
  * <p>Service Description: Service for managing

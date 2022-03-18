@@ -20,14 +20,18 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.stub.ConversationProfilesStub;
 import com.google.cloud.dialogflow.v2.stub.ConversationProfilesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.longrunning.Operation;
+import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -106,6 +110,7 @@ import javax.annotation.Generated;
 public class ConversationProfilesClient implements BackgroundResource {
   private final ConversationProfilesSettings settings;
   private final ConversationProfilesStub stub;
+  private final OperationsClient operationsClient;
 
   /** Constructs an instance of ConversationProfilesClient with default settings. */
   public static final ConversationProfilesClient create() throws IOException {
@@ -138,12 +143,14 @@ public class ConversationProfilesClient implements BackgroundResource {
   protected ConversationProfilesClient(ConversationProfilesSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((ConversationProfilesStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ConversationProfilesClient(ConversationProfilesStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final ConversationProfilesSettings getSettings() {
@@ -153,6 +160,14 @@ public class ConversationProfilesClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ConversationProfilesStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getOperationsClient() {
+    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -824,6 +839,324 @@ public class ConversationProfilesClient implements BackgroundResource {
   public final UnaryCallable<DeleteConversationProfileRequest, Empty>
       deleteConversationProfileCallable() {
     return stub.deleteConversationProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds or updates a suggestion feature in a conversation profile. If the conversation profile
+   * contains the type of suggestion feature for the participant role, it will update it. Otherwise
+   * it will insert the suggestion feature.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata]
+   * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+   *
+   * <p>If a long running operation to add or update suggestion feature config for the same
+   * conversation profile, participant role and suggestion feature type exists, please cancel the
+   * existing long running operation before sending such request, otherwise the request will be
+   * rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversationProfilesClient conversationProfilesClient =
+   *     ConversationProfilesClient.create()) {
+   *   String conversationProfile = "conversationProfile1691597734";
+   *   ConversationProfile response =
+   *       conversationProfilesClient.setSuggestionFeatureConfigAsync(conversationProfile).get();
+   * }
+   * }</pre>
+   *
+   * @param conversationProfile Required. The Conversation Profile to add or update the suggestion
+   *     feature config. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ConversationProfile, SetSuggestionFeatureConfigOperationMetadata>
+      setSuggestionFeatureConfigAsync(String conversationProfile) {
+    SetSuggestionFeatureConfigRequest request =
+        SetSuggestionFeatureConfigRequest.newBuilder()
+            .setConversationProfile(conversationProfile)
+            .build();
+    return setSuggestionFeatureConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds or updates a suggestion feature in a conversation profile. If the conversation profile
+   * contains the type of suggestion feature for the participant role, it will update it. Otherwise
+   * it will insert the suggestion feature.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata]
+   * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+   *
+   * <p>If a long running operation to add or update suggestion feature config for the same
+   * conversation profile, participant role and suggestion feature type exists, please cancel the
+   * existing long running operation before sending such request, otherwise the request will be
+   * rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversationProfilesClient conversationProfilesClient =
+   *     ConversationProfilesClient.create()) {
+   *   SetSuggestionFeatureConfigRequest request =
+   *       SetSuggestionFeatureConfigRequest.newBuilder()
+   *           .setConversationProfile("conversationProfile1691597734")
+   *           .setSuggestionFeatureConfig(
+   *               HumanAgentAssistantConfig.SuggestionFeatureConfig.newBuilder().build())
+   *           .build();
+   *   ConversationProfile response =
+   *       conversationProfilesClient.setSuggestionFeatureConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ConversationProfile, SetSuggestionFeatureConfigOperationMetadata>
+      setSuggestionFeatureConfigAsync(SetSuggestionFeatureConfigRequest request) {
+    return setSuggestionFeatureConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds or updates a suggestion feature in a conversation profile. If the conversation profile
+   * contains the type of suggestion feature for the participant role, it will update it. Otherwise
+   * it will insert the suggestion feature.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata]
+   * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+   *
+   * <p>If a long running operation to add or update suggestion feature config for the same
+   * conversation profile, participant role and suggestion feature type exists, please cancel the
+   * existing long running operation before sending such request, otherwise the request will be
+   * rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversationProfilesClient conversationProfilesClient =
+   *     ConversationProfilesClient.create()) {
+   *   SetSuggestionFeatureConfigRequest request =
+   *       SetSuggestionFeatureConfigRequest.newBuilder()
+   *           .setConversationProfile("conversationProfile1691597734")
+   *           .setSuggestionFeatureConfig(
+   *               HumanAgentAssistantConfig.SuggestionFeatureConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ConversationProfile, SetSuggestionFeatureConfigOperationMetadata> future =
+   *       conversationProfilesClient
+   *           .setSuggestionFeatureConfigOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ConversationProfile response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          SetSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          SetSuggestionFeatureConfigOperationMetadata>
+      setSuggestionFeatureConfigOperationCallable() {
+    return stub.setSuggestionFeatureConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds or updates a suggestion feature in a conversation profile. If the conversation profile
+   * contains the type of suggestion feature for the participant role, it will update it. Otherwise
+   * it will insert the suggestion feature.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata]
+   * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+   *
+   * <p>If a long running operation to add or update suggestion feature config for the same
+   * conversation profile, participant role and suggestion feature type exists, please cancel the
+   * existing long running operation before sending such request, otherwise the request will be
+   * rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversationProfilesClient conversationProfilesClient =
+   *     ConversationProfilesClient.create()) {
+   *   SetSuggestionFeatureConfigRequest request =
+   *       SetSuggestionFeatureConfigRequest.newBuilder()
+   *           .setConversationProfile("conversationProfile1691597734")
+   *           .setSuggestionFeatureConfig(
+   *               HumanAgentAssistantConfig.SuggestionFeatureConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       conversationProfilesClient.setSuggestionFeatureConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetSuggestionFeatureConfigRequest, Operation>
+      setSuggestionFeatureConfigCallable() {
+    return stub.setSuggestionFeatureConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Clears a suggestion feature from a conversation profile for the given participant role.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata]
+   * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversationProfilesClient conversationProfilesClient =
+   *     ConversationProfilesClient.create()) {
+   *   String conversationProfile = "conversationProfile1691597734";
+   *   ConversationProfile response =
+   *       conversationProfilesClient.clearSuggestionFeatureConfigAsync(conversationProfile).get();
+   * }
+   * }</pre>
+   *
+   * @param conversationProfile Required. The Conversation Profile to add or update the suggestion
+   *     feature config. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ConversationProfile, ClearSuggestionFeatureConfigOperationMetadata>
+      clearSuggestionFeatureConfigAsync(String conversationProfile) {
+    ClearSuggestionFeatureConfigRequest request =
+        ClearSuggestionFeatureConfigRequest.newBuilder()
+            .setConversationProfile(conversationProfile)
+            .build();
+    return clearSuggestionFeatureConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Clears a suggestion feature from a conversation profile for the given participant role.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata]
+   * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversationProfilesClient conversationProfilesClient =
+   *     ConversationProfilesClient.create()) {
+   *   ClearSuggestionFeatureConfigRequest request =
+   *       ClearSuggestionFeatureConfigRequest.newBuilder()
+   *           .setConversationProfile("conversationProfile1691597734")
+   *           .build();
+   *   ConversationProfile response =
+   *       conversationProfilesClient.clearSuggestionFeatureConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ConversationProfile, ClearSuggestionFeatureConfigOperationMetadata>
+      clearSuggestionFeatureConfigAsync(ClearSuggestionFeatureConfigRequest request) {
+    return clearSuggestionFeatureConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Clears a suggestion feature from a conversation profile for the given participant role.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata]
+   * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversationProfilesClient conversationProfilesClient =
+   *     ConversationProfilesClient.create()) {
+   *   ClearSuggestionFeatureConfigRequest request =
+   *       ClearSuggestionFeatureConfigRequest.newBuilder()
+   *           .setConversationProfile("conversationProfile1691597734")
+   *           .build();
+   *   OperationFuture<ConversationProfile, ClearSuggestionFeatureConfigOperationMetadata> future =
+   *       conversationProfilesClient
+   *           .clearSuggestionFeatureConfigOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ConversationProfile response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ClearSuggestionFeatureConfigRequest,
+          ConversationProfile,
+          ClearSuggestionFeatureConfigOperationMetadata>
+      clearSuggestionFeatureConfigOperationCallable() {
+    return stub.clearSuggestionFeatureConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Clears a suggestion feature from a conversation profile for the given participant role.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata]
+   * - `response`: [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversationProfilesClient conversationProfilesClient =
+   *     ConversationProfilesClient.create()) {
+   *   ClearSuggestionFeatureConfigRequest request =
+   *       ClearSuggestionFeatureConfigRequest.newBuilder()
+   *           .setConversationProfile("conversationProfile1691597734")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       conversationProfilesClient.clearSuggestionFeatureConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ClearSuggestionFeatureConfigRequest, Operation>
+      clearSuggestionFeatureConfigCallable() {
+    return stub.clearSuggestionFeatureConfigCallable();
   }
 
   @Override

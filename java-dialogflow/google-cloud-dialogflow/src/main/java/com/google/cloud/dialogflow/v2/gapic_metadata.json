@@ -107,11 +107,74 @@
         }
       }
     },
+    "ConversationDatasets": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversationDatasetsClient",
+          "rpcs": {
+            "CreateConversationDataset": {
+              "methods": ["createConversationDatasetAsync", "createConversationDatasetAsync", "createConversationDatasetOperationCallable", "createConversationDatasetCallable"]
+            },
+            "DeleteConversationDataset": {
+              "methods": ["deleteConversationDatasetAsync", "deleteConversationDatasetAsync", "deleteConversationDatasetAsync", "deleteConversationDatasetOperationCallable", "deleteConversationDatasetCallable"]
+            },
+            "GetConversationDataset": {
+              "methods": ["getConversationDataset", "getConversationDataset", "getConversationDataset", "getConversationDatasetCallable"]
+            },
+            "ImportConversationData": {
+              "methods": ["importConversationDataAsync", "importConversationDataOperationCallable", "importConversationDataCallable"]
+            },
+            "ListConversationDatasets": {
+              "methods": ["listConversationDatasets", "listConversationDatasets", "listConversationDatasets", "listConversationDatasetsPagedCallable", "listConversationDatasetsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ConversationModels": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversationModelsClient",
+          "rpcs": {
+            "CreateConversationModel": {
+              "methods": ["createConversationModelAsync", "createConversationModelAsync", "createConversationModelOperationCallable", "createConversationModelCallable"]
+            },
+            "CreateConversationModelEvaluation": {
+              "methods": ["createConversationModelEvaluationAsync", "createConversationModelEvaluationAsync", "createConversationModelEvaluationAsync", "createConversationModelEvaluationOperationCallable", "createConversationModelEvaluationCallable"]
+            },
+            "DeleteConversationModel": {
+              "methods": ["deleteConversationModelAsync", "deleteConversationModelAsync", "deleteConversationModelOperationCallable", "deleteConversationModelCallable"]
+            },
+            "DeployConversationModel": {
+              "methods": ["deployConversationModelAsync", "deployConversationModelOperationCallable", "deployConversationModelCallable"]
+            },
+            "GetConversationModel": {
+              "methods": ["getConversationModel", "getConversationModel", "getConversationModelCallable"]
+            },
+            "GetConversationModelEvaluation": {
+              "methods": ["getConversationModelEvaluation", "getConversationModelEvaluation", "getConversationModelEvaluationCallable"]
+            },
+            "ListConversationModelEvaluations": {
+              "methods": ["listConversationModelEvaluations", "listConversationModelEvaluations", "listConversationModelEvaluationsPagedCallable", "listConversationModelEvaluationsCallable"]
+            },
+            "ListConversationModels": {
+              "methods": ["listConversationModels", "listConversationModels", "listConversationModelsPagedCallable", "listConversationModelsCallable"]
+            },
+            "UndeployConversationModel": {
+              "methods": ["undeployConversationModelAsync", "undeployConversationModelOperationCallable", "undeployConversationModelCallable"]
+            }
+          }
+        }
+      }
+    },
     "ConversationProfiles": {
       "clients": {
         "grpc": {
           "libraryClient": "ConversationProfilesClient",
           "rpcs": {
+            "ClearSuggestionFeatureConfig": {
+              "methods": ["clearSuggestionFeatureConfigAsync", "clearSuggestionFeatureConfigAsync", "clearSuggestionFeatureConfigOperationCallable", "clearSuggestionFeatureConfigCallable"]
+            },
             "CreateConversationProfile": {
               "methods": ["createConversationProfile", "createConversationProfile", "createConversationProfile", "createConversationProfile", "createConversationProfileCallable"]
             },
@@ -123,6 +186,9 @@
             },
             "ListConversationProfiles": {
               "methods": ["listConversationProfiles", "listConversationProfiles", "listConversationProfiles", "listConversationProfiles", "listConversationProfilesPagedCallable", "listConversationProfilesCallable"]
+            },
+            "SetSuggestionFeatureConfig": {
+              "methods": ["setSuggestionFeatureConfigAsync", "setSuggestionFeatureConfigAsync", "setSuggestionFeatureConfigOperationCallable", "setSuggestionFeatureConfigCallable"]
             },
             "UpdateConversationProfile": {
               "methods": ["updateConversationProfile", "updateConversationProfile", "updateConversationProfileCallable"]
