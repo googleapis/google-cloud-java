@@ -44,6 +44,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     name_ = "";
     displayName_ = "";
     model_ = "";
+    serviceAccount_ = "";
     state_ = 0;
     partialFailures_ = java.util.Collections.emptyList();
   }
@@ -395,6 +396,13 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
                 unmanagedContainerModel_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 234:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccount_ = s;
               break;
             }
           default:
@@ -5793,6 +5801,65 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     return getDedicatedResources();
   }
 
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 29;
+  private volatile java.lang.Object serviceAccount_;
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the DeployedModel's container runs as. If not
+   * specified, a system generated one will be used, which
+   * has minimal permissions and the custom container, if used, may not have
+   * enough permission to access other GCP resources.
+   * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+   * permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 29;</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the DeployedModel's container runs as. If not
+   * specified, a system generated one will be used, which
+   * has minimal permissions and the custom container, if used, may not have
+   * enough permission to access other GCP resources.
+   * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+   * permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 29;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int MANUAL_BATCH_TUNING_PARAMETERS_FIELD_NUMBER = 8;
   private com.google.cloud.aiplatform.v1beta1.ManualBatchTuningParameters
       manualBatchTuningParameters_;
@@ -6761,6 +6828,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (unmanagedContainerModel_ != null) {
       output.writeMessage(28, getUnmanagedContainerModel());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 29, serviceAccount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -6850,6 +6920,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               28, getUnmanagedContainerModel());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, serviceAccount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6889,6 +6962,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (hasDedicatedResources()) {
       if (!getDedicatedResources().equals(other.getDedicatedResources())) return false;
     }
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (hasManualBatchTuningParameters() != other.hasManualBatchTuningParameters()) return false;
     if (hasManualBatchTuningParameters()) {
       if (!getManualBatchTuningParameters().equals(other.getManualBatchTuningParameters()))
@@ -6975,6 +7049,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + DEDICATED_RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getDedicatedResources().hashCode();
     }
+    hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccount().hashCode();
     if (hasManualBatchTuningParameters()) {
       hash = (37 * hash) + MANUAL_BATCH_TUNING_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getManualBatchTuningParameters().hashCode();
@@ -7238,6 +7314,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         dedicatedResources_ = null;
         dedicatedResourcesBuilder_ = null;
       }
+      serviceAccount_ = "";
+
       if (manualBatchTuningParametersBuilder_ == null) {
         manualBatchTuningParameters_ = null;
       } else {
@@ -7371,6 +7449,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       } else {
         result.dedicatedResources_ = dedicatedResourcesBuilder_.build();
       }
+      result.serviceAccount_ = serviceAccount_;
       if (manualBatchTuningParametersBuilder_ == null) {
         result.manualBatchTuningParameters_ = manualBatchTuningParameters_;
       } else {
@@ -7515,6 +7594,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasDedicatedResources()) {
         mergeDedicatedResources(other.getDedicatedResources());
+      }
+      if (!other.getServiceAccount().isEmpty()) {
+        serviceAccount_ = other.serviceAccount_;
+        onChanged();
       }
       if (other.hasManualBatchTuningParameters()) {
         mergeManualBatchTuningParameters(other.getManualBatchTuningParameters());
@@ -9150,6 +9233,137 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         dedicatedResources_ = null;
       }
       return dedicatedResourcesBuilder_;
+    }
+
+    private java.lang.Object serviceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeployedModel's container runs as. If not
+     * specified, a system generated one will be used, which
+     * has minimal permissions and the custom container, if used, may not have
+     * enough permission to access other GCP resources.
+     * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 29;</code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeployedModel's container runs as. If not
+     * specified, a system generated one will be used, which
+     * has minimal permissions and the custom container, if used, may not have
+     * enough permission to access other GCP resources.
+     * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 29;</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeployedModel's container runs as. If not
+     * specified, a system generated one will be used, which
+     * has minimal permissions and the custom container, if used, may not have
+     * enough permission to access other GCP resources.
+     * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 29;</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      serviceAccount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeployedModel's container runs as. If not
+     * specified, a system generated one will be used, which
+     * has minimal permissions and the custom container, if used, may not have
+     * enough permission to access other GCP resources.
+     * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 29;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeployedModel's container runs as. If not
+     * specified, a system generated one will be used, which
+     * has minimal permissions and the custom container, if used, may not have
+     * enough permission to access other GCP resources.
+     * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 29;</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      serviceAccount_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.cloud.aiplatform.v1beta1.ManualBatchTuningParameters
