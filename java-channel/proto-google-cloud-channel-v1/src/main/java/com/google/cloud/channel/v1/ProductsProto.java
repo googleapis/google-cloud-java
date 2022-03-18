@@ -53,33 +53,31 @@ public final class ProductsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/channel/v1/products.proto"
-          + "\022\027google.cloud.channel.v1\032\034google/api/an"
-          + "notations.proto\032\031google/api/resource.pro"
-          + "to\"\225\001\n\007Product\022\014\n\004name\030\001 \001(\t\022>\n\016marketin"
-          + "g_info\030\002 \001(\0132&.google.cloud.channel.v1.M"
-          + "arketingInfo:<\352A9\n#cloudchannel.googleap"
-          + "is.com/Product\022\022products/{product}\"\313\001\n\003S"
-          + "ku\022\014\n\004name\030\001 \001(\t\022>\n\016marketing_info\030\002 \001(\013"
-          + "2&.google.cloud.channel.v1.MarketingInfo"
-          + "\0221\n\007product\030\003 \001(\0132 .google.cloud.channel"
-          + ".v1.Product:C\352A@\n\037cloudchannel.googleapi"
-          + "s.com/Sku\022\035products/{product}/skus/{sku}"
-          + "\"p\n\rMarketingInfo\022\024\n\014display_name\030\001 \001(\t\022"
-          + "\023\n\013description\030\002 \001(\t\0224\n\014default_logo\030\003 \001"
-          + "(\0132\036.google.cloud.channel.v1.Media\"Y\n\005Me"
-          + "dia\022\r\n\005title\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\0220\n\004t"
-          + "ype\030\003 \001(\0162\".google.cloud.channel.v1.Medi"
-          + "aType*=\n\tMediaType\022\032\n\026MEDIA_TYPE_UNSPECI"
-          + "FIED\020\000\022\024\n\020MEDIA_TYPE_IMAGE\020\001Bn\n\033com.goog"
-          + "le.cloud.channel.v1B\rProductsProtoP\001Z>go"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/channel/v1;channelb\006proto3"
+          + "\022\027google.cloud.channel.v1\032\031google/api/re"
+          + "source.proto\"\225\001\n\007Product\022\014\n\004name\030\001 \001(\t\022>"
+          + "\n\016marketing_info\030\002 \001(\0132&.google.cloud.ch"
+          + "annel.v1.MarketingInfo:<\352A9\n#cloudchanne"
+          + "l.googleapis.com/Product\022\022products/{prod"
+          + "uct}\"\313\001\n\003Sku\022\014\n\004name\030\001 \001(\t\022>\n\016marketing_"
+          + "info\030\002 \001(\0132&.google.cloud.channel.v1.Mar"
+          + "ketingInfo\0221\n\007product\030\003 \001(\0132 .google.clo"
+          + "ud.channel.v1.Product:C\352A@\n\037cloudchannel"
+          + ".googleapis.com/Sku\022\035products/{product}/"
+          + "skus/{sku}\"p\n\rMarketingInfo\022\024\n\014display_n"
+          + "ame\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\0224\n\014defaul"
+          + "t_logo\030\003 \001(\0132\036.google.cloud.channel.v1.M"
+          + "edia\"Y\n\005Media\022\r\n\005title\030\001 \001(\t\022\017\n\007content\030"
+          + "\002 \001(\t\0220\n\004type\030\003 \001(\0162\".google.cloud.chann"
+          + "el.v1.MediaType*=\n\tMediaType\022\032\n\026MEDIA_TY"
+          + "PE_UNSPECIFIED\020\000\022\024\n\020MEDIA_TYPE_IMAGE\020\001Bn"
+          + "\n\033com.google.cloud.channel.v1B\rProductsP"
+          + "rotoP\001Z>google.golang.org/genproto/googl"
+          + "eapis/cloud/channel/v1;channelb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_channel_v1_Product_descriptor =
@@ -119,7 +117,6 @@ public final class ProductsProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
   }
 

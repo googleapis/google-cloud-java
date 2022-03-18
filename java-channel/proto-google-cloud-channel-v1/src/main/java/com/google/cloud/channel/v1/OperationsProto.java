@@ -41,29 +41,25 @@ public final class OperationsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/channel/v1/operations.pro"
-          + "to\022\027google.cloud.channel.v1\032\034google/api/"
-          + "annotations.proto\"\266\003\n\021OperationMetadata\022"
-          + "P\n\016operation_type\030\001 \001(\01628.google.cloud.c"
-          + "hannel.v1.OperationMetadata.OperationTyp"
-          + "e\"\316\002\n\rOperationType\022\036\n\032OPERATION_TYPE_UN"
-          + "SPECIFIED\020\000\022\026\n\022CREATE_ENTITLEMENT\020\001\022\033\n\027C"
-          + "HANGE_RENEWAL_SETTINGS\020\003\022\026\n\022START_PAID_S"
-          + "ERVICE\020\005\022\030\n\024ACTIVATE_ENTITLEMENT\020\007\022\027\n\023SU"
-          + "SPEND_ENTITLEMENT\020\010\022\026\n\022CANCEL_ENTITLEMEN"
-          + "T\020\t\022\031\n\025TRANSFER_ENTITLEMENTS\020\n\022#\n\037TRANSF"
-          + "ER_ENTITLEMENTS_TO_GOOGLE\020\013\022\020\n\014CHANGE_OF"
-          + "FER\020\016\022\025\n\021CHANGE_PARAMETERS\020\017\022\034\n\030PROVISIO"
-          + "N_CLOUD_IDENTITY\020\020Bp\n\033com.google.cloud.c"
-          + "hannel.v1B\017OperationsProtoP\001Z>google.gol"
-          + "ang.org/genproto/googleapis/cloud/channe"
-          + "l/v1;channelb\006proto3"
+          + "to\022\027google.cloud.channel.v1\"\266\003\n\021Operatio"
+          + "nMetadata\022P\n\016operation_type\030\001 \001(\01628.goog"
+          + "le.cloud.channel.v1.OperationMetadata.Op"
+          + "erationType\"\316\002\n\rOperationType\022\036\n\032OPERATI"
+          + "ON_TYPE_UNSPECIFIED\020\000\022\026\n\022CREATE_ENTITLEM"
+          + "ENT\020\001\022\033\n\027CHANGE_RENEWAL_SETTINGS\020\003\022\026\n\022ST"
+          + "ART_PAID_SERVICE\020\005\022\030\n\024ACTIVATE_ENTITLEME"
+          + "NT\020\007\022\027\n\023SUSPEND_ENTITLEMENT\020\010\022\026\n\022CANCEL_"
+          + "ENTITLEMENT\020\t\022\031\n\025TRANSFER_ENTITLEMENTS\020\n"
+          + "\022#\n\037TRANSFER_ENTITLEMENTS_TO_GOOGLE\020\013\022\020\n"
+          + "\014CHANGE_OFFER\020\016\022\025\n\021CHANGE_PARAMETERS\020\017\022\034"
+          + "\n\030PROVISION_CLOUD_IDENTITY\020\020Bp\n\033com.goog"
+          + "le.cloud.channel.v1B\017OperationsProtoP\001Z>"
+          + "google.golang.org/genproto/googleapis/cl"
+          + "oud/channel/v1;channelb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_channel_v1_OperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_channel_v1_OperationMetadata_fieldAccessorTable =
@@ -72,7 +68,6 @@ public final class OperationsProto {
             new java.lang.String[] {
               "OperationType",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

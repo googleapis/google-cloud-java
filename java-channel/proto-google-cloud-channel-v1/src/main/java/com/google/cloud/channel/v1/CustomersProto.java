@@ -45,39 +45,37 @@ public final class CustomersProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/cloud/channel/v1/customers.prot"
-          + "o\022\027google.cloud.channel.v1\032\034google/api/a"
-          + "nnotations.proto\032\037google/api/field_behav"
-          + "ior.proto\032\031google/api/resource.proto\032$go"
-          + "ogle/cloud/channel/v1/common.proto\032\037goog"
-          + "le/protobuf/timestamp.proto\032 google/type"
-          + "/postal_address.proto\"\321\004\n\010Customer\022\021\n\004na"
-          + "me\030\001 \001(\tB\003\340A\003\022\035\n\020org_display_name\030\002 \001(\tB"
-          + "\003\340A\002\022;\n\022org_postal_address\030\003 \001(\0132\032.googl"
-          + "e.type.PostalAddressB\003\340A\002\022B\n\024primary_con"
-          + "tact_info\030\004 \001(\0132$.google.cloud.channel.v"
-          + "1.ContactInfo\022\027\n\017alternate_email\030\005 \001(\t\022\023"
-          + "\n\006domain\030\006 \001(\tB\003\340A\002\0224\n\013create_time\030\007 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upd"
-          + "ate_time\030\010 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\003\340A\003\022\036\n\021cloud_identity_id\030\t \001(\tB\003\340A\003\022"
-          + "\032\n\rlanguage_code\030\n \001(\tB\003\340A\001\022L\n\023cloud_ide"
-          + "ntity_info\030\014 \001(\0132*.google.cloud.channel."
-          + "v1.CloudIdentityInfoB\003\340A\003\022\032\n\022channel_par"
-          + "tner_id\030\r \001(\t:R\352AO\n$cloudchannel.googlea"
-          + "pis.com/Customer\022\'accounts/{account}/cus"
-          + "tomers/{customer}\"\201\001\n\013ContactInfo\022\022\n\nfir"
-          + "st_name\030\001 \001(\t\022\021\n\tlast_name\030\002 \001(\t\022\031\n\014disp"
-          + "lay_name\030\004 \001(\tB\003\340A\003\022\r\n\005email\030\005 \001(\t\022\022\n\005ti"
-          + "tle\030\006 \001(\tB\003\340A\001\022\r\n\005phone\030\007 \001(\tBo\n\033com.goo"
-          + "gle.cloud.channel.v1B\016CustomersProtoP\001Z>"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/channel/v1;channelb\006proto3"
+          + "o\022\027google.cloud.channel.v1\032\037google/api/f"
+          + "ield_behavior.proto\032\031google/api/resource"
+          + ".proto\032$google/cloud/channel/v1/common.p"
+          + "roto\032\037google/protobuf/timestamp.proto\032 g"
+          + "oogle/type/postal_address.proto\"\321\004\n\010Cust"
+          + "omer\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\035\n\020org_display_n"
+          + "ame\030\002 \001(\tB\003\340A\002\022;\n\022org_postal_address\030\003 \001"
+          + "(\0132\032.google.type.PostalAddressB\003\340A\002\022B\n\024p"
+          + "rimary_contact_info\030\004 \001(\0132$.google.cloud"
+          + ".channel.v1.ContactInfo\022\027\n\017alternate_ema"
+          + "il\030\005 \001(\t\022\023\n\006domain\030\006 \001(\tB\003\340A\002\0224\n\013create_"
+          + "time\030\007 \001(\0132\032.google.protobuf.TimestampB\003"
+          + "\340A\003\0224\n\013update_time\030\010 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\022\036\n\021cloud_identity_id\030\t"
+          + " \001(\tB\003\340A\003\022\032\n\rlanguage_code\030\n \001(\tB\003\340A\001\022L\n"
+          + "\023cloud_identity_info\030\014 \001(\0132*.google.clou"
+          + "d.channel.v1.CloudIdentityInfoB\003\340A\003\022\032\n\022c"
+          + "hannel_partner_id\030\r \001(\t:R\352AO\n$cloudchann"
+          + "el.googleapis.com/Customer\022\'accounts/{ac"
+          + "count}/customers/{customer}\"\201\001\n\013ContactI"
+          + "nfo\022\022\n\nfirst_name\030\001 \001(\t\022\021\n\tlast_name\030\002 \001"
+          + "(\t\022\031\n\014display_name\030\004 \001(\tB\003\340A\003\022\r\n\005email\030\005"
+          + " \001(\t\022\022\n\005title\030\006 \001(\tB\003\340A\001\022\r\n\005phone\030\007 \001(\tB"
+          + "o\n\033com.google.cloud.channel.v1B\016Customer"
+          + "sProtoP\001Z>google.golang.org/genproto/goo"
+          + "gleapis/cloud/channel/v1;channelb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.channel.v1.CommonProto.getDescriptor(),
@@ -117,7 +115,6 @@ public final class CustomersProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.channel.v1.CommonProto.getDescriptor();

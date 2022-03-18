@@ -41,39 +41,37 @@ public final class ChannelPartnerLinksProto {
   static {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/channel/v1/channel_partne"
-          + "r_links.proto\022\027google.cloud.channel.v1\032\034"
-          + "google/api/annotations.proto\032\037google/api"
-          + "/field_behavior.proto\032\031google/api/resour"
-          + "ce.proto\032$google/cloud/channel/v1/common"
-          + ".proto\032\037google/protobuf/timestamp.proto\""
-          + "\217\004\n\022ChannelPartnerLink\022\021\n\004name\030\001 \001(\tB\003\340A"
-          + "\003\022\'\n\032reseller_cloud_identity_id\030\002 \001(\tB\003\340"
-          + "A\002\022I\n\nlink_state\030\003 \001(\01620.google.cloud.ch"
-          + "annel.v1.ChannelPartnerLinkStateB\003\340A\002\022\034\n"
-          + "\017invite_link_uri\030\004 \001(\tB\003\340A\003\0224\n\013create_ti"
-          + "me\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\0224\n\013update_time\030\006 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\022\026\n\tpublic_id\030\007 \001(\tB\003\340A\003\022"
-          + "\\\n#channel_partner_cloud_identity_info\030\010"
-          + " \001(\0132*.google.cloud.channel.v1.CloudIden"
-          + "tityInfoB\003\340A\003:r\352Ao\n.cloudchannel.googlea"
-          + "pis.com/ChannelPartnerLink\022=accounts/{ac"
-          + "count}/channelPartnerLinks/{channel_part"
-          + "ner_link}*>\n\026ChannelPartnerLinkView\022\017\n\013U"
-          + "NSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002*z\n\027Cha"
-          + "nnelPartnerLinkState\022*\n&CHANNEL_PARTNER_"
-          + "LINK_STATE_UNSPECIFIED\020\000\022\013\n\007INVITED\020\001\022\n\n"
-          + "\006ACTIVE\020\002\022\013\n\007REVOKED\020\003\022\r\n\tSUSPENDED\020\004By\n"
-          + "\033com.google.cloud.channel.v1B\030ChannelPar"
-          + "tnerLinksProtoP\001Z>google.golang.org/genp"
-          + "roto/googleapis/cloud/channel/v1;channel"
-          + "b\006proto3"
+          + "r_links.proto\022\027google.cloud.channel.v1\032\037"
+          + "google/api/field_behavior.proto\032\031google/"
+          + "api/resource.proto\032$google/cloud/channel"
+          + "/v1/common.proto\032\037google/protobuf/timest"
+          + "amp.proto\"\217\004\n\022ChannelPartnerLink\022\021\n\004name"
+          + "\030\001 \001(\tB\003\340A\003\022\'\n\032reseller_cloud_identity_i"
+          + "d\030\002 \001(\tB\003\340A\002\022I\n\nlink_state\030\003 \001(\01620.googl"
+          + "e.cloud.channel.v1.ChannelPartnerLinkSta"
+          + "teB\003\340A\002\022\034\n\017invite_link_uri\030\004 \001(\tB\003\340A\003\0224\n"
+          + "\013create_time\030\005 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\003\340A\003\022\026\n\tpublic_id\030\007"
+          + " \001(\tB\003\340A\003\022\\\n#channel_partner_cloud_ident"
+          + "ity_info\030\010 \001(\0132*.google.cloud.channel.v1"
+          + ".CloudIdentityInfoB\003\340A\003:r\352Ao\n.cloudchann"
+          + "el.googleapis.com/ChannelPartnerLink\022=ac"
+          + "counts/{account}/channelPartnerLinks/{ch"
+          + "annel_partner_link}*>\n\026ChannelPartnerLin"
+          + "kView\022\017\n\013UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FUL"
+          + "L\020\002*z\n\027ChannelPartnerLinkState\022*\n&CHANNE"
+          + "L_PARTNER_LINK_STATE_UNSPECIFIED\020\000\022\013\n\007IN"
+          + "VITED\020\001\022\n\n\006ACTIVE\020\002\022\013\n\007REVOKED\020\003\022\r\n\tSUSP"
+          + "ENDED\020\004By\n\033com.google.cloud.channel.v1B\030"
+          + "ChannelPartnerLinksProtoP\001Z>google.golan"
+          + "g.org/genproto/googleapis/cloud/channel/"
+          + "v1;channelb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.channel.v1.CommonProto.getDescriptor(),
@@ -100,7 +98,6 @@ public final class ChannelPartnerLinksProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.channel.v1.CommonProto.getDescriptor();

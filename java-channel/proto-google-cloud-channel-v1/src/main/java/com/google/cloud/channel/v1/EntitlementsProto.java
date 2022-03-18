@@ -73,88 +73,84 @@ public final class EntitlementsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/channel/v1/entitlements.p"
-          + "roto\022\027google.cloud.channel.v1\032\034google/ap"
-          + "i/annotations.proto\032\037google/api/field_be"
-          + "havior.proto\032\031google/api/resource.proto\032"
-          + "$google/cloud/channel/v1/common.proto\032$g"
-          + "oogle/cloud/channel/v1/offers.proto\032&goo"
-          + "gle/cloud/channel/v1/products.proto\032\037goo"
-          + "gle/protobuf/timestamp.proto\032\036google/pro"
-          + "tobuf/wrappers.proto\"\335\010\n\013Entitlement\022\021\n\004"
-          + "name\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\005 \001(\0132\032.g"
-          + "oogle.protobuf.TimestampB\003\340A\003\0224\n\013update_"
-          + "time\030\006 \001(\0132\032.google.protobuf.TimestampB\003"
-          + "\340A\003\0228\n\005offer\030\010 \001(\tB)\340A\002\372A#\n!cloudchannel"
-          + ".googleapis.com/Offer\022H\n\023commitment_sett"
-          + "ings\030\014 \001(\0132+.google.cloud.channel.v1.Com"
-          + "mitmentSettings\022W\n\022provisioning_state\030\r "
-          + "\001(\01626.google.cloud.channel.v1.Entitlemen"
-          + "t.ProvisioningStateB\003\340A\003\022M\n\023provisioned_"
-          + "service\030\020 \001(\0132+.google.cloud.channel.v1."
-          + "ProvisionedServiceB\003\340A\003\022V\n\022suspension_re"
-          + "asons\030\022 \003(\01625.google.cloud.channel.v1.En"
-          + "titlement.SuspensionReasonB\003\340A\003\022\036\n\021purch"
-          + "ase_order_id\030\023 \001(\tB\003\340A\001\022C\n\016trial_setting"
-          + "s\030\025 \001(\0132&.google.cloud.channel.v1.TrialS"
-          + "ettingsB\003\340A\003\022B\n\020association_info\030\027 \001(\0132("
-          + ".google.cloud.channel.v1.AssociationInfo"
-          + "\0226\n\nparameters\030\032 \003(\0132\".google.cloud.chan"
-          + "nel.v1.Parameter\"R\n\021ProvisioningState\022\"\n"
-          + "\036PROVISIONING_STATE_UNSPECIFIED\020\000\022\n\n\006ACT"
-          + "IVE\020\001\022\r\n\tSUSPENDED\020\005\"\243\001\n\020SuspensionReaso"
-          + "n\022!\n\035SUSPENSION_REASON_UNSPECIFIED\020\000\022\026\n\022"
-          + "RESELLER_INITIATED\020\001\022\017\n\013TRIAL_ENDED\020\002\022\034\n"
-          + "\030RENEWAL_WITH_TYPE_CANCEL\020\003\022\032\n\026PENDING_T"
-          + "OS_ACCEPTANCE\020\004\022\t\n\005OTHER\020d:p\352Am\n\'cloudch"
-          + "annel.googleapis.com/Entitlement\022Baccoun"
-          + "ts/{account}/customers/{customer}/entitl"
-          + "ements/{entitlement}\"_\n\tParameter\022\014\n\004nam"
-          + "e\030\001 \001(\t\022-\n\005value\030\002 \001(\0132\036.google.cloud.ch"
-          + "annel.v1.Value\022\025\n\010editable\030\003 \001(\010B\003\340A\003\"Y\n"
-          + "\017AssociationInfo\022F\n\020base_entitlement\030\001 \001"
-          + "(\tB,\372A)\n\'cloudchannel.googleapis.com/Ent"
-          + "itlement\"`\n\022ProvisionedService\022\034\n\017provis"
-          + "ioning_id\030\001 \001(\tB\003\340A\003\022\027\n\nproduct_id\030\002 \001(\t"
-          + "B\003\340A\003\022\023\n\006sku_id\030\003 \001(\tB\003\340A\003\"\305\001\n\022Commitmen"
-          + "tSettings\0223\n\nstart_time\030\001 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\022G\n\020ren"
-          + "ewal_settings\030\004 \001(\0132(.google.cloud.chann"
-          + "el.v1.RenewalSettingsB\003\340A\001\"\270\001\n\017RenewalSe"
-          + "ttings\022\026\n\016enable_renewal\030\001 \001(\010\022\031\n\021resize"
-          + "_unit_count\030\002 \001(\010\022:\n\014payment_plan\030\005 \001(\0162"
-          + "$.google.cloud.channel.v1.PaymentPlan\0226\n"
-          + "\rpayment_cycle\030\006 \001(\0132\037.google.cloud.chan"
-          + "nel.v1.Period\"L\n\rTrialSettings\022\r\n\005trial\030"
-          + "\001 \001(\010\022,\n\010end_time\030\002 \001(\0132\032.google.protobu"
-          + "f.Timestamp\"\277\001\n\017TransferableSku\022J\n\024trans"
-          + "fer_eligibility\030\t \001(\0132,.google.cloud.cha"
-          + "nnel.v1.TransferEligibility\022)\n\003sku\030\013 \001(\013"
-          + "2\034.google.cloud.channel.v1.Sku\0225\n\nlegacy"
-          + "_sku\030\014 \001(\0132\034.google.cloud.channel.v1.Sku"
-          + "B\003\340A\001\"\371\001\n\023TransferEligibility\022\023\n\013is_elig"
-          + "ible\030\001 \001(\010\022\023\n\013description\030\002 \001(\t\022Q\n\024ineli"
-          + "gibility_reason\030\003 \001(\01623.google.cloud.cha"
-          + "nnel.v1.TransferEligibility.Reason\"e\n\006Re"
-          + "ason\022\026\n\022REASON_UNSPECIFIED\020\000\022\032\n\026PENDING_"
-          + "TOS_ACCEPTANCE\020\001\022\024\n\020SKU_NOT_ELIGIBLE\020\002\022\021"
-          + "\n\rSKU_SUSPENDED\020\003Br\n\033com.google.cloud.ch"
-          + "annel.v1B\021EntitlementsProtoP\001Z>google.go"
-          + "lang.org/genproto/googleapis/cloud/chann"
-          + "el/v1;channelb\006proto3"
+          + "roto\022\027google.cloud.channel.v1\032\037google/ap"
+          + "i/field_behavior.proto\032\031google/api/resou"
+          + "rce.proto\032$google/cloud/channel/v1/commo"
+          + "n.proto\032$google/cloud/channel/v1/offers."
+          + "proto\032&google/cloud/channel/v1/products."
+          + "proto\032\037google/protobuf/timestamp.proto\"\335"
+          + "\010\n\013Entitlement\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013cre"
+          + "ate_time\030\005 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\003\340A\003\0228\n\005offer\030\010 \001(\tB)\340A"
+          + "\002\372A#\n!cloudchannel.googleapis.com/Offer\022"
+          + "H\n\023commitment_settings\030\014 \001(\0132+.google.cl"
+          + "oud.channel.v1.CommitmentSettings\022W\n\022pro"
+          + "visioning_state\030\r \001(\01626.google.cloud.cha"
+          + "nnel.v1.Entitlement.ProvisioningStateB\003\340"
+          + "A\003\022M\n\023provisioned_service\030\020 \001(\0132+.google"
+          + ".cloud.channel.v1.ProvisionedServiceB\003\340A"
+          + "\003\022V\n\022suspension_reasons\030\022 \003(\01625.google.c"
+          + "loud.channel.v1.Entitlement.SuspensionRe"
+          + "asonB\003\340A\003\022\036\n\021purchase_order_id\030\023 \001(\tB\003\340A"
+          + "\001\022C\n\016trial_settings\030\025 \001(\0132&.google.cloud"
+          + ".channel.v1.TrialSettingsB\003\340A\003\022B\n\020associ"
+          + "ation_info\030\027 \001(\0132(.google.cloud.channel."
+          + "v1.AssociationInfo\0226\n\nparameters\030\032 \003(\0132\""
+          + ".google.cloud.channel.v1.Parameter\"R\n\021Pr"
+          + "ovisioningState\022\"\n\036PROVISIONING_STATE_UN"
+          + "SPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\r\n\tSUSPENDED\020\005\"\243"
+          + "\001\n\020SuspensionReason\022!\n\035SUSPENSION_REASON"
+          + "_UNSPECIFIED\020\000\022\026\n\022RESELLER_INITIATED\020\001\022\017"
+          + "\n\013TRIAL_ENDED\020\002\022\034\n\030RENEWAL_WITH_TYPE_CAN"
+          + "CEL\020\003\022\032\n\026PENDING_TOS_ACCEPTANCE\020\004\022\t\n\005OTH"
+          + "ER\020d:p\352Am\n\'cloudchannel.googleapis.com/E"
+          + "ntitlement\022Baccounts/{account}/customers"
+          + "/{customer}/entitlements/{entitlement}\"_"
+          + "\n\tParameter\022\014\n\004name\030\001 \001(\t\022-\n\005value\030\002 \001(\013"
+          + "2\036.google.cloud.channel.v1.Value\022\025\n\010edit"
+          + "able\030\003 \001(\010B\003\340A\003\"Y\n\017AssociationInfo\022F\n\020ba"
+          + "se_entitlement\030\001 \001(\tB,\372A)\n\'cloudchannel."
+          + "googleapis.com/Entitlement\"`\n\022Provisione"
+          + "dService\022\034\n\017provisioning_id\030\001 \001(\tB\003\340A\003\022\027"
+          + "\n\nproduct_id\030\002 \001(\tB\003\340A\003\022\023\n\006sku_id\030\003 \001(\tB"
+          + "\003\340A\003\"\305\001\n\022CommitmentSettings\0223\n\nstart_tim"
+          + "e\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+          + "\0221\n\010end_time\030\002 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\003\022G\n\020renewal_settings\030\004 \001(\0132(."
+          + "google.cloud.channel.v1.RenewalSettingsB"
+          + "\003\340A\001\"\270\001\n\017RenewalSettings\022\026\n\016enable_renew"
+          + "al\030\001 \001(\010\022\031\n\021resize_unit_count\030\002 \001(\010\022:\n\014p"
+          + "ayment_plan\030\005 \001(\0162$.google.cloud.channel"
+          + ".v1.PaymentPlan\0226\n\rpayment_cycle\030\006 \001(\0132\037"
+          + ".google.cloud.channel.v1.Period\"L\n\rTrial"
+          + "Settings\022\r\n\005trial\030\001 \001(\010\022,\n\010end_time\030\002 \001("
+          + "\0132\032.google.protobuf.Timestamp\"\277\001\n\017Transf"
+          + "erableSku\022J\n\024transfer_eligibility\030\t \001(\0132"
+          + ",.google.cloud.channel.v1.TransferEligib"
+          + "ility\022)\n\003sku\030\013 \001(\0132\034.google.cloud.channe"
+          + "l.v1.Sku\0225\n\nlegacy_sku\030\014 \001(\0132\034.google.cl"
+          + "oud.channel.v1.SkuB\003\340A\001\"\371\001\n\023TransferElig"
+          + "ibility\022\023\n\013is_eligible\030\001 \001(\010\022\023\n\013descript"
+          + "ion\030\002 \001(\t\022Q\n\024ineligibility_reason\030\003 \001(\0162"
+          + "3.google.cloud.channel.v1.TransferEligib"
+          + "ility.Reason\"e\n\006Reason\022\026\n\022REASON_UNSPECI"
+          + "FIED\020\000\022\032\n\026PENDING_TOS_ACCEPTANCE\020\001\022\024\n\020SK"
+          + "U_NOT_ELIGIBLE\020\002\022\021\n\rSKU_SUSPENDED\020\003Br\n\033c"
+          + "om.google.cloud.channel.v1B\021Entitlements"
+          + "ProtoP\001Z>google.golang.org/genproto/goog"
+          + "leapis/cloud/channel/v1;channelb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.channel.v1.CommonProto.getDescriptor(),
               com.google.cloud.channel.v1.OffersProto.getDescriptor(),
               com.google.cloud.channel.v1.ProductsProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.protobuf.WrappersProto.getDescriptor(),
             });
     internal_static_google_cloud_channel_v1_Entitlement_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -246,14 +242,12 @@ public final class EntitlementsProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.channel.v1.CommonProto.getDescriptor();
     com.google.cloud.channel.v1.OffersProto.getDescriptor();
     com.google.cloud.channel.v1.ProductsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.protobuf.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
