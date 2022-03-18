@@ -204,4 +204,89 @@ public interface CustomMetricOrBuilder
    * @return The scope.
    */
   com.google.analytics.admin.v1alpha.CustomMetric.MetricScope getScope();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Types of restricted data that this metric may contain. Required for metrics
+   * with CURRENCY measurement unit. Must be empty for metrics with a
+   * non-CURRENCY measurement unit.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the restrictedMetricType.
+   */
+  java.util.List<com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType>
+      getRestrictedMetricTypeList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Types of restricted data that this metric may contain. Required for metrics
+   * with CURRENCY measurement unit. Must be empty for metrics with a
+   * non-CURRENCY measurement unit.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of restrictedMetricType.
+   */
+  int getRestrictedMetricTypeCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Types of restricted data that this metric may contain. Required for metrics
+   * with CURRENCY measurement unit. Must be empty for metrics with a
+   * non-CURRENCY measurement unit.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The restrictedMetricType at the given index.
+   */
+  com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType getRestrictedMetricType(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Types of restricted data that this metric may contain. Required for metrics
+   * with CURRENCY measurement unit. Must be empty for metrics with a
+   * non-CURRENCY measurement unit.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for restrictedMetricType.
+   */
+  java.util.List<java.lang.Integer> getRestrictedMetricTypeValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Types of restricted data that this metric may contain. Required for metrics
+   * with CURRENCY measurement unit. Must be empty for metrics with a
+   * non-CURRENCY measurement unit.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of restrictedMetricType at the given index.
+   */
+  int getRestrictedMetricTypeValue(int index);
 }

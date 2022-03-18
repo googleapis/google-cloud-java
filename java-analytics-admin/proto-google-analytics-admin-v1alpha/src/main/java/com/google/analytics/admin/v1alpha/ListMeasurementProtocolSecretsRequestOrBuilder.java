@@ -28,10 +28,8 @@ public interface ListMeasurementProtocolSecretsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the parent stream.
-   * Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream)
-   * may be a parent.
    * Format:
-   * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets
+   * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets
    * </pre>
    *
    * <code>
@@ -46,10 +44,8 @@ public interface ListMeasurementProtocolSecretsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the parent stream.
-   * Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream)
-   * may be a parent.
    * Format:
-   * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets
+   * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets
    * </pre>
    *
    * <code>

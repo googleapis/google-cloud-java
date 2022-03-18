@@ -28,7 +28,8 @@ public interface GlobalSiteTagOrBuilder
    *
    * <pre>
    * Output only. Resource name for this GlobalSiteTag resource.
-   * Format: properties/{propertyId}/globalSiteTag
+   * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+   * Example: "properties/123/dataStreams/456/globalSiteTag"
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -41,7 +42,8 @@ public interface GlobalSiteTagOrBuilder
    *
    * <pre>
    * Output only. Resource name for this GlobalSiteTag resource.
-   * Format: properties/{propertyId}/globalSiteTag
+   * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+   * Example: "properties/123/dataStreams/456/globalSiteTag"
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

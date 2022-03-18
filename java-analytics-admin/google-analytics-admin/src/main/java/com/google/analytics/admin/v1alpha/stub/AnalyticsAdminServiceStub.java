@@ -19,7 +19,6 @@ package com.google.analytics.admin.v1alpha.stub;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -28,17 +27,14 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
-import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
 import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
@@ -65,30 +61,25 @@ import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
-import com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
-import com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
-import com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
-import com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
-import com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -99,21 +90,16 @@ import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkPropos
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
-import com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
-import com.google.analytics.admin.v1alpha.GetWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
-import com.google.analytics.admin.v1alpha.IosAppDataStream;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
-import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest;
-import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -130,16 +116,12 @@ import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse;
-import com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest;
-import com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
-import com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest;
-import com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
@@ -147,7 +129,6 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
-import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -155,13 +136,10 @@ import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
-import com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
-import com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
-import com.google.analytics.admin.v1alpha.WebDataStream;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -289,84 +267,6 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
 
   public UnaryCallable<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksCallable() {
     throw new UnsupportedOperationException("Not implemented: batchDeleteUserLinksCallable()");
-  }
-
-  public UnaryCallable<GetWebDataStreamRequest, WebDataStream> getWebDataStreamCallable() {
-    throw new UnsupportedOperationException("Not implemented: getWebDataStreamCallable()");
-  }
-
-  public UnaryCallable<DeleteWebDataStreamRequest, Empty> deleteWebDataStreamCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteWebDataStreamCallable()");
-  }
-
-  public UnaryCallable<UpdateWebDataStreamRequest, WebDataStream> updateWebDataStreamCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateWebDataStreamCallable()");
-  }
-
-  public UnaryCallable<CreateWebDataStreamRequest, WebDataStream> createWebDataStreamCallable() {
-    throw new UnsupportedOperationException("Not implemented: createWebDataStreamCallable()");
-  }
-
-  public UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsPagedResponse>
-      listWebDataStreamsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listWebDataStreamsPagedCallable()");
-  }
-
-  public UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsResponse>
-      listWebDataStreamsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listWebDataStreamsCallable()");
-  }
-
-  public UnaryCallable<GetIosAppDataStreamRequest, IosAppDataStream> getIosAppDataStreamCallable() {
-    throw new UnsupportedOperationException("Not implemented: getIosAppDataStreamCallable()");
-  }
-
-  public UnaryCallable<DeleteIosAppDataStreamRequest, Empty> deleteIosAppDataStreamCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteIosAppDataStreamCallable()");
-  }
-
-  public UnaryCallable<UpdateIosAppDataStreamRequest, IosAppDataStream>
-      updateIosAppDataStreamCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateIosAppDataStreamCallable()");
-  }
-
-  public UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsPagedResponse>
-      listIosAppDataStreamsPagedCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: listIosAppDataStreamsPagedCallable()");
-  }
-
-  public UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
-      listIosAppDataStreamsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listIosAppDataStreamsCallable()");
-  }
-
-  public UnaryCallable<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
-      getAndroidAppDataStreamCallable() {
-    throw new UnsupportedOperationException("Not implemented: getAndroidAppDataStreamCallable()");
-  }
-
-  public UnaryCallable<DeleteAndroidAppDataStreamRequest, Empty>
-      deleteAndroidAppDataStreamCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: deleteAndroidAppDataStreamCallable()");
-  }
-
-  public UnaryCallable<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      updateAndroidAppDataStreamCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: updateAndroidAppDataStreamCallable()");
-  }
-
-  public UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsPagedResponse>
-      listAndroidAppDataStreamsPagedCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: listAndroidAppDataStreamsPagedCallable()");
-  }
-
-  public UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
-      listAndroidAppDataStreamsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listAndroidAppDataStreamsCallable()");
   }
 
   public UnaryCallable<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkCallable() {

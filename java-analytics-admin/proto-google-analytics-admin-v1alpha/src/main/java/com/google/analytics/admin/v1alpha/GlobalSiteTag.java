@@ -23,7 +23,7 @@ package com.google.analytics.admin.v1alpha;
  *
  * <pre>
  * Read-only resource with the tag for sending data from a website to a
- * WebDataStream.
+ * DataStream. Only present for web DataStream resources.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.GlobalSiteTag}
@@ -127,7 +127,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Resource name for this GlobalSiteTag resource.
-   * Format: properties/{propertyId}/globalSiteTag
+   * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+   * Example: "properties/123/dataStreams/456/globalSiteTag"
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -151,7 +152,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Resource name for this GlobalSiteTag resource.
-   * Format: properties/{propertyId}/globalSiteTag
+   * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+   * Example: "properties/123/dataStreams/456/globalSiteTag"
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -395,7 +397,7 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Read-only resource with the tag for sending data from a website to a
-   * WebDataStream.
+   * DataStream. Only present for web DataStream resources.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.GlobalSiteTag}
@@ -562,7 +564,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Resource name for this GlobalSiteTag resource.
-     * Format: properties/{propertyId}/globalSiteTag
+     * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+     * Example: "properties/123/dataStreams/456/globalSiteTag"
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -585,7 +588,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Resource name for this GlobalSiteTag resource.
-     * Format: properties/{propertyId}/globalSiteTag
+     * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+     * Example: "properties/123/dataStreams/456/globalSiteTag"
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -608,7 +612,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Resource name for this GlobalSiteTag resource.
-     * Format: properties/{propertyId}/globalSiteTag
+     * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+     * Example: "properties/123/dataStreams/456/globalSiteTag"
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -630,7 +635,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Resource name for this GlobalSiteTag resource.
-     * Format: properties/{propertyId}/globalSiteTag
+     * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+     * Example: "properties/123/dataStreams/456/globalSiteTag"
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -648,7 +654,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Resource name for this GlobalSiteTag resource.
-     * Format: properties/{propertyId}/globalSiteTag
+     * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+     * Example: "properties/123/dataStreams/456/globalSiteTag"
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

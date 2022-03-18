@@ -29,24 +29,24 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
 public class MeasurementProtocolSecretName implements ResourceName {
-  private static final PathTemplate PROPERTY_WEB_DATA_STREAM_MEASUREMENT_PROTOCOL_SECRET =
+  private static final PathTemplate PROPERTY_DATA_STREAM_MEASUREMENT_PROTOCOL_SECRET =
       PathTemplate.createWithoutUrlEncoding(
-          "properties/{property}/webDataStreams/{web_data_stream}/measurementProtocolSecrets/{measurement_protocol_secret}");
+          "properties/{property}/dataStreams/{data_stream}/measurementProtocolSecrets/{measurement_protocol_secret}");
   private volatile Map<String, String> fieldValuesMap;
   private final String property;
-  private final String webDataStream;
+  private final String dataStream;
   private final String measurementProtocolSecret;
 
   @Deprecated
   protected MeasurementProtocolSecretName() {
     property = null;
-    webDataStream = null;
+    dataStream = null;
     measurementProtocolSecret = null;
   }
 
   private MeasurementProtocolSecretName(Builder builder) {
     property = Preconditions.checkNotNull(builder.getProperty());
-    webDataStream = Preconditions.checkNotNull(builder.getWebDataStream());
+    dataStream = Preconditions.checkNotNull(builder.getDataStream());
     measurementProtocolSecret = Preconditions.checkNotNull(builder.getMeasurementProtocolSecret());
   }
 
@@ -54,8 +54,8 @@ public class MeasurementProtocolSecretName implements ResourceName {
     return property;
   }
 
-  public String getWebDataStream() {
-    return webDataStream;
+  public String getDataStream() {
+    return dataStream;
   }
 
   public String getMeasurementProtocolSecret() {
@@ -71,19 +71,19 @@ public class MeasurementProtocolSecretName implements ResourceName {
   }
 
   public static MeasurementProtocolSecretName of(
-      String property, String webDataStream, String measurementProtocolSecret) {
+      String property, String dataStream, String measurementProtocolSecret) {
     return newBuilder()
         .setProperty(property)
-        .setWebDataStream(webDataStream)
+        .setDataStream(dataStream)
         .setMeasurementProtocolSecret(measurementProtocolSecret)
         .build();
   }
 
   public static String format(
-      String property, String webDataStream, String measurementProtocolSecret) {
+      String property, String dataStream, String measurementProtocolSecret) {
     return newBuilder()
         .setProperty(property)
-        .setWebDataStream(webDataStream)
+        .setDataStream(dataStream)
         .setMeasurementProtocolSecret(measurementProtocolSecret)
         .build()
         .toString();
@@ -94,12 +94,12 @@ public class MeasurementProtocolSecretName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PROPERTY_WEB_DATA_STREAM_MEASUREMENT_PROTOCOL_SECRET.validatedMatch(
+        PROPERTY_DATA_STREAM_MEASUREMENT_PROTOCOL_SECRET.validatedMatch(
             formattedString,
             "MeasurementProtocolSecretName.parse: formattedString not in valid format");
     return of(
         matchMap.get("property"),
-        matchMap.get("web_data_stream"),
+        matchMap.get("data_stream"),
         matchMap.get("measurement_protocol_secret"));
   }
 
@@ -124,7 +124,7 @@ public class MeasurementProtocolSecretName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROPERTY_WEB_DATA_STREAM_MEASUREMENT_PROTOCOL_SECRET.matches(formattedString);
+    return PROPERTY_DATA_STREAM_MEASUREMENT_PROTOCOL_SECRET.matches(formattedString);
   }
 
   @Override
@@ -136,8 +136,8 @@ public class MeasurementProtocolSecretName implements ResourceName {
           if (property != null) {
             fieldMapBuilder.put("property", property);
           }
-          if (webDataStream != null) {
-            fieldMapBuilder.put("web_data_stream", webDataStream);
+          if (dataStream != null) {
+            fieldMapBuilder.put("data_stream", dataStream);
           }
           if (measurementProtocolSecret != null) {
             fieldMapBuilder.put("measurement_protocol_secret", measurementProtocolSecret);
@@ -155,11 +155,11 @@ public class MeasurementProtocolSecretName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROPERTY_WEB_DATA_STREAM_MEASUREMENT_PROTOCOL_SECRET.instantiate(
+    return PROPERTY_DATA_STREAM_MEASUREMENT_PROTOCOL_SECRET.instantiate(
         "property",
         property,
-        "web_data_stream",
-        webDataStream,
+        "data_stream",
+        dataStream,
         "measurement_protocol_secret",
         measurementProtocolSecret);
   }
@@ -172,7 +172,7 @@ public class MeasurementProtocolSecretName implements ResourceName {
     if (o != null || getClass() == o.getClass()) {
       MeasurementProtocolSecretName that = ((MeasurementProtocolSecretName) o);
       return Objects.equals(this.property, that.property)
-          && Objects.equals(this.webDataStream, that.webDataStream)
+          && Objects.equals(this.dataStream, that.dataStream)
           && Objects.equals(this.measurementProtocolSecret, that.measurementProtocolSecret);
     }
     return false;
@@ -184,7 +184,7 @@ public class MeasurementProtocolSecretName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(property);
     h *= 1000003;
-    h ^= Objects.hashCode(webDataStream);
+    h ^= Objects.hashCode(dataStream);
     h *= 1000003;
     h ^= Objects.hashCode(measurementProtocolSecret);
     return h;
@@ -192,11 +192,11 @@ public class MeasurementProtocolSecretName implements ResourceName {
 
   /**
    * Builder for
-   * properties/{property}/webDataStreams/{web_data_stream}/measurementProtocolSecrets/{measurement_protocol_secret}.
+   * properties/{property}/dataStreams/{data_stream}/measurementProtocolSecrets/{measurement_protocol_secret}.
    */
   public static class Builder {
     private String property;
-    private String webDataStream;
+    private String dataStream;
     private String measurementProtocolSecret;
 
     protected Builder() {}
@@ -205,8 +205,8 @@ public class MeasurementProtocolSecretName implements ResourceName {
       return property;
     }
 
-    public String getWebDataStream() {
-      return webDataStream;
+    public String getDataStream() {
+      return dataStream;
     }
 
     public String getMeasurementProtocolSecret() {
@@ -218,8 +218,8 @@ public class MeasurementProtocolSecretName implements ResourceName {
       return this;
     }
 
-    public Builder setWebDataStream(String webDataStream) {
-      this.webDataStream = webDataStream;
+    public Builder setDataStream(String dataStream) {
+      this.dataStream = dataStream;
       return this;
     }
 
@@ -230,7 +230,7 @@ public class MeasurementProtocolSecretName implements ResourceName {
 
     private Builder(MeasurementProtocolSecretName measurementProtocolSecretName) {
       this.property = measurementProtocolSecretName.property;
-      this.webDataStream = measurementProtocolSecretName.webDataStream;
+      this.dataStream = measurementProtocolSecretName.dataStream;
       this.measurementProtocolSecret = measurementProtocolSecretName.measurementProtocolSecret;
     }
 

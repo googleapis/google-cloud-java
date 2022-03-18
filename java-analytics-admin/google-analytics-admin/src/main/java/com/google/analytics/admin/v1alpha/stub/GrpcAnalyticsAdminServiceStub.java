@@ -19,7 +19,6 @@ package com.google.analytics.admin.v1alpha.stub;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -28,17 +27,14 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
-import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
 import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
@@ -65,30 +61,25 @@ import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
-import com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
-import com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
-import com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
-import com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
-import com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -99,21 +90,16 @@ import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkPropos
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
-import com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
-import com.google.analytics.admin.v1alpha.GetWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
-import com.google.analytics.admin.v1alpha.IosAppDataStream;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
-import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest;
-import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -130,16 +116,12 @@ import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse;
-import com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest;
-import com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
-import com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest;
-import com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
@@ -147,7 +129,6 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
-import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -155,13 +136,10 @@ import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
-import com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
-import com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
-import com.google.analytics.admin.v1alpha.WebDataStream;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -414,156 +392,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteUserLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetWebDataStreamRequest, WebDataStream>
-      getWebDataStreamMethodDescriptor =
-          MethodDescriptor.<GetWebDataStreamRequest, WebDataStream>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetWebDataStream")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetWebDataStreamRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(WebDataStream.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteWebDataStreamRequest, Empty>
-      deleteWebDataStreamMethodDescriptor =
-          MethodDescriptor.<DeleteWebDataStreamRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteWebDataStream")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteWebDataStreamRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<UpdateWebDataStreamRequest, WebDataStream>
-      updateWebDataStreamMethodDescriptor =
-          MethodDescriptor.<UpdateWebDataStreamRequest, WebDataStream>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateWebDataStream")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateWebDataStreamRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(WebDataStream.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<CreateWebDataStreamRequest, WebDataStream>
-      createWebDataStreamMethodDescriptor =
-          MethodDescriptor.<CreateWebDataStreamRequest, WebDataStream>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateWebDataStream")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateWebDataStreamRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(WebDataStream.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<ListWebDataStreamsRequest, ListWebDataStreamsResponse>
-      listWebDataStreamsMethodDescriptor =
-          MethodDescriptor.<ListWebDataStreamsRequest, ListWebDataStreamsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListWebDataStreams")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListWebDataStreamsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListWebDataStreamsResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetIosAppDataStreamRequest, IosAppDataStream>
-      getIosAppDataStreamMethodDescriptor =
-          MethodDescriptor.<GetIosAppDataStreamRequest, IosAppDataStream>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetIosAppDataStream")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetIosAppDataStreamRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(IosAppDataStream.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteIosAppDataStreamRequest, Empty>
-      deleteIosAppDataStreamMethodDescriptor =
-          MethodDescriptor.<DeleteIosAppDataStreamRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteIosAppDataStream")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteIosAppDataStreamRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<UpdateIosAppDataStreamRequest, IosAppDataStream>
-      updateIosAppDataStreamMethodDescriptor =
-          MethodDescriptor.<UpdateIosAppDataStreamRequest, IosAppDataStream>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateIosAppDataStream")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateIosAppDataStreamRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(IosAppDataStream.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
-      listIosAppDataStreamsMethodDescriptor =
-          MethodDescriptor.<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListIosAppDataStreams")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListIosAppDataStreamsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListIosAppDataStreamsResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
-      getAndroidAppDataStreamMethodDescriptor =
-          MethodDescriptor.<GetAndroidAppDataStreamRequest, AndroidAppDataStream>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetAndroidAppDataStream")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetAndroidAppDataStreamRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(AndroidAppDataStream.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteAndroidAppDataStreamRequest, Empty>
-      deleteAndroidAppDataStreamMethodDescriptor =
-          MethodDescriptor.<DeleteAndroidAppDataStreamRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteAndroidAppDataStream")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteAndroidAppDataStreamRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      updateAndroidAppDataStreamMethodDescriptor =
-          MethodDescriptor.<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateAndroidAppDataStream")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateAndroidAppDataStreamRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(AndroidAppDataStream.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<
-          ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
-      listAndroidAppDataStreamsMethodDescriptor =
-          MethodDescriptor
-              .<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListAndroidAppDataStreams")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListAndroidAppDataStreamsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListAndroidAppDataStreamsResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<CreateFirebaseLinkRequest, FirebaseLink>
@@ -1244,36 +1072,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       batchUpdateUserLinksCallable;
   private final UnaryCallable<DeleteUserLinkRequest, Empty> deleteUserLinkCallable;
   private final UnaryCallable<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksCallable;
-  private final UnaryCallable<GetWebDataStreamRequest, WebDataStream> getWebDataStreamCallable;
-  private final UnaryCallable<DeleteWebDataStreamRequest, Empty> deleteWebDataStreamCallable;
-  private final UnaryCallable<UpdateWebDataStreamRequest, WebDataStream>
-      updateWebDataStreamCallable;
-  private final UnaryCallable<CreateWebDataStreamRequest, WebDataStream>
-      createWebDataStreamCallable;
-  private final UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsResponse>
-      listWebDataStreamsCallable;
-  private final UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsPagedResponse>
-      listWebDataStreamsPagedCallable;
-  private final UnaryCallable<GetIosAppDataStreamRequest, IosAppDataStream>
-      getIosAppDataStreamCallable;
-  private final UnaryCallable<DeleteIosAppDataStreamRequest, Empty> deleteIosAppDataStreamCallable;
-  private final UnaryCallable<UpdateIosAppDataStreamRequest, IosAppDataStream>
-      updateIosAppDataStreamCallable;
-  private final UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
-      listIosAppDataStreamsCallable;
-  private final UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsPagedResponse>
-      listIosAppDataStreamsPagedCallable;
-  private final UnaryCallable<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
-      getAndroidAppDataStreamCallable;
-  private final UnaryCallable<DeleteAndroidAppDataStreamRequest, Empty>
-      deleteAndroidAppDataStreamCallable;
-  private final UnaryCallable<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      updateAndroidAppDataStreamCallable;
-  private final UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
-      listAndroidAppDataStreamsCallable;
-  private final UnaryCallable<
-          ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsPagedResponse>
-      listAndroidAppDataStreamsPagedCallable;
   private final UnaryCallable<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkCallable;
   private final UnaryCallable<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkCallable;
   private final UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
@@ -1632,154 +1430,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   return params.build();
                 })
             .build();
-    GrpcCallSettings<GetWebDataStreamRequest, WebDataStream> getWebDataStreamTransportSettings =
-        GrpcCallSettings.<GetWebDataStreamRequest, WebDataStream>newBuilder()
-            .setMethodDescriptor(getWebDataStreamMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<DeleteWebDataStreamRequest, Empty> deleteWebDataStreamTransportSettings =
-        GrpcCallSettings.<DeleteWebDataStreamRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteWebDataStreamMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<UpdateWebDataStreamRequest, WebDataStream>
-        updateWebDataStreamTransportSettings =
-            GrpcCallSettings.<UpdateWebDataStreamRequest, WebDataStream>newBuilder()
-                .setMethodDescriptor(updateWebDataStreamMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
-                          "web_data_stream.name",
-                          String.valueOf(request.getWebDataStream().getName()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<CreateWebDataStreamRequest, WebDataStream>
-        createWebDataStreamTransportSettings =
-            GrpcCallSettings.<CreateWebDataStreamRequest, WebDataStream>newBuilder()
-                .setMethodDescriptor(createWebDataStreamMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<ListWebDataStreamsRequest, ListWebDataStreamsResponse>
-        listWebDataStreamsTransportSettings =
-            GrpcCallSettings.<ListWebDataStreamsRequest, ListWebDataStreamsResponse>newBuilder()
-                .setMethodDescriptor(listWebDataStreamsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<GetIosAppDataStreamRequest, IosAppDataStream>
-        getIosAppDataStreamTransportSettings =
-            GrpcCallSettings.<GetIosAppDataStreamRequest, IosAppDataStream>newBuilder()
-                .setMethodDescriptor(getIosAppDataStreamMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<DeleteIosAppDataStreamRequest, Empty> deleteIosAppDataStreamTransportSettings =
-        GrpcCallSettings.<DeleteIosAppDataStreamRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteIosAppDataStreamMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<UpdateIosAppDataStreamRequest, IosAppDataStream>
-        updateIosAppDataStreamTransportSettings =
-            GrpcCallSettings.<UpdateIosAppDataStreamRequest, IosAppDataStream>newBuilder()
-                .setMethodDescriptor(updateIosAppDataStreamMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
-                          "ios_app_data_stream.name",
-                          String.valueOf(request.getIosAppDataStream().getName()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
-        listIosAppDataStreamsTransportSettings =
-            GrpcCallSettings
-                .<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>newBuilder()
-                .setMethodDescriptor(listIosAppDataStreamsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
-        getAndroidAppDataStreamTransportSettings =
-            GrpcCallSettings.<GetAndroidAppDataStreamRequest, AndroidAppDataStream>newBuilder()
-                .setMethodDescriptor(getAndroidAppDataStreamMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<DeleteAndroidAppDataStreamRequest, Empty>
-        deleteAndroidAppDataStreamTransportSettings =
-            GrpcCallSettings.<DeleteAndroidAppDataStreamRequest, Empty>newBuilder()
-                .setMethodDescriptor(deleteAndroidAppDataStreamMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
-        updateAndroidAppDataStreamTransportSettings =
-            GrpcCallSettings.<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>newBuilder()
-                .setMethodDescriptor(updateAndroidAppDataStreamMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
-                          "android_app_data_stream.name",
-                          String.valueOf(request.getAndroidAppDataStream().getName()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
-        listAndroidAppDataStreamsTransportSettings =
-            GrpcCallSettings
-                .<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>newBuilder()
-                .setMethodDescriptor(listAndroidAppDataStreamsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
     GrpcCallSettings<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkTransportSettings =
         GrpcCallSettings.<CreateFirebaseLinkRequest, FirebaseLink>newBuilder()
             .setMethodDescriptor(createFirebaseLinkMethodDescriptor)
@@ -2464,84 +2114,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             batchDeleteUserLinksTransportSettings,
             settings.batchDeleteUserLinksSettings(),
             clientContext);
-    this.getWebDataStreamCallable =
-        callableFactory.createUnaryCallable(
-            getWebDataStreamTransportSettings, settings.getWebDataStreamSettings(), clientContext);
-    this.deleteWebDataStreamCallable =
-        callableFactory.createUnaryCallable(
-            deleteWebDataStreamTransportSettings,
-            settings.deleteWebDataStreamSettings(),
-            clientContext);
-    this.updateWebDataStreamCallable =
-        callableFactory.createUnaryCallable(
-            updateWebDataStreamTransportSettings,
-            settings.updateWebDataStreamSettings(),
-            clientContext);
-    this.createWebDataStreamCallable =
-        callableFactory.createUnaryCallable(
-            createWebDataStreamTransportSettings,
-            settings.createWebDataStreamSettings(),
-            clientContext);
-    this.listWebDataStreamsCallable =
-        callableFactory.createUnaryCallable(
-            listWebDataStreamsTransportSettings,
-            settings.listWebDataStreamsSettings(),
-            clientContext);
-    this.listWebDataStreamsPagedCallable =
-        callableFactory.createPagedCallable(
-            listWebDataStreamsTransportSettings,
-            settings.listWebDataStreamsSettings(),
-            clientContext);
-    this.getIosAppDataStreamCallable =
-        callableFactory.createUnaryCallable(
-            getIosAppDataStreamTransportSettings,
-            settings.getIosAppDataStreamSettings(),
-            clientContext);
-    this.deleteIosAppDataStreamCallable =
-        callableFactory.createUnaryCallable(
-            deleteIosAppDataStreamTransportSettings,
-            settings.deleteIosAppDataStreamSettings(),
-            clientContext);
-    this.updateIosAppDataStreamCallable =
-        callableFactory.createUnaryCallable(
-            updateIosAppDataStreamTransportSettings,
-            settings.updateIosAppDataStreamSettings(),
-            clientContext);
-    this.listIosAppDataStreamsCallable =
-        callableFactory.createUnaryCallable(
-            listIosAppDataStreamsTransportSettings,
-            settings.listIosAppDataStreamsSettings(),
-            clientContext);
-    this.listIosAppDataStreamsPagedCallable =
-        callableFactory.createPagedCallable(
-            listIosAppDataStreamsTransportSettings,
-            settings.listIosAppDataStreamsSettings(),
-            clientContext);
-    this.getAndroidAppDataStreamCallable =
-        callableFactory.createUnaryCallable(
-            getAndroidAppDataStreamTransportSettings,
-            settings.getAndroidAppDataStreamSettings(),
-            clientContext);
-    this.deleteAndroidAppDataStreamCallable =
-        callableFactory.createUnaryCallable(
-            deleteAndroidAppDataStreamTransportSettings,
-            settings.deleteAndroidAppDataStreamSettings(),
-            clientContext);
-    this.updateAndroidAppDataStreamCallable =
-        callableFactory.createUnaryCallable(
-            updateAndroidAppDataStreamTransportSettings,
-            settings.updateAndroidAppDataStreamSettings(),
-            clientContext);
-    this.listAndroidAppDataStreamsCallable =
-        callableFactory.createUnaryCallable(
-            listAndroidAppDataStreamsTransportSettings,
-            settings.listAndroidAppDataStreamsSettings(),
-            clientContext);
-    this.listAndroidAppDataStreamsPagedCallable =
-        callableFactory.createPagedCallable(
-            listAndroidAppDataStreamsTransportSettings,
-            settings.listAndroidAppDataStreamsSettings(),
-            clientContext);
     this.createFirebaseLinkCallable =
         callableFactory.createUnaryCallable(
             createFirebaseLinkTransportSettings,
@@ -2972,96 +2544,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   @Override
   public UnaryCallable<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksCallable() {
     return batchDeleteUserLinksCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetWebDataStreamRequest, WebDataStream> getWebDataStreamCallable() {
-    return getWebDataStreamCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteWebDataStreamRequest, Empty> deleteWebDataStreamCallable() {
-    return deleteWebDataStreamCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateWebDataStreamRequest, WebDataStream> updateWebDataStreamCallable() {
-    return updateWebDataStreamCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateWebDataStreamRequest, WebDataStream> createWebDataStreamCallable() {
-    return createWebDataStreamCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsResponse>
-      listWebDataStreamsCallable() {
-    return listWebDataStreamsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsPagedResponse>
-      listWebDataStreamsPagedCallable() {
-    return listWebDataStreamsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetIosAppDataStreamRequest, IosAppDataStream> getIosAppDataStreamCallable() {
-    return getIosAppDataStreamCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteIosAppDataStreamRequest, Empty> deleteIosAppDataStreamCallable() {
-    return deleteIosAppDataStreamCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateIosAppDataStreamRequest, IosAppDataStream>
-      updateIosAppDataStreamCallable() {
-    return updateIosAppDataStreamCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
-      listIosAppDataStreamsCallable() {
-    return listIosAppDataStreamsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsPagedResponse>
-      listIosAppDataStreamsPagedCallable() {
-    return listIosAppDataStreamsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
-      getAndroidAppDataStreamCallable() {
-    return getAndroidAppDataStreamCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteAndroidAppDataStreamRequest, Empty>
-      deleteAndroidAppDataStreamCallable() {
-    return deleteAndroidAppDataStreamCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      updateAndroidAppDataStreamCallable() {
-    return updateAndroidAppDataStreamCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
-      listAndroidAppDataStreamsCallable() {
-    return listAndroidAppDataStreamsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsPagedResponse>
-      listAndroidAppDataStreamsPagedCallable() {
-    return listAndroidAppDataStreamsPagedCallable;
   }
 
   @Override

@@ -29,9 +29,7 @@ public interface GetMeasurementProtocolSecretRequestOrBuilder
    * <pre>
    * Required. The name of the measurement protocol secret to lookup.
    * Format:
-   * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
-   * Note: Any type of stream (WebDataStream, IosAppDataStream,
-   * AndroidAppDataStream) may be a parent.
+   * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
    * </pre>
    *
    * <code>
@@ -47,9 +45,7 @@ public interface GetMeasurementProtocolSecretRequestOrBuilder
    * <pre>
    * Required. The name of the measurement protocol secret to lookup.
    * Format:
-   * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
-   * Note: Any type of stream (WebDataStream, IosAppDataStream,
-   * AndroidAppDataStream) may be a parent.
+   * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
    * </pre>
    *
    * <code>

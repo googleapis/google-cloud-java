@@ -29,22 +29,30 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
 public class GlobalSiteTagName implements ResourceName {
-  private static final PathTemplate PROPERTY =
-      PathTemplate.createWithoutUrlEncoding("properties/{property}/globalSiteTag");
+  private static final PathTemplate PROPERTY_DATA_STREAM =
+      PathTemplate.createWithoutUrlEncoding(
+          "properties/{property}/dataStreams/{data_stream}/globalSiteTag");
   private volatile Map<String, String> fieldValuesMap;
   private final String property;
+  private final String dataStream;
 
   @Deprecated
   protected GlobalSiteTagName() {
     property = null;
+    dataStream = null;
   }
 
   private GlobalSiteTagName(Builder builder) {
     property = Preconditions.checkNotNull(builder.getProperty());
+    dataStream = Preconditions.checkNotNull(builder.getDataStream());
   }
 
   public String getProperty() {
     return property;
+  }
+
+  public String getDataStream() {
+    return dataStream;
   }
 
   public static Builder newBuilder() {
@@ -55,12 +63,12 @@ public class GlobalSiteTagName implements ResourceName {
     return new Builder(this);
   }
 
-  public static GlobalSiteTagName of(String property) {
-    return newBuilder().setProperty(property).build();
+  public static GlobalSiteTagName of(String property, String dataStream) {
+    return newBuilder().setProperty(property).setDataStream(dataStream).build();
   }
 
-  public static String format(String property) {
-    return newBuilder().setProperty(property).build().toString();
+  public static String format(String property, String dataStream) {
+    return newBuilder().setProperty(property).setDataStream(dataStream).build().toString();
   }
 
   public static GlobalSiteTagName parse(String formattedString) {
@@ -68,9 +76,9 @@ public class GlobalSiteTagName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PROPERTY.validatedMatch(
+        PROPERTY_DATA_STREAM.validatedMatch(
             formattedString, "GlobalSiteTagName.parse: formattedString not in valid format");
-    return of(matchMap.get("property"));
+    return of(matchMap.get("property"), matchMap.get("data_stream"));
   }
 
   public static List<GlobalSiteTagName> parseList(List<String> formattedStrings) {
@@ -94,7 +102,7 @@ public class GlobalSiteTagName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROPERTY.matches(formattedString);
+    return PROPERTY_DATA_STREAM.matches(formattedString);
   }
 
   @Override
@@ -105,6 +113,9 @@ public class GlobalSiteTagName implements ResourceName {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
           if (property != null) {
             fieldMapBuilder.put("property", property);
+          }
+          if (dataStream != null) {
+            fieldMapBuilder.put("data_stream", dataStream);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -119,7 +130,7 @@ public class GlobalSiteTagName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROPERTY.instantiate("property", property);
+    return PROPERTY_DATA_STREAM.instantiate("property", property, "data_stream", dataStream);
   }
 
   @Override
@@ -129,7 +140,8 @@ public class GlobalSiteTagName implements ResourceName {
     }
     if (o != null || getClass() == o.getClass()) {
       GlobalSiteTagName that = ((GlobalSiteTagName) o);
-      return Objects.equals(this.property, that.property);
+      return Objects.equals(this.property, that.property)
+          && Objects.equals(this.dataStream, that.dataStream);
     }
     return false;
   }
@@ -139,12 +151,15 @@ public class GlobalSiteTagName implements ResourceName {
     int h = 1;
     h *= 1000003;
     h ^= Objects.hashCode(property);
+    h *= 1000003;
+    h ^= Objects.hashCode(dataStream);
     return h;
   }
 
-  /** Builder for properties/{property}/globalSiteTag. */
+  /** Builder for properties/{property}/dataStreams/{data_stream}/globalSiteTag. */
   public static class Builder {
     private String property;
+    private String dataStream;
 
     protected Builder() {}
 
@@ -152,13 +167,23 @@ public class GlobalSiteTagName implements ResourceName {
       return property;
     }
 
+    public String getDataStream() {
+      return dataStream;
+    }
+
     public Builder setProperty(String property) {
       this.property = property;
       return this;
     }
 
+    public Builder setDataStream(String dataStream) {
+      this.dataStream = dataStream;
+      return this;
+    }
+
     private Builder(GlobalSiteTagName globalSiteTagName) {
       this.property = globalSiteTagName.property;
+      this.dataStream = globalSiteTagName.dataStream;
     }
 
     public GlobalSiteTagName build() {

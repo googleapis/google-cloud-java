@@ -62,36 +62,6 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
-   * WebDataStream resource
-   * </pre>
-   *
-   * <code>WEB_DATA_STREAM = 3;</code>
-   */
-  WEB_DATA_STREAM(3),
-  /**
-   *
-   *
-   * <pre>
-   * AndroidAppDataStream resource
-   * </pre>
-   *
-   * <code>ANDROID_APP_DATA_STREAM = 4;</code>
-   */
-  ANDROID_APP_DATA_STREAM(4),
-  /**
-   *
-   *
-   * <pre>
-   * IosAppDataStream resource
-   * </pre>
-   *
-   * <code>IOS_APP_DATA_STREAM = 5;</code>
-   */
-  IOS_APP_DATA_STREAM(5),
-  /**
-   *
-   *
-   * <pre>
    * FirebaseLink resource
    * </pre>
    *
@@ -188,6 +158,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL = 15;</code>
    */
   DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL(15),
+  /**
+   *
+   *
+   * <pre>
+   * DataStream resource
+   * </pre>
+   *
+   * <code>DATA_STREAM = 18;</code>
+   */
+  DATA_STREAM(18),
   UNRECOGNIZED(-1),
   ;
 
@@ -221,36 +201,6 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>PROPERTY = 2;</code>
    */
   public static final int PROPERTY_VALUE = 2;
-  /**
-   *
-   *
-   * <pre>
-   * WebDataStream resource
-   * </pre>
-   *
-   * <code>WEB_DATA_STREAM = 3;</code>
-   */
-  public static final int WEB_DATA_STREAM_VALUE = 3;
-  /**
-   *
-   *
-   * <pre>
-   * AndroidAppDataStream resource
-   * </pre>
-   *
-   * <code>ANDROID_APP_DATA_STREAM = 4;</code>
-   */
-  public static final int ANDROID_APP_DATA_STREAM_VALUE = 4;
-  /**
-   *
-   *
-   * <pre>
-   * IosAppDataStream resource
-   * </pre>
-   *
-   * <code>IOS_APP_DATA_STREAM = 5;</code>
-   */
-  public static final int IOS_APP_DATA_STREAM_VALUE = 5;
   /**
    *
    *
@@ -351,6 +301,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL = 15;</code>
    */
   public static final int DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL_VALUE = 15;
+  /**
+   *
+   *
+   * <pre>
+   * DataStream resource
+   * </pre>
+   *
+   * <code>DATA_STREAM = 18;</code>
+   */
+  public static final int DATA_STREAM_VALUE = 18;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -382,12 +342,6 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return ACCOUNT;
       case 2:
         return PROPERTY;
-      case 3:
-        return WEB_DATA_STREAM;
-      case 4:
-        return ANDROID_APP_DATA_STREAM;
-      case 5:
-        return IOS_APP_DATA_STREAM;
       case 6:
         return FIREBASE_LINK;
       case 7:
@@ -408,6 +362,8 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return DISPLAY_VIDEO_360_ADVERTISER_LINK;
       case 15:
         return DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL;
+      case 18:
+        return DATA_STREAM;
       default:
         return null;
     }

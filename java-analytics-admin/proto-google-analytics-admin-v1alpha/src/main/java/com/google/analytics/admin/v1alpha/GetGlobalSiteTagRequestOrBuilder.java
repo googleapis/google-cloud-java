@@ -29,8 +29,8 @@ public interface GetGlobalSiteTagRequestOrBuilder
    * <pre>
    * Required. The name of the site tag to lookup.
    * Note that site tags are singletons and do not have unique IDs.
-   * Format: properties/{property_id}/webDataStreams/{stream_id}/globalSiteTag
-   * Example: "properties/123/webDataStreams/456/globalSiteTag"
+   * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+   * Example: "properties/123/dataStreams/456/globalSiteTag"
    * </pre>
    *
    * <code>
@@ -46,8 +46,8 @@ public interface GetGlobalSiteTagRequestOrBuilder
    * <pre>
    * Required. The name of the site tag to lookup.
    * Note that site tags are singletons and do not have unique IDs.
-   * Format: properties/{property_id}/webDataStreams/{stream_id}/globalSiteTag
-   * Example: "properties/123/webDataStreams/456/globalSiteTag"
+   * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
+   * Example: "properties/123/dataStreams/456/globalSiteTag"
    * </pre>
    *
    * <code>

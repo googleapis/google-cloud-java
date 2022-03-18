@@ -73,14 +73,8 @@
             "CreateUserLink": {
               "methods": ["createUserLink", "createUserLink", "createUserLink", "createUserLink", "createUserLinkCallable"]
             },
-            "CreateWebDataStream": {
-              "methods": ["createWebDataStream", "createWebDataStream", "createWebDataStream", "createWebDataStreamCallable"]
-            },
             "DeleteAccount": {
               "methods": ["deleteAccount", "deleteAccount", "deleteAccount", "deleteAccountCallable"]
-            },
-            "DeleteAndroidAppDataStream": {
-              "methods": ["deleteAndroidAppDataStream", "deleteAndroidAppDataStream", "deleteAndroidAppDataStream", "deleteAndroidAppDataStreamCallable"]
             },
             "DeleteConversionEvent": {
               "methods": ["deleteConversionEvent", "deleteConversionEvent", "deleteConversionEvent", "deleteConversionEventCallable"]
@@ -100,9 +94,6 @@
             "DeleteGoogleAdsLink": {
               "methods": ["deleteGoogleAdsLink", "deleteGoogleAdsLink", "deleteGoogleAdsLink", "deleteGoogleAdsLinkCallable"]
             },
-            "DeleteIosAppDataStream": {
-              "methods": ["deleteIosAppDataStream", "deleteIosAppDataStream", "deleteIosAppDataStream", "deleteIosAppDataStreamCallable"]
-            },
             "DeleteMeasurementProtocolSecret": {
               "methods": ["deleteMeasurementProtocolSecret", "deleteMeasurementProtocolSecret", "deleteMeasurementProtocolSecret", "deleteMeasurementProtocolSecretCallable"]
             },
@@ -112,14 +103,8 @@
             "DeleteUserLink": {
               "methods": ["deleteUserLink", "deleteUserLink", "deleteUserLink", "deleteUserLinkCallable"]
             },
-            "DeleteWebDataStream": {
-              "methods": ["deleteWebDataStream", "deleteWebDataStream", "deleteWebDataStream", "deleteWebDataStreamCallable"]
-            },
             "GetAccount": {
               "methods": ["getAccount", "getAccount", "getAccount", "getAccountCallable"]
-            },
-            "GetAndroidAppDataStream": {
-              "methods": ["getAndroidAppDataStream", "getAndroidAppDataStream", "getAndroidAppDataStream", "getAndroidAppDataStreamCallable"]
             },
             "GetConversionEvent": {
               "methods": ["getConversionEvent", "getConversionEvent", "getConversionEvent", "getConversionEventCallable"]
@@ -151,9 +136,6 @@
             "GetGoogleSignalsSettings": {
               "methods": ["getGoogleSignalsSettings", "getGoogleSignalsSettings", "getGoogleSignalsSettings", "getGoogleSignalsSettingsCallable"]
             },
-            "GetIosAppDataStream": {
-              "methods": ["getIosAppDataStream", "getIosAppDataStream", "getIosAppDataStream", "getIosAppDataStreamCallable"]
-            },
             "GetMeasurementProtocolSecret": {
               "methods": ["getMeasurementProtocolSecret", "getMeasurementProtocolSecret", "getMeasurementProtocolSecret", "getMeasurementProtocolSecretCallable"]
             },
@@ -163,17 +145,11 @@
             "GetUserLink": {
               "methods": ["getUserLink", "getUserLink", "getUserLink", "getUserLinkCallable"]
             },
-            "GetWebDataStream": {
-              "methods": ["getWebDataStream", "getWebDataStream", "getWebDataStream", "getWebDataStreamCallable"]
-            },
             "ListAccountSummaries": {
               "methods": ["listAccountSummaries", "listAccountSummariesPagedCallable", "listAccountSummariesCallable"]
             },
             "ListAccounts": {
               "methods": ["listAccounts", "listAccountsPagedCallable", "listAccountsCallable"]
-            },
-            "ListAndroidAppDataStreams": {
-              "methods": ["listAndroidAppDataStreams", "listAndroidAppDataStreams", "listAndroidAppDataStreams", "listAndroidAppDataStreamsPagedCallable", "listAndroidAppDataStreamsCallable"]
             },
             "ListConversionEvents": {
               "methods": ["listConversionEvents", "listConversionEvents", "listConversionEvents", "listConversionEventsPagedCallable", "listConversionEventsCallable"]
@@ -199,9 +175,6 @@
             "ListGoogleAdsLinks": {
               "methods": ["listGoogleAdsLinks", "listGoogleAdsLinks", "listGoogleAdsLinks", "listGoogleAdsLinksPagedCallable", "listGoogleAdsLinksCallable"]
             },
-            "ListIosAppDataStreams": {
-              "methods": ["listIosAppDataStreams", "listIosAppDataStreams", "listIosAppDataStreams", "listIosAppDataStreamsPagedCallable", "listIosAppDataStreamsCallable"]
-            },
             "ListMeasurementProtocolSecrets": {
               "methods": ["listMeasurementProtocolSecrets", "listMeasurementProtocolSecrets", "listMeasurementProtocolSecrets", "listMeasurementProtocolSecretsPagedCallable", "listMeasurementProtocolSecretsCallable"]
             },
@@ -211,9 +184,6 @@
             "ListUserLinks": {
               "methods": ["listUserLinks", "listUserLinks", "listUserLinks", "listUserLinks", "listUserLinksPagedCallable", "listUserLinksCallable"]
             },
-            "ListWebDataStreams": {
-              "methods": ["listWebDataStreams", "listWebDataStreams", "listWebDataStreams", "listWebDataStreamsPagedCallable", "listWebDataStreamsCallable"]
-            },
             "ProvisionAccountTicket": {
               "methods": ["provisionAccountTicket", "provisionAccountTicketCallable"]
             },
@@ -222,9 +192,6 @@
             },
             "UpdateAccount": {
               "methods": ["updateAccount", "updateAccount", "updateAccountCallable"]
-            },
-            "UpdateAndroidAppDataStream": {
-              "methods": ["updateAndroidAppDataStream", "updateAndroidAppDataStream", "updateAndroidAppDataStreamCallable"]
             },
             "UpdateCustomDimension": {
               "methods": ["updateCustomDimension", "updateCustomDimension", "updateCustomDimensionCallable"]
@@ -247,9 +214,6 @@
             "UpdateGoogleSignalsSettings": {
               "methods": ["updateGoogleSignalsSettings", "updateGoogleSignalsSettings", "updateGoogleSignalsSettingsCallable"]
             },
-            "UpdateIosAppDataStream": {
-              "methods": ["updateIosAppDataStream", "updateIosAppDataStream", "updateIosAppDataStreamCallable"]
-            },
             "UpdateMeasurementProtocolSecret": {
               "methods": ["updateMeasurementProtocolSecret", "updateMeasurementProtocolSecret", "updateMeasurementProtocolSecretCallable"]
             },
@@ -258,9 +222,6 @@
             },
             "UpdateUserLink": {
               "methods": ["updateUserLink", "updateUserLink", "updateUserLinkCallable"]
-            },
-            "UpdateWebDataStream": {
-              "methods": ["updateWebDataStream", "updateWebDataStream", "updateWebDataStreamCallable"]
             }
           }
         }

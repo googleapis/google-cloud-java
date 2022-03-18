@@ -139,9 +139,7 @@ public final class CreateMeasurementProtocolSecretRequest
    *
    * <pre>
    * Required. The parent resource where this secret will be created.
-   * Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream)
-   * may be a parent.
-   * Format: properties/{property}/webDataStreams/{webDataStream}
+   * Format: properties/{property}/dataStreams/{dataStream}
    * </pre>
    *
    * <code>
@@ -167,9 +165,7 @@ public final class CreateMeasurementProtocolSecretRequest
    *
    * <pre>
    * Required. The parent resource where this secret will be created.
-   * Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream)
-   * may be a parent.
-   * Format: properties/{property}/webDataStreams/{webDataStream}
+   * Format: properties/{property}/dataStreams/{dataStream}
    * </pre>
    *
    * <code>
@@ -617,9 +613,7 @@ public final class CreateMeasurementProtocolSecretRequest
      *
      * <pre>
      * Required. The parent resource where this secret will be created.
-     * Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream)
-     * may be a parent.
-     * Format: properties/{property}/webDataStreams/{webDataStream}
+     * Format: properties/{property}/dataStreams/{dataStream}
      * </pre>
      *
      * <code>
@@ -644,9 +638,7 @@ public final class CreateMeasurementProtocolSecretRequest
      *
      * <pre>
      * Required. The parent resource where this secret will be created.
-     * Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream)
-     * may be a parent.
-     * Format: properties/{property}/webDataStreams/{webDataStream}
+     * Format: properties/{property}/dataStreams/{dataStream}
      * </pre>
      *
      * <code>
@@ -671,9 +663,7 @@ public final class CreateMeasurementProtocolSecretRequest
      *
      * <pre>
      * Required. The parent resource where this secret will be created.
-     * Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream)
-     * may be a parent.
-     * Format: properties/{property}/webDataStreams/{webDataStream}
+     * Format: properties/{property}/dataStreams/{dataStream}
      * </pre>
      *
      * <code>
@@ -697,9 +687,7 @@ public final class CreateMeasurementProtocolSecretRequest
      *
      * <pre>
      * Required. The parent resource where this secret will be created.
-     * Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream)
-     * may be a parent.
-     * Format: properties/{property}/webDataStreams/{webDataStream}
+     * Format: properties/{property}/dataStreams/{dataStream}
      * </pre>
      *
      * <code>
@@ -719,9 +707,7 @@ public final class CreateMeasurementProtocolSecretRequest
      *
      * <pre>
      * Required. The parent resource where this secret will be created.
-     * Any type of stream (WebDataStream, IosAppDataStream, AndroidAppDataStream)
-     * may be a parent.
-     * Format: properties/{property}/webDataStreams/{webDataStream}
+     * Format: properties/{property}/dataStreams/{dataStream}
      * </pre>
      *
      * <code>

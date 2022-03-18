@@ -44,6 +44,7 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     measurementUnit_ = 0;
     scope_ = 0;
+    restrictedMetricType_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -65,6 +66,7 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -117,6 +119,31 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
               scope_ = rawValue;
               break;
             }
+          case 64:
+            {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                restrictedMetricType_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              restrictedMetricType_.add(rawValue);
+              break;
+            }
+          case 66:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  restrictedMetricType_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                restrictedMetricType_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -131,6 +158,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        restrictedMetricType_ = java.util.Collections.unmodifiableList(restrictedMetricType_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -623,6 +653,167 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.analytics.admin.v1alpha.CustomMetric.MetricScope)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Labels that mark the data in this custom metric as data that should be
+   * restricted to specific users.
+   * </pre>
+   *
+   * Protobuf enum {@code google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType}
+   */
+  public enum RestrictedMetricType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Type unknown or unspecified.
+     * </pre>
+     *
+     * <code>RESTRICTED_METRIC_TYPE_UNSPECIFIED = 0;</code>
+     */
+    RESTRICTED_METRIC_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Metric reports cost data.
+     * </pre>
+     *
+     * <code>COST_DATA = 1;</code>
+     */
+    COST_DATA(1),
+    /**
+     *
+     *
+     * <pre>
+     * Metric reports revenue data.
+     * </pre>
+     *
+     * <code>REVENUE_DATA = 2;</code>
+     */
+    REVENUE_DATA(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Type unknown or unspecified.
+     * </pre>
+     *
+     * <code>RESTRICTED_METRIC_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int RESTRICTED_METRIC_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Metric reports cost data.
+     * </pre>
+     *
+     * <code>COST_DATA = 1;</code>
+     */
+    public static final int COST_DATA_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Metric reports revenue data.
+     * </pre>
+     *
+     * <code>REVENUE_DATA = 2;</code>
+     */
+    public static final int REVENUE_DATA_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RestrictedMetricType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RestrictedMetricType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RESTRICTED_METRIC_TYPE_UNSPECIFIED;
+        case 1:
+          return COST_DATA;
+        case 2:
+          return REVENUE_DATA;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RestrictedMetricType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RestrictedMetricType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<RestrictedMetricType>() {
+              public RestrictedMetricType findValueByNumber(int number) {
+                return RestrictedMetricType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.analytics.admin.v1alpha.CustomMetric.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final RestrictedMetricType[] VALUES = values();
+
+    public static RestrictedMetricType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RestrictedMetricType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType)
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -927,6 +1118,130 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int RESTRICTED_METRIC_TYPE_FIELD_NUMBER = 8;
+  private java.util.List<java.lang.Integer> restrictedMetricType_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType>
+      restrictedMetricType_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer,
+              com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType>() {
+            public com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType convert(
+                java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType result =
+                  com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType.valueOf(
+                      from);
+              return result == null
+                  ? com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType
+                      .UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Types of restricted data that this metric may contain. Required for metrics
+   * with CURRENCY measurement unit. Must be empty for metrics with a
+   * non-CURRENCY measurement unit.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the restrictedMetricType.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType>
+      getRestrictedMetricTypeList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType>(
+        restrictedMetricType_, restrictedMetricType_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Types of restricted data that this metric may contain. Required for metrics
+   * with CURRENCY measurement unit. Must be empty for metrics with a
+   * non-CURRENCY measurement unit.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of restrictedMetricType.
+   */
+  @java.lang.Override
+  public int getRestrictedMetricTypeCount() {
+    return restrictedMetricType_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Types of restricted data that this metric may contain. Required for metrics
+   * with CURRENCY measurement unit. Must be empty for metrics with a
+   * non-CURRENCY measurement unit.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The restrictedMetricType at the given index.
+   */
+  @java.lang.Override
+  public com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType
+      getRestrictedMetricType(int index) {
+    return restrictedMetricType_converter_.convert(restrictedMetricType_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Types of restricted data that this metric may contain. Required for metrics
+   * with CURRENCY measurement unit. Must be empty for metrics with a
+   * non-CURRENCY measurement unit.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for restrictedMetricType.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getRestrictedMetricTypeValueList() {
+    return restrictedMetricType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Types of restricted data that this metric may contain. Required for metrics
+   * with CURRENCY measurement unit. Must be empty for metrics with a
+   * non-CURRENCY measurement unit.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of restrictedMetricType at the given index.
+   */
+  @java.lang.Override
+  public int getRestrictedMetricTypeValue(int index) {
+    return restrictedMetricType_.get(index);
+  }
+
+  private int restrictedMetricTypeMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -941,6 +1256,7 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -963,6 +1279,13 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
         != com.google.analytics.admin.v1alpha.CustomMetric.MetricScope.METRIC_SCOPE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(6, scope_);
+    }
+    if (getRestrictedMetricTypeList().size() > 0) {
+      output.writeUInt32NoTag(66);
+      output.writeUInt32NoTag(restrictedMetricTypeMemoizedSerializedSize);
+    }
+    for (int i = 0; i < restrictedMetricType_.size(); i++) {
+      output.writeEnumNoTag(restrictedMetricType_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -996,6 +1319,20 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, scope_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < restrictedMetricType_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                restrictedMetricType_.get(i));
+      }
+      size += dataSize;
+      if (!getRestrictedMetricTypeList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      restrictedMetricTypeMemoizedSerializedSize = dataSize;
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1018,6 +1355,7 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
     if (!getDescription().equals(other.getDescription())) return false;
     if (measurementUnit_ != other.measurementUnit_) return false;
     if (scope_ != other.scope_) return false;
+    if (!restrictedMetricType_.equals(other.restrictedMetricType_)) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1041,6 +1379,10 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + measurementUnit_;
     hash = (37 * hash) + SCOPE_FIELD_NUMBER;
     hash = (53 * hash) + scope_;
+    if (getRestrictedMetricTypeCount() > 0) {
+      hash = (37 * hash) + RESTRICTED_METRIC_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + restrictedMetricType_.hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1198,6 +1540,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
 
       scope_ = 0;
 
+      restrictedMetricType_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -1225,12 +1569,18 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1alpha.CustomMetric buildPartial() {
       com.google.analytics.admin.v1alpha.CustomMetric result =
           new com.google.analytics.admin.v1alpha.CustomMetric(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.parameterName_ = parameterName_;
       result.displayName_ = displayName_;
       result.description_ = description_;
       result.measurementUnit_ = measurementUnit_;
       result.scope_ = scope_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        restrictedMetricType_ = java.util.Collections.unmodifiableList(restrictedMetricType_);
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.restrictedMetricType_ = restrictedMetricType_;
       onBuilt();
       return result;
     }
@@ -1303,6 +1653,16 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
       if (other.scope_ != 0) {
         setScopeValue(other.getScopeValue());
       }
+      if (!other.restrictedMetricType_.isEmpty()) {
+        if (restrictedMetricType_.isEmpty()) {
+          restrictedMetricType_ = other.restrictedMetricType_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureRestrictedMetricTypeIsMutable();
+          restrictedMetricType_.addAll(other.restrictedMetricType_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1331,6 +1691,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2019,6 +2381,282 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
     public Builder clearScope() {
 
       scope_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> restrictedMetricType_ =
+        java.util.Collections.emptyList();
+
+    private void ensureRestrictedMetricTypeIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        restrictedMetricType_ = new java.util.ArrayList<java.lang.Integer>(restrictedMetricType_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Types of restricted data that this metric may contain. Required for metrics
+     * with CURRENCY measurement unit. Must be empty for metrics with a
+     * non-CURRENCY measurement unit.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the restrictedMetricType.
+     */
+    public java.util.List<com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType>
+        getRestrictedMetricTypeList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType>(
+          restrictedMetricType_, restrictedMetricType_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Types of restricted data that this metric may contain. Required for metrics
+     * with CURRENCY measurement unit. Must be empty for metrics with a
+     * non-CURRENCY measurement unit.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of restrictedMetricType.
+     */
+    public int getRestrictedMetricTypeCount() {
+      return restrictedMetricType_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Types of restricted data that this metric may contain. Required for metrics
+     * with CURRENCY measurement unit. Must be empty for metrics with a
+     * non-CURRENCY measurement unit.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The restrictedMetricType at the given index.
+     */
+    public com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType
+        getRestrictedMetricType(int index) {
+      return restrictedMetricType_converter_.convert(restrictedMetricType_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Types of restricted data that this metric may contain. Required for metrics
+     * with CURRENCY measurement unit. Must be empty for metrics with a
+     * non-CURRENCY measurement unit.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The restrictedMetricType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRestrictedMetricType(
+        int index, com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRestrictedMetricTypeIsMutable();
+      restrictedMetricType_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Types of restricted data that this metric may contain. Required for metrics
+     * with CURRENCY measurement unit. Must be empty for metrics with a
+     * non-CURRENCY measurement unit.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The restrictedMetricType to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRestrictedMetricType(
+        com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRestrictedMetricTypeIsMutable();
+      restrictedMetricType_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Types of restricted data that this metric may contain. Required for metrics
+     * with CURRENCY measurement unit. Must be empty for metrics with a
+     * non-CURRENCY measurement unit.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The restrictedMetricType to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRestrictedMetricType(
+        java.lang.Iterable<
+                ? extends com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType>
+            values) {
+      ensureRestrictedMetricTypeIsMutable();
+      for (com.google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType value : values) {
+        restrictedMetricType_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Types of restricted data that this metric may contain. Required for metrics
+     * with CURRENCY measurement unit. Must be empty for metrics with a
+     * non-CURRENCY measurement unit.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRestrictedMetricType() {
+      restrictedMetricType_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Types of restricted data that this metric may contain. Required for metrics
+     * with CURRENCY measurement unit. Must be empty for metrics with a
+     * non-CURRENCY measurement unit.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for restrictedMetricType.
+     */
+    public java.util.List<java.lang.Integer> getRestrictedMetricTypeValueList() {
+      return java.util.Collections.unmodifiableList(restrictedMetricType_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Types of restricted data that this metric may contain. Required for metrics
+     * with CURRENCY measurement unit. Must be empty for metrics with a
+     * non-CURRENCY measurement unit.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of restrictedMetricType at the given index.
+     */
+    public int getRestrictedMetricTypeValue(int index) {
+      return restrictedMetricType_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Types of restricted data that this metric may contain. Required for metrics
+     * with CURRENCY measurement unit. Must be empty for metrics with a
+     * non-CURRENCY measurement unit.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of restrictedMetricType at the given index.
+     * @return This builder for chaining.
+     */
+    public Builder setRestrictedMetricTypeValue(int index, int value) {
+      ensureRestrictedMetricTypeIsMutable();
+      restrictedMetricType_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Types of restricted data that this metric may contain. Required for metrics
+     * with CURRENCY measurement unit. Must be empty for metrics with a
+     * non-CURRENCY measurement unit.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for restrictedMetricType to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRestrictedMetricTypeValue(int value) {
+      ensureRestrictedMetricTypeIsMutable();
+      restrictedMetricType_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Types of restricted data that this metric may contain. Required for metrics
+     * with CURRENCY measurement unit. Must be empty for metrics with a
+     * non-CURRENCY measurement unit.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for restrictedMetricType to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRestrictedMetricTypeValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureRestrictedMetricTypeIsMutable();
+      for (int value : values) {
+        restrictedMetricType_.add(value);
+      }
       onChanged();
       return this;
     }

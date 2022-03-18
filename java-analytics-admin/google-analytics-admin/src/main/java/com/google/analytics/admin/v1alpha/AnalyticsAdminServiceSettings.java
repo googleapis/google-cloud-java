@@ -19,7 +19,6 @@ package com.google.analytics.admin.v1alpha;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -28,11 +27,9 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.stub.AnalyticsAdminServiceStubSettings;
@@ -207,92 +204,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   /** Returns the object with the settings used for calls to batchDeleteUserLinks. */
   public UnaryCallSettings<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).batchDeleteUserLinksSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getWebDataStream. */
-  public UnaryCallSettings<GetWebDataStreamRequest, WebDataStream> getWebDataStreamSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getWebDataStreamSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteWebDataStream. */
-  public UnaryCallSettings<DeleteWebDataStreamRequest, Empty> deleteWebDataStreamSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteWebDataStreamSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateWebDataStream. */
-  public UnaryCallSettings<UpdateWebDataStreamRequest, WebDataStream>
-      updateWebDataStreamSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateWebDataStreamSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createWebDataStream. */
-  public UnaryCallSettings<CreateWebDataStreamRequest, WebDataStream>
-      createWebDataStreamSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createWebDataStreamSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listWebDataStreams. */
-  public PagedCallSettings<
-          ListWebDataStreamsRequest, ListWebDataStreamsResponse, ListWebDataStreamsPagedResponse>
-      listWebDataStreamsSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listWebDataStreamsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getIosAppDataStream. */
-  public UnaryCallSettings<GetIosAppDataStreamRequest, IosAppDataStream>
-      getIosAppDataStreamSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getIosAppDataStreamSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteIosAppDataStream. */
-  public UnaryCallSettings<DeleteIosAppDataStreamRequest, Empty> deleteIosAppDataStreamSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteIosAppDataStreamSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateIosAppDataStream. */
-  public UnaryCallSettings<UpdateIosAppDataStreamRequest, IosAppDataStream>
-      updateIosAppDataStreamSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateIosAppDataStreamSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listIosAppDataStreams. */
-  public PagedCallSettings<
-          ListIosAppDataStreamsRequest,
-          ListIosAppDataStreamsResponse,
-          ListIosAppDataStreamsPagedResponse>
-      listIosAppDataStreamsSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listIosAppDataStreamsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getAndroidAppDataStream. */
-  public UnaryCallSettings<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
-      getAndroidAppDataStreamSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .getAndroidAppDataStreamSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteAndroidAppDataStream. */
-  public UnaryCallSettings<DeleteAndroidAppDataStreamRequest, Empty>
-      deleteAndroidAppDataStreamSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .deleteAndroidAppDataStreamSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateAndroidAppDataStream. */
-  public UnaryCallSettings<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      updateAndroidAppDataStreamSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .updateAndroidAppDataStreamSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listAndroidAppDataStreams. */
-  public PagedCallSettings<
-          ListAndroidAppDataStreamsRequest,
-          ListAndroidAppDataStreamsResponse,
-          ListAndroidAppDataStreamsPagedResponse>
-      listAndroidAppDataStreamsSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .listAndroidAppDataStreamsSettings();
   }
 
   /** Returns the object with the settings used for calls to createFirebaseLink. */
@@ -869,91 +780,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<BatchDeleteUserLinksRequest, Empty>
         batchDeleteUserLinksSettings() {
       return getStubSettingsBuilder().batchDeleteUserLinksSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getWebDataStream. */
-    public UnaryCallSettings.Builder<GetWebDataStreamRequest, WebDataStream>
-        getWebDataStreamSettings() {
-      return getStubSettingsBuilder().getWebDataStreamSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteWebDataStream. */
-    public UnaryCallSettings.Builder<DeleteWebDataStreamRequest, Empty>
-        deleteWebDataStreamSettings() {
-      return getStubSettingsBuilder().deleteWebDataStreamSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateWebDataStream. */
-    public UnaryCallSettings.Builder<UpdateWebDataStreamRequest, WebDataStream>
-        updateWebDataStreamSettings() {
-      return getStubSettingsBuilder().updateWebDataStreamSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createWebDataStream. */
-    public UnaryCallSettings.Builder<CreateWebDataStreamRequest, WebDataStream>
-        createWebDataStreamSettings() {
-      return getStubSettingsBuilder().createWebDataStreamSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listWebDataStreams. */
-    public PagedCallSettings.Builder<
-            ListWebDataStreamsRequest, ListWebDataStreamsResponse, ListWebDataStreamsPagedResponse>
-        listWebDataStreamsSettings() {
-      return getStubSettingsBuilder().listWebDataStreamsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getIosAppDataStream. */
-    public UnaryCallSettings.Builder<GetIosAppDataStreamRequest, IosAppDataStream>
-        getIosAppDataStreamSettings() {
-      return getStubSettingsBuilder().getIosAppDataStreamSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteIosAppDataStream. */
-    public UnaryCallSettings.Builder<DeleteIosAppDataStreamRequest, Empty>
-        deleteIosAppDataStreamSettings() {
-      return getStubSettingsBuilder().deleteIosAppDataStreamSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateIosAppDataStream. */
-    public UnaryCallSettings.Builder<UpdateIosAppDataStreamRequest, IosAppDataStream>
-        updateIosAppDataStreamSettings() {
-      return getStubSettingsBuilder().updateIosAppDataStreamSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listIosAppDataStreams. */
-    public PagedCallSettings.Builder<
-            ListIosAppDataStreamsRequest,
-            ListIosAppDataStreamsResponse,
-            ListIosAppDataStreamsPagedResponse>
-        listIosAppDataStreamsSettings() {
-      return getStubSettingsBuilder().listIosAppDataStreamsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getAndroidAppDataStream. */
-    public UnaryCallSettings.Builder<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
-        getAndroidAppDataStreamSettings() {
-      return getStubSettingsBuilder().getAndroidAppDataStreamSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteAndroidAppDataStream. */
-    public UnaryCallSettings.Builder<DeleteAndroidAppDataStreamRequest, Empty>
-        deleteAndroidAppDataStreamSettings() {
-      return getStubSettingsBuilder().deleteAndroidAppDataStreamSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateAndroidAppDataStream. */
-    public UnaryCallSettings.Builder<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
-        updateAndroidAppDataStreamSettings() {
-      return getStubSettingsBuilder().updateAndroidAppDataStreamSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listAndroidAppDataStreams. */
-    public PagedCallSettings.Builder<
-            ListAndroidAppDataStreamsRequest,
-            ListAndroidAppDataStreamsResponse,
-            ListAndroidAppDataStreamsPagedResponse>
-        listAndroidAppDataStreamsSettings() {
-      return getStubSettingsBuilder().listAndroidAppDataStreamsSettings();
     }
 
     /** Returns the builder for the settings used for calls to createFirebaseLink. */

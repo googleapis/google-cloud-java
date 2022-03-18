@@ -19,7 +19,6 @@ package com.google.analytics.admin.v1alpha.stub;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -28,18 +27,15 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AccountSummary;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
-import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
 import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
@@ -68,30 +64,25 @@ import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
-import com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
-import com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
-import com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
-import com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
-import com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -102,21 +93,16 @@ import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkPropos
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
-import com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
-import com.google.analytics.admin.v1alpha.GetWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
-import com.google.analytics.admin.v1alpha.IosAppDataStream;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
-import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest;
-import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -133,16 +119,12 @@ import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse;
-import com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest;
-import com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
-import com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest;
-import com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
@@ -150,7 +132,6 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
-import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -158,13 +139,10 @@ import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
-import com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
-import com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
-import com.google.analytics.admin.v1alpha.WebDataStream;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
@@ -281,37 +259,6 @@ public class AnalyticsAdminServiceStubSettings
       batchUpdateUserLinksSettings;
   private final UnaryCallSettings<DeleteUserLinkRequest, Empty> deleteUserLinkSettings;
   private final UnaryCallSettings<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksSettings;
-  private final UnaryCallSettings<GetWebDataStreamRequest, WebDataStream> getWebDataStreamSettings;
-  private final UnaryCallSettings<DeleteWebDataStreamRequest, Empty> deleteWebDataStreamSettings;
-  private final UnaryCallSettings<UpdateWebDataStreamRequest, WebDataStream>
-      updateWebDataStreamSettings;
-  private final UnaryCallSettings<CreateWebDataStreamRequest, WebDataStream>
-      createWebDataStreamSettings;
-  private final PagedCallSettings<
-          ListWebDataStreamsRequest, ListWebDataStreamsResponse, ListWebDataStreamsPagedResponse>
-      listWebDataStreamsSettings;
-  private final UnaryCallSettings<GetIosAppDataStreamRequest, IosAppDataStream>
-      getIosAppDataStreamSettings;
-  private final UnaryCallSettings<DeleteIosAppDataStreamRequest, Empty>
-      deleteIosAppDataStreamSettings;
-  private final UnaryCallSettings<UpdateIosAppDataStreamRequest, IosAppDataStream>
-      updateIosAppDataStreamSettings;
-  private final PagedCallSettings<
-          ListIosAppDataStreamsRequest,
-          ListIosAppDataStreamsResponse,
-          ListIosAppDataStreamsPagedResponse>
-      listIosAppDataStreamsSettings;
-  private final UnaryCallSettings<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
-      getAndroidAppDataStreamSettings;
-  private final UnaryCallSettings<DeleteAndroidAppDataStreamRequest, Empty>
-      deleteAndroidAppDataStreamSettings;
-  private final UnaryCallSettings<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      updateAndroidAppDataStreamSettings;
-  private final PagedCallSettings<
-          ListAndroidAppDataStreamsRequest,
-          ListAndroidAppDataStreamsResponse,
-          ListAndroidAppDataStreamsPagedResponse>
-      listAndroidAppDataStreamsSettings;
   private final UnaryCallSettings<CreateFirebaseLinkRequest, FirebaseLink>
       createFirebaseLinkSettings;
   private final UnaryCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkSettings;
@@ -619,134 +566,6 @@ public class AnalyticsAdminServiceStubSettings
               return payload.getUserLinksList() == null
                   ? ImmutableList.<AuditUserLink>of()
                   : payload.getUserLinksList();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream>
-      LIST_WEB_DATA_STREAMS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListWebDataStreamsRequest injectToken(
-                ListWebDataStreamsRequest payload, String token) {
-              return ListWebDataStreamsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListWebDataStreamsRequest injectPageSize(
-                ListWebDataStreamsRequest payload, int pageSize) {
-              return ListWebDataStreamsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListWebDataStreamsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListWebDataStreamsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<WebDataStream> extractResources(ListWebDataStreamsResponse payload) {
-              return payload.getWebDataStreamsList() == null
-                  ? ImmutableList.<WebDataStream>of()
-                  : payload.getWebDataStreamsList();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream>
-      LIST_IOS_APP_DATA_STREAMS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListIosAppDataStreamsRequest injectToken(
-                ListIosAppDataStreamsRequest payload, String token) {
-              return ListIosAppDataStreamsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListIosAppDataStreamsRequest injectPageSize(
-                ListIosAppDataStreamsRequest payload, int pageSize) {
-              return ListIosAppDataStreamsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListIosAppDataStreamsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListIosAppDataStreamsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<IosAppDataStream> extractResources(
-                ListIosAppDataStreamsResponse payload) {
-              return payload.getIosAppDataStreamsList() == null
-                  ? ImmutableList.<IosAppDataStream>of()
-                  : payload.getIosAppDataStreamsList();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse, AndroidAppDataStream>
-      LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListAndroidAppDataStreamsRequest,
-              ListAndroidAppDataStreamsResponse,
-              AndroidAppDataStream>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListAndroidAppDataStreamsRequest injectToken(
-                ListAndroidAppDataStreamsRequest payload, String token) {
-              return ListAndroidAppDataStreamsRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListAndroidAppDataStreamsRequest injectPageSize(
-                ListAndroidAppDataStreamsRequest payload, int pageSize) {
-              return ListAndroidAppDataStreamsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListAndroidAppDataStreamsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListAndroidAppDataStreamsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<AndroidAppDataStream> extractResources(
-                ListAndroidAppDataStreamsResponse payload) {
-              return payload.getAndroidAppDataStreamsList() == null
-                  ? ImmutableList.<AndroidAppDataStream>of()
-                  : payload.getAndroidAppDataStreamsList();
             }
           };
 
@@ -1281,79 +1100,6 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListWebDataStreamsRequest, ListWebDataStreamsResponse, ListWebDataStreamsPagedResponse>
-      LIST_WEB_DATA_STREAMS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListWebDataStreamsRequest,
-              ListWebDataStreamsResponse,
-              ListWebDataStreamsPagedResponse>() {
-            @Override
-            public ApiFuture<ListWebDataStreamsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsResponse> callable,
-                ListWebDataStreamsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListWebDataStreamsResponse> futureResponse) {
-              PageContext<ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_WEB_DATA_STREAMS_PAGE_STR_DESC, request, context);
-              return ListWebDataStreamsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListIosAppDataStreamsRequest,
-          ListIosAppDataStreamsResponse,
-          ListIosAppDataStreamsPagedResponse>
-      LIST_IOS_APP_DATA_STREAMS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListIosAppDataStreamsRequest,
-              ListIosAppDataStreamsResponse,
-              ListIosAppDataStreamsPagedResponse>() {
-            @Override
-            public ApiFuture<ListIosAppDataStreamsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse> callable,
-                ListIosAppDataStreamsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListIosAppDataStreamsResponse> futureResponse) {
-              PageContext<
-                      ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_IOS_APP_DATA_STREAMS_PAGE_STR_DESC, request, context);
-              return ListIosAppDataStreamsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListAndroidAppDataStreamsRequest,
-          ListAndroidAppDataStreamsResponse,
-          ListAndroidAppDataStreamsPagedResponse>
-      LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListAndroidAppDataStreamsRequest,
-              ListAndroidAppDataStreamsResponse,
-              ListAndroidAppDataStreamsPagedResponse>() {
-            @Override
-            public ApiFuture<ListAndroidAppDataStreamsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
-                    callable,
-                ListAndroidAppDataStreamsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListAndroidAppDataStreamsResponse> futureResponse) {
-              PageContext<
-                      ListAndroidAppDataStreamsRequest,
-                      ListAndroidAppDataStreamsResponse,
-                      AndroidAppDataStream>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_DESC, request, context);
-              return ListAndroidAppDataStreamsPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
           ListFirebaseLinksRequest, ListFirebaseLinksResponse, ListFirebaseLinksPagedResponse>
       LIST_FIREBASE_LINKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1727,88 +1473,6 @@ public class AnalyticsAdminServiceStubSettings
   /** Returns the object with the settings used for calls to batchDeleteUserLinks. */
   public UnaryCallSettings<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksSettings() {
     return batchDeleteUserLinksSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getWebDataStream. */
-  public UnaryCallSettings<GetWebDataStreamRequest, WebDataStream> getWebDataStreamSettings() {
-    return getWebDataStreamSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteWebDataStream. */
-  public UnaryCallSettings<DeleteWebDataStreamRequest, Empty> deleteWebDataStreamSettings() {
-    return deleteWebDataStreamSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateWebDataStream. */
-  public UnaryCallSettings<UpdateWebDataStreamRequest, WebDataStream>
-      updateWebDataStreamSettings() {
-    return updateWebDataStreamSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createWebDataStream. */
-  public UnaryCallSettings<CreateWebDataStreamRequest, WebDataStream>
-      createWebDataStreamSettings() {
-    return createWebDataStreamSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listWebDataStreams. */
-  public PagedCallSettings<
-          ListWebDataStreamsRequest, ListWebDataStreamsResponse, ListWebDataStreamsPagedResponse>
-      listWebDataStreamsSettings() {
-    return listWebDataStreamsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getIosAppDataStream. */
-  public UnaryCallSettings<GetIosAppDataStreamRequest, IosAppDataStream>
-      getIosAppDataStreamSettings() {
-    return getIosAppDataStreamSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteIosAppDataStream. */
-  public UnaryCallSettings<DeleteIosAppDataStreamRequest, Empty> deleteIosAppDataStreamSettings() {
-    return deleteIosAppDataStreamSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateIosAppDataStream. */
-  public UnaryCallSettings<UpdateIosAppDataStreamRequest, IosAppDataStream>
-      updateIosAppDataStreamSettings() {
-    return updateIosAppDataStreamSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listIosAppDataStreams. */
-  public PagedCallSettings<
-          ListIosAppDataStreamsRequest,
-          ListIosAppDataStreamsResponse,
-          ListIosAppDataStreamsPagedResponse>
-      listIosAppDataStreamsSettings() {
-    return listIosAppDataStreamsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getAndroidAppDataStream. */
-  public UnaryCallSettings<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
-      getAndroidAppDataStreamSettings() {
-    return getAndroidAppDataStreamSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteAndroidAppDataStream. */
-  public UnaryCallSettings<DeleteAndroidAppDataStreamRequest, Empty>
-      deleteAndroidAppDataStreamSettings() {
-    return deleteAndroidAppDataStreamSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateAndroidAppDataStream. */
-  public UnaryCallSettings<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
-      updateAndroidAppDataStreamSettings() {
-    return updateAndroidAppDataStreamSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listAndroidAppDataStreams. */
-  public PagedCallSettings<
-          ListAndroidAppDataStreamsRequest,
-          ListAndroidAppDataStreamsResponse,
-          ListAndroidAppDataStreamsPagedResponse>
-      listAndroidAppDataStreamsSettings() {
-    return listAndroidAppDataStreamsSettings;
   }
 
   /** Returns the object with the settings used for calls to createFirebaseLink. */
@@ -2242,21 +1906,6 @@ public class AnalyticsAdminServiceStubSettings
     batchUpdateUserLinksSettings = settingsBuilder.batchUpdateUserLinksSettings().build();
     deleteUserLinkSettings = settingsBuilder.deleteUserLinkSettings().build();
     batchDeleteUserLinksSettings = settingsBuilder.batchDeleteUserLinksSettings().build();
-    getWebDataStreamSettings = settingsBuilder.getWebDataStreamSettings().build();
-    deleteWebDataStreamSettings = settingsBuilder.deleteWebDataStreamSettings().build();
-    updateWebDataStreamSettings = settingsBuilder.updateWebDataStreamSettings().build();
-    createWebDataStreamSettings = settingsBuilder.createWebDataStreamSettings().build();
-    listWebDataStreamsSettings = settingsBuilder.listWebDataStreamsSettings().build();
-    getIosAppDataStreamSettings = settingsBuilder.getIosAppDataStreamSettings().build();
-    deleteIosAppDataStreamSettings = settingsBuilder.deleteIosAppDataStreamSettings().build();
-    updateIosAppDataStreamSettings = settingsBuilder.updateIosAppDataStreamSettings().build();
-    listIosAppDataStreamsSettings = settingsBuilder.listIosAppDataStreamsSettings().build();
-    getAndroidAppDataStreamSettings = settingsBuilder.getAndroidAppDataStreamSettings().build();
-    deleteAndroidAppDataStreamSettings =
-        settingsBuilder.deleteAndroidAppDataStreamSettings().build();
-    updateAndroidAppDataStreamSettings =
-        settingsBuilder.updateAndroidAppDataStreamSettings().build();
-    listAndroidAppDataStreamsSettings = settingsBuilder.listAndroidAppDataStreamsSettings().build();
     createFirebaseLinkSettings = settingsBuilder.createFirebaseLinkSettings().build();
     deleteFirebaseLinkSettings = settingsBuilder.deleteFirebaseLinkSettings().build();
     listFirebaseLinksSettings = settingsBuilder.listFirebaseLinksSettings().build();
@@ -2373,39 +2022,6 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<DeleteUserLinkRequest, Empty> deleteUserLinkSettings;
     private final UnaryCallSettings.Builder<BatchDeleteUserLinksRequest, Empty>
         batchDeleteUserLinksSettings;
-    private final UnaryCallSettings.Builder<GetWebDataStreamRequest, WebDataStream>
-        getWebDataStreamSettings;
-    private final UnaryCallSettings.Builder<DeleteWebDataStreamRequest, Empty>
-        deleteWebDataStreamSettings;
-    private final UnaryCallSettings.Builder<UpdateWebDataStreamRequest, WebDataStream>
-        updateWebDataStreamSettings;
-    private final UnaryCallSettings.Builder<CreateWebDataStreamRequest, WebDataStream>
-        createWebDataStreamSettings;
-    private final PagedCallSettings.Builder<
-            ListWebDataStreamsRequest, ListWebDataStreamsResponse, ListWebDataStreamsPagedResponse>
-        listWebDataStreamsSettings;
-    private final UnaryCallSettings.Builder<GetIosAppDataStreamRequest, IosAppDataStream>
-        getIosAppDataStreamSettings;
-    private final UnaryCallSettings.Builder<DeleteIosAppDataStreamRequest, Empty>
-        deleteIosAppDataStreamSettings;
-    private final UnaryCallSettings.Builder<UpdateIosAppDataStreamRequest, IosAppDataStream>
-        updateIosAppDataStreamSettings;
-    private final PagedCallSettings.Builder<
-            ListIosAppDataStreamsRequest,
-            ListIosAppDataStreamsResponse,
-            ListIosAppDataStreamsPagedResponse>
-        listIosAppDataStreamsSettings;
-    private final UnaryCallSettings.Builder<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
-        getAndroidAppDataStreamSettings;
-    private final UnaryCallSettings.Builder<DeleteAndroidAppDataStreamRequest, Empty>
-        deleteAndroidAppDataStreamSettings;
-    private final UnaryCallSettings.Builder<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
-        updateAndroidAppDataStreamSettings;
-    private final PagedCallSettings.Builder<
-            ListAndroidAppDataStreamsRequest,
-            ListAndroidAppDataStreamsResponse,
-            ListAndroidAppDataStreamsPagedResponse>
-        listAndroidAppDataStreamsSettings;
     private final UnaryCallSettings.Builder<CreateFirebaseLinkRequest, FirebaseLink>
         createFirebaseLinkSettings;
     private final UnaryCallSettings.Builder<DeleteFirebaseLinkRequest, Empty>
@@ -2551,8 +2167,6 @@ public class AnalyticsAdminServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
@@ -2565,14 +2179,6 @@ public class AnalyticsAdminServiceStubSettings
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(1000L))
@@ -2616,22 +2222,6 @@ public class AnalyticsAdminServiceStubSettings
       batchUpdateUserLinksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteUserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchDeleteUserLinksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      getWebDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteWebDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      updateWebDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      createWebDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listWebDataStreamsSettings =
-          PagedCallSettings.newBuilder(LIST_WEB_DATA_STREAMS_PAGE_STR_FACT);
-      getIosAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteIosAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      updateIosAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listIosAppDataStreamsSettings =
-          PagedCallSettings.newBuilder(LIST_IOS_APP_DATA_STREAMS_PAGE_STR_FACT);
-      getAndroidAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteAndroidAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      updateAndroidAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listAndroidAppDataStreamsSettings =
-          PagedCallSettings.newBuilder(LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_FACT);
       createFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listFirebaseLinksSettings = PagedCallSettings.newBuilder(LIST_FIREBASE_LINKS_PAGE_STR_FACT);
@@ -2719,19 +2309,6 @@ public class AnalyticsAdminServiceStubSettings
               batchUpdateUserLinksSettings,
               deleteUserLinkSettings,
               batchDeleteUserLinksSettings,
-              getWebDataStreamSettings,
-              deleteWebDataStreamSettings,
-              updateWebDataStreamSettings,
-              createWebDataStreamSettings,
-              listWebDataStreamsSettings,
-              getIosAppDataStreamSettings,
-              deleteIosAppDataStreamSettings,
-              updateIosAppDataStreamSettings,
-              listIosAppDataStreamsSettings,
-              getAndroidAppDataStreamSettings,
-              deleteAndroidAppDataStreamSettings,
-              updateAndroidAppDataStreamSettings,
-              listAndroidAppDataStreamsSettings,
               createFirebaseLinkSettings,
               deleteFirebaseLinkSettings,
               listFirebaseLinksSettings,
@@ -2809,19 +2386,6 @@ public class AnalyticsAdminServiceStubSettings
       batchUpdateUserLinksSettings = settings.batchUpdateUserLinksSettings.toBuilder();
       deleteUserLinkSettings = settings.deleteUserLinkSettings.toBuilder();
       batchDeleteUserLinksSettings = settings.batchDeleteUserLinksSettings.toBuilder();
-      getWebDataStreamSettings = settings.getWebDataStreamSettings.toBuilder();
-      deleteWebDataStreamSettings = settings.deleteWebDataStreamSettings.toBuilder();
-      updateWebDataStreamSettings = settings.updateWebDataStreamSettings.toBuilder();
-      createWebDataStreamSettings = settings.createWebDataStreamSettings.toBuilder();
-      listWebDataStreamsSettings = settings.listWebDataStreamsSettings.toBuilder();
-      getIosAppDataStreamSettings = settings.getIosAppDataStreamSettings.toBuilder();
-      deleteIosAppDataStreamSettings = settings.deleteIosAppDataStreamSettings.toBuilder();
-      updateIosAppDataStreamSettings = settings.updateIosAppDataStreamSettings.toBuilder();
-      listIosAppDataStreamsSettings = settings.listIosAppDataStreamsSettings.toBuilder();
-      getAndroidAppDataStreamSettings = settings.getAndroidAppDataStreamSettings.toBuilder();
-      deleteAndroidAppDataStreamSettings = settings.deleteAndroidAppDataStreamSettings.toBuilder();
-      updateAndroidAppDataStreamSettings = settings.updateAndroidAppDataStreamSettings.toBuilder();
-      listAndroidAppDataStreamsSettings = settings.listAndroidAppDataStreamsSettings.toBuilder();
       createFirebaseLinkSettings = settings.createFirebaseLinkSettings.toBuilder();
       deleteFirebaseLinkSettings = settings.deleteFirebaseLinkSettings.toBuilder();
       listFirebaseLinksSettings = settings.listFirebaseLinksSettings.toBuilder();
@@ -2915,19 +2479,6 @@ public class AnalyticsAdminServiceStubSettings
               batchUpdateUserLinksSettings,
               deleteUserLinkSettings,
               batchDeleteUserLinksSettings,
-              getWebDataStreamSettings,
-              deleteWebDataStreamSettings,
-              updateWebDataStreamSettings,
-              createWebDataStreamSettings,
-              listWebDataStreamsSettings,
-              getIosAppDataStreamSettings,
-              deleteIosAppDataStreamSettings,
-              updateIosAppDataStreamSettings,
-              listIosAppDataStreamsSettings,
-              getAndroidAppDataStreamSettings,
-              deleteAndroidAppDataStreamSettings,
-              updateAndroidAppDataStreamSettings,
-              listAndroidAppDataStreamsSettings,
               createFirebaseLinkSettings,
               deleteFirebaseLinkSettings,
               listFirebaseLinksSettings,
@@ -2996,28 +2547,28 @@ public class AnalyticsAdminServiceStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .getAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listAccountsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updateAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .provisionAccountTicketSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listAccountSummariesSettings()
@@ -3026,183 +2577,118 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .getPropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listPropertiesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createPropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deletePropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updatePropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getUserLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .batchGetUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .auditUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createUserLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .batchCreateUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateUserLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .batchUpdateUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteUserLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .batchDeleteUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getWebDataStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteWebDataStreamSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .updateWebDataStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .listPropertiesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .createWebDataStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .createPropertySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .listWebDataStreamsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .deletePropertySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .getIosAppDataStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .updatePropertySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .deleteIosAppDataStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .getUserLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .updateIosAppDataStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .batchGetUserLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .listIosAppDataStreamsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .listUserLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .getAndroidAppDataStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .auditUserLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .deleteAndroidAppDataStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .createUserLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .updateAndroidAppDataStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .batchCreateUserLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .listAndroidAppDataStreamsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .updateUserLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchUpdateUserLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteUserLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchDeleteUserLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createFirebaseLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteFirebaseLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listFirebaseLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getGlobalSiteTagSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createGoogleAdsLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updateGoogleAdsLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteGoogleAdsLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listGoogleAdsLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getDataSharingSettingsSettings()
@@ -3552,91 +3038,6 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<BatchDeleteUserLinksRequest, Empty>
         batchDeleteUserLinksSettings() {
       return batchDeleteUserLinksSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getWebDataStream. */
-    public UnaryCallSettings.Builder<GetWebDataStreamRequest, WebDataStream>
-        getWebDataStreamSettings() {
-      return getWebDataStreamSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteWebDataStream. */
-    public UnaryCallSettings.Builder<DeleteWebDataStreamRequest, Empty>
-        deleteWebDataStreamSettings() {
-      return deleteWebDataStreamSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateWebDataStream. */
-    public UnaryCallSettings.Builder<UpdateWebDataStreamRequest, WebDataStream>
-        updateWebDataStreamSettings() {
-      return updateWebDataStreamSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createWebDataStream. */
-    public UnaryCallSettings.Builder<CreateWebDataStreamRequest, WebDataStream>
-        createWebDataStreamSettings() {
-      return createWebDataStreamSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listWebDataStreams. */
-    public PagedCallSettings.Builder<
-            ListWebDataStreamsRequest, ListWebDataStreamsResponse, ListWebDataStreamsPagedResponse>
-        listWebDataStreamsSettings() {
-      return listWebDataStreamsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getIosAppDataStream. */
-    public UnaryCallSettings.Builder<GetIosAppDataStreamRequest, IosAppDataStream>
-        getIosAppDataStreamSettings() {
-      return getIosAppDataStreamSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteIosAppDataStream. */
-    public UnaryCallSettings.Builder<DeleteIosAppDataStreamRequest, Empty>
-        deleteIosAppDataStreamSettings() {
-      return deleteIosAppDataStreamSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateIosAppDataStream. */
-    public UnaryCallSettings.Builder<UpdateIosAppDataStreamRequest, IosAppDataStream>
-        updateIosAppDataStreamSettings() {
-      return updateIosAppDataStreamSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listIosAppDataStreams. */
-    public PagedCallSettings.Builder<
-            ListIosAppDataStreamsRequest,
-            ListIosAppDataStreamsResponse,
-            ListIosAppDataStreamsPagedResponse>
-        listIosAppDataStreamsSettings() {
-      return listIosAppDataStreamsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getAndroidAppDataStream. */
-    public UnaryCallSettings.Builder<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
-        getAndroidAppDataStreamSettings() {
-      return getAndroidAppDataStreamSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteAndroidAppDataStream. */
-    public UnaryCallSettings.Builder<DeleteAndroidAppDataStreamRequest, Empty>
-        deleteAndroidAppDataStreamSettings() {
-      return deleteAndroidAppDataStreamSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateAndroidAppDataStream. */
-    public UnaryCallSettings.Builder<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
-        updateAndroidAppDataStreamSettings() {
-      return updateAndroidAppDataStreamSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listAndroidAppDataStreams. */
-    public PagedCallSettings.Builder<
-            ListAndroidAppDataStreamsRequest,
-            ListAndroidAppDataStreamsResponse,
-            ListAndroidAppDataStreamsPagedResponse>
-        listAndroidAppDataStreamsSettings() {
-      return listAndroidAppDataStreamsSettings;
     }
 
     /** Returns the builder for the settings used for calls to createFirebaseLink. */

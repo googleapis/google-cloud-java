@@ -26,4 +26,29 @@
     <className>com/google/analytics/admin/v1alpha/stub/*AnalyticsAdminServiceStub*</className>
     <method>* *EnhancedMeasurementSettings*(*)</method>
   </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient</className>
+    <method>* *DataStream*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient*DataStreams*</className>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceSettings*</className>
+    <method>* *DataStream*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/stub/*AnalyticsAdminServiceStub*</className>
+    <method>* *DataStream*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient*</className>
+    <method>* *MeasurementProtocolSecret*(*)</method>
+    <to>* *(*)</to>
+  </difference>
 </differences>

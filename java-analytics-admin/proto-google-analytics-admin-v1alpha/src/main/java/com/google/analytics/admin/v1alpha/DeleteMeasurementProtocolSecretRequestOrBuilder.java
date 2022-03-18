@@ -29,9 +29,7 @@ public interface DeleteMeasurementProtocolSecretRequestOrBuilder
    * <pre>
    * Required. The name of the MeasurementProtocolSecret to delete.
    * Format:
-   * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
-   * Note: Any type of stream (WebDataStream, IosAppDataStream,
-   * AndroidAppDataStream) may be a parent.
+   * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
    * </pre>
    *
    * <code>
@@ -47,9 +45,7 @@ public interface DeleteMeasurementProtocolSecretRequestOrBuilder
    * <pre>
    * Required. The name of the MeasurementProtocolSecret to delete.
    * Format:
-   * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
-   * Note: Any type of stream (WebDataStream, IosAppDataStream,
-   * AndroidAppDataStream) may be a parent.
+   * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
    * </pre>
    *
    * <code>

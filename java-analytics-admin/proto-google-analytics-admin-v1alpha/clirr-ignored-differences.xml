@@ -58,4 +58,53 @@
     <differenceType>8001</differenceType>
     <className>com/google/analytics/admin/v1alpha/*EnhancedMeasurementSettings*</className>
   </difference>
+
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AndroidAppDataStream*</className>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/analytics/admin/v1alpha/ChangeHistoryChange$ChangeHistoryResource</className>
+    <field>*_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/ChangeHistoryChange*</className>
+    <method>* *DataStream*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/analytics/admin/v1alpha/ChangeHistory*</className>
+    <field>*DATA_STREAM*</field>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/analytics/admin/v1alpha/ChangeHistory*</className>
+    <field>*DATA_STREAM*</field>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/analytics/admin/v1alpha/*DataStreamRequest*</className>
+    <method>* *DataStream*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/analytics/admin/v1alpha/GlobalSiteTagName</className>
+    <method>* format(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/analytics/admin/v1alpha/GlobalSiteTagName</className>
+    <method>* of(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/analytics/admin/v1alpha/*DataStream*</className>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/MeasurementProtocolSecretName*</className>
+    <method>* *WebDataStream*(*)</method>
+  </difference>
 </differences>

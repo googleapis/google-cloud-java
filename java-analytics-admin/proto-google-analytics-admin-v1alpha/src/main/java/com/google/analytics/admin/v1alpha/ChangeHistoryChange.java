@@ -236,115 +236,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A snapshot of a WebDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-     *
-     * @return Whether the webDataStream field is set.
-     */
-    boolean hasWebDataStream();
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of a WebDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-     *
-     * @return The webDataStream.
-     */
-    com.google.analytics.admin.v1alpha.WebDataStream getWebDataStream();
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of a WebDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-     */
-    com.google.analytics.admin.v1alpha.WebDataStreamOrBuilder getWebDataStreamOrBuilder();
-
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of an AndroidAppDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-     * </code>
-     *
-     * @return Whether the androidAppDataStream field is set.
-     */
-    boolean hasAndroidAppDataStream();
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of an AndroidAppDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-     * </code>
-     *
-     * @return The androidAppDataStream.
-     */
-    com.google.analytics.admin.v1alpha.AndroidAppDataStream getAndroidAppDataStream();
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of an AndroidAppDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-     * </code>
-     */
-    com.google.analytics.admin.v1alpha.AndroidAppDataStreamOrBuilder
-        getAndroidAppDataStreamOrBuilder();
-
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of an IosAppDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-     *
-     * @return Whether the iosAppDataStream field is set.
-     */
-    boolean hasIosAppDataStream();
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of an IosAppDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-     *
-     * @return The iosAppDataStream.
-     */
-    com.google.analytics.admin.v1alpha.IosAppDataStream getIosAppDataStream();
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of an IosAppDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-     */
-    com.google.analytics.admin.v1alpha.IosAppDataStreamOrBuilder getIosAppDataStreamOrBuilder();
-
-    /**
-     *
-     *
-     * <pre>
      * A snapshot of a FirebaseLink resource in change history.
      * </pre>
      *
@@ -728,6 +619,41 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder
         getDataRetentionSettingsOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DataStream resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+     *
+     * @return Whether the dataStream field is set.
+     */
+    boolean hasDataStream();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DataStream resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+     *
+     * @return The dataStream.
+     */
+    com.google.analytics.admin.v1alpha.DataStream getDataStream();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DataStream resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+     */
+    com.google.analytics.admin.v1alpha.DataStreamOrBuilder getDataStreamOrBuilder();
+
     public com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
   }
@@ -813,64 +739,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                   resource_ = subBuilder.buildPartial();
                 }
                 resourceCase_ = 2;
-                break;
-              }
-            case 26:
-              {
-                com.google.analytics.admin.v1alpha.WebDataStream.Builder subBuilder = null;
-                if (resourceCase_ == 3) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.WebDataStream) resource_).toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.WebDataStream.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.analytics.admin.v1alpha.WebDataStream) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 3;
-                break;
-              }
-            case 34:
-              {
-                com.google.analytics.admin.v1alpha.AndroidAppDataStream.Builder subBuilder = null;
-                if (resourceCase_ == 4) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.AndroidAppDataStream) resource_)
-                          .toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.AndroidAppDataStream.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.analytics.admin.v1alpha.AndroidAppDataStream) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 4;
-                break;
-              }
-            case 42:
-              {
-                com.google.analytics.admin.v1alpha.IosAppDataStream.Builder subBuilder = null;
-                if (resourceCase_ == 5) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.IosAppDataStream) resource_).toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.IosAppDataStream.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.analytics.admin.v1alpha.IosAppDataStream) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 5;
                 break;
               }
             case 50:
@@ -1072,6 +940,23 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                 resourceCase_ = 15;
                 break;
               }
+            case 146:
+              {
+                com.google.analytics.admin.v1alpha.DataStream.Builder subBuilder = null;
+                if (resourceCase_ == 18) {
+                  subBuilder =
+                      ((com.google.analytics.admin.v1alpha.DataStream) resource_).toBuilder();
+                }
+                resource_ =
+                    input.readMessage(
+                        com.google.analytics.admin.v1alpha.DataStream.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.analytics.admin.v1alpha.DataStream) resource_);
+                  resource_ = subBuilder.buildPartial();
+                }
+                resourceCase_ = 18;
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1116,9 +1001,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       ACCOUNT(1),
       PROPERTY(2),
-      WEB_DATA_STREAM(3),
-      ANDROID_APP_DATA_STREAM(4),
-      IOS_APP_DATA_STREAM(5),
       FIREBASE_LINK(6),
       GOOGLE_ADS_LINK(7),
       GOOGLE_SIGNALS_SETTINGS(8),
@@ -1129,6 +1011,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       CUSTOM_DIMENSION(13),
       CUSTOM_METRIC(14),
       DATA_RETENTION_SETTINGS(15),
+      DATA_STREAM(18),
       RESOURCE_NOT_SET(0);
       private final int value;
 
@@ -1151,12 +1034,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return ACCOUNT;
           case 2:
             return PROPERTY;
-          case 3:
-            return WEB_DATA_STREAM;
-          case 4:
-            return ANDROID_APP_DATA_STREAM;
-          case 5:
-            return IOS_APP_DATA_STREAM;
           case 6:
             return FIREBASE_LINK;
           case 7:
@@ -1177,6 +1054,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return CUSTOM_METRIC;
           case 15:
             return DATA_RETENTION_SETTINGS;
+          case 18:
+            return DATA_STREAM;
           case 0:
             return RESOURCE_NOT_SET;
           default:
@@ -1293,164 +1172,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         return (com.google.analytics.admin.v1alpha.Property) resource_;
       }
       return com.google.analytics.admin.v1alpha.Property.getDefaultInstance();
-    }
-
-    public static final int WEB_DATA_STREAM_FIELD_NUMBER = 3;
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of a WebDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-     *
-     * @return Whether the webDataStream field is set.
-     */
-    @java.lang.Override
-    public boolean hasWebDataStream() {
-      return resourceCase_ == 3;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of a WebDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-     *
-     * @return The webDataStream.
-     */
-    @java.lang.Override
-    public com.google.analytics.admin.v1alpha.WebDataStream getWebDataStream() {
-      if (resourceCase_ == 3) {
-        return (com.google.analytics.admin.v1alpha.WebDataStream) resource_;
-      }
-      return com.google.analytics.admin.v1alpha.WebDataStream.getDefaultInstance();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of a WebDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-     */
-    @java.lang.Override
-    public com.google.analytics.admin.v1alpha.WebDataStreamOrBuilder getWebDataStreamOrBuilder() {
-      if (resourceCase_ == 3) {
-        return (com.google.analytics.admin.v1alpha.WebDataStream) resource_;
-      }
-      return com.google.analytics.admin.v1alpha.WebDataStream.getDefaultInstance();
-    }
-
-    public static final int ANDROID_APP_DATA_STREAM_FIELD_NUMBER = 4;
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of an AndroidAppDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-     * </code>
-     *
-     * @return Whether the androidAppDataStream field is set.
-     */
-    @java.lang.Override
-    public boolean hasAndroidAppDataStream() {
-      return resourceCase_ == 4;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of an AndroidAppDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-     * </code>
-     *
-     * @return The androidAppDataStream.
-     */
-    @java.lang.Override
-    public com.google.analytics.admin.v1alpha.AndroidAppDataStream getAndroidAppDataStream() {
-      if (resourceCase_ == 4) {
-        return (com.google.analytics.admin.v1alpha.AndroidAppDataStream) resource_;
-      }
-      return com.google.analytics.admin.v1alpha.AndroidAppDataStream.getDefaultInstance();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of an AndroidAppDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.analytics.admin.v1alpha.AndroidAppDataStreamOrBuilder
-        getAndroidAppDataStreamOrBuilder() {
-      if (resourceCase_ == 4) {
-        return (com.google.analytics.admin.v1alpha.AndroidAppDataStream) resource_;
-      }
-      return com.google.analytics.admin.v1alpha.AndroidAppDataStream.getDefaultInstance();
-    }
-
-    public static final int IOS_APP_DATA_STREAM_FIELD_NUMBER = 5;
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of an IosAppDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-     *
-     * @return Whether the iosAppDataStream field is set.
-     */
-    @java.lang.Override
-    public boolean hasIosAppDataStream() {
-      return resourceCase_ == 5;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of an IosAppDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-     *
-     * @return The iosAppDataStream.
-     */
-    @java.lang.Override
-    public com.google.analytics.admin.v1alpha.IosAppDataStream getIosAppDataStream() {
-      if (resourceCase_ == 5) {
-        return (com.google.analytics.admin.v1alpha.IosAppDataStream) resource_;
-      }
-      return com.google.analytics.admin.v1alpha.IosAppDataStream.getDefaultInstance();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A snapshot of an IosAppDataStream resource in change history.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-     */
-    @java.lang.Override
-    public com.google.analytics.admin.v1alpha.IosAppDataStreamOrBuilder
-        getIosAppDataStreamOrBuilder() {
-      if (resourceCase_ == 5) {
-        return (com.google.analytics.admin.v1alpha.IosAppDataStream) resource_;
-      }
-      return com.google.analytics.admin.v1alpha.IosAppDataStream.getDefaultInstance();
     }
 
     public static final int FIREBASE_LINK_FIELD_NUMBER = 6;
@@ -2005,6 +1726,57 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance();
     }
 
+    public static final int DATA_STREAM_FIELD_NUMBER = 18;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DataStream resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+     *
+     * @return Whether the dataStream field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataStream() {
+      return resourceCase_ == 18;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DataStream resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+     *
+     * @return The dataStream.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.DataStream getDataStream() {
+      if (resourceCase_ == 18) {
+        return (com.google.analytics.admin.v1alpha.DataStream) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DataStream resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.DataStreamOrBuilder getDataStreamOrBuilder() {
+      if (resourceCase_ == 18) {
+        return (com.google.analytics.admin.v1alpha.DataStream) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2024,15 +1796,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       if (resourceCase_ == 2) {
         output.writeMessage(2, (com.google.analytics.admin.v1alpha.Property) resource_);
-      }
-      if (resourceCase_ == 3) {
-        output.writeMessage(3, (com.google.analytics.admin.v1alpha.WebDataStream) resource_);
-      }
-      if (resourceCase_ == 4) {
-        output.writeMessage(4, (com.google.analytics.admin.v1alpha.AndroidAppDataStream) resource_);
-      }
-      if (resourceCase_ == 5) {
-        output.writeMessage(5, (com.google.analytics.admin.v1alpha.IosAppDataStream) resource_);
       }
       if (resourceCase_ == 6) {
         output.writeMessage(6, (com.google.analytics.admin.v1alpha.FirebaseLink) resource_);
@@ -2070,6 +1833,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         output.writeMessage(
             15, (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_);
       }
+      if (resourceCase_ == 18) {
+        output.writeMessage(18, (com.google.analytics.admin.v1alpha.DataStream) resource_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2088,21 +1854,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 2, (com.google.analytics.admin.v1alpha.Property) resource_);
-      }
-      if (resourceCase_ == 3) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeMessageSize(
-                3, (com.google.analytics.admin.v1alpha.WebDataStream) resource_);
-      }
-      if (resourceCase_ == 4) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeMessageSize(
-                4, (com.google.analytics.admin.v1alpha.AndroidAppDataStream) resource_);
-      }
-      if (resourceCase_ == 5) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeMessageSize(
-                5, (com.google.analytics.admin.v1alpha.IosAppDataStream) resource_);
       }
       if (resourceCase_ == 6) {
         size +=
@@ -2156,6 +1907,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 15, (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_);
       }
+      if (resourceCase_ == 18) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                18, (com.google.analytics.admin.v1alpha.DataStream) resource_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2181,15 +1937,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           break;
         case 2:
           if (!getProperty().equals(other.getProperty())) return false;
-          break;
-        case 3:
-          if (!getWebDataStream().equals(other.getWebDataStream())) return false;
-          break;
-        case 4:
-          if (!getAndroidAppDataStream().equals(other.getAndroidAppDataStream())) return false;
-          break;
-        case 5:
-          if (!getIosAppDataStream().equals(other.getIosAppDataStream())) return false;
           break;
         case 6:
           if (!getFirebaseLink().equals(other.getFirebaseLink())) return false;
@@ -2224,6 +1971,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 15:
           if (!getDataRetentionSettings().equals(other.getDataRetentionSettings())) return false;
           break;
+        case 18:
+          if (!getDataStream().equals(other.getDataStream())) return false;
+          break;
         case 0:
         default:
       }
@@ -2246,18 +1996,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 2:
           hash = (37 * hash) + PROPERTY_FIELD_NUMBER;
           hash = (53 * hash) + getProperty().hashCode();
-          break;
-        case 3:
-          hash = (37 * hash) + WEB_DATA_STREAM_FIELD_NUMBER;
-          hash = (53 * hash) + getWebDataStream().hashCode();
-          break;
-        case 4:
-          hash = (37 * hash) + ANDROID_APP_DATA_STREAM_FIELD_NUMBER;
-          hash = (53 * hash) + getAndroidAppDataStream().hashCode();
-          break;
-        case 5:
-          hash = (37 * hash) + IOS_APP_DATA_STREAM_FIELD_NUMBER;
-          hash = (53 * hash) + getIosAppDataStream().hashCode();
           break;
         case 6:
           hash = (37 * hash) + FIREBASE_LINK_FIELD_NUMBER;
@@ -2298,6 +2036,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 15:
           hash = (37 * hash) + DATA_RETENTION_SETTINGS_FIELD_NUMBER;
           hash = (53 * hash) + getDataRetentionSettings().hashCode();
+          break;
+        case 18:
+          hash = (37 * hash) + DATA_STREAM_FIELD_NUMBER;
+          hash = (53 * hash) + getDataStream().hashCode();
           break;
         case 0:
         default:
@@ -2507,27 +2249,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             result.resource_ = propertyBuilder_.build();
           }
         }
-        if (resourceCase_ == 3) {
-          if (webDataStreamBuilder_ == null) {
-            result.resource_ = resource_;
-          } else {
-            result.resource_ = webDataStreamBuilder_.build();
-          }
-        }
-        if (resourceCase_ == 4) {
-          if (androidAppDataStreamBuilder_ == null) {
-            result.resource_ = resource_;
-          } else {
-            result.resource_ = androidAppDataStreamBuilder_.build();
-          }
-        }
-        if (resourceCase_ == 5) {
-          if (iosAppDataStreamBuilder_ == null) {
-            result.resource_ = resource_;
-          } else {
-            result.resource_ = iosAppDataStreamBuilder_.build();
-          }
-        }
         if (resourceCase_ == 6) {
           if (firebaseLinkBuilder_ == null) {
             result.resource_ = resource_;
@@ -2596,6 +2317,13 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             result.resource_ = resource_;
           } else {
             result.resource_ = dataRetentionSettingsBuilder_.build();
+          }
+        }
+        if (resourceCase_ == 18) {
+          if (dataStreamBuilder_ == null) {
+            result.resource_ = resource_;
+          } else {
+            result.resource_ = dataStreamBuilder_.build();
           }
         }
         result.resourceCase_ = resourceCase_;
@@ -2667,21 +2395,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               mergeProperty(other.getProperty());
               break;
             }
-          case WEB_DATA_STREAM:
-            {
-              mergeWebDataStream(other.getWebDataStream());
-              break;
-            }
-          case ANDROID_APP_DATA_STREAM:
-            {
-              mergeAndroidAppDataStream(other.getAndroidAppDataStream());
-              break;
-            }
-          case IOS_APP_DATA_STREAM:
-            {
-              mergeIosAppDataStream(other.getIosAppDataStream());
-              break;
-            }
           case FIREBASE_LINK:
             {
               mergeFirebaseLink(other.getFirebaseLink());
@@ -2731,6 +2444,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case DATA_RETENTION_SETTINGS:
             {
               mergeDataRetentionSettings(other.getDataRetentionSettings());
+              break;
+            }
+          case DATA_STREAM:
+            {
+              mergeDataStream(other.getDataStream());
               break;
             }
           case RESOURCE_NOT_SET:
@@ -3200,654 +2918,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         onChanged();
         ;
         return propertyBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.analytics.admin.v1alpha.WebDataStream,
-              com.google.analytics.admin.v1alpha.WebDataStream.Builder,
-              com.google.analytics.admin.v1alpha.WebDataStreamOrBuilder>
-          webDataStreamBuilder_;
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of a WebDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-       *
-       * @return Whether the webDataStream field is set.
-       */
-      @java.lang.Override
-      public boolean hasWebDataStream() {
-        return resourceCase_ == 3;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of a WebDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-       *
-       * @return The webDataStream.
-       */
-      @java.lang.Override
-      public com.google.analytics.admin.v1alpha.WebDataStream getWebDataStream() {
-        if (webDataStreamBuilder_ == null) {
-          if (resourceCase_ == 3) {
-            return (com.google.analytics.admin.v1alpha.WebDataStream) resource_;
-          }
-          return com.google.analytics.admin.v1alpha.WebDataStream.getDefaultInstance();
-        } else {
-          if (resourceCase_ == 3) {
-            return webDataStreamBuilder_.getMessage();
-          }
-          return com.google.analytics.admin.v1alpha.WebDataStream.getDefaultInstance();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of a WebDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-       */
-      public Builder setWebDataStream(com.google.analytics.admin.v1alpha.WebDataStream value) {
-        if (webDataStreamBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resource_ = value;
-          onChanged();
-        } else {
-          webDataStreamBuilder_.setMessage(value);
-        }
-        resourceCase_ = 3;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of a WebDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-       */
-      public Builder setWebDataStream(
-          com.google.analytics.admin.v1alpha.WebDataStream.Builder builderForValue) {
-        if (webDataStreamBuilder_ == null) {
-          resource_ = builderForValue.build();
-          onChanged();
-        } else {
-          webDataStreamBuilder_.setMessage(builderForValue.build());
-        }
-        resourceCase_ = 3;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of a WebDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-       */
-      public Builder mergeWebDataStream(com.google.analytics.admin.v1alpha.WebDataStream value) {
-        if (webDataStreamBuilder_ == null) {
-          if (resourceCase_ == 3
-              && resource_
-                  != com.google.analytics.admin.v1alpha.WebDataStream.getDefaultInstance()) {
-            resource_ =
-                com.google.analytics.admin.v1alpha.WebDataStream.newBuilder(
-                        (com.google.analytics.admin.v1alpha.WebDataStream) resource_)
-                    .mergeFrom(value)
-                    .buildPartial();
-          } else {
-            resource_ = value;
-          }
-          onChanged();
-        } else {
-          if (resourceCase_ == 3) {
-            webDataStreamBuilder_.mergeFrom(value);
-          }
-          webDataStreamBuilder_.setMessage(value);
-        }
-        resourceCase_ = 3;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of a WebDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-       */
-      public Builder clearWebDataStream() {
-        if (webDataStreamBuilder_ == null) {
-          if (resourceCase_ == 3) {
-            resourceCase_ = 0;
-            resource_ = null;
-            onChanged();
-          }
-        } else {
-          if (resourceCase_ == 3) {
-            resourceCase_ = 0;
-            resource_ = null;
-          }
-          webDataStreamBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of a WebDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-       */
-      public com.google.analytics.admin.v1alpha.WebDataStream.Builder getWebDataStreamBuilder() {
-        return getWebDataStreamFieldBuilder().getBuilder();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of a WebDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-       */
-      @java.lang.Override
-      public com.google.analytics.admin.v1alpha.WebDataStreamOrBuilder getWebDataStreamOrBuilder() {
-        if ((resourceCase_ == 3) && (webDataStreamBuilder_ != null)) {
-          return webDataStreamBuilder_.getMessageOrBuilder();
-        } else {
-          if (resourceCase_ == 3) {
-            return (com.google.analytics.admin.v1alpha.WebDataStream) resource_;
-          }
-          return com.google.analytics.admin.v1alpha.WebDataStream.getDefaultInstance();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of a WebDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.WebDataStream web_data_stream = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.analytics.admin.v1alpha.WebDataStream,
-              com.google.analytics.admin.v1alpha.WebDataStream.Builder,
-              com.google.analytics.admin.v1alpha.WebDataStreamOrBuilder>
-          getWebDataStreamFieldBuilder() {
-        if (webDataStreamBuilder_ == null) {
-          if (!(resourceCase_ == 3)) {
-            resource_ = com.google.analytics.admin.v1alpha.WebDataStream.getDefaultInstance();
-          }
-          webDataStreamBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.analytics.admin.v1alpha.WebDataStream,
-                  com.google.analytics.admin.v1alpha.WebDataStream.Builder,
-                  com.google.analytics.admin.v1alpha.WebDataStreamOrBuilder>(
-                  (com.google.analytics.admin.v1alpha.WebDataStream) resource_,
-                  getParentForChildren(),
-                  isClean());
-          resource_ = null;
-        }
-        resourceCase_ = 3;
-        onChanged();
-        ;
-        return webDataStreamBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.analytics.admin.v1alpha.AndroidAppDataStream,
-              com.google.analytics.admin.v1alpha.AndroidAppDataStream.Builder,
-              com.google.analytics.admin.v1alpha.AndroidAppDataStreamOrBuilder>
-          androidAppDataStreamBuilder_;
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an AndroidAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-       * </code>
-       *
-       * @return Whether the androidAppDataStream field is set.
-       */
-      @java.lang.Override
-      public boolean hasAndroidAppDataStream() {
-        return resourceCase_ == 4;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an AndroidAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-       * </code>
-       *
-       * @return The androidAppDataStream.
-       */
-      @java.lang.Override
-      public com.google.analytics.admin.v1alpha.AndroidAppDataStream getAndroidAppDataStream() {
-        if (androidAppDataStreamBuilder_ == null) {
-          if (resourceCase_ == 4) {
-            return (com.google.analytics.admin.v1alpha.AndroidAppDataStream) resource_;
-          }
-          return com.google.analytics.admin.v1alpha.AndroidAppDataStream.getDefaultInstance();
-        } else {
-          if (resourceCase_ == 4) {
-            return androidAppDataStreamBuilder_.getMessage();
-          }
-          return com.google.analytics.admin.v1alpha.AndroidAppDataStream.getDefaultInstance();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an AndroidAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-       * </code>
-       */
-      public Builder setAndroidAppDataStream(
-          com.google.analytics.admin.v1alpha.AndroidAppDataStream value) {
-        if (androidAppDataStreamBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resource_ = value;
-          onChanged();
-        } else {
-          androidAppDataStreamBuilder_.setMessage(value);
-        }
-        resourceCase_ = 4;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an AndroidAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-       * </code>
-       */
-      public Builder setAndroidAppDataStream(
-          com.google.analytics.admin.v1alpha.AndroidAppDataStream.Builder builderForValue) {
-        if (androidAppDataStreamBuilder_ == null) {
-          resource_ = builderForValue.build();
-          onChanged();
-        } else {
-          androidAppDataStreamBuilder_.setMessage(builderForValue.build());
-        }
-        resourceCase_ = 4;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an AndroidAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-       * </code>
-       */
-      public Builder mergeAndroidAppDataStream(
-          com.google.analytics.admin.v1alpha.AndroidAppDataStream value) {
-        if (androidAppDataStreamBuilder_ == null) {
-          if (resourceCase_ == 4
-              && resource_
-                  != com.google.analytics.admin.v1alpha.AndroidAppDataStream.getDefaultInstance()) {
-            resource_ =
-                com.google.analytics.admin.v1alpha.AndroidAppDataStream.newBuilder(
-                        (com.google.analytics.admin.v1alpha.AndroidAppDataStream) resource_)
-                    .mergeFrom(value)
-                    .buildPartial();
-          } else {
-            resource_ = value;
-          }
-          onChanged();
-        } else {
-          if (resourceCase_ == 4) {
-            androidAppDataStreamBuilder_.mergeFrom(value);
-          }
-          androidAppDataStreamBuilder_.setMessage(value);
-        }
-        resourceCase_ = 4;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an AndroidAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-       * </code>
-       */
-      public Builder clearAndroidAppDataStream() {
-        if (androidAppDataStreamBuilder_ == null) {
-          if (resourceCase_ == 4) {
-            resourceCase_ = 0;
-            resource_ = null;
-            onChanged();
-          }
-        } else {
-          if (resourceCase_ == 4) {
-            resourceCase_ = 0;
-            resource_ = null;
-          }
-          androidAppDataStreamBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an AndroidAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-       * </code>
-       */
-      public com.google.analytics.admin.v1alpha.AndroidAppDataStream.Builder
-          getAndroidAppDataStreamBuilder() {
-        return getAndroidAppDataStreamFieldBuilder().getBuilder();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an AndroidAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-       * </code>
-       */
-      @java.lang.Override
-      public com.google.analytics.admin.v1alpha.AndroidAppDataStreamOrBuilder
-          getAndroidAppDataStreamOrBuilder() {
-        if ((resourceCase_ == 4) && (androidAppDataStreamBuilder_ != null)) {
-          return androidAppDataStreamBuilder_.getMessageOrBuilder();
-        } else {
-          if (resourceCase_ == 4) {
-            return (com.google.analytics.admin.v1alpha.AndroidAppDataStream) resource_;
-          }
-          return com.google.analytics.admin.v1alpha.AndroidAppDataStream.getDefaultInstance();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an AndroidAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.AndroidAppDataStream android_app_data_stream = 4;
-       * </code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.analytics.admin.v1alpha.AndroidAppDataStream,
-              com.google.analytics.admin.v1alpha.AndroidAppDataStream.Builder,
-              com.google.analytics.admin.v1alpha.AndroidAppDataStreamOrBuilder>
-          getAndroidAppDataStreamFieldBuilder() {
-        if (androidAppDataStreamBuilder_ == null) {
-          if (!(resourceCase_ == 4)) {
-            resource_ =
-                com.google.analytics.admin.v1alpha.AndroidAppDataStream.getDefaultInstance();
-          }
-          androidAppDataStreamBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.analytics.admin.v1alpha.AndroidAppDataStream,
-                  com.google.analytics.admin.v1alpha.AndroidAppDataStream.Builder,
-                  com.google.analytics.admin.v1alpha.AndroidAppDataStreamOrBuilder>(
-                  (com.google.analytics.admin.v1alpha.AndroidAppDataStream) resource_,
-                  getParentForChildren(),
-                  isClean());
-          resource_ = null;
-        }
-        resourceCase_ = 4;
-        onChanged();
-        ;
-        return androidAppDataStreamBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.analytics.admin.v1alpha.IosAppDataStream,
-              com.google.analytics.admin.v1alpha.IosAppDataStream.Builder,
-              com.google.analytics.admin.v1alpha.IosAppDataStreamOrBuilder>
-          iosAppDataStreamBuilder_;
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an IosAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-       *
-       * @return Whether the iosAppDataStream field is set.
-       */
-      @java.lang.Override
-      public boolean hasIosAppDataStream() {
-        return resourceCase_ == 5;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an IosAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-       *
-       * @return The iosAppDataStream.
-       */
-      @java.lang.Override
-      public com.google.analytics.admin.v1alpha.IosAppDataStream getIosAppDataStream() {
-        if (iosAppDataStreamBuilder_ == null) {
-          if (resourceCase_ == 5) {
-            return (com.google.analytics.admin.v1alpha.IosAppDataStream) resource_;
-          }
-          return com.google.analytics.admin.v1alpha.IosAppDataStream.getDefaultInstance();
-        } else {
-          if (resourceCase_ == 5) {
-            return iosAppDataStreamBuilder_.getMessage();
-          }
-          return com.google.analytics.admin.v1alpha.IosAppDataStream.getDefaultInstance();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an IosAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-       */
-      public Builder setIosAppDataStream(
-          com.google.analytics.admin.v1alpha.IosAppDataStream value) {
-        if (iosAppDataStreamBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resource_ = value;
-          onChanged();
-        } else {
-          iosAppDataStreamBuilder_.setMessage(value);
-        }
-        resourceCase_ = 5;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an IosAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-       */
-      public Builder setIosAppDataStream(
-          com.google.analytics.admin.v1alpha.IosAppDataStream.Builder builderForValue) {
-        if (iosAppDataStreamBuilder_ == null) {
-          resource_ = builderForValue.build();
-          onChanged();
-        } else {
-          iosAppDataStreamBuilder_.setMessage(builderForValue.build());
-        }
-        resourceCase_ = 5;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an IosAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-       */
-      public Builder mergeIosAppDataStream(
-          com.google.analytics.admin.v1alpha.IosAppDataStream value) {
-        if (iosAppDataStreamBuilder_ == null) {
-          if (resourceCase_ == 5
-              && resource_
-                  != com.google.analytics.admin.v1alpha.IosAppDataStream.getDefaultInstance()) {
-            resource_ =
-                com.google.analytics.admin.v1alpha.IosAppDataStream.newBuilder(
-                        (com.google.analytics.admin.v1alpha.IosAppDataStream) resource_)
-                    .mergeFrom(value)
-                    .buildPartial();
-          } else {
-            resource_ = value;
-          }
-          onChanged();
-        } else {
-          if (resourceCase_ == 5) {
-            iosAppDataStreamBuilder_.mergeFrom(value);
-          }
-          iosAppDataStreamBuilder_.setMessage(value);
-        }
-        resourceCase_ = 5;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an IosAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-       */
-      public Builder clearIosAppDataStream() {
-        if (iosAppDataStreamBuilder_ == null) {
-          if (resourceCase_ == 5) {
-            resourceCase_ = 0;
-            resource_ = null;
-            onChanged();
-          }
-        } else {
-          if (resourceCase_ == 5) {
-            resourceCase_ = 0;
-            resource_ = null;
-          }
-          iosAppDataStreamBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an IosAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-       */
-      public com.google.analytics.admin.v1alpha.IosAppDataStream.Builder
-          getIosAppDataStreamBuilder() {
-        return getIosAppDataStreamFieldBuilder().getBuilder();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an IosAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-       */
-      @java.lang.Override
-      public com.google.analytics.admin.v1alpha.IosAppDataStreamOrBuilder
-          getIosAppDataStreamOrBuilder() {
-        if ((resourceCase_ == 5) && (iosAppDataStreamBuilder_ != null)) {
-          return iosAppDataStreamBuilder_.getMessageOrBuilder();
-        } else {
-          if (resourceCase_ == 5) {
-            return (com.google.analytics.admin.v1alpha.IosAppDataStream) resource_;
-          }
-          return com.google.analytics.admin.v1alpha.IosAppDataStream.getDefaultInstance();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A snapshot of an IosAppDataStream resource in change history.
-       * </pre>
-       *
-       * <code>.google.analytics.admin.v1alpha.IosAppDataStream ios_app_data_stream = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.analytics.admin.v1alpha.IosAppDataStream,
-              com.google.analytics.admin.v1alpha.IosAppDataStream.Builder,
-              com.google.analytics.admin.v1alpha.IosAppDataStreamOrBuilder>
-          getIosAppDataStreamFieldBuilder() {
-        if (iosAppDataStreamBuilder_ == null) {
-          if (!(resourceCase_ == 5)) {
-            resource_ = com.google.analytics.admin.v1alpha.IosAppDataStream.getDefaultInstance();
-          }
-          iosAppDataStreamBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.analytics.admin.v1alpha.IosAppDataStream,
-                  com.google.analytics.admin.v1alpha.IosAppDataStream.Builder,
-                  com.google.analytics.admin.v1alpha.IosAppDataStreamOrBuilder>(
-                  (com.google.analytics.admin.v1alpha.IosAppDataStream) resource_,
-                  getParentForChildren(),
-                  isClean());
-          resource_ = null;
-        }
-        resourceCase_ = 5;
-        onChanged();
-        ;
-        return iosAppDataStreamBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6093,6 +5163,215 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         onChanged();
         ;
         return dataRetentionSettingsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.DataStream,
+              com.google.analytics.admin.v1alpha.DataStream.Builder,
+              com.google.analytics.admin.v1alpha.DataStreamOrBuilder>
+          dataStreamBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DataStream resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+       *
+       * @return Whether the dataStream field is set.
+       */
+      @java.lang.Override
+      public boolean hasDataStream() {
+        return resourceCase_ == 18;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DataStream resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+       *
+       * @return The dataStream.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.DataStream getDataStream() {
+        if (dataStreamBuilder_ == null) {
+          if (resourceCase_ == 18) {
+            return (com.google.analytics.admin.v1alpha.DataStream) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 18) {
+            return dataStreamBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DataStream resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+       */
+      public Builder setDataStream(com.google.analytics.admin.v1alpha.DataStream value) {
+        if (dataStreamBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          dataStreamBuilder_.setMessage(value);
+        }
+        resourceCase_ = 18;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DataStream resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+       */
+      public Builder setDataStream(
+          com.google.analytics.admin.v1alpha.DataStream.Builder builderForValue) {
+        if (dataStreamBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataStreamBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 18;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DataStream resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+       */
+      public Builder mergeDataStream(com.google.analytics.admin.v1alpha.DataStream value) {
+        if (dataStreamBuilder_ == null) {
+          if (resourceCase_ == 18
+              && resource_ != com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.DataStream.newBuilder(
+                        (com.google.analytics.admin.v1alpha.DataStream) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 18) {
+            dataStreamBuilder_.mergeFrom(value);
+          }
+          dataStreamBuilder_.setMessage(value);
+        }
+        resourceCase_ = 18;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DataStream resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+       */
+      public Builder clearDataStream() {
+        if (dataStreamBuilder_ == null) {
+          if (resourceCase_ == 18) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 18) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          dataStreamBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DataStream resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+       */
+      public com.google.analytics.admin.v1alpha.DataStream.Builder getDataStreamBuilder() {
+        return getDataStreamFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DataStream resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.DataStreamOrBuilder getDataStreamOrBuilder() {
+        if ((resourceCase_ == 18) && (dataStreamBuilder_ != null)) {
+          return dataStreamBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 18) {
+            return (com.google.analytics.admin.v1alpha.DataStream) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DataStream resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataStream data_stream = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.DataStream,
+              com.google.analytics.admin.v1alpha.DataStream.Builder,
+              com.google.analytics.admin.v1alpha.DataStreamOrBuilder>
+          getDataStreamFieldBuilder() {
+        if (dataStreamBuilder_ == null) {
+          if (!(resourceCase_ == 18)) {
+            resource_ = com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance();
+          }
+          dataStreamBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.DataStream,
+                  com.google.analytics.admin.v1alpha.DataStream.Builder,
+                  com.google.analytics.admin.v1alpha.DataStreamOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.DataStream) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 18;
+        onChanged();
+        ;
+        return dataStreamBuilder_;
       }
 
       @java.lang.Override
