@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/googleapis/java-video-live-stream/compare/v0.1.0...v0.2.0) (2022-03-21)
+
+
+### Features
+
+* update livestream naming ([#24](https://github.com/googleapis/java-video-live-stream/issues/24)) ([0dd3b10](https://github.com/googleapis/java-video-live-stream/commit/0dd3b1046e8cb93d613ff87808b25bd859680967))
+
 ## 0.1.0 (2022-03-17)
 
 
