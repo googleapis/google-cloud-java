@@ -62,6 +62,11 @@ public interface ExportTestCasesRequestOrBuilder
    * export the test cases to. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
    * cases is returned inline.
+   * Dialogflow performs a write operation for the Cloud Storage object
+   * on the caller's behalf, so your request authentication must
+   * have write permissions for the object. For more information, see
+   * [Dialogflow access
+   * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
    * </pre>
    *
    * <code>string gcs_uri = 2;</code>
@@ -77,6 +82,11 @@ public interface ExportTestCasesRequestOrBuilder
    * export the test cases to. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
    * cases is returned inline.
+   * Dialogflow performs a write operation for the Cloud Storage object
+   * on the caller's behalf, so your request authentication must
+   * have write permissions for the object. For more information, see
+   * [Dialogflow access
+   * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
    * </pre>
    *
    * <code>string gcs_uri = 2;</code>
@@ -92,6 +102,11 @@ public interface ExportTestCasesRequestOrBuilder
    * export the test cases to. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
    * cases is returned inline.
+   * Dialogflow performs a write operation for the Cloud Storage object
+   * on the caller's behalf, so your request authentication must
+   * have write permissions for the object. For more information, see
+   * [Dialogflow access
+   * control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
    * </pre>
    *
    * <code>string gcs_uri = 2;</code>
