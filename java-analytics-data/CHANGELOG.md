@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.11.7](https://github.com/googleapis/java-analytics-data/compare/v0.11.6...v0.11.7) (2022-03-21)
+
+
+### Dependencies
+
+* **sample:** using newer google-analytics-data in snippet ([#452](https://github.com/googleapis/java-analytics-data/issues/452)) ([74446cf](https://github.com/googleapis/java-analytics-data/commit/74446cf387d1f7ef3e1b61cd3a85e0700a874b2d))
+
 ### [0.11.6](https://github.com/googleapis/java-analytics-data/compare/v0.11.5...v0.11.6) (2022-03-17)
 
 
