@@ -30,7 +30,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
   <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
-      <version>20211205</version>
+      <version>20220320</version>
   </dependency>
   <dependency>
     <groupId>com.google.cloud</groupId>
@@ -55,7 +55,7 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:24.4.0')
+implementation platform('com.google.cloud:libraries-bom:25.0.0')
 
 implementation 'com.google.cloud:google-cloud-speech'
 ```
