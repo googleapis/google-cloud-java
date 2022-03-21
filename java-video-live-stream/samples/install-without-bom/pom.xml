@@ -28,7 +28,7 @@
     <!-- [START _install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-livestream</artifactId>
+      <artifactId>google-cloud-live-stream</artifactId>
       <version>0.0.0</version>
     </dependency>
     <!-- [END _install_without_bom] -->

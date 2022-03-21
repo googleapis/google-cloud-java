@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-livestream-bom</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-livestream:current} -->
+  <artifactId>google-cloud-live-stream-bom</artifactId>
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-live-stream:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,18 +64,18 @@
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-livestream</artifactId>
-        <version>0.1.0</version><!-- {x-version-update:google-cloud-livestream:current} -->
+        <artifactId>google-cloud-live-stream</artifactId>
+        <version>0.1.0</version><!-- {x-version-update:google-cloud-live-stream:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-livestream-v1</artifactId>
-        <version>0.1.0</version><!-- {x-version-update:grpc-google-cloud-livestream-v1:current} -->
+        <artifactId>grpc-google-cloud-live-stream-v1</artifactId>
+        <version>0.1.0</version><!-- {x-version-update:grpc-google-cloud-live-stream-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-livestream-v1</artifactId>
-        <version>0.1.0</version><!-- {x-version-update:proto-google-cloud-livestream-v1:current} -->
+        <artifactId>proto-google-cloud-live-stream-v1</artifactId>
+        <version>0.1.0</version><!-- {x-version-update:proto-google-cloud-live-stream-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -21,7 +21,7 @@ If you are using Maven, add this to your pom.xml file:
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-livestream</artifactId>
+  <artifactId>google-cloud-live-stream</artifactId>
   <version>0.0.0</version>
 </dependency>
 ```
@@ -29,13 +29,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-livestream:0.0.0'
+implementation 'com.google.cloud:google-cloud-live-stream:0.0.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-livestream" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-live-stream" % "0.0.0"
 ```
 
 ## Authentication
@@ -58,8 +58,8 @@ You will need to [enable billing][enable-billing] to use Google Live Stream API.
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-livestream` library.  See the [Quickstart](#quickstart) section
-to add `google-cloud-livestream` as a dependency in your code.
+You'll need to obtain the `google-cloud-live-stream` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-live-stream` as a dependency in your code.
 
 ## About Live Stream API
 
@@ -164,7 +164,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/livestream/
-[javadocs]: https://googleapis.dev/java/google-cloud-livestream/latest/index.html
+[javadocs]: https://googleapis.dev/java/google-cloud-live-stream/latest/index.html
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-video-live-stream/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-video-live-stream/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-video-live-stream/java8.svg
@@ -176,8 +176,8 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-video-live-stream/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-video-live-stream/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-livestream.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-livestream&core=gav
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-live-stream.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-live-stream&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

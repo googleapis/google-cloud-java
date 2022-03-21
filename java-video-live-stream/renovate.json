@@ -38,7 +38,7 @@
     },
     {
       "packagePatterns": [
-        "^com.google.cloud:google-cloud-livestream",
+        "^com.google.cloud:google-cloud-live-stream",
         "^com.google.cloud:libraries-bom",
         "^com.google.cloud.samples:shared-configuration"
       ],

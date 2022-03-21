@@ -24,10 +24,10 @@
   </properties>
 
   <dependencies>
-    <!-- {x-version-update-start:google-cloud-livestream:current} -->
+    <!-- {x-version-update-start:google-cloud-live-stream:current} -->
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-livestream</artifactId>
+      <artifactId>google-cloud-live-stream</artifactId>
       <version>0.1.0</version>
     </dependency>
     <!-- {x-version-update-end} -->

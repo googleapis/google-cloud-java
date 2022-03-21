@@ -27,7 +27,7 @@
     <!-- TODO: switch to libraries-bom after this artifact is included -->
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-livestream</artifactId>
+      <artifactId>google-cloud-live-stream</artifactId>
       <version>0.0.0</version>
     </dependency>
 

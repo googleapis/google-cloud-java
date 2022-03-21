@@ -25,8 +25,8 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/video/livestream//(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-livestream-$1/src"
+  dest: "/owl-bot-staging/$1/proto-google-cloud-live-stream-$1/src"
 - source: "/google/cloud/video/livestream//(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-livestream-$1/src"
+  dest: "/owl-bot-staging/$1/grpc-google-cloud-live-stream-$1/src"
 - source: "/google/cloud/video/livestream//(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-livestream/src"
+  dest: "/owl-bot-staging/$1/google-cloud-live-stream/src"

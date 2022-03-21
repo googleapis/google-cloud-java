@@ -33,7 +33,7 @@ python3 -m pip install gcp-docuploader
 # compile all packages
 mvn clean install -B -q -DskipTests=true
 
-export NAME=google-cloud-livestream
+export NAME=google-cloud-live-stream
 export VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
 
 # build the docs
