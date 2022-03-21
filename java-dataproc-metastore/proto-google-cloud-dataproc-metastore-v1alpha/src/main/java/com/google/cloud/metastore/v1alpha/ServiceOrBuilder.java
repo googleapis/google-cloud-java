@@ -441,6 +441,8 @@ public interface ServiceOrBuilder
    * <pre>
    * The one hour maintenance window of the metastore service. This specifies
    * when the service can be restarted for maintenance purposes in UTC time.
+   * Maintenance window is not needed for services with the SPANNER
+   * database type.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -454,6 +456,8 @@ public interface ServiceOrBuilder
    * <pre>
    * The one hour maintenance window of the metastore service. This specifies
    * when the service can be restarted for maintenance purposes in UTC time.
+   * Maintenance window is not needed for services with the SPANNER
+   * database type.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -467,6 +471,8 @@ public interface ServiceOrBuilder
    * <pre>
    * The one hour maintenance window of the metastore service. This specifies
    * when the service can be restarted for maintenance purposes in UTC time.
+   * Maintenance window is not needed for services with the SPANNER
+   * database type.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -570,6 +576,123 @@ public interface ServiceOrBuilder
    * @return The releaseChannel.
    */
   com.google.cloud.metastore.v1alpha.Service.ReleaseChannel getReleaseChannel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+   * customer data at rest. Cannot be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionConfig field is set.
+   */
+  boolean hasEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+   * customer data at rest. Cannot be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionConfig.
+   */
+  com.google.cloud.metastore.v1alpha.EncryptionConfig getEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+   * customer data at rest. Cannot be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.metastore.v1alpha.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The configuration specifying the network settings for the
+   * Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  boolean hasNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The configuration specifying the network settings for the
+   * Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The networkConfig.
+   */
+  com.google.cloud.metastore.v1alpha.NetworkConfig getNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The configuration specifying the network settings for the
+   * Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.metastore.v1alpha.NetworkConfigOrBuilder getNetworkConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The database type that the Metastore service stores its data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.Service.DatabaseType database_type = 22 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for databaseType.
+   */
+  int getDatabaseTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The database type that the Metastore service stores its data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.Service.DatabaseType database_type = 22 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The databaseType.
+   */
+  com.google.cloud.metastore.v1alpha.Service.DatabaseType getDatabaseType();
 
   public com.google.cloud.metastore.v1alpha.Service.MetastoreConfigCase getMetastoreConfigCase();
 }

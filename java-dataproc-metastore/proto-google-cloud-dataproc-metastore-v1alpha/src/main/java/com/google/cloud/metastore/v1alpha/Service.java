@@ -47,6 +47,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     tier_ = 0;
     uid_ = "";
     releaseChannel_ = 0;
+    databaseType_ = 0;
   }
 
   @java.lang.Override
@@ -260,6 +261,46 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
               int rawValue = input.readEnum();
 
               releaseChannel_ = rawValue;
+              break;
+            }
+          case 162:
+            {
+              com.google.cloud.metastore.v1alpha.EncryptionConfig.Builder subBuilder = null;
+              if (encryptionConfig_ != null) {
+                subBuilder = encryptionConfig_.toBuilder();
+              }
+              encryptionConfig_ =
+                  input.readMessage(
+                      com.google.cloud.metastore.v1alpha.EncryptionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(encryptionConfig_);
+                encryptionConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 170:
+            {
+              com.google.cloud.metastore.v1alpha.NetworkConfig.Builder subBuilder = null;
+              if (networkConfig_ != null) {
+                subBuilder = networkConfig_.toBuilder();
+              }
+              networkConfig_ =
+                  input.readMessage(
+                      com.google.cloud.metastore.v1alpha.NetworkConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(networkConfig_);
+                networkConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 176:
+            {
+              int rawValue = input.readEnum();
+
+              databaseType_ = rawValue;
               break;
             }
           default:
@@ -904,6 +945,163 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.metastore.v1alpha.Service.ReleaseChannel)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The backend database type for the metastore service.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.metastore.v1alpha.Service.DatabaseType}
+   */
+  public enum DatabaseType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The DATABASE_TYPE is not set.
+     * </pre>
+     *
+     * <code>DATABASE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    DATABASE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * MySQL is used to persist the metastore data.
+     * </pre>
+     *
+     * <code>MYSQL = 1;</code>
+     */
+    MYSQL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Spanner is used to persist the metastore data.
+     * </pre>
+     *
+     * <code>SPANNER = 2;</code>
+     */
+    SPANNER(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The DATABASE_TYPE is not set.
+     * </pre>
+     *
+     * <code>DATABASE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int DATABASE_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * MySQL is used to persist the metastore data.
+     * </pre>
+     *
+     * <code>MYSQL = 1;</code>
+     */
+    public static final int MYSQL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Spanner is used to persist the metastore data.
+     * </pre>
+     *
+     * <code>SPANNER = 2;</code>
+     */
+    public static final int SPANNER_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DatabaseType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DatabaseType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DATABASE_TYPE_UNSPECIFIED;
+        case 1:
+          return MYSQL;
+        case 2:
+          return SPANNER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DatabaseType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DatabaseType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<DatabaseType>() {
+          public DatabaseType findValueByNumber(int number) {
+            return DatabaseType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.metastore.v1alpha.Service.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final DatabaseType[] VALUES = values();
+
+    public static DatabaseType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DatabaseType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.metastore.v1alpha.Service.DatabaseType)
   }
 
   private int metastoreConfigCase_ = 0;
@@ -1614,6 +1812,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The one hour maintenance window of the metastore service. This specifies
    * when the service can be restarted for maintenance purposes in UTC time.
+   * Maintenance window is not needed for services with the SPANNER
+   * database type.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -1630,6 +1830,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The one hour maintenance window of the metastore service. This specifies
    * when the service can be restarted for maintenance purposes in UTC time.
+   * Maintenance window is not needed for services with the SPANNER
+   * database type.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -1648,6 +1850,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The one hour maintenance window of the metastore service. This specifies
    * when the service can be restarted for maintenance purposes in UTC time.
+   * Maintenance window is not needed for services with the SPANNER
+   * database type.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -1807,6 +2011,163 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 20;
+  private com.google.cloud.metastore.v1alpha.EncryptionConfig encryptionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+   * customer data at rest. Cannot be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionConfig() {
+    return encryptionConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+   * customer data at rest. Cannot be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.EncryptionConfig getEncryptionConfig() {
+    return encryptionConfig_ == null
+        ? com.google.cloud.metastore.v1alpha.EncryptionConfig.getDefaultInstance()
+        : encryptionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+   * customer data at rest. Cannot be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.EncryptionConfigOrBuilder
+      getEncryptionConfigOrBuilder() {
+    return getEncryptionConfig();
+  }
+
+  public static final int NETWORK_CONFIG_FIELD_NUMBER = 21;
+  private com.google.cloud.metastore.v1alpha.NetworkConfig networkConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The configuration specifying the network settings for the
+   * Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkConfig() {
+    return networkConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The configuration specifying the network settings for the
+   * Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The networkConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.NetworkConfig getNetworkConfig() {
+    return networkConfig_ == null
+        ? com.google.cloud.metastore.v1alpha.NetworkConfig.getDefaultInstance()
+        : networkConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The configuration specifying the network settings for the
+   * Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
+    return getNetworkConfig();
+  }
+
+  public static final int DATABASE_TYPE_FIELD_NUMBER = 22;
+  private int databaseType_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The database type that the Metastore service stores its data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.Service.DatabaseType database_type = 22 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for databaseType.
+   */
+  @java.lang.Override
+  public int getDatabaseTypeValue() {
+    return databaseType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The database type that the Metastore service stores its data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.Service.DatabaseType database_type = 22 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The databaseType.
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.Service.DatabaseType getDatabaseType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.metastore.v1alpha.Service.DatabaseType result =
+        com.google.cloud.metastore.v1alpha.Service.DatabaseType.valueOf(databaseType_);
+    return result == null
+        ? com.google.cloud.metastore.v1alpha.Service.DatabaseType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1873,6 +2234,17 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.metastore.v1alpha.Service.ReleaseChannel.RELEASE_CHANNEL_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(19, releaseChannel_);
+    }
+    if (encryptionConfig_ != null) {
+      output.writeMessage(20, getEncryptionConfig());
+    }
+    if (networkConfig_ != null) {
+      output.writeMessage(21, getNetworkConfig());
+    }
+    if (databaseType_
+        != com.google.cloud.metastore.v1alpha.Service.DatabaseType.DATABASE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(22, databaseType_);
     }
     unknownFields.writeTo(output);
   }
@@ -1948,6 +2320,17 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, releaseChannel_);
     }
+    if (encryptionConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getEncryptionConfig());
+    }
+    if (networkConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getNetworkConfig());
+    }
+    if (databaseType_
+        != com.google.cloud.metastore.v1alpha.Service.DatabaseType.DATABASE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, databaseType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1996,6 +2379,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return false;
     }
     if (releaseChannel_ != other.releaseChannel_) return false;
+    if (hasEncryptionConfig() != other.hasEncryptionConfig()) return false;
+    if (hasEncryptionConfig()) {
+      if (!getEncryptionConfig().equals(other.getEncryptionConfig())) return false;
+    }
+    if (hasNetworkConfig() != other.hasNetworkConfig()) return false;
+    if (hasNetworkConfig()) {
+      if (!getNetworkConfig().equals(other.getNetworkConfig())) return false;
+    }
+    if (databaseType_ != other.databaseType_) return false;
     if (!getMetastoreConfigCase().equals(other.getMetastoreConfigCase())) return false;
     switch (metastoreConfigCase_) {
       case 5:
@@ -2059,6 +2451,16 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + RELEASE_CHANNEL_FIELD_NUMBER;
     hash = (53 * hash) + releaseChannel_;
+    if (hasEncryptionConfig()) {
+      hash = (37 * hash) + ENCRYPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionConfig().hashCode();
+    }
+    if (hasNetworkConfig()) {
+      hash = (37 * hash) + NETWORK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkConfig().hashCode();
+    }
+    hash = (37 * hash) + DATABASE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + databaseType_;
     switch (metastoreConfigCase_) {
       case 5:
         hash = (37 * hash) + HIVE_METASTORE_CONFIG_FIELD_NUMBER;
@@ -2283,6 +2685,20 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       releaseChannel_ = 0;
 
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = null;
+      } else {
+        encryptionConfig_ = null;
+        encryptionConfigBuilder_ = null;
+      }
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = null;
+      } else {
+        networkConfig_ = null;
+        networkConfigBuilder_ = null;
+      }
+      databaseType_ = 0;
+
       metastoreConfigCase_ = 0;
       metastoreConfig_ = null;
       return this;
@@ -2357,6 +2773,17 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         result.metadataManagementActivity_ = metadataManagementActivityBuilder_.build();
       }
       result.releaseChannel_ = releaseChannel_;
+      if (encryptionConfigBuilder_ == null) {
+        result.encryptionConfig_ = encryptionConfig_;
+      } else {
+        result.encryptionConfig_ = encryptionConfigBuilder_.build();
+      }
+      if (networkConfigBuilder_ == null) {
+        result.networkConfig_ = networkConfig_;
+      } else {
+        result.networkConfig_ = networkConfigBuilder_.build();
+      }
+      result.databaseType_ = databaseType_;
       result.metastoreConfigCase_ = metastoreConfigCase_;
       onBuilt();
       return result;
@@ -2458,6 +2885,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.releaseChannel_ != 0) {
         setReleaseChannelValue(other.getReleaseChannelValue());
+      }
+      if (other.hasEncryptionConfig()) {
+        mergeEncryptionConfig(other.getEncryptionConfig());
+      }
+      if (other.hasNetworkConfig()) {
+        mergeNetworkConfig(other.getNetworkConfig());
+      }
+      if (other.databaseType_ != 0) {
+        setDatabaseTypeValue(other.getDatabaseTypeValue());
       }
       switch (other.getMetastoreConfigCase()) {
         case HIVE_METASTORE_CONFIG:
@@ -4321,6 +4757,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The one hour maintenance window of the metastore service. This specifies
      * when the service can be restarted for maintenance purposes in UTC time.
+     * Maintenance window is not needed for services with the SPANNER
+     * database type.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -4336,6 +4774,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The one hour maintenance window of the metastore service. This specifies
      * when the service can be restarted for maintenance purposes in UTC time.
+     * Maintenance window is not needed for services with the SPANNER
+     * database type.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -4357,6 +4797,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The one hour maintenance window of the metastore service. This specifies
      * when the service can be restarted for maintenance purposes in UTC time.
+     * Maintenance window is not needed for services with the SPANNER
+     * database type.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -4381,6 +4823,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The one hour maintenance window of the metastore service. This specifies
      * when the service can be restarted for maintenance purposes in UTC time.
+     * Maintenance window is not needed for services with the SPANNER
+     * database type.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -4402,6 +4846,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The one hour maintenance window of the metastore service. This specifies
      * when the service can be restarted for maintenance purposes in UTC time.
+     * Maintenance window is not needed for services with the SPANNER
+     * database type.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -4430,6 +4876,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The one hour maintenance window of the metastore service. This specifies
      * when the service can be restarted for maintenance purposes in UTC time.
+     * Maintenance window is not needed for services with the SPANNER
+     * database type.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -4451,6 +4899,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The one hour maintenance window of the metastore service. This specifies
      * when the service can be restarted for maintenance purposes in UTC time.
+     * Maintenance window is not needed for services with the SPANNER
+     * database type.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -4467,6 +4917,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The one hour maintenance window of the metastore service. This specifies
      * when the service can be restarted for maintenance purposes in UTC time.
+     * Maintenance window is not needed for services with the SPANNER
+     * database type.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -4487,6 +4939,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The one hour maintenance window of the metastore service. This specifies
      * when the service can be restarted for maintenance purposes in UTC time.
+     * Maintenance window is not needed for services with the SPANNER
+     * database type.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
@@ -4930,6 +5384,538 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder clearReleaseChannel() {
 
       releaseChannel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.metastore.v1alpha.EncryptionConfig encryptionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1alpha.EncryptionConfig,
+            com.google.cloud.metastore.v1alpha.EncryptionConfig.Builder,
+            com.google.cloud.metastore.v1alpha.EncryptionConfigOrBuilder>
+        encryptionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+     * customer data at rest. Cannot be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the encryptionConfig field is set.
+     */
+    public boolean hasEncryptionConfig() {
+      return encryptionConfigBuilder_ != null || encryptionConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+     * customer data at rest. Cannot be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The encryptionConfig.
+     */
+    public com.google.cloud.metastore.v1alpha.EncryptionConfig getEncryptionConfig() {
+      if (encryptionConfigBuilder_ == null) {
+        return encryptionConfig_ == null
+            ? com.google.cloud.metastore.v1alpha.EncryptionConfig.getDefaultInstance()
+            : encryptionConfig_;
+      } else {
+        return encryptionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+     * customer data at rest. Cannot be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setEncryptionConfig(com.google.cloud.metastore.v1alpha.EncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionConfig_ = value;
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+     * customer data at rest. Cannot be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setEncryptionConfig(
+        com.google.cloud.metastore.v1alpha.EncryptionConfig.Builder builderForValue) {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+     * customer data at rest. Cannot be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeEncryptionConfig(
+        com.google.cloud.metastore.v1alpha.EncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (encryptionConfig_ != null) {
+          encryptionConfig_ =
+              com.google.cloud.metastore.v1alpha.EncryptionConfig.newBuilder(encryptionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          encryptionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+     * customer data at rest. Cannot be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearEncryptionConfig() {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = null;
+        onChanged();
+      } else {
+        encryptionConfig_ = null;
+        encryptionConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+     * customer data at rest. Cannot be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.metastore.v1alpha.EncryptionConfig.Builder
+        getEncryptionConfigBuilder() {
+
+      onChanged();
+      return getEncryptionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+     * customer data at rest. Cannot be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.metastore.v1alpha.EncryptionConfigOrBuilder
+        getEncryptionConfigOrBuilder() {
+      if (encryptionConfigBuilder_ != null) {
+        return encryptionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionConfig_ == null
+            ? com.google.cloud.metastore.v1alpha.EncryptionConfig.getDefaultInstance()
+            : encryptionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+     * customer data at rest. Cannot be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1alpha.EncryptionConfig,
+            com.google.cloud.metastore.v1alpha.EncryptionConfig.Builder,
+            com.google.cloud.metastore.v1alpha.EncryptionConfigOrBuilder>
+        getEncryptionConfigFieldBuilder() {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.metastore.v1alpha.EncryptionConfig,
+                com.google.cloud.metastore.v1alpha.EncryptionConfig.Builder,
+                com.google.cloud.metastore.v1alpha.EncryptionConfigOrBuilder>(
+                getEncryptionConfig(), getParentForChildren(), isClean());
+        encryptionConfig_ = null;
+      }
+      return encryptionConfigBuilder_;
+    }
+
+    private com.google.cloud.metastore.v1alpha.NetworkConfig networkConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1alpha.NetworkConfig,
+            com.google.cloud.metastore.v1alpha.NetworkConfig.Builder,
+            com.google.cloud.metastore.v1alpha.NetworkConfigOrBuilder>
+        networkConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The configuration specifying the network settings for the
+     * Dataproc Metastore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the networkConfig field is set.
+     */
+    public boolean hasNetworkConfig() {
+      return networkConfigBuilder_ != null || networkConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The configuration specifying the network settings for the
+     * Dataproc Metastore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The networkConfig.
+     */
+    public com.google.cloud.metastore.v1alpha.NetworkConfig getNetworkConfig() {
+      if (networkConfigBuilder_ == null) {
+        return networkConfig_ == null
+            ? com.google.cloud.metastore.v1alpha.NetworkConfig.getDefaultInstance()
+            : networkConfig_;
+      } else {
+        return networkConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The configuration specifying the network settings for the
+     * Dataproc Metastore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setNetworkConfig(com.google.cloud.metastore.v1alpha.NetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkConfig_ = value;
+        onChanged();
+      } else {
+        networkConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The configuration specifying the network settings for the
+     * Dataproc Metastore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setNetworkConfig(
+        com.google.cloud.metastore.v1alpha.NetworkConfig.Builder builderForValue) {
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        networkConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The configuration specifying the network settings for the
+     * Dataproc Metastore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeNetworkConfig(com.google.cloud.metastore.v1alpha.NetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (networkConfig_ != null) {
+          networkConfig_ =
+              com.google.cloud.metastore.v1alpha.NetworkConfig.newBuilder(networkConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          networkConfig_ = value;
+        }
+        onChanged();
+      } else {
+        networkConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The configuration specifying the network settings for the
+     * Dataproc Metastore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearNetworkConfig() {
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = null;
+        onChanged();
+      } else {
+        networkConfig_ = null;
+        networkConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The configuration specifying the network settings for the
+     * Dataproc Metastore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.metastore.v1alpha.NetworkConfig.Builder getNetworkConfigBuilder() {
+
+      onChanged();
+      return getNetworkConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The configuration specifying the network settings for the
+     * Dataproc Metastore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.metastore.v1alpha.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
+      if (networkConfigBuilder_ != null) {
+        return networkConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return networkConfig_ == null
+            ? com.google.cloud.metastore.v1alpha.NetworkConfig.getDefaultInstance()
+            : networkConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The configuration specifying the network settings for the
+     * Dataproc Metastore service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1alpha.NetworkConfig,
+            com.google.cloud.metastore.v1alpha.NetworkConfig.Builder,
+            com.google.cloud.metastore.v1alpha.NetworkConfigOrBuilder>
+        getNetworkConfigFieldBuilder() {
+      if (networkConfigBuilder_ == null) {
+        networkConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.metastore.v1alpha.NetworkConfig,
+                com.google.cloud.metastore.v1alpha.NetworkConfig.Builder,
+                com.google.cloud.metastore.v1alpha.NetworkConfigOrBuilder>(
+                getNetworkConfig(), getParentForChildren(), isClean());
+        networkConfig_ = null;
+      }
+      return networkConfigBuilder_;
+    }
+
+    private int databaseType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The database type that the Metastore service stores its data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.Service.DatabaseType database_type = 22 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for databaseType.
+     */
+    @java.lang.Override
+    public int getDatabaseTypeValue() {
+      return databaseType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The database type that the Metastore service stores its data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.Service.DatabaseType database_type = 22 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for databaseType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseTypeValue(int value) {
+
+      databaseType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The database type that the Metastore service stores its data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.Service.DatabaseType database_type = 22 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The databaseType.
+     */
+    @java.lang.Override
+    public com.google.cloud.metastore.v1alpha.Service.DatabaseType getDatabaseType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.metastore.v1alpha.Service.DatabaseType result =
+          com.google.cloud.metastore.v1alpha.Service.DatabaseType.valueOf(databaseType_);
+      return result == null
+          ? com.google.cloud.metastore.v1alpha.Service.DatabaseType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The database type that the Metastore service stores its data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.Service.DatabaseType database_type = 22 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The databaseType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseType(com.google.cloud.metastore.v1alpha.Service.DatabaseType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      databaseType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The database type that the Metastore service stores its data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.Service.DatabaseType database_type = 22 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDatabaseType() {
+
+      databaseType_ = 0;
       onChanged();
       return this;
     }

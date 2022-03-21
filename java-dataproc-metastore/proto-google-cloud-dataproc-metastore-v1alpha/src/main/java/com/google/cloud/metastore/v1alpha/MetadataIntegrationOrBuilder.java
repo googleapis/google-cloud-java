@@ -57,4 +57,39 @@ public interface MetadataIntegrationOrBuilder
    * <code>.google.cloud.metastore.v1alpha.DataCatalogConfig data_catalog_config = 1;</code>
    */
   com.google.cloud.metastore.v1alpha.DataCatalogConfigOrBuilder getDataCatalogConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The integration config for the Dataplex service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.DataplexConfig dataplex_config = 2;</code>
+   *
+   * @return Whether the dataplexConfig field is set.
+   */
+  boolean hasDataplexConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The integration config for the Dataplex service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.DataplexConfig dataplex_config = 2;</code>
+   *
+   * @return The dataplexConfig.
+   */
+  com.google.cloud.metastore.v1alpha.DataplexConfig getDataplexConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The integration config for the Dataplex service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.DataplexConfig dataplex_config = 2;</code>
+   */
+  com.google.cloud.metastore.v1alpha.DataplexConfigOrBuilder getDataplexConfigOrBuilder();
 }

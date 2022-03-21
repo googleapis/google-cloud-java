@@ -37,6 +37,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -193,6 +194,8 @@ public class DataprocMetastoreClientTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
             .build();
     mockDataprocMetastore.addResponse(expectedResponse);
 
@@ -243,6 +246,8 @@ public class DataprocMetastoreClientTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
             .build();
     mockDataprocMetastore.addResponse(expectedResponse);
 
@@ -293,6 +298,8 @@ public class DataprocMetastoreClientTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -357,6 +364,8 @@ public class DataprocMetastoreClientTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -421,6 +430,8 @@ public class DataprocMetastoreClientTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -647,6 +658,7 @@ public class DataprocMetastoreClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     mockDataprocMetastore.addResponse(expectedResponse);
 
@@ -692,6 +704,7 @@ public class DataprocMetastoreClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     mockDataprocMetastore.addResponse(expectedResponse);
 
@@ -735,6 +748,7 @@ public class DataprocMetastoreClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -794,6 +808,7 @@ public class DataprocMetastoreClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -853,6 +868,7 @@ public class DataprocMetastoreClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1262,6 +1278,7 @@ public class DataprocMetastoreClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setServiceRevision(Service.newBuilder().build())
             .setDescription("description-1724546052")
+            .addAllRestoringServices(new ArrayList<String>())
             .build();
     mockDataprocMetastore.addResponse(expectedResponse);
 
@@ -1304,6 +1321,7 @@ public class DataprocMetastoreClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setServiceRevision(Service.newBuilder().build())
             .setDescription("description-1724546052")
+            .addAllRestoringServices(new ArrayList<String>())
             .build();
     mockDataprocMetastore.addResponse(expectedResponse);
 
@@ -1346,6 +1364,7 @@ public class DataprocMetastoreClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setServiceRevision(Service.newBuilder().build())
             .setDescription("description-1724546052")
+            .addAllRestoringServices(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1402,6 +1421,7 @@ public class DataprocMetastoreClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setServiceRevision(Service.newBuilder().build())
             .setDescription("description-1724546052")
+            .addAllRestoringServices(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

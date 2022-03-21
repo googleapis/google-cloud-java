@@ -22,8 +22,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * Configures and manages metastore services.
- * Metastore services are fully managed, highly available, auto-scaled,
- * auto-healing, OSS-native deployments of technical metadata management
+ * Metastore services are fully managed, highly available, autoscaled,
+ * autohealing, OSS-native deployments of technical metadata management
  * software. Each metastore service exposes a network endpoint through which
  * metadata queries are served. Metadata queries can originate from a variety
  * of sources, including Apache Hive, Apache Presto, and Apache Spark.
@@ -788,8 +788,8 @@ public final class DataprocMetastoreGrpc {
    *
    * <pre>
    * Configures and manages metastore services.
-   * Metastore services are fully managed, highly available, auto-scaled,
-   * auto-healing, OSS-native deployments of technical metadata management
+   * Metastore services are fully managed, highly available, autoscaled,
+   * autohealing, OSS-native deployments of technical metadata management
    * software. Each metastore service exposes a network endpoint through which
    * metadata queries are served. Metadata queries can originate from a variety
    * of sources, including Apache Hive, Apache Presto, and Apache Spark.
@@ -994,7 +994,7 @@ public final class DataprocMetastoreGrpc {
      *
      *
      * <pre>
-     * Creates a new Backup in a given project and location.
+     * Creates a new backup in a given project and location.
      * </pre>
      */
     public void createBackup(
@@ -1124,8 +1124,8 @@ public final class DataprocMetastoreGrpc {
    *
    * <pre>
    * Configures and manages metastore services.
-   * Metastore services are fully managed, highly available, auto-scaled,
-   * auto-healing, OSS-native deployments of technical metadata management
+   * Metastore services are fully managed, highly available, autoscaled,
+   * autohealing, OSS-native deployments of technical metadata management
    * software. Each metastore service exposes a network endpoint through which
    * metadata queries are served. Metadata queries can originate from a variety
    * of sources, including Apache Hive, Apache Presto, and Apache Spark.
@@ -1364,7 +1364,7 @@ public final class DataprocMetastoreGrpc {
      *
      *
      * <pre>
-     * Creates a new Backup in a given project and location.
+     * Creates a new backup in a given project and location.
      * </pre>
      */
     public void createBackup(
@@ -1398,8 +1398,8 @@ public final class DataprocMetastoreGrpc {
    *
    * <pre>
    * Configures and manages metastore services.
-   * Metastore services are fully managed, highly available, auto-scaled,
-   * auto-healing, OSS-native deployments of technical metadata management
+   * Metastore services are fully managed, highly available, autoscaled,
+   * autohealing, OSS-native deployments of technical metadata management
    * software. Each metastore service exposes a network endpoint through which
    * metadata queries are served. Metadata queries can originate from a variety
    * of sources, including Apache Hive, Apache Presto, and Apache Spark.
@@ -1600,7 +1600,7 @@ public final class DataprocMetastoreGrpc {
      *
      *
      * <pre>
-     * Creates a new Backup in a given project and location.
+     * Creates a new backup in a given project and location.
      * </pre>
      */
     public com.google.longrunning.Operation createBackup(
@@ -1628,8 +1628,8 @@ public final class DataprocMetastoreGrpc {
    *
    * <pre>
    * Configures and manages metastore services.
-   * Metastore services are fully managed, highly available, auto-scaled,
-   * auto-healing, OSS-native deployments of technical metadata management
+   * Metastore services are fully managed, highly available, autoscaled,
+   * autohealing, OSS-native deployments of technical metadata management
    * software. Each metastore service exposes a network endpoint through which
    * metadata queries are served. Metadata queries can originate from a variety
    * of sources, including Apache Hive, Apache Presto, and Apache Spark.
@@ -1837,7 +1837,7 @@ public final class DataprocMetastoreGrpc {
      *
      *
      * <pre>
-     * Creates a new Backup in a given project and location.
+     * Creates a new backup in a given project and location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

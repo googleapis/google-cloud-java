@@ -40,6 +40,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
 
   private HiveMetastoreConfig() {
     version_ = "";
+    endpointProtocol_ = 0;
   }
 
   @java.lang.Override
@@ -113,6 +114,32 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
 
               break;
             }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              endpointProtocol_ = rawValue;
+              break;
+            }
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                auxiliaryVersions_ =
+                    com.google.protobuf.MapField.newMapField(
+                        AuxiliaryVersionsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+                  auxiliaryVersions__ =
+                      input.readMessage(
+                          AuxiliaryVersionsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              auxiliaryVersions_
+                  .getMutableMap()
+                  .put(auxiliaryVersions__.getKey(), auxiliaryVersions__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -143,6 +170,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     switch (number) {
       case 2:
         return internalGetConfigOverrides();
+      case 5:
+        return internalGetAuxiliaryVersions();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -156,6 +185,167 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         .ensureFieldAccessorsInitialized(
             com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.class,
             com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Protocols available for serving the metastore service endpoint.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol}
+   */
+  public enum EndpointProtocol implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The protocol is not set.
+     * </pre>
+     *
+     * <code>ENDPOINT_PROTOCOL_UNSPECIFIED = 0;</code>
+     */
+    ENDPOINT_PROTOCOL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use the legacy Apache Thrift protocol for the metastore service endpoint.
+     * </pre>
+     *
+     * <code>THRIFT = 1;</code>
+     */
+    THRIFT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Use the modernized gRPC protocol for the metastore service endpoint.
+     * </pre>
+     *
+     * <code>GRPC = 2;</code>
+     */
+    GRPC(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The protocol is not set.
+     * </pre>
+     *
+     * <code>ENDPOINT_PROTOCOL_UNSPECIFIED = 0;</code>
+     */
+    public static final int ENDPOINT_PROTOCOL_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Use the legacy Apache Thrift protocol for the metastore service endpoint.
+     * </pre>
+     *
+     * <code>THRIFT = 1;</code>
+     */
+    public static final int THRIFT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Use the modernized gRPC protocol for the metastore service endpoint.
+     * </pre>
+     *
+     * <code>GRPC = 2;</code>
+     */
+    public static final int GRPC_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EndpointProtocol valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EndpointProtocol forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ENDPOINT_PROTOCOL_UNSPECIFIED;
+        case 1:
+          return THRIFT;
+        case 2:
+          return GRPC;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EndpointProtocol> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EndpointProtocol>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EndpointProtocol>() {
+              public EndpointProtocol findValueByNumber(int number) {
+                return EndpointProtocol.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final EndpointProtocol[] VALUES = values();
+
+    public static EndpointProtocol valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EndpointProtocol(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol)
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
@@ -240,7 +430,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * A mapping of Hive metastore configuration key-value pairs to apply to the
    * Hive metastore (configured in `hive-site.xml`). The mappings
-   * override system defaults (some keys cannot be overridden).
+   * override system defaults (some keys cannot be overridden). These
+   * overrides are also applied to auxiliary versions and can be further
+   * customized in the auxiliary version's `AuxiliaryVersionConfig`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -264,7 +456,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * A mapping of Hive metastore configuration key-value pairs to apply to the
    * Hive metastore (configured in `hive-site.xml`). The mappings
-   * override system defaults (some keys cannot be overridden).
+   * override system defaults (some keys cannot be overridden). These
+   * overrides are also applied to auxiliary versions and can be further
+   * customized in the auxiliary version's `AuxiliaryVersionConfig`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -279,7 +473,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * A mapping of Hive metastore configuration key-value pairs to apply to the
    * Hive metastore (configured in `hive-site.xml`). The mappings
-   * override system defaults (some keys cannot be overridden).
+   * override system defaults (some keys cannot be overridden). These
+   * overrides are also applied to auxiliary versions and can be further
+   * customized in the auxiliary version's `AuxiliaryVersionConfig`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -299,7 +495,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * A mapping of Hive metastore configuration key-value pairs to apply to the
    * Hive metastore (configured in `hive-site.xml`). The mappings
-   * override system defaults (some keys cannot be overridden).
+   * override system defaults (some keys cannot be overridden). These
+   * overrides are also applied to auxiliary versions and can be further
+   * customized in the auxiliary version's `AuxiliaryVersionConfig`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -376,6 +574,203 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     return getKerberosConfig();
   }
 
+  public static final int ENDPOINT_PROTOCOL_FIELD_NUMBER = 4;
+  private int endpointProtocol_;
+  /**
+   *
+   *
+   * <pre>
+   * The protocol to use for the metastore service endpoint. If unspecified,
+   * defaults to `THRIFT`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for endpointProtocol.
+   */
+  @java.lang.Override
+  public int getEndpointProtocolValue() {
+    return endpointProtocol_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The protocol to use for the metastore service endpoint. If unspecified,
+   * defaults to `THRIFT`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+   * </code>
+   *
+   * @return The endpointProtocol.
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol
+      getEndpointProtocol() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol result =
+        com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol.valueOf(
+            endpointProtocol_);
+    return result == null
+        ? com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int AUXILIARY_VERSIONS_FIELD_NUMBER = 5;
+
+  private static final class AuxiliaryVersionsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+                    newDefaultInstance(
+                        com.google.cloud.metastore.v1alpha.MetastoreProto
+                            .internal_static_google_cloud_metastore_v1alpha_HiveMetastoreConfig_AuxiliaryVersionsEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig
+                            .getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+      auxiliaryVersions_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+      internalGetAuxiliaryVersions() {
+    if (auxiliaryVersions_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          AuxiliaryVersionsDefaultEntryHolder.defaultEntry);
+    }
+    return auxiliaryVersions_;
+  }
+
+  public int getAuxiliaryVersionsCount() {
+    return internalGetAuxiliaryVersions().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1alpha.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsAuxiliaryVersions(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetAuxiliaryVersions().getMap().containsKey(key);
+  }
+  /** Use {@link #getAuxiliaryVersionsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+      getAuxiliaryVersions() {
+    return getAuxiliaryVersionsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1alpha.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+      getAuxiliaryVersionsMap() {
+    return internalGetAuxiliaryVersions().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1alpha.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig getAuxiliaryVersionsOrDefault(
+      java.lang.String key,
+      com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig> map =
+        internalGetAuxiliaryVersions().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1alpha.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig getAuxiliaryVersionsOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig> map =
+        internalGetAuxiliaryVersions().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -398,6 +793,17 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     if (kerberosConfig_ != null) {
       output.writeMessage(3, getKerberosConfig());
     }
+    if (endpointProtocol_
+        != com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol
+            .ENDPOINT_PROTOCOL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, endpointProtocol_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetAuxiliaryVersions(),
+        AuxiliaryVersionsDefaultEntryHolder.defaultEntry,
+        5);
     unknownFields.writeTo(output);
   }
 
@@ -423,6 +829,25 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     if (kerberosConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getKerberosConfig());
     }
+    if (endpointProtocol_
+        != com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol
+            .ENDPOINT_PROTOCOL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, endpointProtocol_);
+    }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+        entry : internalGetAuxiliaryVersions().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+          auxiliaryVersions__ =
+              AuxiliaryVersionsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, auxiliaryVersions__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -445,6 +870,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     if (hasKerberosConfig()) {
       if (!getKerberosConfig().equals(other.getKerberosConfig())) return false;
     }
+    if (endpointProtocol_ != other.endpointProtocol_) return false;
+    if (!internalGetAuxiliaryVersions().equals(other.internalGetAuxiliaryVersions())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -465,6 +892,12 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     if (hasKerberosConfig()) {
       hash = (37 * hash) + KERBEROS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getKerberosConfig().hashCode();
+    }
+    hash = (37 * hash) + ENDPOINT_PROTOCOL_FIELD_NUMBER;
+    hash = (53 * hash) + endpointProtocol_;
+    if (!internalGetAuxiliaryVersions().getMap().isEmpty()) {
+      hash = (37 * hash) + AUXILIARY_VERSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAuxiliaryVersions().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -591,6 +1024,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       switch (number) {
         case 2:
           return internalGetConfigOverrides();
+        case 5:
+          return internalGetAuxiliaryVersions();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -601,6 +1036,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       switch (number) {
         case 2:
           return internalGetMutableConfigOverrides();
+        case 5:
+          return internalGetMutableAuxiliaryVersions();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -642,6 +1079,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         kerberosConfig_ = null;
         kerberosConfigBuilder_ = null;
       }
+      endpointProtocol_ = 0;
+
+      internalGetMutableAuxiliaryVersions().clear();
       return this;
     }
 
@@ -678,6 +1118,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       } else {
         result.kerberosConfig_ = kerberosConfigBuilder_.build();
       }
+      result.endpointProtocol_ = endpointProtocol_;
+      result.auxiliaryVersions_ = internalGetAuxiliaryVersions();
+      result.auxiliaryVersions_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -736,6 +1179,10 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       if (other.hasKerberosConfig()) {
         mergeKerberosConfig(other.getKerberosConfig());
       }
+      if (other.endpointProtocol_ != 0) {
+        setEndpointProtocolValue(other.getEndpointProtocolValue());
+      }
+      internalGetMutableAuxiliaryVersions().mergeFrom(other.internalGetAuxiliaryVersions());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -909,7 +1356,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -933,7 +1382,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -948,7 +1399,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -968,7 +1421,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -995,7 +1450,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -1018,7 +1475,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -1039,7 +1498,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -1269,6 +1730,358 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         kerberosConfig_ = null;
       }
       return kerberosConfigBuilder_;
+    }
+
+    private int endpointProtocol_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The protocol to use for the metastore service endpoint. If unspecified,
+     * defaults to `THRIFT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for endpointProtocol.
+     */
+    @java.lang.Override
+    public int getEndpointProtocolValue() {
+      return endpointProtocol_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The protocol to use for the metastore service endpoint. If unspecified,
+     * defaults to `THRIFT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for endpointProtocol to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointProtocolValue(int value) {
+
+      endpointProtocol_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The protocol to use for the metastore service endpoint. If unspecified,
+     * defaults to `THRIFT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+     * </code>
+     *
+     * @return The endpointProtocol.
+     */
+    @java.lang.Override
+    public com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol
+        getEndpointProtocol() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol result =
+          com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol.valueOf(
+              endpointProtocol_);
+      return result == null
+          ? com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The protocol to use for the metastore service endpoint. If unspecified,
+     * defaults to `THRIFT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+     * </code>
+     *
+     * @param value The endpointProtocol to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointProtocol(
+        com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      endpointProtocol_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The protocol to use for the metastore service endpoint. If unspecified,
+     * defaults to `THRIFT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.metastore.v1alpha.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEndpointProtocol() {
+
+      endpointProtocol_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+        auxiliaryVersions_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+        internalGetAuxiliaryVersions() {
+      if (auxiliaryVersions_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AuxiliaryVersionsDefaultEntryHolder.defaultEntry);
+      }
+      return auxiliaryVersions_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+        internalGetMutableAuxiliaryVersions() {
+      onChanged();
+      ;
+      if (auxiliaryVersions_ == null) {
+        auxiliaryVersions_ =
+            com.google.protobuf.MapField.newMapField(
+                AuxiliaryVersionsDefaultEntryHolder.defaultEntry);
+      }
+      if (!auxiliaryVersions_.isMutable()) {
+        auxiliaryVersions_ = auxiliaryVersions_.copy();
+      }
+      return auxiliaryVersions_;
+    }
+
+    public int getAuxiliaryVersionsCount() {
+      return internalGetAuxiliaryVersions().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1alpha.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsAuxiliaryVersions(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetAuxiliaryVersions().getMap().containsKey(key);
+    }
+    /** Use {@link #getAuxiliaryVersionsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+        getAuxiliaryVersions() {
+      return getAuxiliaryVersionsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1alpha.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+        getAuxiliaryVersionsMap() {
+      return internalGetAuxiliaryVersions().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1alpha.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig getAuxiliaryVersionsOrDefault(
+        java.lang.String key,
+        com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+          map = internalGetAuxiliaryVersions().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1alpha.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig getAuxiliaryVersionsOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+          map = internalGetAuxiliaryVersions().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearAuxiliaryVersions() {
+      internalGetMutableAuxiliaryVersions().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1alpha.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    public Builder removeAuxiliaryVersions(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableAuxiliaryVersions().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+        getMutableAuxiliaryVersions() {
+      return internalGetMutableAuxiliaryVersions().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1alpha.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    public Builder putAuxiliaryVersions(
+        java.lang.String key, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableAuxiliaryVersions().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1alpha.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    public Builder putAllAuxiliaryVersions(
+        java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
+            values) {
+      internalGetMutableAuxiliaryVersions().getMutableMap().putAll(values);
+      return this;
     }
 
     @java.lang.Override

@@ -22,27 +22,29 @@ package com.google.cloud.metastore.v1alpha;
  *
  *
  * <pre>
- * The specification of database dump to import from or export to.
+ * Encryption settings for the service.
  * </pre>
  *
- * Protobuf type {@code google.cloud.metastore.v1alpha.DatabaseDumpSpec}
+ * Protobuf type {@code google.cloud.metastore.v1alpha.EncryptionConfig}
  */
-public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessageV3
+public final class EncryptionConfig extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1alpha.DatabaseDumpSpec)
-    DatabaseDumpSpecOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1alpha.EncryptionConfig)
+    EncryptionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use DatabaseDumpSpec.newBuilder() to construct.
-  private DatabaseDumpSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use EncryptionConfig.newBuilder() to construct.
+  private EncryptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private DatabaseDumpSpec() {}
+  private EncryptionConfig() {
+    kmsKey_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new DatabaseDumpSpec();
+    return new EncryptionConfig();
   }
 
   @java.lang.Override
@@ -50,7 +52,7 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private DatabaseDumpSpec(
+  private EncryptionConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -68,6 +70,13 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
           case 0:
             done = true;
             break;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              kmsKey_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -89,176 +98,70 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1alpha.MetastoreProto
-        .internal_static_google_cloud_metastore_v1alpha_DatabaseDumpSpec_descriptor;
+        .internal_static_google_cloud_metastore_v1alpha_EncryptionConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.metastore.v1alpha.MetastoreProto
-        .internal_static_google_cloud_metastore_v1alpha_DatabaseDumpSpec_fieldAccessorTable
+        .internal_static_google_cloud_metastore_v1alpha_EncryptionConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.class,
-            com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Builder.class);
+            com.google.cloud.metastore.v1alpha.EncryptionConfig.class,
+            com.google.cloud.metastore.v1alpha.EncryptionConfig.Builder.class);
   }
 
+  public static final int KMS_KEY_FIELD_NUMBER = 1;
+  private volatile java.lang.Object kmsKey_;
   /**
    *
    *
    * <pre>
-   * The type of the database dump.
+   * The fully qualified customer provided Cloud KMS key name to use for
+   * customer data encryption, in the following form:
+   * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
    * </pre>
    *
-   * Protobuf enum {@code google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type}
+   * <code>string kms_key = 1;</code>
+   *
+   * @return The kmsKey.
    */
-  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     *
-     *
-     * <pre>
-     * The type of the database dump is unknown.
-     * </pre>
-     *
-     * <code>TYPE_UNSPECIFIED = 0;</code>
-     */
-    TYPE_UNSPECIFIED(0),
-    /**
-     *
-     *
-     * <pre>
-     * Database dump is a MySQL dump file.
-     * </pre>
-     *
-     * <code>MYSQL = 1;</code>
-     */
-    MYSQL(1),
-    /**
-     *
-     *
-     * <pre>
-     * Database dump contains Avro files.
-     * </pre>
-     *
-     * <code>AVRO = 2;</code>
-     */
-    AVRO(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     *
-     *
-     * <pre>
-     * The type of the database dump is unknown.
-     * </pre>
-     *
-     * <code>TYPE_UNSPECIFIED = 0;</code>
-     */
-    public static final int TYPE_UNSPECIFIED_VALUE = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Database dump is a MySQL dump file.
-     * </pre>
-     *
-     * <code>MYSQL = 1;</code>
-     */
-    public static final int MYSQL_VALUE = 1;
-    /**
-     *
-     *
-     * <pre>
-     * Database dump contains Avro files.
-     * </pre>
-     *
-     * <code>AVRO = 2;</code>
-     */
-    public static final int AVRO_VALUE = 2;
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
+  @java.lang.Override
+  public java.lang.String getKmsKey() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKey_ = s;
+      return s;
     }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Type valueOf(int value) {
-      return forNumber(value);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The fully qualified customer provided Cloud KMS key name to use for
+   * customer data encryption, in the following form:
+   * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
+   * </pre>
+   *
+   * <code>string kms_key = 1;</code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyBytes() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
     }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static Type forNumber(int value) {
-      switch (value) {
-        case 0:
-          return TYPE_UNSPECIFIED;
-        case 1:
-          return MYSQL;
-        case 2:
-          return AVRO;
-        default:
-          return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
-      return internalValueMap;
-    }
-
-    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-          public Type findValueByNumber(int number) {
-            return Type.forNumber(number);
-          }
-        };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-      return getDescriptor();
-    }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.getDescriptor()
-          .getEnumTypes()
-          .get(0);
-    }
-
-    private static final Type[] VALUES = values();
-
-    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Type(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type)
   }
 
   private byte memoizedIsInitialized = -1;
@@ -275,6 +178,9 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kmsKey_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -284,6 +190,9 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kmsKey_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -294,12 +203,13 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.metastore.v1alpha.DatabaseDumpSpec)) {
+    if (!(obj instanceof com.google.cloud.metastore.v1alpha.EncryptionConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.metastore.v1alpha.DatabaseDumpSpec other =
-        (com.google.cloud.metastore.v1alpha.DatabaseDumpSpec) obj;
+    com.google.cloud.metastore.v1alpha.EncryptionConfig other =
+        (com.google.cloud.metastore.v1alpha.EncryptionConfig) obj;
 
+    if (!getKmsKey().equals(other.getKmsKey())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -311,76 +221,78 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKey().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parseFrom(byte[] data)
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parseDelimitedFrom(
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parseDelimitedFrom(
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -397,7 +309,7 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.metastore.v1alpha.DatabaseDumpSpec prototype) {
+  public static Builder newBuilder(com.google.cloud.metastore.v1alpha.EncryptionConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -415,31 +327,31 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The specification of database dump to import from or export to.
+   * Encryption settings for the service.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.metastore.v1alpha.DatabaseDumpSpec}
+   * Protobuf type {@code google.cloud.metastore.v1alpha.EncryptionConfig}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.metastore.v1alpha.DatabaseDumpSpec)
-      com.google.cloud.metastore.v1alpha.DatabaseDumpSpecOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.metastore.v1alpha.EncryptionConfig)
+      com.google.cloud.metastore.v1alpha.EncryptionConfigOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.metastore.v1alpha.MetastoreProto
-          .internal_static_google_cloud_metastore_v1alpha_DatabaseDumpSpec_descriptor;
+          .internal_static_google_cloud_metastore_v1alpha_EncryptionConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.metastore.v1alpha.MetastoreProto
-          .internal_static_google_cloud_metastore_v1alpha_DatabaseDumpSpec_fieldAccessorTable
+          .internal_static_google_cloud_metastore_v1alpha_EncryptionConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.class,
-              com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Builder.class);
+              com.google.cloud.metastore.v1alpha.EncryptionConfig.class,
+              com.google.cloud.metastore.v1alpha.EncryptionConfig.Builder.class);
     }
 
-    // Construct using com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.newBuilder()
+    // Construct using com.google.cloud.metastore.v1alpha.EncryptionConfig.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -456,23 +368,25 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      kmsKey_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.metastore.v1alpha.MetastoreProto
-          .internal_static_google_cloud_metastore_v1alpha_DatabaseDumpSpec_descriptor;
+          .internal_static_google_cloud_metastore_v1alpha_EncryptionConfig_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.metastore.v1alpha.DatabaseDumpSpec getDefaultInstanceForType() {
-      return com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.getDefaultInstance();
+    public com.google.cloud.metastore.v1alpha.EncryptionConfig getDefaultInstanceForType() {
+      return com.google.cloud.metastore.v1alpha.EncryptionConfig.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.metastore.v1alpha.DatabaseDumpSpec build() {
-      com.google.cloud.metastore.v1alpha.DatabaseDumpSpec result = buildPartial();
+    public com.google.cloud.metastore.v1alpha.EncryptionConfig build() {
+      com.google.cloud.metastore.v1alpha.EncryptionConfig result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -480,9 +394,10 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
-    public com.google.cloud.metastore.v1alpha.DatabaseDumpSpec buildPartial() {
-      com.google.cloud.metastore.v1alpha.DatabaseDumpSpec result =
-          new com.google.cloud.metastore.v1alpha.DatabaseDumpSpec(this);
+    public com.google.cloud.metastore.v1alpha.EncryptionConfig buildPartial() {
+      com.google.cloud.metastore.v1alpha.EncryptionConfig result =
+          new com.google.cloud.metastore.v1alpha.EncryptionConfig(this);
+      result.kmsKey_ = kmsKey_;
       onBuilt();
       return result;
     }
@@ -522,17 +437,21 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.metastore.v1alpha.DatabaseDumpSpec) {
-        return mergeFrom((com.google.cloud.metastore.v1alpha.DatabaseDumpSpec) other);
+      if (other instanceof com.google.cloud.metastore.v1alpha.EncryptionConfig) {
+        return mergeFrom((com.google.cloud.metastore.v1alpha.EncryptionConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.metastore.v1alpha.DatabaseDumpSpec other) {
-      if (other == com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.metastore.v1alpha.EncryptionConfig other) {
+      if (other == com.google.cloud.metastore.v1alpha.EncryptionConfig.getDefaultInstance())
         return this;
+      if (!other.getKmsKey().isEmpty()) {
+        kmsKey_ = other.kmsKey_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -548,18 +467,134 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.metastore.v1alpha.DatabaseDumpSpec parsedMessage = null;
+      com.google.cloud.metastore.v1alpha.EncryptionConfig parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.metastore.v1alpha.DatabaseDumpSpec) e.getUnfinishedMessage();
+            (com.google.cloud.metastore.v1alpha.EncryptionConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object kmsKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified customer provided Cloud KMS key name to use for
+     * customer data encryption, in the following form:
+     * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
+     * </pre>
+     *
+     * <code>string kms_key = 1;</code>
+     *
+     * @return The kmsKey.
+     */
+    public java.lang.String getKmsKey() {
+      java.lang.Object ref = kmsKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified customer provided Cloud KMS key name to use for
+     * customer data encryption, in the following form:
+     * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
+     * </pre>
+     *
+     * <code>string kms_key = 1;</code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    public com.google.protobuf.ByteString getKmsKeyBytes() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified customer provided Cloud KMS key name to use for
+     * customer data encryption, in the following form:
+     * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
+     * </pre>
+     *
+     * <code>string kms_key = 1;</code>
+     *
+     * @param value The kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      kmsKey_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified customer provided Cloud KMS key name to use for
+     * customer data encryption, in the following form:
+     * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
+     * </pre>
+     *
+     * <code>string kms_key = 1;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKey() {
+
+      kmsKey_ = getDefaultInstance().getKmsKey();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified customer provided Cloud KMS key name to use for
+     * customer data encryption, in the following form:
+     * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
+     * </pre>
+     *
+     * <code>string kms_key = 1;</code>
+     *
+     * @param value The bytes for kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      kmsKey_ = value;
+      onChanged();
       return this;
     }
 
@@ -574,42 +609,42 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.metastore.v1alpha.DatabaseDumpSpec)
+    // @@protoc_insertion_point(builder_scope:google.cloud.metastore.v1alpha.EncryptionConfig)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.metastore.v1alpha.DatabaseDumpSpec)
-  private static final com.google.cloud.metastore.v1alpha.DatabaseDumpSpec DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.metastore.v1alpha.EncryptionConfig)
+  private static final com.google.cloud.metastore.v1alpha.EncryptionConfig DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.metastore.v1alpha.DatabaseDumpSpec();
+    DEFAULT_INSTANCE = new com.google.cloud.metastore.v1alpha.EncryptionConfig();
   }
 
-  public static com.google.cloud.metastore.v1alpha.DatabaseDumpSpec getDefaultInstance() {
+  public static com.google.cloud.metastore.v1alpha.EncryptionConfig getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DatabaseDumpSpec> PARSER =
-      new com.google.protobuf.AbstractParser<DatabaseDumpSpec>() {
+  private static final com.google.protobuf.Parser<EncryptionConfig> PARSER =
+      new com.google.protobuf.AbstractParser<EncryptionConfig>() {
         @java.lang.Override
-        public DatabaseDumpSpec parsePartialFrom(
+        public EncryptionConfig parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DatabaseDumpSpec(input, extensionRegistry);
+          return new EncryptionConfig(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<DatabaseDumpSpec> parser() {
+  public static com.google.protobuf.Parser<EncryptionConfig> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DatabaseDumpSpec> getParserForType() {
+  public com.google.protobuf.Parser<EncryptionConfig> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.metastore.v1alpha.DatabaseDumpSpec getDefaultInstanceForType() {
+  public com.google.cloud.metastore.v1alpha.EncryptionConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

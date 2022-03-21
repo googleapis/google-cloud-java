@@ -246,7 +246,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A Cloud Storage URI that specifies the path to a
-   * krb5.conf file. It is of the form gs://{bucket_name}/path/to/krb5.conf,
+   * krb5.conf file. It is of the form `gs://{bucket_name}/path/to/krb5.conf`,
    * although the file does not need to be named krb5.conf explicitly.
    * </pre>
    *
@@ -271,7 +271,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A Cloud Storage URI that specifies the path to a
-   * krb5.conf file. It is of the form gs://{bucket_name}/path/to/krb5.conf,
+   * krb5.conf file. It is of the form `gs://{bucket_name}/path/to/krb5.conf`,
    * although the file does not need to be named krb5.conf explicitly.
    * </pre>
    *
@@ -970,7 +970,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A Cloud Storage URI that specifies the path to a
-     * krb5.conf file. It is of the form gs://{bucket_name}/path/to/krb5.conf,
+     * krb5.conf file. It is of the form `gs://{bucket_name}/path/to/krb5.conf`,
      * although the file does not need to be named krb5.conf explicitly.
      * </pre>
      *
@@ -994,7 +994,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A Cloud Storage URI that specifies the path to a
-     * krb5.conf file. It is of the form gs://{bucket_name}/path/to/krb5.conf,
+     * krb5.conf file. It is of the form `gs://{bucket_name}/path/to/krb5.conf`,
      * although the file does not need to be named krb5.conf explicitly.
      * </pre>
      *
@@ -1018,7 +1018,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A Cloud Storage URI that specifies the path to a
-     * krb5.conf file. It is of the form gs://{bucket_name}/path/to/krb5.conf,
+     * krb5.conf file. It is of the form `gs://{bucket_name}/path/to/krb5.conf`,
      * although the file does not need to be named krb5.conf explicitly.
      * </pre>
      *
@@ -1041,7 +1041,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A Cloud Storage URI that specifies the path to a
-     * krb5.conf file. It is of the form gs://{bucket_name}/path/to/krb5.conf,
+     * krb5.conf file. It is of the form `gs://{bucket_name}/path/to/krb5.conf`,
      * although the file does not need to be named krb5.conf explicitly.
      * </pre>
      *
@@ -1060,7 +1060,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A Cloud Storage URI that specifies the path to a
-     * krb5.conf file. It is of the form gs://{bucket_name}/path/to/krb5.conf,
+     * krb5.conf file. It is of the form `gs://{bucket_name}/path/to/krb5.conf`,
      * although the file does not need to be named krb5.conf explicitly.
      * </pre>
      *

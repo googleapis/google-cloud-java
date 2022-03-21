@@ -220,4 +220,59 @@ public interface BackupOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Services that are restoring from the backup.
+   * </pre>
+   *
+   * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the restoringServices.
+   */
+  java.util.List<java.lang.String> getRestoringServicesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Services that are restoring from the backup.
+   * </pre>
+   *
+   * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of restoringServices.
+   */
+  int getRestoringServicesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Services that are restoring from the backup.
+   * </pre>
+   *
+   * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The restoringServices at the given index.
+   */
+  java.lang.String getRestoringServices(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Services that are restoring from the backup.
+   * </pre>
+   *
+   * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the restoringServices at the given index.
+   */
+  com.google.protobuf.ByteString getRestoringServicesBytes(int index);
 }
