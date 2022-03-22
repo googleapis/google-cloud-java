@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.13](https://github.com/googleapis/java-containeranalysis/compare/v2.2.12...v2.2.13) (2022-03-22)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#839](https://github.com/googleapis/java-containeranalysis/issues/839)) ([eea6910](https://github.com/googleapis/java-containeranalysis/commit/eea69104c9e5e4c6024ea61ce03b4964cdfe275c))
+
 ### [2.2.12](https://github.com/googleapis/java-containeranalysis/compare/v2.2.11...v2.2.12) (2022-03-08)
 
 
