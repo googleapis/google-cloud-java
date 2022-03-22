@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.8.8](https://github.com/googleapis/java-recommendations-ai/compare/v0.8.7...v0.8.8) (2022-03-22)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#491](https://github.com/googleapis/java-recommendations-ai/issues/491)) ([05579d9](https://github.com/googleapis/java-recommendations-ai/commit/05579d9d73391bfd179333ba556bdbd62298e011))
+
 ### [0.8.7](https://github.com/googleapis/java-recommendations-ai/compare/v0.8.6...v0.8.7) (2022-03-02)
 
 
