@@ -1,5 +1,32 @@
 # Changelog
 
+### [1.116.1](https://github.com/googleapis/java-pubsub/compare/v1.116.0...v1.116.1) (2022-03-22)
+
+
+### Bug Fixes
+
+* added a maximum metadata size when creating the subscriber ([#1061](https://github.com/googleapis/java-pubsub/issues/1061)) ([3a8c83b](https://github.com/googleapis/java-pubsub/commit/3a8c83b973a1dfbae2ca037125574d74034218ce))
+* Removed EnableExactlyOnceDelivery from Builders ([#1052](https://github.com/googleapis/java-pubsub/issues/1052)) ([9add538](https://github.com/googleapis/java-pubsub/commit/9add53894981d862ac1348d0b641e472b3b3aa79))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.10 ([#1057](https://github.com/googleapis/java-pubsub/issues/1057)) ([0b7d19f](https://github.com/googleapis/java-pubsub/commit/0b7d19fe39326c36152267e4d2a13a2b51530ac2))
+* update dependency com.google.cloud:google-cloud-core to v2.5.8 ([#1050](https://github.com/googleapis/java-pubsub/issues/1050)) ([c7551d6](https://github.com/googleapis/java-pubsub/commit/c7551d621343eac4476a16579763e3aab7f71ea9))
+* update dependency com.google.cloud:google-cloud-core to v2.5.9 ([#1054](https://github.com/googleapis/java-pubsub/issues/1054)) ([5b3227f](https://github.com/googleapis/java-pubsub/commit/5b3227f4013a5121a3db34702f90be5a9ba41748))
+* update dependency com.google.cloud:native-image-support to v0.12.10 ([#1058](https://github.com/googleapis/java-pubsub/issues/1058)) ([af2b364](https://github.com/googleapis/java-pubsub/commit/af2b3640eb22e8e78f5beea07a73e2b3127cce71))
+* update dependency com.google.cloud:native-image-support to v0.12.7 ([#1042](https://github.com/googleapis/java-pubsub/issues/1042)) ([fd52aa8](https://github.com/googleapis/java-pubsub/commit/fd52aa8ffaa4d7cb8e0ad19bb6993b5616eb81df))
+* update dependency com.google.cloud:native-image-support to v0.12.8 ([#1051](https://github.com/googleapis/java-pubsub/issues/1051)) ([da2d3fa](https://github.com/googleapis/java-pubsub/commit/da2d3fa91fe4f07455fbe0aa3ccac15e456666c7))
+* update dependency com.google.cloud:native-image-support to v0.12.9 ([#1053](https://github.com/googleapis/java-pubsub/issues/1053)) ([6e97d52](https://github.com/googleapis/java-pubsub/commit/6e97d5222994dc567bc24ab3457f3431ed000134))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.10 ([#1043](https://github.com/googleapis/java-pubsub/issues/1043)) ([5884bdf](https://github.com/googleapis/java-pubsub/commit/5884bdfafc5ee621935b620e763ca6c0adf67ff7))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.10 ([#1044](https://github.com/googleapis/java-pubsub/issues/1044)) ([158e7f8](https://github.com/googleapis/java-pubsub/commit/158e7f884660a312b7168cecfa85cf594071a7be))
+
+
+### Documentation
+
+* **sample:** Add sample for Native Image support in Pub/Sub ([#1026](https://github.com/googleapis/java-pubsub/issues/1026)) ([a4fa69b](https://github.com/googleapis/java-pubsub/commit/a4fa69b99f34304f7ee7a56fb3c633f018905f09))
+* **sample:** use Java 8 for native image sample ([#1060](https://github.com/googleapis/java-pubsub/issues/1060)) ([2d5c010](https://github.com/googleapis/java-pubsub/commit/2d5c0109fe797698749d2c198cbb5a8a1a9d11dc))
+
 ## [1.116.0](https://github.com/googleapis/java-pubsub/compare/v1.115.5...v1.116.0) (2022-03-04)
 
 
