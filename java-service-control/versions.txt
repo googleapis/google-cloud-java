@@ -4,3 +4,5 @@
 google-cloud-service-control:1.1.9:1.1.10-SNAPSHOT
 grpc-google-cloud-service-control-v1:1.1.9:1.1.10-SNAPSHOT
 proto-google-cloud-service-control-v1:1.1.9:1.1.10-SNAPSHOT
+proto-google-cloud-service-control-v2:1.1.9:1.1.10-SNAPSHOT
+grpc-google-cloud-service-control-v2:1.1.9:1.1.10-SNAPSHOT
