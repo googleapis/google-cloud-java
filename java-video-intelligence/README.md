@@ -45,7 +45,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-intelligence</artifactId>
-  <version>2.0.22</version>
+  <version>2.0.23</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
