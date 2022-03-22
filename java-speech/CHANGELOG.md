@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.11](https://github.com/googleapis/java-speech/compare/v2.2.10...v2.2.11) (2022-03-22)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#820](https://github.com/googleapis/java-speech/issues/820)) ([f22beb1](https://github.com/googleapis/java-speech/commit/f22beb19b2c202cb4e681fdff6b6749b2835ed1b))
+
 ### [2.2.10](https://github.com/googleapis/java-speech/compare/v2.2.9...v2.2.10) (2022-03-21)
 
 
