@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.12](https://github.com/googleapis/java-iamcredentials/compare/v2.0.11...v2.0.12) (2022-03-22)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#639](https://github.com/googleapis/java-iamcredentials/issues/639)) ([a26793c](https://github.com/googleapis/java-iamcredentials/commit/a26793cd0f3965b10317651aa6212b299d3cb6b1))
+
 ### [2.0.11](https://github.com/googleapis/java-iamcredentials/compare/v2.0.10...v2.0.11) (2022-03-02)
 
 
