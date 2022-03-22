@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.5](https://github.com/googleapis/java-orchestration-airflow/compare/v1.1.4...v1.1.5) (2022-03-22)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#156](https://github.com/googleapis/java-orchestration-airflow/issues/156)) ([f6779ae](https://github.com/googleapis/java-orchestration-airflow/commit/f6779ae0df16e2ccb0a87ce9b2ad2965dcdbdfe3))
+
 ### [1.1.4](https://github.com/googleapis/java-orchestration-airflow/compare/v1.1.3...v1.1.4) (2022-03-02)
 
 
