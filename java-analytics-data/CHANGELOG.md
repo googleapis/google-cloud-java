@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.11.8](https://github.com/googleapis/java-analytics-data/compare/v0.11.7...v0.11.8) (2022-03-22)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#435](https://github.com/googleapis/java-analytics-data/issues/435)) ([35cc323](https://github.com/googleapis/java-analytics-data/commit/35cc32386e17f1b8e8c5116e4453fac8076451b6))
+
 ### [0.11.7](https://github.com/googleapis/java-analytics-data/compare/v0.11.6...v0.11.7) (2022-03-21)
 
 
