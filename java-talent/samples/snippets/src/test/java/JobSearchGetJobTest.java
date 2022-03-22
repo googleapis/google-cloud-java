@@ -26,7 +26,7 @@ import org.junit.Test;
 public class JobSearchGetJobTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String TENANT_ID = System.getenv("CTS_TENANT_ID");
-  private static final String JOB_ID = System.getenv("CTS_JOB_ID");
+  private static final String JOB_ID = System.getenv("CTS_GET_JOB_ID");
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
