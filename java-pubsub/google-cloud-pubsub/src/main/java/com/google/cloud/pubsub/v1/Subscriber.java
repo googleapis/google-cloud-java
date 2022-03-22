@@ -93,6 +93,9 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
   private static final int MAX_INBOUND_MESSAGE_SIZE =
       20 * 1024 * 1024; // 20MB API maximum message size.
 
+  private static final int MAX_INBOUND_METADATA_SIZE =
+      4 * 1024 * 1024; // 4MB API maximum metadata size
+
   @InternalApi static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
 
   @InternalApi
@@ -480,6 +483,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     private TransportChannelProvider channelProvider =
         SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
+            .setMaxInboundMetadataSize(MAX_INBOUND_METADATA_SIZE)
             .setKeepAliveTime(Duration.ofMinutes(5))
             .build();
     private HeaderProvider headerProvider = new NoHeaderProvider();
