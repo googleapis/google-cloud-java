@@ -27,12 +27,13 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: [Service Control API v2](/service-infrastructure/docs/service-control)
+ * Service Description: [Service Control API
+ * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
  *
  * <p>Private Preview. This feature is only available for approved services.
  *
  * <p>This API provides admission control and telemetry reporting for services that are integrated
- * with [Service Infrastructure](/service-infrastructure).
+ * with [Service Infrastructure](https://cloud.google.com/service-infrastructure).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -158,10 +159,10 @@ public class ServiceControllerClient implements BackgroundResource {
    * Private Preview. This feature is only available for approved services.
    *
    * <p>This method provides admission control for services that are integrated with [Service
-   * Infrastructure](/service-infrastructure). It checks whether an operation should be allowed
-   * based on the service configuration and relevant policies. It must be called before the
-   * operation is executed. For more information, see [Admission
-   * Control](/service-infrastructure/docs/admission-control).
+   * Infrastructure](https://cloud.google.com/service-infrastructure). It checks whether an
+   * operation should be allowed based on the service configuration and relevant policies. It must
+   * be called before the operation is executed. For more information, see [Admission
+   * Control](https://cloud.google.com/service-infrastructure/docs/admission-control).
    *
    * <p>NOTE: The admission control has an expected policy propagation delay of 60s. The caller
    * &#42;&#42;must&#42;&#42; not depend on the most recent policy changes.
@@ -202,10 +203,10 @@ public class ServiceControllerClient implements BackgroundResource {
    * Private Preview. This feature is only available for approved services.
    *
    * <p>This method provides admission control for services that are integrated with [Service
-   * Infrastructure](/service-infrastructure). It checks whether an operation should be allowed
-   * based on the service configuration and relevant policies. It must be called before the
-   * operation is executed. For more information, see [Admission
-   * Control](/service-infrastructure/docs/admission-control).
+   * Infrastructure](https://cloud.google.com/service-infrastructure). It checks whether an
+   * operation should be allowed based on the service configuration and relevant policies. It must
+   * be called before the operation is executed. For more information, see [Admission
+   * Control](https://cloud.google.com/service-infrastructure/docs/admission-control).
    *
    * <p>NOTE: The admission control has an expected policy propagation delay of 60s. The caller
    * &#42;&#42;must&#42;&#42; not depend on the most recent policy changes.
@@ -245,9 +246,10 @@ public class ServiceControllerClient implements BackgroundResource {
    * Private Preview. This feature is only available for approved services.
    *
    * <p>This method provides telemetry reporting for services that are integrated with [Service
-   * Infrastructure](/service-infrastructure). It reports a list of operations that have occurred on
-   * a service. It must be called after the operations have been executed. For more information, see
-   * [Telemetry Reporting](/service-infrastructure/docs/telemetry-reporting).
+   * Infrastructure](https://cloud.google.com/service-infrastructure). It reports a list of
+   * operations that have occurred on a service. It must be called after the operations have been
+   * executed. For more information, see [Telemetry
+   * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
    *
    * <p>NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB per Report call.
    * It is recommended to have no more than 100 operations per call.
@@ -282,9 +284,10 @@ public class ServiceControllerClient implements BackgroundResource {
    * Private Preview. This feature is only available for approved services.
    *
    * <p>This method provides telemetry reporting for services that are integrated with [Service
-   * Infrastructure](/service-infrastructure). It reports a list of operations that have occurred on
-   * a service. It must be called after the operations have been executed. For more information, see
-   * [Telemetry Reporting](/service-infrastructure/docs/telemetry-reporting).
+   * Infrastructure](https://cloud.google.com/service-infrastructure). It reports a list of
+   * operations that have occurred on a service. It must be called after the operations have been
+   * executed. For more information, see [Telemetry
+   * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
    *
    * <p>NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB per Report call.
    * It is recommended to have no more than 100 operations per call.
