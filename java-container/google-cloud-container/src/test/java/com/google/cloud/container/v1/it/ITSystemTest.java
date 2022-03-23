@@ -148,7 +148,7 @@ public class ITSystemTest {
   public void getServerConfigTest() {
     ServerConfig config = client.getServerConfig(PROJECT_ID, ZONE);
     assertNotNull(config);
-    assertEquals("COS", config.getDefaultImageType());
+    assertEquals("COS_CONTAINERD", config.getDefaultImageType());
   }
 
   @Test
