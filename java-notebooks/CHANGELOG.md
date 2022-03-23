@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://github.com/googleapis/java-notebooks/compare/v1.0.3...v1.0.4) (2022-03-23)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#336](https://github.com/googleapis/java-notebooks/issues/336)) ([584629b](https://github.com/googleapis/java-notebooks/commit/584629b054872e35252244483e897683d5cf3c90))
+
 ### [1.0.3](https://github.com/googleapis/java-notebooks/compare/v1.0.2...v1.0.3) (2022-03-02)
 
 
