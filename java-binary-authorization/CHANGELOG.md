@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.5](https://github.com/googleapis/java-binary-authorization/compare/v1.0.4...v1.0.5) (2022-03-24)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#176](https://github.com/googleapis/java-binary-authorization/issues/176)) ([426f970](https://github.com/googleapis/java-binary-authorization/commit/426f9702ca98b4758ffe9c44f3fc4ca0f83ef92d))
+
 ### [1.0.4](https://github.com/googleapis/java-binary-authorization/compare/v1.0.3...v1.0.4) (2022-03-08)
 
 
