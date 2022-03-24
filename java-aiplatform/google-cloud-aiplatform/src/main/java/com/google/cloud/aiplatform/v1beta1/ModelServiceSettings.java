@@ -125,6 +125,12 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     return ((ModelServiceStubSettings) getStubSettings()).exportModelOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to importModelEvaluation. */
+  public UnaryCallSettings<ImportModelEvaluationRequest, ModelEvaluation>
+      importModelEvaluationSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).importModelEvaluationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getModelEvaluation. */
   public UnaryCallSettings<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationSettings() {
@@ -301,6 +307,12 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
             ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
         exportModelOperationSettings() {
       return getStubSettingsBuilder().exportModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importModelEvaluation. */
+    public UnaryCallSettings.Builder<ImportModelEvaluationRequest, ModelEvaluation>
+        importModelEvaluationSettings() {
+      return getStubSettingsBuilder().importModelEvaluationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getModelEvaluation. */

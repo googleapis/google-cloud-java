@@ -445,6 +445,9 @@
             "GetModelEvaluationSlice": {
               "methods": ["getModelEvaluationSlice", "getModelEvaluationSlice", "getModelEvaluationSlice", "getModelEvaluationSliceCallable"]
             },
+            "ImportModelEvaluation": {
+              "methods": ["importModelEvaluation", "importModelEvaluation", "importModelEvaluation", "importModelEvaluationCallable"]
+            },
             "ListModelEvaluationSlices": {
               "methods": ["listModelEvaluationSlices", "listModelEvaluationSlices", "listModelEvaluationSlices", "listModelEvaluationSlicesPagedCallable", "listModelEvaluationSlicesCallable"]
             },

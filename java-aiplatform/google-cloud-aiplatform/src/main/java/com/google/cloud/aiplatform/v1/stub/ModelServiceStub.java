@@ -31,6 +31,7 @@ import com.google.cloud.aiplatform.v1.ExportModelResponse;
 import com.google.cloud.aiplatform.v1.GetModelEvaluationRequest;
 import com.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest;
 import com.google.cloud.aiplatform.v1.GetModelRequest;
+import com.google.cloud.aiplatform.v1.ImportModelEvaluationRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest;
@@ -103,6 +104,11 @@ public abstract class ModelServiceStub implements BackgroundResource {
 
   public UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
     throw new UnsupportedOperationException("Not implemented: exportModelCallable()");
+  }
+
+  public UnaryCallable<ImportModelEvaluationRequest, ModelEvaluation>
+      importModelEvaluationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importModelEvaluationCallable()");
   }
 
   public UnaryCallable<GetModelEvaluationRequest, ModelEvaluation> getModelEvaluationCallable() {

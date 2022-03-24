@@ -871,6 +871,113 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Imports an externally generated ModelEvaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   ModelEvaluation modelEvaluation = ModelEvaluation.newBuilder().build();
+   *   ModelEvaluation response = modelServiceClient.importModelEvaluation(parent, modelEvaluation);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent model resource. Format:
+   *     `projects/{project}/locations/{location}/models/{model}`
+   * @param modelEvaluation Required. Model evaluation resource to be imported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ModelEvaluation importModelEvaluation(
+      ModelName parent, ModelEvaluation modelEvaluation) {
+    ImportModelEvaluationRequest request =
+        ImportModelEvaluationRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setModelEvaluation(modelEvaluation)
+            .build();
+    return importModelEvaluation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an externally generated ModelEvaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString();
+   *   ModelEvaluation modelEvaluation = ModelEvaluation.newBuilder().build();
+   *   ModelEvaluation response = modelServiceClient.importModelEvaluation(parent, modelEvaluation);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent model resource. Format:
+   *     `projects/{project}/locations/{location}/models/{model}`
+   * @param modelEvaluation Required. Model evaluation resource to be imported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ModelEvaluation importModelEvaluation(
+      String parent, ModelEvaluation modelEvaluation) {
+    ImportModelEvaluationRequest request =
+        ImportModelEvaluationRequest.newBuilder()
+            .setParent(parent)
+            .setModelEvaluation(modelEvaluation)
+            .build();
+    return importModelEvaluation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an externally generated ModelEvaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ImportModelEvaluationRequest request =
+   *       ImportModelEvaluationRequest.newBuilder()
+   *           .setParent(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setModelEvaluation(ModelEvaluation.newBuilder().build())
+   *           .build();
+   *   ModelEvaluation response = modelServiceClient.importModelEvaluation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ModelEvaluation importModelEvaluation(ImportModelEvaluationRequest request) {
+    return importModelEvaluationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an externally generated ModelEvaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ImportModelEvaluationRequest request =
+   *       ImportModelEvaluationRequest.newBuilder()
+   *           .setParent(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setModelEvaluation(ModelEvaluation.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ModelEvaluation> future =
+   *       modelServiceClient.importModelEvaluationCallable().futureCall(request);
+   *   // Do something.
+   *   ModelEvaluation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportModelEvaluationRequest, ModelEvaluation>
+      importModelEvaluationCallable() {
+    return stub.importModelEvaluationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets a ModelEvaluation.
    *
    * <p>Sample code:

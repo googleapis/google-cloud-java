@@ -35,6 +35,7 @@ import com.google.cloud.aiplatform.v1.ExportModelResponse;
 import com.google.cloud.aiplatform.v1.GetModelEvaluationRequest;
 import com.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest;
 import com.google.cloud.aiplatform.v1.GetModelRequest;
+import com.google.cloud.aiplatform.v1.ImportModelEvaluationRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest;
@@ -115,6 +116,16 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<ImportModelEvaluationRequest, ModelEvaluation>
+      importModelEvaluationMethodDescriptor =
+          MethodDescriptor.<ImportModelEvaluationRequest, ModelEvaluation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.ModelService/ImportModelEvaluation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportModelEvaluationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ModelEvaluation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationMethodDescriptor =
           MethodDescriptor.<GetModelEvaluationRequest, ModelEvaluation>newBuilder()
@@ -176,6 +187,8 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   private final OperationCallable<
           ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
       exportModelOperationCallable;
+  private final UnaryCallable<ImportModelEvaluationRequest, ModelEvaluation>
+      importModelEvaluationCallable;
   private final UnaryCallable<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationCallable;
   private final UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
@@ -292,6 +305,17 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ImportModelEvaluationRequest, ModelEvaluation>
+        importModelEvaluationTransportSettings =
+            GrpcCallSettings.<ImportModelEvaluationRequest, ModelEvaluation>newBuilder()
+                .setMethodDescriptor(importModelEvaluationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GetModelEvaluationRequest, ModelEvaluation>
         getModelEvaluationTransportSettings =
             GrpcCallSettings.<GetModelEvaluationRequest, ModelEvaluation>newBuilder()
@@ -377,6 +401,11 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             settings.exportModelOperationSettings(),
             clientContext,
             operationsStub);
+    this.importModelEvaluationCallable =
+        callableFactory.createUnaryCallable(
+            importModelEvaluationTransportSettings,
+            settings.importModelEvaluationSettings(),
+            clientContext);
     this.getModelEvaluationCallable =
         callableFactory.createUnaryCallable(
             getModelEvaluationTransportSettings,
@@ -467,6 +496,12 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   public OperationCallable<ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
       exportModelOperationCallable() {
     return exportModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportModelEvaluationRequest, ModelEvaluation>
+      importModelEvaluationCallable() {
+    return importModelEvaluationCallable;
   }
 
   @Override

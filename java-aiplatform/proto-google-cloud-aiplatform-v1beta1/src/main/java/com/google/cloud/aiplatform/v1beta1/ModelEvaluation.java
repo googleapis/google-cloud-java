@@ -1281,13 +1281,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Points to a YAML file stored on Google Cloud Storage describing the
+   * Points to a YAML file stored on Google Cloud Storage describing the
    * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
    * defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
-   * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string metrics_schema_uri = 2;</code>
    *
    * @return The metricsSchemaUri.
    */
@@ -1307,13 +1307,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Points to a YAML file stored on Google Cloud Storage describing the
+   * Points to a YAML file stored on Google Cloud Storage describing the
    * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
    * defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
-   * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string metrics_schema_uri = 2;</code>
    *
    * @return The bytes for metricsSchemaUri.
    */
@@ -1336,11 +1336,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+   * Evaluation metrics of the Model. The schema of the metrics is stored in
    * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
    * </pre>
    *
-   * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Value metrics = 3;</code>
    *
    * @return Whether the metrics field is set.
    */
@@ -1352,11 +1352,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+   * Evaluation metrics of the Model. The schema of the metrics is stored in
    * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
    * </pre>
    *
-   * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Value metrics = 3;</code>
    *
    * @return The metrics.
    */
@@ -1368,11 +1368,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+   * Evaluation metrics of the Model. The schema of the metrics is stored in
    * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
    * </pre>
    *
-   * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Value metrics = 3;</code>
    */
   @java.lang.Override
   public com.google.protobuf.ValueOrBuilder getMetricsOrBuilder() {
@@ -1434,13 +1434,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
    * ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
    * `slice.dimension = &lt;dimension&gt;`.
    * </pre>
    *
-   * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string slice_dimensions = 5;</code>
    *
    * @return A list containing the sliceDimensions.
    */
@@ -1451,13 +1451,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
    * ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
    * `slice.dimension = &lt;dimension&gt;`.
    * </pre>
    *
-   * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string slice_dimensions = 5;</code>
    *
    * @return The count of sliceDimensions.
    */
@@ -1468,13 +1468,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
    * ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
    * `slice.dimension = &lt;dimension&gt;`.
    * </pre>
    *
-   * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string slice_dimensions = 5;</code>
    *
    * @param index The index of the element to return.
    * @return The sliceDimensions at the given index.
@@ -1486,13 +1486,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
    * ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
    * `slice.dimension = &lt;dimension&gt;`.
    * </pre>
    *
-   * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string slice_dimensions = 5;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the sliceDimensions at the given index.
@@ -1507,14 +1507,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Aggregated explanation metrics for the Model's prediction output over the
+   * Aggregated explanation metrics for the Model's prediction output over the
    * data this ModelEvaluation uses. This field is populated only if the Model
    * is evaluated with explanations, and only for AutoML tabular Models.
    * </pre>
    *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
    *
    * @return Whether the modelExplanation field is set.
    */
@@ -1526,14 +1524,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Aggregated explanation metrics for the Model's prediction output over the
+   * Aggregated explanation metrics for the Model's prediction output over the
    * data this ModelEvaluation uses. This field is populated only if the Model
    * is evaluated with explanations, and only for AutoML tabular Models.
    * </pre>
    *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
    *
    * @return The modelExplanation.
    */
@@ -1547,14 +1543,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Aggregated explanation metrics for the Model's prediction output over the
+   * Aggregated explanation metrics for the Model's prediction output over the
    * data this ModelEvaluation uses. This field is populated only if the Model
    * is evaluated with explanations, and only for AutoML tabular Models.
    * </pre>
    *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ModelExplanationOrBuilder
@@ -1570,12 +1564,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
    * the predicted values on the evaluated data.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
    * </code>
    */
   @java.lang.Override
@@ -1588,12 +1582,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
    * the predicted values on the evaluated data.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
    * </code>
    */
   @java.lang.Override
@@ -1608,12 +1602,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
    * the predicted values on the evaluated data.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
    * </code>
    */
   @java.lang.Override
@@ -1624,12 +1618,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
    * the predicted values on the evaluated data.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
    * </code>
    */
   @java.lang.Override
@@ -1641,12 +1635,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
    * the predicted values on the evaluated data.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
    * </code>
    */
   @java.lang.Override
@@ -2276,13 +2270,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Points to a YAML file stored on Google Cloud Storage describing the
+     * Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
      * defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
-     * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string metrics_schema_uri = 2;</code>
      *
      * @return The metricsSchemaUri.
      */
@@ -2301,13 +2295,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Points to a YAML file stored on Google Cloud Storage describing the
+     * Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
      * defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
-     * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string metrics_schema_uri = 2;</code>
      *
      * @return The bytes for metricsSchemaUri.
      */
@@ -2326,13 +2320,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Points to a YAML file stored on Google Cloud Storage describing the
+     * Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
      * defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
-     * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string metrics_schema_uri = 2;</code>
      *
      * @param value The metricsSchemaUri to set.
      * @return This builder for chaining.
@@ -2350,13 +2344,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Points to a YAML file stored on Google Cloud Storage describing the
+     * Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
      * defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
-     * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string metrics_schema_uri = 2;</code>
      *
      * @return This builder for chaining.
      */
@@ -2370,13 +2364,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Points to a YAML file stored on Google Cloud Storage describing the
+     * Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
      * defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
-     * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string metrics_schema_uri = 2;</code>
      *
      * @param value The bytes for metricsSchemaUri to set.
      * @return This builder for chaining.
@@ -2402,11 +2396,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+     * Evaluation metrics of the Model. The schema of the metrics is stored in
      * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
      * </pre>
      *
-     * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Value metrics = 3;</code>
      *
      * @return Whether the metrics field is set.
      */
@@ -2417,11 +2411,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+     * Evaluation metrics of the Model. The schema of the metrics is stored in
      * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
      * </pre>
      *
-     * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Value metrics = 3;</code>
      *
      * @return The metrics.
      */
@@ -2436,11 +2430,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+     * Evaluation metrics of the Model. The schema of the metrics is stored in
      * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
      * </pre>
      *
-     * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Value metrics = 3;</code>
      */
     public Builder setMetrics(com.google.protobuf.Value value) {
       if (metricsBuilder_ == null) {
@@ -2459,11 +2453,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+     * Evaluation metrics of the Model. The schema of the metrics is stored in
      * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
      * </pre>
      *
-     * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Value metrics = 3;</code>
      */
     public Builder setMetrics(com.google.protobuf.Value.Builder builderForValue) {
       if (metricsBuilder_ == null) {
@@ -2479,11 +2473,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+     * Evaluation metrics of the Model. The schema of the metrics is stored in
      * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
      * </pre>
      *
-     * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Value metrics = 3;</code>
      */
     public Builder mergeMetrics(com.google.protobuf.Value value) {
       if (metricsBuilder_ == null) {
@@ -2503,11 +2497,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+     * Evaluation metrics of the Model. The schema of the metrics is stored in
      * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
      * </pre>
      *
-     * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Value metrics = 3;</code>
      */
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
@@ -2524,11 +2518,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+     * Evaluation metrics of the Model. The schema of the metrics is stored in
      * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
      * </pre>
      *
-     * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Value metrics = 3;</code>
      */
     public com.google.protobuf.Value.Builder getMetricsBuilder() {
 
@@ -2539,11 +2533,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+     * Evaluation metrics of the Model. The schema of the metrics is stored in
      * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
      * </pre>
      *
-     * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Value metrics = 3;</code>
      */
     public com.google.protobuf.ValueOrBuilder getMetricsOrBuilder() {
       if (metricsBuilder_ != null) {
@@ -2556,11 +2550,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+     * Evaluation metrics of the Model. The schema of the metrics is stored in
      * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
      * </pre>
      *
-     * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Value metrics = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Value,
@@ -2793,14 +2787,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
      * ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
      * `slice.dimension = &lt;dimension&gt;`.
      * </pre>
      *
-     * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string slice_dimensions = 5;</code>
      *
      * @return A list containing the sliceDimensions.
      */
@@ -2811,14 +2804,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
      * ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
      * `slice.dimension = &lt;dimension&gt;`.
      * </pre>
      *
-     * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string slice_dimensions = 5;</code>
      *
      * @return The count of sliceDimensions.
      */
@@ -2829,14 +2821,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
      * ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
      * `slice.dimension = &lt;dimension&gt;`.
      * </pre>
      *
-     * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string slice_dimensions = 5;</code>
      *
      * @param index The index of the element to return.
      * @return The sliceDimensions at the given index.
@@ -2848,14 +2839,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
      * ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
      * `slice.dimension = &lt;dimension&gt;`.
      * </pre>
      *
-     * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string slice_dimensions = 5;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the sliceDimensions at the given index.
@@ -2867,14 +2857,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
      * ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
      * `slice.dimension = &lt;dimension&gt;`.
      * </pre>
      *
-     * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string slice_dimensions = 5;</code>
      *
      * @param index The index to set the value at.
      * @param value The sliceDimensions to set.
@@ -2893,14 +2882,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
      * ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
      * `slice.dimension = &lt;dimension&gt;`.
      * </pre>
      *
-     * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string slice_dimensions = 5;</code>
      *
      * @param value The sliceDimensions to add.
      * @return This builder for chaining.
@@ -2918,14 +2906,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
      * ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
      * `slice.dimension = &lt;dimension&gt;`.
      * </pre>
      *
-     * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string slice_dimensions = 5;</code>
      *
      * @param values The sliceDimensions to add.
      * @return This builder for chaining.
@@ -2940,14 +2927,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
      * ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
      * `slice.dimension = &lt;dimension&gt;`.
      * </pre>
      *
-     * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string slice_dimensions = 5;</code>
      *
      * @return This builder for chaining.
      */
@@ -2961,14 +2947,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
      * ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
      * `slice.dimension = &lt;dimension&gt;`.
      * </pre>
      *
-     * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string slice_dimensions = 5;</code>
      *
      * @param value The bytes of the sliceDimensions to add.
      * @return This builder for chaining.
@@ -2994,14 +2979,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * Aggregated explanation metrics for the Model's prediction output over the
      * data this ModelEvaluation uses. This field is populated only if the Model
      * is evaluated with explanations, and only for AutoML tabular Models.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
      *
      * @return Whether the modelExplanation field is set.
      */
@@ -3012,14 +2995,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * Aggregated explanation metrics for the Model's prediction output over the
      * data this ModelEvaluation uses. This field is populated only if the Model
      * is evaluated with explanations, and only for AutoML tabular Models.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
      *
      * @return The modelExplanation.
      */
@@ -3036,14 +3017,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * Aggregated explanation metrics for the Model's prediction output over the
      * data this ModelEvaluation uses. This field is populated only if the Model
      * is evaluated with explanations, and only for AutoML tabular Models.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
      */
     public Builder setModelExplanation(com.google.cloud.aiplatform.v1beta1.ModelExplanation value) {
       if (modelExplanationBuilder_ == null) {
@@ -3062,14 +3041,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * Aggregated explanation metrics for the Model's prediction output over the
      * data this ModelEvaluation uses. This field is populated only if the Model
      * is evaluated with explanations, and only for AutoML tabular Models.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
      */
     public Builder setModelExplanation(
         com.google.cloud.aiplatform.v1beta1.ModelExplanation.Builder builderForValue) {
@@ -3086,14 +3063,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * Aggregated explanation metrics for the Model's prediction output over the
      * data this ModelEvaluation uses. This field is populated only if the Model
      * is evaluated with explanations, and only for AutoML tabular Models.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
      */
     public Builder mergeModelExplanation(
         com.google.cloud.aiplatform.v1beta1.ModelExplanation value) {
@@ -3117,14 +3092,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * Aggregated explanation metrics for the Model's prediction output over the
      * data this ModelEvaluation uses. This field is populated only if the Model
      * is evaluated with explanations, and only for AutoML tabular Models.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
      */
     public Builder clearModelExplanation() {
       if (modelExplanationBuilder_ == null) {
@@ -3141,14 +3114,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * Aggregated explanation metrics for the Model's prediction output over the
      * data this ModelEvaluation uses. This field is populated only if the Model
      * is evaluated with explanations, and only for AutoML tabular Models.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.ModelExplanation.Builder
         getModelExplanationBuilder() {
@@ -3160,14 +3131,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * Aggregated explanation metrics for the Model's prediction output over the
      * data this ModelEvaluation uses. This field is populated only if the Model
      * is evaluated with explanations, and only for AutoML tabular Models.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.ModelExplanationOrBuilder
         getModelExplanationOrBuilder() {
@@ -3183,14 +3152,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * Aggregated explanation metrics for the Model's prediction output over the
      * data this ModelEvaluation uses. This field is populated only if the Model
      * is evaluated with explanations, and only for AutoML tabular Models.
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.ModelExplanation,
@@ -3235,12 +3202,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public java.util.List<
@@ -3256,12 +3223,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public int getExplanationSpecsCount() {
@@ -3275,12 +3242,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
@@ -3295,12 +3262,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public Builder setExplanationSpecs(
@@ -3322,12 +3289,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public Builder setExplanationSpecs(
@@ -3347,12 +3314,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public Builder addExplanationSpecs(
@@ -3373,12 +3340,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public Builder addExplanationSpecs(
@@ -3400,12 +3367,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public Builder addExplanationSpecs(
@@ -3424,12 +3391,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public Builder addExplanationSpecs(
@@ -3449,12 +3416,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public Builder addAllExplanationSpecs(
@@ -3476,12 +3443,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public Builder clearExplanationSpecs() {
@@ -3498,12 +3465,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public Builder removeExplanationSpecs(int index) {
@@ -3520,12 +3487,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
@@ -3537,12 +3504,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.ModelEvaluation
@@ -3558,12 +3525,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public java.util.List<
@@ -3581,12 +3548,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
@@ -3601,12 +3568,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
@@ -3622,12 +3589,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
      * the predicted values on the evaluated data.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
      * </code>
      */
     public java.util.List<

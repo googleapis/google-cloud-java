@@ -301,6 +301,56 @@ public final class ModelServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest,
+          com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
+      getImportModelEvaluationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportModelEvaluation",
+      requestType = com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.ModelEvaluation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest,
+          com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
+      getImportModelEvaluationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest,
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
+        getImportModelEvaluationMethod;
+    if ((getImportModelEvaluationMethod = ModelServiceGrpc.getImportModelEvaluationMethod)
+        == null) {
+      synchronized (ModelServiceGrpc.class) {
+        if ((getImportModelEvaluationMethod = ModelServiceGrpc.getImportModelEvaluationMethod)
+            == null) {
+          ModelServiceGrpc.getImportModelEvaluationMethod =
+              getImportModelEvaluationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest,
+                          com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ImportModelEvaluation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelServiceMethodDescriptorSupplier("ImportModelEvaluation"))
+                      .build();
+        }
+      }
+    }
+    return getImportModelEvaluationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.GetModelEvaluationRequest,
           com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
       getGetModelEvaluationMethod;
@@ -639,6 +689,21 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Imports an externally generated ModelEvaluation.
+     * </pre>
+     */
+    public void importModelEvaluation(
+        com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportModelEvaluationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a ModelEvaluation.
      * </pre>
      */
@@ -737,6 +802,13 @@ public final class ModelServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.ExportModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_MODEL)))
+          .addMethod(
+              getImportModelEvaluationMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest,
+                      com.google.cloud.aiplatform.v1beta1.ModelEvaluation>(
+                      this, METHODID_IMPORT_MODEL_EVALUATION)))
           .addMethod(
               getGetModelEvaluationMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -881,6 +953,23 @@ public final class ModelServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExportModelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an externally generated ModelEvaluation.
+     * </pre>
+     */
+    public void importModelEvaluation(
+        com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportModelEvaluationMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1062,6 +1151,19 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Imports an externally generated ModelEvaluation.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation importModelEvaluation(
+        com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportModelEvaluationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a ModelEvaluation.
      * </pre>
      */
@@ -1221,6 +1323,21 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Imports an externally generated ModelEvaluation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
+        importModelEvaluation(
+            com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportModelEvaluationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a ModelEvaluation.
      * </pre>
      */
@@ -1283,10 +1400,11 @@ public final class ModelServiceGrpc {
   private static final int METHODID_UPDATE_MODEL = 3;
   private static final int METHODID_DELETE_MODEL = 4;
   private static final int METHODID_EXPORT_MODEL = 5;
-  private static final int METHODID_GET_MODEL_EVALUATION = 6;
-  private static final int METHODID_LIST_MODEL_EVALUATIONS = 7;
-  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 8;
-  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 9;
+  private static final int METHODID_IMPORT_MODEL_EVALUATION = 6;
+  private static final int METHODID_GET_MODEL_EVALUATION = 7;
+  private static final int METHODID_LIST_MODEL_EVALUATIONS = 8;
+  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 9;
+  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1337,6 +1455,12 @@ public final class ModelServiceGrpc {
           serviceImpl.exportModel(
               (com.google.cloud.aiplatform.v1beta1.ExportModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_IMPORT_MODEL_EVALUATION:
+          serviceImpl.importModelEvaluation(
+              (com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ModelEvaluation>)
+                  responseObserver);
           break;
         case METHODID_GET_MODEL_EVALUATION:
           serviceImpl.getModelEvaluation(
@@ -1435,6 +1559,7 @@ public final class ModelServiceGrpc {
                       .addMethod(getUpdateModelMethod())
                       .addMethod(getDeleteModelMethod())
                       .addMethod(getExportModelMethod())
+                      .addMethod(getImportModelEvaluationMethod())
                       .addMethod(getGetModelEvaluationMethod())
                       .addMethod(getListModelEvaluationsMethod())
                       .addMethod(getGetModelEvaluationSliceMethod())

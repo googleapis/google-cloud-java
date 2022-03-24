@@ -181,6 +181,27 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   }
 
   @Override
+  public void importModelEvaluation(
+      ImportModelEvaluationRequest request, StreamObserver<ModelEvaluation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ModelEvaluation) {
+      requests.add(request);
+      responseObserver.onNext(((ModelEvaluation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportModelEvaluation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ModelEvaluation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getModelEvaluation(
       GetModelEvaluationRequest request, StreamObserver<ModelEvaluation> responseObserver) {
     Object response = responses.poll();

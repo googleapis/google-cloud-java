@@ -54,6 +54,7 @@ import com.google.cloud.aiplatform.v1.ExportModelResponse;
 import com.google.cloud.aiplatform.v1.GetModelEvaluationRequest;
 import com.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest;
 import com.google.cloud.aiplatform.v1.GetModelRequest;
+import com.google.cloud.aiplatform.v1.ImportModelEvaluationRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest;
@@ -131,6 +132,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   private final OperationCallSettings<
           ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
       exportModelOperationSettings;
+  private final UnaryCallSettings<ImportModelEvaluationRequest, ModelEvaluation>
+      importModelEvaluationSettings;
   private final UnaryCallSettings<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationSettings;
   private final PagedCallSettings<
@@ -390,6 +393,12 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     return exportModelOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to importModelEvaluation. */
+  public UnaryCallSettings<ImportModelEvaluationRequest, ModelEvaluation>
+      importModelEvaluationSettings() {
+    return importModelEvaluationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getModelEvaluation. */
   public UnaryCallSettings<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationSettings() {
@@ -505,6 +514,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     deleteModelOperationSettings = settingsBuilder.deleteModelOperationSettings().build();
     exportModelSettings = settingsBuilder.exportModelSettings().build();
     exportModelOperationSettings = settingsBuilder.exportModelOperationSettings().build();
+    importModelEvaluationSettings = settingsBuilder.importModelEvaluationSettings().build();
     getModelEvaluationSettings = settingsBuilder.getModelEvaluationSettings().build();
     listModelEvaluationsSettings = settingsBuilder.listModelEvaluationsSettings().build();
     getModelEvaluationSliceSettings = settingsBuilder.getModelEvaluationSliceSettings().build();
@@ -530,6 +540,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     private final OperationCallSettings.Builder<
             ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
         exportModelOperationSettings;
+    private final UnaryCallSettings.Builder<ImportModelEvaluationRequest, ModelEvaluation>
+        importModelEvaluationSettings;
     private final UnaryCallSettings.Builder<GetModelEvaluationRequest, ModelEvaluation>
         getModelEvaluationSettings;
     private final PagedCallSettings.Builder<
@@ -580,6 +592,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       deleteModelOperationSettings = OperationCallSettings.newBuilder();
       exportModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportModelOperationSettings = OperationCallSettings.newBuilder();
+      importModelEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getModelEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listModelEvaluationsSettings =
           PagedCallSettings.newBuilder(LIST_MODEL_EVALUATIONS_PAGE_STR_FACT);
@@ -595,6 +608,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               updateModelSettings,
               deleteModelSettings,
               exportModelSettings,
+              importModelEvaluationSettings,
               getModelEvaluationSettings,
               listModelEvaluationsSettings,
               getModelEvaluationSliceSettings,
@@ -614,6 +628,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       deleteModelOperationSettings = settings.deleteModelOperationSettings.toBuilder();
       exportModelSettings = settings.exportModelSettings.toBuilder();
       exportModelOperationSettings = settings.exportModelOperationSettings.toBuilder();
+      importModelEvaluationSettings = settings.importModelEvaluationSettings.toBuilder();
       getModelEvaluationSettings = settings.getModelEvaluationSettings.toBuilder();
       listModelEvaluationsSettings = settings.listModelEvaluationsSettings.toBuilder();
       getModelEvaluationSliceSettings = settings.getModelEvaluationSliceSettings.toBuilder();
@@ -627,6 +642,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               updateModelSettings,
               deleteModelSettings,
               exportModelSettings,
+              importModelEvaluationSettings,
               getModelEvaluationSettings,
               listModelEvaluationsSettings,
               getModelEvaluationSliceSettings,
@@ -674,6 +690,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
       builder
           .exportModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .importModelEvaluationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -841,6 +862,12 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
         exportModelOperationSettings() {
       return exportModelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importModelEvaluation. */
+    public UnaryCallSettings.Builder<ImportModelEvaluationRequest, ModelEvaluation>
+        importModelEvaluationSettings() {
+      return importModelEvaluationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getModelEvaluation. */

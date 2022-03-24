@@ -637,6 +637,110 @@ public class ModelServiceClientTest {
   }
 
   @Test
+  public void importModelEvaluationTest() throws Exception {
+    ModelEvaluation expectedResponse =
+        ModelEvaluation.newBuilder()
+            .setName(
+                ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
+                    .toString())
+            .setMetricsSchemaUri("metricsSchemaUri-182209912")
+            .setMetrics(Value.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllSliceDimensions(new ArrayList<String>())
+            .setDataItemSchemaUri("dataItemSchemaUri-154921298")
+            .setAnnotationSchemaUri("annotationSchemaUri1480032668")
+            .setModelExplanation(ModelExplanation.newBuilder().build())
+            .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+    ModelEvaluation modelEvaluation = ModelEvaluation.newBuilder().build();
+
+    ModelEvaluation actualResponse = client.importModelEvaluation(parent, modelEvaluation);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportModelEvaluationRequest actualRequest =
+        ((ImportModelEvaluationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(modelEvaluation, actualRequest.getModelEvaluation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importModelEvaluationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      ModelEvaluation modelEvaluation = ModelEvaluation.newBuilder().build();
+      client.importModelEvaluation(parent, modelEvaluation);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void importModelEvaluationTest2() throws Exception {
+    ModelEvaluation expectedResponse =
+        ModelEvaluation.newBuilder()
+            .setName(
+                ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
+                    .toString())
+            .setMetricsSchemaUri("metricsSchemaUri-182209912")
+            .setMetrics(Value.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllSliceDimensions(new ArrayList<String>())
+            .setDataItemSchemaUri("dataItemSchemaUri-154921298")
+            .setAnnotationSchemaUri("annotationSchemaUri1480032668")
+            .setModelExplanation(ModelExplanation.newBuilder().build())
+            .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    ModelEvaluation modelEvaluation = ModelEvaluation.newBuilder().build();
+
+    ModelEvaluation actualResponse = client.importModelEvaluation(parent, modelEvaluation);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportModelEvaluationRequest actualRequest =
+        ((ImportModelEvaluationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(modelEvaluation, actualRequest.getModelEvaluation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importModelEvaluationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ModelEvaluation modelEvaluation = ModelEvaluation.newBuilder().build();
+      client.importModelEvaluation(parent, modelEvaluation);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getModelEvaluationTest() throws Exception {
     ModelEvaluation expectedResponse =
         ModelEvaluation.newBuilder()
@@ -647,7 +751,10 @@ public class ModelServiceClientTest {
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
+            .setDataItemSchemaUri("dataItemSchemaUri-154921298")
+            .setAnnotationSchemaUri("annotationSchemaUri1480032668")
             .setModelExplanation(ModelExplanation.newBuilder().build())
+            .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -694,7 +801,10 @@ public class ModelServiceClientTest {
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
+            .setDataItemSchemaUri("dataItemSchemaUri-154921298")
+            .setAnnotationSchemaUri("annotationSchemaUri1480032668")
             .setModelExplanation(ModelExplanation.newBuilder().build())
+            .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
             .build();
     mockModelService.addResponse(expectedResponse);
 

@@ -52,13 +52,13 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Points to a YAML file stored on Google Cloud Storage describing the
+   * Points to a YAML file stored on Google Cloud Storage describing the
    * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
    * defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
-   * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string metrics_schema_uri = 2;</code>
    *
    * @return The metricsSchemaUri.
    */
@@ -67,13 +67,13 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Points to a YAML file stored on Google Cloud Storage describing the
+   * Points to a YAML file stored on Google Cloud Storage describing the
    * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
    * defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
-   * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string metrics_schema_uri = 2;</code>
    *
    * @return The bytes for metricsSchemaUri.
    */
@@ -83,11 +83,11 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+   * Evaluation metrics of the Model. The schema of the metrics is stored in
    * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
    * </pre>
    *
-   * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Value metrics = 3;</code>
    *
    * @return Whether the metrics field is set.
    */
@@ -96,11 +96,11 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+   * Evaluation metrics of the Model. The schema of the metrics is stored in
    * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
    * </pre>
    *
-   * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Value metrics = 3;</code>
    *
    * @return The metrics.
    */
@@ -109,11 +109,11 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
+   * Evaluation metrics of the Model. The schema of the metrics is stored in
    * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
    * </pre>
    *
-   * <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Value metrics = 3;</code>
    */
   com.google.protobuf.ValueOrBuilder getMetricsOrBuilder();
 
@@ -159,13 +159,13 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
    * ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
    * `slice.dimension = &lt;dimension&gt;`.
    * </pre>
    *
-   * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string slice_dimensions = 5;</code>
    *
    * @return A list containing the sliceDimensions.
    */
@@ -174,13 +174,13 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
    * ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
    * `slice.dimension = &lt;dimension&gt;`.
    * </pre>
    *
-   * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string slice_dimensions = 5;</code>
    *
    * @return The count of sliceDimensions.
    */
@@ -189,13 +189,13 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
    * ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
    * `slice.dimension = &lt;dimension&gt;`.
    * </pre>
    *
-   * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string slice_dimensions = 5;</code>
    *
    * @param index The index of the element to return.
    * @return The sliceDimensions at the given index.
@@ -205,13 +205,13 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
+   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
    * ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] request, in the form of
    * `slice.dimension = &lt;dimension&gt;`.
    * </pre>
    *
-   * <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string slice_dimensions = 5;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the sliceDimensions at the given index.
@@ -222,14 +222,12 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Aggregated explanation metrics for the Model's prediction output over the
+   * Aggregated explanation metrics for the Model's prediction output over the
    * data this ModelEvaluation uses. This field is populated only if the Model
    * is evaluated with explanations, and only for AutoML tabular Models.
    * </pre>
    *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
    *
    * @return Whether the modelExplanation field is set.
    */
@@ -238,14 +236,12 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Aggregated explanation metrics for the Model's prediction output over the
+   * Aggregated explanation metrics for the Model's prediction output over the
    * data this ModelEvaluation uses. This field is populated only if the Model
    * is evaluated with explanations, and only for AutoML tabular Models.
    * </pre>
    *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
    *
    * @return The modelExplanation.
    */
@@ -254,14 +250,12 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Aggregated explanation metrics for the Model's prediction output over the
+   * Aggregated explanation metrics for the Model's prediction output over the
    * data this ModelEvaluation uses. This field is populated only if the Model
    * is evaluated with explanations, and only for AutoML tabular Models.
    * </pre>
    *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8;</code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelExplanationOrBuilder getModelExplanationOrBuilder();
 
@@ -269,12 +263,12 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
    * the predicted values on the evaluated data.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec>
@@ -283,12 +277,12 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
    * the predicted values on the evaluated data.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
@@ -297,12 +291,12 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
    * the predicted values on the evaluated data.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
    * </code>
    */
   int getExplanationSpecsCount();
@@ -310,12 +304,12 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
    * the predicted values on the evaluated data.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
    * </code>
    */
   java.util.List<
@@ -327,12 +321,12 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
    * the predicted values on the evaluated data.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9;
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpecOrBuilder
