@@ -553,8 +553,8 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The name of the project to get a vulnerability summary for in the form of
-   *     `projects/[PROJECT_ID]`.
+   * @param parent Required. The name of the project to get a vulnerability summary for in the form
+   *     of `projects/[PROJECT_ID]`.
    * @param filter The filter expression.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -583,8 +583,8 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The name of the project to get a vulnerability summary for in the form of
-   *     `projects/[PROJECT_ID]`.
+   * @param parent Required. The name of the project to get a vulnerability summary for in the form
+   *     of `projects/[PROJECT_ID]`.
    * @param filter The filter expression.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
