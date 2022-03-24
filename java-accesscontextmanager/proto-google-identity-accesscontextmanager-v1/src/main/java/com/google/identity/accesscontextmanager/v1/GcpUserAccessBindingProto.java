@@ -44,23 +44,22 @@ public final class GcpUserAccessBindingProto {
           + "1/gcp_user_access_binding.proto\022\'google."
           + "identity.accesscontextmanager.v1\032\037google"
           + "/api/field_behavior.proto\032\031google/api/re"
-          + "source.proto\032\034google/api/annotations.pro"
-          + "to\"\243\002\n\024GcpUserAccessBinding\022\021\n\004name\030\001 \001("
-          + "\tB\003\340A\005\022\031\n\tgroup_key\030\002 \001(\tB\006\340A\002\340A\005\022N\n\racc"
-          + "ess_levels\030\003 \003(\tB7\340A\002\372A1\n/accesscontextm"
-          + "anager.googleapis.com/AccessLevel:\214\001\352A\210\001"
-          + "\n8accesscontextmanager.googleapis.com/Gc"
-          + "pUserAccessBinding\022Lorganizations/{organ"
-          + "ization}/gcpUserAccessBindings/{gcp_user"
-          + "_access_binding}B\257\002\n+com.google.identity"
-          + ".accesscontextmanager.v1B\031GcpUserAccessB"
-          + "indingProtoP\001Z[google.golang.org/genprot"
-          + "o/googleapis/identity/accesscontextmanag"
-          + "er/v1;accesscontextmanager\242\002\004GACM\252\002\'Goog"
-          + "le.Identity.AccessContextManager.V1\312\002\'Go"
-          + "ogle\\Identity\\AccessContextManager\\V1\352\002*"
-          + "Google::Identity::AccessContextManager::"
-          + "V1b\006proto3"
+          + "source.proto\"\243\002\n\024GcpUserAccessBinding\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\005\022\031\n\tgroup_key\030\002 \001(\tB\006\340A\002"
+          + "\340A\005\022N\n\raccess_levels\030\003 \003(\tB7\340A\002\372A1\n/acce"
+          + "sscontextmanager.googleapis.com/AccessLe"
+          + "vel:\214\001\352A\210\001\n8accesscontextmanager.googlea"
+          + "pis.com/GcpUserAccessBinding\022Lorganizati"
+          + "ons/{organization}/gcpUserAccessBindings"
+          + "/{gcp_user_access_binding}B\257\002\n+com.googl"
+          + "e.identity.accesscontextmanager.v1B\031GcpU"
+          + "serAccessBindingProtoP\001Z[google.golang.o"
+          + "rg/genproto/googleapis/identity/accessco"
+          + "ntextmanager/v1;accesscontextmanager\242\002\004G"
+          + "ACM\252\002\'Google.Identity.AccessContextManag"
+          + "er.V1\312\002\'Google\\Identity\\AccessContextMan"
+          + "ager\\V1\352\002*Google::Identity::AccessContex"
+          + "tManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -68,7 +67,6 @@ public final class GcpUserAccessBindingProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_identity_accesscontextmanager_v1_GcpUserAccessBinding_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -87,7 +85,6 @@ public final class GcpUserAccessBindingProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

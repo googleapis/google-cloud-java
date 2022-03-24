@@ -44,21 +44,21 @@ public final class PolicyProto {
           + "1/access_policy.proto\022\'google.identity.a"
           + "ccesscontextmanager.v1\032\031google/api/resou"
           + "rce.proto\032\037google/protobuf/timestamp.pro"
-          + "to\032\034google/api/annotations.proto\"\202\002\n\014Acc"
-          + "essPolicy\022\014\n\004name\030\001 \001(\t\022\016\n\006parent\030\002 \001(\t\022"
-          + "\r\n\005title\030\003 \001(\t\022/\n\013create_time\030\004 \001(\0132\032.go"
-          + "ogle.protobuf.Timestamp\022/\n\013update_time\030\005"
-          + " \001(\0132\032.google.protobuf.Timestamp\022\014\n\004etag"
-          + "\030\006 \001(\t:U\352AR\n0accesscontextmanager.google"
-          + "apis.com/AccessPolicy\022\036accessPolicies/{a"
-          + "ccess_policy}B\241\002\n+com.google.identity.ac"
-          + "cesscontextmanager.v1B\013PolicyProtoP\001Z[go"
-          + "ogle.golang.org/genproto/googleapis/iden"
-          + "tity/accesscontextmanager/v1;accessconte"
-          + "xtmanager\242\002\004GACM\252\002\'Google.Identity.Acces"
-          + "sContextManager.V1\312\002\'Google\\Identity\\Acc"
-          + "essContextManager\\V1\352\002*Google::Identity:"
-          + ":AccessContextManager::V1b\006proto3"
+          + "to\"\202\002\n\014AccessPolicy\022\014\n\004name\030\001 \001(\t\022\016\n\006par"
+          + "ent\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\022/\n\013create_time\030"
+          + "\004 \001(\0132\032.google.protobuf.Timestamp\022/\n\013upd"
+          + "ate_time\030\005 \001(\0132\032.google.protobuf.Timesta"
+          + "mp\022\014\n\004etag\030\006 \001(\t:U\352AR\n0accesscontextmana"
+          + "ger.googleapis.com/AccessPolicy\022\036accessP"
+          + "olicies/{access_policy}B\241\002\n+com.google.i"
+          + "dentity.accesscontextmanager.v1B\013PolicyP"
+          + "rotoP\001Z[google.golang.org/genproto/googl"
+          + "eapis/identity/accesscontextmanager/v1;a"
+          + "ccesscontextmanager\242\002\004GACM\252\002\'Google.Iden"
+          + "tity.AccessContextManager.V1\312\002\'Google\\Id"
+          + "entity\\AccessContextManager\\V1\352\002*Google:"
+          + ":Identity::AccessContextManager::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -66,7 +66,6 @@ public final class PolicyProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_identity_accesscontextmanager_v1_AccessPolicy_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -83,7 +82,6 @@ public final class PolicyProto {
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
