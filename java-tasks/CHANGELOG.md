@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.1.9](https://github.com/googleapis/java-tasks/compare/v2.1.8...v2.1.9) (2022-03-24)
+
+
+### Dependencies
+
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.11 ([#653](https://github.com/googleapis/java-tasks/issues/653)) ([10eae14](https://github.com/googleapis/java-tasks/commit/10eae14f22bd2c4aea147b5d94e1637b3a2a3f73))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.11 ([#654](https://github.com/googleapis/java-tasks/issues/654)) ([7a5b271](https://github.com/googleapis/java-tasks/commit/7a5b271f1bc4793633fcf7c89ef844be8629e0c7))
+
 ### [2.1.8](https://github.com/googleapis/java-tasks/compare/v2.1.7...v2.1.8) (2022-03-14)
 
 
