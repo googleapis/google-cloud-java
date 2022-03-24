@@ -23,6 +23,7 @@ for library in s.get_staging_dirs():
 s.remove_staging_dirs()
 java.common_templates(
     excludes=[
-        ".kokoro/dependencies.sh"
+        ".kokoro/dependencies.sh",
+        ".kokoro/nightly/integration.cfg"
     ]
 )
