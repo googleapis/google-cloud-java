@@ -8,6 +8,7 @@ jobs:
   upper-bound-check:
     name: Upper-bound check
     runs-on: ubuntu-latest
+    if: github.repository_owner == 'googleapis' && github.head_ref == 'release-please--branches--main'
     steps:
       - uses: actions/checkout@v2
       - uses: stCarolas/setup-maven@v4
@@ -25,6 +26,7 @@ jobs:
   grpc-convergence-check:
     name: gRPC dependency convergence check
     runs-on: ubuntu-latest
+    if: github.repository_owner == 'googleapis' && github.head_ref == 'release-please--branches--main'
     steps:
     - uses: actions/checkout@v2
     - uses: stCarolas/setup-maven@v4
