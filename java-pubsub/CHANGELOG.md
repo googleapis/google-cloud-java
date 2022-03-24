@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.116.2](https://github.com/googleapis/java-pubsub/compare/v1.116.1...v1.116.2) (2022-03-24)
+
+
+### Dependencies
+
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.11 ([#1064](https://github.com/googleapis/java-pubsub/issues/1064)) ([3ebcc5e](https://github.com/googleapis/java-pubsub/commit/3ebcc5e262bf420fd2ba36f26d8b6350b56f989d))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.11 ([#1065](https://github.com/googleapis/java-pubsub/issues/1065)) ([d1ce9c6](https://github.com/googleapis/java-pubsub/commit/d1ce9c6cc9fc9c8030c117bff1b0d2d8e317107c))
+
 ### [1.116.1](https://github.com/googleapis/java-pubsub/compare/v1.116.0...v1.116.1) (2022-03-22)
 
 
