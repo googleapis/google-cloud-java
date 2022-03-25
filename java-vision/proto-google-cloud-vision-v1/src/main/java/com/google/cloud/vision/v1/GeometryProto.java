@@ -53,24 +53,21 @@ public final class GeometryProto {
   static {
     java.lang.String[] descriptorData = {
       "\n%google/cloud/vision/v1/geometry.proto\022"
-          + "\026google.cloud.vision.v1\032\034google/api/anno"
-          + "tations.proto\"\036\n\006Vertex\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030"
-          + "\002 \001(\005\"(\n\020NormalizedVertex\022\t\n\001x\030\001 \001(\002\022\t\n\001"
-          + "y\030\002 \001(\002\"\207\001\n\014BoundingPoly\0220\n\010vertices\030\001 \003"
-          + "(\0132\036.google.cloud.vision.v1.Vertex\022E\n\023no"
-          + "rmalized_vertices\030\002 \003(\0132(.google.cloud.v"
-          + "ision.v1.NormalizedVertex\"+\n\010Position\022\t\n"
-          + "\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002Bu\n\032com.go"
-          + "ogle.cloud.vision.v1B\rGeometryProtoP\001Z<g"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/vision/v1;vision\370\001\001\242\002\004GCVNb\006proto3"
+          + "\026google.cloud.vision.v1\"\036\n\006Vertex\022\t\n\001x\030\001"
+          + " \001(\005\022\t\n\001y\030\002 \001(\005\"(\n\020NormalizedVertex\022\t\n\001x"
+          + "\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"\207\001\n\014BoundingPoly\0220\n\010ve"
+          + "rtices\030\001 \003(\0132\036.google.cloud.vision.v1.Ve"
+          + "rtex\022E\n\023normalized_vertices\030\002 \003(\0132(.goog"
+          + "le.cloud.vision.v1.NormalizedVertex\"+\n\010P"
+          + "osition\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002"
+          + "Bu\n\032com.google.cloud.vision.v1B\rGeometry"
+          + "ProtoP\001Z<google.golang.org/genproto/goog"
+          + "leapis/cloud/vision/v1;vision\370\001\001\242\002\004GCVNb"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_vision_v1_Vertex_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_vision_v1_Vertex_fieldAccessorTable =
@@ -103,7 +100,6 @@ public final class GeometryProto {
             new java.lang.String[] {
               "X", "Y", "Z",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
