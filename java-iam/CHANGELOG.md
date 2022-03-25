@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.11](https://github.com/googleapis/java-iam/compare/v1.2.10...v1.2.11) (2022-03-25)
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v2.1.5 ([#313](https://github.com/googleapis/java-iam/issues/313)) ([b52eee2](https://github.com/googleapis/java-iam/commit/b52eee23a3b6c2b51bbc19929f58f9c5215fb3f4))
+
 ### [1.2.10](https://github.com/googleapis/java-iam/compare/v1.2.9...v1.2.10) (2022-03-10)
 
 
