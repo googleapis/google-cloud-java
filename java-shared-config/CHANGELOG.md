@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.3.1](https://github.com/googleapis/java-shared-config/compare/v1.3.0...v1.3.1) (2022-03-25)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:native-image-support to v0.12.10 ([#443](https://github.com/googleapis/java-shared-config/issues/443)) ([5b39d5e](https://github.com/googleapis/java-shared-config/commit/5b39d5ee15121f052226ff873b6ab101e9c71de5))
+* update dependency com.google.googlejavaformat:google-java-format to v1.15.0 ([#426](https://github.com/googleapis/java-shared-config/issues/426)) ([4c3c4b6](https://github.com/googleapis/java-shared-config/commit/4c3c4b66129632181e6bc363a0ecccf4f5aac914))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.11 ([#448](https://github.com/googleapis/java-shared-config/issues/448)) ([f7f518e](https://github.com/googleapis/java-shared-config/commit/f7f518e87d1d9feb9ac54d7c099f97d8751ee3da))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.11 ([#449](https://github.com/googleapis/java-shared-config/issues/449)) ([3e1c0b5](https://github.com/googleapis/java-shared-config/commit/3e1c0b5a1d2f4a0db88c06a0d683ed90cbc745e2))
+
 ## [1.3.0](https://github.com/googleapis/java-shared-config/compare/v1.2.7...v1.3.0) (2022-03-07)
 
 
