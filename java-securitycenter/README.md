@@ -30,6 +30,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-securitycenter</artifactId>
+    <version>2.3.1</version>
   </dependency>
 
   <dependency>
@@ -55,6 +56,7 @@ If you are using Gradle 5.x or later, add this to your dependencies
 
 ```Groovy
 implementation platform('com.google.cloud:libraries-bom:25.0.0')
+
 
 implementation 'com.google.cloud:google-cloud-securitycenter'
 ```
@@ -117,6 +119,13 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-securitycente
 | List Notification Config Snippets | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/ListNotificationConfigSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/ListNotificationConfigSnippets.java) |
 | Notification Receiver | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/NotificationReceiver.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/NotificationReceiver.java) |
 | Update Notification Config Snippets | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/UpdateNotificationConfigSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/UpdateNotificationConfigSnippets.java) |
+| Bulk Mute Findings | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/BulkMuteFindings.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/BulkMuteFindings.java) |
+| Create Mute Rule | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/CreateMuteRule.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/CreateMuteRule.java) |
+| Delete Mute Rule | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/DeleteMuteRule.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/DeleteMuteRule.java) |
+| Get Mute Rule | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/GetMuteRule.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/GetMuteRule.java) |
+| List Mute Rules | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/ListMuteRules.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/ListMuteRules.java) |
+| Set Mute Unmute Finding | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/SetMuteUnmuteFinding.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/SetMuteUnmuteFinding.java) |
+| Update Mute Rule | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/UpdateMuteRule.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/UpdateMuteRule.java) |
 
 
 
