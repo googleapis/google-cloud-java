@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.0.16](https://github.com/googleapis/java-retail/compare/v2.0.15...v2.0.16) (2022-03-25)
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#311](https://github.com/googleapis/java-retail/issues/311)) ([45f45c1](https://github.com/googleapis/java-retail/commit/45f45c1fbbbfb53843301bb42c9900f015a0c7e1))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.2 ([#375](https://github.com/googleapis/java-retail/issues/375)) ([3e4d951](https://github.com/googleapis/java-retail/commit/3e4d9510bab8ae8ab97e12bf1a37fd5040f30254))
+
 ### [2.0.15](https://github.com/googleapis/java-retail/compare/v2.0.14...v2.0.15) (2022-03-21)
 
 
