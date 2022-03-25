@@ -19,9 +19,8 @@ package com.example.dialogflow;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest;
-import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
-import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
+import com.google.cloud.dialogflow.v2.DeleteKnowledgeBaseRequest;
+import com.google.cloud.dialogflow.v2.KnowledgeBasesClient;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -38,13 +37,23 @@ import org.junit.runners.JUnit4;
 public class CreateKnowledgeBaseTest {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String LOCATION = "global";
+  private static final String ID_PREFIX_IN_OUTPUT = "Name: ";
   private static String KNOWLEDGE_DISPLAY_NAME = UUID.randomUUID().toString();
-  private ByteArrayOutputStream bout;
-  private PrintStream out;
   private String knowledgeBaseName;
+  private ByteArrayOutputStream bout;
+  private PrintStream newOutputStream;
+  private PrintStream originalOutputStream;
 
   private static void requireEnvVar(String varName) {
-    assertNotNull(String.format(varName), String.format(varName));
+    assertNotNull(System.getenv(varName));
+  }
+
+  // Extract the name of created resource from "Name: %s\n" in sample code output
+  private static String getResourceNameFromOutputString(String output) {
+    return output.substring(
+        output.lastIndexOf(ID_PREFIX_IN_OUTPUT) + ID_PREFIX_IN_OUTPUT.length(),
+        output.length() - 1);
   }
 
   @BeforeClass
@@ -56,27 +65,30 @@ public class CreateKnowledgeBaseTest {
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    newOutputStream = new PrintStream(bout);
+    System.setOut(newOutputStream);
   }
 
   @After
   public void tearDown() throws IOException {
+    if (knowledgeBaseName == null) {
+      return;
+    }
+
     // Delete the created knowledge base
     try (KnowledgeBasesClient client = KnowledgeBasesClient.create()) {
       DeleteKnowledgeBaseRequest request =
           DeleteKnowledgeBaseRequest.newBuilder().setName(knowledgeBaseName).setForce(true).build();
       client.deleteKnowledgeBase(request);
     }
-    System.setOut(null);
+    System.setOut(originalOutputStream);
   }
 
   @Test
   public void testCreateKnowledgeBase() throws Exception {
-    KnowledgeBase knowledgeBase =
-        KnowledgeBaseManagement.createKnowledgeBase(PROJECT_ID, KNOWLEDGE_DISPLAY_NAME);
-    knowledgeBaseName = knowledgeBase.getName();
-    String got = bout.toString();
-    assertThat(got).contains(KNOWLEDGE_DISPLAY_NAME);
+    KnowledgeBaseManagement.createKnowledgeBase(PROJECT_ID, LOCATION, KNOWLEDGE_DISPLAY_NAME);
+    String output = bout.toString();
+    assertThat(output).contains(KNOWLEDGE_DISPLAY_NAME);
+    knowledgeBaseName = getResourceNameFromOutputString(output);
   }
 }

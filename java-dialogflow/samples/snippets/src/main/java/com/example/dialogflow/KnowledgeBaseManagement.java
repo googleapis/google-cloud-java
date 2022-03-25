@@ -19,26 +19,39 @@ package com.example.dialogflow;
 // [START dialogflow_create_knowledge_base]
 
 import com.google.api.gax.rpc.ApiException;
-import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
-import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
-import com.google.cloud.dialogflow.v2beta1.ProjectName;
+import com.google.cloud.dialogflow.v2.KnowledgeBase;
+import com.google.cloud.dialogflow.v2.KnowledgeBasesClient;
+import com.google.cloud.dialogflow.v2.LocationName;
 import java.io.IOException;
 
 public class KnowledgeBaseManagement {
 
+  public static void main(String[] args) throws ApiException, IOException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "my-project-id";
+    String location = "my-location";
+
+    // Set display name of the new knowledge base
+    String knowledgeBaseDisplayName = "my-knowledge-base-display-name";
+
+    // Create a knowledge base
+    createKnowledgeBase(projectId, location, knowledgeBaseDisplayName);
+  }
+
   // Create a Knowledge base
-  public static KnowledgeBase createKnowledgeBase(String projectId, String displayName)
+  public static void createKnowledgeBase(String projectId, String location, String displayName)
       throws ApiException, IOException {
     // Instantiates a client
     try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-      KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().setDisplayName(displayName).build();
-      ProjectName projectName = ProjectName.of(projectId);
-      KnowledgeBase response = knowledgeBasesClient.createKnowledgeBase(projectName, knowledgeBase);
+      KnowledgeBase targetKnowledgeBase =
+          KnowledgeBase.newBuilder().setDisplayName(displayName).build();
+      LocationName parent = LocationName.of(projectId, location);
+      KnowledgeBase createdKnowledgeBase =
+          knowledgeBasesClient.createKnowledgeBase(parent, targetKnowledgeBase);
+      System.out.println("====================");
       System.out.format("Knowledgebase created:\n");
-      System.out.format("Display Name: %s \n", response.getDisplayName());
-      System.out.format("Knowledge ID: %s \n", response.getName());
-
-      return response;
+      System.out.format("Display Name: %s\n", createdKnowledgeBase.getDisplayName());
+      System.out.format("Name: %s\n", createdKnowledgeBase.getName());
     }
   }
 }

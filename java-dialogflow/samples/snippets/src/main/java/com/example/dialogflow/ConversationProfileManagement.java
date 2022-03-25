@@ -125,7 +125,7 @@ public class ConversationProfileManagement {
                   .setConversationProfile(targetConversationProfile)
                   .build());
       System.out.println("====================");
-      System.out.println("Conversation Profile created:");
+      System.out.println("Conversation Profile created:\n");
       System.out.format("Display name: %s\n", createdConversationProfile.getDisplayName());
       System.out.format("Name: %s\n", createdConversationProfile.getName());
     }
