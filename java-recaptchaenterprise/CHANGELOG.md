@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.4.7](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.4.6...v2.4.7) (2022-03-25)
+
+
+### Dependencies
+
+* update dependency org.springframework.boot:spring-boot-starter-test to v2.6.5 ([#745](https://github.com/googleapis/java-recaptchaenterprise/issues/745)) ([7ec5272](https://github.com/googleapis/java-recaptchaenterprise/commit/7ec5272dc761c1a3be645b606589a39a1f778846))
+
 ### [2.4.6](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.4.5...v2.4.6) (2022-03-24)
 
 
