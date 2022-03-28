@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.3.2](https://github.com/googleapis/java-shared-config/compare/v1.3.1...v1.3.2) (2022-03-28)
+
+
+### Dependencies
+
+* revert google-java-format to 1.7 ([#453](https://github.com/googleapis/java-shared-config/issues/453)) ([cbc777f](https://github.com/googleapis/java-shared-config/commit/cbc777f3e9ab75edb6fa2e0268a7446ae4111725))
+
 ### [1.3.1](https://github.com/googleapis/java-shared-config/compare/v1.3.0...v1.3.1) (2022-03-25)
 
 
